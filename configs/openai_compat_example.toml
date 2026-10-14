@@ -1,0 +1,42 @@
+# Real models through any OpenAI-compatible endpoint, e.g. a vLLM server on a lab GPU:
+#   vllm serve Qwen/Qwen3-32B --port 8000
+#   python -m ltg run --config configs/openai_compat_example.toml --matters 3
+# Untested against a live model so far: start with a few matters and read every output.
+
+[run]
+n_matters = 3
+seed = 1
+out_dir = "runs/first_real"
+
+[backend]
+kind = "openai_compat"
+base_url = "http://localhost:8000/v1"
+api_key_env = "LTG_API_KEY"         # name of the env var holding the key; unset is fine for a local server
+default_model = "Qwen/Qwen3-32B"
+temperature = 0.7
+max_tokens = 8000
+
+# Optional per-role overrides, e.g. a stronger model as solver and judge:
+# [backend.models]
+# solver = "Qwen/Qwen3-235B-A22B"
+# judge = "Qwen/Qwen3-235B-A22B"
+
+[spec]
+practice_areas = ["commercial_contracts", "mergers_acquisitions"]
+jurisdictions = ["Delaware", "New York"]
+work_types = ["issue_spotting_memo"]
+n_documents = [3, 5]
+n_issues = [3, 5]
+
+[gates]
+solver_attempts = 3
+solver_min_pass_rate = 0.01
+solver_max_pass_rate = 0.99
+probe_without_documents = true
+decontam_threshold = 0.5
+reference_dirs = []                 # e.g. ["../harvey-labs/tasks"] to screen against LAB
+
+[sources]
+precedent_dirs = []                 # folders of real precedents (.md/.txt); empty = bundled synthetic samples
+precedents_per_matter = 1
+precedent_chars = 6000

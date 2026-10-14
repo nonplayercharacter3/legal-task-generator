@@ -1,0 +1,151 @@
+{
+  "matter_id": "s7-m0001",
+  "summary": "Quillon Freight Systems, Inc. is party to a stock purchase agreement with Brightwater Analytics, Inc..",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Quillon Freight Systems, Inc.",
+      "role": "Buyer"
+    },
+    {
+      "id": "P2",
+      "name": "Brightwater Analytics, Inc.",
+      "role": "Seller"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Effective Date",
+      "value": "2025-06-14",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$1,900,000",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Governing Law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F4",
+      "key": "Liability Cap",
+      "value": "$950,000",
+      "doc": "D1",
+      "section": "9.1"
+    },
+    {
+      "id": "F5",
+      "key": "Initial Term",
+      "value": "3 years",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F6",
+      "key": "Amendment Date",
+      "value": "2026-06-05",
+      "doc": "D2",
+      "section": "1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "main agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "disclosure_schedule_2.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter_3.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "email_thread.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "A later document narrows or removes a carve-out from the limitation of liability, so the cap now covers losses it should not.",
+      "doc": "D1",
+      "section": "5.2",
+      "detect_terms": [
+        "limitation of liability",
+        "notwithstanding"
+      ],
+      "expected_finding": "a clause extends the limitation of liability to confidentiality breaches, removing the usual carve-out"
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "A notice or exercise deadline has already passed relative to the dates in the matter.",
+      "doc": "D2",
+      "section": "6.2",
+      "detect_terms": [
+        "written notice",
+        "days prior to"
+      ],
+      "expected_finding": "the termination notice window may already have passed given the term dates, so the client may be locked into the current term"
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "An indemnity obligation is excluded from any cap, exposing the client to unlimited liability.",
+      "doc": "D3",
+      "section": "7.2",
+      "detect_terms": [
+        "indemnify",
+        "without limit"
+      ],
+      "expected_finding": "the client's indemnity is uncapped, exposing it to unlimited liability"
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "A counterparty consent right is triggered by the transaction or a change of control and has not been obtained or addressed.",
+      "doc": "D4",
+      "section": "8.2",
+      "detect_terms": [
+        "change of control",
+        "prior written consent"
+      ],
+      "expected_finding": "the change of control clause requires the counterparty's prior written consent, which the deal does not address"
+    }
+  ]
+}

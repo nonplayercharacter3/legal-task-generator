@@ -1,0 +1,17 @@
+# Offline demo: the fake model, with faults injected into ~30% of matters so every gate gets exercised.
+#   python -m ltg run --config configs/fake_demo.toml
+
+[run]
+n_matters = 20
+seed = 7
+out_dir = "runs/fake_demo"
+
+[backend]
+kind = "fake"
+
+[fake]
+solver_skill = 0.85   # chance the fake solver spots each planted issue
+fault_rate = 0.3      # share of matters with a deliberate defect (drop_issue, wrong_fact, ...)
+
+[gates]
+solver_attempts = 3

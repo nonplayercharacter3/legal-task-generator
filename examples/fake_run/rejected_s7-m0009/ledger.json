@@ -1,0 +1,164 @@
+{
+  "matter_id": "s7-m0009",
+  "summary": "Quillon Freight Systems, Inc. is party to a asset purchase agreement with Copperline Foods LLC.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Quillon Freight Systems, Inc.",
+      "role": "Buyer"
+    },
+    {
+      "id": "P2",
+      "name": "Copperline Foods LLC",
+      "role": "Seller"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Effective Date",
+      "value": "2025-02-11",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$2,900,000",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Governing Law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F4",
+      "key": "Liability Cap",
+      "value": "$1,450,000",
+      "doc": "D1",
+      "section": "9.1"
+    },
+    {
+      "id": "F5",
+      "key": "Initial Term",
+      "value": "5 years",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F6",
+      "key": "Amendment Date",
+      "value": "2026-07-03",
+      "doc": "D2",
+      "section": "1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "main agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "disclosure_schedule_2.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter_3.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "email_thread.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "The counterparty may assign the agreement freely, including to a competitor.",
+      "doc": "D1",
+      "section": "5.2",
+      "detect_terms": [
+        "may assign",
+        "without the consent"
+      ],
+      "expected_finding": "the counterparty may assign the agreement without consent, including to a competitor of the client"
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "A counterparty consent right is triggered by the transaction or a change of control and has not been obtained or addressed.",
+      "doc": "D2",
+      "section": "6.2",
+      "detect_terms": [
+        "change of control",
+        "prior written consent"
+      ],
+      "expected_finding": "the change of control clause requires the counterparty's prior written consent, which the deal does not address"
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "A defined term is used inconsistently across documents, changing the scope of an obligation.",
+      "doc": "D3",
+      "section": "7.2",
+      "detect_terms": [
+        "as defined in",
+        "affiliates"
+      ],
+      "expected_finding": "a supporting document redefines \"Company\" to include all affiliates, widening the obligations beyond the main agreement"
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "A notice or exercise deadline has already passed relative to the dates in the matter.",
+      "doc": "D4",
+      "section": "8.2",
+      "detect_terms": [
+        "written notice",
+        "days prior to"
+      ],
+      "expected_finding": "the termination notice window may already have passed given the term dates, so the client may be locked into the current term"
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Two documents in the same matter choose different governing law or forums.",
+      "doc": "D1",
+      "section": "9.2",
+      "detect_terms": [
+        "governed by the laws of",
+        "exclusive jurisdiction"
+      ],
+      "expected_finding": "one document selects California law and courts, conflicting with the governing law of the main agreement"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "checked": 6
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Notwithstanding anything to the contrary, the limitation of liability applies to all claims, including claims for breach of confidentiality.",
+            "detect_terms_found": "2/2"
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Either party may terminate by giving written notice no fewer than ninety (90) days prior to the end of the then-current term.",
+            "detect_terms_found": "2/2"
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "The Customer shall indemnify the Supplier against all losses arising from third-party claims, without limit as to amount.",
+            "detect_terms_found": "2/2"
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Any change of control of the Customer shall be deemed an assignment requiring the Supplier's prior written consent.",
+            "detect_terms_found": "2/2"
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "skipped": "no reference_dirs configured"
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C3",
+              "C4"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": []
+          },
+          {
+            "passed": true,
+            "failed_criteria": []
+          }
+        ]
+      }
+    }
+  ]
+}
