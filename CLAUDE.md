@@ -30,10 +30,17 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 ## Current status (2026-10-14)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 66 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+- 67 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
   was mutation-checked on 2026-10-14: disabling it makes a test fail.
-- The real-model paths have only been tested against a local mock server and a stub SDK. **No full matter has run on
-  a real LLM yet.** First real Claude call (2026-10-15) failed at login: run `claude` and `/login` first.
+- First real-model runs (2026-10-15, Claude Sonnet through the Agent SDK, one matter each, seed 1):
+  runs 1 to 3 were rejected at `consistency`, each exposing a gap the fake model hid (exact string matching, facts
+  written as clauses, references extracted as values, a contradiction pinned on the fact's own document); all fixed.
+  Run 4 was accepted: 4 documents (3,925 words), 4 issues, 11 criteria, solver pass rate 1/3, 54 calls,
+  ~313k input and ~56k output tokens, ~8 minutes of model time. Output in `runs/claude_test4/` (not committed).
+- Pilot observations to follow up: the solver found every planted issue in every attempt and failed only on
+  negative criteria, so issue spotting may be too easy when Sonnet solves Sonnet's tasks (try a different solver
+  model); issue criteria often bundle find, explain and fix; the instruction writer can still nudge generically
+  ("the documents may not line up").
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 
