@@ -201,8 +201,12 @@ def validate_ledger(ledger: Ledger, spec: MatterSpec) -> list[str]:
             errs.append(f"issue {i.id} has no detect_terms")
         if not i.expected_finding.strip():
             errs.append(f"issue {i.id} has no expected_finding")
-        if i.contradicts and i.contradicts not in {f.id for f in ledger.facts}:
+        fact = next((f for f in ledger.facts if f.id == i.contradicts), None)
+        if i.contradicts and fact is None:
             errs.append(f"issue {i.id} contradicts unknown fact {i.contradicts}")
+        elif fact and fact.doc == i.doc:
+            errs.append(f"issue {i.id} contradicts {fact.id} inside {fact.doc}, the document that states it; "
+                        "a contradiction needs the fact stated in a different document, otherwise set contradicts to null")
         issue_docs.add(i.doc)
     if spec.n_issues >= 2 and len(issue_docs) < 2:
         errs.append("all issues sit in one document; spread them across documents")

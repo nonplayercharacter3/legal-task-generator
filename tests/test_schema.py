@@ -65,3 +65,12 @@ def test_render_input_round_trips():
 
     payload = {"a": [1, "two"], "b": {"c": "ünïcode"}}
     assert extract_input("preamble\n" + render_input(payload) + "\ntrailer") == payload
+
+
+def test_contradiction_must_target_a_fact_in_another_document():
+    ledger, spec = _ledger_and_spec()
+    issue, fact = ledger.issues[0], ledger.facts[0]
+    issue.contradicts, issue.doc = fact.id, fact.doc
+    assert any("contradicts F1 inside" in e for e in validate_ledger(ledger, spec))
+    issue.doc = next(d.id for d in ledger.documents if d.id != fact.doc and not d.distractor)
+    assert not any("contradicts" in e for e in validate_ledger(ledger, spec))

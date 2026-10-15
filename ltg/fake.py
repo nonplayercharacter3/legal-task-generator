@@ -170,7 +170,8 @@ class FakeModel:
                     "section": f"{idx + 5}.2",
                     "detect_terms": list(lib["detect_terms"]),
                     "expected_finding": lib["finding"],
-                    "contradicts": "F3" if itype == "governing_law_mismatch" else None,
+                    # governing law (F3) is stated in D1, so only a conflicting choice elsewhere contradicts it
+                    "contradicts": "F3" if itype == "governing_law_mismatch" and live_docs[idx % len(live_docs)] != "D1" else None,
                 }
             )
         if self.fault_for(spec["matter_id"]) == "leaky_filename" and issues:
@@ -225,6 +226,10 @@ class FakeModel:
             m = re.search(rf"^{re.escape(q['key'])}: (.+)$", content, re.M)
             out.append({"id": q["id"], "value": m.group(1).strip() if m else None})
         return {"facts": out}
+
+    def _fact_matcher(self, p: dict) -> dict:
+        words = lambda s: set(re.findall(r"[a-z0-9]+", str(s).lower()))  # the fake only forgives case and punctuation
+        return {"results": [{"id": x["id"], "same": words(x["ledger"]) == words(x["document"]), "reason": ""} for x in p["pairs"]]}
 
     def _issue_verifier(self, p: dict) -> dict:
         content = p["document"]["content"]

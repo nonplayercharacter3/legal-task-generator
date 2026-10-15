@@ -32,7 +32,7 @@ Needs Python 3.11+. No third-party packages at runtime.
 
 ```bash
 pip install -e ".[dev]"        # or just use python -m ltg from the repo root
-python -m pytest               # 64 tests, ~5 seconds, fully offline
+python -m pytest               # 66 tests, ~5 seconds, fully offline
 
 python -m ltg run --config configs/fake_demo.toml      # 20 matters, fake model, faults injected
 cat runs/fake_demo/report.md
@@ -78,7 +78,7 @@ early as possible.
 | Gate | What it checks | Kind |
 | --- | --- | --- |
 | `ledger_schema` | Counts match the spec, ids resolve, issues are spread across documents and never in a distractor, safe filenames | deterministic |
-| `consistency` | A separate extractor re-reads every fact from every drafted file (told the fact's name, not its value). The fact's own document must match the ledger; other documents may omit it but not contradict it, unless a planted issue does so on purpose | model |
+| `consistency` | A separate extractor re-reads every fact from every drafted file (told the fact's name, not its value); values that differ in wording go to a matcher that judges meaning. The fact's own document must match the ledger; other documents may omit it but not contradict it, unless a planted issue does so on purpose | model |
 | `issue_check` | Each planted issue is present and findable in its assigned document | model |
 | `leak_check` | The instruction, filenames and document kinds do not name an issue or quote its key phrases (punctuation ignored), and documents carry no HTML comments | deterministic |
 | `rubric_trace` | Every criterion cites a ledger issue or fact, every issue is graded, reference answers are well formed | deterministic |
@@ -139,7 +139,7 @@ ltg/
   cli.py           `run` and `inspect`
 configs/           fake demo, real-endpoint example, Claude pilot
 examples/          committed sample output from the fake model
-tests/             64 offline tests
+tests/             66 offline tests
 ```
 
 ## Not done yet

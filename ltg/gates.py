@@ -84,6 +84,10 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
     A fact's own document must state the ledger value. Any other document may stay silent, but must not
     state a different value unless a planted issue `contradicts` that fact there. Otherwise the drafter
     has planted a conflict the answer key does not know about.
+
+    Values that differ only after normalisation go to a matcher, which compares the two values (it never
+    sees the documents): real drafting says "the laws of the State of New York" where the ledger says
+    "State of New York", and only a mismatch in meaning should reject the task.
     """
     fname = {d.id: d.filename for d in ledger.documents}
     planted = {(i.contradicts, fname.get(i.doc)) for i in ledger.issues if i.contradicts}
@@ -93,7 +97,7 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
     }
     out = call_json(client, "fact_extractor", prompts.FACT_EXTRACTOR, render_input(payload))
     got = {r["id"]: r.get("value") for r in out.get("facts", []) if "id" in r}
-    mismatches = []
+    differ = []
     for f in ledger.facts:
         for n in docs:
             v = got.get(f"{f.id}@{n}")
@@ -101,8 +105,19 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
                 continue
             if n != fname[f.doc] and (not _norm(v) or (f.id, n) in planted):
                 continue  # silent elsewhere, or a deliberate contradiction
-            mismatches.append({"fact": f.id, "key": f.key, "filename": n, "ledger": f.value, "document": v})
-    return GateResult("consistency", not mismatches, {"mismatches": mismatches, "checked": len(payload["queries"])})
+            differ.append({"fact": f.id, "key": f.key, "filename": n, "ledger": f.value, "document": v})
+    same: set[int] = set()
+    worded = [k for k, d in enumerate(differ) if _norm(d["document"])]  # a missing value needs no matcher
+    if worded:
+        pairs = [{"id": str(k), "fact": differ[k]["key"], "ledger": differ[k]["ledger"], "document": differ[k]["document"]} for k in worded]
+        out = call_json(client, "fact_matcher", prompts.FACT_MATCHER, render_input({"pairs": pairs}))
+        same = {int(r["id"]) for r in out.get("results", []) if r.get("same") is True and str(r.get("id", "")).isdigit()}
+    mismatches = [d for k, d in enumerate(differ) if k not in same]
+    return GateResult(
+        "consistency",
+        not mismatches,
+        {"mismatches": mismatches, "reworded": len(same), "checked": len(payload["queries"])},
+    )
 
 
 def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms: bool = False) -> GateResult:

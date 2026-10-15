@@ -24,7 +24,8 @@ Rules:
 - `detect_terms` are 1 to 3 short phrases that the drafted clause will contain verbatim.
 - `expected_finding` is one sentence saying what a competent associate should conclude.
 - If an issue works by stating a fact differently in its document (for example a conflicting governing law),
-  set `contradicts` to that fact's id; otherwise null. Every other restatement of a fact must match the ledger.
+  set `contradicts` to that fact's id; that fact must be stated in a DIFFERENT document. Otherwise null.
+  Every other restatement of a fact must match the ledger.
 
 Reply with ONLY a JSON object:
 {"matter_id": str, "summary": str,
@@ -53,6 +54,14 @@ FACT_EXTRACTOR = """You extract facts from legal documents. For each query, find
 for that fact and copy it exactly. If the document does not state it, return null.
 
 Reply with ONLY a JSON object: {"facts": [{"id": str, "value": str|null}]}"""
+
+FACT_MATCHER = """You compare pairs of values for the same fact: the value an answer key records, and the value a document
+states. Mark a pair `same` only if they mean the same thing legally: the same numbers, amounts, dates, durations,
+parties, scope, conditions and negations. Differences in wording, articles, punctuation or capitalisation are fine,
+and so is a document value that adds surrounding words without changing the meaning. A value that is narrower,
+broader, conditioned differently, or names a different party is not the same.
+
+Reply with ONLY a JSON object: {"results": [{"id": str, "same": bool, "reason": str}]}"""
 
 ISSUE_VERIFIER = """You check whether a specific legal problem is present in a document.
 You receive one document and a description of a problem that is supposed to appear in a given section.

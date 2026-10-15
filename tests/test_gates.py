@@ -52,3 +52,41 @@ def test_solver_check_rejects_a_task_solvable_without_documents():
     assert not g.passed and "without opening any document" in g.details["reason"]
     g, _ = gates.solver_check(always, "instr", {"a.md": "text"}, RUBRIC, attempts=3, min_rate=0.01, max_rate=0.99, probe_without_documents=False)
     assert not g.passed and "too easy" in g.details["reason"]
+
+
+class Facts:
+    """Extractor that returns fixed document values, and a matcher with fixed verdicts; records matcher calls."""
+
+    def __init__(self, values, same):
+        self.values, self.same, self.matched = values, same, []
+
+    def complete(self, role, system, user):
+        p = extract_input(user)
+        if role == "fact_extractor":
+            return json.dumps({"facts": [{"id": q["id"], "value": self.values.get(q["id"])} for q in p["queries"]]})
+        self.matched += p["pairs"]
+        return json.dumps({"results": [{"id": x["id"], "same": self.same} for x in p["pairs"]]})
+
+
+def _ledger():
+    from ltg.schema import DocumentPlan, Fact, Ledger, Party
+
+    return Ledger("m", "", [Party("P1", "A", "Buyer"), Party("P2", "B", "Seller")],
+                  [Fact("F1", "Governing Law", "State of New York", "D1", "12")],
+                  [DocumentPlan("D1", "a.md", "agreement"), DocumentPlan("D2", "b.md", "amendment")], [])
+
+
+def test_consistency_asks_the_matcher_only_about_reworded_values():
+    docs = {"a.md": "...", "b.md": "..."}
+    exact = Facts({"F1@a.md": "state of new york."}, same=False)
+    assert gates.consistency(exact, _ledger(), docs).passed and exact.matched == []  # normalisation suffices
+
+    reworded = {"F1@a.md": "the laws of the State of New York", "F1@b.md": "the laws of the State of New York"}
+    ok = gates.consistency(Facts(reworded, same=True), _ledger(), docs)
+    assert ok.passed and ok.details["reworded"] == 2
+    bad = gates.consistency(Facts(reworded, same=False), _ledger(), docs)
+    assert not bad.passed and len(bad.details["mismatches"]) == 2
+
+    missing = Facts({}, same=True)  # silent in its own document: rejected without asking the matcher
+    g = gates.consistency(missing, _ledger(), docs)
+    assert not g.passed and missing.matched == [] and g.details["mismatches"][0]["filename"] == "a.md"

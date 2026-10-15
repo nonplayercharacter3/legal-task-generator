@@ -16,6 +16,7 @@ ROLE_BY_SYSTEM = {
     prompts.LEDGER_WRITER: "ledger_writer",
     prompts.DRAFTER: "drafter",
     prompts.FACT_EXTRACTOR: "fact_extractor",
+    prompts.FACT_MATCHER: "fact_matcher",
     prompts.ISSUE_VERIFIER: "issue_verifier",
     prompts.INSTRUCTION_WRITER: "instruction_writer",
     prompts.RUBRIC_WRITER: "rubric_writer",
