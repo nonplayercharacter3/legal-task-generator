@@ -171,9 +171,9 @@ class Pipeline:
 
         result.gates = [asdict(g) for g in results]
         _write(work / "gates.json", {"accepted": result.accepted, "failed_gate": result.failed_gate, "reason": result.reason, "gates": result.gates})
+        for folder in ("accepted", "rejected"):  # a rerun must not leave the previous verdict behind
+            shutil.rmtree(out / folder / spec.matter_id, ignore_errors=True)
         dest = out / ("accepted" if result.accepted else "rejected") / spec.matter_id
-        if dest.exists():
-            shutil.rmtree(dest)
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.move(str(work), str(dest))
         return result
@@ -185,6 +185,10 @@ class Pipeline:
         out = Path(out_dir or self.cfg.run.out_dir)
         out.mkdir(parents=True, exist_ok=True)
         specs = stages.sample_specs(self.cfg.spec, n, self.cfg.run.seed)
+        ids = {s.matter_id for s in specs}
+        stale = sorted(p.name for f in ("accepted", "rejected") if (out / f).is_dir() for p in (out / f).iterdir() if p.name not in ids)
+        if stale:  # refuse rather than delete: accepted/ must match this run's report
+            raise FileExistsError(f"{out} holds matters from another run ({', '.join(stale[:3])}, ...); use a new --out or delete it")
         results = [self.run_matter(s, out) for s in specs]
         shutil.rmtree(out / "work", ignore_errors=True)
         report = build_report(results, self.log, self.cfg)

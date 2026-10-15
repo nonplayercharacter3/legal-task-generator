@@ -129,3 +129,19 @@ def test_invalid_ledger_is_rejected_after_one_repair_attempt(tmp_path):
     rep = Pipeline(cfg, client=fake).run()
     assert {m["failed_gate"] for m in rep["matters"]} == {"ledger_schema"}
     assert rep["model_calls"]["ledger_writer"]["calls"] == 4  # first try + one repair, per matter
+
+
+def test_rerun_into_same_folder_leaves_no_stale_verdicts(tmp_path):
+    def run(**fake):
+        return Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 6, "seed": 7}, "fake": fake})).run()
+
+    assert run(solver_skill=0.85)["accepted"] > 0
+    assert run(solver_skill=1.0)["accepted"] == 0  # every task now too easy
+    assert not list((tmp_path / "accepted").iterdir())
+    assert len(list((tmp_path / "rejected").iterdir())) == 6
+
+
+def test_run_refuses_folder_with_matters_from_another_run(tmp_path):
+    Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2, "seed": 7}})).run()
+    with pytest.raises(FileExistsError, match="another run"):
+        Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2, "seed": 8}})).run()
