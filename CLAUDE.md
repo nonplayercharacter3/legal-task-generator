@@ -22,15 +22,18 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   issues, the solver sees only the instruction and documents, the judge sees only a response and the rubric.
   Keep it that way; `tests/test_pipeline_fake.py` checks it.
 - **Skeleton first, costing later.** Pengtao approved a preliminary implementation. No cost modeling yet.
-- **Backend-agnostic.** Any OpenAI-compatible endpoint. Lab GPUs with open models (vLLM) is the likely target;
-  not confirmed yet.
+- **Backends.** Any OpenAI-compatible endpoint, or Claude through the Claude Agent SDK (`backend.kind = "claude_sdk"`).
+  Pengtao's direction (2026-10-15): for Claude, use the $100/month subscription through the SDK (reimbursed), never
+  direct API calls. For GPUs, Nautilus; ask Li Zhang for access. The runtime stays standard library only: the SDK
+  is an optional extra (`pip install -e ".[claude]"`) imported only by that backend.
 
 ## Current status (2026-10-14)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 59 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+- 64 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
   was mutation-checked on 2026-10-14: disabling it makes a test fail.
-- The real-model path has only been tested against a local mock server. **It has never run on a real LLM.**
+- The real-model paths have only been tested against a local mock server and a stub SDK. **No full matter has run on
+  a real LLM yet.** First real Claude call (2026-10-15) failed at login: run `claude` and `/login` first.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 

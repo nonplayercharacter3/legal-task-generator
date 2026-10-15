@@ -6,7 +6,7 @@ import tomllib
 from dataclasses import dataclass, field, fields
 from typing import Any
 
-from .models import CallLog, ModelClient, OpenAICompatClient
+from .models import CallLog, ClaudeAgentClient, ModelClient, OpenAICompatClient
 
 
 @dataclass
@@ -19,7 +19,7 @@ class RunCfg:
 
 @dataclass
 class BackendCfg:
-    kind: str = "fake"  # "fake" | "openai_compat"
+    kind: str = "fake"  # "fake" | "openai_compat" | "claude_sdk"
     base_url: str = "http://localhost:8000/v1"
     api_key_env: str = "LTG_API_KEY"
     default_model: str = ""
@@ -128,4 +128,8 @@ def build_client(cfg: Config, log: CallLog) -> ModelClient:
             timeout=b.timeout,
             log=log,
         )
+    if b.kind == "claude_sdk":
+        if not b.default_model:
+            raise ValueError("backend.default_model is required for claude_sdk, e.g. \"sonnet\"")
+        return ClaudeAgentClient(default_model=b.default_model, models=b.models, log=log)
     raise ValueError(f"unknown backend kind {b.kind!r}")

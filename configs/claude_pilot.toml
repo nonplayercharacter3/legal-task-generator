@@ -1,0 +1,24 @@
+# Claude through the Claude Agent SDK, billed to the logged-in Claude Code subscription (no API key, no direct API calls).
+#   python3 -m venv .venv && .venv/bin/pip install -e ".[dev,claude]"
+#   claude            # once, in a terminal: /login with the account that holds the subscription
+#   .venv/bin/python -m ltg run --config configs/claude_pilot.toml
+# Every call runs with no tools, no local settings, skills, memory or MCP servers, and an empty working directory.
+# temperature and max_tokens do not apply to this backend; a reply cut off at the model's limit is rejected.
+
+[run]
+n_matters = 3
+seed = 1
+out_dir = "runs/claude_pilot"
+concurrency = 2                     # subscription usage limits, not throughput, are the constraint
+
+[backend]
+kind = "claude_sdk"
+default_model = "sonnet"            # Claude Code model alias or full model name
+
+# Optional per-role overrides, e.g. a stronger solver and judge:
+# [backend.models]
+# solver = "opus"
+# judge = "opus"
+
+[gates]
+solver_attempts = 3

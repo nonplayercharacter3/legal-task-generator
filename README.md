@@ -32,7 +32,7 @@ Needs Python 3.11+. No third-party packages at runtime.
 
 ```bash
 pip install -e ".[dev]"        # or just use python -m ltg from the repo root
-python -m pytest               # 59 tests, ~5 seconds, fully offline
+python -m pytest               # 64 tests, ~5 seconds, fully offline
 
 python -m ltg run --config configs/fake_demo.toml      # 20 matters, fake model, faults injected
 cat runs/fake_demo/report.md
@@ -51,6 +51,17 @@ Point the pipeline at any OpenAI-compatible endpoint, for example vLLM on a lab 
 vllm serve Qwen/Qwen3-32B --port 8000
 python -m ltg run --config configs/openai_compat_example.toml --matters 3
 ```
+
+Or use Claude through the Claude Agent SDK, billed to a logged-in Claude Code subscription rather than an API key:
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -e ".[dev,claude]"
+claude                                              # once: /login with the subscription's account
+.venv/bin/python -m ltg run --config configs/claude_pilot.toml
+```
+
+Each Claude call runs with no tools and none of the machine's settings, skills, memory or MCP servers, from an
+empty working directory, so isolation holds as it does for the other backends.
 
 If a run stops part way (a crash, Ctrl-C, an endpoint going down), rerun the same command with `--resume`.
 Matters that already have a verdict are kept, matters that ended in an error are retried, and the run refuses to
@@ -120,15 +131,15 @@ ltg/
   solver.py        tool-using solver (read_file, search, finish) behind solve()
   gates.py         the filters above
   prompts.py       system prompt for each role
-  models.py        OpenAI-compatible client, JSON parsing, call log
+  models.py        OpenAI-compatible and Claude Agent SDK clients, JSON parsing, call log
   fake.py          offline fake model with fault injection
   decontam.py      n-gram containment with a fixed-memory Bloom filter
   splits.py        per-matter split assignment
   orchestrator.py  runs matters through the stages and writes the report
   cli.py           `run` and `inspect`
-configs/           fake demo and real-endpoint example
+configs/           fake demo, real-endpoint example, Claude pilot
 examples/          committed sample output from the fake model
-tests/             59 offline tests
+tests/             64 offline tests
 ```
 
 ## Not done yet

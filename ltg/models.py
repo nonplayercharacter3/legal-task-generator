@@ -4,17 +4,20 @@ Every stage talks to a model through `ModelClient.complete(role, system, user)`.
 The role name lets the config route different stages to different models
 (for example a strong model as the solver and a cheaper one as the drafter).
 
-Two backends:
+Three backends:
   * FakeModel (ltg.fake): deterministic, offline, used for tests and demos.
   * OpenAICompatClient: any OpenAI-compatible /chat/completions endpoint
     (vLLM, Ollama, OpenAI, or a provider's OpenAI-compatible endpoint).
+  * ClaudeAgentClient: Claude through the Claude Agent SDK, on the logged-in Claude Code account.
 """
 
 from __future__ import annotations
 
+import asyncio
 import json
 import os
 import re
+import tempfile
 import time
 import urllib.error
 import urllib.request
@@ -144,6 +147,73 @@ class OpenAICompatClient:
                 break
             time.sleep(min(2**attempt * 2, 30))
         raise ModelError(f"{role}: {last_err}")
+
+
+class ClaudeAgentClient:
+    """Claude through the Claude Agent SDK (`pip install claude-agent-sdk`), using the logged-in Claude Code account.
+
+    Each call is one plain completion. No built-in tools, no settings, skills, memory or MCP servers from this
+    machine, and an empty working directory: a role sees only the system prompt and payload its stage gives it,
+    and the solver cannot open the run folder where the answer keys live.
+    """
+
+    def __init__(self, default_model: str, models: dict[str, str] | None = None, log: CallLog | None = None) -> None:
+        try:
+            import claude_agent_sdk
+        except ImportError as e:
+            raise ModelError("backend.kind = 'claude_sdk' needs the Agent SDK: pip install claude-agent-sdk") from e
+        self.sdk = claude_agent_sdk
+        self.default_model = default_model
+        self.models = models or {}
+        self.log = log if log is not None else CallLog()
+        self.cwd = tempfile.mkdtemp(prefix="ltg-claude-")  # empty on purpose
+
+    def model_for(self, role: str) -> str:
+        return self.models.get(role, self.default_model)
+
+    def complete(self, role: str, system: str, user: str) -> str:
+        sdk, model = self.sdk, self.model_for(role)
+        options = sdk.ClaudeAgentOptions(
+            system_prompt=system,  # a string replaces Claude Code's own system prompt
+            model=model,
+            tools=[],
+            setting_sources=[],
+            strict_mcp_config=True,
+            max_turns=1,
+            cwd=self.cwd,
+        )
+
+        async def run():
+            texts, stop, result = [], None, None
+            async for m in sdk.query(prompt=user, options=options):
+                if isinstance(m, sdk.AssistantMessage):
+                    texts += [b.text for b in m.content if isinstance(b, sdk.TextBlock)]
+                    stop = m.stop_reason or stop
+                elif isinstance(m, sdk.ResultMessage):
+                    result = m
+            return "".join(texts), stop, result
+
+        t0 = time.time()
+        try:
+            text, stop, result = asyncio.run(run())  # one event loop per call, so threads can share the client
+            if result is None or result.is_error:
+                raise ModelError(f"{role}: Claude returned an error ({getattr(result, 'subtype', 'no result')})")
+            if stop == "max_tokens":  # a cut-off document must not pass as complete
+                raise ModelError(f"{role}: output truncated at the model's output limit")
+        except Exception as e:
+            self.log.add(CallRecord(role=role, model=model, seconds=round(time.time() - t0, 2), ok=False, error=str(e)[:300]))
+            raise e if isinstance(e, ModelError) else ModelError(f"{role}: {type(e).__name__}: {e}") from e
+        usage = result.usage or {}
+        self.log.add(
+            CallRecord(
+                role=role,
+                model=model,
+                seconds=round(time.time() - t0, 2),
+                input_tokens=sum(usage.get(k) or 0 for k in ("input_tokens", "cache_creation_input_tokens", "cache_read_input_tokens")),
+                output_tokens=usage.get("output_tokens"),
+            )
+        )
+        return _THINK.sub("", result.result or text).strip()
 
 
 # ---------------------------------------------------------------- helpers

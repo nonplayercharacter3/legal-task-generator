@@ -12,6 +12,7 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+claude = ["claude-agent-sdk>=0.2"]  # only for backend.kind = "claude_sdk"
 
 [project.scripts]
 ltg = "ltg.cli:main"
