@@ -20,8 +20,9 @@ def cmd_run(args: argparse.Namespace) -> int:
     if args.out is not None:
         overrides.setdefault("run", {})["out_dir"] = args.out
     cfg = load_config(args.config, overrides)
-    report = Pipeline(cfg).run()
-    print(f"accepted {report['accepted']} of {report['candidates']} candidates -> {cfg.run.out_dir}")
+    report = Pipeline(cfg).run(resume=args.resume)
+    print(f"accepted {report['accepted']} of {report['candidates']} candidates -> {cfg.run.out_dir}"
+          + (f" ({report['resumed']} reloaded from an earlier run)" if report["resumed"] else ""))
     for g, s in report["gates"].items():
         print(f"  {g:<16} evaluated {s['evaluated']:>3}  passed {s['passed']:>3}  failed {s['failed']:>3}  skipped {s['skipped']:>3}")
     if report["gates"]["decontamination"]["skipped"]:
@@ -69,6 +70,7 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--matters", type=int, help="number of candidate matters")
     r.add_argument("--seed", type=int)
     r.add_argument("--out", help="output folder")
+    r.add_argument("--resume", action="store_true", help="keep matters already finished in the output folder; retry errors")
     r.set_defaults(func=cmd_run)
 
     i = sub.add_parser("inspect", help="print one matter folder in readable form")

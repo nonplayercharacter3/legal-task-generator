@@ -250,3 +250,47 @@ def test_matters_run_concurrently_with_the_same_results(tmp_path):
         reps[k] = Pipeline(cfg, client=slow).run()
         assert (slow.peak > 1) is (k > 1)
     assert reps[1]["matters"] == reps[4]["matters"]
+
+
+class Crash(BaseException):
+    """Stands in for the process dying: not an Exception, so no matter catches it."""
+
+
+def _cfg(out, **gates):
+    return load_config(None, {"run": {"out_dir": str(out), "n_matters": 6, "seed": 7, "concurrency": 1}, "gates": gates})
+
+
+def test_resume_after_a_crash_skips_finished_matters(tmp_path):
+    class CrashesOnFourth(FakeModel):
+        def _ledger_writer(self, p):
+            if p["spec"]["matter_id"].endswith("0004"):
+                raise Crash()
+            return super()._ledger_writer(p)
+
+    with pytest.raises(Crash):
+        Pipeline(_cfg(tmp_path / "a"), client=CrashesOnFourth(seed=7)).run()
+    finished = {p.parent.name for p in (tmp_path / "a").glob("*/*/gates.json")}
+    assert {"s7-m0001", "s7-m0002", "s7-m0003"} <= finished and "s7-m0004" not in finished
+    fake = RecordingFake(seed=7)
+    rep = Pipeline(_cfg(tmp_path / "a"), client=fake).run(resume=True)
+    rerun = {p["spec"]["matter_id"] for p in fake.payloads["ledger_writer"]}
+    assert rep["resumed"] == len(finished) and rerun == {f"s7-m000{k}" for k in range(1, 7)} - finished
+    assert rep["matters"] == Pipeline(_cfg(tmp_path / "b")).run()["matters"]  # same as a run that never crashed
+
+
+def test_resume_retries_matters_that_errored(tmp_path):
+    class Down(FakeModel):
+        def _judge(self, p):
+            raise RuntimeError("endpoint down")
+
+    assert Pipeline(_cfg(tmp_path), client=Down(seed=7)).run()["errors"] > 0
+    rep = Pipeline(_cfg(tmp_path)).run(resume=True)
+    assert rep["errors"] == 0 and rep["resumed"] < 6  # matters rejected before the judge was needed are kept
+
+
+def test_resume_refuses_changed_settings(tmp_path):
+    Pipeline(_cfg(tmp_path)).run()
+    with pytest.raises(ValueError, match="settings changed"):
+        Pipeline(_cfg(tmp_path, solver_attempts=5)).run(resume=True)
+    rep = Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 8, "seed": 7, "concurrency": 2}})).run(resume=True)
+    assert rep["resumed"] == 6 and rep["candidates"] == 8  # more matters and other concurrency are fine

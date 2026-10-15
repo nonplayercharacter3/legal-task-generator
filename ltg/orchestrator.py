@@ -176,7 +176,7 @@ class Pipeline:
             _write(work / "error.txt", traceback.format_exc())
 
         result.gates = [asdict(g) for g in results]
-        _write(work / "gates.json", {"accepted": result.accepted, "failed_gate": result.failed_gate, "reason": result.reason, "gates": result.gates})
+        _write(work / "gates.json", asdict(result))  # the full verdict, so --resume can reload it
         for folder in ("accepted", "rejected"):  # a rerun must not leave the previous verdict behind
             shutil.rmtree(out / folder / spec.matter_id, ignore_errors=True)
         dest = out / ("accepted" if result.accepted else "rejected") / spec.matter_id
@@ -186,26 +186,52 @@ class Pipeline:
 
     # ------------------------------------------------------------ a run
 
-    def run(self, n: int | None = None, out_dir: str | None = None) -> dict:
+    def _settings(self) -> dict:
+        """Everything that changes what a matter produces. Run size, concurrency and folder do not."""
+        s = json.loads(json.dumps(asdict(self.cfg)))
+        for k in ("n_matters", "concurrency", "out_dir"):
+            s["run"].pop(k)
+        return s
+
+    def _finished(self, out: Path, matter_id: str) -> MatterResult | None:
+        """A matter with a verdict from an earlier run. Errors don't count: they are retried."""
+        for folder in ("accepted", "rejected"):
+            f = out / folder / matter_id / "gates.json"
+            if f.exists():
+                r = MatterResult(**json.loads(f.read_text()))
+                return None if r.failed_gate == "error" else r
+        return None
+
+    def run(self, n: int | None = None, out_dir: str | None = None, resume: bool = False) -> dict:
         n = n if n is not None else self.cfg.run.n_matters
         out = Path(out_dir or self.cfg.run.out_dir)
         out.mkdir(parents=True, exist_ok=True)
+        settings_file = out / "settings.json"
+        if resume and settings_file.exists() and json.loads(settings_file.read_text()) != self._settings():
+            raise ValueError(f"cannot resume {out}: settings changed since it was started (see {settings_file})")
+        if resume and not settings_file.exists() and any((out / f).is_dir() for f in ("accepted", "rejected")):
+            raise ValueError(f"cannot resume {out}: it has no settings.json, so its settings are unknown")
+        _write(settings_file, self._settings())
         specs = stages.sample_specs(self.cfg.spec, n, self.cfg.run.seed)
         ids = {s.matter_id for s in specs}
         stale = sorted(p.name for f in ("accepted", "rejected") if (out / f).is_dir() for p in (out / f).iterdir() if p.name not in ids)
         if stale:  # refuse rather than delete: accepted/ must match this run's report
             raise FileExistsError(f"{out} holds matters from another run ({', '.join(stale[:3])}, ...); use a new --out or delete it")
-        with ThreadPoolExecutor(max_workers=max(1, self.cfg.run.concurrency)) as pool:  # matters are independent
-            results = list(pool.map(lambda s: self.run_matter(s, out), specs))
+        done = {s.matter_id: r for s in specs if resume and (r := self._finished(out, s.matter_id))}
+        pool = ThreadPoolExecutor(max_workers=max(1, self.cfg.run.concurrency))  # matters are independent
+        try:
+            results = list(pool.map(lambda s: done.get(s.matter_id) or self.run_matter(s, out), specs))
+        finally:  # on Ctrl-C or a crash, finish the matters in flight but start no queued ones
+            pool.shutdown(cancel_futures=True)
         shutil.rmtree(out / "work", ignore_errors=True)
-        report = build_report(results, self.log, self.cfg)
+        report = build_report(results, self.log, self.cfg, resumed=len(done))
         _write(out / "report.json", report)
         _write(out / "report.md", render_report(report))
         self.log.dump(str(out / "calls.jsonl"))
         return report
 
 
-def build_report(results: list[MatterResult], log: CallLog, cfg: Config) -> dict:
+def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed: int = 0) -> dict:
     gate_stats = {g: {"evaluated": 0, "passed": 0, "failed": 0, "skipped": 0} for g in GATE_ORDER}
     for r in results:
         for g in r.gates:
@@ -218,6 +244,7 @@ def build_report(results: list[MatterResult], log: CallLog, cfg: Config) -> dict
         "candidates": len(results),
         "accepted": sum(r.accepted for r in results),
         "errors": errors,
+        "resumed": resumed,
         "gates": gate_stats,
         "matters": [
             {"matter_id": r.matter_id, "accepted": r.accepted, "failed_gate": r.failed_gate, "reason": r.reason, "split": r.split, "solver_pass_rate": r.solver_pass_rate}
@@ -233,6 +260,7 @@ def render_report(rep: dict) -> str:
         "",
         f"Backend: `{rep['backend']}`. Accepted **{rep['accepted']} of {rep['candidates']}** candidate matters"
         + (f" ({rep['errors']} stopped by errors)." if rep["errors"] else "."),
+        *([f"{rep['resumed']} matters were reloaded from an earlier run; model calls below cover this run only."] if rep["resumed"] else []),
         "",
         "## Gates",
         "",

@@ -28,7 +28,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 ## Current status (2026-10-14)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 56 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+- 59 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
   was mutation-checked on 2026-10-14: disabling it makes a test fail.
 - The real-model path has only been tested against a local mock server. **It has never run on a real LLM.**
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
@@ -49,17 +49,19 @@ Fixed after the 2026-10-14 independent review (one commit each):
   tool calls, one JSON action per step, then writes its memo in raw Markdown. Plain JSON over `complete()`, not
   native tool calling, so any endpoint works. Each attempt's trace is saved as `solver/attempt_N.trace.json`.
   This raises solver calls from 1 to about (pages read + 2) per attempt, roughly doubling calls per matter.
+- `ltg run --resume` keeps matters that already have a verdict and retries those that ended in an error. It refuses
+  if `settings.json` in the output folder differs (run size, concurrency and folder may change). Resume is per
+  matter, not per stage: a crash loses only the matters in flight. Ctrl-C no longer waits for queued matters.
 
 ## Known weaknesses (highest priority first)
 
-1. **No resume.** A crash restarts the whole run. Cache per-stage outputs per matter and skip completed stages.
-2. **Judge leniency not measured.** `gates.judge_hints` exists; run the same matters on a real model with it on
+1. **Judge leniency not measured.** `gates.judge_hints` exists; run the same matters on a real model with it on
    and off and compare solver pass rates before choosing a default.
-3. **Solver context grows with the folder.** The transcript keeps every page read (~30k tokens for five long
+2. **Solver context grows with the folder.** The transcript keeps every page read (~30k tokens for five long
    documents). If a model's window is too small, drop old page text and keep the solver's own notes.
-4. **Short folders make the agentic solver read everything.** With 3 to 5 short documents the tool-using solver
+3. **Short folders make the agentic solver read everything.** With 3 to 5 short documents the tool-using solver
    behaves like the old one-prompt solver. The difficulty filter only bites once folders get longer or larger.
-5. **Decontamination index rebuilt every run.** Probably fine since LAB is small; time it before adding a cache.
+4. **Decontamination index rebuilt every run.** Probably fine since LAB is small; time it before adding a cache.
 
 Smaller known gaps: no EDGAR fetcher (precedents come from local folders), no diversity tracking across a run,
 judge not calibrated against lawyer grades, `solver_attempts = 1` rejects every task (a pass rate of 0 or 1 is

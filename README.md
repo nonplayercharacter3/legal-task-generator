@@ -32,7 +32,7 @@ Needs Python 3.11+. No third-party packages at runtime.
 
 ```bash
 pip install -e ".[dev]"        # or just use python -m ltg from the repo root
-python -m pytest               # 56 tests, ~5 seconds, fully offline
+python -m pytest               # 59 tests, ~5 seconds, fully offline
 
 python -m ltg run --config configs/fake_demo.toml      # 20 matters, fake model, faults injected
 cat runs/fake_demo/report.md
@@ -51,6 +51,10 @@ Point the pipeline at any OpenAI-compatible endpoint, for example vLLM on a lab 
 vllm serve Qwen/Qwen3-32B --port 8000
 python -m ltg run --config configs/openai_compat_example.toml --matters 3
 ```
+
+If a run stops part way (a crash, Ctrl-C, an endpoint going down), rerun the same command with `--resume`.
+Matters that already have a verdict are kept, matters that ended in an error are retried, and the run refuses to
+resume if `settings.json` shows the generation settings have changed.
 
 Each role can use a different model (`[backend.models]`), e.g. a stronger model as solver and judge. Start with a
 few matters and read every output before scaling up.
@@ -87,6 +91,7 @@ runs/<name>/
   accepted/<matter_id>/    passed every gate; task.json is the exported task
   rejected/<matter_id>/    kept for debugging; gates.json says where and why it failed
   report.md, report.json   pass counts per gate, per-matter results, model calls and tokens per role
+  settings.json            the settings that shaped the matters; --resume checks them
   calls.jsonl              one line per model call
 ```
 
@@ -123,7 +128,7 @@ ltg/
   cli.py           `run` and `inspect`
 configs/           fake demo and real-endpoint example
 examples/          committed sample output from the fake model
-tests/             56 offline tests
+tests/             59 offline tests
 ```
 
 ## Not done yet
