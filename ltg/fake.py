@@ -99,7 +99,8 @@ class FakeModel:
         handler = getattr(self, f"_{role}", None)
         if handler is None:
             raise ValueError(f"FakeModel has no behaviour for role {role!r}")
-        out = json.dumps(handler(payload))
+        out = handler(payload)
+        out = out if isinstance(out, str) else json.dumps(out)  # long-text roles reply in raw Markdown
         self.log.add(
             CallRecord(
                 role=role,
@@ -180,7 +181,7 @@ class FakeModel:
             "issues": issues,
         }
 
-    def _drafter(self, p: dict) -> dict:
+    def _drafter(self, p: dict) -> str:
         ledger, doc = p["ledger"], p["document"]
         fault = self.fault_for(ledger["matter_id"])
         r = _rng(self.seed, "draft", ledger["matter_id"], doc["id"])
@@ -192,7 +193,7 @@ class FakeModel:
 
         if doc["distractor"]:
             lines += r.sample(DISTRACTOR_TEXT, 2)
-            return {"filename": doc["filename"], "content": "\n\n".join(lines) + "\n"}
+            return "\n\n".join(lines) + "\n"
 
         facts = [f for f in ledger["facts"] if f["doc"] == doc["id"]]
         issues = [i for i in ledger["issues"] if i["doc"] == doc["id"]]
@@ -207,7 +208,7 @@ class FakeModel:
             lines += [f"## {f['section']}. {f['key']}", "", f"{f['key']}: {value}", "", r.choice(BOILERPLATE), ""]
         for i in issues:
             lines += [f"## {i['section']}. General Provisions", "", ISSUE_LIBRARY[i["type"]]["planted_text"], "", r.choice(BOILERPLATE), ""]
-        return {"filename": doc["filename"], "content": "\n".join(lines)}
+        return "\n".join(lines)
 
     def _fact_extractor(self, p: dict) -> dict:
         docs = {d["filename"]: d["content"] for d in p["documents"]}
@@ -250,7 +251,7 @@ class FakeModel:
             crit.append({"id": f"C{len(crit) + 1}", "kind": "issue", "source": "I99", "text": "Identifies the missing escrow provision.", "hints": ["escrow"]})
         return {"criteria": crit}
 
-    def _answer_writer(self, p: dict) -> dict:
+    def _answer_writer(self, p: dict) -> str:
         ledger = p["ledger"]
         fault = self.fault_for(ledger["matter_id"])
         docs = {d["filename"]: d["content"] for d in p["documents"]}
@@ -263,11 +264,11 @@ class FakeModel:
 
         facts = "\n".join(f"- {f['key']}: {f['value']}" for f in ledger["facts"])
         issues = ledger["issues"]
-        gold_issues = issues[1:] if fault == "weak_gold" else issues
-        gold = "MEMORANDUM\n\nIssues identified:\n" + "\n".join(finding(i) for i in gold_issues) + "\n\nKey facts:\n" + facts
-        omit = issues[-1]
-        flawed = "MEMORANDUM\n\nIssues identified:\n" + "\n".join(finding(i) for i in issues if i["id"] != omit["id"]) + "\n\nKey facts:\n" + facts
-        return {"gold": gold, "flawed": flawed, "flawed_omits": [omit["id"]]}
+        if p["write"] == "gold":
+            issues = issues[1:] if fault == "weak_gold" else issues
+        else:
+            issues = [i for i in issues if i["id"] != p["omit_issue"]]
+        return "MEMORANDUM\n\nIssues identified:\n" + "\n".join(finding(i) for i in issues) + "\n\nKey facts:\n" + facts
 
     def _judge(self, p: dict) -> dict:
         resp = p["response"]
@@ -282,12 +283,12 @@ class FakeModel:
             results.append({"id": c["id"], "pass": ok, "reason": "hint match" if ok else "missing"})
         return {"results": results}
 
-    def _solver(self, p: dict) -> dict:
+    def _solver(self, p: dict) -> str:
         key = p["instruction"] + "|" + str(len(p["documents"]))
         attempt = self._solver_attempts.get(key, 0)
         self._solver_attempts[key] = attempt + 1
         if not p["documents"]:
-            return {"answer": "I cannot assess the agreement without the documents in the matter folder."}
+            return "I cannot assess the agreement without the documents in the matter folder."
         r = _rng(self.seed, "solve", key, attempt)
 
         findings, facts = [], []
@@ -305,4 +306,4 @@ class FakeModel:
                     if all(t.lower() in ln.lower() for t in lib["detect_terms"]) and r.random() < self.solver_skill:
                         findings.append(f"- {d['filename']}, Section {section}: this clause is a problem for the client: \"{ln}\"")
         answer = "MEMORANDUM\n\nIssues identified:\n" + ("\n".join(findings) or "- None found.") + "\n\nKey facts:\n" + "\n".join(facts)
-        return {"answer": answer}
+        return answer

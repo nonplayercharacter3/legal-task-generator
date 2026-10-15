@@ -1,6 +1,6 @@
 import pytest
 
-from ltg.models import ModelError, call_json, parse_json
+from ltg.models import ModelError, call_json, call_text, parse_json
 
 
 @pytest.mark.parametrize(
@@ -40,3 +40,13 @@ def test_call_json_retries_once_with_reminder():
 def test_call_json_gives_up():
     with pytest.raises(ModelError):
         call_json(Flaky(["bad", "still bad"]), "x", "sys", "user")
+
+
+@pytest.mark.parametrize("raw", ["# Memo\n\nBody with \"quotes\" and {braces}", "```markdown\n# Memo\n\nBody with \"quotes\" and {braces}\n```"])
+def test_call_text_returns_raw_markdown(raw):
+    assert call_text(Flaky([raw]), "drafter", "sys", "user") == '# Memo\n\nBody with "quotes" and {braces}'
+
+
+def test_call_text_rejects_empty_output():
+    with pytest.raises(ModelError):
+        call_text(Flaky(["  "]), "drafter", "sys", "user")

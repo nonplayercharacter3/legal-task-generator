@@ -12,7 +12,7 @@ import random
 
 from . import prompts
 from .config import SpecCfg
-from .models import ModelClient, call_json, render_input
+from .models import ModelClient, call_json, call_text, render_input
 from .schema import Answers, Ledger, MatterSpec, Rubric, validate_ledger
 from .sources import Precedent
 from .taxonomy import ISSUE_LIBRARY, PRACTICE_AREAS, WORK_TYPES, issue_types_for
@@ -77,8 +77,7 @@ def draft_documents(client: ModelClient, ledger: Ledger, precedents: dict[str, P
             "document": {"id": d.id, "filename": d.filename, "kind": d.kind, "distractor": d.distractor, "precedent": d.precedent},
             "precedent": {"id": prec.id, "title": prec.title, "text": prec.excerpt(precedent_chars)} if prec else None,
         }
-        out = call_json(client, "drafter", prompts.DRAFTER, render_input(payload))
-        docs[d.filename] = out.get("content", "")
+        docs[d.filename] = call_text(client, "drafter", prompts.DRAFTER, render_input(payload))
     return docs
 
 
@@ -104,14 +103,17 @@ def write_rubric(client: ModelClient, spec: MatterSpec, ledger: Ledger, instruct
     return Rubric.from_dict(call_json(client, "rubric_writer", prompts.RUBRIC_WRITER, render_input(payload)))
 
 
-def write_answers(client: ModelClient, ledger: Ledger, instruction: str, rubric: Rubric, docs: Documents) -> Answers:
+def write_answers(client: ModelClient, ledger: Ledger, instruction: str, rubric: Rubric, docs: Documents, omit: str) -> Answers:
+    """Gold and flawed answers, one call each. The pipeline picks the omitted issue, so it is always a real id."""
     payload = {
         "ledger": ledger.to_dict(),
         "instruction": instruction,
         "rubric": rubric.to_dict(),
         "documents": [{"filename": f, "content": c} for f, c in docs.items()],
     }
-    return Answers.from_dict(call_json(client, "answer_writer", prompts.ANSWER_WRITER, render_input(payload)))
+    gold = call_text(client, "answer_writer", prompts.ANSWER_WRITER, render_input({**payload, "write": "gold"}))
+    flawed = call_text(client, "answer_writer", prompts.ANSWER_WRITER, render_input({**payload, "write": "flawed", "omit_issue": omit}))
+    return Answers(gold=gold, flawed=flawed, flawed_omits=[omit])
 
 
 # ---------------------------------------------------------------- used by gates
@@ -129,4 +131,4 @@ def judge(client: ModelClient, response: str, rubric: Rubric) -> dict[str, bool]
 
 def solve(client: ModelClient, instruction: str, docs: Documents) -> str:
     payload = {"instruction": instruction, "documents": [{"filename": f, "content": c} for f, c in docs.items()]}
-    return call_json(client, "solver", prompts.SOLVER, render_input(payload)).get("answer", "")
+    return call_text(client, "solver", prompts.SOLVER, render_input(payload))

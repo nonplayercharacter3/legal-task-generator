@@ -22,6 +22,7 @@ from dataclasses import asdict, dataclass, field
 from typing import Any, Protocol
 
 INPUT_OPEN, INPUT_CLOSE = "<input>", "</input>"
+_THINK = re.compile(r"<think>.*?</think>", re.S)  # reasoning models served without a reasoning parser
 
 
 class ModelClient(Protocol):
@@ -118,6 +119,7 @@ class OpenAICompatClient:
                 req = urllib.request.Request(self.url, data=body, headers=headers, method="POST")
                 with urllib.request.urlopen(req, timeout=self.timeout) as resp:
                     data = json.loads(resp.read())
+                choice = data["choices"][0]
                 usage = data.get("usage") or {}
                 self.log.add(
                     CallRecord(
@@ -128,7 +130,9 @@ class OpenAICompatClient:
                         output_tokens=usage.get("completion_tokens"),
                     )
                 )
-                return data["choices"][0]["message"]["content"] or ""
+                if choice.get("finish_reason") == "length":  # a cut-off document must not pass as complete
+                    raise ModelError(f"{role}: output truncated at max_tokens={self.max_tokens}")
+                return _THINK.sub("", choice["message"]["content"] or "").strip()
             except urllib.error.HTTPError as e:
                 last_err = f"HTTP {e.code}: {e.read()[:300]!r}"
                 retryable = e.code == 429 or e.code >= 500
@@ -194,6 +198,19 @@ def parse_json(text: str) -> Any:
             if depth == 0:
                 return json.loads(text[start : i + 1])
     raise ValueError("unbalanced JSON object in model output")
+
+
+_WHOLE_FENCE = re.compile(r"^```[\w-]*\n(.*)\n```$", re.S)
+
+
+def call_text(client: ModelClient, role: str, system: str, user: str) -> str:
+    """Call a model for long free text (a document or memo). Raw text, not a JSON string, so escaping can't break."""
+    out = client.complete(role, system, user).strip()
+    m = _WHOLE_FENCE.match(out)
+    out = (m.group(1) if m else out).strip()
+    if not out:
+        raise ModelError(f"{role}: empty output")
+    return out
 
 
 def call_json(client: ModelClient, role: str, system: str, user: str, retries: int = 1) -> dict[str, Any]:

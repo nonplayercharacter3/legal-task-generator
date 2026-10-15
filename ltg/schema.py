@@ -144,10 +144,6 @@ class Answers:
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
-    @classmethod
-    def from_dict(cls, d: dict[str, Any]) -> "Answers":
-        return cls(gold=d["gold"], flawed=d["flawed"], flawed_omits=list(d["flawed_omits"]))
-
 
 # ---------------------------------------------------------------- validation
 

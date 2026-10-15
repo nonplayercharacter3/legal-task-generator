@@ -122,7 +122,7 @@ class Pipeline:
 
             rubric = stages.write_rubric(self.client, spec, ledger, instruction)
             _write(work / "rubric.json", rubric.to_dict())
-            answers = stages.write_answers(self.client, ledger, instruction, rubric, docs)
+            answers = stages.write_answers(self.client, ledger, instruction, rubric, docs, omit=rng.choice(ledger.issues).id)
             _write(work / "answers.json", answers.to_dict())
 
             # Stage 3: try to break it

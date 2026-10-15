@@ -9,7 +9,7 @@ import pytest
 from ltg import prompts
 from ltg.config import load_config
 from ltg.fake import FakeModel
-from ltg.models import CallLog, ModelError, OpenAICompatClient
+from ltg.models import CallLog, ModelError, OpenAICompatClient, call_text, render_input
 from ltg.orchestrator import Pipeline
 
 ROLE_BY_SYSTEM = {
@@ -28,7 +28,7 @@ ROLE_BY_SYSTEM = {
 @pytest.fixture
 def server():
     fake = FakeModel(seed=7)
-    state = {"fail_next": 0, "auth": [], "models": []}
+    state = {"fail_next": 0, "auth": [], "models": [], "finish_reason": "stop", "think": ""}
 
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *a):
@@ -46,7 +46,8 @@ def server():
                 return
             system, user = body["messages"][0]["content"], body["messages"][1]["content"]
             content = fake.complete(ROLE_BY_SYSTEM[system], system, user)
-            resp = {"choices": [{"message": {"content": "```json\n" + content + "\n```"}}], "usage": {"prompt_tokens": 10, "completion_tokens": 5}}
+            message = {"content": state["think"] + "```json\n" + content + "\n```"}
+            resp = {"choices": [{"message": message, "finish_reason": state["finish_reason"]}], "usage": {"prompt_tokens": 10, "completion_tokens": 5}}
             data = json.dumps(resp).encode()
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
@@ -86,10 +87,8 @@ def test_client_retries_server_errors(server, monkeypatch):
     client = OpenAICompatClient(url, "m", log=log, max_retries=2)
     client_sleep = []
     monkeypatch.setattr("ltg.models.time.sleep", lambda s: client_sleep.append(s))
-    from ltg.models import render_input
-
     out = client.complete("solver", prompts.SOLVER, render_input({"instruction": "x", "documents": []}))
-    assert "answer" in out
+    assert "cannot assess" in out
     assert [r.ok for r in log.records] == [False, True]
 
 
@@ -101,3 +100,21 @@ def test_client_gives_up_after_retries(server, monkeypatch):
     state["fail_next"] = 5
     with pytest.raises(ModelError):
         OpenAICompatClient(url, "m", max_retries=1).complete("solver", prompts.SOLVER, "x")
+
+
+def test_client_rejects_truncated_output(server, monkeypatch):
+    url, state = server
+    monkeypatch.setenv("NO_PROXY", "127.0.0.1")
+    monkeypatch.setenv("no_proxy", "127.0.0.1")
+    state["finish_reason"] = "length"
+    with pytest.raises(ModelError, match="truncated"):
+        OpenAICompatClient(url, "m").complete("solver", prompts.SOLVER, render_input({"instruction": "x", "documents": []}))
+
+
+def test_client_strips_reasoning_blocks(server, monkeypatch):
+    url, state = server
+    monkeypatch.setenv("NO_PROXY", "127.0.0.1")
+    monkeypatch.setenv("no_proxy", "127.0.0.1")
+    state["think"] = "<think>\nThe answer is {not json}.\n</think>\n"
+    out = call_text(OpenAICompatClient(url, "m"), "solver", prompts.SOLVER, render_input({"instruction": "x", "documents": []}))
+    assert out.startswith("I cannot assess")

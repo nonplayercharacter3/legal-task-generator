@@ -44,7 +44,7 @@ Rules:
 - Write in Markdown with numbered sections. Realistic length: a main agreement 1,500 to 4,000 words,
   supporting documents shorter.
 
-Reply with ONLY a JSON object: {"filename": str, "content": str}"""
+Reply with ONLY the document itself, in Markdown. No preamble and no code fences."""
 
 FACT_EXTRACTOR = """You extract facts from legal documents. For each query, find the value the named document states
 for that fact and copy it exactly. If the document does not state it, return null.
@@ -84,14 +84,13 @@ For each criterion give `hints`: 1 to 3 short phrases a passing response would v
 Reply with ONLY a JSON object:
 {"criteria": [{"id": "C1", "text": str, "kind": str, "source": str|null, "hints": [str]}]}"""
 
-ANSWER_WRITER = """You write reference answers for a legal agent task, used to test its rubric.
-You receive the ledger, the instruction, the rubric and the documents.
-Write:
-- `gold`: an excellent response that satisfies every rubric criterion.
-- `flawed`: a plausible response of similar quality that completely misses the issues listed in
-  `flawed_omits` (choose 1 issue id to omit) but is otherwise correct.
+ANSWER_WRITER = """You write a reference answer for a legal agent task, used to test its rubric.
+You receive the ledger, the instruction, the rubric, the documents and `write`:
+- "gold": an excellent response that satisfies every rubric criterion.
+- "flawed": a plausible response of similar quality that completely misses the ledger issue `omit_issue`
+  (never mention it) but is otherwise correct.
 
-Reply with ONLY a JSON object: {"gold": str, "flawed": str, "flawed_omits": [str]}"""
+Reply with ONLY the response itself, in Markdown. No preamble and no code fences."""
 
 JUDGE = """You grade a response to a legal task against a rubric. Judge each criterion independently and strictly,
 using only the response text. `grading_hints` are phrases a passing response would likely contain; they guide you
@@ -103,4 +102,4 @@ Reply with ONLY a JSON object: {"results": [{"id": str, "pass": bool, "reason": 
 SOLVER = """You are an associate at a law firm. Complete the partner's assignment using only the documents in the
 matter folder. Be specific: cite the document and section for every point.
 
-Reply with ONLY a JSON object: {"answer": str}"""
+Reply with ONLY your work product, in Markdown. No preamble and no code fences."""
