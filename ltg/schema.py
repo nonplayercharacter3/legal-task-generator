@@ -113,6 +113,7 @@ class Ledger:
 
 
 CRITERION_KINDS = ("issue", "fact", "format", "negative")
+MAX_FACT_WORDS = 20
 
 
 @dataclass
@@ -187,6 +188,8 @@ def validate_ledger(ledger: Ledger, spec: MatterSpec) -> list[str]:
             errs.append(f"fact {f.id} points to unknown document {f.doc}")
         if not str(f.value).strip():
             errs.append(f"fact {f.id} has an empty value")
+        elif len(str(f.value).split()) > MAX_FACT_WORDS:  # a clause, not a value: extraction and matching break
+            errs.append(f"fact {f.id} is {len(str(f.value).split())} words; make it one short value (at most {MAX_FACT_WORDS} words) and split compound facts")
 
     issue_docs = set()
     for i in ledger.issues:

@@ -74,3 +74,11 @@ def test_contradiction_must_target_a_fact_in_another_document():
     assert any("contradicts F1 inside" in e for e in validate_ledger(ledger, spec))
     issue.doc = next(d.id for d in ledger.documents if d.id != fact.doc and not d.distractor)
     assert not any("contradicts" in e for e in validate_ledger(ledger, spec))
+
+
+def test_fact_values_must_be_short_values_not_clauses():
+    ledger, spec = _ledger_and_spec()
+    ledger.facts[0].value = " ".join(["word"] * 21)
+    assert any("fact F1 is 21 words" in e for e in validate_ledger(ledger, spec))
+    ledger.facts[0].value = "30 days"
+    assert validate_ledger(ledger, spec) == []

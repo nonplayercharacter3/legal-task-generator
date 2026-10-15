@@ -20,7 +20,10 @@ Rules:
 - Plant exactly `n_issues` issues, one of each requested issue type, each in a specific non-distractor document
   and section. Spread issues across at least two documents when there are two or more issues.
 - Issues must be real problems for the client under the governing law (`jurisdiction`), not drafting trivia.
-- Give 5 to 10 facts (dates, amounts, notice periods, defined terms, governing law) that documents must state consistently.
+- Give 5 to 10 facts that documents must state consistently. Each fact is ONE short value, not a clause: a date,
+  an amount, a duration, a party, a place, or a defined term's core meaning, in at most 20 words
+  (key "Termination notice period", value "30 days"; key "Liability cap", value "fees paid in the prior 12 months").
+  Split compound facts into separate facts.
 - `detect_terms` are 1 to 3 short phrases that the drafted clause will contain verbatim.
 - `expected_finding` is one sentence saying what a competent associate should conclude.
 - If an issue works by stating a fact differently in its document (for example a conflicting governing law),
