@@ -50,6 +50,8 @@ class GatesCfg:
     solver_min_pass_rate: float = 0.01  # below: nothing solves it, probably broken
     solver_max_pass_rate: float = 0.99  # above: too easy to teach anything
     probe_without_documents: bool = True
+    judge_hints: bool = True  # send rubric hints to the judge (and export them); off to measure leniency
+    verifier_sees_terms: bool = False  # terms are checked verbatim in code; the verifier judges blind
     decontam_ngram: int = 8
     decontam_threshold: float = 0.5
     decontam_bloom_bits: int = 2**27

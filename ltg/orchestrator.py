@@ -17,14 +17,14 @@ import json
 import random
 import shutil
 import traceback
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
 
 from . import gates, stages
 from .config import Config, build_client
 from .decontam import BloomIndex
 from .models import CallLog, ModelClient
-from .schema import Ledger, MatterSpec
+from .schema import Ledger, MatterSpec, Rubric
 from .sources import load_precedents, select_precedents
 from .splits import assign_split
 
@@ -114,7 +114,7 @@ class Pipeline:
             for name, content in docs.items():
                 _write(work / "docs" / name, content)
             check(gates.consistency(self.client, ledger, docs))
-            check(gates.issue_check(self.client, ledger, docs))
+            check(gates.issue_check(self.client, ledger, docs, show_terms=cfg.gates.verifier_sees_terms))
 
             instruction = stages.write_instruction(self.client, spec, ledger)
             _write(work / "instruction.md", instruction)
@@ -125,7 +125,9 @@ class Pipeline:
             answers = stages.write_answers(self.client, ledger, instruction, rubric, docs, omit=rng.choice(ledger.issues).id)
             _write(work / "answers.json", answers.to_dict())
 
-            # Stage 3: try to break it
+            # Stage 3: try to break it. The judge sees exactly the rubric that is exported.
+            if not cfg.gates.judge_hints:
+                rubric = Rubric([replace(c, hints=[]) for c in rubric.criteria])
             check(gates.rubric_trace(rubric, ledger, answers))
             check(gates.rubric_tests(self.client, rubric, answers))
             texts = {"instruction": instruction, "rubric": "\n".join(c.text for c in rubric.criteria), **{f"docs/{k}": v for k, v in docs.items()}}
@@ -159,7 +161,7 @@ class Pipeline:
                     "jurisdiction": spec.jurisdiction,
                     "instruction": instruction,
                     "documents": sorted(docs),
-                    "rubric": [{"id": c.id, "text": c.text, "kind": c.kind} for c in rubric.criteria],
+                    "rubric": [{"id": c.id, "text": c.text, "kind": c.kind, "hints": c.hints} for c in rubric.criteria],
                     "solver_pass_rate": result.solver_pass_rate,
                 },
             )

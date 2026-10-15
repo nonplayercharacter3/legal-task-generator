@@ -93,26 +93,26 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
     return GateResult("consistency", not mismatches, {"mismatches": mismatches, "checked": len(payload["queries"])})
 
 
-def issue_check(client: ModelClient, ledger: Ledger, docs: Documents) -> GateResult:
-    """Each planted issue must actually be present and findable where the ledger put it."""
+def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms: bool = False) -> GateResult:
+    """Each planted issue must actually be present and findable where the ledger put it.
+
+    Two checks: the drafter was told to use every detect term verbatim, which code verifies for free;
+    then a verifier that (by default) is not given those terms judges whether the problem is really there.
+    """
     fname = {d.id: d.filename for d in ledger.documents}
     results = []
     for i in ledger.issues:
         content = docs.get(fname[i.doc], "")
-        payload = {
-            "document": {"filename": fname[i.doc], "content": content},
-            "issue": {"label": i.label, "description": i.description, "section": i.section, "detect_terms": i.detect_terms},
-        }
+        missing_terms = [t for t in i.detect_terms if _norm(t) not in _norm(content)]
+        if missing_terms:
+            results.append({"issue": i.id, "present": False, "missing_terms": missing_terms})
+            continue
+        issue = {"label": i.label, "description": i.description, "section": i.section}
+        if show_terms:
+            issue["detect_terms"] = i.detect_terms
+        payload = {"document": {"filename": fname[i.doc], "content": content}, "issue": issue}
         out = call_json(client, "issue_verifier", prompts.ISSUE_VERIFIER, render_input(payload))
-        terms_found = [t for t in i.detect_terms if t.lower() in content.lower()]
-        results.append(
-            {
-                "issue": i.id,
-                "present": bool(out.get("present")),
-                "evidence": out.get("evidence", ""),
-                "detect_terms_found": f"{len(terms_found)}/{len(i.detect_terms)}",
-            }
-        )
+        results.append({"issue": i.id, "present": bool(out.get("present")), "evidence": out.get("evidence", "")})
     missing = [r["issue"] for r in results if not r["present"]]
     return GateResult("issue_check", not missing, {"missing": missing, "results": results})
 

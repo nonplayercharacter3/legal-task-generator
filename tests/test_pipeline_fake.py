@@ -75,6 +75,8 @@ def test_isolation_solver_and_instruction_writer_never_see_the_answer_key(cfg):
         assert set(p) == {"response", "criteria"}
     for p in fake.payloads["fact_extractor"]:  # gets the fact keys, never the expected values
         assert all(set(q) == {"id", "key", "filename"} for q in p["queries"])
+    for p in fake.payloads["issue_verifier"]:  # judges blind; detect terms are checked in code
+        assert "detect_terms" not in p["issue"]
 
 
 def test_leak_check_flags_an_instruction_that_names_an_issue():
@@ -162,3 +164,33 @@ def test_consistency_allows_only_planted_contradictions():
     mismatch.contradicts = None
     g = gates.consistency(fake, ledger, docs)
     assert not g.passed and g.details["mismatches"][0]["filename"] == other
+
+
+def test_issue_check_needs_both_the_terms_and_the_verifier(tmp_path):
+    class BlindVerifier(FakeModel):  # says every issue is present
+        def _issue_verifier(self, p):
+            return {"present": True, "evidence": "", "reason": ""}
+
+    class SkepticalVerifier(FakeModel):  # says no issue is present
+        def _issue_verifier(self, p):
+            return {"present": False, "evidence": "", "reason": ""}
+
+    dropped = load_config(None, {"run": {"out_dir": str(tmp_path / "a"), "n_matters": 2}, "fake": {"fault": "drop_issue"}})
+    rep = Pipeline(dropped, client=BlindVerifier(fault="drop_issue")).run()
+    assert {m["failed_gate"] for m in rep["matters"]} == {"issue_check"}  # detect terms missing from the document
+
+    clean = load_config(None, {"run": {"out_dir": str(tmp_path / "b"), "n_matters": 2}})
+    rep = Pipeline(clean, client=SkepticalVerifier()).run()
+    assert {m["failed_gate"] for m in rep["matters"]} == {"issue_check"}  # terms present, verifier disagrees
+
+
+def test_judge_without_hints_and_exported_rubric_matches_what_was_judged(tmp_path, read_json):
+    for hints in (True, False):
+        cfg = load_config(None, {"run": {"out_dir": str(tmp_path / str(hints)), "n_matters": 6, "seed": 7}, "gates": {"judge_hints": hints}})
+        fake = RecordingFake(seed=7)
+        rep = Pipeline(cfg, client=fake).run()
+        assert rep["accepted"] > 0
+        sent = any("grading_hints" in c for p in fake.payloads["judge"] for c in p["criteria"])
+        assert sent is hints
+        task = read_json(next((tmp_path / str(hints) / "accepted").iterdir()) / "task.json")
+        assert all(bool(c["hints"]) is hints for c in task["rubric"] if c["kind"] != "negative")

@@ -33,6 +33,8 @@ solver_attempts = 3
 solver_min_pass_rate = 0.01
 solver_max_pass_rate = 0.99
 probe_without_documents = true
+judge_hints = true                  # false: judge without rubric hints (run both and compare pass rates)
+verifier_sees_terms = false        # detect terms are checked verbatim in code; the issue verifier judges blind
 decontam_threshold = 0.5
 reference_dirs = []                 # e.g. ["../harvey-labs/tasks"] to screen against LAB
 

@@ -83,6 +83,7 @@ class FakeModel:
         self.fault_rate = fault_rate
         self.log = log if log is not None else CallLog()
         self._solver_attempts: dict[str, int] = {}
+        self._hints: dict[str, list[str]] = {}  # criterion text -> hints, so the fake judge can grade without them
 
     # ------------------------------------------------------------ plumbing
 
@@ -226,7 +227,8 @@ class FakeModel:
 
     def _issue_verifier(self, p: dict) -> dict:
         content = p["document"]["content"]
-        terms = p["issue"].get("detect_terms", [])
+        lib = next((v for v in ISSUE_LIBRARY.values() if v["label"] == p["issue"]["label"]), {})
+        terms = p["issue"].get("detect_terms") or lib.get("detect_terms", [])
         present = bool(terms) and all(t.lower() in content.lower() for t in terms)
         evidence = next((ln for ln in content.splitlines() if terms and terms[0].lower() in ln.lower()), "")
         return {"present": present, "evidence": evidence, "reason": "all detect terms found" if present else "detect terms missing"}
@@ -254,6 +256,7 @@ class FakeModel:
         crit.append({"id": f"C{len(crit) + 1}", "kind": "negative", "source": None, "text": "Does not cite case law or statutes that do not appear in the matter documents.", "hints": []})
         if fault == "untraceable_criterion":
             crit.append({"id": f"C{len(crit) + 1}", "kind": "issue", "source": "I99", "text": "Identifies the missing escrow provision.", "hints": ["escrow"]})
+        self._hints.update({c["text"]: c["hints"] for c in crit})
         return {"criteria": crit}
 
     def _answer_writer(self, p: dict) -> str:
@@ -283,7 +286,7 @@ class FakeModel:
             if c["kind"] == "negative":
                 ok = not re.search(r"\bv\.\s|U\.S\.C\.|F\.\s?\d?d\b", resp)
             else:
-                hints = c.get("grading_hints") or []
+                hints = c.get("grading_hints") or self._hints.get(c["text"], [])
                 ok = bool(resp.strip()) and bool(hints) and all(h.lower() in low for h in hints)
             results.append({"id": c["id"], "pass": ok, "reason": "hint match" if ok else "missing"})
         return {"results": results}

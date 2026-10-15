@@ -122,7 +122,7 @@ def write_answers(client: ModelClient, ledger: Ledger, instruction: str, rubric:
 def judge(client: ModelClient, response: str, rubric: Rubric) -> dict[str, bool]:
     payload = {
         "response": response,
-        "criteria": [{"id": c.id, "text": c.text, "kind": c.kind, "grading_hints": c.hints} for c in rubric.criteria],
+        "criteria": [{"id": c.id, "text": c.text, "kind": c.kind, **({"grading_hints": c.hints} if c.hints else {})} for c in rubric.criteria],
     }
     out = call_json(client, "judge", prompts.JUDGE, render_input(payload))
     got = {r["id"]: bool(r.get("pass")) for r in out.get("results", []) if "id" in r}
