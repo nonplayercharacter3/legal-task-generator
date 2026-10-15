@@ -14,7 +14,8 @@ from . import prompts
 from .decontam import BloomIndex
 from .models import ModelClient, call_json, render_input
 from .schema import Answers, Ledger, MatterSpec, Rubric, validate_answers, validate_ledger, validate_rubric
-from .stages import Documents, judge, solve
+from .solver import Solution, solve
+from .stages import Documents, judge
 
 
 @dataclass
@@ -165,14 +166,16 @@ def solver_check(
     min_rate: float,
     max_rate: float,
     probe_without_documents: bool,
-) -> tuple[GateResult, list[str]]:
-    """Run a solver that never sees the ledger. Returns the gate result and the solver's answers."""
-    answers: list[str] = []
+    max_steps: int = 20,
+    page_chars: int = 6000,
+) -> tuple[GateResult, list[Solution]]:
+    """Run a tool-using solver that never sees the ledger. Returns the gate result and the solver's attempts."""
+    solutions: list[Solution] = []
     details: dict[str, Any] = {}
 
     if probe_without_documents:
-        probe = solve(client, instruction, {})
-        probe_grades = judge(client, probe, rubric)
+        probe = solve(client, instruction, {}, max_steps, page_chars)
+        probe_grades = judge(client, probe.answer, rubric)
         details["probe_without_documents_passed"] = all(probe_grades.values())
         if details["probe_without_documents_passed"]:
             details["reason"] = "solved without opening any document: the instruction leaks the answer"
@@ -180,14 +183,21 @@ def solver_check(
 
     runs = []
     for _ in range(attempts):
-        ans = solve(client, instruction, docs)
-        grades = judge(client, ans, rubric)
-        answers.append(ans)
-        runs.append({"passed": all(grades.values()), "failed_criteria": [c for c, ok in grades.items() if not ok]})
+        sol = solve(client, instruction, docs, max_steps, page_chars)
+        grades = judge(client, sol.answer, rubric)
+        solutions.append(sol)
+        runs.append(
+            {
+                "passed": all(grades.values()),
+                "failed_criteria": [c for c, ok in grades.items() if not ok],
+                "steps": len(sol.steps),
+                "files_opened": sol.files_opened(),
+            }
+        )
     rate = sum(r["passed"] for r in runs) / max(attempts, 1)
     details.update({"pass_rate": round(rate, 3), "runs": runs})
     if rate < min_rate:
         details["reason"] = "no attempt passed: task is probably broken or too hard"
     elif rate > max_rate:
         details["reason"] = "every attempt passed: too easy to carry training signal"
-    return GateResult("solver_check", min_rate <= rate <= max_rate, details), answers
+    return GateResult("solver_check", min_rate <= rate <= max_rate, details), solutions

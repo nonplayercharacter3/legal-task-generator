@@ -31,6 +31,8 @@ n_issues = [3, 5]
 
 [gates]
 solver_attempts = 3
+solver_max_steps = 20                # tool calls per attempt before the solver must write its answer
+solver_page_chars = 6000            # read_file page size (~1,000 words)
 solver_min_pass_rate = 0.01
 solver_max_pass_rate = 0.99
 probe_without_documents = true

@@ -21,7 +21,8 @@ ROLE_BY_SYSTEM = {
     prompts.RUBRIC_WRITER: "rubric_writer",
     prompts.ANSWER_WRITER: "answer_writer",
     prompts.JUDGE: "judge",
-    prompts.SOLVER: "solver",
+    prompts.SOLVER_STEP: "solver",
+    prompts.SOLVER_WRITE: "solver",
 }
 
 
@@ -87,7 +88,7 @@ def test_client_retries_server_errors(server, monkeypatch):
     client = OpenAICompatClient(url, "m", log=log, max_retries=2)
     client_sleep = []
     monkeypatch.setattr("ltg.models.time.sleep", lambda s: client_sleep.append(s))
-    out = client.complete("solver", prompts.SOLVER, render_input({"instruction": "x", "documents": []}))
+    out = client.complete("solver", prompts.SOLVER_WRITE, render_input({"instruction": "x", "files": [], "steps": []}))
     assert "cannot assess" in out
     assert [r.ok for r in log.records] == [False, True]
 
@@ -99,7 +100,7 @@ def test_client_gives_up_after_retries(server, monkeypatch):
     monkeypatch.setattr("ltg.models.time.sleep", lambda s: None)
     state["fail_next"] = 5
     with pytest.raises(ModelError):
-        OpenAICompatClient(url, "m", max_retries=1).complete("solver", prompts.SOLVER, "x")
+        OpenAICompatClient(url, "m", max_retries=1).complete("solver", prompts.SOLVER_WRITE, "x")
 
 
 def test_client_rejects_truncated_output(server, monkeypatch):
@@ -108,7 +109,7 @@ def test_client_rejects_truncated_output(server, monkeypatch):
     monkeypatch.setenv("no_proxy", "127.0.0.1")
     state["finish_reason"] = "length"
     with pytest.raises(ModelError, match="truncated"):
-        OpenAICompatClient(url, "m").complete("solver", prompts.SOLVER, render_input({"instruction": "x", "documents": []}))
+        OpenAICompatClient(url, "m").complete("solver", prompts.SOLVER_WRITE, render_input({"instruction": "x", "files": [], "steps": []}))
 
 
 def test_client_strips_reasoning_blocks(server, monkeypatch):
@@ -116,5 +117,5 @@ def test_client_strips_reasoning_blocks(server, monkeypatch):
     monkeypatch.setenv("NO_PROXY", "127.0.0.1")
     monkeypatch.setenv("no_proxy", "127.0.0.1")
     state["think"] = "<think>\nThe answer is {not json}.\n</think>\n"
-    out = call_text(OpenAICompatClient(url, "m"), "solver", prompts.SOLVER, render_input({"instruction": "x", "documents": []}))
+    out = call_text(OpenAICompatClient(url, "m"), "solver", prompts.SOLVER_WRITE, render_input({"instruction": "x", "files": [], "steps": []}))
     assert out.startswith("I cannot assess")

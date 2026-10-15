@@ -102,7 +102,19 @@ An empty response fails every criterion except negative ones.
 
 Reply with ONLY a JSON object: {"results": [{"id": str, "pass": bool, "reason": str}]}"""
 
-SOLVER = """You are an associate at a law firm. Complete the partner's assignment using only the documents in the
-matter folder. Be specific: cite the document and section for every point.
+SOLVER_STEP = """You are an associate at a law firm working on the partner's assignment. You can open the files in the
+matter folder one step at a time. You receive the instruction, the list of files, every step you have taken so far
+with its result, and how many steps you have left.
+
+Tools:
+- {"tool": "read_file", "filename": str, "page": int}  one page of a file; pages start at 1
+- {"tool": "search", "query": str, "filename": str|null}  lines containing the text, in one file or in all files
+- {"tool": "finish"}  stop; you will then write your work product from what you have read
+
+You can only rely on what you have opened. Read what the assignment needs, then finish.
+Reply with ONLY one JSON action."""
+
+SOLVER_WRITE = """You are an associate at a law firm. Complete the partner's assignment using only what you read in the
+matter folder, shown in the steps below. Be specific: cite the document and section for every point.
 
 Reply with ONLY your work product, in Markdown. No preamble and no code fences."""

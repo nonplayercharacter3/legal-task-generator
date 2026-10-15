@@ -134,7 +134,7 @@ class Pipeline:
             texts = {"instruction": instruction, "rubric": "\n".join(c.text for c in rubric.criteria), **{f"docs/{k}": v for k, v in docs.items()}}
             check(gates.decontamination(texts, self.index, cfg.gates.decontam_threshold))
 
-            g, solver_answers = gates.solver_check(
+            g, solutions = gates.solver_check(
                 self.client,
                 instruction,
                 docs,
@@ -143,9 +143,12 @@ class Pipeline:
                 cfg.gates.solver_min_pass_rate,
                 cfg.gates.solver_max_pass_rate,
                 cfg.gates.probe_without_documents,
+                cfg.gates.solver_max_steps,
+                cfg.gates.solver_page_chars,
             )
-            for k, a in enumerate(solver_answers, 1):
-                _write(work / "solver" / f"attempt_{k}.md", a)
+            for k, sol in enumerate(solutions, 1):
+                _write(work / "solver" / f"attempt_{k}.md", sol.answer)
+                _write(work / "solver" / f"attempt_{k}.trace.json", sol.steps)
             result.solver_pass_rate = g.details.get("pass_rate")
             check(g)
 

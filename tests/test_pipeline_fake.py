@@ -1,6 +1,7 @@
 """End-to-end runs with the fake model, including deliberate faults each gate must catch."""
 
 import json
+from pathlib import Path
 
 import pytest
 
@@ -67,8 +68,17 @@ def test_solver_band_rejects_too_easy_and_too_hard(tmp_path):
 def test_isolation_solver_and_instruction_writer_never_see_the_answer_key(cfg):
     fake = RecordingFake(seed=cfg.run.seed)
     Pipeline(cfg, client=fake).run(n=3)
+    drafted: dict[str, list[str]] = {}
+    for d in Path(cfg.run.out_dir).glob("*/*/docs/*"):
+        drafted.setdefault(d.name, []).append(d.read_text())
+    reads = 0
     for p in fake.payloads["solver"]:
-        assert set(p) == {"instruction", "documents"}
+        assert set(p) in ({"instruction", "files", "steps", "steps_left"}, {"instruction", "files", "steps"})
+        for st in p["steps"]:  # every tool result is text taken from a drafted document, nothing else
+            if st["action"]["tool"] == "read_file":
+                reads += 1
+                assert any(st["result"].split("\n", 1)[1] in text for text in drafted[st["action"]["filename"]])
+    assert reads > 0
     for p in fake.payloads["instruction_writer"]:
         assert set(p) == {"matter", "files"}
         assert "issue_types" not in p["matter"]

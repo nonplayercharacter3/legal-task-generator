@@ -54,4 +54,4 @@ Backend: `fake`. Accepted **7 of 20** candidate matters.
 | judge | 87 | 67251 | 9272 | 0 |
 | ledger_writer | 20 | 23517 | 16184 | 0 |
 | rubric_writer | 14 | 21266 | 5233 | 0 |
-| solver | 48 | 36674 | 8269 | 0 |
+| solver | 231 | 202382 | 10648 | 0 |

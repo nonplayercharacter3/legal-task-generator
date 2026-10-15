@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from ltg import gates
+from ltg import gates, prompts
 from ltg.models import extract_input
 from ltg.schema import Answers, Criterion, Rubric
 
@@ -21,7 +21,7 @@ class Stub:
     def complete(self, role, system, user):
         p = extract_input(user)
         if role == "solver":
-            return self.answer
+            return '{"tool": "finish"}' if system == prompts.SOLVER_STEP else self.answer
         return json.dumps({"results": [{"id": c["id"], "pass": self.grade(p["response"], c["id"])} for c in p["criteria"]]})
 
 

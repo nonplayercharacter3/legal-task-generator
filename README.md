@@ -32,7 +32,7 @@ Needs Python 3.11+. No third-party packages at runtime.
 
 ```bash
 pip install -e ".[dev]"        # or just use python -m ltg from the repo root
-python -m pytest               # 51 tests, ~4 seconds, fully offline
+python -m pytest               # 56 tests, ~5 seconds, fully offline
 
 python -m ltg run --config configs/fake_demo.toml      # 20 matters, fake model, faults injected
 cat runs/fake_demo/report.md
@@ -69,7 +69,7 @@ early as possible.
 | `rubric_trace` | Every criterion cites a ledger issue or fact, every issue is graded, reference answers are well formed | deterministic |
 | `rubric_tests` | The rubric is unit-tested: gold answer passes everything, a blank answer passes nothing, the flawed answer fails exactly the criteria for the issue it omits and passes the rest | model |
 | `decontamination` | Word 8-gram containment against reference benchmarks (e.g. a LAB clone) stays under the threshold | deterministic |
-| `solver_check` | A solver that never sees the ledger attempts the task several times. Rejected if it passes without the documents (the instruction leaks the answer), if it never passes (probably broken) or if it always passes (too easy) | model |
+| `solver_check` | A tool-using solver that never sees the ledger attempts the task several times, opening and searching the matter files step by step. Rejected if it passes without the documents (the instruction leaks the answer), if it never passes (probably broken) or if it always passes (too easy) | model |
 
 Accepted tasks get a train/dev/test split assigned by matter id, so tasks from one matter never straddle splits.
 
@@ -77,7 +77,7 @@ Accepted tasks get a train/dev/test split assigned by matter id, so tasks from o
 
 What each role can see is enforced by what the orchestrator puts in its payload, not by asking a model to ignore
 things. The instruction writer never receives the issues, so it cannot leak them. The solver receives only the
-instruction and the documents. The judge receives only a response and the rubric. `tests/test_pipeline_fake.py`
+instruction and the file list, and reads documents through `read_file` and `search` tools that can reach nothing else. The judge receives only a response and the rubric. `tests/test_pipeline_fake.py`
 checks this on every run.
 
 ## Output layout
@@ -91,12 +91,12 @@ runs/<name>/
 ```
 
 Each matter folder holds `spec.json`, `precedents.json`, `ledger.json`, `docs/`, `instruction.md`, `rubric.json`,
-`answers.json` (gold, flawed and which issue the flawed answer omits), `solver/attempt_N.md` and `gates.json`.
+`answers.json` (gold, flawed and which issue the flawed answer omits), `solver/attempt_N.md` (with `attempt_N.trace.json`, every tool call and its result) and `gates.json`.
 
 ## How the fake model works
 
 `ltg/fake.py` reads the same structured payload a real model would get and returns plausible JSON for each role.
-Its "legal knowledge" is the issue library's key phrases: the fake solver spots an issue with probability
+Its "legal knowledge" is the issue library's key phrases: the fake solver reads every page of every file, then spots an issue with probability
 `solver_skill`, which produces a realistic mix of too-easy, too-hard and accepted tasks. It can also inject
 defects on purpose (`drop_issue`, `wrong_fact`, `conflicting_restatement`, `leaky_filename`, `untraceable_criterion`, `weak_gold`); the tests check that each
 one is caught by the right gate, and that disabling any gate makes a test fail.
@@ -112,6 +112,7 @@ ltg/
   taxonomy.py      practice areas, work types, issue library (DRAFT, needs legal review)
   sources.py       precedent loading and selection (local folders for now)
   stages.py        generation stages; each builds only the payload its role may see
+  solver.py        tool-using solver (read_file, search, finish) behind solve()
   gates.py         the filters above
   prompts.py       system prompt for each role
   models.py        OpenAI-compatible client, JSON parsing, call log
@@ -122,7 +123,7 @@ ltg/
   cli.py           `run` and `inspect`
 configs/           fake demo and real-endpoint example
 examples/          committed sample output from the fake model
-tests/             51 offline tests
+tests/             56 offline tests
 ```
 
 ## Not done yet

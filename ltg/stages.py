@@ -2,7 +2,7 @@
 
 Isolation, by construction:
   * instruction_writer never sees the issues, so it cannot leak them.
-  * solver sees only the instruction and the documents, never the ledger or rubric.
+  * solver (ltg/solver.py) sees only the instruction and the documents, never the ledger or rubric.
   * judge sees only a response and the rubric.
 """
 
@@ -128,7 +128,3 @@ def judge(client: ModelClient, response: str, rubric: Rubric) -> dict[str, bool]
     got = {r["id"]: bool(r.get("pass")) for r in out.get("results", []) if "id" in r}
     return {c.id: got.get(c.id, False) for c in rubric.criteria}  # a criterion the judge skipped counts as failed
 
-
-def solve(client: ModelClient, instruction: str, docs: Documents) -> str:
-    payload = {"instruction": instruction, "documents": [{"filename": f, "content": c} for f, c in docs.items()]}
-    return call_text(client, "solver", prompts.SOLVER, render_input(payload))

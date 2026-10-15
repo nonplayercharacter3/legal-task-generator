@@ -292,18 +292,24 @@ class FakeModel:
             results.append({"id": c["id"], "pass": ok, "reason": "hint match" if ok else "missing"})
         return {"results": results}
 
-    def _solver(self, p: dict) -> str:
-        key = p["instruction"] + "|" + str(len(p["documents"]))
+    def _solver(self, p: dict) -> str | dict:
+        if "steps_left" in p:  # one tool step: read every page of every file in order, then finish
+            return self._solver_step(p)
+        key = p["instruction"] + "|" + str(len(p["files"]))
         attempt = self._solver_attempts.get(key, 0)
         self._solver_attempts[key] = attempt + 1
-        if not p["documents"]:
+        read: dict[str, str] = {}  # filename -> text of the pages actually read, in order
+        for st in p["steps"]:
+            if st["action"].get("tool") == "read_file" and not st["result"].startswith("ERROR"):
+                read[st["action"]["filename"]] = read.get(st["action"]["filename"], "") + st["result"].split("\n", 1)[1]
+        if not read:
             return "I cannot assess the agreement without the documents in the matter folder."
         r = _rng(self.seed, "solve", key, attempt)
 
         findings, facts = [], []
-        for d in p["documents"]:
+        for filename, content in read.items():
             section = "?"
-            for ln in d["content"].splitlines():
+            for ln in content.splitlines():
                 head = re.match(r"^##\s+([\d.]+)\.", ln)
                 if head:
                     section = head.group(1)
@@ -313,6 +319,18 @@ class FakeModel:
                     facts.append(f"- {fm.group(1)}: {fm.group(2)}")
                 for itype, lib in ISSUE_LIBRARY.items():
                     if all(t.lower() in ln.lower() for t in lib["detect_terms"]) and r.random() < self.solver_skill:
-                        findings.append(f"- {d['filename']}, Section {section}: this clause is a problem for the client: \"{ln}\"")
+                        findings.append(f"- {filename}, Section {section}: this clause is a problem for the client: \"{ln}\"")
         answer = "MEMORANDUM\n\nIssues identified:\n" + ("\n".join(findings) or "- None found.") + "\n\nKey facts:\n" + "\n".join(facts)
         return answer
+
+    def _solver_step(self, p: dict) -> dict:
+        names = [f["filename"] for f in p["files"]]
+        reads = [s for s in p["steps"] if s["action"].get("tool") == "read_file"]
+        if not reads:
+            return {"tool": "read_file", "filename": names[0], "page": 1} if names else {"tool": "finish"}
+        last = reads[-1]
+        m = re.match(r".*, page (\d+) of (\d+):", last["result"])
+        if m and int(m.group(1)) < int(m.group(2)):
+            return {"tool": "read_file", "filename": last["action"]["filename"], "page": int(m.group(1)) + 1}
+        k = names.index(last["action"]["filename"]) + 1 if last["action"]["filename"] in names else len(names)
+        return {"tool": "read_file", "filename": names[k], "page": 1} if k < len(names) else {"tool": "finish"}

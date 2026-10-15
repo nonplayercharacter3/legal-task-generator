@@ -48,6 +48,8 @@ class SpecCfg:
 @dataclass
 class GatesCfg:
     solver_attempts: int = 3
+    solver_max_steps: int = 20  # tool calls per attempt before the solver must write its answer
+    solver_page_chars: int = 6000  # read_file page size (~1,000 words)
     solver_min_pass_rate: float = 0.01  # below: nothing solves it, probably broken
     solver_max_pass_rate: float = 0.99  # above: too easy to teach anything
     probe_without_documents: bool = True
