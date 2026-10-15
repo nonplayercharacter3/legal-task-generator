@@ -1,0 +1,127 @@
+{
+  "matter_id": "s7-m0002",
+  "summary": "Northgate Robotics Corp. is party to a distribution agreement with Copperline Foods LLC.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Northgate Robotics Corp.",
+      "role": "Customer"
+    },
+    {
+      "id": "P2",
+      "name": "Copperline Foods LLC",
+      "role": "Supplier"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Effective Date",
+      "value": "2025-01-18",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F2",
+      "key": "Annual Fee",
+      "value": "$1,800,000",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Governing Law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F4",
+      "key": "Liability Cap",
+      "value": "$900,000",
+      "doc": "D1",
+      "section": "9.1"
+    },
+    {
+      "id": "F5",
+      "key": "Initial Term",
+      "value": "2 years",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F6",
+      "key": "Amendment Date",
+      "value": "2026-07-02",
+      "doc": "D2",
+      "section": "1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement.md",
+      "kind": "main agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "email_thread.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "The agreement renews automatically for a long term unless a short opt-out window is used.",
+      "doc": "D1",
+      "section": "5.2",
+      "detect_terms": [
+        "automatically renew",
+        "successive"
+      ],
+      "expected_finding": "the agreement automatically renews for successive three-year terms, locking the client in",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "A later document narrows or removes a carve-out from the limitation of liability, so the cap now covers losses it should not.",
+      "doc": "D2",
+      "section": "6.2",
+      "detect_terms": [
+        "limitation of liability",
+        "notwithstanding"
+      ],
+      "expected_finding": "a clause extends the limitation of liability to confidentiality breaches, removing the usual carve-out",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Two documents in the same matter choose different governing law or forums.",
+      "doc": "D1",
+      "section": "7.2",
+      "detect_terms": [
+        "governed by the laws of",
+        "exclusive jurisdiction"
+      ],
+      "expected_finding": "one document selects California law and courts, conflicting with the governing law of the main agreement",
+      "contradicts": "F3"
+    }
+  ]
+}

@@ -32,11 +32,11 @@ Needs Python 3.11+. No third-party packages at runtime.
 
 ```bash
 pip install -e ".[dev]"        # or just use python -m ltg from the repo root
-python -m pytest               # 31 tests, ~2 seconds, fully offline
+python -m pytest               # 51 tests, ~4 seconds, fully offline
 
 python -m ltg run --config configs/fake_demo.toml      # 20 matters, fake model, faults injected
 cat runs/fake_demo/report.md
-python -m ltg inspect runs/fake_demo/accepted/s7-m0001
+python -m ltg inspect runs/fake_demo/accepted/s7-m0002
 ```
 
 A sample of that output is committed in [`examples/fake_run/`](examples/fake_run/): one accepted task, one task
@@ -122,7 +122,7 @@ ltg/
   cli.py           `run` and `inspect`
 configs/           fake demo and real-endpoint example
 examples/          committed sample output from the fake model
-tests/             31 offline tests
+tests/             51 offline tests
 ```
 
 ## Not done yet

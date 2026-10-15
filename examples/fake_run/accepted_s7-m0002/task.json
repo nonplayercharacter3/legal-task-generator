@@ -1,0 +1,74 @@
+{
+  "task_id": "s7-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "Our client, Northgate Robotics Corp., is reviewing its distribution agreement ahead of a board meeting next week and wants to know where it stands. The matter folder has 3 files (distribution_agreement.md, amendment_1.md, email_thread.md). Please review all of them under New York law and prepare a memo to the supervising partner that lists each issue, where it appears (document and section), why it matters for the client, and a recommended fix. Keep it practical: the client needs to decide what to raise with the counterparty.",
+  "documents": [
+    "amendment_1.md",
+    "distribution_agreement.md",
+    "email_thread.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "Identifies that the agreement automatically renews for successive three-year terms, locking the client in.",
+      "kind": "issue",
+      "hints": [
+        "automatically renew",
+        "successive"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "Identifies that a clause extends the limitation of liability to confidentiality breaches, removing the usual carve-out.",
+      "kind": "issue",
+      "hints": [
+        "limitation of liability",
+        "notwithstanding"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "Identifies that one document selects California law and courts, conflicting with the governing law of the main agreement.",
+      "kind": "issue",
+      "hints": [
+        "governed by the laws of",
+        "exclusive jurisdiction"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "States the Effective Date as 2025-01-18.",
+      "kind": "fact",
+      "hints": [
+        "2025-01-18"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "States the Annual Fee as $1,800,000.",
+      "kind": "fact",
+      "hints": [
+        "$1,800,000"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "Cites the document and section for each issue identified.",
+      "kind": "format",
+      "hints": [
+        "section"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "Does not cite case law or statutes that do not appear in the matter documents.",
+      "kind": "negative",
+      "hints": []
+    }
+  ],
+  "solver_pass_rate": 0.667
+}

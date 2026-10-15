@@ -28,34 +28,45 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 ## Current status (2026-10-14)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 31 offline tests pass (`python3 -m pytest`). Each gate was mutation-checked: disabling it makes a test fail.
+- 51 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+  was mutation-checked on 2026-10-14: disabling it makes a test fail.
 - The real-model path has only been tested against a local mock server. **It has never run on a real LLM.**
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 
-## Known weaknesses (review findings, highest priority first)
+Fixed after the 2026-10-14 independent review (one commit each):
+- Drafter, solver and answer writer reply in raw Markdown, not JSON strings. The client rejects output cut off
+  at `max_tokens` (`finish_reason: length`) and strips `<think>` blocks.
+- A rerun no longer leaves rejected matters in `accepted/`. A run into a folder holding another run's matters stops.
+- `consistency` checks every fact in every document. Issues that contradict a fact on purpose name it in `contradicts`.
+- The exported rubric carries the hints the judge used (`gates.judge_hints` turns them off). The issue verifier no
+  longer sees `detect_terms` (`gates.verifier_sees_terms`). Code checks the terms appear verbatim instead.
+- `leak_check` also scans filenames and document kinds (punctuation ignored) and rejects HTML comments in documents.
+- `rubric_tests` requires the flawed answer to pass every criterion except those for its omitted issue.
+- The report shows decontamination as skipped, with a warning, when `reference_dirs` is empty.
+- Matters run concurrently (`run.concurrency`, default 4).
 
-1. **Sequential model calls.** ~20 to 25 calls per matter, all serial, matters serial too. Matters are independent:
-   run them concurrently (thread pool), with a configurable concurrency limit.
-2. **Long documents returned inside JSON.** The drafter returns a full contract as a JSON string; real models often
-   break escaping on long outputs. Have the drafter (and other long-text roles) return raw Markdown instead.
-3. **Solver is not agentic.** All documents are pasted into one prompt. LAB evaluates agents that open and search
+## Known weaknesses (highest priority first)
+
+1. **Solver is not agentic.** All documents are pasted into one prompt. LAB evaluates agents that open and search
    files with tools, so the difficulty filter does not measure the right thing yet. Consider a tool-using solver
-   (list_files, read_file, search) behind the same `solve()` interface.
-4. **No resume.** A crash restarts the whole run. Cache per-stage outputs per matter and skip completed stages.
-5. **Decontamination index rebuilt every run.** Save the Bloom filter to disk keyed by reference dirs and settings.
-6. **Grading can be biased.** The judge receives `hints`, which may make it lenient; the issue verifier receives
-   the exact `detect_terms`, which weakens it as a check. Make both optional and measure the difference.
+   (list_files, read_file, search) behind the same `solve()` interface. Biggest design change left: ask Syrena first.
+2. **No resume.** A crash restarts the whole run. Cache per-stage outputs per matter and skip completed stages.
+3. **Judge leniency not measured.** `gates.judge_hints` exists; run the same matters on a real model with it on
+   and off and compare solver pass rates before choosing a default.
+4. **Decontamination index rebuilt every run.** Probably fine since LAB is small; time it before adding a cache.
 
 Smaller known gaps: no EDGAR fetcher (precedents come from local folders), no diversity tracking across a run,
-judge not calibrated against lawyer grades.
+judge not calibrated against lawyer grades, `solver_attempts = 1` rejects every task (a pass rate of 0 or 1 is
+always outside the band), dropped connections (`ConnectionResetError`) are not retried, and one fact lives in one
+document, which limits cross-document reasoning.
 
 ## How to verify changes
 
 - `python3 -m pytest` must stay green. Add a test for every new gate or behaviour; if you change a gate, check that
   disabling it still makes a test fail.
 - `python3 -m ltg run --config configs/fake_demo.toml` then read `runs/fake_demo/report.md`. The demo injects
-  faults into ~30% of matters; consistency, issue_check, rubric_trace, rubric_tests and solver_check
+  faults into ~35% of matters; consistency, issue_check, leak_check, rubric_trace, rubric_tests and solver_check
   should each reject at least one.
 - For real-model work: run 3 to 5 matters first and read every output before scaling.
 - Quality checklist for a generated task: instruction realistic and does not hint at issues; each planted issue

@@ -2,8 +2,6 @@
 
 **Between** Quillon Freight Systems, Inc. ("Buyer") and Copperline Foods LLC ("Seller")
 
-<!-- structure adapted from precedent sample_stock_purchase_agreement -->
-
 ## 1.1. Effective Date
 
 Effective Date: 2025-02-11

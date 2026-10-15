@@ -15,7 +15,7 @@
       "passed": true,
       "details": {
         "mismatches": [],
-        "checked": 6
+        "checked": 18
       }
     },
     {
@@ -27,26 +27,17 @@
           {
             "issue": "I1",
             "present": true,
-            "evidence": "Notwithstanding anything to the contrary, the limitation of liability applies to all claims, including claims for breach of confidentiality.",
-            "detect_terms_found": "2/2"
+            "evidence": "This Agreement shall automatically renew for successive three (3) year terms unless terminated as provided herein."
           },
           {
             "issue": "I2",
             "present": true,
-            "evidence": "Either party may terminate by giving written notice no fewer than ninety (90) days prior to the end of the then-current term.",
-            "detect_terms_found": "2/2"
+            "evidence": "Notwithstanding anything to the contrary, the limitation of liability applies to all claims, including claims for breach of confidentiality."
           },
           {
             "issue": "I3",
             "present": true,
-            "evidence": "The Customer shall indemnify the Supplier against all losses arising from third-party claims, without limit as to amount.",
-            "detect_terms_found": "2/2"
-          },
-          {
-            "issue": "I4",
-            "present": true,
-            "evidence": "Any change of control of the Customer shall be deemed an assignment requiring the Supplier's prior written consent.",
-            "detect_terms_found": "2/2"
+            "evidence": "This letter shall be governed by the laws of the State of California, and the parties submit to the exclusive jurisdiction of its courts."
           }
         ]
       }
@@ -56,6 +47,7 @@
       "passed": true,
       "details": {
         "hits": [],
+        "html_comments": [],
         "empty": false
       }
     },
@@ -64,7 +56,7 @@
       "passed": true,
       "details": {
         "errors": [],
-        "n_criteria": 8
+        "n_criteria": 7
       }
     },
     {
@@ -74,9 +66,10 @@
         "gold_fails": [],
         "blank_passes": [],
         "flawed_should_fail": [
-          "C4"
+          "C3"
         ],
-        "flawed_wrongly_passes": []
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
       }
     },
     {
@@ -94,19 +87,18 @@
         "pass_rate": 0.667,
         "runs": [
           {
+            "passed": true,
+            "failed_criteria": []
+          },
+          {
+            "passed": true,
+            "failed_criteria": []
+          },
+          {
             "passed": false,
             "failed_criteria": [
-              "C3",
-              "C4"
+              "C1"
             ]
-          },
-          {
-            "passed": true,
-            "failed_criteria": []
-          },
-          {
-            "passed": true,
-            "failed_criteria": []
           }
         ]
       }
