@@ -67,21 +67,30 @@ def decontamination(texts: dict[str, str], index: BloomIndex | None, threshold: 
 
 
 def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateResult:
-    """Re-extract every fact from the drafted files WITHOUT telling the extractor the value."""
+    """Re-extract every fact from EVERY drafted file, WITHOUT telling the extractor the value.
+
+    A fact's own document must state the ledger value. Any other document may stay silent, but must not
+    state a different value unless a planted issue `contradicts` that fact there. Otherwise the drafter
+    has planted a conflict the answer key does not know about.
+    """
     fname = {d.id: d.filename for d in ledger.documents}
-    used = sorted({fname[f.doc] for f in ledger.facts})
+    planted = {(i.contradicts, fname.get(i.doc)) for i in ledger.issues if i.contradicts}
     payload = {
-        "documents": [{"filename": f, "content": docs.get(f, "")} for f in used],
-        "queries": [{"id": f.id, "key": f.key, "filename": fname[f.doc]} for f in ledger.facts],
+        "documents": [{"filename": n, "content": c} for n, c in docs.items()],
+        "queries": [{"id": f"{f.id}@{n}", "key": f.key, "filename": n} for f in ledger.facts for n in docs],
     }
     out = call_json(client, "fact_extractor", prompts.FACT_EXTRACTOR, render_input(payload))
     got = {r["id"]: r.get("value") for r in out.get("facts", []) if "id" in r}
-    mismatches = [
-        {"fact": f.id, "key": f.key, "ledger": f.value, "document": got.get(f.id)}
-        for f in ledger.facts
-        if _norm(got.get(f.id)) != _norm(f.value)
-    ]
-    return GateResult("consistency", not mismatches, {"mismatches": mismatches, "checked": len(ledger.facts)})
+    mismatches = []
+    for f in ledger.facts:
+        for n in docs:
+            v = got.get(f"{f.id}@{n}")
+            if _norm(v) == _norm(f.value):
+                continue
+            if n != fname[f.doc] and (not _norm(v) or (f.id, n) in planted):
+                continue  # silent elsewhere, or a deliberate contradiction
+            mismatches.append({"fact": f.id, "key": f.key, "filename": n, "ledger": f.value, "document": v})
+    return GateResult("consistency", not mismatches, {"mismatches": mismatches, "checked": len(payload["queries"])})
 
 
 def issue_check(client: ModelClient, ledger: Ledger, docs: Documents) -> GateResult:

@@ -41,6 +41,7 @@ def test_end_to_end_writes_tasks_and_report(cfg, read_json):
     "fault, gate",
     [
         ("wrong_fact", "consistency"),
+        ("conflicting_restatement", "consistency"),
         ("drop_issue", "issue_check"),
         ("untraceable_criterion", "rubric_trace"),
         ("weak_gold", "rubric_tests"),
@@ -145,3 +146,19 @@ def test_run_refuses_folder_with_matters_from_another_run(tmp_path):
     Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2, "seed": 7}})).run()
     with pytest.raises(FileExistsError, match="another run"):
         Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2, "seed": 8}})).run()
+
+
+def test_consistency_allows_only_planted_contradictions():
+    fake = FakeModel(seed=1)
+    spec = {"matter_id": "m", "practice_area": "commercial_contracts", "agreement_type": "supply agreement", "jurisdiction": "Delaware",
+            "n_documents": 3, "issue_types": ["auto_renewal", "governing_law_mismatch"]}
+    ledger = Ledger.from_dict(fake._ledger_writer({"spec": spec, "precedents": []}))
+    mismatch = next(i for i in ledger.issues if i.type == "governing_law_mismatch")
+    docs = {d.filename: fake._drafter({"ledger": ledger.to_dict(), "document": d.__dict__}) for d in ledger.documents}
+    other = next(d.filename for d in ledger.documents if d.id == mismatch.doc)
+    docs[other] += "\nGoverning Law: State of California\n"
+
+    assert gates.consistency(fake, ledger, docs).passed  # the planted issue contradicts F3 on purpose
+    mismatch.contradicts = None
+    g = gates.consistency(fake, ledger, docs)
+    assert not g.passed and g.details["mismatches"][0]["filename"] == other

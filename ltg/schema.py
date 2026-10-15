@@ -79,6 +79,7 @@ class Issue:
     section: str
     detect_terms: list[str]
     expected_finding: str
+    contradicts: str | None = None  # fact id this issue deliberately states differently in its document
 
 
 @dataclass
@@ -200,6 +201,8 @@ def validate_ledger(ledger: Ledger, spec: MatterSpec) -> list[str]:
             errs.append(f"issue {i.id} has no detect_terms")
         if not i.expected_finding.strip():
             errs.append(f"issue {i.id} has no expected_finding")
+        if i.contradicts and i.contradicts not in {f.id for f in ledger.facts}:
+            errs.append(f"issue {i.id} contradicts unknown fact {i.contradicts}")
         issue_docs.add(i.doc)
     if spec.n_issues >= 2 and len(issue_docs) < 2:
         errs.append("all issues sit in one document; spread them across documents")

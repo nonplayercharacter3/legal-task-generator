@@ -7,6 +7,7 @@ gate, can run and be tested without any API.
 It can also inject faults on purpose, to prove each gate rejects what it should:
   drop_issue             drafter leaves a planted issue out       -> issue_check fails
   wrong_fact             drafter misstates a ledger fact          -> consistency fails
+  conflicting_restatement drafter restates a fact differently in another document -> consistency fails
   untraceable_criterion  rubric cites an id not in the ledger     -> rubric_trace fails
   weak_gold              gold answer misses an issue              -> rubric_tests fails
 
@@ -25,7 +26,7 @@ from typing import Any
 from .models import CallLog, CallRecord, extract_input
 from .taxonomy import ISSUE_LIBRARY
 
-FAULTS = ("drop_issue", "wrong_fact", "untraceable_criterion", "weak_gold")
+FAULTS = ("drop_issue", "wrong_fact", "conflicting_restatement", "untraceable_criterion", "weak_gold")
 
 COMPANY_NAMES = [
     "Halvorsen Industrial Supply Co.",
@@ -167,6 +168,7 @@ class FakeModel:
                     "section": f"{idx + 5}.2",
                     "detect_terms": list(lib["detect_terms"]),
                     "expected_finding": lib["finding"],
+                    "contradicts": "F3" if itype == "governing_law_mismatch" else None,
                 }
             )
         return {
@@ -206,6 +208,9 @@ class FakeModel:
             if fault == "wrong_fact" and f["id"] == first_fact:
                 value = "to be confirmed"
             lines += [f"## {f['section']}. {f['key']}", "", f"{f['key']}: {value}", "", r.choice(BOILERPLATE), ""]
+        if fault == "conflicting_restatement" and doc["id"] == "D2":
+            f = ledger["facts"][0]
+            lines += ["## 0. Background", "", f"{f['key']}: {f['value']} (as revised)", ""]
         for i in issues:
             lines += [f"## {i['section']}. General Provisions", "", ISSUE_LIBRARY[i["type"]]["planted_text"], "", r.choice(BOILERPLATE), ""]
         return "\n".join(lines)
