@@ -24,6 +24,8 @@ Rules:
   an amount, a duration, a party, a place, or a defined term's core meaning, in at most 20 words
   (key "Termination notice period", value "30 days"; key "Liability cap", value "fees paid in the prior 12 months").
   Split compound facts into separate facts.
+- When the matter has two or more operative documents, include their order of precedence as a fact, stated in the
+  main agreement, so every document that mentions precedence has to agree with it.
 - A fact records what the documents actually say. If a planted issue makes a document depart from the deal (for
   example exclusivity broader than agreed), do not record the agreed term as a fact of that document; record it
   only in a document that states it correctly (a term sheet, an email) and set the issue's `contradicts` to it.
@@ -51,6 +53,8 @@ Rules:
 - Plant every ledger issue assigned to this document in its given section, using each of its `detect_terms`
   verbatim. Make the problem discoverable by a careful reader, but do not flag it, comment on it or explain it.
 - Do not plant problems that are not in the ledger. A distractor document must contain no issue.
+- Add no order-of-precedence, entire-agreement or other clause that ranks or overrides other documents unless it
+  restates a ledger fact, and then state it exactly as the ledger does.
 - Write in Markdown with numbered sections. Realistic length: a main agreement 1,500 to 4,000 words,
   supporting documents shorter.
 
@@ -64,10 +68,10 @@ thing with a similar name (an amendment's own effective date is not the agreemen
 Reply with ONLY a JSON object: {"facts": [{"id": str, "value": str|null}]}"""
 
 FACT_MATCHER = """You compare pairs of values for the same fact: the value an answer key records, and the value a document
-states. Mark a pair `same` only if they mean the same thing legally: the same numbers, amounts, dates, durations,
-parties, scope, conditions and negations. Differences in wording, articles, punctuation or capitalisation are fine,
-and so is a document value that adds surrounding words without changing the meaning. A value that is narrower,
-broader, conditioned differently, or names a different party is not the same.
+states. Mark a pair `same` unless a careful lawyer reading both would see them as inconsistent: different numbers,
+amounts, dates, durations, parties, items, territory or scope, or a negation. Differences in wording, punctuation or
+capitalisation are fine, and so is compatible added detail ("as updated by the parties in writing", an exhibit
+reference, a section number). A value that is narrower, broader or names a different party is inconsistent.
 
 Reply with ONLY a JSON object: {"results": [{"id": str, "same": bool, "reason": str}]}"""
 
@@ -100,6 +104,8 @@ You receive the facts ledger, the task instruction and the deliverable. Write cr
 - kind "negative": 1 to 2 criteria a response fails by doing something wrong, such as citing authority that is
   not in the documents or flagging a distractor document as problematic (source = null).
 For each criterion give `hints`: 1 to 3 short phrases a passing response would very likely contain.
+Every criterion must be satisfiable from the instruction and the documents alone: the solver never sees the ledger,
+so never require facts that appear only in the ledger (its summary, the client's plans or the deal background).
 
 Reply with ONLY a JSON object:
 {"criteria": [{"id": "C1", "text": str, "kind": str, "source": str|null, "hints": [str]}]}"""
