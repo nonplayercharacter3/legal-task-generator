@@ -67,7 +67,7 @@ def _write(path: Path, data) -> None:
 
 def _first_reason(g: gates.GateResult) -> str:
     d = g.details
-    for key in ("reason", "errors", "mismatches", "missing", "hits", "gold_fails", "blank_passes", "flawed_wrongly_passes", "flagged"):
+    for key in ("reason", "errors", "mismatches", "missing", "hits", "html_comments", "gold_fails", "blank_passes", "flawed_wrongly_passes", "flagged"):
         if d.get(key):
             v = d[key]
             return v if isinstance(v, str) else f"{key}: {json.dumps(v)[:300]}"
@@ -118,7 +118,7 @@ class Pipeline:
 
             instruction = stages.write_instruction(self.client, spec, ledger)
             _write(work / "instruction.md", instruction)
-            check(gates.leak_check(instruction, ledger))
+            check(gates.leak_check(instruction, ledger, docs))
 
             rubric = stages.write_rubric(self.client, spec, ledger, instruction)
             _write(work / "rubric.json", rubric.to_dict())

@@ -8,6 +8,7 @@ It can also inject faults on purpose, to prove each gate rejects what it should:
   drop_issue             drafter leaves a planted issue out       -> issue_check fails
   wrong_fact             drafter misstates a ledger fact          -> consistency fails
   conflicting_restatement drafter restates a fact differently in another document -> consistency fails
+  leaky_filename         ledger names a file after the issue it holds -> leak_check fails
   untraceable_criterion  rubric cites an id not in the ledger     -> rubric_trace fails
   weak_gold              gold answer misses an issue              -> rubric_tests fails
 
@@ -26,7 +27,7 @@ from typing import Any
 from .models import CallLog, CallRecord, extract_input
 from .taxonomy import ISSUE_LIBRARY
 
-FAULTS = ("drop_issue", "wrong_fact", "conflicting_restatement", "untraceable_criterion", "weak_gold")
+FAULTS = ("drop_issue", "wrong_fact", "conflicting_restatement", "leaky_filename", "untraceable_criterion", "weak_gold")
 
 COMPANY_NAMES = [
     "Halvorsen Industrial Supply Co.",
@@ -172,6 +173,8 @@ class FakeModel:
                     "contradicts": "F3" if itype == "governing_law_mismatch" else None,
                 }
             )
+        if self.fault_for(spec["matter_id"]) == "leaky_filename" and issues:
+            documents[0]["filename"] = _slug(issues[0]["label"]) + "_" + documents[0]["filename"]
         return {
             "matter_id": spec["matter_id"],
             "summary": f"{client} is party to a {spec['agreement_type']} with {counterparty}.",
@@ -191,8 +194,6 @@ class FakeModel:
         parties = ledger["parties"]
         title = doc["kind"].title()
         lines = [f"# {title}", "", f"**Between** {parties[0]['name']} (\"{parties[0]['role']}\") and {parties[1]['name']} (\"{parties[1]['role']}\")", ""]
-        if doc.get("precedent"):
-            lines += [f"<!-- structure adapted from precedent {doc['precedent']} -->", ""]
 
         if doc["distractor"]:
             lines += r.sample(DISTRACTOR_TEXT, 2)

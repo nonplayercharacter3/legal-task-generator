@@ -42,6 +42,7 @@ def test_end_to_end_writes_tasks_and_report(cfg, read_json):
     [
         ("wrong_fact", "consistency"),
         ("conflicting_restatement", "consistency"),
+        ("leaky_filename", "leak_check"),
         ("drop_issue", "issue_check"),
         ("untraceable_criterion", "rubric_trace"),
         ("weak_gold", "rubric_tests"),
@@ -84,9 +85,15 @@ def test_leak_check_flags_an_instruction_that_names_an_issue():
     spec = {"matter_id": "m", "practice_area": "commercial_contracts", "agreement_type": "supply agreement", "jurisdiction": "Delaware",
             "n_documents": 3, "issue_types": ["auto_renewal", "uncapped_indemnity"]}
     ledger = Ledger.from_dict(fake._ledger_writer({"spec": spec, "precedents": []}))
-    assert gates.leak_check("Please review the supply agreement and send a memo.", ledger).passed
-    leaky = gates.leak_check("Please check whether the automatic renewal clause hurts the client.", ledger)
+    clean = "Please review the supply agreement and send a memo."
+    assert gates.leak_check(clean, ledger, {}).passed
+    leaky = gates.leak_check("Please check whether the automatic-renewal clause hurts the client.", ledger, {})
     assert not leaky.passed and leaky.details["hits"][0]["issue"] == "I1"
+
+    ledger.documents[1].filename = "automatic_renewal_letter.md"  # the solver sees filenames too
+    assert not gates.leak_check(clean, ledger, {}).passed
+    ledger.documents[1].filename = "side_letter.md"
+    assert not gates.leak_check(clean, ledger, {"side_letter.md": "Text <!-- planted: I1 --> more"}).passed
 
 
 def test_same_seed_same_result(tmp_path):

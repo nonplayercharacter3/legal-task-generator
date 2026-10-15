@@ -38,16 +38,27 @@ def ledger_schema(ledger: Ledger, spec: MatterSpec) -> GateResult:
     return GateResult("ledger_schema", not errs, {"errors": errs})
 
 
-def leak_check(instruction: str, ledger: Ledger) -> GateResult:
-    """The instruction must not name an issue or quote its multi-word detect terms."""
-    low = instruction.lower()
+def _words(s: str) -> str:
+    """Lowercase words separated by single spaces, so "change_of_control.md" matches "change of control"."""
+    return " " + " ".join(re.findall(r"[a-z0-9]+", s.lower())) + " "
+
+
+def leak_check(instruction: str, ledger: Ledger, docs: Documents) -> GateResult:
+    """Nothing the solver sees outside the document text may name an issue or quote its multi-word detect terms.
+
+    That covers the instruction, and the filenames and document kinds, which the ledger writer chose while
+    knowing the issues. Documents must not carry HTML comments: drafter notes the solver would read.
+    """
+    visible = {"instruction": instruction, **{d.filename: f"{d.filename} {d.kind}" for d in ledger.documents}}
     hits = []
-    for i in ledger.issues:
-        for phrase in [i.label, *[t for t in i.detect_terms if " " in t.strip()]]:
-            if phrase and phrase.lower() in low:
-                hits.append({"issue": i.id, "phrase": phrase})
-    passed = bool(instruction.strip()) and not hits
-    return GateResult("leak_check", passed, {"hits": hits, "empty": not instruction.strip()})
+    for where, text in visible.items():
+        for i in ledger.issues:
+            for phrase in [i.label, *[t for t in i.detect_terms if len(t.split()) > 1]]:
+                if _words(phrase).strip() and _words(phrase) in _words(text):
+                    hits.append({"issue": i.id, "phrase": phrase, "in": where})
+    comments = sorted(n for n, c in docs.items() if "<!--" in c)
+    passed = bool(instruction.strip()) and not hits and not comments
+    return GateResult("leak_check", passed, {"hits": hits, "html_comments": comments, "empty": not instruction.strip()})
 
 
 def rubric_trace(rubric: Rubric, ledger: Ledger, answers: Answers) -> GateResult:

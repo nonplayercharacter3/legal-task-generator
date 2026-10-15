@@ -65,7 +65,7 @@ early as possible.
 | `ledger_schema` | Counts match the spec, ids resolve, issues are spread across documents and never in a distractor, safe filenames | deterministic |
 | `consistency` | A separate extractor re-reads every fact from every drafted file (told the fact's name, not its value). The fact's own document must match the ledger; other documents may omit it but not contradict it, unless a planted issue does so on purpose | model |
 | `issue_check` | Each planted issue is present and findable in its assigned document | model |
-| `leak_check` | The instruction does not name an issue or quote its key phrases | deterministic |
+| `leak_check` | The instruction, filenames and document kinds do not name an issue or quote its key phrases (punctuation ignored), and documents carry no HTML comments | deterministic |
 | `rubric_trace` | Every criterion cites a ledger issue or fact, every issue is graded, reference answers are well formed | deterministic |
 | `rubric_tests` | The rubric is unit-tested: gold answer passes everything, a blank answer passes nothing, the flawed answer fails the criteria for the issue it omits | model |
 | `decontamination` | Word 8-gram containment against reference benchmarks (e.g. a LAB clone) stays under the threshold | deterministic |
@@ -98,7 +98,7 @@ Each matter folder holds `spec.json`, `precedents.json`, `ledger.json`, `docs/`,
 `ltg/fake.py` reads the same structured payload a real model would get and returns plausible JSON for each role.
 Its "legal knowledge" is the issue library's key phrases: the fake solver spots an issue with probability
 `solver_skill`, which produces a realistic mix of too-easy, too-hard and accepted tasks. It can also inject
-defects on purpose (`drop_issue`, `wrong_fact`, `conflicting_restatement`, `untraceable_criterion`, `weak_gold`); the tests check that each
+defects on purpose (`drop_issue`, `wrong_fact`, `conflicting_restatement`, `leaky_filename`, `untraceable_criterion`, `weak_gold`); the tests check that each
 one is caught by the right gate, and that disabling any gate makes a test fail.
 
 The HTTP client is tested by running the whole pipeline through a local OpenAI-compatible server backed by the
