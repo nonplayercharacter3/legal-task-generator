@@ -201,12 +201,12 @@ class Pipeline:
 
 
 def build_report(results: list[MatterResult], log: CallLog, cfg: Config) -> dict:
-    gate_stats = {g: {"evaluated": 0, "passed": 0, "failed": 0} for g in GATE_ORDER}
+    gate_stats = {g: {"evaluated": 0, "passed": 0, "failed": 0, "skipped": 0} for g in GATE_ORDER}
     for r in results:
         for g in r.gates:
             s = gate_stats[g["name"]]
             s["evaluated"] += 1
-            s["passed" if g["passed"] else "failed"] += 1
+            s["skipped" if g["details"].get("skipped") else "passed" if g["passed"] else "failed"] += 1
     errors = sum(1 for r in results if r.failed_gate == "error")
     return {
         "backend": cfg.backend.kind,
@@ -231,11 +231,13 @@ def render_report(rep: dict) -> str:
         "",
         "## Gates",
         "",
-        "| Gate | Evaluated | Passed | Failed |",
-        "| --- | ---: | ---: | ---: |",
+        "| Gate | Evaluated | Passed | Failed | Skipped |",
+        "| --- | ---: | ---: | ---: | ---: |",
     ]
     for g, s in rep["gates"].items():
-        lines.append(f"| {g} | {s['evaluated']} | {s['passed']} | {s['failed']} |")
+        lines.append(f"| {g} | {s['evaluated']} | {s['passed']} | {s['failed']} | {s['skipped']} |")
+    if rep["gates"]["decontamination"]["skipped"]:
+        lines += ["", "**Decontamination was skipped (no `reference_dirs`): these tasks were NOT screened against LAB.**"]
     lines += ["", "## Matters", "", "| Matter | Result | Split | Solver pass rate | Reason |", "| --- | --- | --- | ---: | --- |"]
     for m in rep["matters"]:
         res = "accepted" if m["accepted"] else f"rejected at {m['failed_gate']}"

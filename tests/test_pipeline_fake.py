@@ -125,6 +125,16 @@ def test_decontamination_gate_rejects_copied_benchmark_text(tmp_path):
                             "gates": {"reference_dirs": [str(matter / "docs")], "decontam_bloom_bits": 2**20}})
     rep = Pipeline(c2).run()
     assert rep["matters"][0]["failed_gate"] == "decontamination"
+    assert rep["gates"]["decontamination"]["skipped"] == 0
+
+
+def test_report_shows_decontamination_as_skipped_without_reference(cfg):
+    rep = Pipeline(cfg).run()
+    d = rep["gates"]["decontamination"]
+    assert d["evaluated"] > 0 and d["skipped"] == d["evaluated"] and d["passed"] == 0
+    from pathlib import Path
+
+    assert "NOT screened against LAB" in (Path(cfg.run.out_dir) / "report.md").read_text()
 
 
 def test_invalid_ledger_is_rejected_after_one_repair_attempt(tmp_path):

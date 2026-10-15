@@ -23,7 +23,9 @@ def cmd_run(args: argparse.Namespace) -> int:
     report = Pipeline(cfg).run()
     print(f"accepted {report['accepted']} of {report['candidates']} candidates -> {cfg.run.out_dir}")
     for g, s in report["gates"].items():
-        print(f"  {g:<16} evaluated {s['evaluated']:>3}  passed {s['passed']:>3}  failed {s['failed']:>3}")
+        print(f"  {g:<16} evaluated {s['evaluated']:>3}  passed {s['passed']:>3}  failed {s['failed']:>3}  skipped {s['skipped']:>3}")
+    if report["gates"]["decontamination"]["skipped"]:
+        print("WARNING: decontamination skipped (no reference_dirs); tasks were not screened against LAB")
     print(f"report: {Path(cfg.run.out_dir) / 'report.md'}")
     return 0
 
