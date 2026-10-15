@@ -24,6 +24,9 @@ Rules:
   an amount, a duration, a party, a place, or a defined term's core meaning, in at most 20 words
   (key "Termination notice period", value "30 days"; key "Liability cap", value "fees paid in the prior 12 months").
   Split compound facts into separate facts.
+- A fact records what the documents actually say. If a planted issue makes a document depart from the deal (for
+  example exclusivity broader than agreed), do not record the agreed term as a fact of that document; record it
+  only in a document that states it correctly (a term sheet, an email) and set the issue's `contradicts` to it.
 - `detect_terms` are 1 to 3 short phrases that the drafted clause will contain verbatim.
 - `expected_finding` is one sentence saying what a competent associate should conclude.
 - If an issue works by stating a fact differently in its document (for example a conflicting governing law),
@@ -54,7 +57,9 @@ Rules:
 Reply with ONLY the document itself, in Markdown. No preamble and no code fences."""
 
 FACT_EXTRACTOR = """You extract facts from legal documents. For each query, find the value the named document states
-for that fact and copy it exactly. If the document does not state it, return null.
+for that fact and copy it exactly. If the document does not state it, return null. Also return null when the document
+only refers to the fact without stating its value ("the Effective Date of the Agreement"), or states a different
+thing with a similar name (an amendment's own effective date is not the agreement's Effective Date).
 
 Reply with ONLY a JSON object: {"facts": [{"id": str, "value": str|null}]}"""
 
