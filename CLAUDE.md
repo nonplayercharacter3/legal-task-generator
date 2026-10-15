@@ -41,6 +41,10 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   negative criteria, so issue spotting may be too easy when Sonnet solves Sonnet's tasks (try a different solver
   model); issue criteria often bundle find, explain and fix; the instruction writer can still nudge generically
   ("the documents may not line up").
+- 3-matter pilot (2026-10-15, `configs/claude_pilot.toml`): 0 of 3 accepted, all three rejections correct. Two failed
+  consistency on compatible added detail; one had a rubric criterion needing ledger-only background and an unplanted
+  precedence conflict between documents. Prompts fixed in 8d01772; not yet rerun. 69 calls, ~346k input
+  and ~93k output tokens, ~12 minutes of model time, no errors on the Pro plan.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 
