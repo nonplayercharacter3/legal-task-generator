@@ -67,7 +67,7 @@ early as possible.
 | `issue_check` | Each planted issue is present and findable in its assigned document | model |
 | `leak_check` | The instruction, filenames and document kinds do not name an issue or quote its key phrases (punctuation ignored), and documents carry no HTML comments | deterministic |
 | `rubric_trace` | Every criterion cites a ledger issue or fact, every issue is graded, reference answers are well formed | deterministic |
-| `rubric_tests` | The rubric is unit-tested: gold answer passes everything, a blank answer passes nothing, the flawed answer fails the criteria for the issue it omits | model |
+| `rubric_tests` | The rubric is unit-tested: gold answer passes everything, a blank answer passes nothing, the flawed answer fails exactly the criteria for the issue it omits and passes the rest | model |
 | `decontamination` | Word 8-gram containment against reference benchmarks (e.g. a LAB clone) stays under the threshold | deterministic |
 | `solver_check` | A solver that never sees the ledger attempts the task several times. Rejected if it passes without the documents (the instruction leaks the answer), if it never passes (probably broken) or if it always passes (too easy) | model |
 

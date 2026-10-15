@@ -129,7 +129,8 @@ def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms
 
 
 def rubric_tests(client: ModelClient, rubric: Rubric, answers: Answers) -> GateResult:
-    """A rubric is code, so unit-test it: gold passes all, blank passes none, flawed fails where it should."""
+    """A rubric is code, so unit-test it: gold passes all, blank passes none, and the flawed answer fails
+    exactly the criteria for the issue it omits (anything else it fails means a criterion is not specific)."""
     gold = judge(client, answers.gold, rubric)
     blank = judge(client, "", rubric)
     flawed = judge(client, answers.flawed, rubric)
@@ -139,8 +140,9 @@ def rubric_tests(client: ModelClient, rubric: Rubric, answers: Answers) -> GateR
     blank_passes = [c for c in graded_on_blank if blank[c]]
     should_fail = [c.id for c in rubric.criteria if c.kind == "issue" and c.source in answers.flawed_omits]
     flawed_wrongly_passes = [c for c in should_fail if flawed[c]]
+    flawed_wrongly_fails = [c for c, ok in flawed.items() if not ok and c not in should_fail]
 
-    passed = not gold_fails and not blank_passes and bool(should_fail) and not flawed_wrongly_passes
+    passed = not gold_fails and not blank_passes and bool(should_fail) and not flawed_wrongly_passes and not flawed_wrongly_fails
     return GateResult(
         "rubric_tests",
         passed,
@@ -149,6 +151,7 @@ def rubric_tests(client: ModelClient, rubric: Rubric, answers: Answers) -> GateR
             "blank_passes": blank_passes,
             "flawed_should_fail": should_fail,
             "flawed_wrongly_passes": flawed_wrongly_passes,
+            "flawed_wrongly_fails": flawed_wrongly_fails,
         },
     )
 

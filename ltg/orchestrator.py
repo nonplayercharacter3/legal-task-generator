@@ -67,7 +67,7 @@ def _write(path: Path, data) -> None:
 
 def _first_reason(g: gates.GateResult) -> str:
     d = g.details
-    for key in ("reason", "errors", "mismatches", "missing", "hits", "html_comments", "gold_fails", "blank_passes", "flawed_wrongly_passes", "flagged"):
+    for key in ("reason", "errors", "mismatches", "missing", "hits", "html_comments", "gold_fails", "blank_passes", "flawed_wrongly_passes", "flawed_wrongly_fails", "flagged"):
         if d.get(key):
             v = d[key]
             return v if isinstance(v, str) else f"{key}: {json.dumps(v)[:300]}"
