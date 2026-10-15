@@ -7,6 +7,7 @@
 n_matters = 3
 seed = 1
 out_dir = "runs/first_real"
+concurrency = 4                     # matters in flight at once; match it to what the server can batch
 
 [backend]
 kind = "openai_compat"

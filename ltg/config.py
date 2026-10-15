@@ -14,6 +14,7 @@ class RunCfg:
     n_matters: int = 5
     seed: int = 7
     out_dir: str = "runs/demo"
+    concurrency: int = 4  # matters in flight at once; each matter's own calls stay in order
 
 
 @dataclass

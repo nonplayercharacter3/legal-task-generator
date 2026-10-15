@@ -17,6 +17,7 @@ import json
 import random
 import shutil
 import traceback
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
 
@@ -191,7 +192,8 @@ class Pipeline:
         stale = sorted(p.name for f in ("accepted", "rejected") if (out / f).is_dir() for p in (out / f).iterdir() if p.name not in ids)
         if stale:  # refuse rather than delete: accepted/ must match this run's report
             raise FileExistsError(f"{out} holds matters from another run ({', '.join(stale[:3])}, ...); use a new --out or delete it")
-        results = [self.run_matter(s, out) for s in specs]
+        with ThreadPoolExecutor(max_workers=max(1, self.cfg.run.concurrency)) as pool:  # matters are independent
+            results = list(pool.map(lambda s: self.run_matter(s, out), specs))
         shutil.rmtree(out / "work", ignore_errors=True)
         report = build_report(results, self.log, self.cfg)
         _write(out / "report.json", report)

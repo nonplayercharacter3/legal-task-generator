@@ -211,3 +211,32 @@ def test_judge_without_hints_and_exported_rubric_matches_what_was_judged(tmp_pat
         assert sent is hints
         task = read_json(next((tmp_path / str(hints) / "accepted").iterdir()) / "task.json")
         assert all(bool(c["hints"]) is hints for c in task["rubric"] if c["kind"] != "negative")
+
+
+def test_matters_run_concurrently_with_the_same_results(tmp_path):
+    import threading
+    import time
+
+    class Slow(FakeModel):
+        def __init__(self, *a, **kw):
+            super().__init__(*a, **kw)
+            self.lock, self.active, self.peak = threading.Lock(), 0, 0
+
+        def complete(self, role, system, user):
+            with self.lock:
+                self.active += 1
+                self.peak = max(self.peak, self.active)
+            time.sleep(0.002)
+            try:
+                return super().complete(role, system, user)
+            finally:
+                with self.lock:
+                    self.active -= 1
+
+    reps = {}
+    for k in (1, 4):
+        cfg = load_config(None, {"run": {"out_dir": str(tmp_path / str(k)), "n_matters": 6, "seed": 7, "concurrency": k}})
+        slow = Slow(seed=7)
+        reps[k] = Pipeline(cfg, client=slow).run()
+        assert (slow.peak > 1) is (k > 1)
+    assert reps[1]["matters"] == reps[4]["matters"]
