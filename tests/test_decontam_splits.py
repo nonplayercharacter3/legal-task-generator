@@ -107,3 +107,16 @@ def test_wording_shared_by_two_tasks_is_not_a_match(tmp_path):
     BloomIndex.from_dirs([str(tmp_path / "ref")], bits=2**20, n=8, group_depth=3, cache_dir=cache)
     again = BloomIndex.from_dirs([str(tmp_path / "ref")], bits=2**20, n=8, group_depth=3, cache_dir=cache)
     assert again.containment(boiler) < 0.1 and again.containment(REFERENCE) == 1.0
+
+
+def test_index_command_builds_and_saves_the_reference_index(tmp_path, capsys):
+    from ltg.cli import main
+
+    (tmp_path / "ref").mkdir()
+    (tmp_path / "ref" / "a.txt").write_text(REFERENCE)
+    cfg = tmp_path / "c.toml"
+    cfg.write_text(f'[gates]\nreference_dirs = ["{tmp_path / "ref"}"]\ndecontam_bloom_bits = 1048576\n'
+                   f'decontam_cache_dir = "{tmp_path / "cache"}"\n')
+    assert main(["index", "--config", str(cfg)]) == 0
+    assert "reference index ready" in capsys.readouterr().out
+    assert len(list((tmp_path / "cache").iterdir())) == 1

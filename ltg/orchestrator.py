@@ -22,7 +22,7 @@ from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
 
 from . import gates, stages
-from .config import Config, build_client
+from .config import Config, GatesCfg, build_client
 from .decontam import BloomIndex
 from .models import CallLog, ModelClient
 from .schema import Ledger, MatterSpec, Rubric
@@ -75,18 +75,21 @@ def _first_reason(g: gates.GateResult) -> str:
     return "failed"
 
 
+def reference_index(g: GatesCfg) -> BloomIndex | None:
+    """The benchmark index the decontamination gate screens against, or None when no reference folder is set."""
+    if not g.reference_dirs:
+        return None
+    return BloomIndex.from_dirs(g.reference_dirs, bits=g.decontam_bloom_bits, n=g.decontam_ngram,
+                                cache_dir=g.decontam_cache_dir or None, group_depth=g.decontam_group_depth)
+
+
 class Pipeline:
     def __init__(self, cfg: Config, client: ModelClient | None = None, log: CallLog | None = None) -> None:
         self.cfg = cfg
         self.log = log if log is not None else getattr(client, "log", None) or CallLog()
         self.client = client or build_client(cfg, self.log)
         self.precedents = load_precedents(cfg.sources.precedent_dirs or None)
-        g = cfg.gates
-        self.index = (
-            BloomIndex.from_dirs(g.reference_dirs, bits=g.decontam_bloom_bits, n=g.decontam_ngram, cache_dir=g.decontam_cache_dir or None,
-                                group_depth=g.decontam_group_depth)
-            if g.reference_dirs else None
-        )
+        self.index = reference_index(cfg.gates)
 
     # ------------------------------------------------------------ one matter
 
