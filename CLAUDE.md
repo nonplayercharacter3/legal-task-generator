@@ -27,10 +27,10 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   direct API calls. For GPUs, Nautilus; ask Li Zhang for access. The runtime stays standard library only: the SDK
   is an optional extra (`pip install -e ".[claude]"`) imported only by that backend.
 
-## Current status (2026-10-14)
+## Current status (2026-10-18)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 70 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+- 74 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
   was mutation-checked on 2026-10-14: disabling it makes a test fail.
 - First real-model runs (2026-10-15, Claude Sonnet through the Agent SDK, one matter each, seed 1):
   runs 1 to 3 were rejected at `consistency`, each exposing a gap the fake model hid (exact string matching, facts
@@ -50,6 +50,18 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   issue verifier that saw only one document while the issue depended on a letter of intent in another; and a
   distractor drafted without seeing the order form, so their part numbers disagreed. Fixed in the next commit;
   not yet rerun. 66 calls, ~323k input and ~120k output tokens, ~16 minutes of model time, no errors.
+- Cloud pilot (2026-10-18, five rounds of 3 matters, Opus generating, seeds 1 to 5, results under `runs/cloud_pilot*`
+  on branch `claude/wonderful-bardeen-ecwx4o`; round 1 is on `pilot-results/cloud-opus-1`): **phase 1 standard met
+  in round 5**, 2 of 3 accepted (solver pass rates 0.67 and 0.33), both read in full against the checklist.
+  Accepted by round: 0, 1, 1, 0, 2. Defect classes fixed between rounds, one commit each: negative criteria that
+  punished comments on distractors; fact keys not tied to an instrument (an NDA's own Effective Date); an
+  instruction writer guessing document contents, the governing law and how to review; planted issues defused by
+  their own drafting; one issue moving several facts (governing law and forum); added drafting detail around a
+  fact (customary definition items, a fallback court); deadlines tied to "today"; detect terms that were document
+  names; an issue verifier not told who the client is (last fix, not yet run).
+  Rounds 2 to 4 used Sonnet as solver, which found every planted issue in 3 of 6 sound tasks; from round 5 Haiku
+  solves (Syrena's decision), as the closer reference for the open models the lab trains. 847 calls, ~11.9M input
+  and ~2.1M output tokens over the five rounds, no errors, no usage limit hit.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 
