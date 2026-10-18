@@ -42,7 +42,9 @@ Rules:
 - A fact records what the documents actually say. If a planted issue makes a document depart from the deal (for
   example exclusivity broader than agreed), do not record the agreed term as a fact of that document; record it
   only in a document that states it correctly (a term sheet, an email) and set the issue's `contradicts` to it.
-- `detect_terms` are 1 to 3 short phrases that the drafted clause will contain verbatim.
+- `detect_terms` are 1 to 3 short phrases that the drafted clause will contain verbatim. Take them from the flawed
+  wording itself, never a document title, schedule or section name ("Schedule 3.4", "Notice of Disagreement"): the
+  filenames and the instruction name documents, and leak_check rejects any multi-word term found there.
 - `expected_finding` is one sentence saying what a competent associate should conclude.
 - If an issue works by stating a fact differently in its document (for example a conflicting governing law),
   set `contradicts` to that fact's id; that fact must be stated in a DIFFERENT document. If the issue moves
