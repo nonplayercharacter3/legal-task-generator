@@ -24,7 +24,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 - **Skeleton first, costing later.** Pengtao approved a preliminary implementation. No cost modeling yet.
 - **Backends.** Any OpenAI-compatible endpoint, or Claude through the Claude Agent SDK (`backend.kind = "claude_sdk"`).
   Pengtao's direction (2026-10-15): for Claude, use the $100/month subscription through the SDK (reimbursed), never
-  direct API calls. For GPUs, Nautilus; ask Li Zhang for access. The runtime stays standard library only: the SDK
+  direct API calls. For GPUs, Nautilus (namespace `ecepxie`, see Current status). The runtime stays standard library only: the SDK
   is an optional extra (`pip install -e ".[claude]"`) imported only by that backend.
 
 ## Current status (2026-10-18)
@@ -62,6 +62,14 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   Rounds 2 to 4 used Sonnet as solver, which found every planted issue in 3 of 6 sound tasks; from round 5 Haiku
   solves (Sirui She's decision), as the closer reference for the open models the lab trains. 847 calls, ~11.9M input
   and ~2.1M output tokens over the five rounds, no errors, no usage limit hit.
+- Nautilus (2026-10-18): Sirui She can read the lab namespace `ecepxie` through kubectl with UCSD login
+  (`~/.kube/config` from https://nrp.ai/config; never commit it or any token). Read-only checks only, nothing run yet.
+  **New pods are blocked:** the unscoped quota `reached-quota` is set to `pods: 0` (it was 200), most likely an NRP
+  admin freeze. Ask Li Zhang or the NRP admins why and how to lift it before planning GPU work. Once lifted, the
+  namespace may hold up to 12 A100s at once, requested as `nvidia.com/a100` (opportunistic pods excepted), and no
+  H100, H200 or GH200 (quota 0). The cluster lists 31 nodes with whole A100 80GB cards (22 SXM4, 9 PCIe; most at
+  SDSC, SDSU, Missouri); counts are nodes, not cards. Plan: serve a ~8B Qwen with vLLM first, then ~30B, then
+  fine-tune.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 
