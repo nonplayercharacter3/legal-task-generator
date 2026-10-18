@@ -89,10 +89,9 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   the laptop's Claude Code login. In the cloud, the environment's setup script runs `scripts/cloud_setup.sh`, which does
   the same in the background and logs to `/tmp/lab-index.log`; the environment allows `ellm.nrp-nautilus.io` and sets
   `NRP_LLM_API_KEY`. Then: `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml --seed <new> --out runs/<name>`.
-- Open check (2026-10-18): the grouped LAB index (`decontam_group_depth = 3`) has not been verified yet. The ungrouped
-  one matched LAB excerpts at 1.000 but scored our accepted documents 0.31 to 0.56 on shared boilerplate. After the
-  first grouped build, run `scripts/check_lab_index.py`: LAB excerpts should stay near 1.0 and our tasks fall well
-  below 0.5. If they do not, look at which phrases still match before changing the threshold.
+- Grouped LAB index verified (2026-10-18, built by `scripts/cloud_setup.sh` in 41 minutes, 419M n-grams, 1.5% false
+  positives): LAB excerpts score 0.97 to 1.00, our 4 accepted tasks 0.05 to 0.10 (ungrouped: 0.31 to 0.56, one over
+  the 0.5 cutoff). `scripts/check_lab_index.py` repeats this check.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 
