@@ -1,0 +1,134 @@
+{
+  "matter_id": "s2-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.333,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 7,
+        "checked": 44
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.4(c): \"The limitations set forth in Section 9.4(a) and Section 9.4(b) shall not apply to any claim under Section 9.2(a), or to any claim arising from fraud.\" Section 9.2(a) covers \"any breach of or inaccuracy in any representation or warranty made by Seller in this Agreement.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 9.3 of the TSA: \"This Agreement, and all claims or causes of action arising out of or relating to this Agreement or the Services, shall be governed by and construed in accordance with the laws of the State of Delaware ... Each Party irrevocably submits to the exclusive jurisdiction of the courts of the State of Delaware for any action arising out of or relating to this Agreement or the Services.\" Compare APA Sections 10.8–10.9, which choose New York law and the exclusive jurisdiction of New York County courts. APA Section 10.12 provides that \"each Ancillary Agreement controls as to its specific subject matter.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 1.1(b): \"'Purchased Assets' means all of Seller's right, title and interest in, to and under all assets, properties and rights of every kind and nature, whether real, personal or mixed, tangible or intangible, wherever located, used or held for use in the Business.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "skipped": "no reference_dirs configured"
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2"
+            ],
+            "steps": 12,
+            "files_opened": [
+              "asset_purchase_agreement.md",
+              "bill_of_sale.md",
+              "escrow_agreement.md",
+              "transition_services_agreement.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2"
+            ],
+            "steps": 12,
+            "files_opened": [
+              "asset_purchase_agreement.md",
+              "bill_of_sale.md",
+              "escrow_agreement.md",
+              "transition_services_agreement.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 12,
+            "files_opened": [
+              "asset_purchase_agreement.md",
+              "bill_of_sale.md",
+              "escrow_agreement.md",
+              "transition_services_agreement.md"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

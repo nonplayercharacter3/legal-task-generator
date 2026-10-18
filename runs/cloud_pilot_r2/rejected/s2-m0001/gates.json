@@ -1,0 +1,48 @@
+{
+  "matter_id": "s2-m0001",
+  "accepted": false,
+  "failed_gate": "consistency",
+  "reason": "mismatches: [{\"fact\": \"F2\", \"key\": \"Licensed Software\", \"filename\": \"software_license_agreement.md\", \"ledger\": \"Corvane Ledger Platform, version 7.x, in object code form\", \"document\": \"Corvane Ledger Platform, version 7.x, in object code form, together with any Updates provided to Licensee under the Support Add",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": false,
+      "details": {
+        "mismatches": [
+          {
+            "fact": "F2",
+            "key": "Licensed Software",
+            "filename": "software_license_agreement.md",
+            "ledger": "Corvane Ledger Platform, version 7.x, in object code form",
+            "document": "Corvane Ledger Platform, version 7.x, in object code form, together with any Updates provided to Licensee under the Support Addendum, and the related Documentation"
+          },
+          {
+            "fact": "F2",
+            "key": "Licensed Software",
+            "filename": "order_form_no_1.md",
+            "ledger": "Corvane Ledger Platform, version 7.x, in object code form",
+            "document": "Corvane Ledger Platform, version 7.x, in object code form, together with the related Documentation and any Updates provided under the Support Addendum"
+          },
+          {
+            "fact": "F5",
+            "key": "License Agreement exclusive forum",
+            "filename": "order_form_no_1.md",
+            "ledger": "state or federal courts located in New Castle County, Delaware",
+            "document": "the state or federal courts located in New York County, New York"
+          }
+        ],
+        "reworded": 4,
+        "checked": 50
+      }
+    }
+  ]
+}

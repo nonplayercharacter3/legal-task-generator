@@ -1,0 +1,168 @@
+{
+  "matter_id": "s2-m0001",
+  "summary": "Our client, Halvorsen Analytics, Inc., is the licensor. It is licensing its on-premises Corvane Ledger Platform to Brightmoor Logistics Group LLC under a Software License Agreement, an Order Form, a Support and Maintenance Addendum, a prior Mutual NDA and an Implementation Statement of Work. The folder contains three problems for the client. The Order Form, which sits at the top of the order of precedence, replaces the Agreement's Delaware law and forum with New York. The Agreement lets the licensee assign freely, including to a competitor of the licensor. The Support Addendum redefines 'Authorized Users' more broadly than the Agreement, and because the Addendum outranks the Agreement, the broader definition widens both support obligations and the user base.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Halvorsen Analytics, Inc.",
+      "role": "Licensor (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Brightmoor Logistics Group LLC",
+      "role": "Licensee"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "March 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Licensed Software",
+      "value": "Corvane Ledger Platform, version 7.x, in object code form",
+      "doc": "D1",
+      "section": "1.8"
+    },
+    {
+      "id": "F3",
+      "key": "Authorized Users definition (License Agreement)",
+      "value": "individual employees of Licensee only",
+      "doc": "D1",
+      "section": "1.3"
+    },
+    {
+      "id": "F4",
+      "key": "License Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "15.1"
+    },
+    {
+      "id": "F5",
+      "key": "License Agreement exclusive forum",
+      "value": "state or federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "15.2"
+    },
+    {
+      "id": "F6",
+      "key": "License Agreement Initial Term",
+      "value": "three (3) years from the License Agreement Effective Date",
+      "doc": "D1",
+      "section": "10.1"
+    },
+    {
+      "id": "F7",
+      "key": "Invoice payment terms",
+      "value": "net thirty (30) days from invoice date",
+      "doc": "D1",
+      "section": "5.2"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "Order Form, then Support and Maintenance Addendum, then Software License Agreement",
+      "doc": "D1",
+      "section": "16.4"
+    },
+    {
+      "id": "F9",
+      "key": "Order Form No. 1 annual license fee",
+      "value": "USD 480,000 per year",
+      "doc": "D2",
+      "section": "2"
+    },
+    {
+      "id": "F10",
+      "key": "Order Form No. 1 Authorized User cap",
+      "value": "250 named Authorized Users",
+      "doc": "D2",
+      "section": "1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "software_license_agreement.md",
+      "kind": "Software License Agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "order_form_no_1.md",
+      "kind": "Order Form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "support_and_maintenance_addendum.md",
+      "kind": "Support and Maintenance Addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "mutual_nda_2025.md",
+      "kind": "Mutual Nondisclosure Agreement (pre-signing, Delaware law, consistent with D1)",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D5",
+      "filename": "implementation_sow.md",
+      "kind": "Implementation Statement of Work",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Order Form No. 1, Section 7 (Additional Terms), states that the Order Form 'and the Agreement' are governed by New York law and that disputes go exclusively to courts in New York County. Under the Agreement's own order of precedence (F8), the Order Form controls over the Agreement. The New York clause therefore displaces the Delaware law and forum that the client negotiated in Agreement Sections 15.1 and 15.2, and at minimum creates a conflict that invites forum litigation.",
+      "doc": "D2",
+      "section": "7",
+      "detect_terms": [
+        "laws of the State of New York",
+        "New York County"
+      ],
+      "expected_finding": "Because the Order Form outranks the Agreement, its New York governing law and forum clause overrides the Agreement's Delaware choice. It should be deleted, or conformed to Delaware law and New Castle County, Delaware courts.",
+      "contradicts": "F4"
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Agreement Section 14.2 lets the Licensee assign the Agreement and its licenses, in whole or in part, without Licensor's consent, including by merger, change of control or sale of assets. Nothing excludes competitors of the Licensor. Licensor's own right to assign requires Licensee consent. Delaware enforces the contract as written, so this express permission overrides the default rule that a nonexclusive software license is not transferable without the licensor's consent. As drafted, a Halvorsen competitor could acquire the license, the confidential documentation and the support access.",
+      "doc": "D1",
+      "section": "14.2",
+      "detect_terms": [
+        "without the consent of Licensor",
+        "including to any successor"
+      ],
+      "expected_finding": "Licensee can freely assign the license, including to a Halvorsen competitor. Section 14.2 should require Licensor's prior written consent, carve out assignments to competitors, and give Licensor a termination right on a change of control.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Support Addendum Section 1.1 defines 'Authorized Users' as employees, contractors and agents of Licensee and its Affiliates. The Agreement limits Authorized Users to individual employees of Licensee (F3). The Addendum ranks above the Agreement in the order of precedence, so the broader definition arguably governs. That would extend Licensor's support and SLA obligations, and the population of permitted users, to third-party contractors and Affiliates that were never priced into the license fee or the user cap.",
+      "doc": "D3",
+      "section": "1.1",
+      "detect_terms": [
+        "contractors and agents of Licensee and its Affiliates"
+      ],
+      "expected_finding": "The Addendum's broader 'Authorized Users' definition conflicts with the Agreement and, because the Addendum outranks the Agreement, expands license and support scope to contractors and Affiliates. The Addendum should cross-refer to the Agreement's definition instead.",
+      "contradicts": "F3"
+    }
+  ]
+}

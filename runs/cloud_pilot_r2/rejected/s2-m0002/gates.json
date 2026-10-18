@@ -1,0 +1,144 @@
+{
+  "matter_id": "s2-m0002",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "every attempt passed: too easy to carry training signal",
+  "split": null,
+  "solver_pass_rate": 1.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 6,
+        "checked": 45
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"During the Term, Customer appoints Provider as Customer's exclusive provider of all warehousing, freight transportation and delivery services required by Customer and its Affiliates throughout the United States. During the Term, Customer shall not, and shall cause its Affiliates not to, engage, contract with or use any third party to perform, or perform itself, any warehousing, freight transportation or delivery services throughout the United States.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 11.3: \"The limitations in Sections 11.1 and 11.2 shall not apply to Customer's obligations under Section 10.2, which shall apply without limitation.\" Section 10.2 requires Customer to indemnify Provider against \"any third-party claim arising out of or relating to (a) Customer Goods, including any claim that Customer Goods are defective, unsafe or infringe any third-party right, (b) any Customer premises or end-customer premises at which Provider performs Services, or (c) Customer's use of the Services.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "DPA §9.1: \"This DPA and any dispute arising out of or relating to it, including any dispute relating to the Processing of Personal Data or any Security Incident, shall be governed by and construed in accordance with the laws of the State of Delaware ... Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Wilmington, Delaware.\" The MSA §18.1 instead selects \"New York law\" and \"the exclusive jurisdiction of the state and federal courts in New York County, New York,\" and MSA §2.3 says: \"the following order of precedence shall apply: the Data Processing Addendum, then this Agreement, then the Statement of Work.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 14.2: \"On expiry of the Initial Term, this Agreement shall automatically renew for successive renewal terms of three (3) years each ... unless either Party delivers written notice of non-renewal to the other Party during the fifteen (15) day period ending one hundred twenty (120) days before the expiry of the then-current Initial Term or Renewal Term. Notice of non-renewal delivered at any other time shall be of no effect.\""
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "SOW Section 8.2: \"Provider may assign, delegate or otherwise transfer this SOW, and any of its rights and obligations under this SOW and under the Agreement, in whole or in part, to any third party, without Customer's consent.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "skipped": "no reference_dirs configured"
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "runs": [
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 14,
+            "files_opened": [
+              "data_processing_addendum.md",
+              "insurance_certificate_cover_letter.md",
+              "master_services_agreement_draft.md",
+              "sow_no1_warehousing_last_mile.md",
+              "term_sheet_signed_2026-09-22.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 14,
+            "files_opened": [
+              "data_processing_addendum.md",
+              "insurance_certificate_cover_letter.md",
+              "master_services_agreement_draft.md",
+              "sow_no1_warehousing_last_mile.md",
+              "term_sheet_signed_2026-09-22.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 14,
+            "files_opened": [
+              "data_processing_addendum.md",
+              "insurance_certificate_cover_letter.md",
+              "master_services_agreement_draft.md",
+              "sow_no1_warehousing_last_mile.md",
+              "term_sheet_signed_2026-09-22.md"
+            ]
+          }
+        ],
+        "reason": "every attempt passed: too easy to carry training signal"
+      }
+    }
+  ]
+}
