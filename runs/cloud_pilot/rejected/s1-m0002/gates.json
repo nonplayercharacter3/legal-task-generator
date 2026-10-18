@@ -1,0 +1,142 @@
+{
+  "matter_id": "s1-m0002",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "no attempt passed: task is probably broken or too hard",
+  "split": null,
+  "solver_pass_rate": 0.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 5,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 6 lists conditions (a) through (i), including \"(a) completion of Buyer's due diligence with results satisfactory to Buyer in its sole discretion;\" and \"(h) repayment in full at Closing of the Company's revolving credit facility and release of all related liens.\" None of them requires Brightwater's consent. Section 1.1 provides that \"Buyer will purchase from the Sellers ... 100% of the membership interests in the Company.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "For purposes of this Section 3, Section 4 and Section 5 of this Amendment No. 1, \"**Products**\" means all goods offered by Supplier from time to time, including spare parts and accessories, whether or not listed in Exhibit A to the Agreement."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Under Section 2.2 of the Agreement, Distributor hereby exercises its option to renew the Agreement for one additional term of three (3) years (the Renewal Term). The Renewal Term begins upon the expiration of the Initial Term on December 31, 2026."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "skipped": "no reference_dirs configured"
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2",
+              "C9"
+            ],
+            "steps": 14,
+            "files_opened": [
+              "amendment_no1_distribution_agreement.md",
+              "distribution_agreement_halvorsen_brightwater.md",
+              "letter_of_intent_corvane_acquisition.md",
+              "renewal_notice_letter_2026-10-15.md",
+              "warehouse_services_agreement_tidemark.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C9"
+            ],
+            "steps": 14,
+            "files_opened": [
+              "amendment_no1_distribution_agreement.md",
+              "distribution_agreement_halvorsen_brightwater.md",
+              "letter_of_intent_corvane_acquisition.md",
+              "renewal_notice_letter_2026-10-15.md",
+              "warehouse_services_agreement_tidemark.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2",
+              "C9"
+            ],
+            "steps": 13,
+            "files_opened": [
+              "amendment_no1_distribution_agreement.md",
+              "distribution_agreement_halvorsen_brightwater.md",
+              "letter_of_intent_corvane_acquisition.md",
+              "renewal_notice_letter_2026-10-15.md",
+              "warehouse_services_agreement_tidemark.md"
+            ]
+          }
+        ],
+        "reason": "no attempt passed: task is probably broken or too hard"
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 0,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 2,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 2
+    },
+    "solver_check": {
+      "evaluated": 2,
+      "passed": 0,
+      "failed": 2,
+      "skipped": 0
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s1-m0001",
+      "accepted": false,
+      "failed_gate": "consistency",
+      "reason": "mismatches: [{\"fact\": \"F1\", \"key\": \"Effective Date\", \"filename\": \"mutual_nda.md\", \"ledger\": \"March 1, 2027\", \"document\": \"October 5, 2026\"}]",
+      "split": null,
+      "solver_pass_rate": null
+    },
+    {
+      "matter_id": "s1-m0002",
+      "accepted": false,
+      "failed_gate": "solver_check",
+      "reason": "no attempt passed: task is probably broken or too hard",
+      "split": null,
+      "solver_pass_rate": 0.0
+    },
+    {
+      "matter_id": "s1-m0003",
+      "accepted": false,
+      "failed_gate": "solver_check",
+      "reason": "no attempt passed: task is probably broken or too hard",
+      "split": null,
+      "solver_pass_rate": 0.0
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 8356,
+      "output_tokens": 12146,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 12,
+      "input_tokens": 161057,
+      "output_tokens": 64362,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 70080,
+      "output_tokens": 6712,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4380,
+      "output_tokens": 940,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 7,
+      "input_tokens": 153408,
+      "output_tokens": 2773,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 2,
+      "input_tokens": 2762,
+      "output_tokens": 758,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 2,
+      "input_tokens": 9040,
+      "output_tokens": 3686,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 4,
+      "input_tokens": 108606,
+      "output_tokens": 27457,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 14,
+      "input_tokens": 124137,
+      "output_tokens": 13689,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 101,
+      "input_tokens": 1176399,
+      "output_tokens": 148079,
+      "errors": 0
+    }
+  }
+}

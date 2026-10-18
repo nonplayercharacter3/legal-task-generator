@@ -1,0 +1,139 @@
+{
+  "matter_id": "s1-m0003",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "no attempt passed: task is probably broken or too hard",
+  "split": null,
+  "solver_pass_rate": 0.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 5,
+        "checked": 27
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Supplier may assign this Agreement, in whole or in part, without the consent of Customer, to any person, and may delegate any of its obligations under this Agreement to any Affiliate or subcontractor."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 15.3: \"Any Change of Control of Customer, including by merger in which Customer is the surviving entity, shall be deemed an assignment of this Agreement by Customer requiring the prior written consent of Supplier under Section 15.2. If a Change of Control of Customer occurs without the prior written consent of Supplier, Supplier may, at any time within one hundred eighty (180) days after it learns of the Change of Control, terminate this Agreement on thirty (30) days' written notice to Customer. In that event, the unpaid balance of the minimum annual purchase commitment under the Order Form for the remainder of the then-current term shall become immediately due and payable by Customer.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "11.4 Customer Indemnity. Notwithstanding Section 11.2 or Section 11.1, Customer's obligations under Section 10.2 shall not be subject to any limitation of liability or exclusion of damages set out in this Agreement."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "At the end of the Initial Term, the Master Supply Agreement and this Order Form shall automatically renew for successive five (5) year Renewal Terms (each, a \"Renewal Term\")... A notice of non-renewal is effective only if it is delivered in accordance with Section 16 of the Master Supply Agreement no earlier than sixty (60) days and no later than thirty (30) days before the end of the Initial Term or the then-current Renewal Term. A notice delivered outside that period is of no effect... all terms of this Order Form, including the minimum annual purchase commitment in Section 3.1 and the pricing mechanism in Section 4, shall apply during each Renewal Term."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "skipped": "no reference_dirs configured"
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C10"
+            ],
+            "steps": 9,
+            "files_opened": [
+              "master_supply_agreement.md",
+              "order_form_no1.md",
+              "quality_agreement.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C10"
+            ],
+            "steps": 9,
+            "files_opened": [
+              "master_supply_agreement.md",
+              "order_form_no1.md",
+              "quality_agreement.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C10"
+            ],
+            "steps": 9,
+            "files_opened": [
+              "master_supply_agreement.md",
+              "order_form_no1.md",
+              "quality_agreement.md"
+            ]
+          }
+        ],
+        "reason": "no attempt passed: task is probably broken or too hard"
+      }
+    }
+  ]
+}

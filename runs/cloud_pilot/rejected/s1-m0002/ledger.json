@@ -1,0 +1,178 @@
+{
+  "matter_id": "s1-m0002",
+  "summary": "Halvorsen Coffee Distribution LLC (client) is the exclusive distributor of Brightwater Espresso Systems Inc. commercial espresso machines under a New York-law distribution agreement. Corvane Hospitality Partners has signed a letter of intent to buy all of Halvorsen's membership interests. The partner wants an issue-spotting memo on the distribution package before the deal proceeds. The memo should cover the distribution agreement, Amendment No. 1, the acquisition LOI, Halvorsen's renewal notice letter, and an unrelated warehouse services agreement.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Halvorsen Coffee Distribution LLC",
+      "role": "Distributor and firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Brightwater Espresso Systems Inc.",
+      "role": "Supplier and manufacturer"
+    },
+    {
+      "id": "P3",
+      "name": "Corvane Hospitality Partners LLC",
+      "role": "Proposed acquirer of the Distributor under the letter of intent"
+    },
+    {
+      "id": "P4",
+      "name": "Tidemark Logistics LLC",
+      "role": "Third-party warehouse provider to the Distributor"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "January 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Initial Term expiry",
+      "value": "December 31, 2026",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Renewal option notice deadline",
+      "value": "written notice at least 90 days before Initial Term expiry",
+      "doc": "D1",
+      "section": "2.2"
+    },
+    {
+      "id": "F4",
+      "key": "Products definition",
+      "value": "the commercial espresso machines listed in Exhibit A",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F5",
+      "key": "Territory",
+      "value": "New York, New Jersey and Connecticut",
+      "doc": "D1",
+      "section": "1.2"
+    },
+    {
+      "id": "F6",
+      "key": "Governing law",
+      "value": "New York",
+      "doc": "D1",
+      "section": "18.1"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "Amendment No. 1, then the Agreement body, then the Exhibits",
+      "doc": "D1",
+      "section": "19.2"
+    },
+    {
+      "id": "F8",
+      "key": "Annual minimum purchase commitment",
+      "value": "$2,400,000",
+      "doc": "D2",
+      "section": "3.1"
+    },
+    {
+      "id": "F9",
+      "key": "Target closing date of acquisition",
+      "value": "November 30, 2026",
+      "doc": "D3",
+      "section": "4"
+    },
+    {
+      "id": "F10",
+      "key": "Date of Distributor's renewal notice letter",
+      "value": "October 15, 2026",
+      "doc": "D4",
+      "section": "Letterhead/date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement_halvorsen_brightwater.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_no1_distribution_agreement.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D3",
+      "filename": "letter_of_intent_corvane_acquisition.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "renewal_notice_letter_2026-10-15.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "warehouse_services_agreement_tidemark.md",
+      "kind": "warehouse services agreement",
+      "distractor": true,
+      "precedent": "sample_supply_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 14.2 of D1 treats any transfer of more than 50% of the Distributor's equity as an assignment. That requires Brightwater's prior written consent, and failing to get it lets Brightwater terminate. The LOI provides for Corvane to buy 100% of Halvorsen's membership interests. Its closing conditions do not include obtaining Brightwater's consent, and nobody has requested that consent.",
+      "doc": "D3",
+      "section": "6 (Conditions to Closing)",
+      "detect_terms": [
+        "100% of the membership interests",
+        "Conditions to Closing"
+      ],
+      "expected_finding": "The proposed sale of all of Halvorsen's membership interests triggers Brightwater's change of control consent right under D1 §14.2. The consent should be obtained before closing and added as a closing condition in the LOI and definitive agreement, or the client risks termination of its core distribution rights.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 §1.1 defines \"Products\" as the espresso machines listed in Exhibit A. Section 3.1 of Amendment No. 1 sets the annual minimum purchase commitment and redefines \"Products\" for that purpose as all goods Supplier offers, including spare parts and accessories. Amendment No. 1 prevails under the order of precedence. As a result, the client's minimum purchase obligation, and the related default and termination exposure, now measure against a different and broader product set than its exclusive distribution rights.",
+      "doc": "D2",
+      "section": "3.1",
+      "detect_terms": [
+        "including spare parts and accessories",
+        "all goods offered by Supplier"
+      ],
+      "expected_finding": "Amendment No. 1 uses \"Products\" inconsistently with the Agreement's definition, and it controls under the precedence clause. The client's $2,400,000 minimum purchase commitment and exclusivity therefore cover different scopes, which should be conformed by a corrective amendment.",
+      "contradicts": "F4"
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under D1 §2.2, the Distributor must exercise its renewal option by written notice at least 90 days before the Initial Term expires on December 31, 2026, which means by October 2, 2026. Halvorsen's renewal notice letter is dated October 15, 2026, after that window closed.",
+      "doc": "D4",
+      "section": "Paragraph 1",
+      "detect_terms": [
+        "hereby exercises its option to renew"
+      ],
+      "expected_finding": "Halvorsen's October 15, 2026 renewal notice missed the October 2, 2026 deadline under D1 §2.2, so the renewal option has likely lapsed under New York's strict enforcement of option notice deadlines. Brightwater's written agreement to renew or a waiver should be sought, preferably together with the change of control consent.",
+      "contradicts": null
+    }
+  ]
+}

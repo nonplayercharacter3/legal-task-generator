@@ -1,0 +1,178 @@
+{
+  "matter_id": "s1-m0001",
+  "summary": "Halvorsen Fluid Systems, Inc. (client, buyer) is reviewing a supply agreement with Brightwater Polymer Works LLC for industrial hydraulic seals and related parts, together with the parties' non-binding term sheet, a First Amendment circulated by the supplier, and a pre-existing mutual NDA. The partner wants an issue-spotting memo under New York law before signature. Four issues are planted across the main agreement and the amendment. First, the agreement's exclusivity is broader than the term sheet deal. Second, the supplier may assign the agreement freely, including through an asset sale to a competitor. Third, the amendment redefines \"Products\" to drop replacement parts, which narrows the warranty. Fourth, the amendment removes the indemnification carve-out from the liability cap.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Halvorsen Fluid Systems, Inc.",
+      "role": "Customer / buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Brightwater Polymer Works LLC",
+      "role": "Supplier / seller (counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Effective Date",
+      "value": "March 1, 2027",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Initial Term",
+      "value": "36 months from the Effective Date",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "19.1"
+    },
+    {
+      "id": "F4",
+      "key": "Payment terms",
+      "value": "Undisputed invoices due within 45 days of receipt",
+      "doc": "D1",
+      "section": "4.2"
+    },
+    {
+      "id": "F5",
+      "key": "Liability cap",
+      "value": "amounts paid by Customer in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F6",
+      "key": "Liability cap carve-outs",
+      "value": "Indemnification obligations under Section 11 and breach of confidentiality under Section 14",
+      "doc": "D1",
+      "section": "12.3"
+    },
+    {
+      "id": "F7",
+      "key": "Products definition",
+      "value": "Hydraulic seals, gaskets and replacement parts listed in Exhibit A",
+      "doc": "D1",
+      "section": "1.6"
+    },
+    {
+      "id": "F8",
+      "key": "Product warranty period",
+      "value": "18 months after delivery",
+      "doc": "D1",
+      "section": "9.1"
+    },
+    {
+      "id": "F9",
+      "key": "Order of precedence",
+      "value": "Written amendments, then this Agreement, then Exhibits, then Purchase Orders",
+      "doc": "D1",
+      "section": "19.4"
+    },
+    {
+      "id": "F10",
+      "key": "Agreed exclusivity scope",
+      "value": "Industrial hydraulic seals only, for Customer's facilities in the United States",
+      "doc": "D2",
+      "section": "Exclusivity"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement.md",
+      "kind": "Supply Agreement (main agreement)",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "term_sheet.md",
+      "kind": "Non-binding term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "first_amendment.md",
+      "kind": "First Amendment to Supply Agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "mutual_nda.md",
+      "kind": "Mutual Non-Disclosure Agreement (pre-existing)",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Section 6.1 of the Supply Agreement requires Customer and its Affiliates to buy all of their requirements for \"sealing products\" worldwide exclusively from Supplier. The term sheet limited exclusivity to industrial hydraulic seals for Customer's US facilities. As drafted, the clause is a worldwide, affiliate-wide requirements commitment under N.Y. U.C.C. § 2-306 that would put Customer in breach whenever it sources other sealing goods elsewhere.",
+      "doc": "D1",
+      "section": "6.1",
+      "detect_terms": [
+        "all of its requirements",
+        "sealing products",
+        "worldwide"
+      ],
+      "expected_finding": "The exclusivity in Section 6.1 goes beyond the agreed term-sheet scope in product, territory and affiliate coverage. It should be narrowed to industrial hydraulic seals for Customer's US facilities only.",
+      "contradicts": "F10"
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 18.1 bars Customer from assigning without Supplier's consent. Section 18.2 lets Supplier assign the agreement without consent to any Affiliate or to any successor by merger, change of control or sale of assets. Supplier could therefore transfer the exclusive supply relationship, and Customer's confidential specifications, to a Customer competitor. New York courts enforce such clauses as written, so Customer would have no recourse.",
+      "doc": "D1",
+      "section": "18.2",
+      "detect_terms": [
+        "Supplier may assign",
+        "without the consent of Customer",
+        "sale of all or substantially all"
+      ],
+      "expected_finding": "Supplier's assignment right in Section 18.2 is unrestricted and one-sided. It should be made mutual and require Customer's consent, with at least a termination right on any assignment to a competitor or on a change of control.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "The First Amendment adds a new definition of \"Products\" limited to finished goods and expressly excluding components and replacement parts. The Supply Agreement defines Products to include replacement parts. Under the order of precedence the amendment controls, so the 18-month warranty and the supply obligations would no longer cover the replacement parts Customer relies on.",
+      "doc": "D3",
+      "section": "2",
+      "detect_terms": [
+        "finished goods only",
+        "excluding components and replacement parts"
+      ],
+      "expected_finding": "The amendment's redefinition of \"Products\" conflicts with Section 1.6 of the Supply Agreement and silently removes replacement parts from warranty and supply coverage. It should be deleted or conformed to the original definition.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 3 of the First Amendment restates Section 12.3 of the Supply Agreement and keeps only the confidentiality carve-out. It drops the carve-out for indemnification obligations, so Supplier's third-party product liability and IP indemnities become subject to the 12-month fees cap. New York enforces negotiated caps between sophisticated parties outside gross negligence and willful misconduct, so Customer would be left materially underprotected against third-party claims.",
+      "doc": "D3",
+      "section": "3",
+      "detect_terms": [
+        "Section 12.3 is deleted and replaced",
+        "breach of Section 14 (Confidentiality)"
+      ],
+      "expected_finding": "The amendment removes the indemnification carve-out from the liability cap, so Supplier's indemnities are now capped. Customer should insist the original Section 12.3 carve-outs be restored.",
+      "contradicts": "F6"
+    }
+  ]
+}

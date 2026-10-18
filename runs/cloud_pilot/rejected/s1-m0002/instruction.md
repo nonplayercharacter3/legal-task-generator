@@ -1,0 +1,5 @@
+We represent Halvorsen Coffee Distribution LLC, which distributes Brightwater Espresso Systems equipment under a New York-law distribution agreement. Halvorsen has to decide shortly how to respond to Brightwater's renewal notice dated October 15, 2026. It is also weighing a proposed acquisition by Corvane Hospitality Partners and relies on Tidemark Logistics for warehousing. Before we advise on next steps, I need a clear picture of where Halvorsen stands across these arrangements.
+
+Please review the full matter folder: the Halvorsen–Brightwater distribution agreement, Amendment No. 1, the Corvane letter of intent, the October 15 renewal notice letter, and the Tidemark warehouse services agreement. Read them together, not in isolation.
+
+Prepare a memo to me that lists each issue you identify. For each one, state where it appears (document and section), explain why it matters for Halvorsen, and give a recommended fix or course of action. Please flag anything time-sensitive at the top. Let me know if you need anything else from the client to complete the analysis.

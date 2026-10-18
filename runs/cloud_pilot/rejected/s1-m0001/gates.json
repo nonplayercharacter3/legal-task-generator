@@ -1,0 +1,34 @@
+{
+  "matter_id": "s1-m0001",
+  "accepted": false,
+  "failed_gate": "consistency",
+  "reason": "mismatches: [{\"fact\": \"F1\", \"key\": \"Effective Date\", \"filename\": \"mutual_nda.md\", \"ledger\": \"March 1, 2027\", \"document\": \"October 5, 2026\"}]",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": false,
+      "details": {
+        "mismatches": [
+          {
+            "fact": "F1",
+            "key": "Effective Date",
+            "filename": "mutual_nda.md",
+            "ledger": "March 1, 2027",
+            "document": "October 5, 2026"
+          }
+        ],
+        "reworded": 6,
+        "checked": 40
+      }
+    }
+  ]
+}

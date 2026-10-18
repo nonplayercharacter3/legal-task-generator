@@ -1,0 +1,167 @@
+{
+  "matter_id": "s1-m0003",
+  "summary": "Harrowgate Provisions, Inc. (client, Customer) buys food-grade packaging film from Tessaline Polymers LLC (Supplier) under a Master Supply Agreement, an Order Form and a Quality Agreement, all governed by Delaware law. Harrowgate has signed a letter of intent to be acquired by Corvane Equity Partners through a reverse triangular merger and has asked the firm to review the supply documents before signing. The review should find four issues. Tessaline may assign the agreement freely. A change-of-control consent right is triggered by the Corvane deal and has not been addressed. Harrowgate's IP and product-liability indemnity sits outside the liability cap. The Order Form renews automatically for five-year terms with a narrow opt-out window. The Quality Agreement is a distractor and contains no issue.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Harrowgate Provisions, Inc.",
+      "role": "Customer (buyer of packaging film); firm's client; target in pending acquisition"
+    },
+    {
+      "id": "P2",
+      "name": "Tessaline Polymers LLC",
+      "role": "Supplier of food-grade packaging film"
+    },
+    {
+      "id": "P3",
+      "name": "Corvane Equity Partners IV, L.P.",
+      "role": "Proposed acquirer of Harrowgate Provisions, Inc. under a signed letter of intent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Effective Date",
+      "value": "March 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 17.1"
+    },
+    {
+      "id": "F3",
+      "key": "Order of precedence",
+      "value": "Order Form, then Master Supply Agreement, then Quality Agreement",
+      "doc": "D1",
+      "section": "Section 1.3"
+    },
+    {
+      "id": "F4",
+      "key": "Payment terms",
+      "value": "45 days after receipt of undisputed invoice",
+      "doc": "D1",
+      "section": "Section 4.2"
+    },
+    {
+      "id": "F5",
+      "key": "Liability cap",
+      "value": "fees paid or payable in the prior 12 months",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F6",
+      "key": "Initial Term",
+      "value": "three years from the Effective Date",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F7",
+      "key": "Minimum annual purchase commitment",
+      "value": "$2,400,000",
+      "doc": "D2",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F8",
+      "key": "Product warranty period",
+      "value": "18 months after delivery",
+      "doc": "D3",
+      "section": "Section 5.1"
+    },
+    {
+      "id": "F9",
+      "key": "Nonconforming lot rejection window",
+      "value": "10 business days after delivery",
+      "doc": "D3",
+      "section": "Section 6.2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "master_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "order_form_no1.md",
+      "kind": "order form (term, pricing and volume commitments)",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D3",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement (specifications, inspection, warranty mechanics)",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 15.1 lets Supplier assign the agreement, in whole or in part, to any person without Customer's consent, including to a competitor of Harrowgate or a supplier that has failed Harrowgate's qualification. Customer's own assignment is restricted in Section 15.2, so the clause cuts only one way. Delaware generally treats contract rights as freely assignable unless the contract restricts assignment, so Harrowgate has no protection.",
+      "doc": "D1",
+      "section": "Section 15.1",
+      "detect_terms": [
+        "Supplier may assign this Agreement, in whole or in part, without the consent of Customer"
+      ],
+      "expected_finding": "Supplier can assign the agreement to anyone, including a Harrowgate competitor or an unqualified supplier, without consent, so the clause should be made mutual, requiring consent (not unreasonably withheld) with a carve-out only for a non-competitor successor to substantially all of Supplier's business.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 15.3 deems any Change of Control of Customer, expressly including a merger in which Customer survives, to be an assignment requiring Supplier's prior written consent. Without that consent, Supplier may terminate on 30 days' notice and accelerate the unpaid balance of the minimum purchase commitment. The pending reverse triangular merger with Corvane triggers this right. Delaware courts generally do not treat a reverse triangular merger as an assignment by operation of law, but that default does not help here because the express clause overrides it. No consent has been requested or obtained.",
+      "doc": "D1",
+      "section": "Section 15.3",
+      "detect_terms": [
+        "Change of Control of Customer",
+        "prior written consent of Supplier",
+        "including by merger in which Customer is the surviving entity"
+      ],
+      "expected_finding": "The Corvane merger is a Change of Control requiring Supplier's prior written consent, and failure to obtain it gives Supplier termination and acceleration rights, so Harrowgate should obtain a written consent or waiver before signing and list it as a closing deliverable in the merger agreement.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 11.4 excludes Customer's indemnity under Section 10.2 from the Section 11.2 liability cap and the consequential-damages waiver. That indemnity covers third-party claims arising from Customer's artwork, labeling and filled-product contents. Supplier's reciprocal indemnity remains capped. Harrowgate therefore faces unlimited exposure, including for food-safety recall claims, while Supplier's exposure is limited. This is a material diligence point for Corvane.",
+      "doc": "D1",
+      "section": "Section 11.4",
+      "detect_terms": [
+        "Notwithstanding Section 11.2",
+        "Customer's obligations under Section 10.2 shall not be subject to any limitation of liability"
+      ],
+      "expected_finding": "Harrowgate's indemnity is carved out of the cap while Supplier's is not, leaving Harrowgate with unlimited one-sided exposure, so the carve-out should be removed or replaced with a mutual super-cap (for example, a multiple of 12-month fees) that applies equally to both parties.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Section 2.2 of the Order Form renews the agreement automatically for successive five-year Renewal Terms after the three-year Initial Term. Non-renewal is effective only if notice is given no earlier than 60 days and no later than 30 days before the end of the current term. The minimum annual purchase commitment of $2,400,000 carries into each Renewal Term. A missed 30-day window locks Harrowgate, and Corvane after closing, into five more years of volume commitments.",
+      "doc": "D2",
+      "section": "Section 2.2",
+      "detect_terms": [
+        "successive five (5) year Renewal Terms",
+        "no earlier than sixty (60) days and no later than thirty (30) days"
+      ],
+      "expected_finding": "The Order Form auto-renews for five-year terms carrying the $2.4 million annual minimum unless Harrowgate hits a 30-day opt-out window, so renewal terms should be shortened to one year with a longer notice period (or replaced by mutual opt-in renewal), and the window should be docketed now.",
+      "contradicts": null
+    }
+  ]
+}
