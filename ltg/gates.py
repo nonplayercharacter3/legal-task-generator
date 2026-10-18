@@ -31,6 +31,14 @@ def _norm(s) -> str:
     return s.strip(" .;,\"'")
 
 
+_PLAIN = str.maketrans({"\u201c": '"', "\u201d": '"', "\u2018": "'", "\u2019": "'", "*": None, "_": None})
+
+
+def _plain(s) -> str:
+    """Normalised text with Markdown emphasis and curly quotes removed: '"**Territory**" means' -> '"territory" means'."""
+    return _norm(str(s or "").translate(_PLAIN))
+
+
 # ---------------------------------------------------------------- deterministic
 
 
@@ -123,21 +131,24 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
 def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms: bool = False) -> GateResult:
     """Each planted issue must actually be present and findable where the ledger put it.
 
-    Two checks: the drafter was told to use every detect term verbatim, which code verifies for free;
-    then a verifier that (by default) is not given those terms judges whether the problem is really there.
+    Two checks: the drafter was told to use every detect term verbatim, which code verifies for free
+    (ignoring Markdown emphasis and curly quotes); then a verifier that (by default) is not given those terms
+    judges whether the problem is really there. It sees the rest of the folder too, since an issue can
+    depend on a fact stated elsewhere (a change-of-control clause matters because a letter of intent exists).
     """
     fname = {d.id: d.filename for d in ledger.documents}
     results = []
     for i in ledger.issues:
         content = docs.get(fname[i.doc], "")
-        missing_terms = [t for t in i.detect_terms if _norm(t) not in _norm(content)]
+        missing_terms = [t for t in i.detect_terms if _plain(t) not in _plain(content)]
         if missing_terms:
             results.append({"issue": i.id, "present": False, "missing_terms": missing_terms})
             continue
         issue = {"label": i.label, "description": i.description, "section": i.section}
         if show_terms:
             issue["detect_terms"] = i.detect_terms
-        payload = {"document": {"filename": fname[i.doc], "content": content}, "issue": issue}
+        others = [{"filename": n, "content": c} for n, c in docs.items() if n != fname[i.doc]]
+        payload = {"document": {"filename": fname[i.doc], "content": content}, "other_documents": others, "issue": issue}
         out = call_json(client, "issue_verifier", prompts.ISSUE_VERIFIER, render_input(payload))
         results.append({"issue": i.id, "present": bool(out.get("present")), "evidence": out.get("evidence", "")})
     missing = [r["issue"] for r in results if not r["present"]]

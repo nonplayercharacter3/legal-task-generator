@@ -76,6 +76,8 @@ def draft_documents(client: ModelClient, ledger: Ledger, precedents: dict[str, P
             "ledger": ledger.to_dict(),
             "document": {"id": d.id, "filename": d.filename, "kind": d.kind, "distractor": d.distractor, "precedent": d.precedent},
             "precedent": {"id": prec.id, "title": prec.title, "text": prec.excerpt(precedent_chars)} if prec else None,
+            # earlier drafts, so cross-references, part numbers and defined terms stay consistent across the folder
+            "drafted": [{"filename": n, "content": c} for n, c in docs.items()],
         }
         docs[d.filename] = call_text(client, "drafter", prompts.DRAFTER, render_input(payload))
     return docs

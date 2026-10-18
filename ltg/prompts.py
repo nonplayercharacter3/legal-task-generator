@@ -45,7 +45,8 @@ Reply with ONLY a JSON object:
 
 DRAFTER = """You draft one document of a fictional legal matter, in the style of real practice.
 
-You receive the full facts ledger, which document to draft, and optionally a real precedent to adapt.
+You receive the full facts ledger, which document to draft, the documents of this matter already drafted, and
+optionally a real precedent to adapt.
 Rules:
 - Adapt the precedent's structure and drafting style, but use only the ledger's invented parties and facts.
 - State every ledger fact assigned to this document exactly as given (same value), in the given section.
@@ -53,6 +54,8 @@ Rules:
 - Plant every ledger issue assigned to this document in its given section, using each of its `detect_terms`
   verbatim. Make the problem discoverable by a careful reader, but do not flag it, comment on it or explain it.
 - Do not plant problems that are not in the ledger. A distractor document must contain no issue.
+- Stay consistent with the documents already drafted: same defined terms, part numbers, product lists, section
+  references and cross-references, unless a ledger issue in THIS document requires a difference.
 - Add no order-of-precedence, entire-agreement or other clause that ranks or overrides other documents unless it
   restates a ledger fact, and then state it exactly as the ledger does.
 - Write in Markdown with numbered sections. Realistic length: a main agreement 1,500 to 4,000 words,
@@ -71,12 +74,14 @@ FACT_MATCHER = """You compare pairs of values for the same fact: the value an an
 states. Mark a pair `same` unless a careful lawyer reading both would see them as inconsistent: different numbers,
 amounts, dates, durations, parties, items, territory or scope, or a negation. Differences in wording, punctuation or
 capitalisation are fine, and so is compatible added detail ("as updated by the parties in writing", an exhibit
-reference, a section number). A value that is narrower, broader or names a different party is inconsistent.
+reference, a section number) or a forward reference in an earlier document ("to be listed in an exhibit to the
+definitive agreement"). A value that is narrower, broader or names a different party is inconsistent.
 
 Reply with ONLY a JSON object: {"results": [{"id": str, "same": bool, "reason": str}]}"""
 
 ISSUE_VERIFIER = """You check whether a specific legal problem is present in a document.
-You receive one document and a description of a problem that is supposed to appear in a given section.
+You receive one document, the other documents in the matter folder, and a description of a problem that is supposed
+to appear in a given section of that one document. Facts it depends on may be stated in the other documents.
 Answer whether a careful associate reading this document could find that problem there.
 Quote the sentence that shows it.
 

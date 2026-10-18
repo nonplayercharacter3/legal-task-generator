@@ -30,7 +30,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 ## Current status (2026-10-14)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 67 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+- 69 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
   was mutation-checked on 2026-10-14: disabling it makes a test fail.
 - First real-model runs (2026-10-15, Claude Sonnet through the Agent SDK, one matter each, seed 1):
   runs 1 to 3 were rejected at `consistency`, each exposing a gap the fake model hid (exact string matching, facts
@@ -45,6 +45,11 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   consistency on compatible added detail; one had a rubric criterion needing ledger-only background and an unplanted
   precedence conflict between documents. Prompts fixed in 8d01772; not yet rerun. 69 calls, ~346k input
   and ~93k output tokens, ~12 minutes of model time, no errors on the Pro plan.
+- Pilot rerun (2026-10-17, `runs/claude_pilot2`): 0 of 3 again, with new causes only (the first round's did not
+  recur): a forward reference in a term sheet judged a conflict; a detect term missed through Markdown bold; an
+  issue verifier that saw only one document while the issue depended on a letter of intent in another; and a
+  distractor drafted without seeing the order form, so their part numbers disagreed. Fixed in the next commit;
+  not yet rerun. 66 calls, ~323k input and ~120k output tokens, ~16 minutes of model time, no errors.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 

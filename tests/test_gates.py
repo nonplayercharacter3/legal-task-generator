@@ -90,3 +90,21 @@ def test_consistency_asks_the_matcher_only_about_reworded_values():
     missing = Facts({}, same=True)  # silent in its own document: rejected without asking the matcher
     g = gates.consistency(missing, _ledger(), docs)
     assert not g.passed and missing.matched == [] and g.details["mismatches"][0]["filename"] == "a.md"
+
+
+def test_detect_terms_ignore_markdown_emphasis_and_curly_quotes():
+    assert gates._plain('"Territory" means') in gates._plain('> "**Territory**" means the United States')
+    assert gates._plain('"Territory" means') in gates._plain("“Territory” means the United States")
+    assert gates._plain('"Territory" means') not in gates._plain("the Territory is")
+
+
+def test_issue_check_finds_terms_through_markdown_bold():
+    from ltg.schema import DocumentPlan, Issue, Ledger, Party
+
+    class Yes:
+        def complete(self, role, system, user):
+            return json.dumps({"present": True, "evidence": "", "reason": ""})
+
+    issue = Issue("I1", "defined_term_inconsistency", "x", "x", "D1", "2.1", ['"Territory" means'], "x")
+    ledger = Ledger("m", "", [Party("P1", "A", "Buyer"), Party("P2", "B", "Seller")], [], [DocumentPlan("D1", "a.md", "amendment")], [issue])
+    assert gates.issue_check(Yes(), ledger, {"a.md": '> "**Territory**" means the United States'}).passed
