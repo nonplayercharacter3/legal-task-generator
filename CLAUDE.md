@@ -24,7 +24,8 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 - **Skeleton first, costing later.** Pengtao approved a preliminary implementation. No cost modeling yet.
 - **Backends.** Any OpenAI-compatible endpoint, or Claude through the Claude Agent SDK (`backend.kind = "claude_sdk"`).
   Pengtao's direction (2026-10-15): for Claude, use the $100/month subscription through the SDK (reimbursed), never
-  direct API calls. For GPUs, Nautilus (namespace `ecepxie`, see Current status). The runtime stays standard library only: the SDK
+  direct API calls. He confirmed this means the Max plan; Sirui She upgrades on the web after the App Store Pro period
+  ends on 2026-10-30 (the App Store price is $124). Until then, real-model rounds wait. For GPUs, Nautilus (namespace `ecepxie`, see Current status). The runtime stays standard library only: the SDK
   is an optional extra (`pip install -e ".[claude]"`) imported only by that backend.
 
 ## Current status (2026-10-18)
