@@ -108,3 +108,22 @@ def test_issue_check_finds_terms_through_markdown_bold():
     issue = Issue("I1", "defined_term_inconsistency", "x", "x", "D1", "2.1", ['"Territory" means'], "x")
     ledger = Ledger("m", "", [Party("P1", "A", "Buyer"), Party("P2", "B", "Seller")], [], [DocumentPlan("D1", "a.md", "amendment")], [issue])
     assert gates.issue_check(Yes(), ledger, {"a.md": '> "**Territory**" means the United States'}).passed
+
+
+def test_consistency_asks_again_for_a_value_missed_in_its_own_document():
+    class MissesFirst(Facts):  # the long first extraction misses F1; a focused second call finds it
+        calls = 0
+
+        def complete(self, role, system, user):
+            if role == "fact_extractor":
+                MissesFirst.calls += 1
+                if MissesFirst.calls == 1:
+                    return json.dumps({"facts": []})
+                p = extract_input(user)
+                assert [q["id"] for q in p["queries"]] == ["F1@a.md"] and [d["filename"] for d in p["documents"]] == ["a.md"]
+            return super().complete(role, system, user)
+
+    g = gates.consistency(MissesFirst({"F1@a.md": "State of New York"}, same=False), _ledger(), {"a.md": "...", "b.md": "..."})
+    assert g.passed and MissesFirst.calls == 2
+    still_missing = Facts({}, same=True)  # both calls come back empty: rejected
+    assert not gates.consistency(still_missing, _ledger(), {"a.md": "...", "b.md": "..."}).passed

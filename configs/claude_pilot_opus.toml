@@ -1,0 +1,22 @@
+# Claude pilot with Opus generating and Sonnet solving, through the Claude Agent SDK on the logged-in
+# Claude Code subscription (no API key, no direct API calls).
+#   .venv/bin/python -m ltg run --config configs/claude_pilot_opus.toml
+# The solver runs on a different, weaker model than the generator, so the difficulty check means something:
+# when Sonnet solved Sonnet's tasks it found every planted issue every time.
+# Opus uses subscription limits several times faster than Sonnet; if a round stops at the limit, rerun with --resume.
+
+[run]
+n_matters = 3
+seed = 1
+out_dir = "runs/claude_pilot3_opus"
+concurrency = 2
+
+[backend]
+kind = "claude_sdk"
+default_model = "opus"              # ledger, drafting, rubric, answers, gate checks and the judge
+
+[backend.models]
+solver = "sonnet"
+
+[gates]
+solver_attempts = 3

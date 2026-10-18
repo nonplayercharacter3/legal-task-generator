@@ -30,7 +30,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 ## Current status (2026-10-14)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 69 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+- 70 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
   was mutation-checked on 2026-10-14: disabling it makes a test fail.
 - First real-model runs (2026-10-15, Claude Sonnet through the Agent SDK, one matter each, seed 1):
   runs 1 to 3 were rejected at `consistency`, each exposing a gap the fake model hid (exact string matching, facts

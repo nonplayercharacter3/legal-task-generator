@@ -105,6 +105,15 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
     }
     out = call_json(client, "fact_extractor", prompts.FACT_EXTRACTOR, render_input(payload))
     got = {r["id"]: r.get("value") for r in out.get("facts", []) if "id" in r}
+    # One long call misses values (a real run: 1 of 40 came back empty though its document stated it). Ask again,
+    # focused, for each fact its own document seemed not to state; still without telling the extractor the value.
+    retry = [{"id": f"{f.id}@{fname[f.doc]}", "key": f.key, "filename": fname[f.doc]}
+             for f in ledger.facts if not _norm(got.get(f"{f.id}@{fname[f.doc]}"))]
+    if retry:
+        names = sorted({q["filename"] for q in retry})
+        again = {"documents": [{"filename": n, "content": docs[n]} for n in names], "queries": retry}
+        out = call_json(client, "fact_extractor", prompts.FACT_EXTRACTOR, render_input(again))
+        got.update({r["id"]: r.get("value") for r in out.get("facts", []) if "id" in r and _norm(r.get("value"))})
     differ = []
     for f in ledger.facts:
         for n in docs:

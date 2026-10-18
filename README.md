@@ -32,7 +32,7 @@ Needs Python 3.11+. No third-party packages at runtime.
 
 ```bash
 pip install -e ".[dev]"        # or just use python -m ltg from the repo root
-python -m pytest               # 69 tests, ~5 seconds, fully offline
+python -m pytest               # 70 tests, ~5 seconds, fully offline
 
 python -m ltg run --config configs/fake_demo.toml      # 20 matters, fake model, faults injected
 cat runs/fake_demo/report.md
@@ -139,7 +139,7 @@ ltg/
   cli.py           `run` and `inspect`
 configs/           fake demo, real-endpoint example, Claude pilot
 examples/          committed sample output from the fake model
-tests/             69 offline tests
+tests/             70 offline tests
 ```
 
 ## Not done yet
