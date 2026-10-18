@@ -18,5 +18,11 @@ default_model = "opus"              # ledger, drafting, rubric, answers, gate ch
 [backend.models]
 solver = "sonnet"
 
+# Folders of 4 to 5 documents: a 3-document folder lets the solver read everything (known weakness 3). The
+# evidence so far is mixed: accepted tasks had 4 and 5 documents, too-easy ones 4 and 5 as well.
+[spec]
+n_documents = [4, 5]
+
 [gates]
 solver_attempts = 3
+solver_max_steps = 28               # room to page through 5 longer documents (a 12,700-word folder took 17 steps)
