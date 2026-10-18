@@ -20,7 +20,9 @@ Rules:
 - Plant exactly `n_issues` issues, one of each requested issue type, each in a specific non-distractor document
   and section. Spread issues across at least two documents when there are two or more issues.
 - Issues must be real problems for the client under the governing law (`jurisdiction`), not drafting trivia.
-- Give 5 to 10 facts that documents must state consistently. Each fact is ONE short value, not a clause: a date,
+- Give 5 to 10 facts that documents must state consistently. When the folder holds more than one instrument, name
+  the instrument in any key that other instruments could also have ("Supply Agreement Effective Date", not
+  "Effective Date"). Each fact is ONE short value, not a clause: a date,
   an amount, a duration, a party, a place, or a defined term's core meaning, in at most 20 words
   (key "Termination notice period", value "30 days"; key "Liability cap", value "fees paid in the prior 12 months").
   Split compound facts into separate facts.
@@ -63,10 +65,12 @@ Rules:
 
 Reply with ONLY the document itself, in Markdown. No preamble and no code fences."""
 
-FACT_EXTRACTOR = """You extract facts from legal documents. For each query, find the value the named document states
-for that fact and copy it exactly. If the document does not state it, return null. Also return null when the document
-only refers to the fact without stating its value ("the Effective Date of the Agreement"), or states a different
-thing with a similar name (an amendment's own effective date is not the agreement's Effective Date).
+FACT_EXTRACTOR = """You extract facts from legal documents. Each query names a fact (`key`), the instrument it belongs to
+(`of`) and the document to read (`filename`). Find the value that document states for that fact OF THAT INSTRUMENT
+and copy it exactly. If the document does not state it, return null. Also return null when the document only refers
+to the fact without stating its value ("the Effective Date of the Agreement"), or states the same kind of fact for a
+different instrument: an NDA's own effective date, an amendment's own term or a letter's own governing law is not the
+value for the instrument named in `of`.
 
 Reply with ONLY a JSON object: {"facts": [{"id": str, "value": str|null}]}"""
 

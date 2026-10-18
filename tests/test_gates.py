@@ -127,3 +127,16 @@ def test_consistency_asks_again_for_a_value_missed_in_its_own_document():
     assert g.passed and MissesFirst.calls == 2
     still_missing = Facts({}, same=True)  # both calls come back empty: rejected
     assert not gates.consistency(still_missing, _ledger(), {"a.md": "...", "b.md": "..."}).passed
+
+
+def test_consistency_tells_the_extractor_which_instrument_a_fact_belongs_to():
+    seen = []
+
+    class Spy(Facts):
+        def complete(self, role, system, user):
+            if role == "fact_extractor":
+                seen.extend(extract_input(user)["queries"])
+            return super().complete(role, system, user)
+
+    gates.consistency(Spy({"F1@a.md": "State of New York"}, same=True), _ledger(), {"a.md": "...", "b.md": "..."})
+    assert {q["filename"]: q["of"] for q in seen} == {"a.md": "agreement (a.md)", "b.md": "agreement (a.md)"}

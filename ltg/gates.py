@@ -98,16 +98,19 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
     "State of New York", and only a mismatch in meaning should reject the task.
     """
     fname = {d.id: d.filename for d in ledger.documents}
+    # Each query names the instrument the fact belongs to: an NDA in the folder has its own "Effective Date", and
+    # reading that as the supply agreement's Effective Date rejected a sound task (2026-10-18 pilot).
+    owner = {d.id: f"{d.kind} ({d.filename})" for d in ledger.documents}
     planted = {(i.contradicts, fname.get(i.doc)) for i in ledger.issues if i.contradicts}
     payload = {
         "documents": [{"filename": n, "content": c} for n, c in docs.items()],
-        "queries": [{"id": f"{f.id}@{n}", "key": f.key, "filename": n} for f in ledger.facts for n in docs],
+        "queries": [{"id": f"{f.id}@{n}", "key": f.key, "of": owner[f.doc], "filename": n} for f in ledger.facts for n in docs],
     }
     out = call_json(client, "fact_extractor", prompts.FACT_EXTRACTOR, render_input(payload))
     got = {r["id"]: r.get("value") for r in out.get("facts", []) if "id" in r}
     # One long call misses values (a real run: 1 of 40 came back empty though its document stated it). Ask again,
     # focused, for each fact its own document seemed not to state; still without telling the extractor the value.
-    retry = [{"id": f"{f.id}@{fname[f.doc]}", "key": f.key, "filename": fname[f.doc]}
+    retry = [{"id": f"{f.id}@{fname[f.doc]}", "key": f.key, "of": owner[f.doc], "filename": fname[f.doc]}
              for f in ledger.facts if not _norm(got.get(f"{f.id}@{fname[f.doc]}"))]
     if retry:
         names = sorted({q["filename"] for q in retry})

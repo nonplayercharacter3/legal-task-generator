@@ -85,7 +85,7 @@ def test_isolation_solver_and_instruction_writer_never_see_the_answer_key(cfg):
     for p in fake.payloads["judge"]:
         assert set(p) == {"response", "criteria"}
     for p in fake.payloads["fact_extractor"]:  # gets the fact keys, never the expected values
-        assert all(set(q) == {"id", "key", "filename"} for q in p["queries"])
+        assert all(set(q) == {"id", "key", "of", "filename"} for q in p["queries"])
     for p in fake.payloads["issue_verifier"]:  # judges blind; detect terms are checked in code
         assert "detect_terms" not in p["issue"]
     for p in fake.payloads["drafter"]:  # later drafts see earlier ones, never anything beyond the ledger
