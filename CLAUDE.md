@@ -80,6 +80,19 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   8 simultaneous requests for qwen3-small; non-commercial use only. The HTTP client now retries dropped connections
   and waits as long as a 429 asks. Running it from a cloud session needs `ellm.nrp-nautilus.io` allowed in the
   environment's network settings and the key set as an environment variable there.
+- **Running pilot rounds (laptop or cloud).** One-time setup, about 40 minutes, no model calls:
+  `python3 -m venv .venv && .venv/bin/pip install -e ".[dev,claude]"`; clone LAB beside the repo with
+  `GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/harveyai/harvey-labs ../harvey-labs`; build the index
+  with `.venv/bin/python -m ltg index --config configs/pilot_nrp_solver.toml` (~35 min, saved in `runs/.decontam_cache`,
+  reused until LAB changes); check it with `.venv/bin/python scripts/check_lab_index.py`. On a laptop the NRP key must
+  be exported in `~/.zshenv` (not only `~/.zshrc`, which non-interactive shells skip). Claude calls go through the SDK on
+  the laptop's Claude Code login. In the cloud, the environment's setup script runs `scripts/cloud_setup.sh`, which does
+  the same in the background and logs to `/tmp/lab-index.log`; the environment allows `ellm.nrp-nautilus.io` and sets
+  `NRP_LLM_API_KEY`. Then: `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml --seed <new> --out runs/<name>`.
+- Open check (2026-10-18): the grouped LAB index (`decontam_group_depth = 3`) has not been verified yet. The ungrouped
+  one matched LAB excerpts at 1.000 but scored our accepted documents 0.31 to 0.56 on shared boilerplate. After the
+  first grouped build, run `scripts/check_lab_index.py`: LAB excerpts should stay near 1.0 and our tasks fall well
+  below 0.5. If they do not, look at which phrases still match before changing the threshold.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 
