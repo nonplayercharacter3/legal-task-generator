@@ -68,6 +68,8 @@ class BloomIndex:
             for path in root.rglob("*"):
                 if path.is_file() and path.suffix.lower() in TEXT_SUFFIXES:
                     idx.add_text(_read_text(path))
+        if idx.count == 0:  # an empty index would pass every task while looking screened
+            raise ValueError(f"no reference text found in {dirs} (looked for {sorted(TEXT_SUFFIXES)} files)")
         return idx
 
 

@@ -24,6 +24,17 @@ def test_containment_separates_copied_from_novel(tmp_path):
     assert idx.containment(NOVEL) < 0.05
 
 
+def test_reference_folder_without_text_is_an_error(tmp_path):
+    import pytest
+
+    (tmp_path / "ref").mkdir()
+    (tmp_path / "ref" / "scan.pdf").write_bytes(b"%PDF-1.4")  # present, but nothing it can read
+    with pytest.raises(ValueError, match="no reference text"):
+        BloomIndex.from_dirs([str(tmp_path / "ref")], bits=2**16, n=8)
+    with pytest.raises(FileNotFoundError):
+        BloomIndex.from_dirs([str(tmp_path / "missing")], bits=2**16, n=8)
+
+
 def test_short_text_has_no_ngrams():
     idx = BloomIndex(bits=2**16, n=8)
     assert idx.containment("too short") == 0.0

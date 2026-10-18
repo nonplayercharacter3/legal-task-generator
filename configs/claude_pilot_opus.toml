@@ -29,3 +29,8 @@ n_documents = [4, 5]
 [gates]
 solver_attempts = 3
 solver_max_steps = 28               # room to page through 5 longer documents (a 12,700-word folder took 17 steps)
+# Screen every task against LAB's text. Clone it beside this repo first (it is never committed here, and nothing
+# from it reaches any model; the index is local word 8-grams):
+#   GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/harveyai/harvey-labs ../harvey-labs
+# The run stops if the folder is missing or holds no readable text, so a task is never passed unscreened.
+reference_dirs = ["../harvey-labs"]
