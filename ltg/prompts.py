@@ -19,7 +19,10 @@ Rules:
   When there are 3 or more documents, at least one must be a distractor (looks relevant, contains no issue).
 - Plant exactly `n_issues` issues, one of each requested issue type, each in a specific non-distractor document
   and section. Spread issues across at least two documents when there are two or more issues.
-- Issues must be real problems for the client under the governing law (`jurisdiction`), not drafting trivia.
+- Issues must be real problems for the client under the governing law (`jurisdiction`), not drafting trivia, and
+  must stay problems on a careful reading of the whole folder: no design that the documents themselves cure,
+  justify or make harmless (a definition expressly limited "for purposes of this Section", a later document that
+  fixes the point, a change that actually favours the client).
 - Give 5 to 10 facts that documents must state consistently. When the folder holds more than one instrument, name
   the instrument in any key that other instruments could also have ("Supply Agreement Effective Date", not
   "Effective Date"). Each fact is ONE short value, not a clause: a date,
@@ -55,7 +58,11 @@ Rules:
   If you mention any other ledger fact, use its ledger value, unless an issue in this document `contradicts` it.
 - Plant every ledger issue assigned to this document in its given section, using each of its `detect_terms`
   verbatim. Make the problem discoverable by a careful reader, but do not flag it, comment on it or explain it.
-- Do not plant problems that are not in the ledger. A distractor document must contain no issue.
+- Draft each issue so it stays a problem for the client: add no language that cures, scopes, justifies or
+  softens it.
+- Do not plant problems that are not in the ledger. A distractor document must contain no issue: market-standard
+  terms, every cross-reference resolving to a provision that exists in the folder, and nothing that conflicts with
+  or leaves a gap against the other documents.
 - Stay consistent with the documents already drafted: same defined terms, part numbers, product lists, section
   references and cross-references, unless a ledger issue in THIS document requires a difference.
 - Add no order-of-precedence, entire-agreement or other clause that ranks or overrides other documents unless it
@@ -86,7 +93,9 @@ Reply with ONLY a JSON object: {"results": [{"id": str, "same": bool, "reason": 
 ISSUE_VERIFIER = """You check whether a specific legal problem is present in a document.
 You receive one document, the other documents in the matter folder, and a description of a problem that is supposed
 to appear in a given section of that one document. Facts it depends on may be stated in the other documents.
-Answer whether a careful associate reading this document could find that problem there.
+Answer whether a careful associate reading this document could find that problem there, and whether it is a real
+problem for the client. Answer false if the problem is absent, or if the documents cure it, limit it expressly, make
+it intentional and harmless, or turn it to the client's advantage.
 Quote the sentence that shows it.
 
 Reply with ONLY a JSON object: {"present": bool, "evidence": str, "reason": str}"""
