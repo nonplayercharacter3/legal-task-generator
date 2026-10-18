@@ -81,7 +81,7 @@ def test_consistency_asks_the_matcher_only_about_reworded_values():
     exact = Facts({"F1@a.md": "state of new york."}, same=False)
     assert gates.consistency(exact, _ledger(), docs).passed and exact.matched == []  # normalisation suffices
 
-    reworded = {"F1@a.md": "the laws of the State of New York", "F1@b.md": "the laws of the State of New York"}
+    reworded = {"F1@a.md": "New York law", "F1@b.md": "New York law"}
     ok = gates.consistency(Facts(reworded, same=True), _ledger(), docs)
     assert ok.passed and ok.details["reworded"] == 2
     bad = gates.consistency(Facts(reworded, same=False), _ledger(), docs)
@@ -140,3 +140,16 @@ def test_consistency_tells_the_extractor_which_instrument_a_fact_belongs_to():
 
     gates.consistency(Spy({"F1@a.md": "State of New York"}, same=True), _ledger(), {"a.md": "...", "b.md": "..."})
     assert {q["filename"]: q["of"] for q in seen} == {"a.md": "agreement (a.md)", "b.md": "agreement (a.md)"}
+
+
+def test_consistency_accepts_the_ledger_value_word_for_word_inside_its_own_document():
+    fallback = "the Court of Chancery (or, if it lacks jurisdiction, the Superior Court)"
+    ledger = _ledger()
+    ledger.facts[0].value = "Court of Chancery"
+    own = Facts({"F1@a.md": fallback}, same=False)
+    assert gates.consistency(own, ledger, {"a.md": "...", "b.md": "..."}).passed and own.matched == []
+    elsewhere = Facts({"F1@a.md": "Court of Chancery", "F1@b.md": fallback}, same=False)  # other documents still go to the matcher
+    assert not gates.consistency(elsewhere, ledger, {"a.md": "...", "b.md": "..."}).passed
+    digits = Facts({"F1@a.md": "130 days"}, same=False)
+    ledger.facts[0].value = "30 days"
+    assert not gates.consistency(digits, ledger, {"a.md": "...", "b.md": "..."}).passed  # whole words only

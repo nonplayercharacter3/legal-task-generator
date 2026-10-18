@@ -123,6 +123,8 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
             v = got.get(f"{f.id}@{n}")
             if _norm(v) == _norm(f.value):
                 continue
+            if n == fname[f.doc] and _words(_plain(f.value)).strip() and _words(_plain(f.value)) in _words(_plain(v)):
+                continue  # its own document states the value word for word, with drafting around it (a fallback court)
             if n != fname[f.doc] and (not _norm(v) or (f.id, n) in planted):
                 continue  # silent elsewhere, or a deliberate contradiction
             differ.append({"fact": f.id, "key": f.key, "filename": n, "ledger": f.value, "document": v})
