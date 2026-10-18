@@ -1,0 +1,140 @@
+{
+  "matter_id": "s3-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "dev",
+  "solver_pass_rate": 0.667,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 7,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 3.2: \"This Agreement shall renew for one (1) additional term of three (3) years ... only if Distributor delivers to Supplier written notice of its election to renew (a \"Renewal Notice\") at least ninety (90) days prior to the expiration of the Initial Term. This Agreement does not renew automatically. If Distributor does not deliver a Renewal Notice within the time required by this Section 3.2, this Agreement shall expire at the end of the Initial Term.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Schedule 3.6 lists only two Required Consents: \"1. Consent of Brandywine Flats Industrial LLC, as landlord...\" and \"2. Consent of Keystone Commonwealth Bank, N.A., as administrative agent and lender....\" Section 6.4 then provides: \"The Sellers shall have no obligation under this Agreement to obtain any consent, approval or waiver that is not a Required Consent.\" Section 7.1(d) conditions Closing only on \"each of the Required Consents listed on Schedule 3.6.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 1.1: \"Capitalized terms used but not defined in this Side Letter have the meanings given to them in the Distribution Agreement, except that \"Territory\" means Delaware, Maryland, New Jersey, Pennsylvania, New York and Virginia.\" Section 2.1: \"During the Restricted Period, Distributor shall not, directly or indirectly, and shall cause its Affiliates not to, market, promote, sell, distribute or act as a sales agent or representative for any Competing Products in the Territory.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 6.1: \"This Side Letter and any dispute arising out of the exclusivity and non-competition arrangements between the parties are governed by the laws of the State of New York, without regard to its conflict of laws principles.\" Section 6.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in New York County, New York for any action arising out of or relating to this Side Letter or those arrangements.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "skipped": "no reference_dirs configured"
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C7"
+            ],
+            "steps": 17,
+            "files_opened": [
+              "distribution_agreement_harrow_creek_velloran.md",
+              "exclusivity_noncompete_side_letter_2025.md",
+              "first_amendment_distribution_agreement.md",
+              "membership_interest_purchase_agreement_and_schedules.md",
+              "warehouse_services_agreement_saltmarsh.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 17,
+            "files_opened": [
+              "distribution_agreement_harrow_creek_velloran.md",
+              "exclusivity_noncompete_side_letter_2025.md",
+              "first_amendment_distribution_agreement.md",
+              "membership_interest_purchase_agreement_and_schedules.md",
+              "warehouse_services_agreement_saltmarsh.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 17,
+            "files_opened": [
+              "distribution_agreement_harrow_creek_velloran.md",
+              "exclusivity_noncompete_side_letter_2025.md",
+              "first_amendment_distribution_agreement.md",
+              "membership_interest_purchase_agreement_and_schedules.md",
+              "warehouse_services_agreement_saltmarsh.md"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

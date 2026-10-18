@@ -1,0 +1,193 @@
+{
+  "matter_id": "s3-m0002",
+  "summary": "Halvorsen Coastal Distribution LLC (client), a New York regional distributor, distributes Aquilon residential water-filtration systems made by Brightmere Instruments Inc. under a 2024 Distribution Agreement. The agreement was later changed by a First Amendment, and the supplier has since sent a price adjustment notice. The client wants an issue-spotting memo before deciding whether to stay in the relationship. The folder contains four documents: the Distribution Agreement, the First Amendment, the supplier's Price Adjustment Notice, and an Ordering and Logistics Procedures manual.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Halvorsen Coastal Distribution LLC",
+      "role": "Distributor (client), a New York limited liability company"
+    },
+    {
+      "id": "P2",
+      "name": "Brightmere Instruments Inc.",
+      "role": "Supplier and manufacturer, a Delaware corporation"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "July 1, 2024",
+      "doc": "D1",
+      "section": "Preamble; Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Initial Term",
+      "value": "three years, ending June 30, 2027",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Renewal Term",
+      "value": "successive five-year periods",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F4",
+      "key": "Price objection period",
+      "value": "30 days after Distributor's receipt of a price adjustment notice",
+      "doc": "D1",
+      "section": "Section 5.3"
+    },
+    {
+      "id": "F5",
+      "key": "Liability cap",
+      "value": "amounts paid by Distributor to Supplier in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F6",
+      "key": "Distribution Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 17.1"
+    },
+    {
+      "id": "F7",
+      "key": "Distribution Agreement forum",
+      "value": "state and federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 17.2"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "written amendments, then the Agreement body, then Schedules and notices",
+      "doc": "D1",
+      "section": "Section 1.4"
+    },
+    {
+      "id": "F9",
+      "key": "First Amendment Effective Date",
+      "value": "March 1, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Price Adjustment Notice receipt date",
+      "value": "August 21, 2026",
+      "doc": "D3",
+      "section": "Delivery confirmation"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement.md",
+      "kind": "Exclusive Distribution Agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "first_amendment.md",
+      "kind": "First Amendment to Distribution Agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "price_adjustment_notice.md",
+      "kind": "Supplier Price Adjustment Notice (letter)",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "ordering_logistics_procedures.md",
+      "kind": "Ordering and Logistics Procedures manual (Schedule C)",
+      "distractor": true,
+      "precedent": "sample_supply_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Section 2.2 of D1 renews the agreement automatically for successive five-year Renewal Terms, and each renewal carries the minimum annual purchase commitments. The only way out is written notice given no more than 270 and no fewer than 240 days before the current term expires. Against the June 30, 2027 expiry, that window runs from about October 3 to November 2, 2026. Today is October 18, 2026, so the window is open now but closes in about two weeks. If it is missed, the client is locked in until June 30, 2032. This is the one issue designed to be visible from a single clause read on its own.",
+      "doc": "D1",
+      "section": "Section 2.2",
+      "detect_terms": [
+        "successive five-year periods",
+        "not more than 270 days nor less than 240 days"
+      ],
+      "expected_finding": "The agreement auto-renews for five years unless the client gives non-renewal notice in a narrow window that closes around November 2, 2026, so the client must decide and act immediately or seek an amendment.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 5.3 of D1 lets Distributor object to a price increase, or remove the affected Products from the agreement, by written notice within 30 days after receiving a price adjustment notice. If Distributor does not object in time, the increase is deemed accepted. D3 announces a 14% increase effective November 1, 2026. D3 was sent to the notice address in D1 Section 16, and its delivery confirmation shows receipt on August 21, 2026. The objection deadline was therefore September 20, 2026. Measured against today's date of October 18, 2026, the window has already closed. The problem only appears when D1 Section 5.3, the D3 receipt date and the current date are read together.",
+      "doc": "D3",
+      "section": "Paragraph 2 and Delivery confirmation",
+      "detect_terms": [
+        "effective November 1, 2026",
+        "fourteen percent (14%)"
+      ],
+      "expected_finding": "The client's 30-day right to object to the 14% price increase expired on September 20, 2026, so the increase is deemed accepted and the client can only seek a negotiated concession.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 11.1 of D1 requires Distributor to indemnify Supplier against all claims 'arising out of or relating to the distribution, marketing or resale of the Products.' That wording is broad enough to reach product-liability and defect claims caused by Supplier. Section 12.3(a) then excludes 'Distributor's obligations under Section 11.1' from the liability cap. Supplier's reciprocal indemnity in Section 11.2 gets no such exclusion and stays capped. Read together, these provisions give the client unlimited exposure for losses that may be Supplier's fault, while Supplier's own indemnity is capped.",
+      "doc": "D1",
+      "section": "Sections 11.1 and 12.3(a)",
+      "detect_terms": [
+        "arising out of or relating to the distribution, marketing or resale of the Products",
+        "Distributor's obligations under Section 11.1"
+      ],
+      "expected_finding": "The client's indemnity is uncapped and covers supplier-caused product claims while the supplier's indemnity is capped, so the indemnity should be narrowed to the distributor's own fault and made mutual or subject to a cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "In D1, Section 12.3(b) excludes Supplier's obligation to reimburse recall costs under Section 9 from the 12-month-fees cap in Section 12.2. Section 3 of D2 deletes Section 12.3 and replaces it with a version that keeps only the Distributor-indemnity exclusion and the gross negligence/willful misconduct exclusion. The recall carve-out is silently dropped. D2's recitals describe the amendment only as a pricing and territory update. Under D1 Section 1.4, amendments take precedence over the Agreement body, so the cap now limits Supplier's recall reimbursement to fees paid in the prior 12 months. A large recall could exceed that amount.",
+      "doc": "D2",
+      "section": "Section 3",
+      "detect_terms": [
+        "Section 12.3 is hereby deleted in its entirety and replaced",
+        "gross negligence or willful misconduct"
+      ],
+      "expected_finding": "The First Amendment removed the recall-cost carve-out, so the supplier's recall reimbursement is now subject to the 12-month fee cap, and the carve-out should be reinstated.",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Sections 17.1 and 17.2 of D1 choose New York law and exclusive jurisdiction in the state and federal courts in New York County. Section 6 of D2 states that 'this Amendment and the Agreement as amended' are governed by Delaware law, with exclusive jurisdiction in the courts in Wilmington, Delaware. Under the order of precedence in D1 Section 1.4, the amendment controls. The result is that the whole relationship moves to Supplier's home state and forum, and it is uncertain which law applies to disputes about pre-amendment conduct.",
+      "doc": "D2",
+      "section": "Section 6",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Wilmington, Delaware"
+      ],
+      "expected_finding": "The First Amendment switches the governing law and forum for the entire agreement from New York to Delaware through the precedence clause, so it should be conformed back to New York law and New York County courts.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ]
+    }
+  ]
+}

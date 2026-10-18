@@ -1,0 +1,196 @@
+{
+  "matter_id": "s3-m0001",
+  "summary": "The firm represents Harrow Creek Distribution LLC, the exclusive mid-Atlantic distributor of Velloran Instruments, Inc. precision measurement products. Harrow Creek's members signed a Membership Interest Purchase Agreement on October 5, 2026 to sell 100% of Harrow Creek to Quillon Industrial Holdings, Inc. The target closing date is November 30, 2026. The supervising partner wants a memo on issues in the distribution relationship folder that affect the client and the pending sale. The folder holds five documents: the Distribution Agreement, a First Amendment adding products, a 2025 Exclusivity and Non-Competition Side Letter, the MIPA with its disclosure schedules, and an unrelated warehouse services agreement. Four problems are planted. First, the renewal window under the Distribution Agreement passed on August 17, 2026 without a Renewal Notice, so the agreement expires November 14, 2026, before closing. Second, the change-of-control consent Velloran holds is not listed or addressed in the MIPA. Third, the side letter redefines 'Territory' to add New York and Virginia, so the non-compete reaches states where Harrow Creek has no exclusivity, and the precedence clause makes that definition control. Fourth, the side letter selects New York law and New York courts, which conflicts with the Delaware choice in the Distribution Agreement.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Harrow Creek Distribution LLC",
+      "role": "Distributor; firm's client; target company being sold under the MIPA"
+    },
+    {
+      "id": "P2",
+      "name": "Velloran Instruments, Inc.",
+      "role": "Supplier/manufacturer under the Distribution Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Quillon Industrial Holdings, Inc.",
+      "role": "Buyer of 100% of the membership interests of Harrow Creek under the MIPA"
+    },
+    {
+      "id": "P4",
+      "name": "Saltmarsh Logistics LLC",
+      "role": "Third-party warehouse and fulfillment provider to Harrow Creek (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "November 15, 2023",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Initial Term",
+      "value": "3 years from the Distribution Agreement Effective Date, ending November 14, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Renewal Notice deadline",
+      "value": "at least 90 days before the end of the Initial Term",
+      "doc": "D1",
+      "section": "Section 3.2"
+    },
+    {
+      "id": "F4",
+      "key": "Distribution Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 18.1"
+    },
+    {
+      "id": "F5",
+      "key": "Distribution Agreement forum",
+      "value": "state or federal courts located in Wilmington, Delaware (exclusive)",
+      "doc": "D1",
+      "section": "Section 18.2"
+    },
+    {
+      "id": "F6",
+      "key": "Territory (Distribution Agreement)",
+      "value": "Delaware, Maryland, New Jersey and Pennsylvania",
+      "doc": "D1",
+      "section": "Section 1.12"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "First Amendment, then Side Letter, then Distribution Agreement body, then Exhibits",
+      "doc": "D1",
+      "section": "Section 19.4"
+    },
+    {
+      "id": "F8",
+      "key": "First Amendment Effective Date",
+      "value": "June 1, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "MIPA Signing Date",
+      "value": "October 5, 2026",
+      "doc": "D4",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "MIPA Target Closing Date",
+      "value": "November 30, 2026",
+      "doc": "D4",
+      "section": "Section 2.2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement_harrow_creek_velloran.md",
+      "kind": "Exclusive Distribution Agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "first_amendment_distribution_agreement.md",
+      "kind": "First Amendment to Distribution Agreement (adds the Accessory product line to Exhibit A and updates Exhibit B pricing; all other terms unchanged)",
+      "distractor": true,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D3",
+      "filename": "exclusivity_noncompete_side_letter_2025.md",
+      "kind": "Exclusivity and Non-Competition Side Letter dated March 3, 2025, between Velloran and Harrow Creek",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "membership_interest_purchase_agreement_and_schedules.md",
+      "kind": "Membership Interest Purchase Agreement (Quillon acquiring Harrow Creek) with Disclosure Schedules",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "warehouse_services_agreement_saltmarsh.md",
+      "kind": "Warehouse and Fulfillment Services Agreement between Harrow Creek and Saltmarsh Logistics (Delaware law, terminable on 60 days' notice, no change-of-control or assignment restriction)",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "D1 Section 3.1 sets a three-year Initial Term running from the Effective Date of November 15, 2023 (Preamble), so the term ends November 14, 2026. Section 3.2 says the agreement renews for one 3-year Renewal Term only if Distributor delivers a written Renewal Notice at least 90 days before the Initial Term ends. Otherwise it expires; there is no automatic renewal. Working from those dates, the last day for the Renewal Notice was August 16, 2026, and today is October 18, 2026. D4 Disclosure Schedule 3.12 says the Company 'intends to deliver the Renewal Notice prior to Closing'. That statement confirms no notice was sent. MIPA Section 3.12 also represents that the Distribution Agreement 'remains in effect through November 2029'. Read together, these provisions show that the renewal right lapsed and the agreement will expire on November 14, 2026, before the November 30, 2026 target closing. As a result, Harrow Creek's core supply relationship disappears, and the seller faces a likely breach-of-representation claim from Quillon.",
+      "doc": "D1",
+      "section": "Section 3.2",
+      "detect_terms": [
+        "Renewal Notice",
+        "at least ninety (90) days prior to the expiration of the Initial Term"
+      ],
+      "expected_finding": "The renewal window closed on August 16, 2026 with no Renewal Notice, so the Distribution Agreement expires November 14, 2026 unless Velloran agrees to an extension, and the MIPA representation that it runs to 2029 is inaccurate and should be corrected or the extension obtained before closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "D1 Section 14.2 treats any Change of Control of Distributor as an assignment that requires Velloran's prior written consent. A Change of Control includes any transfer of more than 50% of Distributor's equity interests. Section 14.3 lets Velloran terminate immediately if a Change of Control occurs without that consent. D4 is a sale of 100% of Harrow Creek's membership interests to Quillon, so it is a Change of Control. However, MIPA Disclosure Schedule 3.6 (Required Consents) lists only the warehouse landlord and the senior lender. MIPA Section 6.4 obliges the Sellers to obtain only the consents listed on Schedule 3.6, and the closing condition in Section 7.1(d) is limited to those same listed consents. The Velloran consent is therefore neither listed, covenanted nor made a condition to closing. The gap only appears when D1 Section 14.2 is read against D4 Schedule 3.6 and Sections 6.4 and 7.1(d).",
+      "doc": "D4",
+      "section": "Disclosure Schedule 3.6 (Required Consents); Sections 6.4 and 7.1(d)",
+      "detect_terms": [
+        "Required Consents",
+        "Schedule 3.6"
+      ],
+      "expected_finding": "The sale is a Change of Control requiring Velloran's prior written consent under Distribution Agreement Section 14.2, the MIPA omits that consent from Schedule 3.6, the consent covenant and the closing conditions, and the Velloran consent should be added and obtained before closing to avoid a termination right.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 Section 1.12 defines 'Territory' as Delaware, Maryland, New Jersey and Pennsylvania. Velloran's exclusivity grant to Harrow Creek in D1 Section 2.1 is limited to that Territory. D3 Section 1 says capitalized terms have their Distribution Agreement meanings, 'except that \"Territory\" means Delaware, Maryland, New Jersey, Pennsylvania, New York and Virginia.' D3 Section 2 then bars Harrow Creek from selling Competing Products in the 'Territory' during the term and for 18 months afterward. D1 Section 19.4 provides that the Side Letter prevails over the body of the Distribution Agreement. Reading these together, the expanded definition controls the non-compete, which now covers New York and Virginia, where Harrow Creek has no exclusive rights. The exclusivity it receives still covers only four states. This one-sided expansion restricts the business Quillon is buying and survives termination.",
+      "doc": "D3",
+      "section": "Sections 1 and 2",
+      "detect_terms": [
+        "New York and Virginia",
+        "Competing Products"
+      ],
+      "expected_finding": "Because the Side Letter's broader definition of 'Territory' prevails under Section 19.4, Harrow Creek's post-term non-compete covers six states while its exclusivity covers only four, and the definition should be conformed to the Distribution Agreement Territory or the exclusivity expanded to match.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "D1 Section 18.1 selects Delaware law, and Section 18.2 gives the state and federal courts in Wilmington, Delaware exclusive jurisdiction. D3 Section 6 states that the Side Letter 'and any dispute arising out of the exclusivity and non-competition arrangements between the parties' is governed by New York law. It also requires exclusive venue in the state and federal courts of New York County. D1 Section 19.4 gives the Side Letter priority over the body of the Distribution Agreement. As a result, a dispute over exclusivity, minimum performance or the non-compete, all of which are woven into the Distribution Agreement, could be pulled into New York under New York law, while the rest of the relationship is litigated in Delaware. That creates a risk of parallel proceedings and inconsistent results. It also undercuts the Delaware forum on which the client and the buyer's diligence relied.",
+      "doc": "D3",
+      "section": "Section 6",
+      "detect_terms": [
+        "laws of the State of New York",
+        "New York County"
+      ],
+      "expected_finding": "The Side Letter's New York law and New York County forum clause conflicts with the Distribution Agreement's Delaware law and Wilmington forum and, given the precedence clause, can split disputes over the same relationship across two forums, so it should be amended to conform to Delaware.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    }
+  ]
+}
