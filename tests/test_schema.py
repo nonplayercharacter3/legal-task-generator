@@ -82,3 +82,14 @@ def test_fact_values_must_be_short_values_not_clauses():
     assert any("fact F1 is 21 words" in e for e in validate_ledger(ledger, spec))
     ledger.facts[0].value = "30 days"
     assert validate_ledger(ledger, spec) == []
+
+
+def test_negative_criteria_may_not_target_a_distractor():
+    ledger, _ = _ledger_and_spec()
+    distractor = next(d for d in ledger.documents if d.distractor)
+    crits = [{"id": f"C{k + 1}", "text": f"finds {i.id}", "kind": "issue", "source": i.id} for k, i in enumerate(ledger.issues)]
+    ok = Rubric.from_dict({"criteria": crits + [{"id": "N1", "text": "Does not cite case law absent from the documents.", "kind": "negative"}]})
+    assert validate_rubric(ok, ledger) == []
+    name = distractor.filename.rsplit(".", 1)[0].replace("_", " ")
+    bad = Rubric.from_dict({"criteria": crits + [{"id": "N1", "text": f"Fails if it flags the {name} as a problem.", "kind": "negative"}]})
+    assert any("distractor" in e for e in validate_rubric(bad, ledger))

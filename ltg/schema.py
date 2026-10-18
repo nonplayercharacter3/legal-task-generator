@@ -216,6 +216,10 @@ def validate_ledger(ledger: Ledger, spec: MatterSpec) -> list[str]:
     return errs
 
 
+def _words(s: str) -> str:
+    return " " + " ".join(re.findall(r"[a-z0-9]+", s.lower())) + " "
+
+
 def validate_rubric(rubric: Rubric, ledger: Ledger) -> list[str]:
     """Every criterion must trace back to the ledger, and every issue must be graded."""
     errs: list[str] = []
@@ -232,6 +236,15 @@ def validate_rubric(rubric: Rubric, ledger: Ledger) -> list[str]:
             errs.append(f"criterion {c.id} cites {c.source!r}, which is not a ledger issue")
         elif c.kind == "fact" and c.source not in fact_ids:
             errs.append(f"criterion {c.id} cites {c.source!r}, which is not a ledger fact")
+    # A negative criterion about a distractor punishes thoroughness: real documents always hold points a careful
+    # reviewer may raise, and the ledger cannot say they are wrong (the 2026-10-18 pilot lost two tasks this way).
+    for c in rubric.criteria:
+        if c.kind != "negative":
+            continue
+        for d in ledger.documents:
+            names = {_words(d.filename.rsplit(".", 1)[0]), _words(d.kind.split("(")[0])}
+            if d.distractor and any(n.strip() and n in _words(c.text) for n in names):
+                errs.append(f"negative criterion {c.id} is about distractor {d.id}; grade only wrong conclusions")
     graded = {c.source for c in rubric.criteria if c.kind == "issue"}
     for missing in sorted(issue_ids - graded):
         errs.append(f"issue {missing} has no criterion")

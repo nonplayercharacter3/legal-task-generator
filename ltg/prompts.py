@@ -106,8 +106,11 @@ You receive the facts ledger, the task instruction and the deliverable. Write cr
   and why it matters.
 - kind "fact": 1 to 3 criteria for facts a correct answer must state (source = fact id).
 - kind "format": 1 to 2 criteria about the deliverable's form (source = null).
-- kind "negative": 1 to 2 criteria a response fails by doing something wrong, such as citing authority that is
-  not in the documents or flagging a distractor document as problematic (source = null).
+- kind "negative": 1 to 2 criteria a response fails by reaching a specific wrong conclusion that the ledger
+  refutes (for example calling a late notice timely; source = the fact or issue id that refutes it), or by
+  attributing to a document text or authority it does not contain (source = null). Never penalise a response
+  for commenting on, criticising or recommending changes to any document, distractors included: a thorough
+  reviewer may raise points beyond the planted issues, and the rubric cannot know they are wrong.
 For each criterion give `hints`: 1 to 3 short phrases a passing response would very likely contain.
 Every criterion must be satisfiable from the instruction and the documents alone: the solver never sees the ledger,
 so never require facts that appear only in the ledger (its summary, the client's plans or the deal background).
