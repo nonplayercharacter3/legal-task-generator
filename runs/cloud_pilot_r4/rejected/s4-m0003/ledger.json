@@ -1,0 +1,163 @@
+{
+  "matter_id": "s4-m0003",
+  "summary": "The firm represents Harrowgate Climate Systems, Inc. (Buyer) in its acquisition of the commercial and residential building climate control business of Tellmar Controls LLC (Seller) under an Asset Purchase Agreement. The deal signed on January 12, 2026 and closed on February 2, 2026. The folder holds four documents: the APA, a post-closing Transition Services Agreement under which Seller supports Buyer, a correspondence bundle about the post-closing purchase price adjustment, and the Bill of Sale. The supervising partner wants an issue-spotting memo before Buyer sends its working capital dispute notice and before the TSA services are relied on.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Harrowgate Climate Systems, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Tellmar Controls LLC",
+      "role": "Seller and Transition Services Provider"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing Date",
+      "value": "January 12, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Closing Date",
+      "value": "February 2, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Base Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Target Net Working Capital",
+      "value": "$6,200,000",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F5",
+      "key": "Closing Statement delivery deadline",
+      "value": "30 days after the Closing Date",
+      "doc": "D1",
+      "section": "Section 2.4(a)"
+    },
+    {
+      "id": "F6",
+      "key": "Notice of Disagreement period",
+      "value": "30 days after Buyer's receipt of the Closing Statement",
+      "doc": "D1",
+      "section": "Section 2.4(b)"
+    },
+    {
+      "id": "F7",
+      "key": "Closing Statement receipt date",
+      "value": "March 3, 2026",
+      "doc": "D3",
+      "section": "Item 1 (Seller cover letter and courier delivery confirmation)"
+    },
+    {
+      "id": "F8",
+      "key": "APA definition of Business",
+      "value": "design, manufacture, sale and servicing of commercial and residential building climate control systems",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F9",
+      "key": "Order of precedence",
+      "value": "Ancillary Agreement controls as to its subject matter; otherwise the APA controls",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F10",
+      "key": "TSA Term",
+      "value": "9 months after the Closing Date",
+      "doc": "D2",
+      "section": "Section 5.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "Asset Purchase Agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "transition_services_agreement.md",
+      "kind": "Transition Services Agreement (Ancillary Agreement)",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "closing_statement_correspondence.md",
+      "kind": "Correspondence bundle: Seller's Closing Statement cover letter with delivery confirmation, and Buyer's draft Notice of Disagreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "bill_of_sale.md",
+      "kind": "Bill of Sale",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Two provisions in D1 set the window. APA Section 2.4(b) gives Buyer 30 days after it receives Seller's Closing Statement to deliver a Notice of Disagreement. If Buyer misses that window, the Closing Statement becomes final and binding, including Seller's net working capital figure, which is above the $6,200,000 target. APA Section 1.3 says 'days' means calendar days. In D3, Item 1 is Seller's cover letter dated March 2, 2026, and its courier confirmation shows Buyer received the Closing Statement on March 3, 2026. The deadline was therefore April 2, 2026. Item 2 of D3 is Buyer's draft Notice of Disagreement dated April 8, 2026, which is six days late. Nothing in the folder extends or waives the deadline. The finding only appears when the APA's 30-day calendar-day period is computed from the receipt date in D3 and compared with the draft notice's date.",
+      "doc": "D3",
+      "section": "Item 2 (Buyer's draft Notice of Disagreement dated April 8, 2026), read with Item 1 and APA Sections 1.3 and 2.4(b)",
+      "detect_terms": [
+        "Notice of Disagreement",
+        "April 8, 2026",
+        "received on March 3, 2026"
+      ],
+      "expected_finding": "Buyer's Notice of Disagreement window closed on April 2, 2026, 30 calendar days after receipt on March 3, 2026, so the April 8 draft is untimely and Seller's Closing Statement is final and binding unless Buyer obtains a written extension or waiver from Seller.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 9.3 bars Buyer, as Recipient, from assigning without Provider's consent. It also lets Seller, as Provider, assign the TSA or delegate the Services, in whole or in part, to any Person on written notice alone. That allows a transfer to a competitor of Buyer, which would gain access to Buyer's systems and data during the 9-month TSA term. APA Section 11.6 contains a mutual consent requirement, but it applies only to 'this Agreement'. APA Section 11.9 then provides that an Ancillary Agreement controls as to its subject matter. Reading these together, the APA does not cure the gap, and the TSA's one-sided clause governs.",
+      "doc": "D2",
+      "section": "Section 9.3 (Assignment), read with APA Sections 11.6 and 11.9",
+      "detect_terms": [
+        "Provider may assign or delegate this Agreement",
+        "to any Person upon written notice"
+      ],
+      "expected_finding": "Seller can assign the TSA or delegate the Services to anyone, including a Buyer competitor, without consent, and the APA's assignment restriction does not reach the TSA, so Buyer should require a mutual consent requirement with an express bar on transfers to competitors.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 defines 'Business' broadly, covering commercial and residential building climate control systems. TSA Section 1.1 says undefined capitalized terms take their APA meaning, but then gives 'Business' its own narrower definition: 'the design, manufacture, sale and servicing of commercial building climate control systems'. TSA Section 2.1 obliges Seller to provide the Services 'as reasonably necessary to operate the Business'. Under the TSA definition, the residential line Buyer acquired falls outside Seller's service obligations. Because APA Section 11.9 gives the TSA precedence as to its subject matter, the narrower TSA definition controls the scope of the Services.",
+      "doc": "D2",
+      "section": "Section 1.1 (definition of Business), read with TSA Section 2.1 and APA Sections 1.1 and 11.9",
+      "detect_terms": [
+        "commercial building climate control systems",
+        "reasonably necessary to operate the Business"
+      ],
+      "expected_finding": "The TSA's narrower definition of 'Business' removes the acquired residential product line from Seller's transition service obligations, so Buyer should conform the TSA definition to the APA definition.",
+      "contradicts": "F8"
+    }
+  ]
+}

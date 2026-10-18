@@ -1,0 +1,167 @@
+{
+  "matter_id": "s4-m0001",
+  "summary": "The firm represents Halvorsen Optics Inc., a manufacturer of ophthalmic diagnostic devices, which appointed Brightwater Medical Supply LLC as its exclusive distributor in a four-state territory under a 2024 Distribution Agreement governed by New York law. A 2025 amendment described as 'administrative' did two harmful things. It removed the carve-out from the liability cap for the distributor's trademark breaches. It also replaced the distributor's assignment restriction with a broad free-transfer right. Separately, Halvorsen is being acquired by Castellane Holdings Corp. under a Stock Purchase Agreement. The SPA's consents schedule ignores the distributor's change-of-control consent right, and the agreement's advance-notice requirement for that consent was not met. The supervising partner wants an issue-spotting memo before closing.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Halvorsen Optics Inc.",
+      "role": "Supplier/manufacturer under the Distribution Agreement and target company in the stock sale (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Brightwater Medical Supply LLC",
+      "role": "Exclusive Distributor under the Distribution Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Castellane Holdings Corp.",
+      "role": "Buyer of all outstanding stock of Halvorsen Optics Inc. under the Stock Purchase Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "January 15, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Territory",
+      "value": "New York, New Jersey, Connecticut and Pennsylvania",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement Initial Term",
+      "value": "five years from the Distribution Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F4",
+      "key": "Distribution Agreement liability cap",
+      "value": "amounts paid or payable under the Agreement in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F5",
+      "key": "Distribution Agreement governing law",
+      "value": "New York",
+      "doc": "D1",
+      "section": "Section 18.1"
+    },
+    {
+      "id": "F6",
+      "key": "Distribution Agreement order of precedence",
+      "value": "executed amendments prevail over the Agreement; the Agreement prevails over Exhibits and Purchase Orders",
+      "doc": "D1",
+      "section": "Section 18.5"
+    },
+    {
+      "id": "F7",
+      "key": "Change of control consent request deadline",
+      "value": "at least 30 days before closing of the change of control",
+      "doc": "D1",
+      "section": "Section 15.3"
+    },
+    {
+      "id": "F8",
+      "key": "Amendment No. 1 Effective Date",
+      "value": "September 1, 2025",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Stock Purchase Agreement Signing Date",
+      "value": "March 2, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Stock Purchase Agreement Scheduled Closing Date",
+      "value": "March 20, 2026",
+      "doc": "D3",
+      "section": "Section 2.2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement_halvorsen_brightwater.md",
+      "kind": "Exclusive Distribution Agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_no_1_distribution_agreement.md",
+      "kind": "Amendment No. 1 to Distribution Agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "stock_purchase_agreement_excerpt_and_schedule_3_4.md",
+      "kind": "Stock Purchase Agreement (excerpt) with Disclosure Schedule 3.4 (Third-Party Consents)",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "brightwater_2026_cooperative_marketing_letter.md",
+      "kind": "Cooperative marketing funds letter agreement for calendar year 2026",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "D1 Section 12.2 caps each party's liability at the amounts paid or payable in the prior 12 months (F4). D1 Section 12.3 excludes three categories from that cap: (a) indemnification obligations, (b) Distributor's breach of Section 8 (Trademark and IP Restrictions), including unauthorized use, alteration or co-branding of Halvorsen marks, and (c) breach of confidentiality. D2 Section 3 states that 'Section 12.3(b) is deleted' and that the remaining clauses are renumbered. D2's recitals describe the amendment as conforming and administrative. Under the precedence clause in D1 Section 18.5 (F6), the executed amendment controls. Reading D2 Section 3 together with D1 Sections 8, 12.2, 12.3 and 18.5 shows that Distributor's trademark misuse is now subject to the 12-month fee cap. Only Distributor owes the Section 8 obligations, so the deletion benefits Brightwater alone. Brand-damage claims and Lanham Act-type claims can far exceed a year of purchases. The indemnity carve-out in 12.3(a) does not cure this, because Distributor's indemnity in Section 11.2 covers third-party claims only and not Halvorsen's own direct losses from misuse of its marks.",
+      "doc": "D2",
+      "section": "Section 3",
+      "detect_terms": [
+        "Section 12.3(b) is deleted",
+        "clauses shall be renumbered accordingly"
+      ],
+      "expected_finding": "Amendment No. 1, which controls under Section 18.5, silently places Distributor's trademark and IP breaches under the 12-month fee cap, leaving Halvorsen's direct brand-damage losses capped; the carve-out should be reinstated by further amendment.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Original D1 Section 15.1 barred Distributor from assigning without Halvorsen's prior written consent. D1 Section 15.3 deems a change of control to be an assignment, but only for Supplier. D2 Section 2 replaces Section 15.1 in full and lets Distributor assign the Agreement in whole or in part 'without Supplier's consent' to any 'Permitted Transferee'. D2 Section 1 defines that term as any person acquiring all or substantially all of Distributor's business or assets relating to the Territory. The definition has no exclusion for competitors, no creditworthiness test, and no requirement that the transferee assume the Section 6.4 non-compete. D1 Section 18.5 (F6) makes the amendment prevail. Read together, these provisions let Brightwater sell or transfer the exclusive territorial rights to a competing ophthalmic manufacturer or its distributor without Halvorsen's consent. Nothing restricts a change of control of Distributor either. Because D2 expressly authorizes the assignment, New York's general rule of free assignability gives Halvorsen no protection.",
+      "doc": "D2",
+      "section": "Sections 1 and 2",
+      "detect_terms": [
+        "Permitted Transferee",
+        "without Supplier's consent"
+      ],
+      "expected_finding": "Amendment No. 1 lets Brightwater assign the exclusive distributorship, including to a Halvorsen competitor, without Halvorsen's consent; the amendment should be revised to require consent and exclude competitors, and to add a change-of-control trigger for Distributor.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "D1 Section 15.3 treats any change of control of Supplier, including a sale of more than 50% of its voting stock, as 'deemed an assignment'. Such an assignment requires Distributor's prior written consent, which may not be unreasonably withheld, and Supplier must request that consent at least 30 days before closing (F7). If consent is not obtained, Distributor may terminate on notice and require Supplier to repurchase all inventory at landed cost under Section 16.4. D3 Schedule 3.4 represents that 'No consent of any third party' is required in connection with the transaction. The SPA's closing-condition covenant in D3 Section 6.3 covers only scheduled consents. The SPA was signed March 2, 2026 (F9) with closing scheduled for March 20, 2026 (F10), only 18 days apart. A compliant request was therefore impossible after signing, and the folder shows no request ever made to Brightwater. The issue only appears when D1 Section 15.3 is read against D3 Schedule 3.4 and the dates in D3. The result is an inaccurate disclosure that exposes Halvorsen's sellers to an indemnity claim from Castellane. It also leaves Brightwater with a termination and inventory-buyback right that it can use to extract concessions.",
+      "doc": "D3",
+      "section": "Disclosure Schedule 3.4",
+      "detect_terms": [
+        "No consent of any third party",
+        "Schedule 3.4"
+      ],
+      "expected_finding": "The stock sale triggers Brightwater's consent right under Section 15.3 of the Distribution Agreement, but Schedule 3.4 omits it and the 30-day pre-closing request deadline cannot be met given the March 2 signing and March 20 closing dates, so Halvorsen should schedule the consent, seek a waiver or consent from Brightwater promptly, and adjust the closing date or closing conditions.",
+      "contradicts": null
+    }
+  ]
+}

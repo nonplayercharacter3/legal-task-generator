@@ -1,0 +1,189 @@
+{
+  "matter_id": "s4-m0002",
+  "summary": "The firm represents Harrowgate Industrial Holdings LLC (Buyer) in buying all outstanding shares of Coldbrook Precision Components, Inc. from Meridale Capital Partners II, L.P. (Seller) for $48,500,000 under a New York-law Stock Purchase Agreement signed August 3, 2026. The deal is between signing and closing. The folder holds the SPA, the Company's Master Supply Agreement with its sole-source alloy supplier, the Indemnity Escrow Agreement, Seller's Second Schedule Supplement letter dated October 13, 2026, and the Company's headquarters lease. Three issues are planted. First, Buyer's 10-Business-Day window to terminate over the First Schedule Supplement, which disclosed a key customer's non-renewal, expired on September 28, 2026; under the SPA that lapse deems the breach cured for indemnity and closing-condition purposes. Second, the Escrow Agreement redefines 'Losses' more narrowly than the SPA, and the SPA's precedence clause lets the Escrow Agreement control disbursement. Third, the Master Supply Agreement treats a change of control as an assignment that needs Supplier consent, but the SPA's required-consents annex omits it.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Harrowgate Industrial Holdings LLC",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Meridale Capital Partners II, L.P.",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Coldbrook Precision Components, Inc.",
+      "role": "Company (target whose shares are being sold)"
+    },
+    {
+      "id": "P4",
+      "name": "Tavinor Alloys Corp.",
+      "role": "Supplier under the Company's Master Supply Agreement (sole-source specialty alloy supplier)"
+    },
+    {
+      "id": "P5",
+      "name": "Northbank Trust Company, N.A.",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P6",
+      "name": "1180 Elm Ridge Associates LLC",
+      "role": "Landlord under the Company's headquarters lease"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "August 3, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$4,850,000",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F4",
+      "key": "Schedule Supplement termination window",
+      "value": "10 Business Days after Buyer's receipt of a Schedule Supplement",
+      "doc": "D1",
+      "section": "Section 5.7(b)"
+    },
+    {
+      "id": "F5",
+      "key": "SPA Outside Date",
+      "value": "November 30, 2026",
+      "doc": "D1",
+      "section": "Section 8.1(b)"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "SPA prevails over Ancillary Agreements, except Escrow Agreement controls escrow disbursement mechanics",
+      "doc": "D1",
+      "section": "Section 11.11"
+    },
+    {
+      "id": "F7",
+      "key": "SPA definition of Losses",
+      "value": "All damages, including reasonable attorneys' fees and diminution in value",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F8",
+      "key": "SPA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F9",
+      "key": "First Schedule Supplement delivery date",
+      "value": "September 14, 2026",
+      "doc": "D4",
+      "section": "Paragraph 1"
+    },
+    {
+      "id": "F10",
+      "key": "Escrow Agreement indemnity escrow period",
+      "value": "18 months after the Closing Date",
+      "doc": "D3",
+      "section": "Section 4.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "master_supply_agreement_tavinor.md",
+      "kind": "master supply agreement (Company material contract)",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "indemnity_escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "second_schedule_supplement_letter.md",
+      "kind": "seller letter delivering disclosure schedule supplement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "headquarters_office_lease.md",
+      "kind": "commercial office lease (Company as tenant)",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under SPA Section 5.7(b), Buyer may terminate within 10 Business Days after receiving a Schedule Supplement. Under Section 5.7(c), if Buyer does not terminate in that window, the supplement is deemed to cure any breach for purposes of Article IX (indemnification) and the Section 7.2(a) bring-down condition. Seller's Second Schedule Supplement letter (D4), dated October 13, 2026, states in Paragraph 1 that the First Schedule Supplement was delivered and receipt confirmed on September 14, 2026 (a Monday). That supplement disclosed that Ferrovane Automotive, a top customer at about 18% of revenue, gave notice of non-renewal. Paragraph 2 asserts that because Buyer did not terminate, the matter is deemed cured. Counting 10 Business Days from September 14, 2026 gives a deadline of September 28, 2026, which had passed by the letter's October 13, 2026 date. Spotting this requires combining SPA Section 5.7(b)-(c) with the delivery date and letter date in D4. Buyer has lost both its walk right and its indemnity for the customer loss.",
+      "doc": "D4",
+      "section": "Paragraph 2",
+      "detect_terms": [
+        "First Schedule Supplement",
+        "deemed to have cured"
+      ],
+      "expected_finding": "Buyer's 10-Business-Day termination window for the September 14, 2026 First Schedule Supplement expired on September 28, 2026, so under SPA Section 5.7(c) the Ferrovane non-renewal is deemed cured. Buyer should seek a price reduction or special indemnity by amendment before closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines 'Losses' broadly, to include reasonable attorneys' fees and diminution in value, and Article IX indemnity claims against the escrow are measured in Losses. Escrow Agreement Section 1.1 separately defines 'Losses' as actual out-of-pocket losses, excluding diminution in value, lost profits and attorneys' fees. Escrow Agreement Section 4.3 then allows the Escrow Agent to disburse to Buyer only amounts constituting 'Losses' as defined in that agreement. SPA Section 11.11 makes the SPA prevail over Ancillary Agreements except as to escrow disbursement mechanics, where the Escrow Agreement controls. Read together, the precedence clause lets the narrower definition govern what Buyer can actually recover from the $4,850,000 escrow. That narrows Buyer's principal recovery source below what the SPA promises.",
+      "doc": "D3",
+      "section": "Section 1.1 and Section 4.3",
+      "detect_terms": [
+        "out-of-pocket",
+        "excluding diminution in value"
+      ],
+      "expected_finding": "The Escrow Agreement's narrower definition of 'Losses' controls escrow disbursements through SPA Section 11.11 and cuts down Buyer's escrow recovery. The Escrow Agreement should be conformed so that 'Losses' has the meaning given in the SPA.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Master Supply Agreement Section 14.2 deems any transfer of more than 50% of the Company's voting equity an assignment that requires Tavinor Alloys' prior written consent. Absent consent, Tavinor may terminate on 30 days' notice or reprice to list rates. Tavinor is the Company's sole-source supplier of specialty alloy. The SPA's sale of 100% of the shares triggers this clause. However, SPA Section 7.2(d) conditions Buyer's obligation to close only on the consents listed in Annex 7.2(d), which lists only the lender payoff and release. SPA Section 4.4 likewise represents that no third-party consents are required beyond that Annex. Neither the Second Schedule Supplement nor any other document in the folder addresses the Tavinor consent. Spotting this requires reading MSA Section 14.2 against SPA Sections 4.4 and 7.2(d) and Annex 7.2(d). Buyer could be obligated to close and then lose or face repricing of the critical supply contract.",
+      "doc": "D2",
+      "section": "Section 14.2",
+      "detect_terms": [
+        "more than fifty percent (50%)",
+        "prior written consent of Supplier"
+      ],
+      "expected_finding": "The share sale triggers Tavinor's consent right under MSA Section 14.2, which is neither obtained nor listed in SPA Annex 7.2(d). Buyer should add Tavinor's consent as a closing condition and covenant, or obtain it before closing.",
+      "contradicts": null
+    }
+  ]
+}

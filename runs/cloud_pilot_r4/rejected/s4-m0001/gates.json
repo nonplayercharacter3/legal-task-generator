@@ -1,0 +1,70 @@
+{
+  "matter_id": "s4-m0001",
+  "accepted": false,
+  "failed_gate": "leak_check",
+  "reason": "hits: [{\"issue\": \"I3\", \"phrase\": \"Schedule 3.4\", \"in\": \"instruction\"}, {\"issue\": \"I3\", \"phrase\": \"Schedule 3.4\", \"in\": \"stock_purchase_agreement_excerpt_and_schedule_3_4.md\"}]",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Amendment Section 3.1: \"Section 12.3(b) is deleted, and the remaining clauses shall be renumbered accordingly.\" Recital B calls the changes \"certain conforming and administrative amendments.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Amendment Section 2.1 replaces Section 15.1 with: \"Distributor may assign or otherwise transfer this Agreement, in whole or in part, together with any of its rights and obligations under it, without Supplier's consent to any Permitted Transferee.\" Section 1.2 adds: \"'Permitted Transferee' means any person that acquires all or substantially all of Distributor's business or assets relating to the Territory, whether by purchase of assets, purchase of equity, merger, consolidation or otherwise.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Schedule 3.4, Part A: \"No consent of any third party is required under any Material Contract or other Contract to which the Company is a party in connection with the execution, delivery and performance of the Agreement or the consummation of the Transactions, and no notice to any third party is required under any such Contract as a condition to the consummation of the Transactions.\" Compare Distribution Agreement Section 15.3: \"Any change of control of Supplier, including ... any sale or transfer ... of more than 50% of Supplier's outstanding voting stock, is deemed an assignment of this Agreement by Supplier requiring Distributor's prior written consent under Section 15.2 ... Supplier shall deliver a written request for that consent ... at least 30 days before closing of the change of control.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": false,
+      "details": {
+        "hits": [
+          {
+            "issue": "I3",
+            "phrase": "Schedule 3.4",
+            "in": "instruction"
+          },
+          {
+            "issue": "I3",
+            "phrase": "Schedule 3.4",
+            "in": "stock_purchase_agreement_excerpt_and_schedule_3_4.md"
+          }
+        ],
+        "html_comments": [],
+        "empty": false
+      }
+    }
+  ]
+}

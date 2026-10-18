@@ -1,0 +1,134 @@
+{
+  "matter_id": "s4-m0002",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "every attempt passed: too easy to carry training signal",
+  "split": null,
+  "solver_pass_rate": 1.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Paragraph 2: \"Buyer did not deliver a notice of termination under Section 5.7(b) and Section 8.1(e) of the Agreement within the period set forth in Section 5.7(b) for the First Schedule Supplement. So, under Section 5.7(c) of the Agreement, Buyer is deemed to have irrevocably waived its right to terminate the Agreement for the matters disclosed in the First Schedule Supplement. The First Schedule Supplement is also deemed to have cured any inaccuracy in or breach of any representation or warranty arising from those matters ... for purposes of Article IX of the Agreement and for purposes of determining whether the condition in Section 7.2(a) of the Agreement has been satisfied.\" Paragraph 1: the First Schedule Supplement was delivered by email on September 14, 2026, and \"Buyer confirmed receipt of the First Schedule Supplement on September 14, 2026.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Escrow Agreement Section 1.1: \"'Losses' means actual out-of-pocket losses, liabilities, damages, judgments, settlements, fines and penalties paid or incurred by a Buyer Indemnitee, excluding diminution in value, lost profits, consequential damages, and attorneys' fees and other costs of investigation, defense or enforcement.\" Section 4.3: \"The Escrow Agent shall disburse to Buyer from the Escrow Funds only amounts constituting Losses, and each Claim Notice, Joint Written Instruction and Final Order directing a disbursement to Buyer shall state the amount of Losses to be disbursed.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "MSA Section 14.2: \"Any transaction or series of related transactions by which any Person or group of Persons acting together acquires, directly or indirectly, beneficial ownership of more than fifty percent (50%) of the outstanding voting equity of Buyer ... shall be deemed an assignment of this Agreement by Buyer and shall require the prior written consent of Supplier. If any such transaction is consummated without the prior written consent of Supplier, Supplier may ... either (a) terminate this Agreement effective thirty (30) days after delivery of that notice, or (b) replace the Contract Price for all Products ordered after delivery of that notice with the List Price, in which case Sections 6.1 and 6.2 shall cease to apply to those Products and Section 13.5 shall not apply.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "skipped": "no reference_dirs configured"
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "runs": [
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 21,
+            "files_opened": [
+              "headquarters_office_lease.md",
+              "indemnity_escrow_agreement.md",
+              "master_supply_agreement_tavinor.md",
+              "second_schedule_supplement_letter.md",
+              "stock_purchase_agreement.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 21,
+            "files_opened": [
+              "headquarters_office_lease.md",
+              "indemnity_escrow_agreement.md",
+              "master_supply_agreement_tavinor.md",
+              "second_schedule_supplement_letter.md",
+              "stock_purchase_agreement.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 21,
+            "files_opened": [
+              "headquarters_office_lease.md",
+              "indemnity_escrow_agreement.md",
+              "master_supply_agreement_tavinor.md",
+              "second_schedule_supplement_letter.md",
+              "stock_purchase_agreement.md"
+            ]
+          }
+        ],
+        "reason": "every attempt passed: too easy to carry training signal"
+      }
+    }
+  ]
+}
