@@ -28,6 +28,9 @@ Rules:
   read together: a carve-out that swallows a cap through a cross-reference, a precedence clause that lets the flawed
   document control, a defined term that means something different in another document, a deadline that has to be
   computed from dates stated in different places. Say in the description which provisions combine.
+- Never let an issue depend on today's date: the task may be solved at any later time. A deadline that has passed or
+  is about to pass must be measured against a date stated in the documents (a signing date, a letter's date, a
+  delivery confirmation), and the description must name that date.
 - Give 5 to 10 facts that documents must state consistently. When the folder holds more than one instrument, name
   the instrument in any key that other instruments could also have ("Supply Agreement Effective Date", not
   "Effective Date"). Each fact is ONE short value, not a clause: a date,
@@ -67,7 +70,9 @@ Rules:
 - Plant every ledger issue assigned to this document in its given section, using each of its `detect_terms`
   verbatim. Make the problem discoverable by a careful reader, but do not flag it, comment on it or explain it.
 - Draft each issue so it stays a problem for the client: add no language that cures, scopes, justifies or
-  softens it.
+  softens it. Draft it in the document's ordinary voice and place: section headings that do not name the problem,
+  no signposting ("notwithstanding anything to the contrary", "for the avoidance of doubt") around it, and no
+  recital or cover text that points at the change.
 - Do not plant problems that are not in the ledger. A distractor document must contain no issue: market-standard
   terms, every cross-reference resolving to a provision that exists in the folder, and nothing that conflicts with
   or leaves a gap against the other documents.
