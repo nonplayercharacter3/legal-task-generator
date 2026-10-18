@@ -14,7 +14,11 @@ the grading rubric will later be generated from.
 
 Rules:
 - Invent all party names. Never reuse names, figures or text from the precedents.
-- Party P1 is the firm's client.
+- Party P1 is the firm's client. P1's name must start with `name_stems[0]` and P2's with `name_stems[1]`
+  (stem "Dravik" -> "Dravik Cold Storage, Inc."). Never use any name in `avoid_names`.
+- Set the matter in the spec's `industry`: products, figures and deal terms should fit that business.
+- Besides the main agreement, the documents should be the spec's `supporting_kinds` and, for the distractor, its
+  `distractor_kind`. Adjust a kind only if it cannot fit the matter, and keep the same number of documents.
 - Create exactly `n_documents` documents. The first is the main agreement of type `agreement_type`.
   When there are 3 or more documents, at least one must be a distractor (looks relevant, contains no issue).
 - Plant exactly `n_issues` issues, one of each requested issue type, each in a specific non-distractor document

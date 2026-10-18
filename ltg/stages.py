@@ -15,7 +15,17 @@ from .config import SpecCfg
 from .models import ModelClient, call_json, call_text, render_input
 from .schema import Answers, Ledger, MatterSpec, Rubric, validate_ledger
 from .sources import Precedent
-from .taxonomy import ISSUE_LIBRARY, PRACTICE_AREAS, WORK_TYPES, issue_types_for
+from .taxonomy import (
+    DISTRACTOR_KINDS,
+    INDUSTRIES,
+    ISSUE_LIBRARY,
+    OVERUSED_NAMES,
+    PRACTICE_AREAS,
+    SUPPORTING_KINDS,
+    WORK_TYPES,
+    issue_types_for,
+    name_stem,
+)
 
 Documents = dict[str, str]  # filename -> content
 
@@ -27,11 +37,22 @@ def sample_specs(cfg: SpecCfg, n: int, seed: int) -> list[MatterSpec]:
     """Matter spec sampler. Draws from our own taxonomy, never from a benchmark's task list."""
     r = random.Random(seed)
     specs = []
+    used_issues: dict[str, int] = {}
+    used_stems: set[str] = set()
+    industries = r.sample(INDUSTRIES, len(INDUSTRIES))  # every industry once before any repeats
     for k in range(n):
         area = r.choice(cfg.practice_areas)
         work = r.choice(cfg.work_types)
         n_issues = r.randint(*cfg.n_issues)
-        pool = issue_types_for(area)
+        n_docs = r.randint(*cfg.n_documents)
+        issue_types = _balanced_sample(r, issue_types_for(area), n_issues, used_issues)
+        stems = []
+        while len(stems) < 2:
+            s = name_stem(r)
+            if s not in used_stems:
+                used_stems.add(s)
+                stems.append(s)
+        n_support = max(n_docs - 1 - (1 if n_docs >= 3 else 0), 0)  # the rest: main agreement and one distractor
         specs.append(
             MatterSpec(
                 matter_id=f"s{seed}-m{k + 1:04d}",
@@ -40,19 +61,35 @@ def sample_specs(cfg: SpecCfg, n: int, seed: int) -> list[MatterSpec]:
                 work_type=work,
                 jurisdiction=r.choice(cfg.jurisdictions),
                 deliverable=WORK_TYPES[work],
-                n_documents=r.randint(*cfg.n_documents),
+                n_documents=n_docs,
                 n_issues=n_issues,
-                issue_types=r.sample(pool, min(n_issues, len(pool))),
+                issue_types=issue_types,
                 seed=seed,
+                industry=industries[k % len(industries)],
+                name_stems=stems,
+                supporting_kinds=r.sample(SUPPORTING_KINDS[area], min(n_support, len(SUPPORTING_KINDS[area]))),
+                distractor_kind=r.choice(DISTRACTOR_KINDS) if n_docs >= 3 else "",
             )
         )
     return specs
+
+
+def _balanced_sample(r: random.Random, pool: list[str], k: int, used: dict[str, int]) -> list[str]:
+    """Pick k issue types without repeats, favouring types used less often earlier in the run."""
+    picked, left = [], list(pool)
+    for _ in range(min(k, len(left))):
+        t = r.choices(left, weights=[1 / (1 + used.get(x, 0)) ** 2 for x in left])[0]
+        picked.append(t)
+        left.remove(t)
+        used[t] = used.get(t, 0) + 1
+    return picked
 
 
 def write_ledger(client: ModelClient, spec: MatterSpec, precedents: list[Precedent], precedent_chars: int) -> Ledger:
     payload = {
         "spec": spec.to_dict(),
         "issue_types": [{"type": t, "label": ISSUE_LIBRARY[t]["label"], "description": ISSUE_LIBRARY[t]["description"]} for t in spec.issue_types],
+        "avoid_names": OVERUSED_NAMES,
         "precedents": [{"id": p.id, "title": p.title, "excerpt": p.excerpt(min(precedent_chars, 2000))} for p in precedents],
     }
     user = render_input(payload)

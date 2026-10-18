@@ -36,9 +36,51 @@ WORK_TYPES: dict[str, str] = {
 
 JURISDICTIONS = ["Delaware", "New York"]
 
-# Supporting documents a matter folder can contain besides the main agreement.
-SUPPORTING_KINDS = ["amendment", "disclosure schedule", "side letter", "board consent"]
-DISTRACTOR_KINDS = ["email thread", "prior draft", "unrelated vendor agreement", "meeting notes"]
+# Variety. In the 2026-10 pilots the ledger writer, left to choose, reused a few company names (the client was
+# "Halvorsen" or "Harrowgate" in 10 of 12 matters) and the same folder shapes. The sampler now picks the industry,
+# a name stem for each party and the supporting document kinds, so matters differ by construction.
+INDUSTRIES = [
+    "commercial bakery", "specialty pharmaceuticals", "marine shipping", "craft brewing", "solar panel installation",
+    "pet food manufacturing", "regional airline catering", "medical imaging equipment", "industrial textiles",
+    "video game publishing", "cold chain logistics", "dental clinics", "precision agriculture drones",
+    "independent film distribution", "commercial laundry services", "battery recycling", "boutique hotels",
+    "school bus operations", "veterinary diagnostics", "architectural glass", "organic dairy", "data center cooling",
+    "elevator maintenance", "outdoor apparel", "seed genetics", "concert promotion", "water treatment chemicals",
+    "used car auctions", "orthopedic implants", "event furniture rental",
+]
+
+# Supporting documents a folder can hold besides the main agreement, by practice area.
+SUPPORTING_KINDS: dict[str, list[str]] = {
+    "commercial_contracts": [
+        "amendment", "order form", "statement of work", "side letter", "term sheet", "notice letter",
+        "data processing addendum", "quality agreement", "parent guaranty", "service level schedule",
+    ],
+    "mergers_acquisitions": [
+        "disclosure schedule", "escrow agreement", "transition services agreement", "letter of intent", "side letter",
+        "board consent", "bill of sale", "key employee agreement", "IP assignment agreement", "seller note",
+    ],
+}
+DISTRACTOR_KINDS = [
+    "email thread", "prior draft", "unrelated vendor agreement", "meeting notes", "insurance certificate cover letter",
+    "press release", "office lease", "mutual NDA",
+]
+
+# Names the pilots' ledger writer kept reusing; the validator rejects a party name containing any of them.
+OVERUSED_NAMES = [
+    "Halvorsen", "Harrowgate", "Harrow", "Brightwater", "Brightmere", "Brightmoor", "Corvane", "Corbel", "Tessaline",
+    "Tessaly", "Velloran", "Quillon", "Quillmore", "Meridale", "Meridian", "Castellane", "Marrowind", "Tellmar", "Granite",
+]
+
+_ONSETS = ["B", "D", "F", "G", "K", "L", "M", "N", "P", "R", "S", "T", "V", "Z", "Br", "Dr", "Gl", "Pr", "St", "Tr"]
+_VOWELS = ["a", "e", "i", "o", "u", "ai", "ei", "ou"]
+_CONSONANTS = ["b", "d", "g", "k", "l", "m", "n", "p", "r", "s", "t", "v"]
+_CODAS = ["n", "r", "l", "s", "x", "nd", "rt", "sk", "th", "v"]
+
+
+def name_stem(r) -> str:
+    """A made-up two-syllable word ("Dravik", "Selunth") for a party name to start with."""
+    return (r.choice(_ONSETS) + r.choice(_VOWELS) + r.choice(_CONSONANTS) + r.choice(_VOWELS) + r.choice(_CODAS)).capitalize()
+
 
 ISSUE_LIBRARY: dict[str, dict] = {
     "change_of_control_consent": {

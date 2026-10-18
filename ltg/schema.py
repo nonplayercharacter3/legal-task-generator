@@ -10,6 +10,8 @@ import re
 from dataclasses import asdict, dataclass, field
 from typing import Any
 
+from .taxonomy import OVERUSED_NAMES
+
 _SAFE_FILENAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,120}$")
 
 
@@ -31,13 +33,17 @@ class MatterSpec:
     n_issues: int
     issue_types: list[str]
     seed: int
+    industry: str = ""
+    name_stems: list[str] = field(default_factory=list)  # client's name starts with [0], counterparty's with [1]
+    supporting_kinds: list[str] = field(default_factory=list)
+    distractor_kind: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "MatterSpec":
-        return cls(**d)
+        return _pick(cls, d)
 
 
 @dataclass
@@ -219,6 +225,13 @@ def validate_ledger(ledger: Ledger, spec: MatterSpec) -> list[str]:
         issue_docs.add(i.doc)
     if spec.n_issues >= 2 and len(issue_docs) < 2:
         errs.append("all issues sit in one document; spread them across documents")
+    for party, stem in zip(ledger.parties, spec.name_stems):
+        if not party.name.lower().startswith(stem.lower()):
+            errs.append(f"party {party.id} is named {party.name!r}; the spec requires a name starting with {stem!r}")
+    for party in ledger.parties:
+        used = [w for w in OVERUSED_NAMES if re.search(rf"\b{w}\b", party.name, re.I)]
+        if used:
+            errs.append(f"party {party.id} uses the overused name {used[0]!r}; invent a different one")
     return errs
 
 

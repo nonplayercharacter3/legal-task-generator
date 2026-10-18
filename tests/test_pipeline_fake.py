@@ -32,6 +32,10 @@ def test_end_to_end_writes_tasks_and_report(cfg, read_json):
         assert (acc[0] / f).exists(), f
     assert (Path(out) / "report.md").read_text().startswith("# Run report")
     assert not (Path(out) / "work").exists()
+    v = report["variety"]
+    assert sum(v["industries"].values()) == 6 and len(v["industries"]) == 6  # one industry per matter
+    assert v["repeated_names"] == {}  # every party starts with its own stem
+    assert "## Variety" in (Path(out) / "report.md").read_text()
 
     calls = report["model_calls"]
     for role in ("ledger_writer", "drafter", "fact_extractor", "issue_verifier", "instruction_writer", "rubric_writer", "answer_writer", "judge", "solver"):
@@ -82,6 +86,8 @@ def test_isolation_solver_and_instruction_writer_never_see_the_answer_key(cfg):
     for p in fake.payloads["instruction_writer"]:
         assert set(p) == {"matter", "files"}
         assert "issue_types" not in p["matter"] and "jurisdiction" not in p["matter"]
+    for p in fake.payloads["ledger_writer"]:  # the sampler, not the model, picks industry and name stems
+        assert p["spec"]["industry"] and len(p["spec"]["name_stems"]) == 2 and "Halvorsen" in p["avoid_names"]
     for p in fake.payloads["judge"]:
         assert set(p) == {"response", "criteria"}
     for p in fake.payloads["fact_extractor"]:  # gets the fact keys, never the expected values

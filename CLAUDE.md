@@ -30,7 +30,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 ## Current status (2026-10-18)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 82 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+- 85 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
   was mutation-checked on 2026-10-14: disabling it makes a test fail.
 - First real-model runs (2026-10-15, Claude Sonnet through the Agent SDK, one matter each, seed 1):
   runs 1 to 3 were rejected at `consistency`, each exposing a gap the fake model hid (exact string matching, facts
@@ -92,6 +92,12 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 - Grouped LAB index verified (2026-10-18, built by `scripts/cloud_setup.sh` in 41 minutes, 419M n-grams, 1.5% false
   positives): LAB excerpts score 0.97 to 1.00, our 4 accepted tasks 0.05 to 0.10 (ungrouped: 0.31 to 0.56, one over
   the 0.5 cutoff). `scripts/check_lab_index.py` repeats this check.
+- Variety (2026-10-18, not yet run on a real model): the client was "Halvorsen" or "Harrowgate" in 10 of 12 pilot
+  matters, and the same folder shapes and issue types recurred. The sampler now picks each matter's industry (30, none
+  repeated before all are used), a made-up name stem per party (the validator enforces it, and rejects names in
+  `taxonomy.OVERUSED_NAMES`), the supporting document kinds by practice area, and issue types weighted against those
+  already used in the run. The report's Variety section lists industries, agreement and issue types, party names used
+  in more than one matter, and identical issue sets. Issue types stay uneven where pools differ by practice area.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 
@@ -143,7 +149,7 @@ Stop and ask Sirui She if a round hits the usage limit or after 5 rounds without
 4. **LAB index takes ~30 minutes to build.** LAB is ~455M words (mostly .docx); the index is saved under
    `runs/.decontam_cache` and reused while LAB is unchanged, but a fresh cloud container must rebuild it.
 
-Smaller known gaps: no EDGAR fetcher (precedents come from local folders), no diversity tracking across a run,
+Smaller known gaps: no EDGAR fetcher (precedents come from local folders),
 judge not calibrated against lawyer grades, `solver_attempts = 1` rejects every task (a pass rate of 0 or 1 is
 always outside the band), and one fact lives in one document, which limits cross-document reasoning.
 

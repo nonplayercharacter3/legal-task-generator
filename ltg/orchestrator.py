@@ -232,10 +232,41 @@ class Pipeline:
             pool.shutdown(cancel_futures=True)
         shutil.rmtree(out / "work", ignore_errors=True)
         report = build_report(results, self.log, self.cfg, resumed=len(done))
+        report["variety"] = variety(out, results)
         _write(out / "report.json", report)
         _write(out / "report.md", render_report(report))
         self.log.dump(str(out / "calls.jsonl"))
         return report
+
+
+def variety(out: Path, results: list[MatterResult]) -> dict:
+    """How much the run's matters differ: industries, agreement types, issue types, and anything repeated.
+
+    Read from each matter's saved spec and ledger, so it also covers matters reloaded by --resume."""
+    from collections import Counter
+
+    industries, agreements, issues, combos, names = Counter(), Counter(), Counter(), Counter(), {}
+    for r in results:
+        folder = next((out / f / r.matter_id for f in ("accepted", "rejected") if (out / f / r.matter_id).is_dir()), None)
+        if folder is None or not (folder / "spec.json").exists():
+            continue
+        spec = json.loads((folder / "spec.json").read_text())
+        industries[spec.get("industry") or "(none)"] += 1
+        agreements[spec["agreement_type"]] += 1
+        issues.update(spec["issue_types"])
+        combos[" + ".join(sorted(spec["issue_types"]))] += 1
+        if (folder / "ledger.json").exists():
+            for p in json.loads((folder / "ledger.json").read_text()).get("parties", []):
+                word = (p.get("name") or "").split(" ")[0].strip(",.").lower()
+                if word:
+                    names.setdefault(word, set()).add(r.matter_id)
+    return {
+        "industries": dict(industries.most_common()),
+        "agreement_types": dict(agreements.most_common()),
+        "issue_types": dict(issues.most_common()),
+        "repeated_names": {w: sorted(ms) for w, ms in sorted(names.items()) if len(ms) > 1},
+        "repeated_issue_sets": {c: n for c, n in combos.items() if n > 1},
+    }
 
 
 def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed: int = 0) -> dict:
@@ -284,6 +315,14 @@ def render_report(rep: dict) -> str:
         rate = "" if m["solver_pass_rate"] is None else f"{m['solver_pass_rate']:.2f}"
         reason = (m["reason"] or "").replace("|", "/")[:160]
         lines.append(f"| {m['matter_id']} | {res} | {m['split'] or ''} | {rate} | {reason} |")
+    v = rep.get("variety")
+    if v:
+        counts = lambda d: ", ".join(f"{k} ({n})" for k, n in d.items()) or "none"
+        lines += ["", "## Variety", "", f"- Industries: {counts(v['industries'])}", f"- Agreement types: {counts(v['agreement_types'])}",
+                  f"- Issue types: {counts(v['issue_types'])}"]
+        rn = "; ".join(f"{w} in {', '.join(ms)}" for w, ms in v["repeated_names"].items())
+        lines += [f"- Party names used in more than one matter: {rn or 'none'}",
+                  f"- Identical issue sets: {counts(v['repeated_issue_sets'])}"]
     lines += ["", "## Model calls", "", "| Role | Calls | Input tokens | Output tokens | Errors |", "| --- | ---: | ---: | ---: | ---: |"]
     for role, s in sorted(rep["model_calls"].items()):
         lines.append(f"| {role} | {s['calls']} | {s['input_tokens']} | {s['output_tokens']} | {s['errors']} |")
