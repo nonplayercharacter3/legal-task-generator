@@ -1,0 +1,140 @@
+{
+  "matter_id": "s5-m0003",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "no attempt passed: task is probably broken or too hard",
+  "split": null,
+  "solver_pass_rate": 0.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Item 3.4 of Part 3.5 lists the Crestline Exclusive Distribution Agreement with: \"*Relevant provision:* Supplier change in ownership — notice only; no consent required. *Category:* Notice only.\" Section 15.4 of the Distribution Agreement says otherwise: \"Supplier shall not undergo a Change of Control without Distributor's prior written consent. Supplier shall request that consent in writing not less than sixty (60) days before the anticipated closing of the Change of Control.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 14.2: \"Distributor may assign this Agreement in whole, without Supplier's consent, to any of its Affiliates or to any Qualified Transferee, upon written notice to Supplier given within thirty (30) days after the assignment.\" Section 1.1: \"'Qualified Transferee' means any person engaged in the distribution of laboratory or diagnostic products in the Territory that assumes Distributor's obligations under this Agreement in writing.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "First Amendment Section 3.1: \"Section 12.3 of the Agreement is deleted in its entirety and replaced with the following: '12.3 Exclusions. The limitations in Sections 12.1 and 12.2 shall not apply to a party's breach of Section 9.'\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "skipped": "no reference_dirs configured"
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2",
+              "C3",
+              "C5"
+            ],
+            "steps": 8,
+            "files_opened": [
+              "first_amendment_distribution_agreement.md",
+              "halvorsen_crestline_distribution_agreement.md",
+              "price_adjustment_notice_2026.md",
+              "spa_disclosure_schedule_third_party_consents.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2",
+              "C3"
+            ],
+            "steps": 8,
+            "files_opened": [
+              "first_amendment_distribution_agreement.md",
+              "halvorsen_crestline_distribution_agreement.md",
+              "price_adjustment_notice_2026.md",
+              "spa_disclosure_schedule_third_party_consents.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2"
+            ],
+            "steps": 8,
+            "files_opened": [
+              "first_amendment_distribution_agreement.md",
+              "halvorsen_crestline_distribution_agreement.md",
+              "price_adjustment_notice_2026.md",
+              "spa_disclosure_schedule_third_party_consents.md"
+            ]
+          }
+        ],
+        "reason": "no attempt passed: task is probably broken or too hard"
+      }
+    }
+  ]
+}

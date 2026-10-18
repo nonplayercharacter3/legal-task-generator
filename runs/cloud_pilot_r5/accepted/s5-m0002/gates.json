@@ -1,0 +1,145 @@
+{
+  "matter_id": "s5-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.333,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 5,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 2.2: \"At the end of the Initial Term, this Agreement shall automatically renew for successive five-year Renewal Terms, five years each (each, a \"Renewal Term\"), unless either Party gives the other written notice of non-renewal not more than 270 days and not less than 240 days before the expiration of the Initial Term or the then-current Renewal Term. All terms of this Agreement, including Sections 3 and 5, continue to apply during each Renewal Term.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 3.1: \"During the Term, Customer shall purchase from Supplier, and Supplier shall be Customer's exclusive source of, all glass and PET containers for any beverage product manufactured, filled, bottled or packaged by or for Customer or its Affiliates, worldwide.\" Term sheet Section 2.1–2.2 limits exclusivity to \"amber glass bottles for Customer's beer brands at its U.S. and Canadian facilities\" and leaves Customer \"free to source from any supplier all other containers.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Recital C: \"...it was received by Customer on August 3, 2026. No objection to the Price Adjustment Notice has been delivered by Customer, and the Price Adjustment Notice remains subject to Section 5.4 of the Agreement.\" Supply Agreement §5.4: \"Any price adjustment to which Customer does not object within the period stated in this Section 5.4 is deemed accepted by Customer and takes effect on the date stated in the Price Adjustment Notice.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "\"11.2 **Exclusions.** The limitation in Section 11.1 and the exclusion in Section 11.3 do not apply to (a) Supplier's indemnity obligations under Section 9.1, which are excluded solely to third-party intellectual property claims under Section 9.1(c); (b) either Party's breach of Section 12; or (c) a Party's gross negligence, fraud or willful misconduct.\""
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "\"14.4 Assignment by Supplier. Notwithstanding Section 14.3, Supplier may assign or transfer this Agreement, in whole or in part, or any of its rights or obligations under it, without the consent of Customer, to (a) any Affiliate of Supplier; or (b) any successor to Supplier by merger, consolidation, change of control or sale of all or substantially all of the business or assets of Supplier to which this Agreement relates.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "skipped": "no reference_dirs configured"
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C5",
+              "C6"
+            ],
+            "steps": 9,
+            "files_opened": [
+              "amendment_no_1.md",
+              "quality_agreement.md",
+              "supply_agreement.md",
+              "term_sheet.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 9,
+            "files_opened": [
+              "amendment_no_1.md",
+              "quality_agreement.md",
+              "supply_agreement.md",
+              "term_sheet.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C6"
+            ],
+            "steps": 9,
+            "files_opened": [
+              "amendment_no_1.md",
+              "quality_agreement.md",
+              "supply_agreement.md",
+              "term_sheet.md"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

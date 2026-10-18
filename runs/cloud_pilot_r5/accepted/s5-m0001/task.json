@@ -1,0 +1,125 @@
+{
+  "task_id": "s5-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Halvorsen Industrial Holdings LLC, the buyer, on its proposed stock purchase involving Tarrant Peak Partners LP, Corbel Fluidics, Inc., Vantrell Polymer Corp. and Granite Ledger Trust Company. Before we go back to the other side, the client needs to understand where the current documents leave it exposed and what we should be pushing for. Please review the full set in the matter folder: the Stock Purchase Agreement together with its Disclosure Schedule (stock_purchase_agreement.md), the Master Supply Agreement (corbel_vantrell_supply_agreement.md), the indemnification side letter (seller_indemnity_side_letter.md), and the Escrow Agreement (indemnity_escrow_agreement.md). Send me a memo that lists each issue you identify. For each one, give the document and section where it appears, explain why it matters to Halvorsen as buyer, and recommend a fix, with proposed language where that would help. Please put the most significant points first, and flag anything you think needs a call with the client before we respond. If something in the folder is incomplete or unclear, tell me rather than assuming.",
+  "documents": [
+    "corbel_vantrell_supply_agreement.md",
+    "indemnity_escrow_agreement.md",
+    "seller_indemnity_side_letter.md",
+    "stock_purchase_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Supply Agreement Section 14.2 treats a change in ownership of more than 50% of the Company's voting stock as an assignment requiring Vantrell's prior written consent, with a termination right if consent is not obtained. It also explains that the stock sale triggers this right while the SPA does not address it, because Section 4.4 / Disclosure Schedule 4.4 shows no required consents and the Section 7.2(c) closing condition does not cover it.",
+      "kind": "issue",
+      "hints": [
+        "Section 14.2",
+        "prior written consent of Supplier",
+        "Schedule 4.4"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Supply Agreement Section 16.1 lets Vantrell (Supplier) assign the agreement without the Company's consent while the Company cannot assign without Supplier consent. It explains the risk that the sole-source supply contract could pass to a competitor or another undesirable party.",
+      "kind": "issue",
+      "hints": [
+        "Section 16.1",
+        "without the consent of Customer",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Company's extension option under Supply Agreement Section 3.2 required notice at least 120 days before the December 31, 2026 end of the Initial Term, so the deadline fell on or about September 2, 2026. It states that this deadline had passed before the SPA was signed on September 21, 2026, and that the Extension Pricing / extension right is therefore lost or at risk.",
+      "kind": "issue",
+      "hints": [
+        "September 2, 2026",
+        "Extension Pricing",
+        "120 days"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that Side Letter Section 2 redefines Fundamental Representations as only SPA Sections 4.1 and 4.2. It explains that, because SPA Section 11.11 gives the Side Letter precedence, the Capitalization (4.3) and Taxes (4.12) representations drop out of the uncapped carve-out and become subject to the 10% cap.",
+      "kind": "issue",
+      "hints": [
+        "solely Sections 4.1 and 4.2",
+        "Section 11.11",
+        "Capitalization and Taxes now capped"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that Side Letter Section 6 selects Delaware law and the Delaware Court of Chancery for indemnification disputes, which conflicts with the SPA's New York governing law (Section 11.8) and New York County forum (Section 11.9). It explains that the precedence clause lets the Side Letter control, which splits forums or law for indemnity claims.",
+      "kind": "issue",
+      "hints": [
+        "Court of Chancery",
+        "New York",
+        "Section 11.8"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the SPA's general indemnity cap is 10% of the Purchase Price, or equivalently $8,450,000 on the $84,500,000 price.",
+      "kind": "fact",
+      "hints": [
+        "10% of the Purchase Price",
+        "$8,450,000"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the SPA's order of precedence (Section 11.11) places the Side Letter above the SPA.",
+      "kind": "fact",
+      "hints": [
+        "Section 11.11",
+        "Side Letter controls",
+        "order of precedence"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is organized as a memo addressed to the supervising partner. It gives each issue as a distinct item with the document and section, why it matters to Halvorsen, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Recommendation",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response orders issues by significance (most significant first) and includes a flag or list of points requiring a client call before responding to the other side.",
+      "kind": "format",
+      "hints": [
+        "client call",
+        "most significant",
+        "discuss with client"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response does not state that the Company's Section 3.2 extension option remains exercisable or that the notice window is still open as of signing.",
+      "kind": "negative",
+      "hints": [
+        "option has lapsed",
+        "deadline passed"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response does not state that the Fundamental Representations remain uncapped for Capitalization and Taxes under the documents as currently drafted, or that the SPA controls over the Side Letter.",
+      "kind": "negative",
+      "hints": [
+        "Side Letter prevails",
+        "now subject to the cap"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.667
+}

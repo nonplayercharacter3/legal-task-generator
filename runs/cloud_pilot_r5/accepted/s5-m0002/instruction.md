@@ -1,0 +1,5 @@
+We act for Harrowgate Bottling Co., which buys beverage containers from Veltmar Glassworks, Inc. under a supply agreement. The client wants a clear picture of where it stands under the current contract documents before it relies on them going forward, and I'd like your review to give us that.
+
+Please review the full set in the matter folder: the Supply Agreement (supply_agreement.md), the non-binding term sheet (term_sheet.md), Amendment No. 1 to the Supply Agreement (amendment_no_1.md), and the Quality and Specifications Agreement (quality_agreement.md).
+
+Prepare a memo to me that lists each issue you identify. For each one, state where it appears (document and section), explain why it matters for Harrowgate as the buyer, and give a recommended fix. Where a fix calls for new or revised drafting, please propose the language. If anything is unclear or you need further information from the client to finish the analysis, flag it in the memo rather than making assumptions. Please keep the memo organized so I can walk the client through it item by item.

@@ -1,0 +1,142 @@
+{
+  "matter_id": "s5-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.667,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Supply Agreement Section 14.2: \"Any change in the direct or indirect ownership of more than fifty percent (50%) of the outstanding voting stock of Customer, whether by sale or transfer of stock, merger, consolidation or otherwise ... shall be deemed an assignment of this Agreement by Customer and shall require the prior written consent of Supplier. If any such change occurs without the prior written consent of Supplier, Supplier may terminate this Agreement upon thirty (30) days' written notice to Customer.\" SPA Disclosure Schedule 4.4: \"None.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 16.1: \"Customer may not assign or otherwise transfer this Agreement or any of its rights or obligations under this Agreement, in whole or in part, without the prior written consent of Supplier. Supplier may assign this Agreement, in whole or in part, to any Person without the consent of Customer, including in connection with a merger, consolidation, or sale of all or any part of Supplier's resin business or the assets used in manufacturing the Products.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 3.2: \"Customer shall exercise this option by written notice to Supplier delivered not less than one hundred twenty (120) days before the end of the Initial Term. If Customer does not deliver notice within that period, this Agreement expires at the end of the Initial Term.\" Section 3.1 ends the Initial Term on December 31, 2026."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Side Letter Section 2: \"For all purposes of the Purchase Agreement, including Sections 7.2(a), 9.1 and 9.5(b) thereof, \"Fundamental Representations\" means solely Sections 4.1 and 4.2 of the Purchase Agreement, and the definition of that term in Section 1.1 of the Purchase Agreement shall be read accordingly.\""
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 6.1 of the Side Letter: \"This Letter Agreement, and all claims, disputes and causes of action arising out of or relating to indemnification under the Purchase Agreement or this Letter Agreement, shall be governed by and construed in accordance with the internal laws of the State of Delaware.\" Section 6.2: \"Any legal suit, action or proceeding arising out of or relating to indemnification under the Purchase Agreement or this Letter Agreement shall be brought exclusively in the Court of Chancery of the State of Delaware.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "skipped": "no reference_dirs configured"
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2"
+            ],
+            "steps": 16,
+            "files_opened": [
+              "corbel_vantrell_supply_agreement.md",
+              "indemnity_escrow_agreement.md",
+              "seller_indemnity_side_letter.md",
+              "stock_purchase_agreement.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 16,
+            "files_opened": [
+              "corbel_vantrell_supply_agreement.md",
+              "indemnity_escrow_agreement.md",
+              "seller_indemnity_side_letter.md",
+              "stock_purchase_agreement.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 16,
+            "files_opened": [
+              "corbel_vantrell_supply_agreement.md",
+              "indemnity_escrow_agreement.md",
+              "seller_indemnity_side_letter.md",
+              "stock_purchase_agreement.md"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

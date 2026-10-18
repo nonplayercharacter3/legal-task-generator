@@ -1,0 +1,145 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 2,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s5-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.667
+    },
+    {
+      "matter_id": "s5-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.333
+    },
+    {
+      "matter_id": "s5-m0003",
+      "accepted": false,
+      "failed_gate": "solver_check",
+      "reason": "no attempt passed: task is probably broken or too hard",
+      "split": null,
+      "solver_pass_rate": 0.0
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 9981,
+      "output_tokens": 19476,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 12,
+      "input_tokens": 184654,
+      "output_tokens": 70767,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 79344,
+      "output_tokens": 6949,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4530,
+      "output_tokens": 872,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 13,
+      "input_tokens": 303297,
+      "output_tokens": 8213,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4697,
+      "output_tokens": 1150,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 16366,
+      "output_tokens": 4217,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 167098,
+      "output_tokens": 49488,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 21,
+      "input_tokens": 255559,
+      "output_tokens": 19551,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 167,
+      "input_tokens": 1844605,
+      "output_tokens": 560007,
+      "errors": 0
+    }
+  }
+}
