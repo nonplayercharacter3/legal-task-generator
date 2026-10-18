@@ -81,7 +81,7 @@ def test_isolation_solver_and_instruction_writer_never_see_the_answer_key(cfg):
     assert reads > 0
     for p in fake.payloads["instruction_writer"]:
         assert set(p) == {"matter", "files"}
-        assert "issue_types" not in p["matter"]
+        assert "issue_types" not in p["matter"] and "jurisdiction" not in p["matter"]
     for p in fake.payloads["judge"]:
         assert set(p) == {"response", "criteria"}
     for p in fake.payloads["fact_extractor"]:  # gets the fact keys, never the expected values

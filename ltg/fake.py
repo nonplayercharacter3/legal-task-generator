@@ -245,7 +245,7 @@ class FakeModel:
         text = (
             f"Our client, {m['client']}, is reviewing its {m['agreement_type']} ahead of a board meeting next week "
             f"and wants to know where it stands. The matter folder has {len(files)} files ({listing}). "
-            f"Please review all of them under {m['jurisdiction']} law and prepare {m['deliverable']}. "
+            f"Please review all of them and prepare {m['deliverable']}. "
             "Keep it practical: the client needs to decide what to raise with the counterparty."
         )
         return {"instruction": text}

@@ -92,7 +92,6 @@ def write_instruction(client: ModelClient, spec: MatterSpec, ledger: Ledger) -> 
             "counterparties": [p.name for p in ledger.parties[1:]],
             "practice_area": spec.practice_area,
             "agreement_type": spec.agreement_type,
-            "jurisdiction": spec.jurisdiction,
             "deliverable": spec.deliverable,
         },
         "files": [{"filename": d.filename, "kind": d.kind} for d in ledger.documents],

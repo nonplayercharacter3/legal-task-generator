@@ -114,8 +114,10 @@ Rules:
 - Say who the client is and, in general terms, what it needs the review for.
 - Ask for the deliverable described; say which files to review.
 - You know each file only by its filename and kind. Never state what a document says, who wrote or sent it, or
-  when, and invent no deal events: a guess the documents contradict misleads the associate (a real draft called
-  the client's own renewal letter "the counterparty's renewal notice").
+  when, or which law governs it, and invent no deal events: a guess the documents contradict misleads the
+  associate (a real draft called the client's own renewal letter "the counterparty's renewal notice").
+- Do not tell the associate how to look: no "check whether the documents line up", "read them against each
+  other" or "compare X with Y". A partner asks for the deliverable; finding the problems is the associate's job.
 - Do NOT hint at any specific problem, clause type or risk. You have not been told what the problems are.
 
 Reply with ONLY a JSON object: {"instruction": str}"""
