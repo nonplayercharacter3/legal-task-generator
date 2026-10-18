@@ -9,7 +9,7 @@ similar to Harvey's Legal Agent Benchmark (LAB): long-horizon legal tasks made o
 a folder of matter documents, and an all-pass rubric. This repo is the preliminary implementation. The lab works
 on LLM post-training; the goal is training data for legal agents, with LAB used only for evaluation.
 
-## Decisions already made (don't relitigate without asking Syrena)
+## Decisions already made (don't relitigate without asking Sirui She)
 
 - **Ledger-first design.** For each invented matter, write the answer key first (facts plus 3 to 5 planted issues,
   each tied to a document and section), then generate documents, instruction, rubric and reference answers from it.
@@ -60,7 +60,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   fact (customary definition items, a fallback court); deadlines tied to "today"; detect terms that were document
   names; an issue verifier not told who the client is (last fix, not yet run).
   Rounds 2 to 4 used Sonnet as solver, which found every planted issue in 3 of 6 sound tasks; from round 5 Haiku
-  solves (Syrena's decision), as the closer reference for the open models the lab trains. 847 calls, ~11.9M input
+  solves (Sirui She's decision), as the closer reference for the open models the lab trains. 847 calls, ~11.9M input
   and ~2.1M output tokens over the five rounds, no errors, no usage limit hit.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
@@ -100,7 +100,7 @@ Phase 1 ends when one round meets every point below. Each round is 3 fresh matte
    used to.
 
 Between rounds: fix the root cause of every defect class seen, one commit per class, then run the next round.
-Stop and ask Syrena if a round hits the usage limit or after 5 rounds without meeting the standard.
+Stop and ask Sirui She if a round hits the usage limit or after 5 rounds without meeting the standard.
 
 ## Known weaknesses (highest priority first)
 
@@ -134,5 +134,5 @@ document, which limits cross-document reasoning.
 - Python 3.11+, standard library only at runtime (pytest for dev). Keep it that way unless there's a clear reason.
 - Every file that passes between stages is plain JSON or Markdown on disk, so any stage can be inspected by hand.
 - Writing style for docs, README and messages: direct, no em dashes.
-- **Git:** commits authored by Syrena only (`Syrena(Sirui) She`), with no Claude co-author, "Generated with"
+- **Git:** commits authored by Sirui She only (author name exactly `Sirui She`), with no Claude co-author, "Generated with"
   or other AI attribution lines in commit messages or PR descriptions.
