@@ -89,7 +89,10 @@ states. Mark a pair `same` unless a careful lawyer reading both would see them a
 amounts, dates, durations, parties, items, territory or scope, or a negation. Differences in wording, punctuation or
 capitalisation are fine, and so is compatible added detail ("as updated by the parties in writing", an exhibit
 reference, a section number) or a forward reference in an earlier document ("to be listed in an exhibit to the
-definitive agreement"). A value that is narrower, broader or names a different party is inconsistent.
+definitive agreement"). A value that is narrower, broader or names a different party is inconsistent. For a
+definition, items such definitions customarily carry alongside the core subject (related documentation, updates,
+upgrades, copies) are compatible detail when the core subject the answer key names is unchanged; adding a
+different product, service, territory, party or use makes it broader.
 
 Reply with ONLY a JSON object: {"results": [{"id": str, "same": bool, "reason": str}]}"""
 
