@@ -72,6 +72,24 @@ Fixed after the 2026-10-14 independent review (one commit each):
   if `settings.json` in the output folder differs (run size, concurrency and folder may change). Resume is per
   matter, not per stage: a crash loses only the matters in flight. Ctrl-C no longer waits for queued matters.
 
+## Pilot standard (phase 1 exit)
+
+Phase 1 ends when one round meets every point below. Each round is 3 fresh matters
+(`configs/claude_pilot_opus.toml`, a new `--seed` each round so prompts are never tuned to one set of matters).
+
+1. At least 2 of 3 matters accepted, and the run logs no model errors.
+2. Every accepted task passes the quality checklist under "How to verify changes", read in full by a person:
+   instruction realistic, free of hints and free of claims the documents contradict; each planted issue findable
+   where the ledger says and a genuine problem for the client; every criterion traces to the ledger and a thorough,
+   correct memo would pass it; gold passes and flawed fails the right criteria; documents read like real drafting.
+3. Every rejection in the round is read and its cause written up. A false rejection (a gate wrong about a sound
+   task) counts as a defect to fix even when the round reaches 2 of 3.
+4. `python3 -m pytest` is green and `configs/fake_demo.toml` still rejects at least one matter at each gate it
+   used to.
+
+Between rounds: fix the root cause of every defect class seen, one commit per class, then run the next round.
+Stop and ask Syrena if a round hits the usage limit or after 5 rounds without meeting the standard.
+
 ## Known weaknesses (highest priority first)
 
 1. **Judge leniency not measured.** `gates.judge_hints` exists; run the same matters on a real model with it on
