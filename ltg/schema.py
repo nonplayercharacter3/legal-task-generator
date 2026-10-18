@@ -79,7 +79,12 @@ class Issue:
     section: str
     detect_terms: list[str]
     expected_finding: str
-    contradicts: str | None = None  # fact id this issue deliberately states differently in its document
+    contradicts: str | list[str] | None = None  # fact id(s) this issue deliberately states differently in its document
+
+    def contradicted(self) -> list[str]:
+        """The contradicted fact ids as a list: one issue can move several facts (governing law and forum)."""
+        c = self.contradicts
+        return [] if not c else [c] if isinstance(c, str) else [str(x) for x in c]
 
 
 @dataclass
@@ -204,12 +209,13 @@ def validate_ledger(ledger: Ledger, spec: MatterSpec) -> list[str]:
             errs.append(f"issue {i.id} has no detect_terms")
         if not i.expected_finding.strip():
             errs.append(f"issue {i.id} has no expected_finding")
-        fact = next((f for f in ledger.facts if f.id == i.contradicts), None)
-        if i.contradicts and fact is None:
-            errs.append(f"issue {i.id} contradicts unknown fact {i.contradicts}")
-        elif fact and fact.doc == i.doc:
-            errs.append(f"issue {i.id} contradicts {fact.id} inside {fact.doc}, the document that states it; "
-                        "a contradiction needs the fact stated in a different document, otherwise set contradicts to null")
+        for fid in i.contradicted():
+            fact = next((f for f in ledger.facts if f.id == fid), None)
+            if fact is None:
+                errs.append(f"issue {i.id} contradicts unknown fact {fid}")
+            elif fact.doc == i.doc:
+                errs.append(f"issue {i.id} contradicts {fact.id} inside {fact.doc}, the document that states it; "
+                            "a contradiction needs the fact stated in a different document, otherwise leave it out")
         issue_docs.add(i.doc)
     if spec.n_issues >= 2 and len(issue_docs) < 2:
         errs.append("all issues sit in one document; spread them across documents")

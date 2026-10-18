@@ -101,7 +101,7 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
     # Each query names the instrument the fact belongs to: an NDA in the folder has its own "Effective Date", and
     # reading that as the supply agreement's Effective Date rejected a sound task (2026-10-18 pilot).
     owner = {d.id: f"{d.kind} ({d.filename})" for d in ledger.documents}
-    planted = {(i.contradicts, fname.get(i.doc)) for i in ledger.issues if i.contradicts}
+    planted = {(fid, fname.get(i.doc)) for i in ledger.issues for fid in i.contradicted()}
     payload = {
         "documents": [{"filename": n, "content": c} for n, c in docs.items()],
         "queries": [{"id": f"{f.id}@{n}", "key": f.key, "of": owner[f.doc], "filename": n} for f in ledger.facts for n in docs],

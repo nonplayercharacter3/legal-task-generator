@@ -191,6 +191,8 @@ def test_consistency_allows_only_planted_contradictions():
     docs[other] += "\nGoverning Law: State of California\n"
 
     assert gates.consistency(fake, ledger, docs).passed  # the planted issue contradicts F3 on purpose
+    mismatch.contradicts = ["F1", "F3"]  # an issue may move several facts (governing law and forum)
+    assert gates.consistency(fake, ledger, docs).passed
     mismatch.contradicts = None
     g = gates.consistency(fake, ledger, docs)
     assert not g.passed and g.details["mismatches"][0]["filename"] == other

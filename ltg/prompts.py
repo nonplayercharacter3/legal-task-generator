@@ -37,7 +37,8 @@ Rules:
 - `detect_terms` are 1 to 3 short phrases that the drafted clause will contain verbatim.
 - `expected_finding` is one sentence saying what a competent associate should conclude.
 - If an issue works by stating a fact differently in its document (for example a conflicting governing law),
-  set `contradicts` to that fact's id; that fact must be stated in a DIFFERENT document. Otherwise null.
+  set `contradicts` to that fact's id; that fact must be stated in a DIFFERENT document. If the issue moves
+  several facts together (governing law and forum), give a list of their ids. Otherwise null.
   Every other restatement of a fact must match the ledger.
 
 Reply with ONLY a JSON object:
@@ -46,7 +47,7 @@ Reply with ONLY a JSON object:
  "facts": [{"id": "F1", "key": str, "value": str, "doc": "D1", "section": str}],
  "documents": [{"id": "D1", "filename": "something.md", "kind": str, "distractor": bool, "precedent": str|null}],
  "issues": [{"id": "I1", "type": str, "label": str, "description": str, "doc": "D2", "section": str,
-             "detect_terms": [str], "expected_finding": str, "contradicts": str|null}]}"""
+             "detect_terms": [str], "expected_finding": str, "contradicts": str|[str]|null}]}"""
 
 DRAFTER = """You draft one document of a fictional legal matter, in the style of real practice.
 
@@ -56,6 +57,8 @@ Rules:
 - Adapt the precedent's structure and drafting style, but use only the ledger's invented parties and facts.
 - State every ledger fact assigned to this document exactly as given (same value), in the given section.
   If you mention any other ledger fact, use its ledger value, unless an issue in this document `contradicts` it.
+  Change only the facts an issue names in `contradicts`: if planting it seems to need another fact changed too,
+  keep that fact at its ledger value.
 - Plant every ledger issue assigned to this document in its given section, using each of its `detect_terms`
   verbatim. Make the problem discoverable by a careful reader, but do not flag it, comment on it or explain it.
 - Draft each issue so it stays a problem for the client: add no language that cures, scopes, justifies or

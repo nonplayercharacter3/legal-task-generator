@@ -93,3 +93,13 @@ def test_negative_criteria_may_not_target_a_distractor():
     name = distractor.filename.rsplit(".", 1)[0].replace("_", " ")
     bad = Rubric.from_dict({"criteria": crits + [{"id": "N1", "text": f"Fails if it flags the {name} as a problem.", "kind": "negative"}]})
     assert any("distractor" in e for e in validate_rubric(bad, ledger))
+
+
+def test_contradicts_may_list_several_facts():
+    ledger, spec = _ledger_and_spec()
+    issue = ledger.issues[0]
+    others = [f.id for f in ledger.facts if f.doc != issue.doc][:2]
+    issue.contradicts = others
+    assert not any("contradicts" in e for e in validate_ledger(ledger, spec))
+    issue.contradicts = [*others, "F99"]
+    assert any("unknown fact F99" in e for e in validate_ledger(ledger, spec))
