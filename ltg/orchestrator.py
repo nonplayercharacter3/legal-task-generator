@@ -83,7 +83,8 @@ class Pipeline:
         self.precedents = load_precedents(cfg.sources.precedent_dirs or None)
         g = cfg.gates
         self.index = (
-            BloomIndex.from_dirs(g.reference_dirs, bits=g.decontam_bloom_bits, n=g.decontam_ngram, cache_dir=g.decontam_cache_dir or None)
+            BloomIndex.from_dirs(g.reference_dirs, bits=g.decontam_bloom_bits, n=g.decontam_ngram, cache_dir=g.decontam_cache_dir or None,
+                                group_depth=g.decontam_group_depth)
             if g.reference_dirs else None
         )
 

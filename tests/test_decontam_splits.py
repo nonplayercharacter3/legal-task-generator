@@ -87,3 +87,23 @@ def test_split_is_deterministic_and_respects_ratios():
     counts = Counter(assign_split(f"m-{i}", ratios) for i in range(5000))
     assert 0.77 < counts["train"] / 5000 < 0.83
     assert 0.08 < counts["test"] / 5000 < 0.12
+
+
+def test_wording_shared_by_two_tasks_is_not_a_match(tmp_path):
+    boiler = "This Agreement shall be governed by and construed in accordance with the laws of the State of New York without regard to conflict of laws."
+    for task, own in (("t1", REFERENCE), ("t2", NOVEL)):
+        d = tmp_path / "ref" / "tasks" / "area" / task / "documents"
+        d.mkdir(parents=True)
+        (d / "contract.txt").write_text(f"{own}\n{boiler}")
+    (tmp_path / "ref" / "tasks" / "area" / "t1" / "task.json").write_text(json.dumps({"rubric": "Identify the indemnity cap problem in the agreement and explain the consequences for the buyer."}))
+    grouped = BloomIndex.from_dirs([str(tmp_path / "ref")], bits=2**20, n=8, group_depth=3)
+    assert grouped.containment(boiler) < 0.1  # in both tasks: ordinary legal language
+    assert grouped.containment(REFERENCE) == 1.0 and grouped.containment(NOVEL) == 1.0  # each task's own text still matches
+    assert grouped.containment("Identify the indemnity cap problem in the agreement and explain the consequences") == 1.0  # rubric and documents of one task are one group
+    flat = BloomIndex.from_dirs([str(tmp_path / "ref")], bits=2**20, n=8)
+    assert flat.containment(boiler) == 1.0
+
+    cache = str(tmp_path / "cache")  # the grouped index survives a save and load
+    BloomIndex.from_dirs([str(tmp_path / "ref")], bits=2**20, n=8, group_depth=3, cache_dir=cache)
+    again = BloomIndex.from_dirs([str(tmp_path / "ref")], bits=2**20, n=8, group_depth=3, cache_dir=cache)
+    assert again.containment(boiler) < 0.1 and again.containment(REFERENCE) == 1.0

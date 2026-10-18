@@ -37,3 +37,6 @@ reference_dirs = ["../harvey-labs"]
 # LAB holds about 455 million words (42k Word files), so the n-gram table needs 2^32 bits (512 MB) to keep false
 # matches near 2%. The first run builds the index (about 25 minutes) and saves it under runs/.decontam_cache.
 decontam_bloom_bits = 4294967296
+# Count only wording found in a single LAB task (tasks/<area>/<task>). Standard contract language appears across
+# many LAB tasks, and without this our own sound documents scored up to 0.56, above the 0.5 cutoff.
+decontam_group_depth = 3

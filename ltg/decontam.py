@@ -40,28 +40,59 @@ def ngrams(tokens: list[str], n: int) -> list[str]:
 
 
 class BloomIndex:
-    def __init__(self, bits: int = 2**27, n: int = 8) -> None:
+    """N-grams of a reference corpus in a Bloom filter.
+
+    With groups (one per benchmark task), an n-gram found in two or more groups goes into a second filter,
+    `common`, and stops counting as a match: wording shared across tasks ("shall be governed by and construed in
+    accordance with the laws of") is ordinary legal language, while text found in one task only is that task's
+    content. Without groups every n-gram counts.
+    """
+
+    def __init__(self, bits: int = 2**27, n: int = 8, grouped: bool = False) -> None:
         self.bits = bits
         self.n = n
         self.array = bytearray(bits // 8)
+        self.common = bytearray(bits // 8) if grouped else None
         self.count = 0
 
     def _positions(self, gram: str) -> tuple[int, int, int]:
-        d = hashlib.blake2b(gram.encode(), digest_size=12).digest()
+        return self._split(hashlib.blake2b(gram.encode(), digest_size=12).digest())
+
+    def _split(self, d: bytes) -> tuple[int, int, int]:
         return (
             int.from_bytes(d[0:4], "little") % self.bits,
             int.from_bytes(d[4:8], "little") % self.bits,
             int.from_bytes(d[8:12], "little") % self.bits,
         )
 
+    @staticmethod
+    def _has(array: bytearray, pos: tuple[int, int, int]) -> bool:
+        return all(array[p >> 3] & (1 << (p & 7)) for p in pos)
+
+    @staticmethod
+    def _set(array: bytearray, pos: tuple[int, int, int]) -> None:
+        for p in pos:
+            array[p >> 3] |= 1 << (p & 7)
+
     def add_text(self, text: str) -> None:
         for g in ngrams(words(text), self.n):
-            for p in self._positions(g):
-                self.array[p >> 3] |= 1 << (p & 7)
+            self._set(self.array, self._positions(g))
             self.count += 1
 
+    def add_group(self, texts: list[str]) -> None:
+        """Add one task's texts. Its n-grams already seen in an earlier task are marked common."""
+        digests = {hashlib.blake2b(g.encode(), digest_size=12).digest() for t in texts for g in ngrams(words(t), self.n)}
+        for d in digests:
+            pos = self._split(d)
+            if self._has(self.array, pos):
+                self._set(self.common, pos)
+            else:
+                self._set(self.array, pos)
+        self.count += len(digests)
+
     def __contains__(self, gram: str) -> bool:
-        return all(self.array[p >> 3] & (1 << (p & 7)) for p in self._positions(gram))
+        pos = self._positions(gram)
+        return self._has(self.array, pos) and not (self.common is not None and self._has(self.common, pos))
 
     def containment(self, text: str, max_samples: int = 400) -> float:
         grams = ngrams(words(text), self.n)
@@ -81,9 +112,12 @@ class BloomIndex:
     def save(self, path: Path, key: str) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         tmp = path.with_suffix(".tmp")
+        head = {"key": key, "bits": self.bits, "n": self.n, "count": self.count, "grouped": self.common is not None}
         with open(tmp, "wb") as f:
-            f.write((json.dumps({"key": key, "bits": self.bits, "n": self.n, "count": self.count}) + "\n").encode())
+            f.write((json.dumps(head) + "\n").encode())
             f.write(self.array)
+            if self.common is not None:
+                f.write(self.common)
         tmp.replace(path)
 
     @classmethod
@@ -95,29 +129,44 @@ class BloomIndex:
             head = json.loads(f.readline())
             if head.get("key") != key:
                 return None
-            idx = cls(bits=head["bits"], n=head["n"])
+            idx = cls(bits=head["bits"], n=head["n"], grouped=head.get("grouped", False))
             f.readinto(idx.array)
+            if idx.common is not None:
+                f.readinto(idx.common)
         idx.count = head["count"]
         return idx
 
     @classmethod
     def from_dirs(cls, dirs: list[str], bits: int = 2**27, n: int = 8, cache_dir: str | None = None,
-                  max_false_positive: float = 0.05) -> "BloomIndex":
+                  max_false_positive: float = 0.05, group_depth: int = 0) -> "BloomIndex":
         """Index every readable file under `dirs`. With `cache_dir`, a saved index is reused while the files
-        (paths, sizes, modification times) and settings are unchanged: building LAB's takes about 25 minutes."""
-        files = []
+        (paths, sizes, modification times) and settings are unchanged: building LAB's takes about 30 minutes.
+
+        `group_depth` > 0 groups files by the first that many folders of their path under each root (3 for LAB:
+        tasks/<area>/<task>), and wording found in two or more groups stops counting as a match."""
+        files: list[tuple[Path, Path]] = []
         for d in dirs:
             root = Path(d)
             if not root.exists():
                 raise FileNotFoundError(f"reference folder not found: {root}")
-            files += sorted(p for p in root.rglob("*") if ".git" not in p.parts and p.is_file() and p.suffix.lower() in TEXT_SUFFIXES)
-        key = _fingerprint(files, bits, n)
+            files += sorted((root, p) for p in root.rglob("*")
+                            if ".git" not in p.parts and p.is_file() and p.suffix.lower() in TEXT_SUFFIXES)
+        key = _fingerprint([p for _, p in files], bits, n, group_depth)
         cache = Path(cache_dir) / f"{key[:16]}.bloom" if cache_dir else None
         if cache and (idx := cls.load(cache, key)) is not None:
             return idx
-        idx = cls(bits=bits, n=n)
-        for path in files:
-            idx.add_text(_read_text(path))
+        idx = cls(bits=bits, n=n, grouped=group_depth > 0)
+        if group_depth > 0:
+            groups: dict[tuple, list[Path]] = {}
+            for root, p in files:
+                rel = p.relative_to(root).parts
+                unit = rel[:group_depth] if len(rel) > group_depth else rel[:-1]  # files above task level: by folder
+                groups.setdefault((str(root), *unit), []).append(p)
+            for paths in groups.values():
+                idx.add_group([_read_text(p) for p in paths])
+        else:
+            for _, path in files:
+                idx.add_text(_read_text(path))
         if idx.count == 0:  # an empty index would pass every task while looking screened
             raise ValueError(f"no reference text found in {dirs} (looked for {sorted(TEXT_SUFFIXES)} files)")
         fp = idx.false_positive_rate()
@@ -129,11 +178,11 @@ class BloomIndex:
         return idx
 
 
-READER_VERSION = 2  # bump when text extraction changes, so saved indexes are rebuilt
+READER_VERSION = 3  # bump when text extraction or indexing changes, so saved indexes are rebuilt
 
 
-def _fingerprint(files: list[Path], bits: int, n: int) -> str:
-    h = hashlib.sha256(f"{READER_VERSION}|{bits}|{n}".encode())
+def _fingerprint(files: list[Path], bits: int, n: int, group_depth: int = 0) -> str:
+    h = hashlib.sha256(f"{READER_VERSION}|{bits}|{n}|{group_depth}".encode())
     for p in files:
         st = p.stat()
         h.update(f"|{p.resolve()}|{st.st_size}|{st.st_mtime_ns}".encode())
