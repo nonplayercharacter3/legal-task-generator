@@ -30,6 +30,7 @@ class BackendCfg:
     temperature: float = 0.7
     max_tokens: int = 8000
     timeout: float = 600
+    max_retries: int = 3  # HTTP backends: retries after rate limits, server errors and dropped connections
 
 
 @dataclass
@@ -114,7 +115,7 @@ def load_config(path: str | None = None, overrides: dict[str, dict[str, Any]] | 
     return cfg
 
 
-ROLE_BACKEND_KEYS = {"kind", "base_url", "api_key_env", "model", "temperature", "max_tokens", "timeout"}
+ROLE_BACKEND_KEYS = {"kind", "base_url", "api_key_env", "model", "temperature", "max_tokens", "timeout", "max_retries"}
 
 
 def build_client(cfg: Config, log: CallLog) -> ModelClient:
@@ -148,6 +149,7 @@ def _one_client(cfg: Config, b: BackendCfg, log: CallLog) -> ModelClient:
             temperature=b.temperature,
             max_tokens=b.max_tokens,
             timeout=b.timeout,
+            max_retries=b.max_retries,
             log=log,
         )
     if b.kind == "claude_sdk":

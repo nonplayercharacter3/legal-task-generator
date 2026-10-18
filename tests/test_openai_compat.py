@@ -30,7 +30,7 @@ ROLE_BY_SYSTEM = {
 @pytest.fixture
 def server():
     fake = FakeModel(seed=7)
-    state = {"fail_next": 0, "auth": [], "models": [], "finish_reason": "stop", "think": ""}
+    state = {"fail_next": 0, "drop_next": 0, "rate_next": 0, "auth": [], "models": [], "finish_reason": "stop", "think": ""}
 
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *a):
@@ -40,6 +40,16 @@ def server():
             body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
             state["auth"].append(self.headers.get("Authorization"))
             state["models"].append(body["model"])
+            if state["drop_next"]:  # hang up without answering, like a server going down mid-request
+                state["drop_next"] -= 1
+                self.close_connection = True
+                return
+            if state["rate_next"]:
+                state["rate_next"] -= 1
+                self.send_response(429)
+                self.send_header("x-ratelimit-reset", "7")
+                self.end_headers()
+                return
             if state["fail_next"]:
                 state["fail_next"] -= 1
                 self.send_response(503)
@@ -146,3 +156,18 @@ def test_role_backend_rejects_unknown_keys():
     cfg = load_config(None, {"backend": {"kind": "fake", "roles": {"solver": {"kind": "fake", "modle": "x"}}}})
     with pytest.raises(ValueError, match="unknown keys"):
         build_client(cfg, CallLog())
+
+
+def test_client_survives_dropped_connections_and_honours_rate_limits(server, monkeypatch):
+    url, state = server
+    monkeypatch.setenv("NO_PROXY", "127.0.0.1")
+    monkeypatch.setenv("no_proxy", "127.0.0.1")
+    slept = []
+    monkeypatch.setattr("ltg.models.time.sleep", lambda s: slept.append(s))
+    state["drop_next"], state["rate_next"] = 1, 1
+    log = CallLog()
+    out = OpenAICompatClient(url, "m", log=log, max_retries=3).complete(
+        "solver", prompts.SOLVER_WRITE, render_input({"instruction": "x", "files": [], "steps": []}))
+    assert "cannot assess" in out
+    assert [r.ok for r in log.records] == [False, False, True]
+    assert slept[1] == 7  # waited as long as the 429 asked

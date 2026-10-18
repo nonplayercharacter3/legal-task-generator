@@ -30,7 +30,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 ## Current status (2026-10-18)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 74 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+- 82 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
   was mutation-checked on 2026-10-14: disabling it makes a test fail.
 - First real-model runs (2026-10-15, Claude Sonnet through the Agent SDK, one matter each, seed 1):
   runs 1 to 3 were rejected at `consistency`, each exposing a gap the fake model hid (exact string matching, facts
@@ -70,6 +70,16 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   H100, H200 or GH200 (quota 0). The cluster lists 31 nodes with whole A100 80GB cards (22 SXM4, 9 PCIe; most at
   SDSC, SDSU, Missouri); counts are nodes, not cards. Plan: serve a ~8B Qwen with vLLM first, then ~30B, then
   fine-tune.
+- LAB screen on (2026-10-18): `reference_dirs = ["../harvey-labs"]` (clone `harveyai/harvey-labs` beside the repo; never
+  commit it). The index reads LAB's .docx/.xlsx/.pptx/.eml as well as text, and counts only wording found in a single
+  LAB task (`decontam_group_depth = 3`): without that, standard clauses shared across LAB tasks pushed our own sound
+  documents to 0.56, over the 0.5 cutoff.
+- NRP hosted models (2026-10-18): `https://ellm.nrp-nautilus.io/v1`, OpenAI-compatible, key from the NRP portal in
+  `NRP_LLM_API_KEY` (never in the repo or chat). `qwen3-small` is Qwen3.8-27B dense, the planned solver
+  (`configs/pilot_nrp_solver.toml`); no ~8B Qwen chat model is hosted. Limits: 200k output tokens/min per key and model,
+  8 simultaneous requests for qwen3-small; non-commercial use only. The HTTP client now retries dropped connections
+  and waits as long as a 429 asks. Running it from a cloud session needs `ellm.nrp-nautilus.io` allowed in the
+  environment's network settings and the key set as an environment variable there.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 
@@ -118,12 +128,12 @@ Stop and ask Sirui She if a round hits the usage limit or after 5 rounds without
    documents). If a model's window is too small, drop old page text and keep the solver's own notes.
 3. **Short folders make the agentic solver read everything.** With 3 to 5 short documents the tool-using solver
    behaves like the old one-prompt solver. The difficulty filter only bites once folders get longer or larger.
-4. **Decontamination index rebuilt every run.** Probably fine since LAB is small; time it before adding a cache.
+4. **LAB index takes ~30 minutes to build.** LAB is ~455M words (mostly .docx); the index is saved under
+   `runs/.decontam_cache` and reused while LAB is unchanged, but a fresh cloud container must rebuild it.
 
 Smaller known gaps: no EDGAR fetcher (precedents come from local folders), no diversity tracking across a run,
 judge not calibrated against lawyer grades, `solver_attempts = 1` rejects every task (a pass rate of 0 or 1 is
-always outside the band), dropped connections (`ConnectionResetError`) are not retried, and one fact lives in one
-document, which limits cross-document reasoning.
+always outside the band), and one fact lives in one document, which limits cross-document reasoning.
 
 ## How to verify changes
 
