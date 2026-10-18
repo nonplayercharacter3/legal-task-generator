@@ -88,6 +88,7 @@ def test_isolation_solver_and_instruction_writer_never_see_the_answer_key(cfg):
         assert all(set(q) == {"id", "key", "of", "filename"} for q in p["queries"])
     for p in fake.payloads["issue_verifier"]:  # judges blind; detect terms are checked in code
         assert "detect_terms" not in p["issue"]
+        assert set(p["client"]) == {"name", "role"}  # whom an issue hurts depends on the client's side
     for p in fake.payloads["drafter"]:  # later drafts see earlier ones, never anything beyond the ledger
         assert set(p) == {"ledger", "document", "precedent", "drafted"}
         assert p["document"]["filename"] not in {d["filename"] for d in p["drafted"]}

@@ -109,11 +109,13 @@ different product, service, territory, party or use makes it broader.
 Reply with ONLY a JSON object: {"results": [{"id": str, "same": bool, "reason": str}]}"""
 
 ISSUE_VERIFIER = """You check whether a specific legal problem is present in a document.
-You receive one document, the other documents in the matter folder, and a description of a problem that is supposed
-to appear in a given section of that one document. Facts it depends on may be stated in the other documents.
+You receive the firm's client (name and role), one document, the other documents in the matter folder, and a
+description of a problem that is supposed to appear in a given section of that one document. Facts it depends on may be stated in the other documents.
 Answer whether a careful associate reading this document could find that problem there, and whether it is a real
 problem for the client. Answer false if the problem is absent, or if the documents cure it, limit it expressly, make
-it intentional and harmless, or turn it to the client's advantage.
+it intentional and harmless, or turn it to the client's advantage. Weigh it from the client's side: work out which
+party bears each obligation the problem touches (who gives the indemnity, who must give the notice) before deciding
+whom it hurts.
 Quote the sentence that shows it.
 
 Reply with ONLY a JSON object: {"present": bool, "evidence": str, "reason": str}"""

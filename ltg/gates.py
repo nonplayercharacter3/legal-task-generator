@@ -151,6 +151,9 @@ def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms
     depend on a fact stated elsewhere (a change-of-control clause matters because a letter of intent exists).
     """
     fname = {d.id: d.filename for d in ledger.documents}
+    # Whether an issue hurts the client depends on which side the client is on: a narrower indemnity carve-out
+    # helps a supplier that gives most of the indemnities (round 5 planted one as a supplier's problem).
+    party = {"name": ledger.parties[0].name, "role": ledger.parties[0].role}
     results = []
     for i in ledger.issues:
         content = docs.get(fname[i.doc], "")
@@ -162,7 +165,7 @@ def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms
         if show_terms:
             issue["detect_terms"] = i.detect_terms
         others = [{"filename": n, "content": c} for n, c in docs.items() if n != fname[i.doc]]
-        payload = {"document": {"filename": fname[i.doc], "content": content}, "other_documents": others, "issue": issue}
+        payload = {"client": party, "document": {"filename": fname[i.doc], "content": content}, "other_documents": others, "issue": issue}
         out = call_json(client, "issue_verifier", prompts.ISSUE_VERIFIER, render_input(payload))
         results.append({"issue": i.id, "present": bool(out.get("present")), "evidence": out.get("evidence", "")})
     missing = [r["issue"] for r in results if not r["present"]]
