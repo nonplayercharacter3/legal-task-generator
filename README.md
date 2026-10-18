@@ -67,8 +67,19 @@ If a run stops part way (a crash, Ctrl-C, an endpoint going down), rerun the sam
 Matters that already have a verdict are kept, matters that ended in an error are retried, and the run refuses to
 resume if `settings.json` shows the generation settings have changed.
 
-Each role can use a different model (`[backend.models]`), e.g. a stronger model as solver and judge. Start with a
-few matters and read every output before scaling up.
+Each role can use a different model (`[backend.models]`), e.g. a stronger model as solver and judge. A role can
+also use a different backend, for example Claude writing the tasks while an open model on a vLLM server (or a
+hosted endpoint such as NRP's) solves them, so the difficulty check is measured on the model you plan to train:
+
+```toml
+[backend.roles.solver]
+kind = "openai_compat"
+base_url = "https://your-endpoint/v1"
+model = "Qwen/your-model"
+api_key_env = "SOLVER_API_KEY"      # the key is read from this environment variable, never from the file
+```
+
+Start with a few matters and read every output before scaling up.
 
 ## The gates
 

@@ -120,3 +120,29 @@ def test_client_strips_reasoning_blocks(server, monkeypatch):
     state["think"] = "<think>\nThe answer is {not json}.\n</think>\n"
     out = call_text(OpenAICompatClient(url, "m"), "solver", prompts.SOLVER_WRITE, render_input({"instruction": "x", "files": [], "steps": []}))
     assert out.startswith("I cannot assess")
+
+
+def test_one_role_can_use_its_own_backend(server, tmp_path, monkeypatch):
+    """Opus-style generation on one backend, the solver on an OpenAI-compatible endpoint (vLLM, NRP)."""
+    url, state = server
+    monkeypatch.setenv("SOLVER_KEY", "solver-secret")
+    monkeypatch.setenv("NO_PROXY", "127.0.0.1")
+    monkeypatch.setenv("no_proxy", "127.0.0.1")
+    cfg = load_config(None, {
+        "run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7},
+        "backend": {"kind": "fake", "roles": {"solver": {"kind": "openai_compat", "base_url": url,
+                                                         "api_key_env": "SOLVER_KEY", "model": "open-model"}}},
+    })
+    rep = Pipeline(cfg).run()
+    assert rep["errors"] == 0
+    assert state["models"] and set(state["models"]) == {"open-model"}  # only solver calls reached the endpoint
+    assert len(state["models"]) == rep["model_calls"]["solver"]["calls"]
+    assert set(state["auth"]) == {"Bearer solver-secret"}
+
+
+def test_role_backend_rejects_unknown_keys():
+    from ltg.config import build_client
+
+    cfg = load_config(None, {"backend": {"kind": "fake", "roles": {"solver": {"kind": "fake", "modle": "x"}}}})
+    with pytest.raises(ValueError, match="unknown keys"):
+        build_client(cfg, CallLog())

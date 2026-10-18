@@ -149,6 +149,17 @@ class OpenAICompatClient:
         raise ModelError(f"{role}: {last_err}")
 
 
+class RoleRouter:
+    """Sends each role to its own client (e.g. the solver to a local open model), every other role to the default.
+    All clients share one call log, so the report still counts every call."""
+
+    def __init__(self, default: ModelClient, routes: dict[str, ModelClient], log: CallLog) -> None:
+        self.default, self.routes, self.log = default, routes, log
+
+    def complete(self, role: str, system: str, user: str) -> str:
+        return self.routes.get(role, self.default).complete(role, system, user)
+
+
 class ClaudeAgentClient:
     """Claude through the Claude Agent SDK (`pip install claude-agent-sdk`), using the logged-in Claude Code account.
 
