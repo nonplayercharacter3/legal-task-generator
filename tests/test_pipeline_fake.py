@@ -136,7 +136,8 @@ def test_decontamination_gate_rejects_copied_benchmark_text(tmp_path):
     matter = next((tmp_path / "a").glob("*/s9-m0001"))
     # ...then pretend those documents are a benchmark and rerun the same matter.
     c2 = load_config(None, {"run": {"out_dir": str(tmp_path / "b"), "n_matters": 1, "seed": 9},
-                            "gates": {"reference_dirs": [str(matter / "docs")], "decontam_bloom_bits": 2**20}})
+                            "gates": {"reference_dirs": [str(matter / "docs")], "decontam_bloom_bits": 2**20,
+                                      "decontam_cache_dir": str(tmp_path / "cache")}})
     rep = Pipeline(c2).run()
     assert rep["matters"][0]["failed_gate"] == "decontamination"
     assert rep["gates"]["decontamination"]["skipped"] == 0

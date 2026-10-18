@@ -34,3 +34,6 @@ solver_max_steps = 28               # room to page through 5 longer documents (a
 #   GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/harveyai/harvey-labs ../harvey-labs
 # The run stops if the folder is missing or holds no readable text, so a task is never passed unscreened.
 reference_dirs = ["../harvey-labs"]
+# LAB holds about 455 million words (42k Word files), so the n-gram table needs 2^32 bits (512 MB) to keep false
+# matches near 2%. The first run builds the index (about 25 minutes) and saves it under runs/.decontam_cache.
+decontam_bloom_bits = 4294967296

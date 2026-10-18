@@ -59,6 +59,7 @@ class GatesCfg:
     decontam_threshold: float = 0.5
     decontam_bloom_bits: int = 2**27
     reference_dirs: list[str] = field(default_factory=list)
+    decontam_cache_dir: str = "runs/.decontam_cache"  # saved reference index, reused while the files are unchanged
 
 
 @dataclass
