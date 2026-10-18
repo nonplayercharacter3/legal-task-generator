@@ -1,4 +1,4 @@
-# Claude pilot with Opus generating and Sonnet solving, through the Claude Agent SDK on the logged-in
+# Claude pilot with Opus generating and Haiku solving, through the Claude Agent SDK on the logged-in
 # Claude Code subscription (no API key, no direct API calls).
 #   .venv/bin/python -m ltg run --config configs/claude_pilot_opus.toml
 # The solver runs on a different, weaker model than the generator, so the difficulty check means something:
@@ -16,7 +16,10 @@ kind = "claude_sdk"
 default_model = "opus"              # ledger, drafting, rubric, answers, gate checks and the judge
 
 [backend.models]
-solver = "sonnet"
+# Haiku solves from round 5 on (Syrena, 2026-10-18). With Sonnet solving, rounds 2 to 4 rejected 3 of 6 sound
+# tasks as too easy: Sonnet found every planted issue. The lab trains open models far weaker than Sonnet, so
+# Haiku is the closer difficulty reference. Opus still writes, checks and judges.
+solver = "haiku"
 
 # Folders of 4 to 5 documents: a 3-document folder lets the solver read everything (known weakness 3). The
 # evidence so far is mixed: accepted tasks had 4 and 5 documents, too-easy ones 4 and 5 as well.
