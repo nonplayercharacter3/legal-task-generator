@@ -87,8 +87,9 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   with `.venv/bin/python -m ltg index --config configs/pilot_nrp_solver.toml` (~35 min, saved in `runs/.decontam_cache`,
   reused until LAB changes); check it with `.venv/bin/python scripts/check_lab_index.py`. On a laptop the NRP key must
   be exported in `~/.zshenv` (not only `~/.zshrc`, which non-interactive shells skip). Claude calls go through the SDK on
-  the laptop's Claude Code login. In the cloud, the environment's setup script runs `scripts/cloud_setup.sh`, which does
-  the same in the background and logs to `/tmp/lab-index.log`; the environment allows `ellm.nrp-nautilus.io` and sets
+  the laptop's Claude Code login. In the cloud, the environment's setup script runs `scripts/cloud_setup.sh` (setup script:
+  `cd /home/user/legal-task-generator && bash scripts/cloud_setup.sh; true`), which does the same in the background
+  and logs to `/tmp/lab-index.log`; the environment allows `ellm.nrp-nautilus.io` and sets
   `NRP_LLM_API_KEY`. Then: `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml --seed <new> --out runs/<name>`.
 - Grouped LAB index verified (2026-10-18, built by `scripts/cloud_setup.sh` in 41 minutes, 419M n-grams, 1.5% false
   positives): LAB excerpts score 0.97 to 1.00, our 4 accepted tasks 0.05 to 0.10 (ungrouped: 0.31 to 0.56, one over

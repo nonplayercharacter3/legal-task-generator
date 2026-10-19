@@ -7,11 +7,11 @@
 #   tail -f /tmp/lab-index.log      # "reference index ready" when done, "SETUP FAILED" otherwise
 #
 # Settings (environment variables, all optional):
-#   BRANCH   branch whose code builds the index (default claude/wonderful-bardeen-ecwx4o; use main once merged)
+#   BRANCH   branch whose code builds the index (default main)
 #   CONFIG   config with gates.reference_dirs, relative to the repo (default configs/pilot_nrp_solver.toml)
 
 REPO="${REPO:-$PWD}"
-BRANCH="${BRANCH:-claude/wonderful-bardeen-ecwx4o}"
+BRANCH="${BRANCH:-main}"
 CONFIG="${CONFIG:-configs/pilot_nrp_solver.toml}"
 LAB="$(dirname "$REPO")/harvey-labs"
 SRC=/tmp/ltg-index-src
