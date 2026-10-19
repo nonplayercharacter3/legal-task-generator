@@ -1,0 +1,145 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 1,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 2,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 2
+    },
+    "solver_check": {
+      "evaluated": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s2-m0001",
+      "accepted": false,
+      "failed_gate": "consistency",
+      "reason": "mismatches: [{\"fact\": \"F2\", \"key\": \"Licensed Software\", \"filename\": \"software_license_agreement.md\", \"ledger\": \"Corvane Ledger Platform, version 7.x, in object code form\", \"document\": \"Corvane Ledger Platform, version 7.x, in object code form, together with any Updates provided to Licensee under the Support Add",
+      "split": null,
+      "solver_pass_rate": null
+    },
+    {
+      "matter_id": "s2-m0002",
+      "accepted": false,
+      "failed_gate": "solver_check",
+      "reason": "every attempt passed: too easy to carry training signal",
+      "split": null,
+      "solver_pass_rate": 1.0
+    },
+    {
+      "matter_id": "s2-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.333
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 8571,
+      "output_tokens": 13230,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 14,
+      "input_tokens": 219926,
+      "output_tokens": 74179,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 86028,
+      "output_tokens": 7558,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 5023,
+      "output_tokens": 1220,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 8,
+      "input_tokens": 195910,
+      "output_tokens": 4004,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 2,
+      "input_tokens": 2939,
+      "output_tokens": 736,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 2,
+      "input_tokens": 9327,
+      "output_tokens": 2645,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 4,
+      "input_tokens": 116680,
+      "output_tokens": 31978,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 14,
+      "input_tokens": 170718,
+      "output_tokens": 12668,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 112,
+      "input_tokens": 1506200,
+      "output_tokens": 360189,
+      "errors": 0
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "run": {
+    "seed": 5
+  },
+  "backend": {
+    "kind": "claude_sdk",
+    "base_url": "http://localhost:8000/v1",
+    "api_key_env": "LTG_API_KEY",
+    "default_model": "opus",
+    "models": {
+      "solver": "haiku"
+    },
+    "temperature": 0.7,
+    "max_tokens": 8000,
+    "timeout": 600
+  },
+  "fake": {
+    "solver_skill": 0.85,
+    "fault": "",
+    "fault_rate": 0.0
+  },
+  "spec": {
+    "practice_areas": [
+      "commercial_contracts",
+      "mergers_acquisitions"
+    ],
+    "jurisdictions": [
+      "Delaware",
+      "New York"
+    ],
+    "work_types": [
+      "issue_spotting_memo"
+    ],
+    "n_documents": [
+      4,
+      5
+    ],
+    "n_issues": [
+      3,
+      5
+    ]
+  },
+  "gates": {
+    "solver_attempts": 3,
+    "solver_max_steps": 28,
+    "solver_page_chars": 6000,
+    "solver_min_pass_rate": 0.01,
+    "solver_max_pass_rate": 0.99,
+    "probe_without_documents": true,
+    "judge_hints": true,
+    "verifier_sees_terms": false,
+    "decontam_ngram": 8,
+    "decontam_threshold": 0.5,
+    "decontam_bloom_bits": 134217728,
+    "reference_dirs": []
+  },
+  "splits": {
+    "ratios": {
+      "train": 0.8,
+      "dev": 0.1,
+      "test": 0.1
+    },
+    "salt": "ltg-v0"
+  },
+  "sources": {
+    "precedent_dirs": [],
+    "precedents_per_matter": 1,
+    "precedent_chars": 6000
+  }
+}

@@ -10,6 +10,8 @@ import re
 from dataclasses import asdict, dataclass, field
 from typing import Any
 
+from .taxonomy import OVERUSED_NAMES
+
 _SAFE_FILENAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,120}$")
 
 
@@ -31,13 +33,17 @@ class MatterSpec:
     n_issues: int
     issue_types: list[str]
     seed: int
+    industry: str = ""
+    name_stems: list[str] = field(default_factory=list)  # client's name starts with [0], counterparty's with [1]
+    supporting_kinds: list[str] = field(default_factory=list)
+    distractor_kind: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "MatterSpec":
-        return cls(**d)
+        return _pick(cls, d)
 
 
 @dataclass
@@ -79,7 +85,12 @@ class Issue:
     section: str
     detect_terms: list[str]
     expected_finding: str
-    contradicts: str | None = None  # fact id this issue deliberately states differently in its document
+    contradicts: str | list[str] | None = None  # fact id(s) this issue deliberately states differently in its document
+
+    def contradicted(self) -> list[str]:
+        """The contradicted fact ids as a list: one issue can move several facts (governing law and forum)."""
+        c = self.contradicts
+        return [] if not c else [c] if isinstance(c, str) else [str(x) for x in c]
 
 
 @dataclass
@@ -204,16 +215,28 @@ def validate_ledger(ledger: Ledger, spec: MatterSpec) -> list[str]:
             errs.append(f"issue {i.id} has no detect_terms")
         if not i.expected_finding.strip():
             errs.append(f"issue {i.id} has no expected_finding")
-        fact = next((f for f in ledger.facts if f.id == i.contradicts), None)
-        if i.contradicts and fact is None:
-            errs.append(f"issue {i.id} contradicts unknown fact {i.contradicts}")
-        elif fact and fact.doc == i.doc:
-            errs.append(f"issue {i.id} contradicts {fact.id} inside {fact.doc}, the document that states it; "
-                        "a contradiction needs the fact stated in a different document, otherwise set contradicts to null")
+        for fid in i.contradicted():
+            fact = next((f for f in ledger.facts if f.id == fid), None)
+            if fact is None:
+                errs.append(f"issue {i.id} contradicts unknown fact {fid}")
+            elif fact.doc == i.doc:
+                errs.append(f"issue {i.id} contradicts {fact.id} inside {fact.doc}, the document that states it; "
+                            "a contradiction needs the fact stated in a different document, otherwise leave it out")
         issue_docs.add(i.doc)
     if spec.n_issues >= 2 and len(issue_docs) < 2:
         errs.append("all issues sit in one document; spread them across documents")
+    for party, stem in zip(ledger.parties, spec.name_stems):
+        if not party.name.lower().startswith(stem.lower()):
+            errs.append(f"party {party.id} is named {party.name!r}; the spec requires a name starting with {stem!r}")
+    for party in ledger.parties:
+        used = [w for w in OVERUSED_NAMES if re.search(rf"\b{w}\b", party.name, re.I)]
+        if used:
+            errs.append(f"party {party.id} uses the overused name {used[0]!r}; invent a different one")
     return errs
+
+
+def _words(s: str) -> str:
+    return " " + " ".join(re.findall(r"[a-z0-9]+", s.lower())) + " "
 
 
 def validate_rubric(rubric: Rubric, ledger: Ledger) -> list[str]:
@@ -232,6 +255,15 @@ def validate_rubric(rubric: Rubric, ledger: Ledger) -> list[str]:
             errs.append(f"criterion {c.id} cites {c.source!r}, which is not a ledger issue")
         elif c.kind == "fact" and c.source not in fact_ids:
             errs.append(f"criterion {c.id} cites {c.source!r}, which is not a ledger fact")
+    # A negative criterion about a distractor punishes thoroughness: real documents always hold points a careful
+    # reviewer may raise, and the ledger cannot say they are wrong (the 2026-10-18 pilot lost two tasks this way).
+    for c in rubric.criteria:
+        if c.kind != "negative":
+            continue
+        for d in ledger.documents:
+            names = {_words(d.filename.rsplit(".", 1)[0]), _words(d.kind.split("(")[0])}
+            if d.distractor and any(n.strip() and n in _words(c.text) for n in names):
+                errs.append(f"negative criterion {c.id} is about distractor {d.id}; grade only wrong conclusions")
     graded = {c.source for c in rubric.criteria if c.kind == "issue"}
     for missing in sorted(issue_ids - graded):
         errs.append(f"issue {missing} has no criterion")

@@ -32,6 +32,10 @@ def test_end_to_end_writes_tasks_and_report(cfg, read_json):
         assert (acc[0] / f).exists(), f
     assert (Path(out) / "report.md").read_text().startswith("# Run report")
     assert not (Path(out) / "work").exists()
+    v = report["variety"]
+    assert sum(v["industries"].values()) == 6 and len(v["industries"]) == 6  # one industry per matter
+    assert v["repeated_names"] == {}  # every party starts with its own stem
+    assert "## Variety" in (Path(out) / "report.md").read_text()
 
     calls = report["model_calls"]
     for role in ("ledger_writer", "drafter", "fact_extractor", "issue_verifier", "instruction_writer", "rubric_writer", "answer_writer", "judge", "solver"):
@@ -81,13 +85,16 @@ def test_isolation_solver_and_instruction_writer_never_see_the_answer_key(cfg):
     assert reads > 0
     for p in fake.payloads["instruction_writer"]:
         assert set(p) == {"matter", "files"}
-        assert "issue_types" not in p["matter"]
+        assert "issue_types" not in p["matter"] and "jurisdiction" not in p["matter"]
+    for p in fake.payloads["ledger_writer"]:  # the sampler, not the model, picks industry and name stems
+        assert p["spec"]["industry"] and len(p["spec"]["name_stems"]) == 2 and "Halvorsen" in p["avoid_names"]
     for p in fake.payloads["judge"]:
         assert set(p) == {"response", "criteria"}
     for p in fake.payloads["fact_extractor"]:  # gets the fact keys, never the expected values
-        assert all(set(q) == {"id", "key", "filename"} for q in p["queries"])
+        assert all(set(q) == {"id", "key", "of", "filename"} for q in p["queries"])
     for p in fake.payloads["issue_verifier"]:  # judges blind; detect terms are checked in code
         assert "detect_terms" not in p["issue"]
+        assert set(p["client"]) == {"name", "role"}  # whom an issue hurts depends on the client's side
     for p in fake.payloads["drafter"]:  # later drafts see earlier ones, never anything beyond the ledger
         assert set(p) == {"ledger", "document", "precedent", "drafted"}
         assert p["document"]["filename"] not in {d["filename"] for d in p["drafted"]}
@@ -135,7 +142,8 @@ def test_decontamination_gate_rejects_copied_benchmark_text(tmp_path):
     matter = next((tmp_path / "a").glob("*/s9-m0001"))
     # ...then pretend those documents are a benchmark and rerun the same matter.
     c2 = load_config(None, {"run": {"out_dir": str(tmp_path / "b"), "n_matters": 1, "seed": 9},
-                            "gates": {"reference_dirs": [str(matter / "docs")], "decontam_bloom_bits": 2**20}})
+                            "gates": {"reference_dirs": [str(matter / "docs")], "decontam_bloom_bits": 2**20,
+                                      "decontam_cache_dir": str(tmp_path / "cache")}})
     rep = Pipeline(c2).run()
     assert rep["matters"][0]["failed_gate"] == "decontamination"
     assert rep["gates"]["decontamination"]["skipped"] == 0
@@ -191,6 +199,8 @@ def test_consistency_allows_only_planted_contradictions():
     docs[other] += "\nGoverning Law: State of California\n"
 
     assert gates.consistency(fake, ledger, docs).passed  # the planted issue contradicts F3 on purpose
+    mismatch.contradicts = ["F1", "F3"]  # an issue may move several facts (governing law and forum)
+    assert gates.consistency(fake, ledger, docs).passed
     mismatch.contradicts = None
     g = gates.consistency(fake, ledger, docs)
     assert not g.passed and g.details["mismatches"][0]["filename"] == other

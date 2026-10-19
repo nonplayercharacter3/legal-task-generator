@@ -1,0 +1,126 @@
+{
+  "task_id": "s5-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Harrowgate Bottling Co., which buys beverage containers from Veltmar Glassworks, Inc. under a supply agreement. The client wants a clear picture of where it stands under the current contract documents before it relies on them going forward, and I'd like your review to give us that.\n\nPlease review the full set in the matter folder: the Supply Agreement (supply_agreement.md), the non-binding term sheet (term_sheet.md), Amendment No. 1 to the Supply Agreement (amendment_no_1.md), and the Quality and Specifications Agreement (quality_agreement.md).\n\nPrepare a memo to me that lists each issue you identify. For each one, state where it appears (document and section), explain why it matters for Harrowgate as the buyer, and give a recommended fix. Where a fix calls for new or revised drafting, please propose the language. If anything is unclear or you need further information from the client to finish the analysis, flag it in the memo rather than making assumptions. Please keep the memo organized so I can walk the client through it item by item.",
+  "documents": [
+    "amendment_no_1.md",
+    "quality_agreement.md",
+    "supply_agreement.md",
+    "term_sheet.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "Identifies that Section 2.2 of the Supply Agreement renews the agreement automatically for successive five-year Renewal Terms, and that non-renewal requires notice given no more than 270 and no less than 240 days before expiry. Explains that this is effectively a 30-day window and that missing it locks Harrowgate into five more years.",
+      "kind": "issue",
+      "hints": [
+        "five-year Renewal Terms",
+        "270 days",
+        "30-day window"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "Identifies that Section 3.1 of the Supply Agreement requires Harrowgate to buy all glass and PET containers for any beverage product, worldwide, exclusively from Veltmar. Explains that this goes well beyond the term sheet's agreed scope of amber glass bottles for beer brands at U.S. and Canadian facilities, and that Harrowgate is bound by the broader executed text.",
+      "kind": "issue",
+      "hints": [
+        "all glass and PET containers",
+        "worldwide",
+        "amber glass bottles"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "Identifies that Recital C of Amendment No. 1 records receipt of the 14% Price Adjustment Notice on August 3, 2026. Explains that the 30-day objection period under Supply Agreement Section 5.4 expired on or about September 2, 2026, before the amendment's September 21, 2026 date, so the increase is deemed accepted absent an express extension or waiver.",
+      "kind": "issue",
+      "hints": [
+        "August 3, 2026",
+        "September 2, 2026",
+        "deemed accepted"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "Identifies that Section 2 of Amendment No. 1 replaces Supply Agreement Section 11.2, removing product recall costs from the carve-outs to the liability cap and limiting the indemnity carve-out to third-party intellectual property claims. Explains that recall and product-liability exposure is now capped at six months of fees.",
+      "kind": "issue",
+      "hints": [
+        "Section 11.2",
+        "recall costs",
+        "third-party intellectual property claims"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "Identifies that Section 4 of Amendment No. 1 adds a new Section 14.4 that lets Veltmar assign without Harrowgate's consent to Affiliates or to successors by merger, change of control or sale of business, overriding Section 14.3. Explains that nothing prevents assignment to a competitor and that Harrowgate remains bound by the consent requirement, so the restriction is now one-sided.",
+      "kind": "issue",
+      "hints": [
+        "Section 14.4",
+        "without the consent of Customer",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "States that under Supply Agreement Section 15.2 written amendments take precedence over the Supply Agreement, so Amendment No. 1 controls where it conflicts with the Supply Agreement.",
+      "kind": "fact",
+      "hints": [
+        "Section 15.2",
+        "order of precedence",
+        "amendment controls"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "States that the liability cap in Supply Agreement Section 11.1 equals the fees paid by Customer in the six months before the claim arose.",
+      "kind": "fact",
+      "hints": [
+        "six months",
+        "fees paid",
+        "Section 11.1"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "Is organized as a memo addressed to the supervising partner, with issues listed item by item. Each item gives the document and section where the issue appears and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Location"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "For at least one issue whose fix requires new or revised drafting, proposes specific contract language, such as a restored Section 11.2, a narrowed Section 3.1, a revised renewal clause, or a competitor exclusion for assignment.",
+      "kind": "format",
+      "hints": [
+        "proposed language",
+        "shall not assign",
+        "Customer shall purchase"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "Fails if the response concludes that Harrowgate can still timely object to the 14% price increase under Section 5.4 without obtaining an extension or waiver, or treats the objection window as still open as of the amendment date.",
+      "kind": "negative",
+      "hints": [
+        "window has closed",
+        "deemed accepted"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "Fails if the response concludes that the term sheet's narrower exclusivity scope governs or binds the parties over Supply Agreement Section 3.1.",
+      "kind": "negative",
+      "hints": [
+        "term sheet is non-binding",
+        "superseded"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.333
+}

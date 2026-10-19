@@ -82,3 +82,48 @@ def test_fact_values_must_be_short_values_not_clauses():
     assert any("fact F1 is 21 words" in e for e in validate_ledger(ledger, spec))
     ledger.facts[0].value = "30 days"
     assert validate_ledger(ledger, spec) == []
+
+
+def test_negative_criteria_may_not_target_a_distractor():
+    ledger, _ = _ledger_and_spec()
+    distractor = next(d for d in ledger.documents if d.distractor)
+    crits = [{"id": f"C{k + 1}", "text": f"finds {i.id}", "kind": "issue", "source": i.id} for k, i in enumerate(ledger.issues)]
+    ok = Rubric.from_dict({"criteria": crits + [{"id": "N1", "text": "Does not cite case law absent from the documents.", "kind": "negative"}]})
+    assert validate_rubric(ok, ledger) == []
+    name = distractor.filename.rsplit(".", 1)[0].replace("_", " ")
+    bad = Rubric.from_dict({"criteria": crits + [{"id": "N1", "text": f"Fails if it flags the {name} as a problem.", "kind": "negative"}]})
+    assert any("distractor" in e for e in validate_rubric(bad, ledger))
+
+
+def test_contradicts_may_list_several_facts():
+    ledger, spec = _ledger_and_spec()
+    issue = ledger.issues[0]
+    others = [f.id for f in ledger.facts if f.doc != issue.doc][:2]
+    issue.contradicts = others
+    assert not any("contradicts" in e for e in validate_ledger(ledger, spec))
+    issue.contradicts = [*others, "F99"]
+    assert any("unknown fact F99" in e for e in validate_ledger(ledger, spec))
+
+
+def test_specs_spread_industries_names_documents_and_issues():
+    from collections import Counter
+
+    from ltg.taxonomy import INDUSTRIES, SUPPORTING_KINDS, issue_types_for
+
+    specs = sample_specs(SpecCfg(practice_areas=["commercial_contracts"], n_documents=[5, 5], n_issues=[3, 3]), 30, seed=11)
+    assert len({s.industry for s in specs}) == 30 and all(s.industry in INDUSTRIES for s in specs)
+    stems = [st for s in specs for st in s.name_stems]
+    assert len(stems) == 60 and len(set(stems)) == 60
+    assert all(len(s.supporting_kinds) == 3 and set(s.supporting_kinds) <= set(SUPPORTING_KINDS["commercial_contracts"]) for s in specs)
+    counts = Counter(t for s in specs for t in s.issue_types)
+    pool = issue_types_for("commercial_contracts")
+    assert set(counts) == set(pool) and max(counts.values()) <= 2 * min(counts.values())  # balanced, not luck of the draw
+
+
+def test_ledger_names_must_use_the_stems_and_avoid_overused_names():
+    ledger, spec = _ledger_and_spec()
+    assert validate_ledger(ledger, spec) == []
+    ledger.parties[0].name = "Acme Widgets LLC"
+    assert any("must start" in e or "requires a name starting" in e for e in validate_ledger(ledger, spec))
+    ledger.parties[0].name = f"{spec.name_stems[0]} Halvorsen Partners"
+    assert any("overused name" in e for e in validate_ledger(ledger, spec))

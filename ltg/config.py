@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 import tomllib
-from dataclasses import dataclass, field, fields
+from dataclasses import dataclass, field, fields, replace
 from typing import Any
 
-from .models import CallLog, ClaudeAgentClient, ModelClient, OpenAICompatClient
+from .models import CallLog, ClaudeAgentClient, ModelClient, OpenAICompatClient, RoleRouter
 
 
 @dataclass
@@ -23,10 +23,14 @@ class BackendCfg:
     base_url: str = "http://localhost:8000/v1"
     api_key_env: str = "LTG_API_KEY"
     default_model: str = ""
-    models: dict[str, str] = field(default_factory=dict)  # per-role overrides
+    models: dict[str, str] = field(default_factory=dict)  # per-role model overrides on this backend
+    # Per-role backends, e.g. Opus writing through the SDK while an open model on a vLLM or NRP endpoint solves:
+    #   [backend.roles.solver]  kind = "openai_compat", base_url = "...", model = "...", api_key_env = "..."
+    roles: dict[str, dict[str, Any]] = field(default_factory=dict)
     temperature: float = 0.7
     max_tokens: int = 8000
     timeout: float = 600
+    max_retries: int = 3  # HTTP backends: retries after rate limits, server errors and dropped connections
 
 
 @dataclass
@@ -59,6 +63,8 @@ class GatesCfg:
     decontam_threshold: float = 0.5
     decontam_bloom_bits: int = 2**27
     reference_dirs: list[str] = field(default_factory=list)
+    decontam_cache_dir: str = "runs/.decontam_cache"  # saved reference index, reused while the files are unchanged
+    decontam_group_depth: int = 0  # >0: wording shared by 2+ benchmark tasks is not a match (3 for LAB's layout)
 
 
 @dataclass
@@ -109,8 +115,25 @@ def load_config(path: str | None = None, overrides: dict[str, dict[str, Any]] | 
     return cfg
 
 
+ROLE_BACKEND_KEYS = {"kind", "base_url", "api_key_env", "model", "temperature", "max_tokens", "timeout", "max_retries"}
+
+
 def build_client(cfg: Config, log: CallLog) -> ModelClient:
-    b = cfg.backend
+    default = _one_client(cfg, cfg.backend, log)
+    if not cfg.backend.roles:
+        return default
+    routes = {}
+    for role, over in cfg.backend.roles.items():
+        unknown = set(over) - ROLE_BACKEND_KEYS
+        if unknown:
+            raise ValueError(f"backend.roles.{role}: unknown keys {sorted(unknown)}")
+        fields_ = {k: v for k, v in over.items() if k != "model"}
+        b = replace(cfg.backend, roles={}, models={}, **fields_, default_model=over.get("model", ""))
+        routes[role] = _one_client(cfg, b, log)
+    return RoleRouter(default, routes, log)
+
+
+def _one_client(cfg: Config, b: BackendCfg, log: CallLog) -> ModelClient:
     if b.kind == "fake":
         from .fake import FakeModel
 
@@ -126,6 +149,7 @@ def build_client(cfg: Config, log: CallLog) -> ModelClient:
             temperature=b.temperature,
             max_tokens=b.max_tokens,
             timeout=b.timeout,
+            max_retries=b.max_retries,
             log=log,
         )
     if b.kind == "claude_sdk":

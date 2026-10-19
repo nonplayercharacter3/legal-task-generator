@@ -1,0 +1,34 @@
+{
+  "matter_id": "s3-m0003",
+  "accepted": false,
+  "failed_gate": "consistency",
+  "reason": "mismatches: [{\"fact\": \"F5\", \"key\": \"SPA exclusive forum\", \"filename\": \"stock_purchase_agreement.md\", \"ledger\": \"Court of Chancery of the State of Delaware\", \"document\": \"the Court of Chancery of the State of Delaware (or, if and only if such court lacks subject matter jurisdiction, the Superior Court of the Sta",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": false,
+      "details": {
+        "mismatches": [
+          {
+            "fact": "F5",
+            "key": "SPA exclusive forum",
+            "filename": "stock_purchase_agreement.md",
+            "ledger": "Court of Chancery of the State of Delaware",
+            "document": "the Court of Chancery of the State of Delaware (or, if and only if such court lacks subject matter jurisdiction, the Superior Court of the State of Delaware or the United States District Court for the District of Delaware)"
+          }
+        ],
+        "reworded": 4,
+        "checked": 50
+      }
+    }
+  ]
+}

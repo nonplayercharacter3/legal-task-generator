@@ -30,16 +30,16 @@ from .taxonomy import ISSUE_LIBRARY
 FAULTS = ("drop_issue", "wrong_fact", "conflicting_restatement", "leaky_filename", "untraceable_criterion", "weak_gold")
 
 COMPANY_NAMES = [
-    "Halvorsen Industrial Supply Co.",
-    "Brightwater Analytics, Inc.",
+    "Ostrava Industrial Supply Co.",
+    "Lindqvist Analytics, Inc.",
     "Copperline Foods LLC",
     "Northgate Robotics Corp.",
-    "Meridian Orchard Holdings, Inc.",
+    "Pellucid Orchard Holdings, Inc.",
     "Tallis & Reed Logistics LLC",
     "Saffron Peak Software, Inc.",
     "Ironbridge Medical Devices Corp.",
     "Larkspur Renewable Materials LLC",
-    "Quillon Freight Systems, Inc.",
+    "Varnholt Freight Systems, Inc.",
 ]
 
 BOILERPLATE = [
@@ -121,6 +121,9 @@ class FakeModel:
         spec = p["spec"]
         r = _rng(self.seed, "ledger", spec["matter_id"])
         client, counterparty = r.sample(COMPANY_NAMES, 2)
+        stems = spec.get("name_stems") or []
+        if len(stems) >= 2:  # the real ledger writer must start each party's name with its stem
+            client, counterparty = f"{stems[0]} {client.split(' ', 1)[1]}", f"{stems[1]} {counterparty.split(' ', 1)[1]}"
         is_ma = spec["practice_area"] == "mergers_acquisitions"
         roles = ("Buyer", "Seller") if is_ma else ("Customer", "Supplier")
 
@@ -136,12 +139,12 @@ class FakeModel:
                 "precedent": precedent_id,
             }
         ]
-        support = ["amendment", "disclosure schedule", "side letter", "board consent"]
+        support = spec.get("supporting_kinds") or ["amendment", "disclosure schedule", "side letter", "board consent"]
         for k in range(n_docs - 1 - n_distractors):
             kind = support[k % len(support)]
             documents.append({"id": f"D{len(documents) + 1}", "filename": f"{_slug(kind)}_{k + 1}.md", "kind": kind, "distractor": False, "precedent": None})
         for k in range(n_distractors):
-            kind = ["email thread", "meeting notes"][k % 2]
+            kind = spec.get("distractor_kind") or ["email thread", "meeting notes"][k % 2]
             documents.append({"id": f"D{len(documents) + 1}", "filename": f"{_slug(kind)}.md", "kind": kind, "distractor": True, "precedent": None})
 
         year = 2025 + r.randint(0, 1)
@@ -245,7 +248,7 @@ class FakeModel:
         text = (
             f"Our client, {m['client']}, is reviewing its {m['agreement_type']} ahead of a board meeting next week "
             f"and wants to know where it stands. The matter folder has {len(files)} files ({listing}). "
-            f"Please review all of them under {m['jurisdiction']} law and prepare {m['deliverable']}. "
+            f"Please review all of them and prepare {m['deliverable']}. "
             "Keep it practical: the client needs to decide what to raise with the counterparty."
         )
         return {"instruction": text}

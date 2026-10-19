@@ -1,0 +1,208 @@
+{
+  "matter_id": "s5-m0001",
+  "summary": "Halvorsen Industrial Holdings LLC (client, Buyer) is acquiring all outstanding shares of Corbel Fluidics, Inc. from Tarrant Peak Partners LP under a New York-law stock purchase agreement signed September 21, 2026. The folder holds four documents: the SPA; the Company's key Supply Agreement with its sole-source resin supplier; a Seller indemnity side letter; and an escrow agreement. On a full reading, five problems appear. A supplier change-of-control consent is not addressed in the SPA. The supplier may assign freely. The Company's extension option at locked pricing lapsed before signing. The side letter narrows the uncapped Fundamental Representations through the SPA's precedence clause. The side letter also selects Delaware law and forum against the SPA's New York choice.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Halvorsen Industrial Holdings LLC",
+      "role": "Buyer (client)"
+    },
+    {
+      "id": "P2",
+      "name": "Tarrant Peak Partners LP",
+      "role": "Seller, sole stockholder of the Company"
+    },
+    {
+      "id": "P3",
+      "name": "Corbel Fluidics, Inc.",
+      "role": "Company being acquired (target); Customer under the Supply Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Vantrell Polymer Corp.",
+      "role": "Supplier under the Company's sole-source Supply Agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Granite Ledger Trust Company",
+      "role": "Escrow Agent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "September 21, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Purchase Price",
+      "value": "$84,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "SPA Escrow Amount",
+      "value": "$8,450,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F4",
+      "key": "SPA indemnity cap",
+      "value": "10% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "SPA definition of Fundamental Representations",
+      "value": "Sections 4.1, 4.2, 4.3 (Capitalization) and 4.12 (Taxes) of the SPA",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F6",
+      "key": "SPA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F7",
+      "key": "SPA forum",
+      "value": "State or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence among transaction documents",
+      "value": "Side Letter, then SPA, then Escrow Agreement",
+      "doc": "D1",
+      "section": "Section 11.11"
+    },
+    {
+      "id": "F9",
+      "key": "Supply Agreement Initial Term end date",
+      "value": "December 31, 2026",
+      "doc": "D2",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F10",
+      "key": "Supply Agreement extension notice deadline",
+      "value": "At least 120 days before end of Initial Term",
+      "doc": "D2",
+      "section": "Section 3.2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "Stock Purchase Agreement (with Disclosure Schedule)",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "corbel_vantrell_supply_agreement.md",
+      "kind": "Master Supply Agreement (material contract of the Company)",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_indemnity_side_letter.md",
+      "kind": "Side Letter on indemnification matters between Buyer and Seller",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "indemnity_escrow_agreement.md",
+      "kind": "Escrow Agreement among Buyer, Seller and Escrow Agent",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Two provisions combine to create this issue. Section 14.2 of the Supply Agreement (D2) treats any change in the direct or indirect ownership of more than 50% of Customer's voting stock as an assignment. Such a change requires the prior written consent of Supplier, and Supplier may terminate on 30 days' notice if consent is not obtained. The SPA (D1) does not address this. Section 4.4 represents that no third-party consent is required, and Disclosure Schedule 4.4 reads 'None'. The closing condition in Section 7.2(c) covers only consents listed on Schedule 4.4. The sale of 100% of Corbel's stock to Halvorsen therefore triggers Vantrell's consent right. Nothing in the folder obtains that consent or makes it a closing condition. Buyer's only recourse would be an indemnity claim, and that claim would fall under the capped general representations.",
+      "doc": "D2",
+      "section": "Section 14.2",
+      "detect_terms": [
+        "prior written consent of Supplier",
+        "direct or indirect ownership"
+      ],
+      "expected_finding": "The stock sale triggers Vantrell's change-of-control consent and termination right under Supply Agreement Section 14.2, which the SPA omits from Schedule 4.4 and the Section 7.2(c) closing condition. Buyer should require the consent as a closing condition and correct the disclosure.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 16.1 of the Supply Agreement (D2) is one-sided. Customer (the Company) may not assign without Supplier's consent. Supplier, however, may assign the agreement, in whole or in part, to any person without the consent of Customer, including by merger or sale of its resin business. Vantrell is the Company's sole-source supplier. Under this clause it could transfer the contract to a competitor of Halvorsen, which would then control Corbel's critical input supply and receive its forecasts and pricing.",
+      "doc": "D2",
+      "section": "Section 16.1",
+      "detect_terms": [
+        "Supplier may assign this Agreement",
+        "without the consent of Customer"
+      ],
+      "expected_finding": "Supply Agreement Section 16.1 lets Vantrell assign freely, including to a Halvorsen competitor. Buyer should seek a mutual consent requirement with a competitor carve-out, for example as part of the change-of-control consent negotiation.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 3.2 of the Supply Agreement (D2) gives Customer an option to extend the term by 36 months at the then-current Extension Pricing. The option must be exercised by written notice not less than 120 days before the end of the Initial Term. Section 3.1 sets the end of the Initial Term at December 31, 2026, so the exercise deadline was September 2, 2026. The SPA (D1) was signed on September 21, 2026, nineteen days after that deadline. Nothing in the folder shows the option was exercised. The Company has therefore lost its locked pricing, and the contract will expire unless it is renegotiated. This affects valuation and is not reflected in the SPA.",
+      "doc": "D2",
+      "section": "Section 3.2",
+      "detect_terms": [
+        "not less than one hundred twenty (120) days",
+        "Extension Pricing"
+      ],
+      "expected_finding": "The Company's extension option under Supply Agreement Section 3.2 lapsed on September 2, 2026, before the September 21, 2026 SPA signing. Buyer should seek a price adjustment, a special indemnity or a pre-closing renegotiation with Vantrell.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Three provisions combine to narrow the cap carve-out. Under SPA Section 9.5(a)-(b) (D1), the 10% cap does not apply to Fraud or to breaches of Fundamental Representations. Section 1.1 defines those as Sections 4.1, 4.2, 4.3 (Capitalization) and 4.12 (Taxes). Section 2 of the Side Letter (D3) redefines Fundamental Representations 'for all purposes of the Purchase Agreement' as solely Sections 4.1 and 4.2. SPA Section 11.11 provides that the Side Letter controls over the SPA. Read together, these provisions move capitalization and tax breaches under the $8,450,000 cap. Buyer loses uncapped recovery for title-to-shares and pre-closing tax exposure.",
+      "doc": "D3",
+      "section": "Section 2",
+      "detect_terms": [
+        "solely Sections 4.1 and 4.2",
+        "for all purposes of the Purchase Agreement"
+      ],
+      "expected_finding": "Through the Section 11.11 precedence clause, the Side Letter's narrowed definition removes capitalization and tax representations from the SPA's cap carve-out, so those breaches are now capped at 10% of the Purchase Price. Buyer should strike Side Letter Section 2 or conform it to SPA Section 1.1.",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "SPA Sections 11.8 and 11.9 (D1) select New York law and exclusive New York County courts. Section 6 of the Side Letter (D3) selects the laws of the State of Delaware and the exclusive jurisdiction of the Court of Chancery of the State of Delaware for disputes 'arising out of or relating to indemnification'. SPA Section 11.11 makes the Side Letter control. As a result, indemnity claims under SPA Article IX would be litigated in Delaware under Delaware law, while other SPA disputes stay in New York. This splits forums and creates a risk of inconsistent rulings. It also undercuts the New York choice that Buyer negotiated.",
+      "doc": "D3",
+      "section": "Section 6",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery"
+      ],
+      "expected_finding": "The Side Letter's Delaware law and Chancery forum conflict with the SPA's New York law and forum, and the SPA's precedence clause lets the Side Letter govern indemnity disputes. Buyer should conform Side Letter Section 6 to New York law and forum.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 0,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 1,
+      "failed": 2,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 1,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 1
+    },
+    "solver_check": {
+      "evaluated": 1,
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s4-m0001",
+      "accepted": false,
+      "failed_gate": "leak_check",
+      "reason": "hits: [{\"issue\": \"I3\", \"phrase\": \"Schedule 3.4\", \"in\": \"instruction\"}, {\"issue\": \"I3\", \"phrase\": \"Schedule 3.4\", \"in\": \"stock_purchase_agreement_excerpt_and_schedule_3_4.md\"}]",
+      "split": null,
+      "solver_pass_rate": null
+    },
+    {
+      "matter_id": "s4-m0002",
+      "accepted": false,
+      "failed_gate": "solver_check",
+      "reason": "every attempt passed: too easy to carry training signal",
+      "split": null,
+      "solver_pass_rate": 1.0
+    },
+    {
+      "matter_id": "s4-m0003",
+      "accepted": false,
+      "failed_gate": "leak_check",
+      "reason": "hits: [{\"issue\": \"I1\", \"phrase\": \"Notice of Disagreement\", \"in\": \"instruction\"}, {\"issue\": \"I1\", \"phrase\": \"Notice of Disagreement\", \"in\": \"closing_statement_correspondence.md\"}]",
+      "split": null,
+      "solver_pass_rate": null
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 9369,
+      "output_tokens": 23863,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 13,
+      "input_tokens": 251763,
+      "output_tokens": 92471,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 102894,
+      "output_tokens": 6425,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 3907,
+      "output_tokens": 698,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 9,
+      "input_tokens": 269496,
+      "output_tokens": 6872,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4802,
+      "output_tokens": 1172,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 1,
+      "input_tokens": 5466,
+      "output_tokens": 1263,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 2,
+      "input_tokens": 93300,
+      "output_tokens": 17310,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 7,
+      "input_tokens": 63916,
+      "output_tokens": 5944,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 82,
+      "input_tokens": 1670933,
+      "output_tokens": 76232,
+      "errors": 0
+    }
+  }
+}

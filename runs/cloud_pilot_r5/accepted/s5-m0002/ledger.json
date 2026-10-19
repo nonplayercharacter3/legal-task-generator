@@ -1,0 +1,187 @@
+{
+  "matter_id": "s5-m0002",
+  "summary": "Harrowgate Bottling Co. (client, Customer) buys beverage containers from Veltmar Glassworks, Inc. under a Delaware-law Supply Agreement effective March 1, 2024. The folder holds the pre-signing term sheet, the Supply Agreement, Amendment No. 1 dated September 21, 2026, and a Quality Agreement. The partner wants a memo on the risks to Harrowgate. The Supply Agreement renews automatically for five-year terms with a 30-day opt-out window, and its exclusivity is far broader than the term sheet. Amendment No. 1 controls under the precedence clause. It removes the recall-cost and most indemnity carve-outs from the six-month fee cap and lets Veltmar assign freely, including to a competitor. Its recitals also show that Harrowgate's 30-day window to object to a 14% price increase closed before the amendment was dated.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Harrowgate Bottling Co.",
+      "role": "Customer (buyer of beverage containers); firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Veltmar Glassworks, Inc.",
+      "role": "Supplier of glass beverage containers"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "three years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement Renewal Term length",
+      "value": "five years each",
+      "doc": "D1",
+      "section": "2.2"
+    },
+    {
+      "id": "F4",
+      "key": "Liability cap",
+      "value": "fees paid by Customer in the six months before the claim arose",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "written amendments, then Supply Agreement, then Quality Agreement",
+      "doc": "D1",
+      "section": "15.2"
+    },
+    {
+      "id": "F6",
+      "key": "Agreed exclusivity scope (term sheet)",
+      "value": "amber glass bottles for Customer's beer brands at its U.S. and Canadian facilities",
+      "doc": "D2",
+      "section": "2"
+    },
+    {
+      "id": "F7",
+      "key": "Price objection period",
+      "value": "30 days after Customer's receipt of a Price Adjustment Notice",
+      "doc": "D1",
+      "section": "5.4"
+    },
+    {
+      "id": "F8",
+      "key": "Price Adjustment Notice receipt date",
+      "value": "August 3, 2026",
+      "doc": "D3",
+      "section": "Recital C"
+    },
+    {
+      "id": "F9",
+      "key": "Amendment No. 1 date",
+      "value": "September 21, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Supply Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "15.5"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement.md",
+      "kind": "Supply Agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "term_sheet.md",
+      "kind": "Non-binding term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "amendment_no_1.md",
+      "kind": "Amendment No. 1 to Supply Agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "quality_agreement.md",
+      "kind": "Quality and Specifications Agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Section 2.2 of the Supply Agreement renews the agreement automatically for successive five-year Renewal Terms. Either party can stop a renewal only by notice given not more than 270 days and not less than 240 days before the current term expires, which is a 30-day window. If Harrowgate misses that window by even a day, it is locked in for five more years, with exclusivity and supplier price-adjustment rights attached. This is the single-clause issue in the folder.",
+      "doc": "D1",
+      "section": "2.2",
+      "detect_terms": [
+        "successive five-year Renewal Terms",
+        "not more than 270 days"
+      ],
+      "expected_finding": "The agreement auto-renews for five-year terms unless Harrowgate uses a narrow 30-day opt-out window, so Harrowgate should negotiate shorter renewals and a longer, simpler non-renewal right, and calendar the window now.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Section 3.1 of the Supply Agreement requires Harrowgate to buy exclusively from Veltmar all glass and PET containers for any beverage product, worldwide. Section 2 of the term sheet records the agreed scope as amber glass bottles for Harrowgate's beer brands at its U.S. and Canadian facilities. The issue appears only when the two documents are compared. Section 15.2 of the Supply Agreement puts the term sheet nowhere in the order of precedence, and the entire-agreement clause supersedes it. Harrowgate is therefore bound by the broader scope, which captures non-beer lines, PET packaging and future overseas plants.",
+      "doc": "D1",
+      "section": "3.1",
+      "detect_terms": [
+        "all glass and PET containers",
+        "worldwide"
+      ],
+      "expected_finding": "The executed exclusivity covers every glass and PET beverage container worldwide, far beyond the term sheet's amber-glass, beer-only, U.S./Canada deal, and should be narrowed back to the agreed scope.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under Section 5.4 of the Supply Agreement, Harrowgate may object to a Price Adjustment Notice within 30 days after receiving it, and an adjustment not objected to is deemed accepted. Recital C of Amendment No. 1 states that Veltmar's notice of a 14% price increase was received by Customer on August 3, 2026. The recital also says no objection has been delivered and the notice remains subject to Section 5.4. The objection deadline was therefore September 2, 2026, which had already passed by the amendment's own date of September 21, 2026. The increase is deemed accepted, and nothing in Amendment No. 1 extends or waives the deadline.",
+      "doc": "D3",
+      "section": "Recital C",
+      "detect_terms": [
+        "received by Customer on August 3, 2026"
+      ],
+      "expected_finding": "Harrowgate's 30-day window to object to the 14% price increase closed on September 2, 2026, before the September 21, 2026 amendment, so the increase is deemed accepted unless Harrowgate negotiates an express extension or waiver in the amendment.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 11.1 of the Supply Agreement caps liability at the fees paid in the six months before the claim. Section 11.2 excludes from that cap Supplier's indemnity obligations, product recall costs under Section 10, confidentiality breaches and gross negligence. Section 2 of Amendment No. 1 replaces Section 11.2, presented as a clarification. The replacement drops recall costs and limits the indemnity carve-out solely to third-party intellectual property claims. Under the precedence clause in Section 15.2 of the Supply Agreement, the amendment controls. A contaminated-bottle recall or a product-liability indemnity claim would now be capped at six months of fees.",
+      "doc": "D3",
+      "section": "2",
+      "detect_terms": [
+        "solely to third-party intellectual property claims"
+      ],
+      "expected_finding": "Amendment No. 1, which controls under Section 15.2, strips recall costs and product-liability indemnities out of the carve-outs, so Harrowgate's largest exposures are now capped at six months of fees, and the original Section 11.2 should be restored.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 14.3 of the Supply Agreement bars either party from assigning without the other's consent. Section 4 of Amendment No. 1 adds a new Section 14.4. It provides that, notwithstanding Section 14.3, Supplier may assign without the consent of Customer to any Affiliate or to any successor by merger, change of control or sale of its business. There is no exclusion for competitors of Harrowgate and no requirement that the assignee be creditworthy. The precedence clause in Section 15.2 lets the amendment override the mutual consent requirement. Harrowgate's consent requirement still binds Harrowgate, so the restriction is now one-sided.",
+      "doc": "D3",
+      "section": "4",
+      "detect_terms": [
+        "without the consent of Customer"
+      ],
+      "expected_finding": "New Section 14.4, which overrides Section 14.3 via the precedence clause, lets Veltmar assign freely, including to a Harrowgate competitor, while Harrowgate remains bound by consent, so a competitor exclusion and consent or termination right should be added.",
+      "contradicts": null
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "matter_id": "s2-m0003",
+  "summary": "The firm represents Marrowind Packaging Corp. (Seller) in selling its corrugated packaging business to Tessaly Holdings LLC (Buyer) for $18,400,000 under a New York-law asset purchase agreement. The folder holds four documents: the APA, a Transition Services Agreement, a Bill of Sale and an Escrow Agreement. Three issues are planted. In the APA, a carve-out removes the indemnity cap from all of Seller's representation-breach claims. The TSA selects Delaware law and Delaware courts. The Bill of Sale defines 'Purchased Assets' without excluding the Excluded Assets. The APA's precedence clause lets each Ancillary Agreement control as to its own subject matter, so the APA does not cure the TSA or Bill of Sale problems. The Escrow Agreement is a clean distractor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Marrowind Packaging Corp.",
+      "role": "Seller (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Tessaly Holdings LLC",
+      "role": "Buyer"
+    },
+    {
+      "id": "P3",
+      "name": "Corbel Trust Company, N.A.",
+      "role": "Escrow Agent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Purchase Price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F2",
+      "key": "APA Closing Date",
+      "value": "November 20, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "APA governing law",
+      "value": "Laws of the State of New York",
+      "doc": "D1",
+      "section": "Section 10.8"
+    },
+    {
+      "id": "F4",
+      "key": "APA forum",
+      "value": "State and federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 10.9"
+    },
+    {
+      "id": "F5",
+      "key": "Escrow Amount",
+      "value": "$1,840,000",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F6",
+      "key": "APA indemnity cap",
+      "value": "10% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.4(a)"
+    },
+    {
+      "id": "F7",
+      "key": "APA order of precedence",
+      "value": "APA controls over Ancillary Agreements, except each Ancillary Agreement controls as to its specific subject matter",
+      "doc": "D1",
+      "section": "Section 10.12"
+    },
+    {
+      "id": "F8",
+      "key": "APA Purchased Assets definition",
+      "value": "All assets used or held for use in the Business, other than the Excluded Assets",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F9",
+      "key": "APA Excluded Assets",
+      "value": "Seller's cash, the Albany manufacturing facility, and the HOLLIS trademark",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F10",
+      "key": "TSA Term",
+      "value": "6 months after the Closing Date",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F11",
+      "key": "Escrow release date",
+      "value": "18 months after the Closing Date",
+      "doc": "D4",
+      "section": "Section 4.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale and assignment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "escrow_agreement.md",
+      "kind": "indemnity escrow agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 9.4(a) caps Seller's indemnity at 10% of the Purchase Price. Section 9.4(c) then states that the cap shall not apply to any claim under Section 9.2(a). Section 9.2(a) covers breach of any Seller representation, not only fundamental representations, so the carve-out removes the cap for essentially every indemnity claim. Seller is left with liability up to and beyond the full Purchase Price, well above the $1,840,000 escrow.",
+      "doc": "D1",
+      "section": "Section 9.4(c)",
+      "detect_terms": [
+        "shall not apply to any claim under Section 9.2(a)"
+      ],
+      "expected_finding": "The Section 9.4(c) carve-out leaves the 10% cap unable to bind any representation-breach claim, exposing Seller to uncapped liability. It should be narrowed to fundamental representations and fraud, with those claims capped at the Purchase Price.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The TSA is governed by Delaware law and submits disputes exclusively to Delaware courts. The APA chooses New York law and New York County courts. Section 10.12 of the APA lets each Ancillary Agreement control as to its own subject matter, so the TSA clause is not overridden. Related disputes, such as set-off of TSA fees against indemnity claims, could therefore be split across two forums under two bodies of law.",
+      "doc": "D2",
+      "section": "Section 9.3",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "courts of the State of Delaware"
+      ],
+      "expected_finding": "The TSA's Delaware law and forum clause conflicts with the APA's New York choice and is not cured by the precedence clause. It should be conformed to New York law and New York County courts.",
+      "contradicts": "F3"
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "The Bill of Sale defines 'Purchased Assets' as all assets used or held for use in the Business. It does not carve out the Excluded Assets (cash, the Albany facility and the HOLLIS trademark), and it does not cross-refer to the APA definition. The Bill of Sale is the conveyancing instrument and controls as to its subject matter under APA Section 10.12, so it purports to transfer assets Seller agreed to retain.",
+      "doc": "D3",
+      "section": "Section 1 (Definitions)",
+      "detect_terms": [
+        "used or held for use in the Business"
+      ],
+      "expected_finding": "The Bill of Sale's broader 'Purchased Assets' definition could convey the Excluded Assets to Buyer. It should be revised to adopt the APA definition and expressly exclude the Excluded Assets.",
+      "contradicts": "F8"
+    }
+  ]
+}

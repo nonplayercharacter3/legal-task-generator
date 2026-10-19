@@ -1,0 +1,48 @@
+# Pilot with Opus generating through the Claude Agent SDK on the logged-in Claude Code subscription (no Anthropic
+# API key, no direct API calls) and an open model on NRP solving.
+#   NRP_LLM_API_KEY=... .venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml
+# The solver runs on a different, weaker model than the generator, so the difficulty check means something:
+# when Sonnet solved Sonnet's tasks it found every planted issue every time.
+# Opus uses subscription limits several times faster than Sonnet; if a round stops at the limit, rerun with --resume.
+
+[run]
+n_matters = 3
+seed = 1
+out_dir = "runs/claude_pilot3_opus"
+concurrency = 2
+
+[backend]
+kind = "claude_sdk"
+default_model = "opus"              # ledger, drafting, rubric, answers, gate checks and the judge
+
+# The solver is NRP's hosted Qwen3.8-27B (alias qwen3-small): dense and about the size of the model we plan to train,
+# so the difficulty check measures that kind of model rather than Haiku. Free for non-commercial research.
+# Needs the NRP key in NRP_LLM_API_KEY and network access to ellm.nrp-nautilus.io.
+# Limits (NRP fair use, 2026-10): 200k output tokens per minute per key and model, 8 simultaneous requests.
+[backend.roles.solver]
+kind = "openai_compat"
+base_url = "https://ellm.nrp-nautilus.io/v1"
+model = "qwen3-small"
+api_key_env = "NRP_LLM_API_KEY"
+max_tokens = 32000                  # it reasons before answering; 8000 would cut long memos off
+max_retries = 6                     # NRP models go offline for maintenance; waits grow to 30 s
+
+# Folders of 4 to 5 documents: a 3-document folder lets the solver read everything (known weakness 3). The
+# evidence so far is mixed: accepted tasks had 4 and 5 documents, too-easy ones 4 and 5 as well.
+[spec]
+n_documents = [4, 5]
+
+[gates]
+solver_attempts = 3
+solver_max_steps = 28               # room to page through 5 longer documents (a 12,700-word folder took 17 steps)
+# Screen every task against LAB's text. Clone it beside this repo first (it is never committed here, and nothing
+# from it reaches any model; the index is local word 8-grams):
+#   GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/harveyai/harvey-labs ../harvey-labs
+# The run stops if the folder is missing or holds no readable text, so a task is never passed unscreened.
+reference_dirs = ["../harvey-labs"]
+# LAB holds about 455 million words (42k Word files), so the n-gram table needs 2^32 bits (512 MB) to keep false
+# matches near 2%. The first run builds the index (about 25 minutes) and saves it under runs/.decontam_cache.
+decontam_bloom_bits = 4294967296
+# Count only wording found in a single LAB task (tasks/<area>/<task>). Standard contract language appears across
+# many LAB tasks, and without this our own sound documents scored up to 0.56, above the 0.5 cutoff.
+decontam_group_depth = 3

@@ -1,0 +1,141 @@
+{
+  "matter_id": "s3-m0002",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "every attempt passed: too easy to carry training signal",
+  "split": null,
+  "solver_pass_rate": 1.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 2.2: \"Upon expiration of the Initial Term, this Agreement shall automatically renew for successive five-year periods (each, a \"Renewal Term\"), unless either Party delivers written notice of non-renewal to the other Party not more than 270 days nor less than 240 days before the expiration of the then-current Initial Term or Renewal Term. The Minimum Annual Purchase Commitments set out in Schedule B, as adjusted under Section 4.3, shall apply in each Contract Year of each Renewal Term.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Delivery Confirmation: \"Receipt date of this Price Adjustment Notice by Distributor: **August 21, 2026**.\" Paragraph 2.1: \"Supplier is adjusting the Prices for all Products by fourteen percent (14%), effective November 1, 2026.\" Agreement §5.3: \"If Distributor does not deliver a notice of objection within that period, Distributor shall be deemed to have accepted the adjusted Prices.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 11.1: \"Distributor shall defend, indemnify and hold harmless Supplier ... from and against any and all losses ... arising from any third-party claim, suit or proceeding arising out of or relating to the distribution, marketing or resale of the Products.\" Section 12.3, as replaced by the First Amendment: \"The limitations in Sections 12.1 and 12.2 shall not apply to: (a) Distributor's obligations under Section 11.1; or (b) a Party's liability for its gross negligence or willful misconduct.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 3.1 of the First Amendment: \"Section 12.3 is hereby deleted in its entirety and replaced with the following: > 12.3 Exclusions. The limitations in Sections 12.1 and 12.2 shall not apply to: (a) Distributor's obligations under Section 11.1; or (b) a Party's liability for its gross negligence or willful misconduct.\""
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 6.1 of the Amendment: \"This Amendment and the Agreement as amended shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict-of-laws principles.\" Section 6.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Wilmington, Delaware for any action or proceeding arising out of or relating to this Amendment or the Agreement as amended...\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "skipped": "no reference_dirs configured"
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "runs": [
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 9,
+            "files_opened": [
+              "distribution_agreement.md",
+              "first_amendment.md",
+              "ordering_logistics_procedures.md",
+              "price_adjustment_notice.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 9,
+            "files_opened": [
+              "distribution_agreement.md",
+              "first_amendment.md",
+              "ordering_logistics_procedures.md",
+              "price_adjustment_notice.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 9,
+            "files_opened": [
+              "distribution_agreement.md",
+              "first_amendment.md",
+              "ordering_logistics_procedures.md",
+              "price_adjustment_notice.md"
+            ]
+          }
+        ],
+        "reason": "every attempt passed: too easy to carry training signal"
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "s2-m0003",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Marrowind Packaging Corp., the seller, in its asset sale to Tessaly Holdings LLC. Corbel Trust Company, N.A. is also a party to the transaction documents. Marrowind needs a seller-side review of the deal package before we go back to the other side. Please review all four documents in the matter folder: the asset purchase agreement (asset_purchase_agreement.md), the transition services agreement (transition_services_agreement.md), the bill of sale and assignment (bill_of_sale.md), and the indemnity escrow agreement (escrow_agreement.md). Read them together as well as one by one. I want to know whether the ancillary documents line up with the purchase agreement and with each other, not only whether each one works on its own. The documents are governed by New York law. Please send me a memo that lists each issue you find. For each one, give the document and section where it appears, explain why it matters for Marrowind as seller, and recommend a fix. Where you can, propose specific language. Put the most significant items first. If anything needs a business decision from the client rather than a drafting change, flag it separately.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "bill_of_sale.md",
+    "escrow_agreement.md",
+    "transition_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The memo identifies that APA Section 9.4(c) removes the 10% indemnity cap of Section 9.4(a) for all claims under Section 9.2(a) (breach of any Seller representation, not only fundamental representations), explains that this leaves Marrowind exposed to effectively uncapped indemnity liability well beyond the escrow, and recommends narrowing the carve-out (e.g., to fundamental representations and/or fraud).",
+      "kind": "issue",
+      "hints": [
+        "Section 9.4(c)",
+        "uncapped",
+        "fundamental representations"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The memo identifies that the TSA (Section 9.3) selects Delaware law and Delaware courts, conflicting with the APA's New York governing law and New York County forum, explains that APA Section 10.12 lets the TSA control as to its own subject matter so the conflict is not cured, notes the risk of related disputes split across forums or bodies of law, and recommends conforming the TSA to New York law and forum.",
+      "kind": "issue",
+      "hints": [
+        "Delaware",
+        "Section 10.12",
+        "conform to New York"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The memo identifies that the Bill of Sale defines 'Purchased Assets' as all assets used or held for use in the Business without excluding the Excluded Assets or cross-referring to the APA definition, explains that it could convey assets Marrowind is retaining (and that it controls as to its subject matter under APA Section 10.12), and recommends revising it to adopt the APA definition and expressly exclude the Excluded Assets.",
+      "kind": "issue",
+      "hints": [
+        "Purchased Assets",
+        "Excluded Assets",
+        "used or held for use in the Business"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The memo states that the APA indemnity cap is 10% of the Purchase Price (i.e., $1,840,000 on an $18,400,000 price), in the context of the cap or the escrow.",
+      "kind": "fact",
+      "hints": [
+        "10% of the Purchase Price",
+        "$1,840,000"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The memo identifies at least one specific Excluded Asset Seller is retaining under APA Section 2.2: Seller's cash, the Albany manufacturing facility, or the HOLLIS trademark.",
+      "kind": "fact",
+      "hints": [
+        "Albany",
+        "HOLLIS trademark",
+        "cash"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The deliverable is a memo that, for each issue, states the document and section, why it matters to Marrowind as seller, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommendation",
+        "Section"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The memo orders issues by significance, presents the most significant items first, and includes a separate flag or section for matters requiring a client business decision.",
+      "kind": "format",
+      "hints": [
+        "business decision",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The memo does not conclude that the APA's order-of-precedence clause (Section 10.12) cures or overrides the TSA's Delaware governing law/forum provision or the Bill of Sale's Purchased Assets definition.",
+      "kind": "negative",
+      "hints": [
+        "Ancillary Agreement controls",
+        "not cured"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The memo does not conclude that Seller's indemnity liability for ordinary representation breaches is effectively limited to the 10% cap or the escrow amount.",
+      "kind": "negative",
+      "hints": [
+        "cap does not apply",
+        "uncapped"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.333
+}

@@ -1,0 +1,70 @@
+{
+  "matter_id": "s4-m0003",
+  "accepted": false,
+  "failed_gate": "leak_check",
+  "reason": "hits: [{\"issue\": \"I1\", \"phrase\": \"Notice of Disagreement\", \"in\": \"instruction\"}, {\"issue\": \"I1\", \"phrase\": \"Notice of Disagreement\", \"in\": \"closing_statement_correspondence.md\"}]",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "The draft notice's own recital fixes the receipt date: \"It responds to the Closing Statement transmitted under Seller's letter dated March 2, 2026, which Buyer received on March 3, 2026.\" The letter is dated April 8, 2026. The courier proof of delivery confirms \"Delivery Date and Time | March 3, 2026, 10:42 a.m.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "TSA Section 9.3: \"Recipient may not assign this Agreement or any of its rights or delegate any of its obligations under this Agreement without the prior written consent of Provider. Provider may assign or delegate this Agreement, or any of its rights or obligations hereunder, including the performance of any Service, in whole or in part, to any Person upon written notice to Recipient.\" APA Section 11.9: \"In the event of any conflict or inconsistency between this Agreement and any Ancillary Agreement, the Ancillary Agreement controls as to its subject matter.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "TSA Section 1.1: \"'Business' means the design, manufacture, sale and servicing of commercial building climate control systems.\" Compare APA Section 1.1: \"'Business' means the design, manufacture, sale and servicing of commercial and residential building climate control systems.\" TSA Section 2.1: \"...together with any ancillary services that are reasonably necessary to operate the Business and that were provided by or on behalf of Provider to the Business during the twelve months before the Closing Date.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": false,
+      "details": {
+        "hits": [
+          {
+            "issue": "I1",
+            "phrase": "Notice of Disagreement",
+            "in": "instruction"
+          },
+          {
+            "issue": "I1",
+            "phrase": "Notice of Disagreement",
+            "in": "closing_statement_correspondence.md"
+          }
+        ],
+        "html_comments": [],
+        "empty": false
+      }
+    }
+  ]
+}

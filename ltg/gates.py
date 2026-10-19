@@ -98,16 +98,19 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
     "State of New York", and only a mismatch in meaning should reject the task.
     """
     fname = {d.id: d.filename for d in ledger.documents}
-    planted = {(i.contradicts, fname.get(i.doc)) for i in ledger.issues if i.contradicts}
+    # Each query names the instrument the fact belongs to: an NDA in the folder has its own "Effective Date", and
+    # reading that as the supply agreement's Effective Date rejected a sound task (2026-10-18 pilot).
+    owner = {d.id: f"{d.kind} ({d.filename})" for d in ledger.documents}
+    planted = {(fid, fname.get(i.doc)) for i in ledger.issues for fid in i.contradicted()}
     payload = {
         "documents": [{"filename": n, "content": c} for n, c in docs.items()],
-        "queries": [{"id": f"{f.id}@{n}", "key": f.key, "filename": n} for f in ledger.facts for n in docs],
+        "queries": [{"id": f"{f.id}@{n}", "key": f.key, "of": owner[f.doc], "filename": n} for f in ledger.facts for n in docs],
     }
     out = call_json(client, "fact_extractor", prompts.FACT_EXTRACTOR, render_input(payload))
     got = {r["id"]: r.get("value") for r in out.get("facts", []) if "id" in r}
     # One long call misses values (a real run: 1 of 40 came back empty though its document stated it). Ask again,
     # focused, for each fact its own document seemed not to state; still without telling the extractor the value.
-    retry = [{"id": f"{f.id}@{fname[f.doc]}", "key": f.key, "filename": fname[f.doc]}
+    retry = [{"id": f"{f.id}@{fname[f.doc]}", "key": f.key, "of": owner[f.doc], "filename": fname[f.doc]}
              for f in ledger.facts if not _norm(got.get(f"{f.id}@{fname[f.doc]}"))]
     if retry:
         names = sorted({q["filename"] for q in retry})
@@ -120,6 +123,8 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
             v = got.get(f"{f.id}@{n}")
             if _norm(v) == _norm(f.value):
                 continue
+            if n == fname[f.doc] and _words(_plain(f.value)).strip() and _words(_plain(f.value)) in _words(_plain(v)):
+                continue  # its own document states the value word for word, with drafting around it (a fallback court)
             if n != fname[f.doc] and (not _norm(v) or (f.id, n) in planted):
                 continue  # silent elsewhere, or a deliberate contradiction
             differ.append({"fact": f.id, "key": f.key, "filename": n, "ledger": f.value, "document": v})
@@ -146,6 +151,9 @@ def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms
     depend on a fact stated elsewhere (a change-of-control clause matters because a letter of intent exists).
     """
     fname = {d.id: d.filename for d in ledger.documents}
+    # Whether an issue hurts the client depends on which side the client is on: a narrower indemnity carve-out
+    # helps a supplier that gives most of the indemnities (round 5 planted one as a supplier's problem).
+    party = {"name": ledger.parties[0].name, "role": ledger.parties[0].role}
     results = []
     for i in ledger.issues:
         content = docs.get(fname[i.doc], "")
@@ -157,7 +165,7 @@ def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms
         if show_terms:
             issue["detect_terms"] = i.detect_terms
         others = [{"filename": n, "content": c} for n, c in docs.items() if n != fname[i.doc]]
-        payload = {"document": {"filename": fname[i.doc], "content": content}, "other_documents": others, "issue": issue}
+        payload = {"client": party, "document": {"filename": fname[i.doc], "content": content}, "other_documents": others, "issue": issue}
         out = call_json(client, "issue_verifier", prompts.ISSUE_VERIFIER, render_input(payload))
         results.append({"issue": i.id, "present": bool(out.get("present")), "evidence": out.get("evidence", "")})
     missing = [r["issue"] for r in results if not r["present"]]

@@ -1,14 +1,28 @@
-"""Command line: `python -m ltg run ...` and `python -m ltg inspect ...`."""
+"""Command line: `python -m ltg run ...`, `python -m ltg index ...` and `python -m ltg inspect ...`."""
 
 from __future__ import annotations
 
 import argparse
 import json
 import sys
+import time
 from pathlib import Path
 
 from .config import load_config
-from .orchestrator import Pipeline
+from .orchestrator import Pipeline, reference_index
+
+
+def cmd_index(args: argparse.Namespace) -> int:
+    """Build (or load) the reference index on its own, e.g. when a cloud session starts, so runs find it ready."""
+    g = load_config(args.config).gates
+    if not g.reference_dirs:
+        print("no gates.reference_dirs in this config: nothing to index")
+        return 1
+    t0 = time.time()
+    idx = reference_index(g)
+    print(f"reference index ready: {idx.count:,} n-grams from {g.reference_dirs}, "
+          f"false positive rate {idx.false_positive_rate():.2%}, {time.time() - t0:.0f} s, saved under {g.decontam_cache_dir}")
+    return 0
 
 
 def cmd_run(args: argparse.Namespace) -> int:
@@ -72,6 +86,10 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--out", help="output folder")
     r.add_argument("--resume", action="store_true", help="keep matters already finished in the output folder; retry errors")
     r.set_defaults(func=cmd_run)
+
+    x = sub.add_parser("index", help="build or load the decontamination reference index (e.g. LAB) and report it")
+    x.add_argument("--config", required=True, help="TOML config with gates.reference_dirs")
+    x.set_defaults(func=cmd_index)
 
     i = sub.add_parser("inspect", help="print one matter folder in readable form")
     i.add_argument("matter_dir")

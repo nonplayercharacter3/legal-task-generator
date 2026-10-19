@@ -1,0 +1,145 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 1,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 2,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 2
+    },
+    "solver_check": {
+      "evaluated": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s3-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "dev",
+      "solver_pass_rate": 0.667
+    },
+    {
+      "matter_id": "s3-m0002",
+      "accepted": false,
+      "failed_gate": "solver_check",
+      "reason": "every attempt passed: too easy to carry training signal",
+      "split": null,
+      "solver_pass_rate": 1.0
+    },
+    {
+      "matter_id": "s3-m0003",
+      "accepted": false,
+      "failed_gate": "consistency",
+      "reason": "mismatches: [{\"fact\": \"F5\", \"key\": \"SPA exclusive forum\", \"filename\": \"stock_purchase_agreement.md\", \"ledger\": \"Court of Chancery of the State of Delaware\", \"document\": \"the Court of Chancery of the State of Delaware (or, if and only if such court lacks subject matter jurisdiction, the Superior Court of the Sta",
+      "split": null,
+      "solver_pass_rate": null
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 9520,
+      "output_tokens": 23278,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 14,
+      "input_tokens": 265658,
+      "output_tokens": 98621,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 109288,
+      "output_tokens": 7660,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4991,
+      "output_tokens": 1280,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 9,
+      "input_tokens": 234566,
+      "output_tokens": 5674,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 2,
+      "input_tokens": 3312,
+      "output_tokens": 835,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 2,
+      "input_tokens": 11528,
+      "output_tokens": 4043,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 4,
+      "input_tokens": 130724,
+      "output_tokens": 30881,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 14,
+      "input_tokens": 126327,
+      "output_tokens": 14075,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 117,
+      "input_tokens": 1568329,
+      "output_tokens": 146774,
+      "errors": 0
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "matter_id": "s3-m0003",
+  "summary": "Halvorsen Industrial Holdings, Inc. (Buyer, the firm's client) has signed a Delaware-law Stock Purchase Agreement to buy all outstanding shares of Tessaline Filtration Systems, Inc. from Corvane Group LLC for $148,500,000. Closing is targeted for 30 November 2026. The folder holds the SPA, the Target's sole-source resin Master Supply Agreement, the agreed-form Transition Services Agreement to be signed at Closing between Seller and the Company, the lease of the Target's main manufacturing facility, and the agreed-form Escrow Agreement. Buyer wants a pre-closing issue-spotting memo.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Halvorsen Industrial Holdings, Inc.",
+      "role": "Buyer (client); purchaser of all outstanding shares of the Company"
+    },
+    {
+      "id": "P2",
+      "name": "Corvane Group LLC",
+      "role": "Seller; sole stockholder of the Company and service provider under the Transition Services Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Tessaline Filtration Systems, Inc.",
+      "role": "Company (target); customer under the Supply Agreement, tenant under the Lease, service recipient under the TSA"
+    },
+    {
+      "id": "P4",
+      "name": "Okonjo Polymer Works Ltd.",
+      "role": "Supplier; sole-source supplier of filtration resin to the Company"
+    },
+    {
+      "id": "P5",
+      "name": "Ridgefold Properties LLC",
+      "role": "Landlord of the Company's Sparks, Nevada manufacturing facility"
+    },
+    {
+      "id": "P6",
+      "name": "Granite Ledger Trust Company",
+      "role": "Escrow Agent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA signing date",
+      "value": "2 October 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "SPA purchase price",
+      "value": "$148,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "SPA target Closing Date",
+      "value": "30 November 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F4",
+      "key": "SPA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F5",
+      "key": "SPA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence among Transaction Documents",
+      "value": "SPA prevails, except an Ancillary Agreement prevails on matters within its own subject matter",
+      "doc": "D1",
+      "section": "Section 11.4"
+    },
+    {
+      "id": "F7",
+      "key": "SPA definition of \"Business\"",
+      "value": "design, manufacture, sale and servicing of industrial filtration systems, including aftermarket parts and replacement media",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F8",
+      "key": "Escrow Amount",
+      "value": "$14,850,000",
+      "doc": "D5",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F9",
+      "key": "Lease commencement date",
+      "value": "1 March 2017",
+      "doc": "D4",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F10",
+      "key": "Lease renewal notice deadline",
+      "value": "no later than nine months before expiry of the ten-year initial term",
+      "doc": "D4",
+      "section": "Section 18.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "Stock Purchase Agreement (Buyer, Seller; Company shares)",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "master_supply_agreement_okonjo.md",
+      "kind": "Master Supply Agreement (Okonjo Polymer Works Ltd. and the Company)",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement_agreed_form.md",
+      "kind": "Transition Services Agreement, agreed form (Seller and the Company), exhibit to SPA",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "sparks_facility_lease.md",
+      "kind": "Industrial Lease (Ridgefold Properties LLC and the Company)",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "escrow_agreement_agreed_form.md",
+      "kind": "Escrow Agreement, agreed form (Buyer, Seller, Escrow Agent); Delaware law, consistent with SPA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "Supplier consent to change of control not obtained or conditioned",
+      "description": "Supply Agreement Section 14.2 treats any transfer of more than 50% of the Company's voting stock as an assignment. Such a transfer needs Okonjo's prior written consent, and without consent Okonjo may terminate on 30 days' notice. Okonjo is the Company's sole-source resin supplier. The SPA's consent machinery does not reach this right. Section 6.4 obliges Seller to obtain only the consents listed on Schedule 4.5, and Section 7.2(d) makes only those listed consents a closing condition. Schedule 4.5 lists the Landlord's consent but not Okonjo's. Read together, the SPA share sale triggers Okonjo's termination right and Buyer has no covenant, condition or specific indemnity protecting it.",
+      "doc": "D2",
+      "section": "Section 14.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "more than fifty percent (50%) of the voting stock",
+        "prior written consent of Supplier"
+      ],
+      "expected_finding": "The share sale triggers Okonjo's consent and termination right under Supply Agreement Section 14.2, but Okonjo is not on SPA Schedule 4.5. Buyer should require Seller to obtain Okonjo's consent as a covenant and closing condition, or obtain a special indemnity.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "Lease renewal option exercise deadline has passed",
+      "description": "Lease Section 2.1 sets commencement at 1 March 2017. Section 2.2 sets a ten-year initial term, which expires 28 February 2027. Section 18.1 requires written notice exercising the renewal option no later than nine months before that expiry, which is 31 May 2026. The SPA was signed on 2 October 2026 and the matter date is 18 October 2026, so the window has closed. Nothing in the folder shows the option was exercised. The Sparks facility is the Company's principal plant and the right to occupy it will end three months after the 30 November 2026 Closing. The SPA's real-property representation (Section 4.9) describes the Lease as in full force including its renewal option, which overstates the position.",
+      "doc": "D4",
+      "section": "Section 18.1",
+      "detect_terms": [
+        "option to renew",
+        "not later than nine (9) months prior to the expiration of the Initial Term"
+      ],
+      "expected_finding": "The Lease renewal deadline passed on 31 May 2026 and the Company has no remaining right to extend past 28 February 2027. Buyer should require a negotiated lease extension or new lease with Ridgefold as a closing condition, and should get a price adjustment or specific indemnity.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "Supplier may freely assign the Supply Agreement, including to a competitor",
+      "description": "Supply Agreement Section 14.3 lets Okonjo assign or transfer the agreement, in whole or in part, without the Company's consent to any Affiliate, any successor to its business, or any other person. Nothing excludes competitors of the Company or Buyer. Section 14.1, by contrast, bars the Company from assigning without consent. Because Okonjo is sole source, an assignee would take over the Company's resin supply, its confidential specifications and its pricing. That assignee could be a filtration competitor or a Buyer rival.",
+      "doc": "D2",
+      "section": "Section 14.3",
+      "detect_terms": [
+        "Supplier may assign",
+        "without the consent of Customer"
+      ],
+      "expected_finding": "Okonjo can assign the sole-source Supply Agreement to anyone, including a competitor, without Company consent. Buyer should seek an amendment, ideally alongside the change-of-control consent, making supplier assignment mutual-consent with a competitor carve-out.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "TSA's narrower \"Business\" definition overrides the SPA definition and shrinks Seller's non-compete",
+      "description": "SPA Section 1.1 defines \"Business\" to include servicing, aftermarket parts and replacement media. SPA Section 6.8 bars Seller from competing with the \"Business\" for five years. TSA Section 1.1 defines \"Business\" as only the manufacture of filtration systems as conducted at the Sparks facility on the Closing Date, and states that this definition applies for all purposes of the Transaction Documents. SPA Section 11.4 lets an Ancillary Agreement prevail on matters within its subject matter, and the TSA claims the definition across all Transaction Documents. Read together, Seller can argue the narrower TSA definition governs Section 6.8. That would let Seller compete in aftermarket parts, servicing and replacement media, which are the Company's recurring-revenue lines.",
+      "doc": "D3",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "for all purposes of the Transaction Documents",
+        "manufacture of filtration systems as conducted at the Sparks Facility"
+      ],
+      "expected_finding": "The TSA's narrower \"Business\" definition, combined with the SPA precedence carve-out, risks cutting aftermarket parts, servicing and replacement media out of Seller's non-compete. The TSA definition should be deleted or limited to the TSA, and the SPA definition should expressly control.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "TSA selects New York law and New York courts, contrary to the SPA's Delaware choice",
+      "description": "SPA Sections 11.8 and 11.9 select Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery. TSA Section 12.1 selects New York law, and Section 12.2 gives exclusive jurisdiction to the state and federal courts in New York County, \"notwithstanding anything in the Purchase Agreement.\" Under SPA Section 11.4 the TSA prevails on its own subject matter, so the SPA cannot override this clause. Disputes over TSA services, and over the \"Business\" definition the TSA purports to control, would be heard in a different forum under different law from linked SPA indemnity and non-compete claims. That creates a risk of parallel proceedings and inconsistent rulings, and lets Seller argue the non-compete scope under New York law.",
+      "doc": "D3",
+      "section": "Section 12.1",
+      "detect_terms": [
+        "laws of the State of New York",
+        "courts located in the Borough of Manhattan, New York County"
+      ],
+      "expected_finding": "The TSA's New York law and forum clause prevails over the SPA's Delaware provisions under the Section 11.4 carve-out and splits related disputes across two forums. The TSA should be conformed to Delaware law and Court of Chancery jurisdiction.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    }
+  ]
+}

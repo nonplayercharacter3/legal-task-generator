@@ -1,0 +1,166 @@
+{
+  "matter_id": "s5-m0003",
+  "summary": "The firm represents Halvorsen Bioinstruments, Inc. (Supplier), a Delaware maker of laboratory diagnostic instruments. Halvorsen is being acquired by Varga Diagnostics Holdings Corp. under a stock purchase agreement signed September 8, 2026. Before closing, the partner wants an issue-spotting memo on Halvorsen's exclusive distribution arrangement with Crestline Medical Supply LLC. The folder holds four documents: the 2023 Distribution Agreement, a 2025 First Amendment, the seller's consents disclosure schedule to the stock purchase agreement, and a 2026 price adjustment notice. Three problems are planted. The acquisition triggers Crestline's consent right, and the disclosure schedule misdescribes that right as notice-only. Crestline can assign the agreement through a defined term broad enough to reach Halvorsen's competitors. The First Amendment quietly restates the liability cap exclusions and drops the intellectual property and indemnity carve-outs.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Halvorsen Bioinstruments, Inc.",
+      "role": "Supplier under the Distribution Agreement; seller-side target in the acquisition; firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Crestline Medical Supply LLC",
+      "role": "Exclusive Distributor under the Distribution Agreement; counterparty"
+    },
+    {
+      "id": "P3",
+      "name": "Varga Diagnostics Holdings Corp.",
+      "role": "Buyer of all outstanding stock of Halvorsen under the Stock Purchase Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 3, 2023",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Territory",
+      "value": "Ohio, Indiana and Michigan",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 17.1"
+    },
+    {
+      "id": "F4",
+      "key": "Distribution Agreement liability cap",
+      "value": "amounts paid or payable to Supplier in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F5",
+      "key": "Distribution Agreement liability cap exclusions",
+      "value": "breaches of Sections 9 and 10, and indemnification obligations under Section 11",
+      "doc": "D1",
+      "section": "Section 12.3"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "written amendments, then body of the Distribution Agreement, then Schedules",
+      "doc": "D1",
+      "section": "Section 17.5"
+    },
+    {
+      "id": "F7",
+      "key": "Supplier Change of Control under Distribution Agreement",
+      "value": "requires Distributor's prior written consent",
+      "doc": "D1",
+      "section": "Section 15.4"
+    },
+    {
+      "id": "F8",
+      "key": "First Amendment Effective Date",
+      "value": "June 15, 2025",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Extended Initial Term expiry",
+      "value": "March 2, 2029",
+      "doc": "D2",
+      "section": "Section 2"
+    },
+    {
+      "id": "F10",
+      "key": "Stock Purchase Agreement signing date",
+      "value": "September 8, 2026",
+      "doc": "D3",
+      "section": "Header"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "halvorsen_crestline_distribution_agreement.md",
+      "kind": "Exclusive Distribution Agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "first_amendment_distribution_agreement.md",
+      "kind": "First Amendment to Distribution Agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "spa_disclosure_schedule_third_party_consents.md",
+      "kind": "Seller Disclosure Schedule to Stock Purchase Agreement (Third-Party Consents)",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "price_adjustment_notice_2026.md",
+      "kind": "Annual Price Adjustment Notice under Schedule B",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 15.4 of the Distribution Agreement (D1) requires Crestline's prior written consent before Halvorsen undergoes a Change of Control. The definition in Section 1.1 covers any transfer of more than 50% of Halvorsen's voting stock. If Halvorsen closes without consent, Section 15.4 gives Crestline a right to terminate and a termination fee equal to twelve months of average Product purchases. Varga's purchase of all of Halvorsen's stock under the Stock Purchase Agreement signed September 8, 2026 is a Change of Control. However, Section 3.5 of the Seller Disclosure Schedule (D3) lists the Crestline Distribution Agreement as 'notice only; no consent required', so no consent has been sought or made a closing condition. The problem appears only when D1 Sections 1.1 and 15.4 are read against D3 Section 3.5. The schedule is inaccurate. Halvorsen faces post-closing termination, the fee, and breach of its consents representation to Varga.",
+      "doc": "D3",
+      "section": "Section 3.5 (Third-Party Consents)",
+      "detect_terms": [
+        "notice only",
+        "no consent required"
+      ],
+      "expected_finding": "The Varga acquisition is a Change of Control requiring Crestline's prior written consent under D1 Section 15.4. Disclosure Schedule Section 3.5 wrongly calls it notice-only, so Halvorsen must obtain the consent before closing and correct the schedule, or face termination, the fee, and an inaccurate representation.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 14.1 of the Distribution Agreement (D1) bars Halvorsen from assigning without Crestline's consent. Section 14.2 lets Crestline assign the Agreement without consent to its Affiliates or to 'any Qualified Transferee'. Section 1.1 defines 'Qualified Transferee' as any person engaged in the distribution of laboratory or diagnostic products in the Territory that assumes Crestline's obligations in writing. That definition has no exclusion for Halvorsen's competitors or their affiliated distributors. Read together, Section 14.2 and the Section 1.1 definition let Crestline hand Halvorsen's exclusive territory, pricing, and confidential product information to a competitor's distribution arm without Halvorsen's approval.",
+      "doc": "D1",
+      "section": "Section 14.2 (read with Section 1.1 definition of Qualified Transferee)",
+      "detect_terms": [
+        "any Qualified Transferee",
+        "engaged in the distribution of laboratory or diagnostic products"
+      ],
+      "expected_finding": "Crestline can effectively assign the exclusive Distribution Agreement without consent to any distributor in the Territory, including a Halvorsen competitor. Section 14.2 should require Halvorsen's consent or carve competitors and their affiliates out of 'Qualified Transferee'.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 12.3 of the Distribution Agreement (D1) excludes three categories from the Section 12.2 cap: breaches of Section 9 (Confidentiality), breaches of Section 10 (Intellectual Property and Trademarks), and indemnification obligations under Section 11. Section 3 of the First Amendment (D2) presents itself as a conforming update alongside the term extension. It deletes and restates Section 12.3 so that only breaches of Section 9 are excluded. Section 17.5 of D1 makes written amendments control over the body of the Agreement, so the restated D2 text governs. As a result, Crestline's misuse of Halvorsen's trademarks and its indemnity for product claims arising from its own handling and relabeling are now capped at twelve months of payments. The issue appears only when D2 Section 3 is compared with D1 Section 12.3 and the precedence rule in D1 Section 17.5.",
+      "doc": "D2",
+      "section": "Section 3 (Amendment to Section 12.3)",
+      "detect_terms": [
+        "shall not apply to a party's breach of Section 9"
+      ],
+      "expected_finding": "The First Amendment controls under the precedence clause and removes the intellectual property and indemnity carve-outs from the liability cap, leaving Halvorsen's most significant claims against Crestline capped. The original Section 12.3 exclusions should be reinstated by further amendment.",
+      "contradicts": "F5"
+    }
+  ]
+}

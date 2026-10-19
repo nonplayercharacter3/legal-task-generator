@@ -14,6 +14,7 @@ Three backends:
 from __future__ import annotations
 
 import asyncio
+import http.client
 import json
 import os
 import re
@@ -68,6 +69,17 @@ class CallLog:
 
 class ModelError(RuntimeError):
     pass
+
+
+def _server_wait(headers) -> float | None:
+    """Seconds a rate-limited server asks us to wait (Retry-After, or NRP's x-ratelimit-reset), capped at 2 minutes."""
+    for name in ("Retry-After", "x-ratelimit-reset"):
+        value = headers.get(name) if headers else None
+        try:
+            return min(max(float(value), 1.0), 120.0)
+        except (TypeError, ValueError):
+            continue
+    return None
 
 
 class OpenAICompatClient:
@@ -139,14 +151,27 @@ class OpenAICompatClient:
             except urllib.error.HTTPError as e:
                 last_err = f"HTTP {e.code}: {e.read()[:300]!r}"
                 retryable = e.code == 429 or e.code >= 500
-            except (urllib.error.URLError, TimeoutError, KeyError, json.JSONDecodeError) as e:
+                wait = _server_wait(e.headers) if e.code == 429 else None
+            except (OSError, http.client.HTTPException, KeyError, json.JSONDecodeError) as e:
+                # OSError covers timeouts, refused and dropped connections (ConnectionResetError, RemoteDisconnected)
                 last_err = f"{type(e).__name__}: {e}"
-                retryable = not isinstance(e, KeyError)
+                retryable, wait = not isinstance(e, KeyError), None
             self.log.add(CallRecord(role=role, model=model, seconds=round(time.time() - t0, 2), ok=False, error=last_err))
             if not retryable or attempt == self.max_retries:
                 break
-            time.sleep(min(2**attempt * 2, 30))
+            time.sleep(wait if wait is not None else min(2**attempt * 2, 30))
         raise ModelError(f"{role}: {last_err}")
+
+
+class RoleRouter:
+    """Sends each role to its own client (e.g. the solver to a local open model), every other role to the default.
+    All clients share one call log, so the report still counts every call."""
+
+    def __init__(self, default: ModelClient, routes: dict[str, ModelClient], log: CallLog) -> None:
+        self.default, self.routes, self.log = default, routes, log
+
+    def complete(self, role: str, system: str, user: str) -> str:
+        return self.routes.get(role, self.default).complete(role, system, user)
 
 
 class ClaudeAgentClient:

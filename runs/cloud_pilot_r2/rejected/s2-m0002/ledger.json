@@ -1,0 +1,195 @@
+{
+  "matter_id": "s2-m0002",
+  "summary": "Harrowgate Home Goods, Inc., a New York furniture and housewares retailer and the firm's client, is negotiating a master services agreement with Bellweather Freight Logistics LLC for warehousing and last-mile delivery services. The folder holds the draft MSA, Statement of Work No. 1, a Data Processing Addendum, the signed non-binding term sheet, and a certificate-of-insurance cover letter from the provider's broker. Provider-prepared drafts depart from the term sheet and from customer-protective norms. Exclusivity is broader than agreed. Customer indemnities are uncapped while provider indemnities are capped. The DPA selects Delaware law and forum and takes precedence over the MSA. A long auto-renewal sits behind a narrow opt-out window. The SOW lets the provider assign freely, while the MSA restricts only the customer.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Harrowgate Home Goods, Inc.",
+      "role": "Customer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Bellweather Freight Logistics LLC",
+      "role": "Service provider (counterparty)"
+    },
+    {
+      "id": "P3",
+      "name": "Quillmore Insurance Brokers, Inc.",
+      "role": "Provider's insurance broker (author of distractor letter)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "January 1, 2027",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "2 years from the MSA Effective Date",
+      "doc": "D1",
+      "section": "14.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA governing law and forum",
+      "value": "New York law; state and federal courts in New York County, New York",
+      "doc": "D1",
+      "section": "18.1"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "Data Processing Addendum, then MSA, then Statement of Work",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F5",
+      "key": "MSA general liability cap",
+      "value": "fees paid or payable in the 12 months before the claim",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F6",
+      "key": "SOW No. 1 monthly service fee",
+      "value": "$184,500 per month",
+      "doc": "D2",
+      "section": "5.1"
+    },
+    {
+      "id": "F7",
+      "key": "SOW No. 1 Start Date",
+      "value": "January 15, 2027",
+      "doc": "D2",
+      "section": "2.1"
+    },
+    {
+      "id": "F8",
+      "key": "Term sheet agreed exclusivity scope",
+      "value": "last-mile home delivery within the New York City metropolitan area only",
+      "doc": "D4",
+      "section": "4"
+    },
+    {
+      "id": "F9",
+      "key": "Term sheet date",
+      "value": "September 22, 2026",
+      "doc": "D4",
+      "section": "Heading"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "master_services_agreement_draft.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "sow_no1_warehousing_last_mile.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D3",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "term_sheet_signed_2026-09-22.md",
+      "kind": "non-binding term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "broker cover letter enclosing certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "MSA Section 3.2 makes Bellweather Customer's exclusive provider of all warehousing, freight transportation and delivery services throughout the United States. The signed term sheet limited exclusivity to last-mile home delivery in the New York City metropolitan area. The clause would bar Harrowgate from using other carriers or warehouses nationwide.",
+      "doc": "D1",
+      "section": "3.2",
+      "detect_terms": [
+        "exclusive provider",
+        "throughout the United States"
+      ],
+      "expected_finding": "The MSA exclusivity covers all logistics services nationwide, far beyond the term sheet's NYC-metro last-mile scope, and should be narrowed to match the term sheet.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "MSA Section 11.3 excludes Customer's indemnification obligations under Section 10.2 from the liability cap. Section 10.2 covers any third-party claims arising out of or relating to Customer's goods, premises or use of the Services. Provider's indemnity under Section 10.1 remains subject to the 12-month fee cap. This leaves Harrowgate with unlimited, one-sided exposure.",
+      "doc": "D1",
+      "section": "11.3",
+      "detect_terms": [
+        "shall not apply to Customer's obligations under Section 10.2",
+        "without limitation"
+      ],
+      "expected_finding": "Customer's broad indemnity is carved out of the cap while Provider's is capped, exposing Harrowgate to unlimited liability; the carve-out should be removed or made mutual and subject to a super-cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "DPA Section 9.1 selects Delaware law and exclusive jurisdiction of courts in Wilmington, Delaware. The MSA selects New York law and New York County courts. Because the MSA's order of precedence ranks the DPA above the MSA, the Delaware clause controls data-related disputes. That creates split law and forum, with a risk of parallel proceedings over the same incident.",
+      "doc": "D3",
+      "section": "9.1",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Wilmington, Delaware"
+      ],
+      "expected_finding": "The DPA's Delaware law and forum clause conflicts with the MSA's New York choice and prevails under the precedence clause, so it should be conformed to New York law and forum.",
+      "contradicts": "F3"
+    },
+    {
+      "id": "I4",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA Section 14.2 renews the agreement automatically for successive 3-year renewal terms. The only way out is non-renewal notice delivered within a 15-day window ending 120 days before expiry of the then-current term. Coupled with the exclusivity clause, a missed window locks Harrowgate in for three more years.",
+      "doc": "D1",
+      "section": "14.2",
+      "detect_terms": [
+        "successive renewal terms of three (3) years",
+        "fifteen (15) day period"
+      ],
+      "expected_finding": "The MSA auto-renews for 3-year terms unless Harrowgate hits a narrow 15-day notice window, which should be replaced with 1-year renewals terminable on reasonable notice at any time before expiry.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "SOW No. 1 Section 8.2 lets Provider assign the SOW and its rights under the MSA, in whole or in part, to any third party without Customer's consent. MSA Section 17.4 restricts assignment only by Customer and is silent on Provider, so nothing in the higher-ranking documents limits Provider. Bellweather could transfer the exclusive relationship and Customer's data and delivery operations to a competitor or an unvetted carrier.",
+      "doc": "D2",
+      "section": "8.2",
+      "detect_terms": [
+        "Provider may assign",
+        "without Customer's consent"
+      ],
+      "expected_finding": "Provider can freely assign the SOW and MSA rights, including to a Harrowgate competitor, so a mutual consent requirement with a competitor carve-out and change-of-control termination right should be added.",
+      "contradicts": null
+    }
+  ]
+}
