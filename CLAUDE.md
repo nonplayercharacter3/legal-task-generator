@@ -1,6 +1,46 @@
 # CLAUDE.md
 
-Context for any Claude Code session working in this repo. Read this first, then README.md.
+Context for any Claude Code session working in this repo. Read this first, then README.md, then the handoff board
+(see "Working with other sessions" below) before you change anything.
+
+## Now (updated 2026-10-26)
+
+**Goal.** Generate long-horizon contract-review tasks (instruction, matter folder, all-pass rubric) that the lab can
+train open models on. The tasks must be sound by construction and hard but solvable for a ~27B open model.
+
+**Stage.** Phase 1 is done: its exit standard (see "Pilot standard") was met in cloud round 5 on 2026-10-18. Next is
+round 6, the first round with an open model (NRP `qwen3-small`) solving. The laptop is set up for pilot rounds
+(LAB clone, LAB index, NRP key in `~/.zshenv`; checked 2026-10-24). Opus generation waits for the Max plan, after
+2026-10-30.
+
+**Plan, in order.** Each step says what done looks like.
+1. **Make qwen3-small write its memo** (no Claude needed). On 2026-10-24 it followed the tool protocol in 12 of 12
+   attempts, then every memo call failed: 9 hit `max_tokens = 32000` (~24k thinking plus a very long memo) and 3 timed
+   out at 600 s. Fix: either raise the solver role's `max_tokens` and `timeout` in `configs/pilot_nrp_solver.toml`, or
+   send `chat_template_kwargs = {enable_thinking = false}` (needs a per-role option in `OpenAICompatClient`). Sirui She
+   picks. Also unwrap `{"action": {...}}` replies in `ltg/solver.py` `solve()` (6 of ~190 steps), with a test.
+   Done: `.venv/bin/python scripts/solve_only.py configs/pilot_nrp_solver.toml runs/qwen_solver_smoke` writes a memo
+   in 12 of 12 attempts.
+2. **Round 6** (after the Max plan upgrade): `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml
+   --seed 6 --out runs/pilot6_nrp`. First real run of the issue verifier's client fix, the variety sampler and the
+   Qwen solver. Done: the round meets the pilot standard again and every rejection is written up.
+3. **Judge leniency** (known weakness 1): rerun the same matters with `gates.judge_hints` on and off, compare solver
+   pass rates, pick a default.
+4. **GPUs on Nautilus**: serve a Qwen model with vLLM (`deploy/nautilus/`, untracked so far), then fine-tune on
+   accepted tasks.
+
+Loose ends: branch `claude/affectionate-perlman-e65dbe` (local only, worktree under `.claude/worktrees/`, 2 commits
+from 2026-10-18) adds an EDGAR fetcher and is not merged. `deploy/nautilus/` is not committed.
+
+## Working with other sessions
+
+Several Claude Code sessions may work on this repo at once. They coordinate through one file, the handoff board:
+`/Users/shesirui/Projects/legal-task-generator/HANDOFF.md`. It is gitignored on purpose, so there is exactly one copy:
+sessions in a worktree edit it at that absolute path, never a copy on their branch. Its top section gives the rules.
+A cloud session cannot reach it; leave cloud results on a branch or PR and someone on the laptop logs them.
+
+What belongs where: the board holds who is doing what right now, requests between sessions, and a running log.
+Anything that stays true (stage, plan, decisions, results) also goes into this file, on your branch, in the same change.
 
 ## What this project is
 
@@ -28,7 +68,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   ends on 2026-10-30 (the App Store price is $124). Until then, real-model rounds wait. For GPUs, Nautilus (namespace `ecepxie`, see Current status). The runtime stays standard library only: the SDK
   is an optional extra (`pip install -e ".[claude]"`) imported only by that backend.
 
-## Current status (2026-10-18)
+## Current status (2026-10-24)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
 - 85 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
@@ -64,10 +104,10 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   solves (Sirui She's decision), as the closer reference for the open models the lab trains. 847 calls, ~11.9M input
   and ~2.1M output tokens over the five rounds, no errors, no usage limit hit.
 - Nautilus (2026-10-18): Sirui She can read the lab namespace `ecepxie` through kubectl with UCSD login
-  (`~/.kube/config` from https://nrp.ai/config; never commit it or any token). Read-only checks only, nothing run yet.
-  **New pods are blocked:** the unscoped quota `reached-quota` is set to `pods: 0` (it was 200), most likely an NRP
-  admin freeze. Ask Li Zhang or the NRP admins why and how to lift it before planning GPU work. Once lifted, the
-  namespace may hold up to 12 A100s at once, requested as `nvidia.com/a100` (opportunistic pods excepted), and no
+  (`~/.kube/config` from https://nrp.ai/config; never commit it or any token). Nothing of ours has run there yet.
+  The pod freeze seen on 2026-10-18 (`reached-quota` at `pods: 0`) was lifted by 2026-10-24: the quota reads
+  7/200, `kubectl auth can-i create pods` and `persistentvolumeclaims` say yes, and 0 of 12 A100s were in use.
+  NRP limits a pod without a controller to 2 GPUs, 32 GB RAM and 6 hours. The namespace may hold up to 12 A100s at once, requested as `nvidia.com/a100` (opportunistic pods excepted), and no
   H100, H200 or GH200 (quota 0). The cluster lists 31 nodes with whole A100 80GB cards (22 SXM4, 9 PCIe; most at
   SDSC, SDSU, Missouri); counts are nodes, not cards. Plan: serve a ~8B Qwen with vLLM first, then ~30B, then
   fine-tune.
@@ -100,6 +140,12 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   `taxonomy.OVERUSED_NAMES`), the supporting document kinds by practice area, and issue types weighted against those
   already used in the run. The report's Variety section lists industries, agreement and issue types, party names used
   in more than one matter, and identical issue sets. Issue types stay uneven where pools differ by practice area.
+- qwen3-small solver smoke test (2026-10-24, `scripts/solve_only.py`, 3 attempts on each of the 4 accepted cloud
+  pilot tasks, no judging; logs in `runs/qwen_solver_smoke/`, not committed): every attempt called `finish` after 9
+  to 18 actions (limit 28) and read every page, so the tool protocol works. Slips were rare and recovered: 2 prose
+  replies fixed by the JSON retry, 6 actions wrapped as `{"action": {...}}`. Every memo call failed (see "Now", step 1).
+  The endpoint took a 31k-token prompt with `max_tokens` up to 200,000 (the server may clamp silently) and honours
+  `chat_template_kwargs.enable_thinking = false`. 216 calls, ~1.95M input and ~568k output tokens, free on NRP.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.
 - The issue library in `ltg/taxonomy.py` is a draft and has not been reviewed by anyone with legal training.
 
