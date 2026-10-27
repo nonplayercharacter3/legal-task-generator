@@ -1,45 +1,61 @@
 # CLAUDE.md
 
-Context for any Claude Code session working in this repo. Read this first, then README.md, then the handoff board
-(see "Working with other sessions" below) before you change anything.
+Context for any Claude Code session working in this repo. Read this first, then README.md, then "Working with other
+people and sessions" below before you change anything.
 
-## Now (updated 2026-10-26)
+## Now (updated 2026-10-27)
 
 **Goal.** Generate long-horizon contract-review tasks (instruction, matter folder, all-pass rubric) that the lab can
 train open models on. The tasks must be sound by construction and hard but solvable for a ~27B open model.
 
 **Stage.** Phase 1 is done: its exit standard (see "Pilot standard") was met in cloud round 5 on 2026-10-18. Next is
-round 6, the first round with an open model (NRP `qwen3-small`) solving. The laptop is set up for pilot rounds
-(LAB clone, LAB index, NRP key in `~/.zshenv`; checked 2026-10-24). Opus generation waits for the Max plan, after
-2026-10-30.
+round 6, with Opus generating and Haiku solving as in round 5, run by the second contributor on their Max plan.
+Round 7 is the first round with an open model (NRP `qwen3-small`) solving, once its memo call is fixed. Sirui She's
+laptop is set up for pilot rounds (LAB clone, LAB index, NRP key in `~/.zshenv`; checked 2026-10-24).
 
-**Plan, in order.** Each step says what done looks like.
-1. **Make qwen3-small write its memo** (no Claude needed). On 2026-10-24 it followed the tool protocol in 12 of 12
+**Plan.** Steps 1 and 2 run in parallel: step 1 needs Claude, step 2 does not. Each step says what done looks like.
+1. **Round 6** (second contributor, now): `.venv/bin/python -m ltg run --config configs/claude_pilot_opus.toml
+   --seed 6 --out runs/pilot6_haiku`. First real run of the issue verifier's client fix and the variety sampler.
+   Done: the round meets the pilot standard, every rejection is written up, and the results are in a PR (see
+   "Working with other people and sessions").
+2. **Make qwen3-small write its memo** (Sirui She's laptop, no Claude needed). On 2026-10-24 it followed the tool protocol in 12 of 12
    attempts, then every memo call failed: 9 hit `max_tokens = 32000` (~24k thinking plus a very long memo) and 3 timed
    out at 600 s. Fix: either raise the solver role's `max_tokens` and `timeout` in `configs/pilot_nrp_solver.toml`, or
    send `chat_template_kwargs = {enable_thinking = false}` (needs a per-role option in `OpenAICompatClient`). Sirui She
    picks. Also unwrap `{"action": {...}}` replies in `ltg/solver.py` `solve()` (6 of ~190 steps), with a test.
    Done: `.venv/bin/python scripts/solve_only.py configs/pilot_nrp_solver.toml runs/qwen_solver_smoke` writes a memo
    in 12 of 12 attempts.
-2. **Round 6** (after the Max plan upgrade): `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml
-   --seed 6 --out runs/pilot6_nrp`. First real run of the issue verifier's client fix, the variety sampler and the
-   Qwen solver. Done: the round meets the pilot standard again and every rejection is written up.
-3. **Judge leniency** (known weakness 1): rerun the same matters with `gates.judge_hints` on and off, compare solver
+3. **Round 7**, after steps 1 and 2: `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml --seed 7
+   --out runs/pilot7_nrp`. First round with Qwen solving. Do not run it before step 2 is done: the solver check comes
+   after all generation, so every matter would spend its Opus calls and then end in an error. Needs an NRP key
+   (`NRP_LLM_API_KEY`, from the NRP portal). Done: the round meets the pilot standard with Qwen solving.
+4. **Judge leniency** (known weakness 1): rerun the same matters with `gates.judge_hints` on and off, compare solver
    pass rates, pick a default.
-4. **GPUs on Nautilus**: serve a Qwen model with vLLM (`deploy/nautilus/`, untracked so far), then fine-tune on
+5. **GPUs on Nautilus**: serve a Qwen model with vLLM (`deploy/nautilus/`, untracked so far), then fine-tune on
    accepted tasks.
 
 Loose ends: branch `claude/affectionate-perlman-e65dbe` (local only, worktree under `.claude/worktrees/`, 2 commits
 from 2026-10-18) adds an EDGAR fetcher and is not merged. `deploy/nautilus/` is not committed.
 
-## Working with other sessions
+## Working with other people and sessions
 
-Several Claude Code sessions may work on this repo at once. They coordinate through one file, the handoff board:
+Two people work on this repo: Sirui She (owner, on the laptop) and a second contributor (on their own machine, with
+their own Max plan). Each may run several Claude Code sessions.
+
+**Between the two people: GitHub.** Questions, requests and hand-offs go in GitHub issues; results go in pull
+requests. A pilot round goes on its own branch: `runs/` is gitignored, so add the round's folder with
+`git add -f runs/<name>`, and open a PR into `main` whose description has the round's numbers (accepted, pass rates,
+calls, tokens, errors) and the cause of every rejection. If a round leads to code fixes, one commit per defect
+class, as in "Pilot standard". Pull `main` before starting work; whoever changes the stage or plan updates "Now" in
+the same PR.
+
+**Between sessions on Sirui She's laptop: the handoff board.**
 `/Users/shesirui/Projects/legal-task-generator/HANDOFF.md`. It is gitignored on purpose, so there is exactly one copy:
 sessions in a worktree edit it at that absolute path, never a copy on their branch. Its top section gives the rules.
-A cloud session cannot reach it; leave cloud results on a branch or PR and someone on the laptop logs them.
+Only that laptop has it. Sessions elsewhere (the second contributor's, cloud sessions) use GitHub as above, and a
+laptop session logs what they report.
 
-What belongs where: the board holds who is doing what right now, requests between sessions, and a running log.
+What belongs where: the board and GitHub issues hold who is doing what right now, requests and a running log.
 Anything that stays true (stage, plan, decisions, results) also goes into this file, on your branch, in the same change.
 
 ## What this project is
@@ -65,7 +81,8 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 - **Backends.** Any OpenAI-compatible endpoint, or Claude through the Claude Agent SDK (`backend.kind = "claude_sdk"`).
   Pengtao's direction (2026-10-15): for Claude, use the $100/month subscription through the SDK (reimbursed), never
   direct API calls. He confirmed this means the Max plan; Sirui She upgrades on the web after the App Store Pro period
-  ends on 2026-10-30 (the App Store price is $124). Until then, real-model rounds wait. For GPUs, Nautilus (namespace `ecepxie`, see Current status). The runtime stays standard library only: the SDK
+  ends on 2026-10-30 (the App Store price is $124). From 2026-10-27 the second contributor runs Claude rounds on their
+  own Max plan (Sirui She's decision). For GPUs, Nautilus (namespace `ecepxie`, see Current status). The runtime stays standard library only: the SDK
   is an optional extra (`pip install -e ".[claude]"`) imported only by that backend.
 
 ## Current status (2026-10-24)
