@@ -71,3 +71,9 @@ def test_paging_does_not_change_what_the_fake_solver_finds(tmp_path):
     assert reps[1]["model_calls"]["solver"]["calls"] > reps[0]["model_calls"]["solver"]["calls"]  # more pages, more steps
     trace = json.loads(next((tmp_path / "1" / "accepted").glob("*/solver/attempt_1.trace.json")).read_text())
     assert trace and all(s["action"]["tool"] == "read_file" for s in trace)
+
+
+def test_loop_unwraps_an_action_nested_under_action():
+    client = Scripted([{"action": {"tool": "read_file", "filename": "a.md", "page": 1}}, {"action": {"tool": "finish"}}])
+    sol = solve(client, "Review.", DOCS, max_steps=5)
+    assert sol.files_opened() == ["a.md"] and len(sol.steps) == 1

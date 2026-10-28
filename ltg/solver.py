@@ -72,6 +72,8 @@ def solve(client: ModelClient, instruction: str, docs: Documents, max_steps: int
     while len(steps) < max_steps:
         payload = {"instruction": instruction, "files": files, "steps": steps, "steps_left": max_steps - len(steps)}
         action = call_json(client, "solver", prompts.SOLVER_STEP, render_input(payload))
+        if isinstance(action.get("action"), dict):  # Qwen sometimes wraps the step as {"action": {...}}
+            action = action["action"]
         tool = action.get("tool")
         if tool == "finish":
             break

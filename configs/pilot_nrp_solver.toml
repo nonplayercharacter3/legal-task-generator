@@ -26,6 +26,9 @@ model = "qwen3-small"
 api_key_env = "NRP_LLM_API_KEY"
 max_tokens = 32000                  # it reasons before answering; 8000 would cut long memos off
 max_retries = 6                     # NRP models go offline for maintenance; waits grow to 30 s
+# NRP thinks at reasoning_effort "xhigh" by default (~30k tokens before the memo, which then hit max_tokens).
+# "low" finished 4 of 4 replayed memos in ~2 min and named every planted issue (docs/research/qwen_memo_length.md).
+extra_body = { reasoning_effort = "low" }
 
 # Folders of 4 to 5 documents: a 3-document folder lets the solver read everything (known weakness 3). The
 # evidence so far is mixed: accepted tasks had 4 and 5 documents, too-easy ones 4 and 5 as well.

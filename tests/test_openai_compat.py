@@ -40,6 +40,7 @@ def server():
             body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
             state["auth"].append(self.headers.get("Authorization"))
             state["models"].append(body["model"])
+            state.setdefault("bodies", []).append(body)
             if state["drop_next"]:  # hang up without answering, like a server going down mid-request
                 state["drop_next"] -= 1
                 self.close_connection = True
@@ -148,6 +149,25 @@ def test_one_role_can_use_its_own_backend(server, tmp_path, monkeypatch):
     assert state["models"] and set(state["models"]) == {"open-model"}  # only solver calls reached the endpoint
     assert len(state["models"]) == rep["model_calls"]["solver"]["calls"]
     assert set(state["auth"]) == {"Bearer solver-secret"}
+
+
+def test_role_extra_body_reaches_the_request(server, monkeypatch):
+    """Per-role server fields (NRP's reasoning_effort) are sent with every call from that role only."""
+    from ltg.config import build_client
+
+    url, state = server
+    monkeypatch.setenv("NO_PROXY", "127.0.0.1")
+    monkeypatch.setenv("no_proxy", "127.0.0.1")
+    cfg = load_config(None, {"backend": {"kind": "openai_compat", "base_url": url, "default_model": "gen", "roles": {
+        "solver": {"model": "open-model", "extra_body": {"reasoning_effort": "low"}}}}})
+    client = build_client(cfg, CallLog())
+    empty = render_input({"instruction": "x", "files": [], "steps": []})
+    client.complete("solver", prompts.SOLVER_WRITE, empty)
+    client.complete("judge", prompts.JUDGE, render_input({"response": "x", "criteria": []}))
+    solver_body, judge_body = state["bodies"]
+    assert solver_body["model"] == "open-model" and solver_body["reasoning_effort"] == "low"
+    assert solver_body["max_tokens"] == cfg.backend.max_tokens  # the standard fields are still there
+    assert judge_body["model"] == "gen" and "reasoning_effort" not in judge_body
 
 
 def test_role_backend_rejects_unknown_keys():

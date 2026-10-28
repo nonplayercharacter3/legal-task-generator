@@ -95,6 +95,7 @@ class OpenAICompatClient:
         max_tokens: int = 8000,
         timeout: float = 600,
         max_retries: int = 3,
+        extra_body: dict[str, Any] | None = None,
         log: CallLog | None = None,
     ) -> None:
         self.url = base_url.rstrip("/") + "/chat/completions"
@@ -105,6 +106,7 @@ class OpenAICompatClient:
         self.max_tokens = max_tokens
         self.timeout = timeout
         self.max_retries = max_retries
+        self.extra_body = extra_body or {}  # server-specific fields, e.g. reasoning_effort on NRP
         self.log = log if log is not None else CallLog()
 
     def model_for(self, role: str) -> str:
@@ -121,6 +123,7 @@ class OpenAICompatClient:
                 ],
                 "temperature": self.temperature,
                 "max_tokens": self.max_tokens,
+                **self.extra_body,
             }
         ).encode()
         headers = {"Content-Type": "application/json"}
