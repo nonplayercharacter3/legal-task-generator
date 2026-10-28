@@ -1,7 +1,8 @@
 # CLAUDE.md
 
-Context for any Claude Code session working in this repo. Read this first, then README.md, then "Working with other
-people and sessions" below before you change anything.
+Context for any Claude Code session working in this repo (for people, `docs/stage_and_plan.md` says the same in plain
+English). Read this first, then README.md, then "Working with other people and sessions" below before you change
+anything.
 
 ## Now (updated 2026-10-27)
 
@@ -20,9 +21,13 @@ laptop is set up for pilot rounds (LAB clone, LAB index, NRP key in `~/.zshenv`;
    "Working with other people and sessions").
 2. **Make qwen3-small write its memo** (Sirui She's laptop, no Claude needed). On 2026-10-24 it followed the tool protocol in 12 of 12
    attempts, then every memo call failed: 9 hit `max_tokens = 32000` (~24k thinking plus a very long memo) and 3 timed
-   out at 600 s. Fix: either raise the solver role's `max_tokens` and `timeout` in `configs/pilot_nrp_solver.toml`, or
-   send `chat_template_kwargs = {enable_thinking = false}` (needs a per-role option in `OpenAICompatClient`). Sirui She
-   picks. Also unwrap `{"action": {...}}` replies in `ltg/solver.py` `solve()` (6 of ~190 steps), with a test.
+   out at 600 s. Cause: NRP runs the model at `reasoning_effort = "xhigh"` by default and it thinks for ~30k tokens.
+   Researched and measured on 2026-10-27 (`docs/research/qwen_memo_length.md`, "Measured on NRP"): with
+   `reasoning_effort = "low"` the memo call finished 4 of 4, named 20 of 20 planted issues (proxy grader) and took
+   ~2 minutes; thinking off finished fast but named only 15 of 20. Recommended fix, pending Sirui She's OK: a per-role
+   option in `OpenAICompatClient` that adds extra request fields, set to `reasoning_effort = "low"` for the solver in
+   `configs/pilot_nrp_solver.toml`. Also unwrap `{"action": {...}}` replies in `ltg/solver.py` `solve()` (6 of ~190
+   steps), with a test.
    Done: `.venv/bin/python scripts/solve_only.py configs/pilot_nrp_solver.toml runs/qwen_solver_smoke` writes a memo
    in 12 of 12 attempts.
 3. **Round 7**, after steps 1 and 2: `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml --seed 7
@@ -134,7 +139,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   documents to 0.56, over the 0.5 cutoff.
 - NRP hosted models (2026-10-18): `https://ellm.nrp-nautilus.io/v1`, OpenAI-compatible, key from the NRP portal in
   `NRP_LLM_API_KEY` (never in the repo or chat). `qwen3-small` is Qwen3.8-27B dense, the planned solver
-  (`configs/pilot_nrp_solver.toml`); no ~8B Qwen chat model is hosted. Limits: 200k output tokens/min per key and model,
+  (`configs/pilot_nrp_solver.toml`); no ~8B Qwen chat model is hosted. Limits: 48k output tokens/min per key and model (NRP fair-use page, checked 2026-10-27; 200k was wrong),
   8 simultaneous requests for qwen3-small; non-commercial use only. The HTTP client now retries dropped connections
   and waits as long as a 429 asks. Running it from a cloud session needs `ellm.nrp-nautilus.io` allowed in the
   environment's network settings and the key set as an environment variable there.
