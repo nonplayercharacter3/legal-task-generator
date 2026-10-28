@@ -31,13 +31,11 @@ Claude rounds on their own machine.
 1. **Round 6 (second contributor, now).** The same setup as round 5. It is the first real test of two changes:
    a fix to one of the quality checks, and more variety in the assignments (before, the same client names and
    contract types kept coming back).
-2. **Get an open model to finish its answers (Sirui She, at the same time, no Claude needed).** The point of the
-   project is assignments that a mid-sized open model finds hard but possible. We tried the university's hosted Qwen
-   model (about 27 billion parameters, free for research) as the solver on the four assignments we already have.
-   It handled the hands-on part well: it opened the files, read every page and decided when it was done, in all 12
-   tries. Then every try failed at the very last step. It "thinks" at great length before writing, then writes an
-   overly long memo, and runs out of room partway through. See "Fixing the open model's memo" below.
-3. **Round 7.** The first full round with Qwen as the solver, once step 2 works.
+2. **Get an open model to finish its answers (done 2026-10-27).** The point of the project is assignments that a
+   mid-sized open model finds hard but possible. The university's hosted Qwen model (about 27 billion parameters,
+   free for research) handled the hands-on part well from the start, but every answer got cut off at the last step.
+   With the fix below it finished all 12 test answers. See "Fixing the open model's memo".
+3. **Round 7.** The first full round with Qwen as the solver.
 4. **Check the grader.** A model grades each answer against the checklist. We have not measured whether it is too
    generous. We will grade the same answers with and without the extra hints it gets, and compare.
 5. **Our own GPUs.** The university cluster (Nautilus) has unfrozen our account, and we may use up to 12 high-end
@@ -68,8 +66,10 @@ Every memo finished with room to spare, none missed a planted problem, and each 
 timing out. Turning thinking off is faster but misses problems, which would make the open model look weaker than it
 is. Asking for shorter memos would change the assignment for every model, not just this one.
 
-To apply it, the code needs a small option to pass this setting to the solver, then the full test (12 attempts) runs
-again. Full sources and numbers: `docs/research/qwen_memo_length.md`.
+**Applied and retested (2026-10-27).** We added the option and reran the full test: all 12 attempts wrote a memo,
+each attempt took 2 to 6 minutes, and the rough check found 47 of the 51 planted problems. The one it kept missing
+(in all three tries on one assignment) is a supply agreement that lets the other side hand the contract to a
+competitor. Full sources and numbers: `docs/research/qwen_memo_length.md`.
 
 **One more correction from the research.** NRP limits each key to 48,000 output tokens per minute, not the 200,000
 our notes said. Rounds with Qwen solving should run fewer memo calls at once; the client already waits when NRP
@@ -77,7 +77,6 @@ says to slow down.
 
 ## Decisions waiting on Sirui She
 
-- Approve the recommended fix for the open model's memo (low thinking effort, see above).
 - Merge or drop an older, unfinished feature that pulls real contracts from SEC filings to use as drafting examples
   (branch `claude/affectionate-perlman-e65dbe`).
 - Commit or keep local the setup files for running a model on Nautilus (`deploy/nautilus/`).

@@ -11,7 +11,7 @@ train open models on. The tasks must be sound by construction and hard but solva
 
 **Stage.** Phase 1 is done: its exit standard (see "Pilot standard") was met in cloud round 5 on 2026-10-18. Next is
 round 6, with Opus generating and Haiku solving as in round 5, run by the second contributor on their Max plan.
-Round 7 is the first round with an open model (NRP `qwen3-small`) solving, once its memo call is fixed. Sirui She's
+Round 7 is the first round with an open model (NRP `qwen3-small`) solving; its memo call was fixed on 2026-10-27. Sirui She's
 laptop is set up for pilot rounds (LAB clone, LAB index, NRP key in `~/.zshenv`; checked 2026-10-24).
 
 **Plan.** Steps 1 and 2 run in parallel: step 1 needs Claude, step 2 does not. Each step says what done looks like.
@@ -19,20 +19,16 @@ laptop is set up for pilot rounds (LAB clone, LAB index, NRP key in `~/.zshenv`;
    --seed 6 --out runs/pilot6_haiku`. First real run of the issue verifier's client fix and the variety sampler.
    Done: the round meets the pilot standard, every rejection is written up, and the results are in a PR (see
    "Working with other people and sessions").
-2. **Make qwen3-small write its memo** (Sirui She's laptop, no Claude needed). On 2026-10-24 it followed the tool protocol in 12 of 12
-   attempts, then every memo call failed: 9 hit `max_tokens = 32000` (~24k thinking plus a very long memo) and 3 timed
-   out at 600 s. Cause: NRP runs the model at `reasoning_effort = "xhigh"` by default and it thinks for ~30k tokens.
-   Researched and measured on 2026-10-27 (`docs/research/qwen_memo_length.md`, "Measured on NRP"): with
-   `reasoning_effort = "low"` the memo call finished 4 of 4, named 20 of 20 planted issues (proxy grader) and took
-   ~2 minutes; thinking off finished fast but named only 15 of 20. Recommended fix, pending Sirui She's OK: a per-role
-   option in `OpenAICompatClient` that adds extra request fields, set to `reasoning_effort = "low"` for the solver in
-   `configs/pilot_nrp_solver.toml`. Also unwrap `{"action": {...}}` replies in `ltg/solver.py` `solve()` (6 of ~190
-   steps), with a test.
-   Done: `.venv/bin/python scripts/solve_only.py configs/pilot_nrp_solver.toml runs/qwen_solver_smoke` writes a memo
-   in 12 of 12 attempts.
-3. **Round 7**, after steps 1 and 2: `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml --seed 7
-   --out runs/pilot7_nrp`. First round with Qwen solving. Do not run it before step 2 is done: the solver check comes
-   after all generation, so every matter would spend its Opus calls and then end in an error. Needs an NRP key
+2. **Make qwen3-small write its memo: done 2026-10-27.** Every memo call had failed on 2026-10-24 (32k `max_tokens`
+   or 600 s timeouts) because NRP runs the model at `reasoning_effort = "xhigh"` and it thinks for ~30k tokens
+   (`docs/research/qwen_memo_length.md`). Fix: `extra_body` on a backend or role adds fields to each OpenAI-compatible
+   request; `configs/pilot_nrp_solver.toml` sets `reasoning_effort = "low"` for the solver. `solve()` also unwraps
+   `{"action": {...}}` replies. Rerun (`scripts/solve_only.py`, `runs/qwen_solver_smoke_low/`, not committed): 12 of
+   12 memos written (2,600 to 6,900 words), 190 calls, 0 failed, 2 to 6 minutes per attempt, 20 wrapped actions
+   handled. Proxy issue recall (NRP `qwen3` against the ledger, not our judge) 47 of 51; all 3 attempts on s5-m0001
+   missed I2 (free assignment in the supply agreement).
+3. **Round 7**, after step 1: `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml --seed 7
+   --out runs/pilot7_nrp`. First round with Qwen solving. Needs an NRP key
    (`NRP_LLM_API_KEY`, from the NRP portal). Done: the round meets the pilot standard with Qwen solving.
 4. **Judge leniency** (known weakness 1): rerun the same matters with `gates.judge_hints` on and off, compare solver
    pass rates, pick a default.
@@ -93,7 +89,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 ## Current status (2026-10-24)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 85 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+- 87 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
   was mutation-checked on 2026-10-14: disabling it makes a test fail.
 - First real-model runs (2026-10-15, Claude Sonnet through the Agent SDK, one matter each, seed 1):
   runs 1 to 3 were rejected at `consistency`, each exposing a gap the fake model hid (exact string matching, facts
@@ -165,7 +161,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 - qwen3-small solver smoke test (2026-10-24, `scripts/solve_only.py`, 3 attempts on each of the 4 accepted cloud
   pilot tasks, no judging; logs in `runs/qwen_solver_smoke/`, not committed): every attempt called `finish` after 9
   to 18 actions (limit 28) and read every page, so the tool protocol works. Slips were rare and recovered: 2 prose
-  replies fixed by the JSON retry, 6 actions wrapped as `{"action": {...}}`. Every memo call failed (see "Now", step 1).
+  replies fixed by the JSON retry, 6 actions wrapped as `{"action": {...}}`. Every memo call failed (fixed, see "Now", step 2).
   The endpoint took a 31k-token prompt with `max_tokens` up to 200,000 (the server may clamp silently) and honours
   `chat_template_kwargs.enable_thinking = false`. 216 calls, ~1.95M input and ~568k output tokens, free on NRP.
 - `ltg/data/precedents/` holds three short synthetic samples, not real agreements.

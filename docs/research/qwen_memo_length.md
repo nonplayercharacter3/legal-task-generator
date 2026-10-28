@@ -267,3 +267,11 @@ What this shows:
 - Real decode speed of qwen3-small on NRP (needed to size the timeout). We only know the 3 timed-out calls ran
   below ~53 tokens/s.
 - How memo quality and solver pass rates change under each fix. That is for the experiments now running.
+
+## Applied (2026-10-27)
+
+`extra_body = { reasoning_effort = "low" }` on the solver role in `configs/pilot_nrp_solver.toml`. Full rerun of
+`scripts/solve_only.py` (tool steps and memo both at low effort, `runs/qwen_solver_smoke_low/`): 12 of 12 memos,
+2,644 to 6,885 words, 190 calls with none failed, 2 to 6 minutes per attempt, ~222k output tokens. Proxy recall
+47 of 51; s5-m0001 I2 (free assignment, Supply Agreement Section 16.1) was missed in all 3 attempts, though the
+memo-only replays (built from xhigh tool steps) found it, so low effort on the tool steps may cost some recall.
