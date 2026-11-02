@@ -153,3 +153,13 @@ def test_consistency_accepts_the_ledger_value_word_for_word_inside_its_own_docum
     digits = Facts({"F1@a.md": "130 days"}, same=False)
     ledger.facts[0].value = "30 days"
     assert not gates.consistency(digits, ledger, {"a.md": "...", "b.md": "..."}).passed  # whole words only
+
+
+def test_consistency_accepts_a_trimmed_extraction_when_its_own_document_states_the_full_value():
+    ledger = _ledger()
+    ledger.facts[0].value = "exclusive jurisdiction of the courts in New York County"
+    clause = "Each party submits to the exclusive jurisdiction of the courts in New York County."
+    trimmed = Facts({"F1@a.md": "the courts in New York County"}, same=False)
+    assert gates.consistency(trimmed, ledger, {"a.md": clause, "b.md": "..."}).passed and trimmed.matched == []
+    nonexclusive = Facts({"F1@a.md": "the courts in New York County"}, same=False)  # the text really lacks "exclusive"
+    assert not gates.consistency(nonexclusive, ledger, {"a.md": "Each party submits to the courts in New York County.", "b.md": "..."}).passed
