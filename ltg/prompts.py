@@ -29,6 +29,10 @@ Rules:
   fixes the point, a change that actually favours the client).
   Describe each issue as the documents bear it out: a clause that binds both parties alike is not "one-sided";
   say instead how it hurts the client.
+  Before keeping an issue, follow every cross-reference it relies on through the folder. A cap that covers only
+  claims under one subsection never reached the claims a change to its carve-out touches; a clause made "subject to
+  Section X" takes Section X's exceptions too; an order-of-precedence clause under which the main agreement prevails
+  cures a conflict planted in a note, schedule or other ancillary document. Plant the issue where it survives.
 - Make issues require analysis, not just spotting. At most one issue may be visible from a single clause read on
   its own (a plainly one-sided clause). Every other issue must appear only when two provisions or two documents are
   read together: a carve-out that swallows a cap through a cross-reference, a precedence clause that lets the flawed
