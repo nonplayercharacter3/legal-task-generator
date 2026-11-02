@@ -148,6 +148,8 @@ if it meets every criterion, so each criterion must be objective, atomic and che
 You receive the facts ledger, the task instruction and the deliverable. Write criteria FROM THE LEDGER:
 - kind "issue": one per ledger issue (source = issue id): the response identifies the problem, where it is,
   and why it matters. A criterion about an issue's fix or consequence is also kind "issue", with that issue's id.
+  Require the conclusion, not one route to it: name a supporting provision (a precedence clause, a definition in
+  another document) only if a response that reaches the right conclusion without it would be wrong.
 - kind "fact": 1 to 3 criteria for facts a correct answer must state (source = fact id). A fact criterion asks
   only that the response state the fact; it must be passable by a response that misses every planted issue.
 - kind "format": 1 to 2 criteria about the deliverable's form (source = null).
