@@ -1,0 +1,12 @@
+# Hugging Face cache for the vLLM pod. Survives pod deletion so the ~33 GB of weights download once.
+# Delete it only when the project is done: kubectl delete pvc -n ecepxie ltg-hf-cache
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ltg-hf-cache
+spec:
+  storageClassName: rook-ceph-block
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 100Gi
