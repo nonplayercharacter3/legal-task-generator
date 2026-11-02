@@ -1,0 +1,174 @@
+{
+  "matter_id": "s11-m0003",
+  "summary": "Gabousk Transit Technologies, Inc. (client) is a New York distributor of school bus safety and fleet technology. It has signed a distribution agreement with Lopol Fleet Safety Systems, LLC, a manufacturer of school bus stop-arm violation camera systems and the cloud platform behind them. The folder holds four documents: the Distribution Agreement, an Order Form setting the commercial terms, a Data Processing Addendum covering student and violation data on Lopol's platform, and Gabousk's unrelated office and warehouse lease (the distractor). Four issues are planted. First, the Agreement restricts only Gabousk's ability to assign, so Lopol can assign freely, including to a competitor. Second, the Agreement's non-compete reaches all pupil-transportation products nationwide, which goes beyond the narrow exclusivity recorded in the Order Form, and the precedence clause lets the Agreement prevail. Third, the DPA pulls data-breach losses back under the liability cap that the Agreement carves them out of, and the DPA controls on data protection matters. Fourth, the Agreement's renewal mechanics combine with the Order Form's five-year renewal term to create a long automatic renewal with a narrow 30-day opt-out window.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Gabousk Transit Technologies, Inc.",
+      "role": "Distributor; the firm's client. Resells and installs school bus safety technology for school districts and contract bus operators in New York's Hudson Valley."
+    },
+    {
+      "id": "P2",
+      "name": "Lopol Fleet Safety Systems, LLC",
+      "role": "Supplier; manufacturer of stop-arm violation camera systems for school buses and operator of the associated cloud evidence platform."
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Governing law of Distribution Agreement",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 19.1"
+    },
+    {
+      "id": "F3",
+      "key": "Order of precedence",
+      "value": "DPA (as to data protection matters), then Distribution Agreement, then Order Form; Order Form controls only pricing and quantities",
+      "doc": "D1",
+      "section": "Section 1.3"
+    },
+    {
+      "id": "F4",
+      "key": "Distribution Agreement liability cap",
+      "value": "fees paid or payable by Distributor to Supplier in the prior 12 months",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F5",
+      "key": "Initial Term",
+      "value": "three (3) years from the Distribution Agreement Effective Date",
+      "doc": "D2",
+      "section": "Term"
+    },
+    {
+      "id": "F6",
+      "key": "Renewal Term",
+      "value": "five (5) years",
+      "doc": "D2",
+      "section": "Term"
+    },
+    {
+      "id": "F7",
+      "key": "Territory",
+      "value": "Orange, Dutchess, Ulster, Putnam, Rockland and Westchester Counties, New York",
+      "doc": "D2",
+      "section": "Territory"
+    },
+    {
+      "id": "F8",
+      "key": "Agreed exclusivity scope",
+      "value": "Distributor will not sell competing stop-arm violation camera systems within the Territory",
+      "doc": "D2",
+      "section": "Exclusivity"
+    },
+    {
+      "id": "F9",
+      "key": "Annual minimum purchase commitment",
+      "value": "400 stop-arm camera units per contract year",
+      "doc": "D2",
+      "section": "Minimum Commitment"
+    },
+    {
+      "id": "F10",
+      "key": "Office Lease premises",
+      "value": "Suite 210 and Warehouse Bay C, 88 Route 17K, Newburgh, New York",
+      "doc": "D4",
+      "section": "Section 1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement_gabousk_lopol.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "order_form_gabousk_lopol.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "data_processing_addendum_gabousk_lopol.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "office_lease_gabousk_newburgh.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 18.3 of the Distribution Agreement bars only the Distributor from assigning without the Supplier's prior written consent. Nothing restricts Lopol. Under New York law, contract rights are freely assignable absent an express restriction, so Lopol can assign the Agreement to anyone, including a competing technology distributor or a bus-technology vendor that competes with Gabousk. Gabousk would remain bound by its exclusivity, non-compete and minimum purchase commitments to that assignee, with no consent right and no termination right.",
+      "doc": "D1",
+      "section": "Section 18.3",
+      "detect_terms": [
+        "Distributor shall not assign or transfer"
+      ],
+      "expected_finding": "The assignment clause binds only Gabousk, so Lopol may freely assign the Agreement, even to a Gabousk competitor; the clause should be made mutual, or Gabousk should get a consent right or a termination right on any assignment or change of control of Lopol.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "The Order Form records the agreed exclusivity: Gabousk will not sell competing stop-arm violation camera systems within the six-county Territory. Section 7.2 of the Distribution Agreement instead bars Gabousk, during the Term and for 24 months after it, from selling any 'Competing Product' anywhere in the United States. Section 1.1 defines 'Competing Product' as any product used in or in connection with pupil transportation, which sweeps in the routing software, GPS telematics and student ridership card systems Gabousk already sells. Section 1.3 gives the Agreement precedence over the Order Form on everything except pricing and quantities, so the broader Agreement wording controls and the Order Form's narrower deal term does not cure it. Read together, Sections 1.1, 1.3 and 7.2 make the restriction far broader in product scope, territory and duration than the deal, and it risks being an unreasonable restraint under New York law.",
+      "doc": "D1",
+      "section": "Section 7.2 (read with Sections 1.1 and 1.3)",
+      "detect_terms": [
+        "used in or in connection with pupil transportation",
+        "anywhere in the United States"
+      ],
+      "expected_finding": "The Agreement's non-compete, which controls under the precedence clause, covers all pupil-transportation products nationwide for the Term plus 24 months, far beyond the agreed Territory-limited stop-arm camera exclusivity in the Order Form; it should be conformed to that scope.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 12.3 of the Distribution Agreement carves out from the Section 12.2 cap (fees paid or payable in the prior 12 months) both breach of confidentiality and breach of data protection obligations, including unauthorized disclosure of student data. Section 9 of the DPA, however, states that notwithstanding anything in the Agreement, each party's liability arising under or in connection with the Addendum, including for any Personal Data Breach, is subject to the limitations of liability in Section 12 of the Agreement. Section 1.3 of the Agreement says the DPA prevails on data protection matters. Read together, Lopol's liability for a breach of student data held on its platform is capped at roughly one year's fees, even though breach-notification costs and district and parent claims could far exceed that amount. Gabousk faces those claims from its school district customers.",
+      "doc": "D3",
+      "section": "Section 9 (read with Distribution Agreement Sections 1.3, 12.2 and 12.3)",
+      "detect_terms": [
+        "subject to the limitations of liability in Section 12"
+      ],
+      "expected_finding": "Because the DPA prevails on data protection matters, its Section 9 overrides the Agreement's uncapped carve-out for data protection breaches and caps Lopol's student-data breach liability at 12 months' fees; the DPA should be amended to preserve the carve-out or set a separate, higher super-cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Section 3.2 of the Distribution Agreement provides that after the Initial Term the Agreement renews automatically for successive Renewal Terms stated in the Order Form. A party avoids renewal only by giving written notice of non-renewal within a window that begins 90 days and ends 60 days before the end of the then-current term, and notice given outside that window is ineffective. The Order Form sets a three-year Initial Term from the March 1, 2026 Effective Date, which ends on February 28, 2029, and a five-year Renewal Term. Combining these provisions, Gabousk must give notice between December 1, 2028 and December 30, 2028. If it misses that window, Gabousk is locked in until February 28, 2034, together with the non-compete and the 400-unit annual minimum purchase commitment. The mechanism applies to both parties, but it hurts Gabousk because its continuing obligations (the non-compete and minimum volumes) are heavier than Lopol's.",
+      "doc": "D1",
+      "section": "Section 3.2 (read with Order Form Term section)",
+      "detect_terms": [
+        "ending sixty (60) days before",
+        "shall automatically renew"
+      ],
+      "expected_finding": "The Agreement auto-renews for five-year terms unless Gabousk gives notice only between December 1 and December 30, 2028; otherwise Gabousk is bound through February 28, 2034 with its non-compete and minimums. The renewal term should be shortened to one year and the notice window widened, or Gabousk should be given a termination-for-convenience right.",
+      "contradicts": null
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "matter_id": "s11-m0002",
+  "summary": "Fatas Remarketing Group, LLC (P1, buyer, the firm's client) is buying substantially all the assets of Mapeirt Vehicle Auctions, Inc. (P2, seller). Mapeirt runs a wholesale used-car auction from a leased yard in Dover, Delaware, plus an online simulcast bidding platform. The price is $48,500,000, of which $9,000,000 is paid by a subordinated Seller Note. Fatas may set indemnity claims off against that note. The folder holds the Asset Purchase Agreement, the Seller Note, the earlier non-binding Letter of Intent, a post-signing Side Letter amending the APA, and a joint press release announcing the deal. The planted issues are: (1) the APA's closing conditions omit the landlord consent that the APA itself says the Dover yard lease requires; (2) a six-month survival period guts the indemnity for pre-closing title and odometer claims, and the LOI had agreed 18 months; (3) the Side Letter, which satisfies the APA's precedence override, narrows the Excluded Liabilities carve-out from the cap; (4) the Seller Note chooses New Jersey law and forum, against the APA's Delaware law and Chancery forum; (5) the Seller Note redefines 'Losses' so that set-off is limited to finally adjudicated amounts.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Fatas Remarketing Group, LLC",
+      "role": "Buyer under the Asset Purchase Agreement and maker of the Seller Note; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Mapeirt Vehicle Auctions, Inc.",
+      "role": "Seller under the Asset Purchase Agreement and payee/holder of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Kestrow Land Partners LLC",
+      "role": "Landlord under the Dover Yard Lease, which is an Assigned Contract"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Asset Purchase Agreement Effective Date",
+      "value": "March 16, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$9,000,000",
+      "doc": "D2",
+      "section": "Section 1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note maturity",
+      "value": "36 months after the Closing Date",
+      "doc": "D2",
+      "section": "Section 2"
+    },
+    {
+      "id": "F5",
+      "key": "Asset Purchase Agreement governing law",
+      "value": "Laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 12.8"
+    },
+    {
+      "id": "F6",
+      "key": "Asset Purchase Agreement exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 12.9"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "APA prevails over Seller Note and Ancillary Documents, except signed amendments expressly referencing Section 12.12",
+      "doc": "D1",
+      "section": "Section 12.12"
+    },
+    {
+      "id": "F8",
+      "key": "Seller indemnity cap",
+      "value": "10% of the Purchase Price ($4,850,000)",
+      "doc": "D1",
+      "section": "Section 10.5(a)"
+    },
+    {
+      "id": "F9",
+      "key": "LOI survival period for representations and indemnities",
+      "value": "18 months after Closing",
+      "doc": "D3",
+      "section": "Paragraph 5"
+    },
+    {
+      "id": "F10",
+      "key": "Primary auction facility",
+      "value": "Dover Yard, 1400 Leipsic Road, Dover, Delaware, leased from Kestrow Land Partners LLC",
+      "doc": "D1",
+      "section": "Section 4.7(b)"
+    },
+    {
+      "id": "F11",
+      "key": "Side Letter date",
+      "value": "April 2, 2026",
+      "doc": "D4",
+      "section": "Heading"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "Landlord consent for Dover Yard Lease not a closing condition",
+      "description": "APA Section 4.7(b) has Seller disclose two things. The Dover Yard Lease with Kestrow Land Partners LLC covers the primary auction facility and is listed as an Assigned Contract in Section 2.1(c). That lease requires the landlord's prior written consent to any assignment and to any change of control of the tenant. APA Section 8.2(c), however, says the Required Consents that are conditions to Buyer's obligation to close 'shall consist solely of' the transfer of the Delaware motor vehicle auction dealer license and the consent of the floor-plan lender. Section 6.4 requires Seller only to use commercially reasonable efforts to obtain other consents, and nothing deals with the lease consent after closing. Read together, Fatas can be required to close and pay $48.5 million without a valid assignment of the site where the business actually operates. The lease would then be in default, or would sit with Seller subject to termination by the landlord.",
+      "doc": "D1",
+      "section": "Section 8.2(c)",
+      "detect_terms": [
+        "shall consist solely of"
+      ],
+      "expected_finding": "The landlord's consent to assign the Dover Yard Lease, which Section 4.7(b) says is required, is missing from the exclusive Required Consents closing condition in Section 8.2(c), so Fatas could be forced to close without its primary auction site; the consent should be added as a closing condition or backed by a specific indemnity or escrow.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "survival_gap",
+      "label": "Six-month survival cuts off indemnity for pre-closing title and odometer claims",
+      "description": "APA Section 10.1 provides that all representations, warranties and covenants, and all indemnification obligations under Section 10.2 (including for Excluded Liabilities), survive only until 'six (6) months following the Closing Date'. Under Section 2.4(d), Excluded Liabilities include claims arising from vehicles sold at Seller's auctions before Closing, including title defects and odometer misstatements. Consumer and dealer odometer claims under federal law may be brought up to two years after the violation, and title defects often surface on resale well after six months. The LOI (Paragraph 5) recorded an agreed survival period of 18 months. As drafted, Fatas, which acquires the auction platform and its customer relationships, loses recourse for successor-liability claims long before they are likely to be asserted.",
+      "doc": "D1",
+      "section": "Section 10.1",
+      "detect_terms": [
+        "six (6) months following the Closing Date"
+      ],
+      "expected_finding": "The six-month survival period in APA Section 10.1 also governs the indemnity for Excluded Liabilities under Section 2.4(d), which is shorter than both the 18 months agreed in the LOI and the limitations period for odometer and title claims; survival should be extended to at least 18 months, and Excluded Liabilities indemnity should survive until the statute of limitations runs.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "Side Letter narrows Excluded Liabilities carve-out from the indemnity cap",
+      "description": "APA Section 10.5(a) caps Seller's indemnity at 10% of the Purchase Price ($4,850,000). Section 10.5(b) carves Fraud and all Excluded Liabilities out of that cap. The Side Letter dated April 2, 2026, in its Paragraph 3, 'clarifies' that the carve-out applies 'solely to Excluded Liabilities constituting Taxes'. That change puts pre-closing title, odometer and consignor-payment liabilities back under the cap. The Side Letter is signed by both parties and expressly references Section 12.12. It therefore satisfies the APA's precedence override in Section 12.12 and controls. Fatas's uncapped protection for the very liabilities it refused to assume is reduced to a shared $4.85 million cap.",
+      "doc": "D4",
+      "section": "Paragraph 3",
+      "detect_terms": [
+        "solely to Excluded Liabilities constituting Taxes"
+      ],
+      "expected_finding": "Because the Side Letter meets the Section 12.12 amendment requirement, it effectively subjects non-tax Excluded Liabilities (title, odometer and consignor claims) to the 10% cap; Fatas should rescind or correct Paragraph 3 so that all Excluded Liabilities stay uncapped.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "Seller Note governed by New Jersey law and forum",
+      "description": "APA Sections 12.8 and 12.9 choose Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery. Seller Note Section 9 chooses 'the laws of the State of New Jersey' and submits disputes to the Superior Court of New Jersey, Mercer County. Fatas's main remedy for indemnity claims is to set them off against note payments under Note Section 4, so set-off disputes would be heard in New Jersey under New Jersey law. Indemnity entitlement, by contrast, would be decided in Delaware Chancery. This risks parallel proceedings and inconsistent results, and it lets Seller accelerate the note in New Jersey while the indemnity claim is pending in Delaware. APA Section 12.12 does not cure this: it addresses conflicting terms, not the parties' separate submission to a New Jersey forum for note enforcement.",
+      "doc": "D2",
+      "section": "Section 9",
+      "detect_terms": [
+        "laws of the State of New Jersey",
+        "Superior Court of New Jersey"
+      ],
+      "expected_finding": "The Seller Note's New Jersey law and forum clause conflicts with the APA's Delaware law and exclusive Chancery forum, which would split set-off and indemnity disputes across two courts; the note should be conformed to Delaware law and the Delaware Court of Chancery.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "'Losses' redefined in the Seller Note to limit set-off",
+      "description": "APA Section 1.1 defines 'Losses' broadly: losses, liabilities, damages, costs and reasonable attorneys' fees incurred or reasonably expected to be incurred. APA Section 10.7 lets Buyer set off Losses claimed in good faith against amounts due under the Seller Note. Seller Note Section 4 grants the set-off right but defines 'Losses' for the note as amounts 'as finally adjudicated' by a court of competent jurisdiction. Seller Note Section 6 makes any withheld payment not permitted by Section 4 an Event of Default that permits acceleration. Read together, Fatas cannot withhold for pending or good-faith claims without risking default. The set-off negotiated as security for the indemnity is defeated during the six-month survival window, before any judgment could be obtained.",
+      "doc": "D2",
+      "section": "Section 4",
+      "detect_terms": [
+        "as finally adjudicated"
+      ],
+      "expected_finding": "The Seller Note's narrower definition of 'Losses' limits set-off to finally adjudicated amounts and conflicts with the APA's good-faith set-off right, exposing Fatas to acceleration if it withholds; the note should cross-refer to the APA definition and to Section 10.7.",
+      "contradicts": null
+    }
+  ]
+}
