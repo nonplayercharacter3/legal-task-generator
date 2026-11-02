@@ -30,7 +30,7 @@ ROLE_BY_SYSTEM = {
 @pytest.fixture
 def server():
     fake = FakeModel(seed=7)
-    state = {"fail_next": 0, "drop_next": 0, "rate_next": 0, "auth": [], "models": [], "finish_reason": "stop", "think": ""}
+    state = {"fail_next": 0, "drop_next": 0, "rate_next": 0, "forbid_next": [], "auth": [], "models": [], "finish_reason": "stop", "think": ""}
 
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *a):
@@ -50,6 +50,11 @@ def server():
                 self.send_response(429)
                 self.send_header("x-ratelimit-reset", "7")
                 self.end_headers()
+                return
+            if state["forbid_next"]:
+                self.send_response(403)
+                self.end_headers()
+                self.wfile.write(state["forbid_next"].pop(0))
                 return
             if state["fail_next"]:
                 state["fail_next"] -= 1
@@ -191,3 +196,16 @@ def test_client_survives_dropped_connections_and_honours_rate_limits(server, mon
     assert "cannot assess" in out
     assert [r.ok for r in log.records] == [False, False, True]
     assert slept[1] == 7  # waited as long as the 429 asked
+
+
+def test_client_retries_a_bare_403_but_not_a_real_refusal(server, monkeypatch):
+    url, state = server
+    monkeypatch.setenv("NO_PROXY", "127.0.0.1")
+    monkeypatch.setenv("no_proxy", "127.0.0.1")
+    monkeypatch.setattr("ltg.models.time.sleep", lambda s: None)
+    payload = render_input({"instruction": "x", "files": [], "steps": []})
+    state["forbid_next"] = [b""]
+    assert "cannot assess" in OpenAICompatClient(url, "m", max_retries=3).complete("solver", prompts.SOLVER_WRITE, payload)
+    state["forbid_next"] = [b'{"error": "invalid api key"}']
+    with pytest.raises(ModelError, match="invalid api key"):
+        OpenAICompatClient(url, "m", max_retries=3).complete("solver", prompts.SOLVER_WRITE, payload)
