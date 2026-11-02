@@ -1,4 +1,5 @@
-# vLLM OpenAI-compatible server for Qwen3-32B (FP8) on one 80 GB A100, namespace ecepxie.
+# vLLM OpenAI-compatible server for Qwen3.8-27B (FP8) on one 80 GB A100, namespace ecepxie. The same checkpoint NRP
+# hosts as qwen3-small (our solver), so the two endpoints can be compared; a fine-tuned model swaps in here.
 #
 # A bare Pod on purpose. NRP policy (nrp.ai/documentation/userdocs/start/policies, read 2026-10-18):
 # Deployments may not request GPUs, Jobs may not run commands that never end (a server), and a pod without a
@@ -6,16 +7,16 @@
 # So this pod is for a working session only. Delete it as soon as the run ends; an idle pod holds the GPU.
 #
 #   kubectl apply -n ecepxie -f deploy/nautilus/pvc.yaml               # once
-#   kubectl apply -n ecepxie -f deploy/nautilus/vllm-qwen3-32b.yaml
-#   kubectl logs -n ecepxie -f ltg-vllm-qwen3-32b                  # ready at "Application startup complete"
-#   kubectl port-forward -n ecepxie pod/ltg-vllm-qwen3-32b 8000:8000
-#   kubectl delete pod -n ecepxie ltg-vllm-qwen3-32b               # when done
+#   kubectl apply -n ecepxie -f deploy/nautilus/vllm-qwen.yaml
+#   kubectl logs -n ecepxie -f ltg-vllm-qwen                  # ready at "Application startup complete"
+#   kubectl port-forward -n ecepxie pod/ltg-vllm-qwen 8000:8000
+#   kubectl delete pod -n ecepxie ltg-vllm-qwen               # when done
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ltg-vllm-qwen3-32b
+  name: ltg-vllm-qwen
   labels:
-    app: ltg-vllm-qwen3-32b
+    app: ltg-vllm-qwen
 spec:
   restartPolicy: Never
   activeDeadlineSeconds: 21600          # 6 hours, the interactive pod limit; ends a forgotten pod
@@ -31,9 +32,10 @@ spec:
     - name: vllm
       image: vllm/vllm-openai:v0.30.0     # CUDA 13, needs driver 580+; every NRP GPU node had 580+ on 2026-10-18
       args:
-        - Qwen/Qwen3-32B-FP8                # ~33 GB of weights; A100 runs FP8 as weight-only (Marlin)
-        - --served-model-name=Qwen/Qwen3-32B
-        - --max-model-len=40960             # the model's native window; longer needs YaRN
+        - Qwen/Qwen3.8-27B-FP8              # ~31 GB of weights; A100 runs FP8 as weight-only (Marlin)
+        - --served-model-name=qwen3.8-27b
+        - --language-model-only             # skip the vision encoder: text only, more memory for the cache
+        - --max-model-len=131072            # a solver prompt (~31k) plus a 32k memo, with room; native is 262k
         - --gpu-memory-utilization=0.90
         - --reasoning-parser=qwen3          # thinking goes to reasoning_content, not content
         - --port=8000
