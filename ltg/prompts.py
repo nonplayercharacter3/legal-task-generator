@@ -27,6 +27,8 @@ Rules:
   must stay problems on a careful reading of the whole folder: no design that the documents themselves cure,
   justify or make harmless (a definition expressly limited "for purposes of this Section", a later document that
   fixes the point, a change that actually favours the client).
+  Describe each issue as the documents bear it out: a clause that binds both parties alike is not "one-sided";
+  say instead how it hurts the client.
 - Make issues require analysis, not just spotting. At most one issue may be visible from a single clause read on
   its own (a plainly one-sided clause). Every other issue must appear only when two provisions or two documents are
   read together: a carve-out that swallows a cap through a cross-reference, a precedence clause that lets the flawed
