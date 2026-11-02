@@ -102,6 +102,11 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
     # reading that as the supply agreement's Effective Date rejected a sound task (2026-10-18 pilot).
     owner = {d.id: f"{d.kind} ({d.filename})" for d in ledger.documents}
     planted = {(fid, fname.get(i.doc)) for i in ledger.issues for fid in i.contradicted()}
+    # An issue whose own description quotes a fact's value, word for word, is about that fact in its document even
+    # when the ledger writer left `contradicts` empty (round 9: an escrow agreement that cut the SPA's cap carve-outs).
+    # Short values ("30 days") turn up in descriptions by chance, so only values of 5 words or more count.
+    planted |= {(f.id, fname.get(i.doc)) for i in ledger.issues for f in ledger.facts
+                if f.doc != i.doc and len(_words(_plain(f.value)).split()) >= 5 and _words(_plain(f.value)) in _words(_plain(i.description))}
     payload = {
         "documents": [{"filename": n, "content": c} for n, c in docs.items()],
         "queries": [{"id": f"{f.id}@{n}", "key": f.key, "of": owner[f.doc], "filename": n} for f in ledger.facts for n in docs],
