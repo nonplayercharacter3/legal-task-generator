@@ -5,7 +5,8 @@
 
 For every matter folder it judges the solver attempts (solver/attempt_N.md), the gold and flawed answers, and any
 extra memos under --memos/<matter>/attempt_N.md, once per condition ("hints", "nohints") and repeat. Then a referee
-that sees the ledger regrades every criterion where the two conditions disagree, to say which one was right.
+that sees the ledger regrades every criterion where the two conditions disagree, to say which one was right, and
+every issue criterion on the extra memos, to measure how often the judge passes what the referee would not.
 Calls are cached as JSON under the output folder, so a rerun only makes the calls that are missing.
 Prints and saves summary.json: pass rates, run-to-run noise, flips between conditions, gold/flawed checks, the
 referee's verdicts, and each matter's solver pass rate under each condition.
@@ -41,7 +42,7 @@ def load_matter(folder: Path, memos: Path | None) -> dict:
         responses |= {f"memo_{p.stem.split('_')[1]}": p.read_text() for p in sorted((memos / folder.name).glob("attempt_*.md"))}
     responses |= {"gold": answers["gold"], "flawed": answers["flawed"]}
     return {
-        "name": folder.name,
+        "name": f"{folder.parent.parent.name}/{folder.name}",  # matter ids repeat across runs
         "rubric": rubric,
         "ledger": json.loads((folder / "ledger.json").read_text()),
         "flawed_omits": answers["flawed_omits"],
@@ -116,6 +117,18 @@ def main() -> None:
     with ThreadPoolExecutor(a.workers) as pool:
         verdicts = list(pool.map(lambda x: referee(client, next(m for m in matters if m["name"] == x["matter"]), x["resp"], x["crit"], out), flips))
 
+    # Absolute leniency: the referee regrades every issue criterion on the extra memos (the solver we care about).
+    checks = [(m, r, c) for m in matters for r in m["responses"] if r.startswith("memo_") for c in m["rubric"] if c["kind"] == "issue"]
+    with ThreadPoolExecutor(a.workers) as pool:
+        ref = list(pool.map(lambda x: referee(client, *x, out), checks))
+    judged = [g[(m["name"], r, "hints", 1)][c["id"]] for m, r, c in checks]
+    audit = {
+        "issue_criteria": len(checks),
+        "judge_pass_referee_fail": sum(j and not f for j, f in zip(judged, ref)),
+        "judge_fail_referee_pass": sum(f and not j for j, f in zip(judged, ref)),
+        "detail": [{"matter": m["name"], "resp": r, "crit": c["id"], "judge": j, "referee": f} for (m, r, c), j, f in zip(checks, judged, ref) if j != f],
+    }
+
     def rate(cond, kind=None, resp_pred=lambda r: True):
         xs = [g[(m["name"], r, cond, k)][c["id"]] for m in matters for r in m["responses"] if resp_pred(r)
               for c in m["rubric"] if kind in (None, c["kind"]) for k in range(1, a.repeats + 1)]
@@ -162,8 +175,10 @@ def main() -> None:
             for m in matters
         },
     }
+    summary["audit_extra_memo_issues"] = audit
     (out / "summary.json").write_text(json.dumps(summary, indent=2))
-    print(json.dumps({k: v for k, v in summary.items() if k != "flips"} | {"flips": {k: v for k, v in summary["flips"].items() if k != "detail"}}, indent=2))
+    print(json.dumps({k: v for k, v in summary.items() if k not in ("flips", "audit_extra_memo_issues")}
+                     | {k: {x: y for x, y in summary[k].items() if x != "detail"} for k in ("flips", "audit_extra_memo_issues")}, indent=2))
 
 
 if __name__ == "__main__":
