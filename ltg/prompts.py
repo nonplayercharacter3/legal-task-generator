@@ -32,6 +32,9 @@ Rules:
   read together: a carve-out that swallows a cap through a cross-reference, a precedence clause that lets the flawed
   document control, a defined term that means something different in another document, a deadline that has to be
   computed from dates stated in different places. Say in the description which provisions combine.
+- An issue may depend only on what the documents say. If it turns on a deal event (a pending sale of the client or
+  its parent, a closing, a notice sent), state that event in one of the documents (a recital, a letter, an email):
+  the summary never reaches the associate, so an event recorded only there makes the issue unfindable.
 - Never let an issue depend on today's date: the task may be solved at any later time. A deadline that has passed or
   is about to pass must be measured against a date stated in the documents (a signing date, a letter's date, a
   delivery confirmation), and the description must name that date.
