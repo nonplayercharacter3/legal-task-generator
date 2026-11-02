@@ -4,14 +4,15 @@ Context for any Claude Code session working in this repo (for people, `docs/stag
 English). Read this first, then README.md, then "Working with other people and sessions" below before you change
 anything.
 
-## Now (updated 2026-10-27)
+## Now (updated 2026-11-02)
 
 **Goal.** Generate long-horizon contract-review tasks (instruction, matter folder, all-pass rubric) that the lab can
 train open models on. The tasks must be sound by construction and hard but solvable for a ~27B open model.
 
 **Stage.** Phase 1 is done: its exit standard (see "Pilot standard") was met in cloud round 5 on 2026-10-18. Next is
 round 6, with Opus generating and Haiku solving as in round 5, run by the second contributor on their Max plan.
-Round 7 is the first round with an open model (NRP `qwen3-small`) solving; its memo call was fixed on 2026-10-27. Sirui She's
+Rounds 7 to 11 (2026-11-02) had NRP `qwen3-small` solving: round 9 met the standard's numbers (2 of 3 accepted, no
+errors), pending Sirui She's read of the two tasks; rounds 10 and 11 accepted none. Sirui She's
 laptop is set up for pilot rounds (LAB clone, LAB index, NRP key in `~/.zshenv`; checked 2026-10-24).
 
 **Plan.** Steps 1 and 2 run in parallel: step 1 needs Claude, step 2 does not. Each step says what done looks like.
@@ -27,14 +28,30 @@ laptop is set up for pilot rounds (LAB clone, LAB index, NRP key in `~/.zshenv`;
    12 memos written (2,600 to 6,900 words), 190 calls, 0 failed, 2 to 6 minutes per attempt, 20 wrapped actions
    handled. Proxy issue recall (NRP `qwen3` against the ledger, not our judge) 47 of 51; all 3 attempts on s5-m0001
    missed I2 (free assignment in the supply agreement).
-3. **Round 7**, after step 1: `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml --seed 7
-   --out runs/pilot7_nrp`. First round with Qwen solving. Needs an NRP key
-   (`NRP_LLM_API_KEY`, from the NRP portal). Done: the round meets the pilot standard with Qwen solving.
-4. **Judge leniency** (known weakness 1): rerun the same matters with `gates.judge_hints` on and off, compare solver
-   pass rates, pick a default.
-5. **GPUs on Nautilus**: serve a Qwen model with vLLM, then fine-tune on accepted tasks. `deploy/nautilus/` holds a
-   bare Pod serving Qwen3-32B (FP8) on one A100 80GB and a PVC for the weights; the plan starts with ~8B, so swap
-   the model before the first run.
+3. **Qwen rounds: numbers met in round 9, 2026-11-02.** `configs/pilot_nrp_solver.toml`, seeds 7 to 11, results
+   in `runs/pilot7_nrp` to `runs/pilot11_nrp` (branch `plan/phase2-unattended`). Accepted 0, 0, 2, 0, 0 of 3.
+   Round 9 accepted s9-m0002 (glass supply, dev, 0.33) and s9-m0003 (dental MSA renewal, train, 0.33), 0 model
+   errors; read in full by Claude, one weak criterion each (fixed upstream), still to be read by Sirui She. Defect
+   classes fixed, one commit each: extractor trimming a value its own document states (e144c20); a contradiction
+   not marked in `contradicts` but quoted in the issue (48206e3); a fix filed as a fact criterion (e134b3f; e2951d9,
+   which allowed several issue criteria per issue, bloated rubrics to 15 to 17 criteria and caused round 8's 0 of 3);
+   an issue resting on a deal event stated only in the ledger summary (6593250); a mutual clause called one-sided
+   (261f669); a bare 403 from NRP not retried (4703747); issues cured by their own cross-references (c0a90fa, not
+   yet run). Correct rejections: Qwen missed a detail in each of 3 attempts (s7-m0002, s10-m0002: never turned a
+   renewal window into dates). Since round 11, NRP's gateway answers every chat request with an empty 403, even
+   with a bad key, while `/v1/models` works; round 11 lost 2 matters to it. Done: Sirui She's read of round 9.
+4. **Judge leniency: done 2026-11-02, keep `judge_hints = true`.** `scripts/judge_leniency.py`, `runs/judge_leniency*`:
+   11 matters, 67 responses, 1,352 criterion grades per condition. Hints on vs off: 0 settled flips (5 and 7 grades
+   of noise), pass rates 0.923 vs 0.921; gold passed 99.5% and 100% of criteria; a flawed answer got credit for its
+   omitted issue 2 and 1 times in 26. A ledger-aware referee (also Opus, so not lawyer calibration) regraded all 102
+   Qwen issue grades: no judge pass it would fail, 3 judge fails it would pass, all on criteria bundling several asks.
+5. **GPUs on Nautilus: serving works, fine-tuning not started.** `deploy/nautilus/vllm-qwen.yaml` serves
+   Qwen3.8-27B-FP8 (the same model as `qwen3-small`) with vLLM 0.30.0 on one A100 80GB; weights cached on PVC
+   `ltg-hf-cache` (100Gi, kept). Start with `kubectl apply`, then `kubectl port-forward pod/ltg-vllm-qwen 8000:8000`
+   and use `configs/vllm_nautilus_solver.toml`. Queued ~20 minutes for an A100, ready ~7 minutes later, KV cache
+   623k tokens, honours `reasoning_effort = "low"`. `scripts/solve_only.py` against it (`runs/qwen_solver_smoke_vllm`):
+   12 of 12 memos, 0 failed calls, median 8.9 minutes per attempt (NRP 2.5), all-pass 3 of 12 as on NRP. Delete the
+   pod when done (it also stops itself after 6 hours). Next: fine-tune on accepted tasks.
 
 Loose ends: branch `claude/affectionate-perlman-e65dbe` (local only, worktree under `.claude/worktrees/`, 2 commits
 from 2026-10-18) adds an EDGAR fetcher and is not merged.
@@ -90,7 +107,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 ## Current status (2026-10-24)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 87 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+- 90 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
   was mutation-checked on 2026-10-14: disabling it makes a test fail.
 - First real-model runs (2026-10-15, Claude Sonnet through the Agent SDK, one matter each, seed 1):
   runs 1 to 3 were rejected at `consistency`, each exposing a gap the fake model hid (exact string matching, facts
@@ -123,7 +140,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   solves (Sirui She's decision), as the closer reference for the open models the lab trains. 847 calls, ~11.9M input
   and ~2.1M output tokens over the five rounds, no errors, no usage limit hit.
 - Nautilus (2026-10-18): Sirui She can read the lab namespace `ecepxie` through kubectl with UCSD login
-  (`~/.kube/config` from https://nrp.ai/config; never commit it or any token). Nothing of ours has run there yet.
+  (`~/.kube/config` from https://nrp.ai/config; never commit it or any token). Our vLLM pod ran there on 2026-11-02 (see "Now", step 5).
   The pod freeze seen on 2026-10-18 (`reached-quota` at `pods: 0`) was lifted by 2026-10-24: the quota reads
   7/200, `kubectl auth can-i create pods` and `persistentvolumeclaims` say yes, and 0 of 12 A100s were in use.
   NRP limits a pod without a controller to 2 GPUs, 32 GB RAM and 6 hours. The namespace may hold up to 12 A100s at once, requested as `nvidia.com/a100` (opportunistic pods excepted), and no
@@ -207,17 +224,15 @@ Stop and ask Sirui She if a round hits the usage limit or after 5 rounds without
 
 ## Known weaknesses (highest priority first)
 
-1. **Judge leniency not measured.** `gates.judge_hints` exists; run the same matters on a real model with it on
-   and off and compare solver pass rates before choosing a default.
-2. **Solver context grows with the folder.** The transcript keeps every page read (~30k tokens for five long
+1. **Solver context grows with the folder.** The transcript keeps every page read (~30k tokens for five long
    documents). If a model's window is too small, drop old page text and keep the solver's own notes.
-3. **Short folders make the agentic solver read everything.** With 3 to 5 short documents the tool-using solver
+2. **Short folders make the agentic solver read everything.** With 3 to 5 short documents the tool-using solver
    behaves like the old one-prompt solver. The difficulty filter only bites once folders get longer or larger.
-4. **LAB index takes ~30 minutes to build.** LAB is ~455M words (mostly .docx); the index is saved under
+3. **LAB index takes ~30 minutes to build.** LAB is ~455M words (mostly .docx); the index is saved under
    `runs/.decontam_cache` and reused while LAB is unchanged, but a fresh cloud container must rebuild it.
 
 Smaller known gaps: no EDGAR fetcher (precedents come from local folders),
-judge not calibrated against lawyer grades, `solver_attempts = 1` rejects every task (a pass rate of 0 or 1 is
+judge not calibrated against lawyer grades (hints on vs off measured, no difference; see "Now", step 4), `solver_attempts = 1` rejects every task (a pass rate of 0 or 1 is
 always outside the band), and one fact lives in one document, which limits cross-document reasoning.
 
 ## How to verify changes

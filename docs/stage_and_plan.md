@@ -1,6 +1,6 @@
 # Where the project stands and what comes next
 
-Plain-English summary for people joining the project (updated 2026-10-27). The working detail for Claude Code
+Plain-English summary for people joining the project (updated 2026-11-02). The working detail for Claude Code
 sessions is in `CLAUDE.md` ("Now"); this page says the same thing without the jargon.
 
 ## What we are building
@@ -35,11 +35,18 @@ Claude rounds on their own machine.
    mid-sized open model finds hard but possible. The university's hosted Qwen model (about 27 billion parameters,
    free for research) handled the hands-on part well from the start, but every answer got cut off at the last step.
    With the fix below it finished all 12 test answers. See "Fixing the open model's memo".
-3. **Round 7.** The first full round with Qwen as the solver.
-4. **Check the grader.** A model grades each answer against the checklist. We have not measured whether it is too
-   generous. We will grade the same answers with and without the extra hints it gets, and compare.
-5. **Our own GPUs.** The university cluster (Nautilus) has unfrozen our account, and we may use up to 12 high-end
-   GPUs at once. Next we run our own copy of an open model there, then train it on the assignments.
+3. **Rounds with Qwen solving (2026-11-02).** Five rounds (7 to 11). Round 9 kept 2 of 3 assignments with no
+   errors, which meets our bar on the numbers; a person still has to read those two in full. The other rounds kept
+   none. Most rejections were the tool being wrong about a sound assignment, and each kind was fixed before the next
+   round; the rest were fair (Qwen missed something, or the hidden problem undid itself). In rounds 10 and 11 the
+   university's hosted model service started refusing every request, which cost 3 assignments.
+4. **Check the grader (done 2026-11-02).** We graded 67 answers twice, with and without the grader's extra hints:
+   the results were the same (92% of checklist items passed either way). A second, more careful grader agreed with
+   every pass the first one gave. We keep the hints. Both graders are Claude models, so this is not yet a check
+   against real lawyers.
+5. **Our own GPUs (serving done 2026-11-02).** We ran the same Qwen model on one of the university cluster's GPUs
+   (Nautilus). It wrote all 12 test answers with no failures and scored the same as the hosted copy, but took
+   about 9 minutes per answer instead of 2.5. Next: train it on the accepted assignments.
 
 ## Fixing the open model's memo
 
@@ -79,7 +86,6 @@ says to slow down.
 
 - Merge or drop an older, unfinished feature that pulls real contracts from SEC filings to use as drafting examples
   (branch `claude/affectionate-perlman-e65dbe`).
-- Commit or keep local the setup files for running a model on Nautilus (`deploy/nautilus/`).
 - Whether the second contributor commits under their own name; the repo rule says only Sirui She authors commits.
 
 ## How we work together
