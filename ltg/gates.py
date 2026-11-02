@@ -125,6 +125,10 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
                 continue
             if n == fname[f.doc] and _words(_plain(f.value)).strip() and _words(_plain(f.value)) in _words(_plain(v)):
                 continue  # its own document states the value word for word, with drafting around it (a fallback court)
+            # The extractor can drop a qualifier the document states ("exclusively" in a forum clause, 2026-11-02 pilot).
+            # ponytail: 4+ words only, so a short value ("45 days") stated for something else in the document cannot pass
+            if n == fname[f.doc] and len(_words(_plain(f.value)).split()) >= 4 and _words(_plain(f.value)) in _words(_plain(docs[n])):
+                continue
             if n != fname[f.doc] and (not _norm(v) or (f.id, n) in planted):
                 continue  # silent elsewhere, or a deliberate contradiction
             differ.append({"fact": f.id, "key": f.key, "filename": n, "ledger": f.value, "document": v})

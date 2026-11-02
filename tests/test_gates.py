@@ -153,3 +153,14 @@ def test_consistency_accepts_the_ledger_value_word_for_word_inside_its_own_docum
     digits = Facts({"F1@a.md": "130 days"}, same=False)
     ledger.facts[0].value = "30 days"
     assert not gates.consistency(digits, ledger, {"a.md": "...", "b.md": "..."}).passed  # whole words only
+
+
+def test_consistency_trusts_the_document_text_over_an_extractor_that_drops_a_qualifier():
+    ledger = _ledger()
+    ledger.facts[0].value = "courts located in Wilmington, Delaware, exclusively"
+    docs = {"a.md": "16.2 Each Party submits to the **courts located in Wilmington, Delaware, exclusively**.", "b.md": "..."}
+    dropped = Facts({"F1@a.md": "the courts located in Wilmington, Delaware"}, same=False)
+    assert gates.consistency(dropped, ledger, docs).passed
+    ledger.facts[0].value = "45 days"  # too short to trust a bare text match
+    docs["a.md"] = "Buyer may object within 45 days."
+    assert not gates.consistency(Facts({"F1@a.md": "30 days"}, same=False), ledger, docs).passed
