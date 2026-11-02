@@ -28,9 +28,13 @@ Claude rounds on their own machine.
 
 ## What comes next
 
-1. **Round 6 (second contributor, now).** The same setup as round 5. It is the first real test of two changes:
-   a fix to one of the quality checks, and more variety in the assignments (before, the same client names and
-   contract types kept coming back).
+1. **Rounds 6, 8 and 9 (ran 2026-11-02, standard not met).** The same setup as round 5, run on Sirui She's laptop.
+   1 of 9 assignments accepted. Three were rightly turned away as too easy: the weaker model found every problem in
+   all three tries. The other five each exposed a flaw in how assignments are built or checked (a checklist that
+   asked for one particular argument, an assumption written only in the private answer key, a check that misread a
+   clause), and each flaw is fixed. In the last round every assignment passed every quality check; the one thing
+   left is difficulty. Next is a choice for Sirui She: measure difficulty against the open model the lab will
+   train (round 7), or make the assignments harder. The variety change worked: nine industries, no repeated names.
 2. **Get an open model to finish its answers (done 2026-10-27).** The point of the project is assignments that a
    mid-sized open model finds hard but possible. The university's hosted Qwen model (about 27 billion parameters,
    free for research) handled the hands-on part well from the start, but every answer got cut off at the last step.

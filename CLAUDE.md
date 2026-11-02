@@ -4,21 +4,35 @@ Context for any Claude Code session working in this repo (for people, `docs/stag
 English). Read this first, then README.md, then "Working with other people and sessions" below before you change
 anything.
 
-## Now (updated 2026-10-27)
+## Now (updated 2026-11-02)
 
 **Goal.** Generate long-horizon contract-review tasks (instruction, matter folder, all-pass rubric) that the lab can
 train open models on. The tasks must be sound by construction and hard but solvable for a ~27B open model.
 
-**Stage.** Phase 1 is done: its exit standard (see "Pilot standard") was met in cloud round 5 on 2026-10-18. Next is
-round 6, with Opus generating and Haiku solving as in round 5, run by the second contributor on their Max plan.
-Round 7 is the first round with an open model (NRP `qwen3-small`) solving; its memo call was fixed on 2026-10-27. Sirui She's
-laptop is set up for pilot rounds (LAB clone, LAB index, NRP key in `~/.zshenv`; checked 2026-10-24).
+**Stage.** Phase 1 is done: its exit standard (see "Pilot standard") was met in cloud round 5 on 2026-10-18. On
+2026-11-02 Sirui She's laptop (now on the Max plan) ran rounds 6, 8 and 9 (Opus generating, Haiku solving; seed 7
+stays reserved for the Qwen round). None met the standard: 1, 0 and 0 accepted. Every false rejection now has a fix,
+and in round 9 all three matters passed every quality gate. What blocks the standard now is difficulty: Haiku
+passed 3 of 3 attempts on 3 of the 9 matters. Choosing how to make tasks harder, or which solver sets the bar, is
+Sirui She's decision. Sirui She's laptop is set up for pilot rounds (LAB clone, LAB index, NRP key in `~/.zshenv`).
 
-**Plan.** Steps 1 and 2 run in parallel: step 1 needs Claude, step 2 does not. Each step says what done looks like.
-1. **Round 6** (second contributor, now): `.venv/bin/python -m ltg run --config configs/claude_pilot_opus.toml
-   --seed 6 --out runs/pilot6_haiku`. First real run of the issue verifier's client fix and the variety sampler.
-   Done: the round meets the pilot standard, every rejection is written up, and the results are in a PR (see
-   "Working with other people and sessions").
+**Plan.** Each step says what done looks like.
+1. **Rounds 6, 8, 9: ran 2026-11-02, standard not met.** `configs/claude_pilot_opus.toml`, `runs/pilot{6,8,9}_haiku`,
+   branch `pilot/round6-haiku`. 568 calls, ~8.7M input and ~1.8M output tokens, 0 errors, about 45 minutes per round.
+   Accepted: s6-m0002 (distribution agreement, 5 documents, 5 issues, pass rate 0.33). Rejections and causes:
+   - Too easy, correct (Haiku truly found every issue): s6-m0001, s9-m0001, s9-m0003.
+   - s6-m0003 `rubric_tests`, correct: the fix for I1 was filed as a fact criterion. Fixed (rubric writer).
+   - s8-m0003 `consistency`, **false**: the extractor dropped "exclusively" from a forum clause. Fixed (code: a
+     value of 4+ words found verbatim in its own document passes).
+   - s8-m0002 `issue_check`, correct: "subject to the limitations set forth in Section 8.7" also pulled in 8.7(c),
+     which exempted the very claims the issue said were capped. Fixed (ledger writer).
+   - s8-m0001 `solver_check` 0 of 3, **false**: all memos found the issue but C3 also demanded citing a precedence
+     clause the conclusion does not need. Fixed (rubric writer: require the conclusion, not one route).
+   - s9-m0002 `solver_check` 0 of 3, correct: issue I1 rested on a planned sale stated only in the ledger summary.
+     Fixed (ledger writer). The last two fixes have not run on a real model yet.
+   Next (Sirui She decides): run round 7 with Qwen solving, the model the tasks are meant for, so "too easy" is
+   measured against it; or make tasks harder for Haiku (longer folders, more cross-document issues). Done: a round
+   meets the pilot standard and its results are in a PR.
 2. **Make qwen3-small write its memo: done 2026-10-27.** Every memo call had failed on 2026-10-24 (32k `max_tokens`
    or 600 s timeouts) because NRP runs the model at `reasoning_effort = "xhigh"` and it thinks for ~30k tokens
    (`docs/research/qwen_memo_length.md`). Fix: `extra_body` on a backend or role adds fields to each OpenAI-compatible
@@ -27,7 +41,7 @@ laptop is set up for pilot rounds (LAB clone, LAB index, NRP key in `~/.zshenv`;
    12 memos written (2,600 to 6,900 words), 190 calls, 0 failed, 2 to 6 minutes per attempt, 20 wrapped actions
    handled. Proxy issue recall (NRP `qwen3` against the ledger, not our judge) 47 of 51; all 3 attempts on s5-m0001
    missed I2 (free assignment in the supply agreement).
-3. **Round 7**, after step 1: `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml --seed 7
+3. **Round 7** (Qwen solving): `.venv/bin/python -m ltg run --config configs/pilot_nrp_solver.toml --seed 7
    --out runs/pilot7_nrp`. First round with Qwen solving. Needs an NRP key
    (`NRP_LLM_API_KEY`, from the NRP portal). Done: the round meets the pilot standard with Qwen solving.
 4. **Judge leniency** (known weakness 1): rerun the same matters with `gates.judge_hints` on and off, compare solver
@@ -81,9 +95,8 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 - **Skeleton first, costing later.** Pengtao approved a preliminary implementation. No cost modeling yet.
 - **Backends.** Any OpenAI-compatible endpoint, or Claude through the Claude Agent SDK (`backend.kind = "claude_sdk"`).
   Pengtao's direction (2026-10-15): for Claude, use the $100/month subscription through the SDK (reimbursed), never
-  direct API calls. He confirmed this means the Max plan; Sirui She upgrades on the web after the App Store Pro period
-  ends on 2026-10-30 (the App Store price is $124). From 2026-10-27 the second contributor runs Claude rounds on their
-  own Max plan (Sirui She's decision). For GPUs, Nautilus (namespace `ecepxie`, see Current status). The runtime stays standard library only: the SDK
+  direct API calls. He confirmed this means the Max plan; Sirui She is on Max from 2026-11-02. The second contributor also runs Claude rounds on their own Max plan
+  (from 2026-10-27); Sirui She ran round 6 on the laptop. For GPUs, Nautilus (namespace `ecepxie`, see Current status). The runtime stays standard library only: the SDK
   is an optional extra (`pip install -e ".[claude]"`) imported only by that backend.
 
 ## Current status (2026-10-24)
