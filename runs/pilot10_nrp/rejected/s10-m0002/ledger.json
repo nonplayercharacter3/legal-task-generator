@@ -1,0 +1,185 @@
+{
+  "matter_id": "s10-m0002",
+  "summary": "Keisaiv Therapeutics, Inc., a specialty pharmaceutical company that markets a cold-chain biologic, Velnorix injection, in the United States, has signed a Master Services Agreement with Kedoul Specialty Logistics, LLC. Under it Kedoul provides third-party logistics, specialty distribution and patient support hub services for Velnorix. The folder holds the MSA, a Data Processing Addendum covering patient hub data, a GDP Quality Agreement, a Service Level Schedule and the notes of a kickoff meeting. The associate must review the folder for Keisaiv and write an issue-spotting memo to the supervising partner. Four issues are planted. (1) The MSA's exclusivity clause reaches all present and future products of Keisaiv and its Affiliates worldwide, although the deal covers only Velnorix in the U.S. (2) The MSA renews automatically for successive 3-year terms, with a narrow 30-day non-renewal window that must be computed from the Effective Date. (3) The Quality Agreement narrows the defined term 'Temperature Excursion', and the MSA's precedence clause makes that narrower definition control Kedoul's product-loss liability. (4) The DPA chooses Delaware law and Delaware courts, and because the DPA controls on personal data matters, data breach claims are split off from the MSA's New York law and forum.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Keisaiv Therapeutics, Inc.",
+      "role": "Client; specialty pharmaceutical company and customer under the MSA"
+    },
+    {
+      "id": "P2",
+      "name": "Kedoul Specialty Logistics, LLC",
+      "role": "Counterparty; provider of third-party logistics, specialty distribution and patient hub services"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "36 months from the MSA Effective Date",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA governing law",
+      "value": "Laws of the State of New York",
+      "doc": "D1",
+      "section": "16.1"
+    },
+    {
+      "id": "F4",
+      "key": "MSA exclusive forum",
+      "value": "State or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "16.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Quality Agreement for quality/storage/handling; DPA for Personal Data; otherwise MSA, then Service Level Schedule, then SOWs",
+      "doc": "D1",
+      "section": "16.4"
+    },
+    {
+      "id": "F6",
+      "key": "Product and territory covered by Quality Agreement",
+      "value": "Velnorix injection, distributed solely in the United States",
+      "doc": "D3",
+      "section": "2.1"
+    },
+    {
+      "id": "F7",
+      "key": "Velnorix labeled storage range",
+      "value": "2°C to 8°C",
+      "doc": "D3",
+      "section": "5.1"
+    },
+    {
+      "id": "F8",
+      "key": "MSA Temperature Excursion definition",
+      "value": "Any deviation, of any duration, outside the 2°C to 8°C labeled storage range",
+      "doc": "D1",
+      "section": "1.14"
+    },
+    {
+      "id": "F9",
+      "key": "Order fulfillment service level",
+      "value": "98% of conforming orders shipped same Business Day",
+      "doc": "D4",
+      "section": "3.1"
+    },
+    {
+      "id": "F10",
+      "key": "Service credit cap",
+      "value": "10% of monthly fees for the affected month",
+      "doc": "D4",
+      "section": "5.3"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "keisaiv_kedoul_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "keisaiv_kedoul_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "keisaiv_kedoul_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "keisaiv_kedoul_service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "velnorix_launch_kickoff_meeting_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "MSA §2.4 appoints Kedoul as Keisaiv's exclusive provider of logistics, distribution and hub services for 'Covered Products' in the 'Territory'. MSA §1 defines 'Covered Products' as any pharmaceutical product commercialized by Client or its Affiliates, now or in the future, and defines 'Territory' as throughout the world. The engagement is limited to Velnorix in the United States: Quality Agreement §2.1 states that Velnorix injection is distributed solely in the United States, and the Service Level Schedule covers only U.S. lanes. Read together with the §1 definitions, the exclusivity locks Keisaiv's entire present and future pipeline, worldwide, into Kedoul for the full term and every renewal. It would block Keisaiv from using other vendors for new launches or ex-U.S. distribution and would burden any partnering or out-licensing deal.",
+      "doc": "D1",
+      "section": "2.4",
+      "detect_terms": [
+        "any pharmaceutical product",
+        "throughout the world"
+      ],
+      "expected_finding": "The MSA's exclusivity, through the 'Covered Products' and 'Territory' definitions, extends to all of Keisaiv's and its Affiliates' products worldwide and should be narrowed to Velnorix in the United States, consistent with the Quality Agreement scope.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA §12.2 provides that after the 36-month Initial Term (§12.1, running from the March 1, 2024 Effective Date in the preamble), the MSA renews automatically for successive three-year renewal terms. Renewal can be avoided only by written notice of non-renewal delivered no earlier than 210 days and no later than 180 days before the end of the then-current term. Computed from the stated dates, the Initial Term ends February 28, 2027, so the only opt-out window for the first renewal runs from about August 2, 2026 to September 1, 2026. Notice outside that 30-day window is ineffective. Because of the exclusivity in §2.4, a missed window locks Keisaiv into three more years of exclusive dependence on Kedoul.",
+      "doc": "D1",
+      "section": "12.2",
+      "detect_terms": [
+        "successive three (3) year renewal terms",
+        "no earlier than two hundred ten (210) days"
+      ],
+      "expected_finding": "The MSA auto-renews for long 3-year terms with a narrow 30-day non-renewal window (about August 2 to September 1, 2026 for the first renewal, computed from the March 1, 2024 Effective Date), and the clause should be changed to shorter renewal terms and a notice-anytime-before-expiry or termination-for-convenience right.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "MSA §1.14 defines 'Temperature Excursion' as any deviation of any duration outside the 2°C to 8°C labeled storage range. MSA §9.3 makes Kedoul bear the replacement cost of any Velnorix subject to a Temperature Excursion while in Kedoul's custody. Quality Agreement §1.9 defines the same term as a deviation outside 2°C to 8°C lasting more than sixty consecutive minutes. MSA §16.4 provides that the Quality Agreement prevails on quality, storage and handling matters, so the narrower Quality Agreement definition arguably controls the §9.3 liability. Short excursions can still require Keisaiv to quarantine or destroy a high-value biologic under its stability data, and under this reading Kedoul would bear none of that cost.",
+      "doc": "D3",
+      "section": "1.9",
+      "detect_terms": [
+        "more than sixty (60) consecutive minutes"
+      ],
+      "expected_finding": "The Quality Agreement's narrower 'Temperature Excursion' definition, given priority by MSA §16.4, cuts back Kedoul's product-loss liability under MSA §9.3, so the definitions should be conformed or §9.3 should state that the MSA definition governs for liability purposes.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "DPA §12 provides that the DPA, and any dispute arising out of the processing of Personal Data, is governed by the laws of the State of Delaware and subject to the exclusive jurisdiction of the courts of the State of Delaware. MSA §16.1 and §16.2 choose New York law and the courts of New York County. MSA §16.4 gives the DPA priority on matters concerning Personal Data, so the DPA's choice prevails over the MSA's for those disputes. A patient-data breach claim, which is Keisaiv's most significant exposure from the hub services, would therefore be litigated under different law and in a different forum from related MSA claims such as indemnity, termination and fees. That split invites parallel proceedings and inconsistent results.",
+      "doc": "D2",
+      "section": "12",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "courts of the State of Delaware"
+      ],
+      "expected_finding": "The DPA's Delaware governing-law and exclusive-forum clause conflicts with the MSA's New York choices and, because of the DPA's priority on Personal Data matters, would control breach disputes, so it should be conformed to New York law and the New York County forum.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    }
+  ]
+}

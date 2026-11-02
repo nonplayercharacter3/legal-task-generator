@@ -1,0 +1,196 @@
+{
+  "matter_id": "s8-m0003",
+  "summary": "Ziteir Aerial Robotics, Inc. (the firm's client) supplies ZX-40 autonomous crop-spraying drones, a fleet telemetry platform and deployment services to Lakix Grower Services, LLC, an agronomy services provider, under a Delaware-law Supply Agreement. The agreement is supplemented by a Data Processing Addendum covering grower field data and a Statement of Work for fleet deployment and pilot training. Ziteir is about to be acquired by Okonvale Agritech Holdings, Inc. The supervising partner wants an issue-spotting memo on the supply relationship before closing. The folder also contains Ziteir's lease for its drone test hangar, which is unrelated.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Ziteir Aerial Robotics, Inc.",
+      "role": "Supplier of agricultural spray drones, telemetry platform and deployment services; the firm's client; target of a pending acquisition"
+    },
+    {
+      "id": "P2",
+      "name": "Lakix Grower Services, LLC",
+      "role": "Customer; agronomy services provider that buys and deploys drones and supplies grower field data"
+    },
+    {
+      "id": "P3",
+      "name": "Okonvale Agritech Holdings, Inc.",
+      "role": "Acquirer of all outstanding equity of Ziteir under a pending merger"
+    },
+    {
+      "id": "P4",
+      "name": "Pellbrook Airfield Properties, LLC",
+      "role": "Landlord under Ziteir's hangar and office lease (distractor document)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "two years from the Supply Agreement Effective Date, ending February 28, 2027",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement renewal term length",
+      "value": "successive three-year renewal terms",
+      "doc": "D1",
+      "section": "2.2"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement non-renewal notice period",
+      "value": "at least 30 days before the end of the then-current term",
+      "doc": "D1",
+      "section": "2.2"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement governing law",
+      "value": "laws of the State of Delaware",
+      "doc": "D1",
+      "section": "18.1"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement exclusive forum",
+      "value": "state and federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "18.2"
+    },
+    {
+      "id": "F7",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid by Lakix in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "Data Processing Addendum, then Statement of Work, then Supply Agreement",
+      "doc": "D1",
+      "section": "18.3"
+    },
+    {
+      "id": "F9",
+      "key": "ZX-40 drone unit price",
+      "value": "$38,500 per ZX-40 spray drone",
+      "doc": "D1",
+      "section": "Exhibit B"
+    },
+    {
+      "id": "F10",
+      "key": "Okonvale merger expected closing date",
+      "value": "November 30, 2026",
+      "doc": "D3",
+      "section": "Paragraph 1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "ziteir_lakix_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "ziteir_lakix_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ziteir_letter_to_lakix_2026-10-15.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "ziteir_lakix_sow_001_fleet_deployment.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "ziteir_pellbrook_hangar_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "Automatic three-year renewal at locked pricing with a 30-day opt-out",
+      "description": "D1 §2.2 renews the Supply Agreement automatically for successive three-year renewal terms. The renewal can be avoided only by notice given at least 30 days before the end of the then-current term. D1 §2.1 states a two-year Initial Term from the Effective Date of March 1, 2025, ending February 28, 2027, so the non-renewal deadline is January 29, 2027. D1 §1 defines \"Term\" to include all renewal terms. D1 §4.2 fixes prices, including the $38,500 ZX-40 unit price, \"for the duration of the Term\" with no escalation or repricing mechanism. Read together, these provisions mean that if Ziteir misses a narrow window it is locked into supplying drones at 2025 prices until February 2030. That exposure is significant because component costs are volatile and the Okonvale acquisition is pending. The problem appears only when the renewal clause in §2.2, the \"Term\" definition in §1 and the price lock in §4.2 are read together.",
+      "doc": "D1",
+      "section": "2.2",
+      "detect_terms": [
+        "successive three-year renewal terms",
+        "for the duration of the Term"
+      ],
+      "expected_finding": "Ziteir must calendar a non-renewal notice for no later than January 29, 2027, or renegotiate now. Otherwise it is bound for three more years at fixed 2025 pricing, so §2.2 should be amended to require mutual renewal or add price adjustment on renewal.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "Lakix consent to the Okonvale change of control not sought",
+      "description": "D1 §15.2 deems any change of control of Supplier, including a merger in which more than 50% of its voting equity changes hands, to be an assignment. Such an assignment requires Lakix's prior written consent. Failure to obtain consent is a material breach that entitles Lakix to terminate and recover its damages. Ziteir's letter dated October 15, 2026 (D3, Paragraph 2) announces the Okonvale merger closing on November 30, 2026. The letter states that the Agreement will remain with Ziteir and that \"no consent of Lakix is required,\" so it is framed as information only. Read against D1 §15.2, the letter is not a consent request, and nothing in the folder shows that consent was obtained. Unless consent is secured before November 30, 2026, closing will put Ziteir in breach.",
+      "doc": "D3",
+      "section": "Paragraph 2",
+      "detect_terms": [
+        "no consent of Lakix is required",
+        "for informational purposes only"
+      ],
+      "expected_finding": "The October 15, 2026 letter mischaracterizes the merger as requiring no consent. Under D1 §15.2 the change of control requires Lakix's prior written consent, so Ziteir should obtain a written consent and waiver before the November 30, 2026 closing and correct the letter.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "Statement of Work selects New York law and forum and controls under the precedence clause",
+      "description": "D1 §18.1 and §18.2 choose Delaware law and the exclusive jurisdiction of the courts in New Castle County, Delaware. D4 §9 instead provides that the SOW and all disputes arising from the Services are governed by the laws of the State of New York, with exclusive jurisdiction in the courts located in the Borough of Manhattan. Under D1 §18.3, the SOW prevails over the Supply Agreement in any conflict. As a result, New York law and forum control disputes over deployment and training services, while Delaware governs drone supply. A single dispute, such as a drone failure alleged to stem from deployment, could therefore be split across two bodies of law and two exclusive forums. The conflict becomes operative only because the D1 §18.3 precedence clause lets the SOW override the Agreement.",
+      "doc": "D4",
+      "section": "9",
+      "detect_terms": [
+        "laws of the State of New York",
+        "Borough of Manhattan"
+      ],
+      "expected_finding": "SOW §9's New York choice of law and forum overrides the Supply Agreement's Delaware provisions through the D1 §18.3 precedence clause. The SOW should be amended to defer to the Agreement's Delaware law and forum, and D1 §18.3 should carve governing law and forum out of the SOW's priority.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "Data incident indemnity in the DPA escapes the Agreement's liability cap",
+      "description": "D1 §11.1 caps Ziteir's aggregate liability at fees paid by Lakix in the 12 months preceding the claim. D2 §8.1 requires Ziteir to indemnify Lakix and its grower clients for all losses arising from any Security Incident involving Grower Data. This includes regulatory fines, notification costs and third-party claims, whether or not Ziteir was at fault. D2 §8.2 states that these obligations \"shall not be subject to any limitation of liability\" in the Agreement. Under D1 §18.3, the Data Processing Addendum ranks first in the order of precedence. Read together, D2 §8.2 and D1 §18.3 remove the data indemnity from the D1 §11.1 cap. Ziteir therefore faces unlimited, no-fault exposure for breaches of the telemetry platform holding field and grower data. Neither the cap nor the indemnity shows the problem when read alone.",
+      "doc": "D2",
+      "section": "8.2",
+      "detect_terms": [
+        "shall not be subject to any limitation of liability",
+        "whether or not caused by Processor's fault"
+      ],
+      "expected_finding": "Because the DPA prevails under D1 §18.3, DPA §8.2 makes Ziteir's no-fault data incident indemnity unlimited. It should be made subject to a defined super-cap and limited to incidents caused by Ziteir's breach of the DPA.",
+      "contradicts": null
+    }
+  ]
+}

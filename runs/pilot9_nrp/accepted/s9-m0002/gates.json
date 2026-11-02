@@ -1,0 +1,139 @@
+{
+  "matter_id": "s9-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "dev",
+  "solver_pass_rate": 0.333,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 16.2: \"Any Change of Control of Buyer, including a Change of Control occurring at the level of any direct or indirect parent of Buyer, is deemed an assignment of this Agreement by Buyer and requires Supplier's prior written consent under Section 16.1.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 3.1: \"During the Term, Buyer shall, and shall cause its Affiliates to, purchase from Supplier all of its requirements for architectural glass products throughout North America, including insulated glass units, laminated glass, heat-strengthened and fully tempered glass, and coated and spandrel glass, whether for curtainwall, storefront, window wall or other facade applications. Buyer and its Affiliates shall not purchase these products from any other source during the Term.\" Section 18.2 ranks the documents \"Amendments, then the Supply Agreement, then any Statement of Work.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Amendment Section 2 (new Section 2.2): \"On expiry of the Initial Term, this Agreement will automatically renew for successive renewal terms of 24 months each (each, a \"Renewal Term\"), unless either Party gives the other Party written notice of non-renewal at least 180 days before expiry of the then-current term.\" New Section 7.6, added by Amendment Section 3.1: prices \"increase by 7% over the prices in effect on the last day of the preceding term.\" Parent Guaranty Recital C: \"the Supply Agreement will renew for a Renewal Term of 24 months beginning February 1, 2027.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2"
+            ],
+            "steps": 10,
+            "files_opened": [
+              "besouth_holdings_parent_guaranty.md",
+              "besouth_meideis_supply_agreement.md",
+              "calloway_pier_tower_statement_of_work.md",
+              "insurance_certificate_cover_letter.md",
+              "supply_agreement_amendment_no_1.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 10,
+            "files_opened": [
+              "besouth_holdings_parent_guaranty.md",
+              "besouth_meideis_supply_agreement.md",
+              "calloway_pier_tower_statement_of_work.md",
+              "insurance_certificate_cover_letter.md",
+              "supply_agreement_amendment_no_1.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C3",
+              "C8"
+            ],
+            "steps": 12,
+            "files_opened": [
+              "besouth_holdings_parent_guaranty.md",
+              "besouth_meideis_supply_agreement.md",
+              "calloway_pier_tower_statement_of_work.md",
+              "insurance_certificate_cover_letter.md",
+              "supply_agreement_amendment_no_1.md"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

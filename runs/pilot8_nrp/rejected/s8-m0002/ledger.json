@@ -1,0 +1,197 @@
+{
+  "matter_id": "s8-m0002",
+  "summary": "Saitouth Dental Partners, LLC (the client, a dental service organization) bought substantially all assets of four general dentistry and orthodontic clinics in New Castle County, Delaware from Trolind Family Dental, P.A. under a Delaware-law asset purchase agreement. Part of the price was paid by a seller note, and the clinic trademarks and patient-recall software went over by a separate IP assignment executed after closing. Read against the letter of intent and the operative documents, the deal leaves Saitouth with indemnity protection that is impractical to use, a lapsed set-off right, an uncapped indemnity for the seller's pre-closing employee liabilities, an IP cap that swallows the APA's fundamental-rep carve-out, and an IP transfer that misses the orthodontic assets.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Saitouth Dental Partners, LLC",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Trolind Family Dental, P.A.",
+      "role": "Seller and payee under the Seller Note"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Asset Purchase Agreement Closing Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F2",
+      "key": "Asset Purchase Agreement Purchase Price",
+      "value": "$8,400,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Seller indemnity cap (the Cap)",
+      "value": "10% of the Purchase Price ($840,000)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "Asset Purchase Agreement controls over Ancillary Agreements, except the IP Assignment controls as to Assigned IP",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F5",
+      "key": "Asset Purchase Agreement definition of Business",
+      "value": "general dentistry, hygiene and orthodontic services conducted at the Clinics",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F6",
+      "key": "Seller Note principal amount",
+      "value": "$1,800,000",
+      "doc": "D3",
+      "section": "Section 1"
+    },
+    {
+      "id": "F7",
+      "key": "Seller Note Issue Date",
+      "value": "March 2, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F8",
+      "key": "IP Assignment date",
+      "value": "October 12, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Asset Purchase Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.6"
+    },
+    {
+      "id": "F10",
+      "key": "Letter of Intent survival period for seller representations",
+      "value": "18 months after closing",
+      "doc": "D4",
+      "section": "Paragraph 6"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "saitouth_trolind_asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "confirmatory_ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "trolind_seller_promissory_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "letter_of_intent_trolind_clinics.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "saitouth_clinic_acquisition_press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 9.1 says Seller's representations, including the healthcare billing and payer compliance representations in Section 4.12, survive only six months after the Closing Date (March 2, 2026). Section 9.4(b) makes a claim notice valid only if it includes documentation of Losses actually paid by Buyer. Dental payer and Medicaid recoupment audits usually finish and are paid well after six months. Read together, the two provisions mean Buyer can almost never give a valid notice for billing-compliance losses before survival ends. This also departs from the 18-month survival agreed in the LOI (Paragraph 6).",
+      "doc": "D1",
+      "section": "Sections 9.1 and 9.4(b)",
+      "detect_terms": [
+        "six (6) months following the Closing Date",
+        "Losses actually paid"
+      ],
+      "expected_finding": "The six-month survival period combined with the requirement to document Losses actually paid makes Seller's billing-compliance indemnity effectively unclaimable and departs from the 18-month survival agreed in the LOI, so survival should be extended and notice allowed for reasonably anticipated Losses.",
+      "contradicts": "F10"
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Seller Note Section 5.2 lets Buyer set off indemnifiable Losses against note installments only if a Set-off Notice is delivered within 150 days after the Issue Date. The Issue Date is March 2, 2026 (Note preamble; same as the APA Closing Date), so the window closed on July 30, 2026. The IP Assignment is dated October 12, 2026, well after that. As of the folder's latest date, Buyer has lost its set-off right against the remaining $1,800,000 note and must sue Seller to recover any indemnity claims.",
+      "doc": "D3",
+      "section": "Section 5.2",
+      "detect_terms": [
+        "within one hundred fifty (150) days after the Issue Date",
+        "Set-off Notice"
+      ],
+      "expected_finding": "The Seller Note set-off window expired on July 30, 2026, before the October 12, 2026 IP Assignment date, so Buyer can no longer withhold note payments for indemnity claims unless the Note is amended or a timely notice can be shown.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "APA Section 9.5(b) carves breaches of Fundamental Representations, including the IP title representation in Section 4.9, out of the Cap. The later IP Assignment Section 7 says Seller's aggregate liability for breach of its representations, 'including Section 4.9 of the Purchase Agreement', shall not exceed the Cap. The precedence clause in APA Section 11.8 makes the IP Assignment control as to Assigned IP. Read together, IP title breaches become capped at $840,000.",
+      "doc": "D2",
+      "section": "Section 7",
+      "detect_terms": [
+        "including Section 4.9 of the Purchase Agreement",
+        "shall not exceed the Cap"
+      ],
+      "expected_finding": "Because the APA precedence clause lets the IP Assignment control on Assigned IP, IP Assignment Section 7 removes the fundamental-representation carve-out for IP title, so Buyer's recovery for title defects in the clinic marks and software is now capped at $840,000.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "APA Section 9.3(b) requires Buyer to indemnify Seller for Transferred Employee Liabilities. Section 1.1 defines that term as all liabilities to Transferred Employees 'whether arising before or after the Closing', including accrued PTO, wage claims and malpractice tail exposure. The cap on Buyer's indemnity in Section 9.5(c) applies to Buyer's indemnity obligations 'other than Section 9.3(b)'. Read together, Buyer has unlimited liability for Seller's pre-closing employee obligations.",
+      "doc": "D1",
+      "section": "Sections 1.1, 9.3(b) and 9.5(c)",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "other than Section 9.3(b)"
+      ],
+      "expected_finding": "Buyer's indemnity for Transferred Employee Liabilities is uncapped and extends to Seller's pre-closing employee liabilities, so the definition should be limited to post-closing periods and the indemnity brought under a cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 defines Business as general dentistry, hygiene and orthodontic services at the Clinics. IP Assignment Section 1 redefines Business as 'general dentistry and hygiene services' only. It then limits Assigned IP to intellectual property 'used primarily in the Business'. Because APA Section 11.8 gives the IP Assignment precedence as to Assigned IP, the orthodontic brand and the orthodontic patient-recall software fall outside the transfer.",
+      "doc": "D2",
+      "section": "Section 1",
+      "detect_terms": [
+        "general dentistry and hygiene services",
+        "used primarily in the Business"
+      ],
+      "expected_finding": "The IP Assignment's narrower definition of Business, which controls as to Assigned IP, excludes the orthodontic trademarks and software Buyer paid for, so the definition must be conformed to the APA and a corrective assignment obtained.",
+      "contradicts": "F5"
+    }
+  ]
+}

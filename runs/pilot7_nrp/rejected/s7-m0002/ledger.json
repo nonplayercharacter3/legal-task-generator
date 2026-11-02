@@ -1,0 +1,184 @@
+{
+  "matter_id": "s7-m0002",
+  "summary": "Roumoux Solar Holdings, LLC (client, Buyer) is acquiring substantially all operating assets of Tredeil Sunworks, Inc., a residential and small-commercial solar panel installer in Arizona. The assets are its installation contracts backlog, vehicle fleet and equipment, inventory of modules and inverters, trade names and customer warranty book. Buyer pays an $18,400,000 base price plus an earnout of up to $3,000,000 tied to post-closing installed megawatts. The folder contains the executed Asset Purchase Agreement, the existing key employee agreement of Seller's VP of Installation Operations (to be assigned to Buyer as an Assigned Contract), the Bill of Sale, Seller's Disclosure Schedule, and an earlier draft of the APA. The partner wants a memo identifying issues that expose Buyer.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Roumoux Solar Holdings, LLC",
+      "role": "Buyer; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Tredeil Sunworks, Inc.",
+      "role": "Seller; Arizona solar installation contractor selling substantially all of its assets"
+    },
+    {
+      "id": "P3",
+      "name": "Dana Okafor-Lindqvist",
+      "role": "Seller's VP of Installation Operations and licensed qualifying party; counterparty to the Key Employee Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Asset Purchase Agreement Effective Date",
+      "value": "September 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Asset Purchase Agreement Closing Date",
+      "value": "October 1, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Base Purchase Price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F4",
+      "key": "Maximum Earnout Payments",
+      "value": "$3,000,000 in aggregate",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F5",
+      "key": "Indemnification Cap",
+      "value": "15% of the Base Purchase Price ($2,760,000)",
+      "doc": "D1",
+      "section": "Section 8.5(a)"
+    },
+    {
+      "id": "F6",
+      "key": "Asset Purchase Agreement governing law",
+      "value": "Laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 10.10"
+    },
+    {
+      "id": "F7",
+      "key": "Asset Purchase Agreement forum",
+      "value": "Exclusive jurisdiction of the Delaware Court of Chancery",
+      "doc": "D1",
+      "section": "Section 10.11"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "Agreement prevails over Disclosure Schedule and Bill of Sale; Bill of Sale controls on transfer of title",
+      "doc": "D1",
+      "section": "Section 10.13"
+    },
+    {
+      "id": "F9",
+      "key": "Key Employee non-competition period",
+      "value": "24 months after termination of employment",
+      "doc": "D2",
+      "section": "Section 6.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_roumoux_tredeil.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "key_employee_agreement_okafor_lindqvist.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "bill_of_sale_tredeil_to_roumoux.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "apa_prior_draft_august_2026.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_stock_purchase_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "APA Section 10.10 selects Delaware law (F6) and Section 10.11 gives the Delaware Court of Chancery exclusive jurisdiction (F7). The Bill of Sale, in Section 6, states that it is governed by the laws of the State of Arizona and submits disputes exclusively to the state courts in Maricopa County. The mismatch is not cured. APA Section 10.13 (F8) generally lets the APA prevail, but it expressly says the Bill of Sale controls on matters concerning transfer of title. Read together, any dispute over whether a given asset passed to Buyer goes to Arizona under Arizona law. Examples are fleet vehicles, module inventory, and the warranty book versus Excluded Assets. Indemnity and purchase price disputes about the same assets stay in Chancery under Delaware law. Buyer faces parallel proceedings, inconsistent rulings and forum fights over core asset-transfer questions.",
+      "doc": "D3",
+      "section": "Section 6",
+      "detect_terms": [
+        "laws of the State of Arizona",
+        "Maricopa County"
+      ],
+      "expected_finding": "The Bill of Sale's Arizona law and Maricopa forum clause controls title disputes through the APA's precedence carve-out. This splits disputes away from Delaware, so the Bill of Sale should be conformed to Delaware law and Chancery jurisdiction, or the carve-out should be removed.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "APA Section 8.5(a) caps indemnification at 15% of the Base Purchase Price (F5). Section 8.5(b) then excludes from the Cap 'Losses arising out of any Assumed Liability' under Buyer's indemnity in Section 8.3. That looks routine until it is read with Section 2.3(c). Section 2.3(c) defines Assumed Liabilities to include 'Liabilities set forth on Schedule 2.3(c)'. Disclosure Schedule 2.3(c) lists two items. The first is all workmanship and roof-penetration warranty obligations for installations Seller completed before Closing, roughly 4,100 residential systems with 10-year warranties. The second is the pending homeowner roof-leak class action against Seller. Taken together, Buyer gives Seller an uncapped indemnity for Seller's own pre-closing installation defects and litigation. That exposure has no ceiling and could exceed the purchase price.",
+      "doc": "D1",
+      "section": "Section 8.5(b)",
+      "detect_terms": [
+        "Losses arising out of any Assumed Liability",
+        "shall not be subject to the Cap"
+      ],
+      "expected_finding": "Through Schedule 2.3(c), Buyer's uncapped indemnity for Assumed Liabilities covers Seller's pre-closing warranty and class action exposure. Those items should be moved to Excluded Liabilities, or Buyer's indemnity for them should be capped and backed by a holdback.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "APA Section 10.6 bars assignment by either party without consent. It then provides that Seller may assign any of its rights under this Agreement, including Earnout Payments and Article VIII claims, to any Person without the consent of Buyer. Section 2.6(d) gives the 'Seller or its permitted assignee' quarterly access to Buyer's installation volumes, customer pipeline, pricing and books so it can verify the earnout. Read together, Seller could transfer the earnout and its audit rights to a competing solar installer. That competitor would then receive Buyer's confidential pipeline and pricing data, and could press indemnity claims against Buyer, with Buyer having no say.",
+      "doc": "D1",
+      "section": "Section 10.6",
+      "detect_terms": [
+        "Seller may assign any of its rights",
+        "without the consent of Buyer"
+      ],
+      "expected_finding": "Seller's unrestricted right to assign the earnout and indemnity rights carries the Section 2.6(d) information rights to any assignee, including a competitor. Seller's assignment should require Buyer's consent, with competitors excluded and the information rights made non-transferable.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 9.2 of the Key Employee Agreement says the Company may not assign the agreement without the prior written consent of Employee. This expressly includes a sale of all or substantially all of the Company's assets, and any purported assignment without that consent is void. APA Section 2.1(c) lists this agreement as an Assigned Contract. Buyer depends on it for Okafor-Lindqvist's 24-month non-compete (F9) and her service as the licensed qualifying party for the contractor license. However, Disclosure Schedule 4.6 (Required Consents) lists no consents for any Assigned Contract. APA Section 7.2 conditions Closing only on consents listed on Schedule 4.6. As a result, the consent was never obtained or made a closing condition. The assignment to Buyer is void, and the non-compete and qualifying-party arrangement may not have passed to Buyer.",
+      "doc": "D2",
+      "section": "Section 9.2",
+      "detect_terms": [
+        "prior written consent of Employee",
+        "sale of all or substantially all"
+      ],
+      "expected_finding": "The Key Employee Agreement requires the employee's consent to assignment on an asset sale. That consent is missing from Schedule 4.6 and from the closing conditions, so Buyer should obtain her written consent or a new agreement directly with Buyer, and get Seller's indemnity for the omission.",
+      "contradicts": null
+    }
+  ]
+}

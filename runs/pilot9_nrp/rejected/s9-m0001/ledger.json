@@ -1,0 +1,204 @@
+{
+  "matter_id": "s9-m0001",
+  "summary": "Paibon Textile Care Holdings, Inc. (client, Buyer) acquired all outstanding stock of Lindqvist Linen Services, Inc., a New Jersey commercial and healthcare laundry operator, from Zanoul Holdings LLC for $24,000,000. Signing and closing were simultaneous on April 6, 2026. The folder has four documents. The Stock Purchase Agreement is governed by Delaware law. In the Bill of Sale, a Seller affiliate transfers tunnel washers, ironers and folding lines used by the Company to the Company at Closing. The Escrow Agreement holds an indemnity escrow and an adjustment escrow with a third-party escrow agent. The fourth document is a post-closing email thread between deal counsel about wire confirmations and delivery-route handover, and it contains no issue. The partner wants a memo identifying problems for Buyer across the folder.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Paibon Textile Care Holdings, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Zanoul Holdings LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Lindqvist Linen Services, Inc.",
+      "role": "Company (target), New Jersey commercial laundry operator"
+    },
+    {
+      "id": "P4",
+      "name": "Zanoul Equipment Leasing LLC",
+      "role": "Seller affiliate; transferor of laundry equipment under the Bill of Sale"
+    },
+    {
+      "id": "P5",
+      "name": "Ostrander Trust Company, N.A.",
+      "role": "Escrow Agent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement date and Closing Date",
+      "value": "April 6, 2026",
+      "doc": "D1",
+      "section": "Preamble; Section 3.1"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$24,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$2,400,000",
+      "doc": "D1",
+      "section": "Section 2.3(a)"
+    },
+    {
+      "id": "F4",
+      "key": "Adjustment Escrow Amount",
+      "value": "$350,000",
+      "doc": "D1",
+      "section": "Section 2.3(b)"
+    },
+    {
+      "id": "F5",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 10.8"
+    },
+    {
+      "id": "F6",
+      "key": "Stock Purchase Agreement exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 10.9"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "Stock Purchase Agreement, then Escrow Agreement, then Bill of Sale, unless an Ancillary Document expressly supersedes",
+      "doc": "D1",
+      "section": "Section 10.4"
+    },
+    {
+      "id": "F8",
+      "key": "Stock Purchase Agreement indemnity cap carve-outs",
+      "value": "Fraud, breaches of Fundamental Representations, and Excluded Taxes",
+      "doc": "D1",
+      "section": "Section 8.5(b)"
+    },
+    {
+      "id": "F9",
+      "key": "Indemnity Escrow release date",
+      "value": "18 months after the Closing Date",
+      "doc": "D3",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F10",
+      "key": "Escrow Agent",
+      "value": "Ostrander Trust Company, N.A.",
+      "doc": "D3",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "closing_email_thread.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Two provisions of D1 combine to create the gap. SPA Section 8.1(a) defines the 'General Survival Date' as 6 months after the Closing Date. Section 8.1(c) states that the environmental representations in Section 4.12 survive 'until the General Survival Date'. Those representations cover wastewater discharge permits, solvent and chemical handling, and soil and groundwater condition at the Company's industrial laundry plant. Contamination and permit violations at an industrial laundry usually surface only through post-closing sampling or regulator inspection, which take well over 6 months. The Escrow Agreement (D3 Section 4.1) keeps the Indemnity Escrow for 18 months, which shows the parties expected claims well after month six. Delaware enforces contractually shortened survival periods (10 Del. C. § 8106(c)). Any environmental claim noticed after October 6, 2026 is therefore barred, even though escrow funds remain available.",
+      "doc": "D1",
+      "section": "Section 8.1(c)",
+      "detect_terms": [
+        "until the General Survival Date"
+      ],
+      "expected_finding": "The cross-reference in Section 8.1(c) cuts environmental representation survival to 6 months after the April 6, 2026 Closing, far shorter than the 18-month escrow and too short for practical environmental claims, so Buyer should seek an amendment extending survival (for example to 36 months) before October 6, 2026 lapses, or document a timely claim notice.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Escrow Agreement Section 4.3 requires Buyer to deliver any Adjustment Claim against the Adjustment Escrow 'no later than ninety (90) days after the Reference Date'. Section 1.1 of the same agreement defines 'Reference Date' as December 31, 2025, the balance sheet date, not the Closing Date. The deadline therefore fell on March 31, 2026. That is before the Escrow Agreement itself was signed on April 6, 2026, the date stated in its preamble and equal to the SPA Closing Date. Section 4.3 also obliges the Escrow Agent to release the $350,000 Adjustment Escrow to Seller on Seller's written request once the claim deadline passes without a claim. The SPA's working capital mechanics (D1 Section 2.4) contemplate a post-closing Closing Statement and a Notice of Disagreement, but the Escrow Agent is bound only by the Escrow Agreement. Buyer has therefore lost the escrow security for any downward price adjustment from the moment of signing.",
+      "doc": "D3",
+      "section": "Section 4.3 (with Section 1.1 definition of Reference Date)",
+      "detect_terms": [
+        "after the Reference Date",
+        "December 31, 2025"
+      ],
+      "expected_finding": "Measured from the December 31, 2025 Reference Date, the 90-day Adjustment Claim window closed on March 31, 2026, before the April 6, 2026 Escrow Agreement date, so Seller can demand immediate release of the Adjustment Escrow and Buyer should obtain a joint amendment re-keying the deadline to the SPA Section 2.4 adjustment timeline and send joint instructions to the Escrow Agent to hold the funds.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Disclosure Schedule 4.5 to the SPA lists the Company's Hospital Linen Services Agreement with Saint Aldric Health Network, the Company's largest customer. That agreement lets the customer terminate on a change of control of the Company without its prior written consent. However, SPA Section 2.6(a)(iv) only requires delivery at Closing of 'the third-party consents listed on Schedule 2.6', and Schedule 2.6 lists only the landlord consent for the plant lease. The Saint Aldric consent was therefore neither a closing deliverable nor obtained. SPA Section 8.2 then excludes indemnification for any matter disclosed in the Disclosure Schedule. Read together, these provisions mean the consent was triggered by the stock sale and left unaddressed. Buyer has no closing protection and no indemnity if Saint Aldric terminates.",
+      "doc": "D1",
+      "section": "Section 2.6(a)(iv) and Schedule 2.6, read with Schedule 4.5 and Section 8.2",
+      "detect_terms": [
+        "change of control of the Company",
+        "disclosed in the Disclosure Schedule"
+      ],
+      "expected_finding": "The stock sale triggered Saint Aldric's change-of-control termination right, yet the consent was omitted from the Schedule 2.6 closing deliverables and disclosure bars indemnity under Section 8.2, so Buyer should immediately seek the customer's consent or waiver and negotiate a special indemnity or escrow holdback from Seller for loss of that contract.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The SPA selects Delaware law (Section 10.8) and the exclusive jurisdiction of the Delaware Court of Chancery (Section 10.9). Bill of Sale Section 7 instead selects 'the laws of the State of New Jersey' and the exclusive jurisdiction of the 'Superior Court of New Jersey, Bergen County'. It also states that it expressly supersedes the Stock Purchase Agreement as to governing law and forum for any matter relating to the Transferred Equipment. SPA Section 10.4 normally gives the SPA precedence but excepts any Ancillary Document that expressly supersedes it, so the Bill of Sale's choice controls. Equipment title, condition and warranty disputes would then be litigated in New Jersey under New Jersey law, while related indemnity claims proceed in Chancery under Delaware law. The result is split proceedings and a risk of inconsistent outcomes.",
+      "doc": "D2",
+      "section": "Section 7",
+      "detect_terms": [
+        "laws of the State of New Jersey",
+        "Superior Court of New Jersey"
+      ],
+      "expected_finding": "Through the SPA Section 10.4 exception, the Bill of Sale's New Jersey law and Bergen County forum override the SPA's Delaware law and Chancery forum for equipment-related disputes, fragmenting claims, so Buyer should have the Bill of Sale amended to adopt Delaware law and the SPA forum and delete the supersession language.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 8.5(a) caps Seller's indemnity at the $2,400,000 Indemnity Escrow Amount. Section 8.5(b) carves out Fraud, breaches of Fundamental Representations and Excluded Taxes. Escrow Agreement Section 5.4 provides that the Indemnity Escrow Fund is the 'sole and exclusive source of recovery' for all claims by Buyer Indemnified Parties under the Purchase Agreement, other than claims for Fraud. It also states that the Purchase Agreement 'is hereby amended accordingly'. Buyer and Seller both signed the Escrow Agreement, so it satisfies the SPA's written-amendment requirement (Section 10.3). Section 10.4 also lets an Ancillary Document that expressly supersedes the SPA control. Read together, these provisions delete the Fundamental Representations and Excluded Taxes carve-outs. Title and capitalization defects and pre-closing tax liabilities are now limited to the 10% escrow.",
+      "doc": "D3",
+      "section": "Section 5.4",
+      "detect_terms": [
+        "sole and exclusive source of recovery",
+        "hereby amended accordingly"
+      ],
+      "expected_finding": "Escrow Agreement Section 5.4, which operates as an SPA amendment, limits recovery to the $2.4 million escrow for everything except Fraud and so strips the Fundamental Representations and Excluded Taxes carve-outs from the SPA Section 8.5(b) cap, so Buyer should obtain a corrective amendment restoring those carve-outs and deleting the 'amended accordingly' language.",
+      "contradicts": null
+    }
+  ]
+}

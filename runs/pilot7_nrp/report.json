@@ -1,0 +1,169 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 0,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 1,
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s7-m0001",
+      "accepted": false,
+      "failed_gate": "rubric_trace",
+      "reason": "errors: [\"criterion C5 cites 'I1', which is not a ledger fact\"]",
+      "split": null,
+      "solver_pass_rate": null
+    },
+    {
+      "matter_id": "s7-m0002",
+      "accepted": false,
+      "failed_gate": "solver_check",
+      "reason": "no attempt passed: task is probably broken or too hard",
+      "split": null,
+      "solver_pass_rate": 0.0
+    },
+    {
+      "matter_id": "s7-m0003",
+      "accepted": false,
+      "failed_gate": "consistency",
+      "reason": "mismatches: [{\"fact\": \"F7\", \"key\": \"Stock Purchase Agreement forum\", \"filename\": \"stock_purchase_agreement.md\", \"ledger\": \"exclusive jurisdiction of state or federal courts in New York County, New York\", \"document\": \"state or federal courts in New York County, New York\"}]",
+      "split": null,
+      "solver_pass_rate": null
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 10685,
+      "output_tokens": 21182,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 14,
+      "input_tokens": 256255,
+      "output_tokens": 95591,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 104614,
+      "output_tokens": 6814,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4108,
+      "output_tokens": 1067,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 7,
+      "input_tokens": 211402,
+      "output_tokens": 4222,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 2,
+      "input_tokens": 2793,
+      "output_tokens": 789,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 2,
+      "input_tokens": 10243,
+      "output_tokens": 3257,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 4,
+      "input_tokens": 136854,
+      "output_tokens": 32999,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 7,
+      "input_tokens": 69773,
+      "output_tokens": 7665,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 68,
+      "input_tokens": 817450,
+      "output_tokens": 60525,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "cold chain logistics": 1,
+      "solar panel installation": 1,
+      "precision agriculture drones": 1
+    },
+    "agreement_types": {
+      "master services agreement": 1,
+      "asset purchase agreement": 1,
+      "stock purchase agreement": 1
+    },
+    "issue_types": {
+      "change_of_control_consent": 2,
+      "governing_law_mismatch": 2,
+      "uncapped_indemnity": 2,
+      "missing_assignment_restriction": 2,
+      "expired_notice_window": 1,
+      "liability_cap_carveout": 1,
+      "survival_gap": 1,
+      "defined_term_inconsistency": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

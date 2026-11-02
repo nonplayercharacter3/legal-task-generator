@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/Users/shesirui/Projects/legal-task-generator/.claude/worktrees/phase2/ltg/orchestrator.py", line 144, in run_matter
+    g, solutions = gates.solver_check(
+                   ~~~~~~~~~~~~~~~~~~^
+        self.client,
+        ^^^^^^^^^^^^
+    ...<8 lines>...
+        cfg.gates.solver_page_chars,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/shesirui/Projects/legal-task-generator/.claude/worktrees/phase2/ltg/gates.py", line 237, in solver_check
+    sol = solve(client, instruction, docs, max_steps, page_chars)
+  File "/Users/shesirui/Projects/legal-task-generator/.claude/worktrees/phase2/ltg/solver.py", line 88, in solve
+    return Solution(call_text(client, "solver", prompts.SOLVER_WRITE, render_input(payload)), steps)
+                    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shesirui/Projects/legal-task-generator/.claude/worktrees/phase2/ltg/models.py", line 306, in call_text
+    out = client.complete(role, system, user).strip()
+          ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shesirui/Projects/legal-task-generator/.claude/worktrees/phase2/ltg/models.py", line 177, in complete
+    return self.routes.get(role, self.default).complete(role, system, user)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shesirui/Projects/legal-task-generator/.claude/worktrees/phase2/ltg/models.py", line 166, in complete
+    raise ModelError(f"{role}: {last_err}")
+ltg.models.ModelError: solver: HTTP 403: b''

@@ -1,0 +1,178 @@
+{
+  "matter_id": "s10-m0001",
+  "summary": "Kolais Animal Health Diagnostics, Inc. (Buyer, the firm's client) is buying from Sounour Veterinary Systems, LLC (Seller) its HemaQuik point-of-care companion-animal hematology analyzer line, including the associated reagent cartridges, IP, inventory and customer contracts. Seller keeps its reference laboratory business. The deal runs under an Asset Purchase Agreement signed May 18, 2026, with a scheduled Closing on June 30, 2026. It follows a Letter of Intent dated March 9, 2026, and the Bill of Sale is in agreed form for delivery at Closing. The partner wants an issue-spotting memo before Closing. Four problems are planted. (1) Seller may assign the APA, including its earnout audit rights, to a broadly defined 'Permitted Transferee' without Buyer consent and with Seller released. (2) Buyer's indemnity for Assumed Liabilities is uncapped, and Assumed Liabilities sweep in pre-Closing liabilities under Assigned Contracts. (3) The LOI made consent from Fennwick Veterinary Hospitals, the key distributor, a Closing condition, but the APA's consents schedule says none are required and the closing conditions omit it. (4) The Bill of Sale subjects Excluded Liabilities to the APA cap, and the APA's precedence clause lets the Bill of Sale control. Diligence meeting notes on IT and LIMS data migration and employee transfer are a distractor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Kolais Animal Health Diagnostics, Inc.",
+      "role": "Buyer; Delaware corporation; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Sounour Veterinary Systems, LLC",
+      "role": "Seller; Delaware limited liability company; retains its reference laboratory business"
+    },
+    {
+      "id": "P3",
+      "name": "Fennwick Veterinary Hospitals, Inc.",
+      "role": "Third-party exclusive distributor of HemaQuik analyzers and cartridges under the Fennwick Distribution Agreement (an Assigned Contract)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Purchase Price",
+      "value": "$48,600,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F2",
+      "key": "APA signing date",
+      "value": "May 18, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "Scheduled Closing Date",
+      "value": "June 30, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller indemnity cap",
+      "value": "12% of the Purchase Price ($5,832,000)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "Indemnity Escrow Amount",
+      "value": "$4,860,000, held for 18 months after Closing",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F6",
+      "key": "APA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.7"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence among Transaction Documents",
+      "value": "Ancillary Documents, including the Bill of Sale, control over the APA on matters they expressly address",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "Excluded Liabilities treatment under cap",
+      "value": "Seller indemnity for Excluded Liabilities is not subject to the cap",
+      "doc": "D1",
+      "section": "Section 9.5(b)"
+    },
+    {
+      "id": "F9",
+      "key": "Letter of Intent date",
+      "value": "March 9, 2026",
+      "doc": "D2",
+      "section": "Heading"
+    },
+    {
+      "id": "F10",
+      "key": "Fennwick consent to assignment",
+      "value": "Required under Fennwick Distribution Agreement; obtaining it is a condition to Closing",
+      "doc": "D2",
+      "section": "Paragraph 6"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_kolais_sounour.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "letter_of_intent_hemaquik.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "bill_of_sale_closing_form.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "diligence_meeting_notes_lims_migration.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 11.4 of the APA bars Buyer from assigning without Seller's consent. It then lets Seller assign the APA and delegate its obligations 'to any Permitted Transferee' without the consent of Buyer, and releases Seller once the transferee assumes. Section 1.1 defines 'Permitted Transferee' to include any Person that acquires all or substantially all of Seller's remaining assets or business, including any successor to Seller's reference laboratory business. That reaches a competing veterinary diagnostics company. Read together with Section 2.7(d), which gives Seller earnout audit and inspection rights over Buyer's HemaQuik cartridge sales records, and Article IX, which places post-Closing indemnity obligations on Seller, the result is twofold. A competitor could obtain access to Buyer's commercial data. Buyer's indemnity recourse could also shift to an unvetted entity with Seller released.",
+      "doc": "D1",
+      "section": "Section 11.4 (with Section 1.1 'Permitted Transferee' and Section 2.7(d))",
+      "detect_terms": [
+        "any Permitted Transferee",
+        "without the consent of Buyer"
+      ],
+      "expected_finding": "Seller can assign the APA, including its earnout audit rights and indemnity obligations, to a competitor without Buyer's consent and be released, so Buyer should require consent (or exclude competitors) and keep Seller jointly liable.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 9.3(b) of the APA requires Buyer to indemnify the Seller Indemnified Parties for all Assumed Liabilities. Section 2.3(b) defines Assumed Liabilities to include all Liabilities under the Assigned Contracts 'whether arising before or after the Closing'. Section 9.5(a) applies the 12% cap and the basket only to Seller's obligations under Section 9.2(a), and nothing caps Buyer's obligations. Read together, these provisions leave Buyer with unlimited indemnity exposure, including for Seller's own pre-Closing breaches of the Fennwick Distribution Agreement and other customer and supply contracts. That is contrary to the usual allocation, under which pre-Closing contract liabilities stay with Seller as Excluded Liabilities.",
+      "doc": "D1",
+      "section": "Sections 2.3(b), 9.3(b) and 9.5(a)",
+      "detect_terms": [
+        "whether arising before or after the Closing"
+      ],
+      "expected_finding": "Buyer's indemnity for Assumed Liabilities is uncapped and covers Seller's pre-Closing contract liabilities, so the Assumed Liabilities definition should be limited to post-Closing performance and a reciprocal cap applied to Buyer.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Paragraph 6 of the March 9, 2026 Letter of Intent records two points. First, the Fennwick Distribution Agreement requires Fennwick's prior written consent to any assignment or change of control. Second, obtaining that consent is a condition to Closing. In the APA, the Fennwick Distribution Agreement is listed as an Assigned Contract on Schedule 2.1(c). However, the Section 4.5 representation and its schedule state that no consent, approval or notice of any third party is required. The Section 7.2 Buyer closing conditions do not mention the Fennwick consent, and the Section 11.8 entire-agreement clause supersedes the LOI. Taken together, Buyer is obliged to close at the June 30, 2026 Closing Date whether or not Fennwick has consented. Because the rep is scheduled as 'None', Buyer has no clear indemnity claim if Fennwick terminates the distribution channel for the HemaQuik line.",
+      "doc": "D1",
+      "section": "Section 4.5 and its schedule; Section 7.2 (read with LOI Paragraph 6 and APA Section 11.8)",
+      "detect_terms": [
+        "no consent, approval or notice of any third party is required"
+      ],
+      "expected_finding": "The Fennwick consent that the LOI made a Closing condition has been dropped from the APA and wrongly scheduled as not required, so Buyer should add it as a Section 7.2 condition, correct the consents schedule and add a specific indemnity.",
+      "contradicts": "F10"
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 9.5(b) of the APA carves Seller's indemnity for Excluded Liabilities out of the 12% cap. These liabilities include pre-Closing product liability for recalled HemaQuik analyzers and Seller's taxes. Section 4 of the agreed-form Bill of Sale, to be delivered at Closing on June 30, 2026, provides that Seller's liability for the Purchased Assets and related obligations, 'including Excluded Liabilities', is subject to the limitations set forth in Section 9.5 of the APA. Section 11.9 of the APA provides that Ancillary Documents, including the Bill of Sale, control over the APA on matters they expressly address. Read together, the Bill of Sale overrides the carve-out and brings Excluded Liabilities under the $5,832,000 cap. Buyer would then bear any excess pre-Closing product liability and tax losses.",
+      "doc": "D3",
+      "section": "Section 4 (read with APA Sections 9.5(b) and 11.9)",
+      "detect_terms": [
+        "including Excluded Liabilities"
+      ],
+      "expected_finding": "Because the Bill of Sale controls under the APA precedence clause, its reference to Excluded Liabilities brings them under the cap, so the Bill of Sale language must be struck and APA Section 11.9 revised so the APA controls on indemnification.",
+      "contradicts": "F8"
+    }
+  ]
+}

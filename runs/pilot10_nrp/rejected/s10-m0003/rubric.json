@@ -1,0 +1,113 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "Identifies that the Escrow Agreement (Section 1.1) defines 'Losses' more narrowly than the APA (Section 1.1), limiting it to out-of-pocket damages and excluding attorneys' fees and diminution in value. States that because APA Section 11.12 lets the Escrow Agreement control Escrow Fund disbursements (and the escrow is Buyer's main or sole recovery source for non-fundamental claims), the narrower definition limits what Lipaind can actually recover. Recommends conforming the escrow definition to the APA definition.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "excluding attorneys' fees",
+        "Section 11.12",
+        "conform to the APA definition"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "Identifies that Side Letter Section 2 preserves the Title Exclusion Notice right only 'within the period specified in Section 6.4' of the APA. Explains that the Section 6.4 period (30 days after the June 2, 2026 signing) ended on or about July 2, 2026, before the July 31, 2026 Side Letter was signed, so the exclusion right for the Disputed Titles is expired or illusory. Recommends a fresh, stated deadline or amendment.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "July 2, 2026",
+        "already expired",
+        "new deadline"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "Identifies that Escrow Agreement Section 10.3 selects New York law and Manhattan courts, which conflicts with APA Section 11.8's Delaware law and exclusive Court of Chancery forum. Explains the risk of split or parallel proceedings or inconsistent results over escrow and indemnity disputes. Recommends conforming the escrow clause to Delaware.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "New York law",
+        "Court of Chancery",
+        "parallel proceedings"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "Identifies that the Section 4.7 chain-of-title/copyright representation is not among the Fundamental Representations (defined as only Sections 4.1, 4.2 and 4.3). States that under APA Section 9.1 it therefore survives only six months after Closing, which is too short for title and clearance claims that surface later. Recommends adding Section 4.7 to the Fundamental Representations or extending its survival (for example to at least 36 months or to match the escrow).",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "six months",
+        "Section 4.7",
+        "Fundamental Representations"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "Identifies that APA Section 11.5 lets Seller assign the Agreement without Buyer's consent while Buyer needs Seller's consent. Explains that the assignable rights include the earnout audit right over Buyer's books and confidential data, which could pass to a competitor. Recommends requiring Buyer consent or barring assignment to competitors.",
+      "kind": "issue",
+      "source": "I5",
+      "hints": [
+        "Section 11.5",
+        "earnout audit",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "States that the Escrow Amount is $2,760,000, held until 18 months after the Closing Date.",
+      "kind": "fact",
+      "source": "F4",
+      "hints": [
+        "$2,760,000",
+        "18 months"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "States that the APA's governing law is Delaware with the Delaware Court of Chancery as the exclusive forum.",
+      "kind": "fact",
+      "source": "F6",
+      "hints": [
+        "Delaware",
+        "Court of Chancery"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "Is structured as a memo to the supervising partner. Each issue states its document and section, why it matters for the buyer, and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "memo",
+        "recommended fix"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "Orders issues by importance to the client and flags which items need to go to the client or the other side immediately.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "urgent",
+        "raise immediately"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "Fails if the response concludes that Buyer's Title Exclusion Notice right under the Side Letter remains currently exercisable or timely under the APA Section 6.4 period.",
+      "kind": "negative",
+      "source": "I2",
+      "hints": []
+    },
+    {
+      "id": "C11",
+      "text": "Fails if the response states that the chain-of-title representation (Section 4.7) is a Fundamental Representation or survives six years.",
+      "kind": "negative",
+      "source": "I4",
+      "hints": []
+    }
+  ]
+}

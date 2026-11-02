@@ -1,0 +1,209 @@
+{
+  "matter_id": "s8-m0001",
+  "summary": "Daikesk Imaging Holdings, Inc. (the firm's client) is buying all outstanding shares of Sorrelux Imaging, Inc. from Glosiv Medical Systems, Inc. Sorrelux makes digital radiography and ultrasound imaging systems and runs a field-service business. The folder holds five documents: the signed Stock Purchase Agreement, the existing employment agreement of Sorrelux's Chief Technology Officer, the earlier Letter of Intent, the agreed form of Transition Services Agreement that Glosiv will sign at Closing, and a pre-deal mutual NDA. The associate must write an issue-spotting memo to the supervising partner covering consent, definitional, governing-law, assignment and liability-cap problems that appear when these documents are read together.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Daikesk Imaging Holdings, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Glosiv Medical Systems, Inc.",
+      "role": "Seller; services Provider under the Transition Services Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Sorrelux Imaging, Inc.",
+      "role": "Target Company being acquired; services Recipient under the Transition Services Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Dr. Tamsin Ferreol",
+      "role": "Chief Technology Officer of the Company; Key Employee and named inventor of the detector calibration patents"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Purchase Price",
+      "value": "$186,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Stock Purchase Agreement signing date",
+      "value": "August 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F4",
+      "key": "Stock Purchase Agreement exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence among transaction documents",
+      "value": "Purchase Agreement, then Transition Services Agreement, then Key Employee Agreement; each Ancillary Agreement controls as to its own subject matter",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F6",
+      "key": "Stock Purchase Agreement definition of \"Business\"",
+      "value": "design, manufacture, sale and servicing of digital radiography and ultrasound imaging systems",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F7",
+      "key": "Seller indemnification cap",
+      "value": "10% of the Purchase Price ($18,650,000)",
+      "doc": "D1",
+      "section": "Section 9.4(a)"
+    },
+    {
+      "id": "F8",
+      "key": "Seller indemnification cap carve-outs",
+      "value": "Fraud, Fundamental Representations, and breaches of Section 6.7 (Confidentiality)",
+      "doc": "D1",
+      "section": "Section 9.4(b)"
+    },
+    {
+      "id": "F9",
+      "key": "Transition Services Agreement term",
+      "value": "12 months after the Closing Date",
+      "doc": "D4",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F10",
+      "key": "Letter of Intent date",
+      "value": "May 4, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "key_employee_agreement_ferreol.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Ferreol's Key Employee Agreement is dated March 15, 2021. Section 9.3 grants the Company a license to her personally owned detector calibration patents, which Sorrelux's DR products depend on. The license will terminate automatically upon a Change of Control unless the Employee gives prior written consent. Under KEA Section 1.1, a sale of a majority of the Company's stock is a Change of Control, so the SPA triggers it. SPA Section 4.5 represents that no third-party consents are required except those on Schedule 4.5, and that schedule lists only a hospital group purchasing contract. SPA Section 7.2 sets the Buyer's closing conditions and does not require Ferreol's consent. Read together, these provisions mean the Buyer could close and immediately lose rights to core detector IP. The Seller's rep is inaccurate, and the problem is not addressed as a closing condition.",
+      "doc": "D2",
+      "section": "Section 9.3",
+      "detect_terms": [
+        "terminate automatically upon a Change of Control",
+        "Employee's prior written consent"
+      ],
+      "expected_finding": "The sale triggers the termination of Ferreol's patent license unless she consents in writing, and the SPA neither discloses this in Section 4.5 nor makes her consent a closing condition in Section 7.2, so Daikesk should require her written consent (or an assignment of the patents) as a condition to Closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "TSA Section 1.1 defines \"Business\" narrowly as the manufacture of digital radiography detectors. TSA Section 2.1 obliges the Provider to supply the transition services reasonably necessary to operate the Business. SPA Section 1.1, by contrast, defines Business as design, manufacture, sale and servicing of DR and ultrasound systems. The LOI (May 4, 2026) also describes transition support for field service and ultrasound operations. Under SPA Section 11.12, the TSA controls as to its own subject matter. The narrower TSA definition therefore governs the scope of services, and Glosiv has no obligation to support ultrasound or field-service operations during the 12-month transition.",
+      "doc": "D4",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "manufacture of digital radiography detectors"
+      ],
+      "expected_finding": "The TSA's narrower definition of \"Business\" controls the scope of services under the SPA's precedence clause and drops the ultrasound and field-service support that the SPA and LOI contemplate, so the TSA definition should be conformed to the SPA definition.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "TSA Section 13.2 selects New York law and the exclusive jurisdiction of state and federal courts in the Borough of Manhattan. SPA Sections 11.8 and 11.9 select Delaware law and the Delaware Court of Chancery. SPA Section 11.12 provides that each Ancillary Agreement controls as to its own subject matter, so the precedence clause does not cure the conflict. Claims arising from transition-period failures, such as data misuse or service lapses that also breach SPA covenants, will be split between two forums and two bodies of law. That split risks inconsistent results and gives the Seller room to choose its forum.",
+      "doc": "D4",
+      "section": "Section 13.2",
+      "detect_terms": [
+        "laws of the State of New York",
+        "Borough of Manhattan"
+      ],
+      "expected_finding": "The TSA's New York law and Manhattan forum clause conflicts with the SPA's Delaware law and Chancery forum, and the SPA's precedence clause lets the TSA clause control TSA disputes, so the TSA should be conformed to Delaware law and the Court of Chancery.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 12.4 lets the Provider assign the agreement or delegate any Services, in whole or in part, to any person without the Recipient's consent. The Recipient, by contrast, may not assign without the Provider's consent. This one-sidedness is visible from the clause alone. The risk is greater because the SPA Section 6.8 non-compete binds only Seller and its Affiliates. A competing imaging manufacturer that takes over the TSA would gain access to the Company's systems, service data and customer information during the transition and would not be bound by the non-compete.",
+      "doc": "D4",
+      "section": "Section 12.4",
+      "detect_terms": [
+        "Provider may assign this Agreement",
+        "without the consent of Recipient"
+      ],
+      "expected_finding": "Glosiv can freely assign the TSA or delegate services, including to a competitor not bound by the SPA non-compete, so the clause should require Daikesk's or the Company's prior written consent and bar transfers to competitors.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 9.4(b) excludes breaches of the Section 6.7 confidentiality covenant from the 10% indemnity cap. TSA Section 10.2, however, provides that, notwithstanding anything to the contrary in the Purchase Agreement, any claim arising from the Provider's or its Affiliates' use or disclosure of Company Data or Confidential Information in connection with the Services is limited to the TSA fees paid in the preceding six months. SPA Section 11.12 lets the TSA control as to its own subject matter. Read together, these provisions remove the uncapped confidentiality carve-out for disclosures during the 12-month TSA term, which is when Glosiv has the most access to Company data.",
+      "doc": "D4",
+      "section": "Section 10.2",
+      "detect_terms": [
+        "notwithstanding anything to the contrary in the Purchase Agreement",
+        "Company Data"
+      ],
+      "expected_finding": "Through the SPA precedence clause, the TSA liability cap overrides the SPA's uncapped confidentiality carve-out for data misuse during the transition period, so TSA Section 10.2 should expressly preserve the Section 9.4(b) carve-outs.",
+      "contradicts": "F8"
+    }
+  ]
+}

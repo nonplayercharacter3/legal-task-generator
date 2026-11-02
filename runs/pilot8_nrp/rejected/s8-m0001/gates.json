@@ -1,0 +1,154 @@
+{
+  "matter_id": "s8-m0001",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "no attempt passed: task is probably broken or too hard",
+  "split": null,
+  "solver_pass_rate": 0.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.3: \"The license and all rights of the Company under this Section 9.3 shall terminate automatically upon a Change of Control unless the Company has obtained the Employee's prior written consent to that Change of Control.\" Change of Control under KEA §1.1(a) includes \"any sale of a majority of the Company's stock.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "TSA Section 1.1: \"'Business' means the manufacture of digital radiography detectors as conducted by Recipient as of the Closing Date.\" Section 2.1: \"Provider shall provide, or cause its Affiliates to provide, to Recipient the transition services reasonably necessary to operate the Business.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "TSA Section 13.2: \"This Agreement and all claims arising out of or relating to it are governed by the laws of the State of New York... Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in the Borough of Manhattan, City of New York, for any action arising out of or relating to this Agreement or the Services.\" The SPA (Sections 11.8 and 11.9) instead selects Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 12.4: \"Recipient may not assign this Agreement, in whole or in part, without the prior written consent of Provider. Provider may assign this Agreement, or delegate the performance of any of the Services, in whole or in part, to any Person without the consent of Recipient.\""
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "TSA Section 10.2: \"Provider's aggregate liability arising out of or relating to this Agreement or the Services shall not exceed the Fees paid by Recipient under this Agreement in the six months preceding the event giving rise to the claim. Notwithstanding anything to the contrary in the Purchase Agreement, any claim arising from the use or disclosure by Provider or its Affiliates of Company Data or Confidential Information in connection with the Services is subject to, and limited by, this Section 10.2.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 17
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.102,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C7",
+              "C8"
+            ],
+            "steps": 17,
+            "files_opened": [
+              "key_employee_agreement_ferreol.md",
+              "letter_of_intent.md",
+              "mutual_nda.md",
+              "stock_purchase_agreement.md",
+              "transition_services_agreement.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C7"
+            ],
+            "steps": 17,
+            "files_opened": [
+              "key_employee_agreement_ferreol.md",
+              "letter_of_intent.md",
+              "mutual_nda.md",
+              "stock_purchase_agreement.md",
+              "transition_services_agreement.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C7"
+            ],
+            "steps": 17,
+            "files_opened": [
+              "key_employee_agreement_ferreol.md",
+              "letter_of_intent.md",
+              "mutual_nda.md",
+              "stock_purchase_agreement.md",
+              "transition_services_agreement.md"
+            ]
+          }
+        ],
+        "reason": "no attempt passed: task is probably broken or too hard"
+      }
+    }
+  ]
+}

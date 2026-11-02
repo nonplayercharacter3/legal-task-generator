@@ -1,0 +1,188 @@
+{
+  "matter_id": "s9-m0003",
+  "summary": "Daitend Dental Partners, LLC, a multi-location dental clinic group and the firm's client, licenses a cloud practice-management and dental imaging platform from Gaiport Clinical Systems, Inc. under a master services agreement dated January 1, 2024, together with a data processing addendum that also serves as the HIPAA business associate terms. Gaiport has now sent a notice letter saying the agreement has renewed for another 36-month term with a fee increase. The partner wants a memo spotting the problems for Daitend across the master services agreement, the data processing addendum, Gaiport's renewal letter and an onboarding email thread.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Daitend Dental Partners, LLC",
+      "role": "Customer; multi-location dental clinic group (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Gaiport Clinical Systems, Inc.",
+      "role": "Provider of a cloud dental practice-management, scheduling, billing and imaging platform"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "January 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "36 months from the MSA Effective Date, ending December 31, 2026",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA Renewal Term length",
+      "value": "36 months",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F4",
+      "key": "MSA non-renewal notice window",
+      "value": "no earlier than 120 and no later than 90 days before the current term ends",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F5",
+      "key": "MSA liability cap",
+      "value": "fees paid by Customer in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F6",
+      "key": "MSA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "16.1"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "DPA first, then the MSA, then Statements of Work",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F8",
+      "key": "MSA definition of Patient Data",
+      "value": "all patient health information, including radiographs, intraoral scans and other diagnostic images",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F9",
+      "key": "MSA monthly platform fee",
+      "value": "$18,400 per month",
+      "doc": "D1",
+      "section": "4.1"
+    },
+    {
+      "id": "F10",
+      "key": "Gaiport renewal letter date",
+      "value": "October 9, 2026",
+      "doc": "D3",
+      "section": "Date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "daitend_gaiport_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "daitend_gaiport_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "gaiport_renewal_notice_letter_2026.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "email_thread_new_clinic_onboarding.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA Section 12.2 renews the agreement automatically for successive 36-month terms. Daitend can stop a renewal only by written notice given in a 30-day window that opens 120 days and closes 90 days before the term ends. The renewal term is as long as the initial term, the window is narrow, and nothing else in the MSA lets Daitend terminate for convenience. A missed window locks a clinic group into three more years of platform fees. This is the single-clause issue.",
+      "doc": "D1",
+      "section": "12.2",
+      "detect_terms": [
+        "successive renewal terms of thirty-six (36) months"
+      ],
+      "expected_finding": "Section 12.2 imposes an evergreen 36-month renewal that Daitend can avoid only inside a 30-day window, which is heavily one-sided. It should be renegotiated to annual renewals with a longer opt-out window or a right to terminate for convenience.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Three provisions combine to fix the deadline. Under MSA Section 12.1, the Initial Term runs 36 months from the January 1, 2024 Effective Date and ends December 31, 2026. Under Section 12.2, non-renewal notice must be given no later than 90 days before that date, which makes the last day October 2, 2026; the window opened on September 2, 2026. Gaiport's letter is dated October 9, 2026. In paragraph 2 it announces that the agreement has renewed for a 36-month Renewal Term starting January 1, 2027, at an increased fee. The letter was therefore sent 7 days after Daitend's opt-out window closed. The onboarding email thread contains no non-renewal notice from Daitend, so Daitend has no contractual exit and is bound through December 31, 2029.",
+      "doc": "D3",
+      "section": "Paragraph 2",
+      "detect_terms": [
+        "Renewal Term commencing January 1, 2027"
+      ],
+      "expected_finding": "Daitend's non-renewal deadline was October 2, 2026, one week before Gaiport's October 9, 2026 letter, so the agreement has already auto-renewed for 36 months. Daitend's only routes out are negotiation, a waiver from Gaiport, or a for-cause termination right.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "MSA Section 1.1 defines 'Patient Data' to include radiographs, intraoral scans and other diagnostic images. DPA Section 1.1 redefines 'Patient Data' as information in Daitend's scheduling and billing records and expressly excludes diagnostic images. The DPA's security, breach-notification and return/deletion obligations in Sections 5 and 7 attach only to the DPA definition. Under MSA Section 2.3, the DPA prevails over the MSA, so the narrower DPA definition controls. As a result, Gaiport has no HIPAA-grade security or breach obligations for the imaging data it hosts.",
+      "doc": "D2",
+      "section": "1.1",
+      "detect_terms": [
+        "scheduling and billing records",
+        "excluding diagnostic images"
+      ],
+      "expected_finding": "The DPA's narrow definition of Patient Data, which controls under MSA Section 2.3, leaves radiographs and other diagnostic images outside Gaiport's security and breach-notification duties. The DPA definition must be conformed to the MSA definition.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "MSA Section 15.1 appears to be a mutual consent requirement for assignment, but it is made subject to Section 15.3. Section 15.3 lets Gaiport assign the agreement, or any Statement of Work, to 'any Successor' without Daitend's consent. 'Successor' is defined in Section 1.1 as any entity that acquires the Gaiport platform business or any of its customer contracts. That definition has no exclusion for competitors, so it would cover a rival dental service organization. Daitend itself needs Gaiport's consent to assign. Read together, these provisions let Gaiport transfer Daitend's contract and patient data hosting to a competitor.",
+      "doc": "D1",
+      "section": "15.3",
+      "detect_terms": [
+        "any Successor",
+        "without the consent of Customer"
+      ],
+      "expected_finding": "Read with the Section 1.1 definition of Successor, Section 15.3 swallows the Section 15.1 consent requirement and lets Gaiport assign to anyone, including a competing dental group. Gaiport's assignment should require Daitend's consent or exclude competitors, and Daitend should get a termination right on a change of control.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "MSA Section 11.1 caps each party's liability at fees paid in the prior 12 months. Section 11.3 then excludes from that cap all 'amounts payable under Section 10.2'. Section 10.2 is Daitend's one-way indemnity of Gaiport for 'Customer Data Claims', which covers any claim, regulatory fine or penalty arising from data Daitend uploads, including HIPAA enforcement, whether or not Gaiport is at fault. Gaiport's own IP indemnity in Section 10.1 stays within the cap. Read together, these provisions expose Daitend to unlimited liability, including for data incidents Gaiport causes.",
+      "doc": "D1",
+      "section": "11.3",
+      "detect_terms": [
+        "amounts payable under Section 10.2",
+        "Customer Data Claims"
+      ],
+      "expected_finding": "The Section 11.3 carve-out makes Daitend's Section 10.2 data indemnity uncapped while Gaiport's indemnity remains capped. Daitend should seek to cap its indemnity, or make the carve-out mutual, and exclude claims caused by Gaiport's breach or negligence.",
+      "contradicts": null
+    }
+  ]
+}

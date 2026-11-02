@@ -1,0 +1,207 @@
+{
+  "matter_id": "s7-m0003",
+  "summary": "Drebuv Agritech Holdings, Inc. (the client) is buying all outstanding shares of Sowfield Robotics, Inc. from Bruveind Aerial Group, LLC. Sowfield makes precision-agriculture spraying and multispectral imaging drones and runs a crop-analytics platform. The folder holds five documents: the stock purchase agreement, the seller's board consent approving the sale, a transition services agreement under which the seller keeps hosting Sowfield's flight-log and imagery data on its cloud platform, the indemnity escrow agreement, and an earlier mutual NDA. Five buyer-adverse issues are planted across the SPA, the TSA and the escrow agreement.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Drebuv Agritech Holdings, Inc.",
+      "role": "Buyer; the firm's client; Service Recipient under the TSA"
+    },
+    {
+      "id": "P2",
+      "name": "Bruveind Aerial Group, LLC",
+      "role": "Seller; Service Provider under the TSA"
+    },
+    {
+      "id": "P3",
+      "name": "Sowfield Robotics, Inc.",
+      "role": "Target company whose shares are being sold"
+    },
+    {
+      "id": "P4",
+      "name": "Calloway Trust Company, N.A.",
+      "role": "Escrow Agent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement signing date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$148,500,000",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Escrow Amount",
+      "value": "$14,850,000",
+      "doc": "D1",
+      "section": "2.4"
+    },
+    {
+      "id": "F4",
+      "key": "Cap on Seller's general indemnity",
+      "value": "the Escrow Amount",
+      "doc": "D1",
+      "section": "9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "General representation survival period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "9.1"
+    },
+    {
+      "id": "F6",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "11.8"
+    },
+    {
+      "id": "F7",
+      "key": "Stock Purchase Agreement forum",
+      "value": "exclusive jurisdiction of state or federal courts in New York County, New York",
+      "doc": "D1",
+      "section": "11.8"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence among Transaction Documents",
+      "value": "SPA controls, except TSA controls on Transition Services and Escrow Agreement on escrow release mechanics",
+      "doc": "D1",
+      "section": "11.10"
+    },
+    {
+      "id": "F9",
+      "key": "Company Data (SPA definition)",
+      "value": "all agronomic, imagery and flight-log data collected by Company drones, whenever collected",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F10",
+      "key": "Transition Services Agreement term",
+      "value": "12 months after the Closing Date",
+      "doc": "D3",
+      "section": "2.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seller_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "indemnity_escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Under SPA 9.1, general representations survive for 18 months after the Closing Date. Under SPA 9.6, the escrow is Buyer's sole and exclusive recourse for general representation claims. Escrow Agreement 4.1, however, releases all remaining Escrow Funds to Seller nine months after the Closing Date and holds back only amounts covered by claim notices already pending at that point. SPA 11.10 makes the Escrow Agreement control on release mechanics, so the SPA's survival period does not override the escrow release date. Read together, these provisions mean any claim discovered between month 9 and month 18 has no source of recovery. The practical survival period is nine months, which is too short for latent defects such as drone airframe or firmware failures that surface over a growing season.",
+      "doc": "D4",
+      "section": "4.1",
+      "detect_terms": [
+        "nine (9) months after the Closing Date"
+      ],
+      "expected_finding": "Because the escrow is the exclusive remedy and is released at nine months, Buyer's 18-month survival period is illusory; the release date should be aligned to 18 months, or Buyer should get direct recourse against Seller after release.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA 1.1 defines Company Data broadly to cover all agronomic, imagery and flight-log data collected by Company drones, whenever collected. TSA 1.1 redefines Company Data to mean only data uploaded by Recipient to the Provider Platform after the TSA Effective Date. TSA 7.1 gives Recipient ownership of Company Data and requires Provider to return and delete it at the end of the term. Under the TSA definition, those protections do not reach Sowfield's historical pre-closing imagery and field dataset, which Seller will keep hosting on its platform during the transition. SPA 11.10 makes the TSA control on Transition Services, including data hosting, so the narrower TSA definition governs Seller's handling of that dataset.",
+      "doc": "D3",
+      "section": "1.1",
+      "detect_terms": [
+        "uploaded by Recipient to the Provider Platform after the Effective Date"
+      ],
+      "expected_finding": "The TSA's narrower definition of Company Data leaves Sowfield's historical drone dataset outside the TSA's ownership and return-and-delete protections, and the TSA prevails on hosting; the TSA definition should be conformed to the SPA definition.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "SPA 11.8 selects New York law and the exclusive jurisdiction of the New York County courts for all disputes arising out of the Transaction Documents. Escrow Agreement 10.2 instead selects Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery. The Escrow Agent is not a party to the SPA and is bound only by the Escrow Agreement's forum clause. SPA 11.10 also defers to the Escrow Agreement on release mechanics. As a result, any dispute over whether a Buyer claim notice blocks release would have to be litigated in Delaware under Delaware law, while the underlying indemnity claim proceeds in New York. That split creates a risk of inconsistent rulings and duplicate proceedings.",
+      "doc": "D4",
+      "section": "10.2",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery"
+      ],
+      "expected_finding": "The Escrow Agreement's Delaware law and forum clause conflicts with the SPA's New York choice and would split indemnity and escrow-release disputes between two forums; it should be conformed to New York law and New York County courts.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA 12.3 bars Recipient (Buyer) from assigning without Provider's consent. It lets Provider (Seller) assign or delegate the TSA without consent to any Affiliate or to any successor to Provider's cloud platform business. Nothing excludes competitors of Sowfield, so Seller could transfer the hosting of Sowfield's flight-control and agronomic data to a rival drone or agtech company in the middle of the transition.",
+      "doc": "D3",
+      "section": "12.3",
+      "detect_terms": [
+        "any successor to Provider's cloud platform business"
+      ],
+      "expected_finding": "Seller can freely assign the TSA, and with it custody of Sowfield's data, to a successor that may be a competitor; Provider assignment should require Buyer's consent, with an express bar on assignment to competitors.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "SPA 9.3(c) requires Buyer to indemnify Seller for all Losses arising out of the operation of the Business following the Closing, including Losses under any Transition Document. SPA 9.5(d) removes 9.3(c) claims from every limitation in 9.5. Read together, these provisions give Buyer unlimited liability for anything connected to post-closing operations. Because Transition Documents include the TSA, that exposure extends to Losses Seller incurs while performing the Transition Services, even where Seller caused them. By contrast, F4 caps Seller's own general indemnity at the Escrow Amount.",
+      "doc": "D1",
+      "section": "9.5(d)",
+      "detect_terms": [
+        "operation of the Business following the Closing",
+        "without regard to the Cap"
+      ],
+      "expected_finding": "The carve-out in 9.5(d), combined with the broad 9.3(c) indemnity, exposes Buyer to unlimited liability for post-closing and TSA-related Losses, including those Seller causes; the indemnity should be narrowed to Buyer's own conduct and made subject to a reciprocal cap.",
+      "contradicts": null
+    }
+  ]
+}

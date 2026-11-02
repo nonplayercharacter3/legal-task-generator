@@ -1,0 +1,167 @@
+{
+  "matter_id": "s7-m0001",
+  "summary": "The firm represents Ridond Fresh Provisions, Inc., a New York distributor of fresh and frozen prepared foods. Its parent, Ridond Provisions Holdings, Inc., has signed a stock purchase agreement under which Ostrander Peak Capital Partners will acquire 100% of the parent, with closing expected in Q1 2027. As part of diligence and exit planning, the supervising partner wants a review of Ridond's master services agreement with its refrigerated warehousing and temperature-controlled transport provider, Gesav Coldline Logistics LLC. The folder holds the MSA, a parent guaranty from Gesav's parent Gesav Thermal Holdings, Inc., a data processing addendum signed in October 2026, and a Gesav press release announcing the relationship. Ostrander runs its own cold chain network and wants Ridond able to exit Gesav at the end of the initial term. Ridond also needs the guaranty and its data-breach protection to remain intact after closing.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Ridond Fresh Provisions, Inc.",
+      "role": "Customer under the MSA; beneficiary of the parent guaranty; controller under the DPA (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Gesav Coldline Logistics LLC",
+      "role": "Provider of refrigerated warehousing, temperature-controlled transport and cold chain monitoring services; processor under the DPA"
+    },
+    {
+      "id": "P3",
+      "name": "Gesav Thermal Holdings, Inc.",
+      "role": "Parent of Gesav Coldline Logistics LLC; guarantor of Gesav's obligations under the MSA"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "three (3) years from the MSA Effective Date",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA Renewal Term",
+      "value": "successive two (2) year renewal terms, renewing automatically",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F4",
+      "key": "MSA non-renewal notice period",
+      "value": "at least 180 days before expiry of the then-current term",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F5",
+      "key": "MSA liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F6",
+      "key": "MSA uncapped liabilities",
+      "value": "breach of Section 8 (Confidentiality and Data Protection) and indemnification obligations",
+      "doc": "D1",
+      "section": "Section 11.3"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "DPA (as to Personal Data only), then MSA, then Statements of Work",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F8",
+      "key": "MSA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 17.1"
+    },
+    {
+      "id": "F9",
+      "key": "MSA Change of Control definition",
+      "value": "direct or indirect acquisition of over 50% of voting securities of a party or its parent",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F10",
+      "key": "DPA Effective Date",
+      "value": "October 5, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "ridond_gesav_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "gesav_thermal_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ridond_gesav_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "gesav_press_release_ridond_partnership.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "MSA Section 12.1 sets the Initial Term at three years from the March 1, 2024 Effective Date stated in the Preamble, so the Initial Term ends February 28, 2027. The term then renews automatically for successive two-year terms unless a party gives notice of non-renewal at least 180 days before expiry. Reading the Preamble and Section 12.1 together puts the last day for notice at September 1, 2026. The DPA is dated October 5, 2026, and nothing in the folder records a non-renewal notice from Ridond. The window therefore closed before the latest document in the folder was signed. MSA Section 12 gives Ridond termination rights only for uncured material breach and insolvency, with no termination for convenience. Ridond is locked into a renewal term running to February 28, 2029, which defeats Ostrander's plan to exit Gesav at the end of the initial term.",
+      "doc": "D1",
+      "section": "Section 12.1",
+      "detect_terms": [
+        "at least one hundred eighty (180) days prior",
+        "automatically renew for successive two (2) year"
+      ],
+      "expected_finding": "The 180-day non-renewal window under MSA Section 12.1 closed on September 1, 2026, before the October 5, 2026 DPA, so absent a negotiated amendment Ridond is bound to a renewal term through February 28, 2029 with no convenience termination right.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "MSA Section 11.3 excludes breaches of Section 8 (Confidentiality and Data Protection) from the Section 11.2 cap. DPA Section 10, however, provides that each party's aggregate liability arising out of or related to the DPA, including any Personal Data Breach, is subject to the MSA's limitations and shall in no event exceed the cap. MSA Section 2.3 gives the DPA precedence over the MSA on matters relating to Personal Data. Read together, these provisions let DPA Section 10 control. Gesav's liability for data breaches involving Ridond's customer and employee personal data is then capped at 12 months' fees, which removes the uncapped protection Ridond negotiated in the MSA. The guaranty compounds the problem because it covers Gesav's obligations only as limited under the Agreement.",
+      "doc": "D3",
+      "section": "Section 10",
+      "detect_terms": [
+        "including any Personal Data Breach",
+        "shall in no event exceed the cap"
+      ],
+      "expected_finding": "Because the MSA precedence clause lets the DPA control on personal data, DPA Section 10 pulls data-breach liability back under the 12-month-fees cap and overrides the MSA Section 11.3 carve-out, so the DPA should be amended to preserve uncapped liability for data protection breaches.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Guaranty Section 7 provides that the guaranty shall automatically terminate and be of no further force if the Beneficiary undergoes a Change of Control without Guarantor's prior written consent. Guaranty Section 1 adopts the MSA definitions, and MSA Section 1.1 defines Change of Control to include the indirect acquisition of more than 50% of the voting securities of a party's parent. Read together, these provisions mean Ostrander's acquisition of Ridond Provisions Holdings, Inc. is a Change of Control of Ridond, and it will extinguish Gesav Thermal Holdings' guaranty at closing unless Guarantor consents. No consent from Gesav Thermal Holdings, Inc. appears anywhere in the folder, and the MSA does not otherwise require Gesav to maintain credit support.",
+      "doc": "D2",
+      "section": "Section 7",
+      "detect_terms": [
+        "without Guarantor's prior written consent",
+        "shall automatically terminate and be of no further force"
+      ],
+      "expected_finding": "Ostrander's acquisition of Ridond's parent is an indirect Change of Control under the MSA definition incorporated into the guaranty, so Ridond must obtain Gesav Thermal Holdings' written consent before closing (or make it a closing condition) or lose the parent guaranty.",
+      "contradicts": null
+    }
+  ]
+}

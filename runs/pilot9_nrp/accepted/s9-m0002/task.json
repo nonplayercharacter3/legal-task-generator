@@ -1,0 +1,103 @@
+{
+  "task_id": "s9-m0002",
+  "split": "dev",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Besouth Facade Systems, Inc., the buyer under its supply agreement with Meideis Glass Fabrication Co. The client wants a clear picture of where it stands under the supply arrangements and related documents before it relies on them for the Calloway Pier Tower work. The other parties involved are Besouth Holdings LLC and Pellworth Capital Partners. Please review all five files in the matter folder: the supply agreement (besouth_meideis_supply_agreement.md), the Calloway Pier Tower statement of work, Amendment No. 1 to the supply agreement, the Besouth Holdings parent guaranty, and the insurance certificate cover letter. Then prepare a memo to me covering every issue you identify. For each one, give the document and section where it appears, explain why it matters for Besouth, and recommend a fix. Order the issues by how much they matter to the client, and flag anything that needs a decision or follow-up from the client. If something is ambiguous or you need information we don't have, note it rather than assuming. Please keep it practical. I'll use it to brief the client.",
+  "documents": [
+    "besouth_holdings_parent_guaranty.md",
+    "besouth_meideis_supply_agreement.md",
+    "calloway_pier_tower_statement_of_work.md",
+    "insurance_certificate_cover_letter.md",
+    "supply_agreement_amendment_no_1.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "Identifies that the sale of Besouth Holdings LLC to Pellworth is an indirect Change of Control under Supply Agreement Sections 1.1 and 16.2: the definition reaches transfers of a 'direct or indirect parent' and a Change of Control is 'deemed an assignment' requiring Meideis's prior written consent. States that without consent Meideis may terminate on 30 days' notice (Section 16.3), and recommends obtaining Meideis's consent (e.g., as a closing condition or deliverable).",
+      "kind": "issue",
+      "hints": [
+        "indirect parent",
+        "deemed an assignment",
+        "prior written consent"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "Identifies that Supply Agreement Section 3.1 imposes requirements-based exclusivity covering all architectural glass products for Besouth and its Affiliates throughout North America. Explains that this is broader than the SOW's Calloway Pier Tower insulated glass unit scope and that, under the Section 18.2 order of precedence, the Supply Agreement prevails over the SOW. Recommends narrowing the exclusivity to the project scope and/or limiting the Affiliate reach.",
+      "kind": "issue",
+      "hints": [
+        "all of its requirements for architectural glass products",
+        "throughout North America",
+        "Section 18.2"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "Identifies that under Amendment No. 1 Section 2 the agreement auto-renews for a 24-month Renewal Term unless non-renewal notice is given at least 180 days before expiry. Concludes that the deadline (about August 4, 2026, measured from the January 31, 2027 end of the Initial Term) has already passed, so Besouth is locked into a renewal at the Amendment's 7% price increase. Recommends seeking a negotiated release or amendment from Meideis, or disclosure to Pellworth.",
+      "kind": "issue",
+      "hints": [
+        "August 4, 2026",
+        "180 days",
+        "7%"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "States that the Initial Term of the Supply Agreement runs three years from the February 1, 2024 Effective Date, ending on or about January 31, 2027.",
+      "kind": "fact",
+      "hints": [
+        "February 1, 2024",
+        "January 31, 2027"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "States the order of precedence under Supply Agreement Section 18.2: Amendments prevail over the Supply Agreement, which prevails over any Statement of Work.",
+      "kind": "fact",
+      "hints": [
+        "order of precedence",
+        "prevails over the Statement of Work"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "Is structured as a memo addressed to the supervising partner. For each issue it gives the document and section, why the issue matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommendation",
+        "Section"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "Orders issues by importance to the client and flags items requiring a client decision or follow-up.",
+      "kind": "format",
+      "hints": [
+        "priority",
+        "client decision",
+        "follow-up"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "Does not conclude that Besouth can still give timely non-renewal notice to avoid the Renewal Term, or that the non-renewal window remains open.",
+      "kind": "negative",
+      "hints": [
+        "deadline has passed"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "Does not conclude that the change of control consent requirement is not triggered because Besouth Facade Systems itself is not being sold, or that the Parent Guaranty supplies or waives Meideis's consent.",
+      "kind": "negative",
+      "hints": [
+        "indirect change of control"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.333
+}

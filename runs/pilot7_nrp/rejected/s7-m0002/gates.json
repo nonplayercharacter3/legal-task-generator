@@ -1,0 +1,146 @@
+{
+  "matter_id": "s7-m0002",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "no attempt passed: task is probably broken or too hard",
+  "split": null,
+  "solver_pass_rate": 0.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 45
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Bill of Sale §6.1: \"This Bill of Sale, and all claims or causes of action arising out of or relating to this Bill of Sale or the transfer of the Purchased Assets under it, shall be governed by and construed in accordance with the laws of the State of Arizona...\" §6.2: \"Each of Seller and Buyer, by accepting this Bill of Sale, irrevocably submits to the exclusive jurisdiction of the state courts of the State of Arizona located in Maricopa County... Each of them agrees not to commence any such action or proceeding except in those courts.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 8.5(b): \"Losses arising out of any Excluded Liability under Section 8.2(c), and Losses arising out of any Assumed Liability under Section 8.3(c) shall not be subject to the Cap or the deductible in Section 8.5(a).\" Section 2.3(c) adds to the Assumed Liabilities \"Liabilities set forth on Schedule 2.3(c),\" and Schedule 2.3(c) lists \"All workmanship and roof-penetration warranty obligations of Seller for solar photovoltaic systems installed by Seller before the Closing\" (about 4,100 systems) and \"All Liabilities arising out of or relating to ... Halvorsen, et al. v. Tredeil Sunworks, Inc.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 10.6: \"...and Seller may assign any of its rights under this Agreement, including the right to receive Earnout Payments and to make claims under Article VIII, to any Person without the consent of Buyer.\" Section 2.6(d): \"Buyer shall provide Seller or its permitted assignee... reasonable access during normal business hours to Buyer's customer pipeline reports, pricing and proposal data, and books and records relating to Installed Megawatts.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 9.2: \"The Company may not assign this Agreement, or any of its rights or obligations under this Agreement, without the prior written consent of Employee. This restriction applies to any assignment by operation of law or otherwise, including an assignment in connection with a merger, consolidation, or sale of all or substantially all of the assets of the Company. Any purported assignment without that consent is void.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C6"
+            ],
+            "steps": 19,
+            "files_opened": [
+              "apa_prior_draft_august_2026.md",
+              "asset_purchase_agreement_roumoux_tredeil.md",
+              "bill_of_sale_tredeil_to_roumoux.md",
+              "key_employee_agreement_okafor_lindqvist.md",
+              "seller_disclosure_schedule.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C5"
+            ],
+            "steps": 18,
+            "files_opened": [
+              "apa_prior_draft_august_2026.md",
+              "asset_purchase_agreement_roumoux_tredeil.md",
+              "bill_of_sale_tredeil_to_roumoux.md",
+              "key_employee_agreement_okafor_lindqvist.md",
+              "seller_disclosure_schedule.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2"
+            ],
+            "steps": 18,
+            "files_opened": [
+              "apa_prior_draft_august_2026.md",
+              "asset_purchase_agreement_roumoux_tredeil.md",
+              "bill_of_sale_tredeil_to_roumoux.md",
+              "key_employee_agreement_okafor_lindqvist.md",
+              "seller_disclosure_schedule.md"
+            ]
+          }
+        ],
+        "reason": "no attempt passed: task is probably broken or too hard"
+      }
+    }
+  ]
+}

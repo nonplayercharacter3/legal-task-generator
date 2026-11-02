@@ -1,0 +1,150 @@
+{
+  "matter_id": "s8-m0003",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "no attempt passed: task is probably broken or too hard",
+  "split": null,
+  "solver_pass_rate": 0.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "§2.2: \"At the end of the Initial Term, this Agreement will renew automatically for successive three-year renewal terms (each a \"Renewal Term\"). Either Party may prevent renewal by giving the other Party written notice of non-renewal at least 30 days before the end of the then-current term.\" §1.14 defines \"Term\" as \"the Initial Term together with all Renewal Terms,\" and §4.2 says \"The prices set out in Exhibit B are fixed for the duration of the Term.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"Ziteir will remain the same legal entity after closing, and the Agreement will remain with Ziteir. Ziteir will not assign or transfer the Agreement, the Data Processing Addendum or any Statement of Work to Okonvale or any other person. Accordingly, no consent of Lakix is required in connection with the Transaction.\" (Letter, Paragraph 2). Compare Supply Agreement §15.2: \"Any change of control of Supplier, including a merger, consolidation, sale of equity or other transaction in which more than 50% of Supplier's voting equity changes hands, is deemed an assignment of this Agreement. Any such assignment requires Lakix's prior written consent. Failure to obtain that consent is a material breach of this Agreement and entitles Lakix to terminate this Agreement by written notice and to recover its damages.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SOW §9.1: \"This SOW, and all disputes arising out of or relating to the Services, are governed by the laws of the State of New York, without regard to its conflict of laws principles.\" SOW §9.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in the Borough of Manhattan, New York, New York, for any action arising out of or relating to this SOW or the Services.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "DPA §8.2: \"Processor's obligations under Section 8.1 apply to each Security Incident, whether or not caused by Processor's fault, and shall not be subject to any limitation of liability in the Agreement.\" Supply Agreement §18.3: \"...the following order of precedence applies: Data Processing Addendum, then Statement of Work, then Supply Agreement.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 17
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C7",
+          "C8"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.083,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C3",
+              "C11"
+            ],
+            "steps": 14,
+            "files_opened": [
+              "ziteir_lakix_data_processing_addendum.md",
+              "ziteir_lakix_sow_001_fleet_deployment.md",
+              "ziteir_lakix_supply_agreement.md",
+              "ziteir_letter_to_lakix_2026-10-15.md",
+              "ziteir_pellbrook_hangar_lease.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2",
+              "C10",
+              "C11"
+            ],
+            "steps": 14,
+            "files_opened": [
+              "ziteir_lakix_data_processing_addendum.md",
+              "ziteir_lakix_sow_001_fleet_deployment.md",
+              "ziteir_lakix_supply_agreement.md",
+              "ziteir_letter_to_lakix_2026-10-15.md",
+              "ziteir_pellbrook_hangar_lease.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C11"
+            ],
+            "steps": 14,
+            "files_opened": [
+              "ziteir_lakix_data_processing_addendum.md",
+              "ziteir_lakix_sow_001_fleet_deployment.md",
+              "ziteir_lakix_supply_agreement.md",
+              "ziteir_letter_to_lakix_2026-10-15.md",
+              "ziteir_pellbrook_hangar_lease.md"
+            ]
+          }
+        ],
+        "reason": "no attempt passed: task is probably broken or too hard"
+      }
+    }
+  ]
+}

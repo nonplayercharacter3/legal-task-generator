@@ -1,0 +1,117 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "Identifies that MSA Section 12.2 automatically renews the agreement for successive 36-month terms, and that Daitend can avoid renewal only by written notice in a narrow window (no earlier than 120 and no later than 90 days before term end) with no termination-for-convenience right. Explains that this is one-sided and that a missed window locks Daitend into three more years of fees. Recommends a fix such as shorter or annual renewal terms, a longer or more flexible opt-out window, or a termination-for-convenience right.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "Section 12.2",
+        "successive 36-month renewal",
+        "terminate for convenience"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "Identifies that Daitend's non-renewal deadline under MSA Sections 12.1/12.2 was October 2, 2026 (90 days before the December 31, 2026 end of the Initial Term). Explains that Gaiport's October 9, 2026 renewal letter (paragraph 2, announcing a Renewal Term commencing January 1, 2027) came after that deadline, so the agreement has already auto-renewed for 36 months absent a timely notice from Daitend. Recommends practical routes such as negotiating with Gaiport, seeking a waiver, confirming whether Daitend sent any notice, or assessing for-cause termination rights.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "October 2, 2026",
+        "window has closed",
+        "already renewed"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "Identifies that DPA Section 1.1 defines 'Patient Data' narrowly as scheduling and billing records and excludes diagnostic images, which conflicts with the broader MSA Section 1.1 definition that includes radiographs and diagnostic images. Explains that the DPA prevails under MSA Section 2.3, so imaging data falls outside the DPA's security, breach-notification and return/deletion obligations. Recommends conforming the DPA definition to the MSA definition, or otherwise bringing images within the DPA's protections.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "excluding diagnostic images",
+        "DPA prevails",
+        "radiographs"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "Identifies that MSA Section 15.3 lets Gaiport assign the agreement to 'any Successor' without Daitend's consent, overriding the apparent mutual consent requirement in Section 15.1. Explains that the Section 1.1 definition of Successor has no competitor exclusion, so the contract and patient-data hosting could pass to a competitor, while Daitend itself needs consent to assign. Recommends requiring Daitend's consent, excluding competitors, and/or adding a change-of-control termination right.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "Section 15.3",
+        "any Successor",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "Identifies that MSA Section 11.3 excludes amounts payable under Section 10.2 (Daitend's indemnity for Customer Data Claims) from the Section 11.1 liability cap, while Gaiport's Section 10.1 IP indemnity remains capped. Explains that this leaves Daitend with uncapped exposure, including regulatory/HIPAA fines, even for incidents Gaiport causes. Recommends capping Daitend's indemnity or making the carve-out mutual, and excluding claims caused by Gaiport's breach or negligence.",
+      "kind": "issue",
+      "source": "I5",
+      "hints": [
+        "Section 11.3",
+        "Customer Data Claims",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "States that the Initial Term ends December 31, 2026, i.e. 36 months from the January 1, 2024 Effective Date.",
+      "kind": "fact",
+      "source": "F2",
+      "hints": [
+        "December 31, 2026",
+        "January 1, 2024"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "States that Gaiport's renewal letter is dated October 9, 2026.",
+      "kind": "fact",
+      "source": "F10",
+      "hints": [
+        "October 9, 2026"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "Is a memo to the supervising partner that, for each issue, states the document and section where it appears, why it matters for Daitend, and a recommended fix, with issues ordered by significance.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Recommended fix",
+        "Why it matters",
+        "Section"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "Includes proposed contract wording for at least one recommended fix, and lists questions to put to the client or flags ambiguous or missing information.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "proposed wording",
+        "questions for the client"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "Does not conclude that Daitend is still within its non-renewal window, or that it can still stop the renewal by sending notice now as a matter of right under Section 12.2.",
+      "kind": "negative",
+      "source": "I2",
+      "hints": [
+        "deadline passed"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "Does not conclude that the DPA's security or breach-notification obligations cover diagnostic images, or that the MSA's broader Patient Data definition controls over the DPA.",
+      "kind": "negative",
+      "source": "I3",
+      "hints": [
+        "DPA controls"
+      ]
+    }
+  ]
+}
