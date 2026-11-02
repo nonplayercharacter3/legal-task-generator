@@ -144,9 +144,8 @@ RUBRIC_WRITER = """You write grading rubrics for legal agent tasks. The rubric i
 if it meets every criterion, so each criterion must be objective, atomic and checkable from the response alone.
 
 You receive the facts ledger, the task instruction and the deliverable. Write criteria FROM THE LEDGER:
-- kind "issue": at least one per ledger issue (source = issue id): the response identifies the problem, where it
-  is, and why it matters. Another point about the same issue (a consequence, a related right, the fix) is also
-  kind "issue" with that issue's id.
+- kind "issue": exactly one per ledger issue (source = issue id): the response identifies the problem, where it
+  is, and why it matters. Anything else a correct answer must say about that issue goes in the same criterion.
 - kind "fact": 1 to 3 criteria for facts a correct answer must state (source = an id from the ledger's `facts`,
   never an issue id).
 - kind "format": 1 to 2 criteria about the deliverable's form (source = null).
