@@ -26,7 +26,9 @@ Rules:
 - Issues must be real problems for the client under the governing law (`jurisdiction`), not drafting trivia, and
   must stay problems on a careful reading of the whole folder: no design that the documents themselves cure,
   justify or make harmless (a definition expressly limited "for purposes of this Section", a later document that
-  fixes the point, a change that actually favours the client).
+  fixes the point, a change that actually favours the client, a clause made "subject to Section X" whose
+  exceptions in Section X restore what the issue takes away: cite the subsection that does the damage, or say
+  "notwithstanding" the exception).
 - Make issues require analysis, not just spotting. At most one issue may be visible from a single clause read on
   its own (a plainly one-sided clause). Every other issue must appear only when two provisions or two documents are
   read together: a carve-out that swallows a cap through a cross-reference, a precedence clause that lets the flawed
