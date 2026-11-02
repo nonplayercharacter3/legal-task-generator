@@ -32,11 +32,12 @@ laptop is set up for pilot rounds (LAB clone, LAB index, NRP key in `~/.zshenv`;
    (`NRP_LLM_API_KEY`, from the NRP portal). Done: the round meets the pilot standard with Qwen solving.
 4. **Judge leniency** (known weakness 1): rerun the same matters with `gates.judge_hints` on and off, compare solver
    pass rates, pick a default.
-5. **GPUs on Nautilus**: serve a Qwen model with vLLM (`deploy/nautilus/`, untracked so far), then fine-tune on
-   accepted tasks.
+5. **GPUs on Nautilus**: serve a Qwen model with vLLM, then fine-tune on accepted tasks. `deploy/nautilus/` holds a
+   bare Pod serving Qwen3-32B (FP8) on one A100 80GB and a PVC for the weights; the plan starts with ~8B, so swap
+   the model before the first run.
 
 Loose ends: branch `claude/affectionate-perlman-e65dbe` (local only, worktree under `.claude/worktrees/`, 2 commits
-from 2026-10-18) adds an EDGAR fetcher and is not merged. `deploy/nautilus/` is not committed.
+from 2026-10-18) adds an EDGAR fetcher and is not merged.
 
 ## Working with other people and sessions
 
