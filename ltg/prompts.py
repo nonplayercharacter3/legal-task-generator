@@ -34,6 +34,9 @@ Rules:
   read together: a carve-out that swallows a cap through a cross-reference, a precedence clause that lets the flawed
   document control, a defined term that means something different in another document, a deadline that has to be
   computed from dates stated in different places. Say in the description which provisions combine.
+- Never let an issue depend on anything only the summary states (a planned sale, the client's plans): the solver
+  sees only the instruction and the documents. If an issue needs such a premise, put it in a document (a letter of
+  intent, a board consent, an email) and name that document in the description.
 - Never let an issue depend on today's date: the task may be solved at any later time. A deadline that has passed or
   is about to pass must be measured against a date stated in the documents (a signing date, a letter's date, a
   delivery confirmation), and the description must name that date.
