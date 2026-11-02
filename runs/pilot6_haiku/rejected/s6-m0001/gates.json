@@ -1,0 +1,140 @@
+{
+  "matter_id": "s6-m0001",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "every attempt passed: too easy to carry training signal",
+  "split": null,
+  "solver_pass_rate": 1.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 5,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 4.5: \"No consent, approval or waiver of any third party, and no filing with or approval of any Governmental Authority, is required in connection with the execution, delivery and performance by Seller of this Agreement or the consummation of the transactions contemplated by this Agreement, other than the Required Consents.\" Section 7.2(d): \"Seller shall have obtained and delivered to Buyer each of the Required Consents, in form and substance reasonably satisfactory to Buyer.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Paragraph 3(b) of the Side Letter: \"First, the Indemnity Cap shall apply to all Losses under Section 8.2, including Losses arising from any breach of Section 4.12. Second, the only Losses excluded from the Indemnity Cap are Losses arising from Fraud and from breaches of the Fundamental Representations.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 12.6: \"Any action or proceeding concerning the release of the Escrow Funds, or otherwise arising out of or relating to this Escrow Agreement, shall be brought exclusively in the Court of Chancery of the State of Delaware.\" Section 5.3: \"The Escrow Agent shall release a Disputed Amount only (a) in accordance with Joint Written Instructions, or (b) in accordance with a Final Order of the Court of Chancery of the State of Delaware.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Escrow Agreement Section 1.1 defines \"Indemnifiable Claim\" as \"a claim by Buyer, on behalf of itself or any other Buyer Indemnitee, for breach of any representation or warranty of Seller under Section 8.2(a) of the Purchase Agreement.\" Section 4.2 then provides: \"The Escrow Agent shall disburse Escrow Funds to Buyer only in respect of an Indemnifiable Claim that is the subject of a Claim Notice delivered in accordance with this Section 4.2.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.095,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "runs": [
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 16,
+            "files_opened": [
+              "buyer_seller_side_letter.md",
+              "indemnity_escrow_agreement.md",
+              "seller_managers_written_consent.md",
+              "spa_prior_draft_feb2026.md",
+              "stock_purchase_agreement_executed.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 16,
+            "files_opened": [
+              "buyer_seller_side_letter.md",
+              "indemnity_escrow_agreement.md",
+              "seller_managers_written_consent.md",
+              "spa_prior_draft_feb2026.md",
+              "stock_purchase_agreement_executed.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 16,
+            "files_opened": [
+              "buyer_seller_side_letter.md",
+              "indemnity_escrow_agreement.md",
+              "seller_managers_written_consent.md",
+              "spa_prior_draft_feb2026.md",
+              "stock_purchase_agreement_executed.md"
+            ]
+          }
+        ],
+        "reason": "every attempt passed: too easy to carry training signal"
+      }
+    }
+  ]
+}

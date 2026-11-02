@@ -1,0 +1,154 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The memo identifies that MSA Section 12.2 automatically renews the agreement for successive 36-month terms unless notice of non-renewal is given within a narrow window (no more than 120 and no less than 90 days before term end), explains that this locks Daitend into a long renewal commitment, and recommends a fix such as a shorter renewal term, a wider notice window, or a termination-for-convenience right.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "automatically renew",
+        "36 months",
+        "90 to 120 days"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The memo concludes that Daitend's non-renewal letter dated July 20, 2026 was untimely because the notice deadline (90 days before the August 31, 2026 end of the Initial Term) fell on or about June 2, 2026.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "untimely",
+        "June 2, 2026",
+        "missed the window"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The memo states that, because the notice was late, the MSA has likely renewed (or will be treated as renewed) for a further 36-month term running to about August 31, 2029. It recommends that Daitend seek a negotiated exit, waiver, or other resolution with Gaiport rather than rely on the letter, and flags this as requiring prompt action.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "August 31, 2029",
+        "waiver",
+        "negotiated exit"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The memo identifies that the DPA's defined term 'Customer Personal Data' (DPA Section 1.1) is narrower than the MSA's 'Customer Data' and excludes patient health information. It explains that, as a result, the DPA's security and breach-notification obligations do not cover patient records.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "Customer Personal Data",
+        "excluding Patient Health Information",
+        "breach notification"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The memo explains that this gap matters because the DPA controls on personal data processing under the MSA's order-of-precedence clause, or because it leaves PHI without contractual protection required under HIPAA. It recommends aligning the DPA definition to cover patient data and/or putting a business associate agreement in place.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "HIPAA",
+        "business associate agreement",
+        "align the definition"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The memo identifies that MSA Section 15.4, read with the Section 1 definition of 'Permitted Assignee', allows Gaiport to assign the agreement without Daitend's consent or notice to any acquirer of any portion of its assets or business, or to a financing party, including potentially a competitor. It recommends a fix such as a consent or notice requirement, a competitor exclusion, or a termination right on assignment or change of control.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "Permitted Assignee",
+        "without consent",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The memo identifies that MSA Section 10.3(a) excludes indemnification obligations from the Section 10.1 liability cap, and that Daitend's Section 9.1 indemnity covers third-party claims, fines and penalties relating to Customer Data even where caused by Gaiport. It concludes that Daitend faces uncapped exposure while Gaiport's own indemnity is limited to IP infringement.",
+      "kind": "issue",
+      "source": "I5",
+      "hints": [
+        "uncapped",
+        "regardless of whether caused by Gaiport",
+        "Section 10.3(a)"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The memo recommends narrowing Daitend's Section 9.1 indemnity, for example to Daitend's own fault or by excluding Gaiport-caused breaches, and/or subjecting it to a cap or super-cap.",
+      "kind": "issue",
+      "source": "I5",
+      "hints": [
+        "super-cap",
+        "limit to Daitend's own fault",
+        "narrow the indemnity"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The memo states that the MSA Initial Term ends August 31, 2026 (30 months from the March 1, 2024 Effective Date).",
+      "kind": "fact",
+      "source": "F2",
+      "hints": [
+        "August 31, 2026",
+        "30 months",
+        "March 1, 2024"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The memo states the monthly subscription fee of $18,400, or quantifies the renewal commitment based on that fee (e.g., about $662,400 over 36 months).",
+      "kind": "fact",
+      "source": "F6",
+      "hints": [
+        "$18,400",
+        "$662,400"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The memo is organized as a list of issues in which each issue gives the document and section where it appears, why it matters for Daitend, and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Section",
+        "Why it matters",
+        "Recommendation"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The memo orders the issues by importance to the client and expressly flags at least one item as requiring prompt or urgent action.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "urgent",
+        "prompt action",
+        "priority"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The memo does not conclude that Daitend's July 20, 2026 non-renewal letter was timely or effective to prevent renewal.",
+      "kind": "negative",
+      "source": "I4",
+      "hints": [
+        "not timely",
+        "late"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The memo does not state that Gaiport's DPA security or breach-notification obligations clearly cover patient health information or radiographic images.",
+      "kind": "negative",
+      "source": "I2",
+      "hints": [
+        "does not cover patient records"
+      ]
+    }
+  ]
+}

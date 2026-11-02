@@ -1,0 +1,34 @@
+{
+  "matter_id": "s8-m0003",
+  "accepted": false,
+  "failed_gate": "consistency",
+  "reason": "mismatches: [{\"fact\": \"F4\", \"key\": \"Supply Agreement forum\", \"filename\": \"ziteir_lakix_master_supply_agreement.md\", \"ledger\": \"state and federal courts located in Wilmington, Delaware, exclusively\", \"document\": \"the state and federal courts located in Wilmington, Delaware\"}]",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": false,
+      "details": {
+        "mismatches": [
+          {
+            "fact": "F4",
+            "key": "Supply Agreement forum",
+            "filename": "ziteir_lakix_master_supply_agreement.md",
+            "ledger": "state and federal courts located in Wilmington, Delaware, exclusively",
+            "document": "the state and federal courts located in Wilmington, Delaware"
+          }
+        ],
+        "reworded": 1,
+        "checked": 50
+      }
+    }
+  ]
+}

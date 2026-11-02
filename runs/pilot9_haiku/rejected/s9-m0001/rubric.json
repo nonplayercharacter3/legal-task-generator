@@ -1,0 +1,163 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "Identifies that the Section 4.14 environmental representations in the Stock Purchase Agreement survive only 180 days after Closing (Section 9.1), which ends before the Section 6.7 Phase II investigation is required to be completed (270 days after Closing). As a result, environmental breaches found by the Phase II would likely be time-barred.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "180 days",
+        "270 days",
+        "Phase II"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "Recommends extending the survival period for the environmental representations so that it runs beyond completion of the Phase II investigation, for example a longer fixed period or a period tied to Phase II completion.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "extend survival",
+        "36 months",
+        "tie to completion of the Phase II"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "Identifies that the Buyer's Section 338(h)(10) election notice under SPA Section 6.11 had to be delivered within 45 days after the June 1, 2026 signing date, so the window closed on about July 16, 2026. Also notes that the folder shows no timely notice, so the Seller's obligation to join the election has lapsed or is at risk.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "338(h)(10)",
+        "July 16, 2026",
+        "45 days"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "Recommends obtaining the Seller's agreement, such as an amendment or waiver, before Closing to reinstate the Seller's obligation to join the 338(h)(10) election, or else confirming whether a timely election notice was in fact delivered.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "amendment",
+        "reinstate",
+        "confirm whether notice was delivered"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "Identifies that the Larkfield Regional Health System contract, disclosed on Schedule 4.10 as terminable on a change of control, is not a Required Consent and is not a closing condition under Section 7.2(d)/Schedule 7.2(d). Also explains that Section 9.2(f) excludes indemnity for losses from failing to obtain disclosed consents, so the Buyer could be required to close with no recourse if Larkfield terminates.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "Larkfield",
+        "Required Consents",
+        "Section 9.2(f)"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "Recommends adding Larkfield's written consent as a closing condition (Schedule 7.2(d)) or obtaining a specific indemnity or similar protection for loss of the Larkfield contract.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "add to Schedule 7.2(d)",
+        "closing condition",
+        "specific indemnity"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "Identifies that the Escrow Agreement (Section 10.4) chooses New York law and Manhattan courts, which conflicts with the SPA's Delaware law and Delaware Court of Chancery forum. Explains that this risks split or inconsistent proceedings over indemnity claims and escrow release, and recommends conforming the escrow law and forum to Delaware, at least for disputes between Buyer and Seller.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "New York",
+        "Court of Chancery",
+        "conform"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "Identifies that Escrow Agreement Section 6.4 makes the escrow funds the sole and exclusive source of recovery for Article IX claims (except fraud). Because SPA Section 11.9 lets the Escrow Agreement control recovery from the Escrow Funds, this effectively removes the SPA Section 9.6(b) carve-outs for Fundamental Representations and Pre-Closing Taxes and limits that recovery to the $4,200,000 escrow.",
+      "kind": "issue",
+      "source": "I5",
+      "hints": [
+        "sole and exclusive source of recovery",
+        "Fundamental Representations",
+        "$4,200,000"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "Recommends revising Escrow Agreement Section 6.4 to preserve the Section 9.6(b) carve-outs, or amending SPA Section 11.9 so that the SPA controls on that point.",
+      "kind": "issue",
+      "source": "I5",
+      "hints": [
+        "revise Section 6.4",
+        "preserve carve-outs",
+        "amend Section 11.9"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "States that the Closing is scheduled for August 14, 2026.",
+      "kind": "fact",
+      "source": "F2",
+      "hints": [
+        "August 14, 2026"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "States that the purchase price is $42,000,000 and that the indemnity escrow amount (and general indemnity cap) is $4,200,000.",
+      "kind": "fact",
+      "source": "F4",
+      "hints": [
+        "$42,000,000",
+        "$4,200,000"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "Is presented as a memo addressed to the supervising partner, and each issue states the document and section where it appears, why it matters, and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Section"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "Orders the issues by consequence to the client, with the most consequential issues presented first, or states that the issues are ranked by severity or priority.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "highest priority",
+        "ranked by severity"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "Does not conclude that the Buyer's 338(h)(10) election right remains available without any amendment, for example by treating the 45-day notice window as still open at or before Closing, unless the response says it depends on confirming that notice was delivered by July 16, 2026.",
+      "kind": "negative",
+      "source": "I2",
+      "hints": [
+        "window closed",
+        "lapsed"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "Does not conclude that the SPA's carve-outs from the indemnity cap (Fundamental Representations, Pre-Closing Taxes) survive unaffected because the SPA prevails over the Escrow Agreement under Section 11.9.",
+      "kind": "negative",
+      "source": "I5",
+      "hints": [
+        "Escrow Agreement controls",
+        "Section 11.9 exception"
+      ]
+    }
+  ]
+}

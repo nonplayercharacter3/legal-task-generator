@@ -1,0 +1,143 @@
+{
+  "matter_id": "s9-m0003",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "every attempt passed: too easy to carry training signal",
+  "split": null,
+  "solver_pass_rate": 1.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 12.2: \"At the end of the Initial Term, this Agreement shall renew automatically for successive renewal terms of thirty-six (36) months each (each, a \"Renewal Term\"), at the Subscription Fee and other Fees then in effect, unless either party gives the other written notice of non-renewal not more than one hundred twenty (120) days and not less than ninety (90) days before the end of the then-current Initial Term or Renewal Term.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "DPA Section 1.1: \"Customer Personal Data is defined excluding Patient Health Information.\" Sections 5.1 and 6.1 apply only to \"Customer Personal Data\" (e.g., \"Gaiport shall notify Customer without undue delay, and in any event within seventy-two (72) hours, after becoming aware of a Security Incident affecting Customer Personal Data\"). MSA Section 2.3: \"The DPA shall control with respect to the processing of personal data.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 15.4: \"Gaiport may assign or transfer this Agreement, in whole or in part, together with any associated rights, obligations and Customer Data, to any Permitted Assignee without Customer's consent and without notice to Customer.\" Section 1.10 defines \"Permitted Assignee\" to include \"(b) any person or entity that acquires all or any portion of its assets or business ... or (c) any lender, investor or other financing party of Gaiport or its Affiliates.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "The letter is dated July 20, 2026 and states: \"Pursuant to Section 12.2 of the Agreement, Daitend hereby gives notice of non-renewal of the Agreement. The Agreement will therefore expire at the end of the Initial Term on August 31, 2026, and will not renew for a Renewal Term.\" MSA Section 12.2 requires notice \"not more than one hundred twenty (120) days and not less than ninety (90) days before the end of the then-current Initial Term or Renewal Term.\""
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 10.3(a): \"The limitations in Sections 10.1 and 10.2 shall not apply to: (a) a party's indemnification obligations under Section 9;\" read with Section 9.1: \"Customer shall defend, indemnify and hold harmless Gaiport ... from and against all third-party claims, actions, demands, regulatory investigations, fines, penalties ... arising out of or relating to (a) Customer Data, including any unauthorized access to, use of or disclosure of Customer Data, regardless of whether caused by Gaiport\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 14
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4",
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "runs": [
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 10,
+            "files_opened": [
+              "daitend_gaiport_data_processing_addendum.md",
+              "daitend_gaiport_master_services_agreement.md",
+              "daitend_internal_imaging_rollout_emails.md",
+              "daitend_non_renewal_letter_2026-07-20.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 10,
+            "files_opened": [
+              "daitend_gaiport_data_processing_addendum.md",
+              "daitend_gaiport_master_services_agreement.md",
+              "daitend_internal_imaging_rollout_emails.md",
+              "daitend_non_renewal_letter_2026-07-20.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 10,
+            "files_opened": [
+              "daitend_gaiport_data_processing_addendum.md",
+              "daitend_gaiport_master_services_agreement.md",
+              "daitend_internal_imaging_rollout_emails.md",
+              "daitend_non_renewal_letter_2026-07-20.md"
+            ]
+          }
+        ],
+        "reason": "every attempt passed: too easy to carry training signal"
+      }
+    }
+  ]
+}

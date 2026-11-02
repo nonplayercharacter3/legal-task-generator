@@ -1,0 +1,189 @@
+{
+  "matter_id": "s9-m0003",
+  "summary": "Daitend Dental Partners, LLC, a Delaware dental group operating 22 clinics, is the firm's client. It licenses a cloud practice-management, scheduling and dental-imaging platform from Gaiport Practice Systems, Inc. under a Master Services Agreement dated March 1, 2024, together with a Data Processing Addendum. Daitend sent a non-renewal letter dated July 20, 2026 and now wants a memo on its exposure under the folder. The memo should address the renewal mechanics, whether that notice was timely, the scope of Gaiport's data obligations for patient records, Gaiport's freedom to assign the contract, and Daitend's uncapped indemnity exposure. An internal Daitend email thread about an imaging-module rollout is included as a distractor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Daitend Dental Partners, LLC",
+      "role": "Customer; multi-location dental clinic group (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Gaiport Practice Systems, Inc.",
+      "role": "Provider of cloud dental practice-management and imaging platform"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble; Section 12.1"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "30 months from the MSA Effective Date, ending August 31, 2026",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA Renewal Term length",
+      "value": "36 months per renewal",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F4",
+      "key": "MSA non-renewal notice window",
+      "value": "not less than 90 nor more than 120 days before end of current term",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F5",
+      "key": "MSA liability cap",
+      "value": "fees paid by Customer in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 10.1"
+    },
+    {
+      "id": "F6",
+      "key": "MSA monthly subscription fee",
+      "value": "$18,400 per month for 22 clinic locations",
+      "doc": "D1",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F7",
+      "key": "MSA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 16.1"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "DPA controls on personal data processing; otherwise MSA prevails over Order Forms",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F9",
+      "key": "DPA Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Non-renewal letter date",
+      "value": "July 20, 2026",
+      "doc": "D3",
+      "section": "Letter date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "daitend_gaiport_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "daitend_gaiport_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "daitend_non_renewal_letter_2026-07-20.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "daitend_internal_imaging_rollout_emails.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA Section 12.2 renews the agreement automatically for successive 36-month terms at the then-current fee. The only way out is a non-renewal notice given in a 30-day window: no more than 120 and no less than 90 days before the current term ends. Each renewal is longer than the 30-month Initial Term. This is the one issue visible from a single clause: it locks Daitend into roughly $662,400 per renewal term at the current $18,400 monthly fee.",
+      "doc": "D1",
+      "section": "Section 12.2",
+      "detect_terms": [
+        "successive renewal terms of thirty-six (36) months",
+        "not more than one hundred twenty (120) days"
+      ],
+      "expected_finding": "The MSA auto-renews for 36-month terms that can be avoided only through a narrow 30-day notice window, so Daitend should negotiate a shorter renewal term, a wider window, or termination for convenience.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "MSA Section 1 defines 'Customer Data' to include patient records, protected health information and radiographic images. MSA Section 7 ties Gaiport's security, breach notification and data return duties to that term. DPA Section 1.1 instead uses the term 'Customer Personal Data', defined as personal data of Customer's personnel, expressly excluding Patient Health Information. DPA Sections 5 (security) and 6 (breach notification within 72 hours) apply only to 'Customer Personal Data'. MSA Section 2.3 says the DPA controls on personal data processing. Read together, these provisions mean the DPA's narrower term governs, and Gaiport's contractual security and breach-notification commitments do not reach patient records. That leaves Daitend exposed under HIPAA, since it needs business-associate-level protections for PHI.",
+      "doc": "D2",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "Customer Personal Data",
+        "excluding Patient Health Information"
+      ],
+      "expected_finding": "Because the DPA controls under MSA Section 2.3 and its narrower 'Customer Personal Data' definition excludes patient health information, Gaiport's security and breach-notification duties do not cover patient records, so the DPA definition must be aligned with the MSA's 'Customer Data' and a BAA added.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "MSA Section 15.3 appears mutual: 'except as permitted under Section 15.4', neither party may assign without consent. Section 15.4, however, lets Gaiport assign the agreement in whole or in part, without consent or notice, to any 'Permitted Assignee'. Section 1 defines 'Permitted Assignee' as any entity that acquires any portion of Gaiport's assets or business, or any financing party. Read together, these provisions let Gaiport transfer the contract and Daitend's patient data to any buyer of any asset, including a competing dental service organization. Daitend has no consent right and no termination right.",
+      "doc": "D1",
+      "section": "Section 15.4 (with Section 1 definition of 'Permitted Assignee')",
+      "detect_terms": [
+        "Permitted Assignee",
+        "any portion of its assets"
+      ],
+      "expected_finding": "The 'Permitted Assignee' carve-out in Section 15.4 lets Gaiport assign freely to anyone, including competitors, so Daitend should require consent or at least notice, exclude competitors, and gain a termination right on assignment or change of control.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Daitend's non-renewal letter is dated July 20, 2026. Under MSA Section 12.1, the Initial Term runs 30 months from the March 1, 2024 Effective Date and ends August 31, 2026. Under Section 12.2, non-renewal notice must be given no less than 90 days before that date, so the window closed on June 2, 2026 (it opened May 3, 2026). The letter came 42 days before term end and is untimely. Unless Gaiport waives the defect, the MSA renewed on September 1, 2026 for a 36-month term ending August 31, 2029. Determining this requires reading the letter date against both MSA Sections 12.1 and 12.2.",
+      "doc": "D3",
+      "section": "Body, first paragraph (notice of non-renewal)",
+      "detect_terms": [
+        "hereby gives notice of non-renewal"
+      ],
+      "expected_finding": "Daitend's July 20, 2026 letter missed the June 2, 2026 deadline, so the MSA has likely renewed through August 31, 2029, and Daitend should seek a negotiated exit or waiver rather than rely on the letter.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "MSA Section 10.1 caps each party's liability at fees paid in the prior 12 months. Section 10.3(a) states that, notwithstanding Section 10.1, the cap does not apply to 'a party's indemnification obligations under Section 9'. Section 9.1 requires Daitend to indemnify Gaiport for all third-party claims, regulatory fines and penalties arising out of Customer Data or Customer's use of the Services, 'regardless of whether caused by Gaiport'. Gaiport's own indemnity in Section 9.2 covers only IP infringement. Read together, these provisions give Daitend unlimited liability for data-breach claims, including breaches caused by Gaiport, while Gaiport's exposure stays capped.",
+      "doc": "D1",
+      "section": "Section 10.3(a) (with Section 9.1)",
+      "detect_terms": [
+        "indemnification obligations under Section 9",
+        "regardless of whether caused by Gaiport"
+      ],
+      "expected_finding": "Section 10.3(a) removes the cap from Daitend's broad Section 9.1 indemnity, which covers even Gaiport-caused data breaches, so Daitend faces uncapped exposure. Daitend should narrow Section 9.1 to its own fault and subject it to a cap or super-cap.",
+      "contradicts": null
+    }
+  ]
+}
