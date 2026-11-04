@@ -1,4 +1,4 @@
-"""Command line: `python -m ltg run ...`, `python -m ltg index ...` and `python -m ltg inspect ...`."""
+"""Command line: `python -m ltg run ...`, `index ...`, `inspect ...` and `export ...`."""
 
 from __future__ import annotations
 
@@ -75,6 +75,16 @@ def cmd_inspect(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_export(args: argparse.Namespace) -> int:
+    from .export import export
+
+    res = export(args.runs, args.out)
+    for mid, paths in res["duplicates"].items():
+        print(f"duplicate matter id {mid}, kept neither: {', '.join(paths)}", file=sys.stderr)
+    print("exported " + ", ".join(f"{s} {n}" for s, n in res["counts"].items()) + f" -> {args.out}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="ltg", description="Ledger-first generator for LAB-style legal agent tasks.")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -94,6 +104,11 @@ def main(argv: list[str] | None = None) -> int:
     i = sub.add_parser("inspect", help="print one matter folder in readable form")
     i.add_argument("matter_dir")
     i.set_defaults(func=cmd_inspect)
+
+    e = sub.add_parser("export", help="write accepted tasks as JSONL training data, one file per split")
+    e.add_argument("--runs", nargs="+", required=True, help="run folders holding accepted/<matter>/")
+    e.add_argument("--out", required=True, help="output folder for train.jsonl, dev.jsonl, test.jsonl")
+    e.set_defaults(func=cmd_export)
 
     args = p.parse_args(argv)
     return args.func(args)
