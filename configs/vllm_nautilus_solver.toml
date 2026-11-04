@@ -1,0 +1,44 @@
+# Same as pilot_nrp_solver.toml, but the solver is our own vLLM pod on Nautilus (deploy/nautilus/vllm-qwen.yaml)
+# serving the same checkpoint as NRP's qwen3-small. Start the pod, then forward its port before running:
+#   kubectl port-forward -n ecepxie pod/ltg-vllm-qwen 8000:8000
+# A fine-tuned model goes in the pod spec; this file stays the same apart from `model`.
+[run]
+n_matters = 3
+seed = 1
+out_dir = "runs/claude_pilot3_opus"
+concurrency = 2
+
+[backend]
+kind = "claude_sdk"
+default_model = "opus"              # ledger, drafting, rubric, answers, gate checks and the judge
+
+[backend.roles.solver]
+kind = "openai_compat"
+base_url = "http://localhost:8000/v1"
+model = "qwen3.8-27b"               # --served-model-name in the pod spec; no API key
+max_tokens = 32000
+timeout = 1200                      # one A100 is slower than NRP's pool under concurrent attempts
+max_retries = 6
+# As on NRP (docs/research/qwen_memo_length.md). vLLM 0.30 honours it for this model: on one test question,
+# 772 completion tokens at "low" against 2,881 without it, same answer (2026-11-02).
+extra_body = { reasoning_effort = "low" }
+
+# Folders of 4 to 5 documents: a 3-document folder lets the solver read everything (known weakness 3). The
+# evidence so far is mixed: accepted tasks had 4 and 5 documents, too-easy ones 4 and 5 as well.
+[spec]
+n_documents = [4, 5]
+
+[gates]
+solver_attempts = 3
+solver_max_steps = 28               # room to page through 5 longer documents (a 12,700-word folder took 17 steps)
+# Screen every task against LAB's text. Clone it beside this repo first (it is never committed here, and nothing
+# from it reaches any model; the index is local word 8-grams):
+#   GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/harveyai/harvey-labs ../harvey-labs
+# The run stops if the folder is missing or holds no readable text, so a task is never passed unscreened.
+reference_dirs = ["../harvey-labs"]
+# LAB holds about 455 million words (42k Word files), so the n-gram table needs 2^32 bits (512 MB) to keep false
+# matches near 2%. The first run builds the index (about 25 minutes) and saves it under runs/.decontam_cache.
+decontam_bloom_bits = 4294967296
+# Count only wording found in a single LAB task (tasks/<area>/<task>). Standard contract language appears across
+# many LAB tasks, and without this our own sound documents scored up to 0.56, above the 0.5 cutoff.
+decontam_group_depth = 3

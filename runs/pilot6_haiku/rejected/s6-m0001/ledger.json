@@ -1,0 +1,199 @@
+{
+  "matter_id": "s6-m0001",
+  "summary": "Rebond Live Holdings, Inc. (the firm's client, as Buyer) is acquiring all outstanding shares of Lumenhall Presents, Inc., a New York concert promoter that books and produces tours and operates a seasonal waterfront amphitheater, from Drorand Entertainment Group LLC (Seller). The folder holds five documents: the executed stock purchase agreement, a buyer-seller side letter, the Seller's managers' written consent approving the sale, a three-party indemnity escrow agreement with Pellucid Trust Company, N.A. as escrow agent, and a superseded prior draft of the stock purchase agreement. Four problems for Buyer are planted across the stock purchase agreement, the side letter and the escrow agreement. (1) A venue license change-of-control consent is not addressed. (2) A side letter, which controls by precedence, pulls tax losses under the indemnity cap. (3) The escrow agreement applies Delaware law and a Delaware forum. (4) The escrow agreement narrows the claims the escrow fund can pay.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Rebond Live Holdings, Inc.",
+      "role": "Buyer (client)"
+    },
+    {
+      "id": "P2",
+      "name": "Drorand Entertainment Group LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Lumenhall Presents, Inc.",
+      "role": "Target company (concert promoter and amphitheater operator)"
+    },
+    {
+      "id": "P4",
+      "name": "Pellucid Trust Company, N.A.",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P5",
+      "name": "Kestrel Bay Parks Conservancy",
+      "role": "Licensor of the Saltmarsh Pavilion amphitheater venue (third-party counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Purchase Price",
+      "value": "$86,400,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "SPA signing date",
+      "value": "March 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$8,640,000",
+      "doc": "D1",
+      "section": "Section 2.4(a)"
+    },
+    {
+      "id": "F4",
+      "key": "Escrow Period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 2.4(b)"
+    },
+    {
+      "id": "F5",
+      "key": "SPA Indemnity Cap",
+      "value": "10% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 8.4(a)"
+    },
+    {
+      "id": "F6",
+      "key": "Indemnity Cap exclusions",
+      "value": "Fraud, Fundamental Representations, and breaches of Section 4.12 (Taxes)",
+      "doc": "D1",
+      "section": "Section 8.4(b)"
+    },
+    {
+      "id": "F7",
+      "key": "SPA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 10.8"
+    },
+    {
+      "id": "F8",
+      "key": "SPA exclusive forum",
+      "value": "State or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 10.9"
+    },
+    {
+      "id": "F9",
+      "key": "Order of precedence",
+      "value": "Side Letter, then Stock Purchase Agreement, then Escrow Agreement",
+      "doc": "D1",
+      "section": "Section 10.3"
+    },
+    {
+      "id": "F10",
+      "key": "Target company",
+      "value": "Lumenhall Presents, Inc., a New York corporation",
+      "doc": "D1",
+      "section": "Recitals"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_executed.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "buyer_seller_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_managers_written_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "indemnity_escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "spa_prior_draft_feb2026.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_stock_purchase_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "Venue license change-of-control consent not addressed",
+      "description": "Two provisions in D1 work together. SPA Section 4.5 represents that no consent, approval or waiver of any third party is required in connection with the transaction, other than the Required Consents. Section 7.2(d) makes Buyer's closing condition the receipt of the Required Consents only. Neither lists the Saltmarsh Pavilion License Agreement with Kestrel Bay Parks Conservancy. The Seller's managers' written consent (D3, recitals and Resolution 4) acknowledges two things about that license. First, it requires the Conservancy's prior written consent to any direct or indirect change of control of Lumenhall Presents, Inc. Second, without that consent the Conservancy may terminate the license on 30 days' notice. The resolution then authorizes officers to 'seek such consent after the Closing.' The sale of 100% of the Target's stock is a change of control. Buyer is therefore obligated to close without the consent. Buyer's only fallback is a representation claim that is subject to the Indemnity Cap. That remedy is inadequate for losing the Target's owned venue. No document in the folder addresses or obtains the consent.",
+      "doc": "D1",
+      "section": "Section 4.5 and Section 7.2(d)",
+      "detect_terms": [
+        "no consent, approval or waiver of any third party",
+        "Required Consents"
+      ],
+      "expected_finding": "The Saltmarsh Pavilion license requires Conservancy consent to this change of control, but the SPA omits it from the Required Consents and the closing condition, so Buyer should insist on adding it as a Required Consent and closing condition (or a specific uncapped indemnity) before Closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "Side letter pulls tax losses under the Indemnity Cap",
+      "description": "SPA Section 8.4(b) (D1) excludes three categories from the 10% Indemnity Cap: Fraud, Fundamental Representations, and breaches of Section 4.12 (Taxes). Paragraph 3 of the Side Letter (D2) is framed as a 'clarification' about pre-Closing tour settlement tax audits. It provides that the Indemnity Cap 'shall apply to all Losses under Section 8.2, including Losses arising from any breach of Section 4.12,' and keeps only Fraud and Fundamental Representations outside the cap. SPA Section 10.3 says the Side Letter prevails over the SPA in a conflict. The narrower Side Letter therefore controls, and Buyer's recovery for pre-Closing tax liabilities is now capped at $8,640,000. This is significant because the Target has multistate performer withholding and admissions tax exposure.",
+      "doc": "D2",
+      "section": "Paragraph 3",
+      "detect_terms": [
+        "including Losses arising from any breach of Section 4.12"
+      ],
+      "expected_finding": "Because the Side Letter controls over the SPA under Section 10.3, its Paragraph 3 removes the tax carve-out and subjects pre-Closing tax losses to the 10% cap, so Buyer should require the Side Letter to be amended to restore the Section 4.12 exclusion.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "Escrow Agreement chooses Delaware law and forum",
+      "description": "Under SPA Sections 10.8 and 10.9 (D1), New York law governs, with exclusive jurisdiction in the courts of New York County. Under SPA Section 2.4(c), disputes over escrow claims are to be resolved under the SPA's dispute provisions. Section 12.6 of the Escrow Agreement (D4), by contrast, provides that it is governed by the laws of the State of Delaware. It also provides that any dispute concerning a release of the Escrow Funds must be brought exclusively in the Court of Chancery of the State of Delaware. Section 5.3 of the Escrow Agreement says the Escrow Agent will release disputed funds only on joint instructions or a final order of that Delaware court. The Escrow Agent is not a party to the SPA. The SPA-over-Escrow precedence in Section 10.3 therefore does not bind the agent. Buyer could win an indemnity judgment in New York and still be unable to compel release of the escrow without separate Delaware litigation.",
+      "doc": "D4",
+      "section": "Section 12.6 and Section 5.3",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery of the State of Delaware"
+      ],
+      "expected_finding": "The Escrow Agreement's Delaware law and exclusive Delaware forum conflict with the SPA's New York law and forum and could force Buyer into duplicative litigation to reach the escrow, so it should be conformed to New York law and New York County courts (or to accept a final New York order).",
+      "contradicts": [
+        "F7",
+        "F8"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "'Indemnifiable Claim' narrower in Escrow Agreement than in the SPA",
+      "description": "SPA Section 2.4(a) (D1) states that the Indemnity Escrow Amount secures all Indemnifiable Losses. Section 1.1 of the SPA defines that term as Losses under Section 8.2(a) (breach of representations), 8.2(b) (breach of covenants) and 8.2(c) (Pre-Closing Taxes). Section 1.1 of the Escrow Agreement (D4) defines 'Indemnifiable Claim' differently: a claim by Buyer 'for breach of any representation or warranty of Seller under Section 8.2(a) of the Purchase Agreement.' Section 4.2 of the Escrow Agreement allows Buyer to deliver a Claim Notice and receive escrow funds only for an Indemnifiable Claim. Read together, the escrow cannot be drawn for covenant breaches. Those include breach of the non-compete and of the pre-Closing ordinary-course covenant on artist deposits. Nor can it be drawn for Pre-Closing Taxes. Buyer is left with an unsecured claim against a Seller entity that may distribute the sale proceeds. The precedence clause in SPA Section 10.3 does not help, because the Escrow Agent acts solely under the Escrow Agreement (Escrow Agreement Section 7.1).",
+      "doc": "D4",
+      "section": "Section 1.1 and Section 4.2",
+      "detect_terms": [
+        "for breach of any representation or warranty of Seller under Section 8.2(a)"
+      ],
+      "expected_finding": "The Escrow Agreement's definition of Indemnifiable Claim covers only Section 8.2(a) representation claims, so covenant and Pre-Closing Tax claims cannot be paid from the $8,640,000 escrow despite SPA Section 2.4(a); the definition should be conformed to cover all of Section 8.2.",
+      "contradicts": null
+    }
+  ]
+}

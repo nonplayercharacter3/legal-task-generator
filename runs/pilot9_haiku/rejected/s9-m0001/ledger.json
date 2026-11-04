@@ -1,0 +1,210 @@
+{
+  "matter_id": "s9-m0001",
+  "summary": "Paibon Textile Care Partners, LLC (the client, as Buyer) has signed a Stock Purchase Agreement to acquire all outstanding shares of Kestrin Linen Services, Inc. from Zanoul Holdings, Inc. Kestrin is a commercial laundry and healthcare linen services company that operates an industrial laundry plant in Stockton, California. The purchase price is $42,000,000. The agreement was signed June 1, 2026 and the Closing is scheduled for August 14, 2026. The folder holds four documents. The first is the Stock Purchase Agreement. The second is the agreed-form Bill of Sale, under which a Seller affiliate conveys tunnel washers, flatwork ironers and route trucks to the Company at Closing. The third is the Indemnity Escrow Agreement, signed July 28, 2026 with Ostrander Trust Company, N.A. as escrow agent. The fourth is a closing-logistics email thread. The supervising partner wants an issue-spotting memo before Closing.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Paibon Textile Care Partners, LLC",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Zanoul Holdings, Inc.",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Kestrin Linen Services, Inc.",
+      "role": "Company (target whose shares are being acquired)"
+    },
+    {
+      "id": "P4",
+      "name": "Zanoul Equipment Leasing LLC",
+      "role": "Seller affiliate and transferor under the Bill of Sale"
+    },
+    {
+      "id": "P5",
+      "name": "Ostrander Trust Company, N.A.",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P6",
+      "name": "Larkfield Regional Health System",
+      "role": "Company's largest customer under a hospital linen services agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement Signing Date",
+      "value": "June 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Closing Date",
+      "value": "August 14, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Purchase Price",
+      "value": "$42,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Indemnity Escrow Amount",
+      "value": "$4,200,000",
+      "doc": "D1",
+      "section": "Section 2.2(b)"
+    },
+    {
+      "id": "F5",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.6"
+    },
+    {
+      "id": "F6",
+      "key": "Stock Purchase Agreement exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.7"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "SPA prevails over ancillary documents, except Escrow Agreement controls release of and recovery from Escrow Funds",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "General indemnity cap",
+      "value": "Indemnity Escrow Amount",
+      "doc": "D1",
+      "section": "Section 9.6(a)"
+    },
+    {
+      "id": "F9",
+      "key": "Escrow Agreement date",
+      "value": "July 28, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Indemnity escrow release date",
+      "value": "18 months after the Closing Date",
+      "doc": "D3",
+      "section": "Section 5.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "closing_logistics_email_thread.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "The gap appears only when two provisions of D1 are read together. Section 9.1 says the environmental representations in Section 4.14 (wastewater discharge, chemical storage and soil conditions at the Stockton plant) survive until 180 days after the Closing Date, which is February 10, 2027 measured from the August 14, 2026 Closing Date. Section 6.7 gives the Buyer post-closing access for a Phase II subsurface investigation, but only requires that investigation to be completed within 270 days after the Closing Date, which is May 11, 2027. The tool the Buyer would use to discover environmental breaches is not expected to produce results until about three months after the environmental representations expire. Under Delaware law, an express contractual survival period works as a limitation on bringing claims. Any contamination found by the Phase II will therefore be time-barred.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "one hundred eighty (180) days after the Closing Date"
+      ],
+      "expected_finding": "The Section 4.14 environmental representations expire on February 10, 2027, before the Section 6.7 Phase II investigation must be completed on May 11, 2027, so the survival period should be extended to at least 36 months or tied to completion of the Phase II.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 6.11 of D1 obliges the Seller to join in a Section 338(h)(10) election, and to deliver an executed IRS Form 8023 at Closing, only if the Buyer delivered a written election notice within 45 days after the Signing Date. The Signing Date is June 1, 2026 (D1 preamble), so the window closed on July 16, 2026. The Escrow Agreement (D3) is dated July 28, 2026, which is after the window closed. The folder contains no election notice, and Section 6.11 states that the Seller's obligation lapses if no timely notice is given. The Buyer has therefore lost its contractual right to the tax basis step-up in the Company's laundry equipment and route fleet. This is value the Buyer would ordinarily price into a $42,000,000 deal. It can only be recovered by a negotiated amendment before the August 14, 2026 Closing.",
+      "doc": "D1",
+      "section": "Section 6.11",
+      "detect_terms": [
+        "forty-five (45) days after the Signing Date"
+      ],
+      "expected_finding": "The Buyer's 338(h)(10) election notice window expired on July 16, 2026, before the July 28, 2026 Escrow Agreement date and the Closing, so the Buyer must obtain the Seller's agreement to an amendment reinstating the Seller's obligation to join in the election before Closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "The problem appears only when three provisions of D1 are read together. Schedule 4.10 discloses that the Larkfield Regional Health System hospital linen services agreement, the Company's largest contract, may be terminated by the customer upon a change of control of the Company unless the customer's prior written consent is obtained. The closing condition in Section 7.2(d) requires only the 'Required Consents' listed on Schedule 7.2(d), and that schedule names only the Stockton plant landlord. Section 9.2(f) excludes from indemnification any Losses arising from the failure to obtain any consent disclosed on the Disclosure Schedules. As drafted, the Buyer must close even if Larkfield has not consented. It would then have no indemnity if Larkfield terminates after Closing.",
+      "doc": "D1",
+      "section": "Section 7.2(d)",
+      "detect_terms": [
+        "upon a change of control of the Company",
+        "Required Consents"
+      ],
+      "expected_finding": "The Larkfield change-of-control consent is triggered by the share sale but is not a Required Consent, and the Section 9.2(f) exclusion blocks recovery, so the Buyer should add Larkfield's written consent to Schedule 7.2(d) as a closing condition or obtain a specific indemnity.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "D1 Sections 11.6 and 11.7 choose Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery. D3 Section 10.4 instead provides that the Escrow Agreement is governed by the laws of the State of New York, with exclusive jurisdiction in the state and federal courts located in the Borough of Manhattan. Under D1 Section 11.9, the Escrow Agreement controls release of and recovery from the Escrow Funds. Disputes over indemnity claims against the escrow could therefore be split between a Delaware indemnity action and a New York escrow-release action. That creates a risk of inconsistent rulings and of the Seller forum-shopping into the more favourable forum.",
+      "doc": "D3",
+      "section": "Section 10.4",
+      "detect_terms": [
+        "laws of the State of New York",
+        "Borough of Manhattan"
+      ],
+      "expected_finding": "The Escrow Agreement's New York law and Manhattan forum conflict with the SPA's Delaware law and Court of Chancery forum, so the Escrow Agreement should be conformed to Delaware law and forum, at least for disputes among Buyer and Seller.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "D1 Section 9.6(a) caps the Seller's general indemnity at the Indemnity Escrow Amount of $4,200,000. Section 9.6(b) carves out breaches of Fundamental Representations, Pre-Closing Taxes and fraud, which are recoverable up to the full $42,000,000 Purchase Price. D3 Section 6.4, however, states that the Escrow Funds are the sole and exclusive source of recovery for all claims under Article IX of the Purchase Agreement, except claims for actual fraud. D1 Section 11.9 makes the Escrow Agreement control on recovery from the Escrow Funds, so the conflict resolves in favour of D3. Read together, these provisions silently remove the Fundamental Representation and Tax carve-outs. The Buyer's recovery for a title-to-shares defect or a pre-closing tax liability is then limited to the $4,200,000 escrow.",
+      "doc": "D3",
+      "section": "Section 6.4",
+      "detect_terms": [
+        "sole and exclusive source of recovery"
+      ],
+      "expected_finding": "Because Section 11.9 lets the Escrow Agreement control, its exclusive-recovery language in Section 6.4 overrides the SPA's Fundamental Representation and Tax carve-outs, so Section 6.4 should be revised to preserve all Section 9.6(b) carve-outs or Section 11.9 should be amended so the SPA controls on that point.",
+      "contradicts": null
+    }
+  ]
+}

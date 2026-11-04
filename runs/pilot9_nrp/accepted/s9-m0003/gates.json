@@ -1,0 +1,145 @@
+{
+  "matter_id": "s9-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.333,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Upon expiry of the Initial Term, this Agreement shall automatically renew for successive renewal terms of thirty-six (36) months each (each, a \"Renewal Term\"), unless either Party gives the other written notice of non-renewal no earlier than 120 and no later than 90 days before the current term ends."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Notice of non-renewal must be given no earlier than 120 and no later than 90 days before the current term ends. Our records do not show that either Party gave notice of non-renewal. The Agreement has therefore renewed for a 36-month Renewal Term commencing January 1, 2027 and ending December 31, 2029."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "DPA Section 1.1: \"'Patient Data' means Protected Health Information relating to patients of Customer or its Clinic Locations that is contained in Customer's scheduling and billing records created, received, maintained or transmitted by Provider through the Platform, excluding diagnostic images.\" Compare MSA Section 1.1: \"'Patient Data' means all patient health information, including radiographs, intraoral scans and other diagnostic images.\" MSA Section 2.3: \"the DPA first, then this Agreement, then Statements of Work.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "15.3 Provider Assignment. Provider may assign this Agreement, or any Statement of Work, in whole or in part, to any Successor without the consent of Customer, by written notice to Customer given within thirty (30) days after the assignment takes effect."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 11.3: \"The limitations in Sections 11.1 and 11.2 shall not apply to (a) Customer's obligation to pay Fees due under this Agreement; (b) amounts payable under Section 10.2; or (c) a Party's liability for fraud or willful misconduct.\" Section 10.2: \"Customer shall defend, indemnify and hold harmless Provider ... from and against any and all claims, demands, investigations, regulatory proceedings, fines, penalties, losses ... arising out of or relating to any Customer Data ... including any enforcement action, civil money penalty or corrective action plan under HIPAA or state health privacy law, whether or not caused or contributed to by any act or omission of Provider.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.083,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C4"
+            ],
+            "steps": 10,
+            "files_opened": [
+              "daitend_gaiport_data_processing_addendum.md",
+              "daitend_gaiport_master_services_agreement.md",
+              "email_thread_new_clinic_onboarding.md",
+              "gaiport_renewal_notice_letter_2026.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 10,
+            "files_opened": [
+              "daitend_gaiport_data_processing_addendum.md",
+              "daitend_gaiport_master_services_agreement.md",
+              "email_thread_new_clinic_onboarding.md",
+              "gaiport_renewal_notice_letter_2026.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C1"
+            ],
+            "steps": 10,
+            "files_opened": [
+              "daitend_gaiport_data_processing_addendum.md",
+              "daitend_gaiport_master_services_agreement.md",
+              "email_thread_new_clinic_onboarding.md",
+              "gaiport_renewal_notice_letter_2026.md"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

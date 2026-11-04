@@ -1,0 +1,165 @@
+{
+  "matters": 4,
+  "responses": 32,
+  "criterion_grades_per_condition": 672,
+  "pass_rate_attempts": {
+    "hints": 0.915,
+    "nohints": 0.911
+  },
+  "pass_rate_attempts_by_kind": {
+    "fact": {
+      "hints": 0.889,
+      "nohints": 0.889
+    },
+    "format": {
+      "hints": 1.0,
+      "nohints": 1.0
+    },
+    "issue": {
+      "hints": 0.853,
+      "nohints": 0.843
+    },
+    "negative": {
+      "hints": 0.99,
+      "nohints": 0.99
+    }
+  },
+  "gold_criteria_passed": {
+    "hints": 1.0,
+    "nohints": 1.0
+  },
+  "flawed_omitted_issue_criteria_passed": {
+    "hints": "0 of 8",
+    "nohints": "0 of 8"
+  },
+  "noise_unsettled_grades": {
+    "hints": 3,
+    "nohints": 3
+  },
+  "flips": {
+    "total": 0,
+    "hints_pass_nohints_fail": 0,
+    "nohints_pass_hints_fail": 0,
+    "referee_sides_with_hints": 0,
+    "referee_sides_with_nohints": 0,
+    "detail": []
+  },
+  "solver_pass_rate_per_repeat": {
+    "cloud_pilot_r2/s2-m0003": {
+      "hints": {
+        "solver_": [
+          0.333,
+          0.333
+        ],
+        "memo_": [
+          0.333,
+          0.333
+        ]
+      },
+      "nohints": {
+        "solver_": [
+          0.333,
+          0.333
+        ],
+        "memo_": [
+          0.333,
+          0.333
+        ]
+      }
+    },
+    "cloud_pilot_r3/s3-m0001": {
+      "hints": {
+        "solver_": [
+          0.667,
+          0.667
+        ],
+        "memo_": [
+          0.0,
+          0.0
+        ]
+      },
+      "nohints": {
+        "solver_": [
+          0.667,
+          0.667
+        ],
+        "memo_": [
+          0.0,
+          0.333
+        ]
+      }
+    },
+    "cloud_pilot_r5/s5-m0001": {
+      "hints": {
+        "solver_": [
+          1.0,
+          0.667
+        ],
+        "memo_": [
+          0.667,
+          0.667
+        ]
+      },
+      "nohints": {
+        "solver_": [
+          0.333,
+          0.667
+        ],
+        "memo_": [
+          0.667,
+          0.667
+        ]
+      }
+    },
+    "cloud_pilot_r5/s5-m0002": {
+      "hints": {
+        "solver_": [
+          0.333,
+          0.333
+        ],
+        "memo_": [
+          0.0,
+          0.0
+        ]
+      },
+      "nohints": {
+        "solver_": [
+          0.333,
+          0.333
+        ],
+        "memo_": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "audit_extra_memo_issues": {
+    "issue_criteria": 51,
+    "judge_pass_referee_fail": 0,
+    "judge_fail_referee_pass": 3,
+    "detail": [
+      {
+        "matter": "cloud_pilot_r3/s3-m0001",
+        "resp": "memo_1",
+        "crit": "C3",
+        "judge": false,
+        "referee": true
+      },
+      {
+        "matter": "cloud_pilot_r3/s3-m0001",
+        "resp": "memo_3",
+        "crit": "C3",
+        "judge": false,
+        "referee": true
+      },
+      {
+        "matter": "cloud_pilot_r5/s5-m0002",
+        "resp": "memo_2",
+        "crit": "C1",
+        "judge": false,
+        "referee": true
+      }
+    ]
+  }
+}

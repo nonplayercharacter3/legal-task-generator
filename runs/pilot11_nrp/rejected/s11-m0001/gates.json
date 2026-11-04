@@ -1,0 +1,88 @@
+{
+  "matter_id": "s11-m0001",
+  "accepted": false,
+  "failed_gate": "error",
+  "reason": "ModelError: solver: HTTP 403: b''",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 10.2: \"Licensee shall defend, indemnify and hold harmless Licensor and its Affiliates ... from and against any and all claims, actions, demands, losses, liabilities, damages, judgments, settlements, penalties, costs and expenses (including reasonable attorneys' fees) arising out of or relating to the use of the Software by Licensee, its Affiliates or its Authorized Users, including claims brought by Licensee's customers, Licensee's personnel or any other third party.\" Section 11.3: \"The limitations in Sections 11.1 and 11.2 shall not apply to amounts payable under Article 10...\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Order Form No. 2, Section 3.1: \"For purposes of the Agreement and all Order Forms, \"Licensed Facilities\" means the following facilities:\" The table lists only the Hunts Point Plant and the Mount Vernon Plant."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 3.2: \"Upon expiration of the Initial Term, this Agreement will automatically renew for successive 36-month terms ... unless either Party gives the other written notice of non-renewal at least ninety (90) days prior to the expiration of the then-current term. Licensor may increase the Fees for any Renewal Term by up to twelve percent (12%)...\" Section 15.6: \"No Order Form, invoice, purchase order, e-mail or other ordering or operational document constitutes notice under this Agreement.\" Order Form No. 2, Recital C (dated October 26, 2026): \"The Initial Term of the Agreement expires on January 14, 2027. ... Licensee will deliver notice of non-renewal of the Agreement to Licensor.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.08,
+        "flagged": {}
+      }
+    }
+  ]
+}

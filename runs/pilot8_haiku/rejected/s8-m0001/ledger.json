@@ -1,0 +1,205 @@
+{
+  "matter_id": "s8-m0001",
+  "summary": "Daikesk Diagnostics Holdings, Inc. (buyer, firm's client) is acquiring all outstanding shares of Orrenvale Imaging Systems, Inc., a Delaware maker of CT, MRI and ultrasound systems and related service software, from its parent Glosiv Medtech Group, Inc. (seller) for $186,000,000. The folder holds the execution-draft Stock Purchase Agreement, the Target's existing employment agreement with its Chief Technology Officer, the March 2026 letter of intent, the draft Transition Services Agreement under which Glosiv will provide post-closing field service, complaint-handling and IT services, and the parties' earlier mutual NDA. The partner wants a pre-signing issue-spotting memo for the buyer.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Daikesk Diagnostics Holdings, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Glosiv Medtech Group, Inc.",
+      "role": "Seller and post-closing transition services provider"
+    },
+    {
+      "id": "P3",
+      "name": "Orrenvale Imaging Systems, Inc.",
+      "role": "Target company whose shares are being sold"
+    },
+    {
+      "id": "P4",
+      "name": "Dr. Mireille Santangelo",
+      "role": "Chief Technology Officer of the Target and Executive under the key employee agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Purchase Price",
+      "value": "$186,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "SPA governing law",
+      "value": "State of Delaware; applies to the SPA and all Ancillary Agreements",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F3",
+      "key": "SPA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "Each Ancillary Agreement controls over the SPA as to its own subject matter",
+      "doc": "D1",
+      "section": "Section 11.4"
+    },
+    {
+      "id": "F5",
+      "key": "SPA indemnity cap",
+      "value": "$18,600,000 (10% of Purchase Price)",
+      "doc": "D1",
+      "section": "Section 10.5(a)"
+    },
+    {
+      "id": "F6",
+      "key": "LOI uncapped indemnity matters",
+      "value": "Fraud, fundamental representations, pre-closing taxes, and product recall liabilities",
+      "doc": "D3",
+      "section": "Section 5"
+    },
+    {
+      "id": "F7",
+      "key": "Target",
+      "value": "Orrenvale Imaging Systems, Inc., a Delaware corporation",
+      "doc": "D1",
+      "section": "Recitals"
+    },
+    {
+      "id": "F8",
+      "key": "SPA Company Products meaning",
+      "value": "All CT, MRI and ultrasound imaging systems and related service software of the Company",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F9",
+      "key": "TSA Service Term",
+      "value": "12 months after the Closing Date",
+      "doc": "D4",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F10",
+      "key": "LOI date",
+      "value": "March 9, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_execution_draft.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "santangelo_executive_employment_agreement.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "letter_of_intent_2026-03-09.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "transition_services_agreement_draft.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "mutual_nda_daikesk_glosiv.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 9.2 of the CTO's employment agreement says that on a Change of Control of the Company, including a sale of a majority of its stock, the Executive's non-compete, non-solicit and invention-assignment covenants in Section 7 terminate automatically. They survive only if the Executive gives written consent before the Change of Control is consummated. This must be read with three SPA provisions. Section 4.5 and Disclosure Schedule 4.5 state that no third-party consents are required. The closing condition in Section 7.2(c) lists only the GE-style OEM supply consent and regulatory filings. Section 7.2(d) requires only that the key employee agreement be 'in full force and effect.' Nothing in the folder obtains or addresses the Executive's consent. The buyer would close with the Target's key technologist free to compete and to keep improvements.",
+      "doc": "D2",
+      "section": "Section 9.2",
+      "detect_terms": [
+        "shall automatically terminate",
+        "written consent of the Executive"
+      ],
+      "expected_finding": "The CTO's restrictive covenants fall away on closing unless she consents in writing beforehand, and the SPA neither lists this consent nor makes it a closing condition, so the buyer should require a signed consent or a new agreement as a condition to closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines 'Company Products' as all of the Company's CT, MRI and ultrasound imaging systems and related service software. TSA Section 1.1 defines 'Company Products' as only the CT systems listed on Exhibit A. TSA Section 2.1 scopes Glosiv's field service, adverse-event complaint handling and service-software support to 'Company Products.' SPA Section 11.4 makes the TSA control over the SPA as to its own subject matter. As a result, the narrower TSA definition governs, and the MRI and ultrasound installed base gets no transition service or complaint-handling support after closing.",
+      "doc": "D4",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "CT systems listed on Exhibit A"
+      ],
+      "expected_finding": "The TSA's narrower definition of Company Products, which controls under the SPA precedence clause, leaves MRI and ultrasound products without transition services, so the TSA definition must be conformed to the SPA definition.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "TSA Section 12.6 selects New York law and exclusive jurisdiction of the state and federal courts in the Borough of Manhattan. SPA Sections 11.9 and 11.10 require the SPA and all Ancillary Agreements, including the TSA, to be governed by Delaware law and litigated exclusively in the Delaware Court of Chancery. Because SPA Section 11.4 lets an Ancillary Agreement control as to its own subject matter, the TSA's New York clause is likely to prevail for TSA disputes. Disputes that span TSA performance and SPA indemnity could then be split across two forums under two bodies of law.",
+      "doc": "D4",
+      "section": "Section 12.6",
+      "detect_terms": [
+        "laws of the State of New York",
+        "Borough of Manhattan"
+      ],
+      "expected_finding": "The TSA's New York law and forum clause conflicts with the SPA's Delaware law and Chancery forum for all Ancillary Agreements and, via the precedence clause, will likely control, so it should be conformed to Delaware.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 12.3 lets Provider (Glosiv) assign the TSA or delegate any services, in whole or in part, to any Person without the consent of Recipient. Recipient may assign only with Provider's prior written consent. Under the TSA, Provider handles the Target's service data, customer installed-base information and complaint files. Glosiv could therefore transfer the TSA and that data to a competing imaging manufacturer or an unvetted vendor during the 12-month Service Term.",
+      "doc": "D4",
+      "section": "Section 12.3",
+      "detect_terms": [
+        "without the consent of Recipient",
+        "to any Person"
+      ],
+      "expected_finding": "Glosiv may freely assign or delegate the TSA to anyone, including a competitor, so the buyer should require its consent for any assignment or delegation, with an express bar on transfers to competitors.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "The LOI dated March 9, 2026 (Section 5) records the agreed position that fraud, fundamental representations, pre-closing taxes and product recall liabilities sit outside the indemnity cap. The later SPA departs from this. Section 10.5(a) caps all claims under Section 10.2 at $18,600,000. Section 10.5(b) carves out only Fraud and breaches of 'Fundamental Representations.' Section 1.1 defines Fundamental Representations as Sections 4.1, 4.2 and 4.3 only, which cover organization, authority and capitalization. Read together, these provisions put the Taxes representation (Section 4.14), the Product Liability and Recalls representation (Section 4.18) and the Section 10.2(c) pre-closing tax indemnity under the cap. Recall exposure on imaging systems could far exceed the cap.",
+      "doc": "D1",
+      "section": "Section 10.5(b)",
+      "detect_terms": [
+        "Sections 4.1, 4.2 and 4.3"
+      ],
+      "expected_finding": "The SPA's narrow Fundamental Representations definition, combined with the limited cap carve-out, subjects tax and product recall losses to the $18.6 million cap contrary to the LOI, so the carve-out should be expanded to cover Sections 4.14 and 4.18 and the Section 10.2(c) tax indemnity.",
+      "contradicts": null
+    }
+  ]
+}

@@ -153,3 +153,40 @@ def test_consistency_accepts_the_ledger_value_word_for_word_inside_its_own_docum
     digits = Facts({"F1@a.md": "130 days"}, same=False)
     ledger.facts[0].value = "30 days"
     assert not gates.consistency(digits, ledger, {"a.md": "...", "b.md": "..."}).passed  # whole words only
+
+
+def test_consistency_accepts_a_trimmed_extraction_when_its_own_document_states_the_full_value():
+    ledger = _ledger()
+    ledger.facts[0].value = "exclusive jurisdiction of the courts in New York County"
+    clause = "Each party submits to the exclusive jurisdiction of the courts in New York County."
+    trimmed = Facts({"F1@a.md": "the courts in New York County"}, same=False)
+    assert gates.consistency(trimmed, ledger, {"a.md": clause, "b.md": "..."}).passed and trimmed.matched == []
+    nonexclusive = Facts({"F1@a.md": "the courts in New York County"}, same=False)  # the text really lacks "exclusive"
+    assert not gates.consistency(nonexclusive, ledger, {"a.md": "Each party submits to the courts in New York County.", "b.md": "..."}).passed
+
+
+def test_consistency_treats_a_fact_quoted_in_an_issue_description_as_planted_in_its_document():
+    from ltg.schema import Issue
+
+    ledger = _ledger()
+    ledger.facts[0].value = "Fraud, breaches of Fundamental Representations, and Excluded Taxes"
+    ledger.issues = [Issue("I1", "liability_cap_carveout", "x", "Section 8.5(b) carves out Fraud, breaches of Fundamental "
+                           "Representations and Excluded Taxes; the escrow agreement keeps only Fraud.", "D2", "5.4", ["x"], "x")]
+    narrowed = {"F1@a.md": ledger.facts[0].value, "F1@b.md": "claims for Fraud"}
+    assert gates.consistency(Facts(narrowed, same=False), ledger, {"a.md": "...", "b.md": "..."}).passed
+    ledger.issues[0].doc = "D1"  # the issue lives elsewhere: the conflict in b.md is not planted
+    assert not gates.consistency(Facts(narrowed, same=False), ledger, {"a.md": "...", "b.md": "..."}).passed
+    ledger.issues[0].doc, ledger.facts[0].value = "D2", "Fraud"  # too short to count as quoted
+    assert not gates.consistency(Facts({"F1@a.md": "Fraud", "F1@b.md": "claims for willful misconduct"}, same=False), ledger,
+                                 {"a.md": "...", "b.md": "..."}).passed
+
+
+def test_consistency_trusts_the_document_text_over_an_extractor_that_drops_a_qualifier():
+    ledger = _ledger()
+    ledger.facts[0].value = "courts located in Wilmington, Delaware, exclusively"
+    docs = {"a.md": "16.2 Each Party submits to the **courts located in Wilmington, Delaware, exclusively**.", "b.md": "..."}
+    dropped = Facts({"F1@a.md": "the courts located in Wilmington, Delaware"}, same=False)
+    assert gates.consistency(dropped, ledger, docs).passed
+    ledger.facts[0].value = "45 days"  # too short to trust a bare text match
+    docs["a.md"] = "Buyer may object within 45 days."
+    assert not gates.consistency(Facts({"F1@a.md": "30 days"}, same=False), ledger, docs).passed

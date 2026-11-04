@@ -152,8 +152,10 @@ class OpenAICompatClient:
                     raise ModelError(f"{role}: output truncated at max_tokens={self.max_tokens}")
                 return _THINK.sub("", choice["message"]["content"] or "").strip()
             except urllib.error.HTTPError as e:
-                last_err = f"HTTP {e.code}: {e.read()[:300]!r}"
-                retryable = e.code == 429 or e.code >= 500
+                text = e.read()[:300]
+                last_err = f"HTTP {e.code}: {text!r}"
+                # NRP's gateway now and then answers a good key with a bare 403 (round 10); a real refusal has a body
+                retryable = e.code == 429 or e.code >= 500 or (e.code == 403 and not text.strip())
                 wait = _server_wait(e.headers) if e.code == 429 else None
             except (OSError, http.client.HTTPException, KeyError, json.JSONDecodeError) as e:
                 # OSError covers timeouts, refused and dropped connections (ConnectionResetError, RemoteDisconnected)

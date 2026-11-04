@@ -1,0 +1,151 @@
+{
+  "matter_id": "s10-m0002",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "no attempt passed: task is probably broken or too hard",
+  "split": null,
+  "solver_pass_rate": 0.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"During the Term, Client appoints Provider as Client's exclusive provider of third-party logistics, specialty distribution and patient support hub services for the Covered Products in the Territory, and Client shall not, and shall cause its Affiliates not to, engage any third party to perform services that are the same as or substantially similar to the Services for any Covered Product in the Territory.\" (MSA §2.4). The exclusivity reaches this far because of two definitions: \"'Covered Products' means any pharmaceutical product commercialized by Client or its Affiliates, now or in the future, including Velnorix\" (§1.5) and \"'Territory' means throughout the world\" (§1.15)."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 12.2: \"Upon expiration of the Initial Term, this Agreement shall automatically renew for successive three (3) year renewal terms ... unless either Party delivers written notice of non-renewal to the other Party no earlier than two hundred ten (210) days and no later than one hundred eighty (180) days prior to the expiration of the then-current Initial Term or Renewal Term. A notice of non-renewal delivered at any other time shall be of no force or effect.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Quality Agreement §1.9: \"'Temperature Excursion' means any deviation outside the 2°C to 8°C labeled storage range lasting more than sixty (60) consecutive minutes, as recorded by a qualified temperature monitoring device.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "DPA §12.1: \"This DPA is governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of laws principles. The same law governs any dispute arising out of or relating to the Processing of Personal Data under the Agreement or this DPA.\" DPA §12.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the courts of the State of Delaware for any action arising out of or relating to this DPA or the Processing of Personal Data.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.052,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2",
+              "C5"
+            ],
+            "steps": 15,
+            "files_opened": [
+              "keisaiv_kedoul_data_processing_addendum.md",
+              "keisaiv_kedoul_master_services_agreement.md",
+              "keisaiv_kedoul_quality_agreement.md",
+              "keisaiv_kedoul_service_level_schedule.md",
+              "velnorix_launch_kickoff_meeting_notes.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C1",
+              "C2",
+              "C5"
+            ],
+            "steps": 15,
+            "files_opened": [
+              "keisaiv_kedoul_data_processing_addendum.md",
+              "keisaiv_kedoul_master_services_agreement.md",
+              "keisaiv_kedoul_quality_agreement.md",
+              "keisaiv_kedoul_service_level_schedule.md",
+              "velnorix_launch_kickoff_meeting_notes.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C1",
+              "C2",
+              "C5"
+            ],
+            "steps": 15,
+            "files_opened": [
+              "keisaiv_kedoul_data_processing_addendum.md",
+              "keisaiv_kedoul_master_services_agreement.md",
+              "keisaiv_kedoul_quality_agreement.md",
+              "keisaiv_kedoul_service_level_schedule.md",
+              "velnorix_launch_kickoff_meeting_notes.md"
+            ]
+          }
+        ],
+        "reason": "no attempt passed: task is probably broken or too hard"
+      }
+    }
+  ]
+}

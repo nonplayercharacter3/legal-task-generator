@@ -1,0 +1,147 @@
+{
+  "matter_id": "s9-m0002",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "no attempt passed: task is probably broken or too hard",
+  "split": null,
+  "solver_pass_rate": 0.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 16.2: \"Any Change of Control of Buyer shall be deemed an assignment of this Agreement by Buyer and requires Supplier's prior written consent. If a Change of Control of Buyer occurs without Supplier's prior written consent, Supplier may terminate this Agreement by written notice to Buyer, and Buyer shall pay Supplier, within thirty days after that notice, the Price for all remaining Committed Quantities under all open Statements of Work, whether or not those Products have been ordered, manufactured or delivered.\" Section 1.3 reaches \"any direct or indirect transfer ... of more than 50% of the equity interests of Buyer or of any entity that Controls Buyer.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 3.2: \"Upon expiration of the Initial Term ... this Agreement shall renew automatically for successive periods of three years ... unless either Party delivers written notice of non-renewal to the other Party at least 180 days prior to the expiration of the then-current term. ... Each Renewal Term shall be on the terms of this Agreement then in effect, including Section 5.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 2.1: \"Section 1.7 of the Agreement is deleted in its entirety and replaced with the following, which applies for all purposes of the Agreement: 1.7 'Products' means all architectural glass products manufactured, fabricated or supplied by Supplier, including the low-E coated insulating glass units described in Exhibit A and the laminated spandrel glass described in Exhibit A-1.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 14
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C6",
+          "C7"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.072,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C3",
+              "C9"
+            ],
+            "steps": 11,
+            "files_opened": [
+              "besouth_holdings_parent_guaranty.md",
+              "besouth_meideis_supply_agreement.md",
+              "calloway_tower_statement_of_work.md",
+              "meideis_insurance_certificate_cover_letter.md",
+              "supply_agreement_amendment_no1.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C3",
+              "C7",
+              "C9"
+            ],
+            "steps": 11,
+            "files_opened": [
+              "besouth_holdings_parent_guaranty.md",
+              "besouth_meideis_supply_agreement.md",
+              "calloway_tower_statement_of_work.md",
+              "meideis_insurance_certificate_cover_letter.md",
+              "supply_agreement_amendment_no1.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C1",
+              "C3",
+              "C9"
+            ],
+            "steps": 11,
+            "files_opened": [
+              "besouth_holdings_parent_guaranty.md",
+              "besouth_meideis_supply_agreement.md",
+              "calloway_tower_statement_of_work.md",
+              "meideis_insurance_certificate_cover_letter.md",
+              "supply_agreement_amendment_no1.md"
+            ]
+          }
+        ],
+        "reason": "no attempt passed: task is probably broken or too hard"
+      }
+    }
+  ]
+}

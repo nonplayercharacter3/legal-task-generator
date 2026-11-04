@@ -1,0 +1,171 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 2,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s9-m0001",
+      "accepted": false,
+      "failed_gate": "consistency",
+      "reason": "mismatches: [{\"fact\": \"F8\", \"key\": \"Stock Purchase Agreement indemnity cap carve-outs\", \"filename\": \"escrow_agreement.md\", \"ledger\": \"Fraud, breaches of Fundamental Representations, and Excluded Taxes\", \"document\": \"The Indemnity Escrow Fund is the sole and exclusive source of recovery for all claims by the Buy",
+      "split": null,
+      "solver_pass_rate": null
+    },
+    {
+      "matter_id": "s9-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "dev",
+      "solver_pass_rate": 0.333
+    },
+    {
+      "matter_id": "s9-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.333
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 10757,
+      "output_tokens": 24535,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 13,
+      "input_tokens": 204550,
+      "output_tokens": 70194,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 79519,
+      "output_tokens": 7933,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 3854,
+      "output_tokens": 898,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 8,
+      "input_tokens": 171236,
+      "output_tokens": 5047,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 2,
+      "input_tokens": 2758,
+      "output_tokens": 805,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 2,
+      "input_tokens": 10062,
+      "output_tokens": 3055,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 4,
+      "input_tokens": 105784,
+      "output_tokens": 32800,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 14,
+      "input_tokens": 130815,
+      "output_tokens": 15342,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 90,
+      "input_tokens": 609030,
+      "output_tokens": 117521,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "commercial laundry services": 1,
+      "architectural glass": 1,
+      "dental clinics": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 1,
+      "supply agreement": 1,
+      "master services agreement": 1
+    },
+    "issue_types": {
+      "expired_notice_window": 3,
+      "change_of_control_consent": 2,
+      "survival_gap": 1,
+      "governing_law_mismatch": 1,
+      "liability_cap_carveout": 1,
+      "exclusivity_scope": 1,
+      "auto_renewal": 1,
+      "defined_term_inconsistency": 1,
+      "missing_assignment_restriction": 1,
+      "uncapped_indemnity": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

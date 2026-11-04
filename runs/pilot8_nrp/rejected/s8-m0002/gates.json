@@ -1,0 +1,159 @@
+{
+  "matter_id": "s8-m0002",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "no attempt passed: task is probably broken or too hard",
+  "split": null,
+  "solver_pass_rate": 0.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.1: \"The representations and warranties of Seller contained in this Agreement, including the representations and warranties in Section 4.12, shall survive the Closing until the date that is six (6) months following the Closing Date ... No claim may be made in respect of any representation or warranty after its survival period expires, unless a valid Claim Notice was delivered under Section 9.4 before that expiration.\" Section 9.4(b): \"[A Claim Notice] shall include invoices, remittance records or other documentation of Losses actually paid by the Indemnified Party. A Claim Notice that does not satisfy this Section 9.4(b) shall not be valid.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 5.2: \"Maker may exercise its right under Section 5.1 only if Maker delivers to Holder a written notice (a \"Set-off Notice\") within one hundred fifty (150) days after the Issue Date.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 7 of the IP Assignment says: \"Assignor's aggregate liability for any inaccuracy in or breach of its representations and warranties with respect to the Assigned IP, whether under this Assignment or the Purchase Agreement, including Section 4.9 of the Purchase Agreement, shall not exceed the Cap.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 1.1: \"'Transferred Employee Liabilities' means all liabilities and obligations to or in respect of the Transferred Employees, whether arising before or after the Closing, including accrued and unused paid time off, wage and hour claims, bonus and commission obligations, benefit plan obligations and professional liability (malpractice) tail coverage and related exposure.\" Section 9.3: \"Buyer shall indemnify and hold harmless Seller ... from and against all Losses arising out of or resulting from: ... (b) the Transferred Employee Liabilities\". Section 9.5(c): \"Buyer's aggregate liability under Section 9.3, other than Section 9.3(b), shall not exceed the Cap.\""
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "\"**Business**\" means general dentistry and hygiene services conducted at the Clinics. … \"**Assigned IP**\" means all intellectual property owned by Assignor and used primarily in the Business"
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 15
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3",
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.098,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C1",
+              "C3",
+              "C6",
+              "C7"
+            ],
+            "steps": 11,
+            "files_opened": [
+              "confirmatory_ip_assignment_agreement.md",
+              "letter_of_intent_trolind_clinics.md",
+              "saitouth_clinic_acquisition_press_release.md",
+              "saitouth_trolind_asset_purchase_agreement.md",
+              "trolind_seller_promissory_note.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C3",
+              "C6",
+              "C7",
+              "C14"
+            ],
+            "steps": 11,
+            "files_opened": [
+              "confirmatory_ip_assignment_agreement.md",
+              "letter_of_intent_trolind_clinics.md",
+              "saitouth_clinic_acquisition_press_release.md",
+              "saitouth_trolind_asset_purchase_agreement.md",
+              "trolind_seller_promissory_note.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C6",
+              "C7"
+            ],
+            "steps": 11,
+            "files_opened": [
+              "confirmatory_ip_assignment_agreement.md",
+              "letter_of_intent_trolind_clinics.md",
+              "saitouth_clinic_acquisition_press_release.md",
+              "saitouth_trolind_asset_purchase_agreement.md",
+              "trolind_seller_promissory_note.md"
+            ]
+          }
+        ],
+        "reason": "no attempt passed: task is probably broken or too hard"
+      }
+    }
+  ]
+}

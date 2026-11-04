@@ -1,0 +1,197 @@
+{
+  "matter_id": "s10-m0003",
+  "summary": "Lipaind Pictures Group, LLC (client, Buyer) acquires a library of 41 independent feature films, with associated distribution rights and sublicenses, from Zoband Releasing, Inc. (Seller) for $18,400,000 under a Delaware-law Asset Purchase Agreement signed June 2, 2026 and closed July 31, 2026. $2,760,000 is held in escrow by Ostrander Fiduciary Trust Company, N.A. A closing side letter addresses three titles whose chain of title is disputed. A pre-signing mutual NDA is included as a distractor. Five issues are planted. The escrow agreement defines Losses more narrowly than the APA, and the APA's precedence clause lets that definition control escrow disbursements. The escrow agreement chooses New York law and forum while the APA chooses Delaware law and the Court of Chancery. The side letter preserves an exclusion right whose deadline under APA 6.4 had already expired before the letter was signed. The chain-of-title representation falls outside the Fundamental Representations and so survives only six months. The APA lets Seller assign freely, including the earnout audit rights over Buyer's books.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Lipaind Pictures Group, LLC",
+      "role": "Buyer (firm's client), independent film distributor acquiring the film library"
+    },
+    {
+      "id": "P2",
+      "name": "Zoband Releasing, Inc.",
+      "role": "Seller, independent film distributor selling its library titles and distribution rights"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Fiduciary Trust Company, N.A.",
+      "role": "Escrow Agent under the Escrow Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing Date",
+      "value": "June 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "APA Closing Date",
+      "value": "July 31, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Purchase Price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Escrow Amount",
+      "value": "$2,760,000",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F5",
+      "key": "Escrow Release Date",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F6",
+      "key": "APA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F7",
+      "key": "APA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence among transaction documents",
+      "value": "Side Letter, then APA, then Escrow Agreement; Escrow Agreement controls Escrow Fund disbursement",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F9",
+      "key": "APA Losses definition",
+      "value": "includes reasonable attorneys' fees and diminution in value of Library Titles",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F10",
+      "key": "Title Exclusion Notice deadline",
+      "value": "30 days after the APA Signing Date",
+      "doc": "D1",
+      "section": "Section 6.4"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "closing_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 defines 'Losses' to include reasonable attorneys' fees and diminution in value of Library Titles. Escrow Agreement Section 1.1 defines 'Losses' as out-of-pocket damages only, excluding attorneys' fees, diminution in value and lost profits. APA Section 9.6 makes the Escrow Fund Buyer's sole source of recovery for non-fundamental claims. APA Section 11.12 provides that the Escrow Agreement controls Escrow Fund disbursement. Read together, these provisions mean the narrower escrow definition governs what Buyer can actually recover. In a film library deal, the main exposures are chain-of-title litigation costs and lost library value, and those are exactly the items the escrow definition excludes.",
+      "doc": "D2",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "excluding attorneys' fees",
+        "out-of-pocket damages"
+      ],
+      "expected_finding": "Because the APA's precedence clause lets the Escrow Agreement control disbursements, its narrower 'Losses' definition strips attorneys' fees and diminution in value from Buyer's only practical recovery source, and it must be conformed to the APA definition.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "The Side Letter is dated July 31, 2026 (the Closing Date). Its Section 2 purports to preserve Buyer's right to exclude the three Disputed Titles and receive a price reduction by delivering a Title Exclusion Notice 'within the period specified in Section 6.4' of the APA. APA Section 6.4 requires that notice within 30 days after the Signing Date of June 2, 2026, so the period ended July 2, 2026. The window had therefore closed four weeks before the Side Letter was signed. Read with the APA, the Side Letter's only remedy for the Disputed Titles is illusory, and nothing in the folder extends the deadline.",
+      "doc": "D3",
+      "section": "Section 2",
+      "detect_terms": [
+        "within the period specified in Section 6.4"
+      ],
+      "expected_finding": "The Title Exclusion Notice period expired on July 2, 2026, before the July 31, 2026 Side Letter was signed, so Buyer has no live exclusion right for the Disputed Titles and the Side Letter needs a fresh, stated deadline running from its own date.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Escrow Agreement Section 10.3 selects New York law and the state and federal courts in the Borough of Manhattan. APA Section 11.8 selects Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery. Under APA Section 11.12, the Escrow Agreement controls Escrow Fund disbursement. Indemnity disputes over release of the escrow could therefore be litigated in New York under New York law, while the underlying indemnity entitlement is decided in Chancery under Delaware law. That split risks parallel proceedings and inconsistent results on Buyer's main recovery source.",
+      "doc": "D2",
+      "section": "Section 10.3",
+      "detect_terms": [
+        "laws of the State of New York",
+        "Borough of Manhattan"
+      ],
+      "expected_finding": "The Escrow Agreement's New York law and forum clause conflicts with the APA's Delaware law and Chancery forum, and because escrow disbursement disputes are routed to the Escrow Agreement, the clause should be conformed to Delaware.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 9.1 provides that representations survive six months after the Closing Date, except Fundamental Representations, which survive six years. Section 1.1 defines Fundamental Representations as only Sections 4.1, 4.2 and 4.3 (organization, authority, title to tangible assets). The Section 4.7 chain-of-title and copyright/music clearance representation is therefore excluded. Read together, these provisions mean Buyer's claims on the most valuable representation in a film library deal expire around January 31, 2027. Third-party copyright and clearance claims typically surface much later, and the Copyright Act limitations period is three years. The escrow is also held for 18 months, longer than the period in which most claims against it can be made.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "six (6) months following the Closing Date",
+        "Sections 4.1, 4.2 and 4.3"
+      ],
+      "expected_finding": "Because the chain-of-title representation in Section 4.7 is not a Fundamental Representation, it survives only six months, which is too short for practical claims; Section 4.7 should be added to Fundamental Representations or given at least a 36-month survival period.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "APA Section 11.5 lets Seller assign the Agreement, in whole or in part, to any Person without Buyer's consent. Buyer, by contrast, needs Seller's prior written consent to assign. Seller's assignable rights include the Section 2.5 earnout audit right to inspect Buyer's books, exhibitor and platform deal terms, and title-level revenue. A competing distributor could therefore acquire that access by assignment, and Buyer would have no means to prevent it.",
+      "doc": "D1",
+      "section": "Section 11.5",
+      "detect_terms": [
+        "Seller may assign this Agreement",
+        "without the consent of Buyer"
+      ],
+      "expected_finding": "Seller can freely assign the APA, including its earnout audit rights over Buyer's confidential distribution data, to a competitor, so assignment should require Buyer's consent or at least bar assignment to competing distributors.",
+      "contradicts": null
+    }
+  ]
+}

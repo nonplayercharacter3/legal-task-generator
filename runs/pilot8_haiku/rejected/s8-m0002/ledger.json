@@ -1,0 +1,193 @@
+{
+  "matter_id": "s8-m0002",
+  "summary": "Saitouth Dental Partners, LLC (client, Buyer) acquired the assets of four Delaware dental clinics from Trolind Family Dentistry, P.A. (Seller) under an Asset Purchase Agreement that closed on August 3, 2026. Part of the price was paid through a Seller Note. A post-closing IP Assignment Agreement dated October 20, 2026 followed the closing. The folder also holds the non-binding letter of intent and the closing press release. The supervising partner wants an issue-spotting memo on the Buyer's post-closing protection. Five planted issues sit across the APA, the IP Assignment Agreement and the Seller Note: a survival period that ends before the Buyer can find billing claims; a Seller Note setoff window that closed before October 20, 2026; an IP assignment that pulls IP-title claims back under the cap; an uncapped Buyer indemnity covering pre-closing liabilities; and a narrower 'Practice Locations' definition in the IP assignment.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Saitouth Dental Partners, LLC",
+      "role": "Buyer; maker of the Seller Note; assignee under the IP Assignment Agreement (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Trolind Family Dentistry, P.A.",
+      "role": "Seller; holder of the Seller Note; assignor under the IP Assignment Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Purchase Price",
+      "value": "$14,600,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "APA Closing Date",
+      "value": "August 3, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$2,400,000",
+      "doc": "D3",
+      "section": "Section 1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note Date",
+      "value": "August 3, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F5",
+      "key": "APA Seller indemnity cap",
+      "value": "15% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 8.7"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence among transaction documents",
+      "value": "IP Assignment Agreement, then Seller Note, each as to its subject matter, then the APA",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F7",
+      "key": "APA Practice Locations",
+      "value": "Four clinics: Wilmington, Newark, Dover and Middletown, Delaware",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F8",
+      "key": "IP Assignment Agreement Effective Date",
+      "value": "October 20, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "LOI general representation survival period",
+      "value": "18 months after Closing",
+      "doc": "D4",
+      "section": "Section 5"
+    },
+    {
+      "id": "F10",
+      "key": "APA governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 11.6"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_saitouth_trolind.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_promissory_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "closing_press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 8.1 says all representations other than Fundamental Representations survive only until six months after the Closing Date. That end date is February 3, 2027, and it covers the Section 4.12 healthcare billing and payer compliance representations. APA Section 6.7 sets the first post-closing payer Billing Reconciliation for nine months after the Closing Date, because that is when the Buyer first receives payer remittance and recoupment data. Read together, the survival period for billing claims ends about three months before the Buyer could reasonably learn of them. The LOI (Section 5) contemplated 18-month survival, so the APA departs from the agreed deal.",
+      "doc": "D1",
+      "section": "Section 8.1",
+      "detect_terms": [
+        "six (6) months after the Closing Date"
+      ],
+      "expected_finding": "The six-month survival period ends before the nine-month Billing Reconciliation, so the Buyer's healthcare-billing indemnity claims are practically unusable, and survival should be extended to at least the 18 months agreed in the LOI.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Seller Note Section 4.2 lets the Buyer set off indemnity claims against note payments only if it delivers a Setoff Notice within sixty days after the Note Date. The Note Date is August 3, 2026 (Seller Note preamble), so the window closed on October 2, 2026. The first installment is not due until February 3, 2027. APA Section 8.6 says setoff is available only in accordance with the Seller Note, and APA Section 11.9 gives the Seller Note precedence on its subject matter, so the APA gives no independent setoff right. As of the IP Assignment Agreement Effective Date of October 20, 2026, the window had already lapsed. The Buyer has therefore lost setoff against the $2,400,000 note, including for the IP-title and Middletown branding problems that surfaced by that date.",
+      "doc": "D3",
+      "section": "Section 4.2",
+      "detect_terms": [
+        "within sixty (60) days after the Note Date"
+      ],
+      "expected_finding": "The setoff notice window expired on October 2, 2026, before the October 20, 2026 IP Assignment Agreement and before any note payment fell due, so the Buyer has no setoff right and should negotiate a note amendment restoring setoff.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "APA Section 8.7 caps the Seller's indemnity at 15% of the Purchase Price but carves out Fundamental Representations. Those include the Section 4.9 title-to-intellectual-property representation. The later IP Assignment Agreement, Section 6, says the Seller's liability for breach of the Assignment or of APA Section 4.9 is subject to the limitations set forth in Section 8.7. APA Section 11.9 makes the IP Assignment Agreement control as to its subject matter. Read together, IP title claims, which the APA left uncapped, now fall under the 15% cap.",
+      "doc": "D2",
+      "section": "Section 6",
+      "detect_terms": [
+        "subject to the limitations set forth in Section 8.7"
+      ],
+      "expected_finding": "Because the IP Assignment Agreement controls on IP matters, its Section 6 removes the Fundamental Representation carve-out for IP title and caps those claims at 15% of the Purchase Price, so the clause should be deleted or conformed to the APA carve-out.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Under APA Section 8.3, the Buyer indemnifies the Seller for all Assumed Liabilities. APA Section 2.3 defines Assumed Liabilities to include all Liabilities under the Assigned Contracts, including payer agreements, whether arising before or after the Closing. That brings in pre-closing payer overpayment recoupments caused by the Seller's own billing. APA Section 8.7 states that the cap and basket shall apply only to Seller's indemnification obligations, so the Buyer's indemnity has no cap. The LOI had contemplated a mutual cap. The client therefore faces unlimited exposure for the Seller's historical billing.",
+      "doc": "D1",
+      "section": "Section 8.3",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "shall apply only to Seller"
+      ],
+      "expected_finding": "The Buyer's indemnity for Assumed Liabilities, which include the Seller's pre-closing payer liabilities, is uncapped because Section 8.7 limits only the Seller, so pre-closing liabilities should be moved to Excluded Liabilities and a reciprocal cap should be added.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 defines Practice Locations as four clinics: Wilmington, Newark, Dover and Middletown. IP Assignment Agreement Section 1 redefines Practice Locations as the clinics listed on Exhibit A, which lists only Wilmington, Newark and Dover. That section also defines Assigned IP as intellectual property used at the Practice Locations. Because APA Section 11.9 lets the IP Assignment Agreement control on IP matters, the pediatric brand, website domain and patient-portal content used at the Middletown clinic are not assigned, even though the Buyer paid for that clinic.",
+      "doc": "D2",
+      "section": "Section 1",
+      "detect_terms": [
+        "the clinics listed on Exhibit A"
+      ],
+      "expected_finding": "The IP Assignment Agreement's narrower 'Practice Locations' definition leaves out the Middletown clinic, so its brand and online IP stay with the Seller, and the definition and Exhibit A must be conformed to the APA's four locations.",
+      "contradicts": "F7"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "matter_id": "s11-m0001",
+  "summary": "Storox Linen Services, LLC is a commercial laundry operator running three New York plants. It licenses Dratesk Systems' plant-management and linen-tracking software under a Software License Agreement effective January 15, 2024, and its parent, Storox Holdings, Inc., guarantees its obligations. On October 26, 2026 the parties signed Order Form No. 2, adding an RFID tracking module. That order form records Storox's plan to move to a replacement platform when the Initial Term ends on January 14, 2027. The folder has three problems for Storox. First, the Agreement's liability cap carves out all Article 10 indemnity amounts, while Storox's indemnity covers every claim relating to use of the Software, so its exposure is unlimited and passes through to the parent. Second, Order Form No. 2 redefines 'Licensed Facilities' to two plants, and that definition controls under the precedence clause. Third, the 90-day non-renewal deadline (October 16, 2026) had already passed when Order Form No. 2 was signed, so the Agreement auto-renews for 36 months.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Storox Linen Services, LLC",
+      "role": "Licensee; commercial laundry operator (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Dratesk Systems, Inc.",
+      "role": "Licensor; laundry plant-management software vendor"
+    },
+    {
+      "id": "P3",
+      "name": "Storox Holdings, Inc.",
+      "role": "Guarantor; parent company of the Licensee"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "January 15, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Software License Agreement Initial Term",
+      "value": "36 months from the Effective Date",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Non-renewal notice period",
+      "value": "at least 90 days before expiration of the then-current term",
+      "doc": "D1",
+      "section": "3.2"
+    },
+    {
+      "id": "F4",
+      "key": "Renewal Term length",
+      "value": "successive 36-month terms",
+      "doc": "D1",
+      "section": "3.2"
+    },
+    {
+      "id": "F5",
+      "key": "Liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F6",
+      "key": "Licensed Facilities (Agreement definition)",
+      "value": "all laundry processing plants Licensee operates in New York State",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "Order Form controls on license scope, fees and Licensed Facilities; otherwise Agreement controls",
+      "doc": "D1",
+      "section": "15.4"
+    },
+    {
+      "id": "F8",
+      "key": "Minimum cyber liability insurance",
+      "value": "$5,000,000 per claim",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F9",
+      "key": "Order Form No. 2 date",
+      "value": "October 26, 2026",
+      "doc": "D3",
+      "section": "Header"
+    },
+    {
+      "id": "F10",
+      "key": "Initial Term expiration date",
+      "value": "January 14, 2027",
+      "doc": "D3",
+      "section": "Recitals"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "order_form_no_2.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 10.1 limits Dratesk's indemnity to third-party IP infringement claims. Section 10.2 requires Storox to indemnify Dratesk against any and all claims 'arising out of or relating to the use of the Software' by Storox or its Authorized Users. That wording is broad enough to reach claims caused by defects in Dratesk's own software, such as mis-sorted or lost hospital linen and route data errors. Section 11.1 caps each party's liability at fees paid or payable in the prior 12 months. Section 11.3 then states that the cap 'shall not apply to amounts payable under Article 10'. Read together, the cap protects Dratesk only on its narrow IP indemnity, while Storox carries unlimited exposure on a much broader indemnity. Parent Guaranty Section 2 guarantees all obligations under the Agreement without limit, so the uncapped exposure also reaches Storox Holdings.",
+      "doc": "D1",
+      "section": "10.2 and 11.3",
+      "detect_terms": [
+        "arising out of or relating to the use of the Software",
+        "shall not apply to amounts payable under Article 10"
+      ],
+      "expected_finding": "Read with the broad Section 10.2 licensee indemnity, the Section 11.3 carve-out leaves Storox (and, through the guaranty, its parent) with unlimited liability, including for losses caused by Dratesk's own software, so the indemnity should be narrowed and made subject to the cap or a separate super-cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Agreement Section 1.1 defines 'Licensed Facilities' as all laundry processing plants the Licensee operates in New York State. The Agreement recitals identify those plants as Hunts Point (Bronx), Long Island City and Mount Vernon. Order Form No. 2 Section 3 states that 'For purposes of the Agreement and all Order Forms' Licensed Facilities means the facilities in its table, which lists only Hunts Point and Mount Vernon. Agreement Section 15.4 gives the Order Form priority on Licensed Facilities, so the narrower definition controls across the whole license, including the core platform already running at Long Island City. Use at that plant becomes unlicensed. Under Agreement Section 4.5 it is then subject to an audit true-up at 150% of list price and could be treated as a material breach.",
+      "doc": "D3",
+      "section": "3",
+      "detect_terms": [
+        "For purposes of the Agreement and all Order Forms"
+      ],
+      "expected_finding": "Order Form No. 2's definition of Licensed Facilities overrides the Agreement's statewide definition through Section 15.4 and drops the Long Island City plant, so Storox's current use there is unlicensed and the definition must be conformed or the plant added.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under Agreement Section 3.1 the Initial Term runs 36 months from the January 15, 2024 Effective Date. Section 3.2 provides that the Agreement will 'automatically renew' for successive 36-month terms at a price increase of up to 12% unless either party gives written notice 'at least ninety (90) days prior to the expiration' of the then-current term. Section 15.6 requires that notice to go by certified mail or courier to Dratesk's General Counsel and says no Order Form constitutes notice. The recitals of Order Form No. 2, dated October 26, 2026, confirm that the Initial Term expires January 14, 2027. They also state that Storox intends to move to a replacement platform at that expiry and 'will deliver' a non-renewal notice. The 90-day deadline fell on October 16, 2026, ten days before the Order Form was signed, and the folder records no notice. The Agreement, and with it the co-terminous RFID module and the parent guaranty, will therefore renew through January 14, 2030.",
+      "doc": "D1",
+      "section": "3.2",
+      "detect_terms": [
+        "automatically renew",
+        "at least ninety (90) days prior to the expiration"
+      ],
+      "expected_finding": "The non-renewal deadline expired on October 16, 2026, before the October 26, 2026 Order Form recorded Storox's intent to exit, so absent a negotiated amendment Storox is locked into a 36-month renewal at up to a 12% uplift, contrary to its planned platform transition.",
+      "contradicts": null
+    }
+  ]
+}

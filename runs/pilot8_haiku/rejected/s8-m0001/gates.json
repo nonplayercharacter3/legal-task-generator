@@ -1,0 +1,153 @@
+{
+  "matter_id": "s8-m0001",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "no attempt passed: task is probably broken or too hard",
+  "split": null,
+  "solver_pass_rate": 0.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.2: \"On a Change of Control, the covenants of the Executive in Section 7.2 (Non-Competition), Section 7.3 (Non-Solicitation) and Section 7.4 (Assignment of Inventions) shall automatically terminate and be of no further force or effect. This termination occurs as of the consummation of the Change of Control, unless the written consent of the Executive to the continuation of those covenants has been delivered to the Company before the Change of Control is consummated.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "TSA Section 1.1: \"'Company Products' means the CT systems listed on Exhibit A, including the service software used to install, calibrate, monitor, diagnose and maintain those systems.\" Exhibit A lists only the Aurex CT systems and the AurexServ software. The SPA instead defines 'Company Products' as \"all CT, MRI and ultrasound imaging systems and related service software of the Company.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "TSA Section 12.6: \"This Agreement, and all claims or causes of action arising out of or relating to it, are governed by and construed in accordance with the laws of the State of New York ... Any legal suit, action or proceeding arising out of or relating to this Agreement or the Services shall be brought exclusively in the state or federal courts located in the Borough of Manhattan, City of New York.\" SPA Section 11.9: \"This Agreement and all Ancillary Agreements ... are governed by and construed in accordance with the internal laws of the State of Delaware\"; SPA Section 11.10 requires exclusive Delaware Court of Chancery jurisdiction for any proceeding relating to any Ancillary Agreement."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 12.3: \"Provider may assign this Agreement, or delegate the performance of any Services, in whole or in part, to any Person without the consent of Recipient. Recipient may not assign this Agreement without the prior written consent of Provider.\""
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 10.5(b): \"The limitation in Section 10.5(a) does not apply to Losses arising from Fraud or from any inaccuracy in or breach of the Fundamental Representations, being the representations and warranties of Seller in Sections 4.1, 4.2 and 4.3.\" Section 10.5(a) caps \"all Losses for which Seller is liable under Section 10.2\" at $18,600,000."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1",
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.077,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C3"
+            ],
+            "steps": 21,
+            "files_opened": [
+              "letter_of_intent_2026-03-09.md",
+              "mutual_nda_daikesk_glosiv.md",
+              "santangelo_executive_employment_agreement.md",
+              "stock_purchase_agreement_execution_draft.md",
+              "transition_services_agreement_draft.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C3"
+            ],
+            "steps": 21,
+            "files_opened": [
+              "letter_of_intent_2026-03-09.md",
+              "mutual_nda_daikesk_glosiv.md",
+              "santangelo_executive_employment_agreement.md",
+              "stock_purchase_agreement_execution_draft.md",
+              "transition_services_agreement_draft.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C3",
+              "C5"
+            ],
+            "steps": 21,
+            "files_opened": [
+              "letter_of_intent_2026-03-09.md",
+              "mutual_nda_daikesk_glosiv.md",
+              "santangelo_executive_employment_agreement.md",
+              "stock_purchase_agreement_execution_draft.md",
+              "transition_services_agreement_draft.md"
+            ]
+          }
+        ],
+        "reason": "no attempt passed: task is probably broken or too hard"
+      }
+    }
+  ]
+}

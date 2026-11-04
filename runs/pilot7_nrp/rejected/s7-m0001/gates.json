@@ -1,0 +1,69 @@
+{
+  "matter_id": "s7-m0001",
+  "accepted": false,
+  "failed_gate": "rubric_trace",
+  "reason": "errors: [\"criterion C5 cites 'I1', which is not a ledger fact\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 7,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 12.1: \"This Agreement begins on the Effective Date and continues for an initial term of three (3) years from the Effective Date (the \"Initial Term\"). Thereafter, this Agreement shall automatically renew for successive two (2) year renewal terms ... unless either party gives the other party written notice of non-renewal at least one hundred eighty (180) days prior to expiry of the then-current term.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "DPA Section 10: \"Each party's aggregate liability arising out of or related to this DPA, including any Personal Data Breach, is subject to the limitations and exclusions of liability set out in Section 11 of the Agreement and shall in no event exceed the cap set out in Section 11.2 of the Agreement.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 7.2: \"If Beneficiary undergoes a Change of Control without Guarantor's prior written consent, this Guaranty shall automatically terminate and be of no further force or effect.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": false,
+      "details": {
+        "errors": [
+          "criterion C5 cites 'I1', which is not a ledger fact"
+        ],
+        "n_criteria": 10
+      }
+    }
+  ]
+}

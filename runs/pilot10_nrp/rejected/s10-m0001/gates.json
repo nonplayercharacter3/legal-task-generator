@@ -1,0 +1,57 @@
+{
+  "matter_id": "s10-m0001",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I4\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I4"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 11.4: \"Seller may assign this Agreement and any of its rights under this Agreement, including its rights under Section 2.7, and delegate any of its obligations under this Agreement, to any Permitted Transferee without the consent of Buyer. Upon the written assumption by that Permitted Transferee of Seller's obligations under this Agreement, Seller shall be released from those obligations.\" Section 1.1 defines \"Permitted Transferee\" to include \"any Person that acquires all or substantially all of Seller's remaining assets or business, including any successor to Seller's reference laboratory business.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 2.3(b): Buyer assumes \"all Liabilities under the Assigned Contracts, whether arising before or after the Closing\"; Section 9.3(b): \"Buyer shall indemnify and hold harmless Seller ... from and against all Losses ... arising out of or relating to: ... (b) any Assumed Liability.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 4.5: \"Except as set forth in Schedule 4.5, no consent, approval or notice of any third party is required in connection with the execution, delivery and performance by Seller of this Agreement and the Ancillary Documents or the assignment of the Assigned Contracts to Buyer.\" Schedule 4.5: \"None.\" Section 7.2 lists conditions (a) through (e) and none of them refers to Fennwick consent."
+          },
+          {
+            "issue": "I4",
+            "present": false,
+            "evidence": "Bill of Sale Section 4.2: \"Seller's liability with respect to the Purchased Assets and the related obligations of Seller, including Excluded Liabilities, is subject to the limitations set forth in Section 9.5 of the Purchase Agreement.\" APA Section 9.5(b): \"Seller indemnity for Excluded Liabilities is not subject to the cap. Seller's obligations under Sections 9.2(b) and 9.2(c) are not subject to the Basket or the Cap.\""
+          }
+        ]
+      }
+    }
+  ]
+}

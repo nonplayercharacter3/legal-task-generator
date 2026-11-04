@@ -1,6 +1,6 @@
 # Where the project stands and what comes next
 
-Plain-English summary for people joining the project (updated 2026-10-27). The working detail for Claude Code
+Plain-English summary for people joining the project (updated 2026-11-03). The working detail for Claude Code
 sessions is in `CLAUDE.md` ("Now"); this page says the same thing without the jargon.
 
 ## What we are building
@@ -22,24 +22,46 @@ broken, gave away the answer, or was too easy or impossible. Each round exposed 
 before the next. Round 5 kept 2 of 3 assignments, which was our bar for "the tool works", and a person read both in
 full and confirmed they hold up.
 
-**Ready for the next rounds.** Sirui She's laptop has everything a round needs (the LAB copy and its search index,
-access to the university's hosted models). A second contributor with a Claude Max plan has joined and runs the
-Claude rounds on their own machine.
+**November 2: eight more rounds, run in two parallel streams on Sirui She's laptop** (now on the Claude Max plan).
+Opus wrote every assignment; what differed was who tried to solve them.
+
+- **Claude Haiku solving** (rounds 6, 8, 9): 1 of 9 kept. Three were rightly turned away as too easy, because Haiku
+  found every problem in all three tries. The other five each exposed a flaw in how assignments are built or checked,
+  and each flaw is fixed. By the last round every assignment passed every quality check; the only thing left is
+  difficulty. The variety change worked: nine industries, no repeated names.
+- **Qwen solving** (rounds 7 to 11), the open model the lab will actually train: round 9 kept 2 of 3 with no errors,
+  which meets our bar on the numbers; Sirui She still has to read those two in full. The other rounds kept none.
+  Most rejections were the tool being wrong about a sound assignment, and each kind was fixed before the next round.
+  In rounds 10 and 11 the university's hosted model service started refusing every request, which cost 3
+  assignments.
+
+So far the tool has kept **7 assignments** in total (4 in October, 3 in November). Every November assignment was
+checked against LAB's text, and none came close to the cutoff.
+
+**One mix-up to know about.** Both streams used the same random seeds for rounds 8 and 9, so those are the same six
+assignment outlines written twice, not twelve different ones. Later rounds will use new seeds.
+
+**The two streams' work was combined on 2026-11-03.** Both had fixed some of the same problems in slightly different
+ways; the combined version keeps one copy of each fix, and every test still passes.
 
 ## What comes next
 
-1. **Round 6 (second contributor, now).** The same setup as round 5. It is the first real test of two changes:
-   a fix to one of the quality checks, and more variety in the assignments (before, the same client names and
-   contract types kept coming back).
-2. **Get an open model to finish its answers (done 2026-10-27).** The point of the project is assignments that a
-   mid-sized open model finds hard but possible. The university's hosted Qwen model (about 27 billion parameters,
-   free for research) handled the hands-on part well from the start, but every answer got cut off at the last step.
-   With the fix below it finished all 12 test answers. See "Fixing the open model's memo".
-3. **Round 7.** The first full round with Qwen as the solver.
-4. **Check the grader.** A model grades each answer against the checklist. We have not measured whether it is too
-   generous. We will grade the same answers with and without the extra hints it gets, and compare.
-5. **Our own GPUs.** The university cluster (Nautilus) has unfrozen our account, and we may use up to 12 high-end
-   GPUs at once. Next we run our own copy of an open model there, then train it on the assignments.
+1. **Sirui She reads the two Qwen-round assignments** kept in round 9. If they hold up, the standard is met with Qwen
+   solving.
+2. **Qwen sets the difficulty bar (decided 2026-11-03).** The lab trains open models like Qwen, so an assignment
+   counts as too easy only if Qwen solves it every time. Haiku stays available for comparison.
+3. **More rounds**, with new seeds. Qwen rounds need the hosted service back, or our own copy on
+   the university GPUs, which works but is about 3.5 times slower.
+4. **Train on the assignments.** Not started. Seven assignments are far too few, so the generator has to scale first.
+
+**Done along the way (2026-10-27 to 2026-11-02):**
+- **The open model now finishes its answers.** See "Fixing the open model's memo".
+- **The grader is checked.** We graded 67 answers twice, with and without the grader's extra hints: the results were
+  the same (92% of checklist items passed either way). A second, more careful grader agreed with every pass the first
+  one gave. We keep the hints. Both graders are Claude models, so this is not yet a check against real lawyers.
+- **Our own GPUs work.** We ran the same Qwen model on one of the university cluster's GPUs (Nautilus). It wrote all
+  12 test answers with no failures and scored the same as the hosted copy, but took about 9 minutes per answer
+  instead of 2.5.
 
 ## Fixing the open model's memo
 
@@ -79,8 +101,8 @@ says to slow down.
 
 - Merge or drop an older, unfinished feature that pulls real contracts from SEC filings to use as drafting examples
   (branch `claude/affectionate-perlman-e65dbe`).
-- Commit or keep local the setup files for running a model on Nautilus (`deploy/nautilus/`).
 - Whether the second contributor commits under their own name; the repo rule says only Sirui She authors commits.
+- Reading the two assignments kept in Qwen round 9.
 
 ## How we work together
 
@@ -88,3 +110,7 @@ says to slow down.
   for results. Each test round goes on its own branch with a pull request listing its numbers and why each rejected
   assignment was rejected.
 - Several Claude sessions on Sirui She's laptop share one notes file, `HANDOFF.md`, which only that laptop has.
+- Planning happens with Claude in the Claude app; coding happens in the Claude Code terminal on the laptop. The app
+  hands the terminal its tasks through `inbox.md` in the project folder.
+- The main project folder always stays clean: each piece of work happens in its own copy (a git worktree) and is
+  removed once it is merged.

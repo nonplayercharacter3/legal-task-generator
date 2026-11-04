@@ -1,0 +1,64 @@
+{
+  "matter_id": "s11-m0002",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I3\", \"I4\", \"I5\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 55
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I3",
+          "I4",
+          "I5"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 8.2(c): \"the consents and approvals required as conditions to the Closing (the \"Required Consents\") shall have been obtained and delivered to Buyer, and the Required Consents shall consist solely of (i) the transfer to Buyer, or reissuance to Buyer, of the Delaware motor vehicle auction dealer license ... and (ii) the written consent of the Floor Plan Lender to the release of its Encumbrances on the Purchased Assets\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 10.1: \"The representations, warranties, covenants and agreements of the Parties in this Agreement, and all indemnification obligations under Section 10.2 and Section 10.3 (including the indemnification for Excluded Liabilities), shall survive the Closing until the date that is six (6) months following the Closing Date.\""
+          },
+          {
+            "issue": "I3",
+            "present": false,
+            "evidence": "Side Letter ¶3: \"The reference in Section 10.5(b) to 'any Excluded Liability' applies solely to Excluded Liabilities constituting Taxes... '(b) The limitation in Section 10.5(a) shall not apply to Losses arising from Fraud or from any Excluded Liability constituting Taxes under Section 2.4(a).'\" APA §10.5(a): \"The aggregate liability of Seller under Section 10.2(a) shall not exceed 10% of the Purchase Price ($4,850,000).\""
+          },
+          {
+            "issue": "I4",
+            "present": false,
+            "evidence": "Seller Note Section 9.2: \"Each of the Maker and the Holder irrevocably submits to the exclusive jurisdiction of the Superior Court of New Jersey, Mercer County, for any action or proceeding arising out of or relating to this Note, including any action to collect amounts due under this Note or relating to any set-off under Section 4.\" Against this, APA Section 12.9: \"Each Party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware for any action arising out of or relating to this Agreement or the Ancillary Documents.\" And APA Section 12.12: \"If any term of this Agreement conflicts with any term of the Seller Note or any other Ancillary Document, this Agreement shall prevail over the Seller Note and the Ancillary Documents, except signed amendments expressly referencing Section 12.12.\""
+          },
+          {
+            "issue": "I5",
+            "present": false,
+            "evidence": "Seller Note §4.2: \"'Losses' means losses, liabilities, damages, costs and reasonable attorneys' fees for which the Holder is liable under Article 10 of the Purchase Agreement, in each case as finally adjudicated by a court of competent jurisdiction in a judgment that is final and non-appealable.\" Against this, APA §12.12: \"If any term of this Agreement conflicts with any term of the Seller Note or any other Ancillary Document, this Agreement shall prevail over the Seller Note and the Ancillary Documents, except signed amendments expressly referencing Section 12.12.\" And APA §10.7: \"Buyer may set off the amount of any Losses claimed in good faith ... The exercise of this right in good faith shall not constitute a default under the Seller Note.\""
+          }
+        ]
+      }
+    }
+  ]
+}

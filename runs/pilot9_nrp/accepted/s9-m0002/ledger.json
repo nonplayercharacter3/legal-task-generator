@@ -1,0 +1,179 @@
+{
+  "matter_id": "s9-m0002",
+  "summary": "The firm represents Besouth Facade Systems, Inc., a curtainwall fabricator. Its parent, Besouth Holdings LLC, is being sold to Pellworth Capital Partners under an equity purchase agreement. We are reviewing Besouth's supply relationship with Meideis Glass Fabrication Co., which makes insulated and laminated architectural glass. The folder holds the Supply Agreement, the Calloway Pier Tower Statement of Work, Amendment No. 1, the Besouth Holdings parent guaranty and an insurance certificate cover letter. The partner wants a memo flagging issues that affect the sale and Besouth's commercial flexibility.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Besouth Facade Systems, Inc.",
+      "role": "Buyer under the Supply Agreement; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Meideis Glass Fabrication Co.",
+      "role": "Supplier of architectural glass under the Supply Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Besouth Holdings LLC",
+      "role": "Parent of Besouth Facade Systems, Inc.; guarantor under the Parent Guaranty; target of the pending sale"
+    },
+    {
+      "id": "P4",
+      "name": "Pellworth Capital Partners",
+      "role": "Prospective acquirer of all equity of Besouth Holdings LLC"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "February 1, 2024",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "three years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Order of precedence among transaction documents",
+      "value": "Amendments, then the Supply Agreement, then any Statement of Work",
+      "doc": "D1",
+      "section": "18.2"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "18.6"
+    },
+    {
+      "id": "F5",
+      "key": "Exclusivity scope stated in Statement of Work",
+      "value": "insulated glass units for the Calloway Pier Tower project, Baltimore, Maryland",
+      "doc": "D2",
+      "section": "2.1"
+    },
+    {
+      "id": "F6",
+      "key": "Amendment No. 1 date",
+      "value": "June 15, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F7",
+      "key": "Non-renewal notice period (as amended)",
+      "value": "at least 180 days before expiry of the then-current term",
+      "doc": "D3",
+      "section": "2"
+    },
+    {
+      "id": "F8",
+      "key": "Renewal Term length",
+      "value": "24 months",
+      "doc": "D3",
+      "section": "2"
+    },
+    {
+      "id": "F9",
+      "key": "Parent Guaranty date",
+      "value": "October 5, 2026",
+      "doc": "D4",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Parent Guaranty maximum liability",
+      "value": "$4,500,000",
+      "doc": "D4",
+      "section": "3"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "besouth_meideis_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "calloway_pier_tower_statement_of_work.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "supply_agreement_amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "besouth_holdings_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Supply Agreement Section 1.1 defines 'Change of Control' to include a transfer of more than 50% of the equity of Besouth 'or any direct or indirect parent' of Besouth. Section 16.2 says any Change of Control is 'deemed an assignment' that requires Meideis's prior written consent. Section 16.3 lets Meideis terminate on 30 days' notice if that consent is not obtained. Read together, these provisions mean the sale of Besouth Holdings LLC to Pellworth triggers the consent right even though Besouth itself is not a party to the sale. The Parent Guaranty (Section 8) mentions a possible change of control of the Guarantor and says the guaranty continues through one. It does not contain or refer to any Meideis consent under the Supply Agreement, and no other document in the folder obtains or waives that consent.",
+      "doc": "D1",
+      "section": "16.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "direct or indirect parent"
+      ],
+      "expected_finding": "The Pellworth acquisition of Besouth Holdings is an indirect Change of Control that needs Meideis's prior written consent under Sections 1.1 and 16.2, and without it Meideis may terminate under Section 16.3. Consent should be obtained as a closing condition or deliverable.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "The commercial deal limits exclusivity to insulated glass units for the Calloway Pier Tower project, as stated in the Statement of Work (Section 2.1). Supply Agreement Section 3.1, however, requires Besouth and its Affiliates to purchase from Meideis 'all of its requirements for architectural glass products' throughout North America for the full term. Under the precedence clause in Supply Agreement Section 18.2, the Supply Agreement prevails over any Statement of Work, so the narrower project scope does not cut back Section 3.1. Because 'Affiliates' is not limited to current affiliates, Pellworth's other portfolio companies could also be swept in after closing.",
+      "doc": "D1",
+      "section": "3.1",
+      "detect_terms": [
+        "all of its requirements for architectural glass products",
+        "throughout North America"
+      ],
+      "expected_finding": "Section 3.1 imposes a North America-wide requirements exclusivity covering all architectural glass, and through the Section 18.2 precedence clause it overrides the project-limited scope in the SOW. It should be narrowed to Calloway Pier Tower insulated glass units, and the Affiliate reach should be removed.",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Supply Agreement Section 2.1 sets an Effective Date of February 1, 2024 and a three-year Initial Term, so the Initial Term ends January 31, 2027. Amendment No. 1 (dated June 15, 2026), Section 2, makes the agreement renew automatically for 24-month Renewal Terms unless a party gives notice of non-renewal at least 180 days before expiry. Section 3 of the same amendment applies a 7% price increase for any Renewal Term. Counting 180 days back from January 31, 2027 gives a notice deadline of August 4, 2026. The Parent Guaranty, dated October 5, 2026, recites that the Supply Agreement will renew for a Renewal Term starting February 1, 2027. That recital confirms no non-renewal notice was given before the deadline passed. Besouth is therefore locked into a 24-month renewal at increased pricing through January 31, 2029.",
+      "doc": "D3",
+      "section": "2",
+      "detect_terms": [
+        "at least 180 days before",
+        "automatically renew"
+      ],
+      "expected_finding": "The non-renewal deadline of August 4, 2026 had already passed by the October 5, 2026 Parent Guaranty date. Besouth is therefore bound to a 24-month Renewal Term with a 7% price increase unless Meideis agrees to a negotiated release or amendment, and this should be disclosed to Pellworth.",
+      "contradicts": null
+    }
+  ]
+}
