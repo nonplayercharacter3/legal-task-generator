@@ -1,0 +1,169 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 1,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s6-m0001",
+      "accepted": false,
+      "failed_gate": "solver_check",
+      "reason": "every attempt passed: too easy to carry training signal",
+      "split": null,
+      "solver_pass_rate": 1.0
+    },
+    {
+      "matter_id": "s6-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.333
+    },
+    {
+      "matter_id": "s6-m0003",
+      "accepted": false,
+      "failed_gate": "rubric_tests",
+      "reason": "flawed_wrongly_fails: [\"C6\"]",
+      "split": null,
+      "solver_pass_rate": null
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 10768,
+      "output_tokens": 20656,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 15,
+      "input_tokens": 279050,
+      "output_tokens": 101671,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 110602,
+      "output_tokens": 7795,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 3572,
+      "output_tokens": 509,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 12,
+      "input_tokens": 388054,
+      "output_tokens": 7937,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4221,
+      "output_tokens": 1201,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 16518,
+      "output_tokens": 4550,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 227580,
+      "output_tokens": 44715,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 17,
+      "input_tokens": 164577,
+      "output_tokens": 16001,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 141,
+      "input_tokens": 2156428,
+      "output_tokens": 357776,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "concert promotion": 1,
+      "veterinary diagnostics": 1,
+      "water treatment chemicals": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 2,
+      "distribution agreement": 1
+    },
+    "issue_types": {
+      "defined_term_inconsistency": 2,
+      "governing_law_mismatch": 2,
+      "liability_cap_carveout": 2,
+      "change_of_control_consent": 1,
+      "auto_renewal": 1,
+      "expired_notice_window": 1,
+      "exclusivity_scope": 1,
+      "uncapped_indemnity": 1,
+      "missing_assignment_restriction": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "matter_id": "s6-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.333,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 2.2: \"At the end of the Initial Term, this Agreement will automatically renew for successive Renewal Terms unless either Party delivers written notice of non-renewal to the other Party not earlier than 120 days and not later than 90 days before the end of the then-current Initial Term or Renewal Term. A notice of non-renewal delivered outside that period has no effect. Each Renewal Term is on the terms of this Agreement then in effect, including Section 4.3.\" Section 1.1(n): \"'Renewal Term' means a period of five (5) years...\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Recital B: \"On July 20, 2026, Supplier delivered to Distributor an Annual Price Adjustment Notice under Section 5.4 of the Distribution Agreement. The notice provides for an increase of nine percent (9%) in the transfer prices for the Cartridges listed in Exhibit B (product codes SDX-RC25 and SDX-RC100), effective October 1, 2026.\" Section 5.4 of the Distribution Agreement adds: \"Distributor may object to the adjustment by written notice to Supplier delivered within 45 days after Distributor's receipt of a price adjustment notice... If Distributor does not timely object, the adjustment is deemed accepted and Exhibit B is amended accordingly as of the stated effective date.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 3.3: \"During the Term, Distributor shall not, and shall cause its Affiliates not to, directly or indirectly manufacture, market, promote, distribute or sell any veterinary diagnostic instrument, reagent, test kit or reference-laboratory service, other than the Products, anywhere in North America.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 9.4 of the Quality Agreement states: \"Supplier's liability for recall costs and for Nonconformities under this Quality Agreement is subject to Section 11.2 of the Distribution Agreement.\""
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "\"12.3 Regulatory Indemnity. Distributor shall defend, indemnify and hold harmless Supplier, its Affiliates and their officers, directors and employees from and against all Losses arising out of or relating to any Regulatory Claims relating to Distributor's storage, handling, marketing or sale of Products, including any failure to obtain or maintain a Distribution License.\" Section 3.2 then adds new clause \"(f) Distributor's obligations under Section 12.3\" to the Section 11.3 exclusions from the cap."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.068,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C1",
+              "C3"
+            ],
+            "steps": 15,
+            "files_opened": [
+              "amendment_no_1.md",
+              "glakin_sumeith_distribution_agreement.md",
+              "pellbrook_cold_chain_courier_agreement.md",
+              "quality_agreement.md",
+              "statement_of_work_hematology_launch.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C1"
+            ],
+            "steps": 15,
+            "files_opened": [
+              "amendment_no_1.md",
+              "glakin_sumeith_distribution_agreement.md",
+              "pellbrook_cold_chain_courier_agreement.md",
+              "quality_agreement.md",
+              "statement_of_work_hematology_launch.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 15,
+            "files_opened": [
+              "amendment_no_1.md",
+              "glakin_sumeith_distribution_agreement.md",
+              "pellbrook_cold_chain_courier_agreement.md",
+              "quality_agreement.md",
+              "statement_of_work_hematology_launch.md"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "matter_id": "s6-m0003",
+  "accepted": false,
+  "failed_gate": "rubric_tests",
+  "reason": "flawed_wrongly_fails: [\"C6\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Seller Note §8.2: \"This Note, and any claim, controversy or dispute relating to this Note, including any payment, offset or acceleration, is governed by and construed in accordance with the laws of the State of Delaware... Maker and Holder each irrevocably submit exclusively to the state or federal courts in Wilmington, Delaware for any suit, action or proceeding relating to this Note, including any payment, offset or acceleration.\" Compare SPA §11.9/11.10, which select New York law and exclusive New York County courts for disputes \"arising out of or relating to this Agreement or the Transaction Documents.\" SPA §11.4: \"each Ancillary Agreement prevails over the Stock Purchase Agreement as to that Ancillary Agreement's subject matter.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 12.4: \"Provider may assign, delegate or otherwise transfer this Agreement, in whole or in part, to any Person without the consent of Recipient.\" By contrast, Recipient \"may not assign this Agreement or any of its rights or obligations under it without the prior written consent of Provider.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"**Business**\" means the manufacture and sale of coagulants and flocculants for municipal potable water treatment, as conducted by the Company as of the Effective Date."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": false,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [
+          "C6"
+        ]
+      }
+    }
+  ]
+}

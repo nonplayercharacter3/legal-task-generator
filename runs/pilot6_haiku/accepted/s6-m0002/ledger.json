@@ -1,0 +1,202 @@
+{
+  "matter_id": "s6-m0002",
+  "summary": "Glakin Animal Health Distribution LLC (client) is the U.S. distributor of Sumeith Diagnostics, Inc.'s in-clinic veterinary hematology analyzers and reagent cartridges. The folder holds the Distribution Agreement (effective February 1, 2024), a launch Statement of Work, a Quality Agreement, Amendment No. 1 (dated September 14, 2026) and an unrelated cold-chain courier agreement. Five issues are planted. (1) A short opt-out window leads into long automatic renewals. (2) Glakin's right to object to a price increase has lapsed. (3) The non-compete is broader than the agreed exclusivity. (4) The Quality Agreement pulls Sumeith's recall liability under the cap. (5) The Amendment adds an uncapped Glakin regulatory indemnity.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Glakin Animal Health Distribution LLC",
+      "role": "Distributor (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Sumeith Diagnostics, Inc.",
+      "role": "Manufacturer and supplier of veterinary point-of-care hematology analyzers and reagent cartridges"
+    },
+    {
+      "id": "P3",
+      "name": "Pellbrook Freight Logistics LLC",
+      "role": "Cold-chain courier vendor to Glakin (distractor counterparty only)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "February 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Initial Term",
+      "value": "four (4) years from the Distribution Agreement Effective Date",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement Renewal Term length",
+      "value": "five (5) years",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F4",
+      "key": "Price adjustment objection period",
+      "value": "45 days after Distributor's receipt of a price adjustment notice",
+      "doc": "D1",
+      "section": "5.4"
+    },
+    {
+      "id": "F5",
+      "key": "Distribution Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.2"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Amendment; Quality Agreement (quality matters only); Distribution Agreement; Statement of Work",
+      "doc": "D1",
+      "section": "19.4"
+    },
+    {
+      "id": "F7",
+      "key": "Agreed exclusivity scope",
+      "value": "in-clinic veterinary hematology analyzers and their reagent cartridges, United States only",
+      "doc": "D2",
+      "section": "1.2"
+    },
+    {
+      "id": "F8",
+      "key": "Distribution Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "19.1"
+    },
+    {
+      "id": "F9",
+      "key": "Amendment No. 1 date",
+      "value": "September 14, 2026",
+      "doc": "D4",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Annual Price Adjustment Notice delivery date",
+      "value": "July 20, 2026",
+      "doc": "D4",
+      "section": "Recital B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "glakin_sumeith_distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "statement_of_work_hematology_launch.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "pellbrook_cold_chain_courier_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Section 2.2 of the Distribution Agreement says the agreement will automatically renew for successive Renewal Terms. It can only be stopped by a written non-renewal notice delivered not earlier than 120 days and not later than 90 days before the end of the then-current term, which is a 30-day window. Section 1.1 defines 'Renewal Term' as five (5) years, longer than the four-year Initial Term in Section 2.1. Read together, these provisions mean that if Glakin misses one narrow 30-day window, it is locked in for five more years, including the minimum purchase commitments. Nothing elsewhere in the folder gives Glakin a termination for convenience.",
+      "doc": "D1",
+      "section": "2.2",
+      "detect_terms": [
+        "successive Renewal Terms",
+        "not later than 90 days"
+      ],
+      "expected_finding": "Glakin faces an evergreen five-year lock-in that can be escaped only through a 30-day notice window; the renewal term should be shortened to one year, the window widened, or a termination-for-convenience right added.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Recital B of Amendment No. 1 records that Sumeith delivered its Annual Price Adjustment Notice, a nine percent (9%) increase in cartridge transfer prices, on July 20, 2026. Under Section 5.4 of the Distribution Agreement, Glakin has 45 days after receiving a price adjustment notice to object; otherwise the increase is deemed accepted. That deadline was September 3, 2026. The Amendment is dated September 14, 2026, which is after the deadline. It does not reserve, extend or revive Glakin's objection right, and no other document records a timely objection. As of the Amendment date, the 9% increase stands as deemed accepted.",
+      "doc": "D4",
+      "section": "Recital B",
+      "detect_terms": [
+        "July 20, 2026",
+        "nine percent (9%)"
+      ],
+      "expected_finding": "Glakin's 45-day window to object to the 9% price increase closed on September 3, 2026, before Amendment No. 1 was signed, so the increase is deemed accepted unless Sumeith agrees to reopen pricing.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Section 1.2 of the Statement of Work records the agreed exclusivity scope: in-clinic veterinary hematology analyzers and their reagent cartridges, in the United States only. Section 3.3 of the Distribution Agreement goes much further. It bars Glakin from distributing 'any veterinary diagnostic' instrument, reagent, test or reference-laboratory service anywhere in North America. Under the order of precedence in Distribution Agreement Section 19.4, the Distribution Agreement prevails over the SOW, so the broader non-compete controls. That would bar Glakin's existing chemistry, urinalysis and Canadian business lines.",
+      "doc": "D1",
+      "section": "3.3",
+      "detect_terms": [
+        "any veterinary diagnostic",
+        "North America"
+      ],
+      "expected_finding": "The Distribution Agreement non-compete exceeds the agreed hematology-only, U.S.-only exclusivity and overrides the SOW under the precedence clause; it should be narrowed to match SOW Section 1.2.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 11.3 of the Distribution Agreement excludes from the Section 11.2 cap (fees paid in the prior 12 months) Sumeith's liability for product recalls and for its breach of quality obligations. Section 9.4 of the Quality Agreement provides that, notwithstanding the Distribution Agreement, Supplier's liability for recall costs and quality nonconformities is 'subject to Section 11.2' of the Distribution Agreement. Under Distribution Agreement Section 19.4, the Quality Agreement prevails on quality matters. Read together, this removes the recall carve-out and caps Glakin's recovery of recall and field-correction costs.",
+      "doc": "D3",
+      "section": "9.4",
+      "detect_terms": [
+        "subject to Section 11.2",
+        "recall costs"
+      ],
+      "expected_finding": "Because the Quality Agreement controls on quality matters, its Section 9.4 overrides the recall carve-out in Distribution Agreement Section 11.3, capping Sumeith's recall liability; Section 9.4 should be conformed to preserve the uncapped carve-out.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 3 of Amendment No. 1 adds a new Section 12.3 to the Distribution Agreement. Under it, Glakin must indemnify Sumeith against all Losses arising from any Regulatory Claims relating to Glakin's storage, handling, marketing or sale of Products, with no fault or negligence standard. The same Amendment section also amends Section 11.3 to add 'Distributor's obligations under Section 12.3' to the exclusions from the liability cap. The Amendment ranks first in precedence under Section 19.4. Read together, these changes give Glakin unlimited, fault-free exposure for regulatory claims, including claims caused by Sumeith's own labeling or product defects.",
+      "doc": "D4",
+      "section": "3",
+      "detect_terms": [
+        "Regulatory Claims",
+        "Distributor's obligations under Section 12.3"
+      ],
+      "expected_finding": "Amendment No. 1 makes Glakin's new regulatory indemnity both fault-free and excluded from the liability cap, creating unlimited exposure; it should be limited to Glakin's negligence or breach and brought within the cap or a separate negotiated sub-cap.",
+      "contradicts": null
+    }
+  ]
+}

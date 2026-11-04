@@ -1,0 +1,103 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "Identifies that the Seller Note (Section 8.2) selects Delaware law and exclusive Wilmington, Delaware courts for note disputes including payment, offset or acceleration, which conflicts with the SPA's New York governing law and New York County forum (Sections 11.9/11.10). Explains that, read with the SPA's precedence clause (Section 11.4), the note clause controls note disputes, so Buyer's indemnity claim and its setoff against the note could be split between New York and Delaware. The response must note the risk this creates, such as inconsistent judgments, a race to the courthouse, or loss of setoff as a practical defense.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "Wilmington, Delaware",
+        "setoff",
+        "Section 11.4"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "Identifies that TSA Section 12.4 allows Provider (Seller) to assign, delegate or transfer the TSA to any Person without Recipient's consent, while Recipient cannot assign without consent. Explains that an assignee, such as a competitor, could gain access to the Company's ERP and customer data and its proprietary formulations without being bound by the SPA Section 6.9 covenants, which bind only Seller and its Affiliates.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "without the consent of Recipient",
+        "competitor",
+        "Seller and its Affiliates"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "Identifies that the Key Employee Agreement (Section 1.1) defines 'Business' narrowly as coagulants and flocculants for municipal potable water treatment, which is narrower than the SPA's definition (municipal and industrial water treatment chemicals). Explains that the KEA restrictive covenants therefore fail to cover the industrial accounts Ms. Szabo-Lindqvist leads.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "coagulants and flocculants for municipal potable water",
+        "industrial accounts",
+        "non-solicit"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "States that SPA Section 11.4 makes each Ancillary Agreement prevail over the SPA as to that agreement's subject matter, and applies this to at least one conflict, such as the Note forum or the KEA definition.",
+      "kind": "fact",
+      "source": "F7",
+      "hints": [
+        "Ancillary Agreement prevails",
+        "Section 11.4",
+        "order of precedence"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "States that the SPA defines 'Business' as the manufacture and sale of municipal and industrial water treatment chemicals.",
+      "kind": "fact",
+      "source": "F9",
+      "hints": [
+        "municipal and industrial water treatment chemicals",
+        "Section 1.1"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "Recommends a fix for the governing law/forum conflict: conform the Seller Note to New York law and the New York County forum, or have the SPA expressly override the note's forum clause for setoff and indemnity disputes.",
+      "kind": "fact",
+      "source": "F5",
+      "hints": [
+        "conform to New York law",
+        "New York County"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The deliverable is a memo addressed to the supervising partner that, for each issue, states the document and section, why it matters for Brouneth, and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memorandum",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "Issues are presented in order of significance (most significant first), and the memo flags at least one item to raise directly with the client.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "raise with the client",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "Fails if the response concludes that SPA Section 11.4 (the precedence clause) causes the SPA's New York law and forum to override the Seller Note's Delaware clause, or that there is no governing law/forum conflict between the SPA and the Seller Note.",
+      "kind": "negative",
+      "source": "I1",
+      "hints": []
+    },
+    {
+      "id": "C10",
+      "text": "Fails if the response concludes that the Key Employee Agreement's restrictive covenants adequately cover the Company's industrial water treatment business, or that the SPA's broader definition of 'Business' governs the KEA covenants.",
+      "kind": "negative",
+      "source": "I3",
+      "hints": []
+    }
+  ]
+}

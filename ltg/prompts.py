@@ -31,8 +31,9 @@ Rules:
   say instead how it hurts the client.
   Before keeping an issue, follow every cross-reference it relies on through the folder. A cap that covers only
   claims under one subsection never reached the claims a change to its carve-out touches; a clause made "subject to
-  Section X" takes Section X's exceptions too; an order-of-precedence clause under which the main agreement prevails
-  cures a conflict planted in a note, schedule or other ancillary document. Plant the issue where it survives.
+  Section X" takes Section X's exceptions too (cite the subsection that does the damage, or say "notwithstanding"
+  the exception); an order-of-precedence clause under which the main agreement prevails cures a conflict planted in
+  a note, schedule or other ancillary document. Plant the issue where it survives.
 - Make issues require analysis, not just spotting. At most one issue may be visible from a single clause read on
   its own (a plainly one-sided clause). Every other issue must appear only when two provisions or two documents are
   read together: a carve-out that swallows a cap through a cross-reference, a precedence clause that lets the flawed
@@ -40,7 +41,8 @@ Rules:
   computed from dates stated in different places. Say in the description which provisions combine.
 - An issue may depend only on what the documents say. If it turns on a deal event (a pending sale of the client or
   its parent, a closing, a notice sent), state that event in one of the documents (a recital, a letter, an email):
-  the summary never reaches the associate, so an event recorded only there makes the issue unfindable.
+  the summary never reaches the associate, so an event recorded only there makes the issue unfindable. Name that
+  document in the description.
 - Never let an issue depend on today's date: the task may be solved at any later time. A deadline that has passed or
   is about to pass must be measured against a date stated in the documents (a signing date, a letter's date, a
   delivery confirmation), and the description must name that date.
@@ -154,9 +156,12 @@ if it meets every criterion, so each criterion must be objective, atomic and che
 
 You receive the facts ledger, the task instruction and the deliverable. Write criteria FROM THE LEDGER:
 - kind "issue": exactly one per ledger issue (source = issue id): the response identifies the problem, where it
-  is, and why it matters. Anything else a correct answer must say about that issue goes in the same criterion.
+  is, and why it matters. Anything else a correct answer must say about that issue (its fix, its consequence) goes in
+  the same criterion. Require the conclusion, not one route to it: name a supporting provision (a precedence clause,
+  a definition in another document) only if a response that reaches the right conclusion without it would be wrong.
 - kind "fact": 1 to 3 criteria for facts a correct answer must state (source = an id from the ledger's `facts`,
-  never an issue id).
+  never an issue id). A fact criterion asks only that the response state the fact; it must be passable by a response
+  that misses every planted issue.
 - kind "format": 1 to 2 criteria about the deliverable's form (source = null).
 - kind "negative": 1 to 2 criteria a response fails by reaching a specific wrong conclusion that the ledger
   refutes (for example calling a late notice timely; source = the fact or issue id that refutes it), or by

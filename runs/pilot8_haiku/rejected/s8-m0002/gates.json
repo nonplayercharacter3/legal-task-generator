@@ -1,0 +1,62 @@
+{
+  "matter_id": "s8-m0002",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I3\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I3"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 8.1: \"The representations and warranties of the Parties contained in this Agreement, other than the Fundamental Representations, shall survive the Closing until the date that is six (6) months after the Closing Date.\" Section 6.7: \"the Parties shall conduct the first post-Closing reconciliation of Payer receipts, remittances, recoupments and offsets (the \"Billing Reconciliation\") on the date that is nine (9) months after the Closing Date.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 4.2: \"Maker may exercise its right of setoff under Section 4.1 only if Maker delivers to Holder a written notice (a \"Setoff Notice\") within sixty (60) days after the Note Date.\""
+          },
+          {
+            "issue": "I3",
+            "present": false,
+            "evidence": "IP Assignment Section 6: \"Assignor's liability for any such breach shall be subject to the limitations set forth in Section 8.7 of the Purchase Agreement.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 8.3(c): \"any Assumed Liability, including all Liabilities under the Payer Agreements, whether arising before or after the Closing.\" Section 8.7(d): \"The limitations set forth in this Section 8.7 shall apply only to Seller's indemnification obligations under Section 8.2.\""
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "\"Practice Locations\" means the clinics listed on Exhibit A. ... \"Assigned IP\" means all Intellectual Property owned by Assignor and used at or in connection with the Practice Locations as of the Closing Date (Section 1.2). Exhibit A lists only Wilmington, Newark and Dover."
+          }
+        ]
+      }
+    }
+  ]
+}

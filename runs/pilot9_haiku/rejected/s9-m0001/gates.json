@@ -1,0 +1,143 @@
+{
+  "matter_id": "s9-m0001",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "every attempt passed: too easy to carry training signal",
+  "split": null,
+  "solver_pass_rate": 1.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.1: \"the representations and warranties in Section 4.14 (Environmental Matters) shall survive until the date that is one hundred eighty (180) days after the Closing Date ... No claim for breach of a representation or warranty may be brought after the expiration of the applicable survival period, except for claims for which a written notice describing the claim in reasonable detail was delivered before such expiration.\" Section 6.7: \"Buyer shall cause the Phase II Investigation to be completed within two hundred seventy (270) days after the Closing Date.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"If Buyer delivers to Seller written notice of its election to make an election under Section 338(h)(10) ... no later than forty-five (45) days after the Signing Date, Seller shall join with Buyer in making such election and shall deliver to Buyer at Closing an IRS Form 8023, duly executed by Seller. ... If Buyer does not deliver such notice within such period, Seller's obligations under this Section 6.11 shall lapse and be of no further force or effect.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 7.2(d): \"Seller shall have obtained, and delivered to Buyer copies of, each of the consents set forth on Schedule 7.2(d) (the \"Required Consents\")...\" Schedule 7.2(d) lists only: \"1. Written consent of the landlord under the Stockton Plant Lease to the transfer of the Shares to Buyer.\" Schedule 4.10, item 1: \"Larkfield Regional Health System is the Company's largest customer by revenue... Under Section 14.3 of this agreement, Larkfield Regional Health System may terminate the agreement upon a change of control of the Company unless the customer's prior written consent is obtained.\" Section 9.2(f): \"Seller shall not be liable under this Section 9.2 for any Losses arising out of the failure to obtain any consent, approval or waiver disclosed on the Disclosure Schedules.\""
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 10.4: \"This Escrow Agreement shall be governed by and construed in accordance with the laws of the State of New York ... Each party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in the Borough of Manhattan, The City of New York, for any action arising out of or relating to this Escrow Agreement or the Escrow Funds.\" Section 2.1 defines \"Final Order\" as \"a final, non-appealable order or judgment of a court of competent jurisdiction, as described in Section 10.4.\""
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "\"The Escrow Funds shall be the sole and exclusive source of recovery for all claims of the Buyer Indemnitees under Article IX of the Purchase Agreement, except claims for actual fraud.\" (Escrow Agreement Section 6.4)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 15
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5",
+          "C6"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.07,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "runs": [
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 12,
+            "files_opened": [
+              "bill_of_sale.md",
+              "closing_logistics_email_thread.md",
+              "escrow_agreement.md",
+              "stock_purchase_agreement.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 12,
+            "files_opened": [
+              "bill_of_sale.md",
+              "closing_logistics_email_thread.md",
+              "escrow_agreement.md",
+              "stock_purchase_agreement.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 12,
+            "files_opened": [
+              "bill_of_sale.md",
+              "closing_logistics_email_thread.md",
+              "escrow_agreement.md",
+              "stock_purchase_agreement.md"
+            ]
+          }
+        ],
+        "reason": "every attempt passed: too easy to carry training signal"
+      }
+    }
+  ]
+}

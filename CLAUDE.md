@@ -4,66 +4,135 @@ Context for any Claude Code session working in this repo (for people, `docs/stag
 English). Read this first, then README.md, then "Working with other people and sessions" below before you change
 anything.
 
-## Now (updated 2026-11-02)
+## Now (updated 2026-11-03)
 
 **Goal.** Generate long-horizon contract-review tasks (instruction, matter folder, all-pass rubric) that the lab can
 train open models on. The tasks must be sound by construction and hard but solvable for a ~27B open model.
 
-**Stage.** Phase 1 is done: its exit standard (see "Pilot standard") was met in cloud round 5 on 2026-10-18. Next is
-round 6, with Opus generating and Haiku solving as in round 5, run by the second contributor on their Max plan.
-Rounds 7 to 11 (2026-11-02) had NRP `qwen3-small` solving: round 9 met the standard's numbers (2 of 3 accepted, no
-errors), pending Sirui She's read of the two tasks; rounds 10 and 11 accepted none. Sirui She's
-laptop is set up for pilot rounds (LAB clone, LAB index, NRP key in `~/.zshenv`; checked 2026-10-24).
+**Stage.** Phase 1 is done: its exit standard (see "Pilot standard") was met in cloud round 5 on 2026-10-18. On
+2026-11-02 two laptop sessions ran pilot rounds in parallel, both with Opus generating on Sirui She's Max plan
+(active since 2026-11-02):
 
-**Plan.** Steps 1 and 2 run in parallel: step 1 needs Claude, step 2 does not. Each step says what done looks like.
-1. **Round 6** (second contributor, now): `.venv/bin/python -m ltg run --config configs/claude_pilot_opus.toml
-   --seed 6 --out runs/pilot6_haiku`. First real run of the issue verifier's client fix and the variety sampler.
-   Done: the round meets the pilot standard, every rejection is written up, and the results are in a PR (see
-   "Working with other people and sessions").
-2. **Make qwen3-small write its memo: done 2026-10-27.** Every memo call had failed on 2026-10-24 (32k `max_tokens`
-   or 600 s timeouts) because NRP runs the model at `reasoning_effort = "xhigh"` and it thinks for ~30k tokens
-   (`docs/research/qwen_memo_length.md`). Fix: `extra_body` on a backend or role adds fields to each OpenAI-compatible
-   request; `configs/pilot_nrp_solver.toml` sets `reasoning_effort = "low"` for the solver. `solve()` also unwraps
-   `{"action": {...}}` replies. Rerun (`scripts/solve_only.py`, `runs/qwen_solver_smoke_low/`, not committed): 12 of
-   12 memos written (2,600 to 6,900 words), 190 calls, 0 failed, 2 to 6 minutes per attempt, 20 wrapped actions
-   handled. Proxy issue recall (NRP `qwen3` against the ledger, not our judge) 47 of 51; all 3 attempts on s5-m0001
-   missed I2 (free assignment in the supply agreement).
-3. **Qwen rounds: numbers met in round 9, 2026-11-02.** `configs/pilot_nrp_solver.toml`, seeds 7 to 11, results
-   in `runs/pilot7_nrp` to `runs/pilot11_nrp` (branch `plan/phase2-unattended`). Accepted 0, 0, 2, 0, 0 of 3.
-   Round 9 accepted s9-m0002 (glass supply, dev, 0.33) and s9-m0003 (dental MSA renewal, train, 0.33), 0 model
-   errors; read in full by Claude, one weak criterion each (fixed upstream), still to be read by Sirui She. Defect
-   classes fixed, one commit each: extractor trimming a value its own document states (e144c20); a contradiction
-   not marked in `contradicts` but quoted in the issue (48206e3); a fix filed as a fact criterion (e134b3f; e2951d9,
-   which allowed several issue criteria per issue, bloated rubrics to 15 to 17 criteria and caused round 8's 0 of 3);
-   an issue resting on a deal event stated only in the ledger summary (6593250); a mutual clause called one-sided
-   (261f669); a bare 403 from NRP not retried (4703747); issues cured by their own cross-references (c0a90fa, not
-   yet run). Correct rejections: Qwen missed a detail in each of 3 attempts (s7-m0002, s10-m0002: never turned a
-   renewal window into dates). Since round 11, NRP's gateway answers every chat request with an empty 403, even
-   with a bad key, while `/v1/models` works; round 11 lost 2 matters to it. Done: Sirui She's read of round 9.
-4. **Judge leniency: done 2026-11-02, keep `judge_hints = true`.** `scripts/judge_leniency.py`, `runs/judge_leniency*`:
-   11 matters, 67 responses, 1,352 criterion grades per condition. Hints on vs off: 0 settled flips (5 and 7 grades
-   of noise), pass rates 0.923 vs 0.921; gold passed 99.5% and 100% of criteria; a flawed answer got credit for its
-   omitted issue 2 and 1 times in 26. A ledger-aware referee (also Opus, so not lawyer calibration) regraded all 102
-   Qwen issue grades: no judge pass it would fail, 3 judge fails it would pass, all on criteria bundling several asks.
-5. **GPUs on Nautilus: serving works, fine-tuning not started.** `deploy/nautilus/vllm-qwen.yaml` serves
-   Qwen3.8-27B-FP8 (the same model as `qwen3-small`) with vLLM 0.30.0 on one A100 80GB; weights cached on PVC
-   `ltg-hf-cache` (100Gi, kept). Start with `kubectl apply`, then `kubectl port-forward pod/ltg-vllm-qwen 8000:8000`
-   and use `configs/vllm_nautilus_solver.toml`. Queued ~20 minutes for an A100, ready ~7 minutes later, KV cache
-   623k tokens, honours `reasoning_effort = "low"`. `scripts/solve_only.py` against it (`runs/qwen_solver_smoke_vllm`):
-   12 of 12 memos, 0 failed calls, median 8.9 minutes per attempt (NRP 2.5), all-pass 3 of 12 as on NRP. Delete the
-   pod when done (it also stops itself after 6 hours). Next: fine-tune on accepted tasks.
+- **Haiku solving**, rounds 6, 8 and 9, branch `pilot/round6-haiku`: 1 of 9 accepted. Every false rejection has a fix;
+  in round 9 all three matters passed every quality gate, so what blocks the standard against Haiku is difficulty
+  (Haiku passed 3 of 3 attempts on 3 of 9 matters).
+- **Qwen solving** (NRP `qwen3-small`), rounds 7 to 11, branch `plan/phase2-unattended` (PR #3): accepted 0, 0, 2,
+  0, 0. Round 9 meets the standard's numbers (2 of 3, no errors), pending Sirui She's read of the two tasks.
+- Also done that day on `plan/phase2-unattended`: judge leniency measured (keep `judge_hints = true`) and Qwen served
+  with vLLM on Nautilus.
+
+**Both branches were merged into `main` on 2026-11-03.** They had fixed some defect classes independently; the merge
+keeps one copy of each rule (see "Done steps"). All November rounds ran the LAB screen (every task under the cutoff),
+so the "skipped" warning in the October cloud pilot reports no longer applies.
+
+**Seeds 8 and 9 were used by both streams.** `runs/pilot8_haiku` and `runs/pilot8_nrp` (likewise `pilot9_*`) hold the
+same six matter specs, drafted twice by different prompt versions, not separate rounds. Use seed 12 or higher next,
+and give each round one seed across all solvers.
+
+Totals for 2026-11-02 (8 rounds, 24 candidates): 3 accepted (s6-m0002 Haiku 0.33; s9-m0002 and s9-m0003 Qwen 0.33),
+1,270 calls, ~16.7M input tokens, 0 model errors except 3 matters lost to NRP 403s (rounds 10 and 11). Accepted tasks
+so far, all phases: 7 (4 from the October cloud pilot, 3 from November).
+
+Code check (2026-11-03, merged `main`): 91 tests pass; `configs/fake_demo.toml` still rejects at every gate it used
+to (consistency 3, issue_check 1, leak_check 2, rubric_trace 1, rubric_tests 1, solver_check 2).
+
+**Plan.** Each step says what done looks like.
+1. **Sirui She reads round 9 (Qwen):** `runs/pilot9_nrp/accepted/s9-m0002` (glass supply, dev) and `s9-m0003` (dental
+   MSA renewal, train), against the checklist in "How to verify changes". Done: if both hold up, the pilot standard
+   is met with Qwen solving.
+2. **Qwen sets the difficulty bar (Sirui She's decision, 2026-11-03).** Qwen is the model the lab trains, so "too
+   easy" means too easy for Qwen; Haiku found every issue more often. Pilot rounds use
+   `configs/pilot_nrp_solver.toml` (or `configs/vllm_nautilus_solver.toml` when NRP is down). Same spec, different solvers: s9-m0003 was accepted with Qwen (0.33) but
+   too easy for Haiku (3 of 3), though the two drafts differ. If tasks must get harder: longer folders, more
+   cross-document issues (known weaknesses 2 and 3).
+3. **Next rounds** on merged `main`, fresh seeds. First real runs of c0a90fa, 5c66350 and c3f891c. Qwen rounds need NRP
+   back (since ~23:00 on 2026-11-02 every chat request returns an empty 403, even with a bad key, while `/v1/models`
+   works; not rechecked) or the vLLM pod (`configs/vllm_nautilus_solver.toml`, about 3.5 times slower).
+4. **Fine-tune on Nautilus: not started.** Serving works (below). Seven accepted tasks is far too few; scale the
+   generator first.
+5. **Tell the second contributor that round 6 already ran on the laptop** (a GitHub issue), so it is not run twice.
+
+Done steps, for reference:
+- **Merge of `pilot/round6-haiku` and `plan/phase2-unattended` (2026-11-03).** Overlaps resolved by keeping one copy
+  of each rule: `consistency` keeps both trimmed-extraction rules (e144c20: the extraction is part of the ledger value
+  and the document states the whole value; 3e4f5f7: a 4+ word ledger value stated verbatim in its own document);
+  the ledger writer keeps c0a90fa's cross-reference rule with 238bbc2's remedy (cite the damaging subsection or say
+  "notwithstanding"), and 6593250's deal-event rule plus c3f891c's "name that document"; the rubric writer keeps
+  exactly one issue criterion per issue (e134b3f) with 5c66350's "require the conclusion, not one route" and
+  "a fact criterion is passable by a response that misses every issue". Committed run output was slimmed (see
+  "Working with other people and sessions"); the full output stays on the laptop under `runs/`.
+- **Rounds 6, 8, 9 with Haiku (2026-11-02).** `configs/claude_pilot_opus.toml`, `runs/pilot{6,8,9}_haiku`, branch
+  `pilot/round6-haiku`. 568 calls, ~8.7M input and ~1.8M output tokens, 0 errors, about 45 minutes per round.
+  Accepted: s6-m0002 (distribution agreement, 5 documents, 5 issues, pass rate 0.33). Rejections and causes:
+  - Too easy, correct (Haiku truly found every issue): s6-m0001, s9-m0001, s9-m0003.
+  - s6-m0003 `rubric_tests`, correct: the fix for I1 was filed as a fact criterion. Fixed (69294e2, rubric writer).
+  - s8-m0003 `consistency`, **false**: the extractor dropped "exclusively" from a forum clause. Fixed (3e4f5f7: a
+    value of 4+ words found verbatim in its own document passes).
+  - s8-m0002 `issue_check`, correct: "subject to the limitations set forth in Section 8.7" also pulled in 8.7(c),
+    which exempted the very claims the issue said were capped. Fixed (238bbc2, ledger writer).
+  - s8-m0001 `solver_check` 0 of 3, **false**: all memos found the issue but C3 also demanded citing a precedence
+    clause the conclusion does not need. Fixed (5c66350, rubric writer: require the conclusion, not one route).
+  - s9-m0002 `solver_check` 0 of 3, correct: issue I1 rested on a planned sale stated only in the ledger summary.
+    Fixed (c3f891c, ledger writer). 5c66350 and c3f891c have not run on a real model yet.
+- **Make qwen3-small write its memo: done 2026-10-27.** Every memo call had failed on 2026-10-24 (32k `max_tokens`
+  or 600 s timeouts) because NRP runs the model at `reasoning_effort = "xhigh"` and it thinks for ~30k tokens
+  (`docs/research/qwen_memo_length.md`). Fix: `extra_body` on a backend or role adds fields to each OpenAI-compatible
+  request; `configs/pilot_nrp_solver.toml` sets `reasoning_effort = "low"` for the solver. `solve()` also unwraps
+  `{"action": {...}}` replies. Rerun (`scripts/solve_only.py`, `runs/qwen_solver_smoke_low/`, not committed): 12 of
+  12 memos written (2,600 to 6,900 words), 190 calls, 0 failed, 2 to 6 minutes per attempt, 20 wrapped actions
+  handled. Proxy issue recall (NRP `qwen3` against the ledger, not our judge) 47 of 51; all 3 attempts on s5-m0001
+  missed I2 (free assignment in the supply agreement).
+- **Rounds 7 to 11 with Qwen (2026-11-02).** `configs/pilot_nrp_solver.toml`, `runs/pilot7_nrp` to
+  `runs/pilot11_nrp`, branch `plan/phase2-unattended`. Accepted 0, 0, 2, 0, 0 of 3. Round 9 accepted s9-m0002 (glass
+  supply, dev, 0.33) and s9-m0003 (dental MSA renewal, train, 0.33), 0 model errors; read in full by Claude, one weak
+  criterion each (fixed upstream), still to be read by Sirui She. Defect classes fixed, one commit each: extractor
+  trimming a value its own document states (e144c20); a contradiction not marked in `contradicts` but quoted in the
+  issue (48206e3); a fix filed as a fact criterion (e134b3f; e2951d9, which allowed several issue criteria per issue,
+  bloated rubrics to 15 to 17 criteria and caused round 8's 0 of 3); an issue resting on a deal event stated only in
+  the ledger summary (6593250); a mutual clause called one-sided (261f669); a bare 403 from NRP not retried
+  (4703747); issues cured by their own cross-references (c0a90fa, not yet run). Correct rejections: Qwen missed a
+  detail in each of 3 attempts (s7-m0002, s10-m0002: never turned a renewal window into dates).
+- **Judge leniency: done 2026-11-02, keep `judge_hints = true`.** `scripts/judge_leniency.py`, `runs/judge_leniency*`:
+  11 matters, 67 responses, 1,352 criterion grades per condition. Hints on vs off: 0 settled flips (5 and 7 grades
+  of noise), pass rates 0.923 vs 0.921; gold passed 99.5% and 100% of criteria; a flawed answer got credit for its
+  omitted issue 2 and 1 times in 26. A ledger-aware referee (also Opus, so not lawyer calibration) regraded all 102
+  Qwen issue grades: no judge pass it would fail, 3 judge fails it would pass, all on criteria bundling several asks.
+- **GPUs on Nautilus: serving works (2026-11-02).** `deploy/nautilus/vllm-qwen.yaml` (on `plan/phase2-unattended`,
+  merged there from PR #2) serves Qwen3.8-27B-FP8 (the same model as `qwen3-small`) with vLLM 0.30.0 on one A100
+  80GB; weights cached on PVC `ltg-hf-cache` (100Gi, kept). Start with `kubectl apply`, then
+  `kubectl port-forward pod/ltg-vllm-qwen 8000:8000` and use `configs/vllm_nautilus_solver.toml`. Queued ~20 minutes
+  for an A100, ready ~7 minutes later, KV cache 623k tokens, honours `reasoning_effort = "low"`.
+  `scripts/solve_only.py` against it (`runs/qwen_solver_smoke_vllm`): 12 of 12 memos, 0 failed calls, median 8.9
+  minutes per attempt (NRP 2.5), all-pass 3 of 12 as on NRP. Delete the pod when done (it also stops itself after
+  6 hours).
 
 Loose ends: branch `claude/affectionate-perlman-e65dbe` (local only, worktree under `.claude/worktrees/`, 2 commits
-from 2026-10-18) adds an EDGAR fetcher and is not merged.
+from 2026-10-18) adds an EDGAR fetcher and is not merged; recommended parking it, Sirui She has not decided.
+Work only in `~/Projects/legal-task-generator` (the old Desktop clone was removed on 2026-11-03).
 
 ## Working with other people and sessions
+
+**Planning and coding are split (Sirui She's rule, 2026-11-03).** Sirui She plans with Claude in the Claude app; the
+Claude Code terminal on the laptop does the coding. The app session assigns work through `inbox.md` at the repo root
+(gitignored, one copy, attachments under `.inbox/`). In the terminal, `/ltg-inbox` (`.claude/skills/ltg-inbox/`) works
+the next task: read `inbox.md` first, take the top open task, follow its steps, write the result under the task, and
+set its status. **Never use the user-level `/inbox` skill in this repo**; it belongs to another project. Do not start work that is not in the
+inbox or asked for by Sirui She directly.
+
+**Keep the work tree clean.** The main checkout (`~/Projects/legal-task-generator`) stays on `main`, with nothing
+uncommitted and nothing untracked outside `.gitignore`. Every task runs in its own worktree on its own branch
+(`git worktree add ../ltg-wt/<branch> -b <branch> main`), and the worktree and branch are removed once the PR
+merges. Never switch the main checkout's branch. Before ending a task, `git status` must be empty in the main
+checkout and `git worktree list` must show only live work.
 
 Two people work on this repo: Sirui She (owner, on the laptop) and a second contributor (on their own machine, with
 their own Max plan). Each may run several Claude Code sessions.
 
 **Between the two people: GitHub.** Questions, requests and hand-offs go in GitHub issues; results go in pull
-requests. A pilot round goes on its own branch: `runs/` is gitignored, so add the round's folder with
-`git add -f runs/<name>`, and open a PR into `main` whose description has the round's numbers (accepted, pass rates,
+requests. A pilot round goes on its own branch: `runs/` is gitignored, so force-add only what reviewers need
+(`git add -f`): `report.md`, `report.json`, `settings.json`, the whole `accepted/` folder, and `spec.json`,
+`ledger.json` and `gates.json` of each rejected matter; for analysis folders (`judge_leniency*`, solver smoke tests)
+only `summary.json`. Never commit `calls.jsonl`, solver traces or logs. Then open a PR into `main` whose description has the round's numbers (accepted, pass rates,
 calls, tokens, errors) and the cause of every rejection. If a round leads to code fixes, one commit per defect
 class, as in "Pilot standard". Pull `main` before starting work; whoever changes the stage or plan updates "Now" in
 the same PR.
@@ -99,15 +168,14 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 - **Skeleton first, costing later.** Pengtao approved a preliminary implementation. No cost modeling yet.
 - **Backends.** Any OpenAI-compatible endpoint, or Claude through the Claude Agent SDK (`backend.kind = "claude_sdk"`).
   Pengtao's direction (2026-10-15): for Claude, use the $100/month subscription through the SDK (reimbursed), never
-  direct API calls. He confirmed this means the Max plan; Sirui She upgrades on the web after the App Store Pro period
-  ends on 2026-10-30 (the App Store price is $124). From 2026-10-27 the second contributor runs Claude rounds on their
-  own Max plan (Sirui She's decision). For GPUs, Nautilus (namespace `ecepxie`, see Current status). The runtime stays standard library only: the SDK
+  direct API calls. He confirmed this means the Max plan; Sirui She is on Max from 2026-11-02 and runs Claude rounds on the laptop.
+  The second contributor (from 2026-10-27) runs Claude rounds on their own Max plan (Sirui She's decision). For GPUs, Nautilus (namespace `ecepxie`, see "Background and history"). The runtime stays standard library only: the SDK
   is an optional extra (`pip install -e ".[claude]"`) imported only by that backend.
 
-## Current status (2026-10-24)
+## Background and history (status as of 2026-10-24; "Now" supersedes it)
 
 - All three stages and eight gates run end to end with the offline fake model (`ltg/fake.py`).
-- 90 offline tests pass (`python3 -m pytest`). Every gate, and each branch of `rubric_tests` and `solver_check`,
+- Offline tests pass (`python3 -m pytest`; counts per branch in "Now"). Every gate, and each branch of `rubric_tests` and `solver_check`,
   was mutation-checked on 2026-10-14: disabling it makes a test fail.
 - First real-model runs (2026-10-15, Claude Sonnet through the Agent SDK, one matter each, seed 1):
   runs 1 to 3 were rejected at `consistency`, each exposing a gap the fake model hid (exact string matching, facts
@@ -207,7 +275,9 @@ Fixed after the 2026-10-14 independent review (one commit each):
 ## Pilot standard (phase 1 exit)
 
 Phase 1 ends when one round meets every point below. Each round is 3 fresh matters
-(`configs/claude_pilot_opus.toml`, a new `--seed` each round so prompts are never tuned to one set of matters).
+(Opus generating and Qwen solving: `configs/pilot_nrp_solver.toml`, or `configs/vllm_nautilus_solver.toml`; until
+2026-11-02 `configs/claude_pilot_opus.toml` with Haiku solving; a new `--seed` each round so prompts are never tuned to
+one set of matters).
 
 1. At least 2 of 3 matters accepted, and the run logs no model errors.
 2. Every accepted task passes the quality checklist under "How to verify changes", read in full by a person:

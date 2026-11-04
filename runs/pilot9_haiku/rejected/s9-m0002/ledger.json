@@ -1,0 +1,172 @@
+{
+  "matter_id": "s9-m0002",
+  "summary": "The firm represents Besouth Facade Systems, LLC, a curtain-wall and facade contractor. Under a Supply Agreement, Besouth buys low-E coated insulating glass units (IGUs) from Meideis Glassworks, Inc. on an exclusive basis. The folder also holds a project Statement of Work for the Calloway Street Tower facade in Philadelphia, Amendment No. 1 adding laminated spandrel glass for that project, a Parent Guaranty from Besouth's sole member, Besouth Holdings Corp., and a cover letter from Meideis's insurance broker. A private equity sponsor is about to acquire all of the stock of Besouth Holdings Corp. Before closing, the supervising partner wants a memo flagging supply-relationship risks. Three problems are planted. First, the indirect change of control triggers a Meideis consent right that nobody has addressed. Second, the window to stop the Supply Agreement from auto-renewing closed before the Amendment was signed. Third, the Amendment's new definition of Products quietly extends Besouth's exclusive purchase obligation to all architectural glass.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Besouth Facade Systems, LLC",
+      "role": "Buyer under the Supply Agreement; firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Meideis Glassworks, Inc.",
+      "role": "Supplier of coated insulating glass units and architectural glass"
+    },
+    {
+      "id": "P3",
+      "name": "Besouth Holdings Corp.",
+      "role": "Sole member of Besouth Facade Systems, LLC; guarantor of Buyer's payment obligations"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "April 1, 2023",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "four years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement non-renewal notice period",
+      "value": "at least 180 days before expiration of the then-current term",
+      "doc": "D1",
+      "section": "3.2"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement Renewal Term",
+      "value": "three years, automatic unless non-renewal notice given",
+      "doc": "D1",
+      "section": "3.2"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement definition of Products",
+      "value": "low-E coated insulating glass units described in Exhibit A",
+      "doc": "D1",
+      "section": "1.7"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Amendment No. 1, then Supply Agreement, then Statement of Work",
+      "doc": "D1",
+      "section": "17.4"
+    },
+    {
+      "id": "F7",
+      "key": "Amendment No. 1 date",
+      "value": "October 20, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F8",
+      "key": "Guarantor",
+      "value": "Besouth Holdings Corp., sole member of Besouth Facade Systems, LLC",
+      "doc": "D4",
+      "section": "Recitals"
+    },
+    {
+      "id": "F9",
+      "key": "Statement of Work project",
+      "value": "Calloway Street Tower facade, Philadelphia, Pennsylvania",
+      "doc": "D2",
+      "section": "1"
+    },
+    {
+      "id": "F10",
+      "key": "Statement of Work committed quantity",
+      "value": "42,000 square feet of insulating glass units",
+      "doc": "D2",
+      "section": "3"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "besouth_meideis_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "calloway_tower_statement_of_work.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "supply_agreement_amendment_no1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "besouth_holdings_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "meideis_insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Supply Agreement Section 1.3 defines 'Change of Control' to include any direct or indirect transfer of more than 50% of the equity of Buyer or of any entity controlling Buyer. Section 16.2 says a Change of Control of Buyer is deemed an assignment that requires Supplier's prior written consent. If consent is not obtained, Supplier may terminate and demand payment for all remaining committed quantities under open Statements of Work. The Parent Guaranty recitals identify Besouth Holdings Corp. as Buyer's sole member. The planned sale of Holdings' stock is therefore an indirect Change of Control of Buyer under Sections 1.3 and 16.2 read together. No document obtains or waives Meideis's consent, and the Amendment, though signed during deal preparation, does not address it.",
+      "doc": "D1",
+      "section": "16.2",
+      "detect_terms": [
+        "direct or indirect",
+        "deemed an assignment"
+      ],
+      "expected_finding": "The sale of Besouth Holdings Corp. is an indirect Change of Control requiring Meideis's prior written consent under Sections 1.3 and 16.2, so consent must be obtained before closing or Meideis may terminate and accelerate committed-quantity payments.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "The Supply Agreement Effective Date is April 1, 2023 (Preamble), and Section 3.1 sets a four-year Initial Term, so that term expires March 31, 2027. Section 3.2 renews the agreement automatically for a three-year Renewal Term, with the exclusive purchase obligation intact, unless a party gives non-renewal notice at least 180 days before expiration. The notice deadline was therefore October 2, 2026. Amendment No. 1 is dated October 20, 2026, after that deadline, and leaves the term untouched. No non-renewal notice appears in the folder. Besouth is therefore locked into exclusivity through March 31, 2030. The deadline can only be found by combining the Preamble, Section 3.1, Section 3.2, and the Amendment date.",
+      "doc": "D1",
+      "section": "3.2",
+      "detect_terms": [
+        "at least 180 days prior to the expiration"
+      ],
+      "expected_finding": "The non-renewal deadline of October 2, 2026 passed before the October 20, 2026 Amendment was signed, so the Supply Agreement will renew for three years through March 31, 2030 unless Meideis agrees to a negotiated termination or a term change.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "The Amendment's only stated purpose is to add laminated heat-strengthened spandrel glass for the Calloway Street Tower project. Amendment No. 1 Section 2.1 nonetheless replaces the Supply Agreement definition of 'Products' for all purposes of the Agreement. The new definition covers all architectural glass products that Supplier manufactures, fabricates or supplies. Supply Agreement Section 5.1 requires Buyer to buy 100% of its requirements for Products from Supplier. Reading the two together, Besouth's exclusive requirements obligation now reaches every type of architectural glass on every project, not just the IGUs originally defined in Section 1.7. Under the precedence clause in Section 17.4, the Amendment controls over the Supply Agreement, so the original definition does not survive.",
+      "doc": "D3",
+      "section": "2.1",
+      "detect_terms": [
+        "all architectural glass products manufactured, fabricated or supplied by Supplier"
+      ],
+      "expected_finding": "The Amendment's replacement definition of Products, combined with the requirements clause in Section 5.1 and the precedence clause in Section 17.4, expands Besouth's exclusivity from low-E IGUs to all architectural glass. The definition should be narrowed to add only the Calloway spandrel glass, or the spandrel glass should be expressly excluded from Section 5.1.",
+      "contradicts": "F5"
+    }
+  ]
+}

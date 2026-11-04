@@ -179,3 +179,14 @@ def test_consistency_treats_a_fact_quoted_in_an_issue_description_as_planted_in_
     ledger.issues[0].doc, ledger.facts[0].value = "D2", "Fraud"  # too short to count as quoted
     assert not gates.consistency(Facts({"F1@a.md": "Fraud", "F1@b.md": "claims for willful misconduct"}, same=False), ledger,
                                  {"a.md": "...", "b.md": "..."}).passed
+
+
+def test_consistency_trusts_the_document_text_over_an_extractor_that_drops_a_qualifier():
+    ledger = _ledger()
+    ledger.facts[0].value = "courts located in Wilmington, Delaware, exclusively"
+    docs = {"a.md": "16.2 Each Party submits to the **courts located in Wilmington, Delaware, exclusively**.", "b.md": "..."}
+    dropped = Facts({"F1@a.md": "the courts located in Wilmington, Delaware"}, same=False)
+    assert gates.consistency(dropped, ledger, docs).passed
+    ledger.facts[0].value = "45 days"  # too short to trust a bare text match
+    docs["a.md"] = "Buyer may object within 45 days."
+    assert not gates.consistency(Facts({"F1@a.md": "30 days"}, same=False), ledger, docs).passed

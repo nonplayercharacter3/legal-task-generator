@@ -1,0 +1,180 @@
+{
+  "matter_id": "s6-m0003",
+  "summary": "Brouneth Water Holdings, LLC (the firm's client, as Buyer) is acquiring all outstanding stock of Pellinor Aqua Chemistry, Inc., a maker of municipal and industrial water treatment chemicals (coagulants, flocculants, corrosion and scale inhibitors, biocides), from Zouleir Industrial Group, Inc. The deal is documented by a New York-law Stock Purchase Agreement. Part of the price is deferred through a Seller Note, and Buyer may set off indemnity claims against that note. A Transition Services Agreement covers Seller's continued ERP hosting, toll blending and NSF/ANSI 60 certification support. A Key Employee Agreement covers the head of Pellinor's industrial accounts. Counsel exchanged emails on closing logistics and TSA pricing. The partner wants a memo spotting problems for Buyer across the folder.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Brouneth Water Holdings, LLC",
+      "role": "Buyer (firm's client); maker of the Seller Note; post-closing parent of the Company"
+    },
+    {
+      "id": "P2",
+      "name": "Zouleir Industrial Group, Inc.",
+      "role": "Seller; holder of the Seller Note; Provider under the Transition Services Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Pellinor Aqua Chemistry, Inc.",
+      "role": "Company being acquired; Recipient under the Transition Services Agreement; employer under the Key Employee Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Renata Szabo-Lindqvist",
+      "role": "Key Employee; Vice President, Industrial Accounts of the Company"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement Signing Date",
+      "value": "March 16, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Base Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$9,500,000",
+      "doc": "D3",
+      "section": "Section 1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note maturity",
+      "value": "36 months after the Closing Date",
+      "doc": "D3",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F5",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "laws of the State of New York",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F6",
+      "key": "Stock Purchase Agreement exclusive forum",
+      "value": "state or federal courts sitting in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence among Transaction Documents",
+      "value": "each Ancillary Agreement prevails over the Stock Purchase Agreement as to that Ancillary Agreement's subject matter",
+      "doc": "D1",
+      "section": "Section 11.4"
+    },
+    {
+      "id": "F8",
+      "key": "Transition Services Agreement term",
+      "value": "9 months from the Closing Date",
+      "doc": "D4",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F9",
+      "key": "\"Business\" (Stock Purchase Agreement definition)",
+      "value": "manufacture and sale of municipal and industrial water treatment chemicals",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F10",
+      "key": "Seller non-compete period",
+      "value": "5 years after the Closing Date",
+      "doc": "D1",
+      "section": "Section 6.9"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "key_employee_agreement_szabo_lindqvist.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "email_thread_closing_logistics.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Under SPA Section 9.7, Buyer may set off finally determined indemnity claims against payments due under the Seller Note. SPA Sections 11.9 and 11.10 choose New York law and exclusive New York County courts for disputes 'arising out of or relating to this Agreement or the Transaction Documents'. The Seller Note, however, provides at Section 8.2 that it is governed by the laws of the State of Delaware and that the parties submit exclusively to state or federal courts in Wilmington, Delaware for any dispute 'relating to this Note, including any payment, offset or acceleration'. On its own, SPA Section 11.4 might seem to resolve the conflict. Read with Section 8.2, it does the opposite: Section 11.4 makes each Ancillary Agreement prevail as to its own subject matter, so the Delaware clause controls disputes over payment and setoff under the note. Seller could therefore accelerate and sue on the note in Delaware under Delaware law, while the indemnity claim that supports Buyer's setoff has to be litigated in New York under New York law. That creates a risk of inconsistent judgments, a race to the courthouse, and loss of the setoff as a practical defense.",
+      "doc": "D3",
+      "section": "Section 8.2",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Wilmington, Delaware"
+      ],
+      "expected_finding": "Because the SPA's precedence clause lets the Seller Note's Delaware law and Wilmington forum control note disputes, the indemnity claim and the setoff against the note would be split between New York and Delaware. The note should be conformed to New York law and the New York County forum, or the SPA's forum clause should expressly override it.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 12.4 bars Recipient (the Company) from assigning without Provider's consent. It then provides that 'Provider may assign, delegate or otherwise transfer this Agreement, in whole or in part, to any Person without the consent of Recipient'. Under Schedule A, Provider hosts the Company's ERP, including customer order histories, and toll-blends the Company's proprietary coagulant and inhibitor formulations. Seller's non-compete and confidentiality covenants in SPA Section 6.9 bind only 'Seller and its Affiliates'. A third-party assignee, such as a competing water chemicals producer, would therefore receive the formulations and customer data without being bound by those covenants. Nothing in the TSA restricts the identity of the assignee.",
+      "doc": "D4",
+      "section": "Section 12.4",
+      "detect_terms": [
+        "to any Person without the consent of Recipient"
+      ],
+      "expected_finding": "The TSA lets Seller assign or delegate the services, together with access to the Company's formulations and customer data, to any third party, including a competitor that is not bound by the SPA's restrictive covenants. Buyer should require mutual consent to assignment, with a narrow carve-out for successors to all of Provider's business that agree in writing to be bound and that are not competitors.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines 'Business' as the manufacture and sale of municipal and industrial water treatment chemicals, which covers industrial cooling-water and boiler corrosion and scale inhibitors. SPA Section 6.8 requires Renata Szabo-Lindqvist to sign a Key Employee Agreement with a 24-month non-compete and customer non-solicit 'with respect to the Business'. The Key Employee Agreement, however, defines 'Business' in its own Section 1.1 as the manufacture and sale of 'coagulants and flocculants for municipal potable water treatment'. Its restrictive covenants in Section 7 use that narrower term. Ms. Szabo-Lindqvist runs the industrial accounts, which are excluded from the KEA definition. SPA Section 11.4 makes each Ancillary Agreement prevail as to its own subject matter, so the KEA's narrow definition governs her covenants. She could therefore join a competitor and solicit the industrial inhibitor customers that Buyer is paying for.",
+      "doc": "D2",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "coagulants and flocculants for municipal potable water"
+      ],
+      "expected_finding": "The Key Employee Agreement's narrower definition of 'Business', which controls under SPA Section 11.4, leaves the industrial water treatment line led by the key employee outside her non-compete and non-solicit. The KEA definition should be conformed to the SPA's definition before closing.",
+      "contradicts": "F9"
+    }
+  ]
+}

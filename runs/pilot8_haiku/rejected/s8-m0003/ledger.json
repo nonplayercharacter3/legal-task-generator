@@ -1,0 +1,196 @@
+{
+  "matter_id": "s8-m0003",
+  "summary": "Ziteir Agronomics, Inc., a crop-services company that runs drone spraying and field-mapping programs for growers, buys agricultural spray drones, payload sensors and a cloud flight-data platform from Lakix Aerial Systems, LLC under a Master Supply Agreement effective March 1, 2024. Ziteir has signed a deal to be acquired by Penwick Agri Holdings, Inc., with closing expected November 16, 2026. On October 5, 2026 Ziteir sent Lakix a letter announcing the merger. The supervising partner wants an issue-spotting memo on the Lakix relationship before closing. The folder holds the Supply Agreement, the Data Processing Addendum covering field and grower data, Ziteir's notice letter, the Statement of Work for the 2026 spray-fleet deployment, and an unrelated office lease for Ziteir's Ames, Iowa operations office.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Ziteir Agronomics, Inc.",
+      "role": "Customer under the Supply Agreement; the firm's client; target in the pending acquisition by Penwick Agri Holdings, Inc."
+    },
+    {
+      "id": "P2",
+      "name": "Lakix Aerial Systems, LLC",
+      "role": "Supplier of agricultural spray drones, sensors and flight-data platform services"
+    },
+    {
+      "id": "P3",
+      "name": "Penwick Agri Holdings, Inc.",
+      "role": "Proposed acquirer of all outstanding voting stock of Ziteir"
+    },
+    {
+      "id": "P4",
+      "name": "Ostrander Commons LLC",
+      "role": "Landlord under Ziteir's Ames, Iowa office lease (unrelated to the Lakix relationship)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "three years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement governing law",
+      "value": "laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 16.1"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement forum",
+      "value": "state and federal courts located in Wilmington, Delaware, exclusively",
+      "doc": "D1",
+      "section": "Section 16.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Data Processing Addendum, then Supply Agreement, then any Statement of Work",
+      "doc": "D1",
+      "section": "Section 1.4"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid or payable in the 12 months before the claim",
+      "doc": "D1",
+      "section": "Section 11.3"
+    },
+    {
+      "id": "F7",
+      "key": "Annual minimum purchase commitment",
+      "value": "$2,400,000 per contract year",
+      "doc": "D1",
+      "section": "Section 3.2"
+    },
+    {
+      "id": "F8",
+      "key": "Notice letter date",
+      "value": "October 5, 2026",
+      "doc": "D3",
+      "section": "Date line"
+    },
+    {
+      "id": "F9",
+      "key": "Expected merger closing date",
+      "value": "November 16, 2026",
+      "doc": "D3",
+      "section": "Paragraph 2"
+    },
+    {
+      "id": "F10",
+      "key": "SOW drone fleet quantity",
+      "value": "40 Lakix AX-9 spray drones",
+      "doc": "D4",
+      "section": "Section 2.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "ziteir_lakix_master_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "ziteir_lakix_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ziteir_letter_to_lakix_2026-10-05.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "ziteir_lakix_sow_2026_spray_fleet.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "ziteir_ames_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Section 2.2 of the Supply Agreement renews it automatically for successive three-year renewal terms. A party avoids renewal only by giving notice at least 180 days before the current term expires. Read with the Supply Agreement Effective Date of March 1, 2024 (Preamble) and the three-year Initial Term (Section 2.1), the Initial Term ends February 28, 2027. The non-renewal deadline was therefore September 1, 2026. Ziteir's notice letter is dated October 5, 2026 (D3), after that deadline, and it says nothing about non-renewal. No non-renewal notice appears anywhere in the folder. The Agreement has no termination-for-convenience right. Ziteir, and Penwick after closing, will therefore be locked into a further three years ending February 2030, including the $2,400,000 annual minimum purchase commitment in Section 3.2.",
+      "doc": "D1",
+      "section": "Section 2.2",
+      "detect_terms": [
+        "successive three-year renewal terms",
+        "at least one hundred eighty (180) days"
+      ],
+      "expected_finding": "The 180-day non-renewal window closed on September 1, 2026, before the October 5, 2026 letter, so the Supply Agreement will auto-renew for three years with the $2.4M annual minimum unless Ziteir negotiates an amendment or waiver with Lakix.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 15.2 of the Supply Agreement treats any Change of Control of Customer as an assignment requiring Lakix's prior written consent. Change of Control includes acquisition of more than 50% of Customer's voting securities, whether by merger, stock purchase or operation of law. If consent is not obtained, Lakix may terminate and accelerate the remaining minimum purchase commitment. Ziteir's October 5, 2026 letter (D3) describes the acquisition of all of Ziteir's stock by Penwick Agri Holdings, Inc., with closing expected November 16, 2026. The letter presents this as 'for your information only' and states that no consent is required because Ziteir will survive as the contracting entity. Read together, the two documents show that the deal triggers the consent right, that consent has not been requested, and that the letter's position misreads Section 15.2.",
+      "doc": "D1",
+      "section": "Section 15.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "Change of Control of Customer"
+      ],
+      "expected_finding": "The Penwick acquisition is a Change of Control requiring Lakix's prior written consent under Section 15.2; the October 5 letter wrongly asserts no consent is needed, so Ziteir must seek written consent before the November 16, 2026 closing or risk termination and acceleration of the minimum commitment.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Section 12 of the Data Processing Addendum provides that the DPA and all claims arising out of or relating to Farm Data are governed by the laws of the State of New York. It also requires that such claims be brought exclusively in courts in the Borough of Manhattan. Supply Agreement Sections 16.1 and 16.2 choose Delaware law and exclusive Wilmington, Delaware courts. Under the order of precedence in Supply Agreement Section 1.4, the DPA prevails over the Supply Agreement. As a result, the New York clause controls rather than being overridden. Data-breach and data-ownership disputes, including related indemnity claims, would be split from all other disputes under the relationship and heard in a different forum under different law.",
+      "doc": "D2",
+      "section": "Section 12",
+      "detect_terms": [
+        "laws of the State of New York",
+        "Borough of Manhattan"
+      ],
+      "expected_finding": "The DPA's New York law and Manhattan forum clause conflicts with the Supply Agreement's Delaware choice and, because Section 1.4 gives the DPA precedence, will control data-related disputes, so the DPA should be conformed to Delaware law and Wilmington courts.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 7 of the Statement of Work requires Ziteir to indemnify Lakix against all third-party claims arising from drone flights or spray applications over Customer Sites, regardless of Supplier's negligence. Covered claims include crop-damage, chemical-drift and trespass claims by neighboring growers. Section 7 also states that this obligation shall not be subject to any limitation of liability. Supply Agreement Section 11.3 caps liability at fees paid or payable in the prior 12 months, but Section 11.4 carves out of that cap 'Customer's indemnification obligations under any Statement of Work.' Because the Supply Agreement itself incorporates the SOW carve-out, the lower precedence of the SOW under Section 1.4 does not cure the problem. Ziteir carries unlimited indemnity exposure for drift and crop-loss claims, even where those claims result from Lakix product defects or Lakix negligence.",
+      "doc": "D4",
+      "section": "Section 7",
+      "detect_terms": [
+        "shall not be subject to any limitation",
+        "regardless of Supplier's negligence"
+      ],
+      "expected_finding": "Through the Section 11.4 carve-out, the SOW Section 7 indemnity leaves Ziteir with uncapped liability for all spray-drift and crop-damage claims, including those caused by Lakix's own negligence or defects; it should be limited to Ziteir's fault and brought under the cap or a separate super-cap.",
+      "contradicts": null
+    }
+  ]
+}

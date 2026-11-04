@@ -4,9 +4,11 @@ A preliminary implementation of an agent that automatically creates legal agent 
 Harvey's Legal Agent Benchmark (LAB): a partner-style instruction, a folder of matter documents, and a rubric
 graded all-pass.
 
-**Status:** skeleton. Every stage and gate runs end to end and is tested with an offline **fake model**. The
-real-model path (any OpenAI-compatible endpoint) is tested only against a local mock server, so it has not yet been
-run on a real LLM. The issue library is a draft and has not been reviewed by anyone with legal training.
+**Status (2026-11-02):** pilot stage. Every stage and gate runs end to end, is tested offline with a **fake model**,
+and has run on real models: Claude Opus writes the tasks (through the Claude Agent SDK), and Claude Haiku or an open
+Qwen3.8-27B (hosted by NRP, or served with vLLM on Nautilus) solves them. Thirteen pilot rounds of 3 matters have
+kept 7 tasks so far, all screened against LAB. The issue library is a draft and has not been reviewed by anyone with
+legal training. Current stage and plan: `CLAUDE.md` ("Now"); in plain English: `docs/stage_and_plan.md`.
 
 ## The idea: write the answer key first
 
@@ -32,7 +34,7 @@ Needs Python 3.11+. No third-party packages at runtime.
 
 ```bash
 pip install -e ".[dev]"        # or just use python -m ltg from the repo root
-python -m pytest               # 70 tests, ~5 seconds, fully offline
+python -m pytest               # ~90 tests, ~7 seconds, fully offline
 
 python -m ltg run --config configs/fake_demo.toml      # 20 matters, fake model, faults injected
 cat runs/fake_demo/report.md
@@ -147,18 +149,23 @@ ltg/
   decontam.py      n-gram containment with a fixed-memory Bloom filter
   splits.py        per-matter split assignment
   orchestrator.py  runs matters through the stages and writes the report
-  cli.py           `run` and `inspect`
-configs/           fake demo, real-endpoint example, Claude pilot
+  cli.py           `run`, `index` (build the LAB screen) and `inspect`
+configs/           fake demo, real-endpoint example, Claude pilot, NRP and vLLM solver configs
+scripts/           LAB index check, cloud setup, solver-only reruns, judge leniency check
+deploy/nautilus/   vLLM pod and weight cache for Nautilus
+docs/              plain-English stage and plan, research notes
 examples/          committed sample output from the fake model
-tests/             70 offline tests
+tests/             ~90 offline tests
 ```
 
 ## Not done yet
 
 - **Real precedents.** `ltg/data/precedents` holds three short synthetic samples. Next: an EDGAR fetcher for
   material contract exhibits, or a folder of saved precedents passed via `[sources].precedent_dirs`.
-- **First real-model run.** Run 3 to 5 matters on a real endpoint, read every output, and tune prompts.
 - **Issue library review.** Every entry in `taxonomy.py` needs approval from someone with legal training.
-- **Judge calibration.** Compare the judge's grades with a lawyer-graded sample before using them as rewards.
-- **Diversity tracking.** Report the mix of practice areas, issue types and document counts, and resample toward gaps.
+- **Judge calibration.** Hints on and off grade the same (measured 2026-11-02), but the judge has not been compared
+  with a lawyer-graded sample; do that before using its grades as rewards.
+- **Harder tasks.** Claude Haiku found every planted issue in 3 of 9 November matters. Longer folders and more
+  cross-document issues would help.
+- **Scale.** 7 accepted tasks so far; fine-tuning needs far more.
 - **Downstream test.** Fine-tune on generated tasks and evaluate on LAB.
