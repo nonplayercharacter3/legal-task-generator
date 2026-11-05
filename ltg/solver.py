@@ -64,14 +64,14 @@ def search(docs: Documents, query, filename, page_chars: int) -> str:
     return "\n".join(hits[:MAX_HITS]) + more
 
 
-def solve(client: ModelClient, instruction: str, docs: Documents, max_steps: int = 20, page_chars: int = 6000) -> Solution:
+def solve(client: ModelClient, instruction: str, docs: Documents, max_steps: int = 20, page_chars: int = 6000, role: str = "solver") -> Solution:
     files = [{"filename": f, "words": len(c.split())} for f, c in docs.items()]
     steps: list[dict] = []
     # ponytail: the transcript keeps every page read, so context grows with the folder (~30k tokens for five long
     # documents). If that exceeds the model's window, drop old page text and keep only the solver's notes.
     while len(steps) < max_steps:
         payload = {"instruction": instruction, "files": files, "steps": steps, "steps_left": max_steps - len(steps)}
-        action = call_json(client, "solver", prompts.SOLVER_STEP, render_input(payload))
+        action = call_json(client, role, prompts.SOLVER_STEP, render_input(payload))
         if isinstance(action.get("action"), dict):  # Qwen sometimes wraps the step as {"action": {...}}
             action = action["action"]
         tool = action.get("tool")
@@ -85,4 +85,4 @@ def solve(client: ModelClient, instruction: str, docs: Documents, max_steps: int
             result = f"ERROR: unknown tool {tool!r}; use read_file, search or finish"
         steps.append({"action": action, "result": result})
     payload = {"instruction": instruction, "files": files, "steps": steps}
-    return Solution(call_text(client, "solver", prompts.SOLVER_WRITE, render_input(payload)), steps)
+    return Solution(call_text(client, role, prompts.SOLVER_WRITE, render_input(payload)), steps)

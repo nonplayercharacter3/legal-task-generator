@@ -50,6 +50,7 @@ class MatterResult:
     split: str | None = None
     solver_pass_rate: float | None = None
     unsolved: bool = False  # kept, but no solver attempt passed: a person should check it is not broken
+    difficulty: list[dict] = field(default_factory=list)  # per labelling model: model, attempts, passes, pass_rate
     gates: list[dict] = field(default_factory=list)
 
 
@@ -151,12 +152,16 @@ class Pipeline:
                 cfg.gates.probe_without_documents,
                 cfg.gates.solver_max_steps,
                 cfg.gates.solver_page_chars,
+                tuple(cfg.gates.solver_models),
             )
-            for k, sol in enumerate(solutions, 1):
-                _write(work / "solver" / f"attempt_{k}.md", sol.answer)
-                _write(work / "solver" / f"attempt_{k}.trace.json", sol.steps)
+            for role, sols in solutions.items():  # the default solver's attempts at solver/, other models' under their role
+                folder = work / "solver" if role == cfg.gates.solver_models[0] else work / "solver" / role
+                for k, sol in enumerate(sols, 1):
+                    _write(folder / f"attempt_{k}.md", sol.answer)
+                    _write(folder / f"attempt_{k}.trace.json", sol.steps)
             result.solver_pass_rate = g.details.get("pass_rate")
             result.unsolved = bool(g.details.get("unsolved"))
+            result.difficulty = g.details.get("difficulty", [])
             check(g)
 
             result.accepted = True
@@ -175,6 +180,7 @@ class Pipeline:
                     "rubric": [{"id": c.id, "text": c.text, "kind": c.kind, "hints": c.hints} for c in rubric.criteria],
                     "solver_pass_rate": result.solver_pass_rate,
                     "unsolved": result.unsolved,
+                    "difficulty": result.difficulty,
                 },
             )
         except _Rejected as r:
@@ -287,7 +293,7 @@ def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed
         "gates": gate_stats,
         "matters": [
             {"matter_id": r.matter_id, "accepted": r.accepted, "failed_gate": r.failed_gate, "reason": r.reason, "split": r.split,
-             "solver_pass_rate": r.solver_pass_rate, "unsolved": r.unsolved}
+             "solver_pass_rate": r.solver_pass_rate, "unsolved": r.unsolved, "difficulty": r.difficulty}
             for r in results
         ],
         "model_calls": log.by_role(),

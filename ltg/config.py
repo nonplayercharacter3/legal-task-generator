@@ -53,6 +53,9 @@ class SpecCfg:
 @dataclass
 class GatesCfg:
     solver_attempts: int = 3
+    # Roles that label difficulty, each making solver_attempts attempts; the first is the default solver. Route each
+    # to its own model with [backend.roles.<name>] or [backend.models]; a task's difficulty is stored per model.
+    solver_models: list[str] = field(default_factory=lambda: ["solver"])
     solver_max_steps: int = 20  # tool calls per attempt before the solver must write its answer
     solver_page_chars: int = 6000  # read_file page size (~1,000 words)
     probe_without_documents: bool = True

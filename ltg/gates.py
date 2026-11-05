@@ -221,37 +221,48 @@ def solver_check(
     probe_without_documents: bool,
     max_steps: int = 20,
     page_chars: int = 6000,
-) -> tuple[GateResult, list[Solution]]:
-    """Run a tool-using solver that never sees the ledger. Returns the gate result and the solver's attempts.
+    roles: tuple[str, ...] = ("solver",),
+) -> tuple[GateResult, dict[str, list[Solution]]]:
+    """Run tool-using solvers that never see the ledger. Returns the gate result and each role's attempts.
 
-    Rejects only a leak: a task solved without opening any document. The pass rate is recorded as a difficulty
-    label, never judged (decision of 2026-11-04): a task every attempt passes is kept, and one no attempt passes is
-    kept with `unsolved: true` so a person can check it is not broken.
+    Rejects only a leak: a task solved without opening any document. Each role in `roles` (routed to its own model
+    by the config) makes `attempts` attempts; its pass rate is recorded under `difficulty` as a label, never judged
+    (decision of 2026-11-04): a task every attempt passes is kept, and one no model passes at all is kept with
+    `unsolved: true` so a person can check it is not broken.
     """
-    solutions: list[Solution] = []
+    solutions: dict[str, list[Solution]] = {}
     details: dict[str, Any] = {}
 
     if probe_without_documents:
-        probe = solve(client, instruction, {}, max_steps, page_chars)
+        probe = solve(client, instruction, {}, max_steps, page_chars, roles[0])
         probe_grades = judge(client, probe.answer, rubric)
         details["probe_without_documents_passed"] = all(probe_grades.values())
         if details["probe_without_documents_passed"]:
             details["reason"] = "solved without opening any document: the instruction leaks the answer"
-            return GateResult("solver_check", False, details), [probe]
+            return GateResult("solver_check", False, details), {roles[0]: [probe]}
 
-    runs = []
-    for _ in range(attempts):
-        sol = solve(client, instruction, docs, max_steps, page_chars)
-        grades = judge(client, sol.answer, rubric)
-        solutions.append(sol)
-        runs.append(
-            {
-                "passed": all(grades.values()),
-                "failed_criteria": [c for c, ok in grades.items() if not ok],
-                "steps": len(sol.steps),
-                "files_opened": sol.files_opened(),
-            }
-        )
-    rate = sum(r["passed"] for r in runs) / max(attempts, 1)
-    details.update({"pass_rate": round(rate, 3), "unsolved": rate == 0, "runs": runs})
+    difficulty, runs = [], {}
+    for role in roles:
+        model = getattr(client, "model_for", lambda r: "")(role) or role
+        runs[model], solutions[role] = [], []
+        for _ in range(attempts):
+            sol = solve(client, instruction, docs, max_steps, page_chars, role)
+            grades = judge(client, sol.answer, rubric)
+            solutions[role].append(sol)
+            runs[model].append(
+                {
+                    "passed": all(grades.values()),
+                    "failed_criteria": [c for c, ok in grades.items() if not ok],
+                    "steps": len(sol.steps),
+                    "files_opened": sol.files_opened(),
+                }
+            )
+        passes = sum(r["passed"] for r in runs[model])
+        difficulty.append({"model": model, "attempts": attempts, "passes": passes, "pass_rate": round(passes / max(attempts, 1), 3)})
+    details.update({
+        "pass_rate": difficulty[0]["pass_rate"],  # the default solver's, kept for older readers of gates.json
+        "unsolved": not any(d["passes"] for d in difficulty),
+        "difficulty": difficulty,
+        "runs": runs,
+    })
     return GateResult("solver_check", True, details), solutions
