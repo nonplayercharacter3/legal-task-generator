@@ -10,6 +10,8 @@ Qwen3.8-27B (hosted by NRP, or served with vLLM on Nautilus) solves them. Thirte
 kept 7 tasks so far, all screened against LAB. The issue library is a draft and has not been reviewed by anyone with
 legal training. Current stage and plan: `CLAUDE.md` ("Now"); in plain English: `docs/stage_and_plan.md`.
 
+High-level overview: `docs/overview.md`.
+
 ## The idea: write the answer key first
 
 In legal work nobody can cheaply tell you the right answer, so the pipeline constructs answers instead of finding
