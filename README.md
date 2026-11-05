@@ -122,6 +122,23 @@ runs/<name>/
 Each matter folder holds `spec.json`, `precedents.json`, `ledger.json`, `docs/`, `instruction.md`, `rubric.json`,
 `answers.json` (gold, flawed and which issue the flawed answer omits), `solver/attempt_N.md` (with `attempt_N.trace.json`, every tool call and its result) and `gates.json`.
 
+## Exporting training data
+
+```
+python3 -m ltg export --runs runs/pilot9_nrp runs/pilot6_haiku --out export/
+```
+
+Collects every `accepted/<matter_id>/` from the run folders and writes `train.jsonl`, `dev.jsonl` and `test.jsonl`,
+using the split in each matter's `gates.json`. A matter id found in more than one run is reported and left out.
+Each line has:
+
+- `messages`: chat format for supervised fine-tuning. System: the solver's memo prompt. User: the instruction, then
+  every document in full (`### <filename>` and its text). Assistant: the gold memo.
+- `eval`: `task_id`, `split`, `practice_area`, `agreement_type`, `jurisdiction`, the rubric criteria (`id`, `kind`,
+  `text`, no judge hints), `solver_pass_rate` and `solver_model`, so reward-based training can grade a response.
+
+The ledger, planted issues, judge hints and flawed answer are never exported. The format is a draft.
+
 ## How the fake model works
 
 `ltg/fake.py` reads the same structured payload a real model would get and returns plausible JSON for each role.
@@ -149,7 +166,8 @@ ltg/
   decontam.py      n-gram containment with a fixed-memory Bloom filter
   splits.py        per-matter split assignment
   orchestrator.py  runs matters through the stages and writes the report
-  cli.py           `run`, `index` (build the LAB screen) and `inspect`
+  export.py        accepted tasks to JSONL training data
+  cli.py           `run`, `index` (build the LAB screen), `inspect` and `export`
 configs/           fake demo, real-endpoint example, Claude pilot, NRP and vLLM solver configs
 scripts/           LAB index check, cloud setup, solver-only reruns, judge leniency check
 deploy/nautilus/   vLLM pod and weight cache for Nautilus
