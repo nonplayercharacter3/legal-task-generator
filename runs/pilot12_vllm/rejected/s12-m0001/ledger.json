@@ -1,0 +1,161 @@
+{
+  "matter_id": "s12-m0001",
+  "summary": "Geigaiv Recovery Systems, LLC (client) is a lithium-ion battery recycler. Under a Master Services Agreement dated March 2, 2026, it collects, discharges, shreds and hydrometallurgically processes end-of-life batteries and production scrap for Privath Energy Storage, Inc., a maker of grid-scale storage batteries. Geigaiv's sole member has signed a Membership Interest Purchase Agreement to sell Geigaiv to Ashcombe Metals Holdings, Inc. That sale is recorded in a Data Processing Addendum the parties signed in October 2026 ahead of the post-closing systems migration. The folder holds four documents: the MSA, the DPA, the Service Level Schedule, and an earlier mutual NDA. The partner wants a memo spotting issues for Geigaiv. There are three: an unaddressed change-of-control consent right, Privath's unrestricted assignment right, and a 'Feedstock' definition in the SLS that pulls hazardous DDR batteries into the service-level and service-credit regime.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Geigaiv Recovery Systems, LLC",
+      "role": "Battery recycling services provider; the firm's client; target of a pending sale to Ashcombe Metals Holdings, Inc."
+    },
+    {
+      "id": "P2",
+      "name": "Privath Energy Storage, Inc.",
+      "role": "Customer; manufacturer of grid-scale lithium-ion storage systems that tenders end-of-life batteries and production scrap for recycling"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "16.1"
+    },
+    {
+      "id": "F3",
+      "key": "Order of precedence",
+      "value": "SLS controls for Service Levels and Service Credits; otherwise MSA, then SLS, then DPA",
+      "doc": "D1",
+      "section": "16.4"
+    },
+    {
+      "id": "F4",
+      "key": "MSA initial term",
+      "value": "Five years from the MSA Effective Date",
+      "doc": "D1",
+      "section": "13.1"
+    },
+    {
+      "id": "F5",
+      "key": "Feedstock (MSA definition)",
+      "value": "End-of-life lithium-ion batteries meeting Exhibit A Acceptance Specifications, excluding DDR Batteries",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F6",
+      "key": "Standard Processing Time",
+      "value": "10 Business Days from Receipt",
+      "doc": "D3",
+      "section": "2.1"
+    },
+    {
+      "id": "F7",
+      "key": "Monthly service credit cap",
+      "value": "15% of monthly processing fees",
+      "doc": "D3",
+      "section": "4.3"
+    },
+    {
+      "id": "F8",
+      "key": "DPA date",
+      "value": "October 5, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Membership Interest Purchase Agreement signing date",
+      "value": "September 15, 2026",
+      "doc": "D2",
+      "section": "Recital B"
+    },
+    {
+      "id": "F10",
+      "key": "Buyer of Geigaiv",
+      "value": "Ashcombe Metals Holdings, Inc.",
+      "doc": "D2",
+      "section": "Recital B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "geigaiv_privath_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "geigaiv_privath_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "geigaiv_privath_service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "geigaiv_privath_mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "MSA Section 15.2 says any change of control of Geigaiv, direct or indirect, including a sale of its membership interests, is deemed an assignment that needs Privath's prior written consent. MSA Section 13.2(c) lets Privath terminate immediately for an unconsented change of control. DPA Recital B (DPA dated October 5, 2026) records that Geigaiv's sole member signed a Membership Interest Purchase Agreement on September 15, 2026 to sell all of Geigaiv's membership interests to Ashcombe Metals Holdings, Inc. DPA Section 9.4 states that nothing in the DPA is consent under, or a waiver of, any provision of the Agreement. Read together, these provisions show the pending sale triggers Privath's consent right and no consent has been obtained. Closing without consent would let Privath terminate the five-year MSA, putting the deal's key customer contract at risk.",
+      "doc": "D1",
+      "section": "15.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "change of control of Geigaiv"
+      ],
+      "expected_finding": "The Ashcombe sale recorded in DPA Recital B is a deemed assignment under MSA 15.2; Privath's written consent must be obtained before closing, or Privath can terminate under 13.2(c), and DPA 9.4 confirms the DPA is not that consent.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "MSA Section 15.3 lets Privath assign, delegate or transfer the MSA or any rights under it, in whole or in part, to any person without Geigaiv's consent. That includes a competing battery recycler. Geigaiv's own assignment is tightly restricted by Section 15.1 and 15.2. Privath's rights include facility audit rights and access to Geigaiv's process yield and recovery data. An assignee competitor could gain Geigaiv's proprietary hydrometallurgical process information. A partial assignment could also split volumes and obligations across several counterparties without Geigaiv's agreement.",
+      "doc": "D1",
+      "section": "15.3",
+      "detect_terms": [
+        "without Geigaiv's consent",
+        "in whole or in part, to any person"
+      ],
+      "expected_finding": "Privath's assignment right is unrestricted and should be limited to require Geigaiv's consent, except for an assignment to a successor of Privath's whole business that is not a Geigaiv competitor, with no partial assignments.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "MSA Section 1.1 defines 'Feedstock' as batteries meeting the Exhibit A Acceptance Specifications, excluding Damaged, Defective or Recalled (DDR) Batteries. Under MSA Section 3.4, Geigaiv handles DDR Batteries only case by case under a separate hazmat protocol. SLS Section 1.2, however, redefines 'Feedstock' as all batteries, cells, modules, packs and scrap tendered by Privath, including DDR Batteries. MSA Section 16.4 provides that the SLS controls as to Service Levels and Service Credits. Read together, the SLS definition governs the 10-Business-Day Standard Processing Time and the service-credit regime. Any DDR Batteries Geigaiv accepts therefore fall under the standard clock and credits of up to 15% of monthly fees, even though their hazardous handling takes longer.",
+      "doc": "D3",
+      "section": "1.2",
+      "detect_terms": [
+        "including DDR Batteries"
+      ],
+      "expected_finding": "Because MSA 16.4 lets the SLS control service levels, the broader SLS definition of Feedstock exposes Geigaiv to processing-time breaches and service credits on DDR Batteries; the SLS definition should be conformed to MSA 1.1 or DDR Batteries expressly carved out of the Service Levels.",
+      "contradicts": "F5"
+    }
+  ]
+}

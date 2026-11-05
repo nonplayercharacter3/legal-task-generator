@@ -1,0 +1,148 @@
+{
+  "matter_id": "s12-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.333,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"During the Term and for eighteen (18) months after its expiration or termination, Distributor shall not, directly or indirectly, through any Affiliate or otherwise, distribute, market, sell, promote or solicit orders for any thermal management products manufactured by any person other than Supplier, anywhere in the world.\" (Section 4.3)"
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"At the end of the Initial Term, this Agreement will automatically renew for successive five (5) year renewal terms (each, a \"Renewal Term\"). Either Party may prevent a renewal by giving the other Party written notice of non-renewal during the fifteen (15) day period ending ninety (90) days before the expiration of the Initial Term or the then-current Renewal Term. A notice of non-renewal given outside that period is of no effect.\""
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"Under Section 6.3 of the Agreement, Distributor hereby objects to the price increase set out in the Price Adjustment Notice dated July 1, 2026.\" (Section 2.2, letter dated September 21, 2026)"
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "1.2 \"Products\" means solely the coolant distribution unit models listed in Exhibit A, Part 1 to the Agreement (DCT-CDU 350, DCT-CDU 800 and DCT-CDU 1500), as Supplier may update that Part under Section 3.2 of the Agreement."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 17.2: \"Any Change of Control of Distributor, including a change of control of any entity that directly or indirectly controls Distributor, is deemed an assignment of this Agreement for purposes of this Section 17.2.\" The same section requires \"Supplier's prior written consent, which Supplier may grant or withhold in its sole discretion,\" and Section 13.3 adds: \"Supplier may terminate this Agreement immediately by written notice if a Change of Control of Distributor occurs without Supplier's prior written consent under Section 17.2.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.058,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C4"
+            ],
+            "steps": 10,
+            "files_opened": [
+              "draisath_side_letter_minimum_purchase.md",
+              "fubeix_draisath_distribution_agreement.md",
+              "fubeix_draisath_distribution_term_sheet.md",
+              "fubeix_draisath_mutual_nda.md",
+              "fubeix_letter_to_draisath_2026-09-21.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C4"
+            ],
+            "steps": 10,
+            "files_opened": [
+              "draisath_side_letter_minimum_purchase.md",
+              "fubeix_draisath_distribution_agreement.md",
+              "fubeix_draisath_distribution_term_sheet.md",
+              "fubeix_draisath_mutual_nda.md",
+              "fubeix_letter_to_draisath_2026-09-21.md"
+            ]
+          },
+          {
+            "passed": true,
+            "failed_criteria": [],
+            "steps": 10,
+            "files_opened": [
+              "draisath_side_letter_minimum_purchase.md",
+              "fubeix_draisath_distribution_agreement.md",
+              "fubeix_draisath_distribution_term_sheet.md",
+              "fubeix_draisath_mutual_nda.md",
+              "fubeix_letter_to_draisath_2026-09-21.md"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
