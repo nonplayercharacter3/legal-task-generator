@@ -42,7 +42,21 @@ and give each round one seed across all solvers.
 
 Totals for 2026-11-02 (8 rounds, 24 candidates): 3 accepted (s6-m0002 Haiku 0.33; s9-m0002 and s9-m0003 Qwen 0.33),
 1,270 calls, ~16.7M input tokens, 0 model errors except 3 matters lost to NRP 403s (rounds 10 and 11). Accepted tasks
-so far, all phases: 7 (4 from the October cloud pilot, 3 from November).
+so far, all phases: 8 (4 from the October cloud pilot, 4 from November).
+
+**Round 12 (2026-11-04, seed 12, Opus generating, Qwen 27B solving on the vLLM pod, PR #10):** 1 of 3 accepted
+(s12-m0003, data center cooling distribution agreement, 5 documents, 5 issues, pass rate 0.33, to be read by Sirui She);
+154 calls, ~1.49M input and ~245k output tokens, 0 model errors, 36 minutes. First real run of c0a90fa, 5c66350 and
+c3f891c. Two defect classes, fixed on `fix/round12` (one commit each):
+- Issue criteria bundled one particular harm and one particular remedy with the finding, and the judge enforced them
+  (s12-m0001, false rejection at `solver_check` 0 of 3; 5c66350 did not prevent it). Now an issue criterion may require
+  only the finding, where it is, that it matters and that a fix is recommended; `rubric_trace` rejects a harm or
+  remedy clause whose words the issue's `expected_finding` does not carry (on past rubrics it would have flagged 34
+  of 157 issue criteria in 19 of 31 real matters, 0 in the fake demo); the judge passes any sound route.
+- An issue planted as history the client already ratified (s12-m0002, I3: a missed dispute window followed by a
+  restated note the client signed, nothing in the folder objecting; `issue_check` rejected it, correctly). Now the
+  ledger writer keeps every issue actionable and puts the client's position in the folder, the issue verifier asks
+  whether it is still actionable, and `issue_check` stores the verifier's `reason` in `gates.json`.
 
 Code check (2026-11-04, `feat/difficulty-labels`): `configs/fake_demo.toml` rejects consistency 3, issue_check 1,
 leak_check 2, rubric_trace 1, rubric_tests 1; `solver_check` rejects only leaks now, so 0 in the demo (it has no leak
@@ -57,7 +71,7 @@ fault), and 12 of 20 are accepted with labels (pass rates 0.33: 5, 0.67: 5, 1.00
    default labelling model; add roles to `gates.solver_models` to label with more. Same spec, different solvers:
    s9-m0003 scored 0.33 with Qwen and 1.0 with Haiku, though the two drafts differ. If tasks must get harder: longer
    folders, more cross-document issues (known weaknesses 2 and 3).
-3. **Next rounds** on merged `main`, fresh seeds. First real runs of c0a90fa, 5c66350 and c3f891c. Qwen rounds need NRP
+3. **Next rounds** on merged `main`, seed 13 or higher, after the `fix/round12` PR merges. Qwen rounds need NRP
    back (since ~23:00 on 2026-11-02 every chat request returns an empty 403, even with a bad key, while `/v1/models`
    works; not rechecked) or the vLLM pod (`configs/vllm_nautilus_solver.toml`, about 3.5 times slower).
 4. **Fine-tune on Nautilus: not started.** Serving works (below). Seven accepted tasks is far too few; scale the
