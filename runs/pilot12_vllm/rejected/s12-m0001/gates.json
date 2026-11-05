@@ -1,0 +1,142 @@
+{
+  "matter_id": "s12-m0001",
+  "accepted": false,
+  "failed_gate": "solver_check",
+  "reason": "no attempt passed: task is probably broken or too hard",
+  "split": null,
+  "solver_pass_rate": 0.0,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 15.2: \"Any change of control of Geigaiv, whether direct or indirect, is deemed an assignment of this Agreement by Geigaiv and requires Privath's prior written consent under Section 15.1. For this purpose, a change of control of Geigaiv includes: (a) any sale, transfer or other disposition of more than fifty percent (50%) of the membership interests or other equity interests in Geigaiv...\" Section 13.2(c) also lets Privath terminate \"with immediate effect, if a change of control of Geigaiv occurs without Privath's prior written consent as required by Section 15.2.\""
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"Privath may assign, delegate or otherwise transfer this Agreement or any of its rights or obligations under it, in whole or in part, to any person without Geigaiv's consent, on written notice to Geigaiv.\" (Section 15.3)"
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SLS Section 1.2: \"'Feedstock' means all lithium-ion batteries, cells, modules, packs and production scrap that Privath tenders to Geigaiv under the Agreement or any Order, including DDR Batteries.\""
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.055,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": false,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "runs": [
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C2",
+              "C5"
+            ],
+            "steps": 12,
+            "files_opened": [
+              "geigaiv_privath_data_processing_addendum.md",
+              "geigaiv_privath_master_services_agreement.md",
+              "geigaiv_privath_mutual_nda.md",
+              "geigaiv_privath_service_level_schedule.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C1",
+              "C2"
+            ],
+            "steps": 12,
+            "files_opened": [
+              "geigaiv_privath_data_processing_addendum.md",
+              "geigaiv_privath_master_services_agreement.md",
+              "geigaiv_privath_mutual_nda.md",
+              "geigaiv_privath_service_level_schedule.md"
+            ]
+          },
+          {
+            "passed": false,
+            "failed_criteria": [
+              "C1",
+              "C2",
+              "C3"
+            ],
+            "steps": 12,
+            "files_opened": [
+              "geigaiv_privath_data_processing_addendum.md",
+              "geigaiv_privath_master_services_agreement.md",
+              "geigaiv_privath_mutual_nda.md",
+              "geigaiv_privath_service_level_schedule.md"
+            ]
+          }
+        ],
+        "reason": "no attempt passed: task is probably broken or too hard"
+      }
+    }
+  ]
+}

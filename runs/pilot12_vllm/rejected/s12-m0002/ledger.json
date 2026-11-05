@@ -1,0 +1,198 @@
+{
+  "matter_id": "s12-m0002",
+  "summary": "Teitur Industrial Holdings, Inc. (client, Buyer) bought all outstanding shares of Loomcrest Technical Fabrics, Inc., a Gastonia, North Carolina maker of nonwoven geotextiles and industrial filtration fabrics, from Pomaind Industries, LLC (Seller) for $48,500,000. Most of the price was paid in cash at the March 31, 2026 closing. The rest was paid by a Buyer promissory note to Seller, which was later amended and restated on September 15, 2026 to add a post-closing price increase and to move maturity to December 31, 2026. A Bill of Sale moved two Seller-owned needle-punch lines and a fabric pattern library to the Company at closing. The folder has five buyer-side problems. Buyer's own indemnity for Seller's credit support has no cap. The note quietly folds the Fundamental Representation and Tax carve-outs back under the cap, and the precedence clause lets the note control on that point. The deadline to dispute Seller's Closing Statement has run, so a $1,840,000 principal increase is locked in. Survival of Fundamental Representations and the Tax indemnity is tied to the note's maturity, which has been shortened. The note moves set-off and recovery disputes to New York law and New York courts, away from Delaware.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Teitur Industrial Holdings, Inc.",
+      "role": "Buyer; maker of the Seller Note; firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Pomaind Industries, LLC",
+      "role": "Seller of all shares of Loomcrest Technical Fabrics, Inc.; holder of the Seller Note; transferor under the Bill of Sale"
+    },
+    {
+      "id": "P3",
+      "name": "Loomcrest Technical Fabrics, Inc.",
+      "role": "Target company (the Company); transferee under the Bill of Sale"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Purchase Price under Stock Purchase Agreement",
+      "value": "$48,500,000, subject to adjustment under Section 2.4",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Indemnity Cap carve-outs",
+      "value": "Fraud, breaches of Fundamental Representations, and Seller's Tax indemnity under Section 9.2(c)",
+      "doc": "D1",
+      "section": "9.5(b)"
+    },
+    {
+      "id": "F3",
+      "key": "Closing Date",
+      "value": "March 31, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F4",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "Laws of the State of Delaware",
+      "doc": "D1",
+      "section": "11.6"
+    },
+    {
+      "id": "F5",
+      "key": "Stock Purchase Agreement forum",
+      "value": "Exclusive jurisdiction of the Delaware Court of Chancery for all disputes arising out of the Agreement or Ancillary Documents",
+      "doc": "D1",
+      "section": "11.7"
+    },
+    {
+      "id": "F6",
+      "key": "Indemnity Cap",
+      "value": "$4,850,000 (10% of the Purchase Price)",
+      "doc": "D1",
+      "section": "9.5(a)"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "Seller Note controls as to payment, set-off and recovery of Losses; otherwise the Stock Purchase Agreement prevails",
+      "doc": "D1",
+      "section": "11.10"
+    },
+    {
+      "id": "F8",
+      "key": "General representation survival period",
+      "value": "12 months after the Closing Date",
+      "doc": "D1",
+      "section": "9.1(a)"
+    },
+    {
+      "id": "F9",
+      "key": "Amended and Restated Seller Note date",
+      "value": "September 15, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Seller Note Maturity Date",
+      "value": "December 31, 2026",
+      "doc": "D3",
+      "section": "2.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "teitur_loomcrest_stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "pomaind_to_loomcrest_bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "amended_restated_seller_note_teitur_pomaind.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "email_thread_gastonia_transition_items.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 9.3(c) of the SPA makes Buyer indemnify the Seller Parties for all Losses under any 'Seller Credit Support'. That term covers every guarantee, letter of credit, surety bond or other credit support Seller gave for Company obligations, whether those obligations arose before or after Closing. Section 9.5(d) then says the Indemnity Cap, the deductible and the survival limits apply only to claims under Sections 9.2(a) and 9.3(a). Buyer's credit-support indemnity therefore has no cap and no time limit. It also reaches Company obligations that arose before Buyer owned the business, such as equipment lease and supplier guarantees, and there is no matching duty on Seller to release or replace that support.",
+      "doc": "D1",
+      "section": "9.3(c)",
+      "detect_terms": [
+        "all Losses under any Seller Credit Support",
+        "only to claims under Sections 9.2(a) and 9.3(a)"
+      ],
+      "expected_finding": "Buyer's indemnity for Seller Credit Support has no cap or time limit and covers pre-Closing Company obligations, so it should be capped, limited to post-Closing obligations, and paired with a Seller duty to release or replace the support.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 9.5(b) of the SPA carves Fraud, Fundamental Representations and the Tax indemnity out of the $4,850,000 Indemnity Cap. Section 6.3 of the Amended and Restated Seller Note says that, notwithstanding Section 9.5(b) of the Purchase Agreement, Buyer's aggregate recovery of Losses, by set-off or otherwise, may not exceed the Indemnity Cap 'other than Losses arising from Fraud'. That removes the Fundamental Representation and Tax carve-outs. SPA Section 11.10 says the Seller Note controls as to payment, set-off and recovery of Losses. So the note's narrower carve-out prevails, and title, capitalization and tax losses are now capped at $4,850,000.",
+      "doc": "D3",
+      "section": "6.3",
+      "detect_terms": [
+        "notwithstanding Section 9.5(b) of the Purchase Agreement",
+        "other than Losses arising from Fraud"
+      ],
+      "expected_finding": "Read with the SPA precedence clause, Note Section 6.3 puts Fundamental Representation and Tax indemnity claims under the Indemnity Cap, so it should be conformed to restore all SPA Section 9.5(b) carve-outs.",
+      "contradicts": "F2"
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "SPA Section 2.4(b) gives Buyer 45 days after receiving Seller's Closing Statement to dispute it. If Buyer does not, the statement becomes final and binding. The recitals of the Amended and Restated Seller Note, dated September 15, 2026, say that Seller delivered the Closing Statement on June 12, 2026, that no dispute was delivered, and that the Final Purchase Price increased by $1,840,000, which is added to principal (from $12,000,000 to $13,840,000). The 45-day window ran out on July 27, 2026, about seven weeks before the note was signed. Buyer appears to have lost its right to challenge the increase, and by signing the note it has acknowledged the higher principal.",
+      "doc": "D3",
+      "section": "Recitals",
+      "detect_terms": [
+        "delivered the Closing Statement on June 12, 2026",
+        "increased by $1,840,000"
+      ],
+      "expected_finding": "Buyer's 45-day dispute window under SPA Section 2.4(b) expired on July 27, 2026, so the $1,840,000 increase is final unless Seller agrees to reopen it, and Buyer should not have acknowledged it in the restated note without a reservation.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1(b) says Fundamental Representations and Seller's Tax indemnity under Section 9.2(c) survive 'until the Note Maturity Date'. Article I defines that term as the maturity date of the Seller Note 'as amended from time to time'. Section 2.1 of the Amended and Restated Seller Note moved maturity to December 31, 2026, only nine months after the March 31, 2026 Closing Date. That is shorter than the 12-month survival of the general representations under Section 9.1(a), and far shorter than the tax statutes of limitations. Once the note is paid off, Buyer also loses its set-off security.",
+      "doc": "D1",
+      "section": "9.1(b)",
+      "detect_terms": [
+        "until the Note Maturity Date",
+        "as amended from time to time"
+      ],
+      "expected_finding": "Because survival is tied to a note maturity that the restated note shortened to December 31, 2026, Fundamental Representation and Tax claims will lapse before ordinary representation claims, so survival should be reset to a fixed period, such as the statute of limitations plus 60 days, unaffected by changes to the note.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "SPA Sections 11.6 and 11.7 choose Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery for disputes under the Agreement and the Ancillary Documents. Section 9 of the Amended and Restated Seller Note says the note and 'any dispute concerning payment, set-off or recovery' are governed by New York law and subject to the exclusive jurisdiction of New York state and federal courts in New York County. SPA Section 11.10 says the Seller Note controls as to payment, set-off and recovery of Losses, so the precedence clause does not cure the conflict. Buyer's indemnity claims would be decided in Delaware while its set-off defense to Seller's collection suit is heard in New York under different law, which risks inconsistent rulings and an acceleration fight in a forum of Seller's choosing.",
+      "doc": "D3",
+      "section": "9",
+      "detect_terms": [
+        "any dispute concerning payment, set-off or recovery",
+        "State of New York"
+      ],
+      "expected_finding": "The restated note sends set-off and recovery disputes to New York law and New York courts, which conflicts with the SPA's Delaware law and forum and is not cured by the precedence clause, so the note should be conformed to Delaware law and the Court of Chancery.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    }
+  ]
+}

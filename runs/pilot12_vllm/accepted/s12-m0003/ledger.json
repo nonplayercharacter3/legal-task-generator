@@ -1,0 +1,194 @@
+{
+  "matter_id": "s12-m0003",
+  "summary": "The firm represents Fubeix Thermal Distribution, LLC (P1), the regional distributor under a distribution agreement with Draisath Cooling Technologies, Inc. (P2). Draisath manufactures liquid-cooling coolant distribution units (CDUs), rear-door heat exchangers (RDHx) and related spare parts for data centers. The folder holds five documents: the Distribution Agreement (effective January 15, 2026), a side letter that reduces the minimum purchase commitment, a September 21, 2026 letter from Fubeix to Draisath, the pre-signing term sheet, and a mutual NDA, which is the distractor. Fubeix's letter announces the pending acquisition of Fubeix's parent and belatedly objects to a July 1, 2026 price increase. Five issues are planted. (1) The non-compete is worldwide and covers all thermal management products, while the term sheet agreed CDUs in the Territory only. (2) The agreement auto-renews for five-year terms with a 15-day opt-out window, against agreed one-year mutual renewals. (3) Fubeix's price objection falls outside the 45-day objection window. (4) The side letter's narrower definition of 'Products' controls under the precedence clause and excludes RDHx and spare-parts purchases from the minimum commitment. (5) The parent acquisition is a Change of Control that needs Draisath's prior consent, which has not been obtained.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Fubeix Thermal Distribution, LLC",
+      "role": "Distributor (client)"
+    },
+    {
+      "id": "P2",
+      "name": "Draisath Cooling Technologies, Inc.",
+      "role": "Supplier / manufacturer of data center liquid-cooling equipment"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "January 15, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Initial Term",
+      "value": "three (3) years from the Distribution Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Territory",
+      "value": "New York, New Jersey, Pennsylvania, Connecticut and Massachusetts",
+      "doc": "D1",
+      "section": "Section 1.1 (\"Territory\")"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "signed side letter referencing the Distribution Agreement, then the Distribution Agreement, then its Exhibits",
+      "doc": "D1",
+      "section": "Section 18.4"
+    },
+    {
+      "id": "F5",
+      "key": "Term sheet agreed non-compete scope",
+      "value": "competing coolant distribution units, within the Territory only",
+      "doc": "D4",
+      "section": "Section 4 (Exclusivity)"
+    },
+    {
+      "id": "F6",
+      "key": "Term sheet agreed renewal",
+      "value": "one-year renewal terms by mutual written agreement",
+      "doc": "D4",
+      "section": "Section 2 (Term)"
+    },
+    {
+      "id": "F7",
+      "key": "Side Letter Amended Minimum Annual Purchase Commitment",
+      "value": "$6,000,000 per Contract Year",
+      "doc": "D2",
+      "section": "Section 2"
+    },
+    {
+      "id": "F8",
+      "key": "Price adjustment objection period",
+      "value": "45 days after the date of a Price Adjustment Notice",
+      "doc": "D1",
+      "section": "Section 6.3"
+    },
+    {
+      "id": "F9",
+      "key": "Draisath Price Adjustment Notice date",
+      "value": "July 1, 2026",
+      "doc": "D3",
+      "section": "Section 2"
+    },
+    {
+      "id": "F10",
+      "key": "Fubeix notice letter date",
+      "value": "September 21, 2026",
+      "doc": "D3",
+      "section": "Letterhead / date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "fubeix_draisath_distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "draisath_side_letter_minimum_purchase.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "fubeix_letter_to_draisath_2026-09-21.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "fubeix_draisath_distribution_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "fubeix_draisath_mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D1 Section 4.3 bars Fubeix, during the term and for 18 months afterwards, from distributing or marketing any thermal management products made by anyone other than Draisath anywhere in the world. Fubeix also distributes third-party air-side cooling, so this would reach that business. The term sheet (D4 Section 4) agreed a narrower restriction, limited to competing coolant distribution units within the Territory. Read together, D1 Section 4.3 and D4 Section 4 show that the drafted restriction goes well beyond the deal in both product scope and geography. Under New York law, an overbroad covenant also risks being read against the drafter, or only partly enforced, in ways the client cannot predict.",
+      "doc": "D1",
+      "section": "Section 4.3",
+      "detect_terms": [
+        "any thermal management products",
+        "anywhere in the world"
+      ],
+      "expected_finding": "The non-compete in D1 Section 4.3 should be narrowed to competing CDUs within the Territory, as the term sheet agreed, and the post-term tail should be removed or shortened.",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Under D1 Section 2.2, the agreement renews automatically at the end of the three-year Initial Term (F2, running from the January 15, 2026 Effective Date) for successive five-year terms. To stop a renewal, a non-renewal notice must be given within a 15-day window ending 90 days before expiry. Under Section 2.1, the Initial Term ends January 14, 2029. The opt-out window therefore runs only from about October 1 to October 16, 2028. Missing it locks Fubeix, including the minimum purchase commitment and the non-compete, into a further five years. The term sheet (D4 Section 2) agreed only one-year renewals by mutual written agreement.",
+      "doc": "D1",
+      "section": "Section 2.2",
+      "detect_terms": [
+        "successive five (5) year renewal terms"
+      ],
+      "expected_finding": "D1 Section 2.2 should be revised to provide for one-year renewals by mutual agreement, as the term sheet agreed, or at least a short renewal term with a wide opt-out window, and the October 2028 window should be diarized.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "D1 Section 6.3 allows Fubeix to object to a Price Adjustment Notice within 45 days of its date. If no timely objection is made, the adjustment is deemed accepted. D3 Section 2 objects to Draisath's Price Adjustment Notice dated July 1, 2026, which imposes a 9% increase on CDU list prices from October 1, 2026. The objection deadline was August 15, 2026, but D3 is dated September 21, 2026, 82 days after the notice. The objection is therefore untimely and the increase is deemed accepted under Section 6.3, so Fubeix's letter does not preserve its rights.",
+      "doc": "D3",
+      "section": "Section 2",
+      "detect_terms": [
+        "hereby objects to the price increase"
+      ],
+      "expected_finding": "Fubeix's September 21, 2026 objection came after the August 15, 2026 deadline in D1 Section 6.3, so the 9% increase is deemed accepted. Any relief now has to be negotiated with Draisath, for example a waiver or an amendment.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 Section 1.1 defines 'Products' as the CDUs, rear-door heat exchangers and spare parts listed in Exhibit A. D1 Section 5.1 counts all purchases of Products toward the minimum annual purchase commitment. A shortfall lets Draisath end exclusivity or terminate the agreement under Section 13.2. The side letter (D2 Section 1) reduces the commitment to $6,000,000, but for its purposes redefines 'Products' as solely the CDU models. The redefinition is not limited to any one section. Under D1 Section 18.4, a signed side letter referencing the agreement prevails over the agreement. As a result, the narrower definition controls, and Fubeix's RDHx and spare-parts purchases no longer count toward the commitment. This substantially raises the risk of a shortfall and offsets much of the benefit of the reduced figure.",
+      "doc": "D2",
+      "section": "Section 1",
+      "detect_terms": [
+        "solely the coolant distribution unit models"
+      ],
+      "expected_finding": "Because D2 prevails under D1 Section 18.4, its narrower definition of 'Products' excludes RDHx and spare-parts purchases from the minimum commitment. D2 should be amended to adopt the D1 Section 1.1 definition.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "D1 Section 17.2 treats any Change of Control of Distributor, including a change of control of any entity that controls Distributor, as an assignment. Such an assignment requires Draisath's prior written consent, which Draisath may withhold in its sole discretion. D1 Section 13.3 lets Draisath terminate immediately if a Change of Control occurs without that consent. In D3 Section 1, Fubeix only informs Draisath of the signed agreement for Ostrava Climate Holdings to acquire Fubeix's parent, Fubeix Industrial Group, Inc., with closing expected in December 2026. The letter states that it 'satisfies any notice requirement' but does not request consent. Section 17.2 requires consent, not notice. Nothing in the folder shows that consent was requested or given, so closing would expose Fubeix to termination.",
+      "doc": "D1",
+      "section": "Section 17.2",
+      "detect_terms": [
+        "Change of Control of Distributor",
+        "sole discretion"
+      ],
+      "expected_finding": "The pending acquisition of Fubeix's parent described in D3 is a Change of Control under D1 Section 17.2 and requires Draisath's prior written consent. That consent must be obtained before closing to avoid termination under Section 13.3.",
+      "contradicts": null
+    }
+  ]
+}
