@@ -179,7 +179,8 @@ def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms
         others = [{"filename": n, "content": c} for n, c in docs.items() if n != fname[i.doc]]
         payload = {"client": party, "document": {"filename": fname[i.doc], "content": content}, "other_documents": others, "issue": issue}
         out = call_json(client, "issue_verifier", prompts.ISSUE_VERIFIER, render_input(payload))
-        results.append({"issue": i.id, "present": bool(out.get("present")), "evidence": out.get("evidence", "")})
+        # The reason goes to gates.json too: round 12's s12-m0002 was rejected here and its grounds were not on disk.
+        results.append({"issue": i.id, "present": bool(out.get("present")), "evidence": out.get("evidence", ""), "reason": out.get("reason", "")})
     missing = [r["issue"] for r in results if not r["present"]]
     return GateResult("issue_check", not missing, {"missing": missing, "results": results})
 

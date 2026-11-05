@@ -46,6 +46,10 @@ Rules:
 - Never let an issue depend on today's date: the task may be solved at any later time. A deadline that has passed or
   is about to pass must be measured against a date stated in the documents (a signing date, a letter's date, a
   delivery confirmation), and the description must name that date.
+- Every planted issue must be something the memo can still act on. A lapsed deadline or missed window counts only if
+  the client has not since accepted the result in a document (a restated note it signed, an amendment, a payment);
+  the folder must show the client's position (an objection letter, an email disputing the point), and the
+  description must name that document.
 - Give 5 to 10 facts that documents must state consistently. When the folder holds more than one instrument, name
   the instrument in any key that other instruments could also have ("Supply Agreement Effective Date", not
   "Effective Date"). Each fact is ONE short value, not a clause: a date,
@@ -132,8 +136,10 @@ Answer whether a careful associate reading this document could find that problem
 problem for the client. Answer false if the problem is absent, or if the documents cure it, limit it expressly, make
 it intentional and harmless, or turn it to the client's advantage. Weigh it from the client's side: work out which
 party bears each obligation the problem touches (who gives the indemnity, who must give the notice) before deciding
-whom it hurts.
-Quote the sentence that shows it.
+whom it hurts. Answer false also if the client can no longer act on it: a missed deadline or lapsed window is
+history, not a problem to raise, when the folder shows the client has since accepted the result (a restated note it
+signed, a payment) and nothing records its objection. Ask yourself: is this still actionable for the client?
+Quote the sentence that shows it, and say in `reason` why the problem is or is not present and actionable.
 
 Reply with ONLY a JSON object: {"present": bool, "evidence": str, "reason": str}"""
 

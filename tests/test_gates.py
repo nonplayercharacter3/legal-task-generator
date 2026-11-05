@@ -106,11 +106,13 @@ def test_issue_check_finds_terms_through_markdown_bold():
 
     class Yes:
         def complete(self, role, system, user):
-            return json.dumps({"present": True, "evidence": "", "reason": ""})
+            return json.dumps({"present": True, "evidence": "", "reason": "still actionable"})
 
     issue = Issue("I1", "defined_term_inconsistency", "x", "x", "D1", "2.1", ['"Territory" means'], "x")
     ledger = Ledger("m", "", [Party("P1", "A", "Buyer"), Party("P2", "B", "Seller")], [], [DocumentPlan("D1", "a.md", "amendment")], [issue])
-    assert gates.issue_check(Yes(), ledger, {"a.md": '> "**Territory**" means the United States'}).passed
+    g = gates.issue_check(Yes(), ledger, {"a.md": '> "**Territory**" means the United States'})
+    assert g.passed
+    assert g.details["results"][0]["reason"] == "still actionable"  # the verifier's grounds are kept in gates.json
 
 
 def test_consistency_asks_again_for_a_value_missed_in_its_own_document():
