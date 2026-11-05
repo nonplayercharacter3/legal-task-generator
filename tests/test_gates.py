@@ -46,12 +46,15 @@ def test_rubric_tests_catches_each_kind_of_bad_rubric(grade, failure):
     assert flagged == ({failure} if failure else set())
 
 
-def test_solver_check_rejects_a_task_solvable_without_documents():
+def test_solver_check_rejects_only_a_task_solvable_without_documents():
     always = Stub(lambda r, c: True)
-    g, _ = gates.solver_check(always, "instr", {"a.md": "text"}, RUBRIC, attempts=3, min_rate=0.01, max_rate=0.99, probe_without_documents=True)
+    g, _ = gates.solver_check(always, "instr", {"a.md": "text"}, RUBRIC, attempts=3, probe_without_documents=True)
     assert not g.passed and "without opening any document" in g.details["reason"]
-    g, _ = gates.solver_check(always, "instr", {"a.md": "text"}, RUBRIC, attempts=3, min_rate=0.01, max_rate=0.99, probe_without_documents=False)
-    assert not g.passed and "too easy" in g.details["reason"]
+    g, _ = gates.solver_check(always, "instr", {"a.md": "text"}, RUBRIC, attempts=3, probe_without_documents=False)
+    assert g.passed and g.details["pass_rate"] == 1.0 and not g.details["unsolved"]  # 3 of 3 is a label, not a defect
+    never = Stub(lambda r, c: False)
+    g, _ = gates.solver_check(never, "instr", {"a.md": "text"}, RUBRIC, attempts=3, probe_without_documents=True)
+    assert g.passed and g.details["pass_rate"] == 0.0 and g.details["unsolved"]
 
 
 class Facts:

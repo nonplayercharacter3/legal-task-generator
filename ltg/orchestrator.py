@@ -49,6 +49,7 @@ class MatterResult:
     reason: str | None = None
     split: str | None = None
     solver_pass_rate: float | None = None
+    unsolved: bool = False  # kept, but no solver attempt passed: a person should check it is not broken
     gates: list[dict] = field(default_factory=list)
 
 
@@ -147,8 +148,6 @@ class Pipeline:
                 docs,
                 rubric,
                 cfg.gates.solver_attempts,
-                cfg.gates.solver_min_pass_rate,
-                cfg.gates.solver_max_pass_rate,
                 cfg.gates.probe_without_documents,
                 cfg.gates.solver_max_steps,
                 cfg.gates.solver_page_chars,
@@ -157,6 +156,7 @@ class Pipeline:
                 _write(work / "solver" / f"attempt_{k}.md", sol.answer)
                 _write(work / "solver" / f"attempt_{k}.trace.json", sol.steps)
             result.solver_pass_rate = g.details.get("pass_rate")
+            result.unsolved = bool(g.details.get("unsolved"))
             check(g)
 
             result.accepted = True
@@ -174,6 +174,7 @@ class Pipeline:
                     "documents": sorted(docs),
                     "rubric": [{"id": c.id, "text": c.text, "kind": c.kind, "hints": c.hints} for c in rubric.criteria],
                     "solver_pass_rate": result.solver_pass_rate,
+                    "unsolved": result.unsolved,
                 },
             )
         except _Rejected as r:
@@ -285,7 +286,8 @@ def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed
         "resumed": resumed,
         "gates": gate_stats,
         "matters": [
-            {"matter_id": r.matter_id, "accepted": r.accepted, "failed_gate": r.failed_gate, "reason": r.reason, "split": r.split, "solver_pass_rate": r.solver_pass_rate}
+            {"matter_id": r.matter_id, "accepted": r.accepted, "failed_gate": r.failed_gate, "reason": r.reason, "split": r.split,
+             "solver_pass_rate": r.solver_pass_rate, "unsolved": r.unsolved}
             for r in results
         ],
         "model_calls": log.by_role(),
@@ -311,7 +313,7 @@ def render_report(rep: dict) -> str:
         lines += ["", "**Decontamination was skipped (no `reference_dirs`): these tasks were NOT screened against LAB.**"]
     lines += ["", "## Matters", "", "| Matter | Result | Split | Solver pass rate | Reason |", "| --- | --- | --- | ---: | --- |"]
     for m in rep["matters"]:
-        res = "accepted" if m["accepted"] else f"rejected at {m['failed_gate']}"
+        res = ("accepted (unsolved)" if m.get("unsolved") else "accepted") if m["accepted"] else f"rejected at {m['failed_gate']}"
         rate = "" if m["solver_pass_rate"] is None else f"{m['solver_pass_rate']:.2f}"
         reason = (m["reason"] or "").replace("|", "/")[:160]
         lines.append(f"| {m['matter_id']} | {res} | {m['split'] or ''} | {rate} | {reason} |")

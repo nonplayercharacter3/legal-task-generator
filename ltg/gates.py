@@ -218,13 +218,16 @@ def solver_check(
     docs: Documents,
     rubric: Rubric,
     attempts: int,
-    min_rate: float,
-    max_rate: float,
     probe_without_documents: bool,
     max_steps: int = 20,
     page_chars: int = 6000,
 ) -> tuple[GateResult, list[Solution]]:
-    """Run a tool-using solver that never sees the ledger. Returns the gate result and the solver's attempts."""
+    """Run a tool-using solver that never sees the ledger. Returns the gate result and the solver's attempts.
+
+    Rejects only a leak: a task solved without opening any document. The pass rate is recorded as a difficulty
+    label, never judged (decision of 2026-11-04): a task every attempt passes is kept, and one no attempt passes is
+    kept with `unsolved: true` so a person can check it is not broken.
+    """
     solutions: list[Solution] = []
     details: dict[str, Any] = {}
 
@@ -250,9 +253,5 @@ def solver_check(
             }
         )
     rate = sum(r["passed"] for r in runs) / max(attempts, 1)
-    details.update({"pass_rate": round(rate, 3), "runs": runs})
-    if rate < min_rate:
-        details["reason"] = "no attempt passed: task is probably broken or too hard"
-    elif rate > max_rate:
-        details["reason"] = "every attempt passed: too easy to carry training signal"
-    return GateResult("solver_check", min_rate <= rate <= max_rate, details), solutions
+    details.update({"pass_rate": round(rate, 3), "unsolved": rate == 0, "runs": runs})
+    return GateResult("solver_check", True, details), solutions
