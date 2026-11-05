@@ -4,10 +4,21 @@ Context for any Claude Code session working in this repo (for people, `docs/stag
 English). A person should read `docs/overview.md` first, the high-level picture. Then read this file, then README.md,
 then "Working with other people and sessions" below before you change anything.
 
-## Now (updated 2026-11-03)
+## Now (updated 2026-11-04)
 
 **Goal.** Generate long-horizon contract-review tasks (instruction, matter folder, all-pass rubric) that the lab can
-train open models on. The tasks must be sound by construction and hard but solvable for a ~27B open model.
+train open models on. The tasks must be sound by construction. The generator is model-neutral: every sound task is
+kept and labelled with how hard it is; whoever trains picks the band that fits their model.
+
+**Difficulty is a label, not a filter (Sirui She's decision, 2026-11-04).** `solver_check` no longer rejects a task
+solved 3 of 3 or 0 of 3; only the probe without documents (a leak) rejects. Each role in `gates.solver_models`
+(default `["solver"]`) makes `solver_attempts` attempts and its pass rate is stored per model under `difficulty` in
+`gates.json` and `task.json`; a task no model ever passes is kept with `unsolved: true` for a person to check.
+`ltg export --model <id> --min-pass --max-pass` selects a band (`--include-unsolved` to keep flagged tasks) and the
+report shows the pass-rate spread per model. `scripts/relabel_past_runs.py` recovered 6 tasks that earlier rounds
+rejected for a pass rate of 1.0 (s2-m0002, s3-m0002, s4-m0002 Sonnet; s6-m0001, s9-m0001, s9-m0003 Haiku), their
+folders restored on the laptop from the commit before the slim; s9-m0003 is also an accepted Qwen task from the same
+spec, so the export drops both as duplicates until one is renamed. Tasks with a label: 13 on the laptop.
 
 **Stage.** Phase 1 is done: its exit standard (see "Pilot standard") was met in cloud round 5 on 2026-10-18. On
 2026-11-02 two laptop sessions ran pilot rounds in parallel, both with Opus generating on Sirui She's Max plan
@@ -33,18 +44,19 @@ Totals for 2026-11-02 (8 rounds, 24 candidates): 3 accepted (s6-m0002 Haiku 0.33
 1,270 calls, ~16.7M input tokens, 0 model errors except 3 matters lost to NRP 403s (rounds 10 and 11). Accepted tasks
 so far, all phases: 7 (4 from the October cloud pilot, 3 from November).
 
-Code check (2026-11-03, merged `main`): 91 tests pass; `configs/fake_demo.toml` still rejects at every gate it used
-to (consistency 3, issue_check 1, leak_check 2, rubric_trace 1, rubric_tests 1, solver_check 2).
+Code check (2026-11-04, `feat/difficulty-labels`): `configs/fake_demo.toml` rejects consistency 3, issue_check 1,
+leak_check 2, rubric_trace 1, rubric_tests 1; `solver_check` rejects only leaks now, so 0 in the demo (it has no leak
+fault), and 12 of 20 are accepted with labels (pass rates 0.33: 5, 0.67: 5, 1.00: 2).
 
 **Plan.** Each step says what done looks like.
 1. **Sirui She reads round 9 (Qwen):** `runs/pilot9_nrp/accepted/s9-m0002` (glass supply, dev) and `s9-m0003` (dental
    MSA renewal, train), against the checklist in "How to verify changes". Done: if both hold up, the pilot standard
    is met with Qwen solving.
-2. **Qwen sets the difficulty bar (Sirui She's decision, 2026-11-03).** Qwen is the model the lab trains, so "too
-   easy" means too easy for Qwen; Haiku found every issue more often. Pilot rounds use
-   `configs/pilot_nrp_solver.toml` (or `configs/vllm_nautilus_solver.toml` when NRP is down). Same spec, different solvers: s9-m0003 was accepted with Qwen (0.33) but
-   too easy for Haiku (3 of 3), though the two drafts differ. If tasks must get harder: longer folders, more
-   cross-document issues (known weaknesses 2 and 3).
+2. **Qwen labels difficulty (superseded 2026-11-04: a label, not a bar; see above).** Pilot rounds use
+   `configs/pilot_nrp_solver.toml` (or `configs/vllm_nautilus_solver.toml` when NRP is down), so Qwen 27B is the
+   default labelling model; add roles to `gates.solver_models` to label with more. Same spec, different solvers:
+   s9-m0003 scored 0.33 with Qwen and 1.0 with Haiku, though the two drafts differ. If tasks must get harder: longer
+   folders, more cross-document issues (known weaknesses 2 and 3).
 3. **Next rounds** on merged `main`, fresh seeds. First real runs of c0a90fa, 5c66350 and c3f891c. Qwen rounds need NRP
    back (since ~23:00 on 2026-11-02 every chat request returns an empty 403, even with a bad key, while `/v1/models`
    works; not rechecked) or the vLLM pod (`configs/vllm_nautilus_solver.toml`, about 3.5 times slower).
@@ -159,6 +171,9 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 - **Ledger-first design.** For each invented matter, write the answer key first (facts plus 3 to 5 planted issues,
   each tied to a document and section), then generate documents, instruction, rubric and reference answers from it.
   Ground truth is known by construction, not judged by a model.
+- **Difficulty is a label, not a filter (2026-11-04).** The generator is model-neutral: any sound task is kept, the
+  solver models' pass rates are stored with it, and whoever trains picks the band. `solver_check` rejects only a leak
+  (solved without the documents). Tasks no model passes are kept and flagged `unsolved` for a person to check.
 - **Similar to LAB in shape, not content.** Our own taxonomy and issue library. Never use LAB tasks as seeds,
   examples or templates. Screen generated tasks against LAB text (n-gram containment). LAB stays fully held out.
   A reviewer (Ruiyi) has previously pushed back on work that leans too heavily on LAB specifically.
@@ -280,7 +295,7 @@ Phase 1 ends when one round meets every point below. Each round is 3 fresh matte
 2026-11-02 `configs/claude_pilot_opus.toml` with Haiku solving; a new `--seed` each round so prompts are never tuned to
 one set of matters).
 
-1. At least 2 of 3 matters accepted, and the run logs no model errors.
+1. At least 2 of 3 matters pass every quality gate (all gates except the difficulty label), with no model errors.
 2. Every accepted task passes the quality checklist under "How to verify changes", read in full by a person:
    instruction realistic, free of hints and free of claims the documents contradict; each planted issue findable
    where the ledger says and a genuine problem for the client; every criterion traces to the ledger and a thorough,
@@ -303,16 +318,16 @@ Stop and ask Sirui She if a round hits the usage limit or after 5 rounds without
    `runs/.decontam_cache` and reused while LAB is unchanged, but a fresh cloud container must rebuild it.
 
 Smaller known gaps: no EDGAR fetcher (precedents come from local folders),
-judge not calibrated against lawyer grades (hints on vs off measured, no difference; see "Now", step 4), `solver_attempts = 1` rejects every task (a pass rate of 0 or 1 is
-always outside the band), and one fact lives in one document, which limits cross-document reasoning.
+judge not calibrated against lawyer grades (hints on vs off measured, no difference; see "Now", step 4), `solver_attempts = 1` gives
+only the labels 0 and 1, and one fact lives in one document, which limits cross-document reasoning.
 
 ## How to verify changes
 
 - `python3 -m pytest` must stay green. Add a test for every new gate or behaviour; if you change a gate, check that
   disabling it still makes a test fail.
 - `python3 -m ltg run --config configs/fake_demo.toml` then read `runs/fake_demo/report.md`. The demo injects
-  faults into ~35% of matters; consistency, issue_check, leak_check, rubric_trace, rubric_tests and solver_check
-  should each reject at least one.
+  faults into ~35% of matters; consistency, issue_check, leak_check, rubric_trace and rubric_tests should each
+  reject at least one. solver_check rejects only leaks (none in the demo); the Difficulty section shows the labels.
 - For real-model work: run 3 to 5 matters first and read every output before scaling.
 - Quality checklist for a generated task: instruction realistic and does not hint at issues; each planted issue
   is findable where the ledger says; every rubric criterion traces to the ledger; gold passes, flawed fails the

@@ -1,12 +1,13 @@
 # Legal Task Generator Overview
 
-High-level picture for people, kept current as the project moves (updated 2026-11-04, evening). Working detail for Claude
+High-level picture for people, kept current as the project moves (updated 2026-11-04, night). Working detail for Claude
 Code sessions is in `CLAUDE.md` ("Now"); the plain-English history of rounds is in `docs/stage_and_plan.md`.
 
 ## What we're building
 
-We are building a machine that writes practice assignments for legal AI, so Pengtao's lab can train an open model
-(Qwen, 27 billion parameters) to do contract review, then prove the gain on Harvey's LAB benchmark.
+We are building a machine that writes LAB-like practice assignments, so other agents can be trained on them and do
+better on Harvey's LAB benchmark. The generator itself is model-neutral: it makes sound assignments and labels how hard
+each one is; whoever trains picks the slice that fits their model.
 
 Each assignment looks like work a partner hands a junior lawyer: an instruction ("review these contracts for our
 client"), a folder of invented contracts and letters, and a strict pass/fail checklist. The machine writes the answer
@@ -38,8 +39,8 @@ Eight steps take us from an empty repo to a trained model; the first four are bu
    free. *Done (October).*
 2. **Run it on real models and fix what breaks.** Small test rounds of 3 assignments each; every mistake found becomes
    a fix before the next round. *Done for phase 1 (October 18), and continuing.*
-3. **Set the difficulty against the model we will train.** Qwen tries each assignment 3 times; we keep it only if
-   Qwen passes 1 or 2 times. *Decided November 3; first round under this rule is waiting on GPU access.*
+3. **Label difficulty instead of filtering on it.** Test models try each assignment 3 times and their pass rates are
+   recorded on the assignment; only a pass without the documents (a leak) still rejects it. *Decided November 4; queued.*
 4. **Package assignments as training files.** A standard chat-style format with the checklist attached for grading.
    *Merged November 4.*
 5. **Measure Qwen on LAB before training.** The "before" score, so we can show improvement. *Feasibility checked November 4: LAB's tool can run Qwen with no code changes;
@@ -72,7 +73,7 @@ The shape of the machine is settled; these choices hold unless Sirui She reopens
 | Who sees what | Each AI role gets only what its job needs (the test-taker never sees the answer key), enforced in code | Prevents answers leaking into the assignment |
 | Quality checks | Eight automatic checks, cheapest first: consistency, problems findable, no hints, checklist traces to the key, checklist unit-tested, LAB overlap, then the test-taker | Broken assignments are dropped early and cheaply |
 | Author model | Claude Opus, through the Max subscription (Agent SDK), never pay-per-token API calls | Pengtao's direction; fixed, reimbursed cost |
-| Difficulty bar | Qwen 27B tries 3 times; keep only if it passes 1 or 2 times | Qwen is the model we will train, so this is where it learns |
+| Difficulty | A label, not a filter: test models (Qwen 27B for now) try each assignment 3 times and their pass rates are stored with it; never-passed assignments are flagged for review | The generator serves any trainer; each picks the band that fits its model, and no sound assignment is thrown away |
 | Compute | Nautilus A100 GPUs, running Qwen with vLLM; the university's hosted Qwen as the faster option | Free for research; we control it |
 | Format | Plain files (Markdown, JSON) at every stage; standard-library Python | Anyone can inspect any stage by hand |
 | Workflow | Plan in the Claude app, code in the Claude Code terminal, tasks handed over through `inbox.md`; one worktree per task, main checkout always clean | Keeps work traceable and the repo tidy |
@@ -84,7 +85,7 @@ Most open questions are about training, and most wait on Pengtao.
 | Question | Options | Who decides |
 | --- | --- | --- |
 | How do we train? | Leaning: the lab's AIBuildAI post-training agent (`aibuildai-inc/aibuildai-llm-posttrain-agent`). It takes a task folder (task statement, training data, a grader script) and chooses the method itself. Open: which machine runs it (it needs a Linux GPU box with systemd and bubblewrap, which a Nautilus pod may not provide) | Pengtao |
-| Which model, and what size? | Qwen 27B chat (our difficulty bar is set on it) or a smaller model like the lab agent's examples (Qwen3 1.7B); a different target model means a different difficulty bar | Pengtao |
+| Which model will the lab train first? | The lab agent's examples use small base models (Qwen3 1.7B to 4B, one H100 for 10 hours); if that is the target, add it as a labelling test model | Pengtao (heads-up, not a blocker) |
 | How many LAB tasks to grade? | Decided: our own Claude judge through the SDK, per Pengtao's no-API rule (scores comparable only to our own runs; the judge is about 40 lines of code). Open: grading 50 tasks is roughly 2,900 judge calls, a large share of a day's Max limit, so how big a sample | Sirui She |
 | How many assignments do we need? | Depends on the training method; at least hundreds | Pengtao and Sirui She |
 | How do we make assignments harder if needed? | Longer folders, more problems that only show across two documents | Sirui She, after the next rounds |
