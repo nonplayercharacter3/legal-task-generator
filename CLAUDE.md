@@ -1,8 +1,8 @@
 # CLAUDE.md
 
 Context for any Claude Code session working in this repo (for people, `docs/stage_and_plan.md` says the same in plain
-English). Read this first, then README.md, then "Working with other people and sessions" below before you change
-anything.
+English). A person should read `docs/overview.md` first, the high-level picture. Then read this file, then README.md,
+then "Working with other people and sessions" below before you change anything.
 
 ## Now (updated 2026-11-03)
 
@@ -145,6 +145,7 @@ laptop session logs what they report.
 
 What belongs where: the board and GitHub issues hold who is doing what right now, requests and a running log.
 Anything that stays true (stage, plan, decisions, results) also goes into this file, on your branch, in the same change.
+Whoever changes the stage, a step's status or a decision updates `docs/overview.md` in the same PR.
 
 ## What this project is
 
