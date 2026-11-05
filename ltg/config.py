@@ -61,12 +61,19 @@ class GatesCfg:
     probe_without_documents: bool = True
     judge_hints: bool = True  # send rubric hints to the judge (and export them); off to measure leniency
     verifier_sees_terms: bool = False  # terms are checked verbatim in code; the verifier judges blind
+    # Issue criteria that demand a harm or remedy the expected finding does not name: "repair" sends the rubric back to
+    # its writer once and rejects at rubric_trace only if that fails; "warn" records them in gates.json; "off" skips.
+    check_bundling: str = "repair"
     decontam_ngram: int = 8
     decontam_threshold: float = 0.5
     decontam_bloom_bits: int = 2**27
     reference_dirs: list[str] = field(default_factory=list)
     decontam_cache_dir: str = "runs/.decontam_cache"  # saved reference index, reused while the files are unchanged
     decontam_group_depth: int = 0  # >0: wording shared by 2+ benchmark tasks is not a match (3 for LAB's layout)
+
+    def __post_init__(self) -> None:
+        if self.check_bundling not in ("repair", "warn", "off"):
+            raise ValueError(f"gates.check_bundling must be \"repair\", \"warn\" or \"off\", not {self.check_bundling!r}")
 
 
 @dataclass

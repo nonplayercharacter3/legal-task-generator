@@ -13,7 +13,7 @@ from typing import Any
 from . import prompts
 from .decontam import BloomIndex
 from .models import ModelClient, call_json, render_input
-from .schema import Answers, Ledger, MatterSpec, Rubric, validate_answers, validate_ledger, validate_rubric
+from .schema import Answers, Ledger, MatterSpec, Rubric, bundling_errors, validate_answers, validate_ledger, validate_rubric
 from .solver import Solution, solve
 from .stages import Documents, judge
 
@@ -70,9 +70,19 @@ def leak_check(instruction: str, ledger: Ledger, docs: Documents) -> GateResult:
     return GateResult("leak_check", passed, {"hits": hits, "html_comments": comments, "empty": not instruction.strip()})
 
 
-def rubric_trace(rubric: Rubric, ledger: Ledger, answers: Answers) -> GateResult:
-    errs = validate_rubric(rubric, ledger) + validate_answers(answers, ledger)
-    return GateResult("rubric_trace", not errs, {"errors": errs, "n_criteria": len(rubric.criteria)})
+def rubric_trace(rubric: Rubric, ledger: Ledger, answers: Answers, bundling: str = "repair", repair: dict | None = None) -> GateResult:
+    """Deterministic trace of rubric and answers to the ledger.
+
+    `bundling` is `gates.check_bundling`: bundled clauses still present reject under "repair" (the writer already had
+    its one chance, recorded in `repair` by `stages.write_rubric`), are only listed under `bundled` with "warn", and
+    are not checked with "off".
+    """
+    errs = validate_rubric(rubric, ledger, bundling=False) + validate_answers(answers, ledger)
+    bundled = bundling_errors(rubric, ledger) if bundling != "off" else []
+    if bundling == "repair":
+        errs += bundled
+    details = {"errors": errs, "n_criteria": len(rubric.criteria), "bundled": bundled, "repair": repair or {"ran": False}}
+    return GateResult("rubric_trace", not errs, details)
 
 
 def decontamination(texts: dict[str, str], index: BloomIndex | None, threshold: float) -> GateResult:

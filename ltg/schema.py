@@ -278,11 +278,21 @@ def bundled_elements(text: str, vocabulary: set[str]) -> list[str]:
     return out
 
 
-def validate_rubric(rubric: Rubric, ledger: Ledger) -> list[str]:
-    """Every criterion must trace back to the ledger, and every issue must be graded."""
-    errs: list[str] = []
+def bundling_errors(rubric: Rubric, ledger: Ledger) -> list[str]:
+    """One error per bundled clause (see `bundled_elements`), worded for the rubric writer to act on."""
     shared = " ".join([*(p.name for p in ledger.parties), *(f"{d.kind} {d.filename.rsplit('.', 1)[0]}" for d in ledger.documents)])
     issues = {i.id: set(_content(f"{i.expected_finding} {i.label} {i.section} {shared}")) for i in ledger.issues}
+    return [f"criterion {c.id} requires a harm, remedy or provision that issue {c.source}'s expected_finding does not name: "
+            f"{clause!r}; ask that the response explains why it matters and recommends a fix"
+            for c in rubric.criteria if c.kind == "issue" and c.source in issues
+            for clause in bundled_elements(c.text, issues[c.source])]
+
+
+def validate_rubric(rubric: Rubric, ledger: Ledger, bundling: bool = True) -> list[str]:
+    """Every criterion must trace back to the ledger, and every issue must be graded.
+
+    `bundling=False` leaves out `bundling_errors`, which the pipeline handles separately (repair, warn or off)."""
+    errs: list[str] = []
     for d in _dupes([c.id for c in rubric.criteria]):
         errs.append(f"duplicate criterion id {d}")
     issue_ids = {i.id for i in ledger.issues}
@@ -294,10 +304,6 @@ def validate_rubric(rubric: Rubric, ledger: Ledger) -> list[str]:
             errs.append(f"criterion {c.id} has unknown kind {c.kind!r}")
         elif c.kind == "issue" and c.source not in issue_ids:
             errs.append(f"criterion {c.id} cites {c.source!r}, which is not a ledger issue")
-        elif c.kind == "issue":
-            for clause in bundled_elements(c.text, issues[c.source]):
-                errs.append(f"criterion {c.id} requires a harm, remedy or provision that issue {c.source}'s expected_finding "
-                            f"does not name: {clause!r}; ask that the response explains why it matters and recommends a fix")
         elif c.kind == "fact" and c.source not in fact_ids:
             errs.append(f"criterion {c.id} cites {c.source!r}, which is not a ledger fact")
     # A negative criterion about a distractor punishes thoroughness: real documents always hold points a careful
@@ -312,7 +318,7 @@ def validate_rubric(rubric: Rubric, ledger: Ledger) -> list[str]:
     graded = {c.source for c in rubric.criteria if c.kind == "issue"}
     for missing in sorted(issue_ids - graded):
         errs.append(f"issue {missing} has no criterion")
-    return errs
+    return errs + (bundling_errors(rubric, ledger) if bundling else [])
 
 
 def validate_answers(answers: Answers, ledger: Ledger) -> list[str]:

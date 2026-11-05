@@ -168,8 +168,8 @@ You receive the facts ledger, the task instruction and the deliverable. Write cr
   may NOT require a particular harm, a particular remedy or a particular supporting provision (a precedence clause,
   a definition in another document) unless the issue's `expected_finding` names it: a response that reaches the
   right conclusion by any sound route must pass. Write "explains why this matters to the client" and "recommends a
-  fix", not which harm or which fix. Code rejects an issue criterion whose harm or remedy clause names things the
-  expected finding does not.
+  fix", not which harm or which fix. Code flags an issue criterion whose harm or remedy clause names things the
+  expected finding does not, and sends the rubric back to you once with those clauses under `problems`.
 - kind "fact": 1 to 3 criteria for facts a correct answer must state (source = an id from the ledger's `facts`,
   never an issue id). A fact criterion asks only that the response state the fact; it must be passable by a response
   that misses every planted issue.

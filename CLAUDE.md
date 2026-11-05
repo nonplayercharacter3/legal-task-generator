@@ -50,9 +50,12 @@ so far, all phases: 8 (4 from the October cloud pilot, 4 from November).
 c3f891c. Two defect classes, fixed on `fix/round12` (one commit each):
 - Issue criteria bundled one particular harm and one particular remedy with the finding, and the judge enforced them
   (s12-m0001, false rejection at `solver_check` 0 of 3; 5c66350 did not prevent it). Now an issue criterion may require
-  only the finding, where it is, that it matters and that a fix is recommended; `rubric_trace` rejects a harm or
-  remedy clause whose words the issue's `expected_finding` does not carry (on past rubrics it would have flagged 34
-  of 157 issue criteria in 19 of 31 real matters, 0 in the fake demo); the judge passes any sound route.
+  only the finding, where it is, that it matters and that a fix is recommended; a harm or remedy clause whose words
+  the issue's `expected_finding` does not carry is sent back to the rubric writer once with the flagged clauses, and
+  `rubric_trace` rejects only if the corrected rubric still has one (`gates.check_bundling`: `"repair"` default,
+  `"warn"` records only, `"off"`; the repair is in `gates.json` and counted in `report.md`). It is a repair, not a
+  gate, because on past rubrics the word-overlap rule flagged 34 of 157 issue criteria in 19 of 31 real matters,
+  6 of the 9 accepted ones among them, with some synonym false flags. The judge passes any sound route.
 - An issue planted as history the client already ratified (s12-m0002, I3: a missed dispute window followed by a
   restated note the client signed, nothing in the folder objecting; `issue_check` rejected it, correctly). Now the
   ledger writer keeps every issue actionable and puts the client's position in the folder, the issue verifier asks
