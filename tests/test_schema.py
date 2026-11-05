@@ -3,7 +3,7 @@ import copy
 from ltg.config import SpecCfg
 from ltg.fake import FakeModel
 from ltg.models import render_input
-from ltg.schema import Ledger, Rubric, validate_ledger, validate_rubric
+from ltg.schema import Criterion, Ledger, Rubric, validate_ledger, validate_rubric
 from ltg.stages import sample_specs
 
 
@@ -127,3 +127,22 @@ def test_ledger_names_must_use_the_stems_and_avoid_overused_names():
     assert any("must start" in e or "requires a name starting" in e for e in validate_ledger(ledger, spec))
     ledger.parties[0].name = f"{spec.name_stems[0]} Halvorsen Partners"
     assert any("overused name" in e for e in validate_ledger(ledger, spec))
+
+
+def test_issue_criteria_may_not_demand_a_harm_or_remedy_the_finding_omits():
+    """Round 12: s12-m0001's C2 required "access to audit/process or yield data", which the ledger never made essential."""
+    ledger, _ = _ledger_and_spec()
+    issue = ledger.issues[0]
+    bundling = lambda rubric: [e for e in validate_rubric(rubric, ledger) if "harm, remedy or provision" in e]
+    issue.expected_finding = "Privath's assignment right is unrestricted and should be limited to require the client's consent."
+    finding_only = Criterion("C1", f"Identifies that {issue.expected_finding}", "issue", issue.id)
+    generic = Criterion("C1", "Identifies that Section 15.3 lets Privath assign the MSA to anyone without consent; explains why "
+                              "this matters to the client; and recommends a fix.", "issue", issue.id)
+    from_finding = Criterion("C1", "Identifies that Section 15.3 lets Privath assign the MSA to anyone; recommends limiting the "
+                                   "assignment right to require the client's consent.", "issue", issue.id)
+    bundled = Criterion("C1", "Identifies that Section 15.3 lets Privath assign the MSA to anyone; explains the risk that an "
+                              "assignee competitor could gain access to audit, process or yield data; and recommends a fix.", "issue", issue.id)
+    for ok in (finding_only, generic, from_finding):
+        assert bundling(Rubric([ok])) == [], ok.text
+    errs = bundling(Rubric([bundled]))
+    assert len(errs) == 1 and "yield data" in errs[0] and "expected_finding" in errs[0]
