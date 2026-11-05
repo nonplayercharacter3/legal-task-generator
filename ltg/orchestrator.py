@@ -284,6 +284,12 @@ def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed
             s["evaluated"] += 1
             s["skipped" if g["details"].get("skipped") else "passed" if g["passed"] else "failed"] += 1
     errors = sum(1 for r in results if r.failed_gate == "error")
+    spread: dict[str, dict] = {}  # per labelling model: how many accepted tasks sit at each pass rate
+    for r in results:
+        for d in r.difficulty if r.accepted else []:
+            m = spread.setdefault(d["model"], {"tasks": 0, "pass_rates": {}})
+            m["tasks"] += 1
+            m["pass_rates"][f"{d['pass_rate']:.2f}"] = m["pass_rates"].get(f"{d['pass_rate']:.2f}", 0) + 1
     return {
         "backend": cfg.backend.kind,
         "candidates": len(results),
@@ -291,6 +297,8 @@ def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed
         "errors": errors,
         "resumed": resumed,
         "gates": gate_stats,
+        "unsolved": sum(1 for r in results if r.accepted and r.unsolved),
+        "difficulty": {m: {"tasks": v["tasks"], "pass_rates": dict(sorted(v["pass_rates"].items()))} for m, v in sorted(spread.items())},
         "matters": [
             {"matter_id": r.matter_id, "accepted": r.accepted, "failed_gate": r.failed_gate, "reason": r.reason, "split": r.split,
              "solver_pass_rate": r.solver_pass_rate, "unsolved": r.unsolved, "difficulty": r.difficulty}
@@ -317,10 +325,16 @@ def render_report(rep: dict) -> str:
         lines.append(f"| {g} | {s['evaluated']} | {s['passed']} | {s['failed']} | {s['skipped']} |")
     if rep["gates"]["decontamination"]["skipped"]:
         lines += ["", "**Decontamination was skipped (no `reference_dirs`): these tasks were NOT screened against LAB.**"]
-    lines += ["", "## Matters", "", "| Matter | Result | Split | Solver pass rate | Reason |", "| --- | --- | --- | ---: | --- |"]
+    lines += ["", "## Difficulty", "", "Pass rates of the accepted tasks per labelling model. Difficulty is a label, not a filter: whoever "
+              "trains picks the band that fits their model.", "", "| Model | Tasks | Pass rate: tasks |", "| --- | ---: | --- |"]
+    for model, d in rep.get("difficulty", {}).items():
+        lines.append(f"| {model} | {d['tasks']} | " + ", ".join(f"{k}: {n}" for k, n in d["pass_rates"].items()) + " |")
+    if rep.get("unsolved"):
+        lines += ["", f"**{rep['unsolved']} accepted task(s) are marked unsolved (no attempt passed): check they are not broken.**"]
+    lines += ["", "## Matters", "", "| Matter | Result | Split | Pass rate per model | Reason |", "| --- | --- | --- | --- | --- |"]
     for m in rep["matters"]:
         res = ("accepted (unsolved)" if m.get("unsolved") else "accepted") if m["accepted"] else f"rejected at {m['failed_gate']}"
-        rate = "" if m["solver_pass_rate"] is None else f"{m['solver_pass_rate']:.2f}"
+        rate = ", ".join(f"{d['model']} {d['pass_rate']:.2f}" for d in m.get("difficulty") or [])
         reason = (m["reason"] or "").replace("|", "/")[:160]
         lines.append(f"| {m['matter_id']} | {res} | {m['split'] or ''} | {rate} | {reason} |")
     v = rep.get("variety")
