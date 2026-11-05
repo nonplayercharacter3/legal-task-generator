@@ -310,3 +310,25 @@ def test_resume_refuses_changed_settings(tmp_path):
         Pipeline(_cfg(tmp_path, solver_attempts=5)).run(resume=True)
     rep = Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 8, "seed": 7, "concurrency": 2}})).run(resume=True)
     assert rep["resumed"] == 6 and rep["candidates"] == 8  # more matters and other concurrency are fine
+
+
+def test_several_models_label_each_task(tmp_path, read_json):
+    cfg = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2, "seed": 7}, "gates": {"solver_models": ["solver", "solver_b"]}})
+    rep = Pipeline(cfg).run()
+    assert rep["accepted"] == 2 and set(rep["difficulty"]) == {"solver", "solver_b"}  # the fake has no model id: the role names it
+    for m in rep["matters"]:
+        folder = tmp_path / "accepted" / m["matter_id"]
+        task = read_json(folder / "task.json")
+        assert [d["model"] for d in task["difficulty"]] == ["solver", "solver_b"]
+        assert all(set(d) == {"model", "attempts", "passes", "pass_rate"} and d["attempts"] == 3 for d in task["difficulty"])
+        assert task["solver_pass_rate"] == task["difficulty"][0]["pass_rate"]
+        assert (folder / "solver" / "attempt_3.md").exists() and (folder / "solver" / "solver_b" / "attempt_3.md").exists()
+    assert "| solver_b |" in (tmp_path / "report.md").read_text()
+
+
+def test_role_router_names_the_model_behind_a_labelling_role():
+    from ltg.models import OpenAICompatClient, RoleRouter
+
+    qwen = OpenAICompatClient(base_url="http://x/v1", default_model="qwen3-small", api_key_env="NONE")
+    router = RoleRouter(FakeModel(), {"solver": qwen}, qwen.log)
+    assert router.model_for("solver") == "qwen3-small" and router.model_for("solver_b") == ""
