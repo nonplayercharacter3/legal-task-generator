@@ -1,6 +1,6 @@
 # Legal Task Generator Overview
 
-High-level picture for people, kept current as the project moves (updated 2026-11-04). Working detail for Claude
+High-level picture for people, kept current as the project moves (updated 2026-11-04, evening). Working detail for Claude
 Code sessions is in `CLAUDE.md` ("Now"); the plain-English history of rounds is in `docs/stage_and_plan.md`.
 
 ## What we're building
@@ -41,11 +41,12 @@ Eight steps take us from an empty repo to a trained model; the first four are bu
 3. **Set the difficulty against the model we will train.** Qwen tries each assignment 3 times; we keep it only if
    Qwen passes 1 or 2 times. *Decided November 3; first round under this rule is waiting on GPU access.*
 4. **Package assignments as training files.** A standard chat-style format with the checklist attached for grading.
-   *Built, waiting to be merged.*
+   *Merged November 4.*
 5. **Measure Qwen on LAB before training.** The "before" score, so we can show improvement. *Feasibility checked November 4: LAB's tool can run Qwen with no code changes;
    grading needs a small add-on for our own judge, plus a few installs on the laptop.*
 6. **Scale up.** Move from a handful of assignments to hundreds. *Not started.*
-7. **Fine-tune Qwen** on the assignments, on the university's GPUs (Nautilus). *Not started.*
+7. **Fine-tune Qwen** on the assignments, most likely by handing them to the lab's own post-training agent, which picks
+   the method, writes the training code and runs it on a GPU. *Not started.*
 8. **Measure Qwen on LAB again** and compare with step 5. *Not started.*
 
 ## Where we are
@@ -55,13 +56,13 @@ all screened against LAB's text.
 
 - **Blocked:** since November 2 the account has lost access to the lab's Nautilus space and to the university's hosted
   Qwen, so no Qwen runs can happen. Pengtao has been asked to restore access.
-- **Not blocked:** merging the training-file export (step 4), and preparing the LAB run (step 5).
+- **Not blocked:** preparing the LAB run (step 5).
 - **Waiting on a person:** a read-through of the two newest assignments, and someone with legal training to review the
   list of planted problems.
 
 ## Decided
 
-The shape of the machine is settled; these choices hold unless Syrena reopens them.
+The shape of the machine is settled; these choices hold unless Sirui She reopens them.
 
 | Area | Decision | Why |
 | --- | --- | --- |
@@ -82,11 +83,11 @@ Most open questions are about training, and most wait on Pengtao.
 
 | Question | Options | Who decides |
 | --- | --- | --- |
-| How do we train? | The lab's existing setup, or our own; supervised on gold answers, reward from the checklist, or both | Pengtao |
-| Which Qwen do we start from? | The chat version (leaning this way: our difficulty was measured on it) or the raw base model | Pengtao |
-| How do we grade on LAB? | LAB's default judges (paid API keys, comparable to published scores) or our own Claude judge (no API bill, comparable only to our own runs; about 40 lines of code, but grading 50 tasks is roughly 2,900 judge calls, a large share of a day's Max limit) | Pengtao |
-| How many assignments do we need? | Depends on the training method; at least hundreds | Pengtao and Syrena |
-| How do we make assignments harder if needed? | Longer folders, more problems that only show across two documents | Syrena, after the next rounds |
-| Who checks the legal substance? | A lawyer or law student reviews the problem list and grades a few answers | Syrena to find someone |
-| Real contracts as drafting examples? | Pull public agreements from SEC filings (code exists, parked) or keep invented ones | Syrena |
+| How do we train? | Leaning: the lab's AIBuildAI post-training agent (`aibuildai-inc/aibuildai-llm-posttrain-agent`). It takes a task folder (task statement, training data, a grader script) and chooses the method itself. Open: which machine runs it (it needs a Linux GPU box with systemd and bubblewrap, which a Nautilus pod may not provide) | Pengtao |
+| Which model, and what size? | Qwen 27B chat (our difficulty bar is set on it) or a smaller model like the lab agent's examples (Qwen3 1.7B); a different target model means a different difficulty bar | Pengtao |
+| How many LAB tasks to grade? | Decided: our own Claude judge through the SDK, per Pengtao's no-API rule (scores comparable only to our own runs; the judge is about 40 lines of code). Open: grading 50 tasks is roughly 2,900 judge calls, a large share of a day's Max limit, so how big a sample | Sirui She |
+| How many assignments do we need? | Depends on the training method; at least hundreds | Pengtao and Sirui She |
+| How do we make assignments harder if needed? | Longer folders, more problems that only show across two documents | Sirui She, after the next rounds |
+| Who checks the legal substance? | A lawyer or law student reviews the problem list and grades a few answers | Sirui She to find someone |
+| Real contracts as drafting examples? | Pull public agreements from SEC filings (code exists, parked) or keep invented ones | Sirui She |
 | Expand beyond contract review? | Other practice areas later | Later, once scale works |
