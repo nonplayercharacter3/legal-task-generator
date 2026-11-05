@@ -78,10 +78,15 @@ def cmd_inspect(args: argparse.Namespace) -> int:
 def cmd_export(args: argparse.Namespace) -> int:
     from .export import export
 
-    res = export(args.runs, args.out)
+    if args.model is None and (args.min_pass != 0.0 or args.max_pass != 1.0):
+        print("--min-pass and --max-pass select a band of one model's labels: add --model", file=sys.stderr)
+        return 2
+    res = export(args.runs, args.out, args.model, args.min_pass, args.max_pass, args.include_unsolved)
     for mid, paths in res["duplicates"].items():
         print(f"duplicate matter id {mid}, kept neither: {', '.join(paths)}", file=sys.stderr)
-    print("exported " + ", ".join(f"{s} {n}" for s, n in res["counts"].items()) + f" -> {args.out}")
+    sk = res["skipped"]
+    print("exported " + ", ".join(f"{s} {n}" for s, n in res["counts"].items()) + f" -> {args.out}"
+          + f" (left out: {sk['unsolved']} unsolved, {sk['outside_band']} outside the band)")
     return 0
 
 
@@ -108,6 +113,10 @@ def main(argv: list[str] | None = None) -> int:
     e = sub.add_parser("export", help="write accepted tasks as JSONL training data, one file per split")
     e.add_argument("--runs", nargs="+", required=True, help="run folders holding accepted/<matter>/")
     e.add_argument("--out", required=True, help="output folder for train.jsonl, dev.jsonl, test.jsonl")
+    e.add_argument("--model", help="keep only tasks this model labelled, within the band below (e.g. qwen3-small)")
+    e.add_argument("--min-pass", type=float, default=0.0, help="lowest pass rate kept (with --model)")
+    e.add_argument("--max-pass", type=float, default=1.0, help="highest pass rate kept (with --model)")
+    e.add_argument("--include-unsolved", action="store_true", help="also export tasks no solver attempt passed")
     e.set_defaults(func=cmd_export)
 
     args = p.parse_args(argv)

@@ -49,6 +49,8 @@ class MatterResult:
     reason: str | None = None
     split: str | None = None
     solver_pass_rate: float | None = None
+    unsolved: bool = False  # kept, but no solver attempt passed: a person should check it is not broken
+    difficulty: list[dict] = field(default_factory=list)  # per labelling model: model, attempts, passes, pass_rate
     gates: list[dict] = field(default_factory=list)
 
 
@@ -147,16 +149,19 @@ class Pipeline:
                 docs,
                 rubric,
                 cfg.gates.solver_attempts,
-                cfg.gates.solver_min_pass_rate,
-                cfg.gates.solver_max_pass_rate,
                 cfg.gates.probe_without_documents,
                 cfg.gates.solver_max_steps,
                 cfg.gates.solver_page_chars,
+                tuple(cfg.gates.solver_models),
             )
-            for k, sol in enumerate(solutions, 1):
-                _write(work / "solver" / f"attempt_{k}.md", sol.answer)
-                _write(work / "solver" / f"attempt_{k}.trace.json", sol.steps)
+            for role, sols in solutions.items():  # the default solver's attempts at solver/, other models' under their role
+                folder = work / "solver" if role == cfg.gates.solver_models[0] else work / "solver" / role
+                for k, sol in enumerate(sols, 1):
+                    _write(folder / f"attempt_{k}.md", sol.answer)
+                    _write(folder / f"attempt_{k}.trace.json", sol.steps)
             result.solver_pass_rate = g.details.get("pass_rate")
+            result.unsolved = bool(g.details.get("unsolved"))
+            result.difficulty = g.details.get("difficulty", [])
             check(g)
 
             result.accepted = True
@@ -174,6 +179,8 @@ class Pipeline:
                     "documents": sorted(docs),
                     "rubric": [{"id": c.id, "text": c.text, "kind": c.kind, "hints": c.hints} for c in rubric.criteria],
                     "solver_pass_rate": result.solver_pass_rate,
+                    "unsolved": result.unsolved,
+                    "difficulty": result.difficulty,
                 },
             )
         except _Rejected as r:
@@ -277,6 +284,12 @@ def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed
             s["evaluated"] += 1
             s["skipped" if g["details"].get("skipped") else "passed" if g["passed"] else "failed"] += 1
     errors = sum(1 for r in results if r.failed_gate == "error")
+    spread: dict[str, dict] = {}  # per labelling model: how many accepted tasks sit at each pass rate
+    for r in results:
+        for d in r.difficulty if r.accepted else []:
+            m = spread.setdefault(d["model"], {"tasks": 0, "pass_rates": {}})
+            m["tasks"] += 1
+            m["pass_rates"][f"{d['pass_rate']:.2f}"] = m["pass_rates"].get(f"{d['pass_rate']:.2f}", 0) + 1
     return {
         "backend": cfg.backend.kind,
         "candidates": len(results),
@@ -284,8 +297,11 @@ def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed
         "errors": errors,
         "resumed": resumed,
         "gates": gate_stats,
+        "unsolved": sum(1 for r in results if r.accepted and r.unsolved),
+        "difficulty": {m: {"tasks": v["tasks"], "pass_rates": dict(sorted(v["pass_rates"].items()))} for m, v in sorted(spread.items())},
         "matters": [
-            {"matter_id": r.matter_id, "accepted": r.accepted, "failed_gate": r.failed_gate, "reason": r.reason, "split": r.split, "solver_pass_rate": r.solver_pass_rate}
+            {"matter_id": r.matter_id, "accepted": r.accepted, "failed_gate": r.failed_gate, "reason": r.reason, "split": r.split,
+             "solver_pass_rate": r.solver_pass_rate, "unsolved": r.unsolved, "difficulty": r.difficulty}
             for r in results
         ],
         "model_calls": log.by_role(),
@@ -309,10 +325,16 @@ def render_report(rep: dict) -> str:
         lines.append(f"| {g} | {s['evaluated']} | {s['passed']} | {s['failed']} | {s['skipped']} |")
     if rep["gates"]["decontamination"]["skipped"]:
         lines += ["", "**Decontamination was skipped (no `reference_dirs`): these tasks were NOT screened against LAB.**"]
-    lines += ["", "## Matters", "", "| Matter | Result | Split | Solver pass rate | Reason |", "| --- | --- | --- | ---: | --- |"]
+    lines += ["", "## Difficulty", "", "Pass rates of the accepted tasks per labelling model. Difficulty is a label, not a filter: whoever "
+              "trains picks the band that fits their model.", "", "| Model | Tasks | Pass rate: tasks |", "| --- | ---: | --- |"]
+    for model, d in rep.get("difficulty", {}).items():
+        lines.append(f"| {model} | {d['tasks']} | " + ", ".join(f"{k}: {n}" for k, n in d["pass_rates"].items()) + " |")
+    if rep.get("unsolved"):
+        lines += ["", f"**{rep['unsolved']} accepted task(s) are marked unsolved (no attempt passed): check they are not broken.**"]
+    lines += ["", "## Matters", "", "| Matter | Result | Split | Pass rate per model | Reason |", "| --- | --- | --- | --- | --- |"]
     for m in rep["matters"]:
-        res = "accepted" if m["accepted"] else f"rejected at {m['failed_gate']}"
-        rate = "" if m["solver_pass_rate"] is None else f"{m['solver_pass_rate']:.2f}"
+        res = ("accepted (unsolved)" if m.get("unsolved") else "accepted") if m["accepted"] else f"rejected at {m['failed_gate']}"
+        rate = ", ".join(f"{d['model']} {d['pass_rate']:.2f}" for d in m.get("difficulty") or [])
         reason = (m["reason"] or "").replace("|", "/")[:160]
         lines.append(f"| {m['matter_id']} | {res} | {m['split'] or ''} | {rate} | {reason} |")
     v = rep.get("variety")

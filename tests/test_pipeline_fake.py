@@ -19,7 +19,7 @@ def test_end_to_end_writes_tasks_and_report(cfg, read_json):
     out = cfg.run.out_dir
     assert report["candidates"] == 6
     assert report["errors"] == 0
-    assert 0 < report["accepted"] < 6  # solver_skill 0.85 gives a mix of too easy, too hard and kept
+    assert report["accepted"] == 6  # the fake model drafts sound tasks; difficulty is a label, not a filter
 
     from pathlib import Path
 
@@ -60,13 +60,16 @@ def test_each_fault_is_caught_by_its_gate(tmp_path, fault, gate):
     assert {m["failed_gate"] for m in report["matters"]} == {gate}
 
 
-def test_solver_band_rejects_too_easy_and_too_hard(tmp_path):
+def test_pass_rate_is_a_label_not_a_filter(tmp_path, read_json):
     easy = load_config(None, {"run": {"out_dir": str(tmp_path / "easy"), "n_matters": 3}, "fake": {"solver_skill": 1.0}})
     hard = load_config(None, {"run": {"out_dir": str(tmp_path / "hard"), "n_matters": 3}, "fake": {"solver_skill": 0.0}})
-    for c, reason in ((easy, "too easy"), (hard, "too hard")):
+    for c, rate, unsolved in ((easy, 1.0, False), (hard, 0.0, True)):
         rep = Pipeline(c).run()
-        assert rep["accepted"] == 0
-        assert all(m["failed_gate"] == "solver_check" and reason in m["reason"] for m in rep["matters"])
+        assert rep["accepted"] == 3  # a 3-of-3 task is kept with its label; a 0-of-3 task is kept and flagged
+        assert all(m["solver_pass_rate"] == rate and m["unsolved"] is unsolved for m in rep["matters"])
+        task = read_json(Path(c.run.out_dir) / "accepted" / rep["matters"][0]["matter_id"] / "task.json")
+        assert task["solver_pass_rate"] == rate and task["unsolved"] is unsolved
+    assert "accepted (unsolved)" in (Path(hard.run.out_dir) / "report.md").read_text()
 
 
 def test_isolation_solver_and_instruction_writer_never_see_the_answer_key(cfg):
@@ -176,8 +179,8 @@ def test_rerun_into_same_folder_leaves_no_stale_verdicts(tmp_path):
     def run(**fake):
         return Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 6, "seed": 7}, "fake": fake})).run()
 
-    assert run(solver_skill=0.85)["accepted"] > 0
-    assert run(solver_skill=1.0)["accepted"] == 0  # every task now too easy
+    assert run(solver_skill=0.85)["accepted"] == 6
+    assert run(fault="drop_issue")["accepted"] == 0  # every task now broken
     assert not list((tmp_path / "accepted").iterdir())
     assert len(list((tmp_path / "rejected").iterdir())) == 6
 
@@ -307,3 +310,25 @@ def test_resume_refuses_changed_settings(tmp_path):
         Pipeline(_cfg(tmp_path, solver_attempts=5)).run(resume=True)
     rep = Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 8, "seed": 7, "concurrency": 2}})).run(resume=True)
     assert rep["resumed"] == 6 and rep["candidates"] == 8  # more matters and other concurrency are fine
+
+
+def test_several_models_label_each_task(tmp_path, read_json):
+    cfg = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2, "seed": 7}, "gates": {"solver_models": ["solver", "solver_b"]}})
+    rep = Pipeline(cfg).run()
+    assert rep["accepted"] == 2 and set(rep["difficulty"]) == {"solver", "solver_b"}  # the fake has no model id: the role names it
+    for m in rep["matters"]:
+        folder = tmp_path / "accepted" / m["matter_id"]
+        task = read_json(folder / "task.json")
+        assert [d["model"] for d in task["difficulty"]] == ["solver", "solver_b"]
+        assert all(set(d) == {"model", "attempts", "passes", "pass_rate"} and d["attempts"] == 3 for d in task["difficulty"])
+        assert task["solver_pass_rate"] == task["difficulty"][0]["pass_rate"]
+        assert (folder / "solver" / "attempt_3.md").exists() and (folder / "solver" / "solver_b" / "attempt_3.md").exists()
+    assert "| solver_b |" in (tmp_path / "report.md").read_text()
+
+
+def test_role_router_names_the_model_behind_a_labelling_role():
+    from ltg.models import OpenAICompatClient, RoleRouter
+
+    qwen = OpenAICompatClient(base_url="http://x/v1", default_model="qwen3-small", api_key_env="NONE")
+    router = RoleRouter(FakeModel(), {"solver": qwen}, qwen.log)
+    assert router.model_for("solver") == "qwen3-small" and router.model_for("solver_b") == ""

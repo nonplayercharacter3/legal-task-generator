@@ -43,3 +43,68 @@ def test_export_splits_and_no_answer_key(cfg, tmp_path, capsys):
     assert main(["export", "--runs", str(run), str(twin), "--out", str(out)]) == 0
     assert "duplicate matter id" in capsys.readouterr().err
     assert all((out / f"{s}.jsonl").read_text() == "" for s in want)
+
+
+def test_export_filters_by_difficulty_band_and_unsolved(cfg, tmp_path):
+    from ltg.config import load_config
+
+    rep = Pipeline(cfg).run()
+    rates = {m["matter_id"]: m["solver_pass_rate"] for m in rep["matters"]}
+    assert len(set(rates.values())) > 1  # the fake spreads the labels
+    low = min(rates.values())
+    out = tmp_path / "band"
+
+    def exported(*flags):
+        assert main(["export", "--runs", cfg.run.out_dir, "--out", str(out), *flags]) == 0
+        return {json.loads(l)["eval"]["task_id"] for s in ("train", "dev", "test") for l in (out / f"{s}.jsonl").read_text().splitlines()}
+
+    assert exported() == set(rates)
+    assert exported("--model", "solver", "--min-pass", str(low), "--max-pass", str(low)) == {m for m, r in rates.items() if r == low}
+    assert exported("--model", "solver", "--min-pass", str(low + 0.01)) == {m for m, r in rates.items() if r > low}
+    assert exported("--model", "nobody") == set()
+    assert main(["export", "--runs", cfg.run.out_dir, "--out", str(out)]) == 0
+    ex = json.loads((out / "train.jsonl").read_text().splitlines()[0])
+    assert ex["eval"]["difficulty"][0]["model"] == "solver" and "solver_pass_rate" not in ex["eval"]
+    assert main(["export", "--runs", cfg.run.out_dir, "--out", str(out), "--min-pass", "0.5"]) == 2  # a band needs a model
+
+    hard = load_config(None, {"run": {"out_dir": str(tmp_path / "hard"), "n_matters": 3}, "fake": {"solver_skill": 0.0}})
+    assert Pipeline(hard).run()["unsolved"] == 3
+    assert main(["export", "--runs", hard.run.out_dir, "--out", str(out)]) == 0
+    assert all((out / f"{s}.jsonl").read_text() == "" for s in ("train", "dev", "test"))
+    assert main(["export", "--runs", hard.run.out_dir, "--out", str(out), "--include-unsolved"]) == 0
+    assert sum(len((out / f"{s}.jsonl").read_text().splitlines()) for s in ("train", "dev", "test")) == 3
+
+
+def test_relabel_script_recovers_only_old_too_easy_rejections(cfg, tmp_path, capsys):
+    import importlib.util
+    import sys
+
+    spec = importlib.util.spec_from_file_location("relabel", Path(__file__).resolve().parent.parent / "scripts" / "relabel_past_runs.py")
+    relabel = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(relabel)
+
+    Pipeline(cfg).run()
+    run = Path(cfg.run.out_dir)
+    old = {}  # make every matter look like an old run: rejected at solver_check, with its true pass rate
+    for m in sorted((run / "accepted").iterdir()):
+        g = json.loads((m / "gates.json").read_text())
+        g.update({"accepted": False, "failed_gate": "solver_check", "split": None})
+        (m / "task.json").unlink()
+        (m / "gates.json").write_text(json.dumps(g))
+        old[m.name] = g["solver_pass_rate"]
+    (run / "accepted").rename(run / "rejected")
+    leaky = next(iter(old))  # one that failed the probe: never recovered, whatever its rate
+    g = json.loads((run / "rejected" / leaky / "gates.json").read_text())
+    g["solver_pass_rate"] = 1.0
+    next(x for x in g["gates"] if x["name"] == "solver_check")["details"]["probe_without_documents_passed"] = True
+    (run / "rejected" / leaky / "gates.json").write_text(json.dumps(g))
+
+    assert relabel.main([str(run)]) == 0
+    want = {m for m, r in old.items() if r == 1.0 and m != leaky}
+    assert {p.parent.name for p in run.glob("rejected/*/task.json")} == want
+    assert f"recovered {len(want)}" in capsys.readouterr().out
+    for m in want:
+        t = json.loads((run / "rejected" / m / "task.json").read_text())
+        assert t["difficulty"] == [{"model": "fake", "attempts": 3, "passes": 3, "pass_rate": 1.0}] and t["split"] in ("train", "dev", "test")
+    assert main(["export", "--runs", str(run), "--out", str(tmp_path / "x"), "--model", "fake", "--min-pass", "1.0"]) == 0
+    assert sum(len((tmp_path / "x" / f"{s}.jsonl").read_text().splitlines()) for s in ("train", "dev", "test")) == len(want)

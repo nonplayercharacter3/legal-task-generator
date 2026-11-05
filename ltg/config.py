@@ -53,10 +53,11 @@ class SpecCfg:
 @dataclass
 class GatesCfg:
     solver_attempts: int = 3
+    # Roles that label difficulty, each making solver_attempts attempts; the first is the default solver. Route each
+    # to its own model with [backend.roles.<name>] or [backend.models]; a task's difficulty is stored per model.
+    solver_models: list[str] = field(default_factory=lambda: ["solver"])
     solver_max_steps: int = 20  # tool calls per attempt before the solver must write its answer
     solver_page_chars: int = 6000  # read_file page size (~1,000 words)
-    solver_min_pass_rate: float = 0.01  # below: nothing solves it, probably broken
-    solver_max_pass_rate: float = 0.99  # above: too easy to teach anything
     probe_without_documents: bool = True
     judge_hints: bool = True  # send rubric hints to the judge (and export them); off to measure leniency
     verifier_sees_terms: bool = False  # terms are checked verbatim in code; the verifier judges blind

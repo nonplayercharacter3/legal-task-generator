@@ -99,7 +99,7 @@ class FakeModel:
 
     def complete(self, role: str, system: str, user: str) -> str:
         payload = extract_input(user)
-        handler = getattr(self, f"_{role}", None)
+        handler = getattr(self, f"_{role}", None) or (self._solver if role.startswith("solver") else None)  # extra labelling roles
         if handler is None:
             raise ValueError(f"FakeModel has no behaviour for role {role!r}")
         out = handler(payload)

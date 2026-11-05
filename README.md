@@ -99,7 +99,7 @@ early as possible.
 | `rubric_trace` | Every criterion cites a ledger issue or fact, every issue is graded, reference answers are well formed | deterministic |
 | `rubric_tests` | The rubric is unit-tested: gold answer passes everything, a blank answer passes nothing, the flawed answer fails exactly the criteria for the issue it omits and passes the rest | model |
 | `decontamination` | Word 8-gram containment against reference benchmarks (e.g. a LAB clone) stays under the threshold | deterministic |
-| `solver_check` | A tool-using solver that never sees the ledger attempts the task several times, opening and searching the matter files step by step. Rejected if it passes without the documents (the instruction leaks the answer), if it never passes (probably broken) or if it always passes (too easy) | model |
+| `solver_check` | A tool-using solver that never sees the ledger attempts the task several times, opening and searching the matter files step by step. Rejected only if it passes without the documents (the instruction leaks the answer). Each model in `gates.solver_models` gets its pass rate stored as a difficulty label; a task no model passes is kept and flagged `unsolved` | model |
 
 Accepted tasks get a train/dev/test split assigned by matter id, so tasks from one matter never straddle splits.
 
@@ -130,14 +130,17 @@ Each matter folder holds `spec.json`, `precedents.json`, `ledger.json`, `docs/`,
 python3 -m ltg export --runs runs/pilot9_nrp runs/pilot6_haiku --out export/
 ```
 
-Collects every `accepted/<matter_id>/` from the run folders and writes `train.jsonl`, `dev.jsonl` and `test.jsonl`,
-using the split in each matter's `gates.json`. A matter id found in more than one run is reported and left out.
-Each line has:
+Collects every matter folder holding a `task.json` (accepted tasks, and tasks `scripts/relabel_past_runs.py`
+recovered under `rejected/`) and writes `train.jsonl`, `dev.jsonl` and `test.jsonl`. A matter id found in more than
+one run is reported and left out. Tasks flagged `unsolved` are left out unless `--include-unsolved`. Difficulty is a
+label, not a filter: `--model qwen3-small --min-pass 0.33 --max-pass 0.67` keeps one band of one model's labels
+(1 of 3 attempts is 0.333, so a band that should include it starts at 0.33). Each line has:
 
 - `messages`: chat format for supervised fine-tuning. System: the solver's memo prompt. User: the instruction, then
   every document in full (`### <filename>` and its text). Assistant: the gold memo.
 - `eval`: `task_id`, `split`, `practice_area`, `agreement_type`, `jurisdiction`, the rubric criteria (`id`, `kind`,
-  `text`, no judge hints), `solver_pass_rate` and `solver_model`, so reward-based training can grade a response.
+  `text`, no judge hints) and `difficulty` (per labelling model: `model`, `attempts`, `passes`, `pass_rate`), so
+  reward-based training can grade a response and pick its band.
 
 The ledger, planted issues, judge hints and flawed answer are never exported. The format is a draft.
 
@@ -145,7 +148,7 @@ The ledger, planted issues, judge hints and flawed answer are never exported. Th
 
 `ltg/fake.py` reads the same structured payload a real model would get and returns plausible JSON for each role.
 Its "legal knowledge" is the issue library's key phrases: the fake solver reads every page of every file, then spots an issue with probability
-`solver_skill`, which produces a realistic mix of too-easy, too-hard and accepted tasks. It can also inject
+`solver_skill`, which spreads the difficulty labels across pass rates. It can also inject
 defects on purpose (`drop_issue`, `wrong_fact`, `conflicting_restatement`, `leaky_filename`, `untraceable_criterion`, `weak_gold`); the tests check that each
 one is caught by the right gate, and that disabling any gate makes a test fail.
 

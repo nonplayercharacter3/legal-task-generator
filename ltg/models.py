@@ -178,6 +178,10 @@ class RoleRouter:
     def complete(self, role: str, system: str, user: str) -> str:
         return self.routes.get(role, self.default).complete(role, system, user)
 
+    def model_for(self, role: str) -> str:
+        m = getattr(self.routes.get(role, self.default), "model_for", None)
+        return m(role) if m else ""
+
 
 class ClaudeAgentClient:
     """Claude through the Claude Agent SDK (`pip install claude-agent-sdk`), using the logged-in Claude Code account.
