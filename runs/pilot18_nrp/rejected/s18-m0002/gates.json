@@ -1,0 +1,107 @@
+{
+  "matter_id": "s18-m0002",
+  "accepted": false,
+  "failed_gate": "rubric_tests",
+  "reason": "flawed_wrongly_fails: [\"C11\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 36
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.3(b): Buyer shall indemnify the Seller Indemnitees from all Losses arising out of \"any claim, demand or payment under the Seller Guarantees, whether arising before or after the Closing.\" Section 9.5(d): \"None of the limitations set forth in this Section 9.5 shall apply to Buyer's obligations under Section 9.3(b).\" Section 9.5(a): \"Seller's aggregate liability under Section 9.2(a) shall not exceed $2,100,000 (the \"General Cap\").\"",
+            "reason": "The problem is present and still actionable for Buyer. Buyer owes the guaranty indemnity, and it is uncapped, has no deductible and has no survival limit. It expressly covers guaranty calls from pre-Closing defaults, such as rent arrears under the Brewhouse Lease, TTB bond claims for Seller-period excise shortfalls, and Kestrel credit-line arrears. Seller's matching indemnity for those same pre-Closing problems (Sections 4.8, 4.9, 4.11, 9.2(a)) stays capped at $2.1M and is subject to the $184K Deductible and a 9-month survival period. Only Taxes fall under the Purchase Price cap. Buyer could therefore have to repay Seller without limit for defaults Seller caused, while recovering only capped amounts in return. This also departs from the LOI, Paragraph 7, which contemplated addressing only guaranty obligations \"that relate to periods after Closing.\" Closing occurred October 15, 2026, but this is a continuing contingent liability, not a lapsed window. Nothing in the folder cures it or records that Buyer accepted this allocation. Buyer can still seek an amendment, raise set-off or causation arguments, and push for guarantee releases under Section 6.6."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Bill of Sale Section 5.2: \"Any liability of Transferor or Seller for breach of Section 4.6 of the Purchase Agreement or of this Bill of Sale with respect to the Transferred Brand Assets shall not exceed the General Cap.\" SPA Section 11.12: \"this Agreement prevails over the Bill of Sale, except that the Bill of Sale controls as to the Transferred Brand Assets.\"",
+            "reason": "The problem is present and hurts Buyer. Under SPA 9.5(b), Seller's liability for the Section 4.6 title representation is a Fundamental Representation, outside the $2.1M General Cap and capped only at the $18.4M Purchase Price. Bill of Sale 5.2 caps that same title liability at the General Cap, and Seller signed the Bill of Sale acknowledging Section 5. Seller is the indemnifying party, so the cap protects Seller and cuts back Buyer's (and the Company's) recovery for a title failure on the core brand assets. The SPA 11.12 precedence clause does not fix this. Its carve-out makes the Bill of Sale control on matters concerning the Transferred Brand Assets, which arguably includes this cap. The issue is still actionable. Under SPA 9.4(a), Fundamental Representations survive until 18 months after the March 2, 2026 Signing Date, roughly September 2027, so title claims remain open. Nothing in the folder shows Buyer knowingly agreed to cap title liability or gave up its position. Buyer can still raise the point: for example, by arguing that 5.1 says Seller's indemnities are 'not enlarged' (and should not be cut down), that SPA 11.3 requires an amendment signed by Buyer, or by seeking a corrective amendment."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 9.4(a): \"The Fundamental Representations, including the representations in Section 4.12 regarding Taxes, survive until the date that is eighteen (18) months after the Signing Date.\" Section 9.4(c): \"Any claim not so noticed is irrevocably waived and barred.\"",
+            "reason": "The survival clock for the Fundamental Representations (tax, title to the brand assets, capitalization, authority) runs from the March 2, 2026 Signing Date, not from Closing, and unnoticed claims are barred. Closing slipped to October 15, 2026, per the Bill of Sale and the email thread on the TTB approval delay. The period therefore ends September 2, 2027, leaving Buyer only about 10.5 months of post-Closing protection. That is too short for TTB excise tax audits or late-surfacing title defects. The LOI set 36 months after Closing (to October 15, 2029). Nothing in the folder records Buyer accepting the shorter period beyond the SPA text itself, and nothing extends it. Buyer is the indemnified party, so the short window hurts the client. The window has not yet closed (today is November 6, 2026), so the problem is still actionable. Buyer can seek an amendment or protective extension, or at least diligence and calendar notice of claims before September 2, 2027."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Disclosure Schedule 4.9, item 1: \"Section 14.2 of the Distribution Agreement provides that a change of control of the Company, including a transfer of a majority of its outstanding shares, requires the prior written consent of Distributor. If that consent is not obtained, Distributor may terminate the Distribution Agreement on thirty (30) days' notice and require the Company to repurchase Distributor's inventory of the Company's products at Distributor's laid-in cost.\" Schedule 7.2(c) lists only \"Written consent of 214 Wharf Road Realty LLC\" and \"Approval by TTB of the TTB Permit Amendment.\" Section 6.4: \"Seller shall use commercially reasonable efforts to obtain, before the Closing, all consents ... Neither Seller nor the Company is required to pay any consideration...\"",
+            "reason": "The problem is present. Kestrel accounts for about 62% of revenue, and the sale of 100% of the Shares is a change of control that needs Kestrel's consent. Even so, Kestrel's consent is not a closing condition under Schedule 7.2(c). Seller's only obligation is the soft efforts covenant in Section 6.4. The Article IV representations are made \"Except as set forth in the Disclosure Schedule,\" and Section 4.3(c) expressly carves out Schedule 4.9. As a result, Buyer has no representation-based indemnity under Section 9.2(a) if Kestrel terminates or demands an inventory repurchase. There is also no specific indemnity for that loss. The Bill of Sale is dated October 15, 2026, and nothing in the folder records that Kestrel consented. The Company therefore appears to remain exposed to termination on 30 days' notice and to the repurchase demand. The issue is still actionable for Buyer. It can pursue Kestrel's consent after closing, and Seller's covenants survive under Section 9.4(b). Buyer can also assess whether Seller in fact used commercially reasonable efforts before closing. Nothing in the folder shows Buyer accepted the loss of the distributor."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 4.1: \"the Company grants to Transferor a perpetual, irrevocable, royalty-free, non-exclusive license to brew beer using the Recipes and to use the Yeast Strains for its taproom at Rosendale, New York\"; Section 7.2: \"Transferor may freely assign this Bill of Sale and any of its rights under it, including the Retained Taproom License, in whole or in part, without the consent of the Company or any other Person.\"",
+            "reason": "The Company is Buyer's subsidiary after Closing, so it is the licensor. It gives Transferor a perpetual, irrevocable, royalty-free license to the Recipes and Yeast Strains, which are core brand assets Buyer paid for (LOI ¶2). Section 7.2 lets Transferor assign that license to anyone without the Company's consent, and nothing else in the folder limits this. SPA §11.6 restricts assignment only of the SPA itself and binds only Buyer and Seller. SPA §11.12 makes the Bill of Sale control as to the Transferred Brand Assets. The SPA §6.8 non-compete binds only Seller and its controlled Affiliates, lasts only three years, and does not reach an unaffiliated assignee. Section 4.4 imposes confidentiality on Transferor, but it does not stop an assignee from using the recipes and yeast. The Rosendale tie in Section 4.1 is weak protection, because 'whole or in part' assignment could split the license from the taproom or move it with a sale of the taproom. Nothing in the folder shows Buyer negotiated or accepted this as intended. This is not a lapsed deadline: the assignment right is perpetual and the risk is ongoing. The Company can still seek a consent requirement or anti-assignment amendment under Section 9.1."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": false,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [
+          "C11"
+        ],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    }
+  ]
+}

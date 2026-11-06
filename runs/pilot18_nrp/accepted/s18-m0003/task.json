@@ -1,0 +1,112 @@
+{
+  "task_id": "s18-m0003",
+  "split": "dev",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Vaigaind Data Halls, LLC, a colocation data center operator, which is purchasing liquid-cooling equipment and related services from Trugeith Thermal Systems, Inc. The client wants a clear picture of where it stands under the deal documents before it proceeds further, so please review the full matter folder: the supply agreement (supply_agreement_vaigaind_trugeith.md), Statement of Work No. 2 for Hall C (statement_of_work_no2_hall_c.md), the service level schedule (service_level_schedule.md), the data processing addendum (data_processing_addendum.md), and the email thread on Phase 2 freight and rigging (email_thread_phase2_freight_rigging.md). Please prepare a memo to me that lists each issue you identify, states where it appears (document and section), explains why it matters for Vaigaind, and recommends a fix. Keep it practical and prioritized so I can use it in discussions with the client. If anything in the folder appears incomplete or you need further context from the client, note it in the memo rather than guessing. Let me know if you have questions.",
+  "documents": [
+    "data_processing_addendum.md",
+    "email_thread_phase2_freight_rigging.md",
+    "service_level_schedule.md",
+    "statement_of_work_no2_hall_c.md",
+    "supply_agreement_vaigaind_trugeith.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Statement of Work No. 2 definition of 'Covered Sites' (Section 2), which Supply Agreement Section 3.1 adopts for the exclusivity covenant, extends Vaigaind's exclusive-purchase obligation to all facilities owned, leased or operated by Vaigaind or its Affiliates in the United States and Canada rather than only Hall C. It locates the issue in the SOW Section 2 definition and/or Supply Agreement Section 3.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Covered Sites",
+        "Affiliates in the United States and Canada",
+        "limit exclusivity to Hall C"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Data Processing Addendum Section 8.2, which prevails on Personal Data matters under Supply Agreement Section 1.4, overrides the Supply Agreement Section 12.3(b) carve-out and subjects data-security and Security Incident liability to the 12-month-fees cap. It locates the issue in DPA Section 8.2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Notwithstanding Section 12.3(b)",
+        "DPA prevails as to Personal Data",
+        "uncapped or super-cap"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Supply Agreement Section 2.2 automatically renews the Agreement for successive five-year Renewal Terms unless non-renewal notice is given within a 30-day window ending 270 days before the end of the term. It locates the issue in Supply Agreement Section 2.2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "successive five-year Renewal Terms",
+        "30-day window",
+        "270 days before expiry"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that Vaigaind's July 10, 2026 notice of nonconformity for the Phase 1 units came after the 20-day rejection window under Supply Agreement Section 7.3, measured from the June 8, 2026 delivery, so Trugeith can claim deemed acceptance. It locates the facts in SOW No. 2 Recital C and/or Supply Agreement Section 7.3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "July 10, 2026",
+        "deemed accepted",
+        "June 28, 2026"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that under the Supply Agreement, Products are deemed accepted unless the Customer gives written notice of rejection within 20 days after Delivery.",
+      "kind": "fact",
+      "hints": [
+        "20 days after Delivery",
+        "deemed accepted"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Supply Agreement's general liability cap equals the fees paid or payable in the 12 months preceding the event giving rise to the claim.",
+      "kind": "fact",
+      "hints": [
+        "12 months",
+        "fees paid or payable"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is structured as a memo addressed to the supervising partner, and it presents the issues in an evident order of priority or with an explicit priority ranking.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Priority",
+        "High"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that Vaigaind's July 10, 2026 rejection notice for the Phase 1 units was timely under the Supply Agreement's acceptance provisions.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Vaigaind's data-security liability claims against Trugeith remain uncapped because Supply Agreement Section 12.3(b) prevails over the Data Processing Addendum.",
+      "kind": "negative",
+      "hints": [
+        "Agreement prevails over DPA"
+      ]
+    }
+  ],
+  "solver_pass_rate": 1.0,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ]
+}

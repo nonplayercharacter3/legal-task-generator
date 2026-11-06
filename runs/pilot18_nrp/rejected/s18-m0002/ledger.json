@@ -1,0 +1,195 @@
+{
+  "matter_id": "s18-m0002",
+  "summary": "Proudoul Beverage Group, Inc. (client, Buyer) is acquiring all outstanding shares of Fernhollow Brewing Company, Inc., a Hudson Valley craft brewery, from Dripes Family Brewing Holdings, LLC (Seller) for $18,400,000 under a New York-law Stock Purchase Agreement signed March 2, 2026. The Seller affiliate Dripes Brewhouse Properties, LLC (Transferor) contributes the flagship brand assets (trademarks, recipes, house yeast strains) to the Company under a Bill of Sale dated October 15, 2026, the Closing Date. The folder holds the SPA, the January 2026 letter of intent, the Bill of Sale, and an email thread about keg inventory and the TTB permit amendment. The planted problems for Buyer are: (1) an uncapped Buyer indemnity for Seller's guarantees that reaches pre-Closing defaults; (2) a Bill of Sale clause that, through the SPA's precedence clause, pulls the brand-asset title representation back under the General Cap; (3) survival of the Fundamental Representations measured from signing rather than Closing, cutting the 36 months agreed in the LOI to under 11 months after Closing; (4) a distributor change-of-control consent that the disclosure schedule lists but the closing-condition consent schedule omits; (5) a free-assignment clause in the Bill of Sale that lets Transferor pass its retained recipe license to anyone, including a competitor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Proudoul Beverage Group, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Dripes Family Brewing Holdings, LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Dripes Brewhouse Properties, LLC",
+      "role": "Transferor under the Bill of Sale; affiliate of Seller"
+    },
+    {
+      "id": "P4",
+      "name": "Fernhollow Brewing Company, Inc.",
+      "role": "Company (target whose shares are sold)"
+    },
+    {
+      "id": "P5",
+      "name": "Kestrel Valley Beverage Distributors, Inc.",
+      "role": "Company's principal wholesale distributor"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "General Cap",
+      "value": "$2,100,000",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F4",
+      "key": "Closing Date",
+      "value": "October 15, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F5",
+      "key": "LOI survival period for Fundamental Representations",
+      "value": "36 months after Closing",
+      "doc": "D2",
+      "section": "Paragraph 6"
+    },
+    {
+      "id": "F6",
+      "key": "SPA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "SPA prevails over Bill of Sale, except Bill of Sale controls as to Transferred Brand Assets",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F8",
+      "key": "Fundamental Representations excluded from General Cap",
+      "value": "Sections 4.1, 4.2, 4.6 (title to Transferred Brand Assets) and 4.12 (Taxes)",
+      "doc": "D1",
+      "section": "Section 9.5(b)"
+    },
+    {
+      "id": "F9",
+      "key": "Transferred Brand Assets",
+      "value": "Fernhollow trademarks, beer recipes and proprietary house yeast strains",
+      "doc": "D3",
+      "section": "Section 1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_fernhollow.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "letter_of_intent_proudoul_dripes.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "bill_of_sale_brand_assets.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "email_thread_keg_inventory_ttb.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped Buyer indemnity for Seller Guarantees reaching pre-Closing defaults",
+      "description": "SPA Section 9.3(b) obliges Buyer to indemnify the Seller Indemnitees for all Losses under the Seller Guarantees, \"whether arising before or after the Closing\". The Seller Guarantees are Seller's guaranty of the Company's brewhouse lease at 214 Wharf Road, Kingston, NY, its guaranty of the TTB brewer's bond, and its guaranty of the Kestrel distributor credit line. Section 9.5(a) applies the General Cap only to Seller's liability under Section 9.2(a). Section 9.5(d) states that no limitation in Section 9.5 applies to Buyer's obligations under Section 9.3(b). Read together, Buyer carries unlimited liability for guaranty calls that arise from Seller-period defaults, such as pre-Closing rent arrears or bond claims. Seller's own indemnity to Buyer for pre-Closing liabilities under Section 9.2 stays capped, so Buyer could end up repaying Seller without limit for liabilities Seller caused.",
+      "doc": "D1",
+      "section": "Section 9.3(b); Section 9.5(a) and (d)",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "shall apply to Buyer's obligations under Section 9.3(b)"
+      ],
+      "expected_finding": "SPA Section 9.3(b), read with Section 9.5(a) and (d), makes Buyer liable without any cap to indemnify Seller for calls on the Seller Guarantees, including calls caused by pre-Closing defaults. The associate should recommend limiting the indemnity to obligations arising after Closing, excluding Seller-period defaults, and subjecting it to a cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "Bill of Sale pulls brand-asset title representation back under the General Cap",
+      "description": "SPA Section 9.5(b) excludes the Fundamental Representations from the $2,100,000 General Cap. These include Section 4.6, title to the Transferred Brand Assets: the Fernhollow trademarks, recipes and house yeast strains, which are the core of what Buyer is paying for. Bill of Sale Section 5, dated the October 15, 2026 Closing Date, provides that any liability of Transferor or Seller for breach of SPA Section 4.6 or of the Bill of Sale with respect to the Transferred Brand Assets \"shall not exceed the General Cap\". The precedence clause in SPA Section 11.12 says the SPA prevails over the Bill of Sale except that the Bill of Sale controls as to the Transferred Brand Assets. Because of that exception, the precedence clause does not cure the conflict: it makes the Bill of Sale wording control. The result is that a title failure on the flagship brands is capped at about 11% of the $18,400,000 price.",
+      "doc": "D3",
+      "section": "Section 5",
+      "detect_terms": [
+        "shall not exceed the General Cap"
+      ],
+      "expected_finding": "Bill of Sale Section 5 controls under the brand-asset exception in SPA Section 11.12. It therefore removes title to the Transferred Brand Assets (SPA Section 4.6) from the Fundamental Representations carve-out in SPA Section 9.5(b) and caps that claim at the $2,100,000 General Cap. The associate should recommend deleting Section 5 or amending it to preserve the uncapped treatment, and conforming Section 11.12.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "Fundamental Representation survival measured from Signing Date",
+      "description": "SPA Section 9.4(a) provides that the Fundamental Representations, including Section 4.12 on federal excise and state taxes, survive until \"eighteen (18) months after the Signing Date\". Section 9.4(c) bars any claim not noticed within that period. The SPA Signing Date is March 2, 2026, so the period ends September 2, 2027. The Bill of Sale shows that Closing occurred on October 15, 2026, after the delay for the TTB permit amendment. Buyer therefore has only about 10.5 months of post-Closing protection, which is shorter than a TTB excise tax audit cycle. The LOI (Paragraph 6) recorded the agreed term as 36 months after Closing, which would run to October 15, 2029. New York enforces contractual shortening of the limitations period for claims, so the SPA wording would bar late excise tax and title claims. Buyer has not signed any document accepting the shorter period.",
+      "doc": "D1",
+      "section": "Section 9.4(a) and (c)",
+      "detect_terms": [
+        "eighteen (18) months after the Signing Date"
+      ],
+      "expected_finding": "SPA Section 9.4 measures survival of the Fundamental and Tax Representations from the March 2, 2026 Signing Date. Given the October 15, 2026 Closing Date shown in the Bill of Sale, claims expire September 2, 2027, roughly 10.5 months after Closing, instead of the 36 months after Closing agreed in the LOI. The associate should recommend amending the SPA to run survival 36 months from Closing, and for Taxes until 60 days after the statute of limitations expires.",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "Kestrel distributor change-of-control consent not addressed",
+      "description": "Disclosure Schedule 4.9 to the SPA lists the Kestrel Valley Beverage Distributors Distribution Agreement as a Material Contract representing about 62% of Company revenue. It states that a change of control of the Company requires the prior written consent of Distributor, and that if consent is not obtained, Distributor may terminate and demand repurchase of inventory. The sale of all of the Company's shares under SPA Section 1.1 is such a change of control. Schedule 7.2(c), which lists the third-party consents that are a condition to Buyer's obligation to close, names only the landlord and the TTB permit amendment and omits Kestrel. The covenant in Section 6.4 requires Seller only to use commercially reasonable efforts to obtain consents, with no obligation to pay any consideration. As drafted, Buyer must close, or has already closed, without the consent, and has no specific indemnity for loss of the distributor.",
+      "doc": "D1",
+      "section": "Disclosure Schedule 4.9; Schedule 7.2(c); Section 6.4",
+      "detect_terms": [
+        "prior written consent of Distributor"
+      ],
+      "expected_finding": "Disclosure Schedule 4.9 shows that the share sale triggers Kestrel's change-of-control consent and termination right, yet the consent is missing from the Schedule 7.2(c) closing conditions and is backed only by Seller's commercially reasonable efforts under Section 6.4. The associate should recommend obtaining Kestrel's written consent now, or adding a specific uncapped indemnity, or an escrow or price adjustment, for loss of the distribution agreement.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "Transferor may freely assign retained recipe license",
+      "description": "Bill of Sale Section 4 grants Transferor (Dripes Brewhouse Properties, LLC) a perpetual, royalty-free Retained Taproom License to brew the Fernhollow recipes and use the house yeast strains for its Rosendale taproom. Section 7 provides that Transferor may freely assign the Bill of Sale and any rights under it, including the Retained Taproom License, without consent. SPA Section 11.6 restricts assignment only of \"this Agreement\", and binds only Buyer and Seller, not Transferor. SPA Section 11.12 makes the Bill of Sale control as to the Transferred Brand Assets. Read together, nothing stops Transferor from assigning the recipe and yeast license to a competing brewery or a buyer of the taproom. That would erode the exclusivity of the brand Buyer paid for.",
+      "doc": "D3",
+      "section": "Section 4; Section 7",
+      "detect_terms": [
+        "freely assign",
+        "Retained Taproom License"
+      ],
+      "expected_finding": "Bill of Sale Section 7 lets Transferor assign the Retained Taproom License over the Fernhollow recipes and yeast strains to anyone, including a competitor. Neither SPA Section 11.6 nor anything else in the folder restricts this, and SPA Section 11.12 makes the Bill of Sale control as to the brand assets. The associate should recommend prohibiting assignment without Buyer's consent, or limiting the license to the Rosendale taproom and making it non-transferable and terminable on a change of control of Transferor.",
+      "contradicts": null
+    }
+  ]
+}

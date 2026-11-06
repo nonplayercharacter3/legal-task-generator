@@ -1,0 +1,182 @@
+{
+  "matter_id": "s18-m0003",
+  "summary": "Vaigaind Data Halls, LLC, a colocation data center operator and the firm's client, buys liquid-cooling equipment for Hall C of its Secaucus, New Jersey campus from Trugeith Thermal Systems, Inc. The equipment is coolant distribution units (CDUs) and rear-door heat exchangers, plus related installation, commissioning and remote-monitoring services. The folder holds five documents: the Supply Agreement, Statement of Work No. 2 (Phase 2 installation, whose recitals record a dispute over Phase 1 units), a Service Level Schedule, a Data Processing Addendum covering Trugeith's remote-monitoring platform, and a freight and rigging email thread. Four issues are planted. First, the SOW's definition of Covered Sites, which the Agreement adopts for its exclusivity covenant, extends exclusivity to every facility of Vaigaind and its affiliates in the US and Canada. Second, the DPA, which prevails on personal-data matters, pulls data-security liability back under the 12-month-fees cap despite the Agreement's carve-out. Third, the Agreement auto-renews for five-year terms with a narrow, early opt-out window. Fourth, Vaigaind's Phase 1 rejection notice was sent after the 20-day acceptance window, so Trugeith can claim deemed acceptance; the SOW recitals show both parties reserving their positions.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Vaigaind Data Halls, LLC",
+      "role": "Customer; colocation data center operator purchasing liquid-cooling equipment and services (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Trugeith Thermal Systems, Inc.",
+      "role": "Supplier; manufacturer and installer of coolant distribution units, rear-door heat exchangers and remote thermal monitoring services"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Project Site",
+      "value": "Hall C at Customer's Secaucus, New Jersey campus",
+      "doc": "D1",
+      "section": "Recital B"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement Initial Term",
+      "value": "five years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the event giving rise to the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F5",
+      "key": "Liability cap carve-out for data",
+      "value": "breach of Section 14 (Confidentiality and Data Security) is excluded from the cap",
+      "doc": "D1",
+      "section": "Section 12.3(b)"
+    },
+    {
+      "id": "F6",
+      "key": "Acceptance rejection period",
+      "value": "20 days after Delivery; otherwise Products deemed accepted",
+      "doc": "D1",
+      "section": "Section 7.3"
+    },
+    {
+      "id": "F7",
+      "key": "Phase 1 Delivery Date",
+      "value": "June 8, 2026",
+      "doc": "D2",
+      "section": "Recital C"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "DPA (as to Personal Data only), Agreement body, Service Level Schedule, then each SOW",
+      "doc": "D1",
+      "section": "Section 1.4"
+    },
+    {
+      "id": "F9",
+      "key": "Supply Agreement governing law",
+      "value": "New York",
+      "doc": "D1",
+      "section": "Section 18.1"
+    },
+    {
+      "id": "F10",
+      "key": "Monthly cooling availability service level",
+      "value": "99.99%",
+      "doc": "D3",
+      "section": "Section 2.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement_vaigaind_trugeith.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "statement_of_work_no2_hall_c.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "email_thread_phase2_freight_rigging.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D1 Recital B describes the deal as cooling for the Project Site (Hall C, Secaucus), and D2's scope covers only Hall C. D1 Section 3.1 obliges Customer to buy all Covered Products exclusively from Supplier for all Covered Sites. It states that 'Covered Sites' has the meaning given in the applicable SOW. D2 Section 2 defines Covered Sites as all data center facilities owned, leased or operated by Customer or any of its Affiliates in the United States and Canada. Because D1 expressly delegates the definition to the SOW, there is no conflict for the D1 Section 1.4 precedence clause to resolve, and the broad definition controls. Read together, these provisions extend the exclusivity to Customer's whole North American portfolio and its affiliates' facilities. That bars Customer from sourcing CDUs or heat exchangers from other vendors for unrelated sites, well beyond the single-hall deal.",
+      "doc": "D2",
+      "section": "Section 2 (Covered Sites)",
+      "detect_terms": [
+        "owned, leased or operated by Customer or any of its Affiliates",
+        "United States and Canada"
+      ],
+      "expected_finding": "The SOW's Covered Sites definition, which D1 Section 3.1 adopts, extends Customer's purchase exclusivity to all facilities of Customer and its Affiliates in the US and Canada rather than the Hall C Project Site, so the definition should be limited to the Project Site.",
+      "contradicts": "F2"
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "D1 Section 12.3(b) excludes breach of Section 14 (Confidentiality and Data Security) from the Section 12.2 cap of 12 months' fees. D4 Section 8.2 provides that, notwithstanding Section 12.3(b) of the Agreement, each party's aggregate liability arising out of the Addendum or any Security Incident is subject to the Section 12.2 cap. Under D1 Section 1.4, the DPA prevails over the Agreement body as to Personal Data. The DPA therefore controls, and Supplier's liability for a breach of its remote-monitoring platform falls back under the cap. That platform holds Customer's personnel, badge-access and tenant contact data. The clause binds both parties alike, but it hurts Customer, because Supplier is the party processing the data and the cap is small relative to breach-notification and tenant claims.",
+      "doc": "D4",
+      "section": "Section 8.2",
+      "detect_terms": [
+        "Notwithstanding Section 12.3(b) of the Agreement"
+      ],
+      "expected_finding": "D4 Section 8.2, which prevails under D1 Section 1.4's order of precedence, overrides the D1 Section 12.3(b) carve-out and subjects Supplier's data-security and Security Incident liability to the 12-month-fees cap, so the DPA should be revised to preserve the uncapped carve-out (or a separate higher super-cap).",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I3",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "D1 Section 2.2 provides that after the five-year Initial Term, the Agreement renews automatically for successive five-year Renewal Terms. The only way out is a non-renewal notice delivered during the thirty-day period ending 270 days before the end of the then-current term. A missed window locks Customer into another five years of the Agreement, including the Section 3.1 exclusivity, and the window is short and falls months before expiry.",
+      "doc": "D1",
+      "section": "Section 2.2",
+      "detect_terms": [
+        "successive five (5) year Renewal Terms",
+        "thirty (30) day period ending"
+      ],
+      "expected_finding": "D1 Section 2.2 auto-renews the Agreement, and with it the exclusivity, for successive five-year terms unless Customer serves notice within a 30-day window ending 270 days before expiry, so the term should be changed to one-year renewals terminable on reasonable notice at any time before expiry.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under D1 Section 7.3, Customer must give written notice of rejection within 20 days after Delivery, or the Products are deemed accepted. D2 Recital C states that the Phase 1 CDUs were delivered on June 8, 2026, so the window closed on June 28, 2026. D2 Recital C also records that Customer sent its notice of nonconformity on July 10, 2026, concerning leaking quick-disconnect couplings, and that Supplier has rejected the notice as untimely. The parties reserve their respective positions, so Customer has not accepted the result. Supplier can assert deemed acceptance of the Phase 1 units, which would cut off Customer's rejection remedy.",
+      "doc": "D2",
+      "section": "Recital C",
+      "detect_terms": [
+        "July 10, 2026",
+        "reserve their respective positions"
+      ],
+      "expected_finding": "Customer's July 10, 2026 rejection notice came after the 20-day window under D1 Section 7.3 closed on June 28, 2026 (measured from the June 8, 2026 Phase 1 Delivery Date in D2 Recital C), so Supplier can claim deemed acceptance. Customer should rely on its warranty and latent-defect remedies and negotiate a written waiver of the deadline or an extension in SOW No. 2.",
+      "contradicts": null
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "matter_id": "s18-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "dev",
+  "solver_pass_rate": 1.0,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 6,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "SOW No. 2, Section 2: \"For purposes of the Agreement, including Section 3 of the Agreement, \"Covered Sites\" means all data center facilities owned, leased or operated by Customer or any of its Affiliates in the United States and Canada, including the Project Site.\" Agreement Section 3.1: \"During the Term, Customer shall purchase all of its requirements for Covered Products for all Covered Sites exclusively from Supplier.\"",
+            "reason": "Customer is the party bound by the exclusivity in Section 3.1. Agreement Section 1.1(d) leaves \"Covered Sites\" to be defined in the applicable SOW, and SOW No. 2 defines it as every Customer and Affiliate facility in the US and Canada. Because the Agreement delegates the definition to the SOW, the SOW is not amending the Agreement and there is no conflict for Section 1.4 to resolve, so Sections 1.2 and 1.4 do not cut the definition back. The deal itself covers only Hall C at Secaucus, yet this wording would require Customer to buy all CDUs and rear-door heat exchangers for its entire North American portfolio, and its Affiliates' sites, from Supplier. That obligation runs for a five-year term with automatic five-year renewals. The Section 3.2 capacity carve-out is narrow and does not cure this. SOW No. 2 is dated August 24, 2026, but the folder contains only an unsigned signature block and nothing showing the scope was accepted or acted on. The issue is therefore still live for Customer to raise and narrow."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"Notwithstanding Section 12.3(b) of the Agreement, each Party's aggregate liability arising out of or relating to this Addendum or any Security Incident, whether in contract, tort or otherwise, is subject to the limitation of liability in Section 12.2 of the Agreement, being the fees paid or payable in the 12 months preceding the event giving rise to the claim.\" (DPA Section 8.2)",
+            "reason": "Agreement Section 12.3(b) removes breach of Section 14 (Confidentiality and Data Security) from the 12-month-fees cap. DPA Section 8.2 overrides that carve-out for liability under the Addendum or any Security Incident. Agreement Section 1.4 gives the DPA priority over the Agreement body as to Personal Data, so the DPA's cap would control. Supplier is the processor holding Customer's personnel, badge-access and tenant contact data, and it bears the obligations under DPA Section 5.5 and the security duties. In practice, then, the cap protects Supplier and limits Customer's recovery for notification costs, forensic costs and tenant claims. The fee base is small: Remote Monitoring fees are about $1,850 per CDU per month, and product fees are billed in one-time installments. Nothing in the folder cures this. The DPA signature blocks are blank, and nothing shows that Customer accepted the term or that the problem is now history. The issue therefore remains open and actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Upon expiration of the Initial Term, this Agreement shall renew automatically for successive five (5) year Renewal Terms ... Either Party may prevent a renewal by delivering written notice of non-renewal to the other Party during the thirty (30) day period ending two hundred seventy (270) days before the expiration of the then-current Term.",
+            "reason": "Section 2.2 renews the Agreement automatically for successive five-year terms. Customer's only exit is a notice given in a 30-day window that closes 270 days before expiry. If Customer misses that window, it is bound for five more years. That includes the Section 3.1 obligation to buy all Covered Products for all Covered Sites exclusively from Supplier. SOW No. 2 defines Covered Sites as every facility Customer and its Affiliates operate in the US and Canada. Remote monitoring under SOW No. 2 also runs to the end of the Term. Section 15 gives Customer no termination for convenience, and nothing in the folder softens the renewal mechanism. The Initial Term began on March 2, 2026, so the window is years away and the point remains actionable. It is a real problem for Customer."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Recital C: \"The Phase 1 CDUs were Delivered to the Project Site on June 8, 2026. On July 10, 2026, Customer delivered to Supplier a written notice of nonconformity concerning leaking quick-disconnect couplings on the Phase 1 CDUs. Supplier has responded in writing that it rejects the notice as untimely under Section 7.3 of the Agreement. The Parties have not resolved the matter and reserve their respective positions regarding the Phase 1 CDUs.\"",
+            "reason": "Agreement §7.3 puts the notice obligation on Customer: it must give written notice of rejection within 20 days after Delivery, or the Products are deemed accepted. Delivery was June 8, 2026, so the window closed June 28, 2026. Customer's notice of July 10 came 12 days late. Supplier is already relying on deemed acceptance, which would cut off Customer's §7.4 remedies for the Phase 1 CDUs. Those remedies are repair or replacement within 15 days or a refund, at Customer's option, with Supplier bearing freight, removal and reinstallation costs. The issue is still actionable. Customer has not accepted the result: the recital expressly reserves both parties' positions, and the folder shows no payment, restatement or waiver resolving the dispute. The recital also records the delivery and notice dates as agreed facts in a document Customer will sign, which strengthens Supplier's untimeliness argument. §7.5 preserves Customer's §9 warranty rights after acceptance, so Customer is not left without any remedy. Even so, those warranty rights are a lesser substitute: repair or re-perform, with a refund only if Supplier fails within a reasonable time. They do not cure the loss of the rejection remedy. The firm should address this in SOW No. 2, for example by having Supplier waive the timeliness objection, by limiting the factual recital, or by preserving the claim expressly."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.065,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 3,
+            "pass_rate": 1.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 15,
+              "files_opened": [
+                "data_processing_addendum.md",
+                "email_thread_phase2_freight_rigging.md",
+                "service_level_schedule.md",
+                "statement_of_work_no2_hall_c.md",
+                "supply_agreement_vaigaind_trugeith.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 15,
+              "files_opened": [
+                "data_processing_addendum.md",
+                "email_thread_phase2_freight_rigging.md",
+                "service_level_schedule.md",
+                "statement_of_work_no2_hall_c.md",
+                "supply_agreement_vaigaind_trugeith.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 15,
+              "files_opened": [
+                "data_processing_addendum.md",
+                "email_thread_phase2_freight_rigging.md",
+                "service_level_schedule.md",
+                "statement_of_work_no2_hall_c.md",
+                "supply_agreement_vaigaind_trugeith.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

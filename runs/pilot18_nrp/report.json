@@ -1,0 +1,198 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 1,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 1,
+      "failed": 2,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 1,
+      "pass_rates": {
+        "1.00": 1
+      }
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s18-m0001",
+      "accepted": false,
+      "failed_gate": "rubric_tests",
+      "reason": "gold_fails: [\"C9\", \"C10\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    },
+    {
+      "matter_id": "s18-m0002",
+      "accepted": false,
+      "failed_gate": "rubric_tests",
+      "reason": "flawed_wrongly_fails: [\"C11\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    },
+    {
+      "matter_id": "s18-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "dev",
+      "solver_pass_rate": 1.0,
+      "unsolved": false,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 3,
+          "pass_rate": 1.0
+        }
+      ]
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12405,
+      "output_tokens": 25052,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 13,
+      "input_tokens": 220894,
+      "output_tokens": 79319,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 87985,
+      "output_tokens": 7279,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 2,
+      "input_tokens": 3445,
+      "output_tokens": 530,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 13,
+      "input_tokens": 326726,
+      "output_tokens": 9492,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4181,
+      "output_tokens": 1161,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 18659,
+      "output_tokens": 5830,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 186874,
+      "output_tokens": 48022,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 13,
+      "input_tokens": 101511,
+      "output_tokens": 9872,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 58,
+      "input_tokens": 543867,
+      "output_tokens": 52142,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "pet food manufacturing": 1,
+      "craft brewing": 1,
+      "data center cooling": 1
+    },
+    "agreement_types": {
+      "master services agreement": 1,
+      "stock purchase agreement": 1,
+      "supply agreement": 1
+    },
+    "issue_types": {
+      "auto_renewal": 2,
+      "expired_notice_window": 2,
+      "liability_cap_carveout": 2,
+      "governing_law_mismatch": 1,
+      "defined_term_inconsistency": 1,
+      "missing_assignment_restriction": 1,
+      "change_of_control_consent": 1,
+      "survival_gap": 1,
+      "uncapped_indemnity": 1,
+      "exclusivity_scope": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

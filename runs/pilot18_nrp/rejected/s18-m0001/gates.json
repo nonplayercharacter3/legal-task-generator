@@ -1,0 +1,105 @@
+{
+  "matter_id": "s18-m0001",
+  "accepted": false,
+  "failed_gate": "rubric_tests",
+  "reason": "gold_fails: [\"C9\", \"C10\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 12.2: \"At the end of the Initial Term, this Agreement will automatically renew for successive three-year Renewal Terms... The Agreement will not renew if either Party delivers written notice of non-renewal to the other Party during the 30-day period beginning 210 days before the expiration of the Initial Term or the then-current Renewal Term. A notice of non-renewal delivered outside that period has no effect on the renewal of the Agreement. The terms of this Agreement, including the Annual Minimum Commitment under Section 5.2, apply during each Renewal Term.\"",
+            "reason": "The problem is present and still actionable for Tuluth. The clause auto-renews the MSA for three-year terms. Non-renewal notice is effective only inside a narrow 30-day window, and notice outside it is expressly void. Each Renewal Term carries the $1,450,000 Annual Minimum Commitment, which Tuluth pays as customer. The clause is nominally mutual, but the shortfall exposure falls on Tuluth. Nothing in the folder changes this. The September 2026 Side Letter covers only aggregated data, hotline enhancements and the benchmark dispute, and confirms the MSA is otherwise unchanged. The Initial Term runs to March 1, 2028, so the first window opens about August 4, 2027 and closes about September 3, 2027. That is still in the future as of November 2026, so Tuluth can still diary the window or negotiate an amendment."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "DPA §11.1: \"This DPA and any dispute arising from or relating to the processing of Personal Data are governed by the laws of the State of Illinois, without regard to its conflict-of-laws principles.\" DPA §11.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Cook County, Illinois for any action arising from or relating to this DPA or the processing of Personal Data.\" MSA §18.1–18.2 choose Delaware law and exclusive New Castle County courts. MSA §2.3 sets the order of precedence as \"Side Letter; then DPA (as to Personal Data); then MSA body.\"",
+            "reason": "The DPA chooses Illinois law and exclusive Cook County courts. The MSA chooses Delaware law and exclusive New Castle County courts. Because MSA §2.3 ranks the DPA above the MSA body as to Personal Data, the conflict is not cured; the Illinois choice controls for data matters. The Side Letter applies MSA §§18.1–18.2 only to the Side Letter itself and does not amend the DPA. As a result, a hotline data breach would be split: DPA claims would go to Illinois under Illinois law, while related MSA claims (indemnity under §13.1(c), confidentiality under §9) would go to Delaware. That creates parallel litigation and inconsistent results, and Tuluth loses its home Delaware forum to the vendor's home forum. The MSA and DPA remain in effect, and nothing shows Tuluth has accepted or waived the result. The clause can still be renegotiated or amended under DPA §12.3, so the problem remains actionable for Tuluth."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Side Letter §2.1: \"'Aggregated Data' means data and information derived from the performance of the Services that does not contain Customer Data as defined in the Data Processing Addendum. Aggregated Data includes data that Gupisk has compiled, combined or analyzed with data derived from services Gupisk provides to its other customers.\" §2.2(c) lets Gupisk use it for \"developing, marketing and licensing Gupisk's industry reports, benchmarking databases and other commercial products and services,\" and §2.3 gives Gupisk ownership.",
+            "reason": "The Side Letter carves out only DPA 'Customer Data', which the DPA defines as Personal Data that Gupisk processes for Tuluth. The MSA's own definition is far broader: \"all data Tuluth provides or Gupisk generates for Tuluth, including formulations, batch records and test results.\" MSA §9.3 bars Gupisk from using, aggregating or commercially exploiting that data. Because the Side Letter imports the narrower DPA definition, Tuluth's formulations, nutrient profiles and pathogen results count as 'Aggregated Data' once they hold no personal data. That includes data combined with other customers' data, which is not truly anonymized. Gupisk may then use, own and license that data during and after the Term. Under MSA §2.3 the Side Letter ranks first in the order of precedence, and Side Letter §1.2 confirms it forms part of the Agreement, so the conflict resolves against Tuluth. No provision cures the conflict. The free industry report in §2.4 is not adequate consideration, and nothing limits use of Tuluth's confidential technical data. The countersignature block is blank and the Benchmark dispute remains reserved, so Tuluth can still refuse to sign or renegotiate the definition. The problem is real, harms the client and is still actionable."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Recital B: \"On May 4, 2026, Tuluth delivered to Gupisk a written notice requesting a pricing benchmark of the Fees under Section 6.4 of the MSA (the \"Benchmark Notice\").\" Recital C: \"Gupisk has informed Tuluth that it considers the Benchmark Notice untimely under Section 6.4 of the MSA. Tuluth disputes Gupisk's position. The Parties have not resolved this disagreement, and each Party continues to reserve all rights with respect to the Benchmark Notice.\" MSA 6.4 requires the notice to be \"delivered within 45 days after the first anniversary of the MSA Effective Date.\"",
+            "reason": "The problem is present and still actionable. The MSA Effective Date is March 1, 2025, so the 45-day window under Section 6.4 closed on April 15, 2026. Tuluth's May 4, 2026 notice was late on the face of the MSA. Section 6.4 benefits Tuluth: it can force a fee cut to the market median if the Fees exceed it by more than 5%. Gupisk's untimeliness position therefore threatens a right that belongs to Tuluth. The Side Letter does not cure the lapse. It neither extends the window nor deems the notice timely. Section 4.1 expressly leaves the matter unresolved, and Section 4.2 only commits the Parties to good-faith discussion. Tuluth has not accepted the lapse. Recital C records that it disputes Gupisk's position and reserves all rights, and nothing shows a payment or other acquiescence. This Side Letter, which takes precedence over the MSA body, is the obvious place to preserve or renegotiate the benchmark right, for example by Gupisk agreeing to treat the notice as timely or to a new benchmark window."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": false,
+      "details": {
+        "gold_fails": [
+          "C9",
+          "C10"
+        ],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {
+            "C9": "Not triggered: the response states the notice was 19 days late, not delivered within the window.",
+            "C10": "Not triggered: the response states the DPA ranks above the MSA body as to Personal Data."
+          },
+          "flawed": {}
+        }
+      }
+    }
+  ]
+}

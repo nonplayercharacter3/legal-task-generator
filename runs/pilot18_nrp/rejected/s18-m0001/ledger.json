@@ -1,0 +1,184 @@
+{
+  "matter_id": "s18-m0001",
+  "summary": "Tuluth Petfoods, Inc., a Delaware pet food manufacturer, is the client. It retains Gupisk Analytical Services LLC, an Illinois laboratory, under a Master Services Agreement effective March 1, 2025. Gupisk performs pathogen and nutrient testing, AAFCO label-compliance review, and a consumer complaint hotline for pet owners. The folder holds the MSA, a Side Letter dated September 15, 2026, a Data Processing Addendum, and an unrelated racking-inspection vendor agreement that serves as the distractor. Four issues are planted. (1) The MSA auto-renews for three-year terms with only a 30-day opt-out window. (2) The DPA chooses Illinois law and Cook County courts, and the MSA's precedence clause lets the DPA control on personal-data matters, which splits the forum. (3) The Side Letter lets Gupisk use 'Aggregated Data' that excludes only 'Customer Data' as defined in the DPA, which covers personal data only. Because the Side Letter prevails, Gupisk can reuse Tuluth's formulation and test data. (4) Tuluth's pricing benchmark request under MSA 6.4 was delivered after the 45-day window closed. The Side Letter records that Tuluth disputes Gupisk's position that the request was untimely and that both parties reserve their rights.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Tuluth Petfoods, Inc.",
+      "role": "Customer under the MSA; the firm's client; Delaware corporation manufacturing dry and wet pet food"
+    },
+    {
+      "id": "P2",
+      "name": "Gupisk Analytical Services LLC",
+      "role": "Service provider under the MSA; Illinois laboratory providing food-safety testing, compliance review and consumer complaint hotline services"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Rack & Pallet Inspection Co.",
+      "role": "Unrelated vendor to Tuluth under the distractor warehouse racking inspection agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "three years from the MSA Effective Date",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA governing law",
+      "value": "laws of the State of Delaware",
+      "doc": "D1",
+      "section": "18.1"
+    },
+    {
+      "id": "F4",
+      "key": "MSA exclusive forum",
+      "value": "state or federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "18.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Side Letter; then DPA (as to Personal Data); then MSA body; then Statements of Work",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F6",
+      "key": "MSA definition of Customer Data",
+      "value": "all data Tuluth provides or Gupisk generates for Tuluth, including formulations, batch records and test results",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F7",
+      "key": "MSA Annual Minimum Commitment",
+      "value": "$1,450,000 per contract year",
+      "doc": "D1",
+      "section": "5.2"
+    },
+    {
+      "id": "F8",
+      "key": "MSA benchmark request window",
+      "value": "within 45 days after the first anniversary of the MSA Effective Date",
+      "doc": "D1",
+      "section": "6.4"
+    },
+    {
+      "id": "F9",
+      "key": "Side Letter date",
+      "value": "September 15, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Tuluth Benchmark Notice delivery date",
+      "value": "May 4, 2026",
+      "doc": "D2",
+      "section": "Recital B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "tuluth_gupisk_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "tuluth_gupisk_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "tuluth_gupisk_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "tuluth_ostrander_racking_inspection_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA Section 12.2 provides that the Agreement automatically renews for successive three-year Renewal Terms. Tuluth can avoid renewal only by giving notice of non-renewal during a 30-day period that opens 210 days before the end of the then-current term. Each Renewal Term carries the $1,450,000 Annual Minimum Commitment under Section 5.2. The clause binds both parties alike, but it hurts Tuluth as the paying customer. A missed 30-day window locks Tuluth into three more years of minimum spend. This is the one issue visible from a single clause.",
+      "doc": "D1",
+      "section": "12.2",
+      "detect_terms": [
+        "successive three-year Renewal Terms",
+        "30-day period beginning 210 days"
+      ],
+      "expected_finding": "MSA Section 12.2 auto-renews the MSA for three-year terms unless notice is given within a narrow 30-day window, which exposes Tuluth to three further years of the $1,450,000 Annual Minimum Commitment. Tuluth should calendar the window and negotiate a shorter renewal term or an anytime non-renewal right on reasonable notice.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "DPA Section 11 states that the DPA, and any dispute arising from or relating to the processing of Personal Data, is governed by Illinois law and subject to the exclusive jurisdiction of the state and federal courts in Cook County, Illinois. MSA Sections 18.1 and 18.2 choose Delaware law and exclusive New Castle County courts. MSA Section 2.3 ranks the DPA above the MSA body as to Personal Data, so the DPA's Illinois choice controls for data matters rather than being cured. A single incident, such as a breach of the complaint-hotline data that also involves MSA indemnity and confidentiality claims, would have to be split between Illinois and Delaware forums under different laws. Tuluth loses its bargained-for Delaware forum.",
+      "doc": "D3",
+      "section": "11",
+      "detect_terms": [
+        "laws of the State of Illinois",
+        "Cook County, Illinois"
+      ],
+      "expected_finding": "DPA Section 11's Illinois governing law and Cook County forum controls personal-data disputes because MSA Section 2.3 gives the DPA precedence on Personal Data. This conflicts with the MSA's Delaware law and New Castle County forum (Sections 18.1–18.2) and risks split proceedings, so the DPA should be amended to adopt the MSA's Delaware law and forum.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Side Letter Section 2 permits Gupisk to use 'Aggregated Data' for its own benchmarking and commercial products. Aggregated Data is defined as data derived from the Services that 'does not contain Customer Data as defined in the Data Processing Addendum'. DPA Section 1 defines Customer Data narrowly as Personal Data that Gupisk processes on Tuluth's behalf. MSA Section 1.1 defines Customer Data broadly to include formulations, batch records and test results. MSA Section 9.3 prohibits Gupisk from using Customer Data except to perform the Services. Under MSA Section 2.3 the Side Letter prevails over the MSA. Read together, Gupisk may reuse Tuluth's proprietary formulation and lab test data in any form containing no personal data, which guts the MSA's use restriction.",
+      "doc": "D2",
+      "section": "2",
+      "detect_terms": [
+        "Customer Data as defined in the Data Processing Addendum",
+        "Aggregated Data"
+      ],
+      "expected_finding": "Side Letter Section 2 borrows the DPA's personal-data-only definition of Customer Data, and the Side Letter prevails under MSA Section 2.3. As a result, Gupisk may use Tuluth's formulations and test results as Aggregated Data despite MSA Sections 1.1 and 9.3. The Side Letter should be amended to reference Customer Data as defined in the MSA and to require that Aggregated Data exclude all of Tuluth's proprietary data.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "MSA Section 6.4 lets Tuluth request a third-party pricing benchmark, with a fee reduction if fees exceed market by more than 5%. The request must be made by notice within 45 days after the first anniversary of the MSA Effective Date. The Effective Date is March 1, 2025, so the window closed on April 15, 2026. Side Letter Recital B records that Tuluth delivered its Benchmark Notice on May 4, 2026, after the window closed. Recital C records that Gupisk contends the notice was untimely, that Tuluth disputes this, and that both parties reserve all rights. The Side Letter does not extend the window, so Tuluth has not accepted the lapse. Tuluth's benchmark right is exposed and must be preserved or renegotiated.",
+      "doc": "D2",
+      "section": "Recitals B and C",
+      "detect_terms": [
+        "Benchmark Notice",
+        "reserve all rights"
+      ],
+      "expected_finding": "Tuluth's Benchmark Notice was delivered May 4, 2026, after the MSA Section 6.4 window closed on April 15, 2026 (45 days after the first anniversary of the March 1, 2025 Effective Date), so the benchmark right is likely lost. Because Side Letter Recital C shows Tuluth disputes the lapse and reserves its rights, Tuluth should press waiver or estoppel arguments and seek an amendment reopening the benchmark window.",
+      "contradicts": null
+    }
+  ]
+}
