@@ -128,6 +128,9 @@ definitive agreement"). A value that is narrower, broader or names a different p
 definition, items such definitions customarily carry alongside the core subject (related documentation, updates,
 upgrades, copies) are compatible detail when the core subject the answer key names is unchanged; adding a
 different product, service, territory, party or use makes it broader.
+Each pair says which instrument each value comes from (`ledger_in`, `document_in`). Section and clause numbers
+belong to each instrument's own numbering: a term sheet's "Section 10.1" and the agreement's "Section 11.1" can be
+the same provision. Judge whether the same obligations, amounts and parties are meant, not whether the numbers match.
 
 Reply with ONLY a JSON object: {"results": [{"id": str, "same": bool, "reason": str}]}"""
 

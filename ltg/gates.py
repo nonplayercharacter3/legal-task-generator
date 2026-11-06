@@ -169,7 +169,10 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
     same: set[int] = set()
     worded = [k for k, d in enumerate(differ) if _norm(d["document"])]  # a missing value needs no matcher
     if worded:
-        pairs = [{"id": str(k), "fact": differ[k]["key"], "ledger": differ[k]["ledger"], "document": differ[k]["document"]} for k in worded]
+        # Each value with the instrument it comes from: a term sheet cites its own section numbers (round 14, s14-m0002).
+        source = {**{f.id: owner[f.doc] for f in ledger.facts}, **{d.filename: f"{d.kind} ({d.filename})" for d in ledger.documents}}
+        pairs = [{"id": str(k), "fact": differ[k]["key"], "ledger": differ[k]["ledger"], "ledger_in": source[differ[k]["fact"]],
+                  "document": differ[k]["document"], "document_in": source.get(differ[k]["filename"], differ[k]["filename"])} for k in worded]
         out = call_json(client, "fact_matcher", prompts.FACT_MATCHER, render_input({"pairs": pairs}))
         same = {int(r["id"]) for r in out.get("results", []) if r.get("same") is True and str(r.get("id", "")).isdigit()}
     mismatches = [d for k, d in enumerate(differ) if k not in same]
