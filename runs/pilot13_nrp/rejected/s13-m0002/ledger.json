@@ -1,0 +1,211 @@
+{
+  "matter_id": "s13-m0002",
+  "summary": "Drosos Interactive, Inc. is a Delaware video game publisher and the firm's client. It has an exclusive physical and digital retail Distribution Agreement with Tideisk Distribution Group, LLC (effective March 1, 2025) for its console catalog in the United States and Canada. Tideisk paid a $4.5M minimum guarantee advance, recoupable against royalties. The folder holds five documents: the Distribution Agreement, a Data Processing Addendum covering player personal data that Tideisk handles for storefront activation and support, Amendment No. 1 (February 2, 2026), a side letter (October 12, 2026), and an unrelated motion capture services agreement that serves as the distractor. The side letter sets up a launch marketing fund for the title 'Ashfall Requiem'. It also records two things: that Drosos's parent is being acquired by Pelling Ridge Games Group, and that the parties dispute the Q2 2026 royalty statement. The partner wants an issue-spotting memo before the acquisition closes.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Drosos Interactive, Inc.",
+      "role": "Publisher under the Distribution Agreement; firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Tideisk Distribution Group, LLC",
+      "role": "Exclusive Distributor under the Distribution Agreement; processor under the Data Processing Addendum"
+    },
+    {
+      "id": "P3",
+      "name": "Drosos Holdings, LLC",
+      "role": "Sole stockholder and parent of Drosos Interactive, Inc."
+    },
+    {
+      "id": "P4",
+      "name": "Pelling Ridge Games Group, Inc.",
+      "role": "Buyer that has agreed to acquire all equity interests of Drosos Holdings, LLC"
+    },
+    {
+      "id": "P5",
+      "name": "Vantlow Capture Studios, LLC",
+      "role": "Motion capture vendor to Drosos under the distractor services agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Initial Term",
+      "value": "three years from the Effective Date",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement Renewal Term",
+      "value": "successive three-year periods",
+      "doc": "D1",
+      "section": "2.2"
+    },
+    {
+      "id": "F4",
+      "key": "Distribution Agreement liability cap",
+      "value": "Distribution Fees retained by Distributor in the 12 months preceding the event giving rise to liability",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F5",
+      "key": "Royalty Statement objection period",
+      "value": "45 days after Distributor delivers the Royalty Statement",
+      "doc": "D1",
+      "section": "6.5"
+    },
+    {
+      "id": "F6",
+      "key": "Q2 2026 Royalty Statement delivery date",
+      "value": "July 10, 2026",
+      "doc": "D4",
+      "section": "Recital C"
+    },
+    {
+      "id": "F7",
+      "key": "Minimum Guarantee Advance",
+      "value": "$4,500,000, recoupable against Publisher royalties",
+      "doc": "D1",
+      "section": "7.1"
+    },
+    {
+      "id": "F8",
+      "key": "Distribution Agreement order of precedence",
+      "value": "amendments, then Distribution Agreement, then Data Processing Addendum, then side letters",
+      "doc": "D1",
+      "section": "18.4"
+    },
+    {
+      "id": "F9",
+      "key": "Distribution Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "18.1"
+    },
+    {
+      "id": "F10",
+      "key": "Side Letter date",
+      "value": "October 12, 2026",
+      "doc": "D4",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "player_data_dpa.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter_launch_fund.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "vantlow_mocap_services_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "Amendment pulls Distributor's player-data breaches under the cap",
+      "description": "As signed, D1 Section 12.3(b) excludes from the Section 12.2 cap either party's breach of Section 9 (Confidentiality) or of the Data Processing Addendum. D3 Section 3 restates Section 12.3(b) to read 'a party's breach of Section 9 (Confidentiality), excluding any breach of the Data Processing Addendum.' D2 Section 9 provides that each party's liability arising under the Addendum is 'subject to Section 12 of the Agreement.' This includes Tideisk's indemnity in D2 Section 8 for processor data breaches. Under D1 Section 18.4, amendments prevail over the Agreement. Read together, these provisions cap Tideisk's liability for a breach involving player personal data at 12 months of Distribution Fees. Drosos is the controller and bears regulatory and player-class exposure that could far exceed that amount, so the risk now sits with Drosos.",
+      "doc": "D3",
+      "section": "3",
+      "detect_terms": [
+        "excluding any breach of the"
+      ],
+      "expected_finding": "Amendment No. 1 Section 3, read with DPA Section 9 and the precedence clause in Agreement Section 18.4, now caps Tideisk's liability (including its DPA Section 8 indemnity) for player-data breaches at 12 months of Distribution Fees, leaving Drosos as controller with uncovered regulatory and player-claim exposure; Drosos should seek a further amendment restoring the DPA carve-out or a separate, higher data-breach cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "Three-year evergreen with a 30-day opt-out window",
+      "description": "D1 Section 2.2 renews the exclusive distribution term automatically for successive three-year Renewal Terms. The only way out is a non-renewal notice delivered not more than 210 days and not less than 180 days before the end of the current term. The clause applies to both parties, but it hurts Drosos. A notice missed by a few days, or sent early, locks Drosos into three more years of exclusivity across its whole console catalog in the Territory, with no option to move to another distributor or sell direct. Drosos also has no termination for convenience.",
+      "doc": "D1",
+      "section": "2.2",
+      "detect_terms": [
+        "successive three-year Renewal Terms",
+        "not more than 210 days"
+      ],
+      "expected_finding": "Section 2.2 auto-renews Drosos's exclusive distribution for three-year terms unless notice lands in a narrow 30-day window 210 to 180 days before expiry, risking a three-year lock-in; Drosos should calendar the window and negotiate shorter (e.g., one-year) renewals with a simple 'at least 90 days' notice standard or a convenience termination right.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "Q2 2026 royalty objection served after the 45-day window",
+      "description": "Under D1 Section 6.5, Drosos may object to a Royalty Statement within 45 days after delivery. Any statement not timely objected to becomes 'final and binding and not subject to audit or further adjustment', which also shuts off the Section 6.6 audit for that period. D4 Recital C records that Tideisk delivered the Q2 2026 Royalty Statement on July 10, 2026, so the window closed on August 24, 2026. D4 Section 3 records that Drosos served its dispute notice on September 8, 2026. The notice challenges a $612,400 over-deduction for the returns reserve. D4 Section 3 also records that Tideisk contends the statement is final, while Drosos maintains its objection and both parties reserve their rights. Drosos has not accepted the statement, so the point is still live.",
+      "doc": "D4",
+      "section": "3",
+      "detect_terms": [
+        "September 8, 2026",
+        "$612,400"
+      ],
+      "expected_finding": "Drosos's September 8, 2026 objection came after the 45-day window under Agreement Section 6.5 closed on August 24, 2026 (measured from the July 10, 2026 delivery recorded in Side Letter Recital C), so Tideisk can treat the Q2 2026 statement as final and unauditable and defeat the $612,400 claim; Drosos should promptly seek a written waiver or tolling agreement from Tideisk and press waiver/estoppel arguments based on the Side Letter's mutual reservation of rights.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "Publisher's broad Game indemnity sits outside the cap",
+      "description": "D1 Section 11.1 requires Drosos to indemnify Tideisk against all Claims 'arising out of or relating to the Games,' including IP infringement, Game content, product liability, and player claims. D1 Section 12.3(a) removes 'Publisher's obligations under Section 11.1' from the Section 12.2 cap. Tideisk's reciprocal indemnity in Section 11.2, covering its distribution, storefront, and marketing conduct, is not carved out and stays capped. Read together, these sections leave Drosos with unlimited exposure for any Game-related claim, including claims that partly arise from Tideisk's own handling, while Tideisk's indemnity is limited to 12 months of fees. Amendment No. 1 does not change Section 12.3(a).",
+      "doc": "D1",
+      "section": "12.3(a)",
+      "detect_terms": [
+        "Publisher's obligations under Section 11.1",
+        "including player claims"
+      ],
+      "expected_finding": "Section 12.3(a) removes Drosos's broad Section 11.1 indemnity for all Game-related claims from the cap while Tideisk's Section 11.2 indemnity remains capped, exposing Drosos to unlimited liability; Drosos should limit the carve-out to third-party IP infringement claims, narrow Section 11.1 to exclude claims caused by Tideisk, or subject it to a separate super-cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "change_of_control_consent",
+      "label": "Parent-level sale to Pelling Ridge triggers Tideisk consent right",
+      "description": "D1 Section 17.2 provides that any Change of Control of Publisher, 'whether direct or indirect,' including a transfer of more than 50% of the voting equity of Publisher 'or of any Person that Controls Publisher,' is 'deemed an assignment' that requires Tideisk's prior written consent. Under D1 Section 15.2(d), an assignment without consent lets Tideisk terminate on 30 days' notice, and the unrecouped balance of the $4,500,000 Minimum Guarantee Advance then becomes immediately repayable. D4 Recital B records that Pelling Ridge Games Group, Inc. agreed on October 1, 2026 to acquire all equity interests of Drosos Holdings, LLC, the sole stockholder of Drosos. This is an indirect Change of Control. D4 acknowledges notice of the deal but expressly states it is not consent, and no other document in the folder grants consent.",
+      "doc": "D1",
+      "section": "17.2",
+      "detect_terms": [
+        "any Person that Controls Publisher",
+        "deemed an assignment"
+      ],
+      "expected_finding": "The Pelling Ridge acquisition of Drosos Holdings recorded in Side Letter Recital B is an indirect Change of Control deemed an assignment under Agreement Section 17.2, and without Tideisk's written consent Tideisk may terminate under Section 15.2(d) and demand immediate repayment of the unrecouped $4,500,000 Advance; Drosos should obtain Tideisk's written consent (or a waiver) before closing and make it a closing condition in the acquisition.",
+      "contradicts": null
+    }
+  ]
+}

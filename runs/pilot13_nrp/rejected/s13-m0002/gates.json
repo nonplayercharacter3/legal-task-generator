@@ -1,0 +1,96 @@
+{
+  "matter_id": "s13-m0002",
+  "accepted": false,
+  "failed_gate": "rubric_trace",
+  "reason": "errors: [\"criterion C1 requires a harm, remedy or provision that issue I1's expected_finding does not name: 'The response must locate the issue in Amendment No. 1 Section 3, explain why this matters to the client'; ask that the response explains why it matters and recommends a fix\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Amendment Section 3.1 restates Section 12.3(b) as: \"(b) a party's breach of Section 9 (Confidentiality), excluding any breach of the Data Processing Addendum;\"",
+            "reason": "Before the Amendment, Section 12.3(b) of the Agreement took breaches of the Data Processing Addendum outside the Section 12.2 cap. The restated text expressly removes them from the exclusion. DPA Section 9.1 makes all DPA liability, including Tideisk's Section 8.1 indemnity for Security Incidents, regulatory fines and notification costs, \"subject to Section 12 of the Agreement.\" Section 12.3(a) uncaps only Publisher's Section 11.1 indemnity, not Distributor's DPA indemnity. Under Section 18.4 the Amendment prevails. Tideisk's liability for processor data breaches is therefore capped at 12 months of Distribution Fees. Drosos, as controller, bears the regulatory and player-class exposure, so the shortfall falls on Drosos. Nothing in the folder cures or limits this. The Launch Fund side letter does not touch it. It is not a lapsed window: it is a continuing allocation of risk that applies to any future incident, so it remains a live problem Drosos can raise and seek to renegotiate."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 2.2: \"This Agreement will continue for successive three-year Renewal Terms unless either party delivers written notice of non-renewal to the other party not more than 210 days and not less than 180 days before the expiration of the then-current Initial Term or Renewal Term. A notice of non-renewal delivered outside that period is of no effect.\"",
+            "reason": "The clause renews the exclusive term automatically for successive three-year periods. The only exit is a notice delivered in a 30-day window, and a notice sent early or late is void. Nothing else in the folder changes this. Amendment No. 1 leaves Section 2.2 untouched, and Drosos has no termination for convenience: Section 15.3 lets it terminate only for Distributor's non-payment. This hurts Drosos most, because Section 3.2 bars it from selling its whole console catalog in the Territory except through Tideisk. The Initial Term ends March 1, 2028, so the window runs from about August 4 to September 2, 2027. As of November 5, 2026 the window has not opened. The pending Pelling Ridge acquisition also makes exit flexibility matter more. The risk is live and the client can still act on it."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Recital C: \"Distributor delivered to Publisher the Royalty Statement for the Calendar Quarter ended June 30, 2026 (the \"Q2 2026 Royalty Statement\") on July 10, 2026.\" Section 3.1: \"On September 8, 2026, Publisher delivered to Distributor a written notice disputing the Q2 2026 Royalty Statement ... resulting in an over-deduction of $612,400\". Section 3.2: \"Distributor contends that the Q2 2026 Royalty Statement is final and binding under Section 6.5 of the Agreement and is not subject to audit or further adjustment.\"",
+            "reason": "Section 6.5 of the Agreement gives Drosos 45 days after delivery to object. A statement not objected to in time becomes \"final and binding and not subject to audit or further adjustment\", and Section 6.6 limits audits to periods still open under 6.5. Delivery on July 10, 2026 closed the window on August 24, 2026. Drosos served its notice on September 8, 2026, 15 days late. The Letter, which Drosos would countersign, records both dates in its own text, so it documents the lateness. It cures nothing: Section 3.3 only reserves each side's positions, and Tideisk expressly asserts finality. Drosos has not accepted the statement and still maintains its objection, so the issue is live. Its $612,400 claim, the interest under Section 6.7 and audit access for Q2 2026 are all at risk. Counsel should consider other routes before signing, for example: treating the over-withholding as a breach of the 20% cap in Section 6.4 rather than a statement adjustment; relying on the reserve-liquidation obligation in Section 6.4; and avoiding recitals that concede the timeline."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 12.3(a): \"Sections 12.1 and 12.2 do not apply to: (a) Publisher's obligations under Section 11.1;\" read together with Section 11.1: \"Publisher shall defend, indemnify and hold harmless Distributor ... from and against all Claims arising out of or relating to the Games, including Claims alleging that a Game infringes ... product liability Claims, and Claims by end users of the Games, including player claims.\"",
+            "reason": "The problem is present and hurts the client. Section 11.1 obliges Drosos, as Publisher, to indemnify Tideisk for any Claim 'arising out of or relating to the Games.' That wording is broad enough to reach player and product claims that partly arise from Tideisk's own distribution or storefront handling. Section 12.3(a) takes only Publisher's indemnity outside both the exclusion of indirect damages and the cap. Tideisk's reciprocal indemnity in Section 11.2 has no matching carve-out, so it stays within the cap of 12 months of Distribution Fees. Amendment No. 1 states that Section 12.3(a) is unchanged. Amendment No. 1 also narrows 12.3(b) so that breaches of the Data Processing Addendum fall back under the cap, which makes Tideisk's data indemnity under DPA Section 8 capped as well. Nothing in the folder cures or limits this asymmetry. It is a live, ongoing term the client can still renegotiate, for example as part of the consent discussions for the Pelling Ridge transaction."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 17.2: \"Any Change of Control of Publisher, whether direct or indirect, is deemed an assignment of this Agreement by Publisher requiring Distributor's prior written consent under Section 17.1. 'Change of Control' means (a) the transfer, in one transaction or a series of related transactions, of more than 50% of the voting equity of Publisher or of any Person that Controls Publisher...\" Side Letter Recital B records that Pelling Ridge agreed on October 1, 2026 to acquire all equity interests of Drosos Holdings, LLC, the sole stockholder of Publisher. Side Letter Section 4.2 states the acknowledgment \"is not consent by Distributor to the Pelling Ridge Transaction or to any assignment or deemed assignment of the Agreement under Section 17.\"",
+            "reason": "The problem is present and still actionable for Drosos. Drosos Holdings is Publisher's sole stockholder and therefore Controls Publisher. Pelling Ridge buying all of Drosos Holdings' equity is a transfer of more than 50% of the voting equity of a Person that Controls Publisher. That is an indirect Change of Control under 17.2(a), which the clause deems an assignment needing Tideisk's prior written consent. The side letter expressly says Tideisk has not consented, and no other document in the folder grants consent. If the deal closes without consent, Tideisk may terminate under 15.2(d) on 30 days' notice. Under 16.2, the unrecouped balance of the $4.5M Advance would then become immediately repayable by Drosos. The deal was agreed but has not closed: Section 4.3 of the side letter still contemplates updates on closing timing. Drosos can therefore still act by seeking consent through separate notice under 18.3 before closing."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": false,
+      "details": {
+        "errors": [
+          "criterion C1 requires a harm, remedy or provision that issue I1's expected_finding does not name: 'The response must locate the issue in Amendment No. 1 Section 3, explain why this matters to the client'; ask that the response explains why it matters and recommends a fix"
+        ],
+        "n_criteria": 10,
+        "bundled": [
+          "criterion C1 requires a harm, remedy or provision that issue I1's expected_finding does not name: 'The response must locate the issue in Amendment No. 1 Section 3, explain why this matters to the client'; ask that the response explains why it matters and recommends a fix"
+        ],
+        "repair": {
+          "ran": true,
+          "flagged": [
+            "criterion C1 requires a harm, remedy or provision that issue I1's expected_finding does not name: 'The response must locate the issue in Amendment No. 1 Section 3, explain why it matters to Drosos'; ask that the response explains why it matters and recommends a fix"
+          ],
+          "cleared": false
+        }
+      }
+    }
+  ]
+}

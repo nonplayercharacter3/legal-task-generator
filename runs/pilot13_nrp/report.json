@@ -1,0 +1,176 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 0,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 1,
+      "failed": 2,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 1,
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "rubric_repairs": {
+    "ran": 3,
+    "cleared": 1,
+    "bundled_after": 2
+  },
+  "unsolved": 0,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s13-m0001",
+      "accepted": false,
+      "failed_gate": "rubric_tests",
+      "reason": "gold_fails: [\"C8\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    },
+    {
+      "matter_id": "s13-m0002",
+      "accepted": false,
+      "failed_gate": "rubric_trace",
+      "reason": "errors: [\"criterion C1 requires a harm, remedy or provision that issue I1's expected_finding does not name: 'The response must locate the issue in Amendment No. 1 Section 3, explain why this matters to the client'; ask that the response explains why it matters and recommends a fix\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    },
+    {
+      "matter_id": "s13-m0003",
+      "accepted": false,
+      "failed_gate": "rubric_trace",
+      "reason": "errors: [\"criterion C3 requires a harm, remedy or provision that issue I3's expected_finding does not name: 'The response locates the issue in the Seller Note (Section 6 and/or Section 8), explains why this matters to the client'; ask that the response explains why it matters and recommends a fix\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12328,
+      "output_tokens": 29947,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 15,
+      "input_tokens": 305760,
+      "output_tokens": 96037,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 105098,
+      "output_tokens": 7218,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 3620,
+      "output_tokens": 425,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 13,
+      "input_tokens": 395346,
+      "output_tokens": 8117,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4291,
+      "output_tokens": 1191,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 6,
+      "input_tokens": 44611,
+      "output_tokens": 10857,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 221414,
+      "output_tokens": 54107,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 3,
+      "input_tokens": 20561,
+      "output_tokens": 2661,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "industrial textiles": 1,
+      "video game publishing": 1,
+      "data center cooling": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 2,
+      "distribution agreement": 1
+    },
+    "issue_types": {
+      "missing_assignment_restriction": 2,
+      "defined_term_inconsistency": 2,
+      "liability_cap_carveout": 2,
+      "uncapped_indemnity": 2,
+      "governing_law_mismatch": 1,
+      "auto_renewal": 1,
+      "expired_notice_window": 1,
+      "change_of_control_consent": 1,
+      "survival_gap": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}
