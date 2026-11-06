@@ -96,6 +96,20 @@ def decontamination(texts: dict[str, str], index: BloomIndex | None, threshold: 
 # ---------------------------------------------------------------- model-based
 
 
+def _numbers(s) -> set[str]:
+    return set(re.findall(r"\d+(?:\.\d+)?", str(s or "").replace(",", "")))
+
+
+def _stated_change(ledger_value: str, found, descriptions: list[str]) -> bool:
+    """An issue description in the document states the value found there: all of it, or every number it adds to the
+    ledger value. s14-m0001's side letter reset a minimum commitment to 100,000 lbs, and its issue said "resets the
+    Minimum Annual Commitment to 100,000 pounds", but the ledger writer listed only another fact in `contradicts`."""
+    # ponytail: a changed number named by an issue in that document counts; a coincidental number there would pass too
+    found_words, added = _words(_plain(found)), _numbers(found) - _numbers(ledger_value)
+    return bool(found_words.strip()) and any(
+        found_words in _words(_plain(d)) or (added and added <= _numbers(d)) for d in descriptions)
+
+
 def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateResult:
     """Re-extract every fact from EVERY drafted file, WITHOUT telling the extractor the value.
 
@@ -149,6 +163,8 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
                 continue
             if n != fname[f.doc] and (not _norm(v) or (f.id, n) in planted):
                 continue  # silent elsewhere, or a deliberate contradiction
+            if n != fname[f.doc] and _stated_change(f.value, v, [i.description for i in ledger.issues if fname.get(i.doc) == n]):
+                continue  # an issue in this document says it changes the value (a side letter's reset, round 14)
             differ.append({"fact": f.id, "key": f.key, "filename": n, "ledger": f.value, "document": v})
     same: set[int] = set()
     worded = [k for k, d in enumerate(differ) if _norm(d["document"])]  # a missing value needs no matcher

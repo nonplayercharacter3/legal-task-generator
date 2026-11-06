@@ -69,7 +69,9 @@ Rules:
   of a response only what this sentence states.
 - If an issue works by stating a fact differently in its document (for example a conflicting governing law),
   set `contradicts` to that fact's id; that fact must be stated in a DIFFERENT document. If the issue moves
-  several facts together (governing law and forum), give a list of their ids. Otherwise null.
+  several facts together (governing law and forum), give a list of their ids. If the issue's document changes any
+  other fact on purpose (a side letter or amendment that resets a value), list that fact too, even when the change
+  is not itself the problem. Otherwise null.
   Every other restatement of a fact must match the ledger.
 
 Reply with ONLY a JSON object:
