@@ -1,0 +1,178 @@
+{
+  "matter_id": "s17-m0002",
+  "summary": "Trilund Pictures Releasing, LLC, an independent film distributor, licenses Simev Systems, Inc.'s 'Reelpath' platform. Reelpath handles rights windows, participation and royalty accounting, and secure hosting of screeners and delivery masters. The deal runs under a Software License Agreement dated March 1, 2024 (New York law), Amendment No. 1, and a Service Level Schedule. An October 12, 2026 notice letter from Trilund does two things. It tells Simev that Ostrander Media Holdings, LP has agreed to acquire Trilund's parent, Trilund Entertainment Group, Inc., and it purports to give notice of non-renewal. Three problems follow. First, the acquisition is a deemed assignment that needs Simev's consent, and no one has sought that consent. Second, the non-renewal notice was sent before the contractual window opened. Third, the Amendment quietly narrowed the confidentiality carve-out from the liability cap, so a breach of content security is now capped. A distractor email thread covers an August 2026 outage and the service credit, which was applied correctly.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Trilund Pictures Releasing, LLC",
+      "role": "Licensee; the firm's client; independent film distributor"
+    },
+    {
+      "id": "P2",
+      "name": "Simev Systems, Inc.",
+      "role": "Licensor; provider of the Reelpath rights-management, royalty-accounting and secure media hosting platform"
+    },
+    {
+      "id": "P3",
+      "name": "Trilund Entertainment Group, Inc.",
+      "role": "Parent and sole member of Licensee; target of the pending acquisition"
+    },
+    {
+      "id": "P4",
+      "name": "Ostrander Media Holdings, LP",
+      "role": "Proposed acquirer of Trilund Entertainment Group, Inc."
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble and Section 1"
+    },
+    {
+      "id": "F2",
+      "key": "Software License Agreement Initial Term",
+      "value": "36 months from the Effective Date, ending February 28, 2027",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F3",
+      "key": "Renewal Term length",
+      "value": "successive 36-month terms",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F4",
+      "key": "Non-renewal notice window",
+      "value": "not less than 90 nor more than 120 days before end of then-current term",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F5",
+      "key": "Liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 10.2"
+    },
+    {
+      "id": "F6",
+      "key": "Original liability cap carve-out for confidentiality",
+      "value": "breach of Section 7 (Confidentiality and Data Security) as a whole",
+      "doc": "D1",
+      "section": "Section 10.3"
+    },
+    {
+      "id": "F7",
+      "key": "Annual license fee",
+      "value": "$186,000 per contract year",
+      "doc": "D1",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "Amendments, then the Software License Agreement, then the Service Level Schedule",
+      "doc": "D1",
+      "section": "Section 16.4"
+    },
+    {
+      "id": "F9",
+      "key": "Monthly uptime commitment",
+      "value": "99.5% availability per calendar month",
+      "doc": "D3",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F10",
+      "key": "Notice letter date",
+      "value": "October 12, 2026",
+      "doc": "D4",
+      "section": "Date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "trilund_simev_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_no_1_software_license_agreement.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "reelpath_service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "trilund_notice_letter_2026-10-12.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "email_thread_august_outage_service_credit.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "Unaddressed Licensor consent to parent-level change of control",
+      "description": "Three provisions combine to create this issue. Section 1 of D1 defines 'Change of Control' to include the acquisition of more than 50% of the voting securities of Licensee or of any entity that directly or indirectly controls Licensee. Section 14.2 of D1 provides that any Change of Control of Licensee is 'deemed an assignment' requiring Simev's prior written consent, which Simev may withhold in its sole discretion. Without that consent, Simev may terminate on 30 days' notice. The D4 notice letter dated October 12, 2026 tells Simev that Ostrander Media Holdings, LP has signed an agreement to acquire 100% of Trilund Entertainment Group, Inc., Licensee's parent, with closing expected December 15, 2026. The letter states that the notice is 'for informational purposes' and that no action is required of Simev. It does not request consent. Because the acquisition is at the parent level, it falls within the definition even though Licensee's own equity does not change. Closing without consent would let Simev terminate the platform that holds Trilund's rights and royalty records, or use the consent as leverage.",
+      "doc": "D1",
+      "section": "Section 14.2 (read with Section 1 definition of Change of Control)",
+      "detect_terms": [
+        "deemed an assignment",
+        "sole discretion"
+      ],
+      "expected_finding": "The Ostrander acquisition of Trilund's parent, announced in the October 12, 2026 letter, is a Change of Control under the Section 1 definition and therefore a deemed assignment under Section 14.2 requiring Simev's prior written consent in its sole discretion. That consent has not been requested, so Trilund must obtain Simev's written consent or a waiver before the expected December 15, 2026 closing to avoid Simev's 30-day termination right.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "Amendment narrows confidentiality carve-out so content security breaches are capped",
+      "description": "Section 10.3 of D1 carves breach of Section 7 (Confidentiality and Data Security) as a whole out of the Section 10.2 cap of 12 months' fees. Section 4 of the D2 amendment restates Section 10.3 and replaces that carve-out with 'breach of Section 7.1' only. Section 7.1 covers non-disclosure of business Confidential Information. The obligation to secure Licensee Content (unreleased screeners, delivery masters and participation statements) sits in Section 7.3, which is no longer carved out. A leak of an unreleased film from Simev's hosting would therefore be capped at roughly $186,000. Under Section 16.4 of D1, amendments prevail over the License Agreement, and nothing in D2 or D3 restores the carve-out, so the narrowing controls.",
+      "doc": "D2",
+      "section": "Section 4 (restating D1 Section 10.3)",
+      "detect_terms": [
+        "breach of Section 7.1"
+      ],
+      "expected_finding": "Amendment No. 1 Section 4 limits the confidentiality carve-out to Section 7.1, and under the Section 16.4 precedence clause the amendment controls. As a result, Simev's breach of its Section 7.3 obligation to secure Licensee Content is now capped at 12 months' fees, and Trilund should seek to restore the carve-out for all of Section 7, or at least Section 7.3, or negotiate a separate uncapped or super-cap for content security breaches.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I3",
+      "type": "auto_renewal",
+      "label": "Automatic 36-month renewal; Trilund's non-renewal notice is premature and ineffective",
+      "description": "Under Sections 12.1 and 12.2 of D1, the Initial Term runs from March 1, 2024 to February 28, 2027. The agreement then renews automatically for successive 36-month Renewal Terms, at fees that may increase by up to 10%, unless notice of non-renewal is given not less than 90 and not more than 120 days before the end of the term. Computed from those dates, the only valid window runs from October 31, 2026 to November 30, 2026. The D4 letter dated October 12, 2026 states Trilund's intention not to renew. That letter was sent 139 days before term end, before the window opened, so under Section 12.2 it is not effective notice. Trilund's position is that it does not want to renew. Unless a compliant notice is delivered inside the window, Trilund is locked into a further three years. That lock-in also constrains the incoming acquirer's plans.",
+      "doc": "D1",
+      "section": "Section 12.2 (read with Section 12.1 and D4 letter)",
+      "detect_terms": [
+        "not more than one hundred twenty (120) days",
+        "successive thirty-six (36) month"
+      ],
+      "expected_finding": "Section 12.2's window means non-renewal notice must be delivered between October 31 and November 30, 2026. Trilund's October 12, 2026 letter is premature and ineffective, so Trilund must serve a fresh compliant notice within that window, or obtain Simev's written acknowledgment that the October 12 letter is effective, to avoid automatic renewal for a further 36-month term at up to 10% higher fees.",
+      "contradicts": null
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "task_id": "s17-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Zaibeind Hospitality Partners, LLC, the buyer of the Larkspur House assets from Stavain Inn Holdings, LLC. Zaibeind is also the maker of the seller note in the deal. Before we advise the client on its position, I need a full review of the transaction documents in the matter folder: the asset purchase agreement (asset_purchase_agreement_larkspur_house.md), the seller promissory note (seller_promissory_note.md), the seller disclosure schedule (seller_disclosure_schedule.md), the bill of sale and assignment (bill_of_sale_and_assignment.md), and the integration meeting notes (integration_meeting_notes_2026-03-24.md). Please send me a memo that lists each issue you find. For each one, give the document and section where it appears, explain why it matters for Zaibeind as buyer and note maker, and recommend a fix. Rank the issues so the most significant ones for the client come first. Where a recommendation depends on facts we would need to confirm with the client, say so and note what we would need to ask.",
+  "documents": [
+    "asset_purchase_agreement_larkspur_house.md",
+    "bill_of_sale_and_assignment.md",
+    "integration_meeting_notes_2026-03-24.md",
+    "seller_disclosure_schedule.md",
+    "seller_promissory_note.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that APA Section 9.1 limits survival of representations, warranties and the Section 9.2 indemnities, including Seller's indemnity for Pre-Closing Taxes/Excluded Liabilities, to nine months after Closing. It also identifies that the Section 1.1 definition of Fundamental Representations omits the Section 4.12 tax representation, and that Seller Note Section 4 limits setoff to claims asserted within the Section 9.1 survival period. Together these leave Buyer without indemnity or Note setoff for pre-closing sales/occupancy tax assessments that New York can issue after the survival period ends. The response locates this in APA Section 9.1 (with Section 1.1 and/or Seller Note Section 4), explains why it matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "nine (9) months following the Closing Date",
+        "Section 4.12 not a Fundamental Representation",
+        "setoff within the survival period"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that APA Section 2.3(a) makes liabilities under Assigned Contracts arising before the Closing into Assumed Liabilities, and that Section 9.5 exempts Buyer's Section 9.3(b) Assumed Liabilities indemnity from the cap. As a result, Buyer bears uncapped liability for Seller's own pre-closing breaches, such as the $410,000 Hudson Valley Wedding Collective claim. The response locates this in APA Sections 2.3(a) and/or 9.5, explains why it matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "whether arising before or after the Closing",
+        "cap shall not apply to Section 9.3(b)",
+        "Hudson Valley Wedding Collective"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Seller Note Section 1 defines 'Business' to cover all hotels and hospitality operations of Maker and its Affiliates, rather than only The Larkspur House as in the APA. It also identifies that, because APA Section 11.9 lets the Note control as to Maker covenants and Events of Default, the Note Section 6.2 restriction and the Section 7.1(d) acceleration reach Buyer's wider portfolio. The response locates this in the Seller Note definition of 'Business', explains why it matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "all hotels and hospitality operations owned, leased or managed by Maker or any of its Affiliates",
+        "Section 11.9",
+        "Section 6.2 / Section 7.1(d) acceleration"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Seller Note principal amount is $3,200,000.",
+      "kind": "fact",
+      "hints": [
+        "$3,200,000",
+        "Seller Note"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Closing Date is April 15, 2026.",
+      "kind": "fact",
+      "hints": [
+        "April 15, 2026",
+        "Closing Date"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is a memo that presents the issues ranked or ordered by significance to the client and, for each issue, gives the document and section, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "ranked by significance",
+        "recommended fix"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response claims that the APA's definition of 'Business' controls over the Seller Note's definition for purposes of the Note's Maker covenants or Events of Default.",
+      "kind": "negative",
+      "hints": []
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that the Section 4.12 tax representation is a Fundamental Representation that survives six years.",
+      "kind": "negative",
+      "hints": []
+    }
+  ],
+  "solver_pass_rate": 0.667,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ]
+}

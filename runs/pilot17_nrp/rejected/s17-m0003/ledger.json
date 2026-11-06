@@ -1,0 +1,183 @@
+{
+  "matter_id": "s17-m0003",
+  "summary": "The firm represents Drasirt Live Holdings, Inc. (Buyer), a regional concert promoter. Under a Delaware-law stock purchase agreement dated October 1, 2026, Drasirt is buying all outstanding shares of Pellacourt Live, Inc., an independent concert promoter and festival producer, from Dreigox Entertainment Group, LLC (Seller) for $48,500,000. The folder holds four documents: the SPA, the July 2026 letter of intent, Seller's Disclosure Schedule (a version carrying Buyer counsel's bracketed comments), and an insurance broker's certificate cover letter, which is the distractor. Four issues are planted. First, the Disclosure Schedule narrows the SPA's defined term 'Key Talent Buyers' below the four individuals agreed in the LOI. Second, Buyer's Excluded Contract designation window lapsed before Seller delivered the Disclosure Schedule late. Third, a venue operator's change-of-control consent right is disclosed but never made a closing condition or covered by an efforts covenant. Fourth, Seller may freely assign the SPA, including its indemnity and non-compete obligations, and be released.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Drasirt Live Holdings, Inc.",
+      "role": "Buyer; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Dreigox Entertainment Group, LLC",
+      "role": "Seller; sole stockholder of the Company"
+    },
+    {
+      "id": "P3",
+      "name": "Pellacourt Live, Inc.",
+      "role": "Company being acquired; concert promoter and festival producer"
+    },
+    {
+      "id": "P4",
+      "name": "Ostrander Waterfront Venues, LLC",
+      "role": "Venue Operator of the Pier 9 Amphitheater; counterparty to the Company's exclusive booking agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Agreement Date",
+      "value": "October 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "SPA Excluded Contract Notice deadline",
+      "value": "fifteen (15) days after the Agreement Date",
+      "doc": "D1",
+      "section": "Section 6.7"
+    },
+    {
+      "id": "F4",
+      "key": "SPA Disclosure Schedule delivery covenant",
+      "value": "within ten (10) Business Days after the Agreement Date",
+      "doc": "D1",
+      "section": "Section 6.6"
+    },
+    {
+      "id": "F5",
+      "key": "Disclosure Schedule delivery date",
+      "value": "October 23, 2026",
+      "doc": "D3",
+      "section": "Cover Page"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "SPA prevails over Disclosure Schedule; SPA supersedes the Letter of Intent in its entirety",
+      "doc": "D1",
+      "section": "Section 11.4"
+    },
+    {
+      "id": "F7",
+      "key": "LOI Key Talent Buyers",
+      "value": "Nadia Ferro, Jonah Okafor, Lucia Brandt and Theo Marchetti",
+      "doc": "D2",
+      "section": "Section 5"
+    },
+    {
+      "id": "F8",
+      "key": "SPA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F9",
+      "key": "SPA general indemnity cap",
+      "value": "$4,850,000 (10% of Purchase Price)",
+      "doc": "D1",
+      "section": "Section 9.4"
+    },
+    {
+      "id": "F10",
+      "key": "Letter of Intent date",
+      "value": "July 20, 2026",
+      "doc": "D2",
+      "section": "Date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Three provisions combine. SPA Section 1.1 defines 'Key Talent Buyers' as the individuals listed in Section 1.1(a) of the Disclosure Schedule. Two SPA provisions use that term: the closing condition in Section 7.2(d), which requires signed employment and retention agreements, and Seller's non-solicitation covenant in Section 6.8. Section 1.1(a) of the Disclosure Schedule lists only Nadia Ferro and Jonah Okafor. It omits Lucia Brandt, the head booker, and Theo Marchetti, both of whom Section 5 of the July 20, 2026 LOI named as Key Talent Buyers. SPA Section 11.4 states that the SPA supersedes the LOI, so the LOI's four-person definition cannot be relied on. The term now covers only two of the four booking relationships Buyer is paying for, which shrinks the scope of both the closing condition and the non-solicit.",
+      "doc": "D3",
+      "section": "Section 1.1(a)",
+      "detect_terms": [
+        "constitute the Key Talent Buyers"
+      ],
+      "expected_finding": "Disclosure Schedule Section 1.1(a), read through SPA Section 1.1, limits 'Key Talent Buyers' to two individuals instead of the four named in LOI Section 5; because SPA Section 11.4 supersedes the LOI, Lucia Brandt and Theo Marchetti fall outside the Section 7.2(d) retention closing condition and the Section 6.8 non-solicit, so Buyer should require that Section 1.1(a) be amended to list all four.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "SPA Section 6.7 lets Buyer designate any Contract listed in Section 4.9 of the Disclosure Schedule as an Excluded Contract, to be terminated before Closing at Seller's cost. Buyer must give notice no later than fifteen (15) days after the Agreement Date of October 1, 2026, so the window closed on October 16, 2026. SPA Section 6.6 required Seller to deliver the Disclosure Schedule within ten Business Days after the Agreement Date, which is October 15, 2026. The cover page of the Disclosure Schedule shows it was actually delivered on October 23, 2026. Buyer therefore never saw the contract list before its designation window expired. A bracketed Buyer counsel note on that cover page states that Buyer does not accept that the window has lapsed and reserves all rights. Buyer has not signed any amendment or waiver.",
+      "doc": "D1",
+      "section": "Section 6.7",
+      "detect_terms": [
+        "fifteen (15) days after the Agreement Date"
+      ],
+      "expected_finding": "Buyer's Section 6.7 Excluded Contract window expired on October 16, 2026, before Seller's late delivery of the Disclosure Schedule on October 23, 2026 (itself a breach of the Section 6.6 ten-Business-Day covenant); relying on the reservation of rights in the Disclosure Schedule note, Buyer should obtain a written amendment resetting the window to run from actual delivery, or assert that Seller's breach tolled it.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 4.9(c) of the Disclosure Schedule lists the Company's Pier 9 Amphitheater Exclusive Booking Agreement with Ostrander Waterfront Venues, LLC. That agreement lets the Venue Operator terminate upon any change of control of the Company without its prior written consent. Several SPA provisions then combine to leave Buyer exposed. Section 4.4 of the Disclosure Schedule (third-party consents) states 'None.' The SPA's cross-disclosure rule in Section 4.0, together with the Disclosure Schedule preamble, deems the Section 4.9(c) disclosure to qualify the SPA Section 4.4 consents representation, so Buyer has no indemnity claim for the missing consent. The closing condition in SPA Section 7.2(c) requires only the consents listed in Section 7.2(c) of the Disclosure Schedule, which covers only the Lockfield Bank credit agreement consent. Seller's efforts covenant in SPA Section 6.4 extends only to Section 7.2(c) consents. The result is that the transaction triggers the Ostrander termination right, and nothing obliges Seller to obtain the consent or conditions Closing on it.",
+      "doc": "D3",
+      "section": "Section 4.9(c)",
+      "detect_terms": [
+        "prior written consent of Venue Operator"
+      ],
+      "expected_finding": "The sale triggers Ostrander's change-of-control termination right under the Pier 9 booking agreement disclosed in Disclosure Schedule Section 4.9(c), yet the consent is neither a closing condition under SPA Section 7.2(c) nor covered by Seller's Section 6.4 efforts covenant, and the cross-disclosure rule bars an indemnity claim under Section 4.4; Buyer should add the Ostrander consent to Section 7.2(c) and Section 6.4 or obtain a special indemnity for loss of the agreement.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "SPA Section 11.6 bars Buyer from assigning without Seller's consent. Seller, by contrast, may assign this Agreement and any of its rights and obligations to any Person without Buyer's consent, and upon such assignment Seller shall be released. The obligations Seller could assign include its Article IX indemnification obligations and its Section 6.8 restrictive covenants. Seller could therefore transfer them to an under-capitalized affiliate or to a competing promoter and walk away, leaving Buyer with no creditworthy indemnitor and a non-compete held by a rival.",
+      "doc": "D1",
+      "section": "Section 11.6",
+      "detect_terms": [
+        "Seller may assign this Agreement",
+        "Seller shall be released"
+      ],
+      "expected_finding": "SPA Section 11.6 lets Seller assign the SPA, including its Article IX indemnity and Section 6.8 restrictive covenant obligations, to anyone (including a competitor) without Buyer's consent and with a full release, so Buyer should require mutual consent to assignment and keep Seller primarily liable after any permitted assignment.",
+      "contradicts": null
+    }
+  ]
+}

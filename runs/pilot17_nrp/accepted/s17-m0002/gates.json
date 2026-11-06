@@ -1,0 +1,165 @@
+{
+  "matter_id": "s17-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 1.0,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 6,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 14.2: \"Any Change of Control of Licensee shall be deemed an assignment of this Agreement by Licensee and requires the prior written consent of Licensor, which Licensor may grant or withhold in its sole discretion. If a Change of Control of Licensee occurs without Licensor's prior written consent, Licensor may terminate this Agreement on thirty (30) days' written notice to Licensee.\" Section 1.3 covers acquisition of more than 50% of the voting securities \"of any entity that directly or indirectly controls Licensee.\" The October 12, 2026 letter says: \"This notice is provided for informational purposes only, as a courtesy to a valued vendor. No action is required of Licensor in connection with the transaction.\"",
+            "reason": "Ostrander's acquisition of 100% of Trilund Entertainment Group, Inc., Licensee's sole member, falls within clause (a) of the Change of Control definition, even though Licensee's own equity does not change. Under Section 14.2 this is a deemed assignment that needs Simev's prior written consent, which Simev may withhold in its sole discretion. The letter tells Simev no action is required and does not ask for consent. Neither the Amendment nor any other document waives or modifies Section 14.2. This is still actionable: today is November 6, 2026 and closing is expected December 15, 2026, so Trilund can still request consent before closing. If it closes without consent, Simev could terminate on 30 days' notice. That would cut off the platform holding Trilund's rights and royalty records before the planned expiry, and could disrupt the Transition Period. The risk is greater because the October 12 non-renewal notice was sent before the 90–120 day window in Section 12.2 and may be ineffective, which could mean the Agreement auto-renews. Simev could also use the consent as leverage."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 4.1 of Amendment No. 1 restates Section 10.3 to read: \"The limitations in Sections 10.1 and 10.2 do not apply to (a) a Party's indemnification obligations under Section 9; (b) breach of Section 7.1 (Non-Disclosure); (c) a Party's gross negligence, fraud or willful misconduct; or (d) Licensee's obligation to pay Fees.\" The original Section 10.3(b) excluded \"breach of Section 7 (Confidentiality and Data Security) as a whole.\"",
+            "reason": "The obligations at stake belong to Simev as Licensor. These are the content security duties in Section 7.3 (encryption, watermarking, CDSA-level safeguards), incident notice and remediation in Section 7.4, and deletion in Section 7.6. Under the original agreement, a breach of any of them was uncapped. The amendment now carves out only Section 7.1, which covers non-disclosure of business Confidential Information. Licensee Content is protected through Section 7.3, not through the 7.1 definition, so a Simev security failure that leaks unreleased screeners or masters falls back under two limits. Section 10.2 caps recovery at about 12 months' fees (roughly $186,000). Section 10.1 excludes lost profits and consequential damages. Unless Simev's conduct rises to gross negligence or willful misconduct, that is the limit of recovery. Section 16.4 gives amendments precedence over the agreement. Section 6.1 of the amendment leaves everything else unchanged, and no document restores the broader carve-out. This hurts Trilund as the party relying on Simev's security obligations. It is still live: the Initial Term runs to February 28, 2027, and Simev keeps hosting Licensee Content through the 90-day Transition Period and until deletion. Any Security Incident in that window would be subject to the narrowed cap. Nothing in the folder records that Trilund knowingly accepted this result or that a claim has already been resolved."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 12.2: \"This Agreement shall not renew if either Party gives the other written notice of non-renewal not less than ninety (90) days and not more than one hundred twenty (120) days before the end of the then-current term. A notice of non-renewal given outside that period is not effective notice of non-renewal under this Section 12.2.\" The D4 letter dated October 12, 2026 states: \"Licensee gives notice of its intention not to renew the Agreement.\"",
+            "reason": "The problem is present and still actionable. Section 12.1 sets the end of the Initial Term at February 28, 2027, so the Section 12.2 non-renewal window runs from October 31, 2026 to November 30, 2026. Trilund's October 12, 2026 letter came 139 days before term end, before the window opened, and Section 12.2 expressly says such a notice is not effective. Nothing in the folder shows Simev waiving the timing requirement, and Section 16.3 requires any waiver to be written and signed. Unless Trilund serves a compliant notice, the Agreement renews automatically for 36 months, against Trilund's stated wish to exit. That also matters given the Ostrander acquisition. Today is November 6, 2026, so the window is open until November 30. Trilund can still cure the problem by re-serving notice under Section 15.1."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.072,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 3,
+            "pass_rate": 1.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 10,
+              "files_opened": [
+                "amendment_no_1_software_license_agreement.md",
+                "email_thread_august_outage_service_credit.md",
+                "reelpath_service_level_schedule.md",
+                "trilund_notice_letter_2026-10-12.md",
+                "trilund_simev_software_license_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 10,
+              "files_opened": [
+                "amendment_no_1_software_license_agreement.md",
+                "email_thread_august_outage_service_credit.md",
+                "reelpath_service_level_schedule.md",
+                "trilund_notice_letter_2026-10-12.md",
+                "trilund_simev_software_license_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 10,
+              "files_opened": [
+                "amendment_no_1_software_license_agreement.md",
+                "email_thread_august_outage_service_credit.md",
+                "reelpath_service_level_schedule.md",
+                "trilund_notice_letter_2026-10-12.md",
+                "trilund_simev_software_license_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

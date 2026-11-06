@@ -1,0 +1,167 @@
+{
+  "matter_id": "s17-m0001",
+  "summary": "Zaibeind Hospitality Partners, LLC (the client, Buyer) is acquiring substantially all the assets of The Larkspur House, a 42-room boutique hotel in Hudson, New York, from Stavain Inn Holdings, LLC (Seller) under a New York-law asset purchase agreement. The price is $18,400,000, of which $3,200,000 is deferred through a Seller Note issued by Buyer. The folder holds the APA, the Seller Note, the Seller Disclosure Schedule, the Bill of Sale and a set of integration meeting notes. Three issues are planted. First, a nine-month survival period, together with a narrow Fundamental Representations definition, cuts off Buyer's recourse and its Note setoff for pre-closing hotel occupancy and sales tax exposure. Second, the Assumed Liabilities definition sweeps in Seller's pre-closing breaches of Assigned Contracts, and Buyer's indemnity for them sits outside the cap. Third, the Seller Note defines 'Business' to cover all of Buyer's and its Affiliates' hotels, and the APA precedence clause lets the Note control on covenants and defaults.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Zaibeind Hospitality Partners, LLC",
+      "role": "Buyer under the Asset Purchase Agreement; Maker of the Seller Note; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Stavain Inn Holdings, LLC",
+      "role": "Seller under the Asset Purchase Agreement; Holder of the Seller Note; owner and operator of The Larkspur House"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Asset Purchase Agreement Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Closing Date",
+      "value": "April 15, 2026",
+      "doc": "D4",
+      "section": "Preamble and Section 1"
+    },
+    {
+      "id": "F3",
+      "key": "Purchase Price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note principal amount",
+      "value": "$3,200,000",
+      "doc": "D2",
+      "section": "Section 1 (Promise to Pay)"
+    },
+    {
+      "id": "F5",
+      "key": "Seller Note maturity",
+      "value": "36 months after the Closing Date",
+      "doc": "D2",
+      "section": "Section 2 (Payments; Maturity)"
+    },
+    {
+      "id": "F6",
+      "key": "APA general survival period",
+      "value": "nine (9) months following the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F7",
+      "key": "APA indemnity cap",
+      "value": "10% of the Purchase Price ($1,840,000)",
+      "doc": "D1",
+      "section": "Section 9.5"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "APA controls over Ancillary Documents, except Seller Note controls as to payment terms, Maker covenants and Events of Default",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F9",
+      "key": "APA definition of Business",
+      "value": "ownership and operation of the Hotel by Seller",
+      "doc": "D1",
+      "section": "Section 1.1 (Definitions)"
+    },
+    {
+      "id": "F10",
+      "key": "Governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.6"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_larkspur_house.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seller_promissory_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "bill_of_sale_and_assignment.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "integration_meeting_notes_2026-03-24.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 9.1 provides that all representations, warranties, covenants and indemnification obligations under Section 9.2 survive only until nine (9) months following the Closing Date, which is January 15, 2027, measured from the April 15, 2026 Closing Date in the Bill of Sale (D4). The only exception is Fundamental Representations, which survive six years. Section 1.1 defines Fundamental Representations as Sections 4.1 (Organization), 4.2 (Authority) and 4.7 (Title to Purchased Assets) only. It omits Section 4.12 (Taxes), which covers New York State sales tax on hotel occupancy and the Columbia County hotel room occupancy tax. Because Section 9.1 runs the nine-month limit across Section 9.2 as a whole, it also cuts off Seller's Section 9.2(b) indemnity for Excluded Liabilities, which include Pre-Closing Taxes. Section 4 (Setoff) of the Seller Note (D2) limits Maker's setoff to indemnity claims 'asserted in writing within the survival period set forth in Section 9.1 of the Purchase Agreement'. New York sales and occupancy tax assessments for pre-closing periods can be made up to three years after the return is filed. A bulk-sale purchaser can also face successor liability for Seller's unpaid sales taxes under Tax Law Section 1141(c). Read together, these provisions leave Buyer bearing pre-closing tax exposure after January 15, 2027, with no indemnity and no setoff against the $3,200,000 note.",
+      "doc": "D1",
+      "section": "Section 9.1 (read with Section 1.1 'Fundamental Representations' and Seller Note Section 4)",
+      "detect_terms": [
+        "nine (9) months following the Closing Date"
+      ],
+      "expected_finding": "Because APA Section 9.1 ends all indemnity, including Seller's Section 9.2(b) indemnity for Pre-Closing Taxes, nine months after the April 15, 2026 Closing, and Section 1.1 leaves the Section 4.12 tax representation out of the Fundamental Representations, Buyer loses indemnity and Seller Note setoff rights for pre-closing hotel occupancy and sales tax assessments that New York can issue for roughly three years. Section 4.12 and the Pre-Closing Taxes indemnity should survive until 60 days after the applicable statute of limitations, with the Note's setoff right extended to match.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "APA Section 2.3(a) defines Assumed Liabilities to include 'all liabilities and obligations arising under the Assigned Contracts, whether arising before or after the Closing'. Section 2.4 (Excluded Liabilities) does not carve back Seller's pre-closing breaches of those contracts. Section 9.3(b) obliges Buyer to indemnify Seller for all Losses arising from Assumed Liabilities. Section 9.5 caps each party's liability at 10% of the Purchase Price but states that the cap 'shall not apply to claims under Section 9.2(b) or Section 9.3(b)'. Read together, Buyer bears uncapped liability for Seller's own pre-closing breaches of group-booking, OTA and vendor contracts, and owes Seller an uncapped indemnity for them. The exposure is concrete. Schedule 2.1(c) of the Disclosure Schedule (D3) lists the Hudson Valley Wedding Collective room-block agreement as an Assigned Contract. Schedule 4.10 discloses a pending $410,000 claim under that agreement arising from Seller's March 2026 cancellation of a contracted event block. Seller's reciprocal uncapped indemnity under Section 9.2(b) covers only Excluded Liabilities, so it gives Buyer no protection here.",
+      "doc": "D1",
+      "section": "Section 9.5 (read with Sections 2.3(a), 2.4 and 9.3(b))",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "shall not apply to claims under Section 9.2(b) or Section 9.3(b)"
+      ],
+      "expected_finding": "Because APA Section 2.3(a) makes pre-closing liabilities under Assigned Contracts Assumed Liabilities and Section 9.5 exempts Buyer's Section 9.3(b) Assumed Liabilities indemnity from the cap, Buyer faces unlimited liability for Seller's own pre-closing breaches, including the $410,000 Hudson Valley Wedding Collective claim disclosed on Schedule 4.10. Section 2.3(a) should be limited to obligations arising after the Closing, and pre-closing contract breaches should be added to the Excluded Liabilities in Section 2.4 so they fall under Seller's Section 9.2(b) indemnity.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 defines 'Business' as the ownership and operation of the Hotel by Seller. Seller Note Section 1 (Definitions) instead defines 'Business' as 'all hotels and hospitality operations owned, leased or managed by Maker or any of its Affiliates'. Note Section 6.2 bars Maker, without Holder's consent, from selling, transferring, refinancing or encumbering any material portion of the assets of the Business. Note Section 7.1(d) makes a breach of Section 6.2 an Event of Default permitting acceleration of the full $3,200,000. APA Section 11.9 generally makes the APA control over Ancillary Documents, but it provides that the Seller Note controls as to payment terms, Maker covenants and Events of Default. The APA definition therefore does not cure the broader Note definition. As drafted, any financing or disposition of Buyer's or its Affiliates' other hotels needs Seller's consent and could trigger acceleration.",
+      "doc": "D2",
+      "section": "Section 1 (definition of 'Business'), operating through Sections 6.2 and 7.1(d)",
+      "detect_terms": [
+        "all hotels and hospitality operations owned, leased or managed by Maker or any of its Affiliates"
+      ],
+      "expected_finding": "The Seller Note defines 'Business' to cover every hotel of Buyer and its Affiliates rather than just The Larkspur House as defined in APA Section 1.1. Because APA Section 11.9 lets the Note control as to Maker covenants and Events of Default, the Section 6.2 restriction and the Section 7.1(d) acceleration reach Buyer's entire portfolio. The Note's definition should be conformed to the APA so that it covers only the Hotel.",
+      "contradicts": "F9"
+    }
+  ]
+}

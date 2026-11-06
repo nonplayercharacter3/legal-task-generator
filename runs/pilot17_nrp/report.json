@@ -1,0 +1,209 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 2,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 2,
+      "pass_rates": {
+        "0.67": 1,
+        "1.00": 1
+      }
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s17-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.667,
+      "unsolved": false,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 2,
+          "pass_rate": 0.667
+        }
+      ]
+    },
+    {
+      "matter_id": "s17-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 1.0,
+      "unsolved": false,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 3,
+          "pass_rate": 1.0
+        }
+      ]
+    },
+    {
+      "matter_id": "s17-m0003",
+      "accepted": false,
+      "failed_gate": "rubric_tests",
+      "reason": "flawed_wrongly_fails: [\"C9\", \"C10\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12155,
+      "output_tokens": 26799,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 14,
+      "input_tokens": 241963,
+      "output_tokens": 75801,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 83985,
+      "output_tokens": 7587,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4711,
+      "output_tokens": 724,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 10,
+      "input_tokens": 238898,
+      "output_tokens": 7840,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4172,
+      "output_tokens": 1119,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 17831,
+      "output_tokens": 4818,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 175166,
+      "output_tokens": 47645,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 17,
+      "input_tokens": 138094,
+      "output_tokens": 14592,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 100,
+      "input_tokens": 791669,
+      "output_tokens": 122504,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "boutique hotels": 1,
+      "independent film distribution": 1,
+      "concert promotion": 1
+    },
+    "agreement_types": {
+      "asset purchase agreement": 1,
+      "software license agreement": 1,
+      "stock purchase agreement": 1
+    },
+    "issue_types": {
+      "defined_term_inconsistency": 2,
+      "change_of_control_consent": 2,
+      "survival_gap": 1,
+      "uncapped_indemnity": 1,
+      "liability_cap_carveout": 1,
+      "auto_renewal": 1,
+      "expired_notice_window": 1,
+      "missing_assignment_restriction": 1
+    },
+    "repeated_names": {
+      "ostrander": [
+        "s17-m0002",
+        "s17-m0003"
+      ]
+    },
+    "repeated_issue_sets": {}
+  }
+}

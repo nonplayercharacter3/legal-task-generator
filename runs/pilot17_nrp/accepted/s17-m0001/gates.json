@@ -1,0 +1,169 @@
+{
+  "matter_id": "s17-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.667,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.1: \"The representations, warranties, covenants and agreements of the Parties contained in this Agreement, and the indemnification obligations under Section 9.2, shall survive the Closing until nine (9) months following the Closing Date (the \"Survival Period\"); provided that the Fundamental Representations shall survive until six (6) years following the Closing Date.\" Section 1.1: \"\"Fundamental Representations\" means the representations and warranties of Seller in Section 4.1 (Organization), Section 4.2 (Authority) and Section 4.7 (Title to Purchased Assets).\" Seller Note Section 4.1: \"This setoff right applies only to indemnity claims asserted in writing within the survival period set forth in Section 9.1 of the Purchase Agreement.\"",
+            "reason": "The problem is present and it falls on Buyer, our client. Seller is the indemnitor under Section 9.2, and Buyer is the party exposed to pre-closing sales and occupancy tax assessments, including successor liability as a bulk-sale purchaser. The Bill of Sale fixes the Closing Date at April 15, 2026, so the nine-month Survival Period ends January 15, 2027. That limit runs across all of Section 9.2, including the 9.2(b) indemnity for Excluded Liabilities, which covers Pre-Closing Taxes. Section 9.5 lifts only the basket and cap for 9.2(b) claims, not the survival limit. Section 4.12 (Taxes) is not a Fundamental Representation, so it gets no six-year carve-out. Seller Note Section 4.1 ties Buyer's setoff against the $3.2M note to the same window. Nothing in the folder extends the tax survival period. New York tax assessments can come up to three years after filing, so the exposure outlasts the indemnity. As of today (November 6, 2026) the window has not closed. Buyer can still assert written tax claims before January 15, 2027 or negotiate an amendment, so the issue remains actionable."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 2.3(a): Buyer assumes \"all liabilities and obligations arising under the Assigned Contracts, whether arising before or after the Closing\"; Section 9.3(b): Buyer shall indemnify Seller from \"all Losses arising out of or resulting from ... (b) any Assumed Liability\"; Section 9.5: \"The limitations in this Section 9.5 shall not apply to claims under Section 9.2(b) or Section 9.3(b), or to claims arising from fraud.\"",
+            "reason": "The problem is present and still live for Buyer. Section 2.3(a) shifts Seller's pre-closing liabilities under the Assigned Contracts to Buyer, and Section 2.4 has no carve-back for Seller's own pre-closing breaches. Section 9.3(b) makes Buyer the indemnitor for Assumed Liabilities, and Section 9.5 exempts that indemnity from both the $92,000 basket and the $1,840,000 cap. Seller's uncapped indemnity under 9.2(b) covers only Excluded Liabilities, so it does not offset this. Buyer's capped rep claim is also weak: the breach is disclosed in Schedule 4.9, which is an exception to Section 4.9. The exposure is concrete. Schedule 2.1(c) lists the Hudson Valley Wedding Collective Agreement as an Assigned Contract, and Schedule 4.10 discloses a $410,000 claim from Seller's March 2026 cancellation, unresolved at signing. Closing occurred on April 15, 2026, so Buyer has assumed this liability. Nothing in the folder shows the claim was resolved, paid or accepted by Buyer, and the survival period (nine months, to January 2027) has not run. The exposure therefore remains actionable for Buyer, for example through a negotiated amendment or allocation of the claim to Seller."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"Business\" means all hotels and hospitality operations owned, leased or managed by Maker or any of its Affiliates. ... Maker shall not, and shall not permit any of its Affiliates to, without the prior written consent of Holder, sell, transfer, lease, refinance or encumber any material portion of the assets of the Business.\" (Note §1.2, §6.2); \"(d) Maker breaches Section 6.2\" (Note §7.1(d))",
+            "reason": "The Note defines 'Business' far more broadly than APA §1.1, which limits it to the ownership and operation of the Hotel by Seller. The Note's definition reaches every hotel owned, leased or managed by Maker or any Affiliate. Section 6.2 therefore requires Holder (Seller) consent before Buyer or its Affiliates refinance, encumber or sell material assets of any of their hotels. Under §7.1(d), a breach of §6.2 is an immediate Event of Default with no cure period, and under §7.2 Holder may accelerate the full $3.2M. The §6.2 carve-outs cover only the Senior Indebtedness lien and the Mortgage, so they protect financing on the Hotel and nowhere else. APA §11.9 makes the Note control as to Maker covenants and Events of Default, so the narrower APA definition does not cure the problem. Note §1.2 also applies APA definitions only to terms the Note leaves undefined. The covenant burdens the client, as Maker, and it continues for the life of the Note. Nothing in the folder shows that the client accepted this scope or that the Note was amended. The client can still act on it, for example by seeking an amendment under §9.2 or a written clarification from Holder."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.095,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 14,
+              "files_opened": [
+                "asset_purchase_agreement_larkspur_house.md",
+                "bill_of_sale_and_assignment.md",
+                "integration_meeting_notes_2026-03-24.md",
+                "seller_disclosure_schedule.md",
+                "seller_promissory_note.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C7",
+                "C8"
+              ],
+              "steps": 14,
+              "files_opened": [
+                "asset_purchase_agreement_larkspur_house.md",
+                "bill_of_sale_and_assignment.md",
+                "integration_meeting_notes_2026-03-24.md",
+                "seller_disclosure_schedule.md",
+                "seller_promissory_note.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 14,
+              "files_opened": [
+                "asset_purchase_agreement_larkspur_house.md",
+                "bill_of_sale_and_assignment.md",
+                "integration_meeting_notes_2026-03-24.md",
+                "seller_disclosure_schedule.md",
+                "seller_promissory_note.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

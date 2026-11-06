@@ -1,0 +1,102 @@
+{
+  "matter_id": "s17-m0003",
+  "accepted": false,
+  "failed_gate": "rubric_tests",
+  "reason": "flawed_wrongly_fails: [\"C9\", \"C10\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 1.1(a) of the Disclosure Schedule: \"For purposes of the definition of \"Key Talent Buyers\" in Section 1.1 of the Agreement, the following individuals constitute the Key Talent Buyers:\" The table that follows lists only Nadia Ferro and Jonah Okafor. LOI Section 5(a) names four: \"the \"Key Talent Buyers\" are Nadia Ferro, Jonah Okafor, Lucia Brandt and Theo Marchetti.\"",
+            "reason": "SPA Section 1.1 defines Key Talent Buyers only by reference to Schedule Section 1.1(a), and that section names two people. Lucia Brandt (head booker, $245,000) and Theo Marchetti are listed as employees elsewhere in the Schedule but not as Key Talent Buyers. SPA Section 11.4 says the SPA supersedes the LOI, so the LOI's four-person list cannot be relied on. Schedule Section 1.5 says the Schedule becomes part of the Agreement on delivery, and Section 11.4 only makes the SPA prevail over an inconsistent Schedule. Because the SPA itself names no one, nothing overrides the two-name list. As a result, Buyer's closing condition in Section 7.2(d) (signed employment and retention agreements) and Seller's non-solicit in Section 6.8(b) cover only two of the four people whose relationships the LOI said drive Buyer's valuation. Buyer counsel's comments on the Schedule raise other points but not this omission, and Buyer has not signed off on or accepted it. Closing has not occurred and the Outside Date is December 31, 2026, so Buyer can still push to have the Schedule corrected or the SPA amended."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 6.7: \"Buyer may, by written notice to Seller given no later than fifteen (15) days after the Agreement Date (the \"Excluded Contract Notice\"), designate any Contract listed in Section 4.9 of the Disclosure Schedule as an \"Excluded Contract.\"\" The Disclosure Schedule cover reads: \"Delivered by Seller to Buyer: October 23, 2026\" and \"[Buyer counsel note: Received October 23, 2026. Buyer does not accept that the Excluded Contract designation window under Section 6.7 of the Agreement has lapsed, and reserves all rights.]\"",
+            "reason": "Section 6.7 runs Buyer's designation window from the Agreement Date (October 1, 2026), so it closed on October 16. It is not tied to delivery of the Disclosure Schedule. Seller had to deliver the Schedule within ten Business Days under Section 6.6, roughly October 15–16. It delivered on October 23, after the window had closed. Buyer therefore could not designate any contract from a Section 4.9 list it had not received. Nothing in the SPA tolls or extends the window if Seller delivers late. Seller can argue the window has lapsed, which would cost Buyer the right to have unwanted contracts terminated at Seller's cost. That risk matters because the list includes large commitments such as the Pier 9 rent and artist guarantees. Buyer has not acquiesced: its counsel objected in writing and reserved rights, and there is no signed amendment or waiver (Section 11.5 requires one). Closing has not occurred. The issue is therefore present and still actionable, for example by negotiating an extension or amendment, or by asserting Seller's breach of Section 6.6."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 4.9(c)(iv): \"Section 14.2 of the Pier 9 Agreement provides that the Company may not assign the agreement, and may not undergo a Change of Control (as defined in the Pier 9 Agreement, including any transfer of more than fifty percent (50%) of the voting equity of the Company), without the prior written consent of Venue Operator. If any such assignment or Change of Control occurs without that consent, Venue Operator may terminate the Pier 9 Agreement on thirty (30) days' written notice.\" Section 3 (Section 4.4 — Consents): \"None.\" Section 7 (Section 7.2(c) — Required Consents) lists only the Lockfield Bank consent.",
+            "reason": "The sale of 100% of the Shares is a Change of Control under the Pier 9 Agreement. Without Ostrander's consent, Ostrander can terminate it on 30 days' notice. That agreement is the Company's key exclusive venue relationship, carrying a $1.15M annual guaranteed rent through 2030. The consent is missing from Schedule 4.4 and from Schedule 7.2(c). Under SPA 4.0 and Schedule 1.2, the 4.9(c) disclosure is deemed to qualify every Article IV rep, including 4.3 and 4.4. Buyer therefore likely has no indemnity claim under 9.2(a). The closing condition in 7.2(c) and Seller's efforts covenant in 6.4 reach only the consents listed in Schedule 7.2(c), so Seller has no duty to obtain Ostrander's consent and Closing is not conditioned on it. Nothing in the folder cures this. The 11.4 precedence clause does not help, because the Schedule does not conflict with the SPA. The Excluded Contract mechanism under 6.7 would only terminate the contract, which does not protect Buyer's interest in keeping it. The issue remains actionable: Closing has not occurred, the Outside Date is December 31, 2026, and Buyer can still require that the Ostrander consent be added to Schedule 7.2(c) or to a specific indemnity."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 11.6: \"Buyer may not assign this Agreement or any of its rights or obligations under it without the prior written consent of Seller. Seller may assign this Agreement and any of its rights and obligations under it to any Person without the consent of Buyer, and upon such assignment Seller shall be released from the obligations so assigned.\"",
+            "reason": "The problem is present and remains actionable. Seller is the party that owes the obligations this clause touches: the Article IX indemnity (Section 9.2), the Section 6.8 non-compete, non-solicit and confidentiality covenants, and the working capital true-up payments under Section 2.3(c). Section 11.6 lets Seller assign all of these to any Person, including an under-capitalized affiliate or a competing promoter, and then releases Seller entirely. Buyer would lose a creditworthy indemnitor for anything beyond the $2,425,000 escrow, which Section 9.6 releases at 18 months even though Fundamental Representations survive to 60 days past the statute of limitations. The non-compete could also end up held by a rival. Nothing else in the folder cures this. The Disclosure Schedule does not address it, and the Letter of Intent is superseded under Section 11.4. The Agreement is dated October 1, 2026 and closing has not occurred (the October 28 insurance letter still calls the acquisition \"proposed\"), so Buyer can still seek an amendment before closing. Buyer is the party harmed."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": false,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [
+          "C9",
+          "C10"
+        ],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    }
+  ]
+}
