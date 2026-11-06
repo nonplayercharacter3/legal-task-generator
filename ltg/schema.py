@@ -257,6 +257,16 @@ def _content(s: str) -> list[str]:
     return [re.sub(r"(ies|es|s|ed|ing)$", "", w) if len(w) > 4 else w for w in words]
 
 
+# The words of what an issue criterion may always ask for (the finding, where it is, why it matters to the client, that a
+# fix is recommended). Round 13 lost s13-m0002 and s13-m0003 because "locates the issue in ... Section 3, explains why
+# this matters to the client" counted these as harm or remedy words the expected finding does not name.
+_ALLOWED = frozenset(_content(
+    "locate locates located locating location issue issues explain explains explained explaining why matter matters "
+    "mattered important importance client clients recommend recommends recommended recommendation fix fixes fixed "
+    "remedy remedies remedied response responses memo memos memorandum section sections identify identifies identified "
+    "note notes noted address addresses addressed risk risks"))
+
+
 def bundled_elements(text: str, vocabulary: set[str]) -> list[str]:
     """Clauses of an issue criterion that demand a harm, remedy or provision the ledger's expected finding does not name.
 
@@ -264,7 +274,8 @@ def bundled_elements(text: str, vocabulary: set[str]) -> list[str]:
     (s12-m0001) lost a sound task because its criteria also demanded one particular harm ("access to audit/process or
     yield data") and one particular remedy, and the judge enforced them. The first clause (the finding itself) is not
     checked; every later clause that explains or recommends is, and is flagged when most of its content words are
-    missing from `vocabulary` (the expected finding plus the ledger's names, document kinds and the issue's section).
+    missing from `vocabulary` (the expected finding plus the ledger's names, document kinds and the issue's section)
+    and from `_ALLOWED`, the words of the elements every issue criterion may ask for.
     """
     # ponytail: word overlap, no synonyms; a clause that rewords the finding needs the ledger's own words
     out = []
@@ -272,7 +283,7 @@ def bundled_elements(text: str, vocabulary: set[str]) -> list[str]:
         if not _CUE.search(seg):
             continue
         words = _content(seg)
-        novel = [w for w in words if w not in vocabulary]
+        novel = [w for w in words if w not in vocabulary and w not in _ALLOWED]
         if len(words) >= 4 and 2 * len(novel) > len(words):
             out.append(seg)
     return out

@@ -332,8 +332,8 @@ def render_report(rep: dict) -> str:
         lines += ["", "**Decontamination was skipped (no `reference_dirs`): these tasks were NOT screened against LAB.**"]
     rr = rep.get("rubric_repairs") or {}
     if rr.get("ran") or rr.get("bundled_after"):
-        lines += ["", f"Rubric repairs for bundled issue criteria (`gates.check_bundling`): {rr['ran']} ran, {rr['cleared']} cleared; "
-                  f"{rr['bundled_after']} matter(s) still had bundled clauses in the final rubric."]
+        lines += ["", f"Bundled issue criteria (`gates.check_bundling`): {rr['bundled_after']} matter(s) flagged in the final rubric; "
+                  f"{rr['ran']} repair(s) ran, {rr['cleared']} cleared."]
     lines += ["", "## Difficulty", "", "Pass rates of the accepted tasks per labelling model. Difficulty is a label, not a filter: whoever "
               "trains picks the band that fits their model.", "", "| Model | Tasks | Pass rate: tasks |", "| --- | ---: | --- |"]
     for model, d in rep.get("difficulty", {}).items():

@@ -136,7 +136,7 @@ def write_instruction(client: ModelClient, spec: MatterSpec, ledger: Ledger) -> 
     return call_json(client, "instruction_writer", prompts.INSTRUCTION_WRITER, render_input(payload)).get("instruction", "")
 
 
-def write_rubric(client: ModelClient, spec: MatterSpec, ledger: Ledger, instruction: str, bundling: str = "repair") -> tuple[Rubric, dict]:
+def write_rubric(client: ModelClient, spec: MatterSpec, ledger: Ledger, instruction: str, bundling: str = "warn") -> tuple[Rubric, dict]:
     """The rubric, and what was done about bundled issue criteria (`gates.check_bundling`).
 
     With `bundling == "repair"`, a rubric whose only faults are clauses demanding a harm, remedy or provision the

@@ -70,7 +70,7 @@ def leak_check(instruction: str, ledger: Ledger, docs: Documents) -> GateResult:
     return GateResult("leak_check", passed, {"hits": hits, "html_comments": comments, "empty": not instruction.strip()})
 
 
-def rubric_trace(rubric: Rubric, ledger: Ledger, answers: Answers, bundling: str = "repair", repair: dict | None = None) -> GateResult:
+def rubric_trace(rubric: Rubric, ledger: Ledger, answers: Answers, bundling: str = "warn", repair: dict | None = None) -> GateResult:
     """Deterministic trace of rubric and answers to the ledger.
 
     `bundling` is `gates.check_bundling`: bundled clauses still present reject under "repair" (the writer already had
