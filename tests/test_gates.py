@@ -188,6 +188,40 @@ def test_consistency_treats_a_fact_quoted_in_an_issue_description_as_planted_in_
                                  {"a.md": "...", "b.md": "..."}).passed
 
 
+
+def test_consistency_treats_a_value_an_issue_in_that_document_says_it_changes_as_planted():
+    """Round 14, s14-m0001: the side letter resets F5 to 100,000 lbs and its issue says so, but `contradicts` lists only F7."""
+    from ltg.schema import Issue
+
+    ledger = _ledger()
+    ledger.facts[0].key, ledger.facts[0].value = "Supply Agreement Minimum Annual Commitment", "120,000 pounds of Products per Contract Year"
+    ledger.issues = [Issue("I3", "defined_term_inconsistency", "x", "D3 Section 2 resets the Minimum Annual Commitment to 100,000 "
+                           "pounds from Contract Year 2027. It also states that 'Products' means T-90 pelletized hops only.", "D2", "2",
+                           ["x"], "x", contradicts="F7")]
+    reset = {"F1@a.md": "120,000 pounds of Products per Contract Year", "F1@b.md": "100,000 pounds of Products per Contract Year"}
+    docs = {"a.md": "...", "b.md": "..."}
+    assert gates.consistency(Facts(reset, same=False), ledger, docs).passed
+    other = {**reset, "F1@b.md": "90,000 pounds of Products per Contract Year"}  # a number the issue never names
+    assert not gates.consistency(Facts(other, same=False), ledger, docs).passed
+    ledger.issues[0].doc = "D1"  # the issue lives in the other document: b.md's value is not planted
+    assert not gates.consistency(Facts(reset, same=False), ledger, docs).passed
+
+
+def test_consistency_tells_the_matcher_which_instrument_numbers_each_value():
+    """Round 14, s14-m0002: the term sheet names the agreement's cap carve-outs by its own section numbers."""
+    from ltg import prompts
+
+    ledger = _ledger()
+    ledger.facts[0].key = "Distribution Agreement liability cap carve-outs"
+    ledger.facts[0].value = "Supplier indemnity under Section 11.1, recall costs under Section 10.4, and fraud"
+    ledger.documents[1].kind = "term sheet"
+    term_sheet = "Supplier's third-party indemnity in Section 10.1; Supplier's recall cost obligations in Section 9.2; and fraud"
+    seen = Facts({"F1@a.md": ledger.facts[0].value, "F1@b.md": term_sheet}, same=True)
+    assert gates.consistency(seen, ledger, {"a.md": "...", "b.md": "..."}).passed
+    assert seen.matched == [{"id": "0", "fact": ledger.facts[0].key, "ledger": ledger.facts[0].value, "ledger_in": "agreement (a.md)",
+                             "document": term_sheet, "document_in": "term sheet (b.md)"}]
+    assert "own numbering" in prompts.FACT_MATCHER and "not whether the numbers match" in prompts.FACT_MATCHER
+
 def test_consistency_trusts_the_document_text_over_an_extractor_that_drops_a_qualifier():
     ledger = _ledger()
     ledger.facts[0].value = "courts located in Wilmington, Delaware, exclusively"
