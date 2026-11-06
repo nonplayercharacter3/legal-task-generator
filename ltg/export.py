@@ -37,6 +37,12 @@ def difficulty(task: dict, settings: dict) -> list[dict]:
     return [{"model": _solver_model(settings), "attempts": attempts, "passes": round(rate * attempts), "pass_rate": rate}]
 
 
+def task_id(matter: Path) -> str:
+    """`<run folder name>/<matter id>`: matter ids come from the seed, so two runs with one seed share them (s9-m0003
+    was drafted by both pilot9_haiku and pilot9_nrp). The split stays per matter id, so such drafts never straddle splits."""
+    return f"{matter.parent.parent.resolve().name}/{matter.name}"
+
+
 def example(matter: Path, labels: list[dict]) -> dict:
     task = json.loads((matter / "task.json").read_text())
     docs = "\n\n".join(f"### {name}\n\n{(matter / 'docs' / name).read_text()}" for name in sorted(task["documents"]))
@@ -48,7 +54,8 @@ def example(matter: Path, labels: list[dict]) -> dict:
             {"role": "assistant", "content": json.loads((matter / "answers.json").read_text())["gold"]},
         ],
         "eval": {
-            "task_id": task["task_id"],
+            "task_id": task_id(matter),
+            "matter_id": task["task_id"],
             "split": task["split"],
             "practice_area": task["practice_area"],
             "agreement_type": task["agreement_type"],
@@ -63,15 +70,16 @@ def export(runs: list[str], out: str, model: str | None = None, min_pass: float 
            include_unsolved: bool = False) -> dict:
     """Write <out>/{train,dev,test}.jsonl from every matter folder holding a task.json (accepted, or relabelled
     under rejected/). With `model`, keep only tasks that model labelled with min_pass <= pass_rate <= max_pass.
-    Returns counts per split, the matter ids dropped as duplicates, and how many the filters left out."""
+    Returns counts per split, the task ids dropped as duplicates (two run folders with one name), and how many the
+    filters left out."""
     found: dict[str, list[Path]] = {}
     for r in runs:
         for m in sorted(Path(r).glob("*/*/task.json")):
-            found.setdefault(m.parent.name, []).append(m.parent)
+            found.setdefault(task_id(m.parent), []).append(m.parent)
     dupes = sorted(k for k, v in found.items() if len(v) > 1)
     lines: dict[str, list[str]] = {s: [] for s in SPLITS}
     skipped = {"unsolved": 0, "outside_band": 0}
-    for mid, (matter, *rest) in sorted(found.items()):
+    for tid, (matter, *rest) in sorted(found.items()):
         if rest:
             continue
         task = json.loads((matter / "task.json").read_text())

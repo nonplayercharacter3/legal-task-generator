@@ -37,11 +37,22 @@ def test_export_splits_and_no_answer_key(cfg, tmp_path, capsys):
             for secret in secrets:
                 assert json.dumps(secret)[1:-1] not in line
 
-    # the same matter id in two runs: reported, kept in neither
+    # the same matter id in two runs (one seed run twice): both exported, keyed by run folder, same split
     twin = tmp_path / "twin"
     shutil.copytree(run / "accepted", twin / "accepted")
     assert main(["export", "--runs", str(run), str(twin), "--out", str(out)]) == 0
-    assert "duplicate matter id" in capsys.readouterr().err
+    assert capsys.readouterr().err == ""
+    rows = [json.loads(l)["eval"] for s in want for l in (out / f"{s}.jsonl").read_text().splitlines()]
+    assert len(rows) == 2 * sum(want.values())
+    assert {r["task_id"] for r in rows} == {f"{f}/{m}" for f in (run.name, "twin") for m in {r["matter_id"] for r in rows}}
+    by_matter = {}
+    for r in rows:
+        by_matter.setdefault(r["matter_id"], set()).add(r["split"])
+    assert all(len(splits) == 1 for splits in by_matter.values())
+
+    # the same run folder passed twice is a duplicate task id: reported, kept in neither
+    assert main(["export", "--runs", str(run), str(run), "--out", str(out)]) == 0
+    assert "duplicate task id" in capsys.readouterr().err
     assert all((out / f"{s}.jsonl").read_text() == "" for s in want)
 
 
@@ -56,7 +67,7 @@ def test_export_filters_by_difficulty_band_and_unsolved(cfg, tmp_path):
 
     def exported(*flags):
         assert main(["export", "--runs", cfg.run.out_dir, "--out", str(out), *flags]) == 0
-        return {json.loads(l)["eval"]["task_id"] for s in ("train", "dev", "test") for l in (out / f"{s}.jsonl").read_text().splitlines()}
+        return {json.loads(l)["eval"]["matter_id"] for s in ("train", "dev", "test") for l in (out / f"{s}.jsonl").read_text().splitlines()}
 
     assert exported() == set(rates)
     assert exported("--model", "solver", "--min-pass", str(low), "--max-pass", str(low)) == {m for m, r in rates.items() if r == low}
@@ -108,3 +119,15 @@ def test_relabel_script_recovers_only_old_too_easy_rejections(cfg, tmp_path, cap
         assert t["difficulty"] == [{"model": "fake", "attempts": 3, "passes": 3, "pass_rate": 1.0}] and t["split"] in ("train", "dev", "test")
     assert main(["export", "--runs", str(run), "--out", str(tmp_path / "x"), "--model", "fake", "--min-pass", "1.0"]) == 0
     assert sum(len((tmp_path / "x" / f"{s}.jsonl").read_text().splitlines()) for s in ("train", "dev", "test")) == len(want)
+
+
+def test_run_refuses_a_seed_another_run_folder_used(tmp_path, capsys):
+    a, b = str(tmp_path / "a"), str(tmp_path / "b")
+    assert main(["run", "--out", a, "--seed", "5", "--matters", "1"]) == 0
+    assert main(["run", "--out", b, "--seed", "5", "--matters", "1"]) == 2
+    assert "seed 5 was already used by" in capsys.readouterr().err
+    assert not (tmp_path / "b").exists()
+    assert main(["run", "--out", a, "--seed", "5", "--matters", "1", "--resume"]) == 0  # the same folder is not another run
+    assert main(["run", "--out", b, "--seed", "5", "--matters", "1", "--allow-seed-reuse"]) == 0
+    assert main(["run", "--out", str(tmp_path / "c"), "--seed", "6", "--matters", "1"]) == 0
+    assert main(["run", "--out", str(tmp_path / "d"), "--matters", "1"]) == 0  # the config's own seed is not checked
