@@ -171,22 +171,34 @@ set its status. **Never use the user-level `/inbox` skill in this repo**; it bel
 inbox or asked for by Sirui She directly.
 
 **Keep the work tree clean.** The main checkout (`~/Projects/legal-task-generator`) stays on `main`, with nothing
-uncommitted and nothing untracked outside `.gitignore`. Every task runs in its own worktree on its own branch
-(`git worktree add ../ltg-wt/<branch> -b <branch> main`), and the worktree and branch are removed once the PR
-merges. Never switch the main checkout's branch. Before ending a task, `git status` must be empty in the main
-checkout and `git worktree list` must show only live work.
+uncommitted and nothing untracked outside `.gitignore`. Code changes and pilot rounds run in their own worktree on
+their own branch (`git worktree add ../ltg-wt/<branch> -b <branch> main`), and the worktree and branch are removed
+once the PR merges or the round's results are on `main`. Never switch the main checkout's branch. Before ending a
+task, `git status` must be empty in the main checkout and `git worktree list` must show only live work.
+
+**What needs a PR, and what goes straight to `main` (Sirui She's decision, 2026-11-05).** GitHub Actions
+(`.github/workflows/tests.yml`) runs `python -m pytest -q` and the fake demo check on every push to `main` and every
+pull request.
+- **Code changes** (anything under `ltg/`, `tests/`, `configs/`, `scripts/`, `deploy/`, `.github/`, or
+  `pyproject.toml`): worktree, branch, PR into `main`, do not merge. The planning session reviews and merges.
+- **Round results** (the run-output rule's files, below), `docs/`, `README.md` text and `CLAUDE.md` "Now": commit
+  directly to `main` from the main checkout (`git pull --ff-only` first, commit, `git push`), then check CI on that
+  commit with `gh run list --limit 1`. A pilot round still runs in a worktree, but its results are committed to
+  `main` from the main checkout afterwards, with the round's numbers and rejection causes in the commit message
+  instead of a PR description. If a push is refused (branch protection) or CI fails, stop and report.
+- Never mix code and results in one commit.
 
 Two people work on this repo: Sirui She (owner, on the laptop) and a second contributor (on their own machine, with
 their own Max plan). Each may run several Claude Code sessions.
 
-**Between the two people: GitHub.** Questions, requests and hand-offs go in GitHub issues; results go in pull
-requests. A pilot round goes on its own branch: `runs/` is gitignored, so force-add only what reviewers need
-(`git add -f`): `report.md`, `report.json`, `settings.json`, the whole `accepted/` folder, and `spec.json`,
+**Between the two people: GitHub.** Questions, requests and hand-offs go in GitHub issues; code goes in pull
+requests. The run-output rule: `runs/` is gitignored, so force-add only what reviewers need (`git add -f`):
+`report.md`, `report.json`, `settings.json`, the whole `accepted/` folder except solver traces, and `spec.json`,
 `ledger.json` and `gates.json` of each rejected matter; for analysis folders (`judge_leniency*`, solver smoke tests)
-only `summary.json`. Never commit `calls.jsonl`, solver traces or logs. Then open a PR into `main` whose description has the round's numbers (accepted, pass rates,
-calls, tokens, errors) and the cause of every rejection. If a round leads to code fixes, one commit per defect
-class, as in "Pilot standard". Pull `main` before starting work; whoever changes the stage or plan updates "Now" in
-the same PR.
+only `summary.json`. Never commit `calls.jsonl`, solver traces or logs. A round's commit message on `main` has the
+round's numbers (accepted, pass rates, calls, tokens, errors) and the cause of every rejection. If a round leads to
+code fixes, one commit per defect class, as in "Pilot standard". Pull `main` before starting work; whoever changes
+the stage or plan updates "Now" in the same change.
 
 **Between sessions on Sirui She's laptop: the handoff board.**
 `/Users/shesirui/Projects/legal-task-generator/HANDOFF.md`. It is gitignored on purpose, so there is exactly one copy:
@@ -195,8 +207,8 @@ Only that laptop has it. Sessions elsewhere (the second contributor's, cloud ses
 laptop session logs what they report.
 
 What belongs where: the board and GitHub issues hold who is doing what right now, requests and a running log.
-Anything that stays true (stage, plan, decisions, results) also goes into this file, on your branch, in the same change.
-Whoever changes the stage, a step's status or a decision updates `docs/overview.md` in the same PR.
+Anything that stays true (stage, plan, decisions, results) also goes into this file, in the same change.
+Whoever changes the stage, a step's status or a decision updates `docs/overview.md` in the same change.
 
 ## What this project is
 
