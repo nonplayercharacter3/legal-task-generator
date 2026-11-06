@@ -19,7 +19,7 @@ report shows the pass-rate spread per model. `scripts/relabel_past_runs.py` reco
 rejected for a pass rate of 1.0 (s2-m0002, s3-m0002, s4-m0002 Sonnet; s6-m0001, s9-m0001, s9-m0003 Haiku), their
 folders restored on the laptop from the commit before the slim; s9-m0003 is also an accepted Qwen task from the same
 spec; since `fix/unique-task-ids` the export keys tasks `<run folder>/<matter id>` and keeps both, and `ltg run`
-refuses a `--seed` another run folder has used (`--allow-seed-reuse` overrides). Tasks with a label: 15 on the laptop.
+refuses a `--seed` another run folder has used (`--allow-seed-reuse` overrides). Tasks with a label: 16 on the laptop.
 
 **Stage.** Phase 1 is done: its exit standard (see "Pilot standard") was met in cloud round 5 on 2026-10-18. On
 2026-11-02 two laptop sessions ran pilot rounds in parallel, both with Opus generating on Sirui She's Max plan
@@ -43,7 +43,7 @@ and give each round one seed across all solvers.
 
 Totals for 2026-11-02 (8 rounds, 24 candidates): 3 accepted (s6-m0002 Haiku 0.33; s9-m0002 and s9-m0003 Qwen 0.33),
 1,270 calls, ~16.7M input tokens, 0 model errors except 3 matters lost to NRP 403s (rounds 10 and 11). Accepted tasks
-so far, all phases: 8 (4 from the October cloud pilot, 4 from November).
+so far, all phases: 9 (4 from the October cloud pilot, 5 from November).
 
 **Round 12 (2026-11-04, seed 12, Opus generating, Qwen 27B solving on the vLLM pod, PR #10):** 1 of 3 accepted
 (s12-m0003, data center cooling distribution agreement, 5 documents, 5 issues, pass rate 0.33, to be read by Sirui She);
@@ -72,6 +72,16 @@ no solver call ran; 55 calls, ~1.11M input and ~211k output tokens, 0 model erro
   one wrong claim plainly, and the judge passes a memo that quotes, rejects or warns against it.
 - `rubric_tests` kept no judge reasons: `gates.json` now stores them for every gold failure and flawed wrong pass.
 
+**Round 14 (2026-11-05, seed 14, Opus generating, Qwen on NRP, PR #15):** 1 of 3 accepted (s14-m0003, SPA, elevator
+maintenance, 5 documents, 4 issues, qwen3-small 0.33, to be read by Sirui She); 101 calls, ~1.23M input and ~220k
+output tokens, 0 model errors, 27 minutes; 0 bundling flags in warn mode. Both rejections false, at `consistency`;
+fixed on `fix/round14` (one commit each):
+- A side letter deliberately reset a fact its issue's description names (s14-m0001, F5 120,000 to 100,000 lbs) but
+  `contradicts` omitted: a mismatch now counts as planted when an issue in that document states the value found, or
+  every number it adds; the ledger writer lists every fact an issue's document changes.
+- A term sheet cited the same cap carve-outs by its own section numbers (s14-m0002): the matcher now sees which
+  instrument each value comes from and judges substance, not numbering (real Opus matcher: same, 3 of 3).
+
 Code check (2026-11-04, `feat/difficulty-labels`): `configs/fake_demo.toml` rejects consistency 3, issue_check 1,
 leak_check 2, rubric_trace 1, rubric_tests 1; `solver_check` rejects only leaks now, so 0 in the demo (it has no leak
 fault), and 12 of 20 are accepted with labels (pass rates 0.33: 5, 0.67: 5, 1.00: 2).
@@ -85,7 +95,7 @@ fault), and 12 of 20 are accepted with labels (pass rates 0.33: 5, 0.67: 5, 1.00
    default labelling model; add roles to `gates.solver_models` to label with more. Same spec, different solvers:
    s9-m0003 scored 0.33 with Qwen and 1.0 with Haiku, though the two drafts differ. If tasks must get harder: longer
    folders, more cross-document issues (known weaknesses 2 and 3).
-3. **Next rounds** on merged `main`, seed 14 or higher, after the `fix/round13` PR merges, on NRP
+3. **Next rounds** on merged `main`, seed 15 or higher, after the `fix/round14` PR merges, on NRP
    (`configs/pilot_nrp_solver.toml`; the empty 403s from 2026-11-02 stopped on 2026-11-05 with a fresh key in
    `~/.zshenv`). The vLLM pod (`configs/vllm_nautilus_solver.toml`, about 3.5 times slower) is the fallback; on
    2026-11-05 it sat Pending for 85 minutes with every A100 80GB node full.
