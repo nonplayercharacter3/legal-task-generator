@@ -186,8 +186,11 @@ def judge_with_reasons(client: ModelClient, response: str, rubric: Rubric) -> tu
     }
     out = call_json(client, "judge", prompts.JUDGE, render_input(payload))
     rows = [r for r in out.get("results", []) if "id" in r]
-    got = {r["id"]: bool(r.get("pass")) for r in rows}
-    why = {r["id"]: str(r.get("reason") or "") for r in rows}
+    negative = {c.id for c in rubric.criteria if c.kind == "negative"}
+    # Round 15: the judge set `pass` on a negative criterion against its own reason ("does not make this claim").
+    # It now reports only whether the claim is made, and code turns that into the grade; no `claim_made` fails.
+    got = {r["id"]: r.get("claim_made") is False if r["id"] in negative else bool(r.get("pass")) for r in rows}
+    why = {r["id"]: str(r.get("reason") or "") + (" (no claim_made in the judge's reply)" if r["id"] in negative and "claim_made" not in r else "") for r in rows}
     grades = {c.id: got.get(c.id, False) for c in rubric.criteria}  # a criterion the judge skipped counts as failed
     return grades, {c.id: why.get(c.id, "skipped by the judge" if c.id not in got else "") for c in rubric.criteria}
 

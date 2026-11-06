@@ -22,7 +22,8 @@ class Stub:
         p = extract_input(user)
         if role == "solver":
             return '{"tool": "finish"}' if system == prompts.SOLVER_STEP else self.answer
-        return json.dumps({"results": [{"id": c["id"], "pass": self.grade(p["response"], c["id"])} for c in p["criteria"]]})
+        ok = {c["id"]: self.grade(p["response"], c["id"]) for c in p["criteria"]}
+        return json.dumps({"results": [{"id": c["id"], **({"claim_made": not ok[c["id"]]} if c["kind"] == "negative" else {"pass": ok[c["id"]]})} for c in p["criteria"]]})
 
 
 def correct(response, cid):
@@ -240,7 +241,7 @@ def test_negative_criterion_names_one_plain_claim_and_a_gold_that_rejects_it_pas
     from ltg.stages import judge
 
     assert "Never stack negations" in prompts.RUBRIC_WRITER
-    assert "rejecting it or warning against it is a pass" in prompts.JUDGE
+    assert "rejecting it or warning against it is not making it" in prompts.JUDGE
     fake = FakeModel()
     claim = "SPA Section 11.5 restricts assignment of the TSA"
     fake._claims["The response claims that SPA Section 11.5 restricts assignment of the TSA."] = claim
@@ -249,3 +250,38 @@ def test_negative_criterion_names_one_plain_claim_and_a_gold_that_rejects_it_pas
     asserts = "Good news: SPA Section 11.5 restricts assignment of the TSA, so no change is needed."
     assert judge(fake, rejects, rubric) == {"N1": True}
     assert judge(fake, asserts, rubric) == {"N1": False}
+
+
+def test_code_not_the_judge_grades_a_negative_criterion():
+    """Round 15 (s15-m0003): the judge returned `pass: false` on negative criteria C8 and C9 while its reason said the
+    flawed answer does not make the claim. The judge now reports `claim_made` and code derives the grade."""
+    from ltg.stages import judge_with_reasons
+
+    c8 = "The response claims that Wexcombe Dune Holdings LLC is a seller or co-seller of the hotel assets under the APA."
+    c9 = (
+        "The response claims that the APA's New York governing-law and forum clauses override the IP Assignment "
+        "Agreement's Delaware clause for disputes under the IP Assignment."
+    )
+    rubric = Rubric([Criterion("C1", "finds I1", "issue", "I1"), Criterion("C8", c8, "negative", "F9"), Criterion("C9", c9, "negative", "I2")])
+    flawed = (  # excerpts of the flawed answer in runs/pilot15_nrp/rejected/s15-m0003/answers.json
+        "**Wexcombe Dune Holdings LLC** is not a seller or a party to the APA.\n"
+        "On the text, Delaware law and the Chancery forum govern IP Assignment disputes, and the APA does not override them."
+    )
+    why = "The response does not make this claim; it says the opposite."
+
+    class Judge:
+        def __init__(self, reply):
+            self.reply = reply
+
+        def complete(self, role, system, user):
+            assert "claim_made" in system and [c["kind"] for c in extract_input(user)["criteria"]] == ["issue", "negative", "negative"]
+            return json.dumps({"results": self.reply})
+
+    # Round 15's judge, as it answers now: the claims are not made, so C8 and C9 pass, whatever else it adds.
+    grades, reasons = judge_with_reasons(Judge([{"id": "C1", "pass": True}, {"id": "C8", "claim_made": False, "pass": False, "reason": why}, {"id": "C9", "claim_made": False, "reason": why}]), flawed, rubric)
+    assert grades == {"C1": True, "C8": True, "C9": True} and reasons["C8"] == why
+    grades, _ = judge_with_reasons(Judge([{"id": "C1", "pass": True}, {"id": "C8", "claim_made": True}, {"id": "C9", "claim_made": True}]), flawed, rubric)
+    assert grades == {"C1": True, "C8": False, "C9": False}
+    # A bare `pass` on a negative criterion is the round 15 failure mode: it no longer counts, and the reason says so.
+    grades, reasons = judge_with_reasons(Judge([{"id": "C1", "pass": True}, {"id": "C8", "pass": True, "reason": why}, {"id": "C9", "pass": False}]), flawed, rubric)
+    assert grades == {"C1": True, "C8": False, "C9": False} and "no claim_made" in reasons["C8"]
