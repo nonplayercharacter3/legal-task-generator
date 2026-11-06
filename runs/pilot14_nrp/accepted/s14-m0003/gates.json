@@ -1,0 +1,177 @@
+{
+  "matter_id": "s14-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.3(b): Buyer shall indemnify Seller Indemnitees from all Losses arising out of \"any Seller Guarantee, including any demand, draw or claim made by any beneficiary under any Seller Guarantee and any payment or performance by Seller or any of its Affiliates thereunder, whether arising before, on or after the Closing Date.\" Section 9.5(c): \"the limitations in this Section 9.5 shall not apply to Losses under Section 9.3(b).\"",
+            "reason": "The problem is present and still actionable. Buyer, the client, gives the Section 9.3(b) indemnity. It covers draws on Seller's guarantees and bonds even when they come from pre-Closing Company performance defaults. Section 9.5(c) removes the 10% cap ($4,850,000) and every other Section 9.5 limitation for this indemnity. Seller's matching exposure is far narrower. Its liability for the same defaults runs through the Section 9.2(a) indemnity for breach of the Section 4.9 and 4.12 representations. That indemnity is capped at $4,850,000, subject to the $485,000 basket, and expires under Section 9.1 six months after Closing, on December 31, 2026. Section 6.8 requires Buyer only to use 'reasonable efforts' to obtain releases, with no outside date, so the uncapped exposure lasts as long as the guaranteed contracts run. Nothing in the folder cures or limits this. The Seller Note does not address it, and Section 11.9 makes the SPA prevail over the Note in any conflict. Nothing shows Buyer has accepted a call under a guarantee. Buyer could still seek an amendment under Section 11.5, for example carving pre-Closing defaults out of Section 9.3(b) or adding a cap. Separately, the six-month survival period for Seller's representations is still open, so Buyer can deliver a Claim Notice now to protect its own claims."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 9.1: \"All other representations and warranties contained in this Agreement shall survive the Closing until six (6) months after the Closing Date.\" Section 9.4(a): \"A Claim Notice relating to a representation or warranty must be delivered before the expiration of the applicable survival period set forth in Section 9.1.\" Seller Note Section 5(a): \"This right applies only to indemnification claims that a Buyer Indemnitee has timely asserted by a Claim Notice delivered under Section 9.4 of the Purchase Agreement before the expiration of the applicable survival period.\"",
+            "reason": "Buyer is the indemnified party and bears the gap. The operational representations in Sections 4.9 and 4.12 are not Fundamental Representations, so they lapse on December 30, 2026. Seller gives no escrow. Buyer's practical source of recovery is set-off against the Seller Note, whose first installment falls due on December 31, 2027. Set-off is available only for claims noticed before the survival date. Code and permit defects found through later periodic inspection and Category testing therefore cannot be indemnified or set off. One point in the description is overstated: claims noticed in time can still be set off against later installments under Note Section 5(b). The core mismatch is real all the same: survival ends a year before any set-off can be used. The issue is still actionable. Today is November 5, 2026, and the survival window is open until December 30, 2026. Buyer can still accelerate code-compliance diligence and inspections, deliver protective Claim Notices, or negotiate an extension with Seller. Nothing in the folder shows Buyer has accepted the lapse."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 8(a): \"Holder may sell, assign, transfer, pledge or negotiate this Note, in whole or in part, to any Person without the consent of Maker.\" Section 5(a): \"Maker may set off against any amount of principal or interest payable to Seller under this Note any amount to which any Buyer Indemnitee is entitled under Article 9 of the Purchase Agreement.\"",
+            "reason": "The problem is present and hurts Buyer, which is the Maker. Section 8(a) lets the Holder transfer the Note to anyone without Maker's consent, and nothing excludes competitors. SPA Section 11.6 restricts assignment of \"this Agreement\" only, so it does not reach the Note. SPA Section 11.9 therefore has no conflict to resolve. The set-off in Note Section 5 and SPA Section 9.7 applies only to amounts payable \"to Seller.\" The Note does not state that a transferee takes subject to Buyer's set-off or withholding rights. A transferee, particularly a holder in due course, could therefore take free of the indemnity set-off that protects Buyer's $4.85M indemnity recovery. Section 7 also gives any \"Holder\" monthly financial statements and contract-by-contract renewal and termination dates. A competing elevator maintenance company that bought the Note would receive Lockwen's customer data, and no confidentiality restriction binds a transferee. Nothing in the folder cures or limits this, and Buyer has not accepted any transfer. It remains actionable: Buyer can seek an amendment adding a competitor exclusion, transferee confidentiality, and an express statement that the Note is subject to set-off against any holder."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Recital B: \"The Company received the Closing Statement on August 4, 2026.\" Recital C: \"The Company has not yet delivered a Notice of Disagreement to Seller under Section 2.4(b) of the Purchase Agreement.\" The consent is dated September 14, 2026, and SPA §2.4(b) requires a Notice of Disagreement \"within 30 days after Buyer's receipt of the Closing Statement. If Buyer does not deliver a Notice of Disagreement within that period, the Closing Statement shall be final and binding on the parties.\"",
+            "reason": "The 30-day window under SPA §2.4(b) runs from receipt on August 4, 2026, so it closed on September 3, 2026. The consent, dated September 14, admits no notice has been delivered. It then authorizes a Notice of Disagreement (Resolution 2) and negotiation and Independent Accountant steps (Resolution 3) as if the dispute process were still open. It does not mention the deadline or any extension or waiver from Seller. The burden falls on the client: as Buyer, it bears the obligation to give the notice, and it would owe Seller the $1,240,000 surplus under §2.4(d). Nothing in the folder cures this. There is no written waiver or extension under §11.5. The SPA also gives no other route, because §9.5(e) bars double recovery for items taken into account in the final Closing Working Capital determination. The matter is still actionable. Nothing shows Buyer has paid the surplus or otherwise accepted the Closing Statement, and the consent itself records Buyer's objection. Counsel should flag the lapsed window now and seek a written waiver or extension from Seller, or develop alternative grounds, such as whether the Closing Statement was prepared in good faith in accordance with the Accounting Principles. The firm should not simply send a late notice as Resolution 2 contemplates."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.083,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 16,
+              "files_opened": [
+                "broker_insurance_certificate_cover_letter.md",
+                "buyer_managers_written_consent.md",
+                "okafor_wyse_key_employee_agreement.md",
+                "seller_promissory_note.md",
+                "stock_purchase_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C6"
+              ],
+              "steps": 15,
+              "files_opened": [
+                "broker_insurance_certificate_cover_letter.md",
+                "buyer_managers_written_consent.md",
+                "okafor_wyse_key_employee_agreement.md",
+                "seller_promissory_note.md",
+                "stock_purchase_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C2",
+                "C6"
+              ],
+              "steps": 15,
+              "files_opened": [
+                "broker_insurance_certificate_cover_letter.md",
+                "buyer_managers_written_consent.md",
+                "okafor_wyse_key_employee_agreement.md",
+                "seller_promissory_note.md",
+                "stock_purchase_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

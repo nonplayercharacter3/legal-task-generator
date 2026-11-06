@@ -1,0 +1,197 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 1,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 1,
+      "failed": 2,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 1,
+      "pass_rates": {
+        "0.33": 1
+      }
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s14-m0001",
+      "accepted": false,
+      "failed_gate": "consistency",
+      "reason": "mismatches: [{\"fact\": \"F5\", \"key\": \"Supply Agreement Minimum Annual Commitment\", \"filename\": \"gesail_side_letter_minimum_commitment.md\", \"ledger\": \"120,000 pounds of Products per Contract Year\", \"document\": \"100,000 pounds of Products per Contract Year\"}]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    },
+    {
+      "matter_id": "s14-m0002",
+      "accepted": false,
+      "failed_gate": "consistency",
+      "reason": "mismatches: [{\"fact\": \"F7\", \"key\": \"Distribution Agreement liability cap carve-outs\", \"filename\": \"term_sheet.md\", \"ledger\": \"Supplier indemnity under Section 11.1, recall costs under Section 10.4, and fraud\", \"document\": \"Supplier's third-party indemnity in Section 10.1; Supplier's recall cost obligations in S",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    },
+    {
+      "matter_id": "s14-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.333,
+      "unsolved": false,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 1,
+          "pass_rate": 0.333
+        }
+      ]
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12163,
+      "output_tokens": 27863,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 15,
+      "input_tokens": 280189,
+      "output_tokens": 90570,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 102135,
+      "output_tokens": 8724,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4168,
+      "output_tokens": 1093,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 4,
+      "input_tokens": 117145,
+      "output_tokens": 3064,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 1,
+      "input_tokens": 1452,
+      "output_tokens": 378,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 1,
+      "input_tokens": 6389,
+      "output_tokens": 1309,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 2,
+      "input_tokens": 69786,
+      "output_tokens": 18935,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 7,
+      "input_tokens": 67448,
+      "output_tokens": 7329,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 62,
+      "input_tokens": 565738,
+      "output_tokens": 61131,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "craft brewing": 1,
+      "architectural glass": 1,
+      "elevator maintenance": 1
+    },
+    "agreement_types": {
+      "supply agreement": 1,
+      "distribution agreement": 1,
+      "stock purchase agreement": 1
+    },
+    "issue_types": {
+      "defined_term_inconsistency": 2,
+      "expired_notice_window": 2,
+      "change_of_control_consent": 1,
+      "auto_renewal": 1,
+      "liability_cap_carveout": 1,
+      "governing_law_mismatch": 1,
+      "uncapped_indemnity": 1,
+      "survival_gap": 1,
+      "missing_assignment_restriction": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

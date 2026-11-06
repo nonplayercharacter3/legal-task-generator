@@ -1,0 +1,197 @@
+{
+  "matter_id": "s14-m0002",
+  "summary": "Biveir Architectural Glass Distribution LLC (client) is the exclusive tri-state distributor for Glenoul Glassworks, Inc., a maker of architectural glass, under a New York-law Distribution Agreement dated January 15, 2026. The folder holds five documents: the main agreement, the signed term sheet before it, a later Quality Agreement, a Parent Guaranty from Glenoul's English parent, and Biveir's showroom lease (the distractor). Four issues are planted. (1) Read with the Distribution Agreement's precedence clause, the Quality Agreement pulls recall costs and third-party defect indemnity back under the supplier liability cap. (2) The Guaranty's narrow definition of 'Products' leaves laminated glass and insulating glass units outside the guarantee. (3) A delamination claim (NCR-0417), recorded in the Quality Agreement, was notified after the Distribution Agreement's 30-day defect-notice window had closed. Biveir disputes that it is barred. (4) The Guaranty chooses English law and English courts, against both the Distribution Agreement and the term sheet.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Biveir Architectural Glass Distribution LLC",
+      "role": "Distributor; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Glenoul Glassworks, Inc.",
+      "role": "Supplier and manufacturer of architectural glass products"
+    },
+    {
+      "id": "P3",
+      "name": "Glenoul Group Holdings Ltd",
+      "role": "English parent company of the Supplier; guarantor under the Parent Guaranty"
+    },
+    {
+      "id": "P4",
+      "name": "Ostrander Chelsea Properties LLC",
+      "role": "Landlord of the Distributor's Manhattan showroom and office (distractor lease only)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "January 15, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement governing law",
+      "value": "Laws of the State of New York",
+      "doc": "D1",
+      "section": "19.1"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement forum",
+      "value": "Exclusive jurisdiction of state and federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "19.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence between Distribution Agreement and Quality Agreement",
+      "value": "Quality Agreement prevails on quality, nonconformance and recall matters; otherwise Distribution Agreement prevails",
+      "doc": "D1",
+      "section": "19.4"
+    },
+    {
+      "id": "F5",
+      "key": "Distribution Agreement Defect claim notice period",
+      "value": "30 days after Distributor first becomes aware of the Defect",
+      "doc": "D1",
+      "section": "9.5"
+    },
+    {
+      "id": "F6",
+      "key": "Distribution Agreement Supplier liability cap",
+      "value": "Amounts paid by Distributor to Supplier in the prior 12 months",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F7",
+      "key": "Distribution Agreement liability cap carve-outs",
+      "value": "Supplier indemnity under Section 11.1, recall costs under Section 10.4, and fraud",
+      "doc": "D1",
+      "section": "12.3"
+    },
+    {
+      "id": "F8",
+      "key": "Distribution Agreement definition of Products",
+      "value": "All architectural glass products in Exhibit A, including tempered, laminated and insulating glass units",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F9",
+      "key": "Term Sheet Parent Guaranty governing law",
+      "value": "Laws of the State of New York",
+      "doc": "D2",
+      "section": "Guaranty"
+    },
+    {
+      "id": "F10",
+      "key": "Distribution Agreement Territory",
+      "value": "New York, New Jersey and Connecticut",
+      "doc": "D1",
+      "section": "2.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "showroom_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "Quality Agreement pulls defect indemnity and recall costs back under the cap",
+      "description": "Distribution Agreement Section 12.3 removes three items from the Section 12.2 cap: the Supplier's third-party indemnity under Section 11.1 (bodily injury and property damage caused by Defects, such as spontaneous breakage of facade glass), recall costs under Section 10.4, and fraud. Quality Agreement Section 8.3 then says that, notwithstanding Section 12.3, Supplier liability for recall costs and for indemnifying third-party claims arising from Nonconforming Product is subject to the Section 12.2 cap. Distribution Agreement Section 19.4 gives the Quality Agreement priority on quality, nonconformance and recall matters, so Section 8.3 controls. The result is that the Supplier's exposure for facade failures and recalls is limited to twelve months of fees paid by Biveir. Biveir, which faces claims from building owners and contractors, keeps the uncovered loss. This also departs from the uncapped indemnity recorded in the Term Sheet. The issue appears only when Section 12.3, Quality Agreement Section 8.3 and Section 19.4 are read together.",
+      "doc": "D3",
+      "section": "8.3",
+      "detect_terms": [
+        "Notwithstanding Section 12.3 of the Distribution Agreement",
+        "subject to the limitation in Section 12.2"
+      ],
+      "expected_finding": "Because Distribution Agreement Section 19.4 makes the Quality Agreement prevail on quality and recall matters, Quality Agreement Section 8.3 subjects the Supplier's Section 11.1 third-party defect indemnity and Section 10.4 recall costs to the twelve-month-fees cap, despite the Section 12.3 carve-outs. Section 8.3 should be deleted or amended so that those liabilities are expressly uncapped.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "Guaranty's narrow 'Products' definition excludes laminated glass and IGUs",
+      "description": "Distribution Agreement Section 1.1 defines 'Products' as every architectural glass product in Exhibit A, including tempered, laminated and insulating glass units. The Parent Guaranty covers only the Supplier's obligations 'in respect of Products'. Guaranty Section 1.1 defines that term for itself as monolithic float and tempered glass manufactured at the Supplier's Lancaster Facility, and Section 1.2 says terms defined in the Guaranty override the Distribution Agreement's meanings. As a result, the parent's guarantee does not reach laminated glass or insulating glass units, nor products made at any other plant. Those are the higher-risk lines, including the delaminated units in NCR-0417. The gap appears only when the two definitions are compared.",
+      "doc": "D4",
+      "section": "1.1",
+      "detect_terms": [
+        "monolithic float and tempered glass",
+        "manufactured at the Lancaster Facility"
+      ],
+      "expected_finding": "The Parent Guaranty defines 'Products' far more narrowly than Distribution Agreement Section 1.1, so laminated glass, insulating glass units and product from other facilities fall outside the Guaranteed Obligations. The Guaranty should adopt the Distribution Agreement definition of Products.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "NCR-0417 delamination claim notified after the 30-day Defect notice window",
+      "description": "Distribution Agreement Section 9.5 requires notice of a Defect claim within 30 days after Biveir first becomes aware of the Defect. Quality Agreement Schedule C records NCR-0417 as follows: laminated units were delivered February 10, 2026 for a Hudson Yards project; the installer first reported delamination to Biveir on March 2, 2026; and Biveir delivered its Defect notice on April 14, 2026. Measured from March 2, 2026, the window closed on April 1, 2026, so the notice was 13 days late. Schedule C also records that the Supplier has reserved its rights on timeliness, that Biveir disputes it, and that nothing in the Quality Agreement waives either party's position. Biveir has not accepted the bar, but its warranty and recall recovery on NCR-0417 is exposed. The lapse can be computed only by combining Section 9.5 with the dates in Schedule C.",
+      "doc": "D3",
+      "section": "Schedule C",
+      "detect_terms": [
+        "NCR-0417",
+        "first reported to Distributor"
+      ],
+      "expected_finding": "Measured from the March 2, 2026 first report recorded in Quality Agreement Schedule C, the 30-day window under Distribution Agreement Section 9.5 closed on April 1, 2026, so Biveir's April 14, 2026 notice on NCR-0417 is facially untimely. Biveir should preserve its dispute, for example by arguing it was not aware of a Supplier Defect until the cause was confirmed, and should seek a written waiver or tolling of the deadline from the Supplier.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "Parent Guaranty chooses English law and English courts",
+      "description": "Parent Guaranty Section 10 makes the Guaranty subject to the laws of England and Wales and the exclusive jurisdiction of the courts of England and Wales. The Distribution Agreement chooses New York law and New York County courts (Sections 19.1 and 19.2), and the Term Sheet's Guaranty section calls for a New York-law guaranty. The precedence clause in Distribution Agreement Section 19.4 covers only the Distribution Agreement and the Quality Agreement, and the guarantor is not a party to it, so nothing in the folder cures the mismatch. Biveir would have to litigate the underlying default in New York and then pursue the guarantor separately in England under a different law. That creates a risk of inconsistent results, plus added cost and delay, against the protection the client bargained for.",
+      "doc": "D4",
+      "section": "10",
+      "detect_terms": [
+        "laws of England and Wales",
+        "courts of England and Wales"
+      ],
+      "expected_finding": "The Parent Guaranty's choice of English law and exclusive English courts conflicts with the Distribution Agreement's New York law and forum and with the Term Sheet's New York-law guaranty, and the Section 19.4 precedence clause does not reach it. The Guaranty should be amended to New York law with submission to New York County courts.",
+      "contradicts": [
+        "F2",
+        "F3",
+        "F9"
+      ]
+    }
+  ]
+}

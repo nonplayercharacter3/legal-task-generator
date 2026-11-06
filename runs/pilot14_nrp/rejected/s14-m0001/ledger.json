@@ -1,0 +1,181 @@
+{
+  "matter_id": "s14-m0001",
+  "summary": "Veisouv Brewing Company, Inc. (client), a regional craft brewer, buys aroma hops from Gesail Hop Growers, LLC under an executed Hop Supply Agreement effective January 1, 2026. Veisouv Holdings, Inc. guarantees the brewer's obligations. A September 2026 side letter resets the minimum annual commitment. That side letter also records that Veisouv Holdings agreed on August 28, 2026 to sell all of the brewer's stock to Copperline Beverage Group, LLC. The partner wants an issue-spotting memo before closing. The folder holds the supply agreement, the parent guaranty, the side letter, the original term sheet, and a mutual NDA with the buyer. Three problems are planted. First, the Supply Agreement's change-of-control consent right is triggered by the pending sale and has not been obtained. Second, the agreement auto-renews for five-year terms through a 30-day opt-out window, departing from the term sheet. Third, the side letter narrows 'Products' so that the brewer's CO2 hop extract purchases stop counting toward the minimum commitment.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Veisouv Brewing Company, Inc.",
+      "role": "Buyer under the Hop Supply Agreement; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Gesail Hop Growers, LLC",
+      "role": "Supplier of hop pellets and CO2 hop extract"
+    },
+    {
+      "id": "P3",
+      "name": "Veisouv Holdings, Inc.",
+      "role": "Parent of the Buyer; guarantor under the Parent Guaranty; seller of the Buyer's stock"
+    },
+    {
+      "id": "P4",
+      "name": "Copperline Beverage Group, LLC",
+      "role": "Proposed acquirer of 100% of the Buyer's stock"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "January 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "January 1, 2026 through December 31, 2028",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Term Sheet renewal term",
+      "value": "successive one-year renewal terms",
+      "doc": "D4",
+      "section": "Term and Renewal"
+    },
+    {
+      "id": "F4",
+      "key": "Term Sheet non-renewal notice",
+      "value": "either party may non-renew on at least 90 days' notice before term expiry",
+      "doc": "D4",
+      "section": "Term and Renewal"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement Minimum Annual Commitment",
+      "value": "120,000 pounds of Products per Contract Year",
+      "doc": "D1",
+      "section": "4.1"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement shortfall fee",
+      "value": "$4.25 per pound of shortfall below the Minimum Annual Commitment",
+      "doc": "D1",
+      "section": "4.3"
+    },
+    {
+      "id": "F7",
+      "key": "Supply Agreement definition of Products",
+      "value": "T-90 hop pellets and CO2 hop extract listed in Exhibit A",
+      "doc": "D1",
+      "section": "1.7"
+    },
+    {
+      "id": "F8",
+      "key": "Supply Agreement order of precedence",
+      "value": "signed side letters, then Supply Agreement, then Exhibits, then Purchase Orders",
+      "doc": "D1",
+      "section": "18.3"
+    },
+    {
+      "id": "F9",
+      "key": "Stock purchase agreement date (sale of Buyer to Copperline)",
+      "value": "August 28, 2026",
+      "doc": "D3",
+      "section": "Recital B"
+    },
+    {
+      "id": "F10",
+      "key": "Term Sheet anticipated annual CO2 hop extract volume",
+      "value": "35,000 pounds (alongside 85,000 pounds of T-90 pellets)",
+      "doc": "D4",
+      "section": "Volumes"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "veisouv_gesail_hop_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "veisouv_holdings_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "gesail_side_letter_minimum_commitment.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "veisouv_gesail_hop_supply_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "veisouv_copperline_mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Three provisions combine. D1 Section 1.4 defines 'Change of Control' as any direct or indirect transfer of more than 50% of the Buyer's voting equity. D1 Section 14.2 deems a Change of Control an assignment requiring the prior written consent of Supplier. Without that consent, Section 14.2 lets Gesail terminate and recover an Early Termination Fee: the $4.25/lb shortfall fee multiplied by the Minimum Annual Commitment for every remaining Contract Year of the term. D3 Recital B records that Veisouv Holdings signed a stock purchase agreement on August 28, 2026 to sell 100% of the Buyer to Copperline, with closing expected December 15, 2026. That sale is a Change of Control. D3 Section 5 states that nothing in the side letter is a consent or waiver under any provision of the Supply Agreement, so Gesail's consent has not been obtained.",
+      "doc": "D1",
+      "section": "14.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "prior written consent of Supplier"
+      ],
+      "expected_finding": "Veisouv Holdings' sale of the Buyer to Copperline under the August 28, 2026 stock purchase agreement (D3 Recital B) is a Change of Control under D1 Sections 1.4 and 14.2 that requires Gesail's prior written consent; that consent has not been obtained, and D3 Section 5 disclaims any consent. Closing without it would let Gesail terminate and collect the Early Termination Fee, so Gesail's written consent should be obtained and made a condition to closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "D1 Section 2.1 sets the Initial Term to end December 31, 2028. D1 Section 2.2 renews the agreement automatically for successive five (5) year Renewal Terms. The only way out is a non-renewal notice given not more than one hundred eighty (180) and not less than one hundred fifty (150) days before expiry. Computed from the December 31, 2028 end date, that window runs only from July 4 to August 3, 2028. D1 Section 4.1 keeps the Minimum Annual Commitment and Section 4.3 keeps the shortfall fee in force during every Renewal Term. This departs from the D4 term sheet, which agreed one-year renewals and non-renewal by either party on 90 days' notice. D1 Section 18.1 (entire agreement) supersedes the term sheet, so the client is bound by the D1 terms unless they are amended.",
+      "doc": "D1",
+      "section": "2.2",
+      "detect_terms": [
+        "successive five (5) year Renewal Terms",
+        "not more than one hundred eighty (180) days"
+      ],
+      "expected_finding": "D1 Section 2.2 auto-renews the agreement for five-year terms, carrying the Minimum Annual Commitment and shortfall fee, unless Veisouv gives notice in a 30-day window (July 4 to August 3, 2028, computed from the December 31, 2028 expiry), contrary to the term sheet's one-year renewals on 90 days' notice. The client should seek an amendment conforming to the term sheet and, failing that, calendar the window.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D3 Section 2 resets the Minimum Annual Commitment to 100,000 pounds from Contract Year 2027. It also states that, for purposes of the Minimum Annual Commitment, 'Products' means T-90 pelletized hops only. D1 Section 1.7 defines Products to include CO2 hop extract, and D1 Section 4.1 measures the commitment in Products. D1 Section 18.3 makes signed side letters prevail over the Supply Agreement, so the narrower definition controls the commitment calculation. D4 projects 85,000 lbs of pellets and 35,000 lbs of extract per year. Under the D1 definition those volumes met the 120,000 lb minimum. Under the D3 definition the extract no longer counts, leaving a projected 15,000 lb shortfall. At the D1 Section 4.3 rate of $4.25/lb, that is about $63,750 per Contract Year.",
+      "doc": "D3",
+      "section": "2",
+      "detect_terms": [
+        "T-90 pelletized hops only"
+      ],
+      "expected_finding": "D3 Section 2 redefines 'Products' as T-90 pellets only for the Minimum Annual Commitment, and because the side letter prevails under D1 Section 18.3, Veisouv's CO2 hop extract purchases no longer count toward the 100,000 lb minimum. On the term sheet volumes this exposes the client to a shortfall fee of about $63,750 per Contract Year, so the side letter should be amended to use the D1 Section 1.7 definition of Products.",
+      "contradicts": "F7"
+    }
+  ]
+}
