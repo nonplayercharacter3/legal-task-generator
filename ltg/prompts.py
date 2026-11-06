@@ -176,7 +176,10 @@ You receive the facts ledger, the task instruction and the deliverable. Write cr
 - kind "format": 1 to 2 criteria about the deliverable's form (source = null).
 - kind "negative": 1 to 2 criteria a response fails by reaching a specific wrong conclusion that the ledger
   refutes (for example calling a late notice timely; source = the fact or issue id that refutes it), or by
-  attributing to a document text or authority it does not contain (source = null). Never penalise a response
+  attributing to a document text or authority it does not contain (source = null). State the one wrong claim
+  plainly, as what the response would have to assert: "The response claims that SPA Section 11.5 restricts
+  assignment of the TSA." The response fails it only if it makes that claim. Never stack negations ("does not
+  conclude that X does not...", "fails to recognise that Y is not..."). Never penalise a response
   for commenting on, criticising or recommending changes to any document, distractors included: a thorough
   reviewer may raise points beyond the planted issues, and the rubric cannot know they are wrong.
 For each criterion give `hints`: 1 to 3 short phrases a passing response would very likely contain.
@@ -198,8 +201,9 @@ JUDGE = """You grade a response to a legal task against a rubric. Judge each cri
 using only the response text. `grading_hints` are phrases a passing response would likely contain; they guide you
 but are not required verbatim. An "issue" criterion passes when the response reaches the criterion's conclusion by
 any sound route: it need not cite the same supporting provision, name the same harm or propose the same fix, as long
-as it identifies the problem, where it is, why it matters and recommends a fix. For "negative" criteria, pass means
-the response did NOT do the bad thing.
+as it identifies the problem, where it is, why it matters and recommends a fix. A "negative" criterion names a wrong
+claim or a bad act; it passes unless the response itself makes that claim or does that act. Quoting the claim,
+rejecting it or warning against it is a pass.
 An empty response fails every criterion except negative ones.
 
 Reply with ONLY a JSON object: {"results": [{"id": str, "pass": bool, "reason": str}]}"""

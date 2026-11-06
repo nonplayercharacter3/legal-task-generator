@@ -195,3 +195,21 @@ def test_consistency_trusts_the_document_text_over_an_extractor_that_drops_a_qua
     ledger.facts[0].value = "45 days"  # too short to trust a bare text match
     docs["a.md"] = "Buyer may object within 45 days."
     assert not gates.consistency(Facts({"F1@a.md": "30 days"}, same=False), ledger, docs).passed
+
+
+def test_negative_criterion_names_one_plain_claim_and_a_gold_that_rejects_it_passes():
+    """Round 13: the judge failed a gold answer that explicitly rejected the claim a double-negative criterion named."""
+    from ltg import prompts
+    from ltg.fake import FakeModel
+    from ltg.stages import judge
+
+    assert "Never stack negations" in prompts.RUBRIC_WRITER
+    assert "rejecting it or warning against it is a pass" in prompts.JUDGE
+    fake = FakeModel()
+    claim = "SPA Section 11.5 restricts assignment of the TSA"
+    fake._claims["The response claims that SPA Section 11.5 restricts assignment of the TSA."] = claim
+    rubric = Rubric([Criterion("N1", f"The response claims that {claim}.", "negative", "I1")])
+    rejects = "SPA Section 11.5 covers only the SPA. It would be wrong to say that SPA Section 11.5 restricts assignment of the TSA."
+    asserts = "Good news: SPA Section 11.5 restricts assignment of the TSA, so no change is needed."
+    assert judge(fake, rejects, rubric) == {"N1": True}
+    assert judge(fake, asserts, rubric) == {"N1": False}
