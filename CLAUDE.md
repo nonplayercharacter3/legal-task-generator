@@ -238,6 +238,8 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
   direct API calls. He confirmed this means the Max plan; Sirui She is on Max from 2026-11-02 and runs Claude rounds on the laptop.
   The second contributor (from 2026-10-27) runs Claude rounds on their own Max plan (Sirui She's decision). For GPUs, Nautilus (namespace `ecepxie`, see "Background and history"). The runtime stays standard library only: the SDK
   is an optional extra (`pip install -e ".[claude]"`) imported only by that backend.
+- **Final form (Pengtao, 2026-11-05):** a batch tool we run to build a dataset; not a prompt-driven agent or a tool
+  other agents call, for now.
 
 ## Background and history (status as of 2026-10-24; "Now" supersedes it)
 

@@ -1,6 +1,6 @@
 # Legal Task Generator Overview
 
-High-level picture for people, kept current as the project moves (updated 2026-11-04, night). Working detail for Claude
+High-level picture for people, kept current as the project moves (updated 2026-11-05). Working detail for Claude
 Code sessions is in `CLAUDE.md` ("Now"); the plain-English history of rounds is in `docs/stage_and_plan.md`.
 
 ## What we're building
@@ -13,7 +13,7 @@ Each assignment looks like work a partner hands a junior lawyer: an instruction 
 client"), a folder of invented contracts and letters, and a strict pass/fail checklist. The machine writes the answer
 key first, so we always know what a correct answer must find.
 
-The "agent" is that machine: a chain of AI roles, each with one job (plan the matter, draft documents, write the
+Its final form, for now, is a batch tool we run to build a dataset (Pengtao, November 5). The "agent" is that machine: a chain of AI roles, each with one job (plan the matter, draft documents, write the
 checklist, check the work), plus a test-taker that tries each assignment. LAB is used only as the final exam, never
 copied from.
 
@@ -76,6 +76,7 @@ The shape of the machine is settled; these choices hold unless Sirui She reopens
 | Difficulty | A label, not a filter: test models (Qwen 27B for now) try each assignment 3 times and their pass rates are stored with it; never-passed assignments are flagged for review | The generator serves any trainer; each picks the band that fits its model, and no sound assignment is thrown away |
 | Compute | Nautilus A100 GPUs, running Qwen with vLLM; the university's hosted Qwen as the faster option | Free for research; we control it |
 | Format | Plain files (Markdown, JSON) at every stage; standard-library Python | Anyone can inspect any stage by hand |
+| Final form | A batch tool we run to build a dataset, not a prompt-driven agent or a tool other agents call | Pengtao, November 5 |
 | Workflow | Plan in the Claude app, code in the Claude Code terminal, tasks handed over through `inbox.md`; one worktree per task, main checkout always clean | Keeps work traceable and the repo tidy |
 
 ## Still open
