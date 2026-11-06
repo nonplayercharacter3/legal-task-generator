@@ -1,0 +1,95 @@
+{
+  "matter_id": "s13-m0001",
+  "accepted": false,
+  "failed_gate": "rubric_tests",
+  "reason": "gold_fails: [\"C8\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"Provider may assign this Agreement, in whole or in part, and may delegate any of its obligations under it, to any Affiliate or any third party without the consent of Recipient. Recipient may not assign this Agreement or any of its rights or obligations under it without the prior written consent of Provider.\" (TSA Section 12.2); see also TSA Section 9.3: \"Provider may also disclose Recipient Confidential Information to any permitted assignee of this Agreement under Section 12.2 to the extent needed for that assignee to perform the Services.\"",
+            "reason": "The problem is present and still actionable for Buyer. The assignment right runs against the Company, which after Closing is Buyer's subsidiary. Provider (Seller) can transfer the ERP hosting, order management and pricing-data services, and the Company's customer pricing data, to any third party without consent. That third party could be a competitor. Seller's non-compete in SPA 6.7 binds only Seller and its Affiliates. SPA 11.5 covers only the SPA itself. SPA 11.12 makes the TSA control as to its own subject matter. Nothing in the folder cures, limits or waives this. The TSA confidentiality terms bind assignees only to the extent they are bound by Section 9, and they still permit disclosure. The asymmetry hurts the Company and Buyer, since the Company cannot assign without Provider's consent. The TSA is a closing deliverable dated as of the Closing Date, and the folder shows no signed or accepted version. The clause can therefore still be negotiated, or enforced against through Buyer's third-party-beneficiary rights."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "IP Assignment Agreement §8.1: \"This Agreement is governed by and construed in accordance with the laws of the State of North Carolina... Each party irrevocably submits to the exclusive jurisdiction of the state courts of Gaston County, North Carolina, and of the United States District Court having jurisdiction over Gaston County, North Carolina, over any dispute arising out of or relating to this Agreement or the Assigned IP, and agrees that all claims in respect of any such dispute shall be heard and determined only in those courts.\" SPA §11.12: \"Each Ancillary Agreement controls as to its subject matter; otherwise the SPA controls.\"",
+            "reason": "The conflict hurts Teitair. The SPA (§§11.8–11.9) chooses New York law and exclusive New York County courts. The IP Assignment chooses North Carolina law and exclusive Gaston County courts, and that clause reaches beyond the agreement to any dispute 'relating to... the Assigned IP.' Under SPA §11.12 the Ancillary Agreement controls as to its subject matter. Teitair is an express third-party beneficiary of the IP Assignment (§9.3) and could be held to its forum clause. Teitair's §9.2(a) indemnity claims for breach of the §4.12 IP title and sufficiency representations relate to the Assigned IP. Tuvouth, the indemnitor, can therefore argue they belong exclusively in North Carolina. That invites a motion to dismiss or transfer a New York action, and IP disputes could be split across two forums under two bodies of law. Nothing in the folder cures the conflict. The documents appear unsigned and pre-closing: the October 2026 insurance letter still refers to 'from and after the Closing.' Teitair has not accepted the result and can still negotiate a conforming fix, so the problem is actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "KEA Section 1.1: \"\"Business\" means the design, manufacture and sale of coated and laminated industrial fabrics. This definition of \"Business\" applies for all purposes of this Agreement, notwithstanding any definition in any other agreement.\" By contrast, SPA Section 1.1: \"\"Business\" means the design, manufacture and sale of coated industrial fabrics, nonwoven filtration media and aramid protective textiles.\"",
+            "reason": "Two provisions read together create the gap. Under KEA Section 2.3, Ms. Okonkwo-Reyes runs the nonwoven filtration media line. The KEA's own definition of \"Business\" leaves out nonwoven filtration media and aramid textiles. Both the non-compete (Section 7.1, through \"Competing Business\") and the customer and employee non-solicits (Section 7.2) are tied to \"Business.\" So they do not reach the filtration work she actually leads. The override language blocks importing the SPA definition, and SPA Section 11.12 says the KEA controls on its own subject matter. She is also not a party to the SPA. The confidentiality and invention provisions mention filtration, but they do not stop her from competing or soliciting customers. This hurts Buyer, the firm's client, which takes the benefit of these covenants as third-party beneficiary and owner of the Company. The KEA is still an unsigned closing deliverable, so the definition can still be fixed before Closing. The problem is actionable."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": true,
+          "flagged": [
+            "criterion C1 requires a harm, remedy or provision that issue I1's expected_finding does not name: 'explains why this matters to Teitair as buyer'; ask that the response explains why it matters and recommends a fix"
+          ],
+          "cleared": true
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": false,
+      "details": {
+        "gold_fails": [
+          "C8"
+        ],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": []
+      }
+    }
+  ]
+}

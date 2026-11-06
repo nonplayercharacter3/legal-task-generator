@@ -1,0 +1,207 @@
+{
+  "matter_id": "s13-m0003",
+  "summary": "Mairiv Thermal Holdings, Inc. (the firm's client and Buyer) is acquiring all outstanding shares of Ostrel Liquid Cooling, Inc. from Noukav Industrial Group, Inc. (Seller). Ostrel designs, manufactures, installs and services direct-to-chip liquid cooling, immersion cooling and rear-door heat exchanger systems for hyperscale and colocation data centers. The purchase price is $86,000,000. Of that, $12,000,000 is paid by a subordinated Seller Note issued by Buyer. Seller will provide post-closing transition services under a Transition Services Agreement, including hosting Ostrel's customer cooling-telemetry platform. The SPA was signed March 2, 2026 and closing has not yet occurred. The folder holds the SPA, Buyer's board consent, the Seller Note, the TSA and an insurance broker's certificate cover letter. Five issues are planted, all adverse to Buyer: (1) the TSA cap swallows the SPA's data-breach carve-out, through the SPA's precedence clause; (2) survival of tax and environmental representations is too short; (3) the Seller Note is freely transferable, which cuts off Buyer's set-off; (4) the non-compete borrows a TSA definition that omits Ostrel's core products; (5) Buyer gives an uncapped indemnity for Seller Guarantees.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Mairiv Thermal Holdings, Inc.",
+      "role": "Buyer under the SPA, Maker of the Seller Note, and service recipient under the TSA (the firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Noukav Industrial Group, Inc.",
+      "role": "Seller under the SPA, Holder of the Seller Note, and service provider under the TSA"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrel Liquid Cooling, Inc.",
+      "role": "Target company whose shares are being sold; co-recipient of services under the TSA"
+    },
+    {
+      "id": "P4",
+      "name": "Lindqvist Risk Partners LLC",
+      "role": "Insurance broker for the Company that issued the certificate cover letter"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA signing date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "SPA purchase price",
+      "value": "$86,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$12,000,000",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note maturity",
+      "value": "36 months after the Closing Date",
+      "doc": "D3",
+      "section": "Section 2"
+    },
+    {
+      "id": "F5",
+      "key": "SPA general indemnity cap",
+      "value": "$8,600,000 (10% of the Purchase Price)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F6",
+      "key": "Governing law of all transaction documents",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence among transaction documents",
+      "value": "SPA prevails over Seller Note and TSA, except TSA prevails as to Transition Services and liability arising therefrom",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F8",
+      "key": "TSA service term",
+      "value": "9 months after the Closing Date",
+      "doc": "D4",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F9",
+      "key": "TSA monthly service fee",
+      "value": "$85,000 per month",
+      "doc": "D4",
+      "section": "Schedule A"
+    },
+    {
+      "id": "F10",
+      "key": "Buyer board consent date",
+      "value": "March 1, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_mairiv_noukav.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "mairiv_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_note_mairiv_to_noukav.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "ostrel_insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 9.5(d) excludes from the $8,600,000 cap all Losses from Seller's breach of its Section 6.8 confidentiality and Company Data covenant. Under TSA Section 3 and Schedule A, Seller will host Ostrel's customer cooling-telemetry data during the TSA term. TSA Section 9.2 caps Provider's aggregate liability 'arising out of or relating to the Transition Services, including any access to, use or processing of Company Data' at the total fees paid under the TSA. Its only carve-out is willful misconduct. SPA Section 11.10 says the TSA prevails as to Transition Services and liability arising from them. Read together, SPA 9.5(d), TSA 9.2 and SPA 11.10 put any Seller-caused data breach or misuse of Company Data during the TSA term under the TSA cap. That cap is at most $765,000 (9 months x $85,000). The carve-out Buyer negotiated in the SPA disappears for the period of greatest data exposure, and negligent or grossly negligent breaches are covered by the cap.",
+      "doc": "D4",
+      "section": "Section 9.2",
+      "detect_terms": [
+        "including any access to, use or processing of Company Data",
+        "other than Losses resulting from Provider's willful misconduct"
+      ],
+      "expected_finding": "Because SPA Section 11.10 lets the TSA control liability for Transition Services, TSA Section 9.2 caps Seller's liability for Company Data breaches at TSA fees (at most $765,000) and overrides the uncapped data-breach carve-out in SPA Section 9.5(d); TSA 9.2 should be revised to exclude breaches of confidentiality and Company Data obligations (and gross negligence) from the TSA cap, or SPA 11.10 should make SPA 9.5(d) prevail.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 1.1 defines 'Survival Date' as the date that is 6 months after the Closing Date. SPA Section 9.1 provides that all representations and warranties survive only until the Survival Date, including the Tax representations (Section 4.12) and the Environmental representations (Section 4.14, covering HFC refrigerant and coolant-fluid compliance). Claims not noticed by then are barred. Under SPA Section 6.7, Seller prepares the Company's pre-Closing income tax returns and files them after Closing, and taxing authorities can audit those returns for years. Section 4.14 problems typically surface only on regulatory inspection. Read together, Sections 1.1, 9.1 and 6.7 cut off Buyer's tax and environmental claims before the relevant returns are even examined. The cut-off also comes 30 months before the Seller Note matures, so Buyer's set-off right under Section 9.7 has nothing left to secure. New York enforces contractual shortening of the limitations period, so the 6-month bar will be given effect.",
+      "doc": "D1",
+      "section": "Sections 1.1 and 9.1",
+      "detect_terms": [
+        "the date that is six (6) months after the Closing Date",
+        "shall survive the Closing until the Survival Date"
+      ],
+      "expected_finding": "Because SPA Sections 1.1 and 9.1 end survival of all representations, including Tax and Environmental, 6 months after Closing, before the pre-Closing returns Seller files under Section 6.7 can be audited, and New York will enforce that shortened period, Buyer should require general representations to survive at least 18 months and Tax, Environmental and Fundamental representations to survive until 60 days after the applicable statute of limitations.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "SPA Section 9.7 gives Buyer the right to set off indemnifiable Losses against 'amounts payable to Seller under the Seller Note'. SPA Section 11.4 restricts assignment of 'this Agreement' only and does not restrict transfer of the Seller Note. Seller Note Section 8 lets Holder transfer the Note to any Person 'without the consent of Maker', which includes a competitor. Seller Note Section 6 says any transferee takes 'free of any right of set-off, counterclaim or defense of Maker'. After a transfer, payments are owed to the transferee rather than to Seller. SPA 9.7 therefore no longer applies, and the SPA's precedence clause does not help because nothing actually conflicts. A transfer thus strips Buyer of its main security for indemnity recovery on up to $12,000,000. In addition, Seller Note Section 5 gives Holder quarterly financial statements and customer backlog reports, so a competitor that buys the Note would receive Ostrel's sensitive commercial information.",
+      "doc": "D3",
+      "section": "Sections 6 and 8",
+      "detect_terms": [
+        "without the consent of Maker",
+        "free of any right of set-off, counterclaim or defense of Maker"
+      ],
+      "expected_finding": "Seller can freely transfer the Seller Note, including to a competitor that would receive Ostrel's financial and backlog reports under Note Section 5, and the transferee takes free of set-off, which defeats Buyer's SPA Section 9.7 set-off right; the Note should bar transfer without Maker's consent (and to any competitor), preserve set-off against any transferee, and SPA 11.4 should cover the Note.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines the 'Business' as the design, manufacture, installation and servicing of direct-to-chip liquid cooling, immersion cooling and rear-door heat exchanger systems for data centers. However, Seller's 5-year non-compete in SPA Section 6.9 does not use that term. It bars Seller from engaging in any 'Competing Activity (as defined in the Transition Services Agreement)'. TSA Section 1.1 defines 'Competing Activity' generally, for all purposes of the TSA, as the manufacture or sale of perimeter computer-room air conditioning (CRAC) and air-handler units. Those are products Ostrel does not make. SPA Section 6.9 adopts the TSA definition expressly, so there is no conflict for the SPA's precedence clause to resolve. The result is that Seller may compete immediately in liquid and immersion cooling, which is the core of what Buyer is paying $86,000,000 for.",
+      "doc": "D4",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "perimeter computer-room air conditioning",
+        "as defined in the Transition Services Agreement"
+      ],
+      "expected_finding": "Because SPA Section 6.9 borrows the TSA Section 1.1 definition of 'Competing Activity', which covers only perimeter CRAC and air-handler units, the non-compete does not reach the liquid, immersion and rear-door cooling Business defined in SPA Section 1.1; Section 6.9 should restrict Seller from engaging in the 'Business' as defined in the SPA.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "SPA Section 9.3(b) requires Buyer to indemnify Seller for 'any and all Losses arising out of or relating to the Seller Guarantees, whether arising before or after the Closing'. The Seller Guarantees are Seller's parent guaranties of Ostrel's performance and uptime obligations under hyperscale and colocation cooling contracts. SPA Section 9.5(e) then provides that none of the limitations in Section 9.5 apply to claims under Section 9.3(b). Those limitations include the cap, the deductible and the survival limits. Read together, the two provisions make Buyer liable without limit for guaranty calls, including calls caused by Ostrel's pre-Closing performance failures under Seller's ownership. That is also the subject matter of Seller's own representations, which are capped and expire after 6 months.",
+      "doc": "D1",
+      "section": "Sections 9.3(b) and 9.5(e)",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "shall not apply to any claim under Section 9.3(b)"
+      ],
+      "expected_finding": "Read with Section 9.5(e), SPA Section 9.3(b) makes Buyer's indemnity for the Seller Guarantees unlimited and extends it to pre-Closing performance failures; Buyer should limit it to obligations arising after Closing, exclude Losses caused by pre-Closing breaches or matters Seller indemnifies, and make it subject to a cap.",
+      "contradicts": null
+    }
+  ]
+}

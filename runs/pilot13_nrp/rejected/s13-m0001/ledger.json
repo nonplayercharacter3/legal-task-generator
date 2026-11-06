@@ -1,0 +1,186 @@
+{
+  "matter_id": "s13-m0001",
+  "summary": "Teitair Holdings, LLC (the client, Buyer) is buying all outstanding shares of Loomcrest Technical Textiles, Inc., a North Carolina maker of coated industrial fabrics, nonwoven filtration media and aramid protective textiles, from Tuvouth Fabrics Group, Inc. (Seller) for $86,500,000 under a New York-law stock purchase agreement signed September 14, 2026. The folder has five documents: the SPA; a key employee agreement with the Company's VP of Filtration Technology, signed as a closing deliverable; an IP assignment agreement under which Seller transfers to the Company the textile IP that Seller holds; a 12-month transition services agreement under which Seller supplies ERP hosting, order management and pricing-data services to the Company; and an insurance broker's cover letter forwarding certificates of insurance (the distractor). Three issues are planted. First, the TSA lets Seller assign freely, including to a competitor. Second, the IP assignment chooses North Carolina law and an exclusive North Carolina forum for all disputes relating to the Assigned IP, and the SPA's precedence clause gives it control. Third, the key employee agreement defines \"Business\" more narrowly than the SPA and leaves out the filtration line the employee runs, so her non-compete and non-solicit do not reach it.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Teitair Holdings, LLC",
+      "role": "Buyer; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Tuvouth Fabrics Group, Inc.",
+      "role": "Seller; assignor under the IP Assignment Agreement; Provider under the Transition Services Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Loomcrest Technical Textiles, Inc.",
+      "role": "Company whose shares are being acquired; employer under the Key Employee Agreement; assignee under the IP Assignment Agreement; Recipient under the Transition Services Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Dana Okonkwo-Reyes",
+      "role": "Key employee, Vice President of Filtration Technology of the Company"
+    },
+    {
+      "id": "P5",
+      "name": "Ashfield Kerr Insurance Services, LLC",
+      "role": "Insurance broker for the Company (author of the distractor cover letter)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "September 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Purchase Price",
+      "value": "$86,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "SPA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F4",
+      "key": "SPA exclusive forum",
+      "value": "State or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence (SPA vs. Ancillary Agreements)",
+      "value": "Each Ancillary Agreement controls as to its subject matter; otherwise the SPA controls",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F6",
+      "key": "SPA definition of \"Business\"",
+      "value": "Design, manufacture and sale of coated industrial fabrics, nonwoven filtration media and aramid protective textiles",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F7",
+      "key": "Company",
+      "value": "Loomcrest Technical Textiles, Inc., a North Carolina corporation",
+      "doc": "D1",
+      "section": "Recitals"
+    },
+    {
+      "id": "F8",
+      "key": "Key employee title",
+      "value": "Vice President of Filtration Technology",
+      "doc": "D2",
+      "section": "Recitals"
+    },
+    {
+      "id": "F9",
+      "key": "TSA Term",
+      "value": "12 months after the Closing Date",
+      "doc": "D4",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F10",
+      "key": "TSA monthly service fee",
+      "value": "$142,000",
+      "doc": "D4",
+      "section": "Schedule A"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "key_employee_agreement_okonkwo_reyes.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 12.2 provides that Provider (Tuvouth) may assign the TSA, in whole or in part, to any Affiliate or any third party without the Recipient's consent. The same section bars the Recipient (the Company) from assigning without Provider's prior written consent. The Provider runs the Company's ERP hosting and customer order management and holds the Company's customer pricing data. TSA Section 9.3 lets Provider disclose Recipient Confidential Information to permitted assignees. Together these let Tuvouth hand the services, and the Company's data, to a competing industrial textiles producer for the rest of the 12-month TSA Term. SPA Section 11.5, the SPA's own anti-assignment clause, restricts assignment only of \"this Agreement\" and so does not reach the TSA. SPA Section 11.12 lets each Ancillary Agreement control as to its subject matter, so the SPA cannot cure the gap. Seller's non-compete in SPA Section 6.7 binds only Seller and its Affiliates, not a third-party assignee. This is the one issue visible from a single clause.",
+      "doc": "D4",
+      "section": "Section 12.2",
+      "detect_terms": [
+        "to any Affiliate or any third party without the consent of Recipient"
+      ],
+      "expected_finding": "TSA Section 12.2 lets Tuvouth assign the TSA to any third party, including a competitor, without the Company's consent, and Section 9.3 lets it pass the Company's confidential ERP and customer pricing data to that assignee; the SPA's anti-assignment clause (Section 11.5) covers only the SPA, so Teitair should require a mutual consent-to-assign provision that bars assignment to competitors.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "SPA Section 11.8 chooses New York law. SPA Section 11.9 gives exclusive jurisdiction over any dispute arising out of the SPA or the transactions it contemplates to the state or federal courts in New York County. IP Assignment Agreement Section 8.1 instead chooses North Carolina law and gives the courts of Gaston County, North Carolina exclusive jurisdiction over 'any dispute arising out of or relating to this Agreement or the Assigned IP.' SPA Section 11.12 provides that each Ancillary Agreement controls as to its subject matter, so the IP Assignment's clause governs, not the SPA's. As a result, Teitair's indemnity claims under SPA Section 9.2 for breach of the IP representations in SPA Section 4.12 relate to the Assigned IP and fall within North Carolina's exclusive forum. Tuvouth can move to dismiss or transfer a New York action, and IP title claims face splitting across two forums under two bodies of law, with a risk of inconsistent results.",
+      "doc": "D3",
+      "section": "Section 8.1",
+      "detect_terms": [
+        "courts of Gaston County, North Carolina",
+        "or relating to this Agreement or the Assigned IP"
+      ],
+      "expected_finding": "IP Assignment Agreement Section 8.1 picks North Carolina law and an exclusive Gaston County forum for all disputes relating to the Assigned IP, and because SPA Section 11.12 lets the IP Assignment control as to its subject matter, Teitair's SPA indemnity claims for IP breaches are pulled out of the New York law and New York County forum in SPA Sections 11.8 and 11.9; the IP Assignment should be conformed to New York law and the SPA's exclusive forum.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines \"Business\" as the design, manufacture and sale of coated industrial fabrics, nonwoven filtration media and aramid protective textiles. Key Employee Agreement Section 1.1 defines \"Business\" as only 'the design, manufacture and sale of coated and laminated industrial fabrics.' It states that this definition applies 'notwithstanding any definition in any other agreement.' The KEA's non-compete (Section 7.1) and its customer and employee non-solicit (Section 7.2) are both keyed to \"Business.\" The KEA recitals identify Ms. Okonkwo-Reyes as Vice President of Filtration Technology, so the restrictive covenants do not cover the nonwoven filtration media line she runs. The KEA recitals also say the SPA requires delivery of this KEA at Closing to protect the goodwill of the Business, which points to the SPA definition, but the KEA's express override defeats that reading. SPA Section 11.12 lets the KEA control as to its subject matter, and Ms. Okonkwo-Reyes is not a party to the SPA, so the SPA definition cannot be imported. The issue appears only when the two definitions and her title are read together.",
+      "doc": "D2",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "coated and laminated industrial fabrics",
+        "notwithstanding any definition in any other agreement"
+      ],
+      "expected_finding": "The Key Employee Agreement defines \"Business\" to cover only coated and laminated industrial fabrics, unlike the SPA definition that includes nonwoven filtration media, so the non-compete and non-solicit in KEA Sections 7.1 and 7.2 do not stop the Company's VP of Filtration Technology from joining a filtration competitor or soliciting filtration customers; the KEA definition should be conformed to the SPA definition of \"Business\" before Closing.",
+      "contradicts": "F6"
+    }
+  ]
+}

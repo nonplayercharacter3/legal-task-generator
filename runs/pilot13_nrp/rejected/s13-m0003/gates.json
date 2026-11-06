@@ -1,0 +1,96 @@
+{
+  "matter_id": "s13-m0003",
+  "accepted": false,
+  "failed_gate": "rubric_trace",
+  "reason": "errors: [\"criterion C3 requires a harm, remedy or provision that issue I3's expected_finding does not name: 'The response locates the issue in the Seller Note (Section 6 and/or Section 8), explains why this matters to the client'; ask that the response explains why it matters and recommends a fix\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "TSA Section 9.2: \"The aggregate liability of Provider and its Affiliates arising out of or relating to the Transition Services, including any access to, use or processing of Company Data, shall not exceed the total Service Fees paid to Provider under this Agreement, other than Losses resulting from Provider's willful misconduct.\" SPA Section 11.10: \"...except that the Transition Services Agreement shall prevail as to the Transition Services and liability arising therefrom.\"",
+            "reason": "The problem is present and hurts Buyer. Provider (the Seller) bears the data-handling obligations, and Buyer is the party protected by the uncapped carve-out in SPA 9.5(d) for breaches of SPA 6.8. TSA 9.2 instead caps Provider's liability for Company Data access, use or processing at the TSA fees actually paid, which is at most $765,000 over the 9-month term and less early in the term. Its only carve-out is willful misconduct. SPA 11.10 makes the TSA prevail as to Transition Services and the liability arising from them, and TSA 6.2 ties Provider's data use expressly to SPA 6.8. Together these likely pull a Seller-caused data breach during hosting under the TSA cap, so negligent and grossly negligent breaches are capped during the period of greatest data exposure. Nothing in the folder cures this: TSA 9.2 has no carve-out preserving SPA 9.5(d). The TSA is still an unsigned form with a blank date ([●], 2026), so the term can still be negotiated and the issue remains actionable."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 1.1: \"'Survival Date' means the date that is six (6) months after the Closing Date.\" Section 9.1: \"All representations and warranties ... including the representations and warranties set forth in Section 4.12 (Taxes) and Section 4.14 (Environmental Matters), shall survive the Closing until the Survival Date. No claim in respect of any such representation or warranty may be asserted unless written notice describing the claim in reasonable detail is delivered before the Survival Date.\"",
+            "reason": "The problem is present and still actionable, though narrower on tax than described. Buyer (Mairiv, our client) is the indemnified party. Its Section 4.14 environmental claims for HFC refrigerant and coolant-fluid compliance are barred unless noticed within six months after Closing. Such problems usually surface only on regulatory inspection, and no special environmental indemnity or carve-out exists to cure this. Section 9.5(d) carves out only Section 6.8 breaches and fraud. On tax, the gap is partly mitigated: Section 9.2(c) is a standalone indemnity for Pre-Closing Taxes, and Section 6.7 is a covenant. Neither is tied to the Survival Date or to the cap and Deductible in Section 9.5. Even so, a breach of the Section 4.12 representations themselves (for example, that returns are correct or there are no audits) still expires at six months. Meanwhile the Seller Note runs 36 months, so the Section 9.7 set-off right outlasts any environmental or tax-representation claim Buyer could bring. The SPA was signed March 2, 2026 with a June 30, 2026 outside date, so the Survival Date falls in late 2026 at the earliest. The folder records no lapse and no acceptance by Buyer. Buyer can still serve protective notice before the Survival Date or seek an amendment, so the issue remains live."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 8.1: \"The Holder may sell, assign, pledge or otherwise transfer this Note, in whole or in part, to any Person without the consent of Maker.\" Section 6.3: \"Any Person to whom this Note or any interest in it is transferred under Section 8 shall take this Note free of any right of set-off, counterclaim or defense of Maker.\"",
+            "reason": "Maker is the Buyer, so it holds the set-off right and bears the payment obligation. Its set-off right under SPA 9.7 and Note 6.1 reaches only 'amounts payable to Seller'. Note 8.1 lets the Holder transfer the Note to anyone, including a competitor, without Maker's consent. Note 6.3 then strips set-off, counterclaims and defenses from any transferee. SPA 11.4 restricts assignment of the Agreement only, not transfer of the Note. The SPA 11.10 precedence clause does not help because there is no conflict: 9.7 simply does not reach payments owed to a transferee. As a result, Buyer could lose its main security for indemnity recovery on up to $12M. A transferee would also become the Holder entitled to the Section 5 financial statements and customer backlog reports. The Note is still an unexecuted form (dated [●], signature blocks blank), so this remains actionable."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "TSA Section 1.1: \"\"Competing Activity\" means the manufacture or sale of perimeter computer-room air conditioning (CRAC) and air-handler units.\" SPA Section 6.9 restricts Seller from engaging \"in any Competing Activity (as defined in the Transition Services Agreement) anywhere in North America or Europe.\"",
+            "reason": "The problem is present. Buyer is the beneficiary of the non-compete, and Seller (Noukav) is the restricted party. SPA 6.9 adopts the TSA definition of Competing Activity, and TSA 1.1 says its defined terms apply for SPA purposes wherever the SPA refers to them. That definition covers only perimeter CRAC and air-handler units. It does not reach the 'Business' as the SPA defines it: direct-to-chip, immersion and rear-door heat exchanger cooling. Nothing in the folder cures this. The SPA's precedence clause in 11.10 does not help, because the SPA itself points to the TSA definition, so there is no conflict between the documents to resolve. The TSA is still in draft (Effective Date \"[●]\", signature blocks blank), and the board approved it only 'substantially in the form' presented. The definition can therefore still be corrected before Closing. That makes the problem actionable and seriously adverse to Buyer, because Seller could compete at once in the core business Buyer is paying $86M to acquire."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 9.3(b): Buyer shall indemnify Seller Indemnitees against \"any and all Losses arising out of or relating to the Seller Guarantees, whether arising before or after the Closing.\" Section 9.5(e): \"The limitations set forth in this Section 9.5 shall not apply to any claim under Section 9.3(b).\"",
+            "reason": "Buyer (the client) is the party giving this indemnity, and the indemnity has no limit. Section 9.3(b) covers Losses \"whether arising before or after the Closing,\" so it reaches guaranty calls caused by the Company's pre-Closing performance and uptime failures while Seller owned it. Section 9.5(e) removes the cap, the deductible and the survival limit for these claims. The same pre-Closing performance breaches fall within Seller's own Material Contracts representations in Section 4.9, which are capped at $8.6M under Section 9.5(a) and expire six months after Closing under Section 9.1. The result is that Buyer bears unlimited, indefinite exposure for Seller-era failures, while Buyer's recourse against Seller is capped and short-lived. Nothing in the folder cures or limits this. The board consent addresses only Buyer's efforts to obtain releases and offer substitute credit support. Section 6.10 keeps the guarantees in place until release, so the exposure continues. The guarantees remain in place and the indemnity is uncapped, so this is still actionable for Buyer, for example by renegotiation or by asserting its own claims against Seller."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": false,
+      "details": {
+        "errors": [
+          "criterion C3 requires a harm, remedy or provision that issue I3's expected_finding does not name: 'The response locates the issue in the Seller Note (Section 6 and/or Section 8), explains why this matters to the client'; ask that the response explains why it matters and recommends a fix"
+        ],
+        "n_criteria": 12,
+        "bundled": [
+          "criterion C3 requires a harm, remedy or provision that issue I3's expected_finding does not name: 'The response locates the issue in the Seller Note (Section 6 and/or Section 8), explains why this matters to the client'; ask that the response explains why it matters and recommends a fix"
+        ],
+        "repair": {
+          "ran": true,
+          "flagged": [
+            "criterion C3 requires a harm, remedy or provision that issue I3's expected_finding does not name: 'The response locates the issue in Seller Note Sections 6 and/or 8, explains why this matters to Mairiv'; ask that the response explains why it matters and recommends a fix"
+          ],
+          "cleared": false
+        }
+      }
+    }
+  ]
+}
