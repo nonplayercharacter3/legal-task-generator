@@ -238,8 +238,9 @@ def rubric_tests(client: ModelClient, rubric: Rubric, answers: Answers) -> GateR
             "flawed_should_fail": should_fail,
             "flawed_wrongly_passes": flawed_wrongly_passes,
             "flawed_wrongly_fails": flawed_wrongly_fails,
-            # Why the judge failed gold or passed the flawed answer: round 13's gold failure (s13-m0001 C8) had none on disk.
-            "judge_reasons": {"gold": {c: gold_why[c] for c in gold_fails}, "flawed": {c: flawed_why[c] for c in flawed_wrongly_passes}},
+            # The judge's reason for every disagreement: round 13's gold failure (s13-m0001 C8) and round 15's flawed
+            # wrong fails (s15-m0003 C8, C9) had none on disk.
+            "judge_reasons": {"gold": {c: gold_why[c] for c in gold_fails}, "flawed": {c: flawed_why[c] for c in flawed_wrongly_passes + flawed_wrongly_fails}},
         },
     )
 

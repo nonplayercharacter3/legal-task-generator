@@ -45,7 +45,7 @@ def test_rubric_tests_catches_each_kind_of_bad_rubric(grade, failure):
     assert g.passed is (failure is None)
     flagged = {k for k in ("gold_fails", "blank_passes", "flawed_wrongly_passes", "flawed_wrongly_fails") if g.details[k]}
     assert flagged == ({failure} if failure else set())
-    for answer, ids in (("gold", g.details["gold_fails"]), ("flawed", g.details["flawed_wrongly_passes"])):
+    for answer, ids in (("gold", g.details["gold_fails"]), ("flawed", g.details["flawed_wrongly_passes"] + g.details["flawed_wrongly_fails"])):
         assert set(g.details["judge_reasons"][answer]) == set(ids)  # a reason (here "": the stub gives none) for each
 
 
