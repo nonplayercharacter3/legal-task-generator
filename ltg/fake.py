@@ -65,6 +65,11 @@ def _rng(*parts: Any) -> random.Random:
     return random.Random(int(h[:16], 16))
 
 
+def _claim(issue: dict) -> str:
+    """The wrong claim a fake negative criterion names: that the folder already handles a planted issue."""
+    return f"the documents already protect the client against {issue['label'].lower()}"
+
+
 def _slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
 
@@ -87,6 +92,7 @@ class FakeModel:
         self.log = log if log is not None else CallLog()
         self._solver_attempts: dict[str, int] = {}
         self._hints: dict[str, list[str]] = {}  # criterion text -> hints, so the fake judge can grade without them
+        self._claims: dict[str, str] = {}  # negative criterion text -> the wrong claim it names
 
     # ------------------------------------------------------------ plumbing
 
@@ -264,7 +270,12 @@ class FakeModel:
         for f in ledger["facts"][:2]:
             crit.append({"id": f"C{len(crit) + 1}", "kind": "fact", "source": f["id"], "text": f"States the {f['key']} as {f['value']}.", "hints": [f["value"]]})
         crit.append({"id": f"C{len(crit) + 1}", "kind": "format", "source": None, "text": "Cites the document and section for each issue identified.", "hints": ["section"]})
-        crit.append({"id": f"C{len(crit) + 1}", "kind": "negative", "source": None, "text": "Does not cite case law or statutes that do not appear in the matter documents.", "hints": []})
+        crit.append({"id": f"C{len(crit) + 1}", "kind": "negative", "source": None, "text": "Cites case law or statutes that the matter documents do not contain.", "hints": []})
+        # One wrong claim, stated plainly (round 13: a double-negative criterion made the judge fail a correct gold).
+        first = ledger["issues"][0]
+        claim = _claim(first)
+        crit.append({"id": f"C{len(crit) + 1}", "kind": "negative", "source": first["id"], "text": f"The response claims that {claim}.", "hints": []})
+        self._claims[crit[-1]["text"]] = claim
         if fault == "untraceable_criterion":
             crit.append({"id": f"C{len(crit) + 1}", "kind": "issue", "source": "I99", "text": "Identifies the missing escrow provision.", "hints": ["escrow"]})
         if fault == "bundled_criterion" and not p.get("previous_rubric"):  # the repair call sends the rubric back; then it drops the clause
@@ -289,14 +300,21 @@ class FakeModel:
             issues = issues[1:] if fault == "weak_gold" else issues
         else:
             issues = [i for i in issues if i["id"] != p["omit_issue"]]
-        return "MEMORANDUM\n\nIssues identified:\n" + "\n".join(finding(i) for i in issues) + "\n\nKey facts:\n" + facts
+        memo = "MEMORANDUM\n\nIssues identified:\n" + "\n".join(finding(i) for i in issues) + "\n\nKey facts:\n" + facts
+        if p["write"] == "gold":  # a careful memo warns against the wrong claim the rubric's negative criterion names
+            memo += f"\n\nWe should not tell the client that {_claim(ledger['issues'][0])}. That is wrong."
+        return memo
 
     def _judge(self, p: dict) -> dict:
         resp = p["response"]
         low = resp.lower()
         results = []
         for c in p["criteria"]:
-            if c["kind"] == "negative":
+            if c["kind"] == "negative" and c["text"] in self._claims:  # fails only if a sentence asserts the claim
+                claim = self._claims[c["text"]].lower()
+                sentences = [s for s in re.split(r"(?<=[.!?])\s+", low) if claim in s]
+                ok = not any(not re.search(r"\b(not|wrong|incorrect|never)\b", s) for s in sentences)
+            elif c["kind"] == "negative":
                 ok = not re.search(r"\bv\.\s|U\.S\.C\.|F\.\s?\d?d\b", resp)
             else:
                 hints = c.get("grading_hints") or self._hints.get(c["text"], [])

@@ -15,7 +15,7 @@ from .decontam import BloomIndex
 from .models import ModelClient, call_json, render_input
 from .schema import Answers, Ledger, MatterSpec, Rubric, bundling_errors, validate_answers, validate_ledger, validate_rubric
 from .solver import Solution, solve
-from .stages import Documents, judge
+from .stages import Documents, judge, judge_with_reasons
 
 
 @dataclass
@@ -70,7 +70,7 @@ def leak_check(instruction: str, ledger: Ledger, docs: Documents) -> GateResult:
     return GateResult("leak_check", passed, {"hits": hits, "html_comments": comments, "empty": not instruction.strip()})
 
 
-def rubric_trace(rubric: Rubric, ledger: Ledger, answers: Answers, bundling: str = "repair", repair: dict | None = None) -> GateResult:
+def rubric_trace(rubric: Rubric, ledger: Ledger, answers: Answers, bundling: str = "warn", repair: dict | None = None) -> GateResult:
     """Deterministic trace of rubric and answers to the ledger.
 
     `bundling` is `gates.check_bundling`: bundled clauses still present reject under "repair" (the writer already had
@@ -198,9 +198,9 @@ def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms
 def rubric_tests(client: ModelClient, rubric: Rubric, answers: Answers) -> GateResult:
     """A rubric is code, so unit-test it: gold passes all, blank passes none, and the flawed answer fails
     exactly the criteria for the issue it omits (anything else it fails means a criterion is not specific)."""
-    gold = judge(client, answers.gold, rubric)
+    gold, gold_why = judge_with_reasons(client, answers.gold, rubric)
     blank = judge(client, "", rubric)
-    flawed = judge(client, answers.flawed, rubric)
+    flawed, flawed_why = judge_with_reasons(client, answers.flawed, rubric)
 
     gold_fails = [c for c, ok in gold.items() if not ok]
     graded_on_blank = [c.id for c in rubric.criteria if c.kind != "negative"]  # negatives pass on blank by design
@@ -219,6 +219,8 @@ def rubric_tests(client: ModelClient, rubric: Rubric, answers: Answers) -> GateR
             "flawed_should_fail": should_fail,
             "flawed_wrongly_passes": flawed_wrongly_passes,
             "flawed_wrongly_fails": flawed_wrongly_fails,
+            # Why the judge failed gold or passed the flawed answer: round 13's gold failure (s13-m0001 C8) had none on disk.
+            "judge_reasons": {"gold": {c: gold_why[c] for c in gold_fails}, "flawed": {c: flawed_why[c] for c in flawed_wrongly_passes}},
         },
     )
 

@@ -61,9 +61,10 @@ class GatesCfg:
     probe_without_documents: bool = True
     judge_hints: bool = True  # send rubric hints to the judge (and export them); off to measure leniency
     verifier_sees_terms: bool = False  # terms are checked verbatim in code; the verifier judges blind
-    # Issue criteria that demand a harm or remedy the expected finding does not name: "repair" sends the rubric back to
-    # its writer once and rejects at rubric_trace only if that fails; "warn" records them in gates.json; "off" skips.
-    check_bundling: str = "repair"
+    # Issue criteria that demand a harm or remedy the expected finding does not name: "warn" records them in gates.json
+    # and the report and never rejects (default since round 13, which lost 2 of 3 sound tasks to false flags);
+    # "repair" sends the rubric back to its writer once and rejects at rubric_trace only if that fails; "off" skips.
+    check_bundling: str = "warn"
     decontam_ngram: int = 8
     decontam_threshold: float = 0.5
     decontam_bloom_bits: int = 2**27

@@ -53,14 +53,24 @@ c3f891c. Two defect classes, fixed on `fix/round12` (one commit each):
   (s12-m0001, false rejection at `solver_check` 0 of 3; 5c66350 did not prevent it). Now an issue criterion may require
   only the finding, where it is, that it matters and that a fix is recommended; a harm or remedy clause whose words
   the issue's `expected_finding` does not carry is sent back to the rubric writer once with the flagged clauses, and
-  `rubric_trace` rejects only if the corrected rubric still has one (`gates.check_bundling`: `"repair"` default,
-  `"warn"` records only, `"off"`; the repair is in `gates.json` and counted in `report.md`). It is a repair, not a
+  `rubric_trace` rejects only if the corrected rubric still has one (`gates.check_bundling`: `"repair"`, `"warn"`
+  records only and is the default since round 13, `"off"`; the repair is in `gates.json` and counted in `report.md`). It is a repair, not a
   gate, because on past rubrics the word-overlap rule flagged 34 of 157 issue criteria in 19 of 31 real matters,
   6 of the 9 accepted ones among them, with some synonym false flags. The judge passes any sound route.
 - An issue planted as history the client already ratified (s12-m0002, I3: a missed dispute window followed by a
   restated note the client signed, nothing in the folder objecting; `issue_check` rejected it, correctly). Now the
   ledger writer keeps every issue actionable and puts the client's position in the folder, the issue verifier asks
   whether it is still actionable, and `issue_check` stores the verifier's `reason` in `gates.json`.
+
+**Round 13 (2026-11-05, seed 13, Opus generating, Qwen on NRP, PR #13):** 0 of 3 accepted, all three rejections false,
+no solver call ran; 55 calls, ~1.11M input and ~211k output tokens, 0 model errors, 22 minutes. NRP is back since
+2026-11-05, with a fresh key exported in `~/.zshenv`. Three defect classes, fixed on `fix/round13` (one commit each):
+- The bundling check flagged allowed wording ("locates the issue in ... Section 3, explains why this matters to the
+  client"; s13-m0002, s13-m0003): those words are now known vocabulary, and `gates.check_bundling` defaults to `"warn"`
+  (records, never rejects). Past real rubrics: 34 to 33 flagged of 157 issue criteria; round 13's: 2 to 0.
+- A double-negative negative criterion made the judge fail a correct gold (s13-m0001 C8): the rubric writer now states
+  one wrong claim plainly, and the judge passes a memo that quotes, rejects or warns against it.
+- `rubric_tests` kept no judge reasons: `gates.json` now stores them for every gold failure and flawed wrong pass.
 
 Code check (2026-11-04, `feat/difficulty-labels`): `configs/fake_demo.toml` rejects consistency 3, issue_check 1,
 leak_check 2, rubric_trace 1, rubric_tests 1; `solver_check` rejects only leaks now, so 0 in the demo (it has no leak
@@ -75,9 +85,10 @@ fault), and 12 of 20 are accepted with labels (pass rates 0.33: 5, 0.67: 5, 1.00
    default labelling model; add roles to `gates.solver_models` to label with more. Same spec, different solvers:
    s9-m0003 scored 0.33 with Qwen and 1.0 with Haiku, though the two drafts differ. If tasks must get harder: longer
    folders, more cross-document issues (known weaknesses 2 and 3).
-3. **Next rounds** on merged `main`, seed 13 or higher, after the `fix/round12` PR merges. Qwen rounds need NRP
-   back (since ~23:00 on 2026-11-02 every chat request returns an empty 403, even with a bad key, while `/v1/models`
-   works; not rechecked) or the vLLM pod (`configs/vllm_nautilus_solver.toml`, about 3.5 times slower).
+3. **Next rounds** on merged `main`, seed 14 or higher, after the `fix/round13` PR merges, on NRP
+   (`configs/pilot_nrp_solver.toml`; the empty 403s from 2026-11-02 stopped on 2026-11-05 with a fresh key in
+   `~/.zshenv`). The vLLM pod (`configs/vllm_nautilus_solver.toml`, about 3.5 times slower) is the fallback; on
+   2026-11-05 it sat Pending for 85 minutes with every A100 80GB node full.
 4. **Fine-tune on Nautilus: not started.** Serving works (below). Seven accepted tasks is far too few; scale the
    generator first.
 5. **Tell the second contributor that round 6 already ran on the laptop** (a GitHub issue), so it is not run twice.

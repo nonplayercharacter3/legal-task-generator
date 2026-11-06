@@ -146,3 +146,36 @@ def test_issue_criteria_may_not_demand_a_harm_or_remedy_the_finding_omits():
         assert bundling(Rubric([ok])) == [], ok.text
     errs = bundling(Rubric([bundled]))
     assert len(errs) == 1 and "yield data" in errs[0] and "expected_finding" in errs[0]
+
+
+def test_bundling_ignores_the_wording_every_issue_criterion_may_use():
+    """Round 13: both clauses below were flagged, and the repair could not clear them, because "locate", "issue", "why",
+    "matter" and "client" counted as harm or remedy words. Criteria and expected findings verbatim from runs/pilot13_nrp."""
+    ledger, _ = _ledger_and_spec()
+    issue = ledger.issues[0]
+    bundling = lambda text: [e for e in validate_rubric(Rubric([Criterion("C1", text, "issue", issue.id)]), ledger) if "harm, remedy" in e]
+    cases = [
+        ("Amendment No. 1 Section 3, read with DPA Section 9 and the precedence clause in Agreement Section 18.4, now caps "
+         "Tideisk's liability (including its DPA Section 8 indemnity) for player-data breaches at 12 months of Distribution Fees, "
+         "leaving Drosos as controller with uncovered regulatory and player-claim exposure; Drosos should seek a further "
+         "amendment restoring the DPA carve-out or a separate, higher data-breach cap.",
+         "Identifies that Amendment No. 1 Section 3 restates Agreement Section 12.3(b) so that breaches of the Data Processing "
+         "Addendum are no longer excluded from the Section 12.2 liability cap. Read with DPA Section 9 and the precedence of "
+         "amendments under Agreement Section 18.4, this caps Tideisk's liability for player-data breaches, including its DPA "
+         "Section 8 indemnity, at 12 months of Distribution Fees. The response must locate the issue in Amendment No. 1 "
+         "Section 3, explain why this matters to the client, and recommend a fix."),
+        ("Seller can freely transfer the Seller Note, including to a competitor that would receive Ostrel's financial and "
+         "backlog reports under Note Section 5, and the transferee takes free of set-off, which defeats Buyer's SPA Section "
+         "9.7 set-off right; the Note should bar transfer without Maker's consent (and to any competitor), preserve set-off "
+         "against any transferee, and SPA 11.4 should cover the Note.",
+         "Identifies that the Seller Note can be transferred by Holder without Maker's consent, including to a competitor that "
+         "would receive Ostrel's financial and backlog reports under Note Section 5. The response also identifies that a "
+         "transferee takes free of set-off, which defeats Buyer's set-off right under SPA Section 9.7. The response locates the "
+         "issue in the Seller Note (Section 6 and/or Section 8), explains why this matters to the client, and recommends a fix."),
+    ]
+    for finding, text in cases:
+        issue.expected_finding = finding
+        assert bundling(text) == [], text[-120:]
+    # a harm the finding does not name is still flagged (round 12's s12-m0001 C2)
+    issue.expected_finding = cases[1][0]
+    assert bundling("Identifies the transfer right; explains the risk that an assignee could gain access to audit, process or yield data.")
