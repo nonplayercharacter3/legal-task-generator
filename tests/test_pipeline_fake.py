@@ -392,3 +392,15 @@ def test_check_bundling_warn_only_records_and_off_skips(tmp_path, read_json):
         assert ("2 matter(s) flagged" in (tmp_path / mode / "report.md").read_text()) is (mode == "warn")
     with pytest.raises(ValueError, match="check_bundling"):
         load_config(None, {"gates": {"check_bundling": "maybe"}})
+
+
+def test_rubric_tests_keeps_the_judges_reason_for_a_gold_failure(tmp_path, read_json):
+    """Round 13: the judge failed s13-m0001's gold on C8 and nothing on disk said why."""
+    cfg = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2, "seed": 11}, "fake": {"fault": "weak_gold"}})
+    rep = Pipeline(cfg).run()
+    assert {m["failed_gate"] for m in rep["matters"]} == {"rubric_tests"}
+    g = read_json(Path(tmp_path) / "rejected" / rep["matters"][0]["matter_id"] / "gates.json")["gates"][-1]
+    d = g["details"]
+    assert g["name"] == "rubric_tests" and d["gold_fails"]
+    assert set(d["judge_reasons"]["gold"]) == set(d["gold_fails"]) and all(d["judge_reasons"]["gold"].values())
+    assert d["judge_reasons"]["flawed"] == {}

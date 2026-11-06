@@ -175,11 +175,19 @@ def write_answers(client: ModelClient, ledger: Ledger, instruction: str, rubric:
 
 
 def judge(client: ModelClient, response: str, rubric: Rubric) -> dict[str, bool]:
+    return judge_with_reasons(client, response, rubric)[0]
+
+
+def judge_with_reasons(client: ModelClient, response: str, rubric: Rubric) -> tuple[dict[str, bool], dict[str, str]]:
+    """Each criterion's grade, and the judge's reason for it ("" when it gave none)."""
     payload = {
         "response": response,
         "criteria": [{"id": c.id, "text": c.text, "kind": c.kind, **({"grading_hints": c.hints} if c.hints else {})} for c in rubric.criteria],
     }
     out = call_json(client, "judge", prompts.JUDGE, render_input(payload))
-    got = {r["id"]: bool(r.get("pass")) for r in out.get("results", []) if "id" in r}
-    return {c.id: got.get(c.id, False) for c in rubric.criteria}  # a criterion the judge skipped counts as failed
+    rows = [r for r in out.get("results", []) if "id" in r]
+    got = {r["id"]: bool(r.get("pass")) for r in rows}
+    why = {r["id"]: str(r.get("reason") or "") for r in rows}
+    grades = {c.id: got.get(c.id, False) for c in rubric.criteria}  # a criterion the judge skipped counts as failed
+    return grades, {c.id: why.get(c.id, "skipped by the judge" if c.id not in got else "") for c in rubric.criteria}
 
