@@ -319,7 +319,10 @@ class FakeModel:
             else:
                 hints = c.get("grading_hints") or self._hints.get(c["text"], [])
                 ok = bool(resp.strip()) and bool(hints) and all(h.lower() in low for h in hints)
-            results.append({"id": c["id"], "pass": ok, "reason": "hint match" if ok else "missing"})
+            if c["kind"] == "negative":
+                results.append({"id": c["id"], "claim_made": not ok, "reason": "claim not made" if ok else "claim made"})
+            else:
+                results.append({"id": c["id"], "pass": ok, "reason": "hint match" if ok else "missing"})
         return {"results": results}
 
     def _solver(self, p: dict) -> str | dict:

@@ -207,11 +207,12 @@ using only the response text. `grading_hints` are phrases a passing response wou
 but are not required verbatim. An "issue" criterion passes when the response reaches the criterion's conclusion by
 any sound route: it need not cite the same supporting provision, name the same harm or propose the same fix, as long
 as it identifies the problem, where it is, why it matters and recommends a fix. A "negative" criterion names a wrong
-claim or a bad act; it passes unless the response itself makes that claim or does that act. Quoting the claim,
-rejecting it or warning against it is a pass.
-An empty response fails every criterion except negative ones.
+claim or a bad act. Do not grade it pass or fail: answer only `claim_made`, whether the response itself makes that
+claim or does that act. Quoting the claim, rejecting it or warning against it is not making it.
+An empty response fails every criterion that is not negative, and makes no claim.
 
-Reply with ONLY a JSON object: {"results": [{"id": str, "pass": bool, "reason": str}]}"""
+Reply with ONLY a JSON object: {"results": [{"id": str, "pass": bool, "reason": str}]}, where the entry for a negative
+criterion has "claim_made": bool in place of "pass"."""
 
 SOLVER_STEP = """You are an associate at a law firm working on the partner's assignment. You can open the files in the
 matter folder one step at a time. You receive the instruction, the list of files, every step you have taken so far
