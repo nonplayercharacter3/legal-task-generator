@@ -332,3 +332,59 @@ def test_role_router_names_the_model_behind_a_labelling_role():
     qwen = OpenAICompatClient(base_url="http://x/v1", default_model="qwen3-small", api_key_env="NONE")
     router = RoleRouter(FakeModel(), {"solver": qwen}, qwen.log)
     assert router.model_for("solver") == "qwen3-small" and router.model_for("solver_b") == ""
+
+
+def test_bundled_issue_criterion_is_repaired_once_not_rejected(tmp_path, read_json):
+    """T11b: a rubric whose only fault is a bundled harm or remedy clause goes back to its writer once."""
+    cfg = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2}, "fake": {"fault": "bundled_criterion"}})
+    rep = Pipeline(cfg).run()
+    assert rep["accepted"] == 2
+    assert rep["model_calls"]["rubric_writer"]["calls"] == 4  # first draft + one repair, per matter
+    assert rep["rubric_repairs"] == {"ran": 2, "cleared": 2, "bundled_after": 0}
+    assert "Rubric repairs" in (Path(tmp_path) / "report.md").read_text()
+    trace = next(g for g in read_json(Path(tmp_path) / "accepted" / rep["matters"][0]["matter_id"] / "gates.json")["gates"] if g["name"] == "rubric_trace")
+    assert trace["details"]["repair"]["ran"] and trace["details"]["repair"]["cleared"]
+    assert len(trace["details"]["repair"]["flagged"]) == 1 and "yield data" in trace["details"]["repair"]["flagged"][0]
+    assert trace["details"]["bundled"] == [] and trace["details"]["errors"] == []
+    clean = Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path / "clean"), "n_matters": 2}})).run()
+    assert clean["model_calls"]["rubric_writer"]["calls"] == 2 and clean["rubric_repairs"]["ran"] == 0
+
+
+class _StubbornWriter(FakeModel):
+    """Keeps the bundled clause even when sent the rubric back."""
+
+    def _rubric_writer(self, p):
+        return super()._rubric_writer({**p, "previous_rubric": None})
+
+
+def test_bundling_the_writer_cannot_correct_rejects_at_rubric_trace(tmp_path, read_json):
+    cfg = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2}, "fake": {"fault": "bundled_criterion"}})
+    rep = Pipeline(cfg, client=_StubbornWriter(fault="bundled_criterion")).run()
+    assert {m["failed_gate"] for m in rep["matters"]} == {"rubric_trace"}
+    assert rep["model_calls"]["rubric_writer"]["calls"] == 4
+    assert rep["rubric_repairs"] == {"ran": 2, "cleared": 0, "bundled_after": 2}
+    trace = read_json(Path(tmp_path) / "rejected" / rep["matters"][0]["matter_id"] / "gates.json")["gates"][-1]
+    assert trace["name"] == "rubric_trace" and trace["details"]["repair"]["ran"] and not trace["details"]["repair"]["cleared"]
+    assert trace["details"]["bundled"] and trace["details"]["errors"] == trace["details"]["bundled"]
+
+
+def test_other_rubric_faults_reject_at_once_without_a_repair_call(tmp_path):
+    cfg = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2}, "fake": {"fault": "untraceable_criterion"}})
+    rep = Pipeline(cfg).run()
+    assert {m["failed_gate"] for m in rep["matters"]} == {"rubric_trace"}
+    assert rep["model_calls"]["rubric_writer"]["calls"] == 2 and rep["rubric_repairs"]["ran"] == 0
+
+
+def test_check_bundling_warn_only_records_and_off_skips(tmp_path, read_json):
+    for mode in ("warn", "off"):
+        cfg = load_config(None, {"run": {"out_dir": str(tmp_path / mode), "n_matters": 2}, "fake": {"fault": "bundled_criterion"},
+                                 "gates": {"check_bundling": mode}})
+        rep = Pipeline(cfg, client=_StubbornWriter(fault="bundled_criterion")).run()
+        assert rep["accepted"] == 2, mode
+        assert rep["model_calls"]["rubric_writer"]["calls"] == 2, mode  # no repair call in either mode
+        trace = next(g for g in read_json(Path(tmp_path) / mode / "accepted" / rep["matters"][0]["matter_id"] / "gates.json")["gates"] if g["name"] == "rubric_trace")
+        assert trace["details"]["repair"] == {"ran": False} and trace["details"]["errors"] == []
+        assert (len(trace["details"]["bundled"]) == 1) is (mode == "warn")
+        assert rep["rubric_repairs"]["bundled_after"] == (2 if mode == "warn" else 0)
+    with pytest.raises(ValueError, match="check_bundling"):
+        load_config(None, {"gates": {"check_bundling": "maybe"}})

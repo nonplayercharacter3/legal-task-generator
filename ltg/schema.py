@@ -239,8 +239,59 @@ def _words(s: str) -> str:
     return " " + " ".join(re.findall(r"[a-z0-9]+", s.lower())) + " "
 
 
-def validate_rubric(rubric: Rubric, ledger: Ledger) -> list[str]:
-    """Every criterion must trace back to the ledger, and every issue must be graded."""
+_STOP = frozenset(
+    "the a an and or of to in that this which with for as by on at from its it is are be been was were not no any all "
+    "into under over than then there their them they such so if because when where who whose while also would should "
+    "could may might must shall will can does do did has have had having being very only both either neither each per "
+    "via about above after before between during through within without against along among around out up down off "
+    "recommend recommends explain explains note notes state states conclude concludes advise advises flag flags "
+    "response say says risk risks result therefore".split()
+)
+_CUE = re.compile(r"\b(recommend|explain|note|state|conclud|advis|should|risk|expos|could|would|lets?\b|allow|consequence|harm|must|lock|face|lose)", re.I)
+_SPLIT = re.compile(r";|\.\s+(?=[A-Z])|,?\s+(?:and|or)\s+(?=(?:recommend|explain|note|state|conclud|advis|flag)\w*\b)")
+
+
+def _content(s: str) -> list[str]:
+    """Content words, crudely stemmed, so "locks" and "locked" meet "lock"."""
+    words = [w for w in re.findall(r"[a-z0-9][a-z0-9./-]*[a-z0-9]|[a-z0-9]", s.lower()) if len(w) >= 3 and w not in _STOP]
+    return [re.sub(r"(ies|es|s|ed|ing)$", "", w) if len(w) > 4 else w for w in words]
+
+
+def bundled_elements(text: str, vocabulary: set[str]) -> list[str]:
+    """Clauses of an issue criterion that demand a harm, remedy or provision the ledger's expected finding does not name.
+
+    An issue criterion may ask for the finding, where it is, that it matters and that a fix is recommended. Round 12
+    (s12-m0001) lost a sound task because its criteria also demanded one particular harm ("access to audit/process or
+    yield data") and one particular remedy, and the judge enforced them. The first clause (the finding itself) is not
+    checked; every later clause that explains or recommends is, and is flagged when most of its content words are
+    missing from `vocabulary` (the expected finding plus the ledger's names, document kinds and the issue's section).
+    """
+    # ponytail: word overlap, no synonyms; a clause that rewords the finding needs the ledger's own words
+    out = []
+    for seg in [x.strip() for x in _SPLIT.split(text)[1:] if x and x.strip()]:
+        if not _CUE.search(seg):
+            continue
+        words = _content(seg)
+        novel = [w for w in words if w not in vocabulary]
+        if len(words) >= 4 and 2 * len(novel) > len(words):
+            out.append(seg)
+    return out
+
+
+def bundling_errors(rubric: Rubric, ledger: Ledger) -> list[str]:
+    """One error per bundled clause (see `bundled_elements`), worded for the rubric writer to act on."""
+    shared = " ".join([*(p.name for p in ledger.parties), *(f"{d.kind} {d.filename.rsplit('.', 1)[0]}" for d in ledger.documents)])
+    issues = {i.id: set(_content(f"{i.expected_finding} {i.label} {i.section} {shared}")) for i in ledger.issues}
+    return [f"criterion {c.id} requires a harm, remedy or provision that issue {c.source}'s expected_finding does not name: "
+            f"{clause!r}; ask that the response explains why it matters and recommends a fix"
+            for c in rubric.criteria if c.kind == "issue" and c.source in issues
+            for clause in bundled_elements(c.text, issues[c.source])]
+
+
+def validate_rubric(rubric: Rubric, ledger: Ledger, bundling: bool = True) -> list[str]:
+    """Every criterion must trace back to the ledger, and every issue must be graded.
+
+    `bundling=False` leaves out `bundling_errors`, which the pipeline handles separately (repair, warn or off)."""
     errs: list[str] = []
     for d in _dupes([c.id for c in rubric.criteria]):
         errs.append(f"duplicate criterion id {d}")
@@ -267,7 +318,7 @@ def validate_rubric(rubric: Rubric, ledger: Ledger) -> list[str]:
     graded = {c.source for c in rubric.criteria if c.kind == "issue"}
     for missing in sorted(issue_ids - graded):
         errs.append(f"issue {missing} has no criterion")
-    return errs
+    return errs + (bundling_errors(rubric, ledger) if bundling else [])
 
 
 def validate_answers(answers: Answers, ledger: Ledger) -> list[str]:

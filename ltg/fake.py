@@ -10,6 +10,8 @@ It can also inject faults on purpose, to prove each gate rejects what it should:
   conflicting_restatement drafter restates a fact differently in another document -> consistency fails
   leaky_filename         ledger names a file after the issue it holds -> leak_check fails
   untraceable_criterion  rubric cites an id not in the ledger     -> rubric_trace fails
+  bundled_criterion      an issue criterion also demands one particular harm -> repaired on the writer's second call
+                         (rubric_trace fails only when check_bundling = "repair" and the writer does not correct it)
   weak_gold              gold answer misses an issue              -> rubric_tests fails
 
 Its "legal knowledge" is the issue library's detect_terms, so the fake solver finds
@@ -27,7 +29,7 @@ from typing import Any
 from .models import CallLog, CallRecord, extract_input
 from .taxonomy import ISSUE_LIBRARY
 
-FAULTS = ("drop_issue", "wrong_fact", "conflicting_restatement", "leaky_filename", "untraceable_criterion", "weak_gold")
+FAULTS = ("drop_issue", "wrong_fact", "conflicting_restatement", "leaky_filename", "untraceable_criterion", "weak_gold", "bundled_criterion")
 
 COMPANY_NAMES = [
     "Ostrava Industrial Supply Co.",
@@ -94,7 +96,7 @@ class FakeModel:
         if self.fault_rate > 0:
             r = _rng(self.seed, "fault", matter_id)
             if r.random() < self.fault_rate:
-                return r.choice(FAULTS)
+                return r.choice(FAULTS[:-1])  # not bundled_criterion: the writer corrects it, so it rejects nothing and would only reshuffle the demo
         return ""
 
     def complete(self, role: str, system: str, user: str) -> str:
@@ -265,6 +267,8 @@ class FakeModel:
         crit.append({"id": f"C{len(crit) + 1}", "kind": "negative", "source": None, "text": "Does not cite case law or statutes that do not appear in the matter documents.", "hints": []})
         if fault == "untraceable_criterion":
             crit.append({"id": f"C{len(crit) + 1}", "kind": "issue", "source": "I99", "text": "Identifies the missing escrow provision.", "hints": ["escrow"]})
+        if fault == "bundled_criterion" and not p.get("previous_rubric"):  # the repair call sends the rubric back; then it drops the clause
+            crit[0]["text"] = crit[0]["text"].rstrip(".") + "; explains the risk that an assignee competitor could gain access to audit, process or yield data."
         self._hints.update({c["text"]: c["hints"] for c in crit})
         return {"criteria": crit}
 

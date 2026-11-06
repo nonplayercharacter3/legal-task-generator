@@ -130,7 +130,7 @@ class Pipeline:
             _write(work / "instruction.md", instruction)
             check(gates.leak_check(instruction, ledger, docs))
 
-            rubric = stages.write_rubric(self.client, spec, ledger, instruction)
+            rubric, repair = stages.write_rubric(self.client, spec, ledger, instruction, cfg.gates.check_bundling)
             _write(work / "rubric.json", rubric.to_dict())
             answers = stages.write_answers(self.client, ledger, instruction, rubric, docs, omit=rng.choice(ledger.issues).id)
             _write(work / "answers.json", answers.to_dict())
@@ -138,7 +138,7 @@ class Pipeline:
             # Stage 3: try to break it. The judge sees exactly the rubric that is exported.
             if not cfg.gates.judge_hints:
                 rubric = Rubric([replace(c, hints=[]) for c in rubric.criteria])
-            check(gates.rubric_trace(rubric, ledger, answers))
+            check(gates.rubric_trace(rubric, ledger, answers, cfg.gates.check_bundling, repair))
             check(gates.rubric_tests(self.client, rubric, answers))
             texts = {"instruction": instruction, "rubric": "\n".join(c.text for c in rubric.criteria), **{f"docs/{k}": v for k, v in docs.items()}}
             check(gates.decontamination(texts, self.index, cfg.gates.decontam_threshold))
@@ -284,6 +284,10 @@ def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed
             s["evaluated"] += 1
             s["skipped" if g["details"].get("skipped") else "passed" if g["passed"] else "failed"] += 1
     errors = sum(1 for r in results if r.failed_gate == "error")
+    traces = [g["details"] for r in results for g in r.gates if g["name"] == "rubric_trace"]
+    repairs = {"ran": sum(1 for d in traces if d.get("repair", {}).get("ran")),
+               "cleared": sum(1 for d in traces if d.get("repair", {}).get("cleared")),
+               "bundled_after": sum(1 for d in traces if d.get("bundled"))}  # matters whose final rubric still has bundled clauses
     spread: dict[str, dict] = {}  # per labelling model: how many accepted tasks sit at each pass rate
     for r in results:
         for d in r.difficulty if r.accepted else []:
@@ -297,6 +301,7 @@ def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed
         "errors": errors,
         "resumed": resumed,
         "gates": gate_stats,
+        "rubric_repairs": repairs,
         "unsolved": sum(1 for r in results if r.accepted and r.unsolved),
         "difficulty": {m: {"tasks": v["tasks"], "pass_rates": dict(sorted(v["pass_rates"].items()))} for m, v in sorted(spread.items())},
         "matters": [
@@ -325,6 +330,10 @@ def render_report(rep: dict) -> str:
         lines.append(f"| {g} | {s['evaluated']} | {s['passed']} | {s['failed']} | {s['skipped']} |")
     if rep["gates"]["decontamination"]["skipped"]:
         lines += ["", "**Decontamination was skipped (no `reference_dirs`): these tasks were NOT screened against LAB.**"]
+    rr = rep.get("rubric_repairs") or {}
+    if rr.get("ran") or rr.get("bundled_after"):
+        lines += ["", f"Rubric repairs for bundled issue criteria (`gates.check_bundling`): {rr['ran']} ran, {rr['cleared']} cleared; "
+                  f"{rr['bundled_after']} matter(s) still had bundled clauses in the final rubric."]
     lines += ["", "## Difficulty", "", "Pass rates of the accepted tasks per labelling model. Difficulty is a label, not a filter: whoever "
               "trains picks the band that fits their model.", "", "| Model | Tasks | Pass rate: tasks |", "| --- | ---: | --- |"]
     for model, d in rep.get("difficulty", {}).items():

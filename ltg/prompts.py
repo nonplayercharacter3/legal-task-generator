@@ -46,6 +46,10 @@ Rules:
 - Never let an issue depend on today's date: the task may be solved at any later time. A deadline that has passed or
   is about to pass must be measured against a date stated in the documents (a signing date, a letter's date, a
   delivery confirmation), and the description must name that date.
+- Every planted issue must be something the memo can still act on. A lapsed deadline or missed window counts only if
+  the client has not since accepted the result in a document (a restated note it signed, an amendment, a payment);
+  the folder must show the client's position (an objection letter, an email disputing the point), and the
+  description must name that document.
 - Give 5 to 10 facts that documents must state consistently. When the folder holds more than one instrument, name
   the instrument in any key that other instruments could also have ("Supply Agreement Effective Date", not
   "Effective Date"). Each fact is ONE short value, not a clause: a date,
@@ -60,7 +64,9 @@ Rules:
 - `detect_terms` are 1 to 3 short phrases that the drafted clause will contain verbatim. Take them from the flawed
   wording itself, never a document title, schedule or section name ("Schedule 3.4", "Notice of Disagreement"): the
   filenames and the instruction name documents, and leak_check rejects any multi-word term found there.
-- `expected_finding` is one sentence saying what a competent associate should conclude.
+- `expected_finding` is one sentence saying what a competent associate should conclude. Put in it every harm,
+  remedy or supporting provision that is essential to that conclusion, and nothing optional: the rubric may require
+  of a response only what this sentence states.
 - If an issue works by stating a fact differently in its document (for example a conflicting governing law),
   set `contradicts` to that fact's id; that fact must be stated in a DIFFERENT document. If the issue moves
   several facts together (governing law and forum), give a list of their ids. Otherwise null.
@@ -130,8 +136,10 @@ Answer whether a careful associate reading this document could find that problem
 problem for the client. Answer false if the problem is absent, or if the documents cure it, limit it expressly, make
 it intentional and harmless, or turn it to the client's advantage. Weigh it from the client's side: work out which
 party bears each obligation the problem touches (who gives the indemnity, who must give the notice) before deciding
-whom it hurts.
-Quote the sentence that shows it.
+whom it hurts. Answer false also if the client can no longer act on it: a missed deadline or lapsed window is
+history, not a problem to raise, when the folder shows the client has since accepted the result (a restated note it
+signed, a payment) and nothing records its objection. Ask yourself: is this still actionable for the client?
+Quote the sentence that shows it, and say in `reason` why the problem is or is not present and actionable.
 
 Reply with ONLY a JSON object: {"present": bool, "evidence": str, "reason": str}"""
 
@@ -155,10 +163,13 @@ RUBRIC_WRITER = """You write grading rubrics for legal agent tasks. The rubric i
 if it meets every criterion, so each criterion must be objective, atomic and checkable from the response alone.
 
 You receive the facts ledger, the task instruction and the deliverable. Write criteria FROM THE LEDGER:
-- kind "issue": exactly one per ledger issue (source = issue id): the response identifies the problem, where it
-  is, and why it matters. Anything else a correct answer must say about that issue (its fix, its consequence) goes in
-  the same criterion. Require the conclusion, not one route to it: name a supporting provision (a precedence clause,
-  a definition in another document) only if a response that reaches the right conclusion without it would be wrong.
+- kind "issue": exactly one per ledger issue (source = issue id). It may require four things: (a) the finding,
+  (b) where it is (document and section), (c) that it matters to the client, and (d) that a fix is recommended. It
+  may NOT require a particular harm, a particular remedy or a particular supporting provision (a precedence clause,
+  a definition in another document) unless the issue's `expected_finding` names it: a response that reaches the
+  right conclusion by any sound route must pass. Write "explains why this matters to the client" and "recommends a
+  fix", not which harm or which fix. Code flags an issue criterion whose harm or remedy clause names things the
+  expected finding does not, and sends the rubric back to you once with those clauses under `problems`.
 - kind "fact": 1 to 3 criteria for facts a correct answer must state (source = an id from the ledger's `facts`,
   never an issue id). A fact criterion asks only that the response state the fact; it must be passable by a response
   that misses every planted issue.
@@ -185,7 +196,10 @@ Reply with ONLY the response itself, in Markdown. No preamble and no code fences
 
 JUDGE = """You grade a response to a legal task against a rubric. Judge each criterion independently and strictly,
 using only the response text. `grading_hints` are phrases a passing response would likely contain; they guide you
-but are not required verbatim. For "negative" criteria, pass means the response did NOT do the bad thing.
+but are not required verbatim. An "issue" criterion passes when the response reaches the criterion's conclusion by
+any sound route: it need not cite the same supporting provision, name the same harm or propose the same fix, as long
+as it identifies the problem, where it is, why it matters and recommends a fix. For "negative" criteria, pass means
+the response did NOT do the bad thing.
 An empty response fails every criterion except negative ones.
 
 Reply with ONLY a JSON object: {"results": [{"id": str, "pass": bool, "reason": str}]}"""
