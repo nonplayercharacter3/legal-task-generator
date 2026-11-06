@@ -120,3 +120,21 @@ def test_index_command_builds_and_saves_the_reference_index(tmp_path, capsys):
     assert main(["index", "--config", str(cfg)]) == 0
     assert "reference index ready" in capsys.readouterr().out
     assert len(list((tmp_path / "cache").iterdir())) == 1
+
+
+def test_ci_check_fails_when_the_fake_demo_stops_rejecting_at_a_gate(tmp_path, capsys):
+    """scripts/check_fake_demo.py, which CI runs after the fake demo."""
+    import importlib.util
+    import json
+    from pathlib import Path
+
+    spec = importlib.util.spec_from_file_location("check_fake_demo", Path(__file__).resolve().parent.parent / "scripts" / "check_fake_demo.py")
+    check = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(check)
+    gates = {g: {"evaluated": 5, "passed": 4, "failed": 1, "skipped": 0} for g in check.GATES}
+    report = tmp_path / "report.json"
+    report.write_text(json.dumps({"gates": gates}))
+    assert check.main([str(report)]) == 0
+    gates["rubric_trace"]["failed"] = 0
+    report.write_text(json.dumps({"gates": gates}))
+    assert check.main([str(report)]) == 1 and "rubric_trace" in capsys.readouterr().err

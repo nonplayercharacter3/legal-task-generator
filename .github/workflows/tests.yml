@@ -1,0 +1,26 @@
+# Offline checks only: the fake model, no network models, no Claude SDK, no LAB clone.
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e ".[dev]"
+      - run: python -m pytest -q
+      - name: Fake demo rejects at every quality gate
+        run: |
+          python -m ltg run --config configs/fake_demo.toml --out /tmp/fake_demo
+          python scripts/check_fake_demo.py /tmp/fake_demo/report.json
