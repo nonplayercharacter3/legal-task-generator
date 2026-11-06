@@ -4,7 +4,7 @@ Context for any Claude Code session working in this repo (for people, `docs/stag
 English). A person should read `docs/overview.md` first, the high-level picture. Then read this file, then README.md,
 then "Working with other people and sessions" below before you change anything.
 
-## Now (updated 2026-11-04)
+## Now (updated 2026-11-06)
 
 **Goal.** Generate long-horizon contract-review tasks (instruction, matter folder, all-pass rubric) that the lab can
 train open models on. The tasks must be sound by construction. The generator is model-neutral: every sound task is
@@ -89,9 +89,14 @@ accepted, the pilot standard's numbers, pending Sirui She's read: s15-m0001 (SPA
 in warn mode (s15-m0002 C4). The one rejection is false, at `rubric_tests` (s15-m0003, APA, boutique hotels):
 the flawed answer, which states plainly that the ground lessor is not a seller and that the APA does not override
 the IP Assignment's Delaware clause, failed negative criteria C8 and C9. Re-judged twice: once all pass, once C8
-`pass: false` with the reason "the response does not make this claim ... it passes". Defect classes, not yet fixed:
-- The judge sometimes sets `pass` on a negative criterion to whether the claim is made, against its own reason.
-- `rubric_tests` stores no judge reasons for a flawed answer's wrong fails, only for gold fails and wrong passes.
+`pass: false` with the reason "the response does not make this claim ... it passes". First round whose results went
+straight to `main` (716908d). Two defect classes, fixed on `fix/round15` (one commit each; rounds 17 to 19 repeated
+the first in 4 of 7 rejections):
+- The judge sometimes set `pass` on a negative criterion to whether the claim is discussed, against its own reason.
+  Now the judge answers only `claim_made` for a negative criterion and code sets `pass = not claim_made` (a reply
+  without `claim_made` fails, with a note in the reason), in `rubric_tests` and `solver_check` alike.
+- `rubric_tests` stored no judge reasons for a flawed answer's wrong fails; `gates.json` now keeps the reason for
+  every disagreement (gold fails, flawed wrong passes and wrong fails).
 
 Code check (2026-11-04, `feat/difficulty-labels`): `configs/fake_demo.toml` rejects consistency 3, issue_check 1,
 leak_check 2, rubric_trace 1, rubric_tests 1; `solver_check` rejects only leaks now, so 0 in the demo (it has no leak
