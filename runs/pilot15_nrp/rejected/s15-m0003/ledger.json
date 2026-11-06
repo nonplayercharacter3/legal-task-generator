@@ -1,0 +1,170 @@
+{
+  "matter_id": "s15-m0003",
+  "summary": "Pelen Hospitality Partners LLC (client, Buyer) is acquiring substantially all assets of Hotel Saltmarsh, a 42-room boutique hotel in Montauk, New York, from Bralisk Coastal Hotels LLC (Seller) for $48,500,000 under a New York-law Asset Purchase Agreement signed September 14, 2026. The hotel sits on land held under a ground lease from Wexcombe Dune Holdings LLC. The SALTMARSH brand marks pass under a separate IP Assignment Agreement. The folder holds the APA, the Seller Disclosure Schedule, the IP Assignment Agreement and a closing-logistics email thread. Three issues are planted: a survival period for property-condition representations that a post-closing covenant cuts to about 30 days; an IP assignment governed by Delaware law with a Delaware forum that controls because of the APA's precedence clause; and a ground-lease landlord consent, triggered by the assignment, that is disclosed in the schedule but left out of the closing conditions.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Pelen Hospitality Partners LLC",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Bralisk Coastal Hotels LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Wexcombe Dune Holdings LLC",
+      "role": "Ground lessor of the Hotel Saltmarsh land (non-signatory counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing Date",
+      "value": "September 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F3",
+      "key": "Hotel property",
+      "value": "Hotel Saltmarsh, a 42-room boutique hotel in Montauk, New York",
+      "doc": "D1",
+      "section": "Recitals"
+    },
+    {
+      "id": "F4",
+      "key": "APA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F5",
+      "key": "APA exclusive forum",
+      "value": "State and federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Each Ancillary Agreement prevails over the APA as to its subject matter",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F7",
+      "key": "Indemnity cap",
+      "value": "12% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5"
+    },
+    {
+      "id": "F8",
+      "key": "Final Property Condition Report delivery deadline",
+      "value": "Within 30 days after the Closing Date",
+      "doc": "D1",
+      "section": "Section 6.8"
+    },
+    {
+      "id": "F9",
+      "key": "Ground lessor",
+      "value": "Wexcombe Dune Holdings LLC",
+      "doc": "D2",
+      "section": "Schedule 4.4"
+    },
+    {
+      "id": "F10",
+      "key": "Transferred brand marks",
+      "value": "SALTMARSH word mark and the Saltmarsh heron design mark",
+      "doc": "D3",
+      "section": "Section 1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_hotel_saltmarsh.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ip_assignment_agreement_saltmarsh_marks.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "email_thread_closing_logistics.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Section 9.1 of the APA says the property-condition and environmental representations in Section 4.9 survive until the 'Survival Date'. Section 1.1 defines the Survival Date as the earlier of (a) nine months after the Closing Date and (b) Buyer's delivery of the Final Property Condition Report. Section 6.8 requires Buyer to deliver that report within 30 days after the Closing Date. Read together, these provisions end Buyer's right to bring claims on the Section 4.9 representations about 30 days after Closing. That is too short to find latent defects at a coastal hotel, such as roof, HVAC, mold or seawall problems that show up seasonally. Section 9.4 bars any claim noticed after the Survival Date, and it adds to the harm. The nine-month figure looks protective on its face, but Buyer's own required delivery under Section 6.8 always triggers the earlier date.",
+      "doc": "D1",
+      "section": "Section 1.1 (definition of Survival Date), read with Sections 6.8, 9.1 and 9.4",
+      "detect_terms": [
+        "delivery of the Final Property Condition Report",
+        "the earlier of (a) nine (9) months"
+      ],
+      "expected_finding": "Because Section 6.8 requires Buyer to deliver the Final Property Condition Report within 30 days after Closing, the Section 1.1 Survival Date ends the Section 4.9 property-condition representations about 30 days after Closing, so Buyer has no practical indemnity remedy for latent defects; the fix is to delete limb (b) so these representations survive a fixed period (at least 12 to 18 months) that does not depend on the report.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The APA chooses New York law (Section 11.8) and the exclusive jurisdiction of the state and federal courts in New York County (Section 11.9). The IP Assignment Agreement is listed as an Ancillary Agreement. Its Section 8 chooses Delaware law and the exclusive jurisdiction of the Court of Chancery of the State of Delaware. Section 7 of the IP Assignment contains Seller's warranty of title to the SALTMARSH marks and its further-assurances obligations. APA Section 11.12 provides that each Ancillary Agreement prevails over the APA as to its subject matter, so the Delaware clause controls rather than being cured. As a result, disputes over title to the brand marks and the recordation of the assignment would go to Delaware under Delaware law. Related APA indemnity claims on the Section 4.11 IP representations would be heard in New York. Buyer faces split proceedings, possibly inconsistent results, and the risk that Seller argues IP-related indemnity claims must be brought in Chancery.",
+      "doc": "D3",
+      "section": "Section 8 (Governing Law; Forum), read with APA Sections 11.8, 11.9 and 11.12",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery of the State of Delaware"
+      ],
+      "expected_finding": "The IP Assignment Agreement's Delaware governing-law and exclusive Chancery forum clause conflicts with the APA's New York law and New York County forum, and because APA Section 11.12 makes Ancillary Agreements prevail as to their subject matter, brand-mark title disputes would be split from the APA indemnity claims; the fix is to conform the IP Assignment to New York law and forum, or to amend Section 11.12 so the APA's dispute provisions control.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Schedule 4.4 of the Disclosure Schedule discloses the Ground Lease with Wexcombe Dune Holdings LLC. Under Section 14.2 of that lease, any assignment of the tenant's interest, including by sale of substantially all of the tenant's assets, requires the lessor's prior written consent. Any assignment without that consent is void and an Event of Default. The APA lists the Ground Lease as an Assigned Contract (Section 2.1(c)). However, the closing condition in Section 7.2(d) and Seller's consent covenant in Section 5.4 cover solely the consents set forth in Section 7.2(d): the liquor license transfer and the reservation-platform agreement. Nothing in the folder records that the landlord's consent has been obtained, and the email thread does not address it. If Buyer closes on the APA as drafted, it is not protected if the landlord withholds consent. It could pay $48,500,000 for hotel improvements sitting on land whose lease assignment is void and in default.",
+      "doc": "D1",
+      "section": "Section 7.2(d) and Section 5.4, read with Disclosure Schedule 4.4 and Section 2.1(c)",
+      "detect_terms": [
+        "solely the consents set forth",
+        "liquor license transfer"
+      ],
+      "expected_finding": "The Ground Lease landlord consent disclosed in Schedule 4.4 is triggered by the assignment to Buyer but is not a Required Consent under APA Section 7.2(d) or covered by Section 5.4, so Buyer could be obligated to close into a void, defaulted lease assignment; the fix is to add the Wexcombe consent (with an estoppel) as a closing condition and Seller covenant.",
+      "contradicts": null
+    }
+  ]
+}

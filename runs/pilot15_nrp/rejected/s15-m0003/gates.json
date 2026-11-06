@@ -1,0 +1,96 @@
+{
+  "matter_id": "s15-m0003",
+  "accepted": false,
+  "failed_gate": "rubric_tests",
+  "reason": "flawed_wrongly_fails: [\"C8\", \"C9\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"Survival Date\" means the earlier of (a) nine (9) months after the Closing Date and (b) Buyer's delivery of the Final Property Condition Report under Section 6.8. Read with Section 6.8: \"Buyer shall deliver the resulting Final Property Condition Report to Seller within 30 days after the Closing Date.\" Read with Section 9.4: \"No claim for breach of any representation or warranty in Section 4.9 may be made unless notice of that claim is given on or before the Survival Date. Any such claim noticed after the Survival Date is barred.\"",
+            "reason": "The problem is present and hurts Buyer. Section 6.8 obliges Buyer to deliver the Final Property Condition Report within 30 days after Closing. That delivery triggers prong (b) of the Survival Date, which is the earlier date. So the Section 4.9 property-condition and environmental representations expire about 30 days after Closing. Section 9.4 then bars any claim noticed later. The nine-month prong in (a) cannot apply while Buyer complies with its own covenant. Seasonal latent defects at a coastal hotel, such as roof, HVAC, mold or seawall problems, would likely surface only after the window closes. Nothing in the disclosure schedule, the IP assignment or the emails cures or addresses the point. The Closing is targeted for November 19, 2026 and has not yet occurred, and the APA can still be amended under Section 11.4. The issue is therefore still actionable for Buyer, for example by decoupling report delivery from the Survival Date."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "IP Assignment Section 8.1: \"This Assignment, and all claims and disputes arising out of or relating to it, the Assigned Assets or the transactions it contemplates, are governed by the laws of the State of Delaware.\" Section 8.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware for any action arising out of or relating to this Assignment.\" Compare APA Section 11.8 (New York law), Section 11.9 (exclusive jurisdiction of New York County courts), and Section 11.12: \"Each Ancillary Agreement prevails over the APA as to its subject matter.\"",
+            "reason": "The problem is present and still actionable. The APA chooses New York law and exclusive New York County jurisdiction. The IP Assignment is an Ancillary Agreement, and its Section 8 chooses Delaware law and exclusive Chancery jurisdiction. Section 8.1 is drafted broadly enough to reach claims relating to the Assigned Assets or the transactions the Assignment contemplates. APA Section 11.12 makes the Ancillary Agreement prevail as to its subject matter, so the conflict is reinforced rather than cured. The result is that Seller's title warranty and further-assurances obligations in IP Assignment Section 7 would be litigated in Delaware under Delaware law. Buyer's indemnity claims under APA Section 9.2 for breach of the Section 4.11 IP representation would go to New York. These obligations run from Seller to Buyer, so it is Buyer, the client, that bears the risk of split proceedings, inconsistent results, and forum fights. That includes Seller arguing that IP-related indemnity claims belong in Chancery. The IP Assignment is still unsigned and undated. Execution versions are not due until November 11 and closing is targeted for November 19. Buyer's counsel is preparing the execution versions, so the forum and governing-law clause can still be conformed to the APA before signing."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 5.4: \"Seller shall use commercially reasonable efforts to obtain, before the Closing, the Required Consents, which comprise solely the consents set forth in Section 7.2(d).\" Section 7.2(d) lists only (i) New York State Liquor Authority approvals and (ii) the Reservation Platform Agreement counterparty's consent. Disclosure Schedule 3.2(a): \"Section 14.2 of the Ground Lease provides that any assignment of the tenant's interest requires the prior written consent of the lessor, Wexcombe Dune Holdings LLC ... any purported assignment made without that consent is void and constitutes an Event of Default under the Ground Lease.\"",
+            "reason": "The Ground Lease is an Assigned Contract under Section 2.1(c)(i), and the Disclosure Schedule shows that assigning it needs the landlord's prior written consent. That consent is left out of the Required Consents, so Seller has no covenant to obtain it and Buyer has no closing condition protecting it. Because the requirement is disclosed in Schedules 4.4 and 4.5, the bring-down condition and the rep-breach indemnity give no fallback either. The November 2026 email thread confirms the Tidewell consent and covers the liquor licence and the Harborline lien, but never mentions Wexcombe's consent or an estoppel. Closing has not happened (target is November 19, 2026), so Buyer can still act: it can add the landlord consent to Sections 7.2(d) and 5.4 or require an estoppel under Ground Lease Section 14.5. Otherwise Buyer risks paying $48.5M for an assignment of the land lease that is void and in default."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": false,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [
+          "C8",
+          "C9"
+        ],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    }
+  ]
+}

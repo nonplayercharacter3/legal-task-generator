@@ -1,0 +1,171 @@
+{
+  "matter_id": "s15-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.667,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 10.1: \"This Agreement, and all claims and causes of action arising out of or relating to it or to the Assigned IP, shall be governed by and construed in accordance with the laws of the State of Delaware...\" Section 10.2: \"Each of Assignor, Assignee and Buyer irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware for any action or proceeding arising out of or relating to this Agreement or the Assigned IP.\"",
+            "reason": "The problem is present and still actionable. SPA §11.8 picks New York law and makes New York County courts the exclusive forum for disputes under any Transaction Document. The IP Assignment is an Ancillary Agreement and therefore a Transaction Document. Section 10 of the IP Assignment instead picks Delaware law and the Delaware Chancery forum, and reaches every claim 'relating to... the Assigned IP.' SPA §11.10 says an Ancillary Agreement controls as to its subject matter, so the SPA does not override Section 10. The result is that title disputes over the recipes, specifications and Ostrander Marks go to Delaware. Indemnity claims under SPA Article IX on the same facts go to New York. Section 8.3 makes this worse by tying §4.12 claims under both documents together. Breidoun, as Buyer and a joinder party bound by §10.2, faces split proceedings and the risk of inconsistent results. The agreement's signature blocks are blank, so it is still in draft. Breidoun can still negotiate Section 10 before signing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Key Employee Agreement Section 1: \"'Business' means the preparation of hot inflight meals for regional air carriers.\" Section 7.1: \"Employee shall not ... provide services to any Person engaged in the Business ...\" Section 7.2 likewise limits customer non-solicitation to \"any products or services of the Business.\" By contrast, SPA Section 1.1 defines \"Business\" as \"inflight catering, galley provisioning and crew meal services for regional air carriers,\" and SPA Section 6.9 requires a covenant \"not to engage in the Business.\"",
+            "reason": "The KEA's definition of Business is much narrower than the SPA's. Both the non-compete and the customer non-solicit are tied to that narrow term. Solvig would therefore be free to compete in galley provisioning, crew meals and cold or other catering for the same regional carriers.\n\nNothing in the folder cures this:\n- SPA Section 11.10 makes the KEA control as to its own subject matter.\n- The confidentiality clauses do not substitute for a non-compete.\n- No document records that Buyer accepted the narrower scope or waived the point.\n\nThe gap hurts Buyer, the KEA's third-party beneficiary and the owner of the acquired goodwill. It remains actionable. Seller's failure to deliver a KEA meeting Section 6.9 can support an indemnity claim under SPA Section 9.2(b), since covenants survive per their terms. The Company and Buyer can also seek an amendment with Solvig before she departs, offering the retention payments as leverage."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SPA §2.4(b): \"If Buyer does not deliver a Notice of Disagreement within that period, the Closing Statement and Seller's calculation of Closing Working Capital shall be final and binding on the Parties.\" Confirmatory IP Assignment Recital C: \"Seller delivered the Closing Statement to Buyer on August 3, 2026.\" Recital D: \"Buyer delivered a Notice of Disagreement to Seller on September 18, 2026. Seller has notified Buyer that it rejects the Notice of Disagreement as untimely under Section 2.4(b) of the Purchase Agreement. Buyer expressly reserves its position with respect to the Notice of Disagreement and the Closing Statement.\"",
+            "reason": "Section 2.4(b) puts the notice obligation on Buyer, the client. Buyer had 30 days from delivery of the Closing Statement on August 3, so the window closed on September 2, 2026. Buyer's notice of September 18 was 16 days late. Under the deemed-final language, Seller's working capital figures would bind and the Independent Accountant process would not apply. Nothing in the SPA extends or cures the deadline: there is no tolling, no materiality qualifier and no written waiver by Seller under §11.5. Seller's own Closing Statement was timely (July 1 plus 45 days), so it cannot be attacked on that ground. The problem is still actionable. Seller has expressly rejected the notice, Buyer has expressly reserved its position, and nothing in the folder shows Buyer accepted the Closing Statement or made the §2.4(e) payment. It is therefore a live and serious risk to the client's purchase price adjustment."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 8.3: \"Assignor's aggregate liability for Losses arising out of any breach of this Agreement or of the representations and warranties in Section 4.12 of the Purchase Agreement, whether claimed under this Agreement or under Article IX of the Purchase Agreement, shall be subject to the Cap set forth in Section 9.5(a) of the Purchase Agreement, notwithstanding Section 9.5(b) of the Purchase Agreement.\"",
+            "reason": "The problem is present and it hurts Buyer, the firm's client.\n\n- Under the SPA, Seller (Miriv) is the indemnitor. SPA §9.5(b) takes breaches of the §4.12 IP representations out of the 10% Cap and limits them only by the full Purchase Price.\n- Section 8.3 of this confirmatory assignment expressly overrides §9.5(b). It applies whether the claim is brought under this Agreement or under SPA Article IX.\n- SPA §11.10 says the Ancillary Agreement controls as to its subject matter, and this IP assignment is defined as an Ancillary Agreement. So §8.3 would likely displace the IP carve-out.\n- The result is that Seller's exposure for defective title to the Recipes and Specifications and the Ostrander Marks drops from up to the full Purchase Price to 10% of it. One correction to the issue as described: the carve-out did not leave these claims entirely uncapped, but the reduction is still large.\n- Buyer gets nothing in return. Section 2.4 says no consideration is payable. SPA §6.10 obliges Seller to deliver the assignment without further consideration, in form reasonably satisfactory to Buyer.\n- Buyer joins the Agreement and accepts the benefit of Section 8, so it would be bound by the limit.\n- This is still actionable. The signature blocks are blank, so the Agreement is unexecuted. Nothing in the folder shows Buyer has accepted the cap, and Buyer can insist that §8.3 be deleted or revised before signing."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.09,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 14,
+              "files_opened": [
+                "confirmatory_ip_assignment_agreement.md",
+                "key_employee_agreement_solvig.md",
+                "linen_and_cart_washing_services_agreement.md",
+                "stock_purchase_agreement_breidoun_miriv.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C10"
+              ],
+              "steps": 14,
+              "files_opened": [
+                "confirmatory_ip_assignment_agreement.md",
+                "key_employee_agreement_solvig.md",
+                "linen_and_cart_washing_services_agreement.md",
+                "stock_purchase_agreement_breidoun_miriv.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 14,
+              "files_opened": [
+                "confirmatory_ip_assignment_agreement.md",
+                "key_employee_agreement_solvig.md",
+                "linen_and_cart_washing_services_agreement.md",
+                "stock_purchase_agreement_breidoun_miriv.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

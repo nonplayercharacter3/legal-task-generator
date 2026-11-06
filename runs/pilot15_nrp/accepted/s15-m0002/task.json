@@ -1,0 +1,117 @@
+{
+  "task_id": "s15-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Glogair Artisan Bakeries, Inc., the supplier under its distribution agreement with Nulind Foodservice Distribution LLC. Kestrune Baking Holdings, LLC is also involved in the matter. The client needs a clear picture of where it stands under the current documents, so please review the full matter folder: the distribution agreement (glogair_nulind_distribution_agreement.md), the quality agreement (glogair_nulind_quality_agreement.md), the notice letter dated 2026-09-15 (glogair_notice_letter_2026-09-15.md), and the November 2021 prior draft of the distribution agreement (distribution_agreement_prior_draft_2021-11.md). Please prepare a memo to me that lists each issue you identify. For each one, give the document and section where it appears, explain why it matters for Glogair, and recommend a fix. Organize it so I can take it straight into a call with the client, and flag anything you think needs the client's input before we can advise. If something in the folder is unclear or seems to be missing, tell me rather than assume.",
+  "documents": [
+    "distribution_agreement_prior_draft_2021-11.md",
+    "glogair_notice_letter_2026-09-15.md",
+    "glogair_nulind_distribution_agreement.md",
+    "glogair_nulind_quality_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Kestrune stock acquisition is a Change of Control that counts as an 'Assign' under the Distribution Agreement. It must also identify that the acquisition therefore needs Nulind's prior written consent under Section 16.2, contrary to Paragraph 2 of the September 15, 2026 notice letter. It must locate the issue in the notice letter (Paragraph 2) and/or Distribution Agreement Sections 1.1/16.2, explain why this matters to Glogair, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "prior written consent",
+        "Section 16.2"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that once the acquisition closes, the exclusivity in Distribution Agreement Section 2.1 would extend to Kestrune's own baked goods. This follows from Section 2.1 ('Supplier and its Affiliates') read with the 'Products' definition in Section 1.1, which covers goods made by or for Affiliates. The resulting exclusivity runs across the Territory and all channels of trade. The response must locate the issue in Distribution Agreement Section 2.1 (and/or Section 1.1), explain why this matters to Glogair, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "Affiliates",
+        "Kestrune's products",
+        "any channel of trade"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Distribution Agreement Section 16.1 lets Nulind assign the agreement without Glogair's consent, including to a competitor. It must also identify that the assignee would inherit the Quality Agreement Section 7 audit and inspection rights over Glogair's facilities, recipes or formulations. The response must locate the issue in Distribution Agreement Section 16.1, explain why this matters to Glogair, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 16.1",
+        "without the consent of Supplier",
+        "audit"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the September 15, 2026 non-renewal notice falls outside the Section 3.2 window of 210 to 180 days before the December 31, 2026 expiry (roughly June 4 to July 4, 2026). It must conclude that the notice is ineffective and that the Distribution Agreement will automatically renew for a further five-year term. The response must locate the issue in Distribution Agreement Section 3.2, explain why this matters to Glogair, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "outside the notice window",
+        "automatically renew",
+        "December 31, 2031"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Distribution Agreement's Initial Term ends on December 31, 2026.",
+      "kind": "fact",
+      "hints": [
+        "December 31, 2026",
+        "Initial Term"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Kestrune acquisition is expected to close on December 1, 2026.",
+      "kind": "fact",
+      "hints": [
+        "December 1, 2026",
+        "closing"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is structured as a memo addressed to the supervising partner. For each issue it lists, it gives the document and section, why the issue matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response includes a section or list flagging points that need the client's input, or that are unclear or missing from the folder.",
+      "kind": "format",
+      "hints": [
+        "client input",
+        "questions for the client",
+        "unclear"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Glogair's September 15, 2026 non-renewal notice is timely or effective to end the Distribution Agreement on December 31, 2026.",
+      "kind": "negative",
+      "hints": []
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the Kestrune stock acquisition requires no consent from Nulind under the Distribution Agreement.",
+      "kind": "negative",
+      "hints": []
+    }
+  ],
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ]
+}

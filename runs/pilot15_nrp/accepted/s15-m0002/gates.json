@@ -1,0 +1,174 @@
+{
+  "matter_id": "s15-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Paragraph 2: \"The transaction is structured as a purchase of stock from Glogair's shareholders. After closing, Glogair will continue as the same legal entity and will remain the Supplier under the Agreement. No contract will be transferred. Because the transaction is not an assignment of the Agreement by Glogair, no consent of Nulind is required under Section 16 of the Agreement.\" Against this, Agreement §1.1(b) says: \"With respect to Supplier, 'Assign' includes any Change of Control of Supplier.\" §1.1(c)(i) defines Change of Control to include \"the sale... of a majority of the outstanding voting stock of Supplier.\" §16.2 says: \"Supplier shall not Assign this Agreement without the prior written consent of Distributor. Any purported Assignment by Supplier without that consent is void.\" §15.2(c) lets Distributor terminate if \"Supplier undertakes any Assignment without Distributor's prior written consent under Section 16.2.\"",
+            "reason": "The letter's position is wrong under the executed Agreement. Kestrune's purchase of all of Glogair's stock is a Change of Control. For Supplier, that is expressly an 'Assignment'. It therefore needs Nulind's prior written consent under §16.2. Without consent, Nulind gets a termination right under §15.2(c), and the Assignment is arguably void. The executed text is one-sided on this point: the prior draft made the clause mutual and reasonableness-qualified, but the signed version binds only the Supplier, so it plainly targets Glogair. The burden falls on Glogair, the firm's client. It must obtain consent or face termination or breach exposure. The problem is compounded because the non-renewal notice is likely ineffective. It was sent September 15, about 107 days before December 31. §3.2 requires notice no fewer than 180 days before expiry. So the Agreement may auto-renew for five years, and the change-of-control exposure would extend well beyond December 2026. Closing is set for December 1, 2026, and today is November 5, 2026. Glogair can still request Nulind's consent or correct its position before closing, so the issue is still actionable."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 2.1: \"During the Term, Supplier and its Affiliates shall not sell, offer for sale or otherwise distribute, directly or indirectly, any Products in the Territory through any channel of trade except through Distributor.\" Section 1.1(f): \"'Products' means all baked goods manufactured by or for Supplier or any of its Affiliates...\" Notice letter ¶3: \"Kestrune... operates commercial bakeries that supply grocery retailers in New Jersey and New York. After closing, Glogair will operate as a wholly owned subsidiary of Kestrune.\"",
+            "reason": "The problem is present and it hurts Glogair, which gives the exclusivity covenant.\n\n**How the provisions combine.** Once the stock sale closes, Kestrune and its bakeries will be Glogair Affiliates under the common-control definition. Section 2.1 binds 'Supplier and its Affiliates', across all channels, as to all baked goods made by or for any Affiliate. Kestrune's existing grocery-retail sales in NJ and NY would therefore breach Section 2.1 unless they go through Nulind.\n\n**How the folder makes it worse.**\n- The November 2021 draft limited exclusivity to the Foodservice Channel and to Supplier-made products. The executed text removed those limits.\n- Glogair's non-renewal notice is dated September 15, 2026, about 107 days before December 31, 2026. Section 3.2 requires notice no fewer than 180 days before expiration, so the notice is late. The Agreement likely auto-renews for five years, which would extend the affiliate-wide exclusivity well past closing.\n- Even without renewal, the covenant would run from the December 1 closing through year-end.\n\n**Why it is still actionable.** Closing has not occurred; today is November 5, 2026. Nothing in the folder shows Glogair has accepted this result, so it can still be addressed before closing, through a waiver or amendment with Nulind or by restructuring the deal."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 16.1: \"Distributor may assign this Agreement, in whole or in part, to any person without the consent of Supplier, upon written notice to Supplier.\" Quality Agreement Section 7.1: \"Distributor and its successors and permitted assigns may audit and inspect Supplier's bakeries...\" Section 7.2(e) adds \"the recipes and formulations of the Products, including ingredient percentages, process parameters and par-bake profiles.\"",
+            "reason": "The problem is present and still actionable for Glogair. Section 16.1 lets Nulind assign to any person, including a competing bakery or distributor, without Glogair's consent. Section 16.2 restricts only Glogair. The prior draft had a mutual consent requirement and a carve-out for competitors, and both were dropped. An assignee would take the Section 2.1 exclusivity, which binds Glogair and its Affiliates. It would also take the Quality Agreement Section 7 audit rights over Glogair's recipes and formulations. Section 18.4 gives the Distribution Agreement precedence but contains nothing that limits those rights. Section 7.5 makes audit information Confidential Information, but that only limits how the information is used. It does not stop a competitor from getting access in the first place. The exposure has not lapsed. Glogair's September 15, 2026 non-renewal notice was sent outside the Section 3.2 window, which ran from about June 4 to July 4, 2026. The Agreement therefore likely renews automatically for another five-year term. Nulind could assign at any point during that term."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 3.2: \"Upon expiration of the Initial Term, this Agreement shall automatically renew for successive five-year terms (each, a \"Renewal Term\") unless either Party gives the other Party written notice of non-renewal not more than 210 nor fewer than 180 days before expiration of the then-current term.\" The notice letter, dated September 15, 2026, states: \"Glogair hereby gives Nulind written notice under Section 3.2 of the Agreement that it does not intend to renew the Agreement.\"",
+            "reason": "The Initial Term ends December 31, 2026, so the non-renewal window under Section 3.2 ran from about June 4 to July 4, 2026. Glogair's notice was sent on September 15, 2026 (effective on receipt under Section 17.1), roughly 107 days before expiration. That is well outside the window, so it does not satisfy Section 3.2, and the Agreement will renew automatically through December 31, 2031. The burden of giving timely notice was Glogair's, so the miss falls on the client. NY GOL §5-903 covers service and maintenance contracts, not this sale-of-goods distribution agreement, so it does not cure the miss. Nothing in the folder cures, waives or amends the renewal. Glogair has not accepted the renewal; its letter expressly rejects it, and the renewal does not take effect until expiration. The issue is therefore live and actionable now, before December 31 and before the December 1 Kestrune closing. Glogair could, for example, seek Nulind's written agreement to non-renewal under Section 18.3, or plan for the consequences. The consequences are serious for Glogair. A renewal would extend to 2031 the broad exclusivity in Section 2.1, which binds Supplier's Affiliates (Kestrune after closing). It would also extend Distributor's termination right in Section 15.2(c), which is triggered by a Change of Control without Distributor's consent."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [
+          "criterion C4 requires a harm, remedy or provision that issue I4's expected_finding does not name: 'It must conclude that the notice is ineffective and that the Distribution Agreement will automatically renew for a further five-year term'; ask that the response explains why it matters and recommends a fix"
+        ],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.072,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 12,
+              "files_opened": [
+                "distribution_agreement_prior_draft_2021-11.md",
+                "glogair_notice_letter_2026-09-15.md",
+                "glogair_nulind_distribution_agreement.md",
+                "glogair_nulind_quality_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 12,
+              "files_opened": [
+                "distribution_agreement_prior_draft_2021-11.md",
+                "glogair_notice_letter_2026-09-15.md",
+                "glogair_nulind_distribution_agreement.md",
+                "glogair_nulind_quality_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 12,
+              "files_opened": [
+                "distribution_agreement_prior_draft_2021-11.md",
+                "glogair_notice_letter_2026-09-15.md",
+                "glogair_nulind_distribution_agreement.md",
+                "glogair_nulind_quality_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

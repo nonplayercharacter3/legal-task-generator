@@ -82,6 +82,17 @@ fixed on `fix/round14` (one commit each):
 - A term sheet cited the same cap carve-outs by its own section numbers (s14-m0002): the matcher now sees which
   instrument each value comes from and judges substance, not numbering (real Opus matcher: same, 3 of 3).
 
+**Round 15 (2026-11-05, seed 15, Opus generating, Qwen on NRP, results committed straight to `main`):** 2 of 3
+accepted, the pilot standard's numbers, pending Sirui She's read: s15-m0001 (SPA, regional airline catering,
+4 documents, 4 issues, qwen3-small 0.67) and s15-m0002 (distribution agreement, commercial bakery, 4 documents,
+4 issues, 0.33); 169 calls, ~1.77M input and ~293k output tokens, 0 model errors, 28 minutes; 1 bundling flag
+in warn mode (s15-m0002 C4). The one rejection is false, at `rubric_tests` (s15-m0003, APA, boutique hotels):
+the flawed answer, which states plainly that the ground lessor is not a seller and that the APA does not override
+the IP Assignment's Delaware clause, failed negative criteria C8 and C9. Re-judged twice: once all pass, once C8
+`pass: false` with the reason "the response does not make this claim ... it passes". Defect classes, not yet fixed:
+- The judge sometimes sets `pass` on a negative criterion to whether the claim is made, against its own reason.
+- `rubric_tests` stores no judge reasons for a flawed answer's wrong fails, only for gold fails and wrong passes.
+
 Code check (2026-11-04, `feat/difficulty-labels`): `configs/fake_demo.toml` rejects consistency 3, issue_check 1,
 leak_check 2, rubric_trace 1, rubric_tests 1; `solver_check` rejects only leaks now, so 0 in the demo (it has no leak
 fault), and 12 of 20 are accepted with labels (pass rates 0.33: 5, 0.67: 5, 1.00: 2).
@@ -95,7 +106,7 @@ fault), and 12 of 20 are accepted with labels (pass rates 0.33: 5, 0.67: 5, 1.00
    default labelling model; add roles to `gates.solver_models` to label with more. Same spec, different solvers:
    s9-m0003 scored 0.33 with Qwen and 1.0 with Haiku, though the two drafts differ. If tasks must get harder: longer
    folders, more cross-document issues (known weaknesses 2 and 3).
-3. **Next rounds** on merged `main`, seed 15 or higher, after the `fix/round14` PR merges, on NRP
+3. **Next rounds** on merged `main`, seed 16 or higher, after round 15's two fixes merge, on NRP
    (`configs/pilot_nrp_solver.toml`; the empty 403s from 2026-11-02 stopped on 2026-11-05 with a fresh key in
    `~/.zshenv`). The vLLM pod (`configs/vllm_nautilus_solver.toml`, about 3.5 times slower) is the fallback; on
    2026-11-05 it sat Pending for 85 minutes with every A100 80GB node full.

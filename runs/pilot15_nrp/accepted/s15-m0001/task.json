@@ -1,0 +1,132 @@
+{
+  "task_id": "s15-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Breidoun Aviation Holdings, Inc., the buyer under its stock purchase agreement with Miriv Provisioning Group, LLC. Before we advise the client on next steps, I need your review of the deal documents in the matter folder. Please go through all of the following: stock_purchase_agreement_breidoun_miriv.md, confirmatory_ip_assignment_agreement.md, key_employee_agreement_solvig.md and linen_and_cart_washing_services_agreement.md. The last of these is a vendor agreement that sits outside the core deal papers. Review it anyway and tell me whether anything in it matters for us.\n\nPlease send me a memo that lists each issue you find. For each one, give the document and section where it appears, explain why it matters for Breidoun as buyer, and recommend a fix. Where you can, propose specific language. Put the issues that carry the most risk to the client at the top. If something is unclear, or you need facts from the client to resolve a point, flag it as an open question and don't guess. Let me know if you have questions as you go.",
+  "documents": [
+    "confirmatory_ip_assignment_agreement.md",
+    "key_employee_agreement_solvig.md",
+    "linen_and_cart_washing_services_agreement.md",
+    "stock_purchase_agreement_breidoun_miriv.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Section 10 of the Confirmatory IP Assignment Agreement selects Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery. It also identifies that this conflicts with SPA Section 11.8, which selects New York law and New York County courts as the exclusive forum. It recognises that under SPA Section 11.10 the IP Assignment Agreement controls as to its subject matter, so the SPA does not cure the conflict. It explains why this matters to Breidoun and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Court of Chancery of the State of Delaware",
+        "Section 11.10",
+        "parallel proceedings"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the Key Employee Agreement (Section 1 and/or Section 7) defines \"Business\" as only the preparation of hot inflight meals. It identifies that this is narrower than the SPA Section 1.1 definition, which also covers galley provisioning and crew meal services. It concludes that Solvig's non-compete leaves those service lines unprotected. It explains why this matters to Breidoun and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "preparation of hot inflight meals",
+        "galley provisioning and crew meal services",
+        "non-compete"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that under SPA Section 2.4(b) the 30-day window to deliver a Notice of Disagreement ran from the August 3, 2026 delivery of the Closing Statement and expired on or about September 2, 2026. It concludes that Breidoun's September 18, 2026 notice is late and that the Closing Statement risks becoming final and binding. It explains why this matters to Breidoun and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "September 2, 2026",
+        "untimely",
+        "final and binding"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that Section 8.3 of the Confirmatory IP Assignment Agreement subjects Seller's liability for breach of the SPA Section 4.12 IP representations to the SPA Section 9.5(a) cap, notwithstanding Section 9.5(b). It concludes that this removes the carve-out for IP representation breaches, so IP losses are now capped at 10% of the Purchase Price. It explains why this matters to Breidoun and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 8.3",
+        "notwithstanding Section 9.5(b)",
+        "10% of the Purchase Price"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Stock Purchase Agreement is governed by New York law.",
+      "kind": "fact",
+      "hints": [
+        "New York law",
+        "Section 11.8"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the SPA indemnity cap is 10% of the Purchase Price.",
+      "kind": "fact",
+      "hints": [
+        "10% of the Purchase Price",
+        "Section 9.5(a)"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the SPA defines \"Business\" to include inflight catering, galley provisioning and crew meal services for regional air carriers.",
+      "kind": "fact",
+      "hints": [
+        "inflight catering, galley provisioning and crew meal services",
+        "Section 1.1"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo that lists the issues separately. For each issue it gives the document and section, and it orders the issues so that those it presents as highest risk to the client come first.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "highest risk",
+        "recommended fix"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response states a conclusion on whether anything in the linen and galley-cart washing services agreement matters for Breidoun.",
+      "kind": "format",
+      "hints": [
+        "linen",
+        "cart washing",
+        "Pellacourt"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Breidoun's September 18, 2026 Notice of Disagreement was delivered within the SPA's 30-day window.",
+      "kind": "negative",
+      "hints": [
+        "timely",
+        "within the window"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the SPA's New York governing law and forum clause overrides the IP Assignment Agreement's Delaware clause as to IP matters.",
+      "kind": "negative",
+      "hints": [
+        "SPA controls",
+        "Section 11.10"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.667,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ]
+}

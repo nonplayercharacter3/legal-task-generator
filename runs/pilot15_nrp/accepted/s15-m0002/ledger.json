@@ -1,0 +1,180 @@
+{
+  "matter_id": "s15-m0002",
+  "summary": "Glogair Artisan Bakeries, Inc. (client), a commercial bakery, sells par-baked breads, rolls and laminated pastry to Nulind Foodservice Distribution LLC under an exclusive Distribution Agreement effective January 1, 2022, with a companion Quality Agreement. Glogair's notice letter of September 15, 2026 tells Nulind two things: that Glogair will be acquired by Kestrune Baking Holdings, LLC on December 1, 2026, and that Glogair does not intend to renew the agreement. Read together, the documents show four problems. The notice letter wrongly assumes no consent is needed for the acquisition. The non-renewal notice missed its window, so the agreement renews for five more years. The exclusivity will reach Kestrune's own products once Kestrune becomes an Affiliate. Nulind may assign freely, and its assignee would take audit access to Glogair's facilities and formulations under the Quality Agreement. A prior draft of the Distribution Agreement is a distractor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Glogair Artisan Bakeries, Inc.",
+      "role": "Supplier under the Distribution Agreement; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Nulind Foodservice Distribution LLC",
+      "role": "Exclusive distributor of Supplier's bakery products"
+    },
+    {
+      "id": "P3",
+      "name": "Kestrune Baking Holdings, LLC",
+      "role": "Prospective acquirer of all outstanding stock of Glogair"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "January 1, 2022",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Initial Term",
+      "value": "five years, ending December 31, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement Renewal Term",
+      "value": "successive five-year terms",
+      "doc": "D1",
+      "section": "Section 3.2"
+    },
+    {
+      "id": "F4",
+      "key": "Non-renewal notice window",
+      "value": "not more than 210 nor fewer than 180 days before expiration of the then-current term",
+      "doc": "D1",
+      "section": "Section 3.2"
+    },
+    {
+      "id": "F5",
+      "key": "Territory",
+      "value": "the States of New York, New Jersey and Connecticut",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F6",
+      "key": "Governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 18.1"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "Distribution Agreement prevails over the Quality Agreement in any conflict",
+      "doc": "D1",
+      "section": "Section 18.4"
+    },
+    {
+      "id": "F8",
+      "key": "Notice letter date",
+      "value": "September 15, 2026",
+      "doc": "D2",
+      "section": "Letter date"
+    },
+    {
+      "id": "F9",
+      "key": "Kestrune acquisition expected closing date",
+      "value": "December 1, 2026",
+      "doc": "D2",
+      "section": "Paragraph 2"
+    },
+    {
+      "id": "F10",
+      "key": "Quality Agreement Effective Date",
+      "value": "January 1, 2022",
+      "doc": "D3",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "glogair_nulind_distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "glogair_notice_letter_2026-09-15.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "glogair_nulind_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "distribution_agreement_prior_draft_2021-11.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_supply_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Paragraph 2 of the notice letter (D2, dated September 15, 2026) says the Kestrune stock acquisition, closing December 1, 2026, is not an assignment and so needs no Nulind consent. Three provisions of D1 combine against that view. Section 16.2 bars Supplier from assigning without Distributor's prior written consent. Section 1.1 defines 'Assign' to include any Change of Control of Supplier, including a sale of a majority of its voting stock. Section 15.2(c) lets Distributor terminate for any unconsented Assignment. The closing therefore needs Nulind's consent, which has not been requested.",
+      "doc": "D2",
+      "section": "Paragraph 2",
+      "detect_terms": [
+        "no consent of Nulind is required"
+      ],
+      "expected_finding": "The Kestrune acquisition is a Change of Control and therefore an 'Assign' under D1 Section 1.1. Under Section 16.2 it needs Nulind's prior written consent, and Glogair must obtain that consent before the December 1, 2026 closing, or closing will give Nulind a termination right under Section 15.2(c).",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D1 Section 2.1 bars Supplier 'and its Affiliates' from selling Products in the Territory through any channel of trade except through Distributor. Section 1.1 defines 'Products' as all baked goods manufactured by or for Supplier or any of its Affiliates. D2 Paragraph 3 states that Kestrune operates bakeries supplying grocery retailers in New Jersey and New York. Once the acquisition closes, Kestrune and its bakeries become Glogair Affiliates. Read together, these provisions extend the exclusivity to Kestrune's existing retail output and to channels the foodservice relationship never needed.",
+      "doc": "D1",
+      "section": "Section 2.1",
+      "detect_terms": [
+        "Supplier and its Affiliates shall not",
+        "any channel of trade"
+      ],
+      "expected_finding": "After the Kestrune closing, Sections 2.1 and 1.1 together would make Kestrune's own baked goods exclusive to Nulind across the Territory and all channels, putting Kestrune's existing grocery sales in breach. The fix is to narrow 'Products' to Glogair-manufactured goods and the exclusivity to the foodservice channel, ideally as part of the consent negotiation.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "D1 Section 16.1 lets Distributor assign the Agreement to any person without Supplier's consent, while Section 16.2 restricts only Supplier. D3 Section 7 gives Distributor 'and its successors and permitted assigns' audit and inspection rights over Supplier's bakeries, recipes and formulations. D1 Section 18.4 gives D1 precedence over D3, but nothing in D1 limits those rights. Together the provisions let Nulind assign to a competing bakery or distributor, which would then take exclusivity and audit access to Glogair's proprietary formulations.",
+      "doc": "D1",
+      "section": "Section 16.1",
+      "detect_terms": [
+        "Distributor may assign this Agreement",
+        "without the consent of Supplier"
+      ],
+      "expected_finding": "Section 16.1 lets Nulind assign freely, including to a Glogair competitor, and that assignee would inherit D3 Section 7 audit access to Glogair's recipes and formulations. Glogair should require its consent for any Distributor assignment and bar assignment to competitors.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "D1 Section 3.1 sets an Initial Term ending December 31, 2026. Section 3.2 renews the Agreement automatically for successive five-year terms unless notice is given between 210 and 180 days before expiration, which is June 4 to July 4, 2026. Glogair's non-renewal notice in D2 Paragraph 4 is dated September 15, 2026, outside that window, so it is ineffective and the Agreement renews through December 31, 2031. D2 records that Glogair wants non-renewal and has not accepted the renewal. New York's General Obligations Law Section 5-903 does not reach this sale-of-goods contract, so it offers no rescue.",
+      "doc": "D1",
+      "section": "Section 3.2",
+      "detect_terms": [
+        "successive five-year terms",
+        "not more than 210 nor fewer than 180 days"
+      ],
+      "expected_finding": "Glogair's September 15, 2026 non-renewal notice missed the June 4 to July 4, 2026 window under Section 3.2, so the Agreement will auto-renew through December 31, 2031. Glogair should negotiate a written waiver or amendment ending the term on December 31, 2026, using the needed change of control consent as leverage.",
+      "contradicts": null
+    }
+  ]
+}
