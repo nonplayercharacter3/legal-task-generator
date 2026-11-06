@@ -1,0 +1,36 @@
+{
+  "matter_id": "s14-m0001",
+  "accepted": false,
+  "failed_gate": "consistency",
+  "reason": "mismatches: [{\"fact\": \"F5\", \"key\": \"Supply Agreement Minimum Annual Commitment\", \"filename\": \"gesail_side_letter_minimum_commitment.md\", \"ledger\": \"120,000 pounds of Products per Contract Year\", \"document\": \"100,000 pounds of Products per Contract Year\"}]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": false,
+      "details": {
+        "mismatches": [
+          {
+            "fact": "F5",
+            "key": "Supply Agreement Minimum Annual Commitment",
+            "filename": "gesail_side_letter_minimum_commitment.md",
+            "ledger": "120,000 pounds of Products per Contract Year",
+            "document": "100,000 pounds of Products per Contract Year"
+          }
+        ],
+        "reworded": 0,
+        "checked": 50
+      }
+    }
+  ]
+}

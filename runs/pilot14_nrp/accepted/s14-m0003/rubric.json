@@ -1,0 +1,98 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Buyer's indemnity of Seller for the Seller Guarantees in SPA Section 9.3(b) is excluded from the Section 9.5(a) cap by Section 9.5(c) and extends to losses arising before the Closing Date, so Buyer bears uncapped liability for pre-closing Company performance defaults. It locates this in the Stock Purchase Agreement, Sections 9.3(b) and 9.5(c), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "Section 9.5(c)",
+        "uncapped",
+        "pre-closing defaults"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the six-month survival period for non-fundamental representations in SPA Section 9.1, which covers the elevator code compliance and customer contract representations, expires on or about December 30, 2026. This is long before the first Seller Note installment on December 31, 2027, against which Buyer's set-off recovery operates. The response locates this in the Stock Purchase Agreement, Section 9.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "six (6) months after the Closing Date",
+        "December 31, 2027",
+        "survival"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Seller Note Section 8 lets the Holder assign or negotiate the Note to any person, including a competitor, without Maker's consent. It also identifies that this could defeat Buyer's set-off right, which runs only against 'Seller', and could give an assignee the customer information delivered under Section 7. The response locates this in the Seller Note, Section 8, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "without the consent of Maker",
+        "set-off",
+        "assignee"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that Buyer received the Closing Statement on August 4, 2026, so the 30-day Notice of Disagreement window under SPA Section 2.4(b) expired on or about September 3, 2026. That was before the September 14, 2026 managers' consent authorized the objection, so the $1,240,000 working capital surplus risks becoming final and binding. The response locates this in the Buyer managers' written consent (Recitals B and C / Resolution 2) read with SPA Section 2.4(b), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "September 3, 2026",
+        "Section 2.4(b)",
+        "final and binding"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Seller Note principal amount is $7,500,000.",
+      "kind": "fact",
+      "source": "F3",
+      "hints": [
+        "$7,500,000"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the SPA indemnity cap is 10% of the Purchase Price, or $4,850,000.",
+      "kind": "fact",
+      "source": "F8",
+      "hints": [
+        "10%",
+        "$4,850,000"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is a memo addressed to the supervising partner that presents the issues in ranked order, with the most significant first.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memo",
+        "To:",
+        "ranked"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that Buyer's Notice of Disagreement on the Closing Statement can still be delivered within the 30-day period under SPA Section 2.4(b).",
+      "kind": "negative",
+      "source": "I4",
+      "hints": [
+        "still timely",
+        "within the 30-day period"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that SPA Section 11.6 restricts the Holder's assignment of the Seller Note.",
+      "kind": "negative",
+      "source": "I3",
+      "hints": [
+        "Section 11.6",
+        "assignment of the Note"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "matter_id": "s14-m0003",
+  "summary": "Stipuv Vertical Holdings, LLC (client, Buyer) bought all outstanding stock of Lockwen Lift Services, Inc., a New York elevator maintenance contractor, from Braveirt Elevator Group, Inc. (Seller). The Stock Purchase Agreement closed on June 30, 2026. The $48,500,000 price was paid partly in cash and partly by a $7,500,000 Seller Note issued by Buyer. A post-closing Buyer managers' consent records the working capital dispute. A key employee agreement retains the Company's field operations director, and a broker cover letter transmits insurance certificates. Four issues are planted. (1) Buyer gives an uncapped indemnity for Seller's parent guarantees of Company service contracts, and that indemnity reaches pre-closing defaults. (2) A six-month general survival period runs out long before the first Seller Note installment against which Buyer would set off claims. (3) The Seller Note may be freely assigned by Braveirt, while the set-off rights run only against 'Seller'. (4) The Notice of Disagreement window on the closing working capital statement expired before Buyer's managers acted, as computed from dates in the SPA and the consent.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Stipuv Vertical Holdings, LLC",
+      "role": "Buyer under the Stock Purchase Agreement and Maker of the Seller Note (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Braveirt Elevator Group, Inc.",
+      "role": "Seller under the Stock Purchase Agreement and initial Holder of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Lockwen Lift Services, Inc.",
+      "role": "Target company (elevator inspection, maintenance and repair contractor), wholly owned by Buyer after Closing"
+    },
+    {
+      "id": "P4",
+      "name": "Darnell Okafor-Wyse",
+      "role": "Key employee, Director of Field Operations of Lockwen Lift Services, Inc."
+    },
+    {
+      "id": "P5",
+      "name": "Pellucid Risk Partners LLC",
+      "role": "Insurance broker to Lockwen Lift Services, Inc."
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Closing Date",
+      "value": "June 30, 2026",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$7,500,000",
+      "doc": "D2",
+      "section": "1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note first installment date",
+      "value": "December 31, 2027",
+      "doc": "D2",
+      "section": "2"
+    },
+    {
+      "id": "F5",
+      "key": "SPA Notice of Disagreement period",
+      "value": "30 days after Buyer's receipt of the Closing Statement",
+      "doc": "D1",
+      "section": "2.4(b)"
+    },
+    {
+      "id": "F6",
+      "key": "Closing Statement receipt date",
+      "value": "August 4, 2026",
+      "doc": "D3",
+      "section": "Recital B"
+    },
+    {
+      "id": "F7",
+      "key": "SPA general representation survival period",
+      "value": "six months after the Closing Date",
+      "doc": "D1",
+      "section": "9.1"
+    },
+    {
+      "id": "F8",
+      "key": "SPA indemnity cap",
+      "value": "10% of the Purchase Price ($4,850,000)",
+      "doc": "D1",
+      "section": "9.5(a)"
+    },
+    {
+      "id": "F9",
+      "key": "Order of precedence among Transaction Documents",
+      "value": "Stock Purchase Agreement prevails over the Seller Note and all other Transaction Documents",
+      "doc": "D1",
+      "section": "11.9"
+    },
+    {
+      "id": "F10",
+      "key": "Key Employee Agreement initial term",
+      "value": "two years from the Closing Date",
+      "doc": "D4",
+      "section": "2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seller_promissory_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "buyer_managers_written_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "okafor_wyse_key_employee_agreement.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "broker_insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Under SPA Section 9.3(b), Buyer indemnifies Seller for all Losses under the 'Seller Guarantees'. These are Braveirt's parent performance guarantees and bonds backing Company elevator maintenance and modernization contracts with building owners. The indemnity covers Losses 'whether arising before, on or after the Closing Date'. Section 9.5(c) then provides that the limitations in Section 9.5, including the 10% Purchase Price cap in Section 9.5(a), 'shall not apply to Losses under Section 9.3(b)'. Read together, these provisions make Buyer the unlimited indemnitor for pre-closing Company performance defaults. Seller's own exposure for the same defaults, under the Section 9.2(a) representation indemnity, is capped and expires six months after Closing. If a building owner calls a Seller Guarantee for a pre-closing default, Seller can therefore pass the full amount to Buyer without limit. Buyer's own claim against Seller for the same default would be capped or time-barred. Section 6.8 obliges Buyer only to use 'reasonable efforts' to replace the Seller Guarantees, with no outside date. The exposure therefore continues for as long as the guaranteed contracts run.",
+      "doc": "D1",
+      "section": "9.3(b) and 9.5(c)",
+      "detect_terms": [
+        "whether arising before, on or after the Closing Date",
+        "shall not apply to Losses under Section 9.3(b)"
+      ],
+      "expected_finding": "Buyer's indemnity of Seller for the Seller Guarantees under Section 9.3(b) is excluded from the Section 9.5(a) cap by Section 9.5(c) and covers pre-closing defaults, so Buyer bears unlimited liability for Company pre-closing performance failures that Seller should bear, and the indemnity should be limited to post-closing events and brought under the cap or an outside replacement date.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Under SPA Section 9.1, all representations other than Fundamental Representations survive only until 'six (6) months after the Closing Date', which is December 30, 2026. The Fundamental Representations are organization, authority, capitalization and brokers. They do not include Section 4.12 (Elevator Code Compliance and Permits) or Section 4.9 (Material Customer Contracts). Under Section 9.4(a), a claim notice must be delivered before the applicable survival date. SPA Section 9.7 makes set-off against the Seller Note Buyer's principal recovery source, and there is no escrow. However, Seller Note Section 2 sets the first installment for December 31, 2027. Seller Note Section 5 permits set-off only for indemnification claims timely asserted under the SPA. Most code-compliance and permit defects surface only through the annual periodic inspection and test cycle, which falls after the survival period. Read together, these provisions mean the operational representations expire about a year before any set-off can be used. Buyer has no practical remedy for those representations.",
+      "doc": "D1",
+      "section": "9.1",
+      "detect_terms": [
+        "six (6) months after the Closing Date"
+      ],
+      "expected_finding": "The six-month survival period in SPA Section 9.1 bars claims for the elevator code compliance and customer contract representations by December 30, 2026, long before the first Seller Note installment on December 31, 2027 against which Buyer's only set-off recovery operates, so survival for those representations should be extended to at least 18 months or to the first note installment date.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Under Seller Note Section 8, the Holder may assign, transfer or negotiate the Note in whole or in part to any Person 'without the consent of Maker'. Nothing excludes competitors of the Company. SPA Section 11.6 restricts assignment of 'this Agreement' only, so it does not reach the Note. The SPA order-of-precedence clause in Section 11.9 therefore resolves no conflict. Two further provisions make the free assignment harmful. First, Seller Note Section 5 and SPA Section 9.7 give Buyer a set-off right against amounts payable 'to Seller' only. Neither provision says the set-off binds any assignee or holder. A transferee, particularly a holder in due course of a negotiable note under the New York UCC, could therefore take free of Buyer's set-off. Second, Seller Note Section 7 entitles the Holder to monthly financial statements and customer contract renewal schedules. A competing elevator maintenance company that acquires the Note would receive Lockwen's customer data.",
+      "doc": "D2",
+      "section": "8",
+      "detect_terms": [
+        "without the consent of Maker"
+      ],
+      "expected_finding": "The Seller Note lets Braveirt assign it to anyone, including a competing elevator maintenance contractor, without Buyer's consent, which would strip Buyer's set-off right (written only against 'Seller') and hand the assignee Section 7 customer information, so assignment should require Buyer's consent, bar competitors, make the Note non-negotiable and make set-off binding on all holders.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under SPA Section 2.4(b), Buyer must deliver a Notice of Disagreement within thirty (30) days after receipt of Seller's Closing Statement. If it does not, the Closing Statement becomes final and binding. The Buyer managers' written consent, dated September 14, 2026, states in Recital B that Buyer received the Closing Statement on August 4, 2026. The window therefore closed on September 3, 2026. The Closing Statement shows a Closing Working Capital surplus of $1,240,000 payable to Seller. In Recital C, the consent records that Buyer 'has not yet delivered' a Notice of Disagreement. Resolution 2 authorizes management to deliver one disputing the surplus, because unearned deferred revenue on prepaid maintenance contracts was excluded from current liabilities. The consent thus shows that Buyer disputes the figure and has not accepted it. However, its own action comes 11 days after the SPA deadline. Seller can treat the statement as binding unless Buyer obtains an extension or waiver, or has another ground under the SPA.",
+      "doc": "D3",
+      "section": "Recitals B and C; Resolution 2",
+      "detect_terms": [
+        "has not yet delivered",
+        "August 4, 2026"
+      ],
+      "expected_finding": "Because Buyer received the Closing Statement on August 4, 2026, the 30-day Notice of Disagreement window under SPA Section 2.4(b) expired on September 3, 2026, before the September 14, 2026 managers' consent authorized the objection, so the $1,240,000 working capital surplus risks becoming final and binding and counsel should immediately deliver the notice and seek Seller's written extension or waiver while assessing any manifest error or bad-faith arguments.",
+      "contradicts": null
+    }
+  ]
+}

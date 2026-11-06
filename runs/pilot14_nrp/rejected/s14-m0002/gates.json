@@ -1,0 +1,36 @@
+{
+  "matter_id": "s14-m0002",
+  "accepted": false,
+  "failed_gate": "consistency",
+  "reason": "mismatches: [{\"fact\": \"F7\", \"key\": \"Distribution Agreement liability cap carve-outs\", \"filename\": \"term_sheet.md\", \"ledger\": \"Supplier indemnity under Section 11.1, recall costs under Section 10.4, and fraud\", \"document\": \"Supplier's third-party indemnity in Section 10.1; Supplier's recall cost obligations in S",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": false,
+      "details": {
+        "mismatches": [
+          {
+            "fact": "F7",
+            "key": "Distribution Agreement liability cap carve-outs",
+            "filename": "term_sheet.md",
+            "ledger": "Supplier indemnity under Section 11.1, recall costs under Section 10.4, and fraud",
+            "document": "Supplier's third-party indemnity in Section 10.1; Supplier's recall cost obligations in Section 9.2; and fraud"
+          }
+        ],
+        "reworded": 7,
+        "checked": 50
+      }
+    }
+  ]
+}
