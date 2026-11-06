@@ -1,0 +1,76 @@
+{
+  "matter_id": "s16-m0003",
+  "accepted": false,
+  "failed_gate": "leak_check",
+  "reason": "hits: [{\"issue\": \"I3\", \"phrase\": \"Lumora Biomechanics\", \"in\": \"instruction\"}]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "LOI Section 7(c): \"Buyer may extend the Exclusivity Period once, for an additional thirty (30) days, by delivering written notice of the extension to Seller (an \"Exclusivity Extension Notice\") at least ten (10) Business Days prior to the expiration of the Exclusivity Period.\" SPA draft Section 6.10 Note to Draft: \"Buyer delivered its Exclusivity Extension Notice under Section 7 of the Letter of Intent on May 12, 2026. Buyer's position is that the notice extended the Exclusivity Period under the Letter of Intent. Seller has not confirmed.\"",
+            "reason": "Section 7 is expressly binding under Section 11(a). The Exclusivity Period ended at 11:59 p.m. ET on Friday, May 15, 2026. Counting back ten Business Days, the extension notice had to be given by Friday, May 1, 2026. Buyer's May 12 notice was late, so on the documents the extension never took effect and Seller's no-shop ended on May 15. Even a valid extension would only have run to mid-June. So today (November 2026) Buyer has no exclusivity protection under the LOI, and its stated position that the notice worked is unsupported. The folder shows no acceptance by Buyer: the Note to Draft records Buyer still asserting the extension, and nothing Buyer signed concedes the lapse. The problem remains actionable. The SPA draft has no signing-to-closing no-shop, and Section 6.10 preserves only the LOI's confidentiality provisions. Buyer should stop relying on the late notice and negotiate a new exclusivity or no-shop covenant before continuing to spend on diligence and drafting."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 9.4(c): \"Notwithstanding Section 9.4(b), any Losses arising out of or relating to Company Intellectual Property, including any breach of Section 4.12, shall be subject to the General Cap.\"",
+            "reason": "Seller gives the indemnity and Buyer (the client) is the indemnitee, so the problem hurts Buyer. Section 1.1 lists Section 4.12(a) (IP title) as a Fundamental Representation. Section 9.4(b) takes Fundamental Representations out of the General Cap and allows recovery up to the Purchase Price. Section 9.4(c) then overrides that by placing all IP-related Losses, including Section 4.12, under the $18.4M General Cap. The result is that a title defect in the core porous-titanium patents and the Assigned IP is recoverable only up to 10% of the Purchase Price. That contradicts LOI Section 4(d), under which IP title claims were excluded from the cap and recoverable up to the Purchase Price. Nothing else in the folder cures this. The IP Assignment Agreement has its own title warranty but no separate uncapped remedy against Seller, and the Agreement's order of precedence clause does not override the cap. The document is an unsigned Buyer draft still under negotiation, so the provision can still be revised and the issue remains actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Schedule 4.5, item 1: \"Section 14.2 of the agreement requires the prior written consent of Lumora Biomechanics to any Change of Control of the Company. Absent that consent, Lumora may terminate upon a Change of Control by written notice to the Company within ninety (90) days after the Change of Control.\" Schedule 7.2(c) lists only: \"1. Consent of Ashcombe Health Purchasing Alliance to the Change of Control of the Company under the Group Purchasing Agreement dated January 1, 2024.\"",
+            "reason": "Buyer bears the risk here. Section 7.2(c) makes Buyer's obligation to close depend only on the Required Consents on Schedule 7.2(c). That schedule leaves out the Lumora consent. Section 6.4 limits Seller's efforts covenant, and its duty to pay consent fees, to the same schedule. Buyer could therefore have to close while Lumora keeps a 90-day termination right over the exclusive license to the porous lattice patents that the fusion cage line practices. Nothing else in the folder fixes this. The disclosure on Schedule 4.5 qualifies the Article IV representations, including the 4.4 no-conflicts rep and the 4.12(d) sufficiency rep. That likely weakens any indemnity claim if Lumora later terminates. The IP indemnity is also capped at the General Cap under 9.4(c). The SPA is still a Buyer draft dated September 14, 2026, and nothing shows it has been signed, so Buyer can still add the Lumora consent to Schedule 7.2(c)."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "IP Assignment Agreement Section 9.1: \"This Agreement, and all claims arising out of or relating to it or to the Assigned IP conveyed under it, shall be governed by and construed in accordance with the laws of the State of New York...\" Section 9.2: \"Any action or proceeding arising out of or relating to this Agreement or the Assigned IP conveyed under it shall be brought exclusively in the state or federal courts located in the Borough of Manhattan, City of New York.\" SPA Section 11.9: \"If any provision of this Agreement conflicts with any provision of an Ancillary Agreement, this Agreement prevails. However, the IP Assignment Agreement controls as to title to the Assigned IP.\"",
+            "reason": "The SPA chooses Delaware law and the Court of Chancery as the exclusive forum (Sections 11.7 and 11.8). The form IP Assignment chooses New York law and Manhattan courts as the exclusive forum, and extends that choice to all claims relating to the Assigned IP. SPA Section 11.9 says the SPA prevails over Ancillary Agreements, but it carves out the IP Assignment Agreement as controlling on title to the Assigned IP. So the conflict is not resolved in Delaware's favor for title disputes. The rep in SPA Section 4.12(a) expressly ties Company title to the Assigned IP. Buyer's indemnity claims for an IP-title breach would therefore go to Chancery under Delaware law, while the underlying title dispute is pushed to New York under New York law. That risks parallel proceedings and inconsistent results on the same facts. This hurts Buyer, the firm's client. Buyer, through the Company post-closing, is the party enforcing title and indemnity, and Buyer is a third-party beneficiary under Section 10.2. The document is still an unsigned form exhibit to Buyer's live draft, so the point is still actionable in negotiation."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": false,
+      "details": {
+        "hits": [
+          {
+            "issue": "I3",
+            "phrase": "Lumora Biomechanics",
+            "in": "instruction"
+          }
+        ],
+        "html_comments": [],
+        "empty": false
+      }
+    }
+  ]
+}

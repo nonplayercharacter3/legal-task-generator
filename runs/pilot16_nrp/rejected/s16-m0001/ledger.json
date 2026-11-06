@@ -1,0 +1,192 @@
+{
+  "matter_id": "s16-m0001",
+  "summary": "Dreiriv Dental Partners, LLC (client, Buyer) acquired the assets of three Pittsburgh-area dental clinics from Ralen Family Dental Group, P.C. (Seller) under an Asset Purchase Agreement signed January 12, 2026, which closed February 1, 2026 for $8,400,000. The folder has five documents: the APA; a Key Employee Agreement with Seller's principal, Dr. Marisol Vantrees; a Transition Services Agreement under which Seller provides practice-management software access, billing under Seller's payer credentials, and records hosting while Buyer completes credentialing; a post-closing side letter dated April 20, 2026; and an insurance broker's cover letter. Three issues are planted. (1) Buyer's dispute of Seller's Closing Statement was delivered after the APA's 30-day window, computed from dates recited in the side letter; Buyer disputes the point and both parties reserve rights. (2) The APA chooses Delaware law and the Delaware Court of Chancery, but its precedence clause lets the Key Employee Agreement control Dr. Vantrees's restrictive covenants, and that agreement chooses Pennsylvania law and Allegheny County courts. (3) The TSA lets Seller terminate on an indirect Change of Control of Buyer without Seller's consent. The side letter records a signed merger of Buyer's parent and expressly grants no consent.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Dreiriv Dental Partners, LLC",
+      "role": "Buyer; the firm's client; Delaware limited liability company and dental support organization"
+    },
+    {
+      "id": "P2",
+      "name": "Ralen Family Dental Group, P.C.",
+      "role": "Seller; Pennsylvania professional corporation operating three dental clinics"
+    },
+    {
+      "id": "P3",
+      "name": "Dr. Marisol Vantrees, D.M.D.",
+      "role": "Seller's sole shareholder and principal; key employee of Buyer after closing"
+    },
+    {
+      "id": "P4",
+      "name": "Dreiriv Holdings, Inc.",
+      "role": "Buyer's sole member and parent company"
+    },
+    {
+      "id": "P5",
+      "name": "Kestrelline Dental Holdings, L.P.",
+      "role": "Counterparty acquiring Dreiriv Holdings, Inc. under a merger agreement dated April 6, 2026"
+    },
+    {
+      "id": "P6",
+      "name": "Ashcombe Risk Advisors, LLC",
+      "role": "Buyer's insurance broker"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing Date",
+      "value": "January 12, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "APA Closing Date",
+      "value": "February 1, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "APA Purchase Price",
+      "value": "$8,400,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "APA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 10.8"
+    },
+    {
+      "id": "F5",
+      "key": "APA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 10.9"
+    },
+    {
+      "id": "F6",
+      "key": "Closing Statement dispute period",
+      "value": "30 days after Seller's delivery of the Closing Statement",
+      "doc": "D1",
+      "section": "Section 2.4(b)"
+    },
+    {
+      "id": "F7",
+      "key": "Closing Statement delivery date",
+      "value": "March 2, 2026",
+      "doc": "D4",
+      "section": "Recital B"
+    },
+    {
+      "id": "F8",
+      "key": "Buyer Dispute Notice delivery date",
+      "value": "April 14, 2026",
+      "doc": "D4",
+      "section": "Recital B"
+    },
+    {
+      "id": "F9",
+      "key": "TSA term",
+      "value": "180 days after the APA Closing Date",
+      "doc": "D3",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F10",
+      "key": "Order of precedence",
+      "value": "APA prevails over Ancillary Agreements, except Key Employee Agreement controls Vantrees employment and restrictive covenants",
+      "doc": "D1",
+      "section": "Section 10.12"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "key_employee_agreement_vantrees.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "post_closing_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "Closing Statement dispute delivered after the 30-day window",
+      "description": "Two provisions combine. APA Section 2.4(b) gives Buyer 30 days after Seller delivers the Closing Statement to deliver a Dispute Notice; if Buyer does not, the Closing Statement, including Seller's net working capital and patient-receivables figures, becomes final and binding. The APA does not state the delivery dates. Recital B of the side letter (D4), dated April 20, 2026, recites that Seller delivered the Closing Statement on March 2, 2026 and Buyer delivered its Dispute Notice on April 14, 2026. That is 43 days later, so the 30-day window closed on April 1, 2026. Recital B also records Buyer's position that its dispute is valid and Seller's position that it is untimely, and both parties reserve all rights. Buyer has therefore not accepted the Closing Statement. However, it faces losing its claimed adjustment of $312,000 unless it can show waiver, extension or another ground for relief.",
+      "doc": "D1",
+      "section": "Section 2.4(b)",
+      "detect_terms": [
+        "within thirty (30) days after Seller's delivery of the Closing Statement",
+        "final and binding"
+      ],
+      "expected_finding": "Buyer's April 14, 2026 Dispute Notice came after the 30-day window in APA Section 2.4(b), which ran from the March 2, 2026 delivery recited in the side letter and closed April 1, 2026, so Seller can treat the Closing Statement as final and binding; because the side letter reserves Buyer's rights, Buyer should promptly seek a written extension or waiver from Seller and prepare waiver or estoppel arguments rather than assume its $312,000 adjustment claim survives.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "Key Employee Agreement's Pennsylvania law and forum control the non-compete through the APA's precedence carve-out",
+      "description": "Three provisions combine. APA Sections 10.8 and 10.9 choose Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery for all disputes arising out of the APA and the Ancillary Agreements. APA Section 6.7 imposes a five-year non-compete and patient non-solicit on Seller and Dr. Vantrees within 15 miles of each clinic. However, APA Section 10.12 says the APA prevails over the Ancillary Agreements except that the Key Employee Agreement controls as to Dr. Vantrees's employment and restrictive covenants. Key Employee Agreement Sections 12.1 and 12.2 (D2) choose the law of the Commonwealth of Pennsylvania and the exclusive jurisdiction of the Court of Common Pleas of Allegheny County. Because of the carve-out, the Pennsylvania choice governs the restrictive covenants that protect the goodwill Buyer paid for, rather than being cured by the APA. Buyer loses the Delaware forum it bargained for. It also faces split litigation: claims against Seller go to Delaware while claims against Dr. Vantrees go to Pennsylvania. And Dr. Vantrees's covenant must be enforced under Pennsylvania law as an employment covenant, which is less predictable than a sale-of-business covenant under Delaware law.",
+      "doc": "D2",
+      "section": "Sections 12.1 and 12.2",
+      "detect_terms": [
+        "Commonwealth of Pennsylvania",
+        "Court of Common Pleas of Allegheny County"
+      ],
+      "expected_finding": "Because APA Section 10.12 lets the Key Employee Agreement control Dr. Vantrees's restrictive covenants, that agreement's Pennsylvania law and Allegheny County forum override the APA's Delaware law and Chancery forum (Sections 10.8–10.9) for the non-compete protecting the purchased goodwill, splitting enforcement and weakening it; Buyer should amend the Key Employee Agreement to adopt Delaware law and forum, or narrow the Section 10.12 carve-out so the APA governs the restrictive covenants.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "Seller can terminate the TSA on the pending merger of Buyer's parent",
+      "description": "Three provisions combine. TSA Section 9.3 (D3) lets Seller terminate the TSA immediately on written notice upon a Change of Control of Buyer without Seller's prior written consent. TSA Section 1.1 defines Change of Control to include any merger or transfer of a majority of the voting interests of any direct or indirect parent of Buyer. Recital C of the side letter (D4) states that Dreiriv Holdings, Inc., Buyer's sole member, signed a merger agreement with Kestrelline Dental Holdings, L.P. on April 6, 2026. That merger is an indirect Change of Control under the TSA. Section 4 of the side letter states that nothing in it constitutes a consent or waiver under any Ancillary Agreement, and no other document records Seller's consent. Buyer depends on the TSA for practice-management software access, insurance billing under Seller's payer credentials and patient-records hosting until its own credentialing is complete within the 180-day term. Termination would interrupt billing and records access at all three clinics.",
+      "doc": "D3",
+      "section": "Section 9.3",
+      "detect_terms": [
+        "Change of Control of Buyer",
+        "without Seller's prior written consent"
+      ],
+      "expected_finding": "The April 6, 2026 merger of Dreiriv Holdings, Inc. with Kestrelline Dental Holdings, L.P., recorded in the side letter, is an indirect Change of Control under the TSA's Section 1.1 definition, and since the side letter expressly grants no consent, Seller may terminate the TSA under Section 9.3 and cut off billing, software and patient-records services Buyer still relies on; Buyer should obtain Seller's written consent or waiver before the merger closes, or line up replacement services and credentialing.",
+      "contradicts": null
+    }
+  ]
+}

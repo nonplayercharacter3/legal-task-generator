@@ -1,0 +1,175 @@
+{
+  "matter_id": "s16-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 1.1(f) of the Disclosure Schedule: \"the Fundamental Representations shall consist of Sections 4.1, 4.2, 4.3 and 4.5 of the Agreement, being: 4.1 Organization | 4.2 Authority | 4.3 Capitalization | 4.5 Brokers.\" Board Resolution 2(c) by contrast states the Fundamental Representations \"include Section 4.14 (Environmental Matters) of the SPA, together with Sections 4.1 (Organization), 4.2 (Authority), 4.3 (Capitalization) and 4.5 (Brokers).\"",
+            "reason": "The problem is present and hurts Drapesk.\n\n- **The schedule omits 4.14.** SPA §1.1 defines \"Fundamental Representations\" entirely by reference to Schedule §1.1(f), and that list leaves out §4.14. As a result, Seller's environmental indemnity under §9.2(a) is limited by the 10% Cap and the $920,000 Basket in §9.4. It also survives only six months under §9.1, not the statute of limitations plus 60 days.\n- **Section 11.9 does not cure it.** The SPA body does not conflict with the schedule. It delegates the definition to the schedule, so the precedence clause has nothing to resolve.\n- **The board approved different terms.** The board consent, Resolution 2(c), approved the deal on the express basis that §4.14 would be fundamental and uncapped. Resolution 3 limits officers to changes \"consistent with the principal terms,\" so the signed terms appear to exceed the board's authorization.\n- **This is Drapesk's largest risk.** Environmental exposure at a battery recycler (black mass, electrolyte leachate) is the Buyer's principal risk, and Seller is the indemnitor.\n- **It is still worth raising.** The folder shows closing around April 23, 2026, and the six-month survival and escrow-release dates have now passed. That timing makes the omission more harmful, not historical. Nothing in the folder shows Drapesk accepted the narrower definition, waived the point, or signed any amendment.\n- **Remedies remain open.** Drapesk could still pursue reformation or mutual mistake, a §11.11 specific-performance or reformation route, or claims under any Claim Notice already delivered. The cap issue also governs any pending or future environmental recovery."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 9.1: \"The representations and warranties contained in this Agreement, other than the Fundamental Representations, shall survive the Closing and shall survive until the date that is six (6) months after the Closing Date.\" Section 9.6: \"Buyer shall not deliver a Claim Notice with respect to any inaccuracy in or breach of Section 4.14 until thirty (30) days after Buyer's receipt of the Phase II Report.\" Section 6.8: Seller delivers the Phase II Report \"no later than 180 days after the Closing Date.\" Disclosure Schedule Section 1.1(f): \"the Fundamental Representations shall consist of Sections 4.1, 4.2, 4.3 and 4.5 of the Agreement.\"",
+            "reason": "Section 4.14 is not a Fundamental Representation. The SPA defines that term by reference to Schedule 1.1(f), which omits 4.14. The board's March 6 consent assumed 4.14 would be fundamental, but that is not what the signed documents say. So Section 4.14 survives only six months after Closing. Section 9.6 bars Drapesk, the indemnified party, from giving a Section 4.14 Claim Notice until 30 days after it receives the Phase II Report. Seller may deliver that report as late as day 180, which is roughly the same day the survival period ends. Read together, the provisions can leave Drapesk no window to make Seller indemnify environmental breaches, which are the deal's main risk. Section 9.10 makes Article IX the exclusive remedy, which makes the gap worse. Taking an April 23, 2026 closing (as scheduled in the email thread), the six-month period ran out around October 23, 2026. Nothing in the folder shows Drapesk accepted that result: no escrow release, no settlement, no waiver. It therefore remains actionable. Drapesk can still deliver a Claim Notice and argue that the Section 9.6 standstill tolls or extends survival, or seek reformation given the board's stated understanding, and it should preserve the escrow under Section 9.7."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 11.5: \"Buyer may not assign this Agreement or any of its rights or obligations hereunder without the prior written consent of Seller. Seller may assign this Agreement or any of its rights or obligations hereunder to any Person without the consent of Buyer, and upon delivery to Buyer of a written instrument by which the assignee assumes the obligations so assigned, Seller shall thereupon be released from such obligations.\"",
+            "reason": "The clause is one-sided against Drapesk, the Buyer. Seller can assign to any Person without Buyer's consent. Delivering a written assumption fully releases Seller, and the assignee need not be creditworthy, affiliated with Seller, or a non-competitor. Seller owes the obligations at stake: the Article IX indemnity (uncapped for Fundamental Representations and Fraud, and payable directly by Seller once the escrow is released under Sections 9.7 and 9.8) and the Section 6.10 non-compete and exclusive feedstock supply. Seller could shift these to a shell, or assign the feedstock covenant to a competing recycler. No other document cures or limits this: the board consent, the Disclosure Schedule and the closing emails do not address it. Closing occurred in April 2026, and the 6-month escrow release date has passed, so Seller's direct liability is now the main source of recovery. The 5-year covenants and long-tail indemnities are still running, and nothing shows any assignment has happened or that Buyer accepted one. The exposure therefore remains live and actionable: Buyer could seek an amendment or a guarantee, or monitor and object to any assignment."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 9.3(b): Buyer shall indemnify Seller Indemnitees from all Losses arising out of \"the ownership or operation of the Company or any of the Facilities, whether before or after the Closing\". Section 9.4(c): \"The aggregate amount of all Losses for which Buyer shall be liable pursuant to Section 9.3, other than with respect to Section 9.3(b), shall not exceed 10% of the Purchase Price.\"",
+            "reason": "Drapesk (Buyer, the client) is the indemnifying party under 9.3(b). That indemnity covers pre-Closing operations, which include the historical environmental releases Seller warrants against in 4.14. Section 9.4(c) expressly takes 9.3(b) out of the cap. As a result, Buyer gives Seller an unlimited indemnity for pre-Closing liabilities. Seller can use it to claw back what Buyer recovers under 9.2(a), and it pushes uncapped third-party claims against Seller onto Buyer. No other document cures this. The board consent describes only a Seller cap and Seller environmental responsibility and says nothing approving a Buyer indemnity for pre-Closing operations. The disclosure schedule and the closing emails do not address it. The agreement appears to have closed around April 23, 2026, but the indemnity is a continuing obligation and has not been accepted or exhausted. The 6-month survival period applies only to representations and warranties, and covenants and indemnities survive per their terms. So the exposure remains live and actionable for Buyer, for example in resisting Seller offset claims or seeking an amendment."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [
+          "criterion C3 requires a harm, remedy or provision that issue I3's expected_finding does not name: \"It notes that the assignable obligations include Seller's indemnity and/or its covenants\"; ask that the response explains why it matters and recommends a fix"
+        ],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 14,
+              "files_opened": [
+                "closing_logistics_email_thread.md",
+                "drapesk_board_written_consent.md",
+                "seller_disclosure_schedule.md",
+                "stock_purchase_agreement_drapesk_trepal.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C4",
+                "C5"
+              ],
+              "steps": 14,
+              "files_opened": [
+                "closing_logistics_email_thread.md",
+                "drapesk_board_written_consent.md",
+                "seller_disclosure_schedule.md",
+                "stock_purchase_agreement_drapesk_trepal.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 14,
+              "files_opened": [
+                "closing_logistics_email_thread.md",
+                "drapesk_board_written_consent.md",
+                "seller_disclosure_schedule.md",
+                "stock_purchase_agreement_drapesk_trepal.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

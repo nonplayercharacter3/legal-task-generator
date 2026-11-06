@@ -1,0 +1,189 @@
+{
+  "matter_id": "s16-m0003",
+  "summary": "Beitar Orthopedic Holdings, Inc. (client, Buyer) is acquiring all outstanding stock of Calvra Spine Systems, Inc. from Deigus Medical Group, LLC (Seller). Calvra makes porous-titanium spinal fusion cages and pedicle screw systems. The folder holds four documents: Buyer's revised draft Stock Purchase Agreement dated September 14, 2026; the March 16, 2026 letter of intent; the form IP Assignment Agreement (SPA Exhibit C), under which Seller conveys Calvra-related patents and know-how to the Company at Closing; and notes of a diligence call on regulatory and operational matters. Four issues are planted. (1) The Buyer's exclusivity in the LOI lapsed because its extension notice was late. (2) The SPA pulls the IP title claims, which the LOI agreed would be uncapped, back under the general indemnity cap. (3) A key patent license with Lumora Biomechanics requires the licensor's consent to a change of control, but the SPA's closing consents do not cover it. (4) The IP Assignment Agreement selects New York law and New York courts, and the SPA's precedence clause makes that agreement control on title to the assigned IP. The diligence call notes are the distractor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Beitar Orthopedic Holdings, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Deigus Medical Group, LLC",
+      "role": "Seller and assignor under the IP Assignment Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Calvra Spine Systems, Inc.",
+      "role": "Company (target) and assignee under the IP Assignment Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Lumora Biomechanics, Inc.",
+      "role": "Licensor of porous lattice implant patents to the Company"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Purchase Price",
+      "value": "$184,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "SPA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.7"
+    },
+    {
+      "id": "F3",
+      "key": "SPA exclusive forum",
+      "value": "Delaware Court of Chancery",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "SPA prevails over Ancillary Agreements, except IP Assignment Agreement controls as to title to Assigned IP",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F5",
+      "key": "SPA General Cap",
+      "value": "10% of the Purchase Price ($18,400,000)",
+      "doc": "D1",
+      "section": "Section 9.4(a)"
+    },
+    {
+      "id": "F6",
+      "key": "LOI date",
+      "value": "March 16, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F7",
+      "key": "LOI Exclusivity Period end date",
+      "value": "May 15, 2026",
+      "doc": "D2",
+      "section": "Section 7"
+    },
+    {
+      "id": "F8",
+      "key": "LOI exclusivity extension notice deadline",
+      "value": "at least 10 Business Days before the Exclusivity Period ends",
+      "doc": "D2",
+      "section": "Section 7"
+    },
+    {
+      "id": "F9",
+      "key": "LOI treatment of IP title representations",
+      "value": "excluded from the indemnity cap; recoverable up to the Purchase Price",
+      "doc": "D2",
+      "section": "Section 4"
+    },
+    {
+      "id": "F10",
+      "key": "Buyer Exclusivity Extension Notice delivery date",
+      "value": "May 12, 2026",
+      "doc": "D1",
+      "section": "Section 6.10 (Note to Draft)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_buyer_draft.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ip_assignment_agreement_exhibit_c.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "diligence_call_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "Buyer's LOI exclusivity lapsed because the extension notice was untimely",
+      "description": "Section 7 of the LOI (D2), dated March 16, 2026, is expressly binding. It grants Buyer exclusivity through May 15, 2026. Buyer may extend that period only by an Exclusivity Extension Notice delivered at least ten (10) Business Days before the period ends, which falls on Friday, May 1, 2026. The SPA draft (D1, Section 6.10 Note to Draft) records that Buyer delivered its Exclusivity Extension Notice on May 12, 2026. That notice was eleven days late. The same Note to Draft states Buyer's position that the notice extended exclusivity, and says Seller has not confirmed. On the documents, the no-shop expired on May 15, 2026. Seller has therefore been free to solicit or negotiate with other bidders, and the SPA draft contains no signing-to-closing no-shop to replace it. Buyer has signed nothing accepting the lapse.",
+      "doc": "D2",
+      "section": "Section 7",
+      "detect_terms": [
+        "at least ten (10) Business Days prior to",
+        "Exclusivity Extension Notice"
+      ],
+      "expected_finding": "Buyer's May 12, 2026 extension notice missed the May 1, 2026 deadline under LOI Section 7, so exclusivity expired on May 15, 2026 and Seller is free to shop the Company; Buyer should promptly obtain a written exclusivity agreement from Seller and add a no-shop covenant to the SPA rather than rely on the disputed extension.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "SPA pulls IP title claims back under the General Cap contrary to the LOI",
+      "description": "Section 1.1 of the SPA defines Fundamental Representations to include Section 4.12(a) (title to Company Intellectual Property). Section 9.4(b) excludes Fundamental Representations and Fraud from the General Cap of 10% of the Purchase Price ($18,400,000). Section 9.4(c) then provides: 'Notwithstanding Section 9.4(b), any Losses arising out of or relating to Company Intellectual Property, including any breach of Section 4.12, shall be subject to the General Cap.' Reading the three provisions together, the IP title carve-out is removed. Buyer's recovery for defects in title to the core porous-titanium implant patents is capped at $18.4M. That departs from LOI Section 4 (D2), under which IP title representations were excluded from the cap and recoverable up to the Purchase Price.",
+      "doc": "D1",
+      "section": "Section 9.4(c)",
+      "detect_terms": [
+        "arising out of or relating to Company Intellectual Property",
+        "shall be subject to the General Cap"
+      ],
+      "expected_finding": "SPA Section 9.4(c) overrides the Section 9.4(b) carve-out for Fundamental Representations, which include Section 4.12(a), so IP title claims are capped at $18,400,000 contrary to the LOI's agreed uncapped (up-to-Purchase-Price) treatment; Buyer should delete Section 9.4(c) or limit it to non-title IP representations.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "Lumora license change-of-control consent not required at Closing",
+      "description": "Schedule 4.5 of the SPA discloses that the Company's Exclusive Patent License Agreement with Lumora Biomechanics, Inc. requires Lumora's prior written consent to any change of control of the Company. Without that consent, Lumora may terminate upon a Change of Control. This license covers the porous lattice patents used in the Company's fusion cage line. Section 7.2(c), however, conditions Buyer's obligation to close only on the Required Consents listed on Schedule 7.2(c), and that schedule lists only the Ashcombe Health Purchasing Alliance GPO consent. Seller's efforts covenant in Section 6.4 is limited to the same schedule. Read together, these provisions mean Buyer could be required to close while Lumora keeps a live termination right over a key license, and Seller has no obligation to seek the consent.",
+      "doc": "D1",
+      "section": "Section 7.2(c); Schedule 4.5",
+      "detect_terms": [
+        "Lumora Biomechanics",
+        "terminate upon a Change of Control"
+      ],
+      "expected_finding": "The stock sale triggers Lumora's change-of-control consent and termination right under the license disclosed on Schedule 4.5, yet neither the Section 7.2(c) closing condition nor the Section 6.4 covenant covers it; Buyer should add the Lumora consent to Schedule 7.2(c) as a Required Consent and to Seller's Section 6.4 efforts obligation.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "IP Assignment Agreement selects New York law and courts and controls title disputes",
+      "description": "The SPA (D1) is governed by Delaware law (Section 11.7) and requires disputes to be brought exclusively in the Delaware Court of Chancery (Section 11.8). The form IP Assignment Agreement (D3, Section 9) selects the laws of the State of New York and the courts located in the Borough of Manhattan. SPA Section 11.9 provides that the SPA prevails over Ancillary Agreements, except that the IP Assignment Agreement controls as to title to the Assigned IP. As a result, the conflict is not cured. Disputes over title to the assigned implant patents would be governed by New York law in New York courts, while the related SPA indemnity claims go to Chancery under Delaware law. Buyer faces split proceedings, inconsistent outcomes, and forum fights on the same IP-title facts.",
+      "doc": "D3",
+      "section": "Section 9",
+      "detect_terms": [
+        "laws of the State of New York",
+        "courts located in the Borough of Manhattan"
+      ],
+      "expected_finding": "Because SPA Section 11.9 lets the IP Assignment Agreement control title to the Assigned IP, its New York law and Manhattan forum clause will govern IP title disputes while SPA indemnity claims go to the Delaware Court of Chancery under Delaware law; Buyer should conform the IP Assignment Agreement's Section 9 to Delaware law and the Court of Chancery.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ]
+    }
+  ]
+}

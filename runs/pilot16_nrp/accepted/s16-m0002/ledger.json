@@ -1,0 +1,180 @@
+{
+  "matter_id": "s16-m0002",
+  "summary": "Drapesk Materials Group, Inc. (client, Buyer) is buying all outstanding shares of Kestrin Cell Reclamation, Inc. from Trepal Holdings Corp. (Seller) for $184,000,000 under a New York-law Stock Purchase Agreement dated March 9, 2026. Kestrin runs lithium-ion battery collection, black-mass shredding and hydrometallurgical recovery plants. The folder has four documents: the SPA, Drapesk's board consent approving the deal, Seller's Disclosure Schedule, and a counsel email thread on closing logistics. Four issues are planted. (1) The SPA defines 'Fundamental Representations' by cross-reference to the Disclosure Schedule, which leaves out the environmental representation, so the board-approved environmental matters fall under the 10% cap. (2) The 6-month general survival period expires before Buyer can bring an environmental claim, because such claims must wait for a post-closing Phase II report. (3) Seller may assign freely and be released. (4) Buyer gives an uncapped indemnity for Company operations 'whether before or after the Closing'.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Drapesk Materials Group, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Trepal Holdings Corp.",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Kestrin Cell Reclamation, Inc.",
+      "role": "Company (target whose shares are sold)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA date",
+      "value": "March 9, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$184,000,000",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$9,200,000",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F4",
+      "key": "Seller general indemnity cap",
+      "value": "10% of the Purchase Price",
+      "doc": "D1",
+      "section": "9.4(a)"
+    },
+    {
+      "id": "F5",
+      "key": "General representation survival period",
+      "value": "6 months after the Closing Date",
+      "doc": "D1",
+      "section": "9.1"
+    },
+    {
+      "id": "F6",
+      "key": "Phase II Report delivery deadline",
+      "value": "180 days after the Closing Date",
+      "doc": "D1",
+      "section": "6.8"
+    },
+    {
+      "id": "F7",
+      "key": "SPA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "11.8"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "SPA body prevails over the Disclosure Schedule and any Exhibit",
+      "doc": "D1",
+      "section": "11.9"
+    },
+    {
+      "id": "F9",
+      "key": "Board-approved Fundamental Representations",
+      "value": "include Section 4.14 (Environmental Matters) of the SPA",
+      "doc": "D2",
+      "section": "Resolution 2(c)"
+    },
+    {
+      "id": "F10",
+      "key": "Board consent date",
+      "value": "March 6, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_drapesk_trepal.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "drapesk_board_written_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "closing_logistics_email_thread.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 9.4(a) caps Seller's indemnity at 10% of the Purchase Price. The cap does not apply to breaches of Fundamental Representations or to Fraud. SPA Section 1.1 defines 'Fundamental Representations' as the representations listed in Section 1.1(f) of the Disclosure Schedule. That schedule section lists only Sections 4.1 (Organization), 4.2 (Authority), 4.3 (Capitalization) and 4.5 (Brokers). It omits Section 4.14 (Environmental Matters). Drapesk's board consent (Resolution 2(c)) approved the deal on the basis that 4.14 would be a Fundamental Representation. The omission puts environmental liabilities under the 10% cap, which is the largest risk in a battery recycling business (contaminated black-mass storage, groundwater from electrolyte leachate). The precedence clause in SPA Section 11.9 does not cure this: the SPA body does not conflict with the schedule. It delegates the definition to the schedule, so the schedule controls the content.",
+      "doc": "D3",
+      "section": "1.1(f)",
+      "detect_terms": [
+        "Fundamental Representations shall consist of Sections 4.1, 4.2, 4.3 and 4.5"
+      ],
+      "expected_finding": "Because the SPA defines Fundamental Representations by reference to Disclosure Schedule Section 1.1(f), and that section omits Section 4.14, environmental breaches fall under the 10% cap in SPA Section 9.4(a), contrary to the board-approved terms; Section 4.14 should be added to the Fundamental Representations, preferably by naming them in the SPA itself.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I2",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1 provides that non-Fundamental Representations, including Section 4.14, survive only 6 months after the Closing Date. SPA Section 9.6 says Buyer may not deliver a claim notice for breach of Section 4.14 until it has received the Phase II Report and a further 30-day review period has run. Under Section 6.8, Seller's environmental consultant delivers the Phase II Report up to 180 days after the Closing Date. Read together, the survival period can expire before or at the moment the Phase II Report arrives, and always before the 30-day review period ends. Buyer may therefore have no window at all to bring an environmental claim. New York enforces contractual shortening of survival and limitations periods, so a court would likely give effect to the gap.",
+      "doc": "D1",
+      "section": "9.1 and 9.6 (with 6.8)",
+      "detect_terms": [
+        "shall survive until the date that is six (6) months after the Closing Date",
+        "until thirty (30) days after Buyer's receipt of the Phase II Report"
+      ],
+      "expected_finding": "The 6-month survival period in SPA Section 9.1 expires before Buyer can bring an environmental claim, because Section 9.6 bars claims until 30 days after the Phase II Report, which Section 6.8 allows to arrive up to 180 days after Closing; Section 4.14 should survive substantially longer (e.g., at least 36 months, or as a Fundamental Representation) and the Section 9.6 condition should be removed or tolled.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "SPA Section 11.5 bars Buyer from assigning without Seller's consent. It lets Seller assign the Agreement, or any of its rights or obligations, to any Person without Buyer's consent. Seller is then released from its obligations once the assignee delivers a written assumption. Seller's obligations include its indemnity under Article IX and the 5-year non-compete and spent-battery feedstock covenant in Section 6.10. Seller could therefore move its indemnity to an unfunded entity once the escrow is released. It could also assign the feedstock covenant to a competing battery recycler. The clause has no requirement that the assignee be creditworthy or not be a competitor.",
+      "doc": "D1",
+      "section": "11.5",
+      "detect_terms": [
+        "Seller may assign this Agreement or any of its rights or obligations hereunder to any Person without the consent of Buyer",
+        "shall thereupon be released"
+      ],
+      "expected_finding": "SPA Section 11.5 lets Seller assign freely, including its Article IX indemnity and Section 6.10 covenants, to any Person, including a competitor or an unfunded entity, and releases Seller on assignment; Seller's assignment should require Buyer's consent, or at least Seller should remain jointly liable and assignment to competitors should be prohibited.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Under SPA Section 9.3(b), Buyer indemnifies Seller Indemnitees for all Losses arising out of the ownership or operation of the Company or its facilities 'whether before or after the Closing'. Under SPA Section 9.4(c), Buyer's aggregate liability is capped at 10% of the Purchase Price 'other than with respect to Section 9.3(b)'. Read together, Buyer takes on unlimited liability for pre-Closing Company liabilities, including the historical environmental contamination Seller warrants against in Section 4.14. This lets Seller claim back from Buyer, without limit, whatever Buyer recovers under Section 9.2(a), and it exposes Buyer to uncapped third-party claims made against Seller.",
+      "doc": "D1",
+      "section": "9.3(b) and 9.4(c)",
+      "detect_terms": [
+        "whether before or after the Closing",
+        "other than with respect to Section 9.3(b)"
+      ],
+      "expected_finding": "Read together, SPA Sections 9.3(b) and 9.4(c) make Buyer liable without limit for Company liabilities arising before Closing, which undercuts Seller's own indemnity under Section 9.2; Section 9.3(b) should be limited to post-Closing operations and made subject to Buyer's cap.",
+      "contradicts": null
+    }
+  ]
+}

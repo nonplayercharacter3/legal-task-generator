@@ -1,0 +1,95 @@
+{
+  "matter_id": "s16-m0001",
+  "accepted": false,
+  "failed_gate": "rubric_tests",
+  "reason": "flawed_wrongly_fails: [\"C4\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "APA Section 2.4(b): \"If Buyer does not deliver a Dispute Notice within that period, the Closing Statement, including Seller's calculation of Net Working Capital and the Patient Receivables, shall be final and binding on the Parties.\" The window is \"within thirty (30) days after Seller's delivery of the Closing Statement.\" Side letter Recital B: \"Seller delivered the Closing Statement to Buyer under Section 2.4(a) of the Purchase Agreement on March 2, 2026. Buyer delivered its Dispute Notice to Seller on April 14, 2026 ... Seller's position is that the Dispute Notice is untimely under Section 2.4(b).\"",
+            "reason": "Section 2.4(b) puts the dispute obligation on Buyer, the firm's client. Under the side letter's dates, the 30-day window closed on April 1, 2026, and Buyer's notice came 43 days after delivery. If the notice is untimely, Seller's working-capital and receivables figures are final and binding, and Buyer loses its claimed $312,000 downward adjustment. Nothing in the folder cures the lapse. The side letter is expressly not a waiver or extension (Section 4), and APA 10.3 requires any waiver to be in a signed writing. However, the lapse is not settled history. Buyer has not accepted the Closing Statement or paid on it. It has asserted that its notice is valid, and both sides reserved all rights. The question is therefore live and actionable: Buyer needs to develop waiver, estoppel, extension or other grounds for relief, or prepare for Seller's untimeliness defense."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "KEA §12.1: \"This Agreement, and all claims arising out of or relating to this Agreement or Executive's employment with Company, shall be governed by and construed in accordance with the laws of the Commonwealth of Pennsylvania...\" KEA §12.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the Court of Common Pleas of Allegheny County, Pennsylvania ...\" APA §10.12: \"If there is any conflict between this Agreement and any Ancillary Agreement, this Agreement prevails, except that the Key Employee Agreement controls as to Principal's employment and restrictive covenants.\"",
+            "reason": "The problem is present and still actionable for Dreiriv, the Buyer. APA §§10.8 and 10.9 choose Delaware law and the Court of Chancery for disputes under the APA and the Ancillary Agreements, and the KEA is one of those Ancillary Agreements. But APA §10.12 makes the APA prevail only with a carve-out: the KEA controls as to Dr. Vantrees's employment and restrictive covenants. As a result, the KEA's Pennsylvania law and its exclusive Allegheny County forum govern the covenants that protect the goodwill Buyer paid for. KEA §10.1 sets the Restricted Period as the later of 5 years after closing or 2 years after employment ends, which overlaps APA §6.7. This produces three harms. First, enforcement is split: claims against Seller under APA §6.7 go to Delaware, while claims against Dr. Vantrees go to Pennsylvania. Second, Buyer loses the Delaware forum it bargained for. Third, the covenant is exposed to Pennsylvania's scrutiny of employment-linked non-competes. The KEA §10.5 sale-of-business acknowledgments help but do not remove these risks. No document in the folder cures the conflict. The April 2026 side letter reserves rights and amends nothing on this point. The KEA's §13.3 amendment clause allows the parties to fix it, so it remains live for the client."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 9.3: \"Seller may terminate this Agreement immediately upon written notice to Buyer upon a Change of Control of Buyer without Seller's prior written consent.\" Section 1.1 defines Change of Control to include \"any merger, consolidation, conversion or reorganization of Buyer or of any direct or indirect parent of Buyer with or into any other person\" and names Dreiriv Holdings, Inc. \"a direct parent of Buyer.\" Side letter Recital C: \"On April 6, 2026, Dreiriv Holdings, Inc. ... signed an agreement and plan of merger with Kestrelline Dental Holdings, L.P. ... The transactions under the Parent Merger Agreement have not yet closed.\" Side letter Section 4: \"Nothing in this Letter ... constitutes a consent, approval or waiver by any Party under ... the Transition Services Agreement.\"",
+            "reason": "When the parent merger closes, it will be a Change of Control of Buyer (Dreiriv Dental Partners, the client) under the TSA. Signing alone does not trigger it. Section 9.3 then lets Seller terminate immediately, with no cure period. The side letter expressly says Buyer's disclosure of the merger is not a consent or waiver, and no document in the folder records Seller's consent. Buyer relies on Seller under the TSA for PM System access, billing under Seller's payer credentials and hosting of patient records, and Buyer's credentialing was still in progress at the April 20 side letter. Termination would cut off billing and records access at all three clinics, giving Seller leverage, for example in the pending dispute over working capital. The documents contain no cure, carve-out or consent, so this is a live risk for the client. One caveat: the 180-day term measured from the February 1, 2026 closing would run to about July 31, 2026. The folder records no expiration, extension or completion of credentialing, so the problem is treated as still actionable on these documents. That should be confirmed against the TSA's current status."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": false,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [
+          "C4"
+        ],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    }
+  ]
+}

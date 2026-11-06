@@ -1,0 +1,194 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 1,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 1
+  },
+  "unsolved": 0,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 1,
+      "pass_rates": {
+        "0.33": 1
+      }
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s16-m0001",
+      "accepted": false,
+      "failed_gate": "rubric_tests",
+      "reason": "flawed_wrongly_fails: [\"C4\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    },
+    {
+      "matter_id": "s16-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.333,
+      "unsolved": false,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 1,
+          "pass_rate": 0.333
+        }
+      ]
+    },
+    {
+      "matter_id": "s16-m0003",
+      "accepted": false,
+      "failed_gate": "leak_check",
+      "reason": "hits: [{\"issue\": \"I3\", \"phrase\": \"Lumora Biomechanics\", \"in\": \"instruction\"}]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12262,
+      "output_tokens": 25340,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 13,
+      "input_tokens": 250780,
+      "output_tokens": 87137,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 94288,
+      "output_tokens": 6954,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4527,
+      "output_tokens": 641,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 11,
+      "input_tokens": 302554,
+      "output_tokens": 9269,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4175,
+      "output_tokens": 1107,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 2,
+      "input_tokens": 11862,
+      "output_tokens": 3196,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 4,
+      "input_tokens": 136930,
+      "output_tokens": 31702,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 10,
+      "input_tokens": 82860,
+      "output_tokens": 7545,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 57,
+      "input_tokens": 480065,
+      "output_tokens": 58993,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "dental clinics": 1,
+      "battery recycling": 1,
+      "orthopedic implants": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 2,
+      "asset purchase agreement": 1
+    },
+    "issue_types": {
+      "expired_notice_window": 2,
+      "governing_law_mismatch": 2,
+      "change_of_control_consent": 2,
+      "liability_cap_carveout": 2,
+      "survival_gap": 1,
+      "missing_assignment_restriction": 1,
+      "uncapped_indemnity": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}
