@@ -1,0 +1,186 @@
+{
+  "matter_id": "s19-m0001",
+  "summary": "Voutuv Infrastructure Partners, LLC (client, Buyer) is acquiring all outstanding stock of Kelthorn Thermal Systems, Inc., a Delaware maker of liquid and chilled-water cooling systems for hyperscale data centers, from Gliteis Industrial Holdings, Inc. (Seller) for $214,500,000. The folder holds five documents: the signed Stock Purchase Agreement, a form Bill of Sale under which a Seller affiliate moves certain thermal-test equipment and IP into Kelthorn before Closing, the earlier Letter of Intent, a Transition Services Agreement under which Gliteis provides ERP, payroll and field-service dispatch for 9 months after Closing, and Kelthorn's freight logistics vendor agreement. Three issues are planted. (1) Kelthorn's largest customer contract needs change-of-control consent, but the SPA makes that consent neither a closing condition nor a firm covenant. (2) General representations survive only about 90 days once the defined Survival Date is computed from the Closing Statement mechanics; the LOI agreed 18 months. (3) The TSA picks Texas law and Texas courts and uses the SPA's precedence exception to override the SPA's Delaware law and Delaware forum.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Voutuv Infrastructure Partners, LLC",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Gliteis Industrial Holdings, Inc.",
+      "role": "Seller; parent of the target and TSA service provider"
+    },
+    {
+      "id": "P3",
+      "name": "Kelthorn Thermal Systems, Inc.",
+      "role": "Target company (Delaware corporation) whose shares are sold"
+    },
+    {
+      "id": "P4",
+      "name": "Northvale Compute LLC",
+      "role": "Target's largest customer under the Thermal Systems Master Supply Agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Ostrander Freight Logistics, Inc.",
+      "role": "Target's freight vendor (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "September 15, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$214,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Company (target)",
+      "value": "Kelthorn Thermal Systems, Inc., a Delaware corporation",
+      "doc": "D1",
+      "section": "Recitals"
+    },
+    {
+      "id": "F4",
+      "key": "SPA governing law",
+      "value": "Laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F5",
+      "key": "SPA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "SPA prevails over Ancillary Agreements unless an Ancillary Agreement expressly provides otherwise",
+      "doc": "D1",
+      "section": "Section 11.4"
+    },
+    {
+      "id": "F7",
+      "key": "LOI agreed general representation survival period",
+      "value": "18 months after Closing",
+      "doc": "D3",
+      "section": "Section 4 (Indemnification)"
+    },
+    {
+      "id": "F8",
+      "key": "Closing Statement delivery deadline",
+      "value": "30 days after the Closing Date",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F9",
+      "key": "SPA indemnity cap for general representations",
+      "value": "10% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.4"
+    },
+    {
+      "id": "F10",
+      "key": "TSA term",
+      "value": "9 months after the Closing Date",
+      "doc": "D4",
+      "section": "Section 3.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale_form.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "ostrander_freight_services_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "Northvale change-of-control consent neither a closing condition nor a firm covenant",
+      "description": "Schedule 4.6 of the SPA lists the Thermal Systems Master Supply Agreement with Northvale Compute LLC. The schedule states that the contract accounts for about 41% of Kelthorn's revenue and that it requires Northvale's prior written consent to any change of control of Kelthorn; without that consent, Northvale may terminate on 30 days' notice. Three provisions of the SPA have to be read together. Section 6.5 requires Seller only to use 'commercially reasonable efforts' to obtain third-party consents and states that obtaining any such consent 'shall not be a condition to Closing'. Section 7.2(c) conditions Buyer's obligation to close only on the consents listed in Schedule 7.2(c), and that schedule lists only the Austin facility landlord consent. Article IX contains no specific indemnity for loss of the Northvale contract. Read together, these provisions mean Buyer must close even if the sale itself gives Northvale a right to walk away, and Buyer has no tailored remedy if it does.",
+      "doc": "D1",
+      "section": "Section 6.5, Section 7.2(c) and Schedules 4.6 and 7.2(c)",
+      "detect_terms": [
+        "shall not be a condition to Closing",
+        "commercially reasonable efforts"
+      ],
+      "expected_finding": "The stock sale triggers Northvale's consent right under the Master Supply Agreement listed in Schedule 4.6, which covers about 41% of revenue. Because Section 6.5 and Schedule 7.2(c) leave the Northvale consent out of the closing conditions, Buyer could be forced to close and then lose the contract. Buyer should add the Northvale consent to Schedule 7.2(c) as a closing condition, or obtain a special indemnity or purchase price adjustment if Northvale terminates.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "survival_gap",
+      "label": "Survival Date leaves only about 90 days to bring general representation claims",
+      "description": "Section 9.1 of the SPA provides that the general representations survive Closing only until the 'Survival Date'. Section 9.6 bars any claim for which notice is not given before that date. Article I defines 'Survival Date' as 'sixty (60) days after delivery of the Closing Statement', and Section 2.4 requires the Closing Statement within 30 days after the Closing Date. Computed together, these provisions give Buyer roughly 90 days after Closing to assert claims for breaches of the material contracts, product warranty, refrigerant/environmental and customer representations. Defects in installed cooling systems and annual customer SLA true-ups typically surface well after that window. The LOI recorded agreement on an 18-month survival period. The LOI is non-binding and superseded, so it does not cure the SPA, but it shows the SPA term departs from the agreed deal. The 10% cap in Section 9.4 is of little practical value if claims expire this quickly.",
+      "doc": "D1",
+      "section": "Article I (definition of Survival Date), Section 9.1 and Section 9.6, read with Section 2.4",
+      "detect_terms": [
+        "sixty (60) days after delivery of the Closing Statement"
+      ],
+      "expected_finding": "Read with the 30-day Closing Statement deadline in Section 2.4, the Survival Date definition limits Buyer's general representation claims to about 90 days after Closing, far short of the 18 months agreed in the LOI. That makes the indemnity largely illusory, and Buyer should redefine the Survival Date as 18 months after the Closing Date.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "TSA overrides the SPA's Delaware law and forum with Texas law and courts",
+      "description": "Section 11.9 of the SPA chooses Delaware law and Section 11.10 makes the Delaware Court of Chancery the exclusive forum. Section 11.4 provides that the SPA prevails over Ancillary Agreements 'unless an Ancillary Agreement expressly provides otherwise'. TSA Section 12.2 takes advantage of that exception. It states that, notwithstanding Sections 11.9 and 11.10 of the Purchase Agreement, the TSA and all disputes 'arising out of or relating to this Agreement or the Services' are governed by the laws of the State of Texas and are subject to the exclusive jurisdiction of the state and federal courts in Harris County, Texas. Because the SPA's precedence clause defers to this express override, the conflict is not cured. Closely related claims would therefore be split between two forums and two bodies of law. For example, a TSA field-service dispatch failure that causes a breach of the Northvale contract, together with the related SPA indemnity claim, would be heard partly in Texas and partly in Delaware, risking inconsistent results.",
+      "doc": "D4",
+      "section": "Section 12.2 (Governing Law; Jurisdiction), read with SPA Sections 11.4, 11.9 and 11.10",
+      "detect_terms": [
+        "laws of the State of Texas",
+        "Harris County, Texas"
+      ],
+      "expected_finding": "Under the express-override exception in SPA Section 11.4, TSA Section 12.2 validly displaces the SPA's Delaware law and Chancery forum for TSA-related disputes. This splits related claims between Texas and Delaware with a risk of inconsistent results, so the TSA should be conformed to Delaware law and the Court of Chancery, or the Section 11.4 exception should be narrowed.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    }
+  ]
+}

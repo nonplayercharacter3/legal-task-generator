@@ -1,0 +1,214 @@
+{
+  "matter_id": "s19-m0002",
+  "summary": "Gloumeith Therapeutics, Inc. (buyer, firm's client) is acquiring from Laken Pharmaceuticals, LLC (seller) a portfolio of three sterile injectable ANDA products, their manufacturing know-how and related contracts under a New York-law asset purchase agreement signed September 14, 2026. Closing is pending. The folder has five documents: the APA; the employment agreement of Laken's Chief Technical Officer, which is to be assigned to the buyer; a draft indemnity escrow agreement; a side letter Laken delivered for the buyer's countersignature at Closing; and an unrelated lab-equipment maintenance agreement of the buyer, which is the distractor. Five issues are planted. (1) The CTO's agreement gives her a consent right over assignment that has not been obtained, and the buyer would assume the resulting severance. (2) The side letter adds an uncapped buyer indemnity for Laken's pre-closing regulatory matters. (3) The escrow agreement chooses Delaware law and courts, and the APA's precedence clause lets it control escrow disputes. (4) The side letter deletes the Excluded Liabilities carve-out from the seller's cap. (5) The escrow agreement's defined 'Claim Notice' covers only rep-and-warranty breaches, so escrow funds can be released while Excluded Liability and covenant claims are still pending.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Gloumeith Therapeutics, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Laken Pharmaceuticals, LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Northbridge Trust Company, N.A.",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P4",
+      "name": "Dr. Imogen Varga",
+      "role": "Seller's Chief Technical Officer; Key Employee under assigned employment agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Pellridge Analytical Services, Inc.",
+      "role": "Buyer's lab-equipment maintenance vendor (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA signing date",
+      "value": "September 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "APA Purchase Price",
+      "value": "$86,000,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$8,600,000",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F4",
+      "key": "Escrow Period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F5",
+      "key": "Seller general indemnity cap",
+      "value": "15% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 10.5(a)"
+    },
+    {
+      "id": "F6",
+      "key": "APA cap carve-outs",
+      "value": "Fraud, Fundamental Representations under Section 10.2(a), and Excluded Liabilities under Section 10.2(c)",
+      "doc": "D1",
+      "section": "Section 10.5(b)"
+    },
+    {
+      "id": "F7",
+      "key": "APA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 12.8"
+    },
+    {
+      "id": "F8",
+      "key": "APA forum",
+      "value": "State or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 12.9"
+    },
+    {
+      "id": "F9",
+      "key": "Order of precedence",
+      "value": "APA prevails over Ancillary Agreements, except Escrow Agreement controls matters concerning the Escrow Fund",
+      "doc": "D1",
+      "section": "Section 12.4"
+    },
+    {
+      "id": "F10",
+      "key": "Varga Employment Agreement date",
+      "value": "March 2, 2023",
+      "doc": "D2",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "varga_employment_agreement.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "indemnity_escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "laken_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "pellridge_lab_equipment_maintenance_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "Unobtained Key Employee consent to assignment triggers assumed severance",
+      "description": "The defect appears only when D2 Section 9.2 is read with three APA provisions. D2 Section 9.2 bars Laken from assigning the Varga Employment Agreement without Dr. Varga's prior written consent. This expressly includes an assignment made in connection with a sale of all or substantially all of the assets of the business. Any assignment without that consent constitutes Good Reason, which entitles her under D2 Section 7.3 to resign and receive 18 months' base salary plus target bonus. APA Section 2.1(e) and Schedule 2.1(e) list the Varga Employment Agreement as an Assigned Contract. APA Section 2.3(b) makes the Buyer assume all obligations under Assigned Contracts arising after Closing. APA Section 7.2 requires Dr. Varga to be employed at Closing but does not require her consent to the assignment. APA Section 5.4, the seller's covenant to obtain third-party consents, covers only the consents listed on Schedule 4.4, and her consent is not listed. As drafted, the Buyer would take an assignment that itself gives Dr. Varga Good Reason, and the Buyer would bear the severance. It could also lose the CTO who is key to the product know-how.",
+      "doc": "D2",
+      "section": "Section 9.2",
+      "detect_terms": [
+        "without the Executive's prior written consent",
+        "shall constitute Good Reason"
+      ],
+      "expected_finding": "Dr. Varga's written consent to the assignment of her employment agreement is required under D2 Section 9.2 and is not obtained or made a closing condition in the APA, so Closing would trigger Good Reason and severance that Gloumeith assumes under APA Section 2.3(b). Gloumeith should add her consent (or a waiver of Good Reason) to Schedule 4.4 and the Section 7.2 conditions, or make the severance an Excluded Liability.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "Uncapped buyer indemnity for seller's pre-closing regulatory matters",
+      "description": "D4 paragraph 3, in a side letter Laken delivered on October 30, 2026 for Gloumeith's countersignature at Closing, adds a new APA Section 10.3(c). Under it, the Buyer indemnifies the Seller for all Losses arising from 'Pre-Closing Regulatory Matters'. That term includes the open FDA Form 483 observations at Laken's sterile fill-finish facility and any resulting recall, consent decree or penalty. The indemnity applies 'notwithstanding Section 10.5', so it falls outside any cap, basket or survival limit. These are pre-closing seller liabilities that APA Section 2.4(d) treats as Excluded Liabilities retained by the Seller. The side letter would therefore expose the client to unlimited liability for the seller's own regulatory history.",
+      "doc": "D4",
+      "section": "Paragraph 3",
+      "detect_terms": [
+        "notwithstanding Section 10.5",
+        "Pre-Closing Regulatory Matters"
+      ],
+      "expected_finding": "Paragraph 3 of the side letter would make Gloumeith indemnify Laken, without any cap, for Laken's pre-closing FDA regulatory liabilities, which APA Section 2.4(d) treats as Excluded Liabilities. Gloumeith should refuse to countersign or strike paragraph 3 so that these liabilities stay with the Seller.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "Escrow Agreement's Delaware law and forum control escrow disputes",
+      "description": "D3 Section 11.6 selects the laws of the State of Delaware and the exclusive jurisdiction of the Delaware Court of Chancery. APA Sections 12.8 and 12.9 choose New York law and the courts of New York County. APA Section 12.4 would ordinarily make the APA prevail. However, it carves out an exception under which the Escrow Agreement controls matters concerning the Escrow Fund. Disputes over releasing escrow to satisfy Buyer indemnity claims would therefore be governed by Delaware law and heard in Delaware. The underlying indemnity claims would be decided under New York law in New York. The client faces parallel proceedings and inconsistent results on its main source of indemnity recovery.",
+      "doc": "D3",
+      "section": "Section 11.6",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery"
+      ],
+      "expected_finding": "Because APA Section 12.4 lets the Escrow Agreement control Escrow Fund matters, the Escrow Agreement's Delaware law and Chancery forum in Section 11.6 would govern escrow-release disputes, splitting them from New York indemnity claims under APA Sections 12.8–12.9. Gloumeith should conform the Escrow Agreement to New York law and New York County courts.",
+      "contradicts": [
+        "F7",
+        "F8"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "Side letter deletes Excluded Liabilities carve-out from seller cap",
+      "description": "APA Section 10.5(a) caps the Seller's aggregate liability under Section 10.2 at 15% of the Purchase Price. Section 10.2 covers rep-and-warranty breaches under 10.2(a), covenant breaches under 10.2(b) and Excluded Liabilities under 10.2(c). Section 10.5(b) excludes from the cap Fraud, Fundamental Representations and claims under Section 10.2(c). D4 paragraph 2 states that the words 'or Section 10.2(c)' in Section 10.5(b) are hereby deleted. As a result, the Seller's indemnity for Excluded Liabilities would fall under the $12.9 million cap. Excluded Liabilities include pre-closing product liability and recall costs under APA Section 2.4. The side letter is expressly an amendment of the APA under APA Section 12.3, so the APA's precedence clause does not cure the change.",
+      "doc": "D4",
+      "section": "Paragraph 2",
+      "detect_terms": [
+        "are hereby deleted",
+        "or Section 10.2(c)"
+      ],
+      "expected_finding": "Paragraph 2 of the side letter removes Excluded Liabilities claims under Section 10.2(c) from the Section 10.5(b) carve-outs, so the seller's retained pre-closing liabilities become subject to the 15% cap and Gloumeith bears any excess. Gloumeith should reject paragraph 2 and keep Excluded Liabilities uncapped.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "Escrow 'Claim Notice' limited to rep-and-warranty claims",
+      "description": "APA Section 10.6 makes the Indemnity Escrow Fund the first source of recovery for all Buyer claims under Section 10.2. This includes covenant breaches under 10.2(b) and Excluded Liabilities under 10.2(c). D3 Section 1.1, however, defines 'Claim Notice' as a notice 'solely for Losses arising from a breach of any representation or warranty'. D3 Section 5.2 directs the Escrow Agent to release the remaining fund to the Seller at the end of the Escrow Period except for amounts subject to pending Claim Notices. Under APA Section 12.4, the Escrow Agreement controls Escrow Fund matters, so the narrower definition governs. Buyer notices for Excluded Liabilities or covenant claims would therefore not hold back funds, and the escrow could be released to Laken while those claims are unresolved.",
+      "doc": "D3",
+      "section": "Section 1.1 (definition of \"Claim Notice\")",
+      "detect_terms": [
+        "solely for Losses arising from a breach of any representation or warranty"
+      ],
+      "expected_finding": "The Escrow Agreement's definition of 'Claim Notice' covers only rep-and-warranty claims, while APA Section 10.6 makes the escrow available for all Section 10.2 claims, and because APA Section 12.4 lets the Escrow Agreement control, pending covenant and Excluded Liability claims would not block release under D3 Section 5.2. Gloumeith should conform the definition to cover any claim for indemnification under APA Section 10.2.",
+      "contradicts": null
+    }
+  ]
+}

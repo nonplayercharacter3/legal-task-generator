@@ -1,0 +1,194 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 1,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 1,
+      "pass_rates": {
+        "0.67": 1
+      }
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s19-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.667,
+      "unsolved": false,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 2,
+          "pass_rate": 0.667
+        }
+      ]
+    },
+    {
+      "matter_id": "s19-m0002",
+      "accepted": false,
+      "failed_gate": "consistency",
+      "reason": "mismatches: [{\"fact\": \"F6\", \"key\": \"APA cap carve-outs\", \"filename\": \"asset_purchase_agreement.md\", \"ledger\": \"Fraud, Fundamental Representations under Section 10.2(a), and Excluded Liabilities under Section 10.2(c)\", \"document\": \"The limitations in Section 10.5(a) shall not apply to Losses arising from Fraud, ",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    },
+    {
+      "matter_id": "s19-m0003",
+      "accepted": false,
+      "failed_gate": "rubric_tests",
+      "reason": "flawed_wrongly_fails: [\"C9\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12380,
+      "output_tokens": 27379,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 15,
+      "input_tokens": 301615,
+      "output_tokens": 102871,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 112713,
+      "output_tokens": 8296,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4446,
+      "output_tokens": 746,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 7,
+      "input_tokens": 227770,
+      "output_tokens": 5549,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 2,
+      "input_tokens": 2816,
+      "output_tokens": 730,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 2,
+      "input_tokens": 11852,
+      "output_tokens": 3250,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 4,
+      "input_tokens": 150492,
+      "output_tokens": 32148,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 10,
+      "input_tokens": 81753,
+      "output_tokens": 7301,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 65,
+      "input_tokens": 600419,
+      "output_tokens": 48969,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "data center cooling": 1,
+      "specialty pharmaceuticals": 1,
+      "concert promotion": 1
+    },
+    "agreement_types": {
+      "asset purchase agreement": 2,
+      "stock purchase agreement": 1
+    },
+    "issue_types": {
+      "governing_law_mismatch": 3,
+      "change_of_control_consent": 2,
+      "uncapped_indemnity": 2,
+      "defined_term_inconsistency": 2,
+      "survival_gap": 1,
+      "liability_cap_carveout": 1,
+      "expired_notice_window": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

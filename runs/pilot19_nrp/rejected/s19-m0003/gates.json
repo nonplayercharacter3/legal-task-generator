@@ -1,0 +1,101 @@
+{
+  "matter_id": "s19-m0003",
+  "accepted": false,
+  "failed_gate": "rubric_tests",
+  "reason": "flawed_wrongly_fails: [\"C9\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.5(c): \"The limitation in Section 9.5(a) shall not apply to Losses under Section 9.2(d).\" Section 1.1 defines \"Ticketing Liabilities\" as \"all liabilities and obligations for refunds, credits, chargebacks, payment-card reversals and consumer claims ... arising out of or relating to tickets, passes or packages for any Festival Event sold by or on behalf of Seller.\" Section 2.4 then carves out of Assumed Liabilities \"any obligation that is a Ticketing Liability.\"",
+            "reason": "The problem is present and still hurts Seller.\n\n- **Seller bears the obligation.** Seller is the indemnitor under 9.2(d), and 9.5(c) removes the $1.84M cap for that indemnity.\n- **The definition is not limited to pre-Closing events.** It reaches any Festival Event ticket Seller sold. That includes the 2026 Festival pre-sales, which Buyer now runs. The February draft limited the definition to events \"held before the Closing Date.\" It also had Buyer assume refunds and chargebacks for post-Closing events as \"Post-Closing Ticketing Obligations\" and indemnify Seller for them. The executed APA dropped both protections.\n- **Buyer keeps the ticket money.** Seller must remit the Advance Ticket Proceeds to Buyer under 2.6. The June side letter shows roughly $2.7M already paid or due.\n- **Buyer controls the decisions that cause refunds.** Under TSA 2.3, Buyer decides cancellation, postponement and refund policy.\n- **The TSA does not cure it.** TSA 9.2 has Buyer indemnify Seller only for third-party claims arising from Buyer's instructions or operations. That would not clearly cover chargebacks and refunds owed under the APA's allocation. The APA also controls on conflicts (APA 11.4), and Buyer may set off claimed Article IX amounts against TSA fees (TSA 4.4).\n- **It is still actionable.** The August 2026 festival has just occurred. Claims under 9.2(d) survive until 60 days after the statute of limitations. Nothing in the folder shows Seller has accepted this allocation."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "TSA §12.2: \"This Agreement shall be governed by and construed in accordance with the laws of the State of New York... Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in the County of New York, State of New York, for any action arising out of or relating to this Agreement.\" TSA §4.4: \"Buyer may set off against any Fees or other amounts payable to Seller under this Agreement any amount that Buyer claims in good faith is owed to Buyer or any of its indemnified Persons under Article IX of the Purchase Agreement.\"",
+            "reason": "The APA (§11.8) and the TSA (§12.2) pick different law and different exclusive forums: Delaware Chancery under Delaware law for the APA, and New York courts under New York law for the TSA. APA §11.4 lets the TSA control as to provision of and payment for Transition Services, so the precedence clause does not fix the mismatch. TSA §4.4 lets Buyer withhold Seller's service fees based on its own good-faith claim of an APA Article IX indemnity. When Seller, the client and fee creditor, sues to collect, the dispute goes to New York, and the APA indemnity defenses would be decided there. That sidesteps the Chancery forum, the APA §9.6 claims and negotiation procedures, and the §9.5 cap and deductible framework. It also risks parallel or inconsistent rulings while the Advance Ticket Proceeds dispute is live under Delaware-governed documents. Nothing in the folder cures this: the side letter expressly leaves the TSA unamended. The Service Term runs through September 30, 2026, with fees payable 30 days after invoice. The non-compete and indemnity terms also survive termination, so collection and set-off disputes remain actionable for Seller."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 7.2: \"During the Service Term and for twenty-four (24) months after its expiration or termination, Seller shall not, and shall cause its Affiliates not to, directly or indirectly promote, produce or provide box office or ticketing services for any Competing Event in the Restricted Territory, which comprises the Commonwealth of Kentucky, the State of Indiana and the State of Ohio.\" Section 1.1 defines \"Competing Event\" as \"any live music concert, festival or other live music performance that is open to the public and for which tickets are sold.\"",
+            "reason": "The covenant binds Seller, the client, and covers all of Kentucky. \"Competing Event\" reaches any ticketed public concert. So the covenant captures the Copperline Club Series in Louisville, which Seller kept as the Excluded Business under the APA recitals and Section 2.3(a). The TSA has no carve-out for that business. The APA's protections do not reach this covenant: the 75-mile Restricted Territory and the Section 6.9 carve-out for the Excluded Business and club concerts apply only to APA Section 6.9. The TSA restriction stands alone and is much broader. APA Section 11.4 is not a reliable fix. It gives the APA priority only where the two agreements conflict, and the TSA could be read as an added restriction rather than a conflicting one. The TSA also controls on transition-services matters. Nothing in the folder waives, amends or narrows Section 7.2. The June 2026 side letter expressly leaves the TSA unamended apart from its Sections 1 and 2. The Service Term ended September 30, 2026, so the 24-month tail runs to about September 2028. The restriction is therefore live today, and Seller can still act on it by seeking an amendment or carve-out, or by asserting the APA's precedence."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "APA §2.6(c): \"Seller may object to the Reconciliation Statement by delivering to Buyer a written notice of objection (an \"Objection Notice\") within twenty (20) days after delivery of the Reconciliation Statement... If Seller does not deliver an Objection Notice within that period, the Reconciliation Statement shall be final and binding on the Parties.\" Side letter Recital B: \"Buyer delivered the Reconciliation Statement to Seller ... on May 8, 2026 ... Seller delivered to Buyer, by email on May 29, 2026, a written notice objecting to the Reconciliation Statement.\"",
+            "reason": "Under APA §1.2, 'days' means calendar days, so Seller's 20-day objection window ran from May 8 and closed on May 28, 2026. Under §11.2, an email notice is deemed given when sent, so Seller's May 29 objection was one day late. Read literally, §2.6(c) makes the $3,126,400 statement final and binding, and puts the $412,750 in disputed items at risk for Seller. Seller is the party that had to give the notice, so the lapse hurts the client. The folder does not cure the problem. In the side letter Buyer expressly maintains that the statement became final on May 28 (§3.2), and the side letter amends the APA only as to the undisputed payment and the exchange of records (§5.1). It does not extend the deadline or waive the lateness. The problem is still actionable. Seller has not accepted the result: it paid only the undisputed $2,713,650 against a credit, maintained its objection (§3.1), and both parties reserved all rights with no admission or waiver (§3.3). Seller therefore needs to address the late-notice risk, for example by arguing waiver or course of dealing from the May 27 meeting held inside the window, or by negotiating."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": false,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [
+          "C9"
+        ],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    }
+  ]
+}

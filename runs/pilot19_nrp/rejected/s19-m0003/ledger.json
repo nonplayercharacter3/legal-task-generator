@@ -1,0 +1,186 @@
+{
+  "matter_id": "s19-m0003",
+  "summary": "The firm represents Dekurt Live Presents, LLC (Seller), a regional concert promoter. Dekurt sold the assets of its amphitheater festival business, the Riverbend Roots Festival at the Riverbend Amphitheater in Cincinnati, Ohio, to Goudouth Entertainment Holdings, Inc. (Buyer) for $18,400,000. Dekurt kept its Copperline Club Series, a run of club shows in Louisville, Kentucky. The APA was signed March 2, 2026 and closed April 15, 2026. Ancillary documents are a Transition Services Agreement under which Dekurt provides box office and ticketing support, a Bill of Sale, and a post-closing side letter dated June 1, 2026. The side letter records a dispute over the advance-ticket-proceeds reconciliation. A superseded February draft of the APA is also in the folder. The partner wants an issue-spotting memo covering Dekurt's exposure across the folder.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Dekurt Live Presents, LLC",
+      "role": "Seller; the firm's client; concert promoter selling the Riverbend Roots Festival business and keeping its Copperline Club Series in Louisville"
+    },
+    {
+      "id": "P2",
+      "name": "Goudouth Entertainment Holdings, Inc.",
+      "role": "Buyer of the festival business assets; recipient of transition services"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Closing Date",
+      "value": "April 15, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "Purchase Price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "2.2"
+    },
+    {
+      "id": "F4",
+      "key": "APA general indemnity cap",
+      "value": "$1,840,000",
+      "doc": "D1",
+      "section": "9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "APA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "11.8"
+    },
+    {
+      "id": "F6",
+      "key": "APA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "11.8"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "APA controls over Ancillary Agreements, except TSA controls as to provision of and payment for Transition Services",
+      "doc": "D1",
+      "section": "11.4"
+    },
+    {
+      "id": "F8",
+      "key": "APA Restricted Territory",
+      "value": "area within 75 miles of the Riverbend Amphitheater, Cincinnati, Ohio",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F9",
+      "key": "Reconciliation Statement objection period",
+      "value": "20 days after delivery of the Reconciliation Statement",
+      "doc": "D1",
+      "section": "2.6(c)"
+    },
+    {
+      "id": "F10",
+      "key": "Reconciliation Statement delivery date",
+      "value": "May 8, 2026",
+      "doc": "D4",
+      "section": "Recital B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_executed.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter_june_2026.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "apa_prior_draft_february.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_stock_purchase_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "Uncapped Seller indemnity for ticketing liabilities on Buyer-run shows",
+      "description": "Section 9.2(d) of the APA requires Seller to indemnify Buyer for 'Ticketing Liabilities'. Section 9.5(c) states that the $1,840,000 cap in Section 9.5(a) shall not apply to Losses under Section 9.2(d). Section 1.1 defines Ticketing Liabilities as all refund, chargeback and consumer-claim liabilities for tickets sold by or on behalf of Seller, with no limit to events held before the Closing Date. That definition therefore reaches tickets Seller pre-sold for the August 2026 festival, which Buyer operates. Under Section 2.6, Buyer receives those Advance Ticket Proceeds through the reconciliation. Read together, these provisions leave Seller with unlimited liability for refunds and chargebacks if Buyer cancels or mismanages a post-closing show, even though Buyer holds the ticket money.",
+      "doc": "D1",
+      "section": "9.5(c)",
+      "detect_terms": [
+        "sold by or on behalf of Seller",
+        "shall not apply to Losses under Section 9.2(d)"
+      ],
+      "expected_finding": "Read together, Sections 1.1, 9.2(d) and 9.5(c) of the APA make Dekurt liable without cap for refunds and chargebacks on post-closing shows that Buyer runs and whose ticket proceeds Buyer received under Section 2.6. Dekurt should seek to limit Ticketing Liabilities to events held before the Closing Date, or bring them under the Section 9.5(a) cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "TSA chooses New York law and courts while TSA set-off pulls APA indemnity disputes into that forum",
+      "description": "Section 11.8 of the APA selects Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery. Section 12.2 of the TSA selects New York law and the exclusive jurisdiction of the state and federal courts in the County of New York. Section 11.4 of the APA lets the TSA control as to the provision of and payment for Transition Services, so the precedence clause does not resolve the mismatch. Section 4.4 of the TSA also lets Buyer set off any amount Buyer claims is owed under Article IX of the APA against TSA service fees payable to Seller. As a result, any Seller suit to collect TSA fees would be decided in New York under New York law, including Buyer's APA indemnity defenses. That outcome bypasses the Chancery forum and the APA's claims procedures and creates a risk of parallel or inconsistent proceedings.",
+      "doc": "D2",
+      "section": "12.2",
+      "detect_terms": [
+        "laws of the State of New York",
+        "County of New York"
+      ],
+      "expected_finding": "TSA Section 12.2 (New York law and courts) conflicts with APA Section 11.8 (Delaware law, Court of Chancery), and APA Section 11.4 does not cure it because the TSA controls on payment for services. TSA Section 4.4 lets Buyer litigate APA indemnity set-offs in New York, so Dekurt should seek to conform the TSA to Delaware law and Chancery jurisdiction, or remove the set-off right.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "TSA's broader 'Restricted Territory' bars Seller's retained Louisville club series",
+      "description": "Section 1.1 of the APA defines Restricted Territory as the area within 75 miles of the Riverbend Amphitheater. That definition protects Seller's retained Copperline Club Series in Louisville, which the APA recitals describe as an Excluded Business. Section 1.1 of the TSA defines the same term as the Commonwealth of Kentucky, the State of Indiana and the State of Ohio. Section 7.2 of the TSA then bars Seller, during the Service Term and for 24 months after it, from promoting or providing box office services for any Competing Event in the Restricted Territory. Read with the TSA definition, that covenant covers Louisville. Section 11.4 of the APA does not cure this: Section 7.2 imposes an additional, freestanding TSA covenant rather than one that conflicts with APA Section 6.9, and the TSA controls on transition-services matters in any event. The covenant restricts the business Seller kept.",
+      "doc": "D2",
+      "section": "7.2",
+      "detect_terms": [
+        "the State of Indiana",
+        "Competing Event"
+      ],
+      "expected_finding": "Under its own definition in TSA Section 1.1, the TSA Section 7.2 non-compete uses a 'Restricted Territory' of Kentucky, Indiana and Ohio, far broader than the APA's 75-mile radius, and that sweeps in Dekurt's retained Louisville Copperline Club Series. Dekurt should require the TSA to adopt the APA definition or carve out the Excluded Business.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "Seller's objection to the Reconciliation Statement was delivered after the 20-day window",
+      "description": "Section 2.6(c) of the APA gives Seller twenty (20) days after delivery of Buyer's Reconciliation Statement of Advance Ticket Proceeds to deliver an objection. If Seller does not object in time, the statement becomes final and binding. Section 1.2 of the APA defines 'days' as calendar days. Recital B of the June 1, 2026 side letter records that Buyer delivered the statement on May 8, 2026, so the window closed on May 28, 2026. The same recital records that Seller emailed its objection on May 29, 2026, one day late. In Section 3 of the side letter, Seller maintains its objection and the parties reserve all rights, including Buyer's position that the statement became final on May 28, 2026. Seller has therefore not accepted the statement, but its contractual objection right has lapsed, and the remittance amount Buyer claims may be binding.",
+      "doc": "D1",
+      "section": "2.6(c)",
+      "detect_terms": [
+        "twenty (20) days after delivery",
+        "final and binding"
+      ],
+      "expected_finding": "Measured from the May 8, 2026 delivery date recorded in the June 1, 2026 side letter, Dekurt's May 29, 2026 objection missed the APA Section 2.6(c) 20-day window that closed May 28, 2026, so Buyer can argue its Reconciliation Statement is final and binding. Because the side letter preserves Dekurt's dispute, Dekurt should promptly seek a written extension or waiver from Buyer and develop arguments that the statement is not binding.",
+      "contradicts": null
+    }
+  ]
+}

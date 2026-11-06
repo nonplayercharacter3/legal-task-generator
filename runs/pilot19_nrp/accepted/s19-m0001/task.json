@@ -1,0 +1,110 @@
+{
+  "task_id": "s19-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Voutuv Infrastructure Partners, LLC, the buyer in a stock purchase transaction. Before we respond on the deal documents, the client wants a clear picture of where it stands. Please review the matter folder: the stock purchase agreement (stock_purchase_agreement.md), the bill of sale form (bill_of_sale_form.md), the letter of intent (letter_of_intent.md), the transition services agreement (transition_services_agreement.md), and the Ostrander Freight services agreement (ostrander_freight_services_agreement.md), which is filed as a vendor agreement. Then prepare a memo to me. For each issue you find, state where it appears (document and section), explain why it matters to Voutuv as buyer, and recommend a fix, with proposed language where that helps. Order the issues by importance to the client. If you conclude that any document in the folder has no bearing on the transaction, say so briefly and explain why rather than skipping it. Also flag any point where you need facts from the client to finish your analysis. Please have a draft to me by end of day Tuesday.",
+  "documents": [
+    "bill_of_sale_form.md",
+    "letter_of_intent.md",
+    "ostrander_freight_services_agreement.md",
+    "stock_purchase_agreement.md",
+    "transition_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the sale of Kelthorn triggers a change-of-control consent right of Northvale Compute LLC under the Master Supply Agreement listed in SPA Schedule 4.6, which accounts for about 41% of revenue. It also identifies that the SPA does not make obtaining that consent a condition to Buyer's obligation to close: Section 6.5 requires only commercially reasonable efforts and states that consents are not a closing condition, and Schedule 7.2(c) does not list Northvale. The response locates the issue in the SPA (Section 6.5, Section 7.2(c) or Schedule 7.2(c)), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Northvale consent",
+        "not a condition to Closing",
+        "Schedule 7.2(c)"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the SPA's definition of Survival Date ('sixty (60) days after delivery of the Closing Statement'), read with the 30-day Closing Statement deadline in Section 2.4, gives Buyer only about 90 days after Closing to bring general representation claims. It also states that this falls far short of the 18-month survival period recorded in the LOI. The response locates the issue in the SPA (the Article I definition of Survival Date or Section 9.1/9.6), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Survival Date",
+        "approximately 90 days",
+        "18 months in the LOI"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that TSA Section 12.2 selects Texas law and the exclusive jurisdiction of courts in Harris County, Texas. It also identifies that, because SPA Section 11.4 lets an Ancillary Agreement that expressly provides otherwise prevail, this displaces the SPA's Delaware governing law and Court of Chancery forum for TSA-related disputes, splitting related claims between Texas and Delaware. The response locates the issue in TSA Section 12.2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Harris County, Texas",
+        "Section 11.4",
+        "split forums"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the purchase price is $214,500,000.",
+      "kind": "fact",
+      "hints": [
+        "$214,500,000",
+        "$214.5 million"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the SPA is governed by Delaware law.",
+      "kind": "fact",
+      "hints": [
+        "Delaware law",
+        "Section 11.9"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is structured as a memo to the supervising partner, presenting the issues in an order the response indicates reflects their importance to the client.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "in order of importance"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response expressly addresses the Ostrander Freight services agreement, stating whether or not it bears on the transaction and giving a reason.",
+      "kind": "format",
+      "hints": [
+        "Ostrander",
+        "no bearing on the transaction"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that SPA Section 11.4 causes the SPA's Delaware governing law and forum to prevail over TSA Section 12.2.",
+      "kind": "negative",
+      "hints": [
+        "SPA prevails over the TSA"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that obtaining Northvale's consent is a condition to Buyer's obligation to close under the SPA.",
+      "kind": "negative",
+      "hints": [
+        "Northvale consent is a closing condition"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.667,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ]
+}

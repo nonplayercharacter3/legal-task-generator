@@ -1,0 +1,167 @@
+{
+  "matter_id": "s19-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.667,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 6.5: \"Seller shall, and shall cause the Company to, use commercially reasonable efforts to give all notices to, and obtain all consents from, all third parties that are described in Schedule 4.4 or Schedule 4.6; provided, however, that neither Seller nor the Company shall be required to pay any consent fee or make any concession to obtain any such consent. Obtaining any such consent, other than the consents listed in Schedule 7.2(c), shall not be a condition to Closing.\" Schedule 4.6, item 1: \"Revenue under this agreement represented approximately 41% of the Company's revenue for fiscal year 2025. The agreement requires Northvale Compute LLC's prior written consent to any change of control of the Company. If that consent is not obtained, Northvale Compute LLC may terminate the agreement on 30 days' notice.\" Schedule 7.2(c) lists only: \"Consent of the landlord under the lease of the Company's Austin, Texas facility.\"",
+            "reason": "The problem is present and it hurts Buyer, the firm's client. Seller bears the consent obligation, but only on a commercially reasonable efforts basis, and Seller need pay nothing and make no concession. Section 7.2(c) makes only the landlord consent a closing condition, so Buyer must close without Northvale's consent. Nothing else in the folder cures this. (1) The MAE condition in 7.2(e) does not help, because Northvale's termination right is triggered by the change of control at Closing, not before it. (2) There is no indemnity backstop. Schedule 4.6 discloses the consent requirement, which takes it out of the no-conflicts rep in Section 4.4. Article IX has no specific indemnity for loss of the Northvale contract. Seller's efforts covenant is satisfied by commercially reasonable efforts even if consent is refused. The other documents, including the LOI and the Ostrander agreement, do not address Northvale. The matter is still actionable: the outside date is January 15, 2027, Closing has not occurred, and the signature blocks are blank. Buyer can still negotiate a Northvale consent condition, a special indemnity, or a price protection."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"Survival Date\" means the date that is sixty (60) days after delivery of the Closing Statement.\" Read with Section 2.4(a): \"Within 30 days after the Closing Date, Buyer shall prepare and deliver to Seller a statement (the \"Closing Statement\")\"; Section 9.1: \"The representations and warranties in this Agreement survive the Closing until the Survival Date\"; and Section 9.6: \"No claim may be made under Section 9.2(a) ... unless the Indemnified Party has given written notice of the claim ... before the Survival Date.\"",
+            "reason": "Buyer (the client) is the party protected by Seller's indemnity under Section 9.2(a), so a short survival period hurts Buyer. Together these provisions end the general representations about 90 days after Closing, and Buyer could cut that further by delivering the Closing Statement early. The affected representations are material contracts, financial statements, product warranty, environmental/refrigerant, customers, IP and litigation. Section 9.7 makes indemnification the exclusive remedy, so once the window closes Buyer has no claim except for fraud. The LOI recorded an 18-month survival period, which shows the SPA departs from the agreed deal. Nothing in the folder fixes this: the Bill of Sale expressly does not modify the SPA representations, and the TSA does not address it. The SPA is dated September 15, 2026, but the signature blocks are blank and Closing has not happened. The term can therefore still be renegotiated or corrected before signing or closing, so the problem is present and actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 12.2: \"This Agreement, and all claims, disputes and causes of action arising out of or relating to this Agreement or the Services, shall be governed by and construed in accordance with the laws of the State of Texas ... Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Harris County, Texas ... Sections 11.9 and 11.10 of the Purchase Agreement do not apply to this Agreement, and this Section 12.2 expressly provides otherwise for purposes of Section 11.4 of the Purchase Agreement.\"",
+            "reason": "The problem is present and still actionable for Buyer. SPA Section 11.4 lets an Ancillary Agreement override the SPA if it 'expressly provides otherwise', and TSA Section 12.2 does exactly that, so the SPA's precedence clause does not cure the conflict. As a result, TSA claims, including claims 'relating to ... the Services', go exclusively to Texas law and Harris County courts, while SPA claims stay under Delaware law in the Court of Chancery (SPA Sections 11.9 and 11.10). The overlap is real. Seller provides the field-service dispatch service that supports the Company's customer obligations, including the Northvale contract, which accounts for about 41% of revenue. A dispatch failure could therefore give rise both to a TSA claim and to SPA covenant or indemnity claims. Each forum clause is exclusive, so those claims would have to be split between two courts, with a risk of inconsistent results. Buyer and the Company it will own bear that cost. The TSA is still an unsigned draft (Effective Date [●]; it is delivered at Closing), so Buyer can still negotiate the clause to align it with Delaware or add a consolidation mechanism. Nothing in the folder shows Buyer has accepted it."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.092,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 16,
+              "files_opened": [
+                "bill_of_sale_form.md",
+                "letter_of_intent.md",
+                "ostrander_freight_services_agreement.md",
+                "stock_purchase_agreement.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C4"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "bill_of_sale_form.md",
+                "letter_of_intent.md",
+                "ostrander_freight_services_agreement.md",
+                "stock_purchase_agreement.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 16,
+              "files_opened": [
+                "bill_of_sale_form.md",
+                "letter_of_intent.md",
+                "ostrander_freight_services_agreement.md",
+                "stock_purchase_agreement.md",
+                "transition_services_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
