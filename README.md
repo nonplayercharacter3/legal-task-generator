@@ -131,14 +131,15 @@ python3 -m ltg export --runs runs/pilot9_nrp runs/pilot6_haiku --out export/
 ```
 
 Collects every matter folder holding a `task.json` (accepted tasks, and tasks `scripts/relabel_past_runs.py`
-recovered under `rejected/`) and writes `train.jsonl`, `dev.jsonl` and `test.jsonl`. A matter id found in more than
-one run is reported and left out. Tasks flagged `unsolved` are left out unless `--include-unsolved`. Difficulty is a
+recovered under `rejected/`) and writes `train.jsonl`, `dev.jsonl` and `test.jsonl`. Tasks are keyed
+`<run folder>/<matter id>`, so two runs of one seed export both drafts (`ltg run` refuses a `--seed` another run folder
+has used unless `--allow-seed-reuse`). Tasks flagged `unsolved` are left out unless `--include-unsolved`. Difficulty is a
 label, not a filter: `--model qwen3-small --min-pass 0.33 --max-pass 0.67` keeps one band of one model's labels
 (1 of 3 attempts is 0.333, so a band that should include it starts at 0.33). Each line has:
 
 - `messages`: chat format for supervised fine-tuning. System: the solver's memo prompt. User: the instruction, then
   every document in full (`### <filename>` and its text). Assistant: the gold memo.
-- `eval`: `task_id`, `split`, `practice_area`, `agreement_type`, `jurisdiction`, the rubric criteria (`id`, `kind`,
+- `eval`: `task_id` (`<run folder>/<matter id>`, unique across runs), `matter_id`, `split`, `practice_area`, `agreement_type`, `jurisdiction`, the rubric criteria (`id`, `kind`,
   `text`, no judge hints) and `difficulty` (per labelling model: `model`, `attempts`, `passes`, `pass_rate`), so
   reward-based training can grade a response and pick its band.
 

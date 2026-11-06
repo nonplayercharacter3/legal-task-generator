@@ -18,7 +18,8 @@ solved 3 of 3 or 0 of 3; only the probe without documents (a leak) rejects. Each
 report shows the pass-rate spread per model. `scripts/relabel_past_runs.py` recovered 6 tasks that earlier rounds
 rejected for a pass rate of 1.0 (s2-m0002, s3-m0002, s4-m0002 Sonnet; s6-m0001, s9-m0001, s9-m0003 Haiku), their
 folders restored on the laptop from the commit before the slim; s9-m0003 is also an accepted Qwen task from the same
-spec, so the export drops both as duplicates until one is renamed. Tasks with a label: 13 on the laptop.
+spec; since `fix/unique-task-ids` the export keys tasks `<run folder>/<matter id>` and keeps both, and `ltg run`
+refuses a `--seed` another run folder has used (`--allow-seed-reuse` overrides). Tasks with a label: 15 on the laptop.
 
 **Stage.** Phase 1 is done: its exit standard (see "Pilot standard") was met in cloud round 5 on 2026-10-18. On
 2026-11-02 two laptop sessions ran pilot rounds in parallel, both with Opus generating on Sirui She's Max plan

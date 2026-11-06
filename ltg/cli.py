@@ -25,6 +25,20 @@ def cmd_index(args: argparse.Namespace) -> int:
     return 0
 
 
+def seed_used_by(out_dir: str, seed: int) -> str | None:
+    """Another run folder beside `out_dir` that ran this seed, or None. Matter ids come from the seed, so a reused
+    seed drafts the same matter specs again (seeds 8 and 9 were run by both solver streams, see CLAUDE.md)."""
+    for s in sorted(Path(out_dir).parent.glob("*/settings.json")):
+        if s.parent.resolve() == Path(out_dir).resolve():
+            continue  # the same folder: a --resume, or a rerun into it
+        try:
+            if json.loads(s.read_text()).get("run", {}).get("seed") == seed:
+                return str(s.parent)
+        except (OSError, ValueError):
+            continue
+    return None
+
+
 def cmd_run(args: argparse.Namespace) -> int:
     overrides: dict = {}
     if args.matters is not None:
@@ -34,6 +48,10 @@ def cmd_run(args: argparse.Namespace) -> int:
     if args.out is not None:
         overrides.setdefault("run", {})["out_dir"] = args.out
     cfg = load_config(args.config, overrides)
+    if args.seed is not None and not args.allow_seed_reuse and (other := seed_used_by(cfg.run.out_dir, cfg.run.seed)):
+        print(f"seed {cfg.run.seed} was already used by {other}: its matter ids and specs would repeat. "
+              f"Pick a seed no run folder beside {cfg.run.out_dir} has used, or pass --allow-seed-reuse.", file=sys.stderr)
+        return 2
     report = Pipeline(cfg).run(resume=args.resume)
     print(f"accepted {report['accepted']} of {report['candidates']} candidates -> {cfg.run.out_dir}"
           + (f" ({report['resumed']} reloaded from an earlier run)" if report["resumed"] else ""))
@@ -82,8 +100,8 @@ def cmd_export(args: argparse.Namespace) -> int:
         print("--min-pass and --max-pass select a band of one model's labels: add --model", file=sys.stderr)
         return 2
     res = export(args.runs, args.out, args.model, args.min_pass, args.max_pass, args.include_unsolved)
-    for mid, paths in res["duplicates"].items():
-        print(f"duplicate matter id {mid}, kept neither: {', '.join(paths)}", file=sys.stderr)
+    for tid, paths in res["duplicates"].items():
+        print(f"duplicate task id {tid}, kept neither: {', '.join(paths)}", file=sys.stderr)
     sk = res["skipped"]
     print("exported " + ", ".join(f"{s} {n}" for s, n in res["counts"].items()) + f" -> {args.out}"
           + f" (left out: {sk['unsolved']} unsolved, {sk['outside_band']} outside the band)")
@@ -100,6 +118,7 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--seed", type=int)
     r.add_argument("--out", help="output folder")
     r.add_argument("--resume", action="store_true", help="keep matters already finished in the output folder; retry errors")
+    r.add_argument("--allow-seed-reuse", action="store_true", help="run a --seed another run folder beside --out has already used")
     r.set_defaults(func=cmd_run)
 
     x = sub.add_parser("index", help="build or load the decontamination reference index (e.g. LAB) and report it")
