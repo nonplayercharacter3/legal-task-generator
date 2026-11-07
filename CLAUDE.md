@@ -4,7 +4,7 @@ Context for any Claude Code session working in this repo (for people, `docs/stag
 English). A person should read `docs/overview.md` first, the high-level picture. Then read this file, then README.md,
 then "Working with other people and sessions" below before you change anything.
 
-## Now (updated 2026-11-06)
+## Now (updated 2026-11-07)
 
 **Goal.** Generate long-horizon contract-review tasks (instruction, matter folder, all-pass rubric) that the lab can
 train open models on. The tasks must be sound by construction. The generator is model-neutral: every sound task is
@@ -97,6 +97,18 @@ the first in 4 of 7 rejections):
   without `claim_made` fails, with a note in the reason), in `rubric_tests` and `solver_check` alike.
 - `rubric_tests` stored no judge reasons for a flawed answer's wrong fails; `gates.json` now keeps the reason for
   every disagreement (gold fails, flawed wrong passes and wrong fails).
+
+**Rounds 16 to 27 (overnight batches, Opus generating, Qwen on NRP, results straight to `main`).** Rounds 16 to 19
+(2026-11-05, bcc1302): 5 of 12 accepted, 4 false rejections, all the negative-criterion judge class. Rounds 20 to 27
+(2026-11-06 to 07, seeds 20 to 27, main 81173a2 with that class fixed, 9224fd2 to de11391): **23 of 24 accepted**,
+0 false rejections; the one rejection is correct (s22-m0001, `rubric_tests`: a fact criterion that only the omitted
+issue uses, as s16-m0001). Labels (qwen3-small): 0.00: 13 (`unsolved`), 0.33: 6, 1.00: 4. In 11 of the 13 unsolved
+tasks a positive criterion failed in all three attempts (an issue criterion in 8, a fact criterion in 5, 3 of those
+a whole order of precedence the memos cite only in part), so a person should read a few before they count as hard.
+1,740 calls, 0 model errors; Opus ~8.42M input and ~1.59M output tokens (~366k and ~69k per kept task), Qwen ~9.69M
+and ~1.28M; 5 h 42 min wall time, about 4 kept tasks per hour, including one 30-minute pause after seed 27's first try
+errored on all three matters (the error text was not kept); 3 bundling flags in warn mode. Full export over every real
+run: 46 tasks (train 38, dev 5, test 3); without `--include-unsolved`, 33.
 
 Code check (2026-11-04, `feat/difficulty-labels`): `configs/fake_demo.toml` rejects consistency 3, issue_check 1,
 leak_check 2, rubric_trace 1, rubric_tests 1; `solver_check` rejects only leaks now, so 0 in the demo (it has no leak
