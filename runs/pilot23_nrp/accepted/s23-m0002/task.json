@@ -1,0 +1,110 @@
+{
+  "task_id": "s23-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "master services agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Staidaix Seed Genetics, LLC, which is the customer under its master services agreement with Prupox Genomics, Inc. Fenwyck AgriSciences Corp. is also a counterparty in this matter. Staidaix wants a clear view of where it stands under the current contract set so it can decide how to handle the relationship going forward. Please review the full matter folder: the master services agreement (staidaix_prupox_master_services_agreement.md), the service level schedule, Order Form No. 4, the quality agreement, and the Q3 2026 business review meeting notes. Then prepare a memo to me that identifies each issue you find that matters to Staidaix. For each issue, state where it appears by document and section, explain why it matters for the client, and give a recommended fix. Please flag anything you could not resolve from the documents alone and anything you think we should raise with the client before going back to the counterparties. Keep the memo practical and organized so I can work from it directly when I speak with the client.",
+  "documents": [
+    "order_form_no_4.md",
+    "q3_2026_business_review_meeting_notes.md",
+    "quality_agreement.md",
+    "service_level_schedule.md",
+    "staidaix_prupox_master_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Fenwyck AgriSciences merger with Staidaix's parent (recorded in Order Form No. 4 Recital B) is a Change of Control that MSA Section 14.2 deems an assignment requiring Prupox's prior written consent, and that this consent has not been obtained. It states that closing without consent would let Prupox terminate under MSA Section 12.3 and accelerate the remaining Minimum Annual Commitment under Order Form No. 4 Section 5. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "deemed an assignment",
+        "Section 14.2",
+        "consent before closing"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Staidaix's October 2, 2026 Nonconformance Notice for Lot SG-26-117 was sent after the deadline of ten Business Days after the September 14, 2026 Data Release Date (September 28, 2026) under Quality Agreement Section 7.2. It states that the lot is therefore likely deemed accepted and the re-run/credit remedies lost. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Quality Agreement Section 7.2",
+        "September 28, 2026",
+        "deemed accepted"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that MSA Section 3.4 imposes exclusivity covering all crops, service types, territories and Customer's Affiliates, and that under the MSA Section 1.3 precedence clause it overrides the narrower soybean/United States exclusivity scope in Order Form No. 4 Section 2. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 3.4",
+        "any crop species in any territory",
+        "Section 1.3 precedence"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Minimum Annual Commitment under Order Form No. 4 is $1,850,000 per Contract Year for a three-year Order Term.",
+      "kind": "fact",
+      "hints": [
+        "$1,850,000",
+        "three-year"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the MSA order of precedence ranks the MSA first, then the Quality Agreement, then the Service Level Schedule, then Order Forms.",
+      "kind": "fact",
+      "hints": [
+        "order of precedence",
+        "Section 1.3"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is organized as a memo that addresses each issue separately and, for each issue, gives the document and section, why it matters to the client, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "recommended fix"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response includes a section or list flagging open points it could not resolve from the documents and/or points to raise with the client before going back to the counterparties.",
+      "kind": "format",
+      "hints": [
+        "open questions",
+        "raise with the client"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that Staidaix's Nonconformance Notice for Lot SG-26-117 was timely under the Quality Agreement.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the soybean/United States exclusivity scope in Order Form No. 4 Section 2 controls over MSA Section 3.4.",
+      "kind": "negative",
+      "hints": [
+        "Order Form prevails"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ]
+}

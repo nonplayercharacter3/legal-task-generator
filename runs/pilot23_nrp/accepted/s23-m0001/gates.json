@@ -1,0 +1,173 @@
+{
+  "matter_id": "s23-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 10.1: \"Distributor shall defend, indemnify and hold harmless Supplier ... from and against any and all claims ... arising out of or relating to the distribution, rental, setup or use of the Products by Distributor, any Customer or any other person, regardless of whether caused by a defect in the Products.\" Section 12.2: \"The limitation in Section 12.1 shall not apply to a party's obligations under Section 10 ...\"",
+            "reason": "The problem is present and still actionable for Taisund. Section 10.1 makes Taisund, the Distributor, indemnify Stepisk for all claims tied to distribution, rental, setup or use of the Products. That includes claims caused by Stepisk's own manufacturing defects. Stepisk's indemnity in Section 10.2 covers only IP infringement. Section 12.2 then lifts the Section 12.1 cap for Section 10 obligations, and Section 12.3 also exempts Section 10 from the bar on consequential damages. The carve-out reads as mutual, but Taisund ends up with unlimited exposure for product-defect and personal-injury claims, while Stepisk's uncapped exposure is limited to narrow IP claims. Nothing in the folder cures this. Section 8.4 does not narrow the indemnity, the 8.1 and 8.2 warranties and the 8.3 repair, replace or refund remedy do not offset it, and Stepisk's $2M/$5M products insurance in Section 11.1 does not limit Taisund's obligation to Stepisk. The SOW and Service Level Schedule do not address it either. The pending assignment to Orlenne under Section 17.2 would carry the indemnity over to Orlenne, a competing rental operator in the Territory. That makes the issue a live point to raise, alongside the assignment, rather than a closed one."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "SOW Section 9.1: \"This SOW, and any claim, controversy or dispute arising out of or relating to this SOW or the Services, is governed by and construed in accordance with the laws of the State of New York ... Each party irrevocably submits to the exclusive jurisdiction of the state or federal courts located in New York County, New York for any action or proceeding arising out of or relating to this SOW or the Services.\" This conflicts with Agreement Sections 18.1 and 18.2, which choose Delaware law and the exclusive jurisdiction of the Wilmington, Delaware courts. Agreement Section 2.3 ranks the documents \"Statement of Work, then Service Level Schedule, then Distribution Agreement.\"",
+            "reason": "The conflict is real and nothing in the folder cures it. Agreement Section 2.3 gives the SOW priority, so its New York law and New York County forum clause controls disputes about the Services. Delaware law and the Wilmington courts govern the rest of the Agreement. A typical Taisund claim would mix both. Examples are claims over damaged or late inventory, refurbishment failures, or loss of goods held as bailee under SOW Section 4.4. Such claims draw on the SOW and the Service Level Schedule, which have no governing-law clause of their own, and on Agreement remedies such as warranty, termination under 15.3 and the liability cap. Each of the two clauses is exclusive and covers anything 'arising out of or relating to' its document. That creates a risk of forum fights, split proceedings and inconsistent results, which costs Taisund money as the party most likely to bring service claims. It is also hard to call the mismatch intentional and harmless. All four Depots, Taisund itself, Stepisk's warehouse and the incoming assignee Orlenne are located in PA, NJ or DE, so New York has no connection to the parties or the work. No amendment, waiver or change order has fixed the conflict. The kickoff notes say no changes were agreed. The issue remains actionable: the SOW runs for the whole Term, and the December 1, 2026 assignment to Orlenne gives Taisund a natural moment to seek a change order under SOW Section 7.3."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 17.2: \"Supplier may assign this Agreement, in whole or in part, to any person, including by merger, consolidation, reorganization or sale of all or any part of its assets or business, without the consent of Distributor, upon written notice to Distributor.\" The October 19, 2026 notice letter states: \"Supplier will assign the Agreement to Orlenne Event Group LLC\" and \"Orlenne operates an event furniture rental business. It serves venues, caterers, planners and corporate customers in Pennsylvania, New Jersey and Delaware.\"",
+            "reason": "The assignment rights are one-sided. Taisund needs Stepisk's consent to assign (Section 17.1). Stepisk needs only notice to assign to anyone (Section 17.2). The Agreement has no exception for competitors. Section 15 gives Taisund no right to terminate on assignment, and no other document gives it one. Section 3.2 restricts only Supplier's own sales in the Territory. After assignment, Orlenne becomes \"Supplier\" and receives Taisund's pricing, Forecasts, Purchase Orders and Customer delivery schedules and locations. Orlenne is a direct competitor in the same Territory, so this harms Taisund. Section 14 confidentiality only limits use to performance; it does not cure the competitive conflict. The assignment takes effect December 1, 2026, which is after today (November 7, 2026). Nothing in the folder shows Taisund consented or accepted the assignment. The issue therefore remains live and actionable."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.045,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 13,
+              "files_opened": [
+                "kickoff_meeting_notes.md",
+                "service_level_schedule.md",
+                "statement_of_work_refurbishment_and_logistics.md",
+                "stepisk_notice_letter_2026-10-19.md",
+                "taisund_stepisk_exclusive_distribution_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5",
+                "C6",
+                "C7"
+              ],
+              "steps": 13,
+              "files_opened": [
+                "kickoff_meeting_notes.md",
+                "service_level_schedule.md",
+                "statement_of_work_refurbishment_and_logistics.md",
+                "stepisk_notice_letter_2026-10-19.md",
+                "taisund_stepisk_exclusive_distribution_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 13,
+              "files_opened": [
+                "kickoff_meeting_notes.md",
+                "service_level_schedule.md",
+                "statement_of_work_refurbishment_and_logistics.md",
+                "stepisk_notice_letter_2026-10-19.md",
+                "taisund_stepisk_exclusive_distribution_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

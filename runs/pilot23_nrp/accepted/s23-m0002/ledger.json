@@ -1,0 +1,174 @@
+{
+  "matter_id": "s23-m0002",
+  "summary": "Staidaix Seed Genetics, LLC (client) is a soybean and corn breeding company. It buys marker-assisted genotyping and trait-screening laboratory services from Prupox Genomics, Inc. under a Master Services Agreement effective March 1, 2025. The other documents are a Service Level Schedule, Order Form No. 4 (effective October 20, 2026), a Quality Agreement, and notes from a September 2026 quarterly business review. Order Form No. 4 records that Staidaix's parent signed a merger agreement on October 12, 2026 to be acquired by Fenwyck AgriSciences Corp. It also records Staidaix's reservation of rights over a disputed nonconforming genotyping lot. Three problems are planted. (1) The MSA treats a change of control of Staidaix as an assignment that needs Prupox's consent. That consent has not been obtained, and the breach would accelerate the Order Form minimum commitment. (2) Staidaix's nonconformance notice for Lot SG-26-117 was sent after the Quality Agreement window closed. (3) The MSA exclusivity covers all crops worldwide, including Affiliates, and it overrides the narrower soybean/US scope in the Order Form because of the precedence clause.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Staidaix Seed Genetics, LLC",
+      "role": "Customer under the Master Services Agreement; plant breeding and seed genetics company; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Prupox Genomics, Inc.",
+      "role": "Provider of genotyping, sequencing and trait-screening laboratory services"
+    },
+    {
+      "id": "P3",
+      "name": "Fenwyck AgriSciences Corp.",
+      "role": "Proposed acquirer of Staidaix's parent, Staidaix Holdings, Inc., under the Merger Agreement dated October 12, 2026"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Master Services Agreement Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Order of precedence",
+      "value": "MSA, then Quality Agreement, then Service Level Schedule, then Order Forms",
+      "doc": "D1",
+      "section": "Section 1.3"
+    },
+    {
+      "id": "F3",
+      "key": "Master Services Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 15.1"
+    },
+    {
+      "id": "F4",
+      "key": "Order Form No. 4 Effective Date",
+      "value": "October 20, 2026",
+      "doc": "D3",
+      "section": "Header"
+    },
+    {
+      "id": "F5",
+      "key": "Minimum Annual Commitment under Order Form No. 4",
+      "value": "$1,850,000 per Contract Year for a three-year Order Term",
+      "doc": "D3",
+      "section": "Section 3"
+    },
+    {
+      "id": "F6",
+      "key": "Agreed exclusive services scope",
+      "value": "Soybean marker-assisted genotyping services performed for Customer in the United States",
+      "doc": "D3",
+      "section": "Section 2"
+    },
+    {
+      "id": "F7",
+      "key": "Data Release Date for Lot SG-26-117",
+      "value": "September 14, 2026",
+      "doc": "D3",
+      "section": "Section 6"
+    },
+    {
+      "id": "F8",
+      "key": "Date of Customer's Nonconformance Notice for Lot SG-26-117",
+      "value": "October 2, 2026",
+      "doc": "D3",
+      "section": "Section 6"
+    },
+    {
+      "id": "F9",
+      "key": "Quality Agreement nonconformance notice window",
+      "value": "10 Business Days after the Data Release Date",
+      "doc": "D4",
+      "section": "Section 7.2"
+    },
+    {
+      "id": "F10",
+      "key": "Merger Agreement date",
+      "value": "October 12, 2026",
+      "doc": "D3",
+      "section": "Recital B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "staidaix_prupox_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "order_form_no_4.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "q3_2026_business_review_meeting_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Three provisions combine to create this exposure. First, MSA Section 14.2 provides that a Change of Control of Customer is deemed an assignment requiring Provider's prior written consent. Change of Control is defined to include an indirect change through any parent entity. Second, MSA Section 12.3 lets Provider terminate for an unconsented assignment. Third, Order Form No. 4 Section 5 provides that if Provider terminates for Customer's breach, the unpaid Minimum Annual Commitment for the rest of the three-year Order Term becomes immediately due (up to $5,550,000). Order Form No. 4 Recital B, dated October 20, 2026, records the pending deal: Staidaix Holdings, Inc. signed a Merger Agreement dated October 12, 2026 under which it will be acquired by Fenwyck AgriSciences Corp. The same Order Form states that nothing in it constitutes Provider's consent under any MSA provision. No consent has been obtained, so closing the merger would put Staidaix in breach and expose it to termination and acceleration.",
+      "doc": "D1",
+      "section": "Section 14.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "Change of Control of Customer"
+      ],
+      "expected_finding": "The Fenwyck merger recorded in Order Form No. 4 Recital B is a Change of Control deemed an assignment under MSA Section 14.2 for which Prupox's consent has not been obtained; closing without it would let Prupox terminate under Section 12.3 and accelerate the remaining Minimum Annual Commitment under Order Form Section 5, so Staidaix should obtain Prupox's written consent or waiver before closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "The deadline has to be worked out from three documents. Quality Agreement Section 7.2 requires a Nonconformance Notice within ten (10) Business Days after the Data Release Date; if no timely notice is given, the lot is deemed accepted and Customer loses its re-run and credit remedies. The Service Level Schedule Section 1 defines Data Release Date as the date Provider posts final genotype data to the Customer portal. MSA Section 1.1 defines Business Day to exclude weekends and U.S. federal holidays. Order Form No. 4 Section 6 records a Data Release Date of September 14, 2026 for Lot SG-26-117, which makes the deadline September 28, 2026. The same Section 6 records that Customer's Nonconformance Notice was sent on October 2, 2026, four Business Days late. Order Form No. 4 Section 6 also shows that Staidaix disputes Prupox's position that the notice was untimely and reserves all rights; Staidaix has not accepted the lot. Because the Quality Agreement ranks above the Order Form in the MSA Section 1.3 precedence clause, the reservation does not extend the window.",
+      "doc": "D4",
+      "section": "Section 7.2",
+      "detect_terms": [
+        "within ten (10) Business Days after the Data Release Date",
+        "deemed accepted"
+      ],
+      "expected_finding": "Staidaix's October 2, 2026 Nonconformance Notice for Lot SG-26-117 was sent after the September 28, 2026 deadline (ten Business Days after the September 14, 2026 Data Release Date) under Quality Agreement Section 7.2, so the lot is likely deemed accepted and the re-run/credit remedy lost; Staidaix should seek a written waiver from Prupox while relying on the reservation of rights in Order Form No. 4 Section 6.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "MSA Section 3.4 requires Customer and its Affiliates to procure all genotyping, sequencing and trait-screening services for any crop species in any territory exclusively from Provider. The agreed deal, stated in Order Form No. 4 Section 2, limits exclusivity to soybean marker-assisted genotyping in the United States. MSA Section 1.3 ranks the MSA above all Order Forms. It allows an Order Form to override the MSA only if the Order Form expressly references the MSA section it overrides, and Order Form Section 2 does not reference Section 3.4. The broader MSA clause therefore controls. It would put Staidaix in breach for its existing corn and wheat programs and its South American affiliate testing done with other labs. After the Fenwyck closing it would also reach the acquirer's affiliates.",
+      "doc": "D1",
+      "section": "Section 3.4",
+      "detect_terms": [
+        "for any crop species in any territory",
+        "Customer and its Affiliates"
+      ],
+      "expected_finding": "MSA Section 3.4 imposes exclusivity over all crops, all service types, all territories and all Affiliates, and under the MSA Section 1.3 precedence clause it overrides the agreed soybean/United States scope in Order Form No. 4 Section 2; Staidaix should amend Section 3.4 to match the Order Form scope and exclude Affiliates.",
+      "contradicts": "F6"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "matter_id": "s23-m0003",
+  "summary": "Bikas Interactive Holdings, Inc. (client, Seller) is selling all outstanding shares of its subsidiary Emberline Forge Studios, Inc., a tactical RPG studio whose flagship title is 'Ashen Vanguard', to Douvend Entertainment Group, Inc. (Buyer). The price is an $84,000,000 base price plus an earnout of up to $30,000,000. Bikas keeps its mobile casual game publishing business and its proprietary Cinderloom game engine, which it will license to Emberline at Closing. The folder has four documents: the Buyer's draft Stock Purchase Agreement dated May 14, 2026; the existing Key Employee Agreement between Emberline and its studio head, Teodor Vasquez-Ilunga; the signed Letter of Intent dated March 3, 2026; and an email thread between deal counsel about closing logistics. The associate must review the Buyer's draft against the Letter of Intent and the Key Employee Agreement. The draft has five problems for Bikas. Buyer can assign the agreement, including the earnout obligation, to any designee and be released. Buyer's cap carve-outs have been cut back to fraud only. The non-compete imports a much broader 'Competing Business' definition from the Key Employee Agreement. A change-of-control consent under the studio head's toolkit license has been missed. Seller gives an uncapped IP indemnity.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Bikas Interactive Holdings, Inc.",
+      "role": "Seller; the firm's client; sole stockholder of the Company"
+    },
+    {
+      "id": "P2",
+      "name": "Douvend Entertainment Group, Inc.",
+      "role": "Buyer"
+    },
+    {
+      "id": "P3",
+      "name": "Emberline Forge Studios, Inc.",
+      "role": "Company being sold; employer party to the Key Employee Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Teodor Vasquez-Ilunga",
+      "role": "Studio head of the Company; employee and toolkit licensor under the Key Employee Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Base Purchase Price",
+      "value": "$84,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Maximum Earnout Amount",
+      "value": "$30,000,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "SPA Earnout Period",
+      "value": "three years following the Closing Date",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F4",
+      "key": "SPA indemnification Cap",
+      "value": "10% of the Base Purchase Price ($8,400,000)",
+      "doc": "D1",
+      "section": "Section 9.4(a)"
+    },
+    {
+      "id": "F5",
+      "key": "SPA order of precedence",
+      "value": "As between Buyer and Seller, the SPA prevails over any Ancillary Agreement and the Letter of Intent",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F6",
+      "key": "SPA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.6"
+    },
+    {
+      "id": "F7",
+      "key": "Seller Retained Business",
+      "value": "Seller's mobile casual game publishing business, operated as 'Bikas Pocket'",
+      "doc": "D1",
+      "section": "Recitals"
+    },
+    {
+      "id": "F8",
+      "key": "Letter of Intent date",
+      "value": "March 3, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Letter of Intent Buyer liability cap carve-outs",
+      "value": "fraud, Earnout payment obligations, and breaches of the Retained Engine License",
+      "doc": "D3",
+      "section": "Paragraph 6"
+    },
+    {
+      "id": "F10",
+      "key": "Letter of Intent Seller non-compete scope",
+      "value": "tactical role-playing games for console and PC only",
+      "doc": "D3",
+      "section": "Paragraph 8"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "bikas_douvend_stock_purchase_agreement_buyer_draft_2026-05-14.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "emberline_key_employee_agreement_vasquez-ilunga.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "douvend_letter_of_intent_2026-03-03.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "counsel_email_thread_closing_logistics.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 11.4 of the SPA looks mutual: neither party may assign without the other's consent. The clause then lets Buyer assign this Agreement and any Ancillary Agreement to 'any Buyer Designee'. When the clause is read with the definition of 'Buyer Designee' in Section 1.1 ('any Person designated by Buyer in writing'), Buyer may assign to anyone, including a competitor of Bikas. That covers the Retained Engine License for Seller's Cinderloom engine. Section 11.4 also says Buyer is 'relieved of its obligations' on assignment, and the draft contains no Buyer parent guarantee. Buyer could therefore move the $30,000,000 earnout obligation in Section 2.5 to an undercapitalized assignee. It could also hand the Cinderloom engine license and Seller's confidential engine technology to a rival. Seller would have no consent right and no recourse against Douvend.",
+      "doc": "D1",
+      "section": "Section 11.4 (read with Section 1.1 'Buyer Designee')",
+      "detect_terms": [
+        "any Buyer Designee",
+        "relieved of its obligations"
+      ],
+      "expected_finding": "Section 11.4, read with the Section 1.1 definition of Buyer Designee, lets Buyer assign the SPA and the Retained Engine License to any person, including a Bikas competitor, and be released. This puts the earnout and the Cinderloom engine confidentiality at risk. The draft should require Seller consent, except for an assignment to an affiliate in which Douvend remains liable, and should bar assignment of the Retained Engine License to competitors.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "The Letter of Intent dated March 3, 2026 (Paragraph 6) carves three things out of Buyer's liability cap: fraud, Earnout payment obligations, and breaches of the Retained Engine License. The SPA draft narrows this through several provisions read together. Section 9.3(b) makes Buyer's covenant breaches, including the Section 2.5 earnout payment covenant and the Section 6.7 Retained Engine License restrictions, indemnifiable claims. Section 9.5(b) says Buyer's aggregate liability under Section 9.3 'shall not exceed the Cap' except for 'Excluded Buyer Obligations'. Section 1.1 defines 'Excluded Buyer Obligations' as fraud only. Section 9.8 makes indemnification the exclusive remedy for all claims under the Agreement. As a result, Bikas could recover no more than $8,400,000 for an unpaid earnout of up to $30,000,000 or for misuse of the Cinderloom engine. The SPA's entire-agreement clause and Section 11.9 precedence clause mean the Letter of Intent will not protect Seller once the SPA is signed.",
+      "doc": "D1",
+      "section": "Section 9.5(b) (read with Section 1.1 'Excluded Buyer Obligations', Section 9.3(b) and Section 9.8)",
+      "detect_terms": [
+        "Excluded Buyer Obligations",
+        "shall not exceed the Cap"
+      ],
+      "expected_finding": "The SPA narrows the Letter of Intent's agreed carve-outs to fraud only. Through Sections 9.3(b), 9.5(b) and 9.8 exclusive remedy, Buyer's liability for earnout non-payment and Retained Engine License breaches is capped at $8,400,000. The definition of Excluded Buyer Obligations must be expanded to include Earnout payment obligations and Retained Engine License breaches, as agreed in the Letter of Intent.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Section 6.4 of the SPA bars Seller from engaging in any 'Competing Business' for three years. Instead of using the SPA's own definition of 'Business' (the Company's tactical RPG development and publishing), it says 'Competing Business' has the meaning given in the Key Employee Agreement. Section 1.1 of the Key Employee Agreement defines that term as development or publishing of 'any video game in any genre, on any platform'. Read together, these provisions make the non-compete cover Seller's retained Bikas Pocket mobile casual publishing business, which is stated in the SPA Recitals. That is far broader than the Letter of Intent's agreed scope of tactical RPGs for console and PC only. Bikas would be in breach from the Closing Date.",
+      "doc": "D1",
+      "section": "Section 6.4 (read with Key Employee Agreement Section 1.1)",
+      "detect_terms": [
+        "Competing Business",
+        "any video game in any genre, on any platform"
+      ],
+      "expected_finding": "By importing the Key Employee Agreement's definition of Competing Business, SPA Section 6.4 extends Seller's non-compete to all video games on all platforms. That would put Bikas in breach through its retained Bikas Pocket mobile business. The non-compete should be redefined in the SPA itself to cover only tactical role-playing games for console and PC, as agreed in the Letter of Intent, with an express carve-out for the Seller Retained Business.",
+      "contradicts": "F10"
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 7.3 of the Key Employee Agreement grants the Company a license to the studio head's personally owned 'Kestrel Motion' animation toolkit, which is used in Ashen Vanguard. The license will 'terminate automatically upon a Change of Control' of the Company unless Mr. Vasquez-Ilunga has 'consented in writing' beforehand. Section 1.1 of that agreement defines Change of Control to include a sale of a majority of the Company's equity, so the share sale triggers it. Nothing in the folder shows that his consent has been obtained or requested. The SPA does not address it either. Section 4.4 has Seller represent that no consent of any Person is required under any Material Contract, and Schedule 4.4 lists 'None', even though Schedule 4.10 lists the Key Employee Agreement as a Material Contract. The SPA's precedence clause in Section 11.9 cannot help, because the employee is not a party to the SPA. Closing without the consent would breach Seller's representation, expose Bikas to indemnity claims, and cut off the toolkit behind the title that drives the earnout.",
+      "doc": "D2",
+      "section": "Section 7.3 (read with Key Employee Agreement Section 1.1 and SPA Section 4.4 / Schedule 4.4)",
+      "detect_terms": [
+        "terminate automatically upon a Change of Control",
+        "consented in writing"
+      ],
+      "expected_finding": "The sale is a Change of Control under the Key Employee Agreement and will automatically terminate the Kestrel Motion toolkit license unless Mr. Vasquez-Ilunga consents in writing beforehand. That would make Seller's SPA Section 4.4 no-consents representation false and impair the earnout title. Bikas should obtain his written consent before signing, or list the consent on Schedule 4.4 and make it a closing deliverable, so that it is not exposed to indemnity claims.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 9.2(d) of the SPA requires Seller to indemnify Buyer for all Losses arising from any third-party claim that Company IP infringes or misappropriates any intellectual property, 'whether known or unknown'. It applies 'without regard to the Cap', the Basket or the survival period. Bikas therefore faces unlimited, perpetual liability for IP claims against the Company's game titles, well beyond the $84,000,000 Base Purchase Price. Ordinary IP representation breaches are otherwise subject to the 10% Cap in Section 9.4(a).",
+      "doc": "D1",
+      "section": "Section 9.2(d)",
+      "detect_terms": [
+        "without regard to the Cap",
+        "whether known or unknown"
+      ],
+      "expected_finding": "Section 9.2(d) gives Buyer an uncapped, perpetual Seller indemnity for all IP infringement claims, exposing Bikas to unlimited liability. It should be brought under the Cap, or under a separate IP cap no higher than the purchase price, with a defined survival period and limited to identified or scheduled matters.",
+      "contradicts": null
+    }
+  ]
+}

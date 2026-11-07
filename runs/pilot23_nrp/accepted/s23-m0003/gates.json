@@ -1,0 +1,174 @@
+{
+  "matter_id": "s23-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 1.0,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"Neither party may assign this Agreement or any of its rights or obligations under this Agreement without the prior written consent of the other party, except that Buyer may, without Seller's consent, assign this Agreement and any Ancillary Agreement, in whole or in part, to any Buyer Designee. Upon any such assignment and the Buyer Designee's written assumption of the assigned obligations, Buyer will be relieved of its obligations under this Agreement and the applicable Ancillary Agreements.\" Section 1.1 defines \"Buyer Designee\" as \"any Person designated by Buyer in writing.\"",
+            "reason": "Because Buyer Designee means anyone Buyer names, Buyer can assign the SPA and the Ancillary Agreements without Seller's consent. That includes the Retained Engine License and the Section 2.5 earnout. The assignee could be a competitor of Seller or an undercapitalized entity. Buyer is then released from its obligations. Nothing in the folder cures this. The draft has no Buyer parent guarantee and no creditworthiness or non-competitor limit on assignees. The Section 2.5(f) acceleration applies only to asset sales, not to an assignment. The Section 5.3 funds rep and the Section 9.3 indemnity bind Buyer, which is released. The LOI provided for no such assignment right. Section 11.9 makes the SPA prevail over the Ancillary Agreements, so the engine license cannot override this clause. The hit falls on Seller, our client. Seller is the earnout payee and the licensor, and it loses both its credit counterparty and its control over who holds its Cinderloom technology. This is a Buyer draft still under review, with Seller's markup pending, so the point remains fully actionable."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 9.5(b): \"Buyer's aggregate liability under Section 9.3 shall not exceed the Cap, except for Losses arising out of Excluded Buyer Obligations.\" Section 1.1: \"'Excluded Buyer Obligations' means any Losses arising from fraud by Buyer.\" Section 9.3(b) covers \"any breach of any covenant of Buyer in this Agreement, including Buyer's obligations under Section 2.5 and Section 6.7\", and Section 9.8 makes Article 9 \"the sole and exclusive remedy\".",
+            "reason": "The problem is present and the client can still act on it. Buyer bears the obligations involved: paying the earnout and observing the Cinderloom restrictions. The draft routes Seller's claims for breach of those obligations through Section 9.3(b). Section 9.5(b) then caps them at $8,400,000, and the only exception (Excluded Buyer Obligations) is fraud. That drops two of the three carve-outs agreed in LOI Paragraph 6: Earnout payment obligations and Retained Engine License breaches. Section 9.8 makes indemnification the exclusive remedy. Section 11.9 makes the SPA prevail over the LOI, which is non-binding on this point anyway. As a result, Seller could recover at most $8.4M against up to $30M of earnout or for engine misuse. The specific-performance carve-out in Sections 9.8 and 11.10 is uncertain for money claims and does not cure the problem. One detail in the issue description is wrong: the SPA has no separate entire-agreement clause, but Section 11.9 has the same effect. This is an unsigned Buyer draft dated May 14, 2026, and Seller's markup is still pending, so the point remains open to negotiate."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 6.4: \"For purposes of this Section 6.4, \"Competing Business\" has the meaning given in Section 1.1 of the Key Employee Agreement, being the development, publishing or distribution of any video game in any genre, on any platform.\" Recital D: \"Seller also conducts, and will retain after the Closing, Seller's mobile casual game publishing business, operated as \"Bikas Pocket\" (the \"Seller Retained Business\").\"",
+            "reason": "The non-compete obligation falls on Seller, our client. Section 6.4 does not use the SPA's narrower defined term \"Business\" (tactical RPG development and publishing). It instead borrows the Key Employee Agreement definition, which covers any video game in any genre on any platform. The section has no carve-out for the Bikas Pocket business or for Cinderloom engine activities. The SPA's own Recital D states that Seller will keep running Bikas Pocket after the Closing, so Seller would be in breach from the Closing Date. That breach would expose Seller to uncapped indemnity under 9.2(b) and to injunctive relief under 11.10. The LOI (Paragraph 8) limited the covenant to tactical RPGs for console and PC only and expressly excluded Bikas Pocket and Cinderloom. The SPA's precedence clause (11.9) makes the SPA prevail over the LOI, so the LOI does not cure the problem. This is an unsigned Buyer draft, and Seller's markup is still pending according to the email thread. The point remains open and actionable."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "KEA Section 7.3(d): \"The Kestrel Motion License will terminate automatically upon a Change of Control of the Company, unless before the Change of Control Executive has consented in writing to the continuation of the Kestrel Motion License following that Change of Control.\" KEA Section 1.1 defines Change of Control to include \"the sale, transfer or other disposition ... of a majority of the outstanding equity securities of the Company, whether by the Company's stockholders or otherwise.\" SPA Section 4.4 has Seller represent that the transaction does not \"require the consent of ... any Person under ... any Material Contract,\" and Schedule 4.4 reads \"None,\" while Schedule 4.10 lists the Key Employee Agreement as a Material Contract.",
+            "reason": "The problem is present. Bikas's sale of 100% of the Emberline shares to Douvend is a Change of Control under KEA Section 1.1. Under Section 7.3(d), that triggers automatic termination of the Kestrel Motion License unless Vasquez-Ilunga consents in writing before Closing. Section 7.3(e) would then require the Company to stop using Kestrel Motion, including in Ashen Vanguard. The consent right belongs to the employee alone. Nothing in the folder shows his consent was requested or obtained. The LOI only contemplates Buyer discussing his continued role. Section 9.2 of the KEA does not help, because it covers assignment, not a change of control. SPA Section 11.9 binds only Buyer and Seller, not the employee. This exposes Bikas in three ways. First, the Section 4.4 rep and the 'None' on Schedule 4.4 are inaccurate, which creates indemnity exposure under Section 9.2(a) and risks the closing condition in Section 7.2(a). Second, the uncapped IP indemnity in Section 9.2(d) could be implicated. Third, losing the toolkit threatens Ashen Vanguard revenue and therefore the earnout. The issue is still actionable. The SPA is only a Buyer draft dated May 14, 2026, Seller's markup is pending, and nothing has been signed or closed. Bikas can still schedule the consent requirement and obtain the employee's written consent before Closing."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 9.2(d): \"any third-party claim alleging that any Company IP, or the development, publishing or exploitation of any game title of the Company, infringes, misappropriates or otherwise violates any Intellectual Property of any Person, whether known or unknown, and whether arising before or after the Closing. Seller's obligations under this Section 9.2(d) apply without regard to the Cap, the Basket or the survival periods in Section 9.1.\"",
+            "reason": "Seller (Bikas, our client) gives this indemnity, and Buyer is the beneficiary. Nothing in the SPA limits it. The 10% Cap in Section 9.4(a) applies only to claims under 9.2(a). The Base Purchase Price ceiling applies only to Fundamental Representations. Section 9.2(d) expressly sits outside the Cap, the Basket and the survival periods. It also reaches post-Closing exploitation of Company titles by Buyer and includes \"licensed to\" IP. The result is an unlimited, perpetual exposure that could exceed the $84M price. The Letter of Intent contemplated no such special indemnity. It set a 10% cap for general representations and limited even fundamental representations to the Base Purchase Price. The risk is real: the Key Employee Agreement's Kestrel Motion license terminates automatically on a Change of Control unless Vasquez-Ilunga consents in writing, and Schedule 4.4 lists no consents. Continued use of Kestrel Motion in Ashen Vanguard after Closing could therefore draw an infringement claim that falls squarely within 9.2(d). This is a Buyer draft still under negotiation. Seller's counsel has said its markup is forthcoming, and nothing in the folder shows Seller accepted the term. The problem is therefore present and actionable."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.07,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 3,
+            "pass_rate": 1.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "bikas_douvend_stock_purchase_agreement_buyer_draft_2026-05-14.md",
+                "counsel_email_thread_closing_logistics.md",
+                "douvend_letter_of_intent_2026-03-03.md",
+                "emberline_key_employee_agreement_vasquez-ilunga.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "bikas_douvend_stock_purchase_agreement_buyer_draft_2026-05-14.md",
+                "counsel_email_thread_closing_logistics.md",
+                "douvend_letter_of_intent_2026-03-03.md",
+                "emberline_key_employee_agreement_vasquez-ilunga.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "bikas_douvend_stock_purchase_agreement_buyer_draft_2026-05-14.md",
+                "counsel_email_thread_closing_logistics.md",
+                "douvend_letter_of_intent_2026-03-03.md",
+                "emberline_key_employee_agreement_vasquez-ilunga.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

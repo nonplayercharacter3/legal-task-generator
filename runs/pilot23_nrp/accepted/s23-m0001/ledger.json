@@ -1,0 +1,177 @@
+{
+  "matter_id": "s23-m0001",
+  "summary": "Taisund Event Rentals, LLC (client) is the exclusive Mid-Atlantic distributor and rental operator for a line of commercial event furniture (chiavari chairs, folding banquet tables, cocktail tables, lounge seating) made by Stepisk Furnishings Manufacturing, Inc. The folder holds five documents. The first is the Exclusive Distribution Agreement, governed by Delaware law. The second is a Statement of Work under which Stepisk refurbishes, warehouses and delivers inventory to Taisund's depots. The third is a Service Level Schedule. The fourth is a notice letter from Stepisk announcing that it will assign the distribution agreement to a rental company that competes with Taisund in the Territory. The fifth is the internal notes of a kickoff meeting. Three problems are planted. Taisund's broad product-use indemnity, which reaches even claims caused by product defects, sits outside the liability cap. The Statement of Work picks New York law and forum, and it controls because of the agreement's precedence clause. Stepisk may assign the agreement freely, including to a competitor, and the notice letter shows it is doing so.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Taisund Event Rentals, LLC",
+      "role": "Distributor and client; exclusive regional distributor and rental operator of the event furniture line"
+    },
+    {
+      "id": "P2",
+      "name": "Stepisk Furnishings Manufacturing, Inc.",
+      "role": "Supplier; manufacturer of the commercial event furniture and provider of refurbishment and logistics services"
+    },
+    {
+      "id": "P3",
+      "name": "Orlenne Event Group LLC",
+      "role": "Proposed assignee named in Stepisk's notice letter; operates a competing event furniture rental business in the Territory"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Territory",
+      "value": "Pennsylvania, New Jersey and Delaware",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement Initial Term",
+      "value": "three years from the Distribution Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F4",
+      "key": "Distribution Agreement liability cap",
+      "value": "amounts paid or payable under the Agreement in the 12 months before the claim",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Statement of Work, then Service Level Schedule, then Distribution Agreement",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F6",
+      "key": "Distribution Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 18.1"
+    },
+    {
+      "id": "F7",
+      "key": "Distribution Agreement exclusive forum",
+      "value": "state or federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "Section 18.2"
+    },
+    {
+      "id": "F8",
+      "key": "Statement of Work Effective Date",
+      "value": "March 16, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Damaged unit replacement time",
+      "value": "48 hours after Distributor's damage report",
+      "doc": "D3",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F10",
+      "key": "Assignment notice letter date",
+      "value": "October 19, 2026",
+      "doc": "D4",
+      "section": "Letter date"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "taisund_stepisk_exclusive_distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "statement_of_work_refurbishment_and_logistics.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "stepisk_notice_letter_2026-10-19.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "kickoff_meeting_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Two provisions combine to expose the client to unlimited liability. Section 10.1 makes Taisund indemnify Stepisk for all claims arising out of the distribution, rental, setup or use of the Products, regardless of whether caused by a defect in the Products. That would cover, for example, a guest injured when a defectively manufactured chair collapses. Stepisk's own indemnity in Section 10.2 covers only intellectual property infringement claims. Section 12.2 then states that the Section 12.1 cap (amounts paid in the prior 12 months) does not apply to a party's obligations under Section 10. The carve-out reads as mutual, but it works against Taisund. Its effect is that Taisund carries unlimited exposure for product-defect and personal injury claims caused by Stepisk's own manufacturing. Stepisk's carved-out exposure is limited to narrow IP claims. The problem appears only when the indemnity scope in Section 10.1 is read together with the carve-out in Section 12.2.",
+      "doc": "D1",
+      "section": "Section 10.1 and Section 12.2",
+      "detect_terms": [
+        "regardless of whether caused by a defect",
+        "shall not apply to a party's obligations under Section 10"
+      ],
+      "expected_finding": "Taisund's Section 10.1 indemnity covers even claims caused by Stepisk's product defects, and Section 12.2 removes all Section 10 obligations from the Section 12.1 cap. Together they leave Taisund with unlimited liability for injuries caused by Stepisk's own manufacturing defects. Section 10.1 should exclude defect-caused claims, Stepisk should give a reciprocal product-defect indemnity, and Taisund's indemnity should be capped or the carve-out narrowed.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Section 9.1 of the Statement of Work provides that it is governed by the laws of the State of New York. Disputes under it must be brought exclusively in the state or federal courts in New York County. Sections 18.1 and 18.2 of the Distribution Agreement choose Delaware law and the Wilmington courts. Section 2.3 of the Distribution Agreement does not cure the conflict, because it ranks the Statement of Work first. The New York clause therefore controls disputes within the SOW's scope: refurbishment, warehousing and delivery of inventory. Delaware law and forum govern the rest of the relationship. A single dispute over damaged or late inventory involves the SOW, the Service Level Schedule and the Distribution Agreement's indemnity and remedies at once. Such a dispute could be split across two exclusive forums under two bodies of law, with a risk of parallel litigation and inconsistent results. The problem appears only when SOW Section 9.1 is read together with Distribution Agreement Sections 2.3 and 18.",
+      "doc": "D2",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "laws of the State of New York",
+        "New York County"
+      ],
+      "expected_finding": "SOW Section 9.1 chooses New York law and exclusive New York County courts. Because Distribution Agreement Section 2.3 makes the SOW prevail, that choice overrides the Delaware law and Wilmington forum in Sections 18.1–18.2 for SOW-scope disputes, splitting the relationship across two laws and forums. The fix is to delete the SOW clause or amend Section 2.3 so that Section 18 controls notwithstanding the order of precedence.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 17.1 bars Taisund from assigning without Stepisk's prior written consent. Section 17.2, however, lets Stepisk assign the Agreement, in whole or in part, to any person, including by merger or sale of assets, without the consent of Distributor, on notice only. There is no exception for competitors and no right for Taisund to terminate. The risk is current. The notice letter dated October 19, 2026 states that Stepisk will assign the Agreement to Orlenne Event Group LLC, which operates a competing event furniture rental business in the Territory. Taisund's exclusive supplier, together with its pricing, forecasts and customer delivery data, would pass to a direct competitor. The assignment has not yet occurred and Taisund has not consented in any document, so the point can still be acted on.",
+      "doc": "D1",
+      "section": "Section 17.2",
+      "detect_terms": [
+        "Supplier may assign this Agreement, in whole or in part",
+        "without the consent of Distributor"
+      ],
+      "expected_finding": "Section 17.2 lets Stepisk assign the Agreement to anyone without Taisund's consent, and the October 19, 2026 notice letter shows Stepisk is about to assign it to Orlenne Event Group LLC, a competitor in the Territory. Taisund should promptly object and seek an amendment that requires its consent to any assignment, bars assignment to competitors, and gives it a termination right on an unapproved assignment or change of control.",
+      "contradicts": null
+    }
+  ]
+}

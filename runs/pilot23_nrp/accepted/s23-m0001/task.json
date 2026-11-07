@@ -1,0 +1,117 @@
+{
+  "task_id": "s23-m0001",
+  "split": "test",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Taisund Event Rentals, LLC, the exclusive regional distributor and rental operator of Stepisk Furnishings Manufacturing, Inc.'s event furniture line. Orlenne Event Group LLC is also a party in this matter. The client wants a clear picture of where it stands under its arrangements with Stepisk so it can decide how to proceed. Please review the full matter folder: the exclusive distribution agreement (taisund_stepisk_exclusive_distribution_agreement.md), the statement of work for refurbishment and logistics, the service level schedule, the Stepisk notice letter dated 2026-10-19, and the kickoff meeting notes. Then prepare a memo to me that sets out each issue you identify. For each one, state where it appears (document and section), explain why it matters for Taisund, and give a recommended fix. Please order the issues by how much they matter to the client, and flag anything that needs a decision or action from Taisund soon. If any point turns on facts the folder doesn't resolve, note what we would need to confirm with the client.",
+  "documents": [
+    "kickoff_meeting_notes.md",
+    "service_level_schedule.md",
+    "statement_of_work_refurbishment_and_logistics.md",
+    "stepisk_notice_letter_2026-10-19.md",
+    "taisund_stepisk_exclusive_distribution_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Distribution Agreement Section 10.1 requires Taisund to indemnify Stepisk for product-related claims even where they are caused by a defect in the Products, and that Section 12.2 removes Section 10 indemnity obligations from the Section 12.1 liability cap, so that Taisund's exposure for such claims is uncapped. It locates the issue in the Distribution Agreement (Sections 10.1 and 12.2), explains why this matters to Taisund, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "regardless of whether caused by a defect",
+        "Section 12.2",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Statement of Work Section 9.1 selects New York law and exclusive New York County courts, and that because Distribution Agreement Section 2.3 gives the Statement of Work precedence, this choice overrides the Delaware law and Wilmington forum in Distribution Agreement Section 18 for disputes within the SOW's scope. It locates the issue in SOW Section 9.1, explains why this matters to Taisund, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York County",
+        "order of precedence",
+        "Section 2.3"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Distribution Agreement Section 17.2 allows Stepisk to assign the Agreement without Taisund's consent, and that the October 19, 2026 notice letter shows Stepisk intends to assign it to Orlenne Event Group LLC, a competitor of Taisund in the Territory. It locates the issue in Distribution Agreement Section 17.2, explains why this matters to Taisund, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 17.2",
+        "without the consent of Distributor",
+        "Orlenne"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that under Distribution Agreement Section 2.3 the order of precedence is the Statement of Work first, then the Service Level Schedule, then the Distribution Agreement.",
+      "kind": "fact",
+      "hints": [
+        "order of precedence",
+        "Statement of Work prevails"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Distribution Agreement Section 12.1 liability cap is the amounts paid or payable under the Agreement in the 12 months before the claim.",
+      "kind": "fact",
+      "hints": [
+        "12 months",
+        "paid or payable"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that Stepisk's notice letter is dated October 19, 2026.",
+      "kind": "fact",
+      "hints": [
+        "October 19, 2026",
+        "2026-10-19"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is in the form of a memo addressed to the supervising partner. It presents the issues in an order the response describes as reflecting their importance to the client, and for each issue it gives the location (document and section), why the issue matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response contains a section or clearly marked items that flag actions or decisions Taisund needs to take soon.",
+      "kind": "format",
+      "hints": [
+        "action required",
+        "decision needed",
+        "urgent"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that disputes under the Statement of Work are governed by Delaware law and the Wilmington courts because the Distribution Agreement prevails over the Statement of Work.",
+      "kind": "negative",
+      "hints": []
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Stepisk needs Taisund's prior written consent to assign the Distribution Agreement.",
+      "kind": "negative",
+      "hints": []
+    }
+  ],
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ]
+}

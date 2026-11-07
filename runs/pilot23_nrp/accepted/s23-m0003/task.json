@@ -1,0 +1,133 @@
+{
+  "task_id": "s23-m0003",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Bikas Interactive Holdings, Inc., the seller and sole stockholder of the Company, in its sale of the Company's stock to Douvend Entertainment Group, Inc. Emberline Forge Studios, Inc. and Teodor Vasquez-Ilunga are also parties to the deal documents. We need to know where we stand before we respond on the agreement and move toward closing. Please review the full matter folder: the buyer's draft stock purchase agreement (bikas_douvend_stock_purchase_agreement_buyer_draft_2026-05-14.md), the key employee agreement for Vasquez-Ilunga (emberline_key_employee_agreement_vasquez-ilunga.md), the letter of intent (douvend_letter_of_intent_2026-03-03.md), and the counsel email thread on closing logistics (counsel_email_thread_closing_logistics.md). Then send me a memo that lists each issue you find. For each issue, say where it appears (document and section), explain why it matters for Bikas, and recommend a fix we can propose or act on. Put the issues that most affect the client's position first. If something is unclear, or depends on facts we need from the client, flag it and say what we should ask them.",
+  "documents": [
+    "bikas_douvend_stock_purchase_agreement_buyer_draft_2026-05-14.md",
+    "counsel_email_thread_closing_logistics.md",
+    "douvend_letter_of_intent_2026-03-03.md",
+    "emberline_key_employee_agreement_vasquez-ilunga.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that SPA Section 11.4 (read with the Section 1.1 definition of 'Buyer Designee') lets Buyer assign the Agreement, including the Retained Engine License, to any person it designates, including a Bikas competitor, and be relieved of its obligations. It locates the issue in SPA Section 11.4 and/or the Section 1.1 definition, explains why this matters to Bikas, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "any Buyer Designee",
+        "relieved of its obligations",
+        "Seller consent"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the SPA narrows Buyer's cap carve-outs to fraud only, through the 'Excluded Buyer Obligations' definition in Section 1.1, Sections 9.3(b) and 9.5(b), and the Section 9.8 exclusive remedy. As a result, Buyer's liability for earnout non-payment and Retained Engine License breaches is capped at $8,400,000, contrary to the Letter of Intent's agreed carve-outs. It locates the issue in the SPA (Section 9.5(b) and/or the Excluded Buyer Obligations definition), explains why this matters to Bikas, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Excluded Buyer Obligations",
+        "fraud only",
+        "Letter of Intent Paragraph 6"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that SPA Section 6.4 imports the Key Employee Agreement's definition of 'Competing Business' (any video game in any genre, on any platform). This extends Seller's non-compete beyond the Letter of Intent's tactical RPG console/PC scope and would capture Bikas's retained Bikas Pocket mobile business. It locates the issue in SPA Section 6.4 and/or Key Employee Agreement Section 1.1, explains why this matters to Bikas, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Competing Business",
+        "any video game in any genre, on any platform",
+        "Bikas Pocket"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the share sale is a Change of Control under the Key Employee Agreement. Under Section 7.3 of that agreement, the Kestrel Motion toolkit license will terminate automatically unless Vasquez-Ilunga consents in writing beforehand, which would make Seller's SPA Section 4.4 no-consents representation (Schedule 4.4 'None') inaccurate. It locates the issue in Key Employee Agreement Section 7.3 and/or SPA Section 4.4/Schedule 4.4, explains why this matters to Bikas, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Kestrel Motion",
+        "terminate automatically upon a Change of Control",
+        "Schedule 4.4"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that SPA Section 9.2(d) gives Buyer a Seller indemnity for third-party IP infringement claims, 'whether known or unknown', that applies without regard to the Cap (and the Basket/survival limits). This exposes Bikas to unlimited, perpetual liability. It locates the issue in SPA Section 9.2(d), explains why this matters to Bikas, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 9.2(d)",
+        "without regard to the Cap",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the SPA indemnification Cap is 10% of the Base Purchase Price, i.e., $8,400,000.",
+      "kind": "fact",
+      "hints": [
+        "$8,400,000",
+        "10% of the Base Purchase Price"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the maximum earnout under the SPA is $30,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$30,000,000",
+        "earnout"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is structured as a memo addressed to the supervising partner. For each issue, it identifies the document and section, explains why the issue matters, and gives a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response includes at least one flagged open point or question to put to the client.",
+      "kind": "format",
+      "hints": [
+        "ask the client",
+        "confirm with Bikas",
+        "open question"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the SPA's Seller non-compete is limited to tactical role-playing games for console and PC.",
+      "kind": "negative",
+      "hints": [
+        "limited to tactical RPGs",
+        "consistent with the LOI"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that, under the SPA draft, Buyer's liability for failure to pay the earnout is excluded from the Cap.",
+      "kind": "negative",
+      "hints": [
+        "earnout excluded from the Cap",
+        "earnout uncapped"
+      ]
+    }
+  ],
+  "solver_pass_rate": 1.0,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ]
+}

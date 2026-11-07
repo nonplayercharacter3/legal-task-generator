@@ -1,0 +1,171 @@
+{
+  "matter_id": "s23-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "MSA Section 14.2: \"A Change of Control of Customer is deemed an assignment of this Agreement and each Order Form by Customer and requires Provider's prior written consent under Section 14.1. ... Provider may withhold or condition its consent in its discretion.\" The Change of Control definition, clause (d), covers \"any event described in clauses (a) to (c) occurring for any parent entity that directly or indirectly controls that entity, such that control of that entity changes indirectly.\" Order Form No. 4, Recital B, records that \"Staidaix Holdings, Inc. signed an Agreement and Plan of Merger dated October 12, 2026 ... under which Staidaix Holdings, Inc. will be acquired by Fenwyck AgriSciences Corp,\" with closing expected in Q1 2027. Order Form No. 4, Section 9.2: \"Nothing in this Order Form constitutes Provider's consent under any provision of the Agreement.\"",
+            "reason": "The problem is present and still actionable for Staidaix. Clause (d) of the Change of Control definition means Fenwyck's acquisition of the parent, Staidaix Holdings, is an indirect Change of Control of Staidaix. Section 14.2 deems that an assignment needing Provider's prior written consent, which Provider may withhold or condition at its discretion. Provider knows about the deal, but Order Form No. 4, Section 9.2, expressly says the Order Form gives no consent. Nothing else in the folder records a consent. If the merger closes without consent, Provider can terminate immediately under MSA Section 12.3, which treats that termination as one for Customer's breach. That triggers Order Form No. 4, Section 5.2: the unpaid Minimum Annual Commitment for the current and remaining Contract Years becomes immediately due, up to about $5.55M. Fee-payment obligations are also excluded from the liability cap under MSA Section 11.3(e). Staidaix is the party that owes the consent and notice and that bears the acceleration, so the exposure falls on the client. The merger has not closed (expected Q1 2027), so Staidaix can still seek consent or negotiate protections before closing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Quality Agreement §7.2: \"Customer shall give Provider a Nonconformance Notice for a Batch within ten (10) Business Days after the Data Release Date for that Batch. If Customer does not give a Nonconformance Notice for a Batch within that period, the Batch and its Deliverables are deemed accepted, and Customer will have no right to a Re-run, replacement data, service credit under Section 4.2 of the Service Level Schedule, or refund in respect of that Batch.\" Order Form No. 4 §6.1: \"The Data Release Date for Lot SG-26-117 was September 14, 2026. Customer's Nonconformance Notice for Lot SG-26-117 is dated October 2, 2026.\"",
+            "reason": "The notice obligation sits with Staidaix (Customer), so the deemed-acceptance consequence falls on the client. The deadline is ten Business Days after the Data Release Date. Data Release Date is the date of final posting to the portal (SLS §1). Business Days exclude weekends and federal holidays (MSA §1.1), and no federal holiday falls in the window. Counting from Monday, September 14, 2026, the deadline was September 28, 2026. The October 2 notice was therefore four Business Days late. That exposes Staidaix to losing its re-run, credit and refund remedies for 23 of 48 failing plates. Nothing in the folder cures this. MSA §1.3 ranks the Quality Agreement above the Order Form, and the Order Form reservation does not extend the window. Order Form §9.2 also rules out any waiver by Provider. The issue is still actionable. Staidaix has not accepted the lot, has disputed the invoice under MSA §4.4, has expressly reserved all rights, and the matter remains in executive discussions under MSA §15.2. Counsel should therefore advise on this exposure and develop arguments, such as Provider waiver or estoppel."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "MSA Section 3.4: \"During the term of this Agreement, Customer and its Affiliates shall procure all genotyping, sequencing and trait-screening services for any crop species in any territory exclusively from Provider, and shall not engage any third-party laboratory or service provider, or perform those services internally, except with Provider's prior written consent.\" Section 1.3: \"A term in an Order Form will prevail over a conflicting term of this Agreement only if the Order Form expressly identifies, by section number, the provision of this Agreement that it is intended to override.\"",
+            "reason": "The obligation falls on Staidaix (Customer) and its Affiliates. Section 3.4 binds them to exclusivity across all crops and territories, and it also bars in-house testing. Order Form No. 4 Section 2.1 records the agreed scope as only \"Soybean marker-assisted genotyping services performed for Customer in the United States.\" That clause does not cite Section 3.4 by number. Under Section 1.3 the MSA ranks above Order Forms, so the broader MSA exclusivity controls. Order Form Section 9.2 also says nothing in it is a consent or waiver by Provider, so Provider has given no written consent that would cure the conflict. The folder does not itself confirm the corn, wheat or South American affiliate testing done with other labs. Even without that, the clause already covers corn, which Order Form No. 4 shows Staidaix is ordering. It also covers non-US and in-house work. The Affiliate definition reaches parent entities, so after the Fenwyck closing it would sweep in Fenwyck and its affiliates. The MSA term runs to 2030 and the issue can still be fixed by amendment or express override, so it remains actionable."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.06,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 13,
+              "files_opened": [
+                "order_form_no_4.md",
+                "q3_2026_business_review_meeting_notes.md",
+                "quality_agreement.md",
+                "service_level_schedule.md",
+                "staidaix_prupox_master_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 13,
+              "files_opened": [
+                "order_form_no_4.md",
+                "q3_2026_business_review_meeting_notes.md",
+                "quality_agreement.md",
+                "service_level_schedule.md",
+                "staidaix_prupox_master_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 13,
+              "files_opened": [
+                "order_form_no_4.md",
+                "q3_2026_business_review_meeting_notes.md",
+                "quality_agreement.md",
+                "service_level_schedule.md",
+                "staidaix_prupox_master_services_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
