@@ -1,0 +1,124 @@
+{
+  "task_id": "s25-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Sterin Field Systems, LLC, which is the distributor in its relationship with Pridort Aerial Robotics, Inc. Sterin wants a clear view of where it stands under the distribution arrangement and the related documents before it decides how to proceed with Pridort. Please review the full set in the matter folder: the distribution agreement (sterin_pridort_distribution_agreement.md), the quality agreement (sterin_pridort_quality_agreement.md), the Pridort Holdings parent guaranty (pridort_holdings_parent_guaranty.md), the amended and restated service level schedule (amended_restated_service_level_schedule.md), and the mutual NDA (sterin_pridort_mutual_nda.md). The other parties involved include Pridort Holdings, Inc., Sterin Holdings, Inc., and Kestrova Agritech, Inc. Prepare a memo to me listing each issue you identify. For each one, give the document and section where it appears, explain why it matters to Sterin as distributor, and recommend a fix. Put the issues that carry the most exposure for Sterin first. Where a point depends on facts the documents do not settle, flag it and note what we would need to ask the client.",
+  "documents": [
+    "amended_restated_service_level_schedule.md",
+    "pridort_holdings_parent_guaranty.md",
+    "sterin_pridort_distribution_agreement.md",
+    "sterin_pridort_mutual_nda.md",
+    "sterin_pridort_quality_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Quality Agreement Section 9.4 makes Supplier's recall cost liability subject to (and counted toward) the Distribution Agreement Section 12.1 cap. It also concludes that, because Distribution Agreement Section 20.4 gives the Quality Agreement precedence on recall matters, Section 9.4 overrides the Section 12.3(d) carve-out, so recall cost reimbursement is capped. The response locates this in Quality Agreement Section 9.4, explains why this matters to Sterin, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Quality Agreement Section 9.4",
+        "Section 12.3(d)",
+        "Section 20.4 precedence"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Sterin's August 25, 2026 nonconformance notice for Lot SR-4417 was sent after the 10-Business-Day window under Quality Agreement Section 6.2, which expired on or about August 18, 2026. It concludes that Supplier has a deemed-acceptance or waiver defense to the claim on those drones. The response locates this in Quality Agreement Section 6.2, explains why this matters to Sterin, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Lot SR-4417",
+        "August 18, 2026",
+        "deemed accepted"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Distribution Agreement Section 11.2 requires Sterin to indemnify Supplier for any breach of the Agreement. It also identifies that Section 12.3(a) excludes Section 11 obligations from the liability cap and the consequential damages exclusion, leaving Sterin exposed to uncapped liability, including lost profits, for any breach. The response locates this in Distribution Agreement Section 11.2 and/or Section 12.3(a), explains why this matters to Sterin, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 11.2",
+        "Section 12.3(a)",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the sale of 100% of Sterin's equity to Kestrova Agritech, recorded in Service Level Schedule Section 8.1, is a Change of Control. Under Distribution Agreement Section 17.2, a Change of Control is deemed an assignment requiring Pridort's prior written consent. The response notes that consent has not been given, with Schedule Section 8.3 expressly stating it is not consent. It also notes that closing without consent would be a material breach permitting termination and suspension of shipments. The response locates this in Distribution Agreement Section 17.2, explains why this matters to Sterin, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "Section 17.2",
+        "prior written consent"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Distribution Agreement's general liability cap is the amounts paid or payable by Distributor in the 12 months preceding the claim.",
+      "kind": "fact",
+      "hints": [
+        "12 months",
+        "paid or payable"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Kestrova acquisition is expected to close on January 15, 2027.",
+      "kind": "fact",
+      "hints": [
+        "January 15, 2027"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Distribution Agreement is governed by New York law.",
+      "kind": "fact",
+      "hints": [
+        "New York"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo addressed to the supervising partner. It lists issues separately, and each issue includes its document and section, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response presents the issues in an order that places those it describes as carrying the highest exposure for Sterin first.",
+      "kind": "format",
+      "hints": [
+        "highest exposure",
+        "priority"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Sterin's August 25, 2026 nonconformance notice for Lot SR-4417 was timely under Quality Agreement Section 6.2.",
+      "kind": "negative",
+      "hints": []
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the Distribution Agreement prevails over the Quality Agreement on recall matters, so that Supplier's recall cost reimbursement remains outside the liability cap.",
+      "kind": "negative",
+      "hints": []
+    }
+  ],
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ]
+}

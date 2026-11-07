@@ -1,0 +1,210 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 2,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 3,
+      "pass_rates": {
+        "0.00": 2,
+        "0.33": 1
+      }
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s25-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.0,
+      "unsolved": true,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 0,
+          "pass_rate": 0.0
+        }
+      ]
+    },
+    {
+      "matter_id": "s25-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.0,
+      "unsolved": true,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 0,
+          "pass_rate": 0.0
+        }
+      ]
+    },
+    {
+      "matter_id": "s25-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.333,
+      "unsolved": false,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 1,
+          "pass_rate": 0.333
+        }
+      ]
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12377,
+      "output_tokens": 29309,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 13,
+      "input_tokens": 213417,
+      "output_tokens": 79121,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 87932,
+      "output_tokens": 6589,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4193,
+      "output_tokens": 738,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 11,
+      "input_tokens": 281536,
+      "output_tokens": 7146,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4090,
+      "output_tokens": 1127,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 18067,
+      "output_tokens": 5109,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 186704,
+      "output_tokens": 48462,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 21,
+      "input_tokens": 217180,
+      "output_tokens": 18951,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 146,
+      "input_tokens": 1141185,
+      "output_tokens": 159452,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "precision agriculture drones": 1,
+      "seed genetics": 1,
+      "water treatment chemicals": 1
+    },
+    "agreement_types": {
+      "distribution agreement": 2,
+      "supply agreement": 1
+    },
+    "issue_types": {
+      "liability_cap_carveout": 2,
+      "uncapped_indemnity": 2,
+      "exclusivity_scope": 2,
+      "expired_notice_window": 1,
+      "change_of_control_consent": 1,
+      "governing_law_mismatch": 1,
+      "missing_assignment_restriction": 1,
+      "defined_term_inconsistency": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

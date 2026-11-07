@@ -1,0 +1,5 @@
+We represent Gloumund Water Solutions, LLC, the distributor under its distribution arrangement with Droupourt Chemical Corporation. Gloumund Holdings, Inc. is also involved by way of a parent guaranty. The client wants a clear picture of where it stands under this package of documents and what exposure it may have, so it can decide on next steps with Droupourt.
+
+Please review everything in the matter folder: the distribution agreement (gloumund_droupourt_distribution_agreement.md), the notice letter (droupourt_notice_letter_2026-03-16.md), the parent guaranty (gloumund_holdings_parent_guaranty.md), and the prior draft of the agreement (distribution_agreement_prior_draft_v2.md).
+
+Send me a memo that lists each issue you identify. For each one, give the document and section where it appears, explain why it matters for Gloumund Water Solutions, and recommend a fix or course of action. Where the documents leave something unclear, or where you need facts from the client to reach a conclusion, flag it and tell me what we should ask. Put the items with the most significant consequences for the client at the top.

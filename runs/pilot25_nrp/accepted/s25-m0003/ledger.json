@@ -1,0 +1,159 @@
+{
+  "matter_id": "s25-m0003",
+  "summary": "Gloumund Water Solutions, LLC (client) distributes Droupourt Chemical Corporation's polyaluminum chloride and ferric sulfate coagulants to municipal and industrial water treatment customers in New York, New Jersey and Pennsylvania. Gloumund's parent, Gloumund Holdings, Inc., guarantees Gloumund's obligations up to a fixed cap. Droupourt has sent a notice letter that does two things. First, it alleges that Gloumund breached the non-compete by selling a third party's sodium hypochlorite disinfectant to utilities in Connecticut. Second, it tenders to Gloumund an environmental claim arising from a leaking Droupourt-packaged tote at Gloumund's Newark warehouse. The partner wants an issue-spotting memo. Three problems are planted. (1) The non-compete is overbroad: through the 'Competing Products' definition it reaches all water treatment chemicals anywhere in North America, far beyond the coagulant products and three-state Territory actually distributed. (2) The cap carve-out leaves only Gloumund's broad, fault-blind indemnity uncapped, while Droupourt's indemnity stays capped. (3) The guaranty redefines 'Products' so the parent's capped guaranty is consumed by unrelated affiliate purchases. A superseded prior draft of the distribution agreement is the distractor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Gloumund Water Solutions, LLC",
+      "role": "Distributor; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Droupourt Chemical Corporation",
+      "role": "Supplier and manufacturer of water treatment coagulants"
+    },
+    {
+      "id": "P3",
+      "name": "Gloumund Holdings, Inc.",
+      "role": "Parent of the Distributor and guarantor under the Parent Guaranty; also a client-side party"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "January 12, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Territory",
+      "value": "the States of New York, New Jersey and Pennsylvania",
+      "doc": "D1",
+      "section": "Section 1.9"
+    },
+    {
+      "id": "F3",
+      "key": "Products (Distribution Agreement definition)",
+      "value": "polyaluminum chloride and ferric sulfate coagulants listed in Exhibit A",
+      "doc": "D1",
+      "section": "Section 1.7"
+    },
+    {
+      "id": "F4",
+      "key": "Distribution Agreement Initial Term",
+      "value": "five years from the Effective Date",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F5",
+      "key": "Distribution Agreement liability cap",
+      "value": "amounts paid by Distributor to Supplier in the 12 months before the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F6",
+      "key": "Distribution Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 18.2"
+    },
+    {
+      "id": "F7",
+      "key": "Distribution Agreement order of precedence",
+      "value": "Agreement body, then Exhibits, then Purchase Orders; does not govern the Parent Guaranty",
+      "doc": "D1",
+      "section": "Section 18.4"
+    },
+    {
+      "id": "F8",
+      "key": "Parent Guaranty maximum liability",
+      "value": "$2,000,000",
+      "doc": "D3",
+      "section": "Section 3"
+    },
+    {
+      "id": "F9",
+      "key": "Notice letter date",
+      "value": "March 16, 2026",
+      "doc": "D2",
+      "section": "Letterhead / date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "gloumund_droupourt_distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "droupourt_notice_letter_2026-03-16.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "gloumund_holdings_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "distribution_agreement_prior_draft_v2.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_supply_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "The problem appears only when D1 Section 2.4 is read with D1 Section 1.4. Section 2.4 bars Distributor from selling 'Competing Products' anywhere in North America during the term and for 18 months after. Section 1.4 defines 'Competing Products' as any chemical used in the treatment of water or wastewater, whether or not it competes with the Products. Under Section 1.7, the Products are only coagulants, and under Section 1.9 the Territory is only New York, New Jersey and Pennsylvania. The restraint therefore reaches whole product lines (disinfectants, pH adjusters, corrosion inhibitors) and territories in which Gloumund gets no exclusivity and Droupourt has no protectable interest. Under New York's reasonableness standard for restrictive covenants (BDO Seidman), it is vulnerable as broader than needed to protect Droupourt's legitimate interest. Until it is narrowed, however, it restricts Gloumund's existing business. D2, Droupourt's March 16, 2026 notice letter, already invokes Section 2.4 against Gloumund's Connecticut sodium hypochlorite sales and reserves termination rights, so the issue is live.",
+      "doc": "D1",
+      "section": "Section 2.4 (read with Section 1.4)",
+      "detect_terms": [
+        "anywhere in North America",
+        "any chemical used in the treatment of water or wastewater"
+      ],
+      "expected_finding": "The D1 Section 2.4 non-compete, through the Section 1.4 'Competing Products' definition, restrains Gloumund from all water treatment chemicals across North America, beyond the coagulant Products and three-state Territory. Droupourt is already using it in its March 16, 2026 letter (D2) to attack Gloumund's Connecticut hypochlorite sales, so it should be narrowed to products that compete with the Products and to the Territory.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "In D3, Section 1.1 of the Parent Guaranty defines 'Products' as all products sold by Supplier or any of its Affiliates to Distributor or any of its Affiliates. Section 1.2 then makes the 'Guaranteed Obligations' all payment obligations for Products. D1 Section 1.7 limits 'Products' to the Exhibit A coagulants sold under the Distribution Agreement. D3 Section 1.3 states that terms defined in the Guaranty control for the Guaranty notwithstanding any different definition in the Distribution Agreement. Under D1 Section 18.4, D1's order of precedence does not govern the Parent Guaranty. Nothing in the folder therefore cures the conflict. As a result, Gloumund Holdings guarantees purchases by other Gloumund affiliates from any Droupourt affiliate under unrelated contracts. Those unrelated debts can consume the $2,000,000 cap in D3 Section 3, leaving the guaranty to support unbargained-for obligations.",
+      "doc": "D3",
+      "section": "Section 1.1 (read with Sections 1.2, 1.3 and 3, and D1 Sections 1.7 and 18.4)",
+      "detect_terms": [
+        "sold by Supplier or any of its Affiliates to Distributor or any of its Affiliates"
+      ],
+      "expected_finding": "The Parent Guaranty's 'Products' definition (D3 Section 1.1) is broader than D1 Section 1.7 and expressly controls under D3 Section 1.3. Gloumund Holdings therefore guarantees all affiliate-to-affiliate purchases, which can exhaust its $2,000,000 cap, so the Guaranty should adopt D1's definition and be limited to obligations under the Distribution Agreement.",
+      "contradicts": "F3"
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "The problem appears only when D1 Sections 11.1, 11.2 and 12.3 are read together. Section 12.2 caps each party's liability at amounts paid in the prior 12 months. Section 12.3 excludes from that cap only 'Distributor's obligations under Section 11.1'. Section 11.1 obliges Distributor to indemnify Supplier for all claims, including environmental and regulatory claims, arising from the storage, handling, transport or resale of Products, regardless of the cause. That language picks up losses caused by Supplier's own defective products or packaging. Supplier's reciprocal indemnity in Section 11.2, covering product defects and nonconformity, is not carved out and stays subject to the 12-month cap. The result is that Gloumund carries unlimited exposure even for Supplier-caused contamination, while Droupourt's exposure is capped. D2, the March 16, 2026 letter, tenders under Section 11.1 an environmental claim arising from a leaking Droupourt-packaged tote at Gloumund's Newark warehouse, showing the exposure is live.",
+      "doc": "D1",
+      "section": "Section 12.3 (read with Sections 11.1 and 11.2)",
+      "detect_terms": [
+        "except for Distributor's obligations under Section 11.1",
+        "regardless of the cause"
+      ],
+      "expected_finding": "D1 Section 12.3 removes only Gloumund's Section 11.1 indemnity from the cap. Because Section 11.1 covers losses regardless of cause, including Supplier-caused contamination such as the Newark tote leak tendered in D2, Gloumund faces unlimited liability while Droupourt's Section 11.2 indemnity remains capped. The carve-out should be made mutual or capped, and Section 11.1 should exclude losses caused by Supplier's products, packaging or negligence.",
+      "contradicts": null
+    }
+  ]
+}

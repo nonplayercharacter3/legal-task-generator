@@ -1,0 +1,179 @@
+{
+  "matter_id": "s25-m0002",
+  "summary": "Braport Seed Genetics, Inc., a developer of proprietary corn parent lines, has engaged Traidir Seed Production, LLC to grow, condition and supply hybrid corn seed from Braport parent seed under a Delaware-law Supply Agreement. The Supply Agreement comes with a 2027 Statement of Work and a Service Level Schedule, and the folder also holds production planning meeting notes. The associate must review the folder for Braport. Four issues are planted. (1) The exclusivity clause, read through its defined terms, reaches every crop and all of North America, well beyond the agreed hybrid corn arrangement in Iowa and Illinois. (2) Traidir may assign freely, including to a competitor. (3) The Service Level Schedule pulls germplasm-loss liability back under the cap, and it controls under the precedence clause. (4) The Service Level Schedule also moves seed-quality disputes to Iowa law and Iowa courts, and it controls under the same precedence clause. The meeting notes are a distractor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Braport Seed Genetics, Inc.",
+      "role": "Customer; owner of the proprietary parent-line germplasm; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Traidir Seed Production, LLC",
+      "role": "Supplier; contract grower and conditioner of hybrid seed"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "October 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "five years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement governing law",
+      "value": "laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 19.1"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement dispute forum",
+      "value": "state or federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "Section 19.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Service Level Schedule, then Supply Agreement, then each Statement of Work",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid by Customer in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F7",
+      "key": "Supply Agreement payment terms",
+      "value": "45 days from receipt of invoice",
+      "doc": "D1",
+      "section": "Section 6.2"
+    },
+    {
+      "id": "F8",
+      "key": "Agreed production scope",
+      "value": "hybrid corn seed from Braport parent lines, grown in Iowa and Illinois",
+      "doc": "D2",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F9",
+      "key": "2027 SOW production volume",
+      "value": "180,000 units of 80,000 kernels each",
+      "doc": "D2",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F10",
+      "key": "Minimum warm germination standard",
+      "value": "95% warm germination",
+      "doc": "D3",
+      "section": "Section 2.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "statement_of_work_2027.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "production_planning_meeting_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Supply Agreement Section 4.1 looks routine on its own. It requires Braport to purchase all of its requirements of Contract Seed in the Territory exclusively from Traidir, and to refrain from producing Contract Seed itself or through any other grower. The defined terms in Section 1.1 change its reach. \"Contract Seed\" means any seed of any crop produced from Braport Germplasm, which pulls in soybean, sorghum and wheat lines. \"Territory\" means the United States and Canada. The Statement of Work (Section 1.1) records the arrangement as hybrid corn seed from Braport parent lines grown in Iowa and Illinois only. Read together, Sections 1.1 and 4.1 of the Supply Agreement lock Braport into using Traidir for every crop across North America for the five-year term. That bars Braport's own in-house production and any other contract grower, far beyond what the deal requires. The precedence clause does not cure this. The flaw sits in the Supply Agreement itself, which outranks the Statement of Work, so the narrower scope cannot control.",
+      "doc": "D1",
+      "section": "Section 4.1 (read with Section 1.1 definitions of \"Contract Seed\" and \"Territory\")",
+      "detect_terms": [
+        "all of its requirements of Contract Seed",
+        "any seed of any crop produced from Braport Germplasm"
+      ],
+      "expected_finding": "Sections 1.1 and 4.1 of the Supply Agreement together make Braport's exclusivity and non-production covenant cover every crop from Braport Germplasm across the United States and Canada, exceeding the agreed hybrid-corn, Iowa-and-Illinois scope recorded in SOW Section 1.1. The definitions should be narrowed to hybrid corn seed in Iowa and Illinois, with Braport's in-house production carved out.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "The two assignment provisions in Supply Agreement Article 18 treat the parties differently. Section 18.1 bars Braport from assigning without Traidir's prior written consent. Section 18.2 lets Traidir assign the Agreement or any Statement of Work, in whole or in part, without the consent of Customer, on 30 days' notice. That includes assignment by merger or by sale of its seed production assets. Nothing excludes assignment to a competing seed company. Traidir holds Braport's proprietary parent seed under the Agreement, so an assignee competitor would gain custody of that germplasm and the production relationship. Braport would have no consent right and no termination right.",
+      "doc": "D1",
+      "section": "Section 18.2",
+      "detect_terms": [
+        "Supplier may assign this Agreement",
+        "without the consent of Customer"
+      ],
+      "expected_finding": "Section 18.2 lets Traidir assign the Supply Agreement without Braport's consent, including to a competitor that would then hold Braport's parent seed. It should require Braport's consent, prohibit assignment to competitors, and give Braport a termination right on a Traidir change of control.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "The Supply Agreement sets up the cap and its carve-out as follows. Section 12.2 caps each party's liability at fees paid in the prior 12 months. Section 12.3(a) carves out breaches of Article 9, which covers germplasm protection, including loss, diversion or unauthorized propagation of Parent Seed. Service Level Schedule Section 6.2 then provides that, notwithstanding Section 12.3 of the Agreement, Supplier's liability for any Germplasm Loss Event is subject to the Section 12.2 cap. Supply Agreement Section 2.3 ranks the Service Level Schedule above the Supply Agreement, so the Schedule controls. Read together, Sections 2.3, 12.2, 12.3(a) and Schedule 6.2 remove the uncapped remedy Braport bargained for. Misappropriation of parent lines worth far more than a year of production fees is now limited to those fees.",
+      "doc": "D3",
+      "section": "Section 6.2",
+      "detect_terms": [
+        "Notwithstanding Section 12.3 of the Agreement",
+        "Germplasm Loss Event"
+      ],
+      "expected_finding": "Service Level Schedule Section 6.2, which prevails under Supply Agreement Section 2.3, subjects Germplasm Loss Events to the Section 12.2 fee cap and overrides the Section 12.3(a) carve-out for breaches of the Article 9 germplasm protections. Braport's recovery for loss or misappropriation of its parent lines is therefore capped at 12 months' fees. Section 6.2 should be deleted, or the precedence clause amended so that Article 12 of the Supply Agreement controls.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The Supply Agreement (Sections 19.1 and 19.2) chooses Delaware law and the courts in Wilmington, Delaware. Service Level Schedule Section 8.1 provides that the Schedule, and any dispute concerning Performance Failures, Service Credits or Seed Quality, is governed by the laws of the State of Iowa and resolved exclusively in the state or federal courts in Polk County, Iowa. Supply Agreement Section 2.3 gives the Service Level Schedule priority over the Supply Agreement, so the Iowa clause controls rather than being cured. The core commercial disputes would therefore be split from the rest of the Agreement under a different law and in a different forum. Those disputes cover germination failures, rejected lots and service credits. The split invites parallel litigation and forum fights over which clause a claim falls under.",
+      "doc": "D3",
+      "section": "Section 8.1",
+      "detect_terms": [
+        "laws of the State of Iowa",
+        "Polk County, Iowa"
+      ],
+      "expected_finding": "Service Level Schedule Section 8.1 sends seed-quality and performance disputes to Iowa law and exclusive Polk County, Iowa courts. Because the Schedule prevails under Supply Agreement Section 2.3, this overrides the Delaware law and Wilmington forum in Sections 19.1 and 19.2 for core disputes. Section 8.1 should be conformed to Delaware law and forum, or deleted.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    }
+  ]
+}

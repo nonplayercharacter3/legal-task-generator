@@ -1,0 +1,180 @@
+{
+  "matter_id": "s25-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Quality Agreement Section 9.4: \"Supplier's aggregate liability for Recall Costs is subject to the limitation set forth in Section 12.1 of the Distribution Agreement, and all amounts paid or payable by Supplier in respect of Recall Costs shall be counted toward that limitation.\" Compare Distribution Agreement Section 12.3(d), which carves out \"Supplier's recall cost reimbursement under Section 9.5, which is excluded from the Section 12.1 cap,\" and Section 20.4, which ranks the \"Quality Agreement (quality, nonconformance and recall matters only)\" first in the order of precedence.",
+            "reason": "Supplier owes the Recall Cost reimbursement and Sterin (Distributor) is the one entitled to it. Under the Distribution Agreement that obligation is uncapped. Quality Agreement Section 9.4 puts it back under the 12-month-fees cap and counts recall payments toward that same cap. Section 20.4 gives the Quality Agreement priority on recall matters, so the narrower QA term is likely to control. The result is that any recall costs above the cap fall on Sterin. Recall payments also use up the cap that would otherwise cover Sterin's other claims. The parent guaranty does not fix this, because Guaranty Section 2.2 covers Supplier's obligations only \"as limited by\" the Guaranteed Documents, and the Quality Agreement is one of them. Nothing in the folder cures or waives the point. The QA is a live agreement and the issue can still be raised, either by amending the QA or by arguing interpretation. It is a real and actionable problem for Sterin."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "QA §6.2: \"Distributor shall reject any Product or Lot having a Nonconformity discoverable at incoming inspection by written notice to Supplier's Quality Contact within ten (10) Business Days after delivery... Any Product not rejected within that period shall be deemed accepted, and Distributor waives all claims with respect to any Nonconformity in that Product that was discoverable at incoming inspection, including warranty claims under Section 9 of the Distribution Agreement.\" SLS Annex B, OM-01: \"Lot SR-4417, consisting of 140 AX-60 spray drones, was delivered on August 4, 2026. Distributor delivered written notice... on August 25, 2026. On September 3, 2026, Supplier rejected Distributor's notice as untimely under Section 6.2... Distributor disputes Supplier's position and reserves all rights.\"",
+            "reason": "The rejection obligation and the waiver both fall on Sterin, so the deemed-acceptance and waiver hurt the client. Ten Business Days after the August 4, 2026 delivery is August 18, 2026, so the August 25 notice was five Business Days late. Schedule 2 lists a 'nozzle flow-controller static flow test on sampled units' as an incoming check, which supports Pridort's argument that the defect was discoverable at inspection and therefore waived. DA §20.4 gives the Quality Agreement precedence on nonconformance matters, so the 12-month warranty in DA §9.1 does not by itself rescue the claim. The matter is still actionable: Annex B records that Sterin disputes Pridort's position and reserves all rights, and nothing shows a settlement or acceptance. Sterin's available argument is that the defect is a Latent Nonconformity under QA §7.1, with a 30-days-from-awareness window, and its counsel should pursue that point."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 11.2: \"Distributor shall defend, indemnify and hold harmless Supplier... from and against all Losses arising out of or relating to (a) any breach by Distributor of this Agreement...\" Section 1.5 says Losses, \"for the purposes of Section 11, includes lost profits and direct losses whether or not arising out of a third-party claim.\" Section 12.3(a) says the limitations in Sections 12.1 and 12.2 \"shall not apply to: (a) a Party's obligations under Section 11.\"",
+            "reason": "The problem is present and still actionable for Sterin. It is the indemnifying party under 11.2(a), and that indemnity covers any breach of the Agreement. Section 1.5 extends Losses to lost profits and to direct, first-party losses. Section 12.3(a) removes both the cap and the consequential-damages exclusion for all Section 11 obligations. Together, these let Supplier turn an ordinary breach claim into an uncapped claim for lost profits. Supplier's own indemnity in 11.1 covers only third-party IP claims, so in practice the carve-out runs one way against Sterin. Nothing else in the folder cures this. The Quality Agreement and Service Level Schedule do not touch it, and the Guaranty concerns only Supplier's obligations. Section 4.3 makes conversion to non-exclusive Supplier's \"sole right under this Section 4.3,\" which may weaken the minimum-purchase example, but it does not limit 11.2(a) generally. The exposure is live. SLS Section 8 records a pending sale of 100% of Sterin to Kestrova, expected to close January 15, 2027, and states that Supplier has not consented under Section 17.2. Section 17.2 makes a Change of Control without consent a material breach. That breach would fall within 11.2(a) and could support an uncapped lost-profits claim. The Agreement is in effect and no executed document limits this exposure, so Sterin can still seek an amendment or Supplier's consent before closing."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "\"A Change of Control without Supplier's prior written consent is a material breach of this Agreement, and Supplier may, on written notice, immediately terminate this Agreement and suspend shipments of Products under any Purchase Order, without opportunity to cure.\" (Distribution Agreement §17.2); SLS §8.1: \"Sterin Holdings, Inc. will sell one hundred percent (100%) of the equity of Distributor to Kestrova... Closing ... is expected to occur on January 15, 2027\"; SLS §8.3: \"Nothing in this Section 8 constitutes Supplier's consent under Section 17.2 of the Distribution Agreement.\"",
+            "reason": "The planned sale of 100% of Sterin's equity to Kestrova is a Change of Control under §17.2(a). The closing date of January 15, 2027 is still ahead, so the client can still act. Supplier has expressly said it has not consented, and nothing in the folder grants consent. If Sterin closes without consent, Supplier gets an immediate, no-cure right to terminate and suspend shipments. That would hurt Sterin badly as the distributor. Consent should therefore be obtained before closing."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.058,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3",
+                "C7"
+              ],
+              "steps": 14,
+              "files_opened": [
+                "amended_restated_service_level_schedule.md",
+                "pridort_holdings_parent_guaranty.md",
+                "sterin_pridort_distribution_agreement.md",
+                "sterin_pridort_mutual_nda.md",
+                "sterin_pridort_quality_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3",
+                "C7"
+              ],
+              "steps": 14,
+              "files_opened": [
+                "amended_restated_service_level_schedule.md",
+                "pridort_holdings_parent_guaranty.md",
+                "sterin_pridort_distribution_agreement.md",
+                "sterin_pridort_mutual_nda.md",
+                "sterin_pridort_quality_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3",
+                "C7"
+              ],
+              "steps": 14,
+              "files_opened": [
+                "amended_restated_service_level_schedule.md",
+                "pridort_holdings_parent_guaranty.md",
+                "sterin_pridort_distribution_agreement.md",
+                "sterin_pridort_mutual_nda.md",
+                "sterin_pridort_quality_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

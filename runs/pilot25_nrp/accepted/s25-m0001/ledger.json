@@ -1,0 +1,198 @@
+{
+  "matter_id": "s25-m0001",
+  "summary": "Sterin Field Systems, LLC (client) is the exclusive Midwest distributor of Pridort Aerial Robotics' AX-series precision agriculture spray and mapping drones under a New York-law Distribution Agreement dated March 3, 2025. The folder also holds a Quality Agreement (June 1, 2025), a parent guaranty from Pridort Holdings, Inc. of the supplier's obligations, an Amended and Restated Service Level Schedule dated October 20, 2026, and a pre-contract mutual NDA. Four problems run against Sterin. The Quality Agreement prevails on recall matters and pulls the supplier's recall-cost reimbursement under the liability cap that the Distribution Agreement had carved it out of. Sterin's own indemnity covers any breach and is carved out of the cap, so it is unlimited. Sterin's rejection of a defective drone lot was sent after the Quality Agreement's 10-business-day window, and the supplier relies on that lapse. The pending sale of Sterin to Kestrova Agritech, recorded in the Service Level Schedule, is a deemed assignment that needs Pridort's written consent, which has not been obtained.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Sterin Field Systems, LLC",
+      "role": "Distributor; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Pridort Aerial Robotics, Inc.",
+      "role": "Supplier and manufacturer of AX-series agricultural drones"
+    },
+    {
+      "id": "P3",
+      "name": "Pridort Holdings, Inc.",
+      "role": "Parent of Supplier; guarantor of Supplier's obligations"
+    },
+    {
+      "id": "P4",
+      "name": "Sterin Holdings, Inc.",
+      "role": "Parent of Distributor; seller under the pending stock purchase agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Kestrova Agritech, Inc.",
+      "role": "Buyer of 100% of Distributor's equity under the pending stock purchase agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 3, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 20.1"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement liability cap",
+      "value": "amounts paid or payable by Distributor in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "Quality Agreement (quality, nonconformance and recall matters only), then Distribution Agreement, then Service Level Schedule, then Purchase Orders",
+      "doc": "D1",
+      "section": "Section 20.4"
+    },
+    {
+      "id": "F5",
+      "key": "Recall cost carve-out from liability cap",
+      "value": "Supplier's recall cost reimbursement under Section 9.5 is excluded from the Section 12.1 cap",
+      "doc": "D1",
+      "section": "Section 12.3(d)"
+    },
+    {
+      "id": "F6",
+      "key": "Quality Agreement incoming inspection rejection period",
+      "value": "10 Business Days after delivery",
+      "doc": "D2",
+      "section": "Section 6.2"
+    },
+    {
+      "id": "F7",
+      "key": "Kestrova Stock Purchase Agreement date",
+      "value": "September 22, 2026",
+      "doc": "D4",
+      "section": "Section 8.1"
+    },
+    {
+      "id": "F8",
+      "key": "Kestrova acquisition expected closing date",
+      "value": "January 15, 2027",
+      "doc": "D4",
+      "section": "Section 8.1"
+    },
+    {
+      "id": "F9",
+      "key": "Lot SR-4417 delivery date",
+      "value": "August 4, 2026 (140 AX-60 spray drones)",
+      "doc": "D4",
+      "section": "Annex B"
+    },
+    {
+      "id": "F10",
+      "key": "Distributor nonconformance notice date for Lot SR-4417",
+      "value": "August 25, 2026",
+      "doc": "D4",
+      "section": "Annex B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "sterin_pridort_distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "sterin_pridort_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "pridort_holdings_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "amended_restated_service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "sterin_pridort_mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "Quality Agreement pulls recall costs back under the cap",
+      "description": "Distribution Agreement Section 12.3(d) excludes Supplier's recall cost reimbursement obligations under Section 9.5 from the Section 12.1 cap. That cap is fees paid or payable in the prior 12 months. Quality Agreement Section 9.4 states that Supplier's aggregate liability for Recall Costs is subject to the limitation in Section 12.1 of the Distribution Agreement and counts toward it. Read alone, Distribution Agreement Section 20.4 would make the Agreement prevail. But Section 20.4 ranks the Quality Agreement first on quality, nonconformance and recall matters, so the Quality Agreement's narrowing controls. The result: recall costs for a drone recall, such as a battery or flow-controller defect across Sterin's installed fleet, are capped, and any excess falls on Sterin. The same capped amount is also eroded for every other claim. The parent guaranty (D3) guarantees Supplier's obligations only as limited by the operative documents, so it does not restore the carve-out.",
+      "doc": "D2",
+      "section": "Section 9.4",
+      "detect_terms": [
+        "shall be counted toward",
+        "subject to the limitation set forth in Section 12.1"
+      ],
+      "expected_finding": "Because Distribution Agreement Section 20.4 gives the Quality Agreement precedence on recall matters, Quality Agreement Section 9.4 overrides the recall carve-out in Section 12.3(d) and caps Supplier's recall cost reimbursement at 12 months' fees. Sterin should seek an amendment that deletes Section 9.4 or confirms that Section 12.3(d) prevails.",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "Lot SR-4417 rejection notice sent after the 10-business-day window",
+      "description": "Quality Agreement Section 6.2 requires Distributor to reject Nonconformities discoverable at incoming inspection by written notice within 10 Business Days after delivery. Products not rejected in time are deemed accepted, and all claims for that Nonconformity are waived, including warranty claims under Distribution Agreement Section 9. Under Distribution Agreement Section 20.4 the Quality Agreement prevails on nonconformance matters, so the Section 9 twelve-month warranty does not save the claim. Annex B of the Amended and Restated Service Level Schedule (D4, dated October 20, 2026) records three dates. Lot SR-4417 (140 AX-60 spray drones) was delivered on August 4, 2026. Sterin sent its nozzle flow-controller nonconformance notice on August 25, 2026. Supplier rejected that notice as untimely on September 3, 2026. Ten Business Days after August 4, 2026 is August 18, 2026, so the notice was five Business Days late. The same Annex B states that Distributor disputes Supplier's position and reserves all rights, so the claim has not been accepted or settled and can still be pursued.",
+      "doc": "D2",
+      "section": "Section 6.2",
+      "detect_terms": [
+        "within ten (10) Business Days after delivery",
+        "deemed accepted"
+      ],
+      "expected_finding": "Sterin's August 25, 2026 rejection of Lot SR-4417 came after the August 18, 2026 deadline under Quality Agreement Section 6.2, which prevails under Section 20.4. Supplier therefore has a strong deemed-acceptance and waiver defense to the claim on the 140 drones. Sterin's disputed position in D4 Annex B should be preserved and a negotiated resolution pursued, and the window should be lengthened by amendment going forward.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "Distributor's breach indemnity is excluded from the cap",
+      "description": "Distribution Agreement Section 11.2 obliges Distributor to indemnify the Supplier Indemnitees against all Losses arising out of any breach by Distributor of this Agreement, as well as its marketing and resale activities. Losses expressly include lost profits and direct losses whether or not a third-party claim exists. Section 12.3(a) excludes 'obligations under Section 11' from both the Section 12.1 cap and the consequential damages exclusion in Section 12.2. Read together, Supplier can recast any ordinary contract claim against Sterin as an uncapped indemnity claim, for example lost profits for missed minimum purchase commitments under Section 4.3. Supplier's own indemnity in Section 11.1 covers only third-party IP infringement claims. The carve-out therefore leaves Sterin with effectively unlimited contract liability while Supplier's exposure stays bounded.",
+      "doc": "D1",
+      "section": "Section 11.2",
+      "detect_terms": [
+        "any breach by Distributor of this Agreement",
+        "obligations under Section 11"
+      ],
+      "expected_finding": "Section 11.2's indemnity for any breach, combined with Section 12.3(a)'s exclusion of Section 11 obligations from the cap and the consequential damages exclusion, exposes Sterin to unlimited liability, including lost profits, for any breach of the Agreement. Sterin should limit Section 11.2 to third-party claims and subject it to a cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "Kestrova sale requires Supplier's prior written consent",
+      "description": "Distribution Agreement Section 17.2 deems any Change of Control of Distributor to be an assignment requiring Supplier's prior written consent. A Change of Control includes a transfer of more than 50% of the voting equity of Distributor or of any entity Controlling Distributor. A Change of Control without consent is a material breach that lets Supplier terminate immediately and suspend shipments. Section 8.1 of the Amended and Restated Service Level Schedule (D4) records the Stock Purchase Agreement dated September 22, 2026. Under it, Sterin Holdings, Inc. will sell 100% of Sterin's equity to Kestrova Agritech, Inc., with closing expected January 15, 2027. Section 8.3 of D4 provides only portal-migration support and states that nothing in Section 8 constitutes Supplier's consent under Section 17.2. No document in the folder grants that consent.",
+      "doc": "D1",
+      "section": "Section 17.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "any entity Controlling Distributor"
+      ],
+      "expected_finding": "The Kestrova acquisition recorded in Service Level Schedule Section 8.1 is a Change of Control under Distribution Agreement Section 17.2, and Section 8.3 of that Schedule expressly withholds consent. Sterin must obtain Pridort's prior written consent before the expected January 15, 2027 closing, or the sale will be a material breach entitling Pridort to terminate immediately and suspend shipments.",
+      "contradicts": null
+    }
+  ]
+}

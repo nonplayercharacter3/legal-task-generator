@@ -1,0 +1,120 @@
+{
+  "task_id": "s25-m0003",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Gloumund Water Solutions, LLC, the distributor under its distribution arrangement with Droupourt Chemical Corporation. Gloumund Holdings, Inc. is also involved by way of a parent guaranty. The client wants a clear picture of where it stands under this package of documents and what exposure it may have, so it can decide on next steps with Droupourt.\n\nPlease review everything in the matter folder: the distribution agreement (gloumund_droupourt_distribution_agreement.md), the notice letter (droupourt_notice_letter_2026-03-16.md), the parent guaranty (gloumund_holdings_parent_guaranty.md), and the prior draft of the agreement (distribution_agreement_prior_draft_v2.md).\n\nSend me a memo that lists each issue you identify. For each one, give the document and section where it appears, explain why it matters for Gloumund Water Solutions, and recommend a fix or course of action. Where the documents leave something unclear, or where you need facts from the client to reach a conclusion, flag it and tell me what we should ask. Put the items with the most significant consequences for the client at the top.",
+  "documents": [
+    "distribution_agreement_prior_draft_v2.md",
+    "droupourt_notice_letter_2026-03-16.md",
+    "gloumund_droupourt_distribution_agreement.md",
+    "gloumund_holdings_parent_guaranty.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the non-compete in the Distribution Agreement Section 2.4, read with the Section 1.4 definition of 'Competing Products', bars Gloumund from selling any water or wastewater treatment chemical anywhere in North America. It also identifies that this reaches beyond the coagulant Products and the three-state Territory. The response locates the issue in the Distribution Agreement Section 2.4 and/or Section 1.4, explains why this matters to Gloumund, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "anywhere in North America",
+        "any chemical used in the treatment of water or wastewater",
+        "narrow the non-compete"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the Parent Guaranty Section 1.1 defines 'Products' more broadly than Distribution Agreement Section 1.7, covering products sold by Supplier or any Affiliate to Distributor or any Affiliate. It also identifies that the Guaranty's definition controls for the Guaranty, so Gloumund Holdings guarantees unrelated affiliate purchases that can exhaust the $2,000,000 cap. The response locates the issue in the Parent Guaranty Section 1.1 and/or Section 1.3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "any of its Affiliates",
+        "consume the $2,000,000 cap",
+        "conform the definition to the Distribution Agreement"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Distribution Agreement Section 12.3 carves only Distributor's Section 11.1 indemnity out of the liability cap. It also identifies that Section 11.1 applies regardless of cause, including Supplier-caused losses, while Supplier's Section 11.2 indemnity remains capped. The response locates the issue in the Distribution Agreement Section 12.3 and/or Sections 11.1–11.2, explains why this matters to Gloumund, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "except for Distributor's obligations under Section 11.1",
+        "regardless of the cause",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Territory under the Distribution Agreement is New York, New Jersey and Pennsylvania.",
+      "kind": "fact",
+      "hints": [
+        "New York, New Jersey and Pennsylvania",
+        "Territory"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Parent Guaranty's maximum liability is $2,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$2,000,000",
+        "maximum liability"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Products under the Distribution Agreement are polyaluminum chloride and ferric sulfate coagulants.",
+      "kind": "fact",
+      "hints": [
+        "polyaluminum chloride",
+        "ferric sulfate",
+        "coagulants"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is structured as a memo that presents each issue as a separate item. For each issue, it states the document and section where the issue appears and gives a recommendation.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Issue",
+        "Recommendation"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response includes at least one question for the client or one flagged point on which facts or clarification are needed.",
+      "kind": "format",
+      "hints": [
+        "questions for the client",
+        "confirm with the client"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Gloumund's indemnity under Distribution Agreement Section 11.1 is subject to the Section 12.2 liability cap.",
+      "kind": "negative",
+      "hints": [
+        "capped at 12 months' fees"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the order of precedence in Distribution Agreement Section 18.4 makes the Distribution Agreement's definition of 'Products' control over the Parent Guaranty's definition.",
+      "kind": "negative",
+      "hints": [
+        "Section 18.4 governs the Guaranty"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ]
+}

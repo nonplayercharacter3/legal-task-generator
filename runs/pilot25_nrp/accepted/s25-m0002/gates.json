@@ -1,0 +1,176 @@
+{
+  "matter_id": "s25-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 4.1: \"During the Initial Term and any Renewal Term, Customer shall purchase all of its requirements of Contract Seed in the Territory exclusively from Supplier, and shall not produce Contract Seed in the Territory itself or through any other grower.\" Section 1.1: \"'Contract Seed' means any seed of any crop produced from Braport Germplasm\" and \"'Territory' means the United States and Canada.\"",
+            "reason": "The exclusivity obligation falls on Braport, the client. Through the defined terms it reaches every crop grown from Braport Germplasm across the US and Canada. It also bars Braport's own in-house production and any other contract grower, for five years plus automatic renewals. The deal itself is much narrower: SOW No. 1 covers only hybrid corn grown in Iowa and Illinois. Nothing cures this. Under Section 2.3 the SOW ranks below the Supply Agreement, so its narrower scope cannot control. The SOW does not conflict with Section 4.1 in any case; it simply describes one season's production. Section 4.3 makes forecasts non-binding, but that does not limit the exclusivity. The Service Level Schedule says nothing to narrow it. The meeting notes confirm no changes were agreed. The agreement only took effect October 1, 2026, and the restriction runs forward through the whole term. It therefore remains a live, actionable problem for Braport, to be fixed by amendment under Section 20.3."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "18.2 By Supplier. Supplier may assign this Agreement or any Statement of Work, in whole or in part, without the consent of Customer, on 30 days' written notice to Customer, including by merger, consolidation, change of control or sale of all or part of its seed production assets.",
+            "reason": "Section 18.1 requires Traidir's prior written consent before Braport can assign. Section 18.2 lets Traidir assign without Braport's consent on 30 days' notice, and that includes assignment by merger, change of control or sale of its seed production assets. Nothing excludes competitors as assignees. Article 16 gives Braport no termination right on assignment or change of control. Braport is locked into exclusivity under Section 4.1, and Traidir holds its parent seed as bailee. An assignee that competes with Braport could therefore take custody of Braport's germplasm and the production relationship, and Braport could not object or exit. The other documents do not cure this. The Service Level Schedule and SOW are silent on assignment, and the meeting notes record no changes. The Agreement is in effect, but this is the first season and assignment is a continuing risk. Braport can still raise it or negotiate an amendment, so it remains actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Schedule Section 6.2: \"Notwithstanding Section 12.3 of the Agreement, Supplier's liability for any Germplasm Loss Event, including any related Performance Failure, is subject to the limit in Section 12.2 of the Agreement.\" Supply Agreement Section 2.3: \"...the documents will govern in the following order: the Service Level Schedule, then this Supply Agreement, then each Statement of Work.\"",
+            "reason": "Supplier is the party whose liability is at stake. Supply Agreement Section 12.3(a) leaves uncapped Supplier's breach of Article 9, including loss, diversion or unauthorized propagation of Braport Germplasm. Schedule Section 6.2 expressly overrides that carve-out and puts Germplasm Loss Events back under the Section 12.2 cap, which is 12 months' fees. Section 2.3 makes the Schedule prevail in a conflict, so the cap controls. That hurts Braport, the germplasm owner, because parent-line misappropriation is the main risk it negotiated to keep uncapped. No other document cures or limits the conflict, and the November 2026 meeting notes confirm no changes were agreed. The schedule's signature blocks are blank, and the agreement is in its first season with no losses or claims yet. The issue is therefore still live and can be fixed by amendment under Section 20.3."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Service Level Schedule Section 8.1: \"This Schedule, and any dispute concerning Performance Failures, Service Credits or Seed Quality, is governed by the laws of the State of Iowa, without regard to its conflict of laws principles. Any such dispute will be resolved exclusively in the state or federal courts located in Polk County, Iowa.\" Supply Agreement Section 19.1 instead selects Delaware law, and Section 19.2 gives exclusive jurisdiction to the courts in Wilmington, Delaware. Section 2.3 ranks the Service Level Schedule ahead of the Supply Agreement.",
+            "reason": "The two governing law and forum clauses conflict. Because Section 2.3 gives the Schedule precedence, the Iowa clause controls the core quality and service-credit disputes rather than being overridden. These are the disputes Braport, as Customer, is most likely to bring: failed germination, genetic purity, rejected lots and service credits. They would go to Polk County, Iowa, Traidir's home state, while germplasm, indemnity and other claims stay in Delaware. A single germplasm-contamination dispute could straddle both clauses, which invites parallel suits and forum fights. Nothing in the folder cures the conflict. The meeting notes confirm no changes to the documents were agreed. The documents appear to be unsigned drafts, so this remains actionable."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.052,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "production_planning_meeting_notes.md",
+                "service_level_schedule.md",
+                "statement_of_work_2027.md",
+                "supply_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C5"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "production_planning_meeting_notes.md",
+                "service_level_schedule.md",
+                "statement_of_work_2027.md",
+                "supply_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C5"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "production_planning_meeting_notes.md",
+                "service_level_schedule.md",
+                "statement_of_work_2027.md",
+                "supply_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
