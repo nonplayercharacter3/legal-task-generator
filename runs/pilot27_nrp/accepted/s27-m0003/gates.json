@@ -1,0 +1,178 @@
+{
+  "matter_id": "s27-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.3(b): Buyer shall indemnify and hold harmless Seller and its Affiliates \"from and against all Losses arising out of or resulting from ... (b) the ownership or operation of the Company or its business after the Closing.\" Section 9.5(c): \"The limitations in Section 9.5(a) and Section 9.5(b) shall not apply to: ... (iii) Losses arising under Section 9.3. Seller's aggregate liability for Losses described in clauses (i) and (ii) shall not exceed the Purchase Price.\"",
+            "reason": "Buyer, our client, is the indemnitor under Section 9.3(b), so this obligation falls on Buyer. Section 9.5(c)(iii) expressly takes Section 9.3 Losses outside the limitations. The Purchase Price ceiling applies only to clauses (i) and (ii), so Buyer's exposure has no limit at all. Seller's indemnity, by contrast, is capped at $4.85M with a $242,500 deductible. Seller's general rep claims also lapse 12 months after signing, which is about six months after the September 30, 2026 closing.\n\nSection 9.3(b) has no carve-out for pre-Closing occurrences or for matters Seller must indemnify under Section 9.2. Section 9.2 itself contains no standalone indemnity for pre-Closing liabilities. As a result, a pre-Closing maintenance act that causes a post-Closing entrapment or fall could be framed as post-Closing operation. Buyer would then bear unlimited liability for it.\n\nNothing in the Seller Note, IP Assignment or Bill of Sale cures this. The agreement has closed, but this is a continuing exposure, not a lapsed window. It remains actionable: it can shape how Buyer responds to any Seller indemnity demand, and the parties could amend it."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Note §12.1: \"This Note, and all claims arising out of or relating to it, shall be governed by and construed in accordance with the laws of the State of New York...\"; §12.2: \"Each of Maker and Holder irrevocably submits to the exclusive jurisdiction of the state courts of the State of New York sitting in the County of New York and the United States District Court for the Southern District of New York...\" By contrast, SPA §11.8 chooses Delaware law and makes the Delaware Court of Chancery the exclusive forum. SPA §11.12 provides that \"the Seller Note shall control with respect to matters arising under or relating to the Seller Note.\"",
+            "reason": "The conflict is real, and the precedence clause makes it worse rather than curing it. Buyer (the client, as Maker) relies mainly on setoff and withholding against the Note under SPA §9.8 and Note §6 to recover indemnity claims. A dispute over whether a setoff or withholding was proper, or in 'good faith' under Note §6.4 and §8.1(a), relates to the Note. Under SPA §11.12 that dispute would go to New York courts under New York law. The underlying indemnity entitlement under SPA Article IX stays in the Delaware Court of Chancery under Delaware law. Note §6.4 and §8.1(a) carve good-faith setoff out of default, but that only helps if the setoff is found proper. Holder can still claim a payment default and seek acceleration and collection costs in New York (§9.2, §9.4) while Buyer's indemnity claim is pending in Delaware. That creates a risk of parallel proceedings and inconsistent results against the client. Nothing in the folder records an amendment or a reconciling forum provision. The Note is the client's own instrument, so the conflict remains actionable, for example by amending the Note or aligning the forum and governing-law provisions."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 9.1(a): \"The representations and warranties in this Agreement, other than the Fundamental Representations, shall survive the Closing until the date that is twelve (12) months after the date of this Agreement.\" The Agreement is \"dated as of March 2, 2026,\" and Section 2.4(a) sets the Scheduled Closing Date at September 30, 2026. Section 9.1(d) and Section 9.6(b) bar any claim unless a Claim Notice is delivered before the survival period expires.",
+            "reason": "The survival period for general representations runs from the signing date (March 2, 2026), not from Closing, so it ends March 2, 2027. The IP Assignment Agreement, Bill of Sale and Seller Note are all dated September 30, 2026, which indicates Closing occurred on that date. That leaves Buyer (the client) only about five months after Closing to assert claims. Seller gives the indemnity under Section 9.2, so the short window hurts Buyer. Section 4.12(b) states that every serviced unit is subject to annual state periodic inspection. Breaches of the code-compliance and inspection-certificate representations in Sections 4.12(c)–(e) would likely surface during the first post-Closing inspection cycle, much of which falls after March 2, 2027. Those claims would then be barred. They could also not be set off against the Seller Note under Section 9.8, which depends on an indemnity entitlement or a timely Claim Notice. No document in the folder extends the survival period or cures the gap. The problem is still actionable as of today (November 7, 2026): the survival period has not yet expired. Buyer can still serve protective Claim Notices before March 2, 2027 for known or suspected Section 4.12 issues. It can also seek an amendment under Section 11.6 to re-anchor survival to the Closing Date."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 9.2(a): \"Seller may assign this Agreement, in whole or in part, together with the License and its other rights and obligations under this Agreement, without the consent of any other party. Any such assignment may be made to any Person, including to any successor by merger, consolidation or other business combination, or to any purchaser of all or any portion of Seller's assets or equity.\" By contrast, Section 9.2(b): \"Neither Buyer nor the Company may assign this Agreement or any of its rights or obligations under it without the prior written consent of Seller.\"",
+            "reason": "The problem is present and it hurts Mouren. The Company (now Buyer's subsidiary) grants the License, and Stamox holds it. Section 4.2 makes the License perpetual, irrevocable, royalty-free and fully paid-up. Its only field language is permissive: the License \"may be exercised in the conduct of the Retained Business, including...\". It does not say \"solely\", and it is not tied to the original licensee. Section 4.3 also lets Seller sublicense to Affiliates, contractors and customers. Section 9.2(a) lets Seller transfer the License to any Person without consent, including a direct maintenance competitor of Buyer. A transferee would take a license to the Company's core diagnostic platform, with source-code retention rights under Section 3.2. The non-compete in SPA Section 6.6 binds only Seller and its Affiliates, so it would not bind an unaffiliated assignee. Nothing in the SPA or the other documents cures or limits this. Assignment rights are also one-sided, since Buyer and the Company need Seller's consent to assign. No transfer has occurred, and nothing in the folder shows Buyer accepted such a transfer. The issue therefore remains actionable, for example by amending the Agreement to require consent, limit assignment to a successor of the Retained Business, and add an express field-of-use restriction."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.095,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "bill_of_sale_fleet_and_tooling.md",
+                "liftsense_ip_assignment_agreement.md",
+                "mutual_nda_mouren_stamox.md",
+                "seller_promissory_note.md",
+                "stock_purchase_agreement_ascendra.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "bill_of_sale_fleet_and_tooling.md",
+                "liftsense_ip_assignment_agreement.md",
+                "mutual_nda_mouren_stamox.md",
+                "seller_promissory_note.md",
+                "stock_purchase_agreement_ascendra.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C7"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "bill_of_sale_fleet_and_tooling.md",
+                "liftsense_ip_assignment_agreement.md",
+                "mutual_nda_mouren_stamox.md",
+                "seller_promissory_note.md",
+                "stock_purchase_agreement_ascendra.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

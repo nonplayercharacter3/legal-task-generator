@@ -1,0 +1,186 @@
+{
+  "matter_id": "s27-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 45
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.3(b): Buyer shall indemnify Seller for Losses arising out of or relating to \"(b) the Company Guaranties, including any payment, performance or other obligation of Seller or any of its Affiliates under any Company Guaranty, whether arising before or after the Closing, and notwithstanding Section 9.5.\"",
+            "reason": "Buyer is the firm's client, and Buyer is the party giving this indemnity, so the exposure falls on our client. The 'notwithstanding Section 9.5' language removes the Cap. Section 9.5(a) caps Buyer only under 9.3(a), so the Cap would not reach 9.3(b) anyway. The 9.1 survival limits cover representations, so this indemnity has no time limit. The clause also expressly covers guaranty liabilities 'arising before' Closing, which are Seller's economic responsibility. The underlying guaranties are Seller's credit support for the St. Albans Plant lease and the supply contracts (Schedule 1.1(a)), and nothing requires Seller to obtain releases of them. The February 2026 draft limited the indemnity to obligations that 'first arise[] and [are] attributable to the period after the Closing' and capped Buyer under all of Section 9.3. The final text dropped both limits, so the change is a deterioration, not a cure. Nothing else in the folder limits it: the board consent only says Buyer will indemnify 'as provided in the Purchase Agreement'. The deal closed on April 30, 2026, but the indemnity is a continuing, unlimited exposure. It remains actionable: Buyer can resist pre-Closing guaranty claims, seek an amendment, or pursue releases or replacement of the guaranties."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Bill of Sale Section 4.1: \"All Losses arising out of or relating to the Conveyed Assets or the underlying real property on which the Conveyed Assets are located, including any Environmental Liability, shall be recoverable by the Company, Buyer and the other Buyer Indemnitees solely under, and in accordance with the procedures of, Article IX of the Purchase Agreement, and subject to the Cap.\"",
+            "reason": "The problem is present and hurts Buyer. SPA Section 9.5(b)(iii) excludes the Specified Environmental Matter (contamination from the lagoon system) from the Cap, and Section 9.2(c) has Seller indemnify those Losses for seven years. Bill of Sale Section 4.1 subjects all Losses relating to the lagoon assets, expressly including Environmental Liability, to the Cap. It has no carve-out for the Specified Environmental Matter. SPA Section 12.8 says an Ancillary Agreement controls as to its subject matter, and the Bill of Sale is an Ancillary Agreement. Seller can therefore argue that lagoon contamination Losses are capped at 10% of the Purchase Price ($8.65M) instead of uncapped. Seller is the indemnitor, so the cap benefits Seller and limits recovery for Buyer and the Company, the firm's client side. The other documents do not cure the conflict. Nothing indicates the Bill of Sale signed at Closing differs from this text, and there is no amendment or waiver. The issue remains actionable: the indemnity survives for seven years, and the client can seek a corrective amendment under Bill of Sale Section 6.2 or contest the interpretation."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "TSA 7.1: \"'Confidential Information' means any non-public business, technical or financial information disclosed by one Party ... that is marked as confidential at the time of disclosure.\" TSA 7.3: \"Provider's obligations with respect to information of the Company received by Provider or Provider Personnel in performing the Services are governed exclusively by this Section 7.\"",
+            "reason": "SPA 6.7 binds Seller to protect all Company Confidential Information, whether or not it is marked. TSA 7.1 protects only information that is marked as confidential. TSA 7.3 makes Section 7 the exclusive rule for information Seller receives while performing the Services. SPA 12.8 lets the TSA control on its own subject matter. Under TSA 6.2, the Company must hand over supplier organic certificates, customer order data, raw milk samples and production schedules, which are normally not marked. So Seller can argue that this operational data is unprotected, or protected only under the narrower TSA terms, which also expire three years after the Service Period ends. That works against Buyer and the Company, and nothing in the folder fixes it. It is still actionable because the Service Period runs to April 2027. Buyer can seek an amendment conforming TSA 7.1 and 7.3 to SPA 6.7, and can have the Company mark disclosures in the meantime."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Recital 1.6: \"Under the Raw Milk Supply Agreement, a change in control of the Company requires the prior written consent of Kettle Ridge, failing which Kettle Ridge may terminate the Raw Milk Supply Agreement on 30 days' notice.\" Resolution 4: \"the Authorized Officers are, and each of them is, hereby authorized to request such consent following the Closing.\" By contrast, SPA §4.5 represents that no consent is required \"except as set forth on Schedule 4.5\", and Schedule 4.5 lists only the landlord, the organic certifying agent and the Vermont ANR.",
+            "reason": "The problem is present and still live for Buyer.\n\n- **What the consent records.** Seller's board acknowledges that the Kettle Ridge change-of-control consent is required. Kettle Ridge supplies about 40% of the Company's raw milk. The board plans to request that consent only after Closing.\n- **What the SPA says.** The §4.5 representation omits Kettle Ridge from Schedule 4.5. Section 7.2(d) conditions Closing only on the Schedule 4.5 consents. So the consent was never a closing condition.\n- **Closing has happened.** The TSA and Bill of Sale show Closing on April 30, 2026. The change in control has therefore already occurred without Kettle Ridge's prior consent. Nothing in the folder shows the consent was obtained or the termination right waived.\n- **Buyer's live exposure.** Kettle Ridge's right to terminate on 30 days' notice still stands.\n- **Weakness of Buyer's remedy.** Buyer's main remedy is a §9.2(a) claim for breach of the §4.5 and §4.6 representations. That claim must be made within 18 months, so until about October 2027. It is subject to the Deductible and the Cap. It is also exposed to a Galli v. Metz waiver defense under New York governing law. Seller disclosed the matter before Closing: these resolutions were certified to Buyer under §3.2(a)(vii). The SPA has no pro-sandbagging clause and no express reservation of rights.\n- **Why it is still actionable.** The survival window remains open and the Kettle Ridge consent is still outstanding. Buyer can still:\n  - press Seller to obtain the consent under Resolution 4;\n  - give written notice of a claim before the survival period expires;\n  - assess the Galli risk and the supply-termination risk."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "TSA Section 12.3: \"Assignment of this Agreement and of any rights or obligations under it is governed by Section 12.4 of the Purchase Agreement, mutatis mutandis, with Provider in the position of Seller and the Company in the position of Buyer.\" SPA Section 12.4: \"Seller may assign this Agreement or any of its rights or obligations under it without the consent of Buyer.\"",
+            "reason": "The cross-reference puts Provider in Seller's position. Provider can therefore assign the TSA, or any of its obligations under it, to anyone without the Company's consent, while the Company needs Provider's consent to assign. Nothing in the TSA limits who the assignee can be. There is no carve-out for competitors, no requirement that the assignee be qualified or accredited, and no termination right triggered by assignment. The only exit is convenience termination on 30 days' notice under Section 9.1. That does not solve the problem, because the Company depends on these lab, organic-compliance and cold-chain services during the transition and would simply lose them. The data exposure is also real. TSA Section 7.3 makes Section 7 the exclusive regime for information Provider receives while performing the Services. Section 7 protects only information marked confidential, and only for three years. The SPA Section 6.8 non-compete binds Seller and its Affiliates, not an unrelated assignee. The TSA is current, so the problem is still actionable, for example by seeking an amendment requiring consent to assignment or barring assignment to competitors."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [
+          "criterion C1 requires a harm, remedy or provision that issue I1's expected_finding does not name: 'It also states that the indemnity covers obligations arising before the Closing'; ask that the response explains why it matters and recommends a fix"
+        ],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.087,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3",
+                "C5"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "bill_of_sale_lagoon_assets.md",
+                "brilal_board_consent.md",
+                "spa_article_ix_prior_draft_feb2026.md",
+                "stock_purchase_agreement_ratel_brilal.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "bill_of_sale_lagoon_assets.md",
+                "brilal_board_consent.md",
+                "spa_article_ix_prior_draft_feb2026.md",
+                "stock_purchase_agreement_ratel_brilal.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "bill_of_sale_lagoon_assets.md",
+                "brilal_board_consent.md",
+                "spa_article_ix_prior_draft_feb2026.md",
+                "stock_purchase_agreement_ratel_brilal.md",
+                "transition_services_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "matter_id": "s27-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 1.0,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.1: \"The representations and warranties in this Agreement shall survive the Closing until the date that is nine (9) months following the Closing Date. This applies to the Environmental Representations.\" Section 7.6(c): \"Before the Permit Transfer Approval is obtained, Buyer and its consultants shall not conduct any invasive or subsurface sampling at the Facility.\" Section 7.6(a): \"Seller may pursue the Permit Transfer Approval for up to twelve (12) months after the Closing Date.\"",
+            "reason": "The Bill of Sale fixes the Closing at June 1, 2026, so the Environmental Representations expire March 1, 2027. Seller controls the permit transfer and has up to June 1, 2027 to obtain it. Until then, Buyer cannot do soil borings, groundwater wells or sump sampling. Section 9.4 requires a Claim Notice to state the facts and, where estimable, the amount of Losses. As a result, Buyer may be unable to find contamination, or describe it, before the 4.12 representations lapse. Section 9.1 invokes 10 Del. C. § 8106(c), so the shortened period is meant to be enforceable. The Escrow Agreement's Release Date is also nine months after Closing, so the $4.2M escrow would be released to Seller on the same timetable. Two points only partly limit the problem. First, Section 2.2 and 9.2(c) leave pre-Closing environmental liabilities with Seller as Excluded Liabilities. Second, the survival period for that indemnity is not expressly stated, and the term \"Excluded Liability\" is not defined. Neither point cures the expiry of the representation and escrow protection. Nothing in the folder shows that Permit Transfer Approval has been obtained, that the parties have amended these terms, or that Buyer has given up the point. As of November 2026 the survival period has not yet run. The problem is therefore still actionable: Buyer can seek a tolling or extension amendment, earlier access for sampling, or serve a protective Claim Notice."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Escrow Agreement §12.1: \"This Escrow Agreement, and all claims and disputes arising out of or relating to it or to the Escrow Fund, shall be governed by and construed in accordance with the laws of the State of New York ... Each of the parties irrevocably submits to the exclusive jurisdiction of the state and federal courts located in the Borough of Manhattan, City of New York, for any action or proceeding arising out of or relating to this Escrow Agreement or the Escrow Fund.\" APA §11.12: \"...except that the Escrow Agreement shall control all matters relating to the Escrow Fund, including disputes regarding any Claim Notice.\"",
+            "reason": "The problem is present and still actionable for Glarol, the Buyer. APA §§11.8 and 11.9 select Delaware law and the exclusive jurisdiction of the Court of Chancery. Escrow Agreement §12.1 selects New York law and exclusive Manhattan courts for anything relating to the Escrow Fund. APA §11.12 does not resolve the conflict in the APA's favor. It expressly gives the Escrow Agreement control over Escrow Fund matters and Claim Notice disputes. The Escrow Agreement also has no carve-out deferring to the APA's forum. Release of a Disputed Amount requires a Final Order under §5.4(b) and §6.2, and that order would come from a New York court. Meanwhile the underlying indemnity entitlement is decided in Chancery under Delaware law. This harms Glarol because it is the party asserting claims against the $4.2M escrow. That escrow is its first-recourse recovery source under APA §9.6. The result is a risk of parallel proceedings, inconsistent results, delayed release, and forum-shopping by Seller. The survival and claim window runs nine months from June 1, 2026, to about March 2027, so claims can still be made. Nothing in the folder shows the issue was resolved or accepted. Glarol can still address it, for example by amending the Escrow Agreement with all parties' signatures under §12.4, or by agreeing a forum before any escrow dispute arises."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Annex A, item 3: \"Feedstock Supply Agreement between Seller and Ostrander Fleet Recovery LLC ... The agreement requires Ostrander Fleet Recovery LLC's prior written consent to any assignment of the agreement or any change of control of Seller. Status: consent not obtained as of the Closing.\" Bill of Sale Section 4: \"This Bill of Sale does not assign ... any Assigned Contract if a third party's consent to its assignment is required and that consent has not been obtained at or before the Closing.\" APA Schedule 8.2(d) lists only the landlord consent. APA Section 2.6: \"For ninety (90) days after the Closing, Seller shall use commercially reasonable efforts to obtain each such consent ... The failure to obtain any such consent shall not entitle Buyer to any adjustment of the Purchase Price.\"",
+            "reason": "The problem is present. Ostrander's consent was never a closing condition, because Schedule 8.2(d) covers only the landlord. The Bill of Sale therefore did not convey the Ostrander contract to Glarol. Seller's only duty was commercially reasonable efforts for 90 days, with no consent fee or litigation required. That period ran from the June 1, 2026 Closing and ended on August 30, 2026. Section 2.6 also bars any price adjustment. The result is that Glarol, the Buyer, holds no assigned rights to the feedstock contract and faces termination risk under the anti-assignment and change-of-control clause. Its only contractual remedy has been removed. Nothing in the folder shows Ostrander's consent was obtained or that Glarol accepted the outcome. The board consent deals only with the inventory dispute. The exposure is ongoing, not settled history, so Glarol can still act on it. It could seek consent directly from Ostrander or a direct contract with it. It could invoke further assurances and Seller's hold-for-benefit obligation 'until the consent is obtained.' It could also test whether the consent requirement was properly disclosed against the Section 4.3 representation."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Recital C: \"Seller's Closing Statement, dated July 17, 2026, was received by email on July 20, 2026 at the Company's notice address, notices@glarol.com.\" Recital D: \"As of the date of this consent, the Company has not delivered a Notice of Disagreement or any other written objection to the Closing Statement to Seller.\" Resolution 2 directs officers to deliver the Notice of Disagreement \"promptly following the date of this consent\" (August 27, 2026).",
+            "reason": "Under APA Section 11.2, an email notice is effective on delivery, so the Closing Statement was delivered on July 20, 2026. Section 2.5(b) gave Glarol, as Buyer, 30 days from that date, which ran to August 19, 2026. Section 2.5(c) makes the Closing Statement final and binding if no Notice of Disagreement is delivered in that period. The consent is dated August 27, eight days after the window closed, and authorizes an objection only now. It does not acknowledge or address the lapse. That exposes Glarol to Seller's position that the overstated inventory figure, which management puts at about $1.9M too high, is binding, along with the upward payment Seller claims under Section 2.5(d). Glarol remains the party that owes the payment. Nothing in the folder cures the problem: there is no extension, no waiver signed by Seller under Section 11.3, and no tolling. The issue is still actionable. Glarol has not accepted the Closing Statement or paid, and the consent records its dispute. Counsel therefore needs to consider responses before or alongside sending the notice. These include Seller's own late delivery (the 45-day deadline in Section 2.5(a) was July 16), the fact that Section 4.9 inventory indemnity claims under Article IX are preserved, and whether Seller will waive the lapse."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.062,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 3,
+            "pass_rate": 1.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "bill_of_sale.md",
+                "escrow_agreement.md",
+                "glarol_board_consent.md",
+                "insurance_certificate_cover_letter.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "bill_of_sale.md",
+                "escrow_agreement.md",
+                "glarol_board_consent.md",
+                "insurance_certificate_cover_letter.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "bill_of_sale.md",
+                "escrow_agreement.md",
+                "glarol_board_consent.md",
+                "insurance_certificate_cover_letter.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

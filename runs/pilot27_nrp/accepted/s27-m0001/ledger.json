@@ -1,0 +1,199 @@
+{
+  "matter_id": "s27-m0001",
+  "summary": "Ratel Dairy Holdings, LLC (client, Buyer) is acquiring all outstanding shares of Sunfold Creamery, Inc., a Vermont organic dairy processor, from Brilal Foods Group, Inc. (Seller) for $86,500,000 under a New York-law Stock Purchase Agreement signed March 16, 2026. The folder has five documents. The first is the SPA. The second is a Transition Services Agreement under which Seller provides lab testing, organic-certification compliance support and cold-chain logistics for 12 months after Closing. The third is Seller's board consent approving the sale. The fourth is a Bill of Sale dated April 30, 2026 (the Closing Date) by which Seller conveys the wastewater lagoon system at Sunfold's St. Albans plant to the Company. The fifth is a superseded February draft of the SPA indemnification article. Five issues are planted. (1) Buyer gives an uncapped indemnity for Seller's guaranties, including pre-Closing exposure. (2) The Bill of Sale pulls the Specified Environmental Matter back under the cap, and the SPA precedence clause lets it control. (3) The TSA narrows 'Confidential Information' to marked materials and makes that definition exclusive. (4) The Seller board consent records an unaddressed change-of-control consent right in the Company's key raw milk supply contract that the SPA neither discloses nor makes a closing condition. (5) The TSA incorporates an SPA assignment clause that lets Seller assign freely, including to a competitor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Ratel Dairy Holdings, LLC",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Brilal Foods Group, Inc.",
+      "role": "Seller; TSA service provider"
+    },
+    {
+      "id": "P3",
+      "name": "Sunfold Creamery, Inc.",
+      "role": "Company (target), Vermont organic dairy processor"
+    },
+    {
+      "id": "P4",
+      "name": "Kettle Ridge Organic Dairy Cooperative",
+      "role": "Raw milk supplier to the Company under the Raw Milk Supply Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA signing date",
+      "value": "March 16, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$86,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Closing Date",
+      "value": "April 30, 2026",
+      "doc": "D4",
+      "section": "Preamble"
+    },
+    {
+      "id": "F4",
+      "key": "SPA indemnity Cap",
+      "value": "10% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "SPA general representation survival period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Ancillary Agreement controls as to its subject matter; otherwise the SPA controls",
+      "doc": "D1",
+      "section": "Section 12.8"
+    },
+    {
+      "id": "F7",
+      "key": "Specified Environmental Matter meaning",
+      "value": "contamination originating from the St. Albans Plant wastewater lagoon system",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F8",
+      "key": "TSA Service Period",
+      "value": "12 months after the Closing Date",
+      "doc": "D2",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F9",
+      "key": "SPA governing law",
+      "value": "New York",
+      "doc": "D1",
+      "section": "Section 12.10"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_ratel_brilal.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "brilal_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "bill_of_sale_lagoon_assets.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "spa_article_ix_prior_draft_feb2026.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_stock_purchase_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "SPA Section 9.3(b) has Buyer indemnify Seller for all Losses arising out of or relating to the Company Guaranties, meaning Seller's guaranties of the Company's plant lease and supply contracts. The indemnity applies 'whether arising before or after the Closing' and 'notwithstanding Section 9.5'. That language removes the Cap, the deductible and the survival limits, so Buyer has unlimited, perpetual exposure. It also covers pre-Closing guaranty liabilities that are Seller's economic responsibility. This is visible from the clause on its own.",
+      "doc": "D1",
+      "section": "Section 9.3(b)",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "notwithstanding Section 9.5"
+      ],
+      "expected_finding": "Section 9.3(b) exposes Buyer to uncapped, unlimited-duration liability for Seller's guaranties, including pre-Closing obligations, and should be limited to post-Closing obligations, made subject to the Cap, and paired with a Seller covenant to obtain guaranty releases.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Three provisions combine. First, SPA Section 9.5(b) carves the Specified Environmental Matter out of the Cap in Section 9.5(a); the Specified Environmental Matter is contamination from the St. Albans Plant wastewater lagoon system. Second, Bill of Sale Section 4 conveys that lagoon system to the Company and provides that all Losses arising from the Conveyed Assets or the underlying real property, 'including any Environmental Liability', are recoverable solely under SPA Article IX and 'subject to the Cap'. Third, SPA Section 12.8 provides that an Ancillary Agreement controls as to its subject matter. The Bill of Sale therefore governs the lagoon assets and brings the most significant known environmental exposure back under the 10% Cap.",
+      "doc": "D4",
+      "section": "Section 4",
+      "detect_terms": [
+        "subject to the Cap",
+        "including any Environmental Liability"
+      ],
+      "expected_finding": "Because SPA Section 12.8 lets the Bill of Sale control as to its subject matter, Bill of Sale Section 4 subjects the Specified Environmental Matter to the 10% Cap despite the SPA 9.5(b) carve-out, and must be amended to preserve the uncapped carve-out or Section 12.8 revised so the SPA prevails.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 6.7 obliges Seller to protect 'Company Confidential Information', defined in SPA Section 1.1 to cover all non-public Company information, including customer lists, farm supplier pricing, herd records and product formulas. TSA Section 7.1 defines 'Confidential Information' as information 'marked as confidential at the time of disclosure'. TSA Section 7.3 states that Seller's obligations for information received in performing the Services are 'governed exclusively by this Section 7'. SPA Section 12.8 lets the TSA control as to its subject matter. Seller will handle the Company's unmarked supplier pricing and customer order data for the 12-month Service Period. That data loses protection.",
+      "doc": "D2",
+      "section": "Sections 7.1 and 7.3",
+      "detect_terms": [
+        "marked as confidential at the time of disclosure",
+        "governed exclusively by this Section 7"
+      ],
+      "expected_finding": "The TSA's narrower, exclusive definition of Confidential Information, given control by SPA Section 12.8, strips SPA Section 6.7 protection from unmarked Company data that Seller receives while performing the Services, and the TSA should adopt the SPA definition of Company Confidential Information.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Seller's board consent records three points in its recitals and resolutions. The Company's Raw Milk Supply Agreement with Kettle Ridge Organic Dairy Cooperative supplies about 40% of the Company's raw milk. Its change in control requires Kettle Ridge's prior written consent, failing which Kettle Ridge may terminate on 30 days' notice. Officers are 'authorized to request such consent following the Closing'. SPA Section 4.5 nonetheless represents that no third-party consents are required except those on Schedule 4.5, which omits Kettle Ridge. SPA Section 7.2(d) conditions Closing only on the Schedule 4.5 consents. The consent therefore is not a closing condition and will not be obtained before Closing. Because Seller disclosed the matter to Buyer, a later breach-of-representation claim faces a Galli v. Metz reliance defense under New York law.",
+      "doc": "D3",
+      "section": "Recitals and Resolution 4",
+      "detect_terms": [
+        "authorized to request such consent following the Closing"
+      ],
+      "expected_finding": "The Kettle Ridge change-of-control consent is unaddressed in SPA Sections 4.5 and 7.2(d), leaving Buyer exposed to termination of the Company's principal raw milk supply. Buyer should require the consent as a closing condition or obtain a specific uncapped indemnity, because Seller's disclosure in the board consent may defeat a rep-breach claim under New York law.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 12.3 provides that assignment of the TSA is 'governed by Section 12.4 of the Purchase Agreement, mutatis mutandis'. SPA Section 12.4 bars Buyer from assigning without Seller's consent. It also states that Seller may assign the Agreement or any of its rights or obligations without Buyer's consent. Read together, Seller may assign the TSA freely to anyone, including a competing organic dairy processor. The assignee would take over testing, certification and logistics services and get access to the Company's operational data. Buyer has no consent right or termination remedy.",
+      "doc": "D2",
+      "section": "Section 12.3",
+      "detect_terms": [
+        "governed by Section 12.4 of the Purchase Agreement",
+        "mutatis mutandis"
+      ],
+      "expected_finding": "Through incorporation of SPA Section 12.4, TSA Section 12.3 lets Seller assign the TSA without Buyer's consent, including to a competitor, and should be replaced with a mutual consent requirement plus a Buyer termination right on any assignment to a competitor.",
+      "contradicts": null
+    }
+  ]
+}

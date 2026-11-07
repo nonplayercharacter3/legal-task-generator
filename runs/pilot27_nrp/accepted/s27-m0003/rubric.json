@@ -1,0 +1,106 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Buyer's indemnity of Seller under SPA Section 9.3(b) (for Losses arising from post-Closing ownership or operation of the Company) is excluded from the cap by Section 9.5(c), so Buyer's exposure is unlimited while Seller's indemnity is capped at $4,850,000. It locates the issue in the SPA at Section 9.3(b) and/or Section 9.5(c), explains why this matters to Mouren, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "Section 9.5(c)",
+        "uncapped",
+        "Section 9.3(b)"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Seller Note Section 12 chooses New York law and New York courts, while the SPA chooses Delaware law and the Delaware Court of Chancery. It notes that SPA Section 11.12 lets the Note control matters relating to it, so Buyer's setoff of indemnity claims against the Note under SPA Section 9.8 could be litigated in New York while the indemnity claim proceeds in Delaware. It locates the issue in the Seller Note Section 12, explains why this matters to Mouren, and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "New York",
+        "Section 11.12",
+        "setoff"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that SPA Section 9.1(a) measures survival of the representations from the March 2, 2026 Agreement date rather than from the September 30, 2026 Closing, leaving only about five months after Closing to bring claims. It notes that this period ends before a full annual inspection cycle under Section 4.12(b) can reveal code-compliance breaches. It locates the issue in SPA Section 9.1(a), explains why this matters to Mouren, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "date of this Agreement",
+        "five months",
+        "annual inspection"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that IP Assignment Agreement Section 9.2 lets Stamox freely assign its Section 4.2 LiftSense license-back without consent, including to a competitor of Mouren in elevator maintenance. It locates the issue in the IP Assignment Agreement at Section 9.2 (with or without reference to Section 4.2), explains why this matters to Mouren, and recommends a fix.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "license-back",
+        "Section 9.2",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Scheduled Closing Date is September 30, 2026.",
+      "kind": "fact",
+      "source": "F2",
+      "hints": [
+        "September 30, 2026"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Seller Note principal amount is $7,500,000.",
+      "kind": "fact",
+      "source": "F4",
+      "hints": [
+        "$7,500,000",
+        "$7.5 million"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is organized as a memo that lists issues ranked by significance, with the most significant first. For each issue it gives a document and section reference and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "memo",
+        "ranked",
+        "recommended fix"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response flags at least one item as requiring a client decision rather than a drafting change.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "client decision",
+        "commercial decision"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the representations under SPA Section 9.1(a) survive for twelve months after the Closing Date.",
+      "kind": "negative",
+      "source": "I3",
+      "hints": [
+        "twelve months after Closing"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that SPA Section 11.12 makes the SPA's Delaware governing-law and forum provisions prevail over the Seller Note's New York provisions.",
+      "kind": "negative",
+      "source": "F8",
+      "hints": [
+        "SPA prevails over the Note"
+      ]
+    }
+  ]
+}

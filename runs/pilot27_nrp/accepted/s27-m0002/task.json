@@ -1,0 +1,122 @@
+{
+  "task_id": "s27-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Glarol Recycling Technologies, Inc., the buyer in an asset acquisition from Mourend Battery Materials LLC. Pellmont Trust Company, N.A. and Ostrander Fleet Recovery LLC are also counterparties on the deal documents. Before we go further, the client needs a clear picture of where the documents leave it exposed.\n\nPlease review everything in the matter folder: the asset purchase agreement (asset_purchase_agreement.md), the bill of sale (bill_of_sale.md), Glarol's board consent (glarol_board_consent.md), the escrow agreement (escrow_agreement.md), and the insurance certificate cover letter (insurance_certificate_cover_letter.md).\n\nSend me a memo that lists each issue you find. For each one, give the document and section where it appears, explain why it matters for Glarol as buyer, and recommend a fix. Order the issues by significance to the client. Flag anything you think needs my attention or a call with the client before we respond to the other side. Keep it practical, as I'll be using it to decide our next steps on the documents.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "bill_of_sale.md",
+    "escrow_agreement.md",
+    "glarol_board_consent.md",
+    "insurance_certificate_cover_letter.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the environmental representations survive only nine months after Closing under APA Section 9.1, while APA Section 7.6 bars Buyer from invasive or subsurface sampling at the Tilden facility until the permit transfer is approved, which may take up to twelve months, so the representations can expire before Buyer is able to test the site. It locates the issue in the APA (Section 9.1 and/or Section 7.6), explains why this matters to Glarol, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "nine months",
+        "subsurface sampling",
+        "Section 7.6"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Escrow Agreement Section 12.1 chooses New York law and Manhattan courts, and that because APA Section 11.12 lets the Escrow Agreement control Escrow Fund and Claim Notice disputes, escrow disputes would be split from the Delaware-law, Court of Chancery indemnity disputes under the APA. It locates the issue in the Escrow Agreement (Section 12.1) and/or APA Section 11.12, explains why this matters to Glarol, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York law",
+        "Section 11.12",
+        "Court of Chancery"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Ostrander's consent to assignment of the Feedstock Supply Agreement was not obtained at Closing, and that the APA neither made that consent a closing condition (Schedule 8.2(d)) nor protected Buyer beyond Seller's limited 90-day efforts and pass-through obligation under Section 2.6, so Glarol does not hold assigned rights to the contract. It locates the issue in the Bill of Sale Annex A and/or the APA (Section 2.6 or Schedule 8.2(d)), explains why this matters to Glarol, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Ostrander",
+        "consent not obtained",
+        "Section 2.6"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the 30-day period under APA Section 2.5(b) to deliver a Notice of Disagreement on the Closing Statement received July 20, 2026 expired on or about August 19, 2026, before the August 27, 2026 board consent authorized an objection, so Seller can treat the Closing Statement (including the disputed inventory valuation) as final and binding under Section 2.5(c). It locates the issue in the board consent and/or APA Section 2.5, explains why this matters to Glarol, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "July 20, 2026",
+        "August 19, 2026",
+        "final and binding"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Closing Date was June 1, 2026.",
+      "kind": "fact",
+      "hints": [
+        "June 1, 2026"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the indemnity escrow amount is $4,200,000.",
+      "kind": "fact",
+      "hints": [
+        "$4,200,000",
+        "$4.2 million"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the APA is governed by Delaware law.",
+      "kind": "fact",
+      "hints": [
+        "Delaware law",
+        "Section 11.8"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is in memo form and presents the issues ordered by significance to the client, giving for each issue a document and section reference, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Glarol's Notice of Disagreement on the Closing Statement can still be timely delivered within the 30-day period under APA Section 2.5(b).",
+      "kind": "negative",
+      "hints": [
+        "still within the 30-day window",
+        "objection remains timely"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that APA Section 11.12 makes the APA's Delaware governing law and forum provisions prevail over the Escrow Agreement's New York provisions for disputes over the Escrow Fund or Claim Notices.",
+      "kind": "negative",
+      "hints": [
+        "APA prevails over the Escrow Agreement",
+        "precedence clause resolves the conflict"
+      ]
+    }
+  ],
+  "solver_pass_rate": 1.0,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ]
+}

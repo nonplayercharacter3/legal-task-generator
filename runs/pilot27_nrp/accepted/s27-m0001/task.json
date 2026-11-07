@@ -1,0 +1,124 @@
+{
+  "task_id": "s27-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Ratel Dairy Holdings, LLC as buyer in its stock purchase from Brilal Foods Group, Inc. The deal also involves Sunfold Creamery, Inc. and Kettle Ridge Organic Dairy Cooperative. Before we go back to the other side, I need a clear picture of where the current documents leave Ratel exposed or fall short of what it needs to close and run the business afterward. Please review the full matter folder: the stock purchase agreement (stock_purchase_agreement_ratel_brilal.md), the transition services agreement (transition_services_agreement.md), the Brilal board consent (brilal_board_consent.md), the bill of sale for the lagoon assets (bill_of_sale_lagoon_assets.md), and the February 2026 prior draft of SPA Article IX (spa_article_ix_prior_draft_feb2026.md). Send me a memo that lists each issue you identify. For each one, give its location (document and section), explain why it matters to Ratel, and recommend a fix. Where you can, propose specific drafting language. If you need to make an assumption about deal facts, say so. Put the items you think are most significant for the client first.",
+  "documents": [
+    "bill_of_sale_lagoon_assets.md",
+    "brilal_board_consent.md",
+    "spa_article_ix_prior_draft_feb2026.md",
+    "stock_purchase_agreement_ratel_brilal.md",
+    "transition_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that SPA Section 9.3(b) requires Buyer to indemnify Seller for Losses relating to the Company Guaranties 'notwithstanding Section 9.5', so the indemnity is not subject to the Cap or other Section 9.5 limits. It also states that the indemnity covers obligations arising before the Closing. It explains why this matters to Ratel and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "notwithstanding Section 9.5",
+        "whether arising before or after the Closing",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Bill of Sale Section 4 makes Losses from the lagoon assets, including Environmental Liability, recoverable 'subject to the Cap'. It states that because SPA Section 12.8 lets an Ancillary Agreement control as to its subject matter, this brings the Specified Environmental Matter back under the 10% Cap despite the SPA Section 9.5(b) carve-out. It explains why this matters to Ratel and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Bill of Sale Section 4",
+        "Section 12.8",
+        "Specified Environmental Matter"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that TSA Section 7.1 limits 'Confidential Information' to information marked as confidential at the time of disclosure. It states that TSA Section 7.3 makes Section 7 the exclusive source of Seller's confidentiality obligations for information received in performing the Services. It concludes that, with the TSA controlling under SPA Section 12.8, unmarked Company data Seller handles under the TSA loses the broader protection of SPA Section 6.7 / Company Confidential Information. It explains why this matters to Ratel and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "marked as confidential at the time of disclosure",
+        "governed exclusively by this Section 7",
+        "Company Confidential Information"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Brilal board consent records that the Kettle Ridge Raw Milk Supply Agreement requires Kettle Ridge's consent to a change in control. It states that the consent is to be requested only after Closing, and that SPA Section 4.5 / Schedule 4.5 and the Section 7.2(d) closing condition do not address this consent. It explains why this matters to Ratel and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Kettle Ridge",
+        "change in control",
+        "following the Closing"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that TSA Section 12.3 incorporates SPA Section 12.4 mutatis mutandis. It states that, as a result, Seller may assign the TSA without Buyer's consent, including to a competitor, while Buyer needs Seller's consent. It explains why this matters to Ratel and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "TSA Section 12.3",
+        "SPA Section 12.4",
+        "without Buyer's consent"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the SPA indemnity Cap is 10% of the Purchase Price.",
+      "kind": "fact",
+      "hints": [
+        "10% of the Purchase Price",
+        "Cap"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Purchase Price is $86,500,000.",
+      "kind": "fact",
+      "hints": [
+        "$86,500,000",
+        "$86.5 million"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo that presents the issues as separate items. For each item it gives a document and section location, an explanation of significance and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "Location",
+        "Recommendation"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the Specified Environmental Matter remains fully uncapped as against Seller notwithstanding the Bill of Sale.",
+      "kind": "negative",
+      "hints": [
+        "remains uncapped",
+        "carve-out preserved"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the Kettle Ridge consent is listed on Schedule 4.5 or is a condition to Closing under SPA Section 7.2(d).",
+      "kind": "negative",
+      "hints": [
+        "Schedule 4.5 includes Kettle Ridge",
+        "closing condition"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ]
+}

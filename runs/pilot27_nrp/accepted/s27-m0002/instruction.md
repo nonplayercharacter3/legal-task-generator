@@ -1,0 +1,5 @@
+We act for Glarol Recycling Technologies, Inc., the buyer in an asset acquisition from Mourend Battery Materials LLC. Pellmont Trust Company, N.A. and Ostrander Fleet Recovery LLC are also counterparties on the deal documents. Before we go further, the client needs a clear picture of where the documents leave it exposed.
+
+Please review everything in the matter folder: the asset purchase agreement (asset_purchase_agreement.md), the bill of sale (bill_of_sale.md), Glarol's board consent (glarol_board_consent.md), the escrow agreement (escrow_agreement.md), and the insurance certificate cover letter (insurance_certificate_cover_letter.md).
+
+Send me a memo that lists each issue you find. For each one, give the document and section where it appears, explain why it matters for Glarol as buyer, and recommend a fix. Order the issues by significance to the client. Flag anything you think needs my attention or a call with the client before we respond to the other side. Keep it practical, as I'll be using it to decide our next steps on the documents.

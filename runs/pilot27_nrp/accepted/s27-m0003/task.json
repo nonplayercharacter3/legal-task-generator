@@ -1,0 +1,120 @@
+{
+  "task_id": "s27-m0003",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Mouren Building Systems Holdings, Inc., the buyer in its proposed acquisition of Ascendra Lift Services, Inc. from Stamox Vertical Group. Mouren is also the maker of the seller note and the assignee-side party to the LiftSense IP assignment. Before we sign off, the client wants a careful review of the transaction package. That way it knows what it is taking on and what we should push back on. Please review all five documents in the folder: the stock purchase agreement (stock_purchase_agreement_ascendra.md), the LiftSense IP assignment agreement (liftsense_ip_assignment_agreement.md), the bill of sale for the fleet and tooling (bill_of_sale_fleet_and_tooling.md), the seller promissory note (seller_promissory_note.md), and the mutual NDA between Mouren and Stamox (mutual_nda_mouren_stamox.md). Then send me a memo listing each issue you find. For each one, give the document and section where it appears, explain why it matters for Mouren, and recommend a fix. Rank the items so the most significant ones come first. Flag anything you think needs a client decision rather than a drafting change.",
+  "documents": [
+    "bill_of_sale_fleet_and_tooling.md",
+    "liftsense_ip_assignment_agreement.md",
+    "mutual_nda_mouren_stamox.md",
+    "seller_promissory_note.md",
+    "stock_purchase_agreement_ascendra.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Buyer's indemnity of Seller under SPA Section 9.3(b) (for Losses arising from post-Closing ownership or operation of the Company) is excluded from the cap by Section 9.5(c), so Buyer's exposure is unlimited while Seller's indemnity is capped at $4,850,000. It locates the issue in the SPA at Section 9.3(b) and/or Section 9.5(c), explains why this matters to Mouren, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 9.5(c)",
+        "uncapped",
+        "Section 9.3(b)"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Seller Note Section 12 chooses New York law and New York courts, while the SPA chooses Delaware law and the Delaware Court of Chancery. It notes that SPA Section 11.12 lets the Note control matters relating to it, so Buyer's setoff of indemnity claims against the Note under SPA Section 9.8 could be litigated in New York while the indemnity claim proceeds in Delaware. It locates the issue in the Seller Note Section 12, explains why this matters to Mouren, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York",
+        "Section 11.12",
+        "setoff"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that SPA Section 9.1(a) measures survival of the representations from the March 2, 2026 Agreement date rather than from the September 30, 2026 Closing, leaving only about five months after Closing to bring claims. It notes that this period ends before a full annual inspection cycle under Section 4.12(b) can reveal code-compliance breaches. It locates the issue in SPA Section 9.1(a), explains why this matters to Mouren, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "date of this Agreement",
+        "five months",
+        "annual inspection"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that IP Assignment Agreement Section 9.2 lets Stamox freely assign its Section 4.2 LiftSense license-back without consent, including to a competitor of Mouren in elevator maintenance. It locates the issue in the IP Assignment Agreement at Section 9.2 (with or without reference to Section 4.2), explains why this matters to Mouren, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "license-back",
+        "Section 9.2",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Scheduled Closing Date is September 30, 2026.",
+      "kind": "fact",
+      "hints": [
+        "September 30, 2026"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Seller Note principal amount is $7,500,000.",
+      "kind": "fact",
+      "hints": [
+        "$7,500,000",
+        "$7.5 million"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is organized as a memo that lists issues ranked by significance, with the most significant first. For each issue it gives a document and section reference and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "ranked",
+        "recommended fix"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response flags at least one item as requiring a client decision rather than a drafting change.",
+      "kind": "format",
+      "hints": [
+        "client decision",
+        "commercial decision"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the representations under SPA Section 9.1(a) survive for twelve months after the Closing Date.",
+      "kind": "negative",
+      "hints": [
+        "twelve months after Closing"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that SPA Section 11.12 makes the SPA's Delaware governing-law and forum provisions prevail over the Seller Note's New York provisions.",
+      "kind": "negative",
+      "hints": [
+        "SPA prevails over the Note"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ]
+}

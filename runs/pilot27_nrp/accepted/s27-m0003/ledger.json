@@ -1,0 +1,195 @@
+{
+  "matter_id": "s27-m0003",
+  "summary": "Mouren Building Systems Holdings, Inc. (the client and Buyer) is buying all of the issued and outstanding stock of Ascendra Lift Services, Inc. from Stamox Vertical Group, Inc. (Seller). Ascendra is a Delaware corporation that maintains, repairs and inspects elevators and escalators for commercial buildings in the Mid-Atlantic. The Stock Purchase Agreement is dated as of March 2, 2026. Closing is scheduled for September 30, 2026, after state elevator contractor licenses are transferred. The price is $48,500,000, of which $7,500,000 is deferred through a Seller Note issued by Buyer. Two closing deliverables accompany the SPA. In an IP Assignment Agreement, Seller assigns the LiftSense remote-monitoring software to Ascendra and takes a license back. In a Bill of Sale, a Seller affiliate conveys field service vehicles and tooling to Ascendra. A mutual NDA from the diligence phase is also in the folder. Four problems for Buyer are planted. First, Buyer's indemnity of Seller is excluded from the cap. Second, the Seller Note chooses New York law and forum and controls over the SPA through the precedence clause. Third, the representations survive only five months past the scheduled Closing. Fourth, Seller may freely assign its LiftSense license-back, including to a competitor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Mouren Building Systems Holdings, Inc.",
+      "role": "Buyer (client); maker of the Seller Note; assignee-side party under the IP Assignment Agreement"
+    },
+    {
+      "id": "P2",
+      "name": "Stamox Vertical Group, Inc.",
+      "role": "Seller of the Ascendra shares; holder of the Seller Note; assignor and licensee-back under the IP Assignment Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Ascendra Lift Services, Inc.",
+      "role": "Target company whose shares are being sold; assignee of LiftSense IP; transferee under the Bill of Sale"
+    },
+    {
+      "id": "P4",
+      "name": "Stamox Fleet Services, LLC",
+      "role": "Seller affiliate conveying service vehicles and tooling under the Bill of Sale"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Scheduled Closing Date",
+      "value": "September 30, 2026",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F3",
+      "key": "Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note principal amount",
+      "value": "$7,500,000",
+      "doc": "D1",
+      "section": "Section 2.2(b)"
+    },
+    {
+      "id": "F5",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8(a)"
+    },
+    {
+      "id": "F6",
+      "key": "Stock Purchase Agreement exclusive forum",
+      "value": "Delaware Court of Chancery",
+      "doc": "D1",
+      "section": "Section 11.8(b)"
+    },
+    {
+      "id": "F7",
+      "key": "Seller indemnity cap",
+      "value": "$4,850,000 (10% of the Purchase Price)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "SPA prevails over Ancillary Documents, except the Seller Note controls matters arising under or relating to it",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F9",
+      "key": "Seller Note maturity",
+      "value": "36 months after the Closing Date",
+      "doc": "D4",
+      "section": "Section 2"
+    },
+    {
+      "id": "F10",
+      "key": "Ascendra elevator inspection cycle",
+      "value": "annual state periodic inspection of every serviced unit",
+      "doc": "D1",
+      "section": "Section 4.12(b)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_ascendra.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "liftsense_ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "bill_of_sale_fleet_and_tooling.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_promissory_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "mutual_nda_mouren_stamox.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Two SPA provisions combine to expose Buyer to unlimited liability. Section 9.3(b) requires Buyer to indemnify Seller for all Losses arising out of the ownership or operation of the Company or its business after the Closing. That is broad enough to cover legacy service-contract and elevator-accident claims that Seller can recharacterize as post-Closing operations. Section 9.5(c) then excludes from the cap any Losses 'arising under Section 9.3'. Seller's indemnity is capped at $4,850,000 under Section 9.5(a), but Buyer's 9.3(b) exposure has no ceiling. Seller's 9.2 indemnity also does not expressly carve pre-Closing occurrences out of Buyer's 9.3(b) obligation. In elevator maintenance, a single entrapment or fall claim can be very large.",
+      "doc": "D1",
+      "section": "Section 9.3(b) and Section 9.5(c)",
+      "detect_terms": [
+        "ownership or operation of the Company",
+        "arising under Section 9.3"
+      ],
+      "expected_finding": "Buyer's indemnity under SPA Section 9.3(b) for post-Closing operation of the Company is excluded from any cap by Section 9.5(c), leaving Buyer with unlimited exposure while Seller is capped at $4,850,000. Buyer should cap 9.3(b) to match the 10% cap and narrow it to exclude occurrences before the Closing, which remain Seller's responsibility.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The SPA chooses Delaware law in Section 11.8(a) and makes the Delaware Court of Chancery the exclusive forum in Section 11.8(b). Seller Note Section 12 instead chooses New York law and the exclusive jurisdiction of the state and federal courts in New York County. The SPA's precedence clause, Section 11.12, does not cure the conflict. It provides that the Seller Note controls on matters arising under or relating to the Seller Note. Buyer's principal indemnity recovery is to set off Seller indemnity claims against Note payments under SPA Section 9.8. A dispute over whether a setoff was proper therefore 'relates to' the Note and would be heard in New York under New York law. The underlying indemnity claim would be heard in Delaware under Delaware law. The result is parallel proceedings and inconsistent outcomes. Seller could also accelerate the Note in New York while the indemnity claim is pending in Delaware.",
+      "doc": "D4",
+      "section": "Section 12",
+      "detect_terms": [
+        "laws of the State of New York",
+        "County of New York"
+      ],
+      "expected_finding": "Seller Note Section 12 chooses New York law and New York courts, and SPA Section 11.12 lets the Note control matters relating to it. Buyer's setoff of indemnity claims against the Note under SPA Section 9.8 would therefore be litigated in New York while the indemnity claim proceeds in Delaware. The Note should be conformed to Delaware law and the Court of Chancery, or the precedence exception should be removed.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1(a) provides that the general representations survive 'until the date that is twelve (12) months after the date of this Agreement'. That anchors survival to the Agreement date of March 2, 2026, not to the Closing, so the survival period ends March 2, 2027. Section 2.4 sets the Scheduled Closing Date at September 30, 2026. The Bill of Sale (D3) is also dated September 30, 2026 as a closing deliverable. Buyer therefore has only about five months after Closing to bring claims. Section 4.12(b) states that every unit Ascendra services is subject to an annual state periodic inspection. Breaches of the code-compliance and inspection-certificate representations in Section 4.12 would normally surface at the first post-Closing annual inspection cycle. Much of that cycle falls after March 2, 2027. Section 9.6 requires a claim notice before survival expires, so those claims would be barred.",
+      "doc": "D1",
+      "section": "Section 9.1(a)",
+      "detect_terms": [
+        "twelve (12) months after the date of this Agreement"
+      ],
+      "expected_finding": "SPA Section 9.1(a) measures survival from the March 2, 2026 Agreement date rather than from the September 30, 2026 Closing, leaving only about five months after Closing and ending before a full annual inspection cycle under Section 4.12(b) can reveal code-compliance breaches. Survival should run at least 18 months from the Closing Date, with longer survival for the Section 4.12 representations.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Under IP Assignment Agreement Section 4.2, Ascendra grants Stamox Vertical Group a perpetual, royalty-free license back to the assigned LiftSense remote-monitoring software for Seller's retained modernization business. Section 9.2 allows Stamox to assign the IP Assignment Agreement and the license-back without consent to any person, including by merger or sale of assets. Mouren and Ascendra, by contrast, need Stamox's prior written consent to assign. The license-back runs to Ascendra's core diagnostic technology. Read with Section 4.2, Section 9.2 lets Seller transfer that license to a direct elevator-maintenance competitor of Buyer. Nothing in the agreement limits the license to the original licensee or a field of use that protects Buyer.",
+      "doc": "D2",
+      "section": "Section 9.2 (read with Section 4.2)",
+      "detect_terms": [
+        "without the consent of any other party",
+        "including to any successor by merger"
+      ],
+      "expected_finding": "IP Assignment Agreement Section 9.2 lets Stamox freely assign its Section 4.2 LiftSense license-back, including to a competitor of Buyer in elevator maintenance. The clause should require Ascendra's consent, prohibit transfer to competitors, and limit any permitted transfer to a sale of Seller's entire modernization business within its existing field of use.",
+      "contradicts": null
+    }
+  ]
+}

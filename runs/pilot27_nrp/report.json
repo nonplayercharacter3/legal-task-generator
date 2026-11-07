@@ -1,0 +1,210 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 1
+  },
+  "unsolved": 2,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 3,
+      "pass_rates": {
+        "0.00": 2,
+        "1.00": 1
+      }
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s27-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.0,
+      "unsolved": true,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 0,
+          "pass_rate": 0.0
+        }
+      ]
+    },
+    {
+      "matter_id": "s27-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 1.0,
+      "unsolved": false,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 3,
+          "pass_rate": 1.0
+        }
+      ]
+    },
+    {
+      "matter_id": "s27-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.0,
+      "unsolved": true,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 0,
+          "pass_rate": 0.0
+        }
+      ]
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12438,
+      "output_tokens": 24725,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 15,
+      "input_tokens": 316962,
+      "output_tokens": 94868,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 103894,
+      "output_tokens": 7764,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4457,
+      "output_tokens": 416,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 13,
+      "input_tokens": 396484,
+      "output_tokens": 11949,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4255,
+      "output_tokens": 1170,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 19043,
+      "output_tokens": 4888,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 217244,
+      "output_tokens": 53045,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 21,
+      "input_tokens": 209826,
+      "output_tokens": 20708,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 182,
+      "input_tokens": 1707859,
+      "output_tokens": 179899,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "organic dairy": 1,
+      "battery recycling": 1,
+      "elevator maintenance": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 2,
+      "asset purchase agreement": 1
+    },
+    "issue_types": {
+      "uncapped_indemnity": 2,
+      "change_of_control_consent": 2,
+      "missing_assignment_restriction": 2,
+      "governing_law_mismatch": 2,
+      "survival_gap": 2,
+      "liability_cap_carveout": 1,
+      "defined_term_inconsistency": 1,
+      "expired_notice_window": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}
