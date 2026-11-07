@@ -1,0 +1,222 @@
+{
+  "matter_id": "s26-m0003",
+  "summary": "Starev Thermal Holdings, Inc. (client, Buyer) is buying all of the outstanding stock of Coldline Immersion Systems, Inc. from Drasiv Industrial Group, LLC (Seller) for $184,000,000. Coldline designs and sells immersion and refrigerant-based cooling systems for hyperscale data centers. The Stock Purchase Agreement was signed on October 6, 2026, is governed by Delaware law and is scheduled to close on November 20, 2026. At Closing, Seller's affiliate Drasiv IP Holdings, LLC will convey Coldline's core immersion-tank patents and design files (the Contributed Assets) to the Company under a form Bill of Sale. The folder contains five documents: the SPA, the form Bill of Sale, Seller's Disclosure Schedule, a side letter signed with the SPA, and Coldline's Newark office lease (a distractor). Five issues are planted. (1) The Bill of Sale moves Contributed Asset claims to New York law and New York courts, and the SPA's precedence clause lets the Bill of Sale control on that point. (2) The indemnity for a known, multi-year refrigerant consent order expires 12 months after Closing. (3) A dielectric fluid price-lock extension option is presented as available, but its exercise deadline passed before signing. (4) The Disclosure Schedule shows that the largest customer contract needs change-of-control consent, but that consent is missing from the Required Consents closing condition. (5) The side letter, which prevails over the SPA, cuts the indemnity cap carve-outs down to Fraud only.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Starev Thermal Holdings, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Drasiv Industrial Group, LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Coldline Immersion Systems, Inc.",
+      "role": "Company (target whose stock is sold)"
+    },
+    {
+      "id": "P4",
+      "name": "Drasiv IP Holdings, LLC",
+      "role": "Seller affiliate conveying the Contributed Assets under the Bill of Sale"
+    },
+    {
+      "id": "P5",
+      "name": "Nimbara Cloud Services, Inc.",
+      "role": "Company's largest customer under a Master Supply Agreement"
+    },
+    {
+      "id": "P6",
+      "name": "Kelvara Fluids Corp.",
+      "role": "Company's dielectric immersion fluid supplier"
+    },
+    {
+      "id": "P7",
+      "name": "Ostrander Park Associates, LLC",
+      "role": "Landlord under the Company's Newark, Delaware office lease"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement date",
+      "value": "October 6, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Scheduled Closing Date",
+      "value": "November 20, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Purchase Price",
+      "value": "$184,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "SPA indemnity cap",
+      "value": "10% of the Purchase Price ($18,400,000)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "SPA indemnity cap exclusions",
+      "value": "Fraud, breach of Fundamental Representations, and the Section 9.2(d) Scheduled Refrigerant Matter indemnity",
+      "doc": "D1",
+      "section": "Section 9.5(b)"
+    },
+    {
+      "id": "F6",
+      "key": "General representation survival period",
+      "value": "12 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1(a)"
+    },
+    {
+      "id": "F7",
+      "key": "SPA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8(a)"
+    },
+    {
+      "id": "F8",
+      "key": "SPA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8(b)"
+    },
+    {
+      "id": "F9",
+      "key": "Order of precedence",
+      "value": "Side Letter, then SPA, then Disclosure Schedule, then other Ancillary Documents; Bill of Sale controls Contributed Assets conveyance",
+      "doc": "D1",
+      "section": "Section 11.11"
+    },
+    {
+      "id": "F10",
+      "key": "Kelvara Supply Agreement Initial Term expiry",
+      "value": "December 29, 2026",
+      "doc": "D3",
+      "section": "Schedule 4.11, Item 3"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale_contributed_assets.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "newark_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "SPA Section 11.8 puts all claims under Delaware law in the Delaware Court of Chancery. Bill of Sale Section 6 says that the Bill of Sale 'and all claims arising out of or relating to the Contributed Assets or their conveyance' are governed by the laws of the State of New York, with exclusive jurisdiction in the state and federal courts in the County of New York. SPA Section 11.11 normally makes the SPA prevail over Ancillary Documents, but it carves out an exception: the Bill of Sale controls any matter relating to the conveyance of the Contributed Assets. The precedence clause therefore does not cure the conflict. Read together, these provisions mean that claims about title to, or defects in, the core immersion-tank patents would be heard in New York under New York law. All other indemnity claims arising from the same facts would stay in Delaware under Delaware law. Buyer faces split proceedings, inconsistent results, and the loss of the Delaware contractual framework the SPA indemnity was negotiated under.",
+      "doc": "D2",
+      "section": "Section 6 (Governing Law; Jurisdiction)",
+      "detect_terms": [
+        "laws of the State of New York",
+        "County of New York"
+      ],
+      "expected_finding": "Bill of Sale Section 6 moves Contributed Asset claims to New York law and New York courts, and SPA Section 11.11 lets the Bill of Sale control on that point, so Buyer's claims about the core patents would be split from its Delaware SPA claims; the Bill of Sale should be conformed to Delaware law and the Court of Chancery, or the SPA Section 11.11 exception should be narrowed to the bare transfer of title.",
+      "contradicts": [
+        "F7",
+        "F8"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.2(d) gives Buyer a specific indemnity for Losses from the 'Scheduled Refrigerant Matter'. SPA Section 9.1(b), however, says the covenants in Sections 9.2(b) through 9.2(d) survive only until the expiration of the survival period of the representation to which the covenant relates. The related representation is Section 4.15 (Environmental Matters). It is not a Fundamental Representation, so under Section 9.1(a) it survives only 12 months after Closing, which is November 20, 2027 measured from the Scheduled Closing Date. Disclosure Schedule 4.15 describes the matter: a Delaware DNREC consent order over an HFC refrigerant release at the Company's Newark test facility, requiring remediation and monitoring through June 30, 2029. Most of the remediation and monitoring costs will therefore arise after the indemnity has expired. Delaware enforces contractual shortening of survival periods (10 Del. C. § 8106(c)), so Buyer cannot recover those costs.",
+      "doc": "D1",
+      "section": "Section 9.1(b)",
+      "detect_terms": [
+        "to which such covenant relates"
+      ],
+      "expected_finding": "Because SPA Section 9.1(b) ties the Section 9.2(d) Scheduled Refrigerant Matter indemnity to the 12-month survival period of the Section 4.15 environmental representation, the indemnity expires around November 2027, while Disclosure Schedule 4.15 shows the consent order obligations running to June 30, 2029; the Section 9.2(d) indemnity should be given a separate survival period running at least until the consent order obligations are fully discharged.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Disclosure Schedule 4.11, Item 3 lists the Kelvara Fluids Supply Agreement as 'in effect, with the price-lock extension option available to the Company'. The option must be exercised by written notice delivered not less than ninety (90) days before the Initial Term expiry of December 29, 2026. That makes the deadline September 30, 2026. The SPA is dated October 6, 2026, and the Disclosure Schedule was delivered the same day, so the window had already closed when the schedule described the option as available. Side Letter paragraph 2, dated October 6, 2026, records Buyer's position: Seller agrees to cause the Company to exercise the Kelvara extension option before Closing. That covenant cannot be performed. Unless Kelvara agrees to reinstate the option, the Company loses its locked price for dielectric immersion fluid when the Initial Term ends. Because the lapse is disclosed against the Section 4.11 representation, Buyer may have no indemnity claim for the resulting cost increase. Buyer has not accepted the lapse, and the deal has not closed, so Buyer can still address it.",
+      "doc": "D3",
+      "section": "Schedule 4.11, Item 3",
+      "detect_terms": [
+        "not less than ninety (90) days",
+        "extension option available"
+      ],
+      "expected_finding": "The Kelvara price-lock extension option had to be exercised by September 30, 2026 (90 days before the December 29, 2026 Initial Term expiry), which was before the October 6, 2026 SPA date, so Side Letter paragraph 2 cannot be performed; before Closing, Buyer should require Seller to obtain Kelvara's written reinstatement of the option, or obtain a special indemnity or purchase price adjustment for the lost fluid pricing.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Disclosure Schedule 4.10(a) lists the Nimbara Cloud Master Supply Agreement as the Company's largest contract, at 38% of revenue. The schedule states that the contract requires the prior written consent of Nimbara to any change of control of the Company, and that without consent Nimbara may terminate and claim service credits. SPA Section 6.4(c) makes it a Buyer closing condition that the Required Consents be obtained. SPA Section 5.5 obliges Seller to obtain only the Required Consents. Both sections define Required Consents by reference to Schedule 6.4 of the Disclosure Schedule, and Schedule 6.4 lists only the landlord consent under the office lease. Nimbara's consent is therefore not a closing condition and Seller has no covenant to obtain it. Because the consent requirement is disclosed against Section 4.4 (No Conflicts), Buyer would also have no indemnity claim if Nimbara terminates after Closing. The office lease consent, by contrast, is properly listed and addressed.",
+      "doc": "D3",
+      "section": "Schedule 6.4 (Required Consents), read with Schedule 4.10(a)",
+      "detect_terms": [
+        "prior written consent of Nimbara"
+      ],
+      "expected_finding": "The Nimbara Master Supply Agreement (38% of revenue) requires Nimbara's prior written consent to the change of control, but that consent is missing from Schedule 6.4, so it is neither a closing condition under SPA Section 6.4(c) nor a Seller covenant under Section 5.5, and its disclosure blocks any indemnity claim; Nimbara's consent should be added to Schedule 6.4 as a Required Consent, or Buyer should obtain a special indemnity for Nimbara termination losses.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 9.5(b) excludes three categories from the cap of 10% of the Purchase Price: Fraud, breaches of Fundamental Representations, and the Section 9.2(d) Scheduled Refrigerant Matter indemnity. Side Letter paragraph 3 states that the exclusions from the Cap under Section 9.5(b) are 'limited solely to Fraud'. Under SPA Section 11.11 the Side Letter prevails over the SPA, so this change controls. As a result, claims for breach of the capitalization, title-to-shares and authority representations, and claims for refrigerant consent order costs, are now capped at $18,400,000 on a $184,000,000 deal. The cap reduction compounds the survival gap on the refrigerant indemnity.",
+      "doc": "D4",
+      "section": "Paragraph 3",
+      "detect_terms": [
+        "limited solely to Fraud"
+      ],
+      "expected_finding": "Side Letter paragraph 3 overrides SPA Section 9.5(b) through the Section 11.11 precedence clause and limits the cap exclusions to Fraud, so breaches of Fundamental Representations and the Section 9.2(d) Scheduled Refrigerant Matter indemnity are now subject to the $18,400,000 cap; paragraph 3 should be deleted, or revised to restore the full Section 9.5(b) exclusions.",
+      "contradicts": "F5"
+    }
+  ]
+}

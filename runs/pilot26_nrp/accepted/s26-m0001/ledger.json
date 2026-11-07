@@ -1,0 +1,198 @@
+{
+  "matter_id": "s26-m0001",
+  "summary": "Seinon Outdoor Gear, Inc. (client), a maker of technical outdoor apparel, is the customer under a Master Services Agreement with Poseirt Commerce Logistics, LLC. Poseirt will host Seinon's direct-to-consumer e-commerce storefront and provide order fulfillment from a Reno, Nevada warehouse. The folder holds four documents: the MSA, an Order Form, a Service Level Schedule, and an unrelated fabric-testing agreement between Seinon and a lab. The fabric-testing agreement is a distractor. The MSA ranks the Order Form and the Service Level Schedule above itself. Because of that ranking, a New York governing-law and forum clause and a worldwide all-channel exclusivity clause in the Order Form override the MSA's Delaware choice and its narrow exclusivity. For the same reason, a Service Level Schedule clause pulls Security Incidents back under the liability cap, even though the MSA carves them out. Within the MSA itself, two further problems arise from reading provisions together. First, the auto-renewal clause, read with the Order Form's 60-month Initial Term, renews for five-year terms with only a 10-day opt-out window. Second, the cap exclusion for all indemnities, combined with Seinon's broad product indemnity, leaves Seinon with uncapped exposure.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Seinon Outdoor Gear, Inc.",
+      "role": "Customer; outdoor apparel brand purchasing e-commerce platform and fulfillment services (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Poseirt Commerce Logistics, LLC",
+      "role": "Provider of e-commerce storefront hosting, order management and warehouse fulfillment services"
+    },
+    {
+      "id": "P3",
+      "name": "Kelvane Textile Labs, Inc.",
+      "role": "Unrelated vendor providing waterproofing and abrasion testing of fabrics to Seinon (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Order Form Effective Date",
+      "value": "April 1, 2026",
+      "doc": "D2",
+      "section": "Section 1 (Order Details)"
+    },
+    {
+      "id": "F3",
+      "key": "Order Form Initial Term",
+      "value": "60 months from the Order Form Effective Date",
+      "doc": "D2",
+      "section": "Section 2 (Term)"
+    },
+    {
+      "id": "F4",
+      "key": "MSA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 14.1"
+    },
+    {
+      "id": "F5",
+      "key": "MSA forum",
+      "value": "state or federal courts located in Wilmington, Delaware (exclusive)",
+      "doc": "D1",
+      "section": "Section 14.2"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Order Form, then Service Level Schedule, then Master Services Agreement",
+      "doc": "D1",
+      "section": "Section 1.3"
+    },
+    {
+      "id": "F7",
+      "key": "MSA exclusivity scope",
+      "value": "direct-to-consumer e-commerce fulfillment of Seinon products shipped to the United States and Canada",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F8",
+      "key": "MSA liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F9",
+      "key": "MSA liability cap exclusions",
+      "value": "confidentiality breach, Security Incidents, gross negligence, willful misconduct, indemnification obligations",
+      "doc": "D1",
+      "section": "Section 11.3"
+    },
+    {
+      "id": "F10",
+      "key": "Order Form monthly platform fee",
+      "value": "$48,500",
+      "doc": "D2",
+      "section": "Section 3 (Fees)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "seinon_poseirt_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seinon_poseirt_order_form_no1.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seinon_poseirt_service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seinon_kelvane_fabric_testing_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "MSA Sections 14.1 and 14.2 choose Delaware law and the exclusive courts in Wilmington, Delaware. Order Form Section 8 instead provides that the Order Form and any dispute arising under it are governed by New York law and must be brought exclusively in the state or federal courts of New York County. On its own the conflict might look like a stray clause, but MSA Section 1.3 ranks the Order Form above the MSA. That ranking lets the New York clause control disputes over fees, term and exclusivity, which are all set in the Order Form. Disputes under the MSA and the Service Level Schedule stay in Delaware. Seinon therefore faces split governing law, two exclusive forums that each claim jurisdiction, and the risk of parallel litigation over a single relationship.",
+      "doc": "D2",
+      "section": "Section 8 (Governing Law and Venue)",
+      "detect_terms": [
+        "laws of the State of New York",
+        "New York County"
+      ],
+      "expected_finding": "Order Form Section 8's New York law and New York County forum clause conflicts with MSA Sections 14.1–14.2 (Delaware law, Wilmington courts). Because MSA Section 1.3 gives the Order Form precedence, Order Form disputes would be split off into New York. The Order Form clause should be deleted, or conformed to Delaware law and forum.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "MSA Section 2.4 limits Seinon's exclusivity commitment to direct-to-consumer e-commerce fulfillment of products shipped to the United States and Canada. Order Form Section 4, however, requires Seinon to use Poseirt exclusively for 'all fulfillment, warehousing and logistics services' for all Seinon products in all sales channels worldwide. That language expressly includes wholesale distribution and retail-store replenishment. MSA Section 1.3 makes the Order Form prevail, so the broader clause controls. Seinon would be barred from using any other warehouse or logistics provider for its wholesale accounts, its own stores, or international markets. Those activities fall well outside the North American direct-to-consumer services Poseirt actually provides. Seinon could also be in breach the moment it uses any existing third-party logistics provider in those channels.",
+      "doc": "D2",
+      "section": "Section 4 (Exclusivity)",
+      "detect_terms": [
+        "all fulfillment, warehousing and logistics services",
+        "in all sales channels worldwide"
+      ],
+      "expected_finding": "Order Form Section 4 extends exclusivity to all fulfillment, warehousing and logistics in every channel worldwide, and it overrides the MSA Section 2.4 limit (direct-to-consumer e-commerce in the U.S. and Canada) through the MSA Section 1.3 precedence clause. The Order Form should be narrowed to match MSA Section 2.4.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I3",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA Section 9.2 provides that each Order Form renews automatically for successive renewal terms equal in length to its Initial Term. Renewal can be avoided only by written notice delivered no earlier than 100 days and no later than 90 days before the current term expires. Order Form Section 2 sets a 60-month Initial Term beginning on the Order Form Effective Date of April 1, 2026, so the Initial Term ends March 31, 2031. Read together, these provisions mean Seinon is locked in for a further five years unless it gives notice within a 10-day window, from December 21, 2030 to December 31, 2030. The clause binds both parties, but the harm falls on Seinon. A single missed window commits Seinon to five more years of fees at $48,500 per month and to the exclusivity, with no termination for convenience.",
+      "doc": "D1",
+      "section": "Section 9.2 (Renewal)",
+      "detect_terms": [
+        "equal in length to its Initial Term",
+        "no earlier than 100 days and no later than 90 days"
+      ],
+      "expected_finding": "MSA Section 9.2, read with the 60-month Initial Term in Order Form Section 2 (starting April 1, 2026), auto-renews for five-year terms unless notice is given in a 10-day window (December 21–31, 2030). The renewal should be shortened to one-year terms, with a longer notice window or a right to terminate on notice during any renewal term.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "MSA Section 11.3 provides that the Section 11.2 cap does not apply to either party's indemnification obligations under Section 10. Poseirt's indemnity in Section 10.1 is narrow, covering only third-party claims that its platform software infringes intellectual property. Seinon's indemnity in Section 10.2 is broad. It covers all third-party claims arising out of or relating to the Products or Customer Materials, including product liability, recall, and customs or import claims, 'regardless of whether caused in part by Provider' handling, storage or shipment. Read together, the two sections leave Seinon with unlimited liability for claims that Poseirt's own warehouse negligence helps cause. Poseirt's uncapped exposure, by contrast, is confined to IP infringement.",
+      "doc": "D1",
+      "section": "Sections 10.2 and 11.3",
+      "detect_terms": [
+        "regardless of whether caused in part by Provider",
+        "shall not apply to either party's indemnification obligations"
+      ],
+      "expected_finding": "Because MSA Section 11.3 removes all Section 10 indemnities from the cap, Seinon's broad Section 10.2 product indemnity, which applies even where Poseirt's handling contributes to the claim, is uncapped. Seinon's indemnity should be capped or limited to claims not caused by Poseirt, or Poseirt's negligence should be excluded from it.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "MSA Section 11.3 carves Security Incidents out of the 12-month-fees cap in Section 11.2. A Security Incident includes a breach exposing the personal data of Seinon's online shoppers. Service Level Schedule Section 6.3, however, states that service credits are Seinon's sole and exclusive remedy for any Service Failure, 'including any Security Incident'. It further provides that, notwithstanding Section 11.3 of the MSA, Poseirt's aggregate liability for Security Incidents shall not exceed the Section 11.2 cap. MSA Section 1.3 ranks the Service Level Schedule above the MSA, so the schedule controls. A consumer data breach, with its notification costs, regulatory penalties and class claims, would then be limited to service credits or at most one year's fees.",
+      "doc": "D3",
+      "section": "Section 6.3 (Exclusive Remedy)",
+      "detect_terms": [
+        "including any Security Incident",
+        "notwithstanding Section 11.3 of the MSA"
+      ],
+      "expected_finding": "Service Level Schedule Section 6.3 removes the MSA Section 11.3 Security Incident carve-out and places data breaches under the Section 11.2 cap, with service credits as the exclusive remedy, and it controls through MSA Section 1.3 precedence. Security Incidents should be deleted from Section 6.3, and the MSA carve-out should be made to prevail.",
+      "contradicts": "F9"
+    }
+  ]
+}

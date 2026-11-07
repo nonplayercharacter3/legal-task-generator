@@ -1,0 +1,181 @@
+{
+  "matter_id": "s26-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Bill of Sale Section 6.1: \"This Bill of Sale and all claims arising out of or relating to the Contributed Assets or their conveyance shall be governed by and construed in accordance with the laws of the State of New York...\" Section 6.2 gives exclusive jurisdiction to \"the state and federal courts located in the County of New York.\" SPA Section 11.11: \"However, the Bill of Sale shall control with respect to any matter relating to the conveyance of the Contributed Assets.\"",
+            "reason": "SPA Section 11.8 sends all claims arising out of the SPA or the transactions it contemplates to Delaware law and the Delaware Court of Chancery. The Bill of Sale instead sends all claims relating to the Contributed Assets or their conveyance to New York law and exclusive New York courts. The SPA's order-of-precedence clause does not resolve this conflict, because its carve-out makes the Bill of Sale control conveyance matters. The Side Letter does not address governing law or forum either. The result is that title and defect claims over the core patents could be split away from the Delaware indemnity claims (for example under SPA 4.12(b) and 9.2) that arise from the same facts. That exposes Buyer and the Company to parallel proceedings and inconsistent results. The Bill of Sale is still an unsigned form exhibit, and Closing is set for November 20, 2026, so Buyer can still fix this before signing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 9.1(b): \"The covenants and agreements of Seller in Sections 9.2(b) through 9.2(d) shall survive the Closing until the expiration of the survival period of the representation and warranty to which such covenant relates.\" Section 9.1(a) gives non-Fundamental representations, including Section 4.15 (Environmental Matters), only 12 months after the Closing Date. Disclosure Schedule 4.15 states the DNREC Consent Order requires the Company to \"complete all remediation and monitoring through June 30, 2029,\" with an estimated $3,900,000 in remaining costs, \"most of that amount relates to remediation completion and monitoring to be performed in 2027 through 2029.\"",
+            "reason": "The problem is present and hurts Buyer. The Section 9.2(d) indemnity for the Scheduled Refrigerant Matter is a Seller obligation running to Buyer. Section 9.1(b) ties its survival to the representation it relates to, which is Section 4.15. Section 4.15 is not a Fundamental Representation, so it lapses 12 months after Closing (about November 20, 2027). That is well before the consent-order work ends on June 30, 2029, and most of the roughly $3.9M in costs falls after the cutoff. Section 9.1(c) does not help, because it expressly carves out Section 9.1(b). Section 9.1(d) preserves only claims asserted before expiry, so it does not reach costs incurred later. Nothing else in the folder fixes this. The Side Letter leaves survival untouched, and it actually narrows the cap exclusions to Fraud only, which makes Buyer's position worse. The Bill of Sale and the Newark lease do not address it either. Closing is scheduled for November 20, 2026 and has not yet occurred, so the agreement terms can still be renegotiated. The issue is therefore still actionable for Buyer."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Schedule 4.11, Item 3: \"To do so, the Company must deliver written notice of exercise to Kelvara not less than ninety (90) days before the expiration of the Initial Term.\" Also: \"Initial Term: The Initial Term expires December 29, 2026.\" And: \"Status: In effect, with the price-lock extension option available to the Company.\"",
+            "reason": "Ninety days before December 29, 2026 is September 30, 2026. The schedule was delivered on October 6, 2026, so the exercise window had already closed when Seller described the option as available. That description is false.\n\nSide Letter ¶2.1 obligates Seller to cause the Company to exercise the option before Closing. Under the agreement's own terms, that covenant cannot be performed. Unless Kelvara agrees to reinstate the option, the agreement goes month-to-month at Kelvara's list pricing after the Initial Term ends. That would cost Buyer's target the Locked Price on a critical input.\n\nNothing in the folder cures the problem:\n- No Kelvara waiver or reinstatement appears.\n- Buyer has not accepted the lapse.\n- Closing is scheduled for November 20, 2026, and has not occurred.\n\nBuyer can still act. It can demand that Seller obtain Kelvara's agreement to reinstate the option, rely on the closing condition in §6.4(b), seek a price adjustment, or obtain a specific indemnity. It should also clarify that the inaccurate description supports a §4.11 claim rather than operating as a disclosure against it."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Schedule 6.4 lists only: \"1. Consent of Ostrander Park Associates, LLC, as landlord under the Newark Lease, to the change of control of the Company resulting from the sale of the Shares to Buyer.\" Schedule 4.10(a), Item 1, by contrast, states that the Nimbara agreement is \"the Company's largest contract. It accounted for 38% of the Company's revenue in fiscal year 2025\" and that \"Section 14.2 of the agreement requires the prior written consent of Nimbara to any change of control of the Company. If a change of control occurs without that consent, Nimbara may terminate the agreement on written notice and may claim service credits.\"",
+            "reason": "The SPA defines \"Required Consents\" solely by reference to Schedule 6.4. Two provisions turn on that definition: the closing condition in Section 6.4(c) and Seller's reasonable-best-efforts covenant in Section 5.5. Schedule 6.4 lists only the landlord consent, so Nimbara's consent is neither a condition to Buyer's obligation to close nor something Seller must pursue. Schedule 4.4, Item 1 discloses the Nimbara consent requirement against the Section 4.4 no-conflicts representation, which defeats any Section 9.2(a) indemnity claim if Nimbara terminates and claims service credits after Closing. Nothing else in the folder fixes this: the Side Letter deals only with Kelvara, the Cap and refrigerant updates, and there is no Nimbara indemnity or covenant. The risk falls on Buyer, the firm's client, through loss of a contract worth 38% of revenue plus service credit exposure. The SPA is dated October 6, 2026 and Closing is set for November 20, 2026, so Buyer can still act by amending Schedule 6.4 or adding a specific indemnity."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Seller and Buyer agree that the exclusions from the Cap under Section 9.5(b) of the Agreement are limited solely to Fraud.",
+            "reason": "SPA 9.5(b) carves Fraud, Fundamental Representation breaches and the 9.2(d) refrigerant indemnity out of the $18.4M Cap. Side Letter paragraph 3 cuts that list to Fraud alone. Under SPA 11.11 the Side Letter prevails over the SPA. Buyer is the indemnified party, so it bears the loss. Claims for breach of Capitalization, Title to Shares, Authority and Organization (all brought under 9.2(a)) would now be capped at 10% of a $184M price. That is far below the exposure on a failure of title to the Shares. The refrigerant point is weaker but still real. On its face, 9.5(a) caps only 9.2(a) claims, so the 9.2(d) indemnity is arguably uncapped anyway. However, deleting the express exclusion invites Seller to argue that consent-order costs (about $3.9M estimated) were meant to be capped, or that they count toward the Cap. The Side Letter signature blocks are blank, it is dated October 6, 2026, and Closing is November 20, 2026. Nothing shows Buyer has accepted the result, so the point remains actionable before signing or Closing."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.09,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 14,
+              "files_opened": [
+                "bill_of_sale_contributed_assets.md",
+                "newark_office_lease.md",
+                "seller_disclosure_schedule.md",
+                "side_letter.md",
+                "stock_purchase_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2"
+              ],
+              "steps": 14,
+              "files_opened": [
+                "bill_of_sale_contributed_assets.md",
+                "newark_office_lease.md",
+                "seller_disclosure_schedule.md",
+                "side_letter.md",
+                "stock_purchase_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 14,
+              "files_opened": [
+                "bill_of_sale_contributed_assets.md",
+                "newark_office_lease.md",
+                "seller_disclosure_schedule.md",
+                "side_letter.md",
+                "stock_purchase_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

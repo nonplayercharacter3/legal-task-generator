@@ -1,0 +1,142 @@
+{
+  "task_id": "s26-m0003",
+  "split": "test",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Starev Thermal Holdings, Inc., the buyer under a stock purchase agreement with Drasiv Industrial Group, LLC. The deal also involves Coldline Immersion Systems, Inc., Drasiv IP Holdings, LLC, Nimbara Cloud Services, Inc., Kelvara Fluids Corp. and Ostrander Park Associates, LLC. Before we go back to the other side, Starev needs a clear view of where the deal documents leave it exposed and what we should push for. Please review everything in the matter folder: stock_purchase_agreement.md, bill_of_sale_contributed_assets.md, seller_disclosure_schedule.md, side_letter.md and newark_office_lease.md. Then prepare a memo to me that lists each issue you identify. For each issue, give the document and section where it appears, explain why it matters to Starev as buyer, and recommend a specific fix, such as proposed revised language, a new closing condition or deliverable, or a point to raise in negotiation. Please rank the issues so the most significant come first, and flag anything you think needs to be resolved before signing. If something is ambiguous or you need facts from the client, note it in the memo rather than assuming an answer.",
+  "documents": [
+    "bill_of_sale_contributed_assets.md",
+    "newark_office_lease.md",
+    "seller_disclosure_schedule.md",
+    "side_letter.md",
+    "stock_purchase_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Bill of Sale Section 6 subjects the Bill of Sale and claims relating to the Contributed Assets or their conveyance to New York law and New York courts, conflicting with the SPA's Delaware governing law and Court of Chancery forum (SPA Section 11.8). It also identifies that SPA Section 11.11 lets the Bill of Sale control on Contributed Asset conveyance matters, so the conflict is not cured. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "laws of the State of New York",
+        "Section 11.11",
+        "Court of Chancery"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that SPA Section 9.1(b) ties the survival of the Section 9.2(d) Scheduled Refrigerant Matter indemnity to the survival period of the related environmental representation (Section 4.15), which is 12 months after Closing. It also identifies that Disclosure Schedule 4.15 shows the consent order obligations running to June 30, 2029, so the indemnity expires well before those obligations end. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 9.1(b)",
+        "June 30, 2029",
+        "12 months"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Kelvara price-lock extension option listed in Disclosure Schedule 4.11, Item 3 had to be exercised at least 90 days before the December 29, 2026 Initial Term expiry, a deadline of about September 30, 2026. It also identifies that this deadline passed before the October 6, 2026 SPA date, so the option is not available as described and the Side Letter paragraph 2 covenant to exercise it cannot be performed. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "September 30, 2026",
+        "ninety (90) days",
+        "Kelvara"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that Disclosure Schedule 4.10(a) shows the Nimbara Master Supply Agreement requires Nimbara's prior written consent to a change of control. It also identifies that this consent is not listed in Schedule 6.4 (Required Consents), so it is not a Buyer closing condition under SPA Section 6.4(c) or a Seller obligation under Section 5.5. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Nimbara",
+        "Schedule 6.4",
+        "Required Consents"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that Side Letter paragraph 3 limits the exclusions from the indemnity cap to Fraud only. It also identifies that, because the Side Letter prevails over the SPA (SPA Section 11.11), this overrides SPA Section 9.5(b), so breaches of Fundamental Representations and the Section 9.2(d) Scheduled Refrigerant Matter indemnity become subject to the cap. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "limited solely to Fraud",
+        "Section 9.5(b)",
+        "Fundamental Representations"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the indemnity cap under SPA Section 9.5(a) is 10% of the Purchase Price, or $18,400,000.",
+      "kind": "fact",
+      "hints": [
+        "$18,400,000",
+        "10% of the Purchase Price"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Purchase Price is $184,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$184,000,000",
+        "$184 million"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that the scheduled Closing Date is November 20, 2026.",
+      "kind": "fact",
+      "hints": [
+        "November 20, 2026"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is written as a memo addressed to the supervising partner. It presents the issues as a list, and each issue gives the document and section where it appears.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Section"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response ranks or orders the issues by significance, stating or showing that the most significant come first.",
+      "kind": "format",
+      "hints": [
+        "ranked",
+        "most significant",
+        "priority"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the Kelvara price-lock extension option can still be exercised on its existing terms by timely notice before the December 29, 2026 Initial Term expiry.",
+      "kind": "negative",
+      "hints": [
+        "option remains available",
+        "still exercisable"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response claims that, despite the Side Letter, breaches of Fundamental Representations remain excluded from the indemnity cap under the deal documents as currently drafted.",
+      "kind": "negative",
+      "hints": [
+        "Fundamental Representations uncapped",
+        "excluded from the cap"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ]
+}

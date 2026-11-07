@@ -1,0 +1,182 @@
+{
+  "matter_id": "s26-m0002",
+  "summary": "Praidein Flight Kitchens, LLC is a regional airline caterer and the firm's client. It licenses Zousen Galley Systems, Inc.'s cloud galley-planning and tray-assembly software under a Delaware-law Software License Agreement dated 15 January 2024. The other documents are an Order Form (subscription start 1 February 2024, 36-month initial term) and a Side Letter dated 21 October 2026. The Side Letter adds a flight-kitchen site. Its recitals record that Praidein signed a Merger Agreement on 11 September 2026 under which Ostrander Aviation Hospitality Group will acquire 100% of Praidein's equity. It also records Praidein's non-renewal notice of 14 October 2026, which Zousen says was late. A refrigerated-fleet maintenance agreement with an unrelated vendor is a distractor. The partner wants a memo spotting issues before the acquisition closes. The four planted issues are: a missed non-renewal window that triggers a 24-month auto-renewal; Order Form wording that lets Zousen assign freely and overrides the mutual restriction; an Order Form definition of 'Authorized User' that is narrower than the Agreement's and shuts out Praidein's agency galley crews; and an unaddressed change-of-control consent right that the pending merger will trigger.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Praidein Flight Kitchens, LLC",
+      "role": "Licensee; regional airline caterer; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Zousen Galley Systems, Inc.",
+      "role": "Licensor; provider of galley-planning and tray-assembly software"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Aviation Hospitality Group, Inc.",
+      "role": "Prospective acquirer of 100% of Praidein's equity under the Merger Agreement recited in the Side Letter"
+    },
+    {
+      "id": "P4",
+      "name": "Lorvex Fleet Refrigeration Services, LLC",
+      "role": "Unrelated vendor maintaining Praidein's refrigerated catering trucks (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "15 January 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Order of precedence",
+      "value": "Side Letter, then Order Form, then the body of the Software License Agreement",
+      "doc": "D1",
+      "section": "Section 1.3"
+    },
+    {
+      "id": "F3",
+      "key": "Non-renewal notice period",
+      "value": "at least 120 days before the end of the then-current Subscription Term",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F4",
+      "key": "Renewal Term length",
+      "value": "24 months",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F5",
+      "key": "Authorized User definition (Software License Agreement)",
+      "value": "employees, contractors and agency workers of Licensee and its Affiliates",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F6",
+      "key": "Order Form Subscription Start Date",
+      "value": "1 February 2024",
+      "doc": "D3",
+      "section": "Section 1"
+    },
+    {
+      "id": "F7",
+      "key": "Initial Subscription Term",
+      "value": "36 months",
+      "doc": "D3",
+      "section": "Section 1"
+    },
+    {
+      "id": "F8",
+      "key": "Merger Agreement date",
+      "value": "11 September 2026",
+      "doc": "D2",
+      "section": "Recital B"
+    },
+    {
+      "id": "F9",
+      "key": "Side Letter date",
+      "value": "21 October 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Praidein non-renewal notice delivery date",
+      "value": "14 October 2026",
+      "doc": "D2",
+      "section": "Section 4"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "praidein_zousen_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "praidein_zousen_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "praidein_zousen_order_form.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "praidein_lorvex_fleet_refrigeration_maintenance_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "D1 Section 12.2 renews the Subscription Term automatically for a 24-month Renewal Term unless a party gives non-renewal notice at least 120 days before the then-current term ends. D3 Section 1 sets the Subscription Start Date at 1 February 2024 and the Initial Subscription Term at 36 months, so the term ends 31 January 2027. The notice deadline was therefore 3 October 2026. D2 Section 4 records that Praidein delivered its non-renewal notice on 14 October 2026, eleven days late. In the same section Zousen asserts the notice was untimely, while both parties reserve their positions. Praidein has not accepted the renewal. On the face of the documents, however, it is locked into a 24-month Renewal Term running to 31 January 2029, and the deadline can only be found by reading D1 and D3 together.",
+      "doc": "D1",
+      "section": "Section 12.2",
+      "detect_terms": [
+        "at least one hundred twenty (120) days"
+      ],
+      "expected_finding": "Praidein's 14 October 2026 non-renewal notice missed the 3 October 2026 deadline (120 days before the 31 January 2027 end of the 36-month term starting 1 February 2024), so under Section 12.2 Zousen can claim a 24-month auto-renewal; because Praidein reserved its position in the Side Letter, it should negotiate a waiver or termination right rather than accept the renewal.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "D1 Section 15.1 appears to bar both parties from assigning without the other's consent. D3 Section 7, however, lets Zousen assign or transfer the Order Form and the Agreement, without Licensee's consent, to any Affiliate or to any acquirer of all or part of its business or assets. D1 Section 1.3 makes the Order Form prevail over the body of the Agreement, so D3 Section 7 controls. Zousen could therefore move the license, including Praidein's menu, airline-contract pricing and production data, to a competing caterer or other hostile party, or split it off with a divested product line. Praidein, by contrast, stays bound by the consent requirement.",
+      "doc": "D3",
+      "section": "Section 7",
+      "detect_terms": [
+        "any acquirer of all or part of its business"
+      ],
+      "expected_finding": "Because Section 1.3 gives the Order Form precedence, Order Form Section 7 overrides the mutual consent requirement in Section 15.1 and lets Zousen assign the license without consent to any acquirer, including a Praidein competitor; Praidein should require consent, or at least a bar on assignment to competitors, in an amended Order Form or the Side Letter.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 Section 1.1 defines 'Authorized User' to cover employees, contractors and agency workers of Licensee and its Affiliates. D1's recitals state that Praidein staffs its flight kitchens largely with agency galley crews. D3 Section 2, by contrast, defines 'Authorized User' as a named employee of Licensee at an Authorized Site. It also caps the subscription at 240 Authorized Users and charges overage fees for use by any other individual. Under D1 Section 1.3 the Order Form prevails, so the narrower definition governs. Use by agency workers, contractors or Affiliate staff (including Ostrander personnel after closing) then becomes unlicensed use, exposing Praidein to overage fees and breach claims.",
+      "doc": "D3",
+      "section": "Section 2",
+      "detect_terms": [
+        "named employee of Licensee"
+      ],
+      "expected_finding": "The Order Form's 'Authorized User' definition (named employees at an Authorized Site) prevails over the Agreement's broader definition under Section 1.3, so the agency workers and contractors Praidein relies on are unlicensed and trigger overage fees or breach; the Order Form definition should be conformed to Section 1.1 of the Agreement.",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "D1 Section 15.3 treats a Change of Control of Licensee, including any acquisition of more than 50% of its equity, as an assignment requiring Licensor's prior written consent. Without that consent, Zousen may terminate on 30 days' notice and accelerate all fees for the remainder of the Subscription Term. D2 Recital B records the Merger Agreement dated 11 September 2026, under which Ostrander will acquire 100% of Praidein's equity. D2 itself is signed by Zousen and adds an Authorized Site. It does not grant consent, and D2 Section 5 confirms that D1 otherwise remains unmodified. Closing will therefore trigger Zousen's termination and acceleration rights. Because of the disputed auto-renewal in I1, the accelerated fees could extend to January 2029.",
+      "doc": "D1",
+      "section": "Section 15.3",
+      "detect_terms": [
+        "deemed an assignment"
+      ],
+      "expected_finding": "The Ostrander merger recited in the Side Letter is a Change of Control that Section 15.3 treats as an assignment needing Zousen's prior written consent; the Side Letter gives no consent, so Praidein must obtain written consent or a waiver before closing to avoid Zousen's right to terminate and accelerate fees.",
+      "contradicts": null
+    }
+  ]
+}

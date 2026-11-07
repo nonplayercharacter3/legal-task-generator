@@ -1,0 +1,115 @@
+{
+  "task_id": "s26-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Praidein Flight Kitchens, LLC, a regional airline caterer, which is the licensee under a software license arrangement with Zousen Galley Systems, Inc. The client wants to understand where it stands under the deal before relying on it in its operations, and I need your help preparing that advice. Please review the software license agreement (praidein_zousen_software_license_agreement.md), the side letter (praidein_zousen_side_letter.md) and the order form (praidein_zousen_order_form.md), and prepare a memo to me that lists each issue you identify. For each issue, state where it appears (document and section), explain why it matters for Praidein, and give a recommended fix. The folder also contains a fleet refrigeration maintenance agreement with Lorvex Fleet Refrigeration Services, LLC (praidein_lorvex_fleet_refrigeration_maintenance_agreement.md). It is a separate vendor agreement, so use your judgment on whether anything in it bears on the Zousen review. Keep the memo practical and organized so I can take it to the client. Flag anything you can't resolve from the documents alone, and let me know if you need anything further from the client.",
+  "documents": [
+    "praidein_lorvex_fleet_refrigeration_maintenance_agreement.md",
+    "praidein_zousen_order_form.md",
+    "praidein_zousen_side_letter.md",
+    "praidein_zousen_software_license_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Praidein's non-renewal notice delivered 14 October 2026 missed the deadline under Software License Agreement Section 12.2 (at least 120 days before the end of the 36-month term starting 1 February 2024, i.e. a deadline of about 3 October 2026), so Zousen can claim a 24-month auto-renewal; it locates the issue in the Software License Agreement Section 12.2 (with or without the Order Form/Side Letter references), explains why this matters to Praidein, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "3 October 2026",
+        "120 days",
+        "24-month Renewal Term"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Order Form Section 7 lets Zousen assign the license without Praidein's consent to any acquirer and, because Section 1.3 of the Agreement gives the Order Form precedence, overrides the mutual consent requirement in Agreement Section 15.1; it locates the issue in Order Form Section 7, explains why this matters to Praidein, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Order Form Section 7",
+        "without Licensee's consent",
+        "Section 15.1"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Order Form's definition of 'Authorized User' (named employees of Licensee at an Authorized Site) is narrower than the Agreement Section 1.1 definition and prevails under Section 1.3, so agency workers and contractors Praidein relies on would be unlicensed users; it locates the issue in Order Form Section 2, explains why this matters to Praidein, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "named employee",
+        "agency workers",
+        "Order Form Section 2"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Ostrander merger recited in the Side Letter is a Change of Control that Agreement Section 15.3 treats as an assignment requiring Zousen's prior written consent, and that the Side Letter does not grant that consent; it locates the issue in Agreement Section 15.3, explains why this matters to Praidein, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "Section 15.3",
+        "prior written consent"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the initial Subscription Term is 36 months starting 1 February 2024 (or that the term ends 31 January 2027).",
+      "kind": "fact",
+      "hints": [
+        "36 months",
+        "1 February 2024",
+        "31 January 2027"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the order of precedence places the Side Letter first, then the Order Form, then the body of the Software License Agreement.",
+      "kind": "fact",
+      "hints": [
+        "order of precedence",
+        "Section 1.3",
+        "Order Form prevails"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is organized as a memo to the supervising partner that, for each issue listed, states the document and section, why it matters for Praidein, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that Praidein's 14 October 2026 non-renewal notice was timely under Section 12.2.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely",
+        "within the notice period"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the Side Letter grants Zousen's consent to the Ostrander merger or change of control.",
+      "kind": "negative",
+      "hints": [
+        "Side Letter consents",
+        "consent already given"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ]
+}
