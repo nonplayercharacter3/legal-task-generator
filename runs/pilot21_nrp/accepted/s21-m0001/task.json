@@ -1,0 +1,123 @@
+{
+  "task_id": "s21-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Bougairt Pet Nutrition, Inc., the buyer in its stock purchase from Drigask Holdings, LLC, which also involves Pinecrest Pet Provisions, Inc. and Fenwold Pet Supply Co. Bougairt is the maker of the Seller Note, so it will carry the payment obligations under that instrument after closing. Before we go back to the other side, the client needs a clear picture of where the current documents leave it exposed. Please review the four documents in the matter folder: the stock purchase agreement (stock_purchase_agreement_bougairt_drigask.md), the letter of intent (letter_of_intent_pinecrest_acquisition.md), the Seller Note at Exhibit B (seller_note_exhibit_b.md), and the earlier buyer draft of the note (seller_note_buyer_draft_2026-06-02.md). Then send me a memo listing each issue you find. For each one, say where it appears by document and section, explain why it matters to Bougairt as buyer and note maker, and recommend a fix we can propose. Please keep it practical and focused on what we would actually raise with the other side, and flag anything where you need more facts from the client.",
+  "documents": [
+    "letter_of_intent_pinecrest_acquisition.md",
+    "seller_note_buyer_draft_2026-06-02.md",
+    "seller_note_exhibit_b.md",
+    "stock_purchase_agreement_bougairt_drigask.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that SPA Section 9.1 limits survival of Seller's non-fundamental representations (including the Section 4.14 product safety/recall representations) to nine months after Closing. It notes that this is shorter than the LOI's 18-month survival period and shorter than the up-to-18-month product shelf life stated in SPA Section 4.14, so latent product claims (and set-off against the Seller Note) could be time-barred. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "nine months",
+        "18-month shelf life",
+        "Section 9.1"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Seller Note Section 8 permits the Holder to transfer the note without Maker's consent, contrary to the LOI's requirement of Buyer consent. It notes that, combined with the Section 5 information rights, this could let a competitor or other transferee obtain Buyer's confidential financial and customer data and the note's remedies. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 8",
+        "without the consent of Maker",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Fenwold Pet Supply change-of-control consent, disclosed in SPA Section 4.9(b), is not among the closing conditions in SPA Section 7.2(c) or the consents Seller must seek under Section 6.4. It concludes that Buyer would have to close even if Fenwold refuses consent or terminates. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Fenwold",
+        "Section 7.2(c)",
+        "closing condition"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that Buyer's indemnity for Seller Guarantees in SPA Section 9.3(c) is uncapped because the Section 9.5(b) Buyer cap applies only to Section 9.3(a). It notes that the Section 1.1 definition of Seller Guarantees reaches unlisted and pre-Closing credit support. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Seller Guarantees",
+        "Section 9.3(c)",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that Seller Note Section 4.2 limits Buyer's recoverable Losses, including those described in SPA Section 9.5(c), to the $7,200,000 General Cap. It recognises that this controls because SPA Section 11.9 gives the Seller Note precedence on set-off and recovery of indemnifiable Losses, which eliminates the 9.5(c) carve-out for Product Recall Losses and Fundamental Representations. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 4.2",
+        "Section 11.9",
+        "Product Recall Losses"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Seller Note principal amount is $14,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$14,000,000",
+        "Seller Note"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the SPA General Cap is $7,200,000.",
+      "kind": "fact",
+      "hints": [
+        "$7,200,000",
+        "General Cap"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is organised as a memo that sets out issues individually, with each issue giving its location (document and section), why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Recommended fix",
+        "Location"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the SPA's order-of-precedence clause causes the SPA's Section 9.5(c) carve-outs to override Seller Note Section 4.2 on recovery of Losses.",
+      "kind": "negative",
+      "hints": [
+        "SPA prevails",
+        "precedence"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the operative Seller Note (Exhibit B) requires Buyer's or Maker's consent before the Holder may transfer it.",
+      "kind": "negative",
+      "hints": [
+        "consent to transfer",
+        "Exhibit B"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ]
+}

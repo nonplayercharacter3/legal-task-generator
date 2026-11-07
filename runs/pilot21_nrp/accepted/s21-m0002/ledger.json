@@ -1,0 +1,203 @@
+{
+  "matter_id": "s21-m0002",
+  "summary": "Breimourt Pictures Releasing LLC, an independent theatrical film distributor and the firm's client, buys digital cinema services from Padisk Digital Cinema Services, Inc. These are DCP mastering, KDM generation, hard-drive duplication and shipment, and electronic delivery to exhibitors. The purchases run under a New York-law Supply Agreement and an Order Form. The Order Form sets the Territory, the Initial Term, pricing and an US$850,000 Minimum Annual Commitment. Padisk's Ontario parent, Padisk Holdings Ltd., guarantees Padisk's performance obligations. A side letter dated February 20, 2026 does two things: it sets electronic delivery rates, and it records a dispute over Breimourt's February 2, 2026 notice reducing its minimum commitment. A March 2025 press release announcing the partnership is a distractor. The partner wants a memo on the client's exposure. Five problems are planted. Automatic three-year renewals carry the minimums, exclusivity and price escalators forward. The exclusivity is worldwide and covers all media and Affiliates. The Order Form narrows 'Covered Services' so that electronic delivery spend does not count toward the minimum. The reduction-option window lapsed before Breimourt's notice. The guaranty is governed by Ontario law and an Ontario forum, splitting enforcement away from the New York forum.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Breimourt Pictures Releasing LLC",
+      "role": "Customer; independent theatrical film distributor (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Padisk Digital Cinema Services, Inc.",
+      "role": "Supplier of DCP mastering, KDM and theatrical delivery services"
+    },
+    {
+      "id": "P3",
+      "name": "Padisk Holdings Ltd.",
+      "role": "Ontario parent of Supplier; guarantor under the Parent Guaranty"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Order Form Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D2",
+      "section": "Header / Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Initial Term",
+      "value": "3 years from the Order Form Effective Date, ending February 29, 2028",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement Renewal Term length",
+      "value": "successive 3-year Renewal Terms",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement non-renewal notice period",
+      "value": "at least 180 days before expiry of the then-current term",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 15.1"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement forum",
+      "value": "exclusive jurisdiction of state and federal courts in New York County, New York",
+      "doc": "D1",
+      "section": "Section 15.2"
+    },
+    {
+      "id": "F7",
+      "key": "Order Form Territory",
+      "value": "United States and Canada",
+      "doc": "D2",
+      "section": "Section 1.2"
+    },
+    {
+      "id": "F8",
+      "key": "Supply Agreement 'Covered Services' definition",
+      "value": "DCP mastering, KDM generation, hard-drive duplication and shipment, and electronic delivery to exhibitors",
+      "doc": "D1",
+      "section": "Section 1.4"
+    },
+    {
+      "id": "F9",
+      "key": "Minimum Annual Commitment",
+      "value": "US$850,000 in Covered Services fees per Contract Year",
+      "doc": "D2",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F10",
+      "key": "Order of precedence",
+      "value": "Supply Agreement prevails over Order Form, except Order Form controls pricing, Initial Term and Minimum Annual Commitment",
+      "doc": "D1",
+      "section": "Section 14.3"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "order_form.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter_electronic_delivery.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Supply Agreement Section 2.2 renews the Agreement automatically for successive 3-year Renewal Terms. Renewal is avoided only if a party gives written non-renewal notice at least 180 days before the current term expires. Order Form Section 2.1 sets the Initial Term as 3 years from March 1, 2025, ending February 29, 2028. The non-renewal deadline therefore falls on September 2, 2027. Read together with Order Form Section 3.1 and Section 4.3, the renewal carries real cost. Section 3.1 applies the US$850,000 Minimum Annual Commitment in every Contract Year of the Term, including any Renewal Term. Section 4.3 raises all rates by 7% at the start of each Renewal Term. Supply Agreement Section 4.1 keeps the exclusivity running for the whole Term. The clause binds both parties alike, but the harm falls on Breimourt. A single missed calendar date locks it into three more years of minimums, exclusivity and escalated pricing, with no termination for convenience.",
+      "doc": "D1",
+      "section": "Section 2.2",
+      "detect_terms": [
+        "successive Renewal Terms of three (3) years",
+        "at least one hundred eighty (180) days"
+      ],
+      "expected_finding": "The Supply Agreement auto-renews for 3-year terms unless notice is given by September 2, 2027 (180 days before the February 29, 2028 end of the Initial Term). Renewal carries forward the US$850,000 Minimum Annual Commitment, the exclusivity and a 7% rate increase. Breimourt should calendar the deadline and negotiate one-year renewals, or renewal only by mutual written agreement.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Supply Agreement Section 4.1 requires Breimourt and its Affiliates to obtain all 'Exclusive Services' solely from Padisk 'throughout the world'. Section 1.7 defines those services as mastering, encoding and delivery services for any 'Content'. Section 1.5 defines 'Content' as any audiovisual work 'in any medium', including streaming, airline and home-entertainment deliverables. The commercial deal in the Order Form is narrower: Section 1.2 sets the Territory as the United States and Canada, and Section 1.3 covers only theatrical DCP services for Breimourt's theatrical releases. Under Supply Agreement Section 14.3, the Order Form controls only pricing, the Initial Term and the Minimum Annual Commitment. The Supply Agreement therefore governs exclusivity, and the Order Form's Territory does not narrow it. The result is that the exclusivity reaches Breimourt's non-theatrical and foreign deliverables and binds its Affiliates, all beyond what the deal requires.",
+      "doc": "D1",
+      "section": "Section 4.1",
+      "detect_terms": [
+        "throughout the world",
+        "in any medium"
+      ],
+      "expected_finding": "The exclusivity in Supply Agreement Section 4.1 is worldwide, reaches all media, and binds Breimourt's Affiliates. Because Section 14.3 gives the Supply Agreement control over non-commercial terms, the Order Form's United States and Canada Territory does not cure this. The clause should be narrowed to theatrical Covered Services for Breimourt's own releases in the Territory, and Affiliates should be excluded.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Supply Agreement Section 1.4 defines 'Covered Services' to include DCP mastering, KDM generation, hard-drive duplication and shipment, and electronic delivery. Order Form Section 1.1 redefines the term: 'As used in this Order Form, Covered Services means physical DCP duplication and hard-drive shipment only.' Order Form Section 3.1 measures the US$850,000 Minimum Annual Commitment in Covered Services fees, and Section 3.2 makes any shortfall payable in full. Supply Agreement Section 14.3 provides that the Order Form controls the Minimum Annual Commitment, so the narrower definition governs the calculation. The side letter (D4) prices electronic delivery separately and states that nothing else is amended. As a result, Breimourt's growing spend on electronic delivery, KDM and mastering does not count toward the minimum. That inflates the shortfall payments Breimourt owes.",
+      "doc": "D2",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "physical DCP duplication and hard-drive shipment only"
+      ],
+      "expected_finding": "Under the Section 14.3 precedence rule, the Order Form's narrower 'Covered Services' definition controls the Minimum Annual Commitment. Breimourt's mastering, KDM and electronic delivery fees therefore do not count toward the US$850,000 minimum, which increases its shortfall exposure under Order Form Section 3.2. The Order Form definition should be conformed to Supply Agreement Section 1.4.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Order Form Section 3.4 gives Breimourt a one-time option to reduce the Minimum Annual Commitment for the second Contract Year by up to 25%. The option must be exercised by written notice delivered no later than 45 days before the first day of the second Contract Year. Supply Agreement Section 1.3 defines each Contract Year as a 12-month period beginning on the Order Form Effective Date, which Order Form Section 2.1 sets as March 1, 2025. The second Contract Year therefore began March 1, 2026, and the deadline was January 15, 2026. The side letter (D4), dated February 20, 2026, records three things. First, Breimourt delivered its reduction notice on February 2, 2026. Second, Padisk rejected the notice as untimely. Third, Breimourt disputes that rejection and maintains the notice is effective, with both parties reserving all rights. On the stated dates the window had lapsed, so Breimourt's position is weak. The dispute nonetheless remains open, and Breimourt faces full Contract Year 2 shortfall exposure.",
+      "doc": "D2",
+      "section": "Section 3.4",
+      "detect_terms": [
+        "45 days before the first day of the second Contract Year"
+      ],
+      "expected_finding": "The reduction option expired on January 15, 2026, 45 days before the second Contract Year began on March 1, 2026. Breimourt's February 2, 2026 notice was therefore late, and its position recorded in the February 20, 2026 side letter is weak. Breimourt should preserve its reservation of rights and seek a negotiated waiver or amendment before the Contract Year 2 shortfall becomes payable.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Supply Agreement Sections 15.1 and 15.2 choose New York law and the exclusive jurisdiction of the state and federal courts in New York County. The Parent Guaranty is a separate instrument by Padisk Holdings Ltd. Under its Section 2, it guarantees Padisk's payment of refunds, service credits and indemnities. Parent Guaranty Section 12 chooses the laws of Ontario and the exclusive jurisdiction of the Ontario Superior Court of Justice in Toronto. That choice covers all disputes 'arising out of or relating to this Guaranty or the Guaranteed Obligations'. The guaranty is not listed in the Supply Agreement's Section 14.3 precedence clause, and the Supply Agreement's forum clause does not bind the guarantor. Breimourt would therefore have to sue Padisk in New York and then sue the guarantor in Toronto under different law. In Toronto the guarantor could relitigate whether, and how much, Padisk owes. This creates cost, delay and the risk of inconsistent results.",
+      "doc": "D3",
+      "section": "Section 12",
+      "detect_terms": [
+        "laws of the Province of Ontario",
+        "Ontario Superior Court of Justice"
+      ],
+      "expected_finding": "The Parent Guaranty's Ontario law and exclusive Toronto forum conflict with the Supply Agreement's New York law and exclusive New York County forum. Breimourt would face split proceedings in which the guarantor can relitigate the underlying obligations. The guaranty should be amended to adopt New York law and forum, and the guarantor should agree to be bound by judgments against Padisk.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    }
+  ]
+}

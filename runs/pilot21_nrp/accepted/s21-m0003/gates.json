@@ -1,0 +1,190 @@
+{
+  "matter_id": "s21-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "MSA §11.3: \"The limitations in Sections 11.1 and 11.2 do not apply to (a) Customer's obligations under Section 10.2; (b) Customer's obligation to pay Fees properly due under this Agreement; or (c) a Party's liability for fraud.\" Read with §10.2: \"Customer shall defend, indemnify and hold harmless Provider ... from and against all third-party claims ... arising out of or relating to the condition of the Premises or the Equipment, whether or not caused in part by Provider.\"",
+            "reason": "Negel, the client, gives the §10.2 indemnity. That indemnity covers claims about the condition of the Equipment, meaning the elevators Zaigath maintains, even where Zaigath contributed to the harm. §11.3(a) removes Negel's indemnity from both the cap and the consequential-damages exclusion. Zaigath's §10.1 indemnity gets no such carve-out, so it stays capped at 12 months of fees (about $462k at $38,500 a month). Nothing in the folder cures this. Amendment No. 1 changes only the notice address and the assignment clause, and says the rest of the Agreement remains in full force. Under the order of precedence the MSA controls the SOW, so the SOW cannot fix it either. N.Y. Gen. Oblig. Law §5-322.1 gives only partial relief. The issue is still actionable: the Agreement is in force, either through renewal or while the non-renewal dispute is pending, and the folder shows Negel reserving its rights, not accepting these terms. Negel can address the exposure in a renegotiation or in its dispute posture."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "MSA §1.14: \"'Service Call' means a request by Customer or its building personnel for Provider to attend to a malfunction, shutdown, Entrapment or other condition of the Equipment, received during Business Hours through Provider's dispatch center by telephone or through Provider's customer portal.\" MSA §5.4: \"A request for service received outside Business Hours is an 'After-Hours Callback.' Provider shall dispatch personnel in response to After-Hours Callbacks as soon as practicable, and Customer shall pay for the labor expended on each After-Hours Callback ... at Provider's overtime rates.\" MSA §2.3 ranks \"Amendments, then the MSA, then any Statement of Work.\"",
+            "reason": "The problem is present and it hurts Negel. SOW §1.2 imports the MSA definitions. Under MSA §1.14, a 'Service Call' is limited to requests received during Business Hours (7 a.m. to 6 p.m. on Business Days). Requests outside that window are After-Hours Callbacks, which carry only an 'as soon as practicable' dispatch standard and are billed to Customer at overtime rates. SOW §4.1's promise of a 30-minute response '24 hours a day, 7 days a week' conflicts with that definition, and the §2.3 order of precedence lets the MSA prevail. The 30-minute commitment and the §4.3 service credits therefore likely do not reach nights, weekends or holidays. Those periods include after-hours entrapments, and Negel also pays extra for them. Amendment No. 1 changes only the notice address and the assignment terms and does nothing to fix this. The Agreement is still being performed, including during the renewal dispute, so Negel can still raise the point and should seek an Amendment to fix the definition."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Recital B: \"Customer delivered to Provider a notice of non-renewal dated November 14, 2025 under Section 12.2 of the Agreement. Provider has advised Customer that it considers the notice untimely and that the Agreement renewed through February 28, 2031. Customer disputes Provider's position and reserves all of its rights.\"",
+            "reason": "The Initial Term ended February 28, 2026 (MSA §12.1). Section 12.2 required non-renewal notice at least 120 days before expiration, so the deadline was about October 31, 2025. Negel's notice dated November 14, 2025 was about two weeks late. Zaigath says the MSA has renewed through 2031. That would bind Negel to five more years of portfolio-wide exclusivity (§3.4) and the uncapped Customer indemnity (§§10.2, 11.3). Amendment §4.1 only preserves Negel's position; it does not cure the late notice, and Provider's position is expressly preserved too (§4.2). Nothing in the folder shows Negel has accepted the renewal, and its reservation of rights is on record. The dispute is still live, and Negel can still argue that N.Y. Gen. Oblig. Law §5-903 makes the auto-renewal unenforceable, since no reminder notice from Zaigath appears in the folder. The problem is real and actionable for Negel."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "MSA §3.4: \"During the Term, Customer shall engage Provider as its exclusive provider of Vertical Transportation Services at every Customer Property, and Customer shall not engage, or permit any Affiliate to engage, any other person to perform Vertical Transportation Services at any Customer Property, except as Provider may agree in writing.\" MSA §1.6 defines \"Customer Property\" as \"any building, structure or real property owned, leased, managed or hereafter acquired by Customer or any of its Affiliates, wherever located.\"",
+            "reason": "The business deal in SOW §2.1 makes Zaigath exclusive only for the five Covered Buildings in Schedule A. MSA §3.4, read with the §1.6 definition, goes much further. It makes Negel (and through it, its Affiliates) use Zaigath exclusively at every property owned, leased, managed or later acquired, anywhere. Under MSA §2.3 the MSA prevails over any SOW, so the broader clause controls. Amendment No. 1 changed only the notice and assignment provisions. It did not narrow §3.4 or §1.6. The problem therefore remains uncured. The obligation falls on Negel, the client, and restricts it and its affiliates. It could put Negel in breach at properties that have other elevator contracts, or at properties it acquires later. The issue is still actionable: Zaigath claims the MSA renewed through 2031, Negel disputes that and has reserved its rights, and the restriction applies for as long as the Term runs."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "\"Section 15.4 of the Agreement is deleted in its entirety and replaced with the following: > **15.4 Assignment by Customer.** Customer may assign this Agreement or any Statement of Work ... Except as provided in this Section 15.4, Customer may assign this Agreement only with the prior written consent of Provider ...\"",
+            "reason": "Amendment §3.1 deletes the whole of original MSA §15.4, including the mutual consent requirement and the voidness clause. The replacement restricts assignment only by Customer and says nothing about Provider. No other provision in the MSA, SOW or Amendment limits Zaigath's ability to assign, and MSA §2.3 gives the Amendment precedence. Under New York's default rule of free assignability, Zaigath could transfer the MSA and SOW without Negel's consent. The assignee would take the portfolio-wide exclusivity in §3.4 and the benefit of Customer's indemnity in §10.2, which is not capped under §11.3(a). Negel is the party harmed. The Amendment is unsigned (blank signature blocks), so the problem is still actionable: Negel can fix it before execution by keeping a consent restriction on Provider's assignment."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [
+          "criterion C3 requires a harm, remedy or provision that issue I3's expected_finding does not name: 'recommends a course of action on the disputed renewal.'; ask that the response explains why it matters and recommends a fix"
+        ],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.058,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C2",
+                "C5",
+                "C7",
+                "C8"
+              ],
+              "steps": 8,
+              "files_opened": [
+                "amendment_no_1_to_msa.md",
+                "negel_zaigath_master_services_agreement.md",
+                "sow_1_vertical_transportation_maintenance.md",
+                "zaigath_press_release_negel_award.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2",
+                "C5",
+                "C8",
+                "C12"
+              ],
+              "steps": 8,
+              "files_opened": [
+                "amendment_no_1_to_msa.md",
+                "negel_zaigath_master_services_agreement.md",
+                "sow_1_vertical_transportation_maintenance.md",
+                "zaigath_press_release_negel_award.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2",
+                "C5"
+              ],
+              "steps": 8,
+              "files_opened": [
+                "amendment_no_1_to_msa.md",
+                "negel_zaigath_master_services_agreement.md",
+                "sow_1_vertical_transportation_maintenance.md",
+                "zaigath_press_release_negel_award.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

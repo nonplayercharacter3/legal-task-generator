@@ -1,0 +1,184 @@
+{
+  "matter_id": "s21-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 2.2: \"On expiry of the Initial Term, this Agreement shall automatically renew for successive Renewal Terms of three (3) years each (each, a \"Renewal Term\"). Renewal will not occur if either Party gives the other written notice of non-renewal at least one hundred eighty (180) days before expiry of the then-current term.\"",
+            "reason": "The problem is present and still actionable. Order Form Section 2.1 ends the Initial Term on February 29, 2028, so the 180-day non-renewal notice is due by about September 2, 2027. That date is still in the future, so Breimourt can calendar it or negotiate a fix now. If the date is missed, renewal carries real cost. Order Form Section 3.1 applies the US$850,000 Minimum Annual Commitment in every Contract Year, including Renewal Terms. Order Form Section 4.3 raises all rates by 7% at each renewal. Supply Agreement Section 4.1 keeps worldwide exclusivity running for the whole Term. The Agreement has no termination for convenience; Section 13 allows termination only for cause or insolvency. No other document cures or limits the clause. The side letter amends only the electronic delivery rates and does not touch renewal. The clause is mutual, but the harm falls on Breimourt as the party bound by the minimums, exclusivity and price increases."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 4.1: \"During the Term, Customer shall, and shall cause its Affiliates to, obtain all of their requirements for Exclusive Services throughout the world solely from Supplier.\" Section 1.7 defines Exclusive Services as \"mastering, encoding and delivery services for any Content, including the Covered Services,\" and Section 1.5 defines Content as any audiovisual work \"in any medium, including theatrical, streaming, airline, and home-entertainment deliverables.\"",
+            "reason": "The exclusivity obligation falls on Breimourt, the client, and it reaches far beyond the commercial deal. The Order Form limits the deal to the United States and Canada (Section 1.2) and to theatrical DCP services (Section 1.3). Under Supply Agreement Section 14.3, however, the Order Form controls only pricing, the Initial Term and the Minimum Annual Commitment, and the Supply Agreement prevails on everything else, including exclusivity. So the Territory and scope limits do not narrow Sections 4.1 and 4.2. Section 4.2 adds a bar on self-performance. As drafted, Breimourt and its Affiliates are barred worldwide from using other vendors, or their own staff, for streaming, airline and home-entertainment mastering and delivery. That would put Breimourt in breach whenever it sources those services elsewhere. Nothing in the folder cures this. The Side Letter expressly amends nothing except electronic delivery rates. The press release describes a US/Canada theatrical deal, but it is not an amendment. The term runs to February 2028 and renews automatically for three-year terms, so the problem is live. It should be raised, for example by seeking a written amendment under Section 14.2 limiting exclusivity to theatrical Covered Services in the Territory, before any non-conforming sourcing occurs."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Order Form Section 1.1: \"As used in this Order Form, Covered Services means physical DCP duplication and hard-drive shipment only.\" Section 3.1 then sets the commitment in \"US$850,000 in Covered Services fees per Contract Year\", and Section 3.2 provides that \"Customer shall pay Supplier the full amount of the difference.\"",
+            "reason": "The problem is present and still actionable. Supply Agreement Section 1.4 defines Covered Services broadly, to include mastering, KDM generation, duplication and shipment, and electronic delivery. Order Form Section 1.1 narrows the term to physical duplication and shipment only. The Minimum Annual Commitment and the full shortfall payment are measured in Covered Services fees. Supply Agreement Section 14.3 makes the Order Form control the Minimum Annual Commitment, so the narrow definition arguably governs the calculation. The obligation falls on Breimourt: it must meet the minimum and pay any shortfall. Its spend on mastering, KDMs and electronic delivery would therefore not count, and its shortfall exposure grows. Nothing in the folder cures this. The side letter only prices electronic delivery, and Section 4.1 says nothing else is amended. The side letter's reservation of rights covers only the timeliness of the reduction notice, not this definition. Breimourt has not accepted any shortfall invoice. The second Contract Year runs to February 2027, and the commitment applies to every Contract Year, including any Renewal Term. The issue is therefore live and Breimourt can still raise it."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Order Form 3.4: \"Customer may exercise the option only by written notice to Supplier, given in accordance with Supply Agreement Section 16.1, delivered no later than 45 days before the first day of the second Contract Year.\" Side Letter 3.1–3.4: \"On February 2, 2026, Customer delivered written notice ... By letter dated February 9, 2026, Supplier rejected the Reduction Notice as untimely ... Customer disputes Supplier's rejection ... Each Party reserves all of its rights and remedies.\"",
+            "reason": "The problem is present and still actionable for Breimourt. The second Contract Year began March 1, 2026, because Contract Years run from the Order Form Effective Date of March 1, 2025 (Supply Agreement 1.3; Order Form 2.1–2.2). Counting 45 days back from that date puts the exercise deadline at January 15, 2026. Breimourt's notice of February 2, 2026 was therefore late on its face. Padisk rejected it, and Breimourt has not accepted that result. The side letter records Breimourt's dispute, an express reservation of rights, and a no-waiver clause. Contract Year 2 runs until February 28, 2027, and no Shortfall Amount has yet been invoiced or paid. Breimourt therefore still faces exposure to a Year 2 shortfall measured against the full US$850,000 commitment rather than US$637,500. It can still act on this by managing its spend toward the higher figure or pursuing the dispute under Supply Agreement Section 15. The parent guaranty gives no help, because it covers only Supplier's obligations."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Parent Guaranty Section 12.2: \"The Guarantor and the Beneficiary irrevocably submit to the exclusive jurisdiction of the Ontario Superior Court of Justice sitting in Toronto, Ontario for any action or proceeding arising out of or relating to this Guaranty or the Guaranteed Obligations.\" Section 12.1 also applies Ontario law to any claim relating to \"this Guaranty or the Guaranteed Obligations\". By contrast, Supply Agreement Sections 15.1 and 15.2 choose New York law and the exclusive jurisdiction of the New York County courts.",
+            "reason": "The guaranteed obligations are Padisk's service credits, refunds and Section 10.1 indemnities. Under the Supply Agreement, claims for these must go to the New York courts under New York law. The Guaranty sends any proceeding on the same Guaranteed Obligations exclusively to Toronto under Ontario law. Nothing in the folder reconciles the two. The Guarantor does not consent to New York jurisdiction or agree to be bound by a New York judgment against Padisk. Supply Agreement Section 14.3 covers only the Supply Agreement and the Order Form, and the Side Letter does not touch the Guaranty. Section 3.1 of the Guaranty allows a separate action against the Guarantor, but it does not cure the split forum. Breimourt, as Beneficiary, bears the cost: duplicative litigation, possible relitigation of the underlying liability in Toronto, and the risk of inconsistent results. The Guaranty is still in force and can be amended under its Section 13.2, so the problem remains actionable."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C3"
+              ],
+              "steps": 10,
+              "files_opened": [
+                "order_form.md",
+                "parent_guaranty.md",
+                "press_release.md",
+                "side_letter_electronic_delivery.md",
+                "supply_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 10,
+              "files_opened": [
+                "order_form.md",
+                "parent_guaranty.md",
+                "press_release.md",
+                "side_letter_electronic_delivery.md",
+                "supply_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2"
+              ],
+              "steps": 11,
+              "files_opened": [
+                "order_form.md",
+                "parent_guaranty.md",
+                "press_release.md",
+                "side_letter_electronic_delivery.md",
+                "supply_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

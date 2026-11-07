@@ -1,0 +1,213 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 1
+  },
+  "unsolved": 2,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 3,
+      "pass_rates": {
+        "0.00": 2,
+        "0.33": 1
+      }
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s21-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.333,
+      "unsolved": false,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 1,
+          "pass_rate": 0.333
+        }
+      ]
+    },
+    {
+      "matter_id": "s21-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.0,
+      "unsolved": true,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 0,
+          "pass_rate": 0.0
+        }
+      ]
+    },
+    {
+      "matter_id": "s21-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.0,
+      "unsolved": true,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 0,
+          "pass_rate": 0.0
+        }
+      ]
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12554,
+      "output_tokens": 34828,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 13,
+      "input_tokens": 215564,
+      "output_tokens": 66680,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 73897,
+      "output_tokens": 6828,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4418,
+      "output_tokens": 459,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 15,
+      "input_tokens": 316397,
+      "output_tokens": 9843,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4067,
+      "output_tokens": 1079,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 19959,
+      "output_tokens": 6581,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 163950,
+      "output_tokens": 43568,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 21,
+      "input_tokens": 172068,
+      "output_tokens": 22358,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 132,
+      "input_tokens": 869915,
+      "output_tokens": 146875,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "pet food manufacturing": 1,
+      "independent film distribution": 1,
+      "elevator maintenance": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 1,
+      "supply agreement": 1,
+      "master services agreement": 1
+    },
+    "issue_types": {
+      "missing_assignment_restriction": 2,
+      "uncapped_indemnity": 2,
+      "expired_notice_window": 2,
+      "defined_term_inconsistency": 2,
+      "exclusivity_scope": 2,
+      "survival_gap": 1,
+      "change_of_control_consent": 1,
+      "liability_cap_carveout": 1,
+      "auto_renewal": 1,
+      "governing_law_mismatch": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

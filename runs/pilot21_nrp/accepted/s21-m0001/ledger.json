@@ -1,0 +1,196 @@
+{
+  "matter_id": "s21-m0001",
+  "summary": "Bougairt Pet Nutrition, Inc. (client, Buyer) is acquiring all outstanding shares of Pinecrest Pet Provisions, Inc., a dry and wet pet food manufacturer, from Drigask Holdings, LLC (Seller). The deal follows a March 2026 letter of intent. The Stock Purchase Agreement was signed July 15, 2026, with closing deferred. The $72,000,000 price is paid partly in cash and partly by a $14,000,000 subordinated Seller Note, whose agreed form is attached as Exhibit B and will be issued at Closing. The folder also holds a superseded Buyer draft of the Seller Note dated June 2, 2026 (the distractor). Five issues are planted. In the SPA: survival of Seller's representations is far shorter than the LOI and product shelf life support; a key retailer change-of-control consent is disclosed but not made a closing condition; and Buyer's indemnity for Seller Guarantees sits outside every cap. In the Seller Note: the note is freely transferable despite the LOI and carries sensitive information rights; and, through an SPA precedence exception, the note pulls the product-recall and fundamental-rep carve-outs back under the General Cap.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Bougairt Pet Nutrition, Inc.",
+      "role": "Buyer; maker of the Seller Note (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Drigask Holdings, LLC",
+      "role": "Seller; holder of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Pinecrest Pet Provisions, Inc.",
+      "role": "Target company (pet food manufacturer)"
+    },
+    {
+      "id": "P4",
+      "name": "Fenwold Pet Supply Co.",
+      "role": "National pet retailer; counterparty to the Target's private-label supply agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Purchase Price",
+      "value": "$72,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Seller Note principal amount",
+      "value": "$14,000,000",
+      "doc": "D3",
+      "section": "Section 1"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note interest rate",
+      "value": "6% per annum, simple interest",
+      "doc": "D3",
+      "section": "Section 2"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note maturity",
+      "value": "30 months after the Closing Date",
+      "doc": "D3",
+      "section": "Section 3"
+    },
+    {
+      "id": "F5",
+      "key": "SPA General Cap",
+      "value": "$7,200,000",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F6",
+      "key": "SPA signing date",
+      "value": "July 15, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F7",
+      "key": "LOI general representation survival period",
+      "value": "18 months after Closing",
+      "doc": "D2",
+      "section": "Section 6"
+    },
+    {
+      "id": "F8",
+      "key": "LOI Seller Note transferability",
+      "value": "Not transferable by Seller without Buyer's prior written consent",
+      "doc": "D2",
+      "section": "Section 3"
+    },
+    {
+      "id": "F9",
+      "key": "Order of precedence",
+      "value": "SPA prevails over other Transaction Documents, except Seller Note controls set-off and recovery of indemnifiable Losses",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F10",
+      "key": "SPA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.10"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_bougairt_drigask.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "letter_of_intent_pinecrest_acquisition.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_note_exhibit_b.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_note_buyer_draft_2026-06-02.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1 says Seller's non-fundamental representations, including the Section 4.14 product safety and recall representations, survive only until nine months after the Closing Date. Indemnity claims must be noticed before then. The LOI (D2 Section 6) set an 18-month survival period. SPA Section 4.14 itself states that the Company's dry products carry a shelf life of up to 18 months. Read together, contamination or formulation defects in pre-Closing inventory (for example aflatoxin or vitamin D excess) may not surface, or lead to a recall, until after the claim window closes. The Seller Note in D3 Section 4 permits set-off only for claims noticed within the survival period. Buyer therefore loses both its indemnity claims and its note set-off for the most likely latent product losses, even though the note runs 30 months.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "nine (9) months following the Closing Date"
+      ],
+      "expected_finding": "The nine-month survival period in SPA Section 9.1 departs from the LOI's 18 months and is shorter than the 18-month product shelf life stated in Section 4.14, so latent product safety claims (and set-off against the Seller Note) would be time-barred; survival should be extended to at least 18 months, with product safety reps surviving through Seller Note maturity.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Seller Note Section 8 lets the Holder transfer the note, in whole or in part, to any Person without the consent of Maker. The LOI (D2 Section 3) provided that the note would not be transferable without Buyer's consent. Seller Note Section 5 obliges Maker to deliver monthly financial statements and customer-level sales reports to the Holder, and those rights pass with the note. Read together, Seller could sell the note to a competing pet food manufacturer. That competitor would then receive Buyer's and the Target's confidential sales data and hold the note's acceleration remedies. Seller's non-compete in SPA Section 6.10 binds only Seller and its Affiliates, so it would not bind such a transferee.",
+      "doc": "D3",
+      "section": "Section 8",
+      "detect_terms": [
+        "without the consent of Maker"
+      ],
+      "expected_finding": "Seller Note Section 8 permits free transfer of the note, contrary to the LOI, and combined with the Section 5 information rights would let a competitor obtain Buyer's confidential financial and customer data and the note's remedies; transfer should require Maker's prior written consent, with transfers to competitors barred and transferees bound by confidentiality and the set-off right.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "SPA Section 4.9(b) discloses that the Target's private-label supply agreement with Fenwold Pet Supply Co., described there as its largest customer contract, requires Fenwold's consent to a change of control of the Company. The same section states that the contract may terminate upon a change of control without that consent. SPA Section 7.2(c), however, conditions Buyer's obligation to close only on the two consents it enumerates, the plant lease and the equipment financing, and Fenwold is not one of them. SPA Section 6.4 obliges Seller to seek only the consents listed in Section 7.2(c). The LOI (D2 Section 7) identified the Fenwold consent as a condition to closing. Under the SPA as signed on July 15, 2026, Buyer would be required to close even if Fenwold refuses consent and terminates.",
+      "doc": "D1",
+      "section": "Section 7.2(c)",
+      "detect_terms": [
+        "may terminate upon a change of control"
+      ],
+      "expected_finding": "The Fenwold supply agreement's change-of-control consent, disclosed in SPA Section 4.9(b), is omitted from the Section 7.2(c) closing conditions and the Section 6.4 consent covenant, so Buyer must close even if Fenwold refuses consent and terminates; the SPA should be amended before Closing to make the Fenwold consent a closing condition and to require Seller to pursue it.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Under SPA Section 9.3(c), Buyer indemnifies Seller for all Losses arising under any Seller Guarantee. Section 1.1 defines Seller Guarantees broadly: the guaranties listed in Section 6.8 plus any other guaranty, keep-well or credit support of Seller for any Company obligation, whether arising before or after the Closing, so the definition reaches unknown and pre-Closing obligations. Section 6.8 requires Buyer only to use commercially reasonable efforts to obtain releases. The Buyer cap in Section 9.5(b) applies only to claims under Section 9.3(a), Buyer's representation breaches. Read together, these provisions leave Buyer with an uncapped indemnity, with no time limit, for undisclosed and pre-Closing guaranty exposure.",
+      "doc": "D1",
+      "section": "Section 9.3(c)",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "Losses arising under any Seller Guarantee"
+      ],
+      "expected_finding": "Because the Section 9.5(b) cap reaches only Section 9.3(a), Buyer's Section 9.3(c) indemnity for Seller Guarantees, as broadly defined in Section 1.1 to include unlisted and pre-Closing credit support, is uncapped; the definition should be limited to the scheduled guaranties and post-Closing obligations, and the indemnity capped or excluded for liabilities Seller itself indemnifies.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 9.5(c) carves Fundamental Representations and Product Recall Losses out of the $7,200,000 General Cap; those claims are capped instead at the Purchase Price. SPA Section 9.7 requires indemnifiable Losses to be recovered first by set-off against the Seller Note. Seller Note Section 4.2 states that the aggregate Losses recoverable by Buyer Indemnitees under Article IX, whether by set-off or otherwise, shall not exceed the General Cap, including Losses described in Section 9.5(c). Ordinarily the SPA's precedence clause would cure this, but SPA Section 11.9 makes the Seller Note control on set-off and recovery of indemnifiable Losses, so the note's restatement governs. The note, issued at Closing, therefore pulls recall and fundamental-rep Losses back under the General Cap.",
+      "doc": "D3",
+      "section": "Section 4.2",
+      "detect_terms": [
+        "including Losses described in Section 9.5(c)"
+      ],
+      "expected_finding": "Through the SPA Section 11.9 exception giving the Seller Note control over recovery of indemnifiable Losses, Seller Note Section 4.2 caps Product Recall Losses and Fundamental Representation claims at the $7,200,000 General Cap, eliminating the SPA Section 9.5(c) carve-out; Section 4.2 should be revised to preserve the 9.5(c) carve-outs, and the Section 11.9 exception narrowed so the SPA controls on liability limits.",
+      "contradicts": null
+    }
+  ]
+}

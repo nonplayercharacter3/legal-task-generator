@@ -1,0 +1,189 @@
+{
+  "matter_id": "s21-m0003",
+  "summary": "Negel Realty Partners LLC owns five Manhattan office towers. It engaged Zaigath Vertical Services, Inc. to maintain the towers' elevators and escalators under a Master Services Agreement dated March 1, 2023 (D1). The folder also holds a Statement of Work covering the five Covered Buildings (D2), Amendment No. 1 dated January 20, 2026 (D3), and Zaigath's press release announcing the original award (D4, distractor). The supervising partner wants an issue-spotting memo. There are five planted issues. (1) Negel gives an indemnity for premises and equipment conditions that is carved out of the liability cap. (2) The MSA defines 'Service Call' as a call received during business hours, which hollows out the SOW's 24/7 entrapment response commitment. (3) Negel's non-renewal notice was sent after the 120-day window, and Zaigath claims a five-year renewal. (4) The exclusivity clause reaches every Negel-affiliated property anywhere, not just the five Covered Buildings. (5) The Amendment replaced the mutual anti-assignment clause with one that restricts only Negel, leaving Zaigath free to assign, including to a competitor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Negel Realty Partners LLC",
+      "role": "Customer; building owner and the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Zaigath Vertical Services, Inc.",
+      "role": "Provider; elevator and escalator maintenance contractor"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 1, 2023",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "three years from the MSA Effective Date, ending February 28, 2026",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F3",
+      "key": "Non-renewal notice period",
+      "value": "at least 120 days before expiration of the then-current term",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F4",
+      "key": "Renewal Term length",
+      "value": "five years",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F5",
+      "key": "MSA liability cap",
+      "value": "fees paid or payable in the 12 months preceding the event giving rise to the claim",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Amendments, then the MSA, then any Statement of Work",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F7",
+      "key": "Agreed exclusivity scope",
+      "value": "the five Covered Buildings in Manhattan listed in SOW Schedule A",
+      "doc": "D2",
+      "section": "2.1"
+    },
+    {
+      "id": "F8",
+      "key": "SOW monthly maintenance fee",
+      "value": "$38,500 for all Covered Buildings combined",
+      "doc": "D2",
+      "section": "5.1"
+    },
+    {
+      "id": "F9",
+      "key": "Amendment No. 1 date",
+      "value": "January 20, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Date of Customer's non-renewal notice",
+      "value": "November 14, 2025",
+      "doc": "D3",
+      "section": "Recital B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "negel_zaigath_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "sow_1_vertical_transportation_maintenance.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D3",
+      "filename": "amendment_no_1_to_msa.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "zaigath_press_release_negel_award.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Two MSA provisions combine to give Negel unlimited exposure for elevator accidents. Under MSA §10.2, Negel must defend and indemnify Zaigath against all third-party claims 'arising out of or relating to the condition of the Premises or the Equipment, whether or not caused in part by Provider.' The 'Equipment' is the very elevators Zaigath maintains, so this indemnity reaches bodily-injury claims from elevator accidents that Zaigath's own maintenance may have contributed to. MSA §11.3 then excludes 'Customer's obligations under Section 10.2' from the §11.1 cap (fees paid or payable in the prior 12 months, F5). Zaigath's own indemnity in §10.1 stays within that cap. Negel's exposure for the highest-severity risk in the relationship is therefore uncapped, while Zaigath's is capped at roughly one year of fees. N.Y. Gen. Oblig. Law §5-322.1 voids the indemnity only to the extent of Zaigath's own negligence, so it gives at most partial relief and does not reach shared-fault or property-damage disputes cleanly.",
+      "doc": "D1",
+      "section": "11.3",
+      "detect_terms": [
+        "whether or not caused in part by Provider",
+        "Customer's obligations under Section 10.2"
+      ],
+      "expected_finding": "Read together, MSA §10.2 and §11.3 leave Negel's indemnity for Premises and Equipment conditions, including elevator accidents Zaigath contributed to, uncapped while Zaigath's indemnity is capped. The associate should recommend limiting §10.2 to Negel's own negligence, excluding Equipment, and bringing it under the §11.1 cap or making the carve-out mutual.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SOW §4.1 requires Zaigath to respond to each 'Service Call' within 30 minutes, 24 hours a day, 7 days a week. SOW §4.3 ties service credits to missed Service Call response times. SOW §1.2, however, gives capitalized terms their MSA meanings. MSA §1.14 defines 'Service Call' as a request for service 'received during Business Hours,' and Business Hours means 7:00 a.m. to 6:00 p.m. on weekdays. Calls outside that window are treated as 'After-Hours Callbacks' under MSA §5.4. Those are billed at overtime rates and carry no response-time commitment. Under the MSA §2.3 order of precedence (F6), the MSA prevails over the SOW, so the MSA definition controls. As a result, after-hours and weekend entrapments, which are the most safety-critical calls, fall outside both the 30-minute guarantee and the service credits, and they cost Negel extra.",
+      "doc": "D1",
+      "section": "1.14",
+      "detect_terms": [
+        "received during Business Hours"
+      ],
+      "expected_finding": "Because MSA §1.14 limits 'Service Call' to calls received during Business Hours and the MSA prevails over the SOW under §2.3, the SOW §4.1 24/7 30-minute response commitment and §4.3 service credits do not cover after-hours or weekend entrapments. Those calls are billed as overtime After-Hours Callbacks under MSA §5.4. The associate should recommend redefining Service Call to cover all calls at any hour, or expressly making SOW §4 prevail.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "MSA §12.1 sets an Initial Term of three years from March 1, 2023, ending February 28, 2026. MSA §12.2 renews the MSA automatically for a five-year Renewal Term unless a party gives notice of non-renewal at least 120 days before expiration. That makes the deadline October 31, 2025. Recital B of Amendment No. 1 (D3, dated January 20, 2026) records that Negel delivered its notice of non-renewal dated November 14, 2025, two weeks late. It also records that Zaigath asserts the MSA renewed through February 28, 2031, and that Negel disputes this and reserves all rights. Amendment §4 states that nothing in the Amendment is an acceptance of renewal, so Negel has not conceded the point. The late notice exposes Negel to five more years of exclusivity and the uncapped indemnity. Negel's best argument is N.Y. Gen. Oblig. Law §5-903. That statute makes an automatic renewal clause in a contract for maintenance of real property unenforceable against the recipient unless the provider gave written notice 15 to 30 days before the deadline calling attention to the clause. Nothing in the folder shows that Zaigath sent such a notice.",
+      "doc": "D3",
+      "section": "Recital B",
+      "detect_terms": [
+        "notice of non-renewal dated November 14, 2025",
+        "renewed through February 28, 2031"
+      ],
+      "expected_finding": "Negel's November 14, 2025 non-renewal notice, recorded in Amendment No. 1 Recital B, missed the October 31, 2025 deadline computed from MSA §§12.1–12.2, so Zaigath claims a five-year renewal to February 28, 2031. Negel has reserved its position in the Amendment and should contest renewal under N.Y. Gen. Oblig. Law §5-903 unless Zaigath can show it served the statutory reminder notice.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "SOW §2.1 records the deal as Zaigath serving as exclusive vertical transportation provider for the five Covered Buildings in Manhattan listed in Schedule A (F7). MSA §3.4, however, obliges Negel to engage Zaigath exclusively for all Vertical Transportation Services at every 'Customer Property' during the Term. MSA §1.6 defines 'Customer Property' as any building 'owned, leased, managed or hereafter acquired by Customer or any of its Affiliates, wherever located.' Under MSA §2.3 (F6), the MSA prevails over the SOW. The broader exclusivity therefore controls. It binds Negel's affiliates and any future acquisitions anywhere, including properties that already have their own elevator contracts. The harm grows if the MSA has renewed for five years (see I3).",
+      "doc": "D1",
+      "section": "3.4",
+      "detect_terms": [
+        "at every Customer Property",
+        "hereafter acquired by Customer or any of its Affiliates, wherever located"
+      ],
+      "expected_finding": "MSA §3.4, read with the §1.6 definition of Customer Property and the §2.3 precedence clause, extends Zaigath's exclusivity beyond the five Covered Buildings agreed in SOW §2.1 to every current and future property of Negel and its affiliates anywhere. The associate should recommend limiting exclusivity to the Covered Buildings listed in SOW Schedule A.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "As originally signed, MSA §15.4 barred either party from assigning without the other's prior written consent. Amendment No. 1 §3 was intended to let Negel assign the SOW in part when it sells a Covered Building. It deletes MSA §15.4 in its entirety and replaces it with a clause addressing only assignment by Customer. The replacement contains no restriction on Zaigath. Under the MSA §2.3 order of precedence (F6), the Amendment prevails over the MSA. Under New York law, contract rights are freely assignable absent an express restriction, and elevator maintenance is not a personal-services contract. Zaigath may therefore assign the MSA and SOW to any third party without consent, including a competitor or a less capable contractor. The assignee would then hold the exclusivity in MSA §3.4 and the uncapped indemnity in MSA §10.2.",
+      "doc": "D3",
+      "section": "3",
+      "detect_terms": [
+        "Section 15.4 of the Agreement is deleted in its entirety",
+        "Customer may assign"
+      ],
+      "expected_finding": "Amendment No. 1 §3 deletes the mutual anti-assignment clause in MSA §15.4 and restricts only Negel, and the Amendment prevails over the MSA under §2.3. Zaigath can therefore freely assign the MSA, including its exclusivity and Negel's uncapped indemnity, to a competitor or other third party. The associate should recommend restoring a consent requirement for assignment by Provider, with a limited carve-out for a successor to substantially all of Provider's business that is not a Negel competitor.",
+      "contradicts": null
+    }
+  ]
+}

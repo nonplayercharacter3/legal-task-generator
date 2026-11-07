@@ -1,0 +1,179 @@
+{
+  "matter_id": "s21-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"All other representations and warranties of Seller and Buyer contained in this Agreement, including the representations and warranties in Section 4.14, shall survive the Closing until nine (9) months following the Closing Date. ... No claim for indemnification in respect of a representation or warranty may be made unless written notice of the claim is delivered before the expiration of the applicable survival period\"",
+            "reason": "The gap is present and still actionable for Bougairt as Buyer and indemnified party. Under SPA §9.1, the §4.14 product safety representations (no aflatoxin, no out-of-spec vitamin D, no adulteration) expire nine months after Closing. The LOI agreed 18 months. §4.14(c) itself says dry product shelf life runs up to 18 months, so latent defects in pre-Closing inventory can surface after the window closes. Seller Note §4.1 limits set-off to claims noticed within the §9.1 survival period, so Buyer loses set-off too, even though the Note runs 30 months. One partial mitigation exists. The stand-alone Product Recall Losses indemnity in §9.2(c) is not a 'representation or warranty' claim, so the nine-month cutoff arguably does not reach it. Whether the Note's 'applicable survival period' language restricts set-off for those recall claims is ambiguous. That mitigation does not cover latent-defect losses with no recall, such as pet injury or customer claims and regulatory penalties under §4.14(a). Those stay subject to the nine-month bar. Nothing in the folder shows Buyer accepted this shortened period with knowledge of the issue, or objected to it. The window has not yet run."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 8: \"Holder may sell, assign, pledge or otherwise transfer this Note, in whole or in part, to any Person without the consent of Maker.\" Section 5 adds: \"The rights in this Section 5 are for the benefit of Holder and each subsequent holder of this Note.\"",
+            "reason": "The problem is present and still actionable for Bougairt as Maker. Section 8 lets Drigask transfer the Note to anyone without Bougairt's consent. That departs from the LOI (Section 3(f): not transferable without Buyer's prior written consent) and from the June 2 Buyer draft, which voided unconsented transfers. Section 5 gives every holder monthly financial statements and customer-level sales data for the Company, and the confidentiality limits from the Buyer draft have been removed. A transferee also gets the acceleration rights in Section 9 and the costs of collection in Section 9.3. The SPA non-compete in Section 6.10 binds only Seller and its Affiliates, so a competing pet food maker could buy the Note and receive this data unrestricted. The only protections for Bougairt are that transferees take subject to set-off and subordination, which do not address the data or competitor risk. Section 11.9 of the SPA does not help, because the SPA has no Note-transfer restriction that could override Section 8. The Note is still a form exhibit with the Closing Date blank, and nothing in the folder shows Bougairt accepted the provision after closing. It can still be negotiated."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 7.2(c): \"Seller shall have obtained and delivered to Buyer the following consents, under the Contracts listed below, each of which may terminate upon a change of control of the Company absent such consent: (i) the consent of the landlord under the Plant Lease; and (ii) the consent of the lender under the Equipment Financing Agreement;\" Section 4.9(b) separately states that under the Fenwold Supply Agreement \"a change of control of the Company requires the prior written consent of Fenwold, and the Fenwold Supply Agreement may terminate upon a change of control of the Company effected without that consent.\"",
+            "reason": "The problem is present and hurts Buyer (our client). Section 4.9(b) says the Fenwold contract is the Company's largest customer contract and can terminate on a change of control without Fenwold's consent. Even so, Section 7.2(c) lists only the landlord and equipment-lender consents. Section 6.4 requires Seller to pursue only the consents listed in 7.2(c), so Seller has no obligation to seek Fenwold's consent. That departs from LOI Section 7(d), which made the Fenwold consent a closing condition. The gap is not cured elsewhere. The SPA has no material-adverse-change closing condition. The recall condition does not apply. Section 4.9(b) itself discloses the consent requirement, so Buyer has no misrepresentation claim if Fenwold terminates. No specific indemnity covers loss of Fenwold, and any general claim would be capped. Buyer would therefore have to close even if Fenwold refuses and terminates. The issue is still actionable. Nothing in the folder shows the Closing has occurred: the Seller Note form remains undated and unsigned. The outside date is December 31, 2026. Buyer can still seek an amendment adding the Fenwold consent as a condition and covenant, or another protection, before closing."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 9.3(c): Buyer shall indemnify ... the \"Seller Indemnitees\" from and against all Losses ... arising out of or relating to ... \"(c) Losses arising under any Seller Guarantee.\" Section 1.1 defines \"Seller Guarantees\" to include \"(b) any other guaranty, keep-well, letter of credit, surety bond or other credit support provided by Seller or any of its Affiliates for any obligation of the Company, whether arising before or after the Closing.\" Section 9.5(b): \"The aggregate liability of Buyer under Section 9.3(a) shall not exceed $7,200,000.\"",
+            "reason": "The problem is present and it falls on Bougairt, which gives this indemnity. The Seller Guarantee definition is not limited to the guaranties scheduled in Section 6.8. It reaches any unscheduled credit support Seller gave for the Company, including pre-Closing obligations. Section 6.8 only requires Buyer to use commercially reasonable efforts to obtain releases, so Seller may never be released. The only Buyer cap, Section 9.5(b), covers claims under Section 9.3(a) and not 9.3(c). The nine-month survival limit in Section 9.1 applies only to representations and warranties, so this obligation has no time limit. Nothing in the Seller Note or the LOI cures this. Note Section 4.2 caps recovery by the Buyer Indemnitees, not Bougairt's liability to Seller, and the LOI does not provide for this indemnity at all. The indemnity is a continuing obligation in a binding agreement, so it remains actionable: through an amendment, a scheduled-only definition, a cap, or a survival limit."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Seller Note Section 4.2: \"The aggregate Losses recoverable by the Buyer Indemnitees under Article IX of the Purchase Agreement, whether by set-off under this Note or otherwise, shall not exceed the General Cap, including Losses described in Section 9.5(c) of the Purchase Agreement.\"",
+            "reason": "Bougairt (Buyer/Maker) is the indemnified party, and Seller Drigask is the indemnitor. SPA 9.5(c) takes Fundamental Representation and Product Recall Losses out from under the $7.2M General Cap and limits them only by the $72M Purchase Price. SPA 9.7 routes all recovery first through set-off under Section 4 of the Note. Note Section 4.2 then caps all Article IX recovery, \"whether by set-off under this Note or otherwise,\" at the General Cap, and expressly includes 9.5(c) Losses. SPA 11.9 normally makes the SPA prevail over other documents, but it makes the Seller Note control on set-off and recovery of indemnifiable Losses. So the Note's narrower cap governs. This cuts Buyer's recall and fundamental-rep protection from $72M to $7.2M, which matters for a pet food business with recall exposure. The June 2 Buyer draft (4.3) tied set-off to the SPA 9.5 limitations as applicable, so this is a change from Buyer's own position, not a negotiated outcome. The Note is still in form with blanks, and nothing in the folder shows Buyer accepted the change. It remains actionable."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.065,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 12,
+              "files_opened": [
+                "letter_of_intent_pinecrest_acquisition.md",
+                "seller_note_buyer_draft_2026-06-02.md",
+                "seller_note_exhibit_b.md",
+                "stock_purchase_agreement_bougairt_drigask.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C4",
+                "C6"
+              ],
+              "steps": 12,
+              "files_opened": [
+                "letter_of_intent_pinecrest_acquisition.md",
+                "seller_note_buyer_draft_2026-06-02.md",
+                "seller_note_exhibit_b.md",
+                "stock_purchase_agreement_bougairt_drigask.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C4"
+              ],
+              "steps": 12,
+              "files_opened": [
+                "letter_of_intent_pinecrest_acquisition.md",
+                "seller_note_buyer_draft_2026-06-02.md",
+                "seller_note_exhibit_b.md",
+                "stock_purchase_agreement_bougairt_drigask.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
