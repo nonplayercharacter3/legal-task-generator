@@ -1,0 +1,204 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 2,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 1,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 2,
+      "pass_rates": {
+        "0.00": 1,
+        "0.33": 1
+      }
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s22-m0001",
+      "accepted": false,
+      "failed_gate": "rubric_tests",
+      "reason": "flawed_wrongly_fails: [\"C7\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": []
+    },
+    {
+      "matter_id": "s22-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "test",
+      "solver_pass_rate": 0.333,
+      "unsolved": false,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 1,
+          "pass_rate": 0.333
+        }
+      ]
+    },
+    {
+      "matter_id": "s22-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": 0.0,
+      "unsolved": true,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 0,
+          "pass_rate": 0.0
+        }
+      ]
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12335,
+      "output_tokens": 26491,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 13,
+      "input_tokens": 219771,
+      "output_tokens": 91295,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 99512,
+      "output_tokens": 7119,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 5084,
+      "output_tokens": 679,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 12,
+      "input_tokens": 355832,
+      "output_tokens": 10042,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4204,
+      "output_tokens": 1268,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 18315,
+      "output_tokens": 5314,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 210122,
+      "output_tokens": 50719,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 17,
+      "input_tokens": 147926,
+      "output_tokens": 16948,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 114,
+      "input_tokens": 949132,
+      "output_tokens": 125944,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "event furniture rental": 1,
+      "solar panel installation": 1,
+      "medical imaging equipment": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 2,
+      "software license agreement": 1
+    },
+    "issue_types": {
+      "expired_notice_window": 2,
+      "liability_cap_carveout": 2,
+      "uncapped_indemnity": 2,
+      "missing_assignment_restriction": 1,
+      "auto_renewal": 1,
+      "exclusivity_scope": 1,
+      "defined_term_inconsistency": 1,
+      "governing_law_mismatch": 1,
+      "change_of_control_consent": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

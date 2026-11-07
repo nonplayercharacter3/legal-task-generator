@@ -1,0 +1,98 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response identifies that SPA Section 9.2(c) (Specified Matters indemnity, covering Product Liability Claims for systems manufactured, sold or serviced 'whether before or after the Closing Date') read together with SPA Section 9.5(c) (excluding Section 9.2(c) Losses from the $18,600,000 Seller cap and the deductible) exposes Topar to uncapped indemnity for product liability on imaging systems sold after Closing. It locates this in the SPA at Sections 9.2(c) and 9.5(c), explains why this matters to Topar, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "whether before or after the Closing Date",
+        "Section 9.5(c)",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Escrow Agreement Section 8.3 caps Buyer's liability at the $5,000,000 Buyer Cap except for fraud, and so drops the SPA Section 9.5(e) carve-outs for the Purchase Price/Deferred Payment and the escrow-release obligations. It also identifies that SPA Section 11.9 makes the Escrow Agreement prevail on liability limitations, so Section 8.3 controls. It locates the issue in Escrow Agreement Section 8.3, explains why this matters to Topar, and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "Section 8.3",
+        "Section 11.9",
+        "Buyer Cap"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Okavi Reconstruction Software License, assigned to the Company under Bill of Sale Section 2 and Annex A, requires Okavi's prior written consent to both the assignment and a change of control of the licensee. It also identifies that no such consent has been obtained or scheduled, so SPA Section 4.4 and Disclosure Schedule 4.4 ('None') are inaccurate. It locates the issue in the Bill of Sale (Section 2/Annex A), explains why this matters to Topar, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "Okavi",
+        "change of control",
+        "Disclosure Schedule 4.4"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Seller indemnity cap under SPA Section 9.5(a) is $18,600,000.",
+      "kind": "fact",
+      "source": "F6",
+      "hints": [
+        "$18,600,000",
+        "Section 9.5(a)"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Buyer Cap under SPA Section 9.5(d) is $5,000,000.",
+      "kind": "fact",
+      "source": "F7",
+      "hints": [
+        "$5,000,000",
+        "Buyer Cap"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Deferred Payment is $12,000,000.",
+      "kind": "fact",
+      "source": "F3",
+      "hints": [
+        "$12,000,000",
+        "Deferred Payment"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is structured as a memo addressed to the supervising partner, and for each issue it gives the location (document and section), why it matters to Topar, and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memorandum",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response includes an open-questions section or flags at least one item as an open question requiring input from the client or the other side.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Open questions",
+        "confirm with client"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the SPA's Buyer Cap carve-outs in Section 9.5(e) govern over Escrow Agreement Section 8.3 on liability limitations, so Buyer's Deferred Payment and escrow-release obligations remain uncapped.",
+      "kind": "negative",
+      "source": "F9",
+      "hints": [
+        "SPA controls",
+        "remain uncapped"
+      ]
+    }
+  ]
+}

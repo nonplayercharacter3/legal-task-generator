@@ -1,0 +1,182 @@
+{
+  "matter_id": "s22-m0003",
+  "summary": "Topar Medical Systems, Inc. (client, Seller) is selling all outstanding stock of its wholly owned subsidiary Celestra Imaging Systems, Inc. to Pritor Healthcare Partners, LLC (Buyer). Celestra manufactures and services CT and MRI systems. The Stock Purchase Agreement sets a $186,000,000 purchase price, including a $12,000,000 Deferred Payment, and a $18,600,000 indemnity escrow. Before Closing, Topar drops certain imaging-software contracts into Celestra by a Bill of Sale. Three problems hurt Topar. First, the SPA's uncapped 'Specified Matters' indemnity reaches product liability for systems sold after Closing. Second, the Escrow Agreement, which the SPA's precedence clause lets control on liability limits, removes the SPA carve-out that kept Buyer's payment and escrow-release obligations outside the Buyer Cap. Third, a reconstruction software license assigned by the Bill of Sale requires licensor consent to assignment and to a change of control of the licensee. That consent was never obtained, and the SPA consents schedule does not list it.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Topar Medical Systems, Inc.",
+      "role": "Seller; sole stockholder of Celestra Imaging Systems, Inc.; firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Pritor Healthcare Partners, LLC",
+      "role": "Buyer"
+    },
+    {
+      "id": "P3",
+      "name": "Celestra Imaging Systems, Inc.",
+      "role": "the Company; target whose stock is sold; CT/MRI manufacturer and servicer"
+    },
+    {
+      "id": "P4",
+      "name": "Ashcombe Trust Company, N.A.",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P5",
+      "name": "Okavi Algorithms GmbH",
+      "role": "licensor of image reconstruction software under an Assigned Contract"
+    },
+    {
+      "id": "P6",
+      "name": "Norrland Cryogenics, Inc.",
+      "role": "liquid helium supplier to the Company under the distractor vendor agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA signing date",
+      "value": "March 16, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Purchase Price",
+      "value": "$186,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "SPA Deferred Payment",
+      "value": "$12,000,000, payable 12 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F4",
+      "key": "Escrow Amount",
+      "value": "$18,600,000",
+      "doc": "D3",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F5",
+      "key": "Escrow Period",
+      "value": "18 months after the Closing Date",
+      "doc": "D3",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F6",
+      "key": "SPA Seller indemnity cap",
+      "value": "$18,600,000",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F7",
+      "key": "SPA Buyer Cap",
+      "value": "$5,000,000",
+      "doc": "D1",
+      "section": "Section 9.5(d)"
+    },
+    {
+      "id": "F8",
+      "key": "SPA Buyer Cap carve-outs",
+      "value": "fraud; payment of Purchase Price including Deferred Payment; Buyer's escrow release obligations",
+      "doc": "D1",
+      "section": "Section 9.5(e)"
+    },
+    {
+      "id": "F9",
+      "key": "SPA order of precedence",
+      "value": "SPA prevails over Bill of Sale; Escrow Agreement prevails on escrow releases and liability limitations stated therein",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F10",
+      "key": "Bill of Sale effective date",
+      "value": "March 30, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_topar_pritor.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale_topar_to_celestra.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "escrow_agreement_ashcombe.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "helium_supply_agreement_norrland_celestra.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped Specified Matters indemnity reaches post-Closing product liability",
+      "description": "SPA Section 9.2(c) requires Seller to indemnify Buyer for 'Specified Matters'. The definition includes any Product Liability Claim relating to any imaging system manufactured, sold or serviced by the Company 'whether before or after the Closing Date'. SPA Section 9.5(c) then provides that the Seller cap in Section 9.5(a) ($18,600,000) and the deductible in Section 9.5(b) do not apply to Losses under Section 9.2(c). The two provisions only show the problem when read together. Topar bears unlimited liability for CT/MRI systems that Buyer causes the Company to make and sell after Closing, which Topar no longer controls. That exposure is not limited to the Escrow Amount.",
+      "doc": "D1",
+      "section": "Sections 9.2(c) and 9.5(c)",
+      "detect_terms": [
+        "whether before or after the Closing Date",
+        "shall not apply to Losses under Section 9.2(c)"
+      ],
+      "expected_finding": "Read together, Sections 9.2(c) and 9.5(c) expose Topar to uncapped indemnity for product liability on imaging systems the Company sells after Closing. Topar should limit Specified Matters to pre-Closing sales and bring them under the $18,600,000 cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "Escrow Agreement strips Buyer Cap carve-outs and controls via SPA precedence clause",
+      "description": "SPA Section 9.5(d) caps Buyer's liability at $5,000,000. SPA Section 9.5(e) carves out of that cap fraud, Buyer's obligation to pay the Purchase Price including the $12,000,000 Deferred Payment, and Buyer's obligation to deliver joint instructions releasing Escrow Funds. Escrow Agreement Section 8.3 provides that Buyer's aggregate liability to Seller arising under the Escrow Agreement or Article IX of the Purchase Agreement, including with respect to release of Escrow Funds, shall not exceed the Buyer Cap, except for fraud. That drops the payment and escrow-release carve-outs. SPA Section 11.9 makes the Escrow Agreement prevail on escrow releases and on liability limitations stated in it, so the narrower Section 8.3 controls. As a result, Topar's recovery when Buyer wrongfully withholds release of the $18,600,000 Escrow Amount, or fails to pay the Deferred Payment, may be capped at $5,000,000.",
+      "doc": "D3",
+      "section": "Section 8.3",
+      "detect_terms": [
+        "shall not exceed the Buyer Cap, except for fraud",
+        "including with respect to release of Escrow Funds"
+      ],
+      "expected_finding": "Because SPA Section 11.9 lets the Escrow Agreement control, Escrow Agreement Section 8.3 subjects Buyer's Deferred Payment and escrow-release obligations to the $5,000,000 Buyer Cap that SPA Section 9.5(e) excluded. Topar should conform Section 8.3 to restore those carve-outs, or amend Section 11.9 so the SPA controls.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "Okavi license consent for assignment and change of control not obtained or scheduled",
+      "description": "Bill of Sale Section 2 and Annex A assign to the Company the Reconstruction Software License Agreement with Okavi Algorithms GmbH. Annex A quotes license Section 14.2, which requires Okavi's prior written consent to any assignment and to any change of control of the licensee, and says a transfer without consent is void and permits termination. Two events trigger that clause. The Bill of Sale (effective March 30, 2026) assigns the license, and the SPA sale of all Company stock to Pritor is a change of control of the licensee. Yet SPA Section 4.4 represents that no third-party consents are required except as set out in Disclosure Schedule 4.4, which reads 'None'. The SPA Section 3.2 closing deliverables also include no Okavi consent. Topar is therefore exposed to an indemnifiable rep breach and to losing software used in the Company's CT/MRI reconstruction.",
+      "doc": "D2",
+      "section": "Section 2 and Annex A",
+      "detect_terms": [
+        "prior written consent of Licensor",
+        "any change of control of Licensee"
+      ],
+      "expected_finding": "The Okavi license requires consent to both the Bill of Sale assignment and the change of control under the SPA. No consent has been obtained or scheduled, so SPA Section 4.4 and Disclosure Schedule 4.4 are inaccurate and Topar faces an indemnity claim and possible license termination. Topar should obtain Okavi's consent before Closing, or schedule the consent and make it a closing deliverable.",
+      "contradicts": null
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "task_id": "s22-m0003",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Topar Medical Systems, Inc., the seller and sole stockholder of Celestra Imaging Systems, Inc., in its sale of Celestra's stock to Pritor Healthcare Partners, LLC. Before we go further on the deal, Topar needs a clear view of where the transaction documents leave it exposed and what we should push to change. Please review the matter folder: the stock purchase agreement (stock_purchase_agreement_topar_pritor.md), the bill of sale between Topar and Celestra (bill_of_sale_topar_to_celestra.md), the Ashcombe escrow agreement (escrow_agreement_ashcombe.md), and the Norrland helium supply agreement (helium_supply_agreement_norrland_celestra.md). Then prepare a memo to me. For each issue you identify, state where it appears (document and section), explain why it matters to Topar as seller, and give a recommended fix, with proposed language where that helps. Put the points that matter most at the top. If something can't be resolved from the documents alone and needs input from the client or the other side, flag it as an open question rather than making an assumption. Thanks.",
+  "documents": [
+    "bill_of_sale_topar_to_celestra.md",
+    "escrow_agreement_ashcombe.md",
+    "helium_supply_agreement_norrland_celestra.md",
+    "stock_purchase_agreement_topar_pritor.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that SPA Section 9.2(c) (Specified Matters indemnity, covering Product Liability Claims for systems manufactured, sold or serviced 'whether before or after the Closing Date') read together with SPA Section 9.5(c) (excluding Section 9.2(c) Losses from the $18,600,000 Seller cap and the deductible) exposes Topar to uncapped indemnity for product liability on imaging systems sold after Closing. It locates this in the SPA at Sections 9.2(c) and 9.5(c), explains why this matters to Topar, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "whether before or after the Closing Date",
+        "Section 9.5(c)",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Escrow Agreement Section 8.3 caps Buyer's liability at the $5,000,000 Buyer Cap except for fraud, and so drops the SPA Section 9.5(e) carve-outs for the Purchase Price/Deferred Payment and the escrow-release obligations. It also identifies that SPA Section 11.9 makes the Escrow Agreement prevail on liability limitations, so Section 8.3 controls. It locates the issue in Escrow Agreement Section 8.3, explains why this matters to Topar, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 8.3",
+        "Section 11.9",
+        "Buyer Cap"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Okavi Reconstruction Software License, assigned to the Company under Bill of Sale Section 2 and Annex A, requires Okavi's prior written consent to both the assignment and a change of control of the licensee. It also identifies that no such consent has been obtained or scheduled, so SPA Section 4.4 and Disclosure Schedule 4.4 ('None') are inaccurate. It locates the issue in the Bill of Sale (Section 2/Annex A), explains why this matters to Topar, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Okavi",
+        "change of control",
+        "Disclosure Schedule 4.4"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Seller indemnity cap under SPA Section 9.5(a) is $18,600,000.",
+      "kind": "fact",
+      "hints": [
+        "$18,600,000",
+        "Section 9.5(a)"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Buyer Cap under SPA Section 9.5(d) is $5,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$5,000,000",
+        "Buyer Cap"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Deferred Payment is $12,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$12,000,000",
+        "Deferred Payment"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is structured as a memo addressed to the supervising partner, and for each issue it gives the location (document and section), why it matters to Topar, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response includes an open-questions section or flags at least one item as an open question requiring input from the client or the other side.",
+      "kind": "format",
+      "hints": [
+        "Open questions",
+        "confirm with client"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the SPA's Buyer Cap carve-outs in Section 9.5(e) govern over Escrow Agreement Section 8.3 on liability limitations, so Buyer's Deferred Payment and escrow-release obligations remain uncapped.",
+      "kind": "negative",
+      "hints": [
+        "SPA controls",
+        "remain uncapped"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "task_id": "s22-m0002",
+  "split": "test",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Gleidesk Renewables Acquisition Corp., the buyer, in its stock purchase from Tenein Energy Holdings, LLC, with Tenein Rooftop Solar, Inc. and Pellucid Logistics Park LLC also party to the matter. The client wants a clear view of where it stands under the deal documents and what needs attention. Please review the matter folder: the executed stock purchase agreement (stock_purchase_agreement_executed.md), the form of bill of sale at Exhibit B (exhibit_b_form_of_bill_of_sale.md), the seller disclosure schedule (seller_disclosure_schedule.md), and the superseded September 2026 draft of the SPA (spa_draft_september_2026_superseded.md). Prepare a memo to me that lists each issue you identify. For each one, give its location by document and section, explain why it matters to Gleidesk as buyer, and recommend a fix. Rank the issues so the most significant come first. Where a point turns on a judgment call or on facts we would need from the client, say so rather than guessing. Keep the memo practical so I can use it directly in my next conversation with the client.",
+  "documents": [
+    "exhibit_b_form_of_bill_of_sale.md",
+    "seller_disclosure_schedule.md",
+    "spa_draft_september_2026_superseded.md",
+    "stock_purchase_agreement_executed.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Bill of Sale Section 4 makes Seller's liability for breach of its title warranty on the Transferred Assets 'subject to the Cap'. It explains that, because SPA Section 11.12 makes the Bill of Sale control as to Transferred Assets, this overrides the SPA Section 9.4(b) carve-out of Fundamental Representations (including Section 4.6, Title to Transferred Assets) and caps Buyer's title claims at $4,850,000. It locates the issue in Bill of Sale Section 4, explains why this matters to Gleidesk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "subject to the Cap",
+        "Section 11.12",
+        "Fundamental Representation carve-out"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that SPA Section 9.3(c) (Buyer's indemnity for 'Assumed Warranty Obligations') and Section 9.4(d) (exempting that indemnity from the Cap and Deductible) work together with the Schedule 4.12 definition, which covers installations completed before the Closing Date. Read together, they expose Buyer to uncapped liability to Seller for pre-Closing warranty claims. The response locates the issue in SPA Sections 9.3(c)/9.4(d) and Disclosure Schedule 4.12, explains why this matters to Gleidesk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Assumed Warranty Obligations",
+        "before or after the Closing Date",
+        "not subject to the Cap"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Bill of Sale Section 7 selects California law and the courts of Fresno County, California, and that this conflicts with the Delaware law and Court of Chancery forum chosen in SPA Sections 11.8–11.9. It recognises that SPA Section 11.12 lets the Bill of Sale control as to Transferred Assets, which risks splitting disputes between California and Delaware. The response locates the issue in Bill of Sale Section 7, explains why this matters to Gleidesk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "laws of the State of California",
+        "Fresno County",
+        "Court of Chancery"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Fresno warehouse lease renewal deadline (180 days before the March 31, 2027 expiration, i.e. about October 2, 2026) passed before the October 20, 2026 signing, with no renewal notice delivered. It concludes that Seller cannot perform SPA Section 6.4 as written. The response locates the issue in Disclosure Schedule 4.10(a), explains why this matters to Gleidesk, and recommends a fix to be pursued before Closing.",
+      "kind": "issue",
+      "hints": [
+        "October 2, 2026",
+        "no renewal notice has been delivered",
+        "Section 6.4"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Seller indemnity Cap is 10% of the Purchase Price, or $4,850,000.",
+      "kind": "fact",
+      "hints": [
+        "$4,850,000",
+        "10% of the Purchase Price"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the SPA is governed by Delaware law.",
+      "kind": "fact",
+      "hints": [
+        "Delaware law",
+        "Section 11.8"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is a memo that presents the issues ranked or ordered by significance, with the most significant first.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "ranked",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that the Fresno warehouse lease renewal option can still be exercised by timely notice under the lease's terms.",
+      "kind": "negative",
+      "hints": [
+        "renewal window still open",
+        "notice can still be given"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that SPA Section 11.12 makes the SPA control over the Bill of Sale as to Transferred Assets.",
+      "kind": "negative",
+      "hints": [
+        "SPA prevails over Bill of Sale",
+        "Section 11.12"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ]
+}

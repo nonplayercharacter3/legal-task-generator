@@ -1,0 +1,204 @@
+{
+  "matter_id": "s22-m0001",
+  "summary": "Glilul Event Rentals, LLC is a New York event furniture and tent rental company. It licenses the Zamart RentalDesk reservation and inventory management platform from Zamart Cloud Systems, Inc. under a Software License Agreement effective March 1, 2024. Zamart's parent, Zamart Holdings Corp., guarantees Zamart's obligations. A Data Processing Addendum and a Service Level Schedule (Schedule B) complete the deal. Schedule B's Annex B-1 contains the Q3 2026 Quarterly Service Report, which Zamart delivered on October 6, 2026. The annex also records Glilul's October 9, 2026 dispute comment and Zamart's October 30, 2026 response. The folder also holds an unrelated linen laundering agreement with Pressbrook Textile Care LLC. Glilul wants an issue-spotting memo. The memo should cover: the narrow upcoming non-renewal window; the lapsed chronic-SLA termination window; overbroad exclusivity; Zamart's free assignment, which also releases the guaranty; and a narrower 'Customer Data' definition in the controlling DPA.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Glilul Event Rentals, LLC",
+      "role": "Licensee; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Zamart Cloud Systems, Inc.",
+      "role": "Licensor of the RentalDesk software"
+    },
+    {
+      "id": "P3",
+      "name": "Zamart Holdings Corp.",
+      "role": "Licensor's parent; Guarantor under the Parent Guaranty"
+    },
+    {
+      "id": "P4",
+      "name": "Pressbrook Textile Care LLC",
+      "role": "Glilul's linen and drape laundering vendor (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "License Agreement Initial Term",
+      "value": "three years, ending February 28, 2027",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Licensed Software",
+      "value": "RentalDesk reservation and inventory management modules listed in Order Form No. 1",
+      "doc": "D1",
+      "section": "1 (Definitions)"
+    },
+    {
+      "id": "F4",
+      "key": "Annual license fee",
+      "value": "$186,000",
+      "doc": "D1",
+      "section": "5.1"
+    },
+    {
+      "id": "F5",
+      "key": "License Agreement governing law",
+      "value": "New York",
+      "doc": "D1",
+      "section": "17.1"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "DPA (as to Customer Data processing), then License Agreement, then Service Level Schedule",
+      "doc": "D1",
+      "section": "17.4"
+    },
+    {
+      "id": "F7",
+      "key": "Customer Data (License Agreement definition)",
+      "value": "all data submitted to the Licensed Software, including personal data of Licensee's rental customers",
+      "doc": "D1",
+      "section": "1 (Definitions)"
+    },
+    {
+      "id": "F8",
+      "key": "Monthly Availability commitment",
+      "value": "99.5% per calendar month",
+      "doc": "D4",
+      "section": "2.1"
+    },
+    {
+      "id": "F9",
+      "key": "Guarantor",
+      "value": "Zamart Holdings Corp.",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Q3 2026 Quarterly Service Report delivery date",
+      "value": "October 6, 2026",
+      "doc": "D4",
+      "section": "Annex B-1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "linen_laundering_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "D1 §2.2 renews the Agreement automatically for successive three-year Renewal Terms. The only way out is a non-renewal notice delivered no earlier than 120 days and no later than 90 days before the end of the then-current Term. D1 §5.3 raises the annual license fee by 9% at the start of each Renewal Term. Against the Initial Term end date of February 28, 2027 (D1 §2.1), the opt-out window runs only from October 31, 2026 to November 30, 2026. If Glilul misses that window, it is locked in for three more years at a higher fee. Read on its own, the clause shows the problem; §5.3 makes the cost worse.",
+      "doc": "D1",
+      "section": "2.2",
+      "detect_terms": [
+        "successive three (3) year Renewal Terms",
+        "no earlier than one hundred twenty (120) days"
+      ],
+      "expected_finding": "Under D1 §2.2 the Agreement auto-renews for three years with a 9% fee increase under §5.3 unless Glilul delivers non-renewal notice between October 31 and November 30, 2026, so Glilul should calendar and send a protective notice by November 30, 2026 and negotiate shorter renewal terms with a longer opt-out window.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "D4 §6.2 gives Glilul a chronic-failure termination right. It applies if Availability falls below the 99.5% commitment in D4 §2.1 for three consecutive months. Glilul must exercise it by written notice under D1 §17.6 within fifteen days after delivery of the Quarterly Service Report showing the third failure. D4 §6.4 makes service credits and the §6.2 right Glilul's sole and exclusive remedies for Availability failures, and D1 §12.3 defers to Schedule B for those remedies. Annex B-1 to D4 records the following. The Q3 2026 report was delivered October 6, 2026 and shows misses in July, August and September 2026, with Zamart classifying the August outage as Excused Downtime. Glilul commented on October 9, 2026 that it disputes the Excused Downtime classification and reserves all rights, including termination. Zamart responded on October 30, 2026 that the termination window closed October 21, 2026. Glilul never sent a formal termination notice. Glilul's October 9 comment shows it has not accepted the result, so the point is still live.",
+      "doc": "D4",
+      "section": "6.2",
+      "detect_terms": [
+        "within fifteen (15) days after delivery"
+      ],
+      "expected_finding": "The D4 §6.2 chronic-failure termination window closed October 21, 2026 (fifteen days after the October 6, 2026 report) without a formal notice, and §6.4 makes credits and that right Glilul's sole remedies. Glilul should promptly assert that its October 9, 2026 comment was effective notice or that Zamart's Excused Downtime classification is invalid, reserve rights, and negotiate a reopened window.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D1 §3.4 bars Licensee and its Affiliates, worldwide and for the Term including Renewal Terms, from using, licensing, developing or evaluating any software with functionality similar to any 'Zamart Product'. D1 §1 defines 'Zamart Products' as every product in Zamart's then-current catalog, including payment processing, CRM and route-dispatch tools and any product released after the Effective Date. The license itself covers only the RentalDesk reservation and inventory modules ('Licensed Software', D1 §1 / Order Form No. 1). Read together, the two provisions extend the restriction far beyond the licensed functionality and beyond Glilul's regional rental business. Because the scope grows with Zamart's catalog, it could also bar Glilul's existing or future tools in unrelated categories.",
+      "doc": "D1",
+      "section": "3.4",
+      "detect_terms": [
+        "functionality similar to any Zamart Product",
+        "anywhere in the world"
+      ],
+      "expected_finding": "D1 §3.4 read with the §1 definition of 'Zamart Products' bars Glilul and its Affiliates worldwide from any software resembling anything in Zamart's present or future catalog, not just the licensed reservation and inventory modules. It should be narrowed to the Licensed Software's functionality, Glilul's operating territory, and the Initial Term.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "D1 §16.2 prohibits assignment without consent 'except to a Permitted Assignee'. D1 §1 defines 'Permitted Assignee' as any Affiliate or any Person that acquires all or substantially all of the assets or business line to which the Agreement relates. Zamart can therefore transfer the Agreement, Glilul's data and the exclusivity relationship to any buyer of its RentalDesk line without consent, including a rental competitor of Glilul. The clause is mutual, but it hurts Glilul in a further way. D2 §7 releases Zamart Holdings from the Guaranty for all obligations arising after 'any assignment permitted under Section 16.2' of the License Agreement. A free assignment by Zamart therefore also strips Glilul's credit support.",
+      "doc": "D1",
+      "section": "16.2",
+      "detect_terms": [
+        "all or substantially all of the assets or business line"
+      ],
+      "expected_finding": "Under D1 §16.2 and the 'Permitted Assignee' definition, Zamart may assign without consent to any acquirer of the RentalDesk business, including a Glilul competitor, and D2 §7 then releases Zamart Holdings' guaranty for post-assignment obligations. Glilul should require consent (or exclude competitors) and make the guaranty survive any assignment unless a creditworthy assignee assumes it.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 §1 defines 'Customer Data' as all data submitted to the Licensed Software, including personal data of Glilul's rental customers. D3 §1.2 redefines 'Customer Data' as only Personal Data of Licensee's employees and contractors. That narrower meaning governs all of the DPA's security, 72-hour breach notification, sub-processor and return/deletion obligations. D1 §9.4 states that Licensor's obligations on security, breach notification and return or deletion of Customer Data are set out exclusively in the DPA. D1 §17.4 makes the DPA prevail over the License Agreement as to Customer Data processing. Read together, the DPA's narrow definition controls. The personal data of Glilul's event customers (names, addresses, payment and venue details) carries no contractual breach-notification, security or deletion commitment.",
+      "doc": "D3",
+      "section": "1.2",
+      "detect_terms": [
+        "Personal Data of Licensee's employees and contractors"
+      ],
+      "expected_finding": "Because D1 §9.4 routes data-security obligations exclusively to the DPA and D1 §17.4 makes the DPA prevail, the DPA §1.2 definition of 'Customer Data' (employees and contractors only) strips breach-notification, security and deletion protection from Glilul's rental customers' personal data. The DPA definition must be conformed to the broader D1 §1 definition.",
+      "contradicts": "F7"
+    }
+  ]
+}

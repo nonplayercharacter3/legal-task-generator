@@ -1,0 +1,109 @@
+{
+  "matter_id": "s22-m0001",
+  "accepted": false,
+  "failed_gate": "rubric_tests",
+  "reason": "flawed_wrongly_fails: [\"C7\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "§2.2: \"At the end of the Initial Term, this Agreement will automatically renew for successive three (3) year Renewal Terms (each a \"Renewal Term\"). Either Party may elect not to renew by giving the other Party written notice of non-renewal delivered no earlier than one hundred twenty (120) days and no later than ninety (90) days before the expiration of the then-current Term... A notice delivered outside that period is ineffective for the then-current Term.\" §5.3: \"At the start of each Renewal Term, the annual license fee then in effect will increase by nine percent (9%).\"",
+            "reason": "The problem is present and hurts Glilul. Glilul is the Licensee and pays the fee. If it does not give a non-renewal notice, it is locked into another three years. The fee would rise by 9%, from $186,000 to $202,740 a year. The Initial Term ends February 28, 2027, so the only valid notice window is about October 31 to November 30, 2026. Any notice outside that window is expressly ineffective. The notice must also be served formally under §17.6. A portal comment or email will not do. Nothing in the folder cures or limits this. The Guaranty and the DPA do not change it, and the folder shows no non-renewal notice already given. The issue is still actionable: as of today (November 7, 2026) the window is open, so Glilul can still serve a compliant notice before November 30. This matters more because Glilul's Schedule B chronic-failure termination right may have lapsed. Licensor asserts it closed October 21, 2026, which makes non-renewal Glilul's clearest exit."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Schedule B §6.2: \"Licensee may terminate the Agreement by written notice given in accordance with Section 17.6 of the Agreement within fifteen (15) days after delivery of the Quarterly Service Report showing the third consecutive month below the Availability Commitment.\" Annex B-1 shows the Q3 2026 report was delivered October 6, 2026. Zamart's October 30 response states: \"Under Section 6.2 of Schedule B, the period to exercise termination for chronic failure closed on October 21, 2026.\"",
+            "reason": "The termination right was triggered on Zamart's own numbers. July (99.12%), August (99.31%) and September (99.27%) were each below 99.5%, so the dispute over the August Excused Downtime classification does not matter for the trigger. The 15-day window ran from October 6 to October 21, 2026. Glilul's only response was an October 9 comment posted on the RentalDesk portal. That is not notice under §17.6 of the Agreement, which requires delivery by hand, courier or certified mail; the portal is allowed only for \"operational communications.\" The comment also only reserved termination rather than exercising it. This matters because §6.4 makes service credits and §6.2 termination Glilul's sole remedies for availability failures, and §12.3 of the Agreement defers to Schedule B. So Glilul appears to have lost its only exit for chronic availability failure. That exposure is serious: the Agreement auto-renews on February 28, 2027 for three years, with a 9% fee increase and a worldwide exclusivity covenant. The point is still actionable. Glilul's October 9 comment objected and reserved all rights, including termination. Nothing in the folder shows Glilul later accepted the result, such as paying the credited invoice or signing an acknowledgment. Glilul still has arguments to pursue: the comment as actual or substantially compliant notice, and the no-waiver clause in §17.7. It can also take mitigating steps now: watch for a fresh three-month run (for example August to October in the Q4 report), and send a formal non-renewal notice under §2.2 within the window that runs to about November 30, 2026."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "§3.4: \"During the Term, Licensee shall not, and shall cause its Affiliates not to, anywhere in the world, use, license, procure, develop or evaluate any software, platform or service having functionality similar to any Zamart Product, whether supplied by a third party or developed internally.\" §1.15 defines \"Zamart Products\" to include \"each software product, module, application and service offered in Licensor's then-current product catalog, including the RentalDesk platform and Licensor's payment processing, customer relationship management (CRM) and route-dispatch tools, and any product or service that Licensor or its Affiliates release after the Effective Date.\"",
+            "reason": "The restriction binds Glilul, the Licensee and the firm's client. It is far broader than the license. The license covers only the RentalDesk Reservations and Inventory modules, but §3.4 reaches every product in Zamart's catalog. That includes payment processing, CRM and route-dispatch tools, and anything Zamart or its Affiliates release later. The restriction applies worldwide, covers Glilul's Affiliates, and bars even evaluating or building tools internally. It lasts for the Term, and the Term auto-renews for 3-year periods under §2.2. No other document in the folder narrows or cures it. The Guaranty, DPA, SLS and laundering agreement say nothing on exclusivity, and there is no amendment or waiver. The restriction is ongoing and expands as Zamart's catalog grows. It is still actionable: Glilul can seek an amendment, rely on it in a dispute, or factor it into its non-renewal decision."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "§16.2: \"Neither Party may assign or transfer this Agreement, in whole or in part, whether voluntarily, by operation of law or otherwise, without the prior written consent of the other Party, except to a Permitted Assignee.\" §1.10 defines Permitted Assignee as \"(a) any Affiliate of that Party, or (b) any Person that acquires all or substantially all of the assets or business line of that Party to which this Agreement relates.\" Guaranty §7.3: \"Upon any assignment permitted under Section 16.2 of the License Agreement by the Licensor, the Guarantor is released from this Guaranty as to all Guaranteed Obligations arising after the effective date of that assignment.\"",
+            "reason": "The problem is present and still actionable for Glilul. Zamart can assign the Agreement without Glilul's consent to any Affiliate or to any buyer of the RentalDesk line, and that buyer could be a rental competitor. The only safeguard is notice within 30 days after the assignment takes effect. Glilul gets no consent right, no termination right on assignment and no requirement that the assignee be creditworthy or not a competitor. The assignee would hold Glilul's Customer Data and the §3.4 exclusivity covenant, which Glilul cannot escape. Under Guaranty §7.3, any such assignment automatically releases Zamart Holdings from all later Guaranteed Obligations, so Glilul loses its credit support. Nothing else in the folder cures or limits this. Guaranty §4.1(d) protects only against a change of ownership of the Licensor, not against an assignment of the Agreement. The clause is mutual, but Glilul's reciprocal right does not offset the loss of the guaranty or the exposure to a competitor. The Agreement runs to February 2027 and auto-renews, and nothing shows an assignment has happened or that Glilul has accepted one. The risk can still be addressed through amendment, or by weighing it before the non-renewal window."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "DPA §1.2: \"'Customer Data' means Personal Data of Licensee's employees and contractors that Licensee or its Authorized Users submit to the Licensed Software and that Licensor Processes on Licensee's behalf under the License Agreement.\" License Agreement §1.4: \"'Customer Data' means all data submitted to the Licensed Software, including personal data of Licensee's rental customers.\" License Agreement §9.4: obligations regarding security, breach notification, sub-processors and return or deletion \"are set out exclusively in the DPA.\" License Agreement §17.4 gives the DPA precedence \"as to Customer Data processing.\"",
+            "reason": "The problem is present and still actionable for Glilul, the Licensee. The License Agreement defines Customer Data broadly to include rental customers' personal data. DPA §1.2 narrows it to employees and contractors only, and Annex 2 matches that narrow scope. Two provisions make the narrow meaning control: License Agreement §9.4 sends all security, breach-notice, sub-processor and deletion obligations exclusively to the DPA, and §17.4 makes the DPA prevail on Customer Data processing. The result is that Zamart (the Licensor, which bears these obligations) has no contractual duty to secure, give 72-hour breach notice about, or delete Glilul's event customers' data. That data is the core content of a reservation system. This hurts Glilul, which owes breach notifications to those customers under the SHIELD Act. Nothing in the folder cures the gap. License Agreement §9.1 (use limits) and §10 (confidentiality) give only partial and general protection. The Agreement is in force through February 2027, and the DPA can be amended under §11.3, so Glilul can still raise the issue."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": false,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [
+          "C7"
+        ],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {
+            "C7": "The memo never states that the Q3 2026 report was delivered on October 6, 2026."
+          }
+        }
+      }
+    }
+  ]
+}

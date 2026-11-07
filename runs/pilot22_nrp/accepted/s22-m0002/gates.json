@@ -1,0 +1,173 @@
+{
+  "matter_id": "s22-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Bill of Sale Section 4.3: \"Seller's liability for any breach of the warranties in this Section 4 is subject to the Cap set forth in Section 9.4(a) of the Purchase Agreement.\" SPA Section 11.12: \"In the event of any conflict between this Agreement and any Ancillary Document, the Bill of Sale controls as to the Transferred Assets; otherwise this Agreement controls over all other documents.\"",
+            "reason": "The SPA carves title to the Transferred Assets out of the Cap. Section 4.6 is a Fundamental Representation, and Section 9.4(b) excludes Fundamental Representations from the $4,850,000 Cap and limits Seller's liability for them only by the full Purchase Price. Bill of Sale Section 4.3 instead puts Seller's title warranty under the Cap. Section 11.12 makes the Bill of Sale control on conflicts concerning the Transferred Assets, so the Cap could be read to govern title losses on the vehicles, inventory and equipment. Bill of Sale Section 6 does not cure this: it refers back to Section 11.12, and its 'no expansion' language protects only Buyer and the Company. Seller argues the Cap; Buyer argues the uncapped SPA claim, and that dispute is the problem. The issue hurts Buyer, the firm's client, which holds the title claim. It is still actionable because the Bill of Sale is an unexecuted form with a blank Closing Date. Buyer can strike the Cap reference in Section 4.3 or conform it to Section 9.4(b) before Closing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "SPA §9.3(c): Buyer shall indemnify the Seller Indemnitees against all Losses arising out of or relating to \"the Assumed Warranty Obligations, as defined in Schedule 4.12 of the Disclosure Schedule.\" SPA §9.4(d): \"Buyer's obligations under Section 9.3(c) shall not be subject to the Cap or the Deductible.\" Schedule 4.12, §9.2: \"'Assumed Warranty Obligations' means all obligations of the Company under the workmanship, roof-penetration and production warranties ... for installations whether completed before or after the Closing Date.\"",
+            "reason": "The obligation falls on Buyer, our client. Buyer gives Seller an uncapped indemnity, and the definition it adopts by reference expressly covers pre-Closing installations. Under §9.2(d), Seller indemnifies Buyer for pre-Closing warranty and related property-damage claims, but that indemnity is capped at $4.85M under §9.4(a). Read together, Seller's capped pre-Closing warranty exposure can be passed back to Buyer without limit. This would cover the known 2024 flashing-sealant defect (about 140 homes) and Delgado-type claims, against roughly $900K of warranty cost per year. Nothing cures the conflict. The SPA itself incorporates the Schedule definition, and §11.12 only gives the Bill of Sale priority as to the Transferred Assets. The Sept. 24 Buyer draft had no §9.3(c), so the clause came in late and was not Buyer's intended position. The point is still actionable: the agreement was signed October 20, 2026, Closing has not occurred, and §11.6 allows amendment by a signed writing. The folder shows no acceptance of the result. Buyer should seek an amendment limiting Assumed Warranty Obligations to post-Closing installations, or making §9.2(d) control."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Bill of Sale §7.1: \"This Bill of Sale, and all claims arising out of or relating to it or to the sale, conveyance and transfer of the Transferred Assets, are governed by the laws of the State of California...\" §7.2: \"Each of Seller and the Transferee irrevocably submits to the exclusive jurisdiction of the state courts located in Fresno County, California, for any action arising out of or relating to this Bill of Sale or the Transferred Assets.\" SPA §11.12: \"In the event of any conflict between this Agreement and any Ancillary Document, the Bill of Sale controls as to the Transferred Assets; otherwise this Agreement controls over all other documents.\"",
+            "reason": "SPA §§11.8 and 11.9 choose Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery for all claims relating to the transactions. The Bill of Sale chooses California law and exclusive Fresno County courts. That choice reaches beyond the instrument itself to any action relating to the Transferred Assets. Under SPA §11.12, the Bill of Sale controls as to the Transferred Assets. Bill of Sale §6 does not fix this, because it defers to the SPA only \"as provided in Section 11.12.\" Two of Buyer's remedies for the same asset problem would therefore be split. Title warranty claims under the Bill of Sale, and anything touching the vehicles, inventory and equipment, would go to California courts under California law. Claims on the same facts under SPA §4.6, a Fundamental Representation, and SPA §9.2 indemnity would go to Delaware. Bill of Sale §4.3 still imports the SPA Cap and the SPA §9.5 procedures. The result risks inconsistent outcomes, duplicated litigation and Seller forum-shopping, all against Buyer's interest. The Bill of Sale is still an unexecuted form exhibit and the deal has not closed. Buyer can still fix this, for example by conforming §7 to Delaware or carving governing law and forum out of the precedence clause."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "\"The tenant must exercise the option by written notice to the landlord delivered no later than one hundred eighty (180) days before the lease expiration date. If the tenant does not deliver timely notice, the option lapses.\" ... \"(g) Status of renewal. As of the date of this Disclosure Schedule, no renewal notice has been delivered.\" (Schedule 4.10(a), Section 8.1(d), (f), (g); lease expiration March 31, 2027; Schedule dated October 20, 2026)",
+            "reason": "The lease expires March 31, 2027, so 180 days earlier is October 2, 2026. That is the renewal deadline. The Schedule, delivered October 20, 2026, says no notice has been given, and the lease terms say an untimely notice lets the option lapse. The renewal right therefore expired before signing. SPA Section 6.4 requires Seller to cause the Company to exercise the option 'in accordance with its terms', but that was impossible by the time the parties signed. Because the lapse is disclosed against Section 4.10, a representation-based indemnity claim is weak. The Fresno Warehouse is the Company's principal inventory, fleet and dispatch facility, so Buyer (our client) risks losing it about four months after Closing. Nothing in the folder shows that Closing has occurred, that the landlord has agreed to an extension or new lease, or that Buyer has accepted the lapse or waived it. Buyer can still act before Closing. It can insist on a landlord extension as a closing deliverable, rely on the Section 7.2(b) covenant condition or the Section 8.1(c) termination right, or negotiate a price adjustment or special indemnity. The problem is present and still actionable."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 14,
+              "files_opened": [
+                "exhibit_b_form_of_bill_of_sale.md",
+                "seller_disclosure_schedule.md",
+                "spa_draft_september_2026_superseded.md",
+                "stock_purchase_agreement_executed.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 14,
+              "files_opened": [
+                "exhibit_b_form_of_bill_of_sale.md",
+                "seller_disclosure_schedule.md",
+                "spa_draft_september_2026_superseded.md",
+                "stock_purchase_agreement_executed.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C2"
+              ],
+              "steps": 14,
+              "files_opened": [
+                "exhibit_b_form_of_bill_of_sale.md",
+                "seller_disclosure_schedule.md",
+                "spa_draft_september_2026_superseded.md",
+                "stock_purchase_agreement_executed.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

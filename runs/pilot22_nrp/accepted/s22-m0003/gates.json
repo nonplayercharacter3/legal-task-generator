@@ -1,0 +1,169 @@
+{
+  "matter_id": "s22-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"Specified Matters\" means (a) any Product Liability Claim relating to any CT or MRI imaging system, or any component of one, manufactured, sold or serviced by the Company, whether before or after the Closing Date ...\" (§1.1). Read with §9.2(c), \"Seller shall indemnify ... against all Losses arising out of ... (c) any Specified Matters,\" and §9.5(c), \"The cap in Section 9.5(a) and the deductible in Section 9.5(b) shall not apply to Losses under Section 9.2(c).\"",
+            "reason": "Seller (Topar, the client) gives this indemnity. The definition expressly reaches products the Company makes, sells or services after the Closing, when Buyer controls the Company. Section 9.5(c) removes both the $18.6M cap and the $1.86M deductible for these Losses. It also arguably removes the Purchase Price ceiling in §9.5(a), since §9.5(c) excludes \"the cap in Section 9.5(a)\" without distinction. Section 9.6 sends recovery directly against Seller once the Escrow Funds run out, so the exposure is not limited to the escrow. Nothing in the Bill of Sale or the Escrow Agreement narrows it: the Bill of Sale §8 says it does not modify the SPA indemnities. This is a real, open-ended and continuing exposure for Topar for product liability it cannot control. No document shows Topar has accepted or resolved it, so it remains actionable, whether by amendment or as a defense position on scope."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Escrow Agreement Section 8.3: \"The aggregate liability of Buyer to Seller arising under or in connection with this Escrow Agreement or Article IX of the Purchase Agreement, including with respect to release of Escrow Funds, shall not exceed the Buyer Cap, except for fraud.\"",
+            "reason": "SPA 9.5(e) keeps three things outside the $5,000,000 Buyer Cap: fraud, the Purchase Price including the $12,000,000 Deferred Payment, and Buyer's duty to deliver joint instructions releasing Escrow Funds. Escrow Section 8.3 keeps only fraud. It expressly caps liability for escrow releases and also reaches Article IX, where SPA 9.3(b) covers Buyer's obligations under Sections 2.3 and 2.4. SPA 11.9 makes the Escrow Agreement prevail on releases of Escrow Funds and on liability limitations stated in it, so Section 8.3 likely controls. This hurts Topar as Seller. If Buyer wrongfully refuses joint instructions on the $18,600,000 escrow, Topar's recovery could be capped at $5,000,000. Buyer could also argue the Deferred Payment claim is capped, although SPA 9.8's carve-out for Deferred Payment claims gives Topar a counter-argument. The Escrow Agreement is still an unsigned draft with a blank date, so the point can still be raised and fixed before signing."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Bill of Sale Section 2.1: \"Effective as of the Effective Date, Assignor sells, assigns, transfers, conveys and delivers to Assignee, and Assignee accepts, all of the Contract Rights. This includes Assignor's rights under the Reconstruction Software License Agreement with Okavi Algorithms GmbH described in Item 1 of Annex A.\" Annex A, Item 1, quoting license Section 14.2: \"Licensee shall not assign... without the prior written consent of Licensor. Any change of control of Licensee... shall be deemed a transfer requiring the prior written consent of Licensor. Any purported assignment or transfer in violation of this Section 14.2... shall be null and void, and Licensor may terminate this Agreement immediately upon written notice.\" SPA Schedule 4.4: \"None.\"",
+            "reason": "Topar is the Okavi licensee. It assigns the license to Celestra under Section 2.1 without any consent. Under the quoted Section 14.2, that assignment is void and Okavi may terminate the license.\n\nThe sale of Celestra's stock to Pritor is a second transfer that also needs Okavi's consent. Section 14.2 treats a transfer of more than 50% of the licensee's voting securities as a change of control, and once the license sits with Celestra, Celestra is the licensee.\n\nNothing in the folder cures this:\n- No Okavi consent appears in any document.\n- The Bill of Sale has no consent condition, no consent covenant and no fallback for contracts that are not assigned.\n- The Section 5 notices go to the counterparties only after the assignment and do not seek consent.\n- The SPA Section 3.2 closing deliverables do not include a consent.\n\nTopar's position is made worse by its own statements. In SPA Section 4.4 it represents that no consents are required except as listed on Schedule 4.4, and that schedule reads \"None.\" In Bill of Sale Section 6(b) it represents that each Assigned Contract is in full force and effect.\n\nThis exposes Topar to two kinds of claim:\n- An indemnity claim under SPA Section 9.2(a) for breach of the Section 4.4 representation, paid first from the escrow.\n- Claims arising from Celestra losing the reconstruction software that its CT and MRI systems use.\n\nThe matter is still actionable. Nothing shows that Topar has accepted the result or that Okavi has waived its rights. The representations survive for 18 months after Closing. Topar can still seek Okavi's consent, revise the disclosure schedule before Closing, or build a fallback mechanism for the license."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.077,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2"
+              ],
+              "steps": 13,
+              "files_opened": [
+                "bill_of_sale_topar_to_celestra.md",
+                "escrow_agreement_ashcombe.md",
+                "helium_supply_agreement_norrland_celestra.md",
+                "stock_purchase_agreement_topar_pritor.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2"
+              ],
+              "steps": 13,
+              "files_opened": [
+                "bill_of_sale_topar_to_celestra.md",
+                "escrow_agreement_ashcombe.md",
+                "helium_supply_agreement_norrland_celestra.md",
+                "stock_purchase_agreement_topar_pritor.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2",
+                "C6"
+              ],
+              "steps": 13,
+              "files_opened": [
+                "bill_of_sale_topar_to_celestra.md",
+                "escrow_agreement_ashcombe.md",
+                "helium_supply_agreement_norrland_celestra.md",
+                "stock_purchase_agreement_topar_pritor.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
