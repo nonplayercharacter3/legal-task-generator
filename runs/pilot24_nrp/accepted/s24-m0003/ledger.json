@@ -1,0 +1,209 @@
+{
+  "matter_id": "s24-m0003",
+  "summary": "Soupen Water Solutions, Inc. (client, Buyer) is buying from Faiveirt Chemical Company the business of blending and distributing water treatment chemicals (coagulants, corrosion inhibitors and scale inhibitors), centred on a blending facility in Pasadena, Texas. The deal is a New York-law asset purchase agreement signed August 14, 2026 for $48,500,000, with closing pending. The folder holds five documents: the APA, the agreed form of Bill of Sale (Exhibit A), the non-binding Letter of Intent of May 12, 2026, and a Side Letter signed with the APA, which the APA says prevails over it. The fifth is a broker's cover letter sending insurance certificates, which is a distractor. Five issues are planted. (1) The Side Letter moves governing law and forum for all APA disputes to Texas and Harris County, and it controls under the APA's precedence clause. (2) Seller may assign or delegate the APA, including its post-closing supply and indemnity obligations, to anyone without Buyer's consent and without staying liable. (3) The Side Letter redefines 'Losses' for all purposes of the APA as fines and penalties only, which guts the APA indemnity. (4) The Lakeport Municipal Water District supply contract needs the District's consent to assignment and change of control, as the LOI records. The APA's consent representation and schedule say no consents are needed, and the closing conditions do not cover it. (5) The APA limits the environmental representations and the Excluded Liabilities indemnity to a 12-month survival period, against the LOI's agreed statute-of-limitations survival.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Soupen Water Solutions, Inc.",
+      "role": "Buyer (firm's client), a Delaware corporation headquartered in New York, New York"
+    },
+    {
+      "id": "P2",
+      "name": "Faiveirt Chemical Company",
+      "role": "Seller, a Texas corporation operating the water treatment chemicals business from Pasadena, Texas"
+    },
+    {
+      "id": "P3",
+      "name": "Lakeport Municipal Water District",
+      "role": "Key customer under the Lakeport Supply Contract, an Assumed Contract that requires its consent to assignment or change of control"
+    },
+    {
+      "id": "P4",
+      "name": "Ostrander Risk Partners LLC",
+      "role": "Seller's insurance broker, author of the insurance certificate cover letter"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing Date",
+      "value": "August 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "APA Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "APA governing law",
+      "value": "Laws of the State of New York",
+      "doc": "D1",
+      "section": "Section 11.7"
+    },
+    {
+      "id": "F4",
+      "key": "APA dispute forum",
+      "value": "State or federal courts located in New York County, New York (exclusive)",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Side Letter prevails over the APA; the APA prevails over the Bill of Sale and other Ancillary Documents",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F6",
+      "key": "APA definition of Losses",
+      "value": "Damages, fines, penalties, investigation and remediation costs, and reasonable attorneys' fees",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F7",
+      "key": "LOI survival of environmental representations and Excluded Liabilities indemnity",
+      "value": "Until 60 days after expiry of the applicable statute of limitations",
+      "doc": "D3",
+      "section": "Section 4"
+    },
+    {
+      "id": "F8",
+      "key": "Lakeport Supply Contract consent requirement",
+      "value": "District's prior written consent required for assignment or change of control of supplier",
+      "doc": "D3",
+      "section": "Section 3"
+    },
+    {
+      "id": "F9",
+      "key": "Purchased facility location",
+      "value": "Pasadena, Texas blending facility",
+      "doc": "D1",
+      "section": "Section 2.1(a)"
+    },
+    {
+      "id": "F10",
+      "key": "Side Letter date",
+      "value": "August 14, 2026",
+      "doc": "D4",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_soupen_faiveirt.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale_exhibit_a_form.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "letter_of_intent_2026-05-12.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter_2026-08-14.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "insurance_certificate_cover_letter_ostrander.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "APA Sections 11.7 and 11.8 choose New York law and exclusive New York County courts. Side Letter Section 5 provides that the Side Letter and any dispute arising out of or relating to the Agreement or the transactions contemplated by it are governed by the laws of the State of Texas, with exclusive jurisdiction in the state courts of Harris County, Texas. APA Section 11.9 says the Side Letter prevails over the APA in any conflict, so the Texas clause displaces the New York choice for every APA dispute, including indemnity claims. Buyer, a New York-based client, loses its bargained-for New York law and home forum and must litigate in Seller's home county.",
+      "doc": "D4",
+      "section": "Section 5",
+      "detect_terms": [
+        "laws of the State of Texas",
+        "Harris County"
+      ],
+      "expected_finding": "Side Letter Section 5 moves governing law and exclusive forum for all APA disputes to Texas and Harris County, and APA Section 11.9 makes the Side Letter prevail, so it overrides APA Sections 11.7 and 11.8; it should be limited to the Side Letter's own subject matter or conformed to New York law and New York County courts.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "APA Section 11.4 bars Buyer from assigning without Seller's consent but provides that Seller may assign the Agreement or any of its rights, or delegate any of its obligations, to any person without the consent of Buyer, with no requirement that the assignee assume those obligations in writing and no provision keeping Seller liable. Read with Section 6.7 (Seller's 18-month transitional supply of ferric chloride feedstock to Buyer at the Pasadena facility, which requires access to Buyer's customer volume forecasts) and Article VIII (Seller's indemnification obligations), this lets Seller hand its supply obligation and Buyer's confidential volume data to a competitor. It also lets Seller shift its indemnity obligations to an assignee with no assets, leaving Buyer without a creditworthy indemnitor.",
+      "doc": "D1",
+      "section": "Section 11.4",
+      "detect_terms": [
+        "Seller may assign",
+        "without the consent of Buyer"
+      ],
+      "expected_finding": "APA Section 11.4 lets Seller assign or delegate its Section 6.7 transitional supply obligations and Article VIII indemnity obligations to any person, including a competitor or an assetless entity, without Buyer's consent; it should require Buyer's consent (or limit assignment to creditworthy affiliates that assume in writing), keep Seller liable after any assignment, and bar assignment to competitors.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 defines 'Losses' broadly, to include damages, fines, penalties, investigation and remediation costs, and reasonable attorneys' fees. Article VIII indemnifies Buyer for Losses. Side Letter Section 2, which grants a special indemnity for the pending state environmental notice of violation at the Pasadena facility, states that 'for all purposes of the Agreement and this Side Letter, Losses means only out-of-pocket fines and penalties paid to a Governmental Authority.' Because APA Section 11.9 makes the Side Letter prevail, the narrow definition replaces the APA definition everywhere. Buyer's indemnity for breaches of representations and for Excluded Liabilities therefore no longer covers remediation, investigation or legal costs, which are the main exposures at a chemical blending site.",
+      "doc": "D4",
+      "section": "Section 2",
+      "detect_terms": [
+        "for all purposes of the Agreement",
+        "out-of-pocket fines and penalties"
+      ],
+      "expected_finding": "Side Letter Section 2 redefines 'Losses' for all purposes of the APA as only fines and penalties, and under APA Section 11.9 this overrides the broad APA Section 1.1 definition, stripping remediation, investigation and attorneys' fees from the entire Article VIII indemnity; the Side Letter definition should be confined to the Side Letter's special indemnity, or deleted so the APA definition governs.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "The Letter of Intent (Section 3) records that the Lakeport Municipal Water District Supply Contract requires the District's prior written consent to any assignment or to a change of control of the supplier. The Bill of Sale (Section 1 and its Annex 1) and APA Schedule 2.1(c) list that contract as an Assumed Contract to be conveyed at Closing, and the LOI describes it as the business's largest customer contract. Yet APA Section 4.5 represents that no consent of any third party is required for the transaction except as set out in Schedule 4.5, and Schedule 4.5 reads 'None.' Section 7.2 conditions Buyer's obligation to close only on consents listed in Schedule 4.5, and the APA has no covenant to seek the Lakeport consent and no back-to-back arrangement if consent is not obtained. Buyer could close and take an assignment the District may treat as a breach, and the APA would not require Buyer to wait for the consent.",
+      "doc": "D1",
+      "section": "Section 4.5 and Schedule 4.5",
+      "detect_terms": [
+        "No consent of any third party is required"
+      ],
+      "expected_finding": "The Lakeport Supply Contract requires the District's consent to assignment and change of control (LOI Section 3), but APA Section 4.5 and Schedule 4.5 disclose no required consents and Section 7.2 does not make that consent a closing condition; Buyer should add the Lakeport consent to Schedule 4.5, add a covenant for Seller to obtain it, and make receipt of it a condition to Buyer's obligation to close.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I5",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 8.1 provides that all representations survive for twelve (12) months after the Closing Date. 'Fundamental Representations' (Section 1.1) cover only organization, authority, title and brokers, and so leave out the environmental representations in Section 4.12. Section 8.1 also provides that all claims for indemnification, including claims under Section 8.2(b) (Excluded Liabilities, which include Pre-Closing Environmental Liabilities), must be noticed within that same 12-month period. The Letter of Intent (Section 4) recorded the agreed term: environmental representations and the Excluded Liabilities indemnity survive until 60 days after the applicable statute of limitations. Groundwater and soil contamination at a chemical blending site often surfaces years after closing, so a 12-month window leaves Buyer without practical recourse for pre-closing environmental liabilities that Seller was meant to keep.",
+      "doc": "D1",
+      "section": "Section 8.1",
+      "detect_terms": [
+        "twelve (12) months after the Closing Date",
+        "including claims under Section 8.2(b)"
+      ],
+      "expected_finding": "APA Section 8.1 cuts off the environmental representations and the Excluded Liabilities indemnity under Section 8.2(b) twelve months after Closing, because environmental representations are not Fundamental Representations, contrary to the LOI Section 4 agreement that they survive until 60 days after the statute of limitations; Section 8.1 should extend those periods to match the LOI and carve the Excluded Liabilities indemnity out of the general survival period.",
+      "contradicts": "F7"
+    }
+  ]
+}

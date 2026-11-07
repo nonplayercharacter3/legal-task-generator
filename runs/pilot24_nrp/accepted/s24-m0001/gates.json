@@ -1,0 +1,172 @@
+{
+  "matter_id": "s24-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "APA §9.1: \"The General Representations shall survive the Closing until the date that is 90 days after the Closing Date... No claim for indemnification under Section 9.2(a) ... may be made unless the Indemnified Party delivers written notice of that claim ... before the expiration of the applicable survival period. Any claim not noticed within that period is barred.\" The Fundamental Representations are defined as only §§4.1, 4.2 and 4.8. APA §11.9: \"this Agreement prevails over the Escrow Agreement.\"",
+            "reason": "Buyer is the client and the indemnified party under §9.2(a), so the short survival period hurts it. Section 4.12 (Elevator Code compliance, current certificates, completed periodic tests) is not a Fundamental Representation, so it is a General Representation with only 90-day survival. Breaches of this kind typically surface through annual inspections and periodic load and safety tests, well after 90 days. The Escrow Agreement allows Claim Notices for 15 months, but §11.9 makes the APA prevail, so §9.1's 90-day bar controls. The 15-month escrow therefore cannot be reached for most rep breaches after day 90. The Special Escrow protects only the 14 units in Schedule Supplement No. 1, not other §4.12 breaches, so it does not cure the gap. The folder does not show that Closing has occurred: the Escrow Agreement and TSA are undated agreed forms. Nothing shows Buyer accepted the 90-day limit by later conduct, so the point remains actionable, for example by amendment under §11.4 or by moving §4.12 into a longer survival tier."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 8.3: \"Company may not assign this Agreement, or any of its rights or obligations under this Agreement, without the prior written consent of Executive, including in connection with any merger, consolidation or reorganization of Company or any sale of all or substantially all of the assets of Company or of the Business. Any purported assignment by Company without the prior written consent of Executive is void. If Company makes or purports to make such an assignment, the covenants in Section 6 terminate and are of no further force or effect.\"",
+            "reason": "The problem is present and still actionable for Buyer. APA §2.1(c) names the Key Employee Agreement as an Assigned Contract. Yet APA §4.4 schedules only the municipal license consent, and the §7.2(c) closing condition reaches only scheduled consents. So Closing can occur without Ms. Oyelaran's consent. Under §8.3, the assignment would then be void and her Section 6 non-compete and non-solicitation covenants would terminate. APA §2.8 does not cure this. Its hold-for-benefit fallback depends on someone recognising that a consent is required, and §8.3 kills the covenants even on a 'purported' assignment. The covenants are personal to her and cannot be passed through by Seller. Buyer's fallback rep claim under §4.3/§4.4 is a General Representation. It survives only 90 days after Closing and is capped at the escrow. The folder contains only unsigned agreed forms. Nothing shows that Closing has occurred or that Buyer accepted the result. Buyer can still require her consent, or a new agreement with her, as a closing deliverable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Escrow Agreement Section 3.3: \"On February 9, 2026, Seller delivered to Buyer a Schedule Supplement under Section 6.5 of the Purchase Agreement, designated \"Schedule Supplement No. 1.\" ... On February 23, 2026, Buyer delivered to Seller a written objection to Schedule Supplement No. 1.\" APA Section 6.5: \"...unless Buyer delivers to Seller a written objection to that Schedule Supplement within 5 Business Days after Buyer's receipt of the supplement.\"",
+            "reason": "The problem is present and still actionable, and it hurts Buyer, our client. Under APA §6.5 the burden of objecting falls on Buyer. A Business Day is a Wilmington bank day, and Presidents' Day (February 16, 2026) is excluded. Five Business Days after the February 9 supplement therefore ended on February 17. Buyer's February 23 objection was late on the face of the documents. If the late objection stands, the 14 open deficiency notices are deemed to cure the breach of the APA §4.12 representation (which says there are no open deficiency notices on Covered Units). That cure applies both to the Buyer closing condition in §7.2 and to Article IX indemnity. The escrow does not fix this. Section 3.3(a) records Seller's untimeliness position. Section 3.4(b) releases the $640,000 Special Escrow to Seller by default unless Buyer obtains a Final Order or Joint Written Instructions. Section 3.2 says the escrow is not an admission. So the burden of litigating stays on Buyer, on a timeliness point that appears to favour Seller. Buyer has not accepted the cure. Section 3.3(b) preserves its dispute, the escrow agreement is still an unsigned agreed form, and Closing has not occurred. Buyer can therefore still address the point before Closing. Options include seeking Seller's written waiver of the timeliness defense, an APA amendment, a special indemnity, or reliance on the §7.2 condition and its termination rights."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C6"
+              ],
+              "steps": 19,
+              "files_opened": [
+                "asset_purchase_agreement_seles_tripux.md",
+                "escrow_agreement_agreed_form.md",
+                "fenmark_uniform_rental_agreement.md",
+                "key_employee_agreement_oyelaran.md",
+                "transition_services_agreement_agreed_form.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C4"
+              ],
+              "steps": 19,
+              "files_opened": [
+                "asset_purchase_agreement_seles_tripux.md",
+                "escrow_agreement_agreed_form.md",
+                "fenmark_uniform_rental_agreement.md",
+                "key_employee_agreement_oyelaran.md",
+                "transition_services_agreement_agreed_form.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 19,
+              "files_opened": [
+                "asset_purchase_agreement_seles_tripux.md",
+                "escrow_agreement_agreed_form.md",
+                "fenmark_uniform_rental_agreement.md",
+                "key_employee_agreement_oyelaran.md",
+                "transition_services_agreement_agreed_form.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

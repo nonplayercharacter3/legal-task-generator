@@ -1,0 +1,177 @@
+{
+  "matter_id": "s24-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 1.0,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 7,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Side Letter Section 5: \"This Side Letter, and any dispute arising out of or relating to the Agreement or the transactions contemplated by it, shall be governed by and construed in accordance with the laws of the State of Texas ... Each Party irrevocably submits to the exclusive jurisdiction of the state courts located in Harris County, Texas for any such dispute, and agrees not to bring any such action in any other court.\" APA Section 11.9: \"In the event of any conflict or inconsistency, the Side Letter prevails over this Agreement.\"",
+            "reason": "The problem is present and actionable. APA Sections 11.7 and 11.8 choose New York law and exclusive New York County courts for all claims under the APA. Side Letter Section 5 is not limited to the Side Letter. It reaches \"any dispute arising out of or relating to the Agreement,\" and APA Section 11.9 makes the Side Letter prevail over the APA in any conflict. The Texas clause therefore displaces the New York choice for every APA dispute, including Buyer's indemnity claims under Article VIII. Buyer is a New York-based Delaware corporation and loses its bargained-for home law and forum, and must litigate in Seller's home county. Nothing in the folder cures or limits this. The Side Letter is dated as of signing and its signature blocks are blank. Closing has not been shown to have occurred, and nothing shows Buyer accepted a Texas forum in an actual dispute. Buyer can still raise the conflict and seek an amendment under Side Letter Section 6.1."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 11.4: \"Buyer may not assign this Agreement or any of its rights, or delegate any of its obligations, under this Agreement without the prior written consent of Seller. Seller may assign this Agreement or any of its rights, or delegate any of its obligations, under this Agreement to any Person without the consent of Buyer.\"",
+            "reason": "The problem is present and still actionable. Section 11.4 lets Seller assign the Agreement or delegate its obligations to anyone without Buyer's consent. It does not require the assignee to assume those obligations in writing, and it does not keep Seller liable after an assignment. Buyer is the beneficiary of the obligations that matter most after Closing: (1) the 18-month ferric chloride supply in Section 6.7, under which Buyer must send monthly forecasts derived from its customer volume forecasts; (2) the Article VIII indemnity, which has no cap for Pre-Closing Environmental Liabilities; and (3) the Pasadena NOV special indemnity, which Side Letter 6.2 also makes assignable under Section 11.4. Seller could therefore delegate supply to a competitor, giving it Buyer's forecast data. Section 6.3 confidentiality binds only Seller, and the 6.7 use restriction is weak against a third-party delegate. Seller could also shift its indemnity obligations to a shell with no assets. The escrow is only 5% and is released after 12 months, so it does not cure this. Nothing in the folder fixes the clause. The LOI is silent on assignment, and the APA is dated August 14, 2026 with no record of Closing or of any assignment. Buyer can still seek an amendment under Section 11.3 or raise the point before Closing."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Side Letter Section 2.2: \"For all purposes of the Agreement and this Side Letter, \"Losses\" means only out-of-pocket fines and penalties paid to a Governmental Authority.\" APA Section 11.9: \"In the event of any conflict or inconsistency, the Side Letter prevails over this Agreement...\"",
+            "reason": "APA Section 1.1 defines Losses broadly: damages, fines, penalties, investigation and remediation costs, and reasonable attorneys' fees. The Side Letter redefines Losses \"for all purposes of the Agreement,\" not just for the special NOV indemnity, and APA Section 11.9 makes the Side Letter prevail. As a result, the Seller's indemnities to Buyer under Article VIII are cut down to government fines and penalties only. That covers rep breaches, Excluded Liabilities and Pre-Closing Environmental Liabilities. Buyer, the client, is the indemnified party and loses coverage for remediation, investigation and legal costs, which are the main exposures at a chemical facility. Nothing in the folder cures or limits this. The documents are dated August 14, 2026 and still unsigned. The September 2026 insurance letter refers to pre-closing activity, and nothing shows Buyer accepted this result. The point is therefore still actionable before signing or by amendment."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "APA Section 4.5: \"No consent of any third party is required for the execution, delivery and performance of this Agreement by Seller or the consummation of the transactions contemplated by this Agreement, including the assignment of the Assumed Contracts to Buyer, except as set out in Schedule 4.5.\" Schedule 4.5: \"None.\" LOI Section 3.2: \"Seller has advised Buyer that the Lakeport Supply Contract requires the District's prior written consent for assignment or change of control of the supplier.\"",
+            "reason": "Seller told Buyer in the LOI that the Lakeport Supply Contract, the Business's largest customer contract, needs the District's prior written consent to assignment. Yet Schedule 4.5 lists no consents, and the APA still makes that contract an Assumed Contract (Schedule 2.1(c), Bill of Sale Annex 1). The consent mechanics key off Schedule 4.5, so they do nothing for Buyer here: Section 6.5 covers only listed consents, Section 7.2(d) conditions closing only on listed consents, and Section 3.2(a)(vi) requires delivery only of listed consents. As a result, Seller has no covenant to obtain the Lakeport consent, Buyer has no closing condition protecting it, and there is no back-to-back or pass-through arrangement if the District refuses. The Side Letter deals only with the TCEQ NOV and does not fix this. Buyer's remaining fallback is a claim under Section 8.2(a) for breach of the Section 4.5 rep. That claim is a weak remedy because it is subject to the Basket, the $7.275M cap and 12-month survival, and Side Letter Section 2.2 may narrow \"Losses\" to fines and penalties. The folder shows no closing yet (the September 22, 2026 insurance letter is pre-closing, and the outside date is December 31, 2026). The schedule and conditions can therefore still be corrected, so the issue is live and actionable for Buyer."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 8.1: \"All claims for indemnification under this Article VIII, including claims under Section 8.2(b), must be asserted by written notice delivered before the expiry of twelve (12) months after the Closing Date, other than claims for breach of a Fundamental Representation, which may be asserted at any time within the survival period of that Fundamental Representation.\" Section 1.1 defines \"Fundamental Representations\" as Sections 4.1, 4.2, 4.4 and 4.14 only, so the Section 4.12 environmental representations are not included.",
+            "reason": "Seller gives the indemnity and Buyer, our client, must give notice. Under Section 8.1, Buyer's claims for the Section 4.12 environmental representations and for Excluded Liabilities, including Pre-Closing Environmental Liabilities, must be noticed within 12 months of Closing. LOI Section 4.4(c) records the agreed term: these protections survive until 60 days after the applicable statute of limitations. Contamination at a chemical blending site often surfaces years later, so Buyer would be left without recourse for liabilities Seller agreed to keep. The Side Letter does not cure this. Its open-ended survival applies only to the Pasadena NOV. Its Section 2.2 also narrows \"Losses\" for all purposes of the Agreement to fines and penalties, and under Section 11.9 the Side Letter prevails, which makes Buyer's position worse. Nothing in the folder shows Buyer accepted the shorter period, and the 12-month window has not started to run out. The issue is therefore present and still actionable."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 3,
+            "pass_rate": 1.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "asset_purchase_agreement_soupen_faiveirt.md",
+                "bill_of_sale_exhibit_a_form.md",
+                "insurance_certificate_cover_letter_ostrander.md",
+                "letter_of_intent_2026-05-12.md",
+                "side_letter_2026-08-14.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "asset_purchase_agreement_soupen_faiveirt.md",
+                "bill_of_sale_exhibit_a_form.md",
+                "insurance_certificate_cover_letter_ostrander.md",
+                "letter_of_intent_2026-05-12.md",
+                "side_letter_2026-08-14.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "asset_purchase_agreement_soupen_faiveirt.md",
+                "bill_of_sale_exhibit_a_form.md",
+                "insurance_certificate_cover_letter_ostrander.md",
+                "letter_of_intent_2026-05-12.md",
+                "side_letter_2026-08-14.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

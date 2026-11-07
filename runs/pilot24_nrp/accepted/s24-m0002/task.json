@@ -1,0 +1,121 @@
+{
+  "task_id": "s24-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Nodix Aerial Systems, Inc., the buyer, on its acquisition of assets from Sonox AgroDrone LLC. Dr. Imelda Raskova is the other party involved in the deal. Nodix wants a careful review of the transaction documents so it knows where it stands and what still needs to be fixed or addressed. Please review all four documents in the matter folder: the asset purchase agreement (nodix_sonox_asset_purchase_agreement.md), the Raskova key employee agreement (raskova_key_employee_agreement.md), the Nodix board consent (nodix_board_consent_sonox_acquisition.md), and the closing press release (nodix_sonox_closing_press_release.md). Then prepare a memo to me. For each issue you identify, the memo should state what the issue is, where it appears (document and section), why it matters to Nodix, and your recommended fix. Please rank the issues by significance so the most important ones come first. Flag anything you could not resolve from the documents alone, and anything you think we should raise with the client before we act.",
+  "documents": [
+    "nodix_board_consent_sonox_acquisition.md",
+    "nodix_sonox_asset_purchase_agreement.md",
+    "nodix_sonox_closing_press_release.md",
+    "raskova_key_employee_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Nodix bears uncapped indemnity exposure to Seller for Seller's own pre-closing liabilities under Assigned Contracts. The response must tie this to (i) the Assumed Liabilities definition in APA Section 2.3(b) covering liabilities 'whether arising before or after the Closing' and (ii) the exemption of Buyer's Section 9.3 indemnity from the cap and basket in APA Section 9.5(c). It must locate the issue in the APA, explain why this matters to Nodix, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "whether arising before or after the Closing",
+        "Section 9.5(c)",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Key Employee Agreement Section 7.4, which Seller countersigned, amends APA Section 9.5(b) to remove the IP representation (Section 4.9) from the Fundamental Representations. It must recognise that IP claims therefore fall under the 15% of Purchase Price cap. It must treat the amendment as effective or likely effective under the APA's amendment and precedence provisions (Sections 11.9/11.10). It must explain why this matters to Nodix and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 7.4",
+        "shall not include Section 4.9",
+        "Fundamental Representation"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Key Employee Agreement defines 'Business' (Section 1.1) as only the Sonox Scout crop-imaging line. It must recognise that, as used in Raskova's non-compete (Section 6.1), this definition is far narrower than the APA Section 1.1 definition. It must state that the Key Employee Agreement's definition controls Raskova's restrictive covenant under APA Section 11.9, leaving her free to compete in other acquired lines. It must explain why this matters to Nodix and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "Sonox Scout series",
+        "Competing Business",
+        "Section 11.9"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Purchase Price is $48,500,000.",
+      "kind": "fact",
+      "hints": [
+        "$48,500,000",
+        "48.5 million"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that Seller's indemnity cap under the APA is 15% of the Purchase Price.",
+      "kind": "fact",
+      "hints": [
+        "15% of the Purchase Price",
+        "Section 9.5(a)"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Closing Date was October 30, 2026.",
+      "kind": "fact",
+      "hints": [
+        "October 30, 2026"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is organised as a memo that presents the issues in an order ranked by significance, with the most important issues first.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "ranked",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response includes a section or statements that flag open points it could not resolve from the documents alone and/or matters to raise with the client before acting.",
+      "kind": "format",
+      "hints": [
+        "could not resolve",
+        "raise with the client",
+        "open questions"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that IP representation claims under APA Section 4.9 remain outside the 15% indemnity cap as a Fundamental Representation, with no effective amendment.",
+      "kind": "negative",
+      "hints": [
+        "remains a Fundamental Representation",
+        "IP claims uncapped"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the APA's broader definition of 'Business' governs Raskova's personal non-compete because the APA prevails over the Key Employee Agreement.",
+      "kind": "negative",
+      "hints": [
+        "APA prevails",
+        "APA definition governs"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ]
+}

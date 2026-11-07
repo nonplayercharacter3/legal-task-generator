@@ -1,0 +1,171 @@
+{
+  "matter_id": "s24-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 2.3(b): Buyer assumes \"all liabilities under the Assigned Contracts, whether arising before or after the Closing.\" Section 2.4 makes Excluded Liabilities only \"all liabilities other than Assumed Liabilities.\" Section 9.3(a) requires Buyer to indemnify the Seller Indemnitees for \"any Assumed Liability.\" Section 9.5(c) says \"The Basket and the cap in Section 9.5(a) shall not apply to claims under Section 9.3.\"",
+            "reason": "Nodix is the Buyer, so it is the party that assumes and indemnifies here. Section 2.3(b) shifts to Nodix Seller's pre-closing breaches, warranty claims and unpaid amounts under the dealer, distribution and grower contracts. Because of Section 2.4, those liabilities never become Excluded Liabilities, so Seller's indemnity in Section 9.2(c) does not cover them. Nodix must also indemnify Seller for them under Section 9.3(a), with no cap or basket. Nodix's only route back to Seller is a Section 9.2(a) claim on the knowledge-qualified Section 4.7 rep, which is subject to the $485,000 basket and the 15% cap. None of the other documents cures this. The Key Employee Agreement's Section 7.4 amendment narrows Seller's exposure further rather than limiting Nodix's, and the board consent and press release are silent. Closing on October 30, 2026 is not the client accepting a lapsed result. The exposure is ongoing, and Nodix can still use it: to seek an amendment under Section 11.10 and to manage pre-closing contract claims as they arise."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "KEA Section 7.4: \"Under Section 11.10 of the Purchase Agreement, Section 9.5(b) of the Purchase Agreement is hereby amended so that the term \"Fundamental Representations\" shall not include Section 4.9 (Intellectual Property). As amended, the Fundamental Representations consist of the representations and warranties in Sections 4.1 (Organization), 4.2 (Authority) and 4.14 (Brokers) of the Purchase Agreement.\"",
+            "reason": "The problem is present and hurts Nodix, the client. Sonox is the indemnifying party under APA 9.2(a). Removing Section 4.9 from the Fundamental Representations puts IP title and non-infringement claims under the $485,000 Basket and the 15% cap (about $7.275M), instead of the Purchase Price cap of $48.5M. Those claims cover the FieldMind software and the drone patents, the core assets in the deal. The amendment appears effective. It is a written instrument signed by Buyer and Seller (APA 11.10), and Sonox joins the KEA expressly for Section 7.4. APA 11.9(b) lets an Ancillary Agreement govern where it expressly amends a specified Section and both parties sign it, so the APA's general priority rule does not cure the change. The amendment also conflicts with the board consent. Sections 2.7 and 3.2 of the consent approved a deal with IP representations uncapped and required Ancillary Agreements to be consistent with those terms. That raises a question of officer authority and a variance from what the board approved. The issue is still actionable: closing was October 30, 2026, the 18-month survival period has barely begun, and nothing shows Nodix has knowingly accepted the reduced IP protection. Nodix can still address it, for example by contesting authority, reversing the amendment under KEA 8.5 or APA 11.10, or escalating it to the board."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "KEA Section 1.1: \"'Business' means the crop-imaging drone product line marketed as the Sonox Scout series, as conducted by Seller immediately before the Closing and by the Company after the Closing.\" KEA Section 6.1 prohibits Raskova only from engaging in a \"Competing Business,\" which is defined as a business that engages in the Business or sells products or services \"competitive with the Business.\" By contrast, APA Section 1.1 defines Business as \"the design, manufacture, sale and servicing of agricultural drones, payloads and flight-control and agronomic software, including spray, seeding and imaging platforms.\"",
+            "reason": "Raskova's personal non-compete covers only competition with the Sonox Scout crop-imaging line. The APA's 5-year non-compete in Section 6.4 binds only Seller and its Affiliates, so it does not reach her personally. APA Section 11.9(a) says the KEA governs the Key Employee's restrictive covenants, so the APA's broader definition cannot fill the gap. KEA Section 1.1 does say undefined terms take their APA meaning, but 'Business' is defined in the KEA, so that fallback does not apply. As a result, Raskova may compete in spray and seeding drones, payloads and flight-control software such as a FieldMind competitor, which is most of what Nodix bought. The board consent says her covenants are meant to protect the goodwill of the whole Business, so the narrow definition does not match what the board approved. The KEA was signed only days ago and her employment is ongoing. Nodix can still seek an amendment, and no document shows it accepted the narrow scope knowingly. The problem is real and actionable for Nodix."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [
+          "criterion C2 requires a harm, remedy or provision that issue I2's expected_finding does not name: \"It must treat the amendment as effective or likely effective under the APA's amendment and precedence provisions (Sections 11.9/11.10)\"; ask that the response explains why it matters and recommends a fix"
+        ],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 11,
+              "files_opened": [
+                "nodix_board_consent_sonox_acquisition.md",
+                "nodix_sonox_asset_purchase_agreement.md",
+                "nodix_sonox_closing_press_release.md",
+                "raskova_key_employee_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C6"
+              ],
+              "steps": 11,
+              "files_opened": [
+                "nodix_board_consent_sonox_acquisition.md",
+                "nodix_sonox_asset_purchase_agreement.md",
+                "nodix_sonox_closing_press_release.md",
+                "raskova_key_employee_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 11,
+              "files_opened": [
+                "nodix_board_consent_sonox_acquisition.md",
+                "nodix_sonox_asset_purchase_agreement.md",
+                "nodix_sonox_closing_press_release.md",
+                "raskova_key_employee_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

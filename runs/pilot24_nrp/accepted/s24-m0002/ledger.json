@@ -1,0 +1,166 @@
+{
+  "matter_id": "s24-m0002",
+  "summary": "Nodix Aerial Systems, Inc. (client, Buyer) is buying substantially all of the assets of Sonox AgroDrone LLC (Seller), a maker of precision agriculture drones (spray, seeding and multispectral imaging airframes, payloads and the FieldMind flight-control software), for $48,500,000 under an Asset Purchase Agreement signed September 15, 2026. Closing was October 30, 2026. On the Closing Date, Nodix signed a Key Employee Agreement with Sonox's founder and managing member, Dr. Imelda Raskova, and Sonox joined that agreement for one section. The Nodix board consent records the deal terms the board approved. A joint press release announces the closing. The folder hides three problems for Nodix. (1) Under the APA, Nodix gives Seller an uncapped indemnity for Assumed Liabilities, and that term sweeps in Seller's own pre-closing contract breaches. (2) A clause in the Key Employee Agreement, which Seller countersigned, validly amends the APA so that the intellectual property representation is no longer a Fundamental Representation. That puts IP title claims under the 15% cap. (3) The Key Employee Agreement defines 'Business' far more narrowly than the APA does, which guts Raskova's personal non-compete. Under the APA's precedence clause, the Key Employee Agreement controls on that covenant.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Nodix Aerial Systems, Inc.",
+      "role": "Buyer; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Sonox AgroDrone LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Dr. Imelda Raskova",
+      "role": "Seller's founder and managing member; Key Employee hired by Buyer at Closing"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F2",
+      "key": "Asset Purchase Agreement signing date",
+      "value": "September 15, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "Closing Date",
+      "value": "October 30, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller indemnity cap",
+      "value": "15% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "Survival period for general representations",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F6",
+      "key": "Fundamental Representations",
+      "value": "Sections 4.1 (Organization), 4.2 (Authority), 4.9 (Intellectual Property) and 4.14 (Brokers)",
+      "doc": "D1",
+      "section": "Section 9.5(b)"
+    },
+    {
+      "id": "F7",
+      "key": "Asset Purchase Agreement definition of 'Business'",
+      "value": "design, manufacture, sale and servicing of agricultural drones, payloads and flight-control and agronomic software",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "APA prevails over Ancillary Agreements, except Key Employee Agreement governs Key Employee restrictive covenants and express Buyer-Seller amendments",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F9",
+      "key": "Asset Purchase Agreement governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 11.6"
+    },
+    {
+      "id": "F10",
+      "key": "Seller non-compete term",
+      "value": "5 years after the Closing Date",
+      "doc": "D1",
+      "section": "Section 6.4"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "nodix_sonox_asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "raskova_key_employee_agreement.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "nodix_board_consent_sonox_acquisition.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "nodix_sonox_closing_press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Three APA provisions combine to give Nodix an unlimited indemnity for Seller's own past breaches. First, Section 2.3(b) defines Assumed Liabilities to include 'all liabilities under the Assigned Contracts, whether arising before or after the Closing'. That reaches Seller's pre-closing breaches, warranty claims and unpaid amounts under its dealer and grower service contracts. Second, Section 2.4 defines Excluded Liabilities only as 'all liabilities other than Assumed Liabilities', so those pre-closing contract liabilities never fall within Seller's indemnity for Excluded Liabilities in Section 9.2(c). Third, Section 9.3(a) requires Buyer to indemnify Seller for all Assumed Liabilities, and Section 9.5(c) states that the cap and basket 'shall not apply to claims under Section 9.3'. Seller's indemnity is capped at 15% of the Purchase Price under Section 9.5(a), but Nodix's indemnity for Seller-caused contract liabilities has no limit. Nothing in D2 through D4 limits this.",
+      "doc": "D1",
+      "section": "Sections 2.3(b), 2.4, 9.3(a) and 9.5(c)",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "shall not apply to claims under Section 9.3"
+      ],
+      "expected_finding": "Because Section 2.3(b) makes pre-closing liabilities under Assigned Contracts Assumed Liabilities and Section 9.5(c) exempts Buyer's Section 9.3(a) indemnity from any cap, Nodix bears uncapped indemnity exposure to Seller for Seller's own pre-closing contract breaches; Assumed Liabilities should be limited to post-Closing performance obligations, with pre-Closing liabilities made Excluded Liabilities indemnified by Seller.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "APA Section 9.5(b) lists Section 4.9 (Intellectual Property) as a Fundamental Representation. That keeps IP title and non-infringement claims for the FieldMind software and drone patents outside the 15% cap. The Key Employee Agreement is dated October 30, 2026, after the APA. Sonox signed it 'solely for purposes of Section 7.4'. Section 7.4 provides that APA Section 9.5(b) 'is hereby amended' so that Fundamental Representations 'shall not include Section 4.9'. APA Section 11.10 allows amendment by a writing signed by Buyer and Seller. APA Section 11.9 makes an Ancillary Agreement control where it expressly amends a specified APA section with both Buyer and Seller signing. So the amendment is effective and is not cured by the APA's general priority. As a result, IP breach claims, the core risk in a drone-technology asset deal, now fall under the cap of 15% of the Purchase Price. The Nodix board consent (D3) records approval of a deal in which IP representations were uncapped.",
+      "doc": "D2",
+      "section": "Section 7.4",
+      "detect_terms": [
+        "is hereby amended",
+        "shall not include Section 4.9"
+      ],
+      "expected_finding": "Key Employee Agreement Section 7.4, countersigned by Seller and given effect by APA Sections 11.9 and 11.10, removes the IP representation from the Fundamental Representations carve-out in APA Section 9.5(b), so IP title and infringement claims are now limited by the 15% of Purchase Price cap contrary to the board-approved terms; Section 7.4 should be deleted or rescinded by a Buyer-Seller amendment restoring Section 4.9 as a Fundamental Representation.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 defines 'Business' broadly. It covers agricultural drones, payloads and flight-control and agronomic software, including spray, seeding and imaging platforms. Seller's 5-year non-compete in APA Section 6.4 binds only Sonox AgroDrone LLC, not Raskova personally. Raskova's personal non-compete is in Key Employee Agreement Section 6.1, which prohibits her from engaging in a 'Competing Business'. That term is tied to Key Employee Agreement Section 1.1, which defines 'Business' as only 'the crop-imaging drone product line marketed as the Sonox Scout series'. Under APA Section 11.9, the Key Employee Agreement governs the Key Employee's restrictive covenants, so the APA's broader definition cannot fill the gap. Raskova, the founder who holds the know-how, is therefore free to build competing spray and seeding drones or flight-control software. Those lines make up most of the acquired business described in the APA and in the board consent (D3).",
+      "doc": "D2",
+      "section": "Sections 1.1 and 6.1",
+      "detect_terms": [
+        "Sonox Scout series"
+      ],
+      "expected_finding": "The Key Employee Agreement's definition of 'Business', limited to the Sonox Scout imaging line, controls Raskova's non-compete under APA Section 11.9 and leaves her free to compete in spray, seeding and flight-control software lines that Nodix acquired, so the definition should be conformed to the APA Section 1.1 definition of 'Business'.",
+      "contradicts": "F7"
+    }
+  ]
+}

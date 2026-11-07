@@ -1,0 +1,183 @@
+{
+  "matter_id": "s24-m0001",
+  "summary": "Seles Lift Services, LLC (client, Buyer) signed an asset purchase agreement on January 14, 2026 to buy the elevator maintenance and repair business of Tripux Elevator Company, Inc. (Seller) for $18,750,000. The deal has not closed. The folder holds five documents: the signed APA; the agreed-form Escrow Agreement to be entered at Closing, which also records a dispute over a pre-closing disclosure schedule supplement; Tripux's existing Key Employee Agreement with its Director of Field Operations, which the APA assigns to Buyer; the agreed-form Transition Services Agreement for dispatch and after-hours emergency call answering; and an unrelated technician uniform rental agreement (the distractor). Three issues are planted. First, general representations, including the elevator code compliance and inspection representation, survive only 90 days, so the 15-month indemnity escrow is effectively unusable, and the APA prevails over the Escrow Agreement. Second, the Key Employee Agreement requires the employee's consent to any assignment in an asset sale or her restrictive covenants fall away, but the APA's consent schedule and closing conditions ignore that consent. Third, Buyer's objection to Seller's Schedule Supplement No. 1 was delivered after the 5-Business-Day window, which Seller is using to argue that the inspection deficiencies are cured for indemnity purposes. Buyer disputes that position in the Escrow Agreement's special escrow provision.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Seles Lift Services, LLC",
+      "role": "Buyer under the asset purchase agreement; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Tripux Elevator Company, Inc.",
+      "role": "Seller of the elevator maintenance business; TSA service provider; employer party to the Key Employee Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Kestrow Trust Company, N.A.",
+      "role": "Escrow Agent under the Escrow Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Renata Oyelaran",
+      "role": "Director of Field Operations of Tripux; Executive under the Key Employee Agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Fenmark Workwear Rentals, LLC",
+      "role": "Uniform rental vendor to Tripux under the unrelated vendor agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing Date",
+      "value": "January 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "APA Purchase Price",
+      "value": "$18,750,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$1,875,000",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Indemnity Escrow Release Date",
+      "value": "the date that is 15 months after the Closing Date",
+      "doc": "D2",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F5",
+      "key": "APA survival period for General Representations",
+      "value": "90 days after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "APA prevails over the Escrow Agreement and the Transition Services Agreement",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F7",
+      "key": "APA Schedule Supplement objection period",
+      "value": "5 Business Days after Buyer's receipt of the supplement",
+      "doc": "D1",
+      "section": "Section 6.5"
+    },
+    {
+      "id": "F8",
+      "key": "Schedule Supplement No. 1 delivery date",
+      "value": "February 9, 2026",
+      "doc": "D2",
+      "section": "Section 3.3"
+    },
+    {
+      "id": "F9",
+      "key": "Buyer objection notice date for Schedule Supplement No. 1",
+      "value": "February 23, 2026",
+      "doc": "D2",
+      "section": "Section 3.3"
+    },
+    {
+      "id": "F10",
+      "key": "Special Escrow Amount",
+      "value": "$640,000",
+      "doc": "D2",
+      "section": "Section 3.3"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_seles_tripux.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement_agreed_form.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "key_employee_agreement_oyelaran.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "transition_services_agreement_agreed_form.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "fenmark_uniform_rental_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Two documents combine to create this gap. APA Section 9.1 says General Representations survive only until 90 days after the Closing Date, and it bars any indemnity claim for their breach that is not noticed within that period. Only Sections 4.1 (organization), 4.2 (authority) and 4.8 (title) are listed as Fundamental Representations with a six-year survival. Section 4.12, the representation on elevator code compliance, current state inspection certificates and completion of required periodic safety tests, is therefore a General Representation. Deficiencies of that kind normally surface only through the annual state inspection cycle and periodic load and safety testing, long after 90 days. Escrow Agreement Section 4.1 holds the $1,875,000 Indemnity Escrow for 15 months and allows Claim Notices until then, which suggests a longer claims window. However, APA Section 11.9 makes the APA prevail over the Escrow Agreement, so the 90-day bar in APA Section 9.1 controls. The escrow cannot be reached for most rep breaches after day 90.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "until the date that is 90 days after the Closing Date"
+      ],
+      "expected_finding": "Under APA Section 9.1, the Section 4.12 elevator code compliance and inspection representation survives only 90 days, and APA Section 11.9 makes that bar control over the 15-month Indemnity Escrow in Escrow Agreement Section 4.1. Buyer would lose practical recourse for inspection-cycle defects, so the survival period for General Representations, or at least Section 4.12, should be extended to at least the 15-month escrow release date before Closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 8.3 of the Key Employee Agreement between Tripux and Renata Oyelaran prohibits assigning the agreement without her prior written consent, including in connection with a sale of all or substantially all of Tripux's assets. Any assignment without that consent is void, and the Section 6 non-competition and customer non-solicitation covenants terminate. APA Section 2.1(c) lists the Key Employee Agreement as an Assigned Contract, and the APA treats her retention and covenants as part of the business's value. Yet APA Section 4.4 and its consent schedule list only the municipal elevator contractor license transfer as a required consent. APA Section 7.2(c) conditions Closing only on the scheduled consents. Read together, Closing can occur without Ms. Oyelaran's consent. Delaware courts enforce anti-assignment clauses that declare non-consented assignments void, so Buyer would take a void assignment and lose the restrictive covenants. Buyer's only fallback is a Section 4.4 rep claim, which is itself subject to the short survival period.",
+      "doc": "D3",
+      "section": "Section 8.3",
+      "detect_terms": [
+        "sale of all or substantially all of the assets",
+        "prior written consent of Executive"
+      ],
+      "expected_finding": "Key Employee Agreement Section 8.3 requires Ms. Oyelaran's written consent to the assignment that the APA's asset sale effects, failing which the assignment is void and her restrictive covenants terminate. The APA's consent schedule under Section 4.4 and the closing condition in Section 7.2(c) do not cover this consent. Buyer should require her written consent, or a new agreement with Buyer containing equivalent covenants, as a closing condition.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Two documents combine to create this issue. APA Section 6.5 lets Seller supplement the Disclosure Schedule before Closing. Any supplemented matter is deemed to cure the related breach for purposes of Section 7.2 and Article IX indemnification unless Buyer delivers a written objection within 5 Business Days after receipt. Business Day is defined as a day on which banks in Wilmington, Delaware are open. Escrow Agreement Section 3.3 records that Seller delivered Schedule Supplement No. 1, disclosing open state inspection deficiency notices on 14 elevator units, on February 9, 2026 (a Monday). Section 3.3 also records that Buyer delivered its objection on February 23, 2026. Counting 5 Business Days from February 9, 2026, and excluding Presidents' Day on February 16, the deadline was February 17, 2026, so Buyer's objection was late. Escrow Agreement Section 3.3 states Seller's position that the objection was untimely and that the deficiencies are cured. It also states Buyer's position disputing that. It places $640,000 in a Special Escrow that is released to Seller unless Buyer obtains a final determination in its favor. Buyer has not accepted the cure, so the point can still be addressed before Closing.",
+      "doc": "D2",
+      "section": "Section 3.3",
+      "detect_terms": [
+        "February 23, 2026",
+        "Schedule Supplement No. 1"
+      ],
+      "expected_finding": "Buyer's February 23, 2026 objection to Schedule Supplement No. 1, delivered February 9, 2026, missed the APA Section 6.5 window of 5 Business Days, which ended February 17, 2026. Seller can therefore argue that the inspection deficiencies are cured for indemnity purposes and claim the $640,000 Special Escrow under Escrow Agreement Section 3.3. Before Closing, Buyer should obtain an APA amendment or a specific indemnity for those deficiencies, rather than rely on its disputed objection.",
+      "contradicts": null
+    }
+  ]
+}

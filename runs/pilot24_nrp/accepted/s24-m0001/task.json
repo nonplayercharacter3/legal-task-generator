@@ -1,0 +1,120 @@
+{
+  "task_id": "s24-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Seles Lift Services, LLC, the buyer of Tripux Elevator Company's assets. Seles needs a clear view of where the transaction documents leave it exposed before we finalize them. Please review the asset purchase agreement (asset_purchase_agreement_seles_tripux.md) and the related agreed-form and ancillary documents in the folder: the escrow agreement (escrow_agreement_agreed_form.md), the key employee agreement with Renata Oyelaran (key_employee_agreement_oyelaran.md), and the transition services agreement (transition_services_agreement_agreed_form.md). The folder also holds a Fenmark Workwear Rentals uniform rental agreement (fenmark_uniform_rental_agreement.md). Please look at it and tell me whether it has any bearing on the deal. Prepare a memo to me listing each issue you find. For each one, give the document and section where it appears, explain why it matters for Seles, and recommend a fix. Please put the most significant points first, and flag anything you think needs to go back to the client before we respond to the other side.",
+  "documents": [
+    "asset_purchase_agreement_seles_tripux.md",
+    "escrow_agreement_agreed_form.md",
+    "fenmark_uniform_rental_agreement.md",
+    "key_employee_agreement_oyelaran.md",
+    "transition_services_agreement_agreed_form.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Section 4.12 elevator code compliance and inspection representation is a General Representation that survives only 90 days after Closing under APA Section 9.1. It also identifies that, because the APA prevails over the Escrow Agreement (APA Section 11.9), this 90-day bar controls despite the 15-month Indemnity Escrow in Escrow Agreement Section 4.1. The response locates the issue in APA Section 9.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "90 days after the Closing Date",
+        "Section 11.9",
+        "15 months"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Key Employee Agreement Section 8.3 requires Renata Oyelaran's prior written consent to assignment in a sale of substantially all assets. It states that without that consent the assignment is void and her restrictive covenants terminate. It also identifies that the APA's required-consent schedule (Section 4.4) and closing condition (Section 7.2(c)) do not cover this consent. The response locates the issue in Key Employee Agreement Section 8.3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "prior written consent of Executive",
+        "Section 8.3",
+        "non-competition covenants terminate"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Buyer's February 23, 2026 objection to Schedule Supplement No. 1, which was delivered February 9, 2026, fell outside the 5-Business-Day objection window in APA Section 6.5. It also identifies that this lets Seller argue the inspection deficiencies are cured for indemnity purposes and claim the $640,000 Special Escrow. The response locates the issue in Escrow Agreement Section 3.3 (and/or APA Section 6.5), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "February 23, 2026",
+        "5 Business Days",
+        "Schedule Supplement No. 1"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Indemnity Escrow Amount is $1,875,000.",
+      "kind": "fact",
+      "hints": [
+        "$1,875,000"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Special Escrow Amount is $640,000.",
+      "kind": "fact",
+      "hints": [
+        "$640,000",
+        "Special Escrow"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the purchase price under the APA is $18,750,000.",
+      "kind": "fact",
+      "hints": [
+        "$18,750,000"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is a memo addressed to the supervising partner. It presents the issues in an order the response describes or presents as most significant first.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response expressly addresses the Fenmark Workwear Rentals uniform rental agreement and states whether it has any bearing on the deal.",
+      "kind": "format",
+      "hints": [
+        "Fenmark",
+        "no bearing",
+        "uniform rental"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Buyer's February 23, 2026 objection to Schedule Supplement No. 1 was timely under APA Section 6.5.",
+      "kind": "negative",
+      "hints": [
+        "objection was timely"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the 15-month claims period in the Escrow Agreement overrides or extends the APA's 90-day survival period for General Representations.",
+      "kind": "negative",
+      "hints": [
+        "Escrow Agreement controls",
+        "15-month claims period applies"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ]
+}

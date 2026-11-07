@@ -1,0 +1,132 @@
+{
+  "task_id": "s24-m0003",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Soupen Water Solutions, Inc., the buyer, on its asset purchase from Faiveirt Chemical Company. Lakeport Municipal Water District and Ostrander Risk Partners LLC are also involved. Before we go back to the other side, I need a clear picture of where the deal documents leave Soupen exposed and what we should push to change. Please review everything in the matter folder: the asset purchase agreement (asset_purchase_agreement_soupen_faiveirt.md), the form bill of sale at Exhibit A (bill_of_sale_exhibit_a_form.md), the letter of intent (letter_of_intent_2026-05-12.md), the side letter (side_letter_2026-08-14.md), and the Ostrander insurance certificate cover letter (insurance_certificate_cover_letter_ostrander.md). Send me a memo that lists each issue you find. For each one, tell me where it appears by document and section, explain why it matters for Soupen, and give a recommended fix. Rank the issues so the most significant come first. If you can't resolve a point from the documents alone, flag it as an open question rather than guessing.",
+  "documents": [
+    "asset_purchase_agreement_soupen_faiveirt.md",
+    "bill_of_sale_exhibit_a_form.md",
+    "insurance_certificate_cover_letter_ostrander.md",
+    "letter_of_intent_2026-05-12.md",
+    "side_letter_2026-08-14.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Side Letter Section 5 moves governing law and exclusive forum for disputes arising out of or relating to the APA to Texas law and Harris County courts, and that because APA Section 11.9 makes the Side Letter prevail, this overrides the New York law and New York County forum chosen in APA Sections 11.7 and 11.8. It locates the issue in the Side Letter Section 5, explains why this matters to Soupen, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Side Letter Section 5",
+        "Harris County",
+        "Section 11.9"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that APA Section 11.4 lets Seller assign the Agreement or delegate its obligations, including its transitional supply and/or indemnity obligations, to any person without Buyer's consent. It locates the issue in APA Section 11.4, explains why this matters to Soupen, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 11.4",
+        "Seller may assign",
+        "without the consent of Buyer"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Side Letter Section 2 redefines 'Losses' for all purposes of the APA as only out-of-pocket fines and penalties, and that because APA Section 11.9 makes the Side Letter prevail, this overrides the broader APA Section 1.1 definition and narrows the Article VIII indemnity. It locates the issue in Side Letter Section 2, explains why this matters to Soupen, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Side Letter Section 2",
+        "for all purposes of the Agreement",
+        "definition of Losses"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Lakeport Supply Contract requires the District's consent to assignment and change of control (as recorded in LOI Section 3), while APA Section 4.5 and Schedule 4.5 state that no third-party consents are required, and Section 7.2 does not make that consent a closing condition. It locates the issue in APA Section 4.5 / Schedule 4.5, explains why this matters to Soupen, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Lakeport",
+        "Schedule 4.5",
+        "closing condition"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that APA Section 8.1 limits survival of the environmental representations and the Excluded Liabilities indemnity under Section 8.2(b) to 12 months after Closing, contrary to the LOI Section 4 term that they survive until 60 days after the applicable statute of limitations. It locates the issue in APA Section 8.1, explains why this matters to Soupen, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 8.1",
+        "twelve (12) months",
+        "statute of limitations"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the APA purchase price is $48,500,000.",
+      "kind": "fact",
+      "hints": [
+        "$48,500,000",
+        "$48.5 million"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that APA Section 11.9 provides that the Side Letter prevails over the APA in the event of a conflict.",
+      "kind": "fact",
+      "hints": [
+        "Section 11.9",
+        "Side Letter prevails"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo that, for each issue it lists, gives the document and section location, an explanation of why it matters for Soupen, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Recommended fix",
+        "Why it matters",
+        "Location"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response ranks or orders the issues by significance, with the most significant presented first.",
+      "kind": "format",
+      "hints": [
+        "ranked",
+        "most significant",
+        "priority"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the APA requires the Lakeport Municipal Water District's consent to be obtained before Buyer is obliged to close.",
+      "kind": "negative",
+      "hints": [
+        "Lakeport consent is a closing condition"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the APA's New York governing law and New York County forum clauses prevail over the Side Letter's Texas governing law and Harris County forum provision.",
+      "kind": "negative",
+      "hints": [
+        "New York law prevails over the Side Letter"
+      ]
+    }
+  ],
+  "solver_pass_rate": 1.0,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ]
+}
