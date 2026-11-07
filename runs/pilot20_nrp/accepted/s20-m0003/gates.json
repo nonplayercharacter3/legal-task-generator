@@ -1,0 +1,162 @@
+{
+  "matter_id": "s20-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 1.0,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 4.3 of the agreed form Escrow Agreement: \"The Indemnity Escrow Fund shall be the sole and exclusive source of recovery of the Buyer Indemnified Parties for any Losses under Article IX of the Purchase Agreement. No Buyer Indemnified Party shall have recourse against Seller, any Affiliate of Seller or any of their respective assets for any such Losses in excess of the funds then remaining in the Indemnity Escrow Fund.\" SPA Section 11.9: \"In the event of any conflict between this Agreement and the Escrow Agreement, the Escrow Agreement controls as to the Indemnity Escrow Fund and the matters it addresses.\"",
+            "reason": "The problem is present and hurts the client. Seller gives the indemnity and Buyer (the client) is the indemnified party. The SPA sets a general cap of $18.6M under Section 9.5(a). It caps Fundamental Representation, Tax and Section 9.2(c) claims at the Purchase Price and leaves Fraud uncapped under Section 9.5(b). SPA Section 9.6(b) gives Buyer direct recourse against Seller once the escrow runs out. Escrow Section 4.3 instead makes the $13.95M fund the sole and exclusive source of recovery for all Article IX Losses, with no carve-out for Fundamental Representations, Taxes or Fraud, and bars any recourse against Seller beyond it. Under SPA Section 11.9 the Escrow Agreement controls on matters it addresses, so Seller can argue Section 4.3 overrides Sections 9.5(b) and 9.6(b). That would cap Buyer's total recovery below even the general cap. Section 4.3 also measures claims by the narrower escrow definition of Losses, which excludes diminution in value, lost profits and consequential damages. Nothing in the folder cures this. The form is an agreed exhibit that has not yet been executed at Closing; the board consent is dated September 29, 2026 and today is November 6, 2026, so Buyer can still renegotiate or conform the form before it signs at Closing. The issue is therefore still actionable."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Escrow Agreement Section 1.1 defines \"Losses\" as \"out-of-pocket losses, damages, liabilities, judgments, settlements, Taxes, interest, penalties, fines, costs and expenses actually incurred, including reasonable attorneys' fees, excluding diminution in value, lost profits and consequential damages.\" Section 4.3 provides: \"Claims against the Indemnity Escrow Fund shall be made and determined by reference to Losses as defined in this Agreement.\"",
+            "reason": "The problem is present and hurts Buyer, the client.\n\n- **Who it affects.** Seller gives the indemnity and Buyer is the indemnified party. Narrowing the definition of Losses therefore cuts Buyer's recovery.\n- **The conflict.** SPA Section 1.1 defines Losses to include diminution in value and lost profits. The Escrow Agreement form excludes both, along with consequential damages. Section 4.3 ties escrow claims to the narrower definition.\n- **Which document wins.** SPA Section 11.9 says the Escrow Agreement controls as to the Indemnity Escrow Fund and the matters it addresses.\n- **Made worse by Section 4.3.** It also makes the escrow Buyer's \"sole and exclusive source of recovery,\" which conflicts with SPA Section 9.6(b)'s direct recourse against Seller. That means lost profits and diminution in value may be unrecoverable altogether, not just from the escrow.\n- **Why it matters here.** The Ashgrove contract is 38% of revenue and can be terminated on a change of control. Lost-profit claims are a realistic exposure for Buyer.\n- **Still actionable.** The Escrow Agreement is an unsigned agreed form to be executed at Closing, which has not yet occurred. Nothing in the folder cures the conflict or shows Buyer accepted it."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SPA Schedule 4.4 lists only: \"1. Consent of Dunmore Realty Partners, as landlord, under the Lease Agreement dated as of June 1, 2021 ... pursuant to the change-of-control provision of Section 18.2 of that lease.\" Section 7.2(d) makes the closing condition only that \"each of the Required Consents shall have been obtained,\" and \"Required Consents\" means the consents on Schedule 4.4. The board consent (Recital 1.5) states: \"Section 14.3 of the Ashgrove Supply Agreement permits Ashgrove to terminate the agreement on written notice if a change of control of the Company occurs without Ashgrove's prior written consent.\" Resolution 4.2 directs that the officers \"shall not contact Ashgrove about the Transaction before the Closing.\"",
+            "reason": "The Ashgrove agreement is a listed Material Contract. Under Section 4.10(a) it supplies about 38% of revenue, and the Company's own board recognizes that its change-of-control termination right is triggered by this deal. Even so, the Ashgrove consent is left off Schedule 4.4. As a result, it is not a Required Consent. Buyer has no closing condition requiring it and no covenant under Section 6.3 obliging Seller to seek it. The board has also affirmatively directed management not to approach Ashgrove until after Closing. Buyer could therefore have to close and pay $186M while Ashgrove keeps a live right to walk away.\n\nThe after-the-fact remedy is weak. The Section 4.4(c) rep is not Fundamental, so it is capped at $18.6M. Escrow Agreement §4.3 purports to make the $13.95M escrow the sole recourse, using a narrower Losses definition that excludes diminution in value and lost profits. Under SPA §11.9, the Escrow Agreement controls as to escrow matters, and these are exactly the losses that a 38% customer loss would produce. Buyer may still argue that the Section 4.4 rep is inaccurate and invoke the bring-down condition in §7.2(a). That route depends on a materiality judgment and invites a dispute over whether Buyer knew of the problem from the board consent. It does not substitute for listing Ashgrove as a Required Consent.\n\nThe issue is still actionable. Nothing in the folder shows that Closing has occurred; the November 4, 2026 broker letter still refers to diligence. Buyer can still seek an amendment adding the Ashgrove consent to Schedule 4.4, or a specific indemnity."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.087,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 3,
+            "pass_rate": 1.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "indemnity_escrow_agreement_form.md",
+                "kestrelle_board_consent.md",
+                "pellford_insurance_certificate_cover_letter.md",
+                "stock_purchase_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "indemnity_escrow_agreement_form.md",
+                "kestrelle_board_consent.md",
+                "pellford_insurance_certificate_cover_letter.md",
+                "stock_purchase_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "indemnity_escrow_agreement_form.md",
+                "kestrelle_board_consent.md",
+                "pellford_insurance_certificate_cover_letter.md",
+                "stock_purchase_agreement.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

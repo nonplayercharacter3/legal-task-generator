@@ -1,0 +1,174 @@
+{
+  "matter_id": "s20-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 2 of the draft Amendment: \"Section 2.4 of the Agreement is deleted in its entirety and replaced with the following: > **2.4 Exclusivity.** During the Term, Peigirt shall use Giseind as its exclusive provider of all warehousing, fulfillment and distribution services for Products in any channel worldwide.\" Recital C, by contrast, says: \"The purpose of this Amendment is to add returns processing for Peigirt's Canadian e-commerce customers at Giseind's Mississauga, Ontario Facility.\"",
+            "reason": "The problem is present and hurts Peigirt, which is the party that owes the exclusivity obligation. Under the current MSA, Section 2.4 limits exclusivity to fulfillment of E-Commerce Orders shipped within the Territory (US and Canada). It also expressly keeps Peigirt free to use other providers for any other channel, product or geography. The draft deletes that carve-out. Because \"Products\" covers all goods bearing Peigirt marks, the new clause would bind Peigirt to Giseind for wholesale, retail and international warehousing and distribution worldwide. Under MSA 17.3, Amendments override the MSA body, so the new clause would control once signed. Three things show this goes beyond the agreed deal. Recital C states a narrow Canadian-returns purpose. The Q2 meeting notes record only the Canadian returns scope. Giseind prepared the draft. Exposure is long: the MSA auto-renews for five-year terms. The issue is still actionable because the amendment is an unsigned draft (blank signature blocks). Nothing in the folder shows Peigirt accepted the expansion, so Section 2 can be struck before signing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"At the end of the Initial Term, this Agreement shall automatically renew for successive five (5) year Renewal Terms (each, a \"Renewal Term\"), unless either Party delivers written notice of non-renewal to the other Party no earlier than 300 days and no later than 270 days before the expiration of the then-current Term.\"",
+            "reason": "The problem is present and still actionable. Under Section 12.1, the three-year Initial Term runs from March 1, 2025 and ends around March 1, 2028. Section 12.2 lets Peigirt avoid renewal only by giving notice within a single 30-day window, roughly early May to early June 2027. If Peigirt misses that window, it is bound for a further five years, which is longer than the original term. During that period Peigirt stays tied to Giseind as its exclusive fulfillment provider under Section 2.4. The pending draft Amendment No. 1 would widen that exclusivity to all channels worldwide, which makes the lock-in worse. Nothing in the folder cures this: the Schedule, the draft amendment and the meeting notes leave Section 12.2 unchanged, and Peigirt has no other way out such as termination for convenience. The window has not yet opened (today is November 2026), so Peigirt can still diary the deadline or negotiate a fix, for example in the pending amendment."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Schedule B Section 1: \"\"Peak Season\" means September 1 through January 31 of each year.\" Section 3.3: \"During Peak Season, the Dispatch Service Level does not apply and no Service Credits accrue.\" The MSA defines Peak Season as \"November 15 through December 31 of each year,\" and MSA Section 17.3 gives the Service Level Schedule precedence \"with respect to service levels and service credits.\"",
+            "reason": "The two documents define the same term differently. Schedule B Section 3.3 uses its own broader definition to switch off the Dispatch Service Level and all Service Credits for five months instead of about six weeks. MSA Section 17.3 makes the Schedule control on service levels and credits, so the broader window is likely to prevail. That window covers Peigirt's fall outerwear and holiday period, when dispatch performance matters most. It also weakens Peigirt's chronic-failure termination right in Schedule B Section 6 and MSA Section 13.2(c), because months the Dispatch Service Level does not apply are unlikely to count as failures. Giseind bears the service obligation, so the relief helps Giseind and hurts Peigirt. Nothing in the folder fixes this. Draft Amendment No. 1 leaves the definition untouched, and the meeting notes do not amend the Agreement. The issue is still actionable: today (November 6, 2026) falls inside the current September–January window and the draft amendment is still open. Peigirt can raise it there or through a Section 7 / Section 17.2 Amendment."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 16.3: \"Giseind may assign this Agreement, in whole or in part, without notice to or consent of Peigirt, to (a) any Affiliate of Giseind; (b) any successor to Giseind by merger, consolidation, reorganization or change of control; or (c) any acquirer of all or substantially all of its fulfillment business or assets.\" Section 16.1: \"Neither Party may assign, delegate or otherwise transfer this Agreement ... without the prior written consent of the other Party, except as provided in Section 16.3.\"",
+            "reason": "The problem is present and still actionable. Section 16.1 reads as a mutual restriction, but the only exception in Section 16.3 runs to Giseind alone. Giseind may assign without notice or consent to an Affiliate, a successor by merger or change of control, or an acquirer of its fulfillment business. Nothing excludes Peigirt's competitors. Peigirt gets no termination right on such an assignment. Section 13 has no change-of-control trigger, and the only Peigirt-specific termination rights are for non-payment, data breach and chronic dispatch failure. The transferee would inherit the Section 2.4 exclusivity, which the draft Amendment would widen to all channels worldwide. It would also inherit the Peigirt Data (SKU-level sales and customer data) and the auto-renewing five-year renewal terms. Section 8.3 limits how that data is used but does not stop a competitor from owning the relationship. Peigirt, meanwhile, remains bound by its own consent requirement. No other document in the folder cures this, and the draft Amendment does not touch Section 16. It remains open to negotiate, for example within the pending Amendment."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.048,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C6"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "draft_amendment_no_1.md",
+                "peigirt_giseind_master_services_agreement.md",
+                "q2_2026_business_review_meeting_notes.md",
+                "schedule_b_service_level_schedule.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C6"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "draft_amendment_no_1.md",
+                "peigirt_giseind_master_services_agreement.md",
+                "q2_2026_business_review_meeting_notes.md",
+                "schedule_b_service_level_schedule.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C6"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "draft_amendment_no_1.md",
+                "peigirt_giseind_master_services_agreement.md",
+                "q2_2026_business_review_meeting_notes.md",
+                "schedule_b_service_level_schedule.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

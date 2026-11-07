@@ -1,0 +1,108 @@
+{
+  "task_id": "s20-m0001",
+  "split": "dev",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Muvux Orthopedics, LLC, the buyer of the Pisen Spine Technologies assets and the maker of the seller note in the transaction. Before we go back to the other side, the client wants a clear view of where its position stands under the deal documents and whatever needs to be addressed. Please review the four files in the matter folder: the asset purchase agreement (asset_purchase_agreement_muvux_pisen.md), the letter of intent (letter_of_intent_pisen_spine_assets.md), the form of seller note at Exhibit B (form_of_seller_note_exhibit_b.md), and the email thread on the transition inventory count (email_thread_transition_inventory_count.md). Also keep in mind that Muvux Orthopedics Holdings, Inc. and Ardentis Surgical Partners, L.P. are parties to the matter alongside Pisen. Send me a memo that lists each issue you find. For each one, say where it appears (document and section), explain why it matters for Muvux Orthopedics, LLC, and recommend a fix. Rank the issues by how significant they are to the client. Flag anything you could not resolve from the documents alone, along with what information we would need to resolve it.",
+  "documents": [
+    "asset_purchase_agreement_muvux_pisen.md",
+    "email_thread_transition_inventory_count.md",
+    "form_of_seller_note_exhibit_b.md",
+    "letter_of_intent_pisen_spine_assets.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that APA Section 1.3(c) defines Assumed Liabilities to include product liability claims for Products manufactured or sold before Closing. It also identifies that Buyer's indemnity for Assumed Liabilities (Section 9.3(b)) is excluded from any cap or limitation (Section 9.5(c)). Together these leave Muvux with uncapped exposure for pre-closing product liability. The response notes that this departs from the LOI, under which that liability stayed with Seller. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "whether manufactured or sold before or after the Closing",
+        "Section 9.5(c)",
+        "LOI Paragraph 4"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Seller Note Section 6(e) makes a Change of Control of any Person controlling Maker an Event of Default absent Holder's prior written consent. It states that the parent's August 27, 2026 merger with Ardentis, disclosed in APA Section 5.5, would trigger that default. It notes that no consent from Pisen has been obtained. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 6(e)",
+        "Ardentis",
+        "prior written consent of Holder"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Seller Note Section 8(b) subjects claims for Excluded Liabilities under APA Section 9.2(c) to the Seller Indemnity Cap, overriding the carve-out in APA Section 9.5(b). It states that APA Section 11.9 gives the Seller Note precedence over the APA, so the Note's provision governs. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 8(b)",
+        "Section 11.9",
+        "Seller Indemnity Cap"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Purchase Price is $68,000,000, consisting of $54,000,000 cash at Closing and a $14,000,000 Seller Note.",
+      "kind": "fact",
+      "hints": [
+        "$68,000,000",
+        "$54,000,000",
+        "$14,000,000"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Seller Indemnity Cap is 12% of the Purchase Price, or $8,160,000.",
+      "kind": "fact",
+      "hints": [
+        "12%",
+        "$8,160,000"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response presents the issues in an order or ranking that it expressly identifies as reflecting their significance to the client.",
+      "kind": "format",
+      "hints": [
+        "ranked",
+        "most significant",
+        "priority"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response includes a section or statements flagging matters it could not resolve from the documents alone. For each one, it identifies the information needed to resolve it.",
+      "kind": "format",
+      "hints": [
+        "could not resolve",
+        "information needed",
+        "open items"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that the LOI's allocation of pre-closing product liability to Seller is binding and controls over the APA's definition of Assumed Liabilities.",
+      "kind": "negative",
+      "hints": []
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Muvux's indemnity claims for Excluded Liabilities remain uncapped because APA Section 9.5(b) prevails over Seller Note Section 8(b).",
+      "kind": "negative",
+      "hints": []
+    }
+  ],
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ]
+}

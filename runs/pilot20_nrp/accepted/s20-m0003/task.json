@@ -1,0 +1,107 @@
+{
+  "task_id": "s20-m0003",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Seipal Thermal Holdings, Inc., the buyer, in its stock acquisition. Before we go further, I'd like a clear picture of where the current documents leave Seipal exposed and what we should push for. Please review the four documents in the matter folder: the stock purchase agreement (stock_purchase_agreement.md), the indemnity escrow agreement form (indemnity_escrow_agreement_form.md), the Kestrelle board consent (kestrelle_board_consent.md), and the Pellford insurance certificate cover letter (pellford_insurance_certificate_cover_letter.md). Then send me a memo that lists each issue you find. For each one, give the document and section where it appears, explain why it matters to Seipal as buyer, and recommend a specific fix, such as revised language, a closing deliverable, or a point to raise with the other side. Put the items that matter most to the client at the top, and flag anything you couldn't resolve from the documents alone. Keep it practical, since I'll use it to decide our next round of comments.",
+  "documents": [
+    "indemnity_escrow_agreement_form.md",
+    "kestrelle_board_consent.md",
+    "pellford_insurance_certificate_cover_letter.md",
+    "stock_purchase_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Section 4.3 of the Indemnity Escrow Agreement form makes the escrow fund Buyer's sole and exclusive source of recovery for indemnity Losses. It also states that this effectively limits Buyer's recovery to the $13,950,000 escrow and overrides or undercuts the SPA Section 9.5(b) carve-outs for Fundamental Representations, Taxes and/or Fraud. The response locates the issue in the Escrow Agreement Section 4.3, explains why it matters to Seipal, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "sole and exclusive source of recovery",
+        "Section 4.3",
+        "carve-outs"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the Escrow Agreement form's definition of \"Losses\" excludes diminution in value and lost profits, while the SPA's definition of Losses includes them, so those damages cannot be recovered from the escrow. The response locates the issue in Section 1.1 of the Escrow Agreement form, explains why it matters to Seipal, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "diminution in value",
+        "lost profits",
+        "definition of Losses"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the board consent shows the Ashgrove supply agreement can be terminated on a change of control without Ashgrove's consent. It also states that the Ashgrove consent is not listed in SPA Schedule 4.4 and is not part of the Required Consents closing condition, leaving Buyer without a closing condition protecting it. The response locates the issue in SPA Schedule 4.4 and/or Section 7.2(d), explains why it matters to Seipal, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Ashgrove",
+        "Schedule 4.4",
+        "Required Consents"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Indemnity Escrow Amount is $13,950,000.",
+      "kind": "fact",
+      "hints": [
+        "$13,950,000",
+        "escrow amount"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the SPA's general indemnity cap is $18,600,000, or 10% of the Purchase Price.",
+      "kind": "fact",
+      "hints": [
+        "$18,600,000",
+        "10% of the Purchase Price"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is presented as a memo that lists the issues with the most important items placed first, or that explicitly ranks the issues by priority.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "priority",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response includes a section, note or flag identifying at least one point that cannot be resolved from the documents alone.",
+      "kind": "format",
+      "hints": [
+        "could not resolve",
+        "open items",
+        "need to confirm"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that the Ashgrove consent is listed in SPA Schedule 4.4 or is already one of the Required Consents.",
+      "kind": "negative",
+      "hints": []
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the Escrow Agreement form's definition of Losses is the same as, or as broad as, the SPA's definition of Losses.",
+      "kind": "negative",
+      "hints": []
+    }
+  ],
+  "solver_pass_rate": 1.0,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ]
+}

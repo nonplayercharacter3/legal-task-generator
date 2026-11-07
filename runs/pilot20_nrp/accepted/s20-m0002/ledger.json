@@ -1,0 +1,175 @@
+{
+  "matter_id": "s20-m0002",
+  "summary": "Peigirt Trailwear Co., an outdoor apparel brand selling jackets, base layers and hiking gear online, outsourced warehousing and direct-to-consumer e-commerce fulfillment to Giseind Fulfillment Services, LLC under a Master Services Agreement effective March 1, 2025. Under the MSA, Giseind picks, packs and ships Peigirt's e-commerce orders in the United States and Canada and runs returns, against the service levels in a Service Level Schedule. Giseind has sent a proposed Amendment No. 1 for Peigirt's signature. Its recitals say its purpose is to add Canadian returns processing. The supervising partner wants an issue-spotting memo on the MSA, the Service Level Schedule and the draft amendment before Peigirt signs. The folder also holds notes from a quarterly business review.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Peigirt Trailwear Co.",
+      "role": "Client; outdoor apparel brand and customer of fulfillment services"
+    },
+    {
+      "id": "P2",
+      "name": "Giseind Fulfillment Services, LLC",
+      "role": "Counterparty; third-party logistics and e-commerce fulfillment provider"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "three (3) years from the MSA Effective Date",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F3",
+      "key": "Territory",
+      "value": "the United States and Canada",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F4",
+      "key": "Peak Season (MSA definition)",
+      "value": "November 15 through December 31 of each year",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F5",
+      "key": "MSA exclusivity scope",
+      "value": "fulfillment of E-Commerce Orders shipped to addresses in the Territory",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Amendments; then Service Level Schedule for service levels and service credits; then MSA body",
+      "doc": "D1",
+      "section": "Section 17.3"
+    },
+    {
+      "id": "F7",
+      "key": "Dispatch Service Level",
+      "value": "98% of Orders dispatched within 24 hours of order release",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F8",
+      "key": "Monthly service credit cap",
+      "value": "15% of monthly fulfillment fees",
+      "doc": "D2",
+      "section": "Section 4.2"
+    },
+    {
+      "id": "F9",
+      "key": "MSA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 17.1"
+    },
+    {
+      "id": "F10",
+      "key": "Proposed Amendment No. 1 Effective Date",
+      "value": "September 1, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "peigirt_giseind_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "schedule_b_service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "draft_amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "q2_2026_business_review_meeting_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "The recitals of draft Amendment No. 1 (D3) say its only purpose is to add returns processing for Canadian e-commerce customers. Its Section 2 does more: it deletes and replaces MSA Section 2.4. The MSA clause limits exclusivity to E-Commerce Orders shipped within the Territory (F5). The replacement makes Giseind Peigirt's exclusive provider of 'all warehousing, fulfillment and distribution services for Products in any channel worldwide'. 'Products' is defined in MSA Section 1.1 as all goods bearing Peigirt marks, so the new clause also reaches wholesale, retail-store replenishment and international distribution. Those channels were never part of the deal. Under MSA Section 17.3 (F6), amendments take precedence over the MSA body, so the broader clause would control once signed. Reading the recitals, Section 2 of the amendment and the 'Products' definition together shows the change goes well beyond the amendment's stated purpose. It would force Peigirt to move or break its existing wholesale and international logistics arrangements.",
+      "doc": "D3",
+      "section": "Section 2 (Replacement of MSA Section 2.4)",
+      "detect_terms": [
+        "in any channel worldwide",
+        "all warehousing, fulfillment and distribution services"
+      ],
+      "expected_finding": "Section 2 of draft Amendment No. 1 widens Peigirt's exclusivity from Territory e-commerce orders to all Products in every channel worldwide, which goes beyond the amendment's stated Canadian-returns purpose, and because amendments prevail under MSA Section 17.3 Peigirt should refuse to sign unless Section 2 is removed or limited to E-Commerce Orders in the Territory.",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA Section 12.2 (D1) renews the agreement automatically at the end of the three-year Initial Term (F2, running from the March 1, 2025 MSA Effective Date, F1). Each renewal is for a successive five-year Renewal Term. The only way out is a non-renewal notice delivered no earlier than 300 days and no later than 270 days before the current term expires. That is a single 30-day window. For the Initial Term it falls in roughly May 5 to June 4, 2027. If Peigirt misses it, Peigirt is locked into another five years with an exclusive fulfillment provider. The renewal term is also longer than the original term.",
+      "doc": "D1",
+      "section": "Section 12.2",
+      "detect_terms": [
+        "successive five (5) year Renewal Terms",
+        "no earlier than 300 days and no later than 270 days"
+      ],
+      "expected_finding": "MSA Section 12.2 automatically renews for five-year terms unless Peigirt gives notice within a 30-day window 300 to 270 days before expiry (about May 5 to June 4, 2027 for the Initial Term), so Peigirt should negotiate shorter renewal terms (one year) and a non-renewal right exercisable at any time up to 90 days before expiry, and docket the current window.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "MSA Section 1.1 (D1) defines 'Peak Season' as November 15 through December 31 (F4). Service Level Schedule Section 1 (D2) redefines 'Peak Season' as September 1 through January 31. Section 3.3 of the Schedule then suspends the Dispatch Service Level (F7) and all service credits during Peak Season. Under MSA Section 17.3 (F6), the Service Level Schedule controls on service levels and service credits. That precedence rule gives effect to the broader Schedule definition, which extends SLA relief from about six weeks to five months. The extra months cover the fall jacket and holiday selling period, when shipping performance matters most to an outdoor apparel brand. The cure clause cannot help here because it is the clause that makes the Schedule's definition prevail.",
+      "doc": "D2",
+      "section": "Section 1 (Definitions) and Section 3.3",
+      "detect_terms": [
+        "September 1 through January 31"
+      ],
+      "expected_finding": "The Service Level Schedule defines Peak Season as September 1 through January 31, against the MSA's November 15 through December 31, and because MSA Section 17.3 makes the Schedule control on service levels and credits, the Section 3.3 suspension of the dispatch SLA and credits would run for five months of Peigirt's highest-volume season; the Schedule definition should be conformed to the MSA.",
+      "contradicts": "F4"
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "MSA Section 16.1 (D1) reads as mutual. Neither party may assign without the other's prior written consent 'except as provided in Section 16.3'. Section 16.3 then allows Giseind alone to assign the MSA without notice or consent to any Affiliate, to any successor by merger or change of control, or to any acquirer of all or substantially all of its fulfillment business. It does not exclude Peigirt's competitors and gives Peigirt no termination right. Read together, the two sections let Giseind transfer the agreement to an apparel competitor or a competitor's logistics arm. That transferee would inherit Peigirt's exclusive volume, its SKU-level sales and customer data held under the MSA, and the auto-renewing term. Peigirt meanwhile stays bound by its own consent requirement.",
+      "doc": "D1",
+      "section": "Sections 16.1 and 16.3",
+      "detect_terms": [
+        "without notice to or consent of Peigirt",
+        "all or substantially all of its fulfillment business"
+      ],
+      "expected_finding": "Section 16.3 overrides the apparently mutual consent requirement in Section 16.1 and lets Giseind assign the MSA without notice or consent, including to a Peigirt competitor that would receive Peigirt's customer and sales data, so Peigirt should require consent (or at least prior notice) for any assignment or change of control, exclude competitors, and gain a termination right without penalty on any permitted assignment.",
+      "contradicts": null
+    }
+  ]
+}

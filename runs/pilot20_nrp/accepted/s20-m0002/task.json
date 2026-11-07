@@ -1,0 +1,135 @@
+{
+  "task_id": "s20-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "master services agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Peigirt Trailwear Co., the outdoor apparel brand, in its fulfillment relationship with Giseind Fulfillment Services, LLC. The client wants a clear picture of where it stands under its arrangements with Giseind and what it should push for going forward. Please review the full matter folder: the master services agreement (peigirt_giseind_master_services_agreement.md), the service level schedule (schedule_b_service_level_schedule.md), the draft Amendment No. 1 (draft_amendment_no_1.md), and the Q2 2026 business review meeting notes (q2_2026_business_review_meeting_notes.md). Prepare a memo to me that lists each issue you identify. For each one, state where it appears (document and section), explain why it matters for Peigirt, and give a recommended fix. Please put the most significant items first and keep the memo practical. I want to be able to use it directly in advising the client and in any discussions with Giseind. If anything in the folder is unclear or seems incomplete, flag it rather than assume.",
+  "documents": [
+    "draft_amendment_no_1.md",
+    "peigirt_giseind_master_services_agreement.md",
+    "q2_2026_business_review_meeting_notes.md",
+    "schedule_b_service_level_schedule.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Section 2 of draft Amendment No. 1 replaces MSA Section 2.4 and widens Peigirt's exclusivity from E-Commerce Orders shipped in the Territory to all warehousing, fulfillment and distribution services for Products in any channel worldwide. It also notes that this goes beyond the amendment's stated purpose of adding Canadian returns processing. It locates the issue in draft Amendment No. 1, Section 2. It explains why this matters to Peigirt and recommends a fix, such as removing Section 2 or limiting it to Territory e-commerce orders.",
+      "kind": "issue",
+      "hints": [
+        "in any channel worldwide",
+        "beyond the stated purpose",
+        "Canadian returns"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that MSA Section 12.2 automatically renews the agreement for successive five-year Renewal Terms. It notes that the only exit is a non-renewal notice given within a narrow window, no earlier than 300 and no later than 270 days before expiry. It locates the issue in MSA Section 12.2. It explains why this matters to Peigirt and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "five (5) year Renewal Terms",
+        "300 days",
+        "270 days"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Service Level Schedule defines Peak Season as September 1 through January 31, which conflicts with the MSA definition of November 15 through December 31. It notes that the Schedule's Section 3.3 suspends the dispatch service level and service credits during Peak Season. It locates the issue in Service Level Schedule Section 1 and/or Section 3.3. It explains why this matters to Peigirt and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "September 1 through January 31",
+        "November 15 through December 31",
+        "Peak Season"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that MSA Section 16.3 overrides the apparently mutual consent requirement in Section 16.1. Section 16.3 lets Giseind assign the MSA without Peigirt's notice or consent to Affiliates, merger or change-of-control successors, or acquirers of its fulfillment business. It locates the issue in MSA Sections 16.1 and/or 16.3. It explains why this matters to Peigirt and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 16.3",
+        "without notice to or consent of Peigirt",
+        "assign"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the existing MSA exclusivity in Section 2.4 is limited to fulfillment of E-Commerce Orders shipped to addresses in the Territory (the United States and Canada).",
+      "kind": "fact",
+      "hints": [
+        "E-Commerce Orders",
+        "United States and Canada",
+        "Section 2.4"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that under MSA Section 17.3, amendments take precedence over the MSA body, and the Service Level Schedule controls on service levels and service credits.",
+      "kind": "fact",
+      "hints": [
+        "Section 17.3",
+        "order of precedence",
+        "amendments prevail"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the MSA Initial Term is three years from the March 1, 2025 Effective Date.",
+      "kind": "fact",
+      "hints": [
+        "three (3) years",
+        "March 1, 2025",
+        "Initial Term"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is structured as a memo addressed to the supervising partner, with issues listed separately. Each issue states its location (document and section), why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response presents the issues ordered by significance, with the most significant items first.",
+      "kind": "format",
+      "hints": [
+        "most significant",
+        "priority",
+        "high"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that draft Amendment No. 1 does no more than add Canadian returns processing and leaves Peigirt's exclusivity unchanged.",
+      "kind": "negative",
+      "hints": [
+        "only adds Canadian returns",
+        "no change to exclusivity"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that Giseind cannot assign the MSA without Peigirt's prior written consent.",
+      "kind": "negative",
+      "hints": [
+        "mutual consent",
+        "Giseind requires consent"
+      ]
+    }
+  ],
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ]
+}

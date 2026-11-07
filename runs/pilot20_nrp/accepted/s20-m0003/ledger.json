@@ -1,0 +1,185 @@
+{
+  "matter_id": "s20-m0003",
+  "summary": "Seipal Thermal Holdings, Inc. (the client, Buyer) is buying all outstanding shares of Kestrelle Immersion Systems, Inc. from Gourain Industrial Partners, LLC (Seller) for $186,000,000. Kestrelle designs and services liquid and immersion cooling systems for hyperscale data centers. The stock purchase agreement was signed October 2, 2026, and closing has not yet occurred. The folder holds: the SPA; the agreed form of Indemnity Escrow Agreement, attached as Exhibit B and to be signed at closing; the Kestrelle board consent of September 29, 2026 approving the transaction; and a broker's cover letter sending certificates of insurance. Three issues are planted. First, the escrow form makes the escrow fund Buyer's sole and exclusive source of recovery. Because the SPA's precedence clause lets the Escrow Agreement control, this cuts the uncapped and purchase-price carve-outs down to the escrow amount. Second, the escrow form defines \"Losses\" more narrowly than the SPA, excluding diminution in value and lost profits, and that definition controls escrow claims. Third, the board consent records that Kestrelle's largest customer contract requires consent to a change of control. The SPA's consent schedule, which sets the Required Consents closing condition, lists only the landlord consent.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Seipal Thermal Holdings, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Gourain Industrial Partners, LLC",
+      "role": "Seller (sole stockholder of the Company)"
+    },
+    {
+      "id": "P3",
+      "name": "Kestrelle Immersion Systems, Inc.",
+      "role": "Company (target being acquired)"
+    },
+    {
+      "id": "P4",
+      "name": "Larchmont Trust Company, N.A.",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P5",
+      "name": "Ashgrove Cloud Infrastructure LLC",
+      "role": "Company's principal customer under the Master Cooling Systems Supply Agreement"
+    },
+    {
+      "id": "P6",
+      "name": "Dunmore Realty Partners",
+      "role": "Landlord under the Company's facility lease"
+    },
+    {
+      "id": "P7",
+      "name": "Pellford Risk Advisors",
+      "role": "Company's insurance broker"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Purchase Price",
+      "value": "$186,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Stock Purchase Agreement signing date",
+      "value": "October 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "General indemnity cap",
+      "value": "$18,600,000 (10% of the Purchase Price)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F4",
+      "key": "Fundamental Representations and Tax indemnity cap",
+      "value": "the Purchase Price; Fraud claims uncapped",
+      "doc": "D1",
+      "section": "Section 9.5(b)"
+    },
+    {
+      "id": "F5",
+      "key": "Indemnity Escrow Amount",
+      "value": "$13,950,000",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F6",
+      "key": "General representations survival period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence between SPA and Escrow Agreement",
+      "value": "Escrow Agreement controls as to the Indemnity Escrow Fund and matters it addresses; otherwise SPA controls",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "SPA definition of Losses",
+      "value": "includes diminution in value and lost profits, excluding only punitive damages not paid to a third party",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F9",
+      "key": "Governing law of Stock Purchase Agreement",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 11.6"
+    },
+    {
+      "id": "F10",
+      "key": "Ashgrove Master Cooling Systems Supply Agreement date",
+      "value": "March 14, 2024",
+      "doc": "D3",
+      "section": "Recitals"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "indemnity_escrow_agreement_form.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "kestrelle_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "pellford_insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "Escrow sole-source clause collapses SPA cap carve-outs",
+      "description": "The SPA sets a general cap of $18,600,000 in Section 9.5(a). Section 9.5(b) carves out Fundamental Representation and Tax claims, which are capped at the Purchase Price, and Fraud claims, which are uncapped. Section 4.3 of the agreed form Escrow Agreement (D2) says the Indemnity Escrow Fund is Buyer's \"sole and exclusive source of recovery\" for any Losses under Article IX of the Purchase Agreement, with no exception for Fundamental Representations, Taxes or Fraud. SPA Section 11.9 says the Escrow Agreement controls as to the Indemnity Escrow Fund and any matter it addresses. Read together, the escrow form governs recovery and limits all of Buyer's indemnity recovery to the $13,950,000 escrow. That figure is below even the SPA's general cap, and the carve-outs are eliminated in practice.",
+      "doc": "D2",
+      "section": "Section 4.3",
+      "detect_terms": [
+        "sole and exclusive source of recovery"
+      ],
+      "expected_finding": "Read with SPA Section 11.9, which lets the Escrow Agreement control, Escrow Agreement Section 4.3 limits all of Buyer's indemnity recovery to the $13,950,000 escrow. This overrides the SPA Section 9.5(b) carve-outs for Fundamental Representations, Taxes and Fraud, and falls below the $18,600,000 general cap. Section 4.3 should be revised before closing so the escrow is the sole source only for general-representation claims up to the escrow amount, and Section 11.9 should be narrowed to escrow mechanics.",
+      "contradicts": "F4"
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "Narrower definition of \"Losses\" in the Escrow Agreement",
+      "description": "SPA Section 1.1 defines \"Losses\" to include diminution in value and lost profits. Section 1.1 of the form Escrow Agreement (D2) defines \"Losses\" as out-of-pocket losses, \"excluding diminution in value, lost profits and consequential damages.\" Escrow claims are made by reference to \"Losses\" as defined in the Escrow Agreement. SPA Section 11.9 gives the Escrow Agreement control over claims against the escrow fund, and the escrow is the recovery source. Lost customer revenue or diminished value from a cooling-system failure at a hyperscale site would therefore not be recoverable against the escrow, even though the SPA indemnity covers it.",
+      "doc": "D2",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "excluding diminution in value, lost profits and consequential damages"
+      ],
+      "expected_finding": "The Escrow Agreement definition of Losses excludes diminution in value and lost profits, which the SPA definition includes. Because SPA Section 11.9 makes the Escrow Agreement control claims against the escrow fund, Buyer cannot recover those damages from the escrow. The escrow form should adopt the SPA definition of Losses by cross-reference.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "Ashgrove change-of-control consent missing from Required Consents",
+      "description": "The Kestrelle board consent of September 29, 2026 (D3) states in its recitals that the Master Cooling Systems Supply Agreement with Ashgrove Cloud Infrastructure LLC, dated March 14, 2024, accounts for about 38% of Company revenue. It also states that Section 14.3 of that agreement lets Ashgrove terminate on any change of control made without its prior written consent. The board consent's resolutions direct officers to approach Ashgrove only after closing. SPA Schedule 4.4 lists only the consent of Dunmore Realty Partners under the facility lease. Schedule 4.4 feeds both the no-consents representation in Section 4.4 and the defined \"Required Consents\" closing condition in Section 7.2(d). As signed on October 2, 2026, Buyer must close without the Ashgrove consent. Because the consent is disclosed in D3, Buyer may also struggle to claim breach later.",
+      "doc": "D1",
+      "section": "Schedule 4.4 / Section 7.2(d)",
+      "detect_terms": [
+        "Dunmore Realty Partners",
+        "Required Consents"
+      ],
+      "expected_finding": "The Ashgrove supply agreement, which provides about 38% of Company revenue and is shown in the September 29, 2026 board consent to be terminable on change of control without consent, is not listed in SPA Schedule 4.4. Buyer therefore has no closing condition protecting it. The SPA should be amended before closing to add the Ashgrove consent to Schedule 4.4 and the Required Consents condition in Section 7.2(d), or to give Buyer a special indemnity for loss of that contract.",
+      "contradicts": null
+    }
+  ]
+}

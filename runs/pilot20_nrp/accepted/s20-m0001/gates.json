@@ -1,0 +1,168 @@
+{
+  "matter_id": "s20-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "dev",
+  "solver_pass_rate": 0.333,
+  "unsolved": false,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 44
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 1.3(c): Buyer assumes \"all liabilities for product liability, personal injury, property damage, product warranty and field corrective action claims relating to the Products, whether manufactured or sold before or after the Closing.\" Section 9.3(b) requires Buyer to indemnify Seller for \"any Assumed Liability\". Section 9.5(c): \"No cap, basket or other limitation in this Article IX applies to claims under Section 9.3(b).\"",
+            "reason": "Muvux is the Buyer and therefore the indemnifying party under Section 9.3(b). Section 1.3(c) makes pre-Closing product liability on Pisen-made and Pisen-sold implants an Assumed Liability. Section 9.5(c) then removes any cap or basket on Buyer's indemnity for it. The result is unlimited Buyer exposure for legacy implant failure, field action and recall claims. Nothing in the folder cures this. Section 1.4 does not carve product liability back out as an Excluded Liability. Section 4.8 is only a disclosure representation. The Seller Note cap in Section 8(b) limits Seller's liability, not Buyer's. LOI Paragraph 4 kept pre-Closing product liability with Seller, but the LOI was non-binding and Section 11.9 says the APA supersedes it. The point is still actionable. The email thread shows Closing is not set until December 4, 2026, and Muvux has not yet accepted the result by closing or paying. Muvux can still seek an amendment before Closing, and the exposure itself is ongoing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 6(e) of the Note: \"Maker, or any Person that directly or indirectly controls Maker, undergoes a Change of Control without the prior written consent of Holder\". Section 7(a): \"On the occurrence of any Event of Default under Section 6(a), 6(b), 6(e) or 6(f) ... Holder may, by written notice to Maker, declare the entire unpaid Principal Amount of $14,000,000 ... immediately due and payable.\" APA Section 5.5: \"Parent has entered into an Agreement and Plan of Merger dated August 27, 2026 with Ardentis Surgical Partners, L.P. ..., under which an affiliate of Ardentis Surgical Partners, L.P. will merge with and into Parent, with Parent surviving.\"",
+            "reason": "Muvux is the Maker and bears the payment obligation. Its sole member, Parent, controls it. The disclosed reverse triangular merger with Ardentis would almost certainly be a Change of Control of Parent under clause (A) or (B) of the Note's definition. Clause (B) applies even though Parent survives, and the measure is equity holders as of the Closing Date, which falls before the merger completes. Neither the APA nor the Note contains Pisen's consent or a carve-out for that merger. APA 5.5 is only Buyer's own representation that the merger agreement does not restrict Buyer. It does not waive the Holder's rights. Under APA 11.9 the Note controls over the APA. Once the merger closes, Pisen could accelerate the full $14,000,000 and charge default interest at 4% above the Note rate under Section 7(c). That acceleration is limited only by the subordination provisions. The Note is still an unsigned form, and the Closing Date is targeted for December 4, 2026. Muvux can therefore still negotiate a consent or an express exclusion for the Ardentis merger, so the issue is live and actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 8(b) of the Seller Note: \"Holder's aggregate liability for all claims under Section 9.2 of the Purchase Agreement, including claims under Section 9.2(c) for Excluded Liabilities, whether recovered by set-off under this Section 8 or otherwise, shall not exceed the Seller Indemnity Cap, except for Losses arising from Fraud.\" Compare APA Section 9.5(b): \"The Seller Indemnity Cap does not apply to Losses arising from Fundamental Representations, Fraud, and claims under Section 9.2(c) for Excluded Liabilities.\" APA Section 11.9: \"In the event of any conflict or inconsistency between this Agreement and the Seller Note, the Seller Note shall control.\"",
+            "reason": "The problem is present, although the Note does not use the word \"notwithstanding.\" Its operative language brings Section 9.2(c) Excluded Liabilities claims, and all other Section 9.2 claims, under the $8,160,000 Seller Indemnity Cap. Fraud is the only carve-out. That conflicts with APA Section 9.5(b), which leaves Excluded Liabilities claims uncapped. The Note also drops the separate Fundamental Representations treatment, which in the APA is capped at the full Purchase Price. Because APA Section 11.9 makes the Seller Note control over the APA, the Note's narrower carve-out would govern. Seller (Holder) is the indemnifying party under Section 9.2, so this hurts Muvux as the indemnified Buyer. The Excluded Liabilities at risk include pre-closing taxes, environmental liabilities, FDA Warning Letter remediation and Seller indebtedness. Muvux's total recovery for these would be limited to 12% of the price, whether taken by set-off or otherwise. The Note is still an unsigned form exhibit dated for Closing, and Closing is targeted for December 4, 2026. Nothing in the folder shows Muvux has accepted this term, so it remains actionable and can be fixed before Closing."
+          }
+        ]
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        }
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.083,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C4"
+              ],
+              "steps": 12,
+              "files_opened": [
+                "asset_purchase_agreement_muvux_pisen.md",
+                "email_thread_transition_inventory_count.md",
+                "form_of_seller_note_exhibit_b.md",
+                "letter_of_intent_pisen_spine_assets.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 12,
+              "files_opened": [
+                "asset_purchase_agreement_muvux_pisen.md",
+                "email_thread_transition_inventory_count.md",
+                "form_of_seller_note_exhibit_b.md",
+                "letter_of_intent_pisen_spine_assets.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C4",
+                "C5"
+              ],
+              "steps": 12,
+              "files_opened": [
+                "asset_purchase_agreement_muvux_pisen.md",
+                "email_thread_transition_inventory_count.md",
+                "form_of_seller_note_exhibit_b.md",
+                "letter_of_intent_pisen_spine_assets.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
