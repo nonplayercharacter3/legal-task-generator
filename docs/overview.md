@@ -79,7 +79,7 @@ The shape of the machine is settled; these choices hold unless Sirui She reopens
 | Compute | Nautilus A100 GPUs, running Qwen with vLLM; the university's hosted Qwen as the faster option | Free for research; we control it |
 | Format | Plain files (Markdown, JSON) at every stage; standard-library Python | Anyone can inspect any stage by hand |
 | Final form | A batch tool we run to build a dataset, not a prompt-driven agent or a tool other agents call | Pengtao, November 5 |
-| Workflow | Plan in the Claude app, code in the Claude Code terminal, tasks handed over through `inbox.md`; one worktree per task, main checkout always clean | Keeps work traceable and the repo tidy |
+| Workflow | Plan in the Claude app, code in the Claude Code terminal, tasks handed over through `inbox.md`; one worktree per task, main checkout always clean; the planning session reviews and merges PRs itself (Sirui She, November 9) | Keeps work traceable and the repo tidy |
 | Lab mate | A lab mate contributes on his own machine and Max plan, working from GitHub issues (rules in `CLAUDE.md`) | Keeps his work separate from the laptop's inbox and board |
 
 ## Still open

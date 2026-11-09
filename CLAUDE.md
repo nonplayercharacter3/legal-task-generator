@@ -219,7 +219,8 @@ task, `git status` must be empty in the main checkout and `git worktree list` mu
 (`.github/workflows/tests.yml`) runs `python -m pytest -q` and the fake demo check on every push to `main` and every
 pull request.
 - **Code changes** (anything under `ltg/`, `tests/`, `configs/`, `scripts/`, `deploy/`, `.github/`, or
-  `pyproject.toml`): worktree, branch, PR into `main`, do not merge. The planning session reviews and merges.
+  `pyproject.toml`): worktree, branch, PR into `main`, do not merge. The planning session reviews and merges, without
+  waiting for Sirui She's word (her decision, 2026-11-09): it reads the diff, runs the tests and merges once CI is green.
 - **Round results** (the run-output rule's files, below), `docs/`, `README.md` text and `CLAUDE.md` "Now": commit
   directly to `main` from the main checkout (`git pull --ff-only` first, commit, `git push`), then check CI on that
   commit with `gh run list --limit 1`. A pilot round still runs in a worktree, but its results are committed to
@@ -242,7 +243,7 @@ the stage or plan updates "Now" in the same change.
 **Lab mate.** He works on his own machine with his own Max plan and his own NRP key. His tasks come only from GitHub
 issues labelled `lab-mate`; `inbox.md` and `HANDOFF.md` exist only on Sirui She's laptop and are not for him. His seeds
 are 500 to 999; his run folders are `runs/lm_s<seed>_nrp`. Code and round results both reach `main` only through his
-PRs, which he never merges himself; the planning session reviews and merges on Sirui She's word. A round's PR follows
+PRs, which he never merges himself; the planning session reviews and merges them. A round's PR follows
 the run-output rule and the commit message rule above. He reports each round in a comment on its issue and writes up
 every rejection's cause there; he fixes a defect only when an issue asks him to.
 
