@@ -244,7 +244,6 @@ def test_negative_criterion_names_one_plain_claim_and_a_gold_that_rejects_it_pas
     assert "rejecting it or warning against it is not making it" in prompts.JUDGE
     fake = FakeModel()
     claim = "SPA Section 11.5 restricts assignment of the TSA"
-    fake._claims["The response claims that SPA Section 11.5 restricts assignment of the TSA."] = claim
     rubric = Rubric([Criterion("N1", f"The response claims that {claim}.", "negative", "I1")])
     rejects = "SPA Section 11.5 covers only the SPA. It would be wrong to say that SPA Section 11.5 restricts assignment of the TSA."
     asserts = "Good news: SPA Section 11.5 restricts assignment of the TSA, so no change is needed."

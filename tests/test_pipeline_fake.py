@@ -459,3 +459,36 @@ def test_run_log_has_a_heartbeat_per_stage_and_solver_attempt(tmp_path, capsys):
     assert lines[:3] == ["ledger", "documents", "consistency"]
     assert {"rubric_tests", "solver_check solver probe without documents", "solver_check solver attempt 3 of 3"} <= set(lines)
     assert lines[-1] in ("accepted", "rejected at solver_check")
+
+
+GENERATION_ROLES = ("ledger_writer", "drafter", "instruction_writer", "rubric_writer", "answer_writer")
+
+
+def test_resume_reuses_the_generation_of_a_matter_that_errored_in_solver_check(tmp_path, read_json):
+    # Seed 28 (2026-11-09): a solver call on NRP timed out, and the resume redid the matter's whole Opus generation.
+    class SolverDown(FakeModel):
+        def _solver(self, p):
+            raise RuntimeError("NRP silent")
+
+    first = Pipeline(_cfg(tmp_path / "a"), client=SolverDown(seed=7)).run()
+    errored = {m["matter_id"] for m in first["matters"] if m["failed_gate"] == "error"}
+    assert errored and all("NRP silent" in m["reason"] for m in first["matters"] if m["matter_id"] in errored)
+    for m in errored:
+        assert read_json(tmp_path / "a" / "rejected" / m / "stages_done.json")["stages"] == ["ledger", "documents", "instruction", "rubric", "answers"]
+    fake = RecordingFake(seed=7)
+    rep = Pipeline(_cfg(tmp_path / "a"), client=fake).run(resume=True)
+    regenerated = {p.get("spec", p.get("ledger", {})).get("matter_id") for r in GENERATION_ROLES for p in fake.payloads.get(r, [])}
+    assert not regenerated & errored and fake.payloads["solver"] and rep["errors"] == 0
+    assert rep["matters"] == Pipeline(_cfg(tmp_path / "b")).run()["matters"]  # the verdict of a run that never failed
+    assert not (tmp_path / "a" / "accepted" / sorted(errored)[0] / "error.txt").exists()
+
+
+def test_resume_regenerates_a_matter_whose_stage_never_completed(tmp_path):
+    class DraftsDown(FakeModel):
+        def _drafter(self, p):
+            raise RuntimeError("down")
+
+    Pipeline(_cfg(tmp_path), client=DraftsDown(seed=7)).run()
+    fake = RecordingFake(seed=7)
+    Pipeline(_cfg(tmp_path), client=fake).run(resume=True)
+    assert not fake.payloads.get("ledger_writer") and fake.payloads["drafter"]  # ledger reused, documents redone

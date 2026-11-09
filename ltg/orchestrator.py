@@ -9,12 +9,14 @@ Output layout (one folder per candidate matter):
     <out>/tries/<n>/              report.json (if it got that far) and calls.jsonl of the try a --resume followed
 
 Inside a matter folder: spec.json, precedents.json, ledger.json, docs/, instruction.md,
-rubric.json, answers.json, solver/, gates.json.
+rubric.json, answers.json, stages_done.json, solver/, gates.json. stages_done.json names the generation stages
+whose files are complete; a --resume of a matter that ended in an error reuses them and reruns the gates.
 """
 
 from __future__ import annotations
 
 import json
+import os
 import random
 import shutil
 import sys
@@ -29,7 +31,7 @@ from . import gates, stages
 from .config import Config, GatesCfg, build_client
 from .decontam import BloomIndex
 from .models import CallLog, ModelClient
-from .schema import Ledger, MatterSpec, Rubric
+from .schema import Answers, Ledger, MatterSpec, Rubric
 from .sources import load_precedents, select_precedents
 from .splits import assign_split
 
@@ -77,6 +79,10 @@ def beat(matter_id: str, stage: str) -> None:
     print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} {matter_id} {stage}", file=sys.stderr, flush=True)
 
 
+def _read(path: Path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def _first_reason(g: gates.GateResult) -> str:
     d = g.details
     for key in ("reason", "errors", "mismatches", "missing", "hits", "html_comments", "gold_fails", "blank_passes", "flawed_wrongly_passes", "flawed_wrongly_fails", "flagged"):
@@ -104,14 +110,39 @@ class Pipeline:
 
     # ------------------------------------------------------------ one matter
 
-    def run_matter(self, spec: MatterSpec, out: Path) -> MatterResult:
+    def run_matter(self, spec: MatterSpec, out: Path, reuse: bool = False) -> MatterResult:
         work = out / "work" / spec.matter_id
         if work.exists():
             shutil.rmtree(work)
+        made = _reusable(out / "rejected" / spec.matter_id, work) if reuse else {"stages": []}
         results: list[gates.GateResult] = []
         result = MatterResult(matter_id=spec.matter_id, accepted=False)
 
         step = lambda stage: beat(spec.matter_id, stage)
+        if made["stages"]:
+            step("reusing " + ", ".join(made["stages"]))
+
+        def stage(name, make, save, load):
+            """Run one generation stage, or load what a completed run of it saved in an errored try."""
+            if name in made["stages"]:
+                return load()
+            step(name)
+            value = make()
+            save(value)
+            made["stages"].append(name)
+            tmp = work / "stages_done.json.tmp"  # written after the stage's files, and atomically
+            _write(tmp, made)
+            os.replace(tmp, work / "stages_done.json")
+            return value
+
+        def save_docs(docs):
+            for name, content in docs.items():
+                _write(work / "docs" / name, content)
+            made["docs"] = list(docs)  # in drafting order, which the solver's file list follows
+
+        def save_rubric(value):
+            _write(work / "rubric.json", value[0].to_dict())
+            made["rubric_repair"] = value[1]
 
         def check(g: gates.GateResult) -> None:
             results.append(g)
@@ -126,32 +157,26 @@ class Pipeline:
             rng = random.Random(f"{cfg.run.seed}:{spec.matter_id}")
             chosen = select_precedents(self.precedents, spec.agreement_type, cfg.sources.precedents_per_matter, rng)
             _write(work / "precedents.json", [{"id": p.id, "title": p.title} for p in chosen])
-            step("ledger")
-            ledger: Ledger = stages.write_ledger(self.client, spec, chosen, cfg.sources.precedent_chars)
-            _write(work / "ledger.json", ledger.to_dict())
+            ledger: Ledger = stage("ledger", lambda: stages.write_ledger(self.client, spec, chosen, cfg.sources.precedent_chars),
+                                   lambda v: _write(work / "ledger.json", v.to_dict()), lambda: Ledger.from_dict(_read(work / "ledger.json")))
             check(gates.ledger_schema(ledger, spec))
 
             # Stage 2: build the task from the ledger
-            step("documents")
-            docs = stages.draft_documents(self.client, ledger, {p.id: p for p in chosen}, cfg.sources.precedent_chars)
-            for name, content in docs.items():
-                _write(work / "docs" / name, content)
+            docs = stage("documents", lambda: stages.draft_documents(self.client, ledger, {p.id: p for p in chosen}, cfg.sources.precedent_chars),
+                         save_docs, lambda: {n: (work / "docs" / n).read_text(encoding="utf-8") for n in made["docs"]})
             step("consistency")
             check(gates.consistency(self.client, ledger, docs))
             step("issue_check")
             check(gates.issue_check(self.client, ledger, docs, show_terms=cfg.gates.verifier_sees_terms))
 
-            step("instruction")
-            instruction = stages.write_instruction(self.client, spec, ledger)
-            _write(work / "instruction.md", instruction)
+            instruction = stage("instruction", lambda: stages.write_instruction(self.client, spec, ledger),
+                                lambda v: _write(work / "instruction.md", v), lambda: (work / "instruction.md").read_text(encoding="utf-8"))
             check(gates.leak_check(instruction, ledger, docs))
 
-            step("rubric")
-            rubric, repair = stages.write_rubric(self.client, spec, ledger, instruction, cfg.gates.check_bundling)
-            _write(work / "rubric.json", rubric.to_dict())
-            step("answers")
-            answers = stages.write_answers(self.client, ledger, instruction, rubric, docs, omit=rng.choice(ledger.issues).id)
-            _write(work / "answers.json", answers.to_dict())
+            rubric, repair = stage("rubric", lambda: stages.write_rubric(self.client, spec, ledger, instruction, cfg.gates.check_bundling),
+                                   save_rubric, lambda: (Rubric.from_dict(_read(work / "rubric.json")), made["rubric_repair"]))
+            answers = stage("answers", lambda: stages.write_answers(self.client, ledger, instruction, rubric, docs, omit=rng.choice(ledger.issues).id),
+                            lambda v: _write(work / "answers.json", v.to_dict()), lambda: Answers(**_read(work / "answers.json")))
 
             # Stage 3: try to break it. The judge sees exactly the rubric that is exported.
             if not cfg.gates.judge_hints:
@@ -270,7 +295,7 @@ class Pipeline:
         done = {s.matter_id: r for s in specs if resume and (r := self._finished(out, s.matter_id))}
         pool = ThreadPoolExecutor(max_workers=max(1, self.cfg.run.concurrency))  # matters are independent
         try:
-            results = list(pool.map(lambda s: done.get(s.matter_id) or self.run_matter(s, out), specs))
+            results = list(pool.map(lambda s: done.get(s.matter_id) or self.run_matter(s, out, reuse=resume), specs))
         finally:  # on Ctrl-C or a crash, finish the matters in flight but start no queued ones
             pool.shutdown(cancel_futures=True)
         shutil.rmtree(out / "work", ignore_errors=True)
@@ -279,6 +304,23 @@ class Pipeline:
         _write(out / "report.json", report)
         _write(out / "report.md", render_report(report))
         return report
+
+
+def _reusable(prev: Path, work: Path) -> dict:
+    """The generation stages an errored try of this matter completed. Its folder becomes the work folder again,
+    without the old verdict and solver output, so only the gates rerun. Anything else starts from scratch."""
+    try:
+        made = _read(prev / "stages_done.json")
+        if _read(prev / "gates.json")["failed_gate"] != "error":
+            return {"stages": []}
+    except (OSError, ValueError, KeyError):
+        return {"stages": []}
+    work.parent.mkdir(parents=True, exist_ok=True)
+    shutil.move(str(prev), str(work))
+    for f in ("gates.json", "error.txt", "task.json"):
+        (work / f).unlink(missing_ok=True)
+    shutil.rmtree(work / "solver", ignore_errors=True)
+    return made
 
 
 def variety(out: Path, results: list[MatterResult]) -> dict:
