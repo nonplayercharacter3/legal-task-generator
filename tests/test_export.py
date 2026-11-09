@@ -10,6 +10,7 @@ from ltg.orchestrator import Pipeline
 
 def test_export_splits_and_no_answer_key(cfg, tmp_path, capsys):
     report = Pipeline(cfg).run()
+    capsys.readouterr()  # the run's heartbeat lines; the export below must print no warnings
     run = Path(cfg.run.out_dir)
     want = {s: sum(m["split"] == s for m in report["matters"] if m["accepted"]) for s in ("train", "dev", "test")}
     assert sum(want.values()) == report["accepted"] > 0

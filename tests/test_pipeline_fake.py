@@ -450,3 +450,12 @@ def test_calls_log_grows_as_calls_end_and_a_killed_try_keeps_it(tmp_path):
     assert not (tmp_path / "tries" / "1" / "report.json").exists()
     rep = json.loads((tmp_path / "report.json").read_text())
     assert len((tmp_path / "calls.jsonl").read_text().splitlines()) == sum(r["calls"] for r in rep["model_calls"].values())
+
+
+def test_run_log_has_a_heartbeat_per_stage_and_solver_attempt(tmp_path, capsys):
+    # Seed 28 (2026-11-09): nothing in the batch log showed which stage two matters were stuck in for 50 minutes.
+    Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}})).run()
+    lines = [ln.split(" ", 3)[3] for ln in capsys.readouterr().err.splitlines() if " s7-m0001 " in ln]
+    assert lines[:3] == ["ledger", "documents", "consistency"]
+    assert {"rubric_tests", "solver_check solver probe without documents", "solver_check solver attempt 3 of 3"} <= set(lines)
+    assert lines[-1] in ("accepted", "rejected at solver_check")

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, Callable
 
 from . import prompts
 from .decontam import BloomIndex
@@ -289,6 +289,7 @@ def solver_check(
     max_steps: int = 20,
     page_chars: int = 6000,
     roles: tuple[str, ...] = ("solver",),
+    progress: Callable[[str], None] = lambda stage: None,
 ) -> tuple[GateResult, dict[str, list[Solution]]]:
     """Run tool-using solvers that never see the ledger. Returns the gate result and each role's attempts.
 
@@ -301,6 +302,7 @@ def solver_check(
     details: dict[str, Any] = {}
 
     if probe_without_documents:
+        progress(f"solver_check {roles[0]} probe without documents")
         probe = solve(client, instruction, {}, max_steps, page_chars, roles[0])
         probe_grades = judge(client, probe.answer, rubric)
         details["probe_without_documents_passed"] = all(probe_grades.values())
@@ -312,7 +314,8 @@ def solver_check(
     for role in roles:
         model = getattr(client, "model_for", lambda r: "")(role) or role
         runs[model], solutions[role] = [], []
-        for _ in range(attempts):
+        for k in range(1, attempts + 1):
+            progress(f"solver_check {role} attempt {k} of {attempts}")
             sol = solve(client, instruction, docs, max_steps, page_chars, role)
             grades = judge(client, sol.answer, rubric)
             solutions[role].append(sol)
