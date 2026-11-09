@@ -130,7 +130,9 @@ def write_instruction(client: ModelClient, spec: MatterSpec, ledger: Ledger) -> 
         "matter": {
             "client": client_party.name,
             "client_role": client_party.role,
-            "counterparties": [p.name for p in ledger.parties[1:]],
+            # Only the deal's counterparty (P2, by the name-stem rule): every other ledger party was listed as
+            # "involved", including a non-party licensor and the buyer in a planted issue (s16-m0003, s25-m0001).
+            "counterparty": ledger.parties[1].name if len(ledger.parties) > 1 else "",
             "practice_area": spec.practice_area,
             "agreement_type": spec.agreement_type,
             "deliverable": spec.deliverable,

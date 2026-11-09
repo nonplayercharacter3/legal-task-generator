@@ -179,3 +179,29 @@ def test_bundling_ignores_the_wording_every_issue_criterion_may_use():
     # a harm the finding does not name is still flagged (round 12's s12-m0001 C2)
     issue.expected_finding = cases[1][0]
     assert bundling("Identifies the transfer right; explains the risk that an assignee could gain access to audit, process or yield data.")
+
+
+def test_instruction_writer_sees_only_the_client_and_the_counterparty():
+    """s16-m0003 and s25-m0001: given every ledger party as a counterparty, the instruction writer listed a non-party
+    licensor and the buyer in a planted issue among "the other parties involved", pointing at the issue."""
+    import json
+
+    from ltg import prompts
+    from ltg.models import extract_input
+    from ltg.schema import Party
+    from ltg.stages import write_instruction
+
+    ledger, spec = _ledger_and_spec()
+    ledger.parties.append(Party("P3", "Kestrova Agritech, Inc.", "Buyer of 100% of Distributor's equity"))
+    seen = []
+
+    class Recorder:
+        def complete(self, role, system, user):
+            seen.append(extract_input(user))
+            return json.dumps({"instruction": "Please review."})
+
+    write_instruction(Recorder(), spec, ledger)
+    matter = seen[0]["matter"]
+    assert matter["client"] == ledger.parties[0].name and matter["counterparty"] == ledger.parties[1].name
+    assert "Kestrova" not in json.dumps(seen[0])
+    assert "Name no party but the client and\n  the counterparty" in prompts.INSTRUCTION_WRITER

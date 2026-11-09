@@ -153,7 +153,9 @@ You receive a short description of the matter, the client, and the list of files
 Write a realistic, concise request (80 to 200 words) asking for the stated deliverable.
 
 Rules:
-- Say who the client is and, in general terms, what it needs the review for.
+- Say who the client is and, in general terms, what it needs the review for. Name no party but the client and
+  the counterparty: no "other parties involved", no licensor, buyer, guarantor or affiliate. Who else takes part,
+  and how, is for the associate to find in the documents.
 - Ask for the deliverable described; say which files to review.
 - You know each file only by its filename and kind. Never state what a document says, who wrote or sent it, or
   when, or which law governs it, and invent no deal events: a guess the documents contradict misleads the
