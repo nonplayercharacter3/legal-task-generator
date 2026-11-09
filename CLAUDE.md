@@ -129,21 +129,18 @@ leak_check 2, rubric_trace 1, rubric_tests 1; `solver_check` rejects only leaks 
 fault), and 12 of 20 are accepted with labels (pass rates 0.33: 5, 0.67: 5, 1.00: 2).
 
 **Plan.** Each step says what done looks like.
-1. **Sirui She reads round 9 (Qwen):** `runs/pilot9_nrp/accepted/s9-m0002` (glass supply, dev) and `s9-m0003` (dental
-   MSA renewal, train), against the checklist in "How to verify changes". Done: if both hold up, the pilot standard
-   is met with Qwen solving.
-2. **Qwen labels difficulty (superseded 2026-11-04: a label, not a bar; see above).** Pilot rounds use
-   `configs/pilot_nrp_solver.toml` (or `configs/vllm_nautilus_solver.toml` when NRP is down), so Qwen 27B is the
-   default labelling model; add roles to `gates.solver_models` to label with more. Same spec, different solvers:
-   s9-m0003 scored 0.33 with Qwen and 1.0 with Haiku, though the two drafts differ. If tasks must get harder: longer
-   folders, more cross-document issues (known weaknesses 2 and 3).
-3. **Next rounds** on merged `main`, seed 16 or higher, after round 15's two fixes merge, on NRP
-   (`configs/pilot_nrp_solver.toml`; the empty 403s from 2026-11-02 stopped on 2026-11-05 with a fresh key in
-   `~/.zshenv`). The vLLM pod (`configs/vllm_nautilus_solver.toml`, about 3.5 times slower) is the fallback; on
-   2026-11-05 it sat Pending for 85 minutes with every A100 80GB node full.
-4. **Fine-tune on Nautilus: not started.** Serving works (below). Seven accepted tasks is far too few; scale the
-   generator first.
-5. **Tell the second contributor that round 6 already ran on the laptop** (a GitHub issue), so it is not run twice.
+1. **Sirui She reads round 9 and s12-m0003:** `runs/pilot9_nrp/accepted/s9-m0002` (glass supply), `s9-m0003` (dental
+   MSA renewal) and `runs/pilot12_vllm/accepted/s12-m0003` (data center cooling distribution agreement), against the
+   checklist in "How to verify changes". Done: each holds up, or its defect is written down as a class to fix.
+2. **Overnight batches on `main` toward a v1 dataset of about 250 tasks.** `configs/pilot_nrp_solver.toml` (the vLLM
+   pod, `configs/vllm_nautilus_solver.toml`, is the fallback). Sirui She's seeds run from 28 up (`runs/pilot<seed>_nrp`),
+   the lab mate's from 500 (`runs/lm_s<seed>_nrp`, see "Lab mate"). Each batch's results go to `main`, every rejection
+   is read and each false rejection fixed as a defect class. Done: the full export holds about 250 sound tasks.
+3. **LAB "before" score for Qwen.** LAB's tool runs Qwen unchanged; grading needs our own SDK judge, and the laptop
+   needs podman and pandoc (Sirui She decides whether to install them). Done: a scored LAB sample for Qwen, with its
+   size and the judge's call count recorded.
+4. **Training handoff package for the lab's post-training agent** (`aibuildai-inc/aibuildai-llm-posttrain-agent`: task
+   statement, training data, grader). Not started. Done: a task folder the agent accepts, built from the v1 export.
 
 Done steps, for reference:
 - **Merge of `pilot/round6-haiku` and `plan/phase2-unattended` (2026-11-03).** Overlaps resolved by keeping one copy
@@ -241,6 +238,13 @@ only `summary.json`. Never commit `calls.jsonl`, solver traces or logs. A round'
 round's numbers (accepted, pass rates, calls, tokens, errors) and the cause of every rejection. If a round leads to
 code fixes, one commit per defect class, as in "Pilot standard". Pull `main` before starting work; whoever changes
 the stage or plan updates "Now" in the same change.
+
+**Lab mate.** He works on his own machine with his own Max plan and his own NRP key. His tasks come only from GitHub
+issues labelled `lab-mate`; `inbox.md` and `HANDOFF.md` exist only on Sirui She's laptop and are not for him. His seeds
+are 500 to 999; his run folders are `runs/lm_s<seed>_nrp`. Code and round results both reach `main` only through his
+PRs, which he never merges himself; the planning session reviews and merges on Sirui She's word. A round's PR follows
+the run-output rule and the commit message rule above. He reports each round in a comment on its issue and writes up
+every rejection's cause there; he fixes a defect only when an issue asks him to.
 
 **Between sessions on Sirui She's laptop: the handoff board.**
 `/Users/shesirui/Projects/legal-task-generator/HANDOFF.md`. It is gitignored on purpose, so there is exactly one copy:
@@ -433,5 +437,5 @@ only the labels 0 and 1, and one fact lives in one document, which limits cross-
 - Python 3.11+, standard library only at runtime (pytest for dev). Keep it that way unless there's a clear reason.
 - Every file that passes between stages is plain JSON or Markdown on disk, so any stage can be inspected by hand.
 - Writing style for docs, README and messages: direct, no em dashes.
-- **Git:** commits authored by Sirui She only (author name exactly `Sirui She`), with no Claude co-author, "Generated with"
-  or other AI attribution lines in commit messages or PR descriptions.
+- **Git:** commits are authored by the person running the session (Sirui She, or the lab mate under his own name),
+  with no Claude co-author, "Generated with" or other AI attribution lines in commit messages or PR descriptions.
