@@ -81,8 +81,42 @@ def rubric_trace(rubric: Rubric, ledger: Ledger, answers: Answers, bundling: str
     bundled = bundling_errors(rubric, ledger) if bundling != "off" else []
     if bundling == "repair":
         errs += bundled
-    details = {"errors": errs, "n_criteria": len(rubric.criteria), "bundled": bundled, "repair": repair or {"ran": False}}
+    details = {"errors": errs, "n_criteria": len(rubric.criteria), "bundled": bundled, "repair": repair or {"ran": False},
+               "single_issue_facts": single_issue_facts(rubric, ledger), "ranking_facts": ranking_facts(rubric, ledger)}  # recorded only
     return GateResult("rubric_trace", not errs, details)
+
+
+def ranking_facts(rubric: Rubric, ledger: Ledger) -> list[str]:
+    """Fact criteria asking for a ranking of three or more items (two or more "then" or ";" in the fact's value). The
+    memos cite only the pair an issue uses, so the full order of precedence failed every attempt in s23-m0002 C5,
+    s26-m0001 C6 and s20-m0002 C6 (docs/research/unsolved_review_2026-11.md)."""
+    facts = {f.id: f for f in ledger.facts}
+    return [f"criterion {c.id} asks for the whole ranking in fact {c.source} ({facts[c.source].value!r}); ask for the "
+            f"pair an issue uses" for c in rubric.criteria
+            if c.kind == "fact" and c.source in facts and len(re.findall(r"\bthen\b|;", facts[c.source].value.lower())) >= 2]
+
+
+def single_issue_facts(rubric: Rubric, ledger: Ledger) -> list[str]:
+    """Fact criteria whose fact only one issue uses. A memo that misses that issue need not state it, so the flawed
+    answer fails the criterion and rubric_tests rejects a sound task (s16-m0001 C4, s22-m0001 C7). An issue uses a
+    fact when its description, expected finding or `contradicts` names the fact id, states the whole value, or states
+    every number in it."""
+    # ponytail: word and number matching; a coincidental number in another issue hides a warning, nothing rejects
+    def uses(issue, fact) -> bool:
+        text = f"{issue.description} {issue.expected_finding} {issue.contradicts or ''}"
+        nums = _numbers(fact.value)
+        return (re.search(rf"\b{re.escape(fact.id)}\b", text) is not None
+                or _words(_plain(fact.value)) in _words(_plain(text)) or bool(nums and nums <= _numbers(text)))
+
+    facts = {f.id: f for f in ledger.facts}
+    out = []
+    for c in rubric.criteria:
+        if c.kind == "fact" and c.source in facts:
+            users = [i.id for i in ledger.issues if uses(i, facts[c.source])]
+            if len(users) == 1:
+                out.append(f"criterion {c.id} asks for fact {c.source}, which only issue {users[0]} uses: a memo that "
+                           f"misses {users[0]} need not state it")
+    return out
 
 
 def decontamination(texts: dict[str, str], index: BloomIndex | None, threshold: float) -> GateResult:

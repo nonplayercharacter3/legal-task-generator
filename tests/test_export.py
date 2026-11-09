@@ -131,3 +131,46 @@ def test_run_refuses_a_seed_another_run_folder_used(tmp_path, capsys):
     assert main(["run", "--out", b, "--seed", "5", "--matters", "1", "--allow-seed-reuse"]) == 0
     assert main(["run", "--out", str(tmp_path / "c"), "--seed", "6", "--matters", "1"]) == 0
     assert main(["run", "--out", str(tmp_path / "d"), "--matters", "1"]) == 0  # the config's own seed is not checked
+
+
+def test_drop_criteria_relabels_a_task_from_its_stored_grades(cfg, tmp_path):
+    """T25 found criteria too strict in 7 unsolved tasks; dropping them relabels each task from the grades already
+    stored in gates.json, with no model call."""
+    import importlib.util
+
+    import pytest
+
+    spec = importlib.util.spec_from_file_location("drop", Path(__file__).resolve().parent.parent / "scripts" / "drop_criteria.py")
+    drop = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(drop)
+
+    Pipeline(cfg).run()
+    run = Path(cfg.run.out_dir)
+    m = sorted((run / "accepted").iterdir())[0]
+    g = json.loads((m / "gates.json").read_text())  # make it unsolved: C2 failed every attempt, C3 one of them
+    sc = next(x for x in g["gates"] if x["name"] == "solver_check")["details"]
+    model = sc["difficulty"][0]["model"]
+    for r, failed in zip(sc["runs"][model], (["C2"], ["C2", "C3"], ["C2"])):
+        r.update({"passed": False, "failed_criteria": failed})
+    unsolved = [{**sc["difficulty"][0], "passes": 0, "pass_rate": 0.0}]
+    sc.update({"difficulty": unsolved, "pass_rate": 0.0, "unsolved": True})
+    g.update({"difficulty": unsolved, "solver_pass_rate": 0.0, "unsolved": True})
+    (m / "gates.json").write_text(json.dumps(g))
+    task = json.loads((m / "task.json").read_text())
+    task.update({"difficulty": unsolved, "solver_pass_rate": 0.0, "unsolved": True})
+    (m / "task.json").write_text(json.dumps(task))
+    before = (m / "rubric.json").read_text()
+
+    old, new = drop.relabel(m, ["C2"], "test review")
+    assert old[0]["passes"] == 0 and new[0]["passes"] == 2 and new[0]["pass_rate"] == 0.667
+    assert (m / "rubric.original.json").read_text() == before
+    assert "C2" not in {c["id"] for c in json.loads((m / "rubric.json").read_text())["criteria"]}
+    t = json.loads((m / "task.json").read_text())
+    assert "C2" not in {c["id"] for c in t["rubric"]} and t["relabelled"] == {"dropped": ["C2"], "by": "test review"}
+    assert t["difficulty"] == new and t["unsolved"] is False and t["solver_pass_rate"] == 0.667
+    g = json.loads((m / "gates.json").read_text())
+    assert g["unsolved"] is False and next(x for x in g["gates"] if x["name"] == "solver_check")["details"]["runs"][model][1]["failed_criteria"] == ["C2", "C3"]
+    with pytest.raises(SystemExit, match="already dropped"):
+        drop.relabel(m, ["C2"], "test review")
+    assert main(["export", "--runs", str(run), "--out", str(tmp_path / "x"), "--model", model, "--min-pass", "0.6", "--max-pass", "0.7"]) == 0
+    assert any(json.loads(line)["eval"]["matter_id"] == m.name for line in (tmp_path / "x" / f"{t['split']}.jsonl").read_text().splitlines())

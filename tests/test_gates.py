@@ -285,3 +285,74 @@ def test_code_not_the_judge_grades_a_negative_criterion():
     # A bare `pass` on a negative criterion is the round 15 failure mode: it no longer counts, and the reason says so.
     grades, reasons = judge_with_reasons(Judge([{"id": "C1", "pass": True}, {"id": "C8", "pass": True, "reason": why}, {"id": "C9", "pass": False}]), flawed, rubric)
     assert grades == {"C1": True, "C8": False, "C9": False} and "no claim_made" in reasons["C8"]
+
+
+def _fact_ledger():
+    from ltg.schema import Ledger
+
+    return Ledger.from_dict({
+        "matter_id": "m", "summary": "s", "parties": [{"id": "P1", "name": "A", "role": "client"}],
+        "documents": [{"id": "D1", "filename": "a.md", "kind": "main agreement"}],
+        "facts": [
+            # s16-m0001 F6: I1 restates it as "30 days after Seller delivers", so only its number matches
+            {"id": "F6", "key": "Closing Statement dispute period", "value": "30 days after Seller's delivery of the Closing Statement", "doc": "D1", "section": "2.4(b)"},
+            # s22-m0001 F10: I2 quotes the date
+            {"id": "F10", "key": "Q3 2026 Quarterly Service Report delivery date", "value": "October 6, 2026", "doc": "D1", "section": "Annex B-1"},
+            {"id": "F1", "key": "Purchase Price", "value": "$68,000,000", "doc": "D1", "section": "2.1"},
+            {"id": "F2", "key": "Governing law", "value": "State of New York", "doc": "D1", "section": "20.1"},
+        ],
+        "issues": [
+            {"id": "I1", "type": "t", "label": "late dispute notice", "doc": "D1", "section": "2.4(b)", "detect_terms": [],
+             "description": "APA Section 2.4(b) gives Buyer 30 days after Seller delivers the Closing Statement. Price $68,000,000.",
+             "expected_finding": "The Dispute Notice came after the window."},
+            {"id": "I2", "type": "t", "label": "missed termination window", "doc": "D1", "section": "6.2", "detect_terms": [],
+             "description": "The Q3 report was delivered on October 6, 2026; notice is due within fifteen days.",
+             "expected_finding": "The termination right lapses unless exercised; see F1 for the price."},
+        ],
+    })
+
+
+def test_rubric_trace_warns_about_a_fact_only_one_issue_uses():
+    """s16-m0001 C4 and s22-m0001 C7: a fact criterion only the omitted issue's finding would state, so the flawed
+    answer failed it and rubric_tests rejected the task. rubric_trace now records such criteria, without rejecting."""
+    ledger = _fact_ledger()
+    rubric = Rubric([Criterion("C1", "finds I1", "issue", "I1"), Criterion("C2", "finds I2", "issue", "I2"),
+                     Criterion("C4", "states the 30-day period", "fact", "F6"), Criterion("C7", "states October 6, 2026", "fact", "F10"),
+                     Criterion("C8", "states the price", "fact", "F1"), Criterion("C9", "states New York law", "fact", "F2")])
+    g = gates.rubric_trace(rubric, ledger, Answers(gold="g", flawed="f", flawed_omits=["I2"]))
+    assert g.passed
+    flagged = g.details["single_issue_facts"]
+    assert [w.split()[1] for w in flagged] == ["C4", "C7"]  # F1 is used by both issues (value, id), F2 by none
+    assert "only issue I1" in flagged[0] and "only issue I2" in flagged[1]
+    assert "Never a fact only one issue's finding would state" in prompts.RUBRIC_WRITER
+    assert "Never two facts in one criterion" in prompts.RUBRIC_WRITER
+
+
+def test_rubric_writer_carries_the_unsolved_review_rules_and_trace_warns_on_a_ranking():
+    """docs/research/unsolved_review_2026-11.md: 5 of 13 unsolved tasks failed only on a criterion that was too strict.
+    (a) a whole order of precedence as one fact (s23-m0002 C5, s26-m0001 C6, s20-m0002 C6); (b) background no issue
+    turns on (s25-m0001 C7 governing law, s23-m0001 C5 a cap's measure); (c) a second, ledger-hedged point in an issue
+    criterion (s22-m0003 C2); (d) a route instead of the conclusion (s24-m0001 C1). Only (a) can be checked in code."""
+    rw = prompts.RUBRIC_WRITER
+    assert "never a whole ranking or list when one pair of it" in rw  # (a)
+    assert "never background no issue turns on" in rw and "governing law" in rw  # (b)
+    assert "The finding is ONE finding" in rw and "the ledger\n  itself hedges" in rw  # (c)
+    assert "Name the conclusion, never the route" in rw and "even when the expected finding gives that\n  route" in rw  # (d)
+
+    from ltg.schema import Ledger
+
+    def ledger(value):
+        return Ledger.from_dict({"matter_id": "m", "summary": "s", "parties": [{"id": "P1", "name": "A", "role": "client"}],
+                                 "documents": [{"id": "D1", "filename": "a.md", "kind": "main agreement"}],
+                                 "facts": [{"id": "F2", "key": "Order of precedence", "value": value, "doc": "D1", "section": "1.3"}],
+                                 "issues": [{"id": "I1", "type": "t", "label": "l", "description": "d", "doc": "D1", "section": "1",
+                                             "detect_terms": [], "expected_finding": "e"}]})
+
+    rubric = Rubric([Criterion("C1", "finds I1", "issue", "I1"), Criterion("C5", "states the order of precedence", "fact", "F2")])
+    answers = Answers(gold="g", flawed="f", flawed_omits=["I1"])
+    for value in ("MSA, then Quality Agreement, then Service Level Schedule, then Order Forms",  # s23-m0002 F2
+                  "Amendments; then Service Level Schedule for service levels and service credits; then MSA body"):  # s20-m0002
+        g = gates.rubric_trace(rubric, ledger(value), answers)
+        assert g.passed and len(g.details["ranking_facts"]) == 1 and "C5" in g.details["ranking_facts"][0]
+    pair = gates.rubric_trace(rubric, ledger("The Order Form prevails over the MSA"), answers)
+    assert pair.details["ranking_facts"] == []
