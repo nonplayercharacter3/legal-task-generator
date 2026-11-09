@@ -4,7 +4,7 @@ Context for any Claude Code session working in this repo (for people, `docs/stag
 English). A person should read `docs/overview.md` first, the high-level picture. Then read this file, then README.md,
 then "Working with other people and sessions" below before you change anything.
 
-## Now (updated 2026-11-07)
+## Now (updated 2026-11-08)
 
 **Goal.** Generate long-horizon contract-review tasks (instruction, matter folder, all-pass rubric) that the lab can
 train open models on. The tasks must be sound by construction. The generator is model-neutral: every sound task is
@@ -109,6 +109,20 @@ a whole order of precedence the memos cite only in part), so a person should rea
 and ~1.28M; 5 h 42 min wall time, about 4 kept tasks per hour, including one 30-minute pause after seed 27's first try
 errored on all three matters (the error text was not kept); 3 bundling flags in warn mode. Full export over every real
 run: 46 tasks (train 38, dev 5, test 3); without `--include-unsolved`, 33.
+
+**Unsolved review and fixes (2026-11-08).** `docs/research/unsolved_review_2026-11.md` (an Opus referee, 16 calls):
+of the 13 unsolved tasks of rounds 20 to 27, 8 are hard and 5 failed only on a too-strict criterion; none is broken.
+`scripts/drop_criteria.py` dropped the 7 too-strict criteria with no model calls (329de68). Rounds 20 to 27 now label
+0.00: 8, 0.33: 7, 0.67: 2, 1.00: 6. Two of the 7 were issue criteria (s22-m0003 C2, s24-m0001 C1), so each of those
+tasks now has one issue ungraded. Full export: 46 tasks, 38 without unsolved. Defect classes, fixed on
+`fix/rounds16-27` (PR #19, one commit each):
+- Fact criteria that only one issue's finding states, or two facts in one: the rubric writer picks one fact any
+  correct memo states; `rubric_trace` records `single_issue_facts` (warn only, 91 of 195 saved fact criteria).
+- Too-strict criteria (T25): no whole ranking for one pair (`ranking_facts`, warn only), no background fact, one
+  finding per issue criterion and nothing the ledger hedges, the conclusion and never a route.
+- One industry 3 times in a night: the sampler puts industries used by sibling run folders last (`industries_before.json`).
+- A resume overwrote the failed try's report and calls: it now copies them to `tries/<n>/` first.
+- Instruction writer listed every ledger party as involved: it now sees only the client and the counterparty.
 
 Code check (2026-11-04, `feat/difficulty-labels`): `configs/fake_demo.toml` rejects consistency 3, issue_check 1,
 leak_check 2, rubric_trace 1, rubric_tests 1; `solver_check` rejects only leaks now, so 0 in the demo (it has no leak
