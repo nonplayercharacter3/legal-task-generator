@@ -31,6 +31,7 @@ class BackendCfg:
     max_tokens: int = 8000
     timeout: float = 600
     max_retries: int = 3  # HTTP backends: retries after rate limits, server errors and dropped connections
+    timeout_retries: int = 1  # HTTP backends: of those, retries after a read timeout (each costs a whole `timeout`)
     extra_body: dict[str, Any] = field(default_factory=dict)  # openai_compat: added to each request, e.g. reasoning_effort
 
 
@@ -125,7 +126,7 @@ def load_config(path: str | None = None, overrides: dict[str, dict[str, Any]] | 
     return cfg
 
 
-ROLE_BACKEND_KEYS = {"kind", "base_url", "api_key_env", "model", "temperature", "max_tokens", "timeout", "max_retries", "extra_body"}
+ROLE_BACKEND_KEYS = {"kind", "base_url", "api_key_env", "model", "temperature", "max_tokens", "timeout", "max_retries", "timeout_retries", "extra_body"}
 
 
 def build_client(cfg: Config, log: CallLog) -> ModelClient:
@@ -160,6 +161,7 @@ def _one_client(cfg: Config, b: BackendCfg, log: CallLog) -> ModelClient:
             max_tokens=b.max_tokens,
             timeout=b.timeout,
             max_retries=b.max_retries,
+            timeout_retries=b.timeout_retries,
             extra_body=b.extra_body,
             log=log,
         )

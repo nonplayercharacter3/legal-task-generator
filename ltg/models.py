@@ -95,6 +95,7 @@ class OpenAICompatClient:
         max_tokens: int = 8000,
         timeout: float = 600,
         max_retries: int = 3,
+        timeout_retries: int = 1,
         extra_body: dict[str, Any] | None = None,
         log: CallLog | None = None,
     ) -> None:
@@ -106,6 +107,7 @@ class OpenAICompatClient:
         self.max_tokens = max_tokens
         self.timeout = timeout
         self.max_retries = max_retries
+        self.timeout_retries = timeout_retries  # a read timeout is retried at most this often, within max_retries
         self.extra_body = extra_body or {}  # server-specific fields, e.g. reasoning_effort on NRP
         self.log = log if log is not None else CallLog()
 
@@ -130,7 +132,7 @@ class OpenAICompatClient:
         if self.api_key:
             headers["Authorization"] = f"Bearer {self.api_key}"
 
-        last_err = ""
+        last_err, timeouts = "", 0
         for attempt in range(self.max_retries + 1):
             t0 = time.time()
             try:
@@ -161,6 +163,11 @@ class OpenAICompatClient:
                 # OSError covers timeouts, refused and dropped connections (ConnectionResetError, RemoteDisconnected)
                 last_err = f"{type(e).__name__}: {e}"
                 retryable, wait = not isinstance(e, KeyError), None
+                # A server that went silent until the timeout (round 28: a qwen3-small memo on NRP) mostly stays
+                # silent, and each retry costs a whole `timeout`; rate limits, 5xx and dropped connections do not.
+                if isinstance(e, TimeoutError) or isinstance(getattr(e, "reason", None), TimeoutError):
+                    timeouts += 1
+                    retryable = timeouts <= self.timeout_retries
             self.log.add(CallRecord(role=role, model=model, seconds=round(time.time() - t0, 2), ok=False, error=last_err))
             if not retryable or attempt == self.max_retries:
                 break

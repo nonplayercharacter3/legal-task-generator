@@ -207,6 +207,10 @@ class Pipeline:
         s = json.loads(json.dumps(asdict(self.cfg)))
         for k in ("n_matters", "concurrency", "out_dir"):
             s["run"].pop(k)
+        # Keys added after runs began, left out at their default so those runs still resume (pilot28_nrp and later).
+        for k, default in (("timeout_retries", 1),):
+            if s["backend"].get(k) == default:
+                s["backend"].pop(k)
         return s
 
     def _finished(self, out: Path, matter_id: str) -> MatterResult | None:
