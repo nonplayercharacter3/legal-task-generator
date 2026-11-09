@@ -1,6 +1,6 @@
 # Legal Task Generator Overview
 
-High-level picture for people, kept current as the project moves (updated 2026-11-05). Working detail for Claude
+High-level picture for people, kept current as the project moves (updated 2026-11-08). Working detail for Claude
 Code sessions is in `CLAUDE.md` ("Now"); the plain-English history of rounds is in `docs/stage_and_plan.md`.
 
 ## What we're building
@@ -23,7 +23,7 @@ How the parts fit:
 The machine (working today)
   Plan:   Opus invents a matter and writes the answer key first
     -> Build:  Opus drafts the documents, instruction and checklist
-    -> Check:  8 checks; Qwen tries 3 times, kept if it passes 1 or 2
+    -> Check:  8 checks; Qwen tries 3 times, its pass rate is stored as a difficulty label
 
 Training and testing (ahead)
   Export:     kept assignments become training files (built)
@@ -33,33 +33,35 @@ Training and testing (ahead)
 
 ## The steps
 
-Eight steps take us from an empty repo to a trained model; the first four are built, the last four are not started.
+Eight steps take us from an empty repo to a trained model; the first four are done, step 6 is under way, and steps 5, 7
+and 8 are not done yet.
 
 1. **Build the machine with a fake model.** Every stage and check runs offline, so the plumbing can be tested for
    free. *Done (October).*
 2. **Run it on real models and fix what breaks.** Small test rounds of 3 assignments each; every mistake found becomes
    a fix before the next round. *Done for phase 1 (October 18), and continuing.*
 3. **Label difficulty instead of filtering on it.** Test models try each assignment 3 times and their pass rates are
-   recorded on the assignment; only a pass without the documents (a leak) still rejects it. *Decided November 4; queued.*
+   recorded on the assignment; only a pass without the documents (a leak) still rejects it. *Done (built November 4,
+   past tasks relabelled November 8).*
 4. **Package assignments as training files.** A standard chat-style format with the checklist attached for grading.
-   *Merged November 4.*
+   *Done (merged November 4).*
 5. **Measure Qwen on LAB before training.** The "before" score, so we can show improvement. *Feasibility checked November 4: LAB's tool can run Qwen with no code changes;
    grading needs a small add-on for our own judge, plus a few installs on the laptop.*
-6. **Scale up.** Move from a handful of assignments to hundreds. *Not started.*
+6. **Scale up.** Move from a handful of assignments to hundreds. *Under way: 46 sound assignments so far, about 4 kept
+   per hour in overnight batches.*
 7. **Fine-tune Qwen** on the assignments, most likely by handing them to the lab's own post-training agent, which picks
    the method, writes the training code and runs it on a GPU. *Not started.*
 8. **Measure Qwen on LAB again** and compare with step 5. *Not started.*
 
 ## Where we are
 
-We are between steps 3 and 5: the machine works end to end on real models, and 7 assignments have passed every check,
-all screened against LAB's text.
+We are in step 6: the machine works end to end on real models and runs on its own in overnight batches. 46
+assignments have passed every check so far, all screened against LAB's text.
 
-- **Blocked:** since November 2 the account has lost access to the lab's Nautilus space and to the university's hosted
-  Qwen, so no Qwen runs can happen. Pengtao has been asked to restore access.
+- **Running:** the university's hosted Qwen works again since November 5; the Qwen pod on Nautilus is the fallback.
 - **Not blocked:** preparing the LAB run (step 5).
-- **Waiting on a person:** a read-through of the two newest assignments, and someone with legal training to review the
-  list of planted problems.
+- **Waiting on a person:** a read-through of the round 9 assignments and s12-m0003, and someone with legal training to
+  review the list of planted problems.
 
 ## Decided
 
@@ -78,6 +80,7 @@ The shape of the machine is settled; these choices hold unless Sirui She reopens
 | Format | Plain files (Markdown, JSON) at every stage; standard-library Python | Anyone can inspect any stage by hand |
 | Final form | A batch tool we run to build a dataset, not a prompt-driven agent or a tool other agents call | Pengtao, November 5 |
 | Workflow | Plan in the Claude app, code in the Claude Code terminal, tasks handed over through `inbox.md`; one worktree per task, main checkout always clean | Keeps work traceable and the repo tidy |
+| Lab mate | A lab mate contributes on his own machine and Max plan, working from GitHub issues (rules in `CLAUDE.md`) | Keeps his work separate from the laptop's inbox and board |
 
 ## Still open
 
@@ -93,3 +96,4 @@ Most open questions are about training, and most wait on Pengtao.
 | Who checks the legal substance? | A lawyer or law student reviews the problem list and grades a few answers | Sirui She to find someone |
 | Real contracts as drafting examples? | Pull public agreements from SEC filings (code exists, parked) or keep invented ones | Sirui She |
 | Expand beyond contract review? | Other practice areas later | Later, once scale works |
+| When is v1 done? | Proposed: the generator is trustworthy and runs on its own, a v1 dataset of a few hundred tasks with a real test split is handed to the lab's post-training agent; the project is done when Qwen's LAB score rises | Sirui She |
