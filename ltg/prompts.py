@@ -175,9 +175,11 @@ You receive the facts ledger, the task instruction and the deliverable. Write cr
   right conclusion by any sound route must pass. Write "explains why this matters to the client" and "recommends a
   fix", not which harm or which fix. Code flags an issue criterion whose harm or remedy clause names things the
   expected finding does not, and sends the rubric back to you once with those clauses under `problems`.
-- kind "fact": 1 to 3 criteria for facts a correct answer must state (source = an id from the ledger's `facts`,
-  never an issue id). A fact criterion asks only that the response state the fact; it must be passable by a response
-  that misses every planted issue.
+- kind "fact": 1 to 3 criteria, each asking only that the response state ONE ledger fact (source = an id from the
+  ledger's `facts`, never an issue id). Pick facts any correct memo states whether or not it finds any issue: the
+  deal's key terms that several issues rest on. Never a fact only one issue's finding would state (the date that
+  issue's deadline runs from, a figure only that issue uses): the flawed answer omits an issue and must still pass
+  every fact criterion. Never two facts in one criterion. Code warns when only one issue uses a criterion's fact.
 - kind "format": 1 to 2 criteria about the deliverable's form (source = null).
 - kind "negative": 1 to 2 criteria a response fails by reaching a specific wrong conclusion that the ledger
   refutes (for example calling a late notice timely; source = the fact or issue id that refutes it), or by
