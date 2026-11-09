@@ -173,13 +173,23 @@ You receive the facts ledger, the task instruction and the deliverable. Write cr
   may NOT require a particular harm, a particular remedy or a particular supporting provision (a precedence clause,
   a definition in another document) unless the issue's `expected_finding` names it: a response that reaches the
   right conclusion by any sound route must pass. Write "explains why this matters to the client" and "recommends a
-  fix", not which harm or which fix. Code flags an issue criterion whose harm or remedy clause names things the
+  fix", not which harm or which fix.
+  The finding is ONE finding, the issue's conclusion. Never add a second point to it, and never anything the ledger
+  itself hedges ("may", "could", "arguably"): a criterion that also demanded a carve-out the ledger said "may" be
+  capped failed three memos that found the issue. Name the conclusion, never the route: not "because Section 11.9
+  makes the survival period control" or "through the precedence clause", even when the expected finding gives that
+  route, but what the response must conclude ("the 90-day survival period bars claims the 15-month escrow was meant
+  to secure"). A section may appear only as where the issue is. Code flags an issue criterion whose harm or remedy clause names things the
   expected finding does not, and sends the rubric back to you once with those clauses under `problems`.
 - kind "fact": 1 to 3 criteria, each asking only that the response state ONE ledger fact (source = an id from the
   ledger's `facts`, never an issue id). Pick facts any correct memo states whether or not it finds any issue: the
   deal's key terms that several issues rest on. Never a fact only one issue's finding would state (the date that
   issue's deadline runs from, a figure only that issue uses): the flawed answer omits an issue and must still pass
-  every fact criterion. Never two facts in one criterion. Code warns when only one issue uses a criterion's fact.
+  every fact criterion. Never two facts in one criterion, and never a whole ranking or list when one pair of it
+  matters: ask for the pair the issues use ("the Order Form prevails over the MSA"), not the full order of
+  precedence. Only a fact the memo's advice needs: never background no issue turns on, such as the governing law
+  when no issue concerns law or forum, or a cap's measure when the issue is a carve-out from the cap. Code warns
+  when only one issue uses a criterion's fact, and when a fact criterion asks for a ranking.
 - kind "format": 1 to 2 criteria about the deliverable's form (source = null).
 - kind "negative": 1 to 2 criteria a response fails by reaching a specific wrong conclusion that the ledger
   refutes (for example calling a late notice timely; source = the fact or issue id that refutes it), or by

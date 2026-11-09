@@ -82,8 +82,18 @@ def rubric_trace(rubric: Rubric, ledger: Ledger, answers: Answers, bundling: str
     if bundling == "repair":
         errs += bundled
     details = {"errors": errs, "n_criteria": len(rubric.criteria), "bundled": bundled, "repair": repair or {"ran": False},
-               "single_issue_facts": single_issue_facts(rubric, ledger)}  # recorded only, never rejects
+               "single_issue_facts": single_issue_facts(rubric, ledger), "ranking_facts": ranking_facts(rubric, ledger)}  # recorded only
     return GateResult("rubric_trace", not errs, details)
+
+
+def ranking_facts(rubric: Rubric, ledger: Ledger) -> list[str]:
+    """Fact criteria asking for a ranking of three or more items (two or more "then" or ";" in the fact's value). The
+    memos cite only the pair an issue uses, so the full order of precedence failed every attempt in s23-m0002 C5,
+    s26-m0001 C6 and s20-m0002 C6 (docs/research/unsolved_review_2026-11.md)."""
+    facts = {f.id: f for f in ledger.facts}
+    return [f"criterion {c.id} asks for the whole ranking in fact {c.source} ({facts[c.source].value!r}); ask for the "
+            f"pair an issue uses" for c in rubric.criteria
+            if c.kind == "fact" and c.source in facts and len(re.findall(r"\bthen\b|;", facts[c.source].value.lower())) >= 2]
 
 
 def single_issue_facts(rubric: Rubric, ledger: Ledger) -> list[str]:
