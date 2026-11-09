@@ -54,15 +54,6 @@
       ]
     },
     {
-      "id": "C5",
-      "text": "The response states that the Distribution Agreement Section 12.1 liability cap is the amounts paid or payable under the Agreement in the 12 months before the claim.",
-      "kind": "fact",
-      "hints": [
-        "12 months",
-        "paid or payable"
-      ]
-    },
-    {
       "id": "C6",
       "text": "The response states that Stepisk's notice letter is dated October 19, 2026.",
       "kind": "fact",
@@ -104,14 +95,20 @@
       "hints": []
     }
   ],
-  "solver_pass_rate": 0.0,
-  "unsolved": true,
+  "solver_pass_rate": 0.667,
+  "unsolved": false,
   "difficulty": [
     {
       "model": "qwen3-small",
       "attempts": 3,
-      "passes": 0,
-      "pass_rate": 0.0
+      "passes": 2,
+      "pass_rate": 0.667
     }
-  ]
+  ],
+  "relabelled": {
+    "dropped": [
+      "C5"
+    ],
+    "by": "T25 review 2026-11"
+  }
 }
