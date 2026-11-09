@@ -430,3 +430,23 @@ def test_a_new_run_avoids_industries_earlier_runs_beside_it_used(tmp_path):
     Pipeline(_cfg(tmp_path / "r3")).run()  # a later run changes the history beside r2 ...
     Pipeline(cfg2).run(resume=True)  # ... but a resume keeps the history r2 saved, so it samples the same specs
     assert (tmp_path / "r2" / "industries_before.json").read_text() == saved
+
+
+def test_calls_log_grows_as_calls_end_and_a_killed_try_keeps_it(tmp_path):
+    # Seed 28 (2026-11-09): the run was killed after 110 minutes and its calls.jsonl, written only at the end, was lost.
+    class CrashesOnFourth(FakeModel):
+        def _ledger_writer(self, p):
+            if p["spec"]["matter_id"].endswith("0004"):
+                raise Crash()
+            return super()._ledger_writer(p)
+
+    killed = CrashesOnFourth(seed=7)
+    with pytest.raises(Crash):
+        Pipeline(_cfg(tmp_path), client=killed).run()
+    lines = (tmp_path / "calls.jsonl").read_text().splitlines()
+    assert len(lines) == len(killed.log.records) > 0 and not (tmp_path / "report.json").exists()
+    Pipeline(_cfg(tmp_path)).run(resume=True)
+    assert (tmp_path / "tries" / "1" / "calls.jsonl").read_text().splitlines() == lines
+    assert not (tmp_path / "tries" / "1" / "report.json").exists()
+    rep = json.loads((tmp_path / "report.json").read_text())
+    assert len((tmp_path / "calls.jsonl").read_text().splitlines()) == sum(r["calls"] for r in rep["model_calls"].values())

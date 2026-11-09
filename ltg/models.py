@@ -19,6 +19,7 @@ import json
 import os
 import re
 import tempfile
+import threading
 import time
 import urllib.error
 import urllib.request
@@ -47,9 +48,21 @@ class CallRecord:
 @dataclass
 class CallLog:
     records: list[CallRecord] = field(default_factory=list)
+    path: str | None = None  # set by stream_to: each record is also appended there as its call ends
+    _lock: threading.Lock = field(default_factory=threading.Lock, repr=False, compare=False)
 
     def add(self, rec: CallRecord) -> None:
-        self.records.append(rec)
+        with self._lock:  # matters run in threads and share one log
+            self.records.append(rec)
+            if self.path:
+                with open(self.path, "a", encoding="utf-8") as f:
+                    f.write(json.dumps(asdict(rec)) + "\n")
+
+    def stream_to(self, path: str) -> None:
+        """Start `path` empty and append every later call to it, so a killed run keeps its log."""
+        with self._lock:
+            open(path, "w", encoding="utf-8").close()
+            self.path = path
 
     def by_role(self) -> dict[str, dict[str, int]]:
         out: dict[str, dict[str, int]] = {}
@@ -60,11 +73,6 @@ class CallLog:
             s["output_tokens"] += r.output_tokens or 0
             s["errors"] += 0 if r.ok else 1
         return out
-
-    def dump(self, path: str) -> None:
-        with open(path, "w", encoding="utf-8") as f:
-            for r in self.records:
-                f.write(json.dumps(asdict(r)) + "\n")
 
 
 class ModelError(RuntimeError):
