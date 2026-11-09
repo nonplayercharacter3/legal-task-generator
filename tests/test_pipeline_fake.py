@@ -302,6 +302,13 @@ def test_resume_retries_matters_that_errored(tmp_path):
     assert Pipeline(_cfg(tmp_path), client=Down(seed=7)).run()["errors"] > 0
     rep = Pipeline(_cfg(tmp_path)).run(resume=True)
     assert rep["errors"] == 0 and rep["resumed"] < 6  # matters rejected before the judge was needed are kept
+    # Seed 27 (2026-11-07): the resume overwrote the failed try's report and calls, so its errors were lost.
+    first = tmp_path / "tries" / "1"
+    before = json.loads((first / "report.json").read_text())
+    assert before["errors"] > 0 and any("endpoint down" in (m["reason"] or "") for m in before["matters"])
+    assert (first / "calls.jsonl").exists()
+    Pipeline(_cfg(tmp_path)).run(resume=True)
+    assert json.loads((tmp_path / "tries" / "2" / "report.json").read_text())["errors"] == 0
 
 
 def test_resume_refuses_changed_settings(tmp_path):

@@ -6,6 +6,7 @@ Output layout (one folder per candidate matter):
     <out>/rejected/<matter_id>/   everything else, kept for debugging
     <out>/report.json, report.md  pass counts per gate, model calls per role
     <out>/calls.jsonl             one line per model call
+    <out>/tries/<n>/              report.json and calls.jsonl of the try a --resume followed
 
 Inside a matter folder: spec.json, precedents.json, ledger.json, docs/, instruction.md,
 rubric.json, answers.json, solver/, gates.json.
@@ -226,6 +227,12 @@ class Pipeline:
             raise ValueError(f"cannot resume {out}: settings changed since it was started (see {settings_file})")
         if resume and not settings_file.exists() and any((out / f).is_dir() for f in ("accepted", "rejected")):
             raise ValueError(f"cannot resume {out}: it has no settings.json, so its settings are unknown")
+        if resume and (out / "report.json").exists():  # keep the try this resume follows, errors included
+            tries = out / "tries" / str(len(list((out / "tries").glob("*"))) + 1)
+            tries.mkdir(parents=True)
+            for f in ("report.json", "calls.jsonl"):
+                if (out / f).exists():
+                    shutil.copy2(out / f, tries / f)
         _write(settings_file, self._settings())
         history = out / "industries_before.json"  # kept, so a --resume samples the same specs
         if not (resume and history.exists()):
