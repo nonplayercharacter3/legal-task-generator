@@ -404,3 +404,22 @@ def test_rubric_tests_keeps_the_judges_reason_for_a_gold_failure(tmp_path, read_
     assert g["name"] == "rubric_tests" and d["gold_fails"]
     assert set(d["judge_reasons"]["gold"]) == set(d["gold_fails"]) and all(d["judge_reasons"]["gold"].values())
     assert d["judge_reasons"]["flawed"] == {}
+
+
+def test_a_new_run_avoids_industries_earlier_runs_beside_it_used(tmp_path):
+    """Rounds 20 to 27: elevator maintenance came up 3 times in one night, because each run reshuffled all 30
+    industries on its own. A run now puts the industries its sibling run folders (same backend kind) used last."""
+    from ltg.orchestrator import industries_used_beside
+
+    first = Pipeline(_cfg(tmp_path / "r1")).run()
+    used = set(first["variety"]["industries"])
+    (tmp_path / "other").mkdir()  # another backend's run is ignored
+    (tmp_path / "other" / "settings.json").write_text(json.dumps({"backend": {"kind": "claude_sdk"}}))
+    assert industries_used_beside(tmp_path / "r2", "fake") == {i: 1 for i in used}
+    cfg2 = load_config(None, {"run": {"out_dir": str(tmp_path / "r2"), "n_matters": 6, "seed": 7}})
+    second = Pipeline(cfg2).run()
+    assert not used & set(second["variety"]["industries"])  # same seed, but none of r1's industries
+    saved = (tmp_path / "r2" / "industries_before.json").read_text()
+    Pipeline(_cfg(tmp_path / "r3")).run()  # a later run changes the history beside r2 ...
+    Pipeline(cfg2).run(resume=True)  # ... but a resume keeps the history r2 saved, so it samples the same specs
+    assert (tmp_path / "r2" / "industries_before.json").read_text() == saved

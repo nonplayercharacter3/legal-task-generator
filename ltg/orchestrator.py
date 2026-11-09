@@ -17,6 +17,7 @@ import json
 import random
 import shutil
 import traceback
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
@@ -226,7 +227,10 @@ class Pipeline:
         if resume and not settings_file.exists() and any((out / f).is_dir() for f in ("accepted", "rejected")):
             raise ValueError(f"cannot resume {out}: it has no settings.json, so its settings are unknown")
         _write(settings_file, self._settings())
-        specs = stages.sample_specs(self.cfg.spec, n, self.cfg.run.seed)
+        history = out / "industries_before.json"  # kept, so a --resume samples the same specs
+        if not (resume and history.exists()):
+            _write(history, industries_used_beside(out, self.cfg.backend.kind))
+        specs = stages.sample_specs(self.cfg.spec, n, self.cfg.run.seed, json.loads(history.read_text()))
         ids = {s.matter_id for s in specs}
         stale = sorted(p.name for f in ("accepted", "rejected") if (out / f).is_dir() for p in (out / f).iterdir() if p.name not in ids)
         if stale:  # refuse rather than delete: accepted/ must match this run's report
@@ -250,8 +254,6 @@ def variety(out: Path, results: list[MatterResult]) -> dict:
     """How much the run's matters differ: industries, agreement types, issue types, and anything repeated.
 
     Read from each matter's saved spec and ledger, so it also covers matters reloaded by --resume."""
-    from collections import Counter
-
     industries, agreements, issues, combos, names = Counter(), Counter(), Counter(), Counter(), {}
     for r in results:
         folder = next((out / f / r.matter_id for f in ("accepted", "rejected") if (out / f / r.matter_id).is_dir()), None)
@@ -274,6 +276,24 @@ def variety(out: Path, results: list[MatterResult]) -> dict:
         "repeated_names": {w: sorted(ms) for w, ms in sorted(names.items()) if len(ms) > 1},
         "repeated_issue_sets": {c: n for c, n in combos.items() if n > 1},
     }
+
+
+def industries_used_beside(out: Path, backend_kind: str) -> dict[str, int]:
+    """How often each industry was used by the other run folders beside `out` with the same backend kind (so fake
+    runs neither see nor shape real ones), from their matters' saved specs."""
+    used: Counter = Counter()
+    for settings in out.parent.glob("*/settings.json"):
+        run = settings.parent
+        if run.resolve() == out.resolve():
+            continue
+        try:
+            if json.loads(settings.read_text()).get("backend", {}).get("kind") != backend_kind:
+                continue
+            used.update(json.loads(p.read_text()).get("industry", "") for p in run.glob("*/*/spec.json"))
+        except (OSError, ValueError):
+            continue
+    used.pop("", None)
+    return dict(used)
 
 
 def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed: int = 0) -> dict:

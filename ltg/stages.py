@@ -33,13 +33,17 @@ Documents = dict[str, str]  # filename -> content
 # ---------------------------------------------------------------- stage 1: plan
 
 
-def sample_specs(cfg: SpecCfg, n: int, seed: int) -> list[MatterSpec]:
-    """Matter spec sampler. Draws from our own taxonomy, never from a benchmark's task list."""
+def sample_specs(cfg: SpecCfg, n: int, seed: int, used_industries: dict[str, int] | None = None) -> list[MatterSpec]:
+    """Matter spec sampler. Draws from our own taxonomy, never from a benchmark's task list.
+
+    `used_industries` counts industries earlier runs used: the least used come first, so a night of rounds does not
+    repeat one before all are used (elevator maintenance came up 3 times in rounds 20 to 27)."""
     r = random.Random(seed)
     specs = []
     used_issues: dict[str, int] = {}
     used_stems: set[str] = set()
     industries = r.sample(INDUSTRIES, len(INDUSTRIES))  # every industry once before any repeats
+    industries.sort(key=lambda i: (used_industries or {}).get(i, 0))  # stable: no history keeps the seed's order
     for k in range(n):
         area = r.choice(cfg.practice_areas)
         work = r.choice(cfg.work_types)
