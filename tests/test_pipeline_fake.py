@@ -430,3 +430,65 @@ def test_a_new_run_avoids_industries_earlier_runs_beside_it_used(tmp_path):
     Pipeline(_cfg(tmp_path / "r3")).run()  # a later run changes the history beside r2 ...
     Pipeline(cfg2).run(resume=True)  # ... but a resume keeps the history r2 saved, so it samples the same specs
     assert (tmp_path / "r2" / "industries_before.json").read_text() == saved
+
+
+def test_calls_log_grows_as_calls_end_and_a_killed_try_keeps_it(tmp_path):
+    # Seed 28 (2026-11-09): the run was killed after 110 minutes and its calls.jsonl, written only at the end, was lost.
+    class CrashesOnFourth(FakeModel):
+        def _ledger_writer(self, p):
+            if p["spec"]["matter_id"].endswith("0004"):
+                raise Crash()
+            return super()._ledger_writer(p)
+
+    killed = CrashesOnFourth(seed=7)
+    with pytest.raises(Crash):
+        Pipeline(_cfg(tmp_path), client=killed).run()
+    lines = (tmp_path / "calls.jsonl").read_text().splitlines()
+    assert len(lines) == len(killed.log.records) > 0 and not (tmp_path / "report.json").exists()
+    Pipeline(_cfg(tmp_path)).run(resume=True)
+    assert (tmp_path / "tries" / "1" / "calls.jsonl").read_text().splitlines() == lines
+    assert not (tmp_path / "tries" / "1" / "report.json").exists()
+    rep = json.loads((tmp_path / "report.json").read_text())
+    assert len((tmp_path / "calls.jsonl").read_text().splitlines()) == sum(r["calls"] for r in rep["model_calls"].values())
+
+
+def test_run_log_has_a_heartbeat_per_stage_and_solver_attempt(tmp_path, capsys):
+    # Seed 28 (2026-11-09): nothing in the batch log showed which stage two matters were stuck in for 50 minutes.
+    Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}})).run()
+    lines = [ln.split(" ", 3)[3] for ln in capsys.readouterr().err.splitlines() if " s7-m0001 " in ln]
+    assert lines[:3] == ["ledger", "documents", "consistency"]
+    assert {"rubric_tests", "solver_check solver probe without documents", "solver_check solver attempt 3 of 3"} <= set(lines)
+    assert lines[-1] in ("accepted", "rejected at solver_check")
+
+
+GENERATION_ROLES = ("ledger_writer", "drafter", "instruction_writer", "rubric_writer", "answer_writer")
+
+
+def test_resume_reuses_the_generation_of_a_matter_that_errored_in_solver_check(tmp_path, read_json):
+    # Seed 28 (2026-11-09): a solver call on NRP timed out, and the resume redid the matter's whole Opus generation.
+    class SolverDown(FakeModel):
+        def _solver(self, p):
+            raise RuntimeError("NRP silent")
+
+    first = Pipeline(_cfg(tmp_path / "a"), client=SolverDown(seed=7)).run()
+    errored = {m["matter_id"] for m in first["matters"] if m["failed_gate"] == "error"}
+    assert errored and all("NRP silent" in m["reason"] for m in first["matters"] if m["matter_id"] in errored)
+    for m in errored:
+        assert read_json(tmp_path / "a" / "rejected" / m / "stages_done.json")["stages"] == ["ledger", "documents", "instruction", "rubric", "answers"]
+    fake = RecordingFake(seed=7)
+    rep = Pipeline(_cfg(tmp_path / "a"), client=fake).run(resume=True)
+    regenerated = {p.get("spec", p.get("ledger", {})).get("matter_id") for r in GENERATION_ROLES for p in fake.payloads.get(r, [])}
+    assert not regenerated & errored and fake.payloads["solver"] and rep["errors"] == 0
+    assert rep["matters"] == Pipeline(_cfg(tmp_path / "b")).run()["matters"]  # the verdict of a run that never failed
+    assert not (tmp_path / "a" / "accepted" / sorted(errored)[0] / "error.txt").exists()
+
+
+def test_resume_regenerates_a_matter_whose_stage_never_completed(tmp_path):
+    class DraftsDown(FakeModel):
+        def _drafter(self, p):
+            raise RuntimeError("down")
+
+    Pipeline(_cfg(tmp_path), client=DraftsDown(seed=7)).run()
+    fake = RecordingFake(seed=7)
+    Pipeline(_cfg(tmp_path), client=fake).run(resume=True)
+    assert not fake.payloads.get("ledger_writer") and fake.payloads["drafter"]  # ledger reused, documents redone

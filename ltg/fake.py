@@ -92,7 +92,6 @@ class FakeModel:
         self.log = log if log is not None else CallLog()
         self._solver_attempts: dict[str, int] = {}
         self._hints: dict[str, list[str]] = {}  # criterion text -> hints, so the fake judge can grade without them
-        self._claims: dict[str, str] = {}  # negative criterion text -> the wrong claim it names
 
     # ------------------------------------------------------------ plumbing
 
@@ -275,7 +274,6 @@ class FakeModel:
         first = ledger["issues"][0]
         claim = _claim(first)
         crit.append({"id": f"C{len(crit) + 1}", "kind": "negative", "source": first["id"], "text": f"The response claims that {claim}.", "hints": []})
-        self._claims[crit[-1]["text"]] = claim
         if fault == "untraceable_criterion":
             crit.append({"id": f"C{len(crit) + 1}", "kind": "issue", "source": "I99", "text": "Identifies the missing escrow provision.", "hints": ["escrow"]})
         if fault == "bundled_criterion" and not p.get("previous_rubric"):  # the repair call sends the rubric back; then it drops the clause
@@ -310,8 +308,9 @@ class FakeModel:
         low = resp.lower()
         results = []
         for c in p["criteria"]:
-            if c["kind"] == "negative" and c["text"] in self._claims:  # fails only if a sentence asserts the claim
-                claim = self._claims[c["text"]].lower()
+            named = re.fullmatch(r"The response claims that (.+)\.", c["text"])  # read from the text, so a resume can judge
+            if c["kind"] == "negative" and named:  # fails only if a sentence asserts the claim
+                claim = named.group(1).lower()
                 sentences = [s for s in re.split(r"(?<=[.!?])\s+", low) if claim in s]
                 ok = not any(not re.search(r"\b(not|wrong|incorrect|never)\b", s) for s in sentences)
             elif c["kind"] == "negative":

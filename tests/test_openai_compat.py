@@ -7,7 +7,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import pytest
 
 from ltg import prompts
-from ltg.config import load_config
+from ltg.config import build_client, load_config
 from ltg.fake import FakeModel
 from ltg.models import CallLog, ModelError, OpenAICompatClient, call_text, render_input
 from ltg.orchestrator import Pipeline
@@ -209,3 +209,40 @@ def test_client_retries_a_bare_403_but_not_a_real_refusal(server, monkeypatch):
     state["forbid_next"] = [b'{"error": "invalid api key"}']
     with pytest.raises(ModelError, match="invalid api key"):
         OpenAICompatClient(url, "m", max_retries=3).complete("solver", prompts.SOLVER_WRITE, payload)
+
+
+def test_a_read_timeout_is_retried_once_whatever_max_retries_says(monkeypatch):
+    # Seed 28 (2026-11-09): a qwen3-small memo call went silent until the 600 s timeout, and max_retries = 6 let one
+    # call block a worker for about 72 minutes. Timeouts now get timeout_retries (default 1); other errors keep the rest.
+    import socket
+    import urllib.error
+
+    calls = []
+
+    def silent(req, timeout):
+        calls.append(timeout)
+        raise socket.timeout("The read operation timed out") if len(calls) % 2 else urllib.error.URLError(TimeoutError("timed out"))
+
+    monkeypatch.setattr("ltg.models.urllib.request.urlopen", silent)
+    monkeypatch.setattr("ltg.models.time.sleep", lambda s: None)
+    log = CallLog()
+    with pytest.raises(ModelError, match="timed out"):
+        OpenAICompatClient("http://127.0.0.1:9/v1", "m", max_retries=6, log=log).complete("solver", "s", "u")
+    assert len(calls) == 2 and [r.ok for r in log.records] == [False, False]
+    calls.clear()
+    with pytest.raises(ModelError):
+        OpenAICompatClient("http://127.0.0.1:9/v1", "m", max_retries=6, timeout_retries=0).complete("solver", "s", "u")
+    assert len(calls) == 1
+
+
+def test_timeout_retries_reaches_role_clients_and_keeps_old_runs_resumable(tmp_path):
+    cfg = load_config(None, {"backend": {"kind": "fake", "roles": {"solver": {"kind": "openai_compat", "model": "q", "timeout_retries": 3}}}})
+    assert build_client(cfg, CallLog()).routes["solver"].timeout_retries == 3
+    # settings.json of runs begun before the key existed has no timeout_retries: at its default it stays out
+    run = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}})
+    Pipeline(run).run()
+    assert "timeout_retries" not in json.loads((tmp_path / "settings.json").read_text())["backend"]
+    Pipeline(run).run(resume=True)
+    changed = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}, "backend": {"timeout_retries": 2}})
+    with pytest.raises(ValueError, match="settings changed"):
+        Pipeline(changed).run(resume=True)

@@ -19,6 +19,7 @@ import json
 import os
 import re
 import tempfile
+import threading
 import time
 import urllib.error
 import urllib.request
@@ -47,9 +48,21 @@ class CallRecord:
 @dataclass
 class CallLog:
     records: list[CallRecord] = field(default_factory=list)
+    path: str | None = None  # set by stream_to: each record is also appended there as its call ends
+    _lock: threading.Lock = field(default_factory=threading.Lock, repr=False, compare=False)
 
     def add(self, rec: CallRecord) -> None:
-        self.records.append(rec)
+        with self._lock:  # matters run in threads and share one log
+            self.records.append(rec)
+            if self.path:
+                with open(self.path, "a", encoding="utf-8") as f:
+                    f.write(json.dumps(asdict(rec)) + "\n")
+
+    def stream_to(self, path: str) -> None:
+        """Start `path` empty and append every later call to it, so a killed run keeps its log."""
+        with self._lock:
+            open(path, "w", encoding="utf-8").close()
+            self.path = path
 
     def by_role(self) -> dict[str, dict[str, int]]:
         out: dict[str, dict[str, int]] = {}
@@ -60,11 +73,6 @@ class CallLog:
             s["output_tokens"] += r.output_tokens or 0
             s["errors"] += 0 if r.ok else 1
         return out
-
-    def dump(self, path: str) -> None:
-        with open(path, "w", encoding="utf-8") as f:
-            for r in self.records:
-                f.write(json.dumps(asdict(r)) + "\n")
 
 
 class ModelError(RuntimeError):
@@ -95,6 +103,7 @@ class OpenAICompatClient:
         max_tokens: int = 8000,
         timeout: float = 600,
         max_retries: int = 3,
+        timeout_retries: int = 1,
         extra_body: dict[str, Any] | None = None,
         log: CallLog | None = None,
     ) -> None:
@@ -106,6 +115,7 @@ class OpenAICompatClient:
         self.max_tokens = max_tokens
         self.timeout = timeout
         self.max_retries = max_retries
+        self.timeout_retries = timeout_retries  # a read timeout is retried at most this often, within max_retries
         self.extra_body = extra_body or {}  # server-specific fields, e.g. reasoning_effort on NRP
         self.log = log if log is not None else CallLog()
 
@@ -130,7 +140,7 @@ class OpenAICompatClient:
         if self.api_key:
             headers["Authorization"] = f"Bearer {self.api_key}"
 
-        last_err = ""
+        last_err, timeouts = "", 0
         for attempt in range(self.max_retries + 1):
             t0 = time.time()
             try:
@@ -161,6 +171,11 @@ class OpenAICompatClient:
                 # OSError covers timeouts, refused and dropped connections (ConnectionResetError, RemoteDisconnected)
                 last_err = f"{type(e).__name__}: {e}"
                 retryable, wait = not isinstance(e, KeyError), None
+                # A server that went silent until the timeout (round 28: a qwen3-small memo on NRP) mostly stays
+                # silent, and each retry costs a whole `timeout`; rate limits, 5xx and dropped connections do not.
+                if isinstance(e, TimeoutError) or isinstance(getattr(e, "reason", None), TimeoutError):
+                    timeouts += 1
+                    retryable = timeouts <= self.timeout_retries
             self.log.add(CallRecord(role=role, model=model, seconds=round(time.time() - t0, 2), ok=False, error=last_err))
             if not retryable or attempt == self.max_retries:
                 break
