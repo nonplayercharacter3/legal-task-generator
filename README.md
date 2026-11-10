@@ -71,6 +71,19 @@ If a run stops part way (a crash, Ctrl-C, an endpoint going down), rerun the sam
 Matters that already have a verdict are kept, matters that ended in an error are retried, and the run refuses to
 resume if `settings.json` shows the generation settings have changed.
 
+To make tasks while the solver model is slow or down, defer `solver_check` and label later:
+
+```bash
+.venv/bin/python -m ltg run --config configs/pilot_generate_only.toml --seed <new> --out runs/<name>
+.venv/bin/python -m ltg label --config configs/pilot_nrp_solver.toml runs/<name> [runs/<other> ...]
+```
+
+With `gates.solver_check = "defer"` (default `"inline"`), `ltg run` makes no solver calls: a matter that passes every
+other gate goes to `accepted/` with `label_pending: true` in `task.json` and no difficulty. `ltg label` runs the
+no-documents probe and the labelling attempts on every pending task (`run.concurrency` at a time), writes the labels
+and `labelled_by` (config and models), moves a leak to `rejected/`, appends its calls to `calls.jsonl` and refreshes the
+report. A task that errors stays pending, so rerunning `ltg label` picks up only what is left.
+
 Each role can use a different model (`[backend.models]`), e.g. a stronger model as solver and judge. A role can
 also use a different backend, for example Claude writing the tasks while an open model on a vLLM server (or a
 hosted endpoint such as NRP's) solves them, so the difficulty check is measured on the model you plan to train:
@@ -99,7 +112,7 @@ early as possible.
 | `rubric_trace` | Every criterion cites a ledger issue or fact, every issue is graded, reference answers are well formed. An issue criterion that demands a harm or remedy the ledger's expected finding does not name is recorded in `gates.json` and the report (`gates.check_bundling = "warn"`, the default); `"repair"` sends the rubric back to its writer once and rejects only if the correction still has one; `"off"` skips the check | deterministic |
 | `rubric_tests` | The rubric is unit-tested: gold answer passes everything, a blank answer passes nothing, the flawed answer fails exactly the criteria for the issue it omits and passes the rest | model |
 | `decontamination` | Word 8-gram containment against reference benchmarks (e.g. a LAB clone) stays under the threshold | deterministic |
-| `solver_check` | A tool-using solver that never sees the ledger attempts the task several times, opening and searching the matter files step by step. Rejected only if it passes without the documents (the instruction leaks the answer). Each model in `gates.solver_models` gets its pass rate stored as a difficulty label; a task no model passes is kept and flagged `unsolved` | model |
+| `solver_check` | A tool-using solver that never sees the ledger attempts the task several times, opening and searching the matter files step by step. Rejected only if it passes without the documents (the instruction leaks the answer). Each model in `gates.solver_models` gets its pass rate stored as a difficulty label; a task no model passes is kept and flagged `unsolved`. With `gates.solver_check = "defer"` it is skipped in `ltg run` and run later by `ltg label` | model |
 
 Accepted tasks get a train/dev/test split assigned by matter id, so tasks from one matter never straddle splits.
 
@@ -133,7 +146,8 @@ python3 -m ltg export --runs runs/pilot9_nrp runs/pilot6_haiku --out export/
 Collects every matter folder holding a `task.json` (accepted tasks, and tasks `scripts/relabel_past_runs.py`
 recovered under `rejected/`) and writes `train.jsonl`, `dev.jsonl` and `test.jsonl`. Tasks are keyed
 `<run folder>/<matter id>`, so two runs of one seed export both drafts (`ltg run` refuses a `--seed` another run folder
-has used unless `--allow-seed-reuse`). Tasks flagged `unsolved` are left out unless `--include-unsolved`. Difficulty is a
+has used unless `--allow-seed-reuse`). Tasks flagged `unsolved` are left out unless `--include-unsolved`, tasks a person
+put on hold unless `--include-held`, and tasks still waiting for `ltg label` unless `--include-pending`. Difficulty is a
 label, not a filter: `--model qwen3-small --min-pass 0.33 --max-pass 0.67` keeps one band of one model's labels
 (1 of 3 attempts is 0.333, so a band that should include it starts at 0.33). Each line has:
 
@@ -173,7 +187,7 @@ ltg/
   splits.py        per-matter split assignment
   orchestrator.py  runs matters through the stages and writes the report
   export.py        accepted tasks to JSONL training data
-  cli.py           `run`, `index` (build the LAB screen), `inspect` and `export`
+  cli.py           `run`, `label` (deferred solver_check), `index` (build the LAB screen), `inspect` and `export`
 configs/           fake demo, real-endpoint example, Claude pilot, NRP and vLLM solver configs
 scripts/           LAB index check, cloud setup, solver-only reruns, judge leniency check
 deploy/nautilus/   vLLM pod and weight cache for Nautilus

@@ -60,6 +60,9 @@ class GatesCfg:
     solver_max_steps: int = 20  # tool calls per attempt before the solver must write its answer
     solver_page_chars: int = 6000  # read_file page size (~1,000 words)
     probe_without_documents: bool = True
+    # "inline" runs solver_check in `ltg run`; "defer" skips it there (no solver calls) and accepts a task that passed
+    # every other gate with `label_pending: true`, for `ltg label` to label later, when the solver model is available.
+    solver_check: str = "inline"
     judge_hints: bool = True  # send rubric hints to the judge (and export them); off to measure leniency
     verifier_sees_terms: bool = False  # terms are checked verbatim in code; the verifier judges blind
     # Issue criteria that demand a harm or remedy the expected finding does not name: "warn" records them in gates.json
@@ -76,6 +79,8 @@ class GatesCfg:
     def __post_init__(self) -> None:
         if self.check_bundling not in ("repair", "warn", "off"):
             raise ValueError(f"gates.check_bundling must be \"repair\", \"warn\" or \"off\", not {self.check_bundling!r}")
+        if self.solver_check not in ("inline", "defer"):
+            raise ValueError(f"gates.solver_check must be \"inline\" or \"defer\", not {self.solver_check!r}")
 
 
 @dataclass
