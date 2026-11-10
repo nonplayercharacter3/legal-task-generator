@@ -562,3 +562,22 @@ def test_label_runs_the_deferred_solver_check_retries_errors_and_rejects_leaks(t
     rep = read_json(run / "report.json")
     assert rep["accepted"] == 2 and rep["label_pending"] == 0 and rep["gates"]["solver_check"]["failed"] == 1
     assert orchestrator.label_runs(first, [str(run)]) == {"labelled": 0, "leak": 0, "error": 0}  # nothing left
+
+
+def test_deferred_run_then_label_equals_an_inline_run(tmp_path, read_json):
+    from ltg.orchestrator import label_runs
+
+    base = {"n_matters": 10, "seed": 7}
+    fake = {"solver_skill": 0.85, "fault_rate": 0.35}  # as the fake demo: some matters rejected, labels spread
+    inline = tmp_path / "a" / "run"  # separate parents: a run avoids industries of run folders beside it
+    deferred = tmp_path / "b" / "run"
+    Pipeline(load_config(None, {"run": {**base, "out_dir": str(inline)}, "fake": fake})).run()
+    Pipeline(load_config(None, {"run": {**base, "out_dir": str(deferred)}, "fake": fake, "gates": {"solver_check": "defer"}})).run()
+    assert label_runs(load_config(None, {"run": {"seed": 7}, "fake": fake}), [str(deferred)])["error"] == 0
+
+    tasks = lambda run: {m.name: {k: v for k, v in read_json(m / "task.json").items() if k != "labelled_by"} for m in (run / "accepted").iterdir()}
+    a, b = tasks(inline), tasks(deferred)
+    assert 0 < len(a) < 10 and a == b  # same accepted set, labels, unsolved flags and splits
+    assert len({t["solver_pass_rate"] for t in a.values()}) > 1
+    ra, rb = read_json(inline / "report.json"), read_json(deferred / "report.json")
+    assert {k: ra[k] for k in ("accepted", "unsolved", "difficulty", "matters")} == {k: rb[k] for k in ("accepted", "unsolved", "difficulty", "matters")}
