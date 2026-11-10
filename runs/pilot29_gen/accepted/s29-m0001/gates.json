@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -123,8 +136,69 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C13",
+                "C14",
+                "C15"
+              ],
+              "steps": 19,
+              "files_opened": [
+                "escrow_agreement.md",
+                "gliluv_board_written_consent.md",
+                "saltreach_office_lease.md",
+                "stock_purchase_agreement.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C13",
+                "C14",
+                "C15"
+              ],
+              "steps": 19,
+              "files_opened": [
+                "escrow_agreement.md",
+                "gliluv_board_written_consent.md",
+                "saltreach_office_lease.md",
+                "stock_purchase_agreement.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C13",
+                "C14",
+                "C15"
+              ],
+              "steps": 19,
+              "files_opened": [
+                "escrow_agreement.md",
+                "gliluv_board_written_consent.md",
+                "saltreach_office_lease.md",
+                "stock_purchase_agreement.md",
+                "transition_services_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

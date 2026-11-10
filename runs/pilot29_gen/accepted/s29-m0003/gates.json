@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.667,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -120,8 +133,56 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 8,
+              "files_opened": [
+                "gibeis_holdings_parent_guaranty.md",
+                "gibeis_poubis_side_letter_oct2026.md",
+                "partnership_press_release_mar2024.md",
+                "poubis_gibeis_master_services_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 8,
+              "files_opened": [
+                "gibeis_holdings_parent_guaranty.md",
+                "gibeis_poubis_side_letter_oct2026.md",
+                "partnership_press_release_mar2024.md",
+                "poubis_gibeis_master_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 8,
+              "files_opened": [
+                "gibeis_holdings_parent_guaranty.md",
+                "gibeis_poubis_side_letter_oct2026.md",
+                "partnership_press_release_mar2024.md",
+                "poubis_gibeis_master_services_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
