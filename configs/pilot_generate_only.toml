@@ -34,6 +34,9 @@ max_retries = 6                     # NRP models go offline for maintenance; wai
 # NRP thinks at reasoning_effort "xhigh" by default (~30k tokens before the memo, which then hit max_tokens).
 # "low" finished 4 of 4 replayed memos in ~2 min and named every planted issue (docs/research/qwen_memo_length.md).
 extra_body = { reasoning_effort = "low" }
+# Stream the reply: `timeout` then means 600 s without a byte, not 600 s for the whole memo, which NRP's slow
+# memo calls exceeded silently (2026-11-09). max_seconds (default 3600) caps one call.
+stream = true
 
 # Folders of 4 to 5 documents: a 3-document folder lets the solver read everything (known weakness 3). The
 # evidence so far is mixed: accepted tasks had 4 and 5 documents, too-easy ones 4 and 5 as well.
