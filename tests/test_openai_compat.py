@@ -246,3 +246,94 @@ def test_timeout_retries_reaches_role_clients_and_keeps_old_runs_resumable(tmp_p
     changed = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}, "backend": {"timeout_retries": 2}})
     with pytest.raises(ValueError, match="settings changed"):
         Pipeline(changed).run(resume=True)
+
+
+# ---------------------------------------------------------------- streaming (server-sent events)
+
+
+@pytest.fixture
+def sse(monkeypatch):
+    """A local server that streams a reply as `chunks`, sleeping `gap` seconds before each, then ends as `ending`."""
+    import time
+    from http.server import ThreadingHTTPServer
+
+    monkeypatch.setenv("NO_PROXY", "127.0.0.1")
+    monkeypatch.setenv("no_proxy", "127.0.0.1")
+    sleep = time.sleep  # the handler sleeps for real; the patch below (on the shared time module) skips retry waits
+    monkeypatch.setattr("ltg.models.time.sleep", lambda s: None)
+    state = {"chunks": ["<think>hm</think>", "Hello", ", world"], "gap": 0.0, "finish": "stop", "stall": 0.0, "bodies": []}
+
+    class Handler(BaseHTTPRequestHandler):
+        def log_message(self, *a):
+            pass
+
+        def send(self, event):
+            self.wfile.write(b"data: " + (event if isinstance(event, bytes) else json.dumps(event).encode()) + b"\n\n")
+            self.wfile.flush()
+
+        def do_POST(self):
+            state["bodies"].append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+            self.send_response(200)
+            self.send_header("Content-Type", "text/event-stream")
+            self.end_headers()
+            self.wfile.write(b": keep-alive\n\n")
+            for text in state["chunks"]:
+                sleep(state["gap"])
+                self.send({"choices": [{"index": 0, "delta": {"content": text}, "finish_reason": None}]})
+            sleep(state["stall"])  # a server gone silent mid-reply
+            self.send({"choices": [{"index": 0, "delta": {}, "finish_reason": state["finish"]}]})
+            self.send({"choices": [], "usage": {"prompt_tokens": 12, "completion_tokens": 3}})
+            self.send(b"[DONE]")
+
+    httpd = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+    httpd.daemon_threads = True
+    threading.Thread(target=httpd.serve_forever, daemon=True).start()
+    yield f"http://127.0.0.1:{httpd.server_port}/v1", state
+    httpd.shutdown()
+
+
+def test_a_streamed_reply_is_joined_with_think_stripped_and_usage_kept(sse):
+    url, state = sse
+    log = CallLog()
+    assert OpenAICompatClient(url, "m", stream=True, log=log).complete("solver", "s", "u") == "Hello, world"
+    assert state["bodies"][0]["stream"] is True and state["bodies"][0]["stream_options"] == {"include_usage": True}
+    assert [(r.ok, r.input_tokens, r.output_tokens) for r in log.records] == [(True, 12, 3)]
+
+
+def test_a_streamed_reply_cut_at_max_tokens_is_rejected(sse):
+    url, state = sse
+    state["finish"] = "length"
+    with pytest.raises(ModelError, match="truncated"):
+        OpenAICompatClient(url, "m", stream=True).complete("solver", "s", "u")
+
+
+def test_a_stream_that_goes_silent_fails_after_timeout(sse):
+    url, state = sse
+    state["stall"] = 1.5
+    log = CallLog()
+    with pytest.raises(ModelError, match="timed out"):
+        OpenAICompatClient(url, "m", stream=True, timeout=0.3, max_retries=3, timeout_retries=0, log=log).complete("solver", "s", "u")
+    assert [r.ok for r in log.records] == [False]
+
+
+def test_a_slow_but_steady_stream_longer_than_timeout_passes_until_max_seconds(sse):
+    url, state = sse
+    state["chunks"], state["gap"] = ["a"] * 6, 0.15  # 0.9 s in all, never 0.4 s silent
+    assert OpenAICompatClient(url, "m", stream=True, timeout=0.4).complete("solver", "s", "u") == "aaaaaa"
+    # max_seconds is the ceiling; going over it counts as a timeout, retried timeout_retries times
+    log = CallLog()
+    with pytest.raises(ModelError, match="max_seconds"):
+        OpenAICompatClient(url, "m", stream=True, timeout=0.4, max_seconds=0.5, log=log).complete("solver", "s", "u")
+    assert [r.ok for r in log.records] == [False, False]
+
+
+def test_stream_settings_reach_role_clients_and_keep_old_runs_resumable(tmp_path):
+    over = {"kind": "openai_compat", "model": "q", "stream": True, "max_seconds": 900}
+    solver = build_client(load_config(None, {"backend": {"kind": "fake", "roles": {"solver": over}}}), CallLog()).routes["solver"]
+    assert (solver.stream, solver.max_seconds) == (True, 900)
+    # turning streaming on must not stop a run begun without it from resuming (pilot28_nrp and later)
+    run = {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}
+    Pipeline(load_config(None, {"run": run, "backend": {"roles": {"solver": {"kind": "fake"}}}})).run()
+    assert "stream" not in json.loads((tmp_path / "settings.json").read_text())["backend"]
+    on = {"stream": True, "max_seconds": 900, "roles": {"solver": {"kind": "fake", "stream": True, "max_seconds": 60}}}
+    Pipeline(load_config(None, {"run": run, "backend": on})).run(resume=True)

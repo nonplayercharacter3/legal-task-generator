@@ -33,6 +33,8 @@ class BackendCfg:
     max_retries: int = 3  # HTTP backends: retries after rate limits, server errors and dropped connections
     timeout_retries: int = 1  # HTTP backends: of those, retries after a read timeout (each costs a whole `timeout`)
     extra_body: dict[str, Any] = field(default_factory=dict)  # openai_compat: added to each request, e.g. reasoning_effort
+    stream: bool = False  # openai_compat: stream the reply, so `timeout` is the longest silence between chunks
+    max_seconds: float = 3600  # openai_compat with stream: ceiling on one call, however steadily it streams
 
 
 @dataclass
@@ -131,7 +133,7 @@ def load_config(path: str | None = None, overrides: dict[str, dict[str, Any]] | 
     return cfg
 
 
-ROLE_BACKEND_KEYS = {"kind", "base_url", "api_key_env", "model", "temperature", "max_tokens", "timeout", "max_retries", "timeout_retries", "extra_body"}
+ROLE_BACKEND_KEYS = {"kind", "base_url", "api_key_env", "model", "temperature", "max_tokens", "timeout", "max_retries", "timeout_retries", "extra_body", "stream", "max_seconds"}
 
 
 def build_client(cfg: Config, log: CallLog) -> ModelClient:
@@ -168,6 +170,8 @@ def _one_client(cfg: Config, b: BackendCfg, log: CallLog) -> ModelClient:
             max_retries=b.max_retries,
             timeout_retries=b.timeout_retries,
             extra_body=b.extra_body,
+            stream=b.stream,
+            max_seconds=b.max_seconds,
             log=log,
         )
     if b.kind == "claude_sdk":
