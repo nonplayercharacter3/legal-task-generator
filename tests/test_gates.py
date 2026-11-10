@@ -355,3 +355,23 @@ def test_rubric_writer_carries_the_unsolved_review_rules_and_trace_warns_on_a_ra
         assert g.passed and len(g.details["ranking_facts"]) == 1 and "C5" in g.details["ranking_facts"][0]
     pair = gates.rubric_trace(rubric, ledger("The Order Form prevails over the MSA"), answers)
     assert pair.details["ranking_facts"] == []
+
+
+def test_issue_check_records_a_party_an_issue_needs_that_no_document_mentions():
+    # s9-m0002: I1 rested on Besouth's sale to Pellworth Capital Partners, which no document named; the solver could
+    # only take the name from the instruction. Recorded in issue_check, warn only.
+    from ltg.schema import DocumentPlan, Issue, Ledger, Party
+
+    class Yes:
+        def complete(self, role, system, user):
+            return json.dumps({"present": True, "evidence": "", "reason": "ok"})
+
+    issue = Issue("I1", "change_of_control", "x", "A sale of Besouth to Pellworth Capital Partners triggers 9.2.", "D1", "9.2",
+                  ["change of control"], "Pellworth's purchase lets Lanmark terminate.")
+    parties = [Party("P1", "Besouth Holdings LLC", "Seller"), Party("P2", "Lanmark Glass, Inc.", "Buyer"), Party("P3", "Pellworth Capital Partners", "Buyer")]
+    ledger = Ledger("m", "", parties, [], [DocumentPlan("D1", "a.md", "supply agreement")], [issue])
+    doc = "**BESOUTH** and Lanmark agree. 9.2 A change of control lets Lanmark terminate."
+    g = gates.issue_check(Yes(), ledger, {"a.md": doc})
+    assert g.passed and g.details["absent_parties"] == [{"issue": "I1", "party": "P3", "name": "Pellworth Capital Partners"}]
+    g = gates.issue_check(Yes(), ledger, {"a.md": doc, "b.md": "Notice from Pellworth Capital, L.P."})
+    assert g.details["absent_parties"] == []  # the stem in any document, case and punctuation ignored
