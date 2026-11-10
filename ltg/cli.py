@@ -57,6 +57,8 @@ def cmd_run(args: argparse.Namespace) -> int:
           + (f" ({report['resumed']} reloaded from an earlier run)" if report["resumed"] else ""))
     for g, s in report["gates"].items():
         print(f"  {g:<16} evaluated {s['evaluated']:>3}  passed {s['passed']:>3}  failed {s['failed']:>3}  skipped {s['skipped']:>3}")
+    if report.get("label_pending"):
+        print(f"{report['label_pending']} accepted task(s) wait for labels: run `ltg label` with a solver config on {cfg.run.out_dir}")
     if report["gates"]["decontamination"]["skipped"]:
         print("WARNING: decontamination skipped (no reference_dirs); tasks were not screened against LAB")
     print(f"report: {Path(cfg.run.out_dir) / 'report.md'}")

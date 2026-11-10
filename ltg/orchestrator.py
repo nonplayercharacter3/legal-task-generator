@@ -57,6 +57,7 @@ class MatterResult:
     solver_pass_rate: float | None = None
     unsolved: bool = False  # kept, but no solver attempt passed: a person should check it is not broken
     difficulty: list[dict] = field(default_factory=list)  # per labelling model: model, attempts, passes, pass_rate
+    label_pending: bool = False  # accepted with solver_check deferred: no labels and no leak probe until `ltg label`
     gates: list[dict] = field(default_factory=list)
 
 
@@ -90,6 +91,26 @@ def _first_reason(g: gates.GateResult) -> str:
             v = d[key]
             return v if isinstance(v, str) else f"{key}: {json.dumps(v)[:300]}"
     return "failed"
+
+
+def solve_and_label(client: ModelClient, g: GatesCfg, folder: Path, instruction: str, docs: dict[str, str], rubric: Rubric,
+                    step=lambda stage: None) -> gates.GateResult:
+    """Run solver_check and save each attempt under folder/solver/ (other labelling models under their role)."""
+    res, solutions = gates.solver_check(client, instruction, docs, rubric, g.solver_attempts, g.probe_without_documents,
+                                        g.solver_max_steps, g.solver_page_chars, tuple(g.solver_models), step)
+    for role, sols in solutions.items():
+        sub = folder / "solver" if role == g.solver_models[0] else folder / "solver" / role
+        for k, sol in enumerate(sols, 1):
+            _write(sub / f"attempt_{k}.md", sol.answer)
+            _write(sub / f"attempt_{k}.trace.json", sol.steps)
+    return res
+
+
+def _take_labels(result: MatterResult, g: gates.GateResult) -> None:
+    result.solver_pass_rate = g.details.get("pass_rate")
+    result.unsolved = bool(g.details.get("unsolved"))
+    result.difficulty = g.details.get("difficulty", [])
+    result.label_pending = False
 
 
 def reference_index(g: GatesCfg) -> BloomIndex | None:
@@ -187,27 +208,13 @@ class Pipeline:
             texts = {"instruction": instruction, "rubric": "\n".join(c.text for c in rubric.criteria), **{f"docs/{k}": v for k, v in docs.items()}}
             check(gates.decontamination(texts, self.index, cfg.gates.decontam_threshold))
 
-            g, solutions = gates.solver_check(
-                self.client,
-                instruction,
-                docs,
-                rubric,
-                cfg.gates.solver_attempts,
-                cfg.gates.probe_without_documents,
-                cfg.gates.solver_max_steps,
-                cfg.gates.solver_page_chars,
-                tuple(cfg.gates.solver_models),
-                step,
-            )
-            for role, sols in solutions.items():  # the default solver's attempts at solver/, other models' under their role
-                folder = work / "solver" if role == cfg.gates.solver_models[0] else work / "solver" / role
-                for k, sol in enumerate(sols, 1):
-                    _write(folder / f"attempt_{k}.md", sol.answer)
-                    _write(folder / f"attempt_{k}.trace.json", sol.steps)
-            result.solver_pass_rate = g.details.get("pass_rate")
-            result.unsolved = bool(g.details.get("unsolved"))
-            result.difficulty = g.details.get("difficulty", [])
-            check(g)
+            if cfg.gates.solver_check == "defer":  # `ltg label` runs it later
+                results.append(gates.GateResult("solver_check", True, {"skipped": True, "reason": "deferred"}))
+                result.label_pending = True
+            else:
+                g = solve_and_label(self.client, cfg.gates, work, instruction, docs, rubric, step)
+                _take_labels(result, g)
+                check(g)
 
             result.accepted = True
             result.split = assign_split(spec.matter_id, cfg.splits.ratios, cfg.splits.salt)
@@ -226,6 +233,7 @@ class Pipeline:
                     "solver_pass_rate": result.solver_pass_rate,
                     "unsolved": result.unsolved,
                     "difficulty": result.difficulty,
+                    **({"label_pending": True} if result.label_pending else {}),
                 },
             )
         except _Rejected as r:
@@ -252,9 +260,9 @@ class Pipeline:
         for k in ("n_matters", "concurrency", "out_dir"):
             s["run"].pop(k)
         # Keys added after runs began, left out at their default so those runs still resume (pilot28_nrp and later).
-        for k, default in (("timeout_retries", 1),):
-            if s["backend"].get(k) == default:
-                s["backend"].pop(k)
+        for section, k, default in (("backend", "timeout_retries", 1), ("gates", "solver_check", "inline")):
+            if s[section].get(k) == default:
+                s[section].pop(k)
         return s
 
     def _finished(self, out: Path, matter_id: str) -> MatterResult | None:
@@ -396,10 +404,12 @@ def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed
         "gates": gate_stats,
         "rubric_repairs": repairs,
         "unsolved": sum(1 for r in results if r.accepted and r.unsolved),
+        "label_pending": sum(1 for r in results if r.accepted and r.label_pending),
         "difficulty": {m: {"tasks": v["tasks"], "pass_rates": dict(sorted(v["pass_rates"].items()))} for m, v in sorted(spread.items())},
         "matters": [
             {"matter_id": r.matter_id, "accepted": r.accepted, "failed_gate": r.failed_gate, "reason": r.reason, "split": r.split,
-             "solver_pass_rate": r.solver_pass_rate, "unsolved": r.unsolved, "difficulty": r.difficulty}
+             "solver_pass_rate": r.solver_pass_rate, "unsolved": r.unsolved, "difficulty": r.difficulty,
+             "label_pending": r.label_pending}
             for r in results
         ],
         "model_calls": log.by_role(),
@@ -433,9 +443,13 @@ def render_report(rep: dict) -> str:
         lines.append(f"| {model} | {d['tasks']} | " + ", ".join(f"{k}: {n}" for k, n in d["pass_rates"].items()) + " |")
     if rep.get("unsolved"):
         lines += ["", f"**{rep['unsolved']} accepted task(s) are marked unsolved (no attempt passed): check they are not broken.**"]
+    if rep.get("label_pending"):
+        lines += ["", f"**{rep['label_pending']} accepted task(s) wait for `ltg label`: solver_check was deferred, so they have no "
+                  "difficulty label and no leak probe yet.**"]
     lines += ["", "## Matters", "", "| Matter | Result | Split | Pass rate per model | Reason |", "| --- | --- | --- | --- | --- |"]
     for m in rep["matters"]:
-        res = ("accepted (unsolved)" if m.get("unsolved") else "accepted") if m["accepted"] else f"rejected at {m['failed_gate']}"
+        res = (("accepted (label pending)" if m.get("label_pending") else "accepted (unsolved)" if m.get("unsolved") else "accepted")
+               if m["accepted"] else f"rejected at {m['failed_gate']}")
         rate = ", ".join(f"{d['model']} {d['pass_rate']:.2f}" for d in m.get("difficulty") or [])
         reason = (m["reason"] or "").replace("|", "/")[:160]
         lines.append(f"| {m['matter_id']} | {res} | {m['split'] or ''} | {rate} | {reason} |")

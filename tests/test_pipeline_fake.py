@@ -492,3 +492,24 @@ def test_resume_regenerates_a_matter_whose_stage_never_completed(tmp_path):
     fake = RecordingFake(seed=7)
     Pipeline(_cfg(tmp_path), client=fake).run(resume=True)
     assert not fake.payloads.get("ledger_writer") and fake.payloads["drafter"]  # ledger reused, documents redone
+
+
+def test_deferred_solver_check_makes_no_solver_calls_and_marks_tasks_pending(tmp_path, read_json):
+    cfg = load_config(None, {"run": {"out_dir": str(tmp_path / "run"), "n_matters": 3, "seed": 7}, "gates": {"solver_check": "defer"}})
+    report = Pipeline(cfg).run()
+    assert "solver" not in report["model_calls"] and report["accepted"] == 3 == report["label_pending"]
+    assert report["gates"]["solver_check"] == {"evaluated": 3, "passed": 0, "failed": 0, "skipped": 3}
+    for m in (tmp_path / "run" / "accepted").iterdir():
+        task = read_json(m / "task.json")
+        assert task["label_pending"] is True and task["difficulty"] == [] and task["solver_pass_rate"] is None
+        g = read_json(m / "gates.json")
+        assert g["label_pending"] and g["gates"][-1]["details"] == {"skipped": True, "reason": "deferred"}
+        assert not (m / "solver").exists()
+    assert "wait for `ltg label`" in (tmp_path / "run" / "report.md").read_text()
+    # settings.json leaves the key out at its default, so runs begun before it existed still resume
+    assert read_json(tmp_path / "run" / "settings.json")["gates"]["solver_check"] == "defer"
+    inline = load_config(None, {"run": {"out_dir": str(tmp_path / "old"), "n_matters": 1, "seed": 7}})
+    Pipeline(inline).run()
+    assert "solver_check" not in read_json(tmp_path / "old" / "settings.json")["gates"]
+    with pytest.raises(ValueError, match="solver_check"):
+        load_config(None, {"gates": {"solver_check": "later"}})
