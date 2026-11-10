@@ -192,3 +192,25 @@ def test_a_held_task_is_left_out_of_the_export_unless_asked_for(cfg, tmp_path, c
     assert m.name not in ids(tmp_path / "e")
     assert main(["export", "--runs", str(run), "--out", str(tmp_path / "f"), "--include-held"]) == 0
     assert m.name in ids(tmp_path / "f") and "left out: 0 held" in capsys.readouterr().out
+
+
+def test_audit_script_lists_issues_and_instructions_naming_a_party_no_document_mentions(cfg, capsys):
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("audit", Path(__file__).resolve().parent.parent / "scripts" / "audit_absent_parties.py")
+    audit = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(audit)
+
+    Pipeline(cfg).run()
+    run = Path(cfg.run.out_dir)
+    m = sorted((run / "accepted").iterdir())[0]
+    ledger = json.loads((m / "ledger.json").read_text())
+    ledger["parties"].append({"id": "P9", "name": "Zorvath Capital Partners", "role": "Buyer"})
+    ledger["issues"][0]["description"] += " Zorvath Capital's purchase triggers it."
+    (m / "ledger.json").write_text(json.dumps(ledger))
+    (m / "instruction.md").write_text((m / "instruction.md").read_text() + "\nThe buyer is Zorvath.")
+    capsys.readouterr()
+    assert audit.main([str(run)]) == 0
+    out = capsys.readouterr().out.splitlines()
+    first = ledger["issues"][0]["id"]
+    assert out == [f"{run.name}/{m.name}  {first}  P9  Zorvath Capital Partners", f"{run.name}/{m.name}  instruction  P9  Zorvath Capital Partners"]
