@@ -1,0 +1,110 @@
+{
+  "task_id": "s30-m0003",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Veilound Bakeries, Inc., the licensee under its software license arrangement with Rivix Systems, Inc. for the BakePlan platform. Veilound needs a clear picture of where it stands under the license documents and of its exposure, so it can decide how to deal with Rivix going forward. Please review the full matter folder: the software license agreement (veilound_rivix_software_license_agreement.md), the draft Phase 2 side letter (rivix_draft_side_letter_phase2.md), Order Form No. 1 (bakeplan_order_form_no1.md), the audit notice letter (rivix_license_audit_notice_2026-10-20.md), and the email thread on go-live scheduling (email_thread_bakeplan_golive_scheduling.md). Send me a memo that lists each issue you identify. For each one, give the document and section where it appears, explain why it matters for Veilound, and recommend a fix, whether that is drafting language, a negotiation position, or a practical step the client should take. Put the issues in order of importance to the client, and flag anything that is time-sensitive. Keep it concise enough that I can use it to brief the client.",
+  "documents": [
+    "bakeplan_order_form_no1.md",
+    "email_thread_bakeplan_golive_scheduling.md",
+    "rivix_draft_side_letter_phase2.md",
+    "rivix_license_audit_notice_2026-10-20.md",
+    "veilound_rivix_software_license_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Order Form No. 1's narrower definition of 'Authorized Users' (limited to named employees of Licensee) controls over the Agreement's broader definition and is the basis of Rivix's audit true-up claim. It locates this in Order Form No. 1, Section 1, explains why this matters to Veilound, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "named employee of Licensee",
+        "contractors and Affiliate",
+        "$111,600"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Order Form No. 1 selects New York law and New York courts, which conflicts with the Agreement's choice of Delaware law and Delaware forum. It locates this in Order Form No. 1, Section 7, explains why this matters to Veilound, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York County",
+        "Delaware",
+        "conflicting forum"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the draft Side Letter's exclusivity provision would expand Veilound's exclusivity obligation well beyond the Agreement's covenant. It locates this in the draft Side Letter, Paragraph 2, explains why this matters to Veilound, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "worldwide",
+        "24 months after",
+        "Affiliates"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the draft Side Letter narrows the liability-cap carve-out to Section 6.1 only, so that breaches of the Section 6.3 security-incident obligations would fall under the liability cap. It locates this in the draft Side Letter, Paragraph 4, explains why this matters to Veilound, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 6.1 only",
+        "security incident",
+        "capped"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that under the Agreement's order of precedence, the Order Form prevails over the body of the Software License Agreement.",
+      "kind": "fact",
+      "hints": [
+        "Order Form prevails",
+        "Section 14.2",
+        "order of precedence"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that under the Agreement's order of precedence, an executed side letter prevails over the Software License Agreement.",
+      "kind": "fact",
+      "hints": [
+        "side letter prevails",
+        "once signed",
+        "Section 14.2"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response presents the issues in an order that it states or evidently reflects their importance to Veilound.",
+      "kind": "format",
+      "hints": [
+        "order of importance",
+        "priority",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response expressly flags at least one item as time-sensitive or urgent.",
+      "kind": "format",
+      "hints": [
+        "time-sensitive",
+        "urgent",
+        "before responding"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the body of the Software License Agreement prevails over Order Form No. 1 where the two conflict.",
+      "kind": "negative",
+      "hints": [
+        "Agreement controls over Order Form"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

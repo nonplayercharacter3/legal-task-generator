@@ -1,0 +1,205 @@
+{
+  "matter_id": "s30-m0001",
+  "summary": "Rilux Foods Holdings, Inc. (client, Buyer) acquired all outstanding shares of Sorrelfield Organic Dairy, Inc., a Vermont organic fluid-milk and yogurt processor, from Glegond Dairy Group, LLC (Seller). The Stock Purchase Agreement was signed February 16, 2026 and closed April 1, 2026. At Closing, Seller signed a Bill of Sale conveying to the Company the bottling-line equipment and bulk milk tankers Seller had held. On June 22, 2026 Seller signed a Confirmatory Trademark and Recipe Assignment Agreement transferring the SORRELFIELD marks and formulations to the Company. That agreement licenses back to Seller and records the parties' dispute over the post-closing purchase price adjustment. The folder also holds the insurance broker's cover letter sending post-closing certificates; it contains no issue. Five issues are planted: (1) a survival period too short to support the tax indemnity; (2) an uncapped Company indemnity of Seller in the Bill of Sale that the SPA cap does not reach; (3) a freely transferable license-back that lets Seller pass the brand rights to a competitor outside the SPA non-compete; (4) an unaddressed change-of-control consent under the Company's raw milk supply agreement; (5) a lapsed Notice of Disagreement window that Buyer disputes.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Rilux Foods Holdings, Inc.",
+      "role": "Buyer under the Stock Purchase Agreement; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Glegond Dairy Group, LLC",
+      "role": "Seller under the Stock Purchase Agreement; transferor under the Bill of Sale; assignor and licensee under the IP Assignment Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Sorrelfield Organic Dairy, Inc.",
+      "role": "Target company (the Company); transferee under the Bill of Sale; assignee and licensor under the IP Assignment Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Ashbourne Valley Organic Producers Cooperative",
+      "role": "Counterparty to the Company's Raw Organic Milk Supply Agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Kestrel & Pruitt Insurance Brokers, LLC",
+      "role": "Insurance broker that sent the post-closing certificates of insurance"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement signing date",
+      "value": "February 16, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Closing Date",
+      "value": "April 1, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "Base Purchase Price",
+      "value": "$84,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Notice of Disagreement period",
+      "value": "30 days after delivery of the Closing Statement",
+      "doc": "D1",
+      "section": "Section 2.4(b)"
+    },
+    {
+      "id": "F5",
+      "key": "Seller indemnity cap under SPA Article VIII",
+      "value": "10% of the Base Purchase Price ($8,450,000)",
+      "doc": "D1",
+      "section": "Section 8.6"
+    },
+    {
+      "id": "F6",
+      "key": "Seller non-compete duration",
+      "value": "3 years after the Closing Date",
+      "doc": "D1",
+      "section": "Section 6.8"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "Stock Purchase Agreement controls over the Bill of Sale and IP Assignment Agreement in any conflict",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 11.6"
+    },
+    {
+      "id": "F9",
+      "key": "Closing Statement delivery date",
+      "value": "April 30, 2026",
+      "doc": "D3",
+      "section": "Recital C"
+    },
+    {
+      "id": "F10",
+      "key": "Buyer Notice of Disagreement delivery date",
+      "value": "June 12, 2026",
+      "doc": "D3",
+      "section": "Recital C"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Section 8.1 of the SPA says all representations, including the tax representation in Section 4.9, survive only until six months after the Closing Date. Section 8.2(c) gives Buyer a Pre-Closing Tax indemnity, but only if a Claim Notice is delivered before the applicable survival period under Section 8.1 expires. Read together, the two provisions cut the tax indemnity to about six months after the April 1, 2026 Closing. Tax authorities normally assess pre-closing periods years later, inside the three-year federal assessment period. Delaware (10 Del. C. § 8106(c)) enforces contractually shortened survival periods. As drafted, Buyer's tax protection will in practice expire before any audit could surface a claim.",
+      "doc": "D1",
+      "section": "Sections 8.1 and 8.2(c)",
+      "detect_terms": [
+        "six (6) months following the Closing Date",
+        "prior to the expiration of the applicable survival period"
+      ],
+      "expected_finding": "Because Section 8.2(c) ties the Pre-Closing Tax indemnity to the six-month survival period in Section 8.1, which Delaware will enforce, Buyer's tax indemnity lapses long before pre-closing taxes are likely to be assessed. The tax representation and the Section 8.2(c) indemnity should survive until 60 days after the applicable statute of limitations expires.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 5 of the Bill of Sale requires the Company, which Buyer now owns, to indemnify Seller for all Liabilities relating to the Conveyed Assets (bottling-line equipment and bulk milk tankers). The indemnity covers liabilities 'whether arising before, on or after the date hereof' and applies 'without limitation as to amount'. The SPA does not limit it. The Section 8.6 cap reaches only Losses under SPA Article VIII. The Section 11.9 precedence clause applies only to conflicts, and there is none, because the SPA is silent on liabilities from the Conveyed Assets and its Seller indemnity in Section 8.2 does not cover them. As a result, Buyer, through the Company, carries unlimited exposure for Seller's pre-closing liabilities on those assets, such as product contamination or tanker accidents.",
+      "doc": "D2",
+      "section": "Section 5",
+      "detect_terms": [
+        "whether arising before, on or after the date hereof",
+        "without limitation as to amount"
+      ],
+      "expected_finding": "The Bill of Sale makes the Company indemnify Seller, without any cap, for all liabilities relating to the Conveyed Assets, including pre-closing ones. Neither the SPA's Article VIII cap nor its conflict-only precedence clause reaches that indemnity. It should be amended to cover only post-closing liabilities and to be subject to a cap, with pre-closing liabilities staying with Seller.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 4 of the IP Assignment Agreement grants Seller a 'non-exclusive, transferable, royalty-free license' to use the SORRELFIELD marks and yogurt formulations for its retained product lines. Section 9.3 says the agreement binds and benefits the Parties' 'successors and assigns' and contains no consent requirement for assignment. The assignment restriction in SPA Section 11.4 applies only to 'this Agreement', meaning the SPA. The non-compete in SPA Section 6.8 binds only Seller and its Affiliates. Read together, Seller can transfer the license-back to a competing organic dairy that is not bound by the non-compete. That competitor could then sell under the Company's brand and use its recipes during the three-year restricted period.",
+      "doc": "D3",
+      "section": "Sections 4 and 9.3",
+      "detect_terms": [
+        "transferable, royalty-free license",
+        "successors and assigns"
+      ],
+      "expected_finding": "Seller's license-back under the IP Assignment Agreement can be transferred freely, and neither the SPA's assignment restriction nor its non-compete reaches a transferee. Seller could therefore pass the brand and recipe rights to a competitor. The license should be made non-transferable without the Company's prior written consent and should terminate on any attempted assignment or change of control of Seller.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Disclosure Schedule 4.5(a) to the SPA lists the Company's Raw Organic Milk Supply Agreement with Ashbourne Valley Organic Producers Cooperative, the Company's main source of certified organic raw milk. The schedule states that any change of control of Processor requires the Cooperative's prior written consent, failing which the Cooperative may terminate. Section 6.4 obliges Seller to obtain only 'the Required Consents', which Section 1.1 defines by reference to the closing-condition schedule under Section 7.2(d). That schedule lists only the landlord consent for the St. Albans facility. Closing occurred on April 1, 2026 (the Bill of Sale date), and no document records the Cooperative's consent. Because the requirement was disclosed, Buyer has no representation claim. Because it was omitted from the Required Consents, Seller had no covenant to obtain it. The Cooperative therefore holds a live termination right over the Company's milk supply.",
+      "doc": "D1",
+      "section": "Section 6.4, Section 7.2(d) and Disclosure Schedule 4.5(a)",
+      "detect_terms": [
+        "change of control of Processor",
+        "the Required Consents"
+      ],
+      "expected_finding": "The sale triggered the Cooperative's change-of-control consent right under the Raw Organic Milk Supply Agreement. That consent was not among the Required Consents and was not obtained before the April 1, 2026 Closing. Because the consent requirement was disclosed, Buyer has no representation or covenant claim, and the Cooperative can terminate the Company's key milk supply. Buyer should promptly seek the Cooperative's consent or waiver and seek a specific indemnity from Seller for any resulting loss.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 2.4(b) of the SPA requires Buyer to deliver any Notice of Disagreement within thirty days after the Closing Statement is delivered. If Buyer does not, Seller's Closing Statement becomes final and binding. Recital C of the IP Assignment Agreement, dated June 22, 2026, records the relevant dates. Seller delivered the Closing Statement on April 30, 2026, so the window closed on May 30, 2026. Buyer delivered its Notice of Disagreement on June 12, 2026. Seller asserts the notice was untimely, and Buyer disputes that position and reserves its rights. Buyer has not accepted Seller's statement, but under the SPA's terms its objection was late. Seller's working capital figure is therefore final unless Buyer can establish a basis to avoid the deadline.",
+      "doc": "D1",
+      "section": "Section 2.4(b)",
+      "detect_terms": [
+        "within thirty (30) days after delivery of the Closing Statement",
+        "final and binding"
+      ],
+      "expected_finding": "Seller delivered the Closing Statement on April 30, 2026, so Buyer's 30-day Notice of Disagreement window under Section 2.4(b) closed on May 30, 2026. Buyer's June 12, 2026 notice is late on the face of the SPA, which makes Seller's Closing Statement final and binding. Buyer has disputed this in Recital C of the IP Assignment Agreement. It should promptly test whether the Closing Statement complied with Section 2.4(a) so as to start the clock, and should seek Seller's written agreement to extend the period or treat the notice as timely.",
+      "contradicts": null
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "matter_id": "s30-m0002",
+  "summary": "Fatesk Interactive Entertainment, LLC, a mid-size video game publisher (the firm's client), is about to sign a Platform License Agreement with Drupuv Systems, Inc. The license covers Drupuv's 'Nimbus' live-service backend platform (matchmaking, player login, cross-platform accounts and in-game commerce) for Fatesk's online titles. The folder holds: the execution draft of the License Agreement; a Statement of Work for implementation and integration services; a Service Level Schedule; the non-binding term sheet the parties negotiated earlier; and an unrelated office lease for Fatesk's Wilmington studio, which is the distractor. The partner wants an issue-spotting memo before signature. Four problems are planted. (1) The SOW picks California law and San Francisco courts, and the License Agreement's precedence clause lets the SOW control as to Implementation Services. (2) 'Severity 1 Incident' is defined broadly in the License Agreement but narrowly in the SLA Schedule, and the SLA Schedule controls incident classification. (3) Drupuv may assign through a 'Permitted Transfer' definition that reaches any person, including a competitor. (4) The License Agreement renews for three-year terms with a narrow opt-out window, contrary to the term sheet.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Fatesk Interactive Entertainment, LLC",
+      "role": "Licensee; video game publisher; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Drupuv Systems, Inc.",
+      "role": "Licensor; provider of the Nimbus live-service game backend platform and implementation services"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "February 1, 2027",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "License Agreement Initial Term",
+      "value": "three years from the License Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F3",
+      "key": "License Agreement governing law",
+      "value": "laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 17.1"
+    },
+    {
+      "id": "F4",
+      "key": "License Agreement forum",
+      "value": "exclusive jurisdiction of state and federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "Section 17.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "SOW (as to Implementation Services), then SLA Schedule (as to service levels and incident classification), then License Agreement",
+      "doc": "D1",
+      "section": "Section 17.4"
+    },
+    {
+      "id": "F6",
+      "key": "Annual license fee",
+      "value": "$1,840,000 per contract year",
+      "doc": "D1",
+      "section": "Section 5.1"
+    },
+    {
+      "id": "F7",
+      "key": "Licensed Concurrency",
+      "value": "750,000 peak concurrent users across all Licensed Titles",
+      "doc": "D1",
+      "section": "Section 1 (Definitions)"
+    },
+    {
+      "id": "F8",
+      "key": "License Agreement Severity 1 Incident definition",
+      "value": "incident making matchmaking, login or in-game purchases unavailable to 10% or more of End Users",
+      "doc": "D1",
+      "section": "Section 1 (Definitions)"
+    },
+    {
+      "id": "F9",
+      "key": "Term sheet renewal terms",
+      "value": "one-year renewals; either party may decline renewal on 90 days' notice before term end",
+      "doc": "D3",
+      "section": "Term and Renewal"
+    },
+    {
+      "id": "F10",
+      "key": "Term sheet assignment restriction",
+      "value": "Drupuv may not assign to a Fatesk competitor without Fatesk's prior written consent",
+      "doc": "D3",
+      "section": "Assignment"
+    },
+    {
+      "id": "F11",
+      "key": "SOW implementation fee",
+      "value": "$420,000 fixed fee",
+      "doc": "D2",
+      "section": "Section 5 (Fees)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "fatesk_drupuv_platform_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "nimbus_implementation_statement_of_work.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D3",
+      "filename": "fatesk_drupuv_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "nimbus_service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "fatesk_wilmington_studio_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "D1 Sections 17.1 and 17.2 choose Delaware law and the Wilmington, Delaware courts. D2 Section 9 says the SOW is governed by the laws of the State of California and gives exclusive jurisdiction to the courts in San Francisco County. The conflict is not cured, because the precedence clause in D1 Section 17.4 makes the SOW control as to Implementation Services. Implementation Services are the SDK integration, data migration and launch-readiness work under D2 Section 2, and they are tied tightly to the licensed Platform. As a result, a single dispute over a failed integration or launch would be split between two governing laws and two exclusive forums. Fatesk faces parallel litigation, inconsistent rulings, and arguments over which law and forum apply to any given claim.",
+      "doc": "D2",
+      "section": "Section 9 (Governing Law and Venue)",
+      "detect_terms": [
+        "laws of the State of California",
+        "San Francisco County"
+      ],
+      "expected_finding": "Because D1 Section 17.4 gives the SOW precedence as to Implementation Services, D2 Section 9's California law and San Francisco exclusive forum override the License Agreement's Delaware law and forum for implementation disputes, splitting related claims; D2 Section 9 should be conformed to Delaware law and Wilmington courts, or D1 Section 17.4 should exclude governing law and forum from the SOW's precedence.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 Section 1 defines 'Severity 1 Incident' as any incident that makes matchmaking, login or in-game purchases unavailable to 10% or more of End Users. Two D1 provisions rely on that term: Section 7.2 sets a one-hour response obligation, and Section 8.4 lets Fatesk terminate for three Severity 1 Incidents in any rolling 90-day period. D4 Section 2.1 defines 'Severity 1 Incident' differently, as complete unavailability of the Platform to all End Users in all regions. D4 also states that its severity classifications apply for all purposes of the Agreement. D1 Section 17.4 then makes the SLA Schedule prevail over the License Agreement as to incident classification. Read together, these provisions put the narrow D4 definition in control. Regional outages, a login-only failure, or a store outage during a game launch would never count as Severity 1. That guts both the one-hour response obligation and Fatesk's termination right.",
+      "doc": "D4",
+      "section": "Section 2.1 (Incident Severity Levels)",
+      "detect_terms": [
+        "in all regions",
+        "for all purposes of the Agreement"
+      ],
+      "expected_finding": "Under D1 Section 17.4 the SLA Schedule's narrow 'Severity 1 Incident' definition (total outage in all regions) controls over D1 Section 1's 10%-of-End-Users definition, hollowing out the D1 Section 7.2 response obligation and the D1 Section 8.4 termination right; D4 Section 2.1 should adopt the D1 definition, or D1 should prevail on that term.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "D1 Section 15.1 bars Fatesk from assigning without Drupuv's consent. D1 Section 15.2, however, lets Drupuv assign the Agreement without Fatesk's consent 'in connection with a Permitted Transfer'. D1 Section 1 defines 'Permitted Transfer' as any merger, change of control, or sale of all or any part of the business or assets to which this Agreement relates, to any person. Read together, these provisions let Drupuv transfer the license freely, including to a rival publisher. That buyer would then run Fatesk's player accounts, telemetry and commerce data. The drafting departs from the term sheet (D3), which barred Drupuv from assigning to a Fatesk competitor without consent.",
+      "doc": "D1",
+      "section": "Section 15.2 (Assignment) with Section 1 definition of 'Permitted Transfer'",
+      "detect_terms": [
+        "in connection with a Permitted Transfer",
+        "to any person"
+      ],
+      "expected_finding": "D1 Section 15.2, read with the 'Permitted Transfer' definition in D1 Section 1, lets Drupuv assign the Agreement without consent to anyone, including a Fatesk competitor, contrary to the term sheet; the clause should require Fatesk's consent to any assignment to a competitor and give Fatesk a termination right on a change of control of Drupuv.",
+      "contradicts": "F10"
+    },
+    {
+      "id": "I4",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "D1 Section 12.2 renews the Agreement automatically for successive three-year Renewal Terms after the three-year Initial Term. A non-renewal notice is effective only if delivered no earlier than 150 days and no later than 120 days before the end of the then-current term. That leaves a 30-day window, and missing it locks Fatesk into roughly $5.5 million of further fees at the $1,840,000 annual rate. D1 Section 5.3 also allows fees to rise by up to 9% at each renewal. The term sheet (D3) had agreed one-year renewals with a 90-day notice of non-renewal.",
+      "doc": "D1",
+      "section": "Section 12.2 (Renewal)",
+      "detect_terms": [
+        "successive three (3) year Renewal Terms",
+        "no earlier than one hundred fifty (150) days"
+      ],
+      "expected_finding": "D1 Section 12.2 automatically renews the Agreement for three-year terms unless Fatesk gives notice in a 30-day window 150 to 120 days before term end, departing from the term sheet's one-year renewals with 90-day notice; it should be revised to one-year renewals terminable on 90 days' notice at any time before term end, with a cap on renewal fee increases.",
+      "contradicts": "F9"
+    }
+  ]
+}

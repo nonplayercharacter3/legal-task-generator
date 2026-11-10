@@ -1,0 +1,118 @@
+{
+  "task_id": "s30-m0001",
+  "split": "test",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Rilux Foods Holdings, Inc., the buyer under a stock purchase agreement with Glegond Dairy Group, LLC. Before we sign off on the deal package, I need your review of the documents in the matter folder: stock_purchase_agreement.md, bill_of_sale.md, ip_assignment_agreement.md and insurance_certificate_cover_letter.md. Read all four in full.\n\nPlease prepare a memo to me covering every issue you find that affects Rilux. For each issue, give the document and section where it appears, explain why it matters to Rilux as buyer, and recommend a specific fix, such as proposed revised language, a closing deliverable or a point to raise with Glegond's counsel. Put the issues in order of significance so the most consequential items come first. If something is ambiguous or you need facts we don't have, flag it as an open question rather than assuming an answer.\n\nKeep the memo tight and practical. I'd like to be able to use it directly in our next call with the client.",
+  "documents": [
+    "bill_of_sale.md",
+    "insurance_certificate_cover_letter.md",
+    "ip_assignment_agreement.md",
+    "stock_purchase_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that, under SPA Sections 8.1 and 8.2(c), Buyer's Pre-Closing Tax indemnity in effect lapses about six months after Closing because it is tied to the six-month survival period, long before pre-closing taxes are likely to be assessed. It explains why this matters to Rilux and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "six months following the Closing Date",
+        "Pre-Closing Tax indemnity",
+        "statute of limitations"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Bill of Sale Section 5 requires the Company to indemnify Seller, without any cap, for all liabilities relating to the Conveyed Assets, including pre-closing liabilities, and that the SPA does not limit this indemnity. It explains why this matters to Rilux and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without limitation as to amount",
+        "before, on or after",
+        "Bill of Sale Section 5"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Seller's license-back under IP Assignment Agreement Sections 4 and 9.3 is freely transferable, so Seller could pass the SORRELFIELD brand and recipe rights to a competitor that the SPA non-compete does not bind. It explains why this matters to Rilux and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "transferable, royalty-free license",
+        "successors and assigns",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Ashbourne Valley Cooperative's change-of-control consent under the Raw Organic Milk Supply Agreement was not obtained for the sale, leaving the Cooperative able to terminate the Company's milk supply. It locates the issue in the SPA (Disclosure Schedule 4.5(a), Section 6.4 or Section 7.2(d)), explains why this matters to Rilux and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "change of control",
+        "Required Consents",
+        "Cooperative may terminate"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that Buyer's June 12, 2026 Notice of Disagreement fell outside the 30-day window under SPA Section 2.4(b), which closed on May 30, 2026 after the April 30, 2026 Closing Statement, so on the face of the SPA Seller's Closing Statement is final and binding. It explains why this matters to Rilux and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "May 30, 2026",
+        "final and binding",
+        "Section 2.4(b)"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Closing Date was April 1, 2026.",
+      "kind": "fact",
+      "hints": [
+        "April 1, 2026",
+        "Closing Date"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is structured as a memo to the supervising partner. Each issue is presented separately and gives the document and section, why the issue matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response presents the issues in an order of significance, with the most consequential items first or expressly ranked by priority.",
+      "kind": "format",
+      "hints": [
+        "order of significance",
+        "highest priority",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Buyer's June 12, 2026 Notice of Disagreement was timely under SPA Section 2.4(b).",
+      "kind": "negative",
+      "hints": [
+        "timely",
+        "within the 30-day period"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the SPA Section 8.6 cap limits the Company's indemnity of Seller under Bill of Sale Section 5.",
+      "kind": "negative",
+      "hints": [
+        "subject to the Section 8.6 cap",
+        "capped at $8,450,000"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

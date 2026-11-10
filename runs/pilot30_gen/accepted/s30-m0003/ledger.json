@@ -1,0 +1,184 @@
+{
+  "matter_id": "s30-m0003",
+  "summary": "Veilound Bakeries, Inc., a multi-plant commercial bakery, licenses Rivix Systems, Inc.'s cloud production-scheduling and recipe-management software ('BakePlan') under a Software License Agreement effective March 2, 2026, with an executed Order Form No. 1. Rivix has issued a license audit notice dated October 20, 2026 demanding a true-up for excess users. Rivix has also proposed a draft Side Letter tied to Veilound's Phase 2 plant rollout. Veilound has asked the firm to review the folder before responding to the audit notice and deciding whether to sign the Side Letter. Four issues are planted. (1) The Order Form redefines 'Authorized Users' more narrowly than the Agreement, and the Agreement's precedence clause makes the Order Form control. That narrower definition is the basis of the audit claim. (2) The Order Form chooses New York law and New York courts, against the Agreement's Delaware law and Delaware forum, and the Order Form prevails. (3) The draft Side Letter expands Veilound's exclusivity well beyond the Agreement's covenant. (4) The draft Side Letter narrows the data-security carve-out from the liability cap. Because an executed side letter prevails over everything else, both Side Letter changes would control once signed. The email thread about go-live scheduling is a distractor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Veilound Bakeries, Inc.",
+      "role": "Licensee; commercial bakery operator and the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Rivix Systems, Inc.",
+      "role": "Licensor; provider of BakePlan production-scheduling and recipe-management software"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Software License Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F3",
+      "key": "Software License Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 15.1"
+    },
+    {
+      "id": "F4",
+      "key": "Software License Agreement forum",
+      "value": "state and federal courts located in Wilmington, Delaware, exclusively",
+      "doc": "D1",
+      "section": "Section 15.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "executed side letter, then Order Form, then body of the Software License Agreement",
+      "doc": "D1",
+      "section": "Section 14.2"
+    },
+    {
+      "id": "F6",
+      "key": "Software License Agreement definition of Authorized Users",
+      "value": "employees, agents and contractors of Licensee and its Affiliates",
+      "doc": "D1",
+      "section": "Section 1.2"
+    },
+    {
+      "id": "F7",
+      "key": "Software License Agreement exclusivity scope",
+      "value": "no competing production-scheduling software at the Licensed Facilities during the Term",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F8",
+      "key": "Order Form No. 1 licensed Authorized User quantity",
+      "value": "150 Authorized Users",
+      "doc": "D3",
+      "section": "Section 2"
+    },
+    {
+      "id": "F9",
+      "key": "Order Form No. 1 annual fee per Authorized User",
+      "value": "$1,800",
+      "doc": "D3",
+      "section": "Section 3"
+    },
+    {
+      "id": "F10",
+      "key": "Audit notice true-up amount demanded",
+      "value": "$111,600 for 62 excess Authorized Users",
+      "doc": "D4",
+      "section": "Paragraph 3"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "veilound_rivix_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "rivix_draft_side_letter_phase2.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "bakeplan_order_form_no1.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "rivix_license_audit_notice_2026-10-20.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "email_thread_bakeplan_golive_scheduling.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Agreement Section 1.2 defines 'Authorized Users' broadly as employees, agents and contractors of Licensee and its Affiliates. Order Form No. 1 Section 1 redefines the term as a named employee of Licensee located at a Licensed Facility. That excludes contractors, seasonal agency staff and users at the Affiliate Veilound Wholesale Distribution LLC. Agreement Section 14.2 makes the Order Form prevail over the Agreement body, so the narrow definition controls the 150-user licence count in Order Form Section 2. Rivix's audit notice dated October 20, 2026 (D4, Paragraphs 2-3) relies on this definition. It counts agency contractors and Affiliate personnel as unlicensed and demands a $111,600 true-up. The issue appears only when the Agreement definition, the Order Form definition, the precedence clause and the audit notice are read together.",
+      "doc": "D3",
+      "section": "Section 1 (Definitions)",
+      "detect_terms": [
+        "named employee of Licensee"
+      ],
+      "expected_finding": "The Order Form's narrower 'Authorized User' definition overrides the Agreement's definition through the Section 14.2 precedence clause. This exposes Veilound to Rivix's $111,600 audit true-up for contractor and Affiliate users. Veilound should dispute the audit on the basis of the parties' intended Agreement definition and amend the Order Form to adopt the Section 1.2 definition.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Agreement Sections 15.1 and 15.2 choose Delaware law and the exclusive jurisdiction of the courts in Wilmington, Delaware. Order Form No. 1 Section 7 provides that the Order Form and any dispute arising out of or relating to it are governed by New York law and must be brought exclusively in the state or federal courts in New York County. Agreement Section 14.2 gives the Order Form priority over the Agreement body. As a result, the New York clause arguably controls disputes over fees, user counts and the audit true-up. That is exactly the dispute raised by Rivix's October 20, 2026 audit notice (D4). Veilound therefore faces competing exclusive forums and uncertainty over which law decides the definition and audit issues.",
+      "doc": "D3",
+      "section": "Section 7 (Governing Law and Venue)",
+      "detect_terms": [
+        "laws of the State of New York",
+        "New York County"
+      ],
+      "expected_finding": "Order Form Section 7's New York law and exclusive New York County forum conflict with the Agreement's Delaware choice. Because Section 14.2 makes the Order Form prevail, New York law and courts could govern the pending audit dispute. The Order Form should be amended to defer to Agreement Section 15 before the audit dispute escalates.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Agreement Section 2.6 bars Veilound only from licensing competing production-scheduling software at the Licensed Facilities during the Term. Rivix's draft Side Letter Paragraph 2 replaces this restriction. It would bar Veilound and all its Affiliates from licensing, developing or using any production planning, inventory management, recipe management or warehouse management software from any other provider. The bar would apply at any facility worldwide during the Term and for twenty-four (24) months thereafter. Under Agreement Section 14.2, an executed side letter prevails over the Agreement. Signing it would therefore displace the agreed covenant. It would also restrict Veilound's distribution affiliate and its in-house development, and continue after termination, well beyond what the BakePlan licence requires.",
+      "doc": "D2",
+      "section": "Paragraph 2 (Exclusivity)",
+      "detect_terms": [
+        "any facility worldwide",
+        "twenty-four (24) months thereafter"
+      ],
+      "expected_finding": "Draft Side Letter Paragraph 2 would, through the Section 14.2 precedence of an executed side letter, replace the Agreement's narrow Section 2.6 covenant. The replacement covers all Affiliates, adds inventory, recipe and warehouse software and in-house development, applies worldwide, and runs for 24 months after the Term. Veilound should refuse it or limit it to the Section 2.6 scope before signing.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Agreement Section 9.3(b) excludes from the Section 9.1 cap any liability for breach of Section 6, which covers both Section 6.1 Confidentiality and Section 6.3 Security Incident obligations for hosted recipe formulations and allergen data. Rivix's draft Side Letter Paragraph 4 amends Section 9.3(b) to read only 'a party's breach of Section 6.1'. That drops Section 6.3. Under Agreement Section 14.2, the executed side letter would control. Rivix's liability for a security incident affecting Veilound's proprietary formulations and allergen records would then be limited to 12 months' fees. The amendment binds both parties alike, but only Rivix hosts the other party's data, so the practical effect is to cap Veilound's recovery. The issue appears only when Sections 6.3, 9.1, 9.3(b) and 14.2 are read together with Paragraph 4.",
+      "doc": "D2",
+      "section": "Paragraph 4 (Amendment to Section 9.3)",
+      "detect_terms": [
+        "breach of Section 6.1"
+      ],
+      "expected_finding": "Draft Side Letter Paragraph 4 narrows the Section 9.3(b) carve-out to Section 6.1 only. Through Section 14.2 precedence, Rivix's liability for Section 6.3 security-incident breaches of Veilound's recipe and allergen data would then fall under the 12-month-fees cap in Section 9.1. Veilound should reject the change and keep Section 6 as a whole uncapped.",
+      "contradicts": null
+    }
+  ]
+}

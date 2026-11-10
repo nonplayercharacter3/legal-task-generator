@@ -1,0 +1,123 @@
+{
+  "matter_id": "s30-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Order Form No. 1, Section 1.1: \"'Authorized User' means a named employee of Licensee who is located at a Licensed Facility and has been issued unique login credentials to access the Software.\" Compare Agreement Section 1.2: \"'Authorized Users' means employees, agents and contractors of Licensee and its Affiliates who are authorized by Licensee to access and use the Software under this Agreement.\" Agreement Section 14.2 makes the Order Form prevail over the body of the Agreement.",
+            "reason": "The Order Form narrows the defined term in a way that hurts Veilound. Under the precedence clause, its definition likely controls the 150-user count. That definition cuts out contractors and seasonal agency staff. It also cuts out personnel of the Affiliate Veilound Wholesale Distribution LLC. This is so even though the Agreement expressly covers Affiliate use (Sections 1.1, 2.1 and 2.2), and Order Form Section 4 itself lists the Affiliate's Lehigh Valley Distribution Center as a Licensed Facility. Rivix's October 20, 2026 audit notice relies on exactly this narrow definition. It excludes 34 contractors and 28 Affiliate staff and demands $111,600. The matter is still actionable. Payment is due 30 days after Veilound receives the notice, which falls around November 19. Today is November 10. Nothing in the folder shows that Veilound has paid, accepted the findings, or deactivated any credentials. Veilound can still give a good-faith dispute notice under Section 3.3, which Section 4.3 makes the audit remedy subject to. Separately, the conflict should be fixed in any Phase 2 side letter or order form. The current Rivix draft side letter does not address it."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"This Order Form, and any dispute arising out of or relating to it, is governed by the laws of the State of New York, without regard to its conflict of laws principles. Any action arising out of or relating to this Order Form must be brought exclusively in the state or federal courts located in New York County, New York...\" (Order Form No. 1, Section 7)",
+            "reason": "Agreement Sections 15.1 and 15.2 pick Delaware law and exclusive Wilmington, Delaware courts. Order Form Section 7 picks New York law and exclusive New York County courts. Agreement Section 14.2 ranks the Order Form above the Agreement body, so the New York clause arguably controls disputes about the Order Form. Rivix's October 20, 2026 audit notice is such a dispute: it turns on the Order Form's Authorized User definition, the user count and the fees. Veilound therefore faces two competing exclusive forums and doubt over which law decides the definition and the true-up. The draft Phase 2 side letter says it is governed by Agreement Section 15, but it is unsigned and covers only the side letter itself, so it does not resolve the conflict. Nothing in the folder shows Veilound has paid or accepted the true-up, and the dispute is live, so the issue is still actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Side Letter ¶2.1: \"Licensee agrees that neither Licensee nor any of its Affiliates shall license, develop or use any production planning, inventory management, recipe management or warehouse management software from any provider other than Licensor, whether at the Licensed Facilities or at any facility worldwide, during the Term and for twenty-four (24) months thereafter.\" ¶2.2: \"Licensee shall cause each of its Affiliates, including Veilound Wholesale Distribution LLC, to comply...\"",
+            "reason": "The covenant binds Veilound, the client and Licensee, and it is a substantial expansion against its interest. Agreement §2.6 is limited to competing production-scheduling software at the Licensed Facilities during the Term. It also expressly carves out inventory, warehouse, ERP and other software. The draft drops those carve-outs and extends the bar to inventory, warehouse and recipe software. It reaches all Affiliates, including the distribution LLC, applies at every facility worldwide, covers in-house development, and runs for 24 months after the Term. Under §14.2 an executed side letter prevails over the Agreement body, so signing would displace the negotiated covenant. The Phase 2 concessions offered in exchange are modest: a 15% discount, a $40k credit, and a price hold that Order Form §3.3 already provides. This is only an unsigned Rivix proposed draft, so the issue is fully actionable in negotiation."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Side Letter Paragraph 4: \"Section 9.3(b) of the Agreement is deleted and replaced in its entirety with the following: '(b) a Party's breach of Section 6.1 (Confidentiality);'\"",
+            "reason": "Agreement Section 9.3(b) currently takes breaches of all of Section 6 out of the 9.1 cap and the 9.2 exclusion of indirect damages. Section 6 includes Licensor's 6.2 security program and 6.3 Security Incident notice and reimbursement duties covering Licensee Data. Under Section 1.7 that data includes recipe formulations and allergen data. Paragraph 4 narrows the carve-out to Section 6.1 only. Breaches of 6.2 and 6.3 would then fall back under the 12-month fee cap and the bar on consequential damages. Section 14.2 makes an executed side letter prevail over the Agreement body. Section 5.1 of the Side Letter keeps everything else unchanged, so nothing restores the broader carve-out. The change is nominally mutual, but only Rivix hosts the other party's data and owes 6.2 and 6.3 duties. In practice it caps Veilound's recovery for a security incident. The document is still an unsigned Rivix draft, so Veilound can still reject or revise it, and the issue remains actionable."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C5 asks for the whole ranking in fact F5 ('executed side letter, then Order Form, then body of the Software License Agreement'); ask for the pair an issue uses",
+          "criterion C6 asks for the whole ranking in fact F5 ('executed side letter, then Order Form, then body of the Software License Agreement'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.07,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

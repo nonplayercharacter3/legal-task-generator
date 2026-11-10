@@ -1,0 +1,126 @@
+{
+  "matter_id": "s30-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 8.1: \"The representations and warranties of the Parties contained in this Agreement, including those in Section 4.9, shall survive the Closing until six (6) months following the Closing Date. ... The Parties specifically intend that the survival periods in this Section 8.1 shall replace any otherwise applicable statute of limitations, as permitted by 10 Del. C. § 8106(c).\" Section 8.2(c): \"any Pre-Closing Taxes, provided that a Claim Notice with respect thereto is delivered prior to the expiration of the applicable survival period under Section 8.1\".",
+            "reason": "Seller gives the indemnity in Section 8.2. Buyer (Rilux), the client, must deliver the Claim Notice to get its benefit. Section 8.2(c) ties the Pre-Closing Tax indemnity to the Section 8.1 survival period. Section 8.1 sets that period at six months and expressly includes the tax representation in Section 4.9. It also expressly invokes 10 Del. C. § 8106(c) to override the normal statute of limitations. The bill of sale and IP assignment confirm that Closing occurred on April 1, 2026, so Buyer's tax protection ran only to about October 1, 2026. That is far shorter than the three-year federal assessment window in which pre-closing tax audits typically arise. None of the other documents extends, cures or carves out this limit. The six-month window has now passed (today is November 10, 2026). However, nothing in the folder shows that Buyer accepted the result: there is no release, no settlement, and no record that Buyer abandoned tax claims. The problem therefore still matters to the client. Buyer should confirm whether any Claim Notice was sent before the window closed. It could also argue that the 8.2(c) indemnity is a covenant that survives until fully performed under the second sentence of Section 8.1, or seek an amendment. Absent one of those, any later-assessed Pre-Closing Tax would be uncovered. This is a real and still-actionable exposure for Buyer."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 5.1: \"The Company shall indemnify, defend and hold harmless Seller and its Affiliates ... from and against any and all Liabilities arising out of or relating to the Conveyed Assets or their ownership, operation, maintenance or use. This indemnity applies to Liabilities whether arising before, on or after the date hereof.\" Section 5.2: \"The obligations of the Company under Section 5.1 apply without limitation as to amount.\"",
+            "reason": "The obligation runs the wrong way for the client. The Company, now Rilux's wholly owned subsidiary, is the indemnitor and Seller is the indemnitee. The indemnity covers Seller's own pre-closing liabilities on the bottling equipment and tankers, including contamination, recall, collisions and PMO compliance, with no cap, basket or time limit. 'Liabilities' is defined to include unknown and contingent claims.\n\nNothing in the SPA cures this:\n- The SPA Section 8.6 cap limits only Seller's liability under Article VIII. It does not touch the Company's obligations under the Bill of Sale.\n- SPA Section 11.9 precedence applies only to conflicts. The SPA does not address liabilities from the Conveyed Assets, so there is no conflict to resolve.\n- The SPA Section 8.2(a) rep claims expired six months after the April 1, 2026 closing. That removes any offsetting Seller protection.\n\nThe broker letter does not cure it either. The Rilux-program coverage runs only from April 1, 2026, is capped in amount, and does not address pre-closing occurrences or a contractual indemnity of Seller.\n\nThe issue is still actionable. The indemnity is an ongoing obligation that has not yet been triggered, not a lapsed deadline. Nothing in the folder shows Rilux accepted this exposure, and the client can still seek an amendment or contest enforceability."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 4.1: \"the Company hereby grants to Seller a non-exclusive, transferable, royalty-free license, under the Company's rights in the Licensed IP, to use: the Marks; and the yogurt Formulations identified in Part III of Schedule 1 ... solely in connection with the manufacture, marketing, distribution and sale of the Retained Product Lines.\" Section 9.3: \"This Agreement binds and benefits the Parties and their respective successors and assigns.\"",
+            "reason": "The problem is present and still actionable for Rilux. The license runs from the Company, which Rilux now owns, to Seller. It is expressly \"transferable.\" Neither Section 4 nor Section 9.3 requires the Company's consent to a transfer or excludes competitors as transferees. Section 4.2 limits sublicensing to Affiliates and co-packers, but nothing comparable limits an outright transfer of the license under 4.1. SPA Section 11.4 restricts assignment only of the SPA itself. SPA Section 6.8 binds only Seller and its Affiliates, so an unaffiliated organic dairy that takes the license would not be bound by the non-compete. The field-of-use limit to \"Retained Product Lines\" does not cure this. That term covers any dairy products Seller sold as of the Effective Date plus reasonable line extensions, and it is not limited to conventional products. A transferee could therefore use the SORRELFIELD marks and the SF-C3/SF-G2 yogurt formulations, including Seller's retained copies under Section 2.4, in competition with the Company. The Company's only termination rights are for quality or usage breaches or 12 months of non-use, which do not address a transfer. The signature blocks are blank and nothing in the folder shows the Company has accepted the terms, so Rilux can still negotiate a consent requirement or anti-competitor restriction."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Schedule 4.5(a): \"Section 14.2 of the Raw Organic Milk Supply Agreement provides that any change of control of Processor, including any transfer of a majority of its outstanding voting stock, requires the Cooperative's prior written consent. Failing such consent, the Cooperative may terminate the agreement upon sixty (60) days' written notice.\" Schedule 7.2(d) lists only: \"Written consent of Lamoille Industrial Properties, LLC, as landlord under the Lease Agreement for the St. Albans Facility.\" Section 6.4: \"Seller shall, and shall cause the Company to, use commercially reasonable efforts to obtain the Required Consents before the Closing.\"",
+            "reason": "The problem is present and still live for Buyer. 'Required Consents' is defined by Schedule 7.2(d), which lists only the landlord consent. So neither Seller's Section 6.4 covenant nor Buyer's Section 7.2(d) closing condition covered the Cooperative's consent. Because Schedule 4.5(a) discloses the consent requirement, the representation in Section 4.5(b) is qualified, and Buyer has no indemnity claim. In any event, the six-month survival period under Section 8.1 ended October 1, 2026. Closing occurred April 1, 2026, and nothing in the folder records the Cooperative's consent or a waiver. The Cooperative therefore keeps a right to terminate, on 60 days' notice, the Company's main certified organic raw milk supply, which runs through 2029. This is not past history Buyer has accepted. The termination right still exists, and Buyer can act on it now, for example by approaching the Cooperative for a consent or waiver and by planning for an alternative supply. Buyer bears the risk, and nothing in the documents cures or allocates it to Seller."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "SPA Section 2.4(b): \"Buyer shall deliver to Seller a written notice of disagreement (a \"Notice of Disagreement\") within thirty (30) days after delivery of the Closing Statement... If Buyer does not deliver a Notice of Disagreement within that period, the Closing Statement shall be final and binding on the Parties.\" IP Assignment Agreement Recital C: \"On April 30, 2026, Seller delivered to Buyer the Closing Statement... On June 12, 2026, Buyer delivered to Seller a Notice of Disagreement... Buyer disputes Seller's position and reserves all of its rights. As of the Effective Date, the Parties and Buyer have not resolved this dispute.\"",
+            "reason": "The Closing Statement was delivered on April 30, 2026, so the 30-calendar-day window in Section 2.4(b) ended May 30, 2026. Even if that weekend date rolled to Monday, June 1, Buyer's June 12 notice was late. Nothing in the SPA cures this: there is no extension mechanism, no business-day carve-out and no excuse for late notice. On the SPA's terms, Seller's working capital figure has become final and binding against Buyer, our client. Buyer also loses the Independent Accountant process under Section 2.4(c) for any shortfall. The issue is still actionable. Buyer has not accepted the result: it has expressly disputed Seller's position and reserved its rights. Section 8.1 of the IP Assignment Agreement preserves both sides' positions, and the folder records no payment or acceptance by Buyer. Buyer therefore faces a live dispute in which, on the SPA's terms, it is in the weaker position and must establish a basis to avoid the deadline, such as waiver, estoppel or a defect in delivery."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

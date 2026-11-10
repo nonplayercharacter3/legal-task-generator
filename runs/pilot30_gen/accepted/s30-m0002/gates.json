@@ -1,0 +1,124 @@
+{
+  "matter_id": "s30-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 55
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "SOW Section 9.1: \"This SOW and any dispute arising out of or relating to this SOW or the Implementation Services are governed by the laws of the State of California, without regard to its conflict of laws principles.\" SOW Section 9.2: \"Each Party submits to the exclusive jurisdiction of the state and federal courts located in San Francisco County, California for any action arising out of or relating to this SOW or the Implementation Services.\" Compare Agreement Sections 17.1/17.2 (Delaware law; exclusive jurisdiction of courts in Wilmington, Delaware) and 17.4: \"...they shall prevail in the following order: the SOW (as to Implementation Services)...\"",
+            "reason": "The problem is present. The SOW chooses California law and exclusive San Francisco courts for anything relating to the Implementation Services. The License Agreement chooses Delaware law and exclusive Wilmington courts for anything relating to the Agreement. Section 17.4 of the Agreement gives the SOW priority as to Implementation Services, so the conflict is not cured. Instead, the precedence clause confirms that the split stands. The term sheet called for Delaware law and Wilmington courts across all Definitive Agreements, so the California clause departs from the agreed deal. A dispute about a failed integration or launch would involve both the SOW services and Platform obligations, such as SLA, warranty and Severity 1 response. Those claims would fall under two governing laws and two exclusive forums. For Fatesk, that means a risk of parallel proceedings, inconsistent rulings and arguments over which forum hears what. Fatesk is also Delaware-based, while Drupuv is in Texas, so the California forum gives Fatesk no home-forum benefit. The documents are dated February 1, 2027, and the signature blocks are blank, so the SOW is still unsigned and the clause can still be negotiated. The issue remains actionable."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "SLA Schedule Section 2.1(a): \"'Severity 1 Incident' means an incident resulting in the complete unavailability of the Platform to all End Users in all regions.\" It closes with: \"The severity classifications in this Section 2.1 apply for all purposes of the Agreement.\" License Agreement Section 1.11 instead defines Severity 1 as an incident \"making matchmaking, login or in-game purchases unavailable to 10% or more of End Users.\" Section 17.4 states the SLA Schedule prevails \"as to service levels and incident classification.\"",
+            "reason": "The two definitions conflict. The SLA Schedule's \"all purposes\" language and the License Agreement's order-of-precedence clause make the narrow SLA definition control. Section 2.1(b) of the SLA Schedule confirms this by placing regional and single-Core-Service outages in Severity 2. As a result, Drupuv's Section 7.2 obligations (one-hour response, continuous senior engineering, hourly updates) apply only to a total global outage. The same narrowing hits the Section 7.4 five-day root cause analysis and the Section 8.4 chronic-failure termination right. For Severity 2, the SLA Schedule gives only a 2-hour response and a root cause analysis on request. This departs from the agreed term sheet definition (10% of End Users) and materially weakens remedies that protect Fatesk, which is the beneficiary of these obligations. The documents are unsigned and still in negotiation, so Fatesk can still fix this. Nothing in the folder cures the conflict."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 15.2: \"Drupuv may assign or transfer this Agreement, in whole or in part, without Fatesk's consent in connection with a Permitted Transfer.\" Section 1.8: \"'Permitted Transfer' means any merger, change of control, or sale of all or any part of the business or assets to which this Agreement relates, to any person.\"",
+            "reason": "The problem is present and actionable. Section 15.1 requires Fatesk to obtain Drupuv's consent before assigning. Section 15.2 lets Drupuv assign without Fatesk's consent in any Permitted Transfer, and Section 1.8 defines that term to cover a sale of all or any part of the relevant business 'to any person'. Nothing excludes Fatesk competitors. The only protection is notice within 30 days after the assignment takes effect, so Fatesk learns of it only once it is done. A rival publisher could therefore take over the hosting and processing of Fatesk Data, including player accounts, purchase records and telemetry, and Fatesk would have no consent right and no termination right. This departs from the term sheet (Section 10.2), which barred Drupuv from assigning to a Fatesk competitor without Fatesk's prior written consent. The term sheet is non-binding, so it does not cure the gap. The agreement is not yet signed (unsigned signature blocks, Effective Date February 1, 2027), so the point can still be negotiated."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "\"After the Initial Term, this Agreement shall renew automatically for successive three (3) year Renewal Terms. It shall not renew if either Party gives the other written notice of non-renewal. A notice of non-renewal is effective only if delivered no earlier than one hundred fifty (150) days and no later than one hundred twenty (120) days before the end of the then-current term.\" (Section 12.2)",
+            "reason": "The problem is present and actionable. Section 12.2 sets three-year automatic renewals, and a non-renewal notice counts only if delivered in a 30-day window, 150 to 120 days before term end. Fatesk, as licensee, bears the risk: if it misses the window, it is bound for another three years at about $1.84M a year, roughly $5.5M. Section 5.3 also lets Drupuv raise the fee by up to 9% at each renewal. The term sheet (Section 8.2) agreed one-year renewals that either party could decline on 90 days' notice before term end, so the draft departs from the agreed deal against Fatesk. Nothing in the other documents cures or limits this. The SOW and SLA Schedule do not address renewal, and the order-of-precedence clause does not affect it. The agreement is still an unsigned draft (Effective Date February 1, 2027; signature blocks blank), so Fatesk can still negotiate this term."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F6, which only issue I4 uses: a memo that misses I4 need not state it"
+        ],
+        "ranking_facts": [
+          "criterion C5 asks for the whole ranking in fact F5 ('SOW (as to Implementation Services), then SLA Schedule (as to service levels and incident classification), then License Agreement'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.05,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

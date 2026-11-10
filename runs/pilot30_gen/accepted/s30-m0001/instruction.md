@@ -1,0 +1,5 @@
+We act for Rilux Foods Holdings, Inc., the buyer under a stock purchase agreement with Glegond Dairy Group, LLC. Before we sign off on the deal package, I need your review of the documents in the matter folder: stock_purchase_agreement.md, bill_of_sale.md, ip_assignment_agreement.md and insurance_certificate_cover_letter.md. Read all four in full.
+
+Please prepare a memo to me covering every issue you find that affects Rilux. For each issue, give the document and section where it appears, explain why it matters to Rilux as buyer, and recommend a specific fix, such as proposed revised language, a closing deliverable or a point to raise with Glegond's counsel. Put the issues in order of significance so the most consequential items come first. If something is ambiguous or you need facts we don't have, flag it as an open question rather than assuming an answer.
+
+Keep the memo tight and practical. I'd like to be able to use it directly in our next call with the client.
