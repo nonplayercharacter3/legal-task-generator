@@ -43,6 +43,8 @@ spec:
         - --max-model-len=131072            # a solver prompt (~31k) plus a 32k memo, with room; native is 262k
         - --gpu-memory-utilization=0.90
         - --reasoning-parser=qwen3          # thinking goes to reasoning_content, not content
+        # Ceph serves one stream at ~19 MB/s but 8 at ~146 MB/s (Fullerton, 2026-11-10): read 8 shards at a time.
+        - '--model-loader-extra-config={"enable_multithread_load": true, "num_threads": 8}'
         - --port=8000
       env:
         - name: HF_HOME
