@@ -13,6 +13,7 @@ It can also inject faults on purpose, to prove each gate rejects what it should:
   bundled_criterion      an issue criterion also demands one particular harm -> repaired on the writer's second call
                          (rubric_trace fails only when check_bundling = "repair" and the writer does not correct it)
   weak_gold              gold answer misses an issue              -> rubric_tests fails
+  absent_party           an issue rests on a buyer no document names -> issue_check fails (never drawn by fault_rate)
 
 Its "legal knowledge" is the issue library's detect_terms, so the fake solver finds
 an issue by spotting those phrases, with probability `solver_skill` per issue.
@@ -29,7 +30,7 @@ from typing import Any
 from .models import CallLog, CallRecord, extract_input
 from .taxonomy import ISSUE_LIBRARY
 
-FAULTS = ("drop_issue", "wrong_fact", "conflicting_restatement", "leaky_filename", "untraceable_criterion", "weak_gold", "bundled_criterion")
+FAULTS = ("drop_issue", "wrong_fact", "conflicting_restatement", "leaky_filename", "untraceable_criterion", "weak_gold", "bundled_criterion", "absent_party")
 
 COMPANY_NAMES = [
     "Ostrava Industrial Supply Co.",
@@ -101,7 +102,8 @@ class FakeModel:
         if self.fault_rate > 0:
             r = _rng(self.seed, "fault", matter_id)
             if r.random() < self.fault_rate:
-                return r.choice(FAULTS[:-1])  # not bundled_criterion: the writer corrects it, so it rejects nothing and would only reshuffle the demo
+                # not bundled_criterion (the writer corrects it, so it rejects nothing) nor absent_party: either would only reshuffle the demo
+                return r.choice(FAULTS[:-2])
         return ""
 
     def complete(self, role: str, system: str, user: str) -> str:
@@ -186,13 +188,14 @@ class FakeModel:
             )
         if self.fault_for(spec["matter_id"]) == "leaky_filename" and issues:
             documents[0]["filename"] = _slug(issues[0]["label"]) + "_" + documents[0]["filename"]
+        parties = [{"id": "P1", "name": client, "role": roles[0]}, {"id": "P2", "name": counterparty, "role": roles[1]}]
+        if self.fault_for(spec["matter_id"]) == "absent_party" and issues:  # s9-m0002: the drafter names only P1 and P2
+            parties.append({"id": "P3", "name": "Quellmark Capital Partners", "role": "Prospective buyer"})
+            issues[0]["description"] += " It matters because Quellmark Capital Partners plans to acquire the client."
         return {
             "matter_id": spec["matter_id"],
             "summary": f"{client} is party to a {spec['agreement_type']} with {counterparty}.",
-            "parties": [
-                {"id": "P1", "name": client, "role": roles[0]},
-                {"id": "P2", "name": counterparty, "role": roles[1]},
-            ],
+            "parties": parties,
             "facts": facts,
             "documents": documents,
             "issues": issues,
