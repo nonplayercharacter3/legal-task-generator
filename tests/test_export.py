@@ -175,3 +175,42 @@ def test_drop_criteria_relabels_a_task_from_its_stored_grades(cfg, tmp_path):
         drop.relabel(m, ["C2"], "test review")
     assert main(["export", "--runs", str(run), "--out", str(tmp_path / "x"), "--model", model, "--min-pass", "0.6", "--max-pass", "0.7"]) == 0
     assert any(json.loads(line)["eval"]["matter_id"] == m.name for line in (tmp_path / "x" / f"{t['split']}.jsonl").read_text().splitlines())
+
+
+def test_a_held_task_is_left_out_of_the_export_unless_asked_for(cfg, tmp_path, capsys):
+    # s9-m0002 (2026-11-09): held out of the pool until its issue I1 is repaired.
+    Pipeline(cfg).run()
+    run = Path(cfg.run.out_dir)
+    m = sorted((run / "accepted").iterdir())[0]
+    task = json.loads((m / "task.json").read_text())
+    task["hold"] = {"reason": "issue I1 rests on a sale no document mentions", "by": "Sirui She, 2026-11-09"}
+    (m / "task.json").write_text(json.dumps(task))
+    capsys.readouterr()
+    assert main(["export", "--runs", str(run), "--out", str(tmp_path / "e")]) == 0
+    assert "left out: 1 held" in capsys.readouterr().out
+    ids = lambda out: {json.loads(l)["eval"]["matter_id"] for s in ("train", "dev", "test") for l in (out / f"{s}.jsonl").read_text().splitlines()}
+    assert m.name not in ids(tmp_path / "e")
+    assert main(["export", "--runs", str(run), "--out", str(tmp_path / "f"), "--include-held"]) == 0
+    assert m.name in ids(tmp_path / "f") and "left out: 0 held" in capsys.readouterr().out
+
+
+def test_audit_script_lists_issues_and_instructions_naming_a_party_no_document_mentions(cfg, capsys):
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("audit", Path(__file__).resolve().parent.parent / "scripts" / "audit_absent_parties.py")
+    audit = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(audit)
+
+    Pipeline(cfg).run()
+    run = Path(cfg.run.out_dir)
+    m = sorted((run / "accepted").iterdir())[0]
+    ledger = json.loads((m / "ledger.json").read_text())
+    ledger["parties"].append({"id": "P9", "name": "Zorvath Capital Partners", "role": "Buyer"})
+    ledger["issues"][0]["description"] += " Zorvath Capital's purchase triggers it."
+    (m / "ledger.json").write_text(json.dumps(ledger))
+    (m / "instruction.md").write_text((m / "instruction.md").read_text() + "\nThe buyer is Zorvath.")
+    capsys.readouterr()
+    assert audit.main([str(run)]) == 0
+    out = capsys.readouterr().out.splitlines()
+    first = ledger["issues"][0]["id"]
+    assert out == [f"{run.name}/{m.name}  {first}  P9  Zorvath Capital Partners", f"{run.name}/{m.name}  instruction  P9  Zorvath Capital Partners"]

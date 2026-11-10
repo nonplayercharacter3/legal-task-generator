@@ -39,6 +39,19 @@ def _plain(s) -> str:
     return _norm(str(s or "").translate(_PLAIN))
 
 
+def parties_absent(text: str, ledger: Ledger, docs: Documents) -> list[dict]:
+    """Ledger parties `text` names that no document mentions. A party is named, or mentioned, by its full name or its
+    name stem (the first word, as the spec's name_stems rule makes it); since the stem is part of the full name, a
+    party is absent exactly when no document holds its stem."""
+    folder, named = _words("\n".join(docs.values())), _words(text)
+    out = []
+    for p in ledger.parties:
+        stem = _words(p.name.split(" ")[0])
+        if stem.strip() and stem in named and stem not in folder:
+            out.append({"party": p.id, "name": p.name})
+    return out
+
+
 # ---------------------------------------------------------------- deterministic
 
 
@@ -245,7 +258,10 @@ def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms
         # The reason goes to gates.json too: round 12's s12-m0002 was rejected here and its grounds were not on disk.
         results.append({"issue": i.id, "present": bool(out.get("present")), "evidence": out.get("evidence", ""), "reason": out.get("reason", "")})
     missing = [r["issue"] for r in results if not r["present"]]
-    return GateResult("issue_check", not missing, {"missing": missing, "results": results})
+    # s9-m0002: issue I1 rested on a sale to a buyer no document names, so a solver could only guess it. Recorded
+    # here, never rejected yet.
+    absent = [{"issue": i.id, **p} for i in ledger.issues for p in parties_absent(f"{i.description} {i.expected_finding}", ledger, docs)]
+    return GateResult("issue_check", not missing, {"missing": missing, "results": results, "absent_parties": absent})
 
 
 def rubric_tests(client: ModelClient, rubric: Rubric, answers: Answers) -> GateResult:

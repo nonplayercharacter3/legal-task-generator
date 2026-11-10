@@ -67,9 +67,10 @@ def example(matter: Path, labels: list[dict]) -> dict:
 
 
 def export(runs: list[str], out: str, model: str | None = None, min_pass: float = 0.0, max_pass: float = 1.0,
-           include_unsolved: bool = False) -> dict:
+           include_unsolved: bool = False, include_held: bool = False) -> dict:
     """Write <out>/{train,dev,test}.jsonl from every matter folder holding a task.json (accepted, or relabelled
-    under rejected/). With `model`, keep only tasks that model labelled with min_pass <= pass_rate <= max_pass.
+    under rejected/). A task held by a person (`hold: {"reason", "by"}` in task.json) is left out unless
+    `include_held`. With `model`, keep only tasks that model labelled with min_pass <= pass_rate <= max_pass.
     Returns counts per split, the task ids dropped as duplicates (two run folders with one name), and how many the
     filters left out."""
     found: dict[str, list[Path]] = {}
@@ -78,12 +79,15 @@ def export(runs: list[str], out: str, model: str | None = None, min_pass: float 
             found.setdefault(task_id(m.parent), []).append(m.parent)
     dupes = sorted(k for k, v in found.items() if len(v) > 1)
     lines: dict[str, list[str]] = {s: [] for s in SPLITS}
-    skipped = {"unsolved": 0, "outside_band": 0}
+    skipped = {"held": 0, "unsolved": 0, "outside_band": 0}
     for tid, (matter, *rest) in sorted(found.items()):
         if rest:
             continue
         task = json.loads((matter / "task.json").read_text())
         labels = difficulty(task, _settings(matter.parent.parent))
+        if task.get("hold") and not include_held:
+            skipped["held"] += 1
+            continue
         if task.get("unsolved") and not include_unsolved:
             skipped["unsolved"] += 1
             continue
