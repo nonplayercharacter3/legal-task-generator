@@ -28,6 +28,11 @@ spec:
               - key: nvidia.com/gpu.product   # nvidia.com/a100 also covers 40 GB cards
                 operator: In
                 values: [NVIDIA-A100-SXM4-80GB, NVIDIA-A100-80GB-PCIe]
+              # The weight cache (pvc.yaml, rook-ceph-block) lives on NRP's US West Ceph pool. Read from SDSC on
+              # 2026-11-02 the pod was ready in ~7 minutes; from Missouri on 2026-11-09, ~110 s per shard (~2 hours).
+              - key: topology.kubernetes.io/region
+                operator: In
+                values: [us-west]
   containers:
     - name: vllm
       image: vllm/vllm-openai:v0.30.0     # CUDA 13, needs driver 580+; every NRP GPU node had 580+ on 2026-10-18
