@@ -255,6 +255,10 @@ class Pipeline:
         for k, default in (("timeout_retries", 1),):
             if s["backend"].get(k) == default:
                 s["backend"].pop(k)
+        # How a reply travels does not change what it says, so runs begun without streaming resume with it on.
+        for b in (s["backend"], *s["backend"]["roles"].values()):
+            for k in ("stream", "max_seconds"):
+                b.pop(k, None)
         return s
 
     def _finished(self, out: Path, matter_id: str) -> MatterResult | None:

@@ -105,6 +105,8 @@ class OpenAICompatClient:
         max_retries: int = 3,
         timeout_retries: int = 1,
         extra_body: dict[str, Any] | None = None,
+        stream: bool = False,
+        max_seconds: float = 3600,
         log: CallLog | None = None,
     ) -> None:
         self.url = base_url.rstrip("/") + "/chat/completions"
@@ -117,6 +119,10 @@ class OpenAICompatClient:
         self.max_retries = max_retries
         self.timeout_retries = timeout_retries  # a read timeout is retried at most this often, within max_retries
         self.extra_body = extra_body or {}  # server-specific fields, e.g. reasoning_effort on NRP
+        # Streaming: `timeout` bounds the silence between chunks, so a slow but working server is not cut off;
+        # max_seconds bounds the whole call (checked as each chunk arrives).
+        self.stream = stream
+        self.max_seconds = max_seconds
         self.log = log if log is not None else CallLog()
 
     def model_for(self, role: str) -> str:
@@ -133,6 +139,7 @@ class OpenAICompatClient:
                 ],
                 "temperature": self.temperature,
                 "max_tokens": self.max_tokens,
+                **({"stream": True, "stream_options": {"include_usage": True}} if self.stream else {}),
                 **self.extra_body,
             }
         ).encode()
@@ -146,9 +153,7 @@ class OpenAICompatClient:
             try:
                 req = urllib.request.Request(self.url, data=body, headers=headers, method="POST")
                 with urllib.request.urlopen(req, timeout=self.timeout) as resp:
-                    data = json.loads(resp.read())
-                choice = data["choices"][0]
-                usage = data.get("usage") or {}
+                    content, finish, usage = self._read(resp, t0)
                 self.log.add(
                     CallRecord(
                         role=role,
@@ -158,9 +163,9 @@ class OpenAICompatClient:
                         output_tokens=usage.get("completion_tokens"),
                     )
                 )
-                if choice.get("finish_reason") == "length":  # a cut-off document must not pass as complete
+                if finish == "length":  # a cut-off document must not pass as complete
                     raise ModelError(f"{role}: output truncated at max_tokens={self.max_tokens}")
-                return _THINK.sub("", choice["message"]["content"] or "").strip()
+                return _THINK.sub("", content).strip()
             except urllib.error.HTTPError as e:
                 text = e.read()[:300]
                 last_err = f"HTTP {e.code}: {text!r}"
@@ -181,6 +186,33 @@ class OpenAICompatClient:
                 break
             time.sleep(wait if wait is not None else min(2**attempt * 2, 30))
         raise ModelError(f"{role}: {last_err}")
+
+    def _read(self, resp, t0: float) -> tuple[str, str | None, dict]:
+        """The reply's text, finish_reason and usage, from one JSON body or from a server-sent event stream."""
+        if not (self.stream and "text/event-stream" in (resp.headers.get("Content-Type") or "")):
+            data = json.loads(resp.read())
+            choice = data["choices"][0]
+            return choice["message"]["content"] or "", choice.get("finish_reason"), data.get("usage") or {}
+        parts, finish, usage = [], None, {}
+        for line in resp:  # each line waits at most `timeout` (the socket timeout), however long the whole reply
+            if time.time() - t0 > self.max_seconds:  # a TimeoutError, so it counts against timeout_retries
+                raise TimeoutError(f"reply still streaming after max_seconds={self.max_seconds}")
+            line = line.strip()
+            if not line.startswith(b"data:"):
+                continue  # blank separators and ": keep-alive" comments
+            payload = line[5:].strip()
+            if payload == b"[DONE]":
+                break
+            event = json.loads(payload)
+            if "error" in event:
+                raise ConnectionError(f"error event in stream: {str(event['error'])[:300]}")
+            usage = event.get("usage") or usage  # the last event when include_usage is honoured
+            for choice in event.get("choices") or []:
+                parts.append((choice.get("delta") or {}).get("content") or "")
+                finish = choice.get("finish_reason") or finish
+        if finish is None:  # the connection closed mid-reply
+            raise ConnectionError("stream ended before a finish_reason")
+        return "".join(parts), finish, usage
 
 
 class RoleRouter:
