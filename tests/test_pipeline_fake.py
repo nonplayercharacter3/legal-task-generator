@@ -581,3 +581,20 @@ def test_deferred_run_then_label_equals_an_inline_run(tmp_path, read_json):
     assert len({t["solver_pass_rate"] for t in a.values()}) > 1
     ra, rb = read_json(inline / "report.json"), read_json(deferred / "report.json")
     assert {k: ra[k] for k in ("accepted", "unsolved", "difficulty", "matters")} == {k: rb[k] for k in ("accepted", "unsolved", "difficulty", "matters")}
+
+
+def test_generate_only_config_is_the_nrp_pilot_with_solver_check_deferred(tmp_path):
+    from dataclasses import asdict
+
+    root = Path(__file__).resolve().parent.parent / "configs"
+    gen, nrp = asdict(load_config(str(root / "pilot_generate_only.toml"))), asdict(load_config(str(root / "pilot_nrp_solver.toml")))
+    assert gen["gates"].pop("solver_check") == "defer" and nrp["gates"].pop("solver_check") == "inline"
+    assert gen == nrp
+    # a run started before the key existed (settings.json without it) still resumes
+    run = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}})
+    Pipeline(run).run()
+    settings = json.loads((tmp_path / "settings.json").read_text())
+    assert "solver_check" not in settings["gates"]
+    assert Pipeline(run).run(resume=True)["resumed"] == 1
+    with pytest.raises(ValueError, match="settings changed"):
+        Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}, "gates": {"solver_check": "defer"}})).run(resume=True)
