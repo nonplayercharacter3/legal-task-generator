@@ -22,6 +22,9 @@ max_retries = 6
 # As on NRP (docs/research/qwen_memo_length.md). vLLM 0.30 honours it for this model: on one test question,
 # 772 completion tokens at "low" against 2,881 without it, same answer (2026-11-02).
 extra_body = { reasoning_effort = "low" }
+# Stream the reply: `timeout` then means that long without a byte, not that long for the whole memo, so a slow
+# but working server is not cut off (as on NRP, 2026-11-09). max_seconds (default 3600) caps one call.
+stream = true
 
 # Folders of 4 to 5 documents: a 3-document folder lets the solver read everything (known weakness 3). The
 # evidence so far is mixed: accepted tasks had 4 and 5 documents, too-easy ones 4 and 5 as well.
