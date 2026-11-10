@@ -1,0 +1,114 @@
+{
+  "matter_id": "s33-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "KEA Section 9.2: \"The Employer may not assign this Agreement, including in connection with a merger, consolidation, or sale of all or substantially all of the Employer's assets, without the Executive's prior written consent.\" Section 6.2(e) makes it Good Reason if there is \"any assignment or purported assignment of this Agreement in violation of Section 9.2.\" APA Schedule 2.1(c), item 2, lists the \"Key Employee Agreement between Fupurt Valley Creamery, Inc. and Teodora Venkataraman, Master Cheesemaker\" as an Assigned Contract. APA Section 8.2(c) conditions closing only on the Landlord and Retail Distribution Agreement consents.",
+            "reason": "The asset sale to Buyer is exactly the kind of assignment Section 9.2 restricts, and the APA transfers the KEA to Buyer as an Assigned Contract. Under APA Section 2.3(c), Buyer assumes post-closing liabilities under Assigned Contracts. Neither APA Section 7.3 nor Section 8.2(c) requires Seller to obtain Venkataraman's consent, or makes that consent a closing condition. APA Section 2.5 (non-assignable contracts held for Buyer's benefit) does not cure the problem, because Section 6.2(e) treats a \"purported assignment\" as Good Reason as well. If Good Reason is triggered, she can resign and collect 18 months of base salary plus COBRA premiums under Section 6.3. Under Section 7.5, the non-compete and non-solicit in Sections 7.2 and 7.3 also fall away. Those costs fall on Buyer as assignee, and Buyer loses the protection of the covenants. The Seller Note is undated and nothing in the folder shows that closing has occurred or that Buyer accepted this result, so the issue remains actionable: Buyer can require Executive consent as a covenant and closing condition before closing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 9.5(a): \"The aggregate amount of all Losses for which Buyer shall be liable under Section 9.3, other than claims under Section 9.3(b), shall not exceed $1,840,000 (10% of the purchase price).\" Section 2.3(e): Buyer assumes \"all Liabilities arising out of or relating to the Products, including product warranty, product recall, product liability, contamination and organic-certification Liabilities, whether arising before or after the Closing.\"",
+            "reason": "The problem is present and actionable. Under Section 9.3(b), Buyer owes Seller an indemnity for every Assumed Liability. Section 2.3(e) makes Seller's pre-closing product recall, contamination and certification liabilities Assumed Liabilities. Section 2.4 excludes only liabilities that are not Assumed Liabilities, so it does not carve these out. Section 9.5(a) then removes the cap from 9.3(b) claims. The result is that Buyer, the client, carries uncapped indemnity exposure for Seller's own pre-closing product history. Nothing in the folder cures this. Section 7.7 excludes only bulk-sales liabilities. The Seller Note and the other documents do not limit the exposure. The signature blocks are blank and nothing shows Buyer has accepted the term, so Buyer can still raise it."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Seller Note §10.1: \"This Note and all claims arising out of or relating to it are governed by and construed in accordance with the laws of the State of Delaware...\" §10.2: \"Each of Maker and Holder irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware for any action, suit or proceeding arising under or relating to this Note, including any dispute concerning payment, acceleration or any setoff against amounts due under this Note.\"",
+            "reason": "The APA picks New York law and exclusive New York County courts (§§11.7, 11.8). The Note picks Delaware law and exclusive Delaware Chancery jurisdiction, expressly including setoff disputes. Under APA §11.9 an Ancillary Agreement controls as to its own subject matter, and the Seller Note is an Ancillary Agreement (§1.1(b)), so the conflict is preserved rather than resolved. This hurts Buyer, our client and the Maker. Its setoff right under APA §9.8 and Note §5.1 depends on Losses being \"finally determined\" under the APA, which must be litigated in New York under New York law. Seller, as Holder, could sue for payment or accelerate in Chancery under Delaware law. Buyer would then face two forums, inconsistent rulings and delay in establishing its setoff while default interest and collection costs run. The Note is undated and unsigned, so it is still a draft and the clause can still be negotiated."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.065,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

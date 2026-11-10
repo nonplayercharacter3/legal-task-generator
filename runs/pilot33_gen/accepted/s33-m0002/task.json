@@ -1,0 +1,194 @@
+{
+  "task_id": "s33-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Paikort Pet Foods, Inc., the supplier and manufacturer under its distribution arrangement with Broumoux Distribution Co. The client wants a clear picture of where it stands under the current documents before it decides how to manage the relationship going forward. Please review the matter folder: distribution_agreement.md, amendment_no_1.md, quality_agreement.md and wilmington_office_lease.md. Then prepare a memo to me that lists each issue you identify. For each issue, state where it appears (document and section), explain why it matters for Paikort, and give a recommended fix. Where a fix calls for drafting, propose the language. Where it would require going back to Broumoux, say so. If any of the files turns out to have no bearing on the distribution relationship, tell me briefly and move on. Please keep the memo practical and organized so I can use it directly with the client, and flag anything you think needs urgent attention at the top.",
+  "documents": [
+    "amendment_no_1.md",
+    "distribution_agreement.md",
+    "quality_agreement.md",
+    "wilmington_office_lease.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that Amendment No. 1 narrows the liability-cap carve-out so that Broumoux's recall-cost indemnity (Distribution Agreement Section 10.1(c)) becomes subject to the $750,000 cap, while Paikort's own Section 10.2 indemnities remain uncapped.",
+      "kind": "issue",
+      "hints": [
+        "Section 10.1(a) or Section 10.2",
+        "recall costs now capped",
+        "Paikort's indemnities remain uncapped"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the recall-indemnity cap issue in Amendment No. 1, Section 3 (the restated Section 11.3(b)).",
+      "kind": "issue",
+      "hints": [
+        "Amendment No. 1, Section 3",
+        "Section 11.3(b)"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response explains why the capping of Broumoux's recall-cost indemnity matters to Paikort.",
+      "kind": "issue",
+      "hints": [
+        "recall",
+        "recovery limited",
+        "exposure"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response recommends a fix for the capping of Broumoux's recall-cost indemnity.",
+      "kind": "issue",
+      "hints": [
+        "further amendment",
+        "restore the carve-out",
+        "Section 10.1"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that the Quality Agreement selects New Jersey law and exclusive Essex County, New Jersey courts for recall and handling disputes, displacing the Distribution Agreement's Delaware law and New Castle County forum for those disputes.",
+      "kind": "issue",
+      "hints": [
+        "laws of the State of New Jersey",
+        "Essex County, New Jersey",
+        "conflicts with Delaware"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response locates the governing law and forum conflict in Quality Agreement Section 12.",
+      "kind": "issue",
+      "hints": [
+        "Quality Agreement Section 12",
+        "Governing Law and Venue"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response explains why the New Jersey law and forum clause for recall disputes matters to Paikort.",
+      "kind": "issue",
+      "hints": [
+        "split proceedings",
+        "recall disputes",
+        "different law"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response recommends a fix for the governing law and forum conflict over recall disputes.",
+      "kind": "issue",
+      "hints": [
+        "conform to Delaware",
+        "amend Section 16.4",
+        "Section 12"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response concludes that the pending Fenwyck merger is a Change of Control of Paikort that requires Broumoux's prior written consent, and that this consent has not been obtained or waived.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "prior written consent of Distributor",
+        "Fenwyck merger"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response locates the change-of-control consent issue in Distribution Agreement Section 14.2.",
+      "kind": "issue",
+      "hints": [
+        "Section 14.2",
+        "Distribution Agreement"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response explains why the missing change-of-control consent matters to Paikort.",
+      "kind": "issue",
+      "hints": [
+        "material breach",
+        "termination",
+        "Exit Fee"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response recommends a fix for the missing change-of-control consent.",
+      "kind": "issue",
+      "hints": [
+        "obtain written consent",
+        "before closing",
+        "Broumoux"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response states that the Distribution Agreement's aggregate liability cap is $750,000.",
+      "kind": "fact",
+      "hints": [
+        "$750,000",
+        "Section 11.2"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response states that Amendment No. 1 prevails over the Distribution Agreement in the event of conflict.",
+      "kind": "fact",
+      "hints": [
+        "Amendment prevails",
+        "Section 16.4",
+        "order of precedence"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "The response is organized as a memo that lists issues individually and flags urgent matters at or near the top.",
+      "kind": "format",
+      "hints": [
+        "urgent",
+        "Memo",
+        "Issue 1"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "The response briefly identifies the Wilmington office lease as having no bearing on the distribution relationship.",
+      "kind": "format",
+      "hints": [
+        "office lease",
+        "not relevant",
+        "no bearing"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "The response claims that Amendment No. 1 contains or constitutes Broumoux's consent to, or waiver of, the Change of Control from the Fenwyck merger.",
+      "kind": "negative",
+      "hints": [
+        "consent given in the Amendment",
+        "waived"
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "The response claims that, after Amendment No. 1, Broumoux's recall-cost indemnity under Section 10.1(c) remains excluded from the liability cap.",
+      "kind": "negative",
+      "hints": [
+        "recall indemnity remains uncapped"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

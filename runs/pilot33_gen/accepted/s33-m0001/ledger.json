@@ -1,0 +1,182 @@
+{
+  "matter_id": "s33-m0001",
+  "summary": "The firm represents Sorund Veterinary Diagnostics, Inc., which makes point-of-care veterinary blood-chemistry analyzers and reagents and runs a reference-laboratory testing business. Under a Distribution Agreement effective April 1, 2025, Sorund appointed Bairuth Animal Health Distribution LLC as its exclusive distributor in four Northeastern states. The folder has five documents: the Distribution Agreement, a launch-support Statement of Work, an Order Form setting the Initial Term and minimum purchases, Amendment No. 1 adding the SorundLink cloud software subscription, and a Bairuth press release announcing the partnership. Four issues are planted. Bairuth may assign the agreement freely while Sorund may not. The Amendment's definition of 'Products' pulls in the Statement of Work's broad 'Connected Services' definition and so extends Bairuth's exclusivity to Sorund's reserved reference-lab services. Sorund's parent has signed a merger agreement, recorded in the Amendment recitals, that triggers Bairuth's change-of-control consent right, and no consent has been obtained. The agreement renews automatically for five-year terms unless notice is given in a 30-day window, which must be computed against the 36-month Initial Term stated in the Order Form.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Sorund Veterinary Diagnostics, Inc.",
+      "role": "Supplier (client); manufacturer of veterinary diagnostic analyzers and reagents and provider of reference-laboratory testing services"
+    },
+    {
+      "id": "P2",
+      "name": "Bairuth Animal Health Distribution LLC",
+      "role": "Exclusive distributor of Supplier's products to veterinary clinics in the Territory"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "April 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Territory",
+      "value": "New York, New Jersey, Pennsylvania and Connecticut",
+      "doc": "D1",
+      "section": "Section 1.12 and Schedule 1"
+    },
+    {
+      "id": "F3",
+      "key": "Initial Term",
+      "value": "36 months from the Distribution Agreement Effective Date",
+      "doc": "D3",
+      "section": "Section 2 (Term)"
+    },
+    {
+      "id": "F4",
+      "key": "Renewal Term length",
+      "value": "successive five-year periods",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F5",
+      "key": "Non-renewal notice window",
+      "value": "no earlier than 120 and no later than 90 days before expiry of the then-current term",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Amendments, then Distribution Agreement, then Order Form, then Statement of Work",
+      "doc": "D1",
+      "section": "Section 16.4"
+    },
+    {
+      "id": "F7",
+      "key": "Governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 16.1"
+    },
+    {
+      "id": "F8",
+      "key": "Annual minimum purchase commitment",
+      "value": "$2,400,000 per contract year",
+      "doc": "D3",
+      "section": "Section 4 (Minimum Purchases)"
+    },
+    {
+      "id": "F9",
+      "key": "Amendment No. 1 Effective Date",
+      "value": "October 1, 2026",
+      "doc": "D4",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Parent merger agreement date",
+      "value": "September 15, 2026",
+      "doc": "D4",
+      "section": "Recital C"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "statement_of_work_launch_support.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "order_form.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D4",
+      "filename": "amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "bairuth_press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 15.1 of the Distribution Agreement bars Supplier from assigning without Distributor's prior written consent. The same section lets Distributor assign the Agreement, or any of its rights, to any affiliate, successor or third party on written notice alone. Under New York law, contract rights are freely assignable unless the contract restricts assignment. Bairuth could therefore transfer its exclusive Territory rights to a distributor that carries competing analyzers, and Sorund would have no consent right and no termination right. Sorund would stay locked into exclusivity with a counterparty it never chose.",
+      "doc": "D1",
+      "section": "Section 15.1",
+      "detect_terms": [
+        "Distributor may assign this Agreement",
+        "upon written notice to Supplier"
+      ],
+      "expected_finding": "Section 15.1 lets Bairuth assign the Agreement and its exclusive Territory rights to anyone, including a competitor, on mere notice, while Sorund needs consent to assign. The clause should be revised to require Sorund's prior written consent for any assignment by Bairuth, including by change of control, and to make any non-compliant assignment void.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Distribution Agreement Section 1.9 defines 'Products' as the analyzers and reagents in Exhibit A, and Section 2.2 grants Bairuth exclusivity for Products in the Territory. Section 2.4 expressly reserves to Sorund the right to provide reference-laboratory testing services directly to clinics. Amendment No. 1 was meant to add only the SorundLink cloud software subscription, as its Recital B states. However, Amendment Section 1.1 states that 'Products' 'includes the Connected Services'. The Amendment does not define that term. The only definition is in Statement of Work Section 1.3, which defines 'Connected Services' to include all software, cloud reporting, telemedicine integrations and reference laboratory testing services offered by Supplier. Distribution Agreement Section 16.4 makes Amendments prevail over the Agreement. Read together, these provisions extend Bairuth's exclusivity to Sorund's reference-lab business and override the Section 2.4 reservation.",
+      "doc": "D4",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "includes the Connected Services"
+      ],
+      "expected_finding": "Amendment Section 1.1 imports the SOW's broad 'Connected Services' definition (SOW Section 1.3) into 'Products', which, because Amendments prevail under Agreement Section 16.4, extends Bairuth's Section 2.2 exclusivity to Sorund's reference-laboratory testing services despite the Section 2.4 reservation. The Amendment should be corrected to limit the addition to the SorundLink Platform and to confirm that Section 2.4 is unaffected.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Distribution Agreement Section 1.3 defines 'Change of Control' to include any direct or indirect acquisition of more than 50% of the voting securities of Supplier or of any parent of Supplier. Section 15.3 provides that a Change of Control of Supplier is deemed an assignment requiring Distributor's prior written consent. If the change occurs without that consent, Distributor may terminate and require Supplier to repurchase all inventory at landed cost. Recital C of Amendment No. 1 records that Sorund's parent, Sorund Holdings, Inc., signed an Agreement and Plan of Merger with Ostrava Animal Health plc on September 15, 2026, with closing expected in the first quarter of 2027. Neither the Amendment nor any other document in the folder contains Bairuth's consent or a waiver. The merger will trigger Section 15.3 at closing.",
+      "doc": "D1",
+      "section": "Section 15.3",
+      "detect_terms": [
+        "deemed an assignment requiring Distributor's prior written consent",
+        "any parent of Supplier"
+      ],
+      "expected_finding": "The September 15, 2026 parent merger recorded in Amendment Recital C is a Change of Control under Agreement Sections 1.3 and 15.3, and closing without Bairuth's prior written consent would let Bairuth terminate and force an inventory repurchase. Sorund should obtain Bairuth's written consent or waiver before closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Distribution Agreement Section 12.2 provides that the Agreement automatically renews for successive five-year Renewal Terms at the Exhibit B prices then in effect. It renews unless a party gives non-renewal notice no earlier than 120 days and no later than 90 days before the current term expires. Section 12.1 refers to the Initial Term in the Order Form, and Order Form Section 2 sets that Initial Term at 36 months from the April 1, 2025 Effective Date. Read together, the Initial Term expires March 31, 2028, and Sorund's only exit window runs from December 2, 2027 to January 1, 2028. If Sorund misses that window, it is bound to five more years of exclusivity at frozen pricing.",
+      "doc": "D1",
+      "section": "Section 12.2",
+      "detect_terms": [
+        "successive five (5) year Renewal Terms",
+        "no earlier than one hundred twenty (120) days"
+      ],
+      "expected_finding": "Read with the Order Form's 36-month Initial Term from April 1, 2025, Section 12.2 renews the Agreement for five years at frozen Exhibit B pricing unless notice is given in the window from December 2, 2027 to January 1, 2028. The window should be docketed, and Sorund should seek an amendment that shortens Renewal Terms to one year, widens the notice window and allows price adjustment on renewal.",
+      "contradicts": null
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "s33-m0003",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Sipoun Organic Holdings, LLC, the buyer in its asset purchase from Fupurt Valley Creamery, Inc. Sipoun is the maker of the Seller Note and will take assignment of the Assigned Contracts and the office lease. Before we go back to the other side, the client wants a clear picture of where this document set leaves it exposed. Please review the four files in the matter folder: asset_purchase_agreement.md, key_employee_agreement_venkataraman.md, seller_note.md and office_lease_kingston.md. Then prepare a memo to me. For each issue, the memo should state where it appears (document and section), explain why it matters for Sipoun, and give a recommended fix. If you are unsure about a point, flag it rather than leaving it out. Rank the issues so the most significant ones for the client come first. Tell me if anything you need to finish the review is missing from the folder.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "key_employee_agreement_venkataraman.md",
+    "office_lease_kingston.md",
+    "seller_note.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that assigning the Key Employee Agreement to Buyer in the asset sale without the Executive's prior written consent, which the APA neither obtains nor makes a closing condition, would let the Executive resign for Good Reason, claim 18 months' severance against Buyer and be released from her non-compete. It identifies the issue as arising in the Key Employee Agreement (Section 9.2), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "prior written consent",
+        "Good Reason",
+        "closing condition"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that Buyer's indemnity to Seller for Assumed Liabilities, which include liabilities for Products arising before Closing, is excluded from the $1,840,000 cap, leaving Buyer with uncapped indemnity exposure for Seller's pre-closing product liability. It identifies the issue as arising in the Asset Purchase Agreement (Section 9.5(a)), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "whether arising before or after the Closing",
+        "uncapped",
+        "Section 9.3(b)"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that the Seller Note's Delaware governing-law and exclusive Court of Chancery forum provisions conflict with and override the APA's New York law and forum choice, so that a dispute over Buyer's setoff against the Note would be heard in Delaware under Delaware law, separately from the New York indemnity claim. It identifies the issue as arising in the Seller Note (Sections 10.1-10.2), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Court of Chancery",
+        "laws of the State of Delaware",
+        "setoff"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the purchase price under the Asset Purchase Agreement is $18,400,000.",
+      "kind": "fact",
+      "hints": [
+        "$18,400,000",
+        "purchase price"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the principal amount of the Seller Note is $3,200,000.",
+      "kind": "fact",
+      "hints": [
+        "$3,200,000",
+        "Seller Note"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is a memo that presents the issues in ranked order with the most significant issues for the client first.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "ranked",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "For each issue it raises, the response states the document and section where the issue appears.",
+      "kind": "format",
+      "hints": [
+        "Section",
+        "Agreement"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that the Key Employee Agreement can be assigned to Buyer in the asset sale without the Executive's consent.",
+      "kind": "negative",
+      "hints": [
+        "freely assignable"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the APA's New York governing-law and forum provisions control disputes arising under the Seller Note.",
+      "kind": "negative",
+      "hints": [
+        "New York law governs the Note"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

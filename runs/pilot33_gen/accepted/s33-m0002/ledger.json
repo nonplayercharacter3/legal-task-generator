@@ -1,0 +1,174 @@
+{
+  "matter_id": "s33-m0002",
+  "summary": "Paikort Pet Foods, Inc., a Delaware manufacturer of dry and freeze-dried dog and cat food and the firm's client, appoints Broumoux Distribution Co. as exclusive distributor for New Jersey, New York and Pennsylvania under a Distribution Agreement effective March 1, 2025. Amendment No. 1, dated October 1, 2026, adds a freeze-dried product line and restates the liability carve-outs. Its recitals disclose that Paikort signed a merger agreement on September 15, 2026, under which it will become a wholly owned subsidiary of Fenwyck Pet Holdings, LLC. A Quality Agreement governs storage, handling and recalls. The folder also holds an unrelated office lease. The memo must catch three problems: (1) the amendment quietly caps Broumoux's recall-cost indemnity; (2) the Quality Agreement, which controls recall matters, sends recall disputes to New Jersey law and courts; (3) the pending merger triggers Broumoux's change-of-control consent right, which has not been obtained or addressed.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Paikort Pet Foods, Inc.",
+      "role": "Supplier / manufacturer (client)"
+    },
+    {
+      "id": "P2",
+      "name": "Broumoux Distribution Co.",
+      "role": "Exclusive regional distributor"
+    },
+    {
+      "id": "P3",
+      "name": "Fenwyck Pet Holdings, LLC",
+      "role": "Acquirer of Paikort under the pending merger"
+    },
+    {
+      "id": "P4",
+      "name": "Ostrel Commons Properties LLC",
+      "role": "Landlord under Paikort's Wilmington sales office lease"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Territory",
+      "value": "New Jersey, New York and Pennsylvania",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement Initial Term",
+      "value": "five years from the Effective Date",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F4",
+      "key": "Liability cap",
+      "value": "$750,000 aggregate per party",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F5",
+      "key": "Distribution Agreement governing law",
+      "value": "laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 15.1"
+    },
+    {
+      "id": "F6",
+      "key": "Distribution Agreement forum",
+      "value": "state or federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "Section 15.2"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "Amendment, then Distribution Agreement, then Quality Agreement; Quality Agreement controls quality, recall and handling matters",
+      "doc": "D1",
+      "section": "Section 16.4"
+    },
+    {
+      "id": "F8",
+      "key": "Amendment No. 1 date",
+      "value": "October 1, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Fenwyck merger agreement date",
+      "value": "September 15, 2026",
+      "doc": "D2",
+      "section": "Recital C"
+    },
+    {
+      "id": "F10",
+      "key": "Maximum warehouse storage temperature",
+      "value": "80°F",
+      "doc": "D3",
+      "section": "Section 4.2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "wilmington_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "Amendment caps Distributor's recall-cost indemnity",
+      "description": "In D1, Section 10.1 sets out Broumoux's indemnities: (a) third-party bodily injury and pet injury claims; (b) breach of the territory restrictions; (c) recall, withdrawal and destruction costs caused by Broumoux's storage or handling failures. Section 10.2 sets out Paikort's indemnities. D1 Section 11.3(b) originally excluded 'a party's indemnification obligations under Section 10.1 or Section 10.2' from the $750,000 cap in Section 11.2. D2 Section 3 restates Section 11.3(b) to read 'indemnification obligations under Section 10.1(a) or Section 10.2'. That keeps Paikort's own indemnities uncapped but brings Broumoux's 10.1(b) and 10.1(c) indemnities under the cap. D3 Section 8.3 allocates handling-caused recall costs to Broumoux 'as indemnifiable under Section 10.1(c) of the Distribution Agreement'. Under D1 Section 16.4 the Amendment prevails, so the narrowed carve-out controls. The result is that Paikort's recovery for a multi-state pet food recall caused by Broumoux's warehouse failures is capped at $750,000, while Paikort's own indemnity exposure stays uncapped. The amendment's recitals present it as a product-line addition only.",
+      "doc": "D2",
+      "section": "Section 3 (restating Distribution Agreement Section 11.3(b))",
+      "detect_terms": [
+        "Section 10.1(a) or Section 10.2"
+      ],
+      "expected_finding": "Amendment No. 1 Section 3 narrows the cap carve-out so that Broumoux's recall-cost indemnity under Section 10.1(c), which Quality Agreement Section 8.3 relies on, becomes subject to the $750,000 cap while Paikort's Section 10.2 indemnities stay uncapped; Paikort should restore the full Section 10.1 carve-out by further amendment.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "Quality Agreement sends recall disputes to New Jersey law and courts",
+      "description": "D1 Sections 15.1 and 15.2 choose Delaware law and the courts of New Castle County, Delaware. D3 Section 12 provides that all disputes arising under or relating to the Quality Agreement, expressly including recall cost allocation and handling disputes, are governed by the laws of the State of New Jersey and must be brought exclusively in the courts of Essex County, New Jersey. D1 Section 16.4 normally ranks the Quality Agreement last, but it gives the Quality Agreement control over quality, recall and handling matters. The precedence clause therefore does not cure the conflict; it lets D3's New Jersey clause govern exactly the recall disputes that carry the most money. Paikort faces split proceedings: a recall indemnity claim under D1 Section 10.1(c) brought in Delaware could be challenged under D3's exclusive New Jersey forum clause, and the outcome may turn on different law.",
+      "doc": "D3",
+      "section": "Section 12 (Governing Law and Venue)",
+      "detect_terms": [
+        "laws of the State of New Jersey",
+        "Essex County, New Jersey"
+      ],
+      "expected_finding": "Quality Agreement Section 12 chooses New Jersey law and exclusive Essex County courts for recall and handling disputes, and because Distribution Agreement Section 16.4 makes the Quality Agreement control those matters, it overrides the Delaware law and forum in Sections 15.1–15.2; Paikort should conform Section 12 to Delaware law and forum, or amend Section 16.4 so that the Distribution Agreement's governing law and forum clause controls.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "Pending Fenwyck merger requires Broumoux's consent",
+      "description": "D1 Section 14.2 provides that any Change of Control of Supplier (defined in Section 1 to include a merger in which Supplier becomes a subsidiary of another entity) requires the prior written consent of Distributor. A Change of Control without consent is a material breach that lets Broumoux terminate on 30 days' notice and requires Paikort to repurchase Broumoux's inventory and pay an Exit Fee equal to twelve months' average gross margin on Broumoux's sales of Products. D2 Recital C states that Paikort signed an Agreement and Plan of Merger with Fenwyck Pet Holdings, LLC on September 15, 2026, under which Paikort will become a wholly owned subsidiary of Fenwyck, with closing expected on or about December 1, 2026. Amendment No. 1, dated October 1, 2026 and signed by Broumoux, contains no consent or waiver and confirms that all other terms remain in full force. Nothing else in the folder records Broumoux's consent. The consent must be obtained before closing, or the merger will trigger termination and Exit Fee exposure.",
+      "doc": "D1",
+      "section": "Section 14.2 (Change of Control)",
+      "detect_terms": [
+        "Change of Control of Supplier",
+        "prior written consent of Distributor"
+      ],
+      "expected_finding": "The Fenwyck merger disclosed in Amendment No. 1 Recital C is a Change of Control under Distribution Agreement Section 14.2, and Broumoux's consent has not been obtained or waived, so closing without it would be a material breach exposing Paikort to termination, an inventory repurchase obligation and the Exit Fee; Paikort should obtain Broumoux's written consent before the expected December 1, 2026 closing.",
+      "contradicts": null
+    }
+  ]
+}

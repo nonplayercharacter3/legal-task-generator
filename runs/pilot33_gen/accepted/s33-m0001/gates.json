@@ -1,0 +1,120 @@
+{
+  "matter_id": "s33-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 15.1: \"Supplier shall not assign or transfer this Agreement, or any of its rights or obligations under it, without Distributor's prior written consent. Distributor may assign this Agreement, or any of its rights under it, to any Affiliate, successor or third party upon written notice to Supplier.\"",
+            "reason": "The restriction runs only one way. Sorund, the client, needs Bairuth's consent to assign. Bairuth can transfer the Agreement, including its exclusive Territory appointment, to any third party on notice alone. Sorund gets no consent right, no approval of the assignee's qualifications and no termination right on assignment. Section 12.3 permits termination only for breach, insolvency or a minimum-purchase shortfall. Section 15.3 gives a change-of-control remedy only to Distributor, and only for a change of control of Supplier. Section 3.5's non-compete would arguably bind an assignee, but it does not let Sorund choose its counterparty. It would only give Sorund a later breach claim if an assignee carrying competing analyzers stopped those lines, a remedy subject to a cure period and proof. Amendment No. 1 broadens 'Products' and leaves Section 15.1 unchanged, and the Order Form and SOW do not address assignment. The Agreement is in force with no assignment yet recorded, so Sorund can still act on this, for example by seeking a reciprocal consent requirement in the next amendment."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Amendment Section 1.1: \"1.9 'Products' means the veterinary blood-chemistry analyzers, reagents, consumables and related spare parts listed in Exhibit A, as updated by the Parties in writing, and includes the Connected Services and the SorundLink Platform.\" SOW Section 1.3: \"'Connected Services' means all software, cloud reporting, telemedicine integrations and reference laboratory testing services offered by Supplier, whether provided directly by Supplier or through its Affiliates...\"",
+            "reason": "The Amendment does not define 'Connected Services'. Under Section 1.3, capitalized terms take their meaning from the Agreement, and the SOW forms part of the Agreement. The SOW definition of 'Connected Services' covers reference-laboratory testing and all other Supplier software and telemedicine offerings. Section 16.4 makes Amendments prevail over the Distribution Agreement, so the new 'Products' definition arguably overrides the Section 2.4 statement that reference-lab services 'are not Products'. That would pull Sorund's reference-lab business and other connected offerings into Bairuth's Section 2.2 exclusivity. It would also bar Sorund from selling those services directly in the Territory. A Change of Control would further extend the 15.3 inventory-repurchase exposure. This goes well beyond Recital B's stated purpose of adding only SorundLink. The Amendment is undated in execution, with blank signature lines, so Sorund can still fix the definition. This is a live drafting defect that hurts the client."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 15.3: \"A Change of Control of Supplier, including a Change of Control of any parent of Supplier, shall be deemed an assignment requiring Distributor's prior written consent. If a Change of Control of Supplier occurs without that consent, Distributor may terminate this Agreement by written notice to Supplier given within one hundred eighty (180) days after Distributor learns of the Change of Control. Distributor may also require Supplier to repurchase all of Distributor's then-current inventory of Products at Distributor's landed cost.\" Amendment No. 1, Recital C: \"its parent, Sorund Holdings, Inc., entered into an Agreement and Plan of Merger with Ostrava Animal Health plc on September 15, 2026. Closing of the merger is expected in the first quarter of 2027.\"",
+            "reason": "The obligation to obtain consent falls on Sorund, and the termination and repurchase remedies belong to Bairuth, so the exposure is entirely the client's. Section 1.3 covers acquisitions of more than 50% of the voting securities of any parent of Supplier, by merger or otherwise. The Holdings–Ostrava merger will therefore be a Change of Control when it closes. Amendment No. 1 only records the merger in a recital. It contains no consent and no waiver. Section 16.5 requires any waiver to be in writing and signed by the waiving party, so Bairuth's signature on the Amendment, with only a recital disclosure, does not amount to prior written consent. No other document in the folder supplies consent. Closing has not occurred (it is expected in Q1 2027, and today is November 2026), so the issue is still actionable. Sorund can and should obtain Bairuth's written consent before closing. Otherwise it faces termination of the exclusive arrangement and an obligation to buy back Bairuth's entire inventory at landed cost, payable within 30 days."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 12.2: \"On expiry of the Initial Term, this Agreement shall automatically renew for successive five (5) year Renewal Terms at the prices set out in Exhibit B then in effect (each, a \"Renewal Term\"), unless either Party gives the other written notice of non-renewal no earlier than one hundred twenty (120) days and no later than ninety (90) days before expiry of the then-current term.\" Order Form 2.1: \"the Initial Term is 36 months from the Distribution Agreement Effective Date. The Distribution Agreement Effective Date is April 1, 2025.\"",
+            "reason": "The problem is present and still actionable for Sorund. Reading Section 12.1 with Order Form Section 2.1, the Initial Term ends March 31, 2028. The only non-renewal window is therefore about December 2, 2027 to January 1, 2028. If Sorund misses that 30-day window, it is locked into a five-year Renewal Term. The renewal keeps Distributor's exclusivity under Section 2.2, while Supplier's own assignment and change-of-control rights are restricted under Sections 15.1 and 15.3. The renewal also runs at Exhibit B prices then in effect. Section 5.2 allows price increases only \"During the Initial Term,\" and Exhibit B says prices are adjustable \"only as provided in Section 5.2,\" so pricing is frozen for the whole five years. That burden falls on Sorund as seller. The Section 7.2 shortfall exit is limited to a 60-day post-year window and depends on Distributor underperforming, so it does not cure the problem. Amendment No. 1 does not change Section 12.2. The pending Ostrava merger makes the long lock-in more significant. Today is November 2026, so the window has not yet opened and the clause can still be calendared or renegotiated."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.043,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

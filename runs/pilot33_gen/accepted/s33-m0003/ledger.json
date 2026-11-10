@@ -1,0 +1,175 @@
+{
+  "matter_id": "s33-m0003",
+  "summary": "Sipoun Organic Holdings, LLC (client, Buyer) is acquiring substantially all of the operating assets of Fupurt Valley Creamery, Inc. (Seller). Seller is an organic dairy and artisanal cheese producer in the Hudson Valley. The deal is documented in four instruments. (1) An Asset Purchase Agreement, partly paid in cash. (2) A Seller Note issued by Buyer to Seller for part of the price. (3) Seller's existing Key Employee Agreement with its master cheesemaker, which the APA treats as an Assigned Contract. (4) Seller's office lease, which Buyer will take by assignment; the lease is a clean distractor. Three planted issues: (a) the Key Employee Agreement requires the executive's consent to an asset-sale assignment, and the APA neither obtains nor conditions on that consent; (b) a broad Assumed Liabilities definition combines with a cap carve-out to leave Buyer with uncapped indemnity for pre-closing product liability; (c) the Seller Note selects Delaware law and Chancery forum, and the APA precedence clause lets the Note control.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Sipoun Organic Holdings, LLC",
+      "role": "Buyer; maker of the Seller Note; assignee of Assigned Contracts and the office lease (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Fupurt Valley Creamery, Inc.",
+      "role": "Seller; holder of the Seller Note; current employer under the Key Employee Agreement; current tenant under the office lease"
+    },
+    {
+      "id": "P3",
+      "name": "Teodora Venkataraman",
+      "role": "Master Cheesemaker and Executive under the Key Employee Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Ostrander Mill Properties LLC",
+      "role": "Landlord under the office lease"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Asset Purchase Agreement signing date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Asset Purchase Agreement purchase price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$3,200,000",
+      "doc": "D3",
+      "section": "Section 1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note maturity",
+      "value": "36 months after the Closing Date",
+      "doc": "D3",
+      "section": "Section 2"
+    },
+    {
+      "id": "F5",
+      "key": "Asset Purchase Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.7"
+    },
+    {
+      "id": "F6",
+      "key": "Asset Purchase Agreement forum",
+      "value": "state or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "Ancillary Agreement controls over this Agreement as to the subject matter of that Ancillary Agreement",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "Buyer indemnity cap",
+      "value": "$1,840,000 (10% of the purchase price)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F9",
+      "key": "Key Employee Agreement severance on Good Reason resignation",
+      "value": "18 months of base salary",
+      "doc": "D2",
+      "section": "Section 6.3"
+    },
+    {
+      "id": "F10",
+      "key": "Office lease premises",
+      "value": "Suite 204, 18 Ostrander Mill Road, Kingston, New York",
+      "doc": "D4",
+      "section": "Section 1.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "key_employee_agreement_venkataraman.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "office_lease_kingston.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "Executive consent to asset-sale assignment not obtained",
+      "description": "Key Employee Agreement Section 9.2 provides that the agreement may not be assigned in connection with a sale of all or substantially all of the Employer's assets without the Executive's prior written consent. Under Section 6.2, an assignment made without that consent is Good Reason. Under Section 6.3, the Executive may then resign and receive 18 months of base salary, and the Section 7 non-compete and non-solicit cease to apply. Two APA provisions put Buyer in this position. APA Schedule 2.1(c) lists the Key Employee Agreement as an Assigned Contract, and APA Section 2.3(c) makes Buyer assume all liabilities under Assigned Contracts arising after Closing. APA Section 8.2(c) is the only closing condition on third-party consents, and it lists only the landlord and retail-distribution consents. No APA covenant requires Seller to obtain the Executive's consent. Read together, the Key Employee Agreement and the APA mean that closing on the current documents lets the master cheesemaker walk away free of restrictive covenants and with a severance claim against Buyer. The asset sale itself is what triggers this.",
+      "doc": "D2",
+      "section": "Section 9.2",
+      "detect_terms": [
+        "without the Executive's prior written consent",
+        "sale of all or substantially all"
+      ],
+      "expected_finding": "The asset sale triggers the Executive's consent right under Key Employee Agreement Section 9.2. Because APA Schedule 2.1(c) and Section 2.3(c) have Buyer assume the agreement, and Section 8.2(c) does not condition closing on that consent, an unconsented assignment would give the Executive Good Reason. She could then collect 18 months' severance from Buyer and be released from her non-compete. Buyer should require the Executive's written consent as a closing condition, or make the severance an Excluded Liability with a matching Seller indemnity.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "Uncapped Buyer indemnity for pre-closing product liability",
+      "description": "APA Section 9.5(a) caps Buyer's indemnification obligations under Section 9.3 at $1,840,000, other than claims under Section 9.3(b). Section 9.3(b) is Buyer's indemnity of Seller for Assumed Liabilities. Section 2.3(e) defines Assumed Liabilities to include all liabilities arising out of the Products, whether arising before or after the Closing. That reaches recalls, contamination claims and organic-certification penalties for dairy and cheese that Seller manufactured and sold before Closing. Section 2.4, Excluded Liabilities, is drafted only as liabilities other than Assumed Liabilities and does not carve out pre-closing product liability. Read together, Sections 2.3(e), 9.3(b) and 9.5(a) leave Buyer with unlimited indemnity exposure to Seller for Seller's own pre-closing product history.",
+      "doc": "D1",
+      "section": "Section 9.5(a)",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "other than claims under Section 9.3(b)"
+      ],
+      "expected_finding": "APA Section 2.3(e) makes pre-closing product liabilities Assumed Liabilities, and Section 9.5(a) excludes Buyer's Section 9.3(b) indemnity for Assumed Liabilities from the $1,840,000 cap. Together they expose Buyer to uncapped indemnity for Seller's pre-closing product recalls and claims. Buyer should limit Section 2.3(e) to Products sold after Closing, list pre-closing product liability as an Excluded Liability backed by a Seller indemnity, and narrow the cap carve-out.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "Seller Note's Delaware law and forum override the APA's New York choice",
+      "description": "APA Sections 11.7 and 11.8 choose New York law and New York County courts. APA Section 9.8 gives Buyer a right to set off indemnifiable Losses against amounts due under the Seller Note. The Seller Note chooses different terms: Section 10.1 selects the laws of the State of Delaware, and Section 10.2 submits all disputes arising under or relating to the Note, including any setoff, to the exclusive jurisdiction of the Delaware Court of Chancery. APA Section 11.9 provides that an Ancillary Agreement controls as to its subject matter, and the Seller Note is defined as an Ancillary Agreement. So the precedence clause lets the Note's Delaware provisions govern rather than curing the conflict. A dispute over Buyer's setoff of indemnity claims against Note payments would split across two forums under two bodies of law. Seller could sue on the Note in Chancery while the underlying indemnity claim must be heard in New York.",
+      "doc": "D3",
+      "section": "Sections 10.1-10.2",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery"
+      ],
+      "expected_finding": "The Seller Note's Delaware governing-law and exclusive Chancery forum clauses conflict with APA Sections 11.7 and 11.8, and they prevail under APA Section 11.9. As a result, Buyer's Section 9.8 setoff against the Note would be litigated in Delaware under Delaware law, separately from the New York indemnity claim. Buyer should conform the Note to New York law and New York County courts, or revise Section 11.9 so the APA controls disputes over setoff and indemnity.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    }
+  ]
+}

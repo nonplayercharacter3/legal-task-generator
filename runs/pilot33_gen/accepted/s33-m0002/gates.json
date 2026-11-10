@@ -1,0 +1,121 @@
+{
+  "matter_id": "s33-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Amendment Section 3 restates Section 11.3(b) to read: \"(b) a Party's indemnification obligations under Section 10.1(a) or Section 10.2;\" — replacing the original \"a party's indemnification obligations under Section 10.1 or Section 10.2\".",
+            "reason": "Distributor (Broumoux) gives the Section 10.1 indemnities, and the client, Paikort, receives them. The original Section 11.3(b) carved all of Section 10.1 out of the $750,000 cap. The restated text carves out only 10.1(a). That brings Broumoux's 10.1(b) indemnity (territory and competing-product breaches) and its 10.1(c) indemnity (recall costs caused by its own storage or handling failures) under the cap. Paikort's indemnities under 10.2, including its broad recall indemnity in 10.2(b), stay uncapped. Quality Agreement Section 8.3 routes handling-caused recall costs to Broumoux \"as indemnifiable under Section 10.1(c),\" so those costs are capped as well. Under Distribution Agreement Section 16.4 an executed amendment prevails. Nothing in the Amendment's recitals or its other sections explains or offsets the change; the recitals describe only adding the freeze-dried product line. The Amendment is still unsigned (blank signature blocks), so Paikort can still object and revise Section 3. The problem is therefore present, harmful to the client and actionable."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "QA Section 12.2: \"Any action or proceeding arising under or relating to this Quality Agreement, including any dispute concerning the allocation of Recall costs or the storage and handling of Products, shall be brought exclusively in the state or federal courts located in Essex County, New Jersey.\" Section 12.1 applies New Jersey law to the same disputes, including \"disputes concerning the allocation of Recall costs.\"",
+            "reason": "Distribution Agreement Sections 15.1 and 15.2 choose Delaware law and exclusive New Castle County courts for any dispute relating to that agreement. QA Section 12 sends recall cost allocation and handling disputes to New Jersey law and exclusive Essex County courts. QA Section 8.3 ties those costs to the indemnity in DA Section 10.1(c), so the same claim falls under both clauses. DA Section 16.4 does not cure the conflict, because it gives the Quality Agreement control over \"quality, recall and handling matters.\" That likely lets the New Jersey clause govern recall disputes. Paikort is the party that would enforce the 10.1(c) recall indemnity against Broumoux, so it bears the risk. It faces a forum challenge, possibly split proceedings, and possibly a different law applying. Amendment No. 1 did not change the Quality Agreement's governing-law or venue clause. The QA can still be amended under Section 13.3 and reviewed when a new product line is added, which is due now that the freeze-dried line has been added. So the problem is still actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"Any Change of Control of Supplier requires the prior written consent of Distributor. ... A Change of Control of Supplier without the prior written consent of Distributor is a material breach of this Agreement, which is not subject to the cure period in Section 13.1, and Distributor may terminate this Agreement on thirty (30) days' written notice given at any time within one hundred twenty (120) days after the Change of Control of Supplier becomes effective.\" (Section 14.2). Read with Section 1.2(a): Change of Control includes a merger in which that Party \"survives but becomes a subsidiary of another entity.\" Amendment No. 1, Recital C: \"Supplier will become a wholly owned subsidiary of Fenwyck Pet Holdings, LLC. Closing is expected on or about December 1, 2026.\"",
+            "reason": "The obligation to obtain consent falls on Paikort, the client. The Fenwyck merger fits Section 1.2(a): Paikort survives but becomes a wholly owned subsidiary.\n\nAmendment No. 1 does not give consent. It only recites that the merger agreement was signed. It contains no consent or waiver of Section 14.2. Section 6.1 of the Amendment ratifies all unamended terms, which keeps the consent requirement in force. Section 16.3 also requires any waiver to be in writing and signed, so Broumoux's knowledge of the deal is not consent. Nothing else in the folder records consent.\n\nThe issue is still actionable. Today is November 10, 2026 and closing is expected around December 1, 2026, so Paikort can still seek consent before closing.\n\nIf it closes without consent, the exposure is significant:\n- The breach is material, with no cure period.\n- Broumoux gets a 120-day window to terminate on 30 days' notice.\n- Under Section 14.3, Paikort must repurchase Broumoux's inventory and pay an Exit Fee equal to twelve months' Gross Margin.\n- Section 11.3(d) excludes these payments from the $750,000 cap."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 18,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C13 asks for fact F4, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": [
+          "criterion C14 asks for the whole ranking in fact F7 ('Amendment, then Distribution Agreement, then Quality Agreement; Quality Agreement controls quality, recall and handling matters'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.08,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

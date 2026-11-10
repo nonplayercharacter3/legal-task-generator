@@ -1,0 +1,178 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s33-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s33-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s33-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12227,
+      "output_tokens": 20894,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 13,
+      "input_tokens": 203605,
+      "output_tokens": 74770,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 83008,
+      "output_tokens": 5943,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 2,
+      "input_tokens": 3072,
+      "output_tokens": 390,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 10,
+      "input_tokens": 243080,
+      "output_tokens": 6646,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4179,
+      "output_tokens": 951,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 18454,
+      "output_tokens": 6514,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 178156,
+      "output_tokens": 39187,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 9,
+      "input_tokens": 58725,
+      "output_tokens": 6894,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "veterinary diagnostics": 1,
+      "pet food manufacturing": 1,
+      "organic dairy": 1
+    },
+    "agreement_types": {
+      "distribution agreement": 2,
+      "asset purchase agreement": 1
+    },
+    "issue_types": {
+      "change_of_control_consent": 3,
+      "governing_law_mismatch": 2,
+      "missing_assignment_restriction": 1,
+      "defined_term_inconsistency": 1,
+      "auto_renewal": 1,
+      "liability_cap_carveout": 1,
+      "uncapped_indemnity": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

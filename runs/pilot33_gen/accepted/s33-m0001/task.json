@@ -1,0 +1,109 @@
+{
+  "task_id": "s33-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Sorund Veterinary Diagnostics, Inc., the supplier under its distribution arrangement with Bairuth Animal Health Distribution LLC. Sorund wants a clear picture of where it stands under the deal documents as they currently exist, so it understands its obligations and exposure and can raise any points with Bairuth. Please review the full matter folder: distribution_agreement.md, statement_of_work_launch_support.md, order_form.md, amendment_no_1.md, and bairuth_press_release.md. Then prepare a memo to me. For each issue you identify, the memo should state where it appears (document and section), explain why it matters for Sorund, and give a recommended fix. Rank the issues by significance to the client, and flag anything you think needs prompt attention. Where a point turns on a fact the documents don't settle, say what we would need to confirm with the client. Please keep the memo practical and client-focused. I'd rather have a tight list of real issues than an exhaustive summary of every clause.",
+  "documents": [
+    "amendment_no_1.md",
+    "bairuth_press_release.md",
+    "distribution_agreement.md",
+    "order_form.md",
+    "statement_of_work_launch_support.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Distribution Agreement lets Bairuth assign the Agreement, including its exclusive Territory rights, to any party on written notice alone, while Sorund cannot assign without Bairuth's consent. It locates this in Distribution Agreement Section 15.1, explains why this matters to Sorund, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 15.1",
+        "on written notice",
+        "Distributor may assign"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Amendment No. 1's statement that 'Products' includes the 'Connected Services' extends Bairuth's exclusivity to Sorund's reference-laboratory testing services. It locates this in Amendment No. 1 Section 1.1, explains why this matters to Sorund, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "includes the Connected Services",
+        "reference laboratory",
+        "Amendment Section 1.1"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the parent-level merger recorded in Amendment No. 1 Recital C (Sorund Holdings with Ostrava, signed September 15, 2026) is a Change of Control requiring Bairuth's prior written consent, and that no consent has been obtained. It locates the consent requirement in Distribution Agreement Section 15.3, explains why this matters to Sorund, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "Section 15.3",
+        "Ostrava"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Agreement automatically renews for five-year terms unless non-renewal notice is given in the window from December 2, 2027 to January 1, 2028. It locates this in Distribution Agreement Section 12.2, explains why this matters to Sorund, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 12.2",
+        "five-year Renewal Terms",
+        "December 2, 2027"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that Bairuth's exclusive Territory is New York, New Jersey, Pennsylvania and Connecticut.",
+      "kind": "fact",
+      "hints": [
+        "New York, New Jersey, Pennsylvania and Connecticut",
+        "Territory"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is a memo addressed to the supervising lawyer that presents the issues ranked by significance to Sorund.",
+      "kind": "format",
+      "hints": [
+        "ranked",
+        "most significant",
+        "memo"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response flags at least one issue as needing prompt attention.",
+      "kind": "format",
+      "hints": [
+        "prompt attention",
+        "urgent",
+        "immediately"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that Bairuth has already given its consent to, or waived its rights over, the Sorund Holdings–Ostrava merger.",
+      "kind": "negative",
+      "hints": [
+        "consent has been obtained",
+        "waived"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Sorund's non-renewal notice window for the Initial Term falls in 2026.",
+      "kind": "negative",
+      "hints": [
+        "window in 2026",
+        "already passed"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}
