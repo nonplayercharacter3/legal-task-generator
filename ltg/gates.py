@@ -39,14 +39,26 @@ def _plain(s) -> str:
     return _norm(str(s or "").translate(_PLAIN))
 
 
+# A name stem that is an ordinary word ("First National Bank") would match almost any text, so such a party is
+# matched by its full name instead.
+COMMON_STEMS = frozenset(
+    "a an the first second third new old american national united general global international world north south east "
+    "west northern southern eastern western central pacific atlantic great royal standard capital city state mutual "
+    "federal premier universal union metro summit pioneer".split()
+)
+
+
 def parties_absent(text: str, ledger: Ledger, docs: Documents) -> list[dict]:
     """Ledger parties `text` names that no document mentions. A party is named, or mentioned, by its full name or its
     name stem (the first word, as the spec's name_stems rule makes it); since the stem is part of the full name, a
-    party is absent exactly when no document holds its stem."""
+    party is absent exactly when no document holds its stem. A stem in COMMON_STEMS does not count: such a party is
+    named and mentioned by its full name only, case and punctuation ignored."""
     folder, named = _words("\n".join(docs.values())), _words(text)
     out = []
     for p in ledger.parties:
         stem = _words(p.name.split(" ")[0])
+        if stem.strip() in COMMON_STEMS:
+            stem = _words(p.name)
         if stem.strip() and stem in named and stem not in folder:
             out.append({"party": p.id, "name": p.name})
     return out

@@ -376,3 +376,19 @@ def test_issue_check_rejects_a_party_an_issue_needs_that_no_document_mentions():
     assert g.details["reason"] == "I1 needs party P3 (Pellworth Capital Partners), which no document mentions"
     g = gates.issue_check(Yes(), ledger, {"a.md": doc, "b.md": "Notice from Pellworth Capital, L.P."})
     assert g.passed and g.details["absent_parties"] == [] and "reason" not in g.details  # the stem in any document, case and punctuation ignored
+
+
+def test_parties_absent_matches_a_common_word_stem_by_full_name():
+    # T31's known false-hit risk: "The" or "First" as a stem would match almost any text.
+    from ltg.schema import Ledger, Party
+
+    ledger = Ledger("m", "", [Party("P1", "Besouth Holdings LLC", "Seller"), Party("P2", "First Harbor Bank, N.A.", "Lender")], [], [], [])
+    docs = {"a.md": "Besouth Holdings LLC, the first party, shall notify the lender."}
+    # "first" is in the folder, but the bank is not: still absent
+    assert gates.parties_absent("Consent of First Harbor Bank, N.A. is needed.", ledger, docs) == [{"party": "P2", "name": "First Harbor Bank, N.A."}]
+    # named by its full name in any document, case and punctuation ignored: mentioned
+    assert gates.parties_absent("Consent of First Harbor Bank, N.A. is needed.", ledger, {**docs, "b.md": "FIRST HARBOR BANK N.A."}) == []
+    # "first" alone in the text does not name the bank
+    assert gates.parties_absent("The first notice was late.", ledger, {"a.md": "Besouth"}) == []
+    # an ordinary stem still matches on the stem alone
+    assert gates.parties_absent("Besouth must consent.", ledger, {"a.md": "First Harbor Bank, N.A."}) == [{"party": "P1", "name": "Besouth Holdings LLC"}]
