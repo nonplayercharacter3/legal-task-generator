@@ -89,7 +89,7 @@ Most open questions are about training, and most wait on Pengtao.
 | Question | Options | Who decides |
 | --- | --- | --- |
 | How do we train? | Leaning: the lab's AIBuildAI post-training agent (`aibuildai-inc/aibuildai-llm-posttrain-agent`). It takes a task folder (task statement, training data, a grader script) and chooses the method itself. Open: which machine runs it (it needs a Linux GPU box with systemd and bubblewrap, which a Nautilus pod may not provide) | Pengtao |
-| Which model will the lab train first? | The lab agent's examples use small base models (Qwen3 1.7B to 4B, one H100 for 10 hours); if that is the target, add it as a labelling test model | Pengtao (heads-up, not a blocker) |
+| Which model will the lab train first? | Labels stay with Qwen 27B for now (Sirui She, November 10). If the lab names a much smaller model, add it as a second labelling model and run its attempts over the whole pool at once | Pengtao (heads-up, not a blocker) |
 | How many LAB tasks to grade? | Decided: our own Claude judge through the SDK, per Pengtao's no-API rule (scores comparable only to our own runs; the judge is about 40 lines of code). Open: grading 50 tasks is roughly 2,900 judge calls, a large share of a day's Max limit, so how big a sample | Sirui She |
 | How many assignments do we need? | Depends on the training method; at least hundreds | Pengtao and Sirui She |
 | How do we make assignments harder if needed? | Longer folders, more problems that only show across two documents | Sirui She, after the next rounds |

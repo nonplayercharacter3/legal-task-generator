@@ -269,6 +269,7 @@ on LLM post-training; the goal is training data for legal agents, with LAB used 
 - **Ledger-first design.** For each invented matter, write the answer key first (facts plus 3 to 5 planted issues,
   each tied to a document and section), then generate documents, instruction, rubric and reference answers from it.
   Ground truth is known by construction, not judged by a model.
+- **Labelling model: Qwen 27B (`qwen3-small`) only, for now (Sirui She, 2026-11-10).** A smaller model the lab may train is added as a second labeller later, over the whole pool at once, not mixed in round by round.
 - **Difficulty is a label, not a filter (2026-11-04).** The generator is model-neutral: any sound task is kept, the
   solver models' pass rates are stored with it, and whoever trains picks the band. `solver_check` rejects only a leak
   (solved without the documents). Tasks no model passes are kept and flagged `unsolved` for a person to check.
