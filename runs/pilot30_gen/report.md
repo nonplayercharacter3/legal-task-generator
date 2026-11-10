@@ -13,7 +13,7 @@ Backend: `claude_sdk`. Accepted **3 of 3** candidate matters.
 | rubric_trace | 3 | 3 | 0 | 0 |
 | rubric_tests | 3 | 3 | 0 | 0 |
 | decontamination | 3 | 3 | 0 | 0 |
-| solver_check | 3 | 0 | 0 | 3 |
+| solver_check | 3 | 3 | 0 | 0 |
 
 ## Difficulty
 
@@ -21,16 +21,17 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 
 | Model | Tasks | Pass rate: tasks |
 | --- | ---: | --- |
+| qwen3-small | 3 | 0.00: 1, 1.00: 2 |
 
-**3 accepted task(s) wait for `ltg label`: solver_check was deferred, so they have no difficulty label and no leak probe yet.**
+**1 accepted task(s) are marked unsolved (no attempt passed): check they are not broken.**
 
 ## Matters
 
 | Matter | Result | Split | Pass rate per model | Reason |
 | --- | --- | --- | --- | --- |
-| s30-m0001 | accepted (label pending) | test |  |  |
-| s30-m0002 | accepted (label pending) | train |  |  |
-| s30-m0003 | accepted (label pending) | train |  |  |
+| s30-m0001 | accepted | test | qwen3-small 1.00 |  |
+| s30-m0002 | accepted | train | qwen3-small 1.00 |  |
+| s30-m0003 | accepted (unsolved) | train | qwen3-small 0.00 |  |
 
 ## Variety
 
@@ -50,6 +51,7 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 | fact_matcher | 3 | 3944 | 320 | 0 |
 | instruction_writer | 3 | 4281 | 1222 | 0 |
 | issue_verifier | 13 | 325179 | 8837 | 0 |
-| judge | 9 | 58948 | 6025 | 0 |
+| judge | 21 | 158697 | 18813 | 0 |
 | ledger_writer | 3 | 12338 | 26126 | 0 |
 | rubric_writer | 3 | 20151 | 6364 | 0 |
+| solver | 149 | 997389 | 130230 | 0 |

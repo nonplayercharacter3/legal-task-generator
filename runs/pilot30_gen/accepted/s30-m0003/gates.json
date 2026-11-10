@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -115,8 +128,64 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C6"
+              ],
+              "steps": 10,
+              "files_opened": [
+                "bakeplan_order_form_no1.md",
+                "email_thread_bakeplan_golive_scheduling.md",
+                "rivix_draft_side_letter_phase2.md",
+                "rivix_license_audit_notice_2026-10-20.md",
+                "veilound_rivix_software_license_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C6"
+              ],
+              "steps": 10,
+              "files_opened": [
+                "bakeplan_order_form_no1.md",
+                "email_thread_bakeplan_golive_scheduling.md",
+                "rivix_draft_side_letter_phase2.md",
+                "rivix_license_audit_notice_2026-10-20.md",
+                "veilound_rivix_software_license_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C6"
+              ],
+              "steps": 10,
+              "files_opened": [
+                "bakeplan_order_form_no1.md",
+                "email_thread_bakeplan_golive_scheduling.md",
+                "rivix_draft_side_letter_phase2.md",
+                "rivix_license_audit_notice_2026-10-20.md",
+                "veilound_rivix_software_license_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
