@@ -513,3 +513,52 @@ def test_deferred_solver_check_makes_no_solver_calls_and_marks_tasks_pending(tmp
     assert "solver_check" not in read_json(tmp_path / "old" / "settings.json")["gates"]
     with pytest.raises(ValueError, match="solver_check"):
         load_config(None, {"gates": {"solver_check": "later"}})
+
+
+def test_label_runs_the_deferred_solver_check_retries_errors_and_rejects_leaks(tmp_path, read_json, monkeypatch, capsys):
+    from ltg import orchestrator
+
+    run = tmp_path / "run"
+    cfg = load_config(None, {"run": {"out_dir": str(run), "n_matters": 3, "seed": 7}, "gates": {"solver_check": "defer"}})
+    Pipeline(cfg).run()
+    calls_before = len((run / "calls.jsonl").read_text().splitlines())
+    ids = sorted(p.name for p in (run / "accepted").iterdir())
+
+    task0 = read_json(run / "accepted" / ids[0] / "task.json")
+
+    class Flaky(FakeModel):  # the solver errors on the first matter only
+        def complete(self, role, system, user):
+            if role == "solver" and task0["instruction"][:200] in user:
+                raise RuntimeError("server gone")
+            return super().complete(role, system, user)
+
+    first = load_config(None, {"run": {"seed": 7}})
+    monkeypatch.setattr(orchestrator, "build_client", lambda c, log: Flaky(seed=7, log=log))
+    assert orchestrator.label_runs(first, [str(run)], "solver.toml") == {"labelled": 2, "leak": 0, "error": 1}
+    assert read_json(run / "accepted" / ids[0] / "task.json")["label_pending"] and (run / "accepted" / ids[0] / "label_error.txt").exists()
+    for i in ids[1:]:
+        task, g = read_json(run / "accepted" / i / "task.json"), read_json(run / "accepted" / i / "gates.json")
+        assert "label_pending" not in task and task["difficulty"][0]["model"] == "solver"
+        assert task["labelled_by"] == {"config": "solver.toml", "models": ["solver"], "probe_without_documents_passed": False}
+        assert g["difficulty"] == task["difficulty"] and not g["label_pending"] and g["gates"][-1]["name"] == "solver_check"
+        assert not g["gates"][-1]["details"].get("skipped") and (run / "accepted" / i / "solver" / "attempt_3.md").exists()
+    rep = read_json(run / "report.json")
+    assert rep["label_pending"] == 1 and rep["difficulty"]["solver"]["tasks"] == 2 and rep["model_calls"]["solver"]["calls"] > 0
+    assert rep["model_calls"]["ledger_writer"]["calls"] == 3  # the run's own calls are kept
+    lines = (run / "calls.jsonl").read_text().splitlines()
+    assert len(lines) > calls_before and any('"role": "solver"' in l for l in lines[calls_before:])
+    assert f"run/{ids[1]} solver_check solver attempt 3 of 3" in capsys.readouterr().err
+
+    # a rerun picks up only the pending task; here the judge passes everything, so the no-documents probe leaks
+    class Lenient(FakeModel):
+        def _judge(self, p):
+            return {"results": [{"id": c["id"], "pass": True, "claim_made": False, "reason": "ok"} for c in p["criteria"]]}
+
+    monkeypatch.setattr(orchestrator, "build_client", lambda c, log: Lenient(seed=7, log=log))
+    assert orchestrator.label_runs(first, [str(run)]) == {"labelled": 0, "leak": 1, "error": 0}
+    leaked = run / "rejected" / ids[0]
+    assert not (run / "accepted" / ids[0]).exists() and not (leaked / "task.json").exists()
+    assert read_json(leaked / "gates.json")["failed_gate"] == "solver_check"
+    rep = read_json(run / "report.json")
+    assert rep["accepted"] == 2 and rep["label_pending"] == 0 and rep["gates"]["solver_check"]["failed"] == 1
+    assert orchestrator.label_runs(first, [str(run)]) == {"labelled": 0, "leak": 0, "error": 0}  # nothing left

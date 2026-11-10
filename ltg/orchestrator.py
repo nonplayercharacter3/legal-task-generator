@@ -58,6 +58,7 @@ class MatterResult:
     unsolved: bool = False  # kept, but no solver attempt passed: a person should check it is not broken
     difficulty: list[dict] = field(default_factory=list)  # per labelling model: model, attempts, passes, pass_rate
     label_pending: bool = False  # accepted with solver_check deferred: no labels and no leak probe until `ltg label`
+    labelled_by: dict | None = None  # set by `ltg label`: config, models, probe result
     gates: list[dict] = field(default_factory=list)
 
 
@@ -307,11 +308,89 @@ class Pipeline:
         finally:  # on Ctrl-C or a crash, finish the matters in flight but start no queued ones
             pool.shutdown(cancel_futures=True)
         shutil.rmtree(out / "work", ignore_errors=True)
-        report = build_report(results, self.log, self.cfg, resumed=len(done))
+        report = build_report(results, self.log, self.cfg.backend.kind, resumed=len(done))
         report["variety"] = variety(out, results)
         _write(out / "report.json", report)
         _write(out / "report.md", render_report(report))
         return report
+
+
+def label_runs(cfg: Config, run_dirs: list[str], config_path: str | None = None) -> dict:
+    """`ltg label`: run solver_check on every accepted task with label_pending, `cfg.run.concurrency` at a time, with
+    the solver roles and attempts of `cfg` (a solver config). A task that errors stays pending for the next call.
+    Appends calls to each run's calls.jsonl and refreshes its report."""
+    pending, clients = [], {}
+    for r in map(Path, run_dirs):
+        found = [t.parent for t in sorted((r / "accepted").glob("*/task.json")) if _read(t).get("label_pending")]
+        if found:
+            log = CallLog(path=str(r / "calls.jsonl"))  # appends: the run's own calls stay
+            clients[r] = (build_client(cfg, log), log)
+            pending += [(r, m) for m in found]
+
+    def one(item) -> str:
+        run, m = item
+        try:
+            return label_task(clients[run][0], cfg.gates, m, config_path)
+        except Exception as e:  # stays pending; rerunning `ltg label` retries it
+            beat(f"{run.name}/{m.name}", f"label error, still pending: {type(e).__name__}: {e}")
+            _write(m / "label_error.txt", traceback.format_exc())
+            return "error"
+
+    pool = ThreadPoolExecutor(max_workers=max(1, cfg.run.concurrency))
+    try:
+        outcomes = list(pool.map(one, pending))
+    finally:
+        pool.shutdown(cancel_futures=True)
+    for run, (_, log) in clients.items():
+        refresh_report(run, log)
+    return {k: outcomes.count(k) for k in ("labelled", "leak", "error")}
+
+
+def label_task(client: ModelClient, g: GatesCfg, m: Path, config_path: str | None = None) -> str:
+    """Label one pending task in place; a leak (solved without documents) moves it to rejected/."""
+    task, result = _read(m / "task.json"), MatterResult(**_read(m / "gates.json"))
+    names = _read(m / "stages_done.json")["docs"] if (m / "stages_done.json").exists() else sorted(task["documents"])
+    docs = {n: (m / "docs" / n).read_text(encoding="utf-8") for n in names}  # drafting order, as the inline solver saw it
+    step = lambda stage: beat(f"{m.parent.parent.name}/{m.name}", stage)
+    step("label")
+    shutil.rmtree(m / "solver", ignore_errors=True)
+    res = solve_and_label(client, g, m, task["instruction"], docs, Rubric.from_dict({"criteria": task["rubric"]}), step)
+    _take_labels(result, res)
+    result.labelled_by = {"config": config_path, "models": [getattr(client, "model_for", lambda r: "")(r) or r for r in g.solver_models],
+                          "probe_without_documents_passed": res.details.get("probe_without_documents_passed")}
+    result.gates = [x for x in result.gates if x["name"] != "solver_check"] + [asdict(res)]
+    (m / "label_error.txt").unlink(missing_ok=True)
+    if not res.passed:
+        result.accepted, result.failed_gate, result.reason, result.split = False, "solver_check", _first_reason(res), None
+        _write(m / "gates.json", asdict(result))
+        (m / "task.json").unlink()
+        dest = m.parent.parent / "rejected" / m.name
+        shutil.rmtree(dest, ignore_errors=True)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.move(str(m), str(dest))
+        step("rejected at solver_check (leak)")
+        return "leak"
+    _write(m / "gates.json", asdict(result))
+    task.pop("label_pending", None)
+    task.update(solver_pass_rate=result.solver_pass_rate, unsolved=result.unsolved, difficulty=result.difficulty, labelled_by=result.labelled_by)
+    _write(m / "task.json", task)  # last: label_pending stays set until everything else is written
+    step("labelled " + ", ".join(f"{d['model']} {d['pass_rate']:.2f}" for d in result.difficulty))
+    return "labelled"
+
+
+def refresh_report(out: Path, label_log: CallLog) -> None:
+    """Rebuild report.json and report.md from the matters' gates.json; model calls add the labelling calls."""
+    old = _read(out / "report.json") if (out / "report.json").exists() else {}
+    results = sorted((MatterResult(**_read(f)) for d in ("accepted", "rejected") for f in (out / d).glob("*/gates.json")),
+                     key=lambda r: r.matter_id)
+    rep = build_report(results, label_log, old.get("backend") or _read(out / "settings.json")["backend"]["kind"], old.get("resumed", 0))
+    calls = old.get("model_calls", {})
+    for role, s in rep["model_calls"].items():
+        calls[role] = {k: calls.get(role, {}).get(k, 0) + v for k, v in s.items()}
+    rep["model_calls"] = calls
+    rep["variety"] = variety(out, results)
+    _write(out / "report.json", rep)
+    _write(out / "report.md", render_report(rep))
 
 
 def _reusable(prev: Path, work: Path) -> dict:
@@ -377,7 +456,7 @@ def industries_used_beside(out: Path, backend_kind: str) -> dict[str, int]:
     return dict(used)
 
 
-def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed: int = 0) -> dict:
+def build_report(results: list[MatterResult], log: CallLog, backend: str, resumed: int = 0) -> dict:
     gate_stats = {g: {"evaluated": 0, "passed": 0, "failed": 0, "skipped": 0} for g in GATE_ORDER}
     for r in results:
         for g in r.gates:
@@ -396,7 +475,7 @@ def build_report(results: list[MatterResult], log: CallLog, cfg: Config, resumed
             m["tasks"] += 1
             m["pass_rates"][f"{d['pass_rate']:.2f}"] = m["pass_rates"].get(f"{d['pass_rate']:.2f}", 0) + 1
     return {
-        "backend": cfg.backend.kind,
+        "backend": backend,
         "candidates": len(results),
         "accepted": sum(r.accepted for r in results),
         "errors": errors,

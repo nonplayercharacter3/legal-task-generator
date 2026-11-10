@@ -1,4 +1,4 @@
-"""Command line: `python -m ltg run ...`, `index ...`, `inspect ...` and `export ...`."""
+"""Command line: `python -m ltg run ...`, `label ...`, `index ...`, `inspect ...` and `export ...`."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 
 from .config import load_config
-from .orchestrator import Pipeline, reference_index
+from .orchestrator import Pipeline, label_runs, reference_index
 
 
 def cmd_index(args: argparse.Namespace) -> int:
@@ -63,6 +63,13 @@ def cmd_run(args: argparse.Namespace) -> int:
         print("WARNING: decontamination skipped (no reference_dirs); tasks were not screened against LAB")
     print(f"report: {Path(cfg.run.out_dir) / 'report.md'}")
     return 0
+
+
+def cmd_label(args: argparse.Namespace) -> int:
+    res = label_runs(load_config(args.config), args.runs, args.config)
+    print(f"labelled {res['labelled']}, rejected {res['leak']} as leaks, {res['error']} errors"
+          + (" (still pending: rerun `ltg label` to retry)" if res["error"] else ""))
+    return 1 if res["error"] else 0
 
 
 def cmd_inspect(args: argparse.Namespace) -> int:
@@ -126,6 +133,11 @@ def main(argv: list[str] | None = None) -> int:
     x = sub.add_parser("index", help="build or load the decontamination reference index (e.g. LAB) and report it")
     x.add_argument("--config", required=True, help="TOML config with gates.reference_dirs")
     x.set_defaults(func=cmd_index)
+
+    lb = sub.add_parser("label", help="run the deferred solver_check on accepted tasks with label_pending")
+    lb.add_argument("--config", required=True, help="TOML config with the solver roles, e.g. configs/pilot_nrp_solver.toml")
+    lb.add_argument("runs", nargs="+", help="run folders holding accepted/<matter>/")
+    lb.set_defaults(func=cmd_label)
 
     i = sub.add_parser("inspect", help="print one matter folder in readable form")
     i.add_argument("matter_dir")
