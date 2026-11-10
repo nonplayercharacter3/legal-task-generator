@@ -1,0 +1,203 @@
+{
+  "task_id": "s31-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Sovex Seed Distribution, LLC, which buys from and distributes for Ludis Genetics, Inc. under a supply arrangement. Sovex wants a clear picture of where it stands under the current paperwork and what it should push back on or fix before the relationship goes further. Please review the four documents in the matter folder: the supply agreement (sovex_ludis_supply_agreement.md), Order Form No. 2 for the 2026–2027 season (ludis_order_form_no2_2026_2027_season.md), the data processing addendum (sovex_ludis_data_processing_addendum.md), and the insurance certificate cover letter (sovex_broker_insurance_certificate_cover_letter.md). Then send me a memo that lists each issue you identify. For each one, give the document and section where it appears, explain why it matters for Sovex in practical terms, and recommend a fix, with proposed language where that would help. Put the items that carry the most commercial or legal exposure for Sovex first. If something can't be resolved from the documents alone and needs input from the client, flag it as an open question rather than making an assumption.",
+  "documents": [
+    "ludis_order_form_no2_2026_2027_season.md",
+    "sovex_broker_insurance_certificate_cover_letter.md",
+    "sovex_ludis_data_processing_addendum.md",
+    "sovex_ludis_supply_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Sovex's indemnity of Ludis in Supply Agreement Section 11.2, which covers all Grower Claims whatever their cause, sits outside the liability cap, so Sovex faces unlimited liability, including for grower losses caused by Ludis's own defective or nonconforming seed.",
+      "kind": "issue",
+      "hints": [
+        "Grower Claims",
+        "uncapped",
+        "Section 11.2"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the uncapped indemnity issue in the Supply Agreement at Section 11.2 (alone or together with the Grower Claims definition and/or Section 12.3).",
+      "kind": "issue",
+      "hints": [
+        "Section 11.2",
+        "Section 12.3(a)"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "For the uncapped Grower Claims indemnity, the response explains why this matters to Sovex and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "unlimited exposure",
+        "carve out claims caused by Supplier"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that Sovex's March 30, 2026 germination-shortfall notice on the first delivery was sent after the 21-day notice window, which closed on March 13, 2026 based on the February 20, 2026 Delivery Date.",
+      "kind": "issue",
+      "hints": [
+        "March 30, 2026",
+        "21 days",
+        "untimely"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response locates the late germination notice issue in the Order Form No. 2 recital recording the first delivery and notice history (Recital B) and/or its reservation of rights section, or in Supply Agreement Section 8.4.",
+      "kind": "issue",
+      "hints": [
+        "Recital B",
+        "Section 8.4",
+        "reservation of rights"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "For the late germination notice, the response explains why this matters to Sovex and recommends a fix or course of action.",
+      "kind": "issue",
+      "hints": [
+        "deemed accepted",
+        "timeliness defense"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response identifies that the Supply Agreement renews automatically for successive three-year terms unless non-renewal notice is given within a narrow 30-day window (no more than 150 and no less than 120 days before the end of the term).",
+      "kind": "issue",
+      "hints": [
+        "three (3) year Renewal Terms",
+        "150 days",
+        "120 days"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response locates the automatic renewal issue in Supply Agreement Section 2.2.",
+      "kind": "issue",
+      "hints": [
+        "Section 2.2"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "For the automatic renewal provision, the response explains why this matters to Sovex and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "locked in",
+        "diarize",
+        "one-year renewals"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response identifies that the Supply Agreement exclusivity clause extends to soybean and sorghum seed (not only corn) and to the whole of the United States and Canada, which is broader than the corn-only Iowa and Nebraska deal in the Order Form.",
+      "kind": "issue",
+      "hints": [
+        "corn, soybean or sorghum seed",
+        "United States and Canada"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response locates the overbroad exclusivity issue in Supply Agreement Section 4.1.",
+      "kind": "issue",
+      "hints": [
+        "Section 4.1"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "For the overbroad exclusivity clause, the response explains why this matters to Sovex and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "competing soybean lines",
+        "narrow to Territory"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response identifies that the Data Processing Addendum selects Iowa law and Polk County, Iowa courts for disputes relating to the Addendum, the Agreement or Grower Data, and that this conflicts with the New York law and New York forum chosen in the Supply Agreement rather than being resolved in favour of New York.",
+      "kind": "issue",
+      "hints": [
+        "laws of the State of Iowa",
+        "Polk County",
+        "New York"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response locates the governing law conflict in Data Processing Addendum Section 12.",
+      "kind": "issue",
+      "hints": [
+        "DPA Section 12"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "For the governing law and forum conflict, the response explains why this matters to Sovex and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "parallel litigation",
+        "conform to New York"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "The response states that the Order Form sales Territory is Iowa and Nebraska.",
+      "kind": "fact",
+      "hints": [
+        "Iowa and Nebraska",
+        "Territory"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "The response states that the Supply Agreement's Initial Term ends on December 31, 2028.",
+      "kind": "fact",
+      "hints": [
+        "December 31, 2028",
+        "Initial Term"
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "The response is a memo that presents the issues as separate items, ordered so that the items with the greatest commercial or legal exposure for Sovex come first.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "highest priority",
+        "ranked by exposure"
+      ]
+    },
+    {
+      "id": "C19",
+      "text": "The response claims that Sovex's March 30, 2026 germination notice was timely under the Supply Agreement.",
+      "kind": "negative",
+      "hints": [
+        "timely notice"
+      ]
+    },
+    {
+      "id": "C20",
+      "text": "The response claims that the Supply Agreement's exclusivity restriction is limited to corn seed in Iowa and Nebraska.",
+      "kind": "negative",
+      "hints": [
+        "exclusivity limited to Territory"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

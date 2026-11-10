@@ -1,0 +1,116 @@
+{
+  "task_id": "s31-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Stabind Brewing Company, Inc., which buys hop pellets from Kogein Hop Farms, LLC. The client wants a clear picture of where it stands under its supply arrangements with Kogein and what it should push to change. Please review everything in the matter folder: the supply agreement (stabind_kogein_hop_supply_agreement.md), the 2026 side letter (stabind_kogein_side_letter_2026.md), the service level schedule (service_level_schedule.md), the data processing addendum (data_processing_addendum.md), and the Ridgeline Haze press release (stabind_ridgeline_haze_press_release.md). Then prepare a memo to me. For each issue you find, the memo should say where it appears, by document and section. It should explain why it matters to Stabind and recommend a fix, such as proposed language, a negotiating position or a practical step. Put the issues in order of importance to the client, and flag anything you could not resolve from the documents alone. Keep it tight enough that I can use it to brief the client.",
+  "documents": [
+    "data_processing_addendum.md",
+    "service_level_schedule.md",
+    "stabind_kogein_hop_supply_agreement.md",
+    "stabind_kogein_side_letter_2026.md",
+    "stabind_ridgeline_haze_press_release.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the Supply Agreement renews automatically for successive five-year terms unless a party gives non-renewal notice within a narrow 30-day window (no more than 210 and no less than 180 days before the end of the term). It places the issue in Supply Agreement Section 2.2, explains why this matters to Stabind, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "successive five-year Renewal Terms",
+        "210 and 180 days",
+        "30-day window"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that Kogein can assign the Agreement without Stabind's consent to entities beyond its own affiliates, including any entity with which Kogein has a strategic supply or processing arrangement, which could include a competitor. It places the issue in Supply Agreement Section 15.2 and/or Data Processing Addendum Section 1.1, explains why this matters to Stabind, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Kogein Group Member",
+        "strategic supply or processing arrangement",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that the Side Letter narrows the uncapped Product Contamination Losses carve-out to losses arising from Kogein's willful misconduct, so that contamination losses caused by ordinary negligence are now subject to the 12-month-fees liability cap. It places the issue in Side Letter Section 3, explains why this matters to Stabind, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "willful misconduct",
+        "Product Contamination Losses",
+        "subject to the cap"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that Stabind's August 28, 2026 Chronic Failure election was likely untimely, because the 30-day notice window after Kogein's July 8, 2026 delivery of the Q2 2026 Performance Report closed on August 7, 2026. It places the issue in Service Level Schedule Section 4.2, explains why this matters to Stabind, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "August 7, 2026",
+        "August 28, 2026",
+        "untimely"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Minimum Annual Volume under the Supply Agreement is 180,000 pounds of hop pellets per contract year.",
+      "kind": "fact",
+      "hints": [
+        "180,000 pounds",
+        "Minimum Annual Volume"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that a signed side letter prevails over the Supply Agreement under the order of precedence.",
+      "kind": "fact",
+      "hints": [
+        "order of precedence",
+        "Side Letter prevails",
+        "Section 17.4"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is a memo that presents the issues in an order expressly described as reflecting their importance to the client, and gives a document and section reference for each issue.",
+      "kind": "format",
+      "hints": [
+        "in order of importance",
+        "Section"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response includes a section or statements flagging points that could not be resolved from the documents alone.",
+      "kind": "format",
+      "hints": [
+        "could not be resolved",
+        "open points",
+        "need to confirm"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Stabind's August 28, 2026 Chronic Failure election was timely under the Service Level Schedule.",
+      "kind": "negative",
+      "hints": [
+        "timely election"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Product Contamination Losses caused by Kogein's negligence remain fully uncapped notwithstanding the Side Letter.",
+      "kind": "negative",
+      "hints": [
+        "remain uncapped"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

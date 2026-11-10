@@ -1,0 +1,193 @@
+{
+  "matter_id": "s31-m0002",
+  "summary": "Sovex Seed Distribution, LLC (client) is a regional seed distributor. It entered a multi-year Supply Agreement with Ludis Genetics, Inc. for Ludis proprietary hybrid corn seed, to be resold to growers in Iowa and Nebraska. The folder contains four documents: the Supply Agreement (effective January 15, 2026, New York law), Order Form No. 2 for the 2026-2027 season, a Data Processing Addendum covering grower field and yield data that Sovex shares with Ludis, and a cover letter from Sovex's insurance broker enclosing a certificate of insurance. Five issues are planted. (1) Sovex gives an indemnity for all Grower Claims that sits outside the liability cap. (2) Sovex's germination-shortfall notice on the first delivery was sent after the 21-day contractual window; Ludis rejected it and Sovex reserved its rights. (3) The agreement renews automatically for three-year terms, with only a 30-day opt-out window. (4) The exclusivity clause covers multiple crops across the U.S. and Canada, although the deal is corn-only in Iowa and Nebraska. (5) The DPA chooses Iowa law and an Iowa forum, and its reach extends to the whole Agreement.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Sovex Seed Distribution, LLC",
+      "role": "Customer / distributor (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Ludis Genetics, Inc.",
+      "role": "Supplier of proprietary hybrid corn seed"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "January 15, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement governing law",
+      "value": "Laws of the State of New York",
+      "doc": "D1",
+      "section": "Section 19.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement forum",
+      "value": "State and federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 19.1"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "DPA prevails on data protection matters; otherwise Supply Agreement, then Order Form",
+      "doc": "D1",
+      "section": "Section 19.2"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement Initial Term end date",
+      "value": "December 31, 2028",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement liability cap",
+      "value": "Fees paid or payable in the prior 12 months",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F7",
+      "key": "Germination claim notice period",
+      "value": "21 days after the Delivery Date",
+      "doc": "D1",
+      "section": "Section 8.4"
+    },
+    {
+      "id": "F8",
+      "key": "Order Form No. 1 Delivery Date",
+      "value": "February 20, 2026",
+      "doc": "D2",
+      "section": "Recital B"
+    },
+    {
+      "id": "F9",
+      "key": "Order Form sales Territory",
+      "value": "Iowa and Nebraska",
+      "doc": "D2",
+      "section": "Section 2"
+    },
+    {
+      "id": "F10",
+      "key": "Required product liability insurance",
+      "value": "$5,000,000 per occurrence",
+      "doc": "D1",
+      "section": "Section 13.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "sovex_ludis_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "ludis_order_form_no2_2026_2027_season.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "sovex_ludis_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "sovex_broker_insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "The problem appears only when three provisions of D1 are read together. Section 11.2 requires Customer to indemnify Supplier against all claims arising from Customer's use, handling, resale or planting of Products, 'including any Grower Claims'. Section 1 defines Grower Claims as any claim by a grower relating to crop stand, yield or performance, whatever the cause, so the definition reaches claims caused by defective Ludis seed. Section 12.3(a) then removes 'obligations under Section 11' from the Section 12.1 cap of fees paid in the prior 12 months. The carve-out applies to both parties, but the only Supplier indemnity in Section 11.1 is a narrow IP indemnity. The practical effect is that Sovex carries unlimited liability for grower crop-failure claims, including those caused by Supplier's own nonconforming seed.",
+      "doc": "D1",
+      "section": "Section 11.2 (with Section 1 'Grower Claims' and Section 12.3(a))",
+      "detect_terms": [
+        "including any Grower Claims",
+        "obligations under Section 11"
+      ],
+      "expected_finding": "Because Section 12.3(a) excludes Section 11 obligations from the Section 12.1 cap, and Section 11.2 makes Sovex indemnify Ludis for all Grower Claims regardless of cause, Sovex faces unlimited liability, including for losses caused by Ludis's defective seed. Section 11.2 should exclude claims caused by Supplier's breach or nonconforming Products, and Sovex's indemnity should be capped.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "D1 Section 8.4 says germination nonconformity claims must be noticed within 21 days after the Delivery Date, failing which the Products are deemed accepted. D2 Recital B records that the Order Form No. 1 Delivery Date was February 20, 2026, so the window closed on March 13, 2026. The same recital records that Sovex sent its germination-shortfall notice on March 30, 2026, and that Ludis rejected the notice as untimely by letter dated April 3, 2026. D2 Section 7, signed April 20, 2026, records that Sovex expressly reserves the March 30 claim and that nothing in Order Form No. 2 waives it. The claim therefore remains live but exposed to a timeliness defense. A 21-day window is arguably manifestly unreasonable for latent germination defects that cannot be detected before planting or cold-germ testing (N.Y. U.C.C. 1-302(b), 2-607(3)).",
+      "doc": "D2",
+      "section": "Recital B and Section 7 (Reservation of Rights)",
+      "detect_terms": [
+        "rejected the notice as untimely",
+        "March 30, 2026"
+      ],
+      "expected_finding": "Sovex's March 30, 2026 notice came after the 21-day Section 8.4 window, which closed March 13, 2026 based on the February 20, 2026 Delivery Date. Because D2 Section 7 preserves the claim, Sovex should argue that the window is manifestly unreasonable for latent germination defects under N.Y. U.C.C. 1-302(b) and 2-607(3). Sovex should also renegotiate Section 8.4 so the window runs from germination test results or emergence.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "D1 Section 2.2 provides that after the Initial Term ends on December 31, 2028, the Agreement renews automatically for successive three (3) year Renewal Terms. Renewal can be avoided only if a non-renewal notice is delivered not more than 150 days and not less than 120 days before the end of the then-current term. That is a 30-day window, falling in early August to early September 2028. Missing it locks Sovex into three more years of minimum purchases and exclusivity.",
+      "doc": "D1",
+      "section": "Section 2.2",
+      "detect_terms": [
+        "successive three (3) year Renewal Terms",
+        "not more than 150 days"
+      ],
+      "expected_finding": "Section 2.2 renews the Agreement automatically for three-year terms unless Sovex gives notice within a narrow 30-day window, measured 150 to 120 days before December 31, 2028. Sovex should seek one-year renewals or a right to terminate on reasonable notice at any time, and should diarize the window in the meantime.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D2 Section 2 defines the commercial deal: Ludis hybrid corn varieties listed in Exhibit A, for resale in a Territory of Iowa and Nebraska. D1 Section 4.1, however, bars Customer from purchasing, selling or distributing any 'corn, soybean or sorghum seed' from anyone other than Supplier anywhere in 'the United States and Canada'. Under the D1 Section 19.2 order of precedence, the Supply Agreement prevails over the Order Form on non-data matters. The broader Section 4.1 restriction therefore controls. It would stop Sovex from carrying competing soybean or sorghum lines, or any seed outside its two-state territory.",
+      "doc": "D1",
+      "section": "Section 4.1 (with D1 Section 19.2 and D2 Section 2)",
+      "detect_terms": [
+        "corn, soybean or sorghum seed",
+        "the United States and Canada"
+      ],
+      "expected_finding": "D1 Section 4.1 extends exclusivity to soybean and sorghum seed across the United States and Canada, although the deal in D2 Section 2 covers only Ludis corn in Iowa and Nebraska. Because Section 19.2 makes the Agreement prevail over the Order Form, the overbroad restriction controls. Section 4.1 should be narrowed to Exhibit A corn varieties within the Order Form Territory.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "D1 Section 19.1 selects New York law and the courts of New York County. D3 Section 12, by contrast, provides that the 'laws of the State of Iowa' govern, with exclusive jurisdiction in the courts of 'Polk County', Iowa. D3 Section 12 applies to any dispute arising out of or relating to the Addendum, the Agreement or any processing of Grower Data. D1 Section 19.2 makes the DPA prevail on data protection matters, so the precedence clause does not cure the conflict; it gives the Iowa clause effect for any data-related claim. Many grower-claim and indemnity disputes involve field and yield data, so the result is split law and forum and parallel litigation risk.",
+      "doc": "D3",
+      "section": "Section 12 (Governing Law and Jurisdiction)",
+      "detect_terms": [
+        "laws of the State of Iowa",
+        "Polk County"
+      ],
+      "expected_finding": "D3 Section 12 chooses Iowa law and Polk County courts for disputes relating to the DPA, the Agreement or Grower Data processing. Because D1 Section 19.2 lets the DPA prevail on data matters, this conflicts with the New York law and forum in D1 Section 19.1 instead of being cured. D3 Section 12 should be conformed to New York law and the New York County forum.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ]
+    }
+  ]
+}

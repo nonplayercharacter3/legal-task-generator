@@ -1,0 +1,60 @@
+{
+  "matter_id": "s31-m0003",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I2\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 6,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I2"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Key Employee Agreement §9.2: \"This Agreement may not be assigned or transferred by the Company, by operation of law or otherwise, without the Employee's prior written consent. Sections 7.1 and 7.2 terminate automatically, and are of no further force or effect, on the consummation of any merger in which the Company is not the surviving entity, or any sale of all or substantially all of the assets of the Company. This termination applies if the transaction is effected without the Employee's prior written consent to the continuation of those Sections for the benefit of the acquirer.\"",
+            "reason": "The APA is a sale of substantially all of Momil's assets (Recital B). It lists the Key Employee Agreement as an Assigned Contract (§2.1(c)), but nothing requires Okonkwo-Tull's consent. Schedule 6.4 omits her. §6.4 limits Seller's consent obligations to Schedule 6.4 and records that Buyer reviewed the Assigned Contracts. §7.2 has no closing condition for her consent. The Side Letter does not fix this. So on closing, which appears to have occurred on April 30, 2026 per the IP Assignment, her 24-month non-compete and installer/customer non-solicit lapsed. The assignment itself also needed consent that was never sought. This hurts Buyer: it loses the covenant protection and goodwill it paid for, as the VP who holds the installer and crew relationships is free to compete. The problem is still actionable. Nothing in the folder shows Buyer accepted the loss. Her consent was a consent §4.4 required but did not disclose, and Seller represented under §4.7 that each Assigned Contract is valid and in full force. Those representations survive nine months after Closing (to about January 30, 2027, §9.1), so Buyer can still serve a claim notice. It can also try to negotiate new covenants with her. The §6.4 acknowledgment that Buyer reviewed the Assigned Contracts weakens Buyer's position but does not cure the problem."
+          },
+          {
+            "issue": "I2",
+            "present": false,
+            "evidence": "Section 2.4(b): Seller retains as Excluded Liabilities \"all liabilities arising under any Incentive Program, including any recapture, clawback or repayment, to the extent relating to any Seller-Installed System\"; Section 9.2(c): Seller shall indemnify Buyer against all Losses arising from \"any Excluded Liability\"; Section 9.6(c): the Cap, basket and other limitations \"do not apply to claims under ... Section 9.2(c)\".",
+            "reason": "Section 9.1 does cut off the Section 4.14 representation nine months after Closing, around January 30, 2027. Section 4.14 is not a Fundamental Representation. But Buyer is not left exposed to recapture or clawback. The APA puts those liabilities in Section 2.4(b) as Excluded Liabilities retained by Seller, and Seller indemnifies them under Section 9.2(c). That indemnity is a stand-alone agreement, not a representation, so the nine-month cutoff in Section 9.1 does not reach it; Section 9.1 says agreements survive until fully performed. Section 9.6(c) also takes it outside the Cap and basket. The 2026-04-28 side letter shifted warranty liabilities to Buyer but left Section 2.4(b) unchanged. Section 2.4(f) separately keeps pre-closing proceedings with Seller. The recapture and incentive exposure the issue describes is therefore covered by an uncapped indemnity that does not expire after nine months. The short survival of Section 4.14 does not leave Buyer meaningfully unprotected."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 2.1: Section 2.3(b) of the Agreement is deleted and replaced with \"(b) all Customer Warranty Obligations, whether arising before or after the Closing, including roof penetration, leak and workmanship warranties with terms of up to twenty-five (25) years; and\"; Section 2.2: Section 2.4(c) of the Agreement is deleted and replaced with \"(c) [Reserved];\"",
+            "reason": "The problem is present and hurts Deler, the Buyer. Under the original APA, Seller kept Pre-Closing Customer Warranty Obligations as Excluded Liabilities (Section 2.4(c)) and indemnified Buyer for them without limit (Sections 9.2(c) and 9.6(c)). Buyer assumed only warranties on systems Buyer itself installs after Closing. Section 2 of the Side Letter reverses this. It makes all Customer Warranty Obligations, including those on Seller's entire legacy installed base, Assumed Liabilities, and it deletes the carve-out in Section 2.4(c). Because the Side Letter is a signed amendment under Section 11.6, Section 4.1 makes it part of \"this Agreement\", and Section 11.9 gives it precedence. Under Section 9.3(b), Buyer must therefore indemnify Seller for these liabilities. Section 9.6(c) removes the cap, the basket and the other limits for 9.3(b) claims, so that indemnity is uncapped. Buyer also loses Seller's matching uncapped indemnity under 9.2(c). Nothing in the Side Letter changes the $48,500,000 price to compensate (Section 4.2), and no other document limits or cures the shift. The folder contains no closing payment, restated instrument or other record showing Buyer has accepted the result in a way that would make the point moot, so it remains actionable. Buyer can refuse to countersign or renegotiate, or, if the letter was signed, raise it as a drafting error or seek a correcting amendment."
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "matter_id": "s31-m0001",
+  "summary": "Stabind Brewing Company, Inc., a regional craft brewery and the firm's client, buys hop pellets from Kogein Hop Farms, LLC under a New York-law Hop Supply Agreement effective February 1, 2025. The folder has five documents: the Supply Agreement, a Side Letter dated September 15, 2026, a Service Level Schedule, a Data Processing Addendum and a Stabind press release. The planted problems are: (1) an evergreen five-year renewal with a 30-day opt-out window and list-price repricing; (2) Kogein's assignment right, which reaches a far broader set of assignees through a defined term imported from the DPA; (3) the Side Letter's narrowing of the uncapped Product Contamination Losses carve-out, which prevails under the precedence clause; and (4) Stabind's late election of its Chronic Failure volume-reduction remedy, which Kogein disputes and which the Side Letter expressly reserves.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Stabind Brewing Company, Inc.",
+      "role": "Buyer of hop pellets; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Kogein Hop Farms, LLC",
+      "role": "Supplier of hop pellets and hop processing services; counterparty"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "February 1, 2025",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "four years, ending January 31, 2029",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement Renewal Term length",
+      "value": "five years per renewal",
+      "doc": "D1",
+      "section": "2.2"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid by Stabind in the prior 12 months",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement uncapped carve-out for contamination",
+      "value": "Product Contamination Losses are excluded from the liability cap",
+      "doc": "D1",
+      "section": "11.2(d)"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "signed side letters and amendments, then Supply Agreement, then Service Level Schedule, then DPA",
+      "doc": "D1",
+      "section": "17.4"
+    },
+    {
+      "id": "F7",
+      "key": "Supply Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "17.1"
+    },
+    {
+      "id": "F8",
+      "key": "Minimum Annual Volume",
+      "value": "180,000 pounds of hop pellets per contract year",
+      "doc": "D1",
+      "section": "3.2"
+    },
+    {
+      "id": "F9",
+      "key": "Chronic Failure threshold",
+      "value": "On-Time Delivery below 92% in two consecutive calendar quarters",
+      "doc": "D3",
+      "section": "4.1"
+    },
+    {
+      "id": "F10",
+      "key": "Side Letter date",
+      "value": "September 15, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stabind_kogein_hop_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "stabind_kogein_side_letter_2026.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "stabind_ridgeline_haze_press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Section 2.2 of the Supply Agreement (D1) renews the Agreement automatically after the Initial Term ends on January 31, 2029. Each renewal is a successive five-year Renewal Term. Renewal stops only if a party gives non-renewal notice 'not more than 210 days and not less than 180 days' before the end of the current term, which is a 30-day window. The same section reprices each Renewal Term at Kogein's then-current list price. The 180,000-pound Minimum Annual Volume in Section 3.2 carries over into every Renewal Term. If Stabind misses one narrow window, it is locked into five more years of take-or-pay hop purchases at prices Kogein sets alone. This is the one issue visible on a read of a single clause.",
+      "doc": "D1",
+      "section": "2.2",
+      "detect_terms": [
+        "successive five-year Renewal Terms",
+        "not more than 210 days and not less than 180 days"
+      ],
+      "expected_finding": "Section 2.2 renews the Agreement automatically for five-year terms at Kogein's then-current list prices, carrying the 180,000-pound minimum volume, unless Stabind uses a 30-day window 210 to 180 days before January 31, 2029; Stabind should negotiate a shorter renewal term, a longer notice window ending closer to expiry, and capped renewal pricing, and calendar the window in the meantime.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 15.2 of the Supply Agreement (D1) bars Stabind from assigning without Kogein's consent. It lets Kogein assign the Agreement to any 'Kogein Group Member' on notice alone. Section 1.3 of D1 states that this term 'has the meaning given in Section 1.1 of the Data Processing Addendum.' Section 1.1 of the DPA (D4) defines Kogein Group Member to include not only Kogein's affiliates but also 'any entity with which Kogein has a strategic supply or processing arrangement'. That reach can include a large or rival brewer that buys or processes hops through Kogein. D1 does not define the term differently, so the precedence clause in Section 17.4 creates no conflict for D1 to win. The DPA definition therefore controls. Read together, these provisions let Kogein transfer the Agreement to a competitor without Stabind's consent. That assignee would receive Stabind's volume forecasts, proprietary hop blend specifications and ordering data. Neither document gives Stabind a termination right on such an assignment or on a change of control.",
+      "doc": "D4",
+      "section": "1.1",
+      "detect_terms": [
+        "strategic supply or processing arrangement"
+      ],
+      "expected_finding": "Because D1 Section 15.2 lets Kogein assign on notice to any 'Kogein Group Member' and D1 Section 1.3 imports the DPA Section 1.1 definition covering any entity with a strategic supply or processing arrangement with Kogein, Kogein can assign the Agreement and Stabind's confidential brewing data to a competing brewer without consent, so Stabind should limit the definition to controlled affiliates and add a consent requirement (or termination right) for assignments and changes of control.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 11.1 of the Supply Agreement (D1) caps each party's liability at the fees paid in the prior 12 months. Section 11.2(d) excludes Product Contamination Losses from that cap. These are Stabind's own recall costs, destroyed beer and remediation costs caused by contaminated or off-specification hops. Section 11.3 excludes consequential damages except for claims carved out in Section 11.2. Section 3 of the Side Letter dated September 15, 2026 (D2) amends Section 11.2(d). Under the new wording, only Product Contamination Losses 'to the extent arising from Kogein's willful misconduct' are uncapped. Section 17.4 of D1 ranks signed side letters above the Supply Agreement, so the Side Letter governs. Ordinary negligent contamination therefore now falls under the 12-month-fees cap, and the 11.3 exclusion may also reach it. Section 10.1 indemnifies Stabind only for third-party claims, so it does not cover these first-party losses. A single contaminated lot could cause a brewery recall far larger than one year of hop fees.",
+      "doc": "D2",
+      "section": "3",
+      "detect_terms": [
+        "to the extent arising from Kogein's willful misconduct"
+      ],
+      "expected_finding": "Side Letter Section 3, which prevails over the Supply Agreement under D1 Section 17.4, limits the D1 Section 11.2(d) carve-out to contamination caused by Kogein's willful misconduct, so Stabind's first-party recall and destroyed-inventory losses from negligent contamination are now capped at 12 months' fees (and not reached by the third-party-only indemnity in Section 10.1); Stabind should seek to restore the full uncapped carve-out or at least a separate high recall-cost cap.",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 4.1 of the Service Level Schedule (D3) defines a Chronic Failure as On-Time Delivery below 92% in two consecutive quarters. Under Section 4.2, Stabind may then cut the Minimum Annual Volume by up to 50% or terminate. It must give written notice 'within thirty (30) days after delivery of the Performance Report' for the second failing quarter. The dates appear in the recitals of the Side Letter (D2). Kogein delivered its Q2 2026 Performance Report on July 8, 2026, showing 88% for Q1 2026 and 89% for Q2 2026. The 30-day deadline therefore ran out on August 7, 2026. Stabind sent its election letter on August 28, 2026, which is 21 days late. The Side Letter records that Kogein treats the notice as untimely and that the parties reserve their positions. Stabind has not accepted the result, but its remedy for the Q1–Q2 2026 failure is at serious risk.",
+      "doc": "D3",
+      "section": "4.2",
+      "detect_terms": [
+        "within thirty (30) days after delivery of the Performance Report"
+      ],
+      "expected_finding": "Measured from Kogein's July 8, 2026 delivery of the Q2 2026 Performance Report recited in the Side Letter, the 30-day window in Service Level Schedule Section 4.2 closed on August 7, 2026, so Stabind's August 28, 2026 Chronic Failure election is likely untimely; because the Side Letter reserves Stabind's position, the memo should recommend pursuing waiver or estoppel arguments or a negotiated volume reduction, and calendaring strict compliance for any later Chronic Failure.",
+      "contradicts": null
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "matter_id": "s31-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 11.2: \"Customer will defend Supplier ... against any claim ... arising out of or relating to Customer's use, handling, storage, resale or planting of Products, including any Grower Claims, and will indemnify and hold them harmless from all losses, damages, liabilities, costs and reasonable attorneys' fees arising from such claims.\" Section 1.6 defines Grower Claims as any Grower claim \"relating to the crop stand, emergence, yield or performance of Products, whatever the cause.\" Section 12.3(a): \"Sections 12.1 and 12.2 do not apply to: (a) a Party's obligations under Section 11.\"",
+            "reason": "Sovex (Customer) gives the 11.2 indemnity. Because Grower Claims applies \"whatever the cause,\" the indemnity reaches crop-failure claims caused by Ludis's own nonconforming seed. Section 12.3(a) removes Section 11 obligations from both the 12-month fees cap and the consequential-damages exclusion, so Sovex's exposure has no limit. The carve-out is mutual on its face, but Supplier's only indemnity (11.1) covers IP infringement, so in practice it helps only Ludis. Nothing in the folder cures this. The Order Form says the Agreement's terms apply except as it states, and it does not change Section 11 or 12. The insurance certificate gives Ludis additional-insured status under Sovex's own policy, which makes Sovex's coverage absorb the risk rather than limiting it. The Agreement runs through 2028, and the 2026-2027 Order Form deliveries come in 2027, so the exposure remains live and can still be raised by amendment or in negotiation."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Recital B: \"The Delivery Date for the Products shipped under Order Form No. 1 was February 20, 2026. By letter dated March 30, 2026, Customer gave Supplier written notice under Section 8.4 of the Agreement ... By letter dated April 3, 2026, Supplier rejected the notice as untimely.\" Section 7.1: \"Customer expressly reserves all of its rights and remedies in respect of the March 30 Claim described in Recital B.\"",
+            "reason": "The notice duty in Agreement Section 8.4 falls on Sovex. The 21-day window ran from the February 20 Delivery Date and closed on March 13, so the March 30 notice was 17 days late. Late notice risks the deemed-acceptance consequence, and Ludis has already raised that defense in writing. Section 7 does not cure the lateness. It only keeps Sovex from waiving the claim by signing Order Form No. 2 or by paying invoices. The folder shows no acceptance by Sovex: it has signed no release and the claim is expressly reserved. The claim is therefore still live and actionable, but exposed to the timeliness defense. Sovex's best counter is to argue that a 21-day window is manifestly unreasonable for latent germination defects under N.Y. U.C.C. 1-302(b) and 2-607(3)."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"At the end of the Initial Term, this Agreement will renew automatically for successive three (3) year Renewal Terms ... unless either Party delivers written notice of non-renewal to the other Party not more than 150 days and not less than 120 days before the end of the then-current Term.\"",
+            "reason": "Section 2.2 renews the Agreement automatically for three-year terms. Either party can stop renewal only by giving notice inside a 30-day window, roughly August 3 to September 2, 2028, for the December 31, 2028 Initial Term. Notice given too early or too late is ineffective. The renewal would extend Sovex's obligations under Section 4.1 (exclusivity across all corn, soybean and sorghum seed in the US and Canada) and Section 5 (minimum purchases and shortfall fees). Nothing in the Order Form, the DPA or the insurance letter changes or eases this. The window has not yet opened (today is November 10, 2026), so Sovex can still act on it, for example by docketing the window or negotiating a wider or termination-for-convenience right. This is a real, live risk to the client."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 4.1: \"During the Term, Customer shall not, directly or through any Affiliate, purchase, sell or distribute any corn, soybean or sorghum seed from or on behalf of any person other than Supplier anywhere in the United States and Canada.\" Section 19.2: \"...otherwise this Supply Agreement prevails, then the Order Form.\" Order Form No. 2 §2.2: \"The Territory for resale of Products under this Order Form is Iowa and Nebraska.\"",
+            "reason": "The restriction binds Sovex, the client, as Customer. The deal covers only Ludis hybrid corn resold in Iowa and Nebraska, and Ludis sells no soybean or sorghum. Yet Section 4.1 bars Sovex and its Affiliates from buying or selling any competing corn, soybean or sorghum seed anywhere in the US and Canada. Supplier's matching promise in Section 4.2 is limited to the Territory. Under Section 19.2 the Supply Agreement prevails over the Order Form, so the two-state Territory does not narrow the restriction. Nothing in the folder cures or limits it. The Agreement runs to 2028 with automatic renewal, so the restriction remains live and actionable. Sovex could seek an amendment narrowing it, and the overbreadth also raises enforceability and antitrust questions."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "DPA Section 12.1: \"This Addendum, and any dispute arising out of or relating to this Addendum, the Agreement or any processing of Grower Data, is governed by the laws of the State of Iowa, without regard to its conflict of laws rules.\" DPA Section 12.2: \"Each Party submits to the exclusive jurisdiction of the state and federal courts located in Polk County, Iowa, for any such dispute...\" Supply Agreement Section 19.1, by contrast: \"This Agreement, and any dispute arising out of or relating to it, is governed by the Laws of the State of New York ... Each Party submits to the exclusive jurisdiction of the State and federal courts located in New York County, New York.\"",
+            "reason": "The two documents contain directly conflicting governing law and exclusive forum clauses. DPA Section 12 reaches beyond the Addendum to disputes 'relating to ... the Agreement,' so it overlaps with Supply Agreement Section 19.1. Supply Agreement Section 19.2 makes the DPA prevail only 'on data protection matters' and the Supply Agreement otherwise. That leaves the line unclear for mixed disputes. Examples are Grower Claims and Customer's uncapped Section 11.2 indemnity, which will often turn on yield, stand and planting data. The same applies to the reserved March 30 germination claim. The result for Sovex is a risk of split law and forum and of parallel proceedings in Iowa and New York. Nothing in the folder reconciles or waives the conflict, and the DPA is unsigned and amendable under Section 13.4. The issue therefore remains actionable for Sovex, which could favour a single Iowa forum as an Iowa company."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 20,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C16 asks for fact F9, which only issue I4 uses: a memo that misses I4 need not state it",
+          "criterion C17 asks for fact F5, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4",
+          "C5",
+          "C6"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.048,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

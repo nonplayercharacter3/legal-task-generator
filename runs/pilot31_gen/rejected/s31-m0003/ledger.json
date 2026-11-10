@@ -1,0 +1,174 @@
+{
+  "matter_id": "s31-m0003",
+  "summary": "Deler Solar Holdings, LLC (client, Buyer) is acquiring the residential and small-commercial solar installation business of Momil Sunworks, Inc. (Seller) under an Asset Purchase Agreement signed March 16, 2026, with Closing scheduled for April 30, 2026. The purchase price is $48,500,000. The folder holds five documents: the APA; Seller's Key Employee Agreement with its VP of Installation Operations, which the APA lists as an Assigned Contract; the IP Assignment Agreement for Seller's design software and installation know-how; a Side Letter dated April 28, 2026 signed by both parties as an amendment under APA Section 11.6; and the March 17, 2026 press release announcing the deal. Three problems hurt Buyer. (1) The key employee's non-compete and non-solicit terminate on a sale of substantially all of Seller's assets unless she consents in writing, and the APA neither requires that consent nor makes it a closing condition. (2) The ITC and incentive-compliance representation survives only 9 months, but the federal tax credit recapture exposure it covers runs 5 years. (3) The Side Letter moves Seller's pre-Closing customer warranty liabilities into Assumed Liabilities. Buyer's indemnity for Assumed Liabilities is carved out of the cap, so Buyer would indemnify Seller without limit for Seller's own legacy installations.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Deler Solar Holdings, LLC",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Momil Sunworks, Inc.",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Rhea Okonkwo-Tull",
+      "role": "Seller's Vice President of Installation Operations; counterparty to the Key Employee Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Buyer",
+      "value": "Deler Solar Holdings, LLC, a Delaware limited liability company",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Asset Purchase Agreement signing date",
+      "value": "March 16, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "Scheduled Closing Date",
+      "value": "April 30, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F4",
+      "key": "Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F5",
+      "key": "Indemnity Cap under Sections 9.2(a) and 9.3(a)",
+      "value": "$4,850,000 (10% of Purchase Price)",
+      "doc": "D1",
+      "section": "Section 9.6(a)"
+    },
+    {
+      "id": "F6",
+      "key": "Survival period for non-Fundamental Representations",
+      "value": "9 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F7",
+      "key": "Pre-Closing Customer Warranty Obligations",
+      "value": "Excluded Liabilities retained by Seller",
+      "doc": "D1",
+      "section": "Section 2.4(c)"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "APA prevails over Ancillary Agreements, except written amendments signed by both parties under Section 11.6",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F9",
+      "key": "Key Employee Agreement non-compete period",
+      "value": "24 months after employment ends",
+      "doc": "D2",
+      "section": "Section 7.1"
+    },
+    {
+      "id": "F10",
+      "key": "Asset Purchase Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.10"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_deler_momil.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "key_employee_agreement_okonkwo_tull.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter_2026-04-28.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "press_release_2026-03-17.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "Key employee restrictive covenants lapse on asset sale without employee consent",
+      "description": "APA Section 2.1(c) lists the Key Employee Agreement with Rhea Okonkwo-Tull as an Assigned Contract, and the APA treats her 24-month non-compete (D2 Section 7.1) as protection Buyer acquires. D2 Section 9.2 says the agreement may not be assigned, and that Sections 7.1 and 7.2 (non-compete and non-solicit of installers and customers) terminate automatically on a sale of all or substantially all of Momil's assets, unless the Employee gives prior written consent. APA Section 6.4 limits Seller's consent obligations to the consents listed in Schedule 6.4, which omits her. APA Section 7.2 sets no closing condition for her consent. Read together, the transaction itself kills the restrictive covenants. Buyer would close without the non-compete it is paying for, and no obligation on Seller to get the consent.",
+      "doc": "D2",
+      "section": "Section 9.2",
+      "detect_terms": [
+        "sale of all or substantially all",
+        "without the Employee's prior written consent"
+      ],
+      "expected_finding": "The asset sale triggers D2 Section 9.2 and terminates Ms. Okonkwo-Tull's non-compete and non-solicit unless she consents in writing, and APA Sections 6.4 and 7.2 neither require that consent nor make it a closing condition, so Buyer should add her written consent (or a new agreement with Buyer) to Schedule 6.4 and as a Section 7.2 closing condition before the April 30, 2026 Closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "survival_gap",
+      "label": "ITC and incentive-compliance representation survives 9 months against a 5-year recapture exposure",
+      "description": "APA Section 4.14 has Seller represent that the Seller-installed systems sold or financed with federal investment tax credits, and state incentives, were installed and placed in service in compliance. It acknowledges that this exposure runs through the five-year recapture period. APA Section 9.1 cuts off all representations other than Fundamental Representations 9 months after the Closing Date. Article I defines Fundamental Representations as Sections 4.1, 4.2 and 4.3 only, so Section 4.14 is not one of them. Read together, Buyer's claims for recapture or incentive clawback expire by about January 31, 2027 (9 months after the April 30, 2026 scheduled Closing Date). Recapture events and audits typically surface years later, which leaves the representation practically worthless.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "nine (9) months following the Closing Date",
+        "five-year recapture period"
+      ],
+      "expected_finding": "Because Section 4.14 is not a Fundamental Representation, Section 9.1 ends Buyer's ability to claim for ITC recapture or incentive clawback 9 months after Closing, although the recapture exposure Section 4.14 describes lasts five years; Buyer should extend survival for Section 4.14 to at least the recapture period plus 60 days, or add it to the Fundamental Representations.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "Side Letter makes Buyer an uncapped indemnitor of Seller's pre-Closing warranty liabilities",
+      "description": "APA Section 2.4(c) keeps Pre-Closing Customer Warranty Obligations as Excluded Liabilities with Seller. Section 9.3(b) requires Buyer to indemnify Seller for all Assumed Liabilities. Section 9.6(c) says the cap in Section 9.6(a) and the other limits in Section 9.6 do not apply to claims under Section 9.3(b). The April 28, 2026 Side Letter (D4 Section 2) amends Section 2.3 to add to Assumed Liabilities all Customer Warranty Obligations, whether arising before or after the Closing, covering roof penetration, leak and workmanship warranties of up to 25 years. The Side Letter is signed by both parties as an amendment under Section 11.6, so under the Section 11.9 precedence clause it controls over the APA. Read together, Buyer must indemnify Seller without any cap for workmanship defects in Seller's entire legacy installed base.",
+      "doc": "D4",
+      "section": "Section 2",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "Customer Warranty Obligations"
+      ],
+      "expected_finding": "The Side Letter, which controls as a Section 11.6 amendment, moves Seller's pre-Closing Customer Warranty Obligations into Assumed Liabilities, and the Section 9.6(c) carve-out leaves Buyer's Section 9.3(b) indemnity for them uncapped, so Buyer faces unlimited liability for Seller's legacy installations and should strike the pre-Closing language or cap and time-limit that indemnity before Closing.",
+      "contradicts": "F7"
+    }
+  ]
+}
