@@ -214,3 +214,16 @@ def test_audit_script_lists_issues_and_instructions_naming_a_party_no_document_m
     out = capsys.readouterr().out.splitlines()
     first = ledger["issues"][0]["id"]
     assert out == [f"{run.name}/{m.name}  {first}  P9  Zorvath Capital Partners", f"{run.name}/{m.name}  instruction  P9  Zorvath Capital Partners"]
+
+
+def test_tasks_waiting_for_labels_are_left_out_unless_asked_for(tmp_path, capsys):
+    from ltg.config import load_config
+
+    run = tmp_path / "run"
+    Pipeline(load_config(None, {"run": {"out_dir": str(run), "n_matters": 3, "seed": 7}, "gates": {"solver_check": "defer"}})).run()
+    capsys.readouterr()
+    lines = lambda out: [l for s in ("train", "dev", "test") for l in (out / f"{s}.jsonl").read_text().splitlines()]
+    assert main(["export", "--runs", str(run), "--out", str(tmp_path / "e")]) == 0
+    assert lines(tmp_path / "e") == [] and "3 waiting for labels" in capsys.readouterr().out
+    assert main(["export", "--runs", str(run), "--out", str(tmp_path / "f"), "--include-pending"]) == 0
+    assert len(lines(tmp_path / "f")) == 3 and "0 waiting for labels" in capsys.readouterr().out
