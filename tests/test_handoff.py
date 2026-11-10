@@ -8,6 +8,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 
 from ltg.config import load_config
+from ltg.export import export
 from ltg.fake import FakeModel
 from ltg.orchestrator import Pipeline
 
@@ -77,3 +78,11 @@ def test_handoff_folder_and_grader(tmp_path):
         omitted = json.loads((matter / "answers.json").read_text())["flawed_omits"]
         want = {c["id"] for c in json.loads((matter / "rubric.json").read_text())["criteria"] if c.get("source") in omitted}
         assert set(t["failed"]) == want
+
+    # --ratios re-assigns splits before the folder is built, as `ltg export --ratios` does
+    h2 = tmp_path / "h2"
+    assert build_main(["--out", str(h2), "--runs", str(tmp_path / "run"), "--ratios", "0.1,0.9,0"]) == 0
+    res = export([str(tmp_path / "run")], str(tmp_path / "x"), ratios={"train": 0.1, "dev": 0.9, "test": 0.0})
+    dev = [json.loads(l)["task_id"] for l in (h2 / "grade/dev.jsonl").read_text().splitlines()]
+    assert dev == [json.loads(l)["eval"]["task_id"] for l in (tmp_path / "x/dev.jsonl").read_text().splitlines()]
+    assert len(dev) == res["counts"]["dev"] > len(grade)

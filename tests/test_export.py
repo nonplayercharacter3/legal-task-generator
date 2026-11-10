@@ -227,3 +227,42 @@ def test_tasks_waiting_for_labels_are_left_out_unless_asked_for(tmp_path, capsys
     assert lines(tmp_path / "e") == [] and "3 waiting for labels" in capsys.readouterr().out
     assert main(["export", "--runs", str(run), "--out", str(tmp_path / "f"), "--include-pending"]) == 0
     assert len(lines(tmp_path / "f")) == 3 and "0 waiting for labels" in capsys.readouterr().out
+
+
+def _splits(out):
+    return {json.loads(l)["eval"]["task_id"]: s for s in ("train", "dev", "test") for l in (out / f"{s}.jsonl").read_text().splitlines()}
+
+
+def test_export_ratios_reassign_splits(cfg, tmp_path, capsys):
+    Pipeline(cfg).run()
+    run = Path(cfg.run.out_dir)
+    stored = _stored(run, tmp_path / "stored")
+
+    # a subset in its own run folder, then the subset plus the rest: deterministic, and a task keeps its split when others join
+    matters = sorted((run / "accepted").iterdir())
+    half, rest = tmp_path / "half", tmp_path / "rest"
+    for folder, ms in ((half, matters[::2]), (rest, matters[1::2])):
+        for m in ms:
+            shutil.copytree(m, folder / "accepted" / m.name)
+    capsys.readouterr()
+    assert main(["export", "--runs", str(half), "--out", str(tmp_path / "a"), "--ratios", "0.4,0.3,0.3"]) == 0
+    assert main(["export", "--runs", str(half), "--out", str(tmp_path / "b"), "--ratios", "0.4,0.3,0.3"]) == 0
+    assert main(["export", "--runs", str(half), str(rest), "--out", str(tmp_path / "c"), "--ratios", "0.4,0.3,0.3"]) == 0
+    assert "moved" in capsys.readouterr().out
+    a, b, c = (_splits(tmp_path / x) for x in "abc")
+    assert a == b and len(c) == len(stored) and all(c[t] == s for t, s in a.items())
+    assert {k.split("/")[1]: v for k, v in c.items()} != {k.split("/")[1]: v for k, v in stored.items()}  # really re-assigned
+
+    # all to one split; the stored split is untouched on disk
+    assert main(["export", "--runs", str(run), "--out", str(tmp_path / "d"), "--ratios", "0,1,0"]) == 0
+    assert set(_splits(tmp_path / "d").values()) == {"dev"}
+    assert _stored(run, tmp_path / "e") == stored
+
+    for bad in ("0.7,0.2,0.2", "0.5,0.5", "a,b,c", "1.2,-0.1,-0.1"):
+        assert main(["export", "--runs", str(run), "--out", str(tmp_path / "f"), "--ratios", bad]) == 2
+    assert "summing to 1" in capsys.readouterr().err
+
+
+def _stored(run, out):
+    assert main(["export", "--runs", str(run), "--out", str(out)]) == 0
+    return _splits(out)

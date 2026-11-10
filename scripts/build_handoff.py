@@ -27,7 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from ltg.export import export, task_id  # noqa: E402
+from ltg.export import export, parse_ratios, task_id  # noqa: E402
 
 STATEMENT = """# Post-train `{base_model}` to review contracts like a law-firm associate
 
@@ -150,9 +150,14 @@ def main(argv=None) -> int:
     ap.add_argument("--include-unsolved", action="store_true")
     ap.add_argument("--include-held", action="store_true")
     ap.add_argument("--include-pending", action="store_true")
+    ap.add_argument("--ratios", metavar="TRAIN,DEV,TEST", help="re-assign splits as `ltg export --ratios` does")
     a = ap.parse_args(argv)
+    try:
+        ratios = parse_ratios(a.ratios) if a.ratios else None
+    except ValueError as e:
+        ap.error(str(e))
     res = build(Path(a.out), a.runs, a.base_model, model=a.model, min_pass=a.min_pass, max_pass=a.max_pass,
-                include_unsolved=a.include_unsolved, include_held=a.include_held, include_pending=a.include_pending)
+                include_unsolved=a.include_unsolved, include_held=a.include_held, include_pending=a.include_pending, ratios=ratios)
     print(f"handoff -> {res['out']}: train {res['counts']['train']}, dev {res['counts']['dev']} (test {res['counts']['test']} kept back); "
           f"left out {res['skipped']}" + (f"; duplicates dropped: {', '.join(res['duplicates'])}" if res["duplicates"] else ""))
     return 0

@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 
 from . import prompts
+from .splits import assign_split
 
 SPLITS = ("train", "dev", "test")
 
@@ -43,7 +44,18 @@ def task_id(matter: Path) -> str:
     return f"{matter.parent.parent.resolve().name}/{matter.name}"
 
 
-def example(matter: Path, labels: list[dict]) -> dict:
+def parse_ratios(text: str) -> dict[str, float]:
+    """`"0.7,0.15,0.15"` -> {"train": 0.7, "dev": 0.15, "test": 0.15}; three non-negative numbers summing to 1."""
+    try:
+        vals = [float(v) for v in text.split(",")]
+    except ValueError:
+        raise ValueError(f"--ratios takes three numbers TRAIN,DEV,TEST, not {text!r}") from None
+    if len(vals) != 3 or min(vals) < 0 or abs(sum(vals) - 1) > 1e-6:
+        raise ValueError(f"--ratios takes three non-negative numbers TRAIN,DEV,TEST summing to 1, not {text!r}")
+    return dict(zip(SPLITS, vals))
+
+
+def example(matter: Path, labels: list[dict], split: str | None = None) -> dict:
     task = json.loads((matter / "task.json").read_text())
     docs = "\n\n".join(f"### {name}\n\n{(matter / 'docs' / name).read_text()}" for name in sorted(task["documents"]))
     criteria = json.loads((matter / "rubric.json").read_text())["criteria"]
@@ -56,7 +68,7 @@ def example(matter: Path, labels: list[dict]) -> dict:
         "eval": {
             "task_id": task_id(matter),
             "matter_id": task["task_id"],
-            "split": task["split"],
+            "split": split or task["split"],
             "practice_area": task["practice_area"],
             "agreement_type": task["agreement_type"],
             "jurisdiction": task["jurisdiction"],
@@ -67,13 +79,16 @@ def example(matter: Path, labels: list[dict]) -> dict:
 
 
 def export(runs: list[str], out: str, model: str | None = None, min_pass: float = 0.0, max_pass: float = 1.0,
-           include_unsolved: bool = False, include_held: bool = False, include_pending: bool = False) -> dict:
+           include_unsolved: bool = False, include_held: bool = False, include_pending: bool = False,
+           ratios: dict[str, float] | None = None) -> dict:
     """Write <out>/{train,dev,test}.jsonl from every matter folder holding a task.json (accepted, or relabelled
     under rejected/). A task held by a person (`hold: {"reason", "by"}` in task.json) is left out unless
     `include_held`, and one still waiting for `ltg label` (`label_pending`: no label, no leak probe) unless
     `include_pending`. With `model`, keep only tasks that model labelled with min_pass <= pass_rate <= max_pass.
-    Returns counts per split, the task ids dropped as duplicates (two run folders with one name), and how many the
-    filters left out."""
+    With `ratios` ({"train", "dev", "test"}), each task's split is assigned again from its matter id and its run's
+    salt, ignoring the stored one: hashing keeps it deterministic, stable when tasks join, and twin drafts of one matter
+    id in the same split. Returns counts per split, the task ids dropped as duplicates (two run folders with one name),
+    how many the filters left out, and how many tasks `moved` split under `ratios`."""
     found: dict[str, list[Path]] = {}
     for r in runs:
         for m in sorted(Path(r).glob("*/*/task.json")):
@@ -81,11 +96,13 @@ def export(runs: list[str], out: str, model: str | None = None, min_pass: float 
     dupes = sorted(k for k, v in found.items() if len(v) > 1)
     lines: dict[str, list[str]] = {s: [] for s in SPLITS}
     skipped = {"held": 0, "pending": 0, "unsolved": 0, "outside_band": 0}
+    moved = 0
     for tid, (matter, *rest) in sorted(found.items()):
         if rest:
             continue
         task = json.loads((matter / "task.json").read_text())
-        labels = difficulty(task, _settings(matter.parent.parent))
+        settings = _settings(matter.parent.parent)
+        labels = difficulty(task, settings)
         if task.get("hold") and not include_held:
             skipped["held"] += 1
             continue
@@ -100,9 +117,13 @@ def export(runs: list[str], out: str, model: str | None = None, min_pass: float 
             if not mine or not min_pass <= mine[0]["pass_rate"] <= max_pass:
                 skipped["outside_band"] += 1
                 continue
-        ex = example(matter, labels)
+        split = None
+        if ratios is not None:
+            split = assign_split(task["task_id"], ratios, settings.get("splits", {}).get("salt", "ltg-v0"))
+            moved += split != task["split"]
+        ex = example(matter, labels, split)
         lines[ex["eval"]["split"]].append(json.dumps(ex, ensure_ascii=False))
     Path(out).mkdir(parents=True, exist_ok=True)
     for s, ls in lines.items():
         (Path(out) / f"{s}.jsonl").write_text("".join(l + "\n" for l in ls), encoding="utf-8")
-    return {"counts": {s: len(ls) for s, ls in lines.items()}, "duplicates": {k: [str(p) for p in found[k]] for k in dupes}, "skipped": skipped}
+    return {"counts": {s: len(ls) for s, ls in lines.items()}, "duplicates": {k: [str(p) for p in found[k]] for k in dupes}, "skipped": skipped, "moved": moved}
