@@ -1,0 +1,182 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s29-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s29-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s29-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12607,
+      "output_tokens": 27043,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 14,
+      "input_tokens": 233577,
+      "output_tokens": 75512,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 84912,
+      "output_tokens": 8788,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 5824,
+      "output_tokens": 1346,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 15,
+      "input_tokens": 363507,
+      "output_tokens": 10619,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4278,
+      "output_tokens": 1075,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 20457,
+      "output_tokens": 7558,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 182668,
+      "output_tokens": 37556,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 9,
+      "input_tokens": 60331,
+      "output_tokens": 8588,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "marine shipping": 1,
+      "commercial bakery": 1,
+      "cold chain logistics": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 1,
+      "supply agreement": 1,
+      "master services agreement": 1
+    },
+    "issue_types": {
+      "liability_cap_carveout": 3,
+      "uncapped_indemnity": 2,
+      "defined_term_inconsistency": 2,
+      "exclusivity_scope": 2,
+      "expired_notice_window": 1,
+      "survival_gap": 1,
+      "missing_assignment_restriction": 1,
+      "governing_law_mismatch": 1,
+      "change_of_control_consent": 1,
+      "auto_renewal": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

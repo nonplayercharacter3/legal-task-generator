@@ -1,0 +1,129 @@
+{
+  "task_id": "s29-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Mubart Baking Company, LLC, a wholesale bakery that makes private-label bread and buns, in its supply relationship with Zinix Grocers, Inc. Before we advise Mubart on where it stands and what to push back on, I need a clear picture of the issues in this deal. Please review everything in the matter folder: the supply agreement (mubart_zinix_supply_agreement.md), the proposed Amendment No. 1 (proposed_amendment_no1_zinix_draft.md), the private-label bread term sheet (private_label_bread_term_sheet.md), Order Form No. 1 (order_form_no1.md), and the delivery schedule email thread (delivery_schedule_email_thread.md). Then prepare a memo to me. For each issue, state where it appears (document and section), explain why it matters to Mubart, and recommend a fix, such as redline language, a negotiating position, or a follow-up step. Put the most significant items first, and flag anything that needs Mubart's input or that you could not resolve from the documents. Keep it practical. I'd like to be able to use it directly in a client call.",
+  "documents": [
+    "delivery_schedule_email_thread.md",
+    "mubart_zinix_supply_agreement.md",
+    "order_form_no1.md",
+    "private_label_bread_term_sheet.md",
+    "proposed_amendment_no1_zinix_draft.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the exclusivity in Supply Agreement Section 7.1 covers all bakery products throughout the United States, which is broader than the term sheet's private-label sandwich bread and buns in Delaware, Maryland and Pennsylvania. It identifies the Supply Agreement Section 7.1 as where the issue is, explains why this matters to Mubart, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "any bakery products",
+        "anywhere in the United States",
+        "Delaware, Maryland and Pennsylvania"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that Mubart's indemnity in Supply Agreement Section 10.1 covers Product losses 'regardless of cause', including losses Zinix causes, and is excluded from the liability cap, leaving Mubart with unlimited liability. It identifies the Supply Agreement Section 10.1 as where the issue is, explains why this matters to Mubart, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "regardless of cause",
+        "uncapped",
+        "unlimited liability"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that proposed Amendment No. 1 Section 2 removes Zinix's Section 10.2 indemnity from the cap carve-outs, so that if signed, Zinix's indemnity would be capped while Mubart's indemnity stays uncapped. It identifies proposed Amendment No. 1 Section 2 as where the issue is, explains why this matters to Mubart, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Supplier's indemnification obligations under Section 10.1",
+        "Section 10.2",
+        "one-sided"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Order Form No. 1 Section 6's choice of New Jersey law and Bergen County, New Jersey courts displaces the Supply Agreement's Delaware law and forum for disputes about Products ordered under the Order Form. It identifies Order Form No. 1 Section 6 as where the issue is, explains why this matters to Mubart, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New Jersey",
+        "Bergen County",
+        "split forum"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that Order Form No. 1 Section 3 redefines 'Stale Product' to include product damaged or unsaleable in store and to give credit without return, expanding Mubart's stale-credit exposure beyond the Supply Agreement definition. It identifies Order Form No. 1 Section 3 as where the issue is, explains why this matters to Mubart, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "damaged or unsaleable in store",
+        "without return",
+        "48 hours"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Order Form prevails over the Supply Agreement as to Products ordered under it.",
+      "kind": "fact",
+      "hints": [
+        "Order Form prevails",
+        "Section 18.4",
+        "order of precedence"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Supply Agreement as signed excludes each party's Section 10 indemnification obligations from the liability cap.",
+      "kind": "fact",
+      "hints": [
+        "Section 11.3",
+        "each party's indemnification",
+        "excluded from the cap"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is in the form of a memo addressed to the supervising partner. For each issue it gives the document and section, why the issue matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response flags at least one item that needs Mubart's input or that could not be resolved from the documents.",
+      "kind": "format",
+      "hints": [
+        "Mubart's input",
+        "confirm with Mubart",
+        "open point"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the term sheet's narrower exclusivity scope binds the parties or controls over Supply Agreement Section 7.1.",
+      "kind": "negative",
+      "hints": [
+        "term sheet controls",
+        "term sheet governs exclusivity"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that Delaware law and the New Castle County courts govern disputes about Products ordered under Order Form No. 1.",
+      "kind": "negative",
+      "hints": [
+        "Delaware law governs all disputes"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

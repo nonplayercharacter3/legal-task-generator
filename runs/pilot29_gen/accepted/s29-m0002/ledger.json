@@ -1,0 +1,198 @@
+{
+  "matter_id": "s29-m0002",
+  "summary": "Mubart Baking Company, LLC, a commercial wholesale bakery, supplies private-label sandwich bread and buns to Zinix Grocers, Inc., a regional supermarket chain. The parties signed a Supply Agreement effective March 2, 2026, and Order Form No. 1 dated April 6, 2026. Zinix has since circulated a proposed, unsigned Amendment No. 1 dated June 15, 2026. The folder also contains the non-binding term sheet and a logistics email thread. The supervising partner wants an issue-spotting memo for Mubart. Five problems are planted. First, the Agreement's exclusivity covers all bakery products nationwide, although the term sheet limited it to private-label sandwich bread and buns in three states. Second, Mubart's product indemnity applies 'regardless of cause' and sits outside the liability cap. Third, Zinix's draft amendment strips Zinix's own indemnity from the cap carve-outs but leaves Mubart's uncapped. Fourth, the Order Form chooses New Jersey law and courts for disputes about ordered Products, and the Agreement's precedence clause lets the Order Form control those Products. Fifth, the Order Form redefines 'Stale Product' to cover in-store damage and to drop the return requirement, which expands Mubart's stale-credit exposure under the same precedence clause.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Mubart Baking Company, LLC",
+      "role": "Supplier (client), commercial wholesale bakery producing private-label bread and buns"
+    },
+    {
+      "id": "P2",
+      "name": "Zinix Grocers, Inc.",
+      "role": "Customer, regional supermarket chain purchasing private-label baked goods"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "three years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement governing law",
+      "value": "laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 18.2"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement forum",
+      "value": "state or federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "Section 18.2"
+    },
+    {
+      "id": "F5",
+      "key": "Liability cap amount",
+      "value": "amounts paid or payable under the Agreement in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement cap exclusions for indemnities",
+      "value": "each party's indemnification obligations under Section 10 are excluded from the cap",
+      "doc": "D1",
+      "section": "Section 11.3"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "Amendments, then Order Form as to Products ordered under it, then Supply Agreement; term sheet has no effect",
+      "doc": "D1",
+      "section": "Section 18.4"
+    },
+    {
+      "id": "F8",
+      "key": "Supply Agreement 'Stale Product' meaning",
+      "value": "Product unsold after its code date and returned to Supplier within 48 hours",
+      "doc": "D1",
+      "section": "Section 1.9"
+    },
+    {
+      "id": "F9",
+      "key": "Agreed exclusivity scope",
+      "value": "private-label sandwich bread and buns in Delaware, Maryland and Pennsylvania",
+      "doc": "D3",
+      "section": "Section 4"
+    },
+    {
+      "id": "F10",
+      "key": "Order Form No. 1 date",
+      "value": "April 6, 2026",
+      "doc": "D4",
+      "section": "Header"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "mubart_zinix_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "proposed_amendment_no1_zinix_draft.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "private_label_bread_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "order_form_no1.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "delivery_schedule_email_thread.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Supply Agreement Section 7.1 bars Mubart, for the term, from supplying 'any bakery products' to any other grocery retailer 'anywhere in the United States'. The term sheet (D3 Section 4) limited exclusivity to private-label sandwich bread and buns in Delaware, Maryland and Pennsylvania. Supply Agreement Section 18.4 gives the term sheet no effect, so the broader Agreement wording controls. As drafted, the clause would cut Mubart off from its branded and other wholesale grocery business nationwide.",
+      "doc": "D1",
+      "section": "Section 7.1",
+      "detect_terms": [
+        "any bakery products",
+        "anywhere in the United States"
+      ],
+      "expected_finding": "Section 7.1's exclusivity reaches all bakery products nationwide, far beyond the term sheet's private-label sandwich bread and buns in DE, MD and PA. Because Section 18.4 gives the term sheet no effect, the broader clause controls, so Mubart should seek an amendment narrowing Section 7.1 to the agreed product scope and territory.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Supply Agreement Section 10.1 requires Mubart to indemnify Zinix for all losses arising out of or relating to the Products 'regardless of cause'. That wording sweeps in losses caused by Zinix's own storage, handling or negligence, and it covers recall costs. Section 11.3 excludes Supplier's Section 10 indemnity from the Section 11.2 cap, and Zinix's proposed Amendment No. 1 Section 2 keeps that exclusion. Read together, the two provisions give Mubart unlimited liability even for losses Zinix causes.",
+      "doc": "D1",
+      "section": "Section 10.1",
+      "detect_terms": [
+        "regardless of cause"
+      ],
+      "expected_finding": "Mubart's Section 10.1 indemnity covers Product losses 'regardless of cause', including losses caused by Zinix. Section 11.3, as kept in proposed Amendment No. 1, takes that indemnity outside the cap, so Mubart faces unlimited liability. Mubart should limit the indemnity to losses caused by its own breach or negligence and bring it under a cap or a negotiated super-cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Zinix's proposed, unsigned Amendment No. 1 (D2 Section 2, dated June 15, 2026) restates Supply Agreement Section 11.3. The restated exclusion covers only 'Supplier's indemnification obligations under Section 10.1'. That deletes the existing carve-out for Zinix's Section 10.2 indemnity, which covers Customer-supplied private-label artwork, labeling content and trademarks, and Customer's handling of Product. Under Section 18.4, amendments take top precedence. If Mubart signs, Zinix's indemnity becomes capped at 12 months' fees under Section 11.2, while Mubart's own indemnity stays uncapped.",
+      "doc": "D2",
+      "section": "Section 2",
+      "detect_terms": [
+        "Supplier's indemnification obligations under Section 10.1"
+      ],
+      "expected_finding": "Proposed Amendment No. 1 Section 2 removes Zinix's Section 10.2 indemnity from the Section 11.3 carve-outs. Because amendments prevail under Section 18.4, signing would put Mubart's recovery for label, trademark and handling claims under the 12-month-fees cap while Mubart's indemnity stays uncapped. Mubart should refuse that change and keep the original mutual carve-out.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Order Form No. 1 Section 6 provides that, 'notwithstanding Section 18.2 of the Agreement', disputes arising under the Order Form or relating to the Products ordered under it are governed by 'the laws of the State of New Jersey' and heard in courts in Bergen County, New Jersey. Supply Agreement Section 18.2 chooses Delaware law and New Castle County courts. However, Section 18.4 makes the Order Form prevail over the Agreement as to the Products ordered under it. The result is that most product disputes, including quality, stale-credit and payment disputes, are pulled into New Jersey law and a New Jersey forum. Other Agreement claims stay in Delaware, so Mubart faces split governing law and parallel litigation.",
+      "doc": "D4",
+      "section": "Section 6",
+      "detect_terms": [
+        "laws of the State of New Jersey",
+        "Bergen County, New Jersey"
+      ],
+      "expected_finding": "Order Form Section 6 chooses New Jersey law and forum for disputes over ordered Products. Because Agreement Section 18.4 lets the Order Form control as to those Products, that choice displaces Section 18.2's Delaware law and forum for most real disputes and creates split-forum risk. Mubart should delete Order Form Section 6 or make Section 18.2 prevail over any Order Form.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Supply Agreement Section 1.9 defines 'Stale Product' as Product unsold after its code date and returned to Supplier within 48 hours. Only such product earns a credit under Section 5.4. Order Form No. 1 Section 3 redefines 'Stale Product' to include any Product that is unsold at code date or 'damaged or unsaleable in store', and it grants full credit 'without return'. Section 18.4 gives the Order Form precedence as to Products ordered under it. Read together, Mubart must credit Zinix for in-store damage that Zinix causes and loses the return requirement that lets it verify stale claims.",
+      "doc": "D4",
+      "section": "Section 3",
+      "detect_terms": [
+        "damaged or unsaleable in store",
+        "without return"
+      ],
+      "expected_finding": "The Order Form's 'Stale Product' definition adds product damaged in Zinix's stores and drops the 48-hour return requirement. Because Agreement Section 18.4 lets the Order Form control as to ordered Products, this expands Mubart's Section 5.4 credit obligation to losses Zinix causes and removes Mubart's means of verifying claims. Mubart should conform the Order Form to Agreement Section 1.9.",
+      "contradicts": "F8"
+    }
+  ]
+}

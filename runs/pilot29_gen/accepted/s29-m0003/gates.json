@@ -1,0 +1,128 @@
+{
+  "matter_id": "s29-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 6,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "MSA Section 15.2: \"Any Change of Control of Customer is deemed an assignment of this Agreement by Customer and requires the prior written consent of Provider. If a Change of Control of Customer occurs without the prior written consent of Provider, Provider may terminate this Agreement for cause by written notice to Customer and recover the Early Termination Fee under Section 14.4.\" Side Letter Recital B: \"On October 1, 2026, Customer notified Provider in writing that Ostrander Foods Group, Inc. will acquire Customer, with closing expected on January 29, 2027.\" Side Letter Section 3.2: \"This Side Letter does not constitute a consent, approval or waiver by either Party under any provision of the MSA, including Section 15 of the MSA.\"",
+            "reason": "The obligation to get consent falls on Poubis, the Customer and our client. The termination right and the Early Termination Fee run in favor of Provider. The Ostrander acquisition is a Change of Control under clause (a) of the definition, because Ostrander will acquire Control of Customer. Section 15.2 therefore requires Provider's prior written consent before closing on January 29, 2027. No document grants that consent. The Side Letter is the only later agreement, and Section 3.2 expressly disclaims any consent or waiver under Section 15. Section 16.5 requires waivers to be in writing, so Provider's knowledge of the deal does not count as a waiver. Without consent, Provider may terminate for cause at closing. Under Section 14.4, Poubis would then owe up to six months of average Fees, since about 30 days of the Initial Term would remain at closing. Poubis could also lose its cold-chain provider in the middle of the deal. Closing has not happened yet, so this remains actionable: Poubis can seek Provider's written consent before closing. Two timing points add pressure. The non-renewal window under Section 2.2 runs from about October 31, 2026 to November 30, 2026. Closing falls about a month before the Initial Term ends on February 28, 2027."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 3.1: \"During the Term, Customer shall purchase exclusively from Provider all temperature-controlled logistics services ... required by Customer or any Affiliate of Customer anywhere in North America. Customer shall cause its Affiliates to comply with this Section 3.1.\" Section 1.1: \"'Affiliate' means, with respect to a Party, any entity that now or hereafter directly or indirectly controls, is controlled by, or is under common control with that Party.\"",
+            "reason": "The problem is present and still actionable for Poubis.\n\n- **Who bears the obligation.** Poubis, as Customer, carries the exclusivity duty. It must also cause its Affiliates to comply.\n- **Why it reaches Ostrander.** 'Affiliate' expressly covers entities that hereafter control Customer. Once Ostrander Foods Group acquires Poubis (Side Letter Recital B; closing expected January 29, 2027), Ostrander and all its sister companies become Affiliates. Section 3.1 would then require their entire North American temperature-controlled logistics to be bought from Gibeis.\n- **Gap from the announced deal.** The March 2024 press release describes exclusivity limited to Poubis's Mid-Atlantic network.\n- **Nothing cures it.** The October 2026 Side Letter amends only the fuel surcharge and Section 11.3(b). Its Section 3.2 says it grants no consent or waiver, including under Section 15.\n- **Timing.** Closing falls inside the Initial Term, which ends February 28, 2027. Poubis would be in breach of Section 3.1 immediately on closing.\n- **Compounding risk.** That breach sits alongside Provider's change-of-control termination right and the Early Termination Fee under Sections 15.2 and 14.4.\n- **Window still open.** Nothing shows Poubis has accepted this result. Today is November 10, 2026, which is inside the Section 2.2 non-renewal window (about Oct 31 to Nov 30, 2026). Poubis can still give non-renewal notice and negotiate a narrowed Affiliate or territory scope before closing."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"At the end of the Initial Term, this Agreement will renew automatically for successive three (3) year renewal terms ... Automatic renewal will not occur if either Party gives the other written notice of non-renewal no earlier than one hundred twenty (120) days and no later than ninety (90) days before the expiration of the then-current term. A notice of non-renewal given outside that period has no effect.\" (MSA §2.2)",
+            "reason": "The Initial Term ends February 28, 2027 (§2.1), so the only non-renewal window runs from October 31 to November 30, 2026. Any notice outside that window is void. If the window is missed, Poubis renews for three more years of North America-wide exclusivity under §3.1, which also binds its Affiliates. That would include Ostrander after the acquisition closes on January 29, 2027. Leaving early instead would risk the Early Termination Fee under §§14.4 and 15.2. The October 15, 2026 Side Letter changes only the fuel surcharge and §11.3(b). It does not address renewal and expressly grants no other consent or waiver (§3.2). Nothing in the folder shows that a non-renewal notice has been sent. Today is November 10, 2026, so the window is still open and the issue is live: Poubis must decide and, if it chooses, serve notice under §16.3 by November 30, 2026."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 11.3(b) of the MSA is amended to read in full: \"(b) Provider's liability for Cargo Loss, solely to the extent caused by Provider's gross negligence or willful misconduct;\"",
+            "reason": "The problem is present and hurts Poubis, the Customer and the party that bears the loss. MSA §11.3(b) removes all of Provider's Cargo Loss liability from the §11.2 twelve-month fee cap and the §11.1 consequential-damages bar. Cargo Loss expressly includes spoilage from Temperature Excursions. Side Letter §2.2 narrows that carve-out to gross negligence or willful misconduct, and MSA §16.4 gives a Side Letter precedence over the MSA. Gross negligence and willful misconduct are already uncapped under §11.3(c), so the amendment in effect deletes the Cargo Loss carve-out. Ordinary negligent temperature excursions, the main cold-chain risk, would then fall under the 12-month fee cap. The change is labelled a 'clarification', but it is a substantive reduction of Provider's liability. Poubis gets nothing for it, and the fuel surcharge reset in Section 1 also favours Provider. Because the Guaranty follows Side Letters (Guaranty §1.2), Gibeis Holdings' exposure shrinks the same way. The letter was proposed by Provider and the Customer signature block is blank. Nothing in the folder shows Poubis has accepted it, so the issue is still actionable: Poubis can refuse or negotiate Section 2 before countersigning."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Guaranty Section 1.1: \"'Covered Goods' means goods stored or transported by Provider at or below -18°C.\" and \"'Guaranteed Obligations' means all obligations and liabilities of Provider to Customer under the MSA and each Statement of Work ... to the extent they relate to Covered Goods.\" Guaranty Section 8.2: \"For purposes of this Guaranty, the definitions in this Guaranty control over the definitions in the MSA.\" MSA Section 1.1: \"'Cargo' means all goods tendered to Provider, both chilled (0–4°C) and frozen.\"",
+            "reason": "The problem is present and is a real, live problem for Poubis. Under the MSA, Provider owes Cargo Loss liability (Section 7) and indemnity (Section 10.1) for all Cargo, chilled and frozen. MSA Section 16.1 requires a parent guaranty of Provider's obligations under the MSA, without any carve-out. The Guaranty, however, covers only obligations relating to Covered Goods, meaning goods at or below -18°C. Section 8.2 makes that narrower definition control. As a result, Gibeis Holdings gives no credit support for chilled dairy, produce and meat (0–4°C). The press release shows these are core Poubis product lines. Nothing in the folder fixes the gap. The October 2026 Side Letter deals only with the fuel surcharge and Section 11.3(b); it does not amend the Guaranty. Under Guaranty Section 13.1, the Guaranty can be amended only by a writing signed by both Guarantor and Customer. The gap is still actionable: the MSA is ongoing and the Guaranty remains in force, so Poubis can seek an amendment conforming the Guaranty to MSA Section 16.1. This also matters for the pending Ostrander acquisition, which is expected to close January 29, 2027."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F7, which only issue I5 uses: a memo that misses I5 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

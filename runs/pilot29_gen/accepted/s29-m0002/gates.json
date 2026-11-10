@@ -1,0 +1,128 @@
+{
+  "matter_id": "s29-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 7,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "7.1 Supplier Exclusivity. During the Term, Supplier shall not, directly or indirectly, including through any Affiliate, manufacture, sell or supply any bakery products to any other grocery retailer anywhere in the United States.",
+            "reason": "Section 7.1 bars Mubart, the client, from supplying any bakery products, not just private-label sandwich bread and buns, to any other grocery retailer anywhere in the United States for the whole Term, including through its Affiliates. The term sheet (Section 4.1 and 4.3) limited exclusivity to private-label sandwich bread and buns in DE, MD and PA. It also expressly carved out Mubart's branded, foodservice and other wholesale business. Section 18.4 of the Agreement gives the term sheet no effect, so the broader wording controls. Order Form No. 1 does not narrow Section 7.1. The draft Amendment No. 1 does not touch Section 7.1 and is unsigned. The restriction falls on Mubart and would cut off its branded and other grocery wholesale business nationwide. The Term runs three years and renews automatically, and the clause can still be addressed in the amendment being negotiated, so the problem remains actionable."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 10.1: \"Supplier shall defend, indemnify and hold harmless Customer ... from and against all Losses arising out of or relating to the Products, including all costs of any recall, market withdrawal or stock recovery and any claim for personal injury, illness or death, regardless of cause.\" Section 11.3(a) excludes \"each party's indemnification obligations under Section 10\" from the Section 11.1 and 11.2 limitations.",
+            "reason": "Mubart is the indemnitor under Section 10.1. The words \"regardless of cause\" make it cover Products-related losses that Zinix itself causes, including recall costs and injury claims. Section 11.3(a) removes that indemnity from both the consequential-damages exclusion and the 12-month cap, so Mubart's exposure is unlimited. Customer's counter-indemnity in Section 10.2(c) (storage, handling, display or sale after delivery) does not cure this. It does not carve those losses out of 10.1, so the two indemnities overlap and conflict. Zinix's other fault, such as its decision to recall under Section 8.4, remains within 10.1. The term sheet tied Mubart's indemnity to warranty failures, but Section 18.4 says it has no effect. Zinix's draft Amendment No. 1 is unsigned. It would keep Mubart's 10.1 indemnity uncapped while removing Zinix's 10.2 indemnity from the exclusion, which makes the problem worse. Nothing shows Mubart has accepted this result, so it remains actionable: Mubart can push back on the amendment and seek a fault-based carve-out and a cap."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Amendment Section 2 replaces Section 11.3 with: \"(a) Supplier's indemnification obligations under Section 10.1;\" The existing Supply Agreement Section 11.3(a) excludes \"each party's indemnification obligations under Section 10.\"",
+            "reason": "The current carve-out removes both parties' indemnities from the cap. Zinix's draft keeps only Mubart's Section 10.1 indemnity uncapped. That drops Zinix's Section 10.2 indemnity to Mubart, which covers Customer Materials and labeling content, IP infringement, and Zinix's post-delivery handling of Product. Under Section 18.4, an amendment takes first precedence. If signed, Zinix's indemnity would be limited by the Section 11.2 cap of 12 months' amounts and by the 11.1 exclusion of consequential damages. Mubart's own broad indemnity, which applies 'regardless of cause', would stay unlimited. This harms the client and contradicts the term sheet's mutual carve-out. The amendment is an unsigned draft that takes effect only on signature, so Mubart can still reject or revise it, and the problem is actionable."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Order Form No. 1, Section 6: \"Disputes arising under this Order Form or relating to the Products ordered under it are governed by the laws of the State of New Jersey, without regard to its conflict of laws rules. Each Party submits to the exclusive jurisdiction of the state or federal courts located in Bergen County, New Jersey for any such dispute and waives any objection to venue in those courts.\"",
+            "reason": "The problem is present, though the Order Form does not contain the quoted 'notwithstanding Section 18.2' wording. Section 18.2 of the Agreement picks Delaware law and New Castle County courts for any dispute relating to the Agreement. Section 18.4 makes the Order Form prevail 'as to the Products ordered under it'. So for Mubart, disputes over the Products go to New Jersey law and an exclusive Bergen County forum. That covers quality and warranty claims, stale-credit claims, payment and Section 10.1 indemnity claims relating to the Products. Other Agreement claims, such as exclusivity under 7.1, confidentiality and termination, stay in Delaware. Mubart therefore faces split governing law, overlapping exclusive-forum clauses and possible parallel proceedings, in a forum unconnected to either Delaware party or the Delivery Points. Nothing in the folder cures this. The pending draft Amendment No. 1 expressly states it 'does not amend Order Form No. 1'. The emails deal only with logistics. The issue is still actionable: the Agreement runs for years, no dispute has arisen, and Mubart can seek to conform Section 6, for example in the amendment now under negotiation."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Order Form No. 1, Section 3.1: \"For the Products ordered under this Order Form, \"Stale Product\" means any Product that is unsold at its Code Date or is damaged or unsaleable in store.\" Section 3.2: \"Supplier shall issue Customer a credit equal to the full invoiced price of each unit of Stale Product, without return.\"",
+            "reason": "The problem is present and still actionable for Mubart.\n\n- **Narrow agreement definition.** Supply Agreement §1.9 limits Stale Product to Product unsold after its Code Date that is returned to Supplier within 48 hours. §5.4 has Supplier collect that product on its routes.\n- **Broader order form definition.** Order Form §3 widens the term to include Product \"damaged or unsaleable in store.\" It also removes the return requirement. Credits rest only on Zinix's own weekly self-reporting.\n- **The order form controls.** Agreement §18.4 gives the Order Form precedence \"as to the Products ordered under it.\" Order Form §8.1 applies the Agreement only \"except as set out in this Order Form.\" So the broader definition governs.\n- **The burden falls on Mubart.** The credit obligation is Mubart's. Mubart must give full-price credits for in-store damage caused by Zinix's own handling, which is a risk the Agreement otherwise places on Customer (title and risk pass on delivery under §5.2; Customer indemnity under §10.2(c)). Mubart also has no means to verify the claims.\n- **Nothing in the folder cures it.** The draft Amendment No. 1 expressly does not amend Order Form No. 1.\n- **Still actionable.** This is an ongoing credit exposure under a live order form, not a lapsed one-time window. Mubart can renegotiate or amend it, so it remains a real issue to raise."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C6 asks for the whole ranking in fact F7 ('Amendments, then Order Form as to Products ordered under it, then Supply Agreement; term sheet has no effect'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.065,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

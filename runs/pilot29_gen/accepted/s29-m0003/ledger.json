@@ -1,0 +1,199 @@
+{
+  "matter_id": "s29-m0003",
+  "summary": "Poubis Provisions, Inc., a Mid-Atlantic grocery and foodservice distributor, uses Gibeis Cold Logistics, LLC under a Master Services Agreement effective March 1, 2024. Gibeis provides refrigerated warehousing, cross-docking and reefer transport for chilled and frozen food. Gibeis's parent, Gibeis Holdings Corp., guarantees Gibeis's obligations. An October 15, 2026 side letter adjusts the fuel surcharge and 'clarifies' the cargo-loss carve-out from the liability cap. The side letter also records that Poubis has notified Gibeis that Ostrander Foods Group, Inc. will acquire Poubis, with closing expected January 29, 2027. A March 2024 press release announced the partnership. The firm represents Poubis. The supervising partner wants an issue-spotting memo before the acquisition closes and before the renewal decision.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Poubis Provisions, Inc.",
+      "role": "Customer under the MSA; the firm's client; target of a pending acquisition"
+    },
+    {
+      "id": "P2",
+      "name": "Gibeis Cold Logistics, LLC",
+      "role": "Provider of temperature-controlled warehousing and transport services under the MSA"
+    },
+    {
+      "id": "P3",
+      "name": "Gibeis Holdings Corp.",
+      "role": "Parent of Gibeis Cold Logistics, LLC; guarantor under the Parent Guaranty"
+    },
+    {
+      "id": "P4",
+      "name": "Ostrander Foods Group, Inc.",
+      "role": "Pending acquirer of Poubis Provisions, Inc. (not a party to any document)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble; Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "three years from the MSA Effective Date, ending February 28, 2027",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA Renewal Term",
+      "value": "successive three-year renewal terms",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F4",
+      "key": "MSA non-renewal notice window",
+      "value": "no earlier than 120 and no later than 90 days before the current term expires",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F5",
+      "key": "MSA liability cap",
+      "value": "fees paid or payable in the 12 months preceding the event giving rise to the claim",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Side Letter, then MSA, then Statements of Work",
+      "doc": "D1",
+      "section": "Section 16.4"
+    },
+    {
+      "id": "F7",
+      "key": "MSA defined term \"Cargo\"",
+      "value": "all goods tendered to Provider, both chilled (0–4°C) and frozen",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F8",
+      "key": "Guarantor",
+      "value": "Gibeis Holdings Corp.",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Pending acquirer of Poubis",
+      "value": "Ostrander Foods Group, Inc.",
+      "doc": "D3",
+      "section": "Recital B"
+    },
+    {
+      "id": "F10",
+      "key": "Agreed exclusivity scope",
+      "value": "Poubis's Mid-Atlantic distribution network",
+      "doc": "D4",
+      "section": "Paragraph 2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "poubis_gibeis_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "gibeis_holdings_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "gibeis_poubis_side_letter_oct2026.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "partnership_press_release_mar2024.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "MSA Section 15.2 says any change of control of Customer is deemed an assignment. That assignment requires Provider's prior written consent. Without consent, Provider may terminate for cause and recover the early termination fee in Section 14.4. Side Letter (D3) Recital B records Poubis's October 1, 2026 notice that Ostrander Foods Group, Inc. will acquire Poubis, with closing expected January 29, 2027. The side letter addresses only the fuel surcharge and the cargo carve-out. It states that the MSA otherwise remains unmodified and grants no consent under Section 15.2. Read together, the documents show the closing will trigger Provider's consent right, and that right has not been obtained or waived.",
+      "doc": "D1",
+      "section": "Section 15.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "prior written consent of Provider"
+      ],
+      "expected_finding": "The Ostrander acquisition recorded in Side Letter Recital B is a change of control that MSA Section 15.2 deems an assignment needing Gibeis's prior written consent. No consent has been obtained, so Poubis must get Gibeis's written consent or waiver before the January 29, 2027 closing to avoid termination for cause and the Section 14.4 early termination fee.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "MSA Section 3.1 requires all temperature-controlled logistics services needed by Customer or any Affiliate of Customer anywhere in North America to be bought exclusively from Provider. Section 1.1 defines 'Affiliate' to include any entity that now or hereafter controls Customer. The press release (D4) describes the agreed deal as exclusivity limited to Poubis's Mid-Atlantic distribution network. Side Letter Recital B records the pending acquisition by Ostrander Foods Group, Inc. Read together, the provisions mean that after closing the exclusivity would bind Ostrander and its whole North American network. That goes far beyond the regional deal, and it could put Poubis in breach immediately on closing or derail the acquisition.",
+      "doc": "D1",
+      "section": "Section 3.1 (read with Section 1.1 'Affiliate')",
+      "detect_terms": [
+        "any Affiliate of Customer",
+        "anywhere in North America"
+      ],
+      "expected_finding": "MSA Section 3.1, read with the forward-looking 'Affiliate' definition in Section 1.1, extends exclusivity to every future parent of Poubis across North America, including Ostrander after closing, well beyond the agreed Mid-Atlantic scope. It should be narrowed to Poubis's own Mid-Atlantic distribution network, and acquirers and their affiliates should be expressly carved out.",
+      "contradicts": "F10"
+    },
+    {
+      "id": "I3",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA Section 2.2 renews the agreement automatically for successive three-year renewal terms. The only way out is a non-renewal notice given no earlier than 120 and no later than 90 days before the current term expires. The initial term ends February 28, 2027, so the only window for the first renewal runs from October 31, 2026 to November 30, 2026. The clause binds both parties alike. It hurts Poubis because a missed 30-day window locks Poubis, and after closing its acquirer, into three more years of exclusive purchasing under Section 3.1. It also leaves Poubis no flexibility during the acquisition.",
+      "doc": "D1",
+      "section": "Section 2.2",
+      "detect_terms": [
+        "successive three (3) year renewal terms",
+        "no earlier than one hundred twenty (120) days"
+      ],
+      "expected_finding": "MSA Section 2.2 auto-renews for three-year terms unless notice is given within a 30-day window, which for the term ending February 28, 2027 runs October 31 to November 30, 2026. Poubis should calendar and, if appropriate, send non-renewal notice in that window, or negotiate shorter renewal terms or termination for convenience on notice.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "MSA Section 11.2 caps each party's aggregate liability at fees paid or payable in the prior 12 months. Section 11.3(b) excludes Cargo Loss from the cap, and Cargo Loss includes spoilage from temperature excursions while Cargo is in Provider's custody. Side Letter (D3) Section 2 'clarifies' that the Section 11.3(b) exclusion applies solely to the extent the loss is caused by Provider's gross negligence or willful misconduct. MSA Section 16.4 gives the Side Letter precedence over the MSA. Read together, ordinary negligent temperature excursions, the main risk in cold chain storage, now fall under the 12-month fee cap. That leaves Poubis badly under-compensated for spoiled inventory.",
+      "doc": "D3",
+      "section": "Section 2",
+      "detect_terms": [
+        "solely to the extent caused by Provider's gross negligence or willful misconduct"
+      ],
+      "expected_finding": "Side Letter Section 2, which controls over the MSA under Section 16.4, narrows the Cargo Loss carve-out in MSA Section 11.3(b) to gross negligence or willful misconduct. Ordinary temperature-excursion spoilage is therefore capped at 12 months' fees under Section 11.2, and Poubis should seek to amend the side letter to restore the full Cargo Loss carve-out.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "MSA Section 1.1 defines 'Cargo' as all goods tendered to Provider, both chilled (0–4°C) and frozen. Provider's obligations, including Cargo Loss liability and indemnity, run to all Cargo. Parent Guaranty (D2) Section 1 limits the Guaranteed Obligations to Provider's obligations for 'Covered Goods', defined as goods stored or transported at or below -18°C. Guaranty Section 8 says the Guaranty's definitions control over the MSA for purposes of the Guaranty. Read together, Gibeis Holdings Corp. does not guarantee claims about chilled dairy, produce and meat, which are a large part of Poubis's volume. Poubis therefore has no parent credit support for those losses.",
+      "doc": "D2",
+      "section": "Section 1 (read with Section 8)",
+      "detect_terms": [
+        "at or below -18°C",
+        "Covered Goods"
+      ],
+      "expected_finding": "The Parent Guaranty limits the guarantee to 'Covered Goods' (frozen at or below -18°C), and Guaranty Section 8 makes that definition control, so it excludes the chilled goods within the MSA's 'Cargo' definition. Poubis should require the Guaranty to cover all Cargo as defined in the MSA.",
+      "contradicts": null
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+We represent Gliluv Maritime Holdings, LLC, the buyer under its stock purchase agreement with Dreisend Shipping Group, Ltd. and the recipient of services under the related transition services agreement. Before we go further on this deal, I need to know what in the documents could expose Gliluv or needs attention from us.
+
+Please review the full matter folder: stock_purchase_agreement.md, transition_services_agreement.md, gliluv_board_written_consent.md, escrow_agreement.md, and saltreach_office_lease.md. Then send me a memo that lists each issue you find. For each one, give the document and section where it appears, explain why it matters for Gliluv, and recommend a fix, such as specific drafting changes or points to raise with Dreisend's counsel.
+
+Put the most significant items first. If something is unclear and you can't resolve it from the documents, flag it as an open question rather than guessing. Keep the memo tight enough that I can use it to brief the client.

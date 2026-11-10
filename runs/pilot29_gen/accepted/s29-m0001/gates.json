@@ -1,0 +1,131 @@
+{
+  "matter_id": "s29-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "SPA §2.4(b): \"If Buyer disagrees with the Closing Statement, Buyer shall deliver to Seller a written notice (an \"Objection Notice\") within thirty (30) days after receipt of the Closing Statement... If Buyer does not deliver an Objection Notice within that period, the Closing Statement and Seller's calculation of Closing Working Capital will be final and binding on the parties.\" Board Consent Recital B: \"Seller delivered its Closing Statement to the Company on February 9, 2026.\" The consent is dated March 20, 2026 and authorizes officers \"to prepare, execute and deliver to Seller an Objection Notice under Section 2.4(b).\"",
+            "reason": "Buyer (the client) bears the obligation to object. The Closing Statement was received on February 9, 2026, so the 30-day window closed on March 11, 2026. The board did not authorize an Objection Notice until March 20, 2026, nine days later. Nothing in the folder shows an earlier notice was delivered or that Seller agreed to extend the deadline. The general ratification in §2.7 of the consent cannot revive the lapsed window. Under §2.4(b), Seller's $5,420,000 calculation is therefore final and binding, and Buyer's $1.9M adjustment claim is lost unless Seller consents in writing (§11.6). Buyer has not accepted the result; the consent expressly records its dispute. That makes this a live problem for the client, not settled history. Counsel should address it now, for example by seeking Seller's written waiver of the deadline or by assessing alternative recovery routes such as an indemnity claim under §9.2(a) for breach of the §4.5 financial statements representation."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 8.3: \"Recipient shall indemnify, defend and hold harmless Provider, its Affiliates and their respective officers, directors, employees and Provider Personnel from and against all Losses arising out of or relating to the Services or the use of the Services by Recipient Group. This includes Losses arising from the negligence of Provider or any Provider Personnel, except to the extent those Losses are caused by the gross negligence or willful misconduct of Provider. The obligations of Recipient under this Section 8.3 shall not be subject to Section 8.4 or any other limitation.\"",
+            "reason": "Gliluv, as Recipient, is the indemnitor under Section 8.3. The indemnity is broad. It is not limited to third-party claims and covers all Losses arising out of or relating to the Services. It also expressly covers Provider's own ordinary negligence and carves out only gross negligence or willful misconduct. It is stated to be free of Section 8.4 or any other limitation. Section 8.5's exclusion of consequential damages does not apply to amounts payable to third parties under Section 8.3. Provider's liability, by contrast, is capped at fees paid (Section 8.4). Provider's own indemnity in Section 8.2 is narrow: third-party claims only, for gross negligence, willful misconduct or breach of Article 5 or 6. The SPA does not cure this. The SPA Section 9.5 caps apply only to Article IX claims, and SPA Section 11.8 makes the TSA govern as to the Services. Seller runs the crew-management and P&I crew-claims services, so Gliluv bears uncapped exposure for Seller's negligent performance. The TSA is in its Service Period, which runs to January 2027 for A-1, and no document records acceptance or a waiver of this term. The issue therefore remains live and actionable, for example through an amendment under Section 12.5."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Escrow Agreement Section 5.3: \"The Escrow Fund shall be the sole and exclusive source of recovery for all claims for indemnification by the Buyer Indemnitees under Article IX of the Purchase Agreement, including claims under Section 9.2(c) of the Purchase Agreement. Once the Escrow Fund has been fully disbursed under this Agreement, no Buyer Indemnitee shall have any further recourse against Seller or its Affiliates in respect of any such claim.\"",
+            "reason": "Seller gives the indemnity and Buyer (the client) receives it, so any limit hurts Buyer. SPA 9.5(b) excludes the Section 9.2(c) Environmental Indemnity from the cap equal to the Escrow Amount. SPA 9.6(b) also allows uncapped losses to be recovered directly from Seller after the escrow. Escrow Agreement 5.3 conflicts with both: it makes the $6.4M escrow the sole recovery source, expressly including 9.2(c) claims, and bars any further recourse against Seller. SPA 11.8 gives the SPA general precedence but says the Escrow Agreement governs \"with respect to recovery from the Escrow Fund.\" Seller can argue that this lets 5.3 control, so the precedence clause does not cleanly cure the conflict. Section 5.3 also reaches past the escrow by barring recourse after disbursement. This matters because the escrow is released at 18 months, while the Environmental Indemnity survives for 5 years (SPA 9.1). Buyer's recovery for potentially large OPA 90, MARPOL and ballast-water liabilities could therefore be limited to the escrow, or to nothing once it is released. Nothing in the folder shows that Buyer accepted this result or that any deadline has passed. The escrow is still in place and the matter remains actionable, for example by seeking an amendment or a written clarification."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 9.1(b): \"the Tax Representations shall survive until six (6) months after the Closing Date\"; Section 9.2(d): \"any Taxes of the Company for any Pre-Closing Tax Period, provided that claims under this Section 9.2(d) are subject to the survival period applicable to the Tax Representations under Section 9.1\"; Section 9.4: \"No claim for indemnification under this Article IX may be made unless notice of the claim is delivered before the expiration of the applicable survival period under Section 9.1.\"",
+            "reason": "The problem is present and hurts the client. Seller gives both the Tax Representations and the Pre-Closing Tax indemnity, and Gliluv, as Buyer, is the party protected by them. The SPA gives the tax rep a six-month survival period and ties the standalone tax indemnity in 9.2(d) to that same period. Section 9.4 then bars any claim not noticed within it. With closing on January 15, 2026 (confirmed in the TSA, Escrow Agreement and board consent), tax claims were cut off on July 15, 2026. That is far shorter than the roughly three-year audit window in which Section 887 gross transportation tax and tonnage-tax exposures typically surface. It is also inconsistent with the escrow running to July 2027 and with the 18-month general and 5-year environmental survival periods. No other document extends the period or cures the gap. The Escrow Agreement makes things worse: Section 5.3 limits all recovery to the Escrow Fund. Nothing in the folder shows that Gliluv accepted the lapse, waived it or signed an amendment. The board consent deals only with the working-capital dispute. The issue therefore remains live for the client: it can seek an amendment, preserve arguments such as the Fraud carve-out and the timely-noticed survival rule, and assess its tax exposure."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 12.4: \"Assignment of this Agreement is governed by Section 11.5 of the Purchase Agreement, mutatis mutandis, so that Buyer may not assign this Agreement or any of its rights or obligations hereunder without the prior written consent of Seller. For purposes of this Section 12.4, references in Section 11.5 of the Purchase Agreement to Buyer and Seller are to Recipient and Provider, respectively.\" SPA Section 11.5 reads: \"Buyer may not assign this Agreement or any of its rights or obligations hereunder without the prior written consent of Seller.\"",
+            "reason": "The restriction runs only one way. Gliluv, as Recipient and Buyer, needs Dreisend's consent to assign. Dreisend, as Provider and Seller, faces no restriction in either agreement, and New York law lets it assign or delegate freely. Nothing elsewhere in the TSA closes this gap. Section 2.5 limits only the use of subcontractors and keeps Provider responsible for them. It does not reach an outright assignment, under which Provider could step away. Dreisend could therefore transfer the TSA to a competing ship manager without Gliluv's consent. That transferee would perform the crew, chartering and vessel-performance services and would hold the Company Data. The problem is still actionable. The TSA is in force: the Crew Management service runs until January 2027, and extensions are possible. Section 12.5 allows amendment by mutual written agreement, and nothing in the folder shows Gliluv has accepted or waived the point. The client should therefore raise it."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 20,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C16 asks for fact F4, which only issue I3 uses: a memo that misses I3 need not state it",
+          "criterion C17 asks for fact F2, which only issue I4 uses: a memo that misses I4 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C10",
+          "C11",
+          "C12"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
