@@ -1,0 +1,177 @@
+{
+  "matter_id": "s32-m0003",
+  "summary": "Vaikiv Therapeutics, Inc. (buyer, firm's client) is acquiring the Oravexin extended-release tablet franchise from Taigon Pharma Holdings, LLC (seller) for $186,000,000. The franchise includes the NDA, product IP, inventory and a contract manufacturing relationship. The folder holds the Asset Purchase Agreement, an Escrow Agreement, the Seller Disclosure Schedule, a Transition Services Agreement and a joint closing press release. Three problems for the buyer are planted, and each appears only when two documents are read together. First, the APA ties representation survival to the escrow 'Release Date', which the Escrow Agreement sets at 90 days after Closing. Second, the TSA picks New York law and New York courts for disputes 'relating to' the APA, and the APA's precedence clause lets the TSA control matters arising under it. Third, the Disclosure Schedule, which the APA expressly invites to qualify the Excluded Liabilities, puts the known pre-closing Oravexin recall back under the indemnity cap and deductible.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Vaikiv Therapeutics, Inc.",
+      "role": "Buyer (client)"
+    },
+    {
+      "id": "P2",
+      "name": "Taigon Pharma Holdings, LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Trust Company, N.A.",
+      "role": "Escrow Agent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing Date",
+      "value": "February 9, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "APA Closing Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "APA Purchase Price",
+      "value": "$186,000,000",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F4",
+      "key": "Indemnity Escrow Amount",
+      "value": "$18,600,000",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F5",
+      "key": "APA indemnification cap",
+      "value": "10% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F6",
+      "key": "APA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F7",
+      "key": "APA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "APA prevails over Ancillary Agreements, except each Ancillary Agreement controls matters arising under it",
+      "doc": "D1",
+      "section": "Section 11.4"
+    },
+    {
+      "id": "F9",
+      "key": "Transferred product",
+      "value": "Oravexin 40 mg extended-release tablets (NDA 214-883)",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F10",
+      "key": "TSA term",
+      "value": "nine months after the APA Closing Date",
+      "doc": "D4",
+      "section": "Section 7.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "indemnity_escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "closing_press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "Representations survive only 90 days via escrow Release Date",
+      "description": "Section 9.1 of the APA (D1) provides that Seller's non-fundamental representations, including the regulatory, FDA compliance and product quality representations, survive the Closing 'until the Release Date (as defined in the Escrow Agreement)'. It also bars claims not noticed before that date. Section 4.1 of the Escrow Agreement (D2) defines the Release Date as ninety (90) days after the Closing Date. Measured from the March 2, 2026 Closing Date stated in APA Section 3.1, the survival period ends on May 31, 2026. That window is too short for latent manufacturing, stability or FDA inspection problems to surface. Delaware enforces contractually shortened survival periods under 10 Del. C. § 8106(c), so the buyer's rep-breach claims would expire long before such problems typically emerge. The gap appears only when the APA cross-reference is read against the escrow definition.",
+      "doc": "D2",
+      "section": "Section 4.1",
+      "detect_terms": [
+        "ninety (90) days after the Closing Date",
+        "until the Release Date"
+      ],
+      "expected_finding": "Read with Escrow Agreement Section 4.1, APA Section 9.1 cuts off survival of Seller's non-fundamental representations, including the regulatory and product-quality representations, at 90 days after the March 2, 2026 Closing Date. Delaware law (10 Del. C. § 8106(c)) would enforce that cut-off. The fix is to give the APA its own survival period of at least 18–24 months, with the regulatory representations longer, and to tie the escrow release to that period.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "TSA picks New York law and courts for disputes relating to the APA",
+      "description": "The APA (D1) chooses Delaware law in Section 11.8 and the Delaware Court of Chancery as exclusive forum in Section 11.9. Section 9.3 of the TSA (D4) instead chooses New York law and the state and federal courts in New York County for any dispute 'arising out of or relating to this Agreement or the Purchase Agreement'. APA Section 11.4 says the APA prevails over Ancillary Agreements, except that each Ancillary Agreement controls matters arising under it. Because of that exception, the TSA clause governs TSA disputes, and Seller can argue it also reaches APA disputes connected to transition services. Examples are batch release failures, regulatory reporting during the transition and inventory quality. The result is a risk of parallel Delaware and New York proceedings and inconsistent law for one economic dispute.",
+      "doc": "D4",
+      "section": "Section 9.3",
+      "detect_terms": [
+        "laws of the State of New York",
+        "or the Purchase Agreement"
+      ],
+      "expected_finding": "TSA Section 9.3 picks New York law and New York courts for disputes relating to the TSA or the APA, which conflicts with the Delaware law and exclusive Chancery forum in APA Sections 11.8 and 11.9. Because APA Section 11.4 lets an Ancillary Agreement control matters arising under it, the precedence clause does not cure the conflict, and the buyer faces split forums and inconsistent law. The fix is to conform the TSA to Delaware law and the Chancery forum, or at minimum strike the reference to the Purchase Agreement and make APA Sections 11.8 and 11.9 prevail.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "Disclosure Schedule puts known Oravexin recall back under the cap",
+      "description": "APA Section 2.4(c) (D1) makes all pre-closing product liability and recall Liabilities Excluded Liabilities, 'except to the extent provided in Schedule 2.4(c)'. APA Section 9.5(b) carves indemnification for Excluded Liabilities and Fraud out of the cap of 10% of the Purchase Price and out of the deductible in Section 9.5(a). Schedule 2.4(c) of the Disclosure Schedule (D3) covers the 2025 voluntary recall of Oravexin Lots OX-2511 through OX-2519. It states that Liabilities from that recall are Excluded Liabilities but are 'subject to the Cap and the Deductible under Section 9.5 notwithstanding Section 9.5(b)'. The APA expressly delegates to the schedule here, so the APA-prevails precedence in Section 11.4 does not override it. The buyer's protection for a known, pre-closing recall, which is Seller's liability, is therefore limited to $18.6 million after the deductible. That recovery must be shared with every other capped claim.",
+      "doc": "D3",
+      "section": "Schedule 2.4(c)",
+      "detect_terms": [
+        "notwithstanding Section 9.5(b)",
+        "subject to the Cap and the Deductible"
+      ],
+      "expected_finding": "Schedule 2.4(c) uses the express delegation in APA Section 2.4(c) to override the Section 9.5(b) carve-out. This subjects Seller's indemnity for the known pre-closing Oravexin recall to the 10% cap and the deductible. The fix is to delete that language, or amend APA Section 2.4(c) so the Schedule cannot limit the Section 9.5(b) carve-out, so that recall Liabilities stay uncapped Excluded Liabilities.",
+      "contradicts": null
+    }
+  ]
+}

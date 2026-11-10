@@ -1,0 +1,116 @@
+{
+  "task_id": "s32-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Nipusk Bulk Shipping, Inc., the licensee under its software license agreement with Lusen Maritime Software LLC. Nipusk needs a clear picture of where it stands under that arrangement and what it should be pressing for with Lusen, so please review the matter folder and prepare a memo to me. The files to review are: the software license agreement (nipusk_lusen_software_license_agreement.md), the October 2023 term sheet (nipusk_lusen_term_sheet_2023-10.md), the notice letter dated 20 October 2026 (nipusk_non_renewal_letter_2026-10-20.md), and the prior draft of the service level schedule (lusen_service_level_schedule_prior_draft.md). For each issue you identify, the memo should set out where it appears (document and section), why it matters for Nipusk, and your recommended fix. Please keep it practical and organized so I can use it directly in advising the client. If anything in the folder is incomplete or unclear, flag it rather than assume, and let me know if you need anything further from the client.",
+  "documents": [
+    "lusen_service_level_schedule_prior_draft.md",
+    "nipusk_lusen_software_license_agreement.md",
+    "nipusk_lusen_term_sheet_2023-10.md",
+    "nipusk_non_renewal_letter_2026-10-20.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the exclusivity covenant in Section 3.4 of the Software License Agreement (as defined in Section 1.1) reaches beyond the term sheet's agreed scope of voyage-optimization software for Nipusk-owned dry-bulk vessels. It must cover other software categories (such as fleet management, emissions reporting, performance monitoring or crew management) and vessels chartered, managed or operated by Nipusk or its Affiliates. It must locate the issue in the agreement at Section 3.4, explain why this matters to Nipusk, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "Competing Product",
+        "chartered, managed or operated",
+        "Section 3.4"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Section 12.2 of the Software License Agreement automatically renews the agreement for successive three-year terms unless notice is given at least 90 days before term end, departing from the term sheet's one-year renewal terms and 30-day notice period. It must locate the issue at Section 12.2, explain why this matters to Nipusk, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "three-year Renewal Terms",
+        "90 days",
+        "one-year renewals"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Schedule 2, paragraph 9 (Vessel Data Terms) of the Software License Agreement subjects Vessel Data disputes to English law and London (LMAA) arbitration, displacing the Delaware law and Wilmington, Delaware forum otherwise chosen for those disputes. It must locate the issue at Schedule 2, paragraph 9, explain why this matters to Nipusk, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "laws of England and Wales",
+        "London Maritime Arbitrators Association",
+        "Schedule 2"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that Section 16.3 of the Software License Agreement lets Lusen assign the agreement (with its Vessel Data rights) without Nipusk's consent or notice to any 'Permitted Transferee', a term that includes a shipowner, ship operator or charterer that could compete with Nipusk. It must locate the issue at Section 16.3, explain why this matters to Nipusk, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "Permitted Transferee",
+        "without consent or notice",
+        "Section 16.3"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that Nipusk's non-renewal letter dated October 20, 2026 was sent after the October 2, 2026 deadline for notice under the agreement, so the agreement has renewed (or Lusen can claim it has renewed) for a further term. It must locate the issue in the October 20, 2026 non-renewal letter (read with the agreement's term and renewal provisions), explain why this matters to Nipusk, and recommend a course of action.",
+      "kind": "issue",
+      "hints": [
+        "October 2, 2026",
+        "late",
+        "renewed automatically"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Software License Agreement requires non-renewal notice at least 90 days before the end of the then-current term.",
+      "kind": "fact",
+      "hints": [
+        "90 days",
+        "before the end of the term"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Software License Agreement supersedes (prevails over) the October 2023 term sheet.",
+      "kind": "fact",
+      "hints": [
+        "supersedes the Term Sheet",
+        "Section 1.3"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo addressed to the supervising partner that organizes its analysis issue by issue, giving for each issue its location, why it matters and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Nipusk's October 20, 2026 non-renewal letter was timely under the Software License Agreement.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely",
+        "validly terminated"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that disputes arising out of or in connection with Vessel Data are governed by Delaware law under the Software License Agreement as written.",
+      "kind": "negative",
+      "hints": [
+        "Delaware law governs all disputes"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

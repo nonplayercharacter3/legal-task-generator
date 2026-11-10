@@ -1,0 +1,120 @@
+{
+  "matter_id": "s32-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 11.2: \"Customer shall defend, indemnify and hold harmless Provider ... from and against all Losses arising out of or relating to Services performed Airside or aboard Customer's aircraft, regardless of cause, including bodily injury, death and damage to property.\" Section 12.3: \"Sections 12.1 and 12.2 do not apply to: ... (c) Customer's obligations under Section 11.2.\"",
+            "reason": "The problem is present and still actionable for Lebix.\n\n- **Lebix's exposure is uncapped.** Lebix (Customer) is the indemnitor under 11.2, and 'regardless of cause' covers Losses caused by Dugein's own negligence on the ramp or aboard aircraft. Section 12.3(c) removes this obligation from both the cap and the consequential-damages exclusion, so Lebix's exposure has no limit.\n- **Dugein's matching exposure is capped.** Its indemnity under 11.1 is not listed in 12.3, so it stays capped at 12 months' fees.\n- **The folder makes the imbalance worse, not better.**\n  - Amendment No. 1 narrowed Dugein's only party-specific carve-out, 12.3(b), to Food Safety Incidents caused by Dugein's gross negligence or wilful misconduct.\n  - The Quality Agreement's narrower 'Food Safety Incident' definition prevails under MSA 1.3 and further shrinks that carve-out.\n- **Nothing cures it.** Dugein's insurance under 8.1 names Lebix as additional insured but does not limit Lebix's 11.2 liability. The Amendment ratified the MSA but left 12.3(c) unchanged.\n- **It can still be raised.** The agreement is in force through 2030, and Lebix can still seek an amendment."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Quality Agreement Section 1.1: \"'Food Safety Incident' means a confirmed contamination of a Meal that results in illness of a passenger or crew member and is reported to a regulatory authority.\" MSA Section 1.3: \"the Quality Agreement prevails over the MSA on food safety and quality matters, including related defined terms, including the meaning of any defined term relating thereto.\"",
+            "reason": "The problem is present and hurts Lebix. The MSA defines Food Safety Incident broadly: any actual or reasonably suspected contamination, undeclared allergen, temperature excursion or foreign object. The Quality Agreement redefines the same term narrowly, and MSA Section 1.3 makes the Quality Agreement's meaning control. Every protection keyed to the term belongs to Lebix, and the narrow definition shrinks each one. These are: Dugein's two-hour notice and quarantine duties (QA 4.2 and 4.3); Dugein's withdrawal and recall duties (QA 4.4); recall costs, which Dugein bears (MSA 3.4); Corrective Action Plans (QA 7.2(a)); Lebix's termination triggers (MSA 16.3(a) and (c)); and the cap carve-out for Dugein's liability (MSA 12.3(b)). Amendment No. 1 already limited that carve-out to gross negligence or wilful misconduct, and the narrow definition limits it further. Under the narrow definition, suspected contamination, allergen errors and cold-chain breaches that cause no reported illness trigger none of these protections. Nothing in the folder cures the conflict, and the MSA and Quality Agreement remain in force. The issue is therefore still actionable, for example by amending the definition."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"Section 15.2 of the MSA restricts assignment or transfer of the MSA, and no assignment or transfer will occur in connection with the transaction. Accordingly, no consent or other action is required of Provider under the MSA in connection with the merger. Lebix is giving this letter as a matter of courtesy...\"",
+            "reason": "The problem is present and still actionable for Lebix.\n\n- **What the letter gets wrong.** Paragraph 2 relies only on the assignment clause (Section 15.2) and tells Dugein that no consent is needed.\n- **What the MSA actually says.** Section 15.3 separately states that a change of control 'including by merger' requires the other Party's prior written consent. Sablecrest will acquire 100% of Lebix and did not control Lebix on March 1, 2025, so this is a change of control.\n- **Who bears the obligation.** Lebix is the Party undergoing the change of control, so Lebix must request consent by written notice at least 60 days before closing.\n- **The deadline.** Closing is December 15, 2026, so the 60-day date was about October 16. The October 20 letter was already late, and it does not request consent at all.\n- **What Lebix risks.** If closing occurs without consent, Dugein may terminate on 30 days' notice. Lebix would then owe the early termination fee of six months' average monthly fees. That fee is outside the consequential-damages exclusion and is enforceable under Delaware law.\n- **Why it is still actionable.**\n  - Closing has not occurred.\n  - Dugein has not accepted anything.\n  - Nothing in the folder cures the problem or waives Dugein's rights.\n  - Lebix can still correct the letter, request consent (consent cannot be unreasonably withheld only for assignments; Section 15.3 has no such qualifier), or negotiate a waiver before closing.\n  - The disclaimer could also be read as an inaccurate statement to Dugein, which may weaken Lebix's position later."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Amendment No. 1, Section 2.1: \"Section 12.3(b) of the MSA is deleted in its entirety and replaced with the following: '(b) Provider's liability for Losses arising from a Food Safety Incident caused by Provider's gross negligence or wilful misconduct;'\". Amendment Section 4.1: \"If there is any conflict between this Amendment and the MSA, this Amendment controls.\"",
+            "reason": "The problem is present and still actionable for Lebix. The original MSA §12.3(b) kept all of Dugein's food-safety liability outside the §12.1 cap (fees paid or payable in the prior 12 months) and outside the §12.2 consequential-damages exclusion. The replacement only reaches incidents caused by gross negligence or wilful misconduct. Those are already carved out for both parties under §12.3(a), so the new (b) adds nothing. The result is that Dugein's liability for ordinary-negligence contamination events is now capped, and consequential losses from those events are excluded. Dugein is the party bearing that liability, so the change hurts Lebix as the airline customer. It is made worse because the Quality Agreement's narrower definition of 'Food Safety Incident' prevails under MSA §1.3. Nothing in the folder cures the change. There is no price concession, no added insurance and no side letter. Amendment §4.1 makes the new text control. This is a continuing contractual risk allocation, not a lapsed deadline. It applies to future incidents, including at the new MDT kitchen, and Lebix can still seek to renegotiate it under §18.7."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.055,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

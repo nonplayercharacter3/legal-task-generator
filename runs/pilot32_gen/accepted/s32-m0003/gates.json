@@ -1,0 +1,117 @@
+{
+  "matter_id": "s32-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Escrow Agreement Section 4.1: \"The \"Release Date\" means the date that is ninety (90) days after the Closing Date, or, if that date is not a Business Day, the next Business Day.\" APA Section 9.1: \"The representations and warranties of Seller in Article IV, other than the Fundamental Representations, including the representations and warranties in Sections 4.5, 4.6 and 4.7, shall survive the Closing until the Release Date (as defined in the Escrow Agreement).\"",
+            "reason": "The problem is present and hurts Vaikiv. APA §9.1 ties survival of Seller's regulatory, cGMP, product quality and recall reps (§§4.5–4.7) to the escrow Release Date. It also bars any claim not noticed before that date, and it invokes 10 Del. C. §8106(c) to shorten the limitations period. Escrow §4.1 sets that Release Date at 90 days after the March 2, 2026 Closing. 90 days lands on May 31, 2026, a Sunday, so the window closes on June 1, 2026. That is far too short for latent manufacturing, stability or FDA inspection problems to surface. The risk is concrete on these facts: Schedules 2.4(c) and 4.5 disclose a 2025 Class II recall, a granulation moisture deviation, a Form 483, and a recall the FDA has not yet terminated. Nothing in the folder cures the gap. §9.5(b) excludes Excluded Liabilities from the Cap and Deductible, but it does not extend survival for rep claims. No longer survival period appears anywhere else. The folder also contains no post-closing record that Vaikiv accepted a release of the escrow or waived its rep claims. Absent that, this is a live problem to raise, not settled history. If the Release Date has already passed, the issue should be flagged urgently: any claim notices, tolling arguments and remaining recovery theories need to be assessed now."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "TSA Section 9.3: \"This Agreement, and any claim, controversy or dispute arising out of or relating to this Agreement or the Purchase Agreement, shall be governed by and construed in accordance with the laws of the State of New York ... Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in New York County, New York for any action arising out of or relating to this Agreement or the Purchase Agreement.\" This conflicts with APA Section 11.8 (Delaware law) and Section 11.9 (exclusive forum in the Delaware Court of Chancery).",
+            "reason": "The TSA's choice of law and forum expressly reaches disputes 'relating to ... the Purchase Agreement'. That directly conflicts with the APA's Delaware law and Chancery forum. APA Section 11.4 does not cleanly resolve the conflict: the APA prevails generally, but each Ancillary Agreement controls 'matters arising under such Ancillary Agreement'. Seller can therefore argue that APA claims tied to the transition fall under the TSA clause. Examples are batch release under TSA 5.3, recall support, pharmacovigilance reporting, and inventory or quality issues that also support APA Article IX claims. Buyer (the client) faces two risks. First, competing exclusive-forum clauses could produce parallel proceedings or forum fights. Second, inconsistent governing law could apply, including uncertainty over whether the Delaware 10 Del. C. § 8106(c) survival mechanics and Delaware indemnity construction apply. The TSA term runs until nine months after the March 2, 2026 closing, so it is still in effect. Nothing in the folder shows that a dispute has arisen or been resolved, or that the clause has been accepted in a way that bars correction. Buyer can still seek an amendment under TSA 9.7 limiting Section 9.3 to TSA-only disputes, so the issue remains actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Schedule 2.4(c), item 3: \"Seller's indemnification of the Buyer Indemnitees under Section 9.2(c) for Losses arising out of or relating to the 2025 Recall shall be subject to the Cap and the Deductible under Section 9.5 notwithstanding Section 9.5(b).\"",
+            "reason": "The problem is present and still actionable for Buyer (Vaikiv), which is the indemnified party. APA 2.4(c) makes pre-closing recall liabilities Excluded Liabilities 'except to the extent provided in Schedule 2.4(c)'. APA 9.5(b) normally exempts Excluded Liability indemnity under 9.2(c) from the 10% Cap ($18.6M) and the $1,395,000 Deductible. The schedule expressly overrides 9.5(b) for the known 2025 Recall. The APA delegates to the schedule, and 11.12 makes the schedule part of the Agreement, so 11.4 precedence does not help. Buyer's recovery for a known recall that is Seller's liability is therefore deductible-first and capped. It may also compete with other capped 9.2(a) claims. The exposure is live. The recall has not been terminated by FDA, only about 81% of units have been returned, and product liability claims on recalled units remain possible. The 9.1 notice deadline applies only to 9.2(a) claims, so 9.2(c) recall claims are not time-barred. With the escrow likely released by now, recovery would come directly from Seller under 9.6. Nothing in the folder shows Buyer accepted the result or waived it, so it remains a live limitation on Buyer's recovery."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 18,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C9",
+          "C10",
+          "C11",
+          "C12"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.098,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

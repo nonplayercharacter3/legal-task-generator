@@ -1,0 +1,196 @@
+{
+  "matter_id": "s32-m0001",
+  "summary": "Nipusk Bulk Shipping, Inc. (client) licenses Lusen Maritime Software LLC's 'TideRoute' voyage-optimization and fleet-performance platform for its dry-bulk fleet under a Software License Agreement effective January 1, 2024, with three Schedules: Schedule 1 Commercial Terms, Schedule 2 Vessel Data Terms and Schedule 3 Service Levels. The folder has four documents: the agreement, the October 2023 term sheet, Nipusk's October 20, 2026 non-renewal letter, and a superseded prior draft of the Service Level Schedule. Five issues are planted. The exclusivity covenant reaches far beyond the term sheet deal. Renewal runs for 3-year terms with a 90-day window, against 1-year terms and 30 days in the term sheet. Schedule 2 selects English law and London arbitration, and the precedence clause lets it prevail over the Delaware choice. Lusen may assign freely to any 'Permitted Transferee', a term that includes competing shipowners. Nipusk's non-renewal letter was sent after the October 2, 2026 deadline.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Nipusk Bulk Shipping, Inc.",
+      "role": "Licensee; dry-bulk shipowner and operator; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Lusen Maritime Software LLC",
+      "role": "Licensor; provider of the TideRoute voyage-optimization and fleet-performance software"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "January 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Software License Agreement Initial Term",
+      "value": "three years from the Effective Date, ending December 31, 2026",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F3",
+      "key": "Software License Agreement non-renewal notice deadline",
+      "value": "written notice at least 90 days before the end of the then-current term",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F4",
+      "key": "Term Sheet renewal term",
+      "value": "one-year renewal terms",
+      "doc": "D2",
+      "section": "Term and Renewal"
+    },
+    {
+      "id": "F5",
+      "key": "Term Sheet non-renewal notice period",
+      "value": "30 days before the end of the then-current term",
+      "doc": "D2",
+      "section": "Term and Renewal"
+    },
+    {
+      "id": "F6",
+      "key": "Term Sheet exclusivity scope",
+      "value": "voyage-optimization software only, for dry-bulk vessels owned by Nipusk",
+      "doc": "D2",
+      "section": "Exclusivity"
+    },
+    {
+      "id": "F7",
+      "key": "Governing law",
+      "value": "State of Delaware",
+      "doc": "D2",
+      "section": "Governing Law and Forum"
+    },
+    {
+      "id": "F8",
+      "key": "Dispute forum",
+      "value": "state or federal courts located in Wilmington, Delaware",
+      "doc": "D2",
+      "section": "Governing Law and Forum"
+    },
+    {
+      "id": "F9",
+      "key": "Software License Agreement order of precedence",
+      "value": "Schedules prevail over the main body; Agreement supersedes the Term Sheet",
+      "doc": "D1",
+      "section": "Section 1.3"
+    },
+    {
+      "id": "F10",
+      "key": "Nipusk non-renewal letter date",
+      "value": "October 20, 2026",
+      "doc": "D3",
+      "section": "Date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "nipusk_lusen_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "nipusk_lusen_term_sheet_2023-10.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "nipusk_non_renewal_letter_2026-10-20.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "lusen_service_level_schedule_prior_draft.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "The term sheet (D2, Exclusivity) limits exclusivity to voyage-optimization software for dry-bulk vessels Nipusk owns. Section 3.4 of the agreement goes much further: Nipusk and its Affiliates may not license, develop or use any 'Competing Product' on any 'Vessel'. The Section 1.1 definitions make that covenant very wide. 'Competing Product' covers fleet management, voyage optimization, emissions reporting, hull and engine performance monitoring and crew management software. 'Vessel' means any vessel owned, chartered, managed or operated by Licensee or any Affiliate, worldwide. Read together, these provisions bar Nipusk from using other emissions-compliance or crew tools across its chartered-in and managed tonnage and its affiliates. Section 1.3 makes the Agreement supersede the Term Sheet, so the narrower term sheet scope does not cure the problem.",
+      "doc": "D1",
+      "section": "Section 3.4 (read with Section 1.1 definitions of 'Competing Product' and 'Vessel')",
+      "detect_terms": [
+        "Competing Product",
+        "chartered, managed or operated"
+      ],
+      "expected_finding": "Section 3.4, read with the Section 1.1 definitions, extends exclusivity beyond the agreed voyage-optimization scope for Nipusk-owned dry-bulk vessels to all fleet, emissions and crew software across chartered and managed vessels and affiliates worldwide, and because Section 1.3 makes the Agreement supersede the Term Sheet, it should be narrowed to the term sheet scope.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Section 12.2 renews the agreement automatically for successive three-year Renewal Terms unless either party gives written notice at least 90 days before the current term ends. Schedule 1 adds a 7% license fee increase at each renewal. The term sheet (D2) agreed one-year renewals with a 30-day notice period. Under Section 1.3 the Agreement supersedes the Term Sheet, and Section 17.4 is an entire-agreement clause, so Nipusk is bound to the longer lock-in and the earlier deadline.",
+      "doc": "D1",
+      "section": "Section 12.2",
+      "detect_terms": [
+        "successive three-year Renewal Terms",
+        "at least ninety (90) days"
+      ],
+      "expected_finding": "Section 12.2 automatically renews the agreement for three-year terms at escalated fees unless notice is given 90 days before term end, which departs from the term sheet's one-year renewals and 30-day notice and is binding because the Agreement supersedes the Term Sheet, so the clause should be renegotiated to the term sheet's renewal terms.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The term sheet (D2) and Section 15.1 of the agreement choose Delaware law and the courts in Wilmington, Delaware. Schedule 2, paragraph 9 (Vessel Data Terms) instead applies the laws of England and Wales to any dispute 'arising out of or in connection with Vessel Data' and sends those disputes to London Maritime Arbitrators Association arbitration. Vessel Data is defined broadly to include all AIS, noon-report, fuel, route and performance data processed by the software, so nearly every operational dispute falls within Schedule 2. Section 1.3 says the Schedules prevail over the main body if they conflict. As a result, the English law and London arbitration choice controls rather than the Delaware choice, and disputes risk being split between two forums.",
+      "doc": "D1",
+      "section": "Schedule 2, paragraph 9 (read with Section 1.3 and Section 15.1)",
+      "detect_terms": [
+        "laws of England and Wales",
+        "London Maritime Arbitrators Association"
+      ],
+      "expected_finding": "Schedule 2, paragraph 9 subjects all Vessel Data disputes, which in practice means most disputes, to English law and London LMAA arbitration, and because Section 1.3 makes Schedules prevail over the main body, it overrides the agreed Delaware law and Wilmington forum, so it should be deleted or conformed to Delaware.",
+      "contradicts": [
+        "F7",
+        "F8"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 16.2 bars assignment by either party without the other's prior written consent 'except as permitted in Section 16.3'. Section 16.3 then lets Licensor assign the agreement, together with its rights to Vessel Data under Schedule 2, to any 'Permitted Transferee' without consent or notice. Section 1.1 defines 'Permitted Transferee' as any person, including any shipowner, ship operator or charterer, that acquires any part of Licensor's business or assets. Nipusk has no equivalent right. Read together, these provisions allow Lusen to transfer the agreement and Nipusk's commercially sensitive route, fuel and charter data to a competing carrier, and Nipusk would have no right to object or terminate.",
+      "doc": "D1",
+      "section": "Section 16.3 (read with Section 16.2 and Section 1.1 definition of 'Permitted Transferee')",
+      "detect_terms": [
+        "Permitted Transferee",
+        "without the consent of or notice to Licensee"
+      ],
+      "expected_finding": "Section 16.3, read with the Section 1.1 definition of 'Permitted Transferee', lets Lusen assign the agreement and its Vessel Data rights without consent or notice to any acquirer of any part of its business, including a competing shipowner, while Nipusk needs consent, so Licensor assignment should require Nipusk's consent and exclude competitors, or give Nipusk a termination right.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 1 of the agreement fixes the Effective Date at January 1, 2024, and Section 12.1 sets a three-year Initial Term ending December 31, 2026. Section 12.2 requires written non-renewal notice at least 90 days before the term ends, which makes the deadline October 2, 2026. Nipusk's non-renewal letter (D3) is dated, and was couriered on, October 20, 2026, which is 18 days late. On the agreement's terms, the agreement has therefore renewed automatically for a three-year Renewal Term through December 31, 2029, at a 7% higher fee. The letter shows that Nipusk does not accept renewal. It states that Nipusk does not wish to renew, relies on the term sheet's 30-day notice period, and reserves its rights. Nothing in the folder shows that Nipusk has accepted the renewal.",
+      "doc": "D3",
+      "section": "Paragraphs 1-2 (read with D1 Sections 12.1 and 12.2)",
+      "detect_terms": [
+        "does not wish to renew",
+        "thirty (30) days"
+      ],
+      "expected_finding": "Nipusk's October 20, 2026 non-renewal letter came after the October 2, 2026 deadline produced by Sections 12.1 and 12.2, so Lusen can claim the agreement renewed through December 31, 2029 at escalated fees; because the Agreement supersedes the Term Sheet, Nipusk's reliance on the 30-day term-sheet period is weak, and it should promptly negotiate a consensual exit or a shortened renewal while preserving its written objection.",
+      "contradicts": null
+    }
+  ]
+}

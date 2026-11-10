@@ -1,0 +1,186 @@
+{
+  "matter_id": "s32-m0002",
+  "summary": "Lebix Regional Airways, Inc. (client, the airline customer) buys inflight catering from Dugein Inflight Provisions, LLC under a Catering Master Services Agreement effective March 1, 2025. The folder also holds a Food Safety and Quality Agreement, Amendment No. 1 (effective July 1, 2026), Lebix's October 20, 2026 notice letter to Dugein about its pending acquisition by Sablecrest Aviation Holdings, LLC, and a Dugein press release about a new flight kitchen. Four issues are planted. First, Lebix's broad indemnity is carved out of the liability cap while Dugein's indemnity stays capped. Second, the Quality Agreement redefines 'Food Safety Incident' far more narrowly, and the MSA's precedence clause lets that definition control. Third, the Amendment narrows the food-safety carve-out from the cap. Fourth, the notice letter treats the acquisition as needing no consent, even though MSA Section 15.3 requires Dugein's prior written consent to a change of control of Lebix.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Lebix Regional Airways, Inc.",
+      "role": "Customer (regional airline); the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Dugein Inflight Provisions, LLC",
+      "role": "Provider (airline catering and flight-kitchen services)"
+    },
+    {
+      "id": "P3",
+      "name": "Sablecrest Aviation Holdings, LLC",
+      "role": "Proposed acquirer of Lebix (named in the notice letter)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Catering MSA Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Catering MSA initial term",
+      "value": "five years from the Catering MSA Effective Date",
+      "doc": "D1",
+      "section": "16.1"
+    },
+    {
+      "id": "F3",
+      "key": "Catering MSA liability cap",
+      "value": "fees paid or payable in the 12 months preceding the event giving rise to the claim",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F4",
+      "key": "Catering MSA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "18.1"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Quality Agreement prevails over MSA on food safety and quality matters, including related defined terms; MSA prevails over Catering Orders",
+      "doc": "D1",
+      "section": "1.3"
+    },
+    {
+      "id": "F6",
+      "key": "Food Safety Incident (MSA definition)",
+      "value": "any actual or reasonably suspected contamination, undeclared allergen, temperature excursion or foreign object in a Meal",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F7",
+      "key": "Change of control early termination fee",
+      "value": "six months' average monthly fees, payable by the Party undergoing the change of control",
+      "doc": "D1",
+      "section": "15.3"
+    },
+    {
+      "id": "F8",
+      "key": "Amendment No. 1 Effective Date",
+      "value": "July 1, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Notice letter date",
+      "value": "October 20, 2026",
+      "doc": "D4",
+      "section": "Date line"
+    },
+    {
+      "id": "F10",
+      "key": "Expected closing of Sablecrest acquisition",
+      "value": "December 15, 2026",
+      "doc": "D4",
+      "section": "Paragraph 1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "lebix_dugein_catering_msa.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "lebix_dugein_food_safety_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "lebix_dugein_msa_amendment_no1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "lebix_notice_letter_to_dugein_2026-10-20.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "dugein_press_release_new_flight_kitchen.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "Customer indemnity excluded from the cap",
+      "description": "Section 11.2 of the MSA requires Lebix to indemnify Dugein against all Losses arising out of or relating to Services performed airside or aboard Customer's aircraft, 'regardless of cause'. That reach includes losses caused by Dugein's own negligence. Section 12.3(c) then excludes 'Customer's obligations under Section 11.2' from the Section 12.1 cap. Dugein's own indemnity in Section 11.1 is not excluded and stays subject to the cap. Read together, these provisions leave Lebix with unlimited liability for losses Dugein causes, while Dugein's matching exposure is capped at 12 months' fees.",
+      "doc": "D1",
+      "section": "11.2 and 12.3(c)",
+      "detect_terms": [
+        "regardless of cause",
+        "Customer's obligations under Section 11.2"
+      ],
+      "expected_finding": "Lebix's Section 11.2 indemnity covers losses 'regardless of cause', including Dugein's own negligence, and Section 12.3(c) removes it from the cap while Dugein's Section 11.1 indemnity stays capped. Lebix therefore faces unlimited liability, and the indemnity should be limited to losses caused by Lebix's own acts and either made subject to the cap or carved out mutually.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "Narrower 'Food Safety Incident' definition in Quality Agreement controls",
+      "description": "MSA Section 1.1 defines 'Food Safety Incident' broadly: any actual or reasonably suspected contamination, undeclared allergen, temperature excursion or foreign object in a Meal. Quality Agreement Section 1.1 defines the same term as only a confirmed contamination that results in illness of a passenger or crew member and is reported to a regulatory authority. Under MSA Section 1.3, the Quality Agreement prevails on food safety and quality matters, 'including the meaning of any defined term relating thereto'. The narrow definition therefore controls everywhere the term is used. That includes Dugein's two-hour notification duty (Quality Agreement Section 4.2), its recall and withdrawal duties, and the food-safety carve-out from the cap. Suspected contamination, allergen errors and cold-chain breaches no longer trigger those protections.",
+      "doc": "D2",
+      "section": "1.1",
+      "detect_terms": [
+        "confirmed contamination",
+        "reported to a regulatory authority"
+      ],
+      "expected_finding": "Because MSA Section 1.3 makes the Quality Agreement control the meaning of food-safety defined terms, the Quality Agreement's narrow 'Food Safety Incident' definition (confirmed contamination causing illness and reported to a regulator) displaces the MSA's broad definition. That removes Dugein's notification, recall and cap carve-out obligations for suspected contamination, allergen and temperature events, so the Quality Agreement definition should be conformed to the MSA definition or the precedence clause should exclude defined terms.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "Sablecrest acquisition needs Dugein's consent, which the notice letter disclaims",
+      "description": "The October 20, 2026 notice letter (D4) tells Dugein that Lebix has signed a merger agreement. Under it, a Sablecrest subsidiary will merge into Lebix, Lebix will survive as a wholly owned subsidiary of Sablecrest Aviation Holdings, LLC, and closing is expected December 15, 2026. Relying on MSA Section 15.2, the letter says that because Lebix survives and no assignment occurs, 'no consent or other action is required' of Dugein. Section 15.2 covers only assignment, however. MSA Section 15.3 separately treats a change of control of either Party, 'including by merger', as requiring the other Party's prior written consent. If consent is not obtained, the non-consenting Party may terminate on 30 days' notice and the Party undergoing the change of control must pay the early termination fee of six months' average monthly fees. Delaware courts enforce such clauses as written. Closing is still pending, so Lebix can still request consent.",
+      "doc": "D4",
+      "section": "Paragraph 2",
+      "detect_terms": [
+        "no consent or other action is required"
+      ],
+      "expected_finding": "The Sablecrest merger described in the October 20, 2026 letter is a change of control requiring Dugein's prior written consent under MSA Section 15.3, which Section 15.2 does not displace. Without that consent, Dugein could terminate on 30 days' notice and recover the six-months'-fees early termination fee, so Lebix should obtain Dugein's written consent or waiver before the December 15, 2026 closing and correct the letter's position.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "Amendment narrows food-safety carve-out from the cap",
+      "description": "MSA Section 12.3(b) originally excluded from the Section 12.1 cap all of Provider's liability for Losses arising from a Food Safety Incident. Section 2 of Amendment No. 1, effective July 1, 2026, deletes and replaces Section 12.3(b) so that it excludes only Losses arising from a Food Safety Incident 'caused by Provider's gross negligence or wilful misconduct'. Read with the 12-month-fees cap in Section 12.1, Dugein's liability for ordinary-negligence contamination events is now capped. Those events include passenger illness, fleet-wide meal withdrawal and regulatory penalties, and they are the airline's largest catering risk. Amendment Section 4 says the Amendment controls over the MSA, so the MSA's original text does not cure the narrowing. Lebix gave up the protection without any stated price concession tied to it.",
+      "doc": "D3",
+      "section": "2",
+      "detect_terms": [
+        "caused by Provider's gross negligence or wilful misconduct"
+      ],
+      "expected_finding": "Amendment No. 1 Section 2 limits the Section 12.3(b) food-safety carve-out to Dugein's gross negligence or wilful misconduct, so Dugein's liability for ordinarily negligent contamination events now falls within the 12-months'-fees cap in Section 12.1. Lebix should seek a further amendment restoring the full carve-out for all Food Safety Incidents, as defined in the MSA.",
+      "contradicts": null
+    }
+  ]
+}
