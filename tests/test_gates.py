@@ -357,9 +357,9 @@ def test_rubric_writer_carries_the_unsolved_review_rules_and_trace_warns_on_a_ra
     assert pair.details["ranking_facts"] == []
 
 
-def test_issue_check_records_a_party_an_issue_needs_that_no_document_mentions():
+def test_issue_check_rejects_a_party_an_issue_needs_that_no_document_mentions():
     # s9-m0002: I1 rested on Besouth's sale to Pellworth Capital Partners, which no document named; the solver could
-    # only take the name from the instruction. Recorded in issue_check, warn only.
+    # only take the name from the instruction. issue_check rejects it and names issue, party and name.
     from ltg.schema import DocumentPlan, Issue, Ledger, Party
 
     class Yes:
@@ -372,6 +372,7 @@ def test_issue_check_records_a_party_an_issue_needs_that_no_document_mentions():
     ledger = Ledger("m", "", parties, [], [DocumentPlan("D1", "a.md", "supply agreement")], [issue])
     doc = "**BESOUTH** and Lanmark agree. 9.2 A change of control lets Lanmark terminate."
     g = gates.issue_check(Yes(), ledger, {"a.md": doc})
-    assert g.passed and g.details["absent_parties"] == [{"issue": "I1", "party": "P3", "name": "Pellworth Capital Partners"}]
+    assert not g.passed and g.details["absent_parties"] == [{"issue": "I1", "party": "P3", "name": "Pellworth Capital Partners"}]
+    assert g.details["reason"] == "I1 needs party P3 (Pellworth Capital Partners), which no document mentions"
     g = gates.issue_check(Yes(), ledger, {"a.md": doc, "b.md": "Notice from Pellworth Capital, L.P."})
-    assert g.details["absent_parties"] == []  # the stem in any document, case and punctuation ignored
+    assert g.passed and g.details["absent_parties"] == [] and "reason" not in g.details  # the stem in any document, case and punctuation ignored

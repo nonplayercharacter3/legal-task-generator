@@ -258,10 +258,13 @@ def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms
         # The reason goes to gates.json too: round 12's s12-m0002 was rejected here and its grounds were not on disk.
         results.append({"issue": i.id, "present": bool(out.get("present")), "evidence": out.get("evidence", ""), "reason": out.get("reason", "")})
     missing = [r["issue"] for r in results if not r["present"]]
-    # s9-m0002: issue I1 rested on a sale to a buyer no document names, so a solver could only guess it. Recorded
-    # here, never rejected yet.
+    # s9-m0002: issue I1 rested on a sale to a buyer no document names, so a solver could only guess it. T31 found
+    # it on 1 of 95 real matters and nowhere else, so it rejects.
     absent = [{"issue": i.id, **p} for i in ledger.issues for p in parties_absent(f"{i.description} {i.expected_finding}", ledger, docs)]
-    return GateResult("issue_check", not missing, {"missing": missing, "results": results, "absent_parties": absent})
+    details = {"missing": missing, "results": results, "absent_parties": absent}
+    if absent:
+        details["reason"] = "; ".join(f"{a['issue']} needs party {a['party']} ({a['name']}), which no document mentions" for a in absent)
+    return GateResult("issue_check", not missing and not absent, details)
 
 
 def rubric_tests(client: ModelClient, rubric: Rubric, answers: Answers) -> GateResult:
