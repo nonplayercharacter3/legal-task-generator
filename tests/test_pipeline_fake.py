@@ -492,3 +492,109 @@ def test_resume_regenerates_a_matter_whose_stage_never_completed(tmp_path):
     fake = RecordingFake(seed=7)
     Pipeline(_cfg(tmp_path), client=fake).run(resume=True)
     assert not fake.payloads.get("ledger_writer") and fake.payloads["drafter"]  # ledger reused, documents redone
+
+
+def test_deferred_solver_check_makes_no_solver_calls_and_marks_tasks_pending(tmp_path, read_json):
+    cfg = load_config(None, {"run": {"out_dir": str(tmp_path / "run"), "n_matters": 3, "seed": 7}, "gates": {"solver_check": "defer"}})
+    report = Pipeline(cfg).run()
+    assert "solver" not in report["model_calls"] and report["accepted"] == 3 == report["label_pending"]
+    assert report["gates"]["solver_check"] == {"evaluated": 3, "passed": 0, "failed": 0, "skipped": 3}
+    for m in (tmp_path / "run" / "accepted").iterdir():
+        task = read_json(m / "task.json")
+        assert task["label_pending"] is True and task["difficulty"] == [] and task["solver_pass_rate"] is None
+        g = read_json(m / "gates.json")
+        assert g["label_pending"] and g["gates"][-1]["details"] == {"skipped": True, "reason": "deferred"}
+        assert not (m / "solver").exists()
+    assert "wait for `ltg label`" in (tmp_path / "run" / "report.md").read_text()
+    # settings.json leaves the key out at its default, so runs begun before it existed still resume
+    assert read_json(tmp_path / "run" / "settings.json")["gates"]["solver_check"] == "defer"
+    inline = load_config(None, {"run": {"out_dir": str(tmp_path / "old"), "n_matters": 1, "seed": 7}})
+    Pipeline(inline).run()
+    assert "solver_check" not in read_json(tmp_path / "old" / "settings.json")["gates"]
+    with pytest.raises(ValueError, match="solver_check"):
+        load_config(None, {"gates": {"solver_check": "later"}})
+
+
+def test_label_runs_the_deferred_solver_check_retries_errors_and_rejects_leaks(tmp_path, read_json, monkeypatch, capsys):
+    from ltg import orchestrator
+
+    run = tmp_path / "run"
+    cfg = load_config(None, {"run": {"out_dir": str(run), "n_matters": 3, "seed": 7}, "gates": {"solver_check": "defer"}})
+    Pipeline(cfg).run()
+    calls_before = len((run / "calls.jsonl").read_text().splitlines())
+    ids = sorted(p.name for p in (run / "accepted").iterdir())
+
+    task0 = read_json(run / "accepted" / ids[0] / "task.json")
+
+    class Flaky(FakeModel):  # the solver errors on the first matter only
+        def complete(self, role, system, user):
+            if role == "solver" and task0["instruction"][:200] in user:
+                raise RuntimeError("server gone")
+            return super().complete(role, system, user)
+
+    first = load_config(None, {"run": {"seed": 7}})
+    monkeypatch.setattr(orchestrator, "build_client", lambda c, log: Flaky(seed=7, log=log))
+    assert orchestrator.label_runs(first, [str(run)], "solver.toml") == {"labelled": 2, "leak": 0, "error": 1}
+    assert read_json(run / "accepted" / ids[0] / "task.json")["label_pending"] and (run / "accepted" / ids[0] / "label_error.txt").exists()
+    for i in ids[1:]:
+        task, g = read_json(run / "accepted" / i / "task.json"), read_json(run / "accepted" / i / "gates.json")
+        assert "label_pending" not in task and task["difficulty"][0]["model"] == "solver"
+        assert task["labelled_by"] == {"config": "solver.toml", "models": ["solver"], "probe_without_documents_passed": False}
+        assert g["difficulty"] == task["difficulty"] and not g["label_pending"] and g["gates"][-1]["name"] == "solver_check"
+        assert not g["gates"][-1]["details"].get("skipped") and (run / "accepted" / i / "solver" / "attempt_3.md").exists()
+    rep = read_json(run / "report.json")
+    assert rep["label_pending"] == 1 and rep["difficulty"]["solver"]["tasks"] == 2 and rep["model_calls"]["solver"]["calls"] > 0
+    assert rep["model_calls"]["ledger_writer"]["calls"] == 3  # the run's own calls are kept
+    lines = (run / "calls.jsonl").read_text().splitlines()
+    assert len(lines) > calls_before and any('"role": "solver"' in l for l in lines[calls_before:])
+    assert f"run/{ids[1]} solver_check solver attempt 3 of 3" in capsys.readouterr().err
+
+    # a rerun picks up only the pending task; here the judge passes everything, so the no-documents probe leaks
+    class Lenient(FakeModel):
+        def _judge(self, p):
+            return {"results": [{"id": c["id"], "pass": True, "claim_made": False, "reason": "ok"} for c in p["criteria"]]}
+
+    monkeypatch.setattr(orchestrator, "build_client", lambda c, log: Lenient(seed=7, log=log))
+    assert orchestrator.label_runs(first, [str(run)]) == {"labelled": 0, "leak": 1, "error": 0}
+    leaked = run / "rejected" / ids[0]
+    assert not (run / "accepted" / ids[0]).exists() and not (leaked / "task.json").exists()
+    assert read_json(leaked / "gates.json")["failed_gate"] == "solver_check"
+    rep = read_json(run / "report.json")
+    assert rep["accepted"] == 2 and rep["label_pending"] == 0 and rep["gates"]["solver_check"]["failed"] == 1
+    assert orchestrator.label_runs(first, [str(run)]) == {"labelled": 0, "leak": 0, "error": 0}  # nothing left
+
+
+def test_deferred_run_then_label_equals_an_inline_run(tmp_path, read_json):
+    from ltg.orchestrator import label_runs
+
+    base = {"n_matters": 10, "seed": 7}
+    fake = {"solver_skill": 0.85, "fault_rate": 0.35}  # as the fake demo: some matters rejected, labels spread
+    inline = tmp_path / "a" / "run"  # separate parents: a run avoids industries of run folders beside it
+    deferred = tmp_path / "b" / "run"
+    Pipeline(load_config(None, {"run": {**base, "out_dir": str(inline)}, "fake": fake})).run()
+    Pipeline(load_config(None, {"run": {**base, "out_dir": str(deferred)}, "fake": fake, "gates": {"solver_check": "defer"}})).run()
+    assert label_runs(load_config(None, {"run": {"seed": 7}, "fake": fake}), [str(deferred)])["error"] == 0
+
+    tasks = lambda run: {m.name: {k: v for k, v in read_json(m / "task.json").items() if k != "labelled_by"} for m in (run / "accepted").iterdir()}
+    a, b = tasks(inline), tasks(deferred)
+    assert 0 < len(a) < 10 and a == b  # same accepted set, labels, unsolved flags and splits
+    assert len({t["solver_pass_rate"] for t in a.values()}) > 1
+    ra, rb = read_json(inline / "report.json"), read_json(deferred / "report.json")
+    assert {k: ra[k] for k in ("accepted", "unsolved", "difficulty", "matters")} == {k: rb[k] for k in ("accepted", "unsolved", "difficulty", "matters")}
+
+
+def test_generate_only_config_is_the_nrp_pilot_with_solver_check_deferred(tmp_path):
+    from dataclasses import asdict
+
+    root = Path(__file__).resolve().parent.parent / "configs"
+    gen, nrp = asdict(load_config(str(root / "pilot_generate_only.toml"))), asdict(load_config(str(root / "pilot_nrp_solver.toml")))
+    assert gen["gates"].pop("solver_check") == "defer" and nrp["gates"].pop("solver_check") == "inline"
+    assert gen == nrp
+    # a run started before the key existed (settings.json without it) still resumes
+    run = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}})
+    Pipeline(run).run()
+    settings = json.loads((tmp_path / "settings.json").read_text())
+    assert "solver_check" not in settings["gates"]
+    assert Pipeline(run).run(resume=True)["resumed"] == 1
+    with pytest.raises(ValueError, match="settings changed"):
+        Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}, "gates": {"solver_check": "defer"}})).run(resume=True)

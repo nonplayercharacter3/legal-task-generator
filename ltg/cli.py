@@ -1,4 +1,4 @@
-"""Command line: `python -m ltg run ...`, `index ...`, `inspect ...` and `export ...`."""
+"""Command line: `python -m ltg run ...`, `label ...`, `index ...`, `inspect ...` and `export ...`."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 
 from .config import load_config
-from .orchestrator import Pipeline, reference_index
+from .orchestrator import Pipeline, label_runs, reference_index
 
 
 def cmd_index(args: argparse.Namespace) -> int:
@@ -57,10 +57,19 @@ def cmd_run(args: argparse.Namespace) -> int:
           + (f" ({report['resumed']} reloaded from an earlier run)" if report["resumed"] else ""))
     for g, s in report["gates"].items():
         print(f"  {g:<16} evaluated {s['evaluated']:>3}  passed {s['passed']:>3}  failed {s['failed']:>3}  skipped {s['skipped']:>3}")
+    if report.get("label_pending"):
+        print(f"{report['label_pending']} accepted task(s) wait for labels: run `ltg label` with a solver config on {cfg.run.out_dir}")
     if report["gates"]["decontamination"]["skipped"]:
         print("WARNING: decontamination skipped (no reference_dirs); tasks were not screened against LAB")
     print(f"report: {Path(cfg.run.out_dir) / 'report.md'}")
     return 0
+
+
+def cmd_label(args: argparse.Namespace) -> int:
+    res = label_runs(load_config(args.config), args.runs, args.config)
+    print(f"labelled {res['labelled']}, rejected {res['leak']} as leaks, {res['error']} errors"
+          + (" (still pending: rerun `ltg label` to retry)" if res["error"] else ""))
+    return 1 if res["error"] else 0
 
 
 def cmd_inspect(args: argparse.Namespace) -> int:
@@ -99,12 +108,13 @@ def cmd_export(args: argparse.Namespace) -> int:
     if args.model is None and (args.min_pass != 0.0 or args.max_pass != 1.0):
         print("--min-pass and --max-pass select a band of one model's labels: add --model", file=sys.stderr)
         return 2
-    res = export(args.runs, args.out, args.model, args.min_pass, args.max_pass, args.include_unsolved, args.include_held)
+    res = export(args.runs, args.out, args.model, args.min_pass, args.max_pass, args.include_unsolved, args.include_held,
+                 args.include_pending)
     for tid, paths in res["duplicates"].items():
         print(f"duplicate task id {tid}, kept neither: {', '.join(paths)}", file=sys.stderr)
     sk = res["skipped"]
     print("exported " + ", ".join(f"{s} {n}" for s, n in res["counts"].items()) + f" -> {args.out}"
-          + f" (left out: {sk['held']} held, {sk['unsolved']} unsolved, {sk['outside_band']} outside the band)")
+          + f" (left out: {sk['held']} held, {sk['pending']} waiting for labels, {sk['unsolved']} unsolved, {sk['outside_band']} outside the band)")
     return 0
 
 
@@ -125,6 +135,11 @@ def main(argv: list[str] | None = None) -> int:
     x.add_argument("--config", required=True, help="TOML config with gates.reference_dirs")
     x.set_defaults(func=cmd_index)
 
+    lb = sub.add_parser("label", help="run the deferred solver_check on accepted tasks with label_pending")
+    lb.add_argument("--config", required=True, help="TOML config with the solver roles, e.g. configs/pilot_nrp_solver.toml")
+    lb.add_argument("runs", nargs="+", help="run folders holding accepted/<matter>/")
+    lb.set_defaults(func=cmd_label)
+
     i = sub.add_parser("inspect", help="print one matter folder in readable form")
     i.add_argument("matter_dir")
     i.set_defaults(func=cmd_inspect)
@@ -137,6 +152,7 @@ def main(argv: list[str] | None = None) -> int:
     e.add_argument("--max-pass", type=float, default=1.0, help="highest pass rate kept (with --model)")
     e.add_argument("--include-unsolved", action="store_true", help="also export tasks no solver attempt passed")
     e.add_argument("--include-held", action="store_true", help="also export tasks a person put on hold (task.json `hold`)")
+    e.add_argument("--include-pending", action="store_true", help="also export tasks waiting for `ltg label` (no label, no leak probe yet)")
     e.set_defaults(func=cmd_export)
 
     args = p.parse_args(argv)
