@@ -185,6 +185,13 @@ def test_rerun_into_same_folder_leaves_no_stale_verdicts(tmp_path):
     assert len(list((tmp_path / "rejected").iterdir())) == 6
 
 
+def test_issue_resting_on_a_party_no_document_names_is_rejected_at_issue_check(tmp_path):
+    rep = Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2}, "fake": {"fault": "absent_party"}})).run()
+    assert {m["failed_gate"] for m in rep["matters"]} == {"issue_check"}
+    gate = json.loads(next((tmp_path / "rejected").glob("*/gates.json")).read_text())
+    assert gate["reason"] == "I1 needs party P3 (Quellmark Capital Partners), which no document mentions"
+
+
 def test_run_refuses_folder_with_matters_from_another_run(tmp_path):
     Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2, "seed": 7}})).run()
     with pytest.raises(FileExistsError, match="another run"):
