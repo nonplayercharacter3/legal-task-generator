@@ -13,7 +13,7 @@ import random
 from . import prompts
 from .config import SpecCfg
 from .models import ModelClient, call_json, call_text, render_input
-from .schema import Answers, Ledger, MatterSpec, Rubric, bundling_errors, validate_ledger, validate_rubric
+from .schema import Answers, Ledger, MatterSpec, Rubric, bundling_errors, split_issue_errors, validate_ledger, validate_rubric
 from .sources import Precedent
 from .taxonomy import (
     DISTRACTOR_KINDS,
@@ -153,14 +153,16 @@ def write_rubric(client: ModelClient, spec: MatterSpec, ledger: Ledger, instruct
     payload = {"ledger": ledger.to_dict(), "instruction": instruction, "deliverable": spec.deliverable}
     rubric = Rubric.from_dict(call_json(client, "rubric_writer", prompts.RUBRIC_WRITER, render_input(payload)))
     repair: dict = {"ran": False}
-    flagged = bundling_errors(rubric, ledger) if bundling == "repair" else []
+    split = split_issue_errors(rubric, ledger)
+    flagged = split + (bundling_errors(rubric, ledger) if bundling == "repair" else [])
     if flagged and not validate_rubric(rubric, ledger, bundling=False):
         again = {**payload, "previous_rubric": rubric.to_dict(), "problems": flagged,
                  "task": "Your previous rubric is attached. Fix only the criteria listed under problems: keep the finding and "
                          "where it is, and ask that the response explains why the issue matters and recommends a fix, without "
-                         "naming the harm, the remedy or a supporting provision. Return the whole corrected rubric."}
+                         "naming the harm, the remedy or a supporting provision. An issue with several criteria gets ONE: merge its parts "
+                         "(finding, where, why it matters, fix) into a single criterion. Return the whole corrected rubric."}
         rubric = Rubric.from_dict(call_json(client, "rubric_writer", prompts.RUBRIC_WRITER, render_input(again)))
-        repair = {"ran": True, "flagged": flagged, "cleared": not bundling_errors(rubric, ledger)}
+        repair = {"ran": True, "flagged": flagged, "cleared": not split_issue_errors(rubric, ledger) and not (bundling_errors(rubric, ledger) if bundling == "repair" else [])}
     return rubric, repair
 
 

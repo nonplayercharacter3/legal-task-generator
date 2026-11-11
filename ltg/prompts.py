@@ -176,7 +176,9 @@ You receive the facts ledger, the task instruction and the deliverable. Write cr
   a definition in another document) unless the issue's `expected_finding` names it: a response that reaches the
   right conclusion by any sound route must pass. Write "explains why this matters to the client" and "recommends a
   fix", not which harm or which fix.
-  The finding is ONE finding, the issue's conclusion. Never add a second point to it, and never anything the ledger
+  All four go in that ONE criterion, never in separate criteria for finding, location, significance and fix (code
+  rejects a rubric with two issue criteria for one issue). The finding is ONE finding, the issue's conclusion:
+  "one finding" means never adding a second problem, not splitting one criterion into parts. Never add a second point to it, and never anything the ledger
   itself hedges ("may", "could", "arguably"): a criterion that also demanded a carve-out the ledger said "may" be
   capped failed three memos that found the issue. Name the conclusion, never the route: not "because Section 11.9
   makes the survival period control" or "through the precedence clause", even when the expected finding gives that

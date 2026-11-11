@@ -605,3 +605,32 @@ def test_generate_only_config_is_the_nrp_pilot_with_solver_check_deferred(tmp_pa
     assert Pipeline(run).run(resume=True)["resumed"] == 1
     with pytest.raises(ValueError, match="settings changed"):
         Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}, "gates": {"solver_check": "defer"}})).run(resume=True)
+
+
+class _SplitWriter(FakeModel):
+    """T44: splits every issue into a second criterion on the first draft; `stubborn` keeps doing it after the repair."""
+
+    def __init__(self, stubborn=False, **kw):
+        super().__init__(**kw)
+        self.stubborn = stubborn
+
+    def _rubric_writer(self, p):
+        out = super()._rubric_writer(p)
+        if self.stubborn or not p.get("previous_rubric"):
+            n = len(out["criteria"])
+            out["criteria"] += [{"id": f"C{n + k + 1}", "kind": "issue", "source": c["source"], "text": f"Explains why {c['source']} matters.", "hints": []}
+                                for k, c in enumerate([c for c in out["criteria"] if c["kind"] == "issue"])]
+        return out
+
+
+def test_split_issue_criteria_are_repaired_once(tmp_path, read_json):
+    rep = Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2}}), client=_SplitWriter()).run()
+    assert rep["accepted"] == 2 and rep["model_calls"]["rubric_writer"]["calls"] == 4
+    assert rep["rubric_repairs"]["ran"] == 2 and rep["rubric_repairs"]["cleared"] == 2
+
+
+def test_split_issue_criteria_the_writer_keeps_reject_at_rubric_trace(tmp_path, read_json):
+    rep = Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2}}), client=_SplitWriter(stubborn=True)).run()
+    assert {m["failed_gate"] for m in rep["matters"]} == {"rubric_trace"} and rep["model_calls"]["rubric_writer"]["calls"] == 4
+    trace = read_json(Path(tmp_path) / "rejected" / rep["matters"][0]["matter_id"] / "gates.json")["gates"][-1]
+    assert not trace["details"]["repair"]["cleared"] and "issue criteria" in trace["details"]["errors"][0]
