@@ -1,0 +1,122 @@
+{
+  "matter_id": "s43-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 15.2: \"Supplier may assign or transfer this Agreement, in whole or in part, without the consent of Customer, to any Affiliate or to any successor to all or part of its business.\" By contrast, \"Customer may not assign or transfer this Agreement ... without Supplier's prior written consent.\"",
+            "reason": "The clause is one-sided as described. Supplier can assign, even partially, to an Affiliate or to a buyer of any part of its business. There is no consent right, no competitor carve-out, no creditworthiness test and no requirement that Supplier stay liable. Nothing elsewhere in the folder cures this. SOW 3.2 and 3.4 require NSF/ANSI/CAN 60 certification and advance notice of changes, and an assignee would inherit those duties. But they only give Felound a breach claim after the fact; they do not let Felound vet or block the assignee. Meanwhile Felound stays locked in. Section 4.1 imposes 100% exclusivity, the Order Form sets a five-year term with five-year auto-renewals, and Felound has no termination for convenience. A swap to an unvetted, possibly thinly capitalized supplier for a regulated drinking-water coagulant is therefore a real risk to Felound. The signature blocks are blank, so the agreement is still a draft and the point can be negotiated now."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Order Form Section 2.2: \"At the end of the Initial Term, the Supply Agreement will renew automatically for successive five-year terms (each, a \"Renewal Term\").\" Section 2.3: \"A notice is effective only if it is received no earlier than 120 days, and no later than 90 days, before the expiration of the then-current term.\"",
+            "reason": "The problem is present and still actionable for Felound. Supply Agreement Section 2.1 hands the term mechanics to the Order Form, so the Section 17.2 precedence clause does not override them. The Order Form sets up evergreen five-year renewals, and a non-renewal notice works only if it is received in a 30-day window. For the Initial Term ending February 28, 2031, that window is about October 31 to November 30, 2030. Section 2.3 counts from receipt, which makes the deadline easier to miss. The Supply Agreement gives Felound no exit for convenience: Section 12 allows termination only for uncured material breach or insolvency, and Section 14.3 only for extended force majeure. Missing the window would bind Felound to five more years of the Section 4.1 exclusivity, which covers all Water Treatment Chemicals at every Facility, at prices Supplier can raise each year. Nothing in the folder cures or limits this. The window has not passed (today is November 11, 2026). The signature blocks are blank, so the terms can still be negotiated or diarized."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 4.1: \"During the Term, Customer shall purchase one hundred percent (100%) of its requirements of all Water Treatment Chemicals for use at any Facility exclusively from Supplier, and shall not buy any Water Treatment Chemicals for use at any Facility from any third party.\"",
+            "reason": "The obligation falls on Felound, the Customer. Section 1.12 defines Water Treatment Chemicals to cover coagulants, disinfectants, pH adjusters and corrosion inhibitors. Section 1.3 defines Facility as any plant owned or operated by Customer or its Affiliates. The Order Form (Section 4) limits exclusivity to PACl at Ostler Creek, and the SOW covers only PACl at that plant, but Section 17.2 ranks the Supply Agreement first, so the broad clause controls. Nothing in the folder narrows it: the shortfall and force majeure carve-outs in Sections 4.3 and 14.2 are limited exceptions. Felound would breach by buying chlorine, caustic soda or any chemical for its other plants, with exposure lasting a five-year auto-renewing term. The documents are unsigned and nothing shows Felound has accepted the result, so the problem can still be fixed."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Supply Agreement §1.8: \"'Specifications' means, for each Product, Supplier's standard product data sheets for that Product, as in effect from time to time.\" The SOW requirements (§3.1: \"NSF/ANSI/CAN 60 certified PACl, minimum 10.0% Al2O3, 70% basicity\") are never defined as the Specifications. SOW §1.2 adopts Supply Agreement definitions, SOW §8.2 tests \"for conformity to the Specifications,\" and Supply Agreement §17.2 gives the Supply Agreement precedence.",
+            "reason": "The Supply Agreement uses 'Specifications' as the benchmark for the §7.1(a) conformity warranty, the §6.3 rejection right and the SOW §8.2 acceptance testing, and Supplier can revise that benchmark on its own. Nothing ties the defined term to SOW §3.1; that section is framed only as 'PACl Product Requirements.' Precedence favors the Supply Agreement definition, so Felound could be unable to reject, or claim under the warranty for, PACl below 10.0% Al2O3 or at the wrong basicity if Zapeiv's data sheets say otherwise. Two clauses do not cure this. The §7.1(c) Applicable Law warranty may partly cover NSF 60 certification, but it does not cover the assay or basicity. SOW §3.2 requires certification to be maintained but does not make it a rejection standard. The documents are unsigned drafts, so Felound can still fix this by defining Specifications to include the SOW requirements and to prevail over the data sheets."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C5 asks for the whole ranking in fact F3 ('Supply Agreement, then Statement of Work, then Order Form'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.065,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

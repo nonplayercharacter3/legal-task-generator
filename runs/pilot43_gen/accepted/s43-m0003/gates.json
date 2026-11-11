@@ -1,0 +1,130 @@
+{
+  "matter_id": "s43-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Escrow Agreement Section 9.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in the Borough of Manhattan, City of New York, for any action arising out of or relating to this Agreement and for any dispute concerning the Escrow Fund, including whether a Claim Notice is valid or payable.\" Section 9.1 selects New York law. By contrast, APA Section 11.7 selects Delaware law, and APA Section 11.8 gives the Delaware Court of Chancery exclusive jurisdiction. APA Section 11.10 states that \"the Escrow Agreement shall control with respect to matters concerning the Escrow Fund.\"",
+            "reason": "Under the escrow, a disputed claim can be resolved only by Joint Written Instructions or a Final Order (Section 4.4). Section 9.2 sends disputes over whether a Claim Notice is valid or payable to the Manhattan courts under New York law. Those disputes are really Article IX indemnity disputes. The APA would send the same Article IX dispute to Delaware Chancery under Delaware law. Section 11.10 of the APA does not fix this: it makes the Escrow Agreement control on Escrow Fund matters. Buyer (Givand), as the indemnified party, therefore faces split forums and possibly inconsistent rulings. Escrow recovery would be decided in New York, while recovery from Seller beyond the escrow under APA Section 9.7 would be decided in Delaware. This matters especially for uncapped environmental claims that exceed the $4.85M escrow. The Escrow Agreement is still unsigned (the effective date is blank and closing has not occurred), so Buyer can still negotiate a fix."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Schedule 6.2(c): \"The only Required Consents are: 1. the written consent of Truckee Meadows Industrial Partners, LLC, as landlord, to the assignment of the Facility Lease to Buyer ... and 2. the approval of the Nevada Division of Environmental Protection of the transfer to Buyer ... of the Nevada Environmental Permits\". Schedule 3.9, Item 1, by contrast, says Pellancourt's prior written consent is required for \"any sale, assignment or other transfer of all or substantially all of the assets of Seller's lithium-ion battery recycling business\", that Pellancourt \"may terminate the agreement on 30 days' written notice\" without it, and that \"No consent has been requested or obtained as of the date of the Agreement.\"",
+            "reason": "The problem is present and still actionable for Buyer. The transaction is exactly the transfer that Pellancourt Section 16.2 covers (APA Recital B). The LOI calls the Pellancourt offtake a key reason for the deal and says Buyer's valuation assumes it continues. Even so, Schedule 6.2(c) leaves the Pellancourt consent out of the Required Consents. As a result: (1) Seller's efforts covenant in APA 6.4 covers only the scheduled consents; (2) the closing condition in 7.2(d) does not require the Pellancourt consent; and (3) Seller has disclosed the consent requirement against Rep 3.3/3.9, so Buyer likely has no indemnity claim if Pellancourt terminates after closing. Nothing in the folder cures this. APA 11.10 does not help, because the APA itself incorporates Schedule 6.2(c) by reference. The Agreement's narrowed definition of \"Business\" (excluding refining) makes the gap worse rather than better. Closing has not occurred (outside date December 31, 2026), and nothing shows Buyer accepted the omission. Buyer can still seek to add the Pellancourt consent to Schedule 6.2(c) and to the 7.2(d) condition, or obtain a specific indemnity or price protection."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 4.6: \"The Escrow Fund is Buyer's sole and exclusive source of recovery for all Losses of the Buyer Indemnitees under Article IX of the Purchase Agreement, including Losses arising from Excluded Liabilities. This Section 4.6 does not apply to Losses arising from Fraud.\" Read with APA Section 11.10: \"...except that the Escrow Agreement shall control with respect to matters concerning the Escrow Fund.\"",
+            "reason": "The client is Buyer, and Buyer is the party that recovers under Article IX. APA 9.5(b) removes the cap for Fraud, Fundamental Representations and Excluded Liabilities, including Pre-Closing Environmental Liabilities. APA 9.7 says recovery comes first from the escrow and then directly from Seller. Escrow Section 4.6 instead makes the $4.85M escrow the sole source of recovery for all Article IX Losses, expressly including Excluded Liabilities. Its only exception is Fraud, so Fundamental Representation breaches and Excluded Liabilities are not protected. APA 11.10 lets the Escrow Agreement control on Escrow Fund matters, which gives Seller a credible argument that Buyer's uncapped recovery, including for legacy contamination, is limited to the escrow. The Escrow Agreement is still unsigned (dated [●], 2026), so Buyer can still fix this. Nothing in the folder cures or limits the conflict."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 11.4: \"Buyer may not assign this Agreement or any of its rights or obligations under it without the prior written consent of Seller. Seller may assign this Agreement and any of its rights and obligations under it, including its obligations under Article IX, Section 6.7 and Section 6.8 and the Transition Services Agreement, to any Person without the consent of Buyer. Upon any such assignment and the assumption in writing by the assignee of the assigned obligations, Seller shall be released from those obligations.\"",
+            "reason": "The provision is one-sided against Givand, the Buyer. Givand needs Seller's consent to assign. Seller can transfer the obligations Givand most depends on without any consent, and is then released. Those obligations are the Article IX indemnity (including uncapped Pre-Closing Environmental Liabilities), the five-year non-compete and non-solicit, and the TSA.\n\nThe only condition on the assignee is a written assumption. There is no creditworthiness test, no affiliate limitation and no bar on assigning to a competitor. A non-compete held by a shell or a competitor is worthless. Once the $4.85M escrow is released at 18 months, Givand could be left with no solvent indemnitor for the six-year environmental tail.\n\nNothing in the folder cures this. The Escrow Agreement's Section 11.3 restricts assignment only of the escrow agreement. The LOI is silent on assignment. The Disclosure Schedule does not address it.\n\nThe APA signature blocks are blank and Closing is targeted for December 31, 2026, so the issue remains open and actionable for Givand."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "\"Business\" means the business of collection, discharge and mechanical processing of spent lithium-ion batteries into black mass, excluding any refining of black mass, as conducted by Seller at the Facility as of the date of this Agreement.",
+            "reason": "The problem is present and still actionable for Buyer. The APA definition of Business carves out black-mass refining. The LOI (Section 1) defined the Business to include hydrometallurgical refining, and Buyer's stated rationale depends on the refining line feeding the Pellancourt offtake. Disclosure Schedule 2.1(a), Item 7, lists the refining line as equipment of the Business. However, APA Section 2.1 conveys only assets 'used primarily in the Business', and Section 2.2(f) excludes assets 'not used primarily in the Business'. Seller can therefore argue that the refining line, the refining patent, the Pellancourt and Cordell contracts, and the refining employees fall outside the Purchased Assets. Seller can also argue that the Section 6.7 non-compete, which is tied to 'the Business', does not stop it from refining black mass after closing. Under Section 11.10 the APA prevails over the Disclosure Schedule, so listing the line on Schedule 2.1(a) does not clearly cure the problem, and the inconsistency itself creates the dispute. Closing has not occurred, since the outside date is December 31, 2026. Buyer can still fix the definition before closing, so the problem is live."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 21,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C16 asks for fact F3, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C13",
+          "C14",
+          "C15"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.09,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

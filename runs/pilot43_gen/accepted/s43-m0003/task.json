@@ -1,0 +1,212 @@
+{
+  "task_id": "s43-m0003",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Givand Battery Recovery, LLC, the buyer, in its acquisition of assets from Goulound Lithium Reclamation, Inc. under an asset purchase agreement. Before we go back to the other side with comments, I need to know where the deal documents leave Givand exposed or fall short of what it should be getting. Please review everything in the matter folder: the asset purchase agreement (asset_purchase_agreement.md), the seller disclosure schedule (seller_disclosure_schedule.md), the indemnity escrow agreement (indemnity_escrow_agreement.md), the letter of intent (letter_of_intent.md), and the Wilmington office lease (wilmington_office_lease.md). Send me a memo that lists each issue you find. For each one, give the document and section where it appears, explain why it matters to Givand as buyer, and recommend a fix. Where you can, propose language or a negotiating position. Put the most significant items first, and flag anything you think needs to be raised with the client before we respond. Keep it practical. I'd rather have a clear list I can act on than a long narrative.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "indemnity_escrow_agreement.md",
+    "letter_of_intent.md",
+    "seller_disclosure_schedule.md",
+    "wilmington_office_lease.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Escrow Agreement's choice of New York law and Manhattan courts conflicts with the APA's Delaware law and Delaware Chancery forum, so that Givand's indemnity claims against the escrow could be split between New York and Delaware proceedings.",
+      "kind": "issue",
+      "hints": [
+        "New York law",
+        "Borough of Manhattan",
+        "Court of Chancery"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates this governing law/forum issue in the Escrow Agreement, Section 9 (Governing Law; Jurisdiction).",
+      "kind": "issue",
+      "hints": [
+        "Escrow Agreement Section 9"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "For the escrow governing law/forum conflict, the response explains why it matters to Givand and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "conform to Delaware",
+        "split proceedings"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Pellancourt Cathode Feedstock Supply Agreement requires Pellancourt's consent to this asset transfer but is omitted from the Required Consents, so Givand could be required to close without that consent.",
+      "kind": "issue",
+      "hints": [
+        "Pellancourt",
+        "Required Consents",
+        "consent"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response locates the missing Pellancourt consent issue in the Disclosure Schedule, Schedule 6.2(c) (Required Consents).",
+      "kind": "issue",
+      "hints": [
+        "Schedule 6.2(c)"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "For the missing Pellancourt consent, the response explains why it matters to Givand and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "closing condition",
+        "termination of the offtake"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response identifies that the Escrow Agreement's 'sole and exclusive source of recovery' provision limits Givand's recovery to the escrow and so removes the APA's cap carve-outs for Fundamental Representations and Excluded Liabilities (including pre-closing environmental liabilities).",
+      "kind": "issue",
+      "hints": [
+        "sole and exclusive source of recovery",
+        "carve-outs",
+        "Excluded Liabilities"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response locates the exclusive-source-of-recovery issue in the Escrow Agreement, Section 4.6.",
+      "kind": "issue",
+      "hints": [
+        "Escrow Agreement Section 4.6"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "For the exclusive-source-of-recovery issue, the response explains why it matters to Givand and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "delete Section 4.6",
+        "subject to Section 9.5(b)"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response identifies that the APA lets Seller assign its obligations (such as indemnity, transition services and non-compete) to any person without Givand's consent and releases Seller on assignment.",
+      "kind": "issue",
+      "hints": [
+        "without the consent of Buyer",
+        "released",
+        "assign"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response locates the unrestricted Seller assignment issue in the APA, Section 11.4 (Assignment).",
+      "kind": "issue",
+      "hints": [
+        "Section 11.4"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "For the unrestricted Seller assignment issue, the response explains why it matters to Givand and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "mutual",
+        "no release of Seller",
+        "creditworthy"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response identifies that the APA's definition of 'Business' excludes refining of black mass, contrary to the LOI and Disclosure Schedule, so the refining line may not transfer and Seller may be free to compete in refining.",
+      "kind": "issue",
+      "hints": [
+        "excluding any refining of black mass",
+        "hydrometallurgical refining",
+        "non-compete"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response locates the 'Business' definition issue in the APA, Section 1.1 (definition of Business).",
+      "kind": "issue",
+      "hints": [
+        "Section 1.1",
+        "definition of Business"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "For the 'Business' definition issue, the response explains why it matters to Givand and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "include hydrometallurgical refining",
+        "Excluded Asset"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "The response states that the Indemnity Escrow Amount is $4,850,000.",
+      "kind": "fact",
+      "hints": [
+        "$4,850,000"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "The response states that the Escrow Agreement controls over the APA on matters concerning the Escrow Fund.",
+      "kind": "fact",
+      "hints": [
+        "Section 11.10",
+        "Escrow Agreement controls"
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "The response is a memo that presents issues as a discrete list or table, each giving document and section, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Issue",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C19",
+      "text": "The response orders the issues by significance, with the most significant first, or labels each issue's priority.",
+      "kind": "format",
+      "hints": [
+        "priority",
+        "most significant",
+        "High"
+      ]
+    },
+    {
+      "id": "C20",
+      "text": "The response claims that Disclosure Schedule 6.2(c) lists the Pellancourt consent as a Required Consent.",
+      "kind": "negative",
+      "hints": [
+        "Pellancourt is a Required Consent"
+      ]
+    },
+    {
+      "id": "C21",
+      "text": "The response claims that the APA's definition of 'Business' includes hydrometallurgical refining of black mass.",
+      "kind": "negative",
+      "hints": [
+        "Business includes refining"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

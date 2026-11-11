@@ -1,0 +1,184 @@
+{
+  "matter_id": "s43-m0002",
+  "summary": "Felound Regional Water Authority Services, Inc., which operates municipal drinking-water treatment plants, is reviewing a near-final supply package from Zapeiv Chemical Corp. The package covers polyaluminum chloride (PACl) coagulant for one plant, the Ostler Creek Water Treatment Plant. The folder has four documents: the Supply Agreement, a Statement of Work setting delivery, tank-management and specification terms, an Order Form setting term, renewal, price and exclusive scope, and an unrelated laboratory-instrument maintenance agreement with another vendor. The associate must prepare an issue-spotting memo for the supervising partner under New York law. The memo should cover four planted issues. First, Zapeiv may assign freely. Second, the Supply Agreement hands term mechanics to the Order Form, which renews for five-year terms with a 30-day opt-out window. Third, the Supply Agreement's exclusivity covers all chemicals at all facilities, and it prevails over the Order Form's single-product, single-site scope. Fourth, the Supply Agreement defines \"Specifications\" as Zapeiv's own changeable data sheets, and that definition overrides the Statement of Work's PACl specification.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Felound Regional Water Authority Services, Inc.",
+      "role": "Customer (firm's client); operator of municipal drinking-water treatment plants purchasing coagulant chemicals"
+    },
+    {
+      "id": "P2",
+      "name": "Zapeiv Chemical Corp.",
+      "role": "Supplier; manufacturer and distributor of water treatment chemicals"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrevka Analytical Instruments LLC",
+      "role": "Unrelated vendor providing laboratory analyzer maintenance to Felound (distractor document only)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 16.1"
+    },
+    {
+      "id": "F3",
+      "key": "Order of precedence among supply documents",
+      "value": "Supply Agreement, then Statement of Work, then Order Form",
+      "doc": "D1",
+      "section": "Section 17.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order Form Initial Term",
+      "value": "five years from the Supply Agreement Effective Date",
+      "doc": "D3",
+      "section": "Section 2 (Term)"
+    },
+    {
+      "id": "F5",
+      "key": "Order Form Renewal Term",
+      "value": "successive five-year terms, renewing automatically",
+      "doc": "D3",
+      "section": "Section 2 (Term)"
+    },
+    {
+      "id": "F6",
+      "key": "Order Form non-renewal notice window",
+      "value": "no earlier than 120 and no later than 90 days before the then-current term expires",
+      "doc": "D3",
+      "section": "Section 2 (Term)"
+    },
+    {
+      "id": "F7",
+      "key": "Order Form Exclusive Product",
+      "value": "polyaluminum chloride (PACl) coagulant",
+      "doc": "D3",
+      "section": "Section 4 (Exclusive Scope)"
+    },
+    {
+      "id": "F8",
+      "key": "Order Form Covered Site",
+      "value": "Ostler Creek Water Treatment Plant",
+      "doc": "D3",
+      "section": "Section 4 (Exclusive Scope)"
+    },
+    {
+      "id": "F9",
+      "key": "PACl unit price",
+      "value": "$1.42 per gallon, delivered",
+      "doc": "D3",
+      "section": "Section 3 (Pricing)"
+    },
+    {
+      "id": "F10",
+      "key": "Statement of Work PACl Specifications",
+      "value": "NSF/ANSI/CAN 60 certified PACl, minimum 10.0% Al2O3, 70% basicity",
+      "doc": "D2",
+      "section": "Section 3 (Specifications)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "felound_zapeiv_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "felound_zapeiv_statement_of_work.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "felound_zapeiv_order_form.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "felound_ostrevka_instrument_maintenance_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Supply Agreement Section 15.2 bars Customer from assigning without Supplier's prior written consent. It lets Supplier assign the Agreement, in whole or in part, without Customer's consent, to any Affiliate or any successor to all or part of its business. It has no carve-out for competitors of Felound, no requirement that the assignee meet the NSF/ANSI/CAN 60 certification or creditworthiness standard, and no requirement that Supplier remain liable. Because the Agreement locks Felound into exclusive supply, Felound could end up bound to an unvetted or uncertified chemical source for a regulated drinking-water process, with no way out. This is the single issue visible from one clause.",
+      "doc": "D1",
+      "section": "Section 15.2",
+      "detect_terms": [
+        "without the consent of Customer",
+        "any successor to all or part of its business"
+      ],
+      "expected_finding": "Section 15.2 lets Zapeiv assign the Supply Agreement to any affiliate or business successor without Felound's consent while Felound is locked into exclusive supply, so the clause should be made mutual or conditioned on Felound's consent (not unreasonably withheld), with assignee qualification requirements and continued assignor liability.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Supply Agreement Section 2.1 provides that the Agreement continues for the Initial Term and any Renewal Terms stated in the Order Form. That delegation means the Order Form's term mechanics govern rather than conflict with the Agreement, so the Section 17.2 precedence clause does not cure them. Order Form Section 2 then provides two things. First, the Agreement renews automatically for successive five-year Renewal Terms. Second, non-renewal notice is effective only if given no earlier than 120 and no later than 90 days before expiry, a 30-day window. Measured from the March 1, 2026 Supply Agreement Effective Date, the five-year Initial Term ends February 28, 2031. The only opt-out window therefore runs roughly from October 31, 2030 to November 30, 2030. Supply Agreement Section 12 permits termination only for uncured material breach or insolvency, with no termination for convenience. Missing that narrow window would bind Felound to five more years of exclusive purchasing at the Order Form pricing.",
+      "doc": "D3",
+      "section": "Section 2 (Term)",
+      "detect_terms": [
+        "renew automatically for successive five-year",
+        "no earlier than 120 days"
+      ],
+      "expected_finding": "Read with Supply Agreement Section 2.1, the Order Form's automatic five-year renewals and 30-day notice window (roughly October 31 to November 30, 2030, based on the March 1, 2026 Effective Date) would lock Felound into another five years of exclusive supply, with no convenience termination under Section 12. Felound should seek either no auto-renewal or one-year renewals, a simple notice-by deadline without an \"earliest date\" limit, and a termination-for-convenience right during renewal terms.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "The agreed exclusive scope is stated in Order Form Section 4: PACl coagulant for the Ostler Creek Water Treatment Plant only. Supply Agreement Section 4.1 instead requires Customer to purchase 100% of its requirements of all Water Treatment Chemicals for use at any Facility exclusively from Supplier. Supply Agreement Section 1 defines Water Treatment Chemicals to include coagulants, disinfectants, pH adjusters and corrosion inhibitors. It defines Facility as any plant owned or operated by Customer or its Affiliates. Supply Agreement Section 17.2 ranks the Supply Agreement above the Statement of Work and the Order Form, so the broad clause controls and the Order Form's narrow scope does not cure it. Felound would breach by buying chlorine or caustic soda from current vendors, or by buying any chemical for its other plants.",
+      "doc": "D1",
+      "section": "Section 4.1",
+      "detect_terms": [
+        "all Water Treatment Chemicals",
+        "for use at any Facility"
+      ],
+      "expected_finding": "Because Section 17.2 makes the Supply Agreement prevail, Section 4.1's exclusivity over all Water Treatment Chemicals at every Facility overrides the agreed PACl-only, Ostler Creek-only scope in Order Form Section 4 and would put Felound in breach for its existing purchases. Section 4.1 should be narrowed to PACl at the Covered Site, or should expressly defer to the Order Form's Exclusive Product and Covered Site.",
+      "contradicts": [
+        "F7",
+        "F8"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Supply Agreement Section 1.8 defines \"Specifications\" as Supplier's standard product data sheets as in effect from time to time. Statement of Work Section 3 sets out the PACl Specifications Felound actually needs: NSF/ANSI/CAN 60 certified, minimum 10.0% Al2O3, 70% basicity. Statement of Work Section 1 says capitalized terms have the meanings given in the Supply Agreement, and Supply Agreement Section 17.2 gives the Supply Agreement precedence. As a result, the Supply Agreement definition governs the term \"Specifications\" in the following places: the Section 7.1 conformity warranty, the Section 6.3 rejection right, and the Statement of Work's own acceptance testing. Zapeiv can lower product quality by revising its data sheets, and Felound loses warranty and rejection remedies for PACl that fails the SOW assay or certification requirements.",
+      "doc": "D1",
+      "section": "Section 1.8",
+      "detect_terms": [
+        "standard product data sheets",
+        "as in effect from time to time"
+      ],
+      "expected_finding": "Because the Supply Agreement controls defined terms and ranks first under Section 17.2, Section 1.8's definition of \"Specifications\" as Zapeiv's changeable data sheets displaces the SOW Section 3 requirements (NSF/ANSI/CAN 60, 10.0% Al2O3, 70% basicity) for the Section 7.1 warranty and Section 6.3 rejection right. Section 1.8 should define Specifications as the SOW Section 3 requirements, amendable only by written agreement of both parties.",
+      "contradicts": "F10"
+    }
+  ]
+}

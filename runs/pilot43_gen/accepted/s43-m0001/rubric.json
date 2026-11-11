@@ -1,0 +1,102 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the IP Assignment Agreement requires Dilur (Assignee) to indemnify Glesar (Assignor) without any cap for losses arising from the Assigned IP, including losses arising before the Effective Date/Closing. It locates this in the IP Assignment Agreement, Section 5.2, explains why this matters to Dilur, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "Section 5.2",
+        "whether arising before or after the Effective Date",
+        "uncapped indemnity"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the IP Assignment Agreement subjects Glesar's liability for breach of the APA Section 4.9 Intellectual Property representation to the General Cap. This removes the uncapped treatment that representation receives as a Fundamental Representation. The response locates this in the IP Assignment Agreement, Section 6.3, explains why this matters to Dilur, and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "Section 6.3",
+        "subject to the General Cap",
+        "Fundamental Representation"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Dilur's 10-Business-Day window under the APA to terminate after receiving the Schedule Update has already lapsed. The Schedule Update was received September 14, 2026, and the window closed before the October 6, 2026 board consent. The response locates this in APA Section 6.7, explains why this matters to Dilur, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "Section 6.7",
+        "September 28, 2026",
+        "deemed to have cured"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that assigning the Okoro Key Employee Agreement, including its toolkit license, to Dilur through the asset sale requires Ms. Okoro's prior written consent. It also identifies that the APA does not provide for that consent. The response locates this in the Key Employee Agreement, Section 12.4, explains why this matters to Dilur, and recommends a fix.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "Section 12.4",
+        "prior written consent of Employee",
+        "Schedule 4.4"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that, under the APA's order of precedence, the IP Assignment Agreement controls over the APA on matters concerning the Assigned IP.",
+      "kind": "fact",
+      "source": "F6",
+      "hints": [
+        "Section 11.12",
+        "IP Assignment Agreement controls",
+        "Assigned IP"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the APA General Cap is 15% of the Purchase Price, or $7,275,000.",
+      "kind": "fact",
+      "source": "F3",
+      "hints": [
+        "15%",
+        "$7,275,000",
+        "General Cap"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is in memo form. For each issue it lists, it identifies the document and section where the issue appears.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memorandum",
+        "Document:",
+        "Section"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response expressly addresses the Nightjar localization services agreement and states whether it bears on the deal.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Nightjar",
+        "does not bear on",
+        "unrelated"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Dilur's window under APA Section 6.7 to terminate in response to the Schedule Update is still open.",
+      "kind": "negative",
+      "source": "I3",
+      "hints": [
+        "still within the window",
+        "may still terminate"
+      ]
+    }
+  ]
+}

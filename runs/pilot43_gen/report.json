@@ -1,0 +1,180 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s43-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "test",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s43-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s43-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12495,
+      "output_tokens": 23556,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 14,
+      "input_tokens": 274758,
+      "output_tokens": 99686,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 108711,
+      "output_tokens": 6932,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4598,
+      "output_tokens": 701,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 13,
+      "input_tokens": 424008,
+      "output_tokens": 9124,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4281,
+      "output_tokens": 1351,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 20235,
+      "output_tokens": 6882,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 227910,
+      "output_tokens": 48503,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 9,
+      "input_tokens": 69569,
+      "output_tokens": 7450,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "video game publishing": 1,
+      "water treatment chemicals": 1,
+      "battery recycling": 1
+    },
+    "agreement_types": {
+      "asset purchase agreement": 2,
+      "supply agreement": 1
+    },
+    "issue_types": {
+      "change_of_control_consent": 2,
+      "liability_cap_carveout": 2,
+      "missing_assignment_restriction": 2,
+      "defined_term_inconsistency": 2,
+      "uncapped_indemnity": 1,
+      "expired_notice_window": 1,
+      "auto_renewal": 1,
+      "exclusivity_scope": 1,
+      "governing_law_mismatch": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

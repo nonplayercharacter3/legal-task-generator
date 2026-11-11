@@ -1,0 +1,122 @@
+{
+  "matter_id": "s43-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 5.2: \"From and after the Effective Date, Assignee shall indemnify, defend and hold harmless the Assignor Indemnitees from and against all Losses arising out of or relating to the Assigned IP or the ownership, use, licensing, distribution or other exploitation of the Assigned IP, whether arising before or after the Effective Date. Assignee's obligations under this Section 5.2 are not subject to any limitation in the Purchase Agreement.\"",
+            "reason": "Dilur, the client, is the Assignee, so it gives this indemnity, and Glesar and its members receive it. The indemnity covers all Assigned IP Losses, including pre-Closing ones. That reverses APA Section 2.4(d), which keeps pre-Closing infringement liabilities with Seller as Excluded Liabilities. APA Section 11.12 says the IP Assignment Agreement controls on Assigned IP matters, so Section 5.2 would override 2.4(d). The indemnity is also uncapped in two ways: it states that no Purchase Agreement limitation applies, and the General Cap in APA 9.5(a) reaches only claims under 9.2(a) and 9.3(a) anyway. The pending Composer Claim, which Dilur's board objected to and reserved rights on (treating it as an Excluded Liability), would fall within this indemnity. Glesar could then pass that liability back to Dilur. The agreement is still an unsigned closing deliverable, and nothing in the folder shows Dilur has accepted the term, so the problem can still be raised and fixed before signing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 6.3: \"Assignor's liability for any inaccuracy in or breach of Section 4.9 of the Purchase Agreement or Section 3 of this Agreement shall be subject to the General Cap.\" Purchase Agreement Section 11.12: \"the IP Assignment Agreement shall control on matters concerning Assigned IP.\"",
+            "reason": "Section 9.5(c) of the Purchase Agreement makes Section 4.9 a Fundamental Representation. That takes it outside the 15% General Cap ($7,275,000) and caps it instead at the full $48.5M Purchase Price. Section 6.3 of the IP Assignment Agreement puts Section 4.9 and the Section 3 title and non-infringement reps back under the General Cap. It does not use the word \"notwithstanding,\" but the conflict is direct. Under Section 11.12, the IP Assignment Agreement controls on Assigned IP matters, so the lower cap would prevail. The burden falls on Dilur as Buyer and indemnitee, because it limits what Seller must pay for IP defects. Nothing in the folder cures or waives this. The agreement is unsigned and still being delivered at Closing. The Board consent shows Dilur objected to the Composer Claim Schedule Update and expressly reserved its Fundamental Representation indemnity rights, which makes the cap especially harmful. The point remains open and should be raised before signing."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 6.7: \"Buyer may terminate this Agreement under Section 10.1(d) by written notice to Seller delivered within ten (10) Business Days after Buyer's receipt of that Schedule Update. If Buyer does not terminate this Agreement within that period, the Schedule Update shall be deemed to have cured any inaccuracy in or breach of any representation or warranty disclosed in it, for purposes of Article IX and for purposes of determining whether the conditions in Article VII have been satisfied.\" Board Consent Recital C: \"On September 14, 2026, the Company received written notice from Glesar of a Schedule Update under Section 6.7.\"",
+            "reason": "Dilur received the Composer Claim Schedule Update on September 14, 2026, so its ten-Business-Day window to terminate closed on September 28, 2026. Nothing in the folder shows Dilur terminated by then. The board consent dated October 6, 2026 only directs an objection notice and a reservation of rights. Section 6.7 does not make cure depend on Buyer's acceptance; failing to terminate is enough. So the Composer Claim is now arguably deemed to cure the inaccuracies in Section 4.7, Section 4.9 and Schedule 4.9(d). That would defeat Dilur's Article IX rep-breach indemnity, including its claim on the Fundamental Representation in Section 4.9 up to the full Purchase Price. It would also treat the Section 7.2(a) closing condition as satisfied, removing Dilur's walk right under Section 10.1(c). Dilur keeps a partial fallback: it can argue the claim is a pre-Closing Excluded Liability under Sections 2.4(d) and 2.4(e), indemnifiable under Section 9.2(c), which the deemed cure does not expressly reach. That fallback is narrower and contestable. The problem is still actionable. Dilur has not accepted the update and has recorded its objection. Closing has not occurred as of this record, so Dilur can still seek an amendment, special indemnity or escrow, as the board resolution already authorizes. It can also challenge the deemed-cure effect, for example on whether the claim 'first arose' after signing."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 12.4: \"The Company may not assign or transfer this Agreement, or any of its rights under it, including the license granted in Section 7.2, without the prior written consent of Employee. This restriction applies whether the assignment or transfer occurs by operation of law, merger, conversion, change of control, sale of all or substantially all of the Company's assets, or otherwise. Any purported assignment or transfer in violation of this Section 12.4 is void, and upon any such purported assignment or transfer the license granted in Section 7.2 terminates.\"",
+            "reason": "The problem is present and still actionable for Dilur. The APA makes the Key Employee Agreement an Assigned Contract (Schedule 2.1(c); Section 6.4), but Schedule 4.4 says \"None. No third-party consents are required.\" The consent closing condition in Section 7.2(c) reaches only consents listed on Schedule 4.4, so it does not cover Ms. Okoro's consent. Section 2.7's non-assignable-contract mechanism does not help. Under Section 12.4, a transfer without her consent is not merely deferred: it is void, and the Wickline license terminates outright. That would leave the Emberfall game code, which is built on Wickline, without a licensed engine toolkit. Dilur may have rep-based remedies (Sections 4.3, 4.4 and 4.9(b), and the 7.2(a) bring-down). However, the deal would still close without assured toolkit rights unless Dilur notices and invokes them, and IP Assignment Section 6.3 subjects Section 4.9 claims to the General Cap. Nothing in the folder shows that Closing has occurred or that Ms. Okoro has consented, so Dilur can still require her consent before closing."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F3, which only issue I2 uses: a memo that misses I2 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.095,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

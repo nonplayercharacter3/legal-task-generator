@@ -1,0 +1,212 @@
+{
+  "matter_id": "s43-m0003",
+  "summary": "Givand Battery Recovery, LLC (buyer, the firm's client) is acquiring substantially all assets of Goulound Lithium Reclamation, Inc.'s spent lithium-ion battery recycling business. The business is based at a facility in Sparks, Nevada and includes a hydrometallurgical refining line. The deal is documented in a Delaware-law Asset Purchase Agreement signed September 22, 2026 for $48,500,000, with a $4,850,000 indemnity escrow. The folder also holds the Seller's Disclosure Schedule, an Escrow Agreement with Ostrander Trust Company, N.A., the earlier Letter of Intent and an unrelated office lease for Givand's Wilmington sales office. Five issues are planted. (1) The Escrow Agreement picks New York law and Manhattan courts, and the APA lets the Escrow Agreement control on escrow matters. (2) A key offtake contract needs counterparty consent on a change of control or asset transfer, but the Required Consents schedule leaves it out. (3) The Escrow Agreement makes the escrow the sole source of recovery, which removes the APA's cap carve-outs. (4) The APA lets the Seller assign freely and be released. (5) The APA's definition of 'Business' leaves out refining, although the LOI and the Disclosure Schedule treat refining as part of the Business, so the transferred assets and the non-compete are narrowed.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Givand Battery Recovery, LLC",
+      "role": "Buyer (client)"
+    },
+    {
+      "id": "P2",
+      "name": "Goulound Lithium Reclamation, Inc.",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Trust Company, N.A.",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P4",
+      "name": "Pellancourt Cathode Materials, Inc.",
+      "role": "Offtake counterparty under Seller's Cathode Feedstock Supply Agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Oakhurst Plaza Associates LLC",
+      "role": "Landlord under Givand's Wilmington office lease"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Asset Purchase Agreement signing date",
+      "value": "September 22, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$4,850,000",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F4",
+      "key": "APA indemnification cap",
+      "value": "10% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "APA indemnification cap carve-outs",
+      "value": "Fraud, breaches of Fundamental Representations, and Excluded Liabilities (including Pre-Closing Environmental Liabilities)",
+      "doc": "D1",
+      "section": "Section 9.5(b)"
+    },
+    {
+      "id": "F6",
+      "key": "APA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.7"
+    },
+    {
+      "id": "F7",
+      "key": "APA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "APA prevails over Disclosure Schedule and Escrow Agreement, except Escrow Agreement controls matters concerning the Escrow Fund",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F9",
+      "key": "LOI definition of Business",
+      "value": "collection, discharge and shredding of spent lithium-ion batteries and hydrometallurgical refining of black mass",
+      "doc": "D4",
+      "section": "Section 1"
+    },
+    {
+      "id": "F10",
+      "key": "Escrow release date",
+      "value": "18 months after the Closing Date",
+      "doc": "D3",
+      "section": "Section 3.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "indemnity_escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "wilmington_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The Escrow Agreement (D3, Section 9) is governed by New York law. It sends to state and federal courts in the Borough of Manhattan 'any dispute concerning the Escrow Fund, including whether a Claim Notice is valid or payable'. The APA chooses Delaware law (D1 Section 11.7) and exclusive Delaware Chancery jurisdiction (D1 Section 11.8). The APA's precedence clause (D1 Section 11.10) makes the Escrow Agreement control on matters concerning the Escrow Fund, so the APA does not cure the conflict. Read together, these provisions mean any Article IX indemnity claim Givand brings against the escrow could be litigated in New York under New York law. Any recovery beyond the escrow would be litigated in Delaware. The result is split proceedings, inconsistent outcomes and a fight over forum.",
+      "doc": "D3",
+      "section": "Section 9 (Governing Law; Jurisdiction)",
+      "detect_terms": [
+        "laws of the State of New York",
+        "Borough of Manhattan"
+      ],
+      "expected_finding": "The Escrow Agreement's New York law and Manhattan forum clause conflicts with the APA's Delaware law and Chancery forum, and APA Section 11.10 lets the Escrow Agreement control escrow disputes, so Givand's indemnity claims against the escrow could be split between New York and Delaware; the escrow clause should be conformed to Delaware law and Chancery jurisdiction.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Schedule 3.9 of the Disclosure Schedule (D2) lists the Cathode Feedstock Supply Agreement with Pellancourt Cathode Materials, Inc. as an Assigned Contract. It discloses that a change of control of Seller, or a transfer of all or substantially all assets of the recycling business, requires Pellancourt's prior written consent, and that Pellancourt may terminate without that consent. The transaction is exactly such a transfer (D1 Recitals). The LOI (D4) identifies this offtake contract as a key reason for the deal. However, Schedule 6.2(c) of D2 states that 'The only Required Consents are' the Sparks facility landlord consent and the Nevada environmental permit transfer. Under D1 Section 6.4, Seller must seek only the scheduled consents. Under D1 Section 7.2(d), only those consents are a closing condition. Together these provisions mean Givand would have to close without the Pellancourt consent and would be exposed to termination of the offtake contract.",
+      "doc": "D2",
+      "section": "Schedule 6.2(c) (Required Consents)",
+      "detect_terms": [
+        "The only Required Consents are",
+        "change of control of Seller"
+      ],
+      "expected_finding": "The Pellancourt Cathode Feedstock Supply Agreement requires consent on this asset transfer (Schedule 3.9) but is omitted from Required Consents in Schedule 6.2(c), so under APA Sections 6.4 and 7.2(d) Givand could be forced to close without it and risk termination; the consent should be added as a Required Consent and closing condition.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Under APA Section 9.5(b) (D1), the 10% cap in Section 9.5(a) does not apply to Fraud, breaches of Fundamental Representations, or Excluded Liabilities, including Pre-Closing Environmental Liabilities at the Sparks facility. The Escrow Agreement (D3, Section 4.6) states that, notwithstanding anything in the Purchase Agreement, the Indemnity Escrow Fund is Buyer's 'sole and exclusive source of recovery' for all Losses under Article IX, including Excluded Liabilities, except Fraud. APA Section 11.10 gives the Escrow Agreement control over matters concerning the Escrow Fund. Read together, this lets Seller argue that recovery for Fundamental Representation breaches and Excluded Liabilities, including legacy contamination, is limited to the $4,850,000 escrow, despite the APA carve-outs.",
+      "doc": "D3",
+      "section": "Section 4.6 (Exclusive Source of Recovery)",
+      "detect_terms": [
+        "sole and exclusive source of recovery"
+      ],
+      "expected_finding": "Escrow Agreement Section 4.6, given control by APA Section 11.10, limits Givand's recovery to the $4,850,000 escrow and so removes the APA Section 9.5(b) carve-outs for Fundamental Representations and Excluded Liabilities including pre-closing environmental liabilities; Section 4.6 should be deleted or made expressly subject to Section 9.5(b).",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "APA Section 11.4 (D1) requires Seller's consent for any assignment by Buyer. In contrast, it allows Seller to assign the Agreement, including its indemnification, transition services and non-competition obligations, to any Person without Buyer's consent. On such an assignment Seller is released. Seller could therefore move its post-closing obligations to a thinly capitalized entity or to a competitor of Givand, leaving Givand without a creditworthy indemnitor once the escrow is released.",
+      "doc": "D1",
+      "section": "Section 11.4 (Assignment)",
+      "detect_terms": [
+        "to any Person without the consent of Buyer"
+      ],
+      "expected_finding": "APA Section 11.4 lets Seller assign its indemnity, transition services and non-compete obligations to anyone, including a competitor, without Givand's consent and releases Seller, so the clause should be made mutual, requiring Buyer consent, with no release of Seller.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 (D1) defines 'Business' as the collection, discharge and mechanical processing of spent lithium-ion batteries into black mass, 'excluding any refining of black mass'. The LOI (D4, Section 1) defines the Business to include hydrometallurgical refining of black mass. Disclosure Schedule 2.1(a) (D2) lists the hydrometallurgical refining line as equipment of the Business. APA Section 2.1 transfers only assets 'used primarily in the Business', and the Section 6.7 non-compete covers only the Business. Read together, these provisions let Seller argue that the refining line is an Excluded Asset and that Seller may compete in black-mass refining after closing.",
+      "doc": "D1",
+      "section": "Section 1.1 (definition of Business)",
+      "detect_terms": [
+        "excluding any refining of black mass"
+      ],
+      "expected_finding": "The APA's definition of 'Business' excludes black-mass refining, contrary to the LOI and Disclosure Schedule 2.1(a), so under APA Sections 2.1 and 6.7 the refining line may not transfer and Seller would be free to compete in refining; the definition should be conformed to include hydrometallurgical refining.",
+      "contradicts": "F9"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "task_id": "s43-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Felound Regional Water Authority Services, Inc., which runs municipal drinking-water treatment plants and is buying coagulant chemicals from Zapeiv Chemical Corp. Before Felound commits, it wants to know what in the Zapeiv paperwork it should push back on or fix.\n\nPlease review the three documents for this deal:\n\n- felound_zapeiv_supply_agreement.md\n- felound_zapeiv_statement_of_work.md\n- felound_zapeiv_order_form.md\n\nTreat them as a single deal package.\n\nSend me a memo that lists each issue you find. For each one, give:\n\n- where it appears, by document and section;\n- why it matters to Felound as the customer; and\n- your recommended fix, with proposed language where that helps.\n\nPlease put the most significant issues first. If something can't be resolved from the documents alone, flag it as a question for the client rather than assuming an answer.\n\nThe matter folder holds other material as well. Use your judgment about what bears on this deal. Keep the memo practical; I'll use it to frame our comments to Zapeiv.",
+  "documents": [
+    "felound_ostrevka_instrument_maintenance_agreement.md",
+    "felound_zapeiv_order_form.md",
+    "felound_zapeiv_statement_of_work.md",
+    "felound_zapeiv_supply_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Zapeiv may assign the Supply Agreement to an affiliate or a business successor without Felound's consent, while Felound is locked into exclusive supply. It locates this in Supply Agreement Section 15.2, explains why this matters to Felound, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 15.2",
+        "without the consent of Customer",
+        "successor to all or part of its business"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the Order Form renews the agreement automatically for successive five-year terms and allows non-renewal notice only in a narrow window (no earlier than 120 and no later than 90 days before expiry). Missing that window would lock Felound into another five years of exclusive supply. The response locates this in Order Form Section 2, explains why this matters to Felound, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Order Form Section 2",
+        "successive five-year",
+        "120 days"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Supply Agreement's exclusivity covers all Water Treatment Chemicals at every Facility, and that this broad exclusivity controls over the PACl-only, Ostler Creek-only scope in the Order Form. It locates this in Supply Agreement Section 4.1, explains why this matters to Felound, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 4.1",
+        "all Water Treatment Chemicals",
+        "any Facility"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Supply Agreement defines \"Specifications\" as Zapeiv's standard product data sheets as in effect from time to time, and that this definition displaces the Statement of Work Section 3 PACl specifications for warranty and rejection purposes. It locates this in Supply Agreement Section 1.8, explains why this matters to Felound, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 1.8",
+        "standard product data sheets",
+        "as in effect from time to time"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Supply Agreement prevails over the Order Form and the Statement of Work if they conflict.",
+      "kind": "fact",
+      "hints": [
+        "Section 17.2",
+        "order of precedence",
+        "Supply Agreement prevails"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is organized as a memo to the supervising partner that presents each issue as a separate entry, giving its location (document and section), why it matters to Felound, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response claims that Felound's exclusive purchase obligation is limited to PACl for the Ostler Creek Water Treatment Plant.",
+      "kind": "negative",
+      "hints": [
+        "limited to PACl",
+        "only Ostler Creek"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that the Statement of Work's PACl specifications (NSF/ANSI/CAN 60, 10.0% Al2O3, 70% basicity) are the Specifications that govern the Supply Agreement's conformity warranty.",
+      "kind": "negative",
+      "hints": [
+        "SOW specifications govern the warranty"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

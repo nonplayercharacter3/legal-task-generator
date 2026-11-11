@@ -1,0 +1,192 @@
+{
+  "matter_id": "s43-m0001",
+  "summary": "Dilur Interactive, Inc. (client, Buyer) is acquiring from Glesar Studios LLC (Seller) the assets of the 'Emberfall' action-RPG franchise, including game code, trademarks, soundtrack, and the assumed employment agreement of Seller's studio creative director. The Asset Purchase Agreement was signed August 24, 2026. The folder holds: the APA; a Dilur board consent dated October 6, 2026; the IP Assignment Agreement to be delivered at Closing; the creative director's existing Key Employee Agreement with Glesar, which is an Assigned Contract; and an unrelated Dilur localization vendor agreement, which is the distractor. Four issues are planted. (1) The IP Assignment Agreement makes Buyer indemnify Seller, without any cap, for all losses from the Assigned IP, including pre-Closing losses. (2) The same agreement pulls the Section 4.9 IP representation back under the General Cap. In both cases the APA precedence clause lets the IP Assignment Agreement control. (3) Buyer's 10-Business-Day window to terminate after a Schedule Update ran on September 28, 2026. The board consent records that the update was received September 14 and directs an objection. (4) The Key Employee Agreement requires the employee's consent to an asset-sale assignment of her engine-toolkit license. The APA's consent schedule lists none.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Dilur Interactive, Inc.",
+      "role": "Buyer; video game publisher; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Glesar Studios LLC",
+      "role": "Seller; independent game developer and owner of the Emberfall franchise"
+    },
+    {
+      "id": "P3",
+      "name": "Tamsin Okoro",
+      "role": "Glesar's Studio Creative Director; counterparty to the Key Employee Agreement, which is being assigned to Buyer"
+    },
+    {
+      "id": "P4",
+      "name": "Nightjar Localization Ltd.",
+      "role": "Dilur's localization and QA vendor; counterparty to the distractor agreement only"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F2",
+      "key": "APA signing date",
+      "value": "August 24, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "APA General Cap",
+      "value": "15% of the Purchase Price ($7,275,000)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F4",
+      "key": "APA Fundamental Representations",
+      "value": "Sections 4.1 (Organization), 4.2 (Authority) and 4.9 (Intellectual Property), excluded from the General Cap",
+      "doc": "D1",
+      "section": "Section 9.5(c)"
+    },
+    {
+      "id": "F5",
+      "key": "APA Schedule Update termination window",
+      "value": "10 Business Days after Buyer's receipt of a Schedule Update",
+      "doc": "D1",
+      "section": "Section 6.7"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence among Transaction Documents",
+      "value": "IP Assignment Agreement controls on matters concerning Assigned IP; otherwise the APA controls",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F7",
+      "key": "APA Excluded Liabilities (IP)",
+      "value": "Liabilities from pre-Closing infringement by or use of the Assigned IP, retained by Seller",
+      "doc": "D1",
+      "section": "Section 2.4(d)"
+    },
+    {
+      "id": "F8",
+      "key": "Governing law of APA",
+      "value": "New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F9",
+      "key": "Schedule Update receipt date",
+      "value": "September 14, 2026",
+      "doc": "D2",
+      "section": "Recital C"
+    },
+    {
+      "id": "F10",
+      "key": "Dilur board consent date",
+      "value": "October 6, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_dilur_glesar.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "dilur_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ip_assignment_agreement_emberfall.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "key_employee_agreement_okoro.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "nightjar_localization_services_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "Buyer's uncapped indemnity of Seller for all Assigned IP losses, including pre-Closing losses",
+      "description": "D3 Section 5.2 requires Assignee (Dilur) to indemnify Assignor (Glesar) and its members for all Losses arising out of the Assigned IP or its exploitation 'whether arising before or after the Effective Date'. The obligation is stated to be not subject to any limitation in the Purchase Agreement. Under D1 Section 9.5, the General Cap applies only to claims under Sections 9.2(a) and 9.3(a), so it never reaches this freestanding indemnity. Under D1 Section 11.12, the IP Assignment Agreement controls on matters concerning Assigned IP. The clause therefore overrides D1 Section 2.4(d), which leaves pre-Closing infringement liabilities with Seller as Excluded Liabilities. The result is unlimited exposure for Dilur, including for the pending composer infringement claim disclosed in the Schedule Update recited in D2.",
+      "doc": "D3",
+      "section": "Section 5.2",
+      "detect_terms": [
+        "whether arising before or after the Effective Date",
+        "not subject to any limitation"
+      ],
+      "expected_finding": "Because D1 Section 11.12 lets the IP Assignment Agreement control on Assigned IP, D3 Section 5.2 imposes on Dilur an uncapped indemnity of Glesar that also covers pre-Closing IP liabilities, which D1 Section 2.4(d) allocates to Seller. It should be limited to post-Closing exploitation by Buyer, made subject to the APA cap, and conformed to the Excluded Liabilities.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "IP Assignment Agreement pulls the IP representation back under the General Cap",
+      "description": "D1 Section 9.5(c) treats the Section 4.9 Intellectual Property representation as a Fundamental Representation, excluded from the 15% General Cap. D3 Section 6.3 provides that, notwithstanding Section 9.5 of the Purchase Agreement, Seller's liability for breach of Section 4.9 of the Purchase Agreement or Section 3 of the IP Assignment Agreement shall be subject to the General Cap. D1 Section 11.12 makes the IP Assignment Agreement control on matters concerning Assigned IP. Read together, these provisions limit Dilur's recovery for title or infringement defects in the core Emberfall IP to $7,275,000 on a $48,500,000 deal.",
+      "doc": "D3",
+      "section": "Section 6.3",
+      "detect_terms": [
+        "shall be subject to the General Cap"
+      ],
+      "expected_finding": "D3 Section 6.3, given controlling effect by D1 Section 11.12, removes the Section 4.9 IP representation from the Fundamental Representation carve-out in D1 Section 9.5(c) and caps Glesar's IP liability at $7,275,000. D3 Section 6.3 should be deleted, or D1 Section 11.12 amended so the APA's indemnification terms prevail.",
+      "contradicts": "F4"
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "Lapsed 10-Business-Day window to terminate after Schedule Update",
+      "description": "D1 Section 6.7 gives Buyer ten (10) Business Days after receipt of a Schedule Update to terminate. If Buyer does not terminate, the Schedule Update is deemed to have cured any inaccuracy for purposes of Article IX and the closing conditions. D2 Recital C records that Dilur received the Schedule Update, which discloses a pending infringement claim by the Emberfall soundtrack composer, on September 14, 2026. The window therefore closed on September 28, 2026. D2 is dated October 6, 2026, after the window closed, and its resolutions direct management to object to the Schedule Update and reserve all rights. Dilur has not accepted the update, but its termination right has lapsed and the deemed-cure provision threatens its indemnity claim for the composer dispute.",
+      "doc": "D1",
+      "section": "Section 6.7",
+      "detect_terms": [
+        "ten (10) Business Days",
+        "deemed to have cured"
+      ],
+      "expected_finding": "Measured from the September 14, 2026 receipt date recited in D2, Dilur's termination window under D1 Section 6.7 expired on September 28, 2026, before the October 6, 2026 board consent. The update is therefore at risk of being deemed to cure the composer-claim inaccuracy. Dilur should promptly seek a negotiated amendment or a special indemnity for the composer claim, preserving its objection as directed in D2.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "Unobtained employee consent to assignment of the toolkit license",
+      "description": "D4 Section 12.4 bars assignment of the Key Employee Agreement, including the Section 7.2 license of Ms. Okoro's pre-existing Wickline engine toolkit used to build Emberfall, by sale of all or substantially all of Glesar's assets 'without the prior written consent of Employee'. D1 Schedule 2.1(c) lists D4 as an Assigned Contract. D1 Schedule 4.4 states that no third-party consents are required. The D1 Section 7.2(c) closing condition covers only consents listed on Schedule 4.4. As a result, Dilur would be obligated to close without the consent, and without assured rights to the toolkit.",
+      "doc": "D4",
+      "section": "Section 12.4",
+      "detect_terms": [
+        "without the prior written consent of Employee",
+        "sale of all or substantially all"
+      ],
+      "expected_finding": "The asset sale triggers Ms. Okoro's consent right under D4 Section 12.4, so the Wickline toolkit license cannot transfer to Dilur without her written consent. That consent is neither obtained nor listed in D1 Schedule 4.4, so it is not a closing condition. Dilur should require the consent, or a direct license from Ms. Okoro, as a closing condition and correct the Schedule 4.4 disclosure.",
+      "contradicts": null
+    }
+  ]
+}
