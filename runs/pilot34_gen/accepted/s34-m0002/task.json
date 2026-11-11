@@ -1,0 +1,227 @@
+{
+  "task_id": "s34-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Tipul Orthopedics, Inc. in its asset acquisition from Nilur Medical Devices, LLC. Tipul is the buyer under the asset purchase agreement, the maker of the seller note, and the assignee under the IP assignment agreement. Before we sign off on the package, I need a clear picture of anything in these documents that could hurt Tipul or leave it exposed.\n\nPlease review all four files in the matter folder:\n- asset_purchase_agreement_tipul_nilur.md\n- subordinated_seller_note.md\n- ip_assignment_agreement.md\n- ostrander_pike_certificate_cover_letter.md (the insurance certificate cover letter)\n\nPrepare a memo to me that lists each issue you identify. For each one, give:\n- where it appears, by document and section;\n- why it matters for Tipul; and\n- a recommended fix, with proposed language where that would help.\n\nPut the most significant items first. Flag anything you could not resolve from the documents alone so we can decide whether to raise it with Nilur's counsel.",
+  "documents": [
+    "asset_purchase_agreement_tipul_nilur.md",
+    "ip_assignment_agreement.md",
+    "ostrander_pike_certificate_cover_letter.md",
+    "subordinated_seller_note.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that Nilur's indemnity for retained Pre-Closing Product Liabilities (liabilities from implants sold before closing) expires at the 12-month general survival period, i.e. on or about April 15, 2027, leaving Tipul exposed to later-surfacing implant claims.",
+      "kind": "issue",
+      "hints": [
+        "Pre-Closing Product Liabilities",
+        "12 months",
+        "April 15, 2027"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the indemnity survival issue in the APA at Section 8.2 (its final sentence or the Section 8.2(c) claim cut-off).",
+      "kind": "issue",
+      "hints": [
+        "Section 8.2",
+        "Section 8.1(a)"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response explains why the indemnity survival cut-off matters to Tipul.",
+      "kind": "issue",
+      "hints": [
+        "revision surgery",
+        "recall",
+        "years after"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response recommends a fix for the indemnity survival cut-off.",
+      "kind": "issue",
+      "hints": [
+        "survive indefinitely",
+        "statute of limitations"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that the Seller Note lets Nilur transfer the Note, together with its information and inspection rights over Tipul, to any person, including a competitor, without Tipul's consent.",
+      "kind": "issue",
+      "hints": [
+        "without the consent of Maker",
+        "competitor",
+        "information rights"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response locates the unrestricted transfer issue in the Seller Note at Section 9.",
+      "kind": "issue",
+      "hints": [
+        "Note Section 9",
+        "Section 6.2"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response explains why unrestricted transfer of the Seller Note matters to Tipul.",
+      "kind": "issue",
+      "hints": [
+        "confidential",
+        "customer data",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response recommends a fix for the unrestricted transfer of the Seller Note.",
+      "kind": "issue",
+      "hints": [
+        "consent of Maker",
+        "no transfer to a competitor"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response finds that the Seller Note's Minnesota governing law and exclusive Hennepin County, Minnesota forum control disputes under the Note, splitting the deal's disputes between Minnesota and the Delaware Court of Chancery.",
+      "kind": "issue",
+      "hints": [
+        "Minnesota",
+        "Hennepin County",
+        "parallel proceedings"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response locates the governing law and forum conflict in the Seller Note at Section 10.",
+      "kind": "issue",
+      "hints": [
+        "Note Section 10"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response explains why the governing law and forum conflict matters to Tipul.",
+      "kind": "issue",
+      "hints": [
+        "inconsistent rulings",
+        "two forums"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response recommends a fix for the governing law and forum conflict.",
+      "kind": "issue",
+      "hints": [
+        "Delaware law",
+        "Court of Chancery"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response finds that, because the Seller Note defines 'Losses' as only amounts finally determined by a court, Tipul cannot set off good-faith pending indemnity claims against Note payments without risking a payment default under the Note.",
+      "kind": "issue",
+      "hints": [
+        "finally determined by a court of competent jurisdiction",
+        "set-off",
+        "Event of Default"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response locates the 'Losses' definition issue in the Seller Note at Section 1 (definition of 'Losses') or Section 4.2.",
+      "kind": "issue",
+      "hints": [
+        "Note Section 1",
+        "Section 4.2"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "The response explains why the narrow Note definition of 'Losses' matters to Tipul.",
+      "kind": "issue",
+      "hints": [
+        "keep paying",
+        "set-off security"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "The response recommends a fix for the narrow Note definition of 'Losses'.",
+      "kind": "issue",
+      "hints": [
+        "conform to the APA definition",
+        "claimed in good faith"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "The response states that, under the APA's order of precedence, the Seller Note controls over the APA on matters concerning the indebtedness it evidences.",
+      "kind": "fact",
+      "hints": [
+        "Section 11.4",
+        "indebtedness",
+        "Seller Note controls"
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "The response states that the APA is governed by Delaware law.",
+      "kind": "fact",
+      "hints": [
+        "Delaware law",
+        "Section 11.8"
+      ]
+    },
+    {
+      "id": "C19",
+      "text": "The response is a memo that presents the issues as separate items, each giving its location, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C20",
+      "text": "The response includes a section or flags identifying points it could not resolve from the documents alone.",
+      "kind": "format",
+      "hints": [
+        "open items",
+        "could not resolve",
+        "raise with Nilur's counsel"
+      ]
+    },
+    {
+      "id": "C21",
+      "text": "The response claims that indemnity claims for Pre-Closing Product Liabilities benefit from the 6-year Fundamental Representation survival period.",
+      "kind": "negative",
+      "hints": [
+        "6 years",
+        "Fundamental Representation"
+      ]
+    },
+    {
+      "id": "C22",
+      "text": "The response claims that APA Section 11.6 restricts Nilur's transfer of the Seller Note.",
+      "kind": "negative",
+      "hints": [
+        "Section 11.6",
+        "anti-assignment"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

@@ -1,0 +1,181 @@
+{
+  "matter_id": "s34-m0002",
+  "summary": "Tipul Orthopedics, Inc. (buyer, firm client) is acquiring the knee and hip implant product line of Nilur Medical Devices, LLC (seller) under a Delaware-law Asset Purchase Agreement signed March 2, 2026, with closing on April 15, 2026. The purchase price is $48,500,000. Of that, $9,000,000 is paid by a subordinated Seller Note that Tipul issued to Nilur. An IP Assignment Agreement conveys the product-line patents, design history files and trademarks. The folder also holds a broker's cover letter that transmits a certificate of property insurance on inventory in transit before closing. Four issues are planted. (1) The indemnity for pre-closing implant product liabilities is cut off at the 12-month general survival period through a cross-reference. (2) The Seller Note can be freely transferred to any person, including a competitor, and it carries broad information rights. (3) The Seller Note chooses Minnesota law and Minnesota courts, and the APA's precedence clause lets the Note control on indebtedness matters. (4) The Note defines 'Losses' far more narrowly than the APA, which guts the buyer's set-off right.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Tipul Orthopedics, Inc.",
+      "role": "Buyer under the Asset Purchase Agreement; Maker of the Seller Note; Assignee under the IP Assignment Agreement (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Nilur Medical Devices, LLC",
+      "role": "Seller under the Asset Purchase Agreement; Holder of the Seller Note; Assignor under the IP Assignment Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Pike Insurance Brokerage, LLC",
+      "role": "Insurance broker to Nilur Medical Devices, LLC; author of the certificate cover letter"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Closing Date",
+      "value": "April 15, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F2",
+      "key": "APA Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.5(a)"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$9,000,000",
+      "doc": "D1",
+      "section": "Section 2.5(b)"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note maturity date",
+      "value": "April 15, 2029",
+      "doc": "D2",
+      "section": "Section 2"
+    },
+    {
+      "id": "F5",
+      "key": "APA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F6",
+      "key": "APA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "APA controls over Ancillary Agreements, except Seller Note controls on matters concerning the indebtedness it evidences",
+      "doc": "D1",
+      "section": "Section 11.4"
+    },
+    {
+      "id": "F8",
+      "key": "APA general representation survival period",
+      "value": "12 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 8.1(a)"
+    },
+    {
+      "id": "F9",
+      "key": "APA Fundamental Representation survival period",
+      "value": "6 years after the Closing Date",
+      "doc": "D1",
+      "section": "Section 8.1(b)"
+    },
+    {
+      "id": "F10",
+      "key": "IP Assignment Agreement effective date",
+      "value": "April 15, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_tipul_nilur.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "subordinated_seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "ostrander_pike_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Section 2.4(c) of the APA makes all Pre-Closing Product Liabilities Excluded Liabilities retained by Nilur. These are liabilities from knee and hip implants sold before the Closing Date. Section 8.2(c) requires Nilur to indemnify Tipul for Excluded Liabilities. The final sentence of Section 8.2, however, requires any claim under Section 8.2(c) to be asserted 'within the survival period set forth in Section 8.1(a)'. Section 8.1(a) is the 12-month general representation survival period. Read together, Tipul's protection against retained implant product liability ends on April 15, 2027, 12 months after the April 15, 2026 Closing Date stated in Section 3.1. Implant failure, revision surgery and recall claims typically surface years after implantation. Delaware enforces contractually shortened claim periods under 10 Del. C. § 8106(c). Tipul would therefore bear liabilities that the deal allocated to Nilur. The longer 6-year Fundamental Representation period in Section 8.1(b) does not apply, because the cross-reference points only to Section 8.1(a).",
+      "doc": "D1",
+      "section": "Section 8.2 (final sentence), read with Sections 2.4(c) and 8.1(a)",
+      "detect_terms": [
+        "within the survival period set forth in Section 8.1(a)"
+      ],
+      "expected_finding": "The Section 8.2 cross-reference to the 12-month period in Section 8.1(a) makes Nilur's indemnity for retained Pre-Closing Product Liabilities expire on April 15, 2027, which Delaware will enforce under 10 Del. C. § 8106(c), so Tipul should require that Excluded Liability indemnity claims survive indefinitely or at least until the applicable statute of limitations plus a tail.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 9 of the Seller Note lets the Holder sell, assign, pledge or otherwise transfer the Note and all rights under it 'to any Person without the consent of Maker'. It contains no carve-out for competitors. Section 6.2 of the Note gives the Holder monthly financial statements, quarterly unit sales and customer data for the acquired implant line, and inspection rights over Tipul's books. Read together, Nilur could transfer the Note to a competing orthopedic implant maker, which would then receive Tipul's confidential commercial information and creditor remedies. The anti-assignment clause in Section 11.6 of the APA binds only the APA. It does not reach the Note, which is a separate instrument with its own transfer clause.",
+      "doc": "D2",
+      "section": "Section 9, read with Section 6.2",
+      "detect_terms": [
+        "to any Person without the consent of Maker"
+      ],
+      "expected_finding": "Section 9 of the Seller Note lets Nilur transfer the Note, together with the Section 6.2 information and inspection rights, to anyone including a competitor, and the APA's assignment restriction does not cover the Note, so Tipul should require its consent to any transfer (at minimum a bar on transfers to competitors) and confidentiality obligations binding any transferee.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Section 11.8 of the APA chooses Delaware law. Section 11.9 of the APA requires all disputes arising out of the transaction to be brought exclusively in the Delaware Court of Chancery. Section 10 of the Seller Note instead chooses Minnesota law and submits all disputes under the Note to the exclusive jurisdiction of the state and federal courts in Hennepin County, Minnesota. Section 11.4 of the APA would normally cure the conflict, because it says the APA controls over Ancillary Agreements. But Section 11.4 excepts matters concerning the indebtedness evidenced by the Seller Note, so the Note's choice controls on those matters. Nilur could therefore sue in Minnesota for nonpayment or acceleration, while Tipul's indemnity claims, which drive its set-off, must be heard in Delaware. The result is parallel proceedings, a risk of inconsistent rulings, and the loss of the single Delaware forum Tipul bargained for.",
+      "doc": "D2",
+      "section": "Section 10, read with APA Sections 11.4, 11.8 and 11.9",
+      "detect_terms": [
+        "laws of the State of Minnesota",
+        "Hennepin County"
+      ],
+      "expected_finding": "The Seller Note's Minnesota governing law and exclusive Hennepin County forum control payment and set-off disputes because of the APA Section 11.4 exception, which splits disputes between Minnesota and the Delaware Court of Chancery, so Tipul should conform the Note to Delaware law and exclusive Chancery jurisdiction or remove the Note carve-out from Section 11.4.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Section 1.1 of the APA defines 'Losses' broadly, to include damages, settlements, and reasonable attorneys' and experts' fees. Section 8.7 of the APA lets Tipul set off against Seller Note payments any Losses it claims in good faith under Article VIII. Section 1 of the Seller Note, however, defines 'Losses' as amounts 'finally determined by a court of competent jurisdiction' to be owed by Holder to Maker. Section 4.2 of the Note permits set-off only of Losses as so defined. Under the Note carve-out in APA Section 11.4, the Note controls on matters concerning the indebtedness. Tipul therefore cannot withhold note payments while indemnity claims are pending. Withholding would be a payment Event of Default under the Note. Tipul must keep paying into a claim that Nilur may later be unable to satisfy, which defeats the set-off security the APA was meant to provide.",
+      "doc": "D2",
+      "section": "Section 1 (definition of 'Losses') and Section 4.2, read with APA Sections 1.1, 8.7 and 11.4",
+      "detect_terms": [
+        "finally determined by a court of competent jurisdiction"
+      ],
+      "expected_finding": "Because the Seller Note controls under APA Section 11.4 and defines 'Losses' as only court-finally-determined amounts, Tipul cannot exercise the good-faith set-off granted by APA Section 8.7 without triggering a Note payment default, so the Note's definition and Section 4.2 should be conformed to the APA definition and expressly permit set-off of amounts claimed in good faith.",
+      "contradicts": null
+    }
+  ]
+}

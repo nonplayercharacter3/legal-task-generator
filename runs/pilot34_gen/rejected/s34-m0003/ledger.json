@@ -1,0 +1,193 @@
+{
+  "matter_id": "s34-m0003",
+  "summary": "Trouden Cold Chain Holdings, LLC (client, Buyer) is acquiring substantially all assets of Seimil Refrigerated Logistics, Inc. (Seller) under an Asset Purchase Agreement signed October 2, 2026, for $48,500,000. The assets include a temperature-controlled warehouse in Secaucus, NJ with ammonia refrigeration, a reefer trailer fleet and customer contracts. The largest customer contract is a master services agreement with Pellwick Markets, Inc. The folder holds five documents: the APA; a Key Employee Agreement with Seller's VP of Operations; Seller's board consent approving the sale; a side letter granting Seller reserved freezer capacity and WMS access after closing; and a closing-logistics email thread. Four issues are planted. (1) The indemnity survival period is tied by cross-reference to a 120-day escrow release. (2) The Key Employee Agreement chooses New Jersey law and forum, and the APA's precedence carve-out lets it control. (3) The Pellwick MSA's change-of-control consent appears in Seller's board consent but is left out of the APA's Required Consents. (4) The side letter lets Seller assign its capacity and data-access rights freely.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Trouden Cold Chain Holdings, LLC",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Seimil Refrigerated Logistics, Inc.",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Dana Okafor-Reyes",
+      "role": "Seller's VP of Operations; Key Employee joining Buyer at Closing"
+    },
+    {
+      "id": "P4",
+      "name": "Pellwick Markets, Inc.",
+      "role": "Regional grocery chain; counterparty to Seller's largest customer master services agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA signing date",
+      "value": "October 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "APA Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F3",
+      "key": "APA Escrow Amount",
+      "value": "$4,850,000",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F4",
+      "key": "APA Release Date",
+      "value": "120 days after the Closing Date",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F5",
+      "key": "APA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F6",
+      "key": "APA exclusive forum",
+      "value": "State or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence among transaction documents",
+      "value": "APA prevails over Ancillary Agreements, except Key Employee Agreement controls matters within its scope",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F8",
+      "key": "Key Employee Agreement Restricted Period",
+      "value": "36 months after the Closing Date",
+      "doc": "D2",
+      "section": "Section 4"
+    },
+    {
+      "id": "F9",
+      "key": "Seller board consent date",
+      "value": "September 28, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Side letter reserved pallet positions at Secaucus facility",
+      "value": "1,200 pallet positions for 24 months after Closing",
+      "doc": "D4",
+      "section": "Section 2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "key_employee_agreement_okafor_reyes.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seimil_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "transitional_capacity_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "closing_logistics_email_thread.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Section 9.1 of the APA (D1) states that all of Seller's representations and warranties survive until the Release Date. This includes Section 4.10 (Taxes) and Section 4.14 (Environmental; the ammonia refrigeration system at the Secaucus facility). The survival clause does not set a number of months. The Release Date is defined in Section 2.4 as 120 days after the Closing Date. Section 9.6 makes the Escrow Amount the sole source of recovery, and Section 9.4 requires a claim notice before the Release Date. Reading Sections 9.1, 2.4, 9.4 and 9.6 together, Buyer has only about four months after Closing to find and notice any breach. That window is too short for tax audits or for environmental and refrigerant-compliance problems in a cold storage business. Buyer's indemnity protection is therefore largely illusory. The defect appears only when the survival clause's cross-reference is followed into the escrow section.",
+      "doc": "D1",
+      "section": "Section 9.1 (read with Sections 2.4, 9.4 and 9.6)",
+      "detect_terms": [
+        "survive until the Release Date"
+      ],
+      "expected_finding": "Because Section 9.1 ties survival to the Release Date, which Section 2.4 sets at 120 days after Closing, Buyer must notice every rep claim, including tax and environmental claims, within about four months. Survival should be decoupled from the escrow release with a fixed general survival period of at least 18 months and longer periods for tax and environmental reps.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The APA (D1) chooses New York law in Section 11.9 and an exclusive New York County forum in Section 11.10. The Key Employee Agreement with Dana Okafor-Reyes (D2) differs. Its Section 9 chooses New Jersey law and an exclusive forum in Hudson County, New Jersey courts. That agreement holds the 36-month non-compete and non-solicit that Buyer is paying for as part of the business acquisition. This conflict is not cured by the APA. Section 11.12 of the APA says the APA prevails over Ancillary Agreements except that the Key Employee Agreement controls matters within its scope. Read together, Section 11.12 lets D2's New Jersey choice govern the restrictive covenants. Buyer would then have to enforce them in a separate New Jersey forum, under an employment-covenant standard rather than New York's more permissive sale-of-business analysis. It also creates a risk of parallel litigation in two states over a single breach that touches both the APA and D2.",
+      "doc": "D2",
+      "section": "Section 9 (Governing Law; Forum), read with APA Section 11.12",
+      "detect_terms": [
+        "laws of the State of New Jersey",
+        "Hudson County, New Jersey"
+      ],
+      "expected_finding": "The Key Employee Agreement's New Jersey law and Hudson County forum conflict with the APA's New York law and New York County forum. Because APA Section 11.12 lets the Key Employee Agreement control within its scope, the restrictive covenants would be litigated separately under New Jersey law. Both documents should be conformed to New York law and the New York forum, and the Section 11.12 carve-out should be deleted or narrowed.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Seller's board consent (D3), dated September 28, 2026, recites in its recitals and Resolution 3 that the Pellwick Markets, Inc. master services agreement requires Pellwick's prior written consent to any assignment, including by change of control or operation of law. Resolution 3 authorizes officers to close whether or not that consent has been obtained. The APA (D1) handles the same contract differently. It lists the Pellwick MSA as an Assigned Contract in Section 2.1(c). Section 7.2(c) conditions Buyer's obligation to close only on each Required Consent having been obtained. Section 1.1 defines Required Consents as the consents listed on Schedule 4.5, and that schedule lists only the Secaucus landlord consent. The APA has no mechanism for contracts that cannot be assigned (no hold-in-trust, pass-through or price adjustment). Read together, D3 and D1 show that Buyer is obligated to close and pay full price even if Pellwick withholds consent. The largest customer contract could then terminate or fail to transfer. Buyer's only recourse would be a rep claim limited by the short survival period and the escrow.",
+      "doc": "D1",
+      "section": "Section 7.2(c) and Schedule 4.5 (read with D3 Recitals and Resolution 3)",
+      "detect_terms": [
+        "each Required Consent shall have been obtained"
+      ],
+      "expected_finding": "Seller's board consent shows that the Pellwick MSA needs Pellwick's consent to assignment or change of control, yet the APA leaves that consent out of the Required Consents closing condition. Buyer could be forced to close without its largest customer contract. Pellwick's consent should be added to Schedule 4.5 as a closing condition, or alternatively a non-assignable-contract mechanism with a price adjustment should be added.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "The Transitional Capacity Side Letter (D4) grants Seimil two rights at the acquired Secaucus facility for 24 months after Closing. The first is 1,200 reserved pallet positions at a fixed rate. The second is read access to Trouden's warehouse management system, including temperature-monitoring logs and customer lane data. Section 7 of D4 provides that Seimil may assign the letter agreement or any of its rights hereunder to any person without Trouden's consent. Nothing excludes competitors. APA Section 11.6 restricts assignment only of 'this Agreement'. The APA's definition of Ancillary Agreements in Section 1.1 does not include the side letter, and D4 states that it is a standalone agreement. So neither the APA assignment restriction nor the APA precedence clause reaches D4. Seimil could therefore transfer reserved capacity and access to Trouden's customer and operating data to a competing cold chain operator.",
+      "doc": "D4",
+      "section": "Section 7 (Assignment)",
+      "detect_terms": [
+        "any of its rights hereunder to any person without Trouden's consent"
+      ],
+      "expected_finding": "Section 7 of the side letter lets Seimil freely assign its reserved pallet capacity and WMS data-access rights, including to a competitor, and the APA's assignment restriction does not reach the side letter. Assignment should require Trouden's prior written consent, with an express bar on assignment to competitors and automatic termination of data access on any transfer or change of control of Seimil.",
+      "contradicts": null
+    }
+  ]
+}

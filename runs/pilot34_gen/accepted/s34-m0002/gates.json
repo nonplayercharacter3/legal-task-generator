@@ -1,0 +1,125 @@
+{
+  "matter_id": "s34-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"Any claim for indemnification under Section 8.2(c) shall be asserted by written notice to Seller within the survival period set forth in Section 8.1(a).\" Section 8.1(a): \"The representations and warranties of the Parties in this Agreement, other than the Fundamental Representations, survive the Closing until 12 months after the Closing Date.\"",
+            "reason": "Section 2.4(c) leaves all Pre-Closing Product Liabilities with Nilur 'regardless of when the claim is asserted,' and Section 8.2(c) makes Nilur indemnify Tipul for them. The final sentence of Section 8.2, however, limits 8.2(c) claims to the 12-month period in Section 8.1(a). With the April 15, 2026 Closing, Tipul's right to claim ends April 15, 2027. Implant failure, revision surgery and recall claims usually surface later than that. Section 8.8 makes Article VIII Tipul's exclusive post-Closing remedy, and Delaware enforces shortened claim periods, so Tipul would carry liabilities the deal allocated to Nilur. Nothing in the folder cures this. The 6-year Fundamental Representation period does not apply. The Section 6.7 product liability insurance naming Tipul as additional insured is only partial protection: it is capped by policy limits and is not an indemnity. The Note and the IP Assignment do not change this, and the IP Assignment expressly does not enlarge the indemnities. It is still actionable: today is November 10, 2026, the window runs until April 2027, and Tipul can seek an amendment under Section 11.5 or protect itself with timely claim notices."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 9: \"Holder may sell, assign, pledge or otherwise transfer this Note and all of its rights under this Note, in whole or in part, to any Person without the consent of Maker. Upon written notice to Maker of a transfer, identifying the transferee and its payment instructions, the transferee shall be deemed the Holder for all purposes of this Note.\" Section 6.2(c) also requires a quarterly Product Line report with \"unit sales and net revenue by Product and by region, average selling prices, and a list of the hospital, ambulatory surgery center and distributor customers of the Product Line with the revenue attributable to each,\" plus inspection rights over Maker's books.",
+            "reason": "Tipul is the Maker, so it is the party that must deliver the Section 6.2 information and accept inspections by whoever is the Holder. Section 9 lets Nilur transfer the Note to any Person without Tipul's consent. Nothing excludes competitors, and the Note has no confidentiality obligation on the Holder. A transferee is deemed Holder \"for all purposes,\" so a competing implant maker would get Tipul's customer-level revenue, pricing and financial data, the inspection rights, and the default remedies. Two other provisions do not fix this. APA Section 6.4 binds only Seller and its Affiliates. APA Section 11.6 limits assignment of the APA only, and APA Section 11.4 makes the Note control on matters concerning the indebtedness it evidences. The Note is unsigned and closing is pending (it is dated April 15, 2026), and nothing in the folder shows Tipul has accepted this term. The issue can therefore still be raised and negotiated."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Note §10.1: \"This Note, and all claims and causes of action arising out of or relating to it, are governed by the laws of the State of Minnesota...\" and §10.2: \"Maker and Holder each irrevocably submit to the exclusive jurisdiction of the state courts of the State of Minnesota sitting in Hennepin County and the United States District Court for the District of Minnesota for any action arising out of or relating to this Note.\" APA §11.4: \"This Agreement controls over the Ancillary Agreements, except that the Seller Note controls on matters concerning the indebtedness it evidences.\"",
+            "reason": "APA §§11.8 and 11.9 choose Delaware law and require all disputes arising out of the transaction to be brought exclusively in the Delaware Court of Chancery. The Note instead chooses Minnesota law and exclusive Hennepin County courts. APA §11.4 normally makes the APA control over Ancillary Agreements, but it expressly carves out matters concerning the Note's indebtedness. That carve-out lets the Note's Minnesota clauses govern payment, default and acceleration disputes. Nilur, the holder, can therefore sue Tipul in Minnesota for nonpayment or acceleration. Tipul's indemnity claims under APA Article VIII, which support its set-off, must still be heard in Delaware. Note §4.2 makes this worse by allowing set-off only against amounts finally adjudicated, so Tipul cannot raise its set-off defense in the Minnesota payment action. The result is parallel proceedings, a risk of inconsistent rulings, and the loss of the single Delaware forum Tipul bargained for. The Note is unsigned, with blank signature blocks, and nothing in the folder shows Tipul accepted these terms. The problem is real and still actionable for Tipul: it can conform §10 to Delaware law and the Delaware forum, or remove the carve-out in APA §11.4."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Note Section 1: \"'Losses' means amounts that have been finally determined by a court of competent jurisdiction, in a judgment that is no longer subject to appeal, to be owed by Holder to Maker under Article VIII of the Purchase Agreement.\" Note Section 4.2: \"Maker may set off against any amount of principal or interest due under this Note only Losses.\" APA Section 11.4: \"...except that the Seller Note controls on matters concerning the indebtedness it evidences.\"",
+            "reason": "APA Section 8.7 lets Tipul (Maker/Buyer) set off any Losses it claims in good faith, and APA Section 1.1 defines Losses broadly. The Note narrows set-off to amounts fixed by a final, non-appealable judgment. Under APA 11.4 the Note controls on the indebtedness, so the narrower Note terms govern. Tipul therefore cannot withhold payments while indemnity claims are pending. Withholding would be a payment Event of Default under Note 8.1(a), which brings default interest, acceleration and collection costs. Nothing in the folder cures this. Tipul is the party harmed, because it must keep paying a seller whose ability to pay indemnity later is uncertain. The issue is still actionable: the Note's signature blocks are blank, no payments or objections are recorded, and the first principal installment is not due until April 2027. Note 11.3 also allows the Note to be amended in a signed writing."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 22,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C18 asks for fact F5, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C9",
+          "C10",
+          "C11",
+          "C12"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.058,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

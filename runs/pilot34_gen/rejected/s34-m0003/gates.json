@@ -1,0 +1,111 @@
+{
+  "matter_id": "s34-m0003",
+  "accepted": false,
+  "failed_gate": "rubric_tests",
+  "reason": "flawed_wrongly_fails: [\"C10\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.1: \"The representations and warranties of Seller contained in this Agreement, including those in Section 4.10 and Section 4.14, shall survive the Closing and shall survive until the Release Date.\" Section 2.4 defines the Release Date as \"the date that is 120 days after the Closing Date.\" Section 9.4: \"To be valid, a claim notice must be delivered before the Release Date.\" Section 9.6: \"The Escrow Amount shall be the sole and exclusive source of recovery for the Buyer Indemnitees for any Losses under Section 9.2.\"",
+            "reason": "Following the cross-reference from Section 9.1 into Section 2.4 shows that all of Seller's representations, including the tax (4.10) and environmental/ammonia (4.14) representations, expire 120 days after Closing. Section 9.4 also voids any claim noticed after the Release Date, which reaches even Excluded Liability claims under 9.2(c). Section 9.6 caps recovery at the escrow, which is released to Seller on that same date. Seller is the indemnitor, so the short window falls entirely on Buyer, our client. Tax audits and latent PSM, RMP or TCPA refrigerant-compliance issues rarely surface within four months, so Buyer's protection is largely illusory. No other document cures this: the side letter, Key Employee Agreement and board consent do not address survival or escrow. The issue is still actionable. Closing is scheduled for November 16, 2026, Buyer has not yet funded, and nothing shows Buyer accepting the result. Buyer can still seek an amendment under Section 11.4 (for example, longer survival or fundamental and special indemnities outside the escrow) before Closing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "KEA §9.1: \"This Agreement, and all claims arising out of or relating to it or to Executive's employment, shall be governed by and construed in accordance with the laws of the State of New Jersey...\" KEA §9.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state courts located in Hudson County, New Jersey, and the United States District Court for the District of New Jersey sitting in Newark...\" This conflicts with APA §11.9 (New York law) and §11.10 (exclusive New York County forum). APA §11.12 does not cure the conflict; it reinforces it: \"this Agreement shall prevail, except that the Key Employee Agreement shall control with respect to matters within its scope.\"",
+            "reason": "The mismatch is in the document. The 36-month non-compete and non-solicit in KEA §4 are the goodwill protection Trouden is paying for. KEA Recital C and §4.5 tie them expressly to the APA. Yet APA §11.12 sends them to New Jersey law and an exclusive New Jersey forum. Trouden would have to enforce them separately from APA claims, which go to New York. That exposes it to split or parallel litigation over a single breach, and to a court applying an employment-covenant reasonableness test rather than a sale-of-business test. Nothing in the folder shows this split was negotiated as intentional or harmless. The issue is still actionable. Okafor-Reyes signed on November 9, but her signature page is held in escrow until the November 16 closing, which has not yet occurred. Trouden has not yet signed or released its counterpart. The clause can therefore still be conformed, or the APA's precedence clause carved back, before release."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "APA Section 7.2(c): \"each Required Consent shall have been obtained, in form and substance reasonably satisfactory to Buyer\"; Section 1.1: \"'Required Consents' means the consents listed on Schedule 4.5\"; Schedule 4.5 lists only \"Consent of Meadowlands Industrial Partners, L.P., as landlord, to the assignment of the Secaucus Lease to Buyer.\" Seller's board consent, Resolution 3: \"the Authorized Officers are each authorized to consummate the closing of the Transaction in accordance with the Purchase Agreement, whether or not the consent of Pellwick to the assignment of the Pellwick MSA has been obtained at or before the closing.\"",
+            "reason": "The board consent (Recitals 1.4 and 1.6) shows that the Pellwick MSA bars assignment without Pellwick's prior written consent, that Pellwick may terminate on an unconsented assignment, and that Pellwick has not consented. The APA still lists the Pellwick MSA as an Assigned Contract (Section 2.1(c)). The APA does not list Pellwick's consent as a Required Consent, so it is not a closing condition under Section 7.2(c). The APA also has no fallback for contracts that cannot be assigned: no hold-in-trust, pass-through or price adjustment. Buyer might argue that the Section 4.3 and 4.5 reps are inaccurate and that Section 7.2(a) therefore fails. That argument is uncertain and depends on materiality, and it is not an express protection. After Closing, Buyer's recovery is a rep claim. That claim survives only to the 120-day Release Date and is limited to the $4.85M escrow (Sections 9.1 and 9.6), which is a small fraction of the value of the largest customer contract. Closing is set for November 16, 2026, and today is November 10. Nothing in the folder shows Pellwick's consent has been obtained or that Buyer accepted this risk. The email checklist tracks only the landlord consent. Buyer can still act before Closing, for example by adding Pellwick's consent as a Required Consent or negotiating a protective mechanism, so the problem is real and actionable for the client."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 7: \"Seimil may assign this Letter Agreement or any of its rights hereunder to any person without Trouden's consent, upon written notice to Trouden identifying the assignee.\"",
+            "reason": "The problem is present and still actionable. Trouden is the client and bears the burden here: it must supply the reserved capacity and the WMS access, including temperature logs and customer lane data. Section 7 lets Seimil assign to any person, competitors included, with only notice to Trouden. Nothing in the folder fixes this. APA §11.6 covers only \"this Agreement.\" The side letter is not one of the defined Ancillary Agreements, and §10.1 of the letter says it is standalone, so the APA's precedence clause does not reach it either. Section 4 (confidentiality) does not cure the problem. It allows disclosure to \"permitted assigns,\" and since §7 makes any person a permitted assign, an assignee would get the data. Seimil's undertaking in APA §6.6 does not bind an assignee. Seimil has not yet countersigned the letter, and closing is set for November 16, 2026, so Trouden can still negotiate a consent requirement or a carve-out for competitors."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 14,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C9 asks for fact F4, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": false,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3",
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [
+          "C10"
+        ],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {
+            "C10": "Does not mention the APA order of precedence or that the KEA controls within its scope."
+          }
+        }
+      }
+    }
+  ]
+}

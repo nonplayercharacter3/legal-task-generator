@@ -1,0 +1,125 @@
+{
+  "matter_id": "s34-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 6,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Order Form Section 5.1: \"During the Subscription Term, including all Renewal Terms, Licensee shall not, and shall cause its Affiliates not to, license, subscribe to, use, implement, pilot or evaluate any competing hospitality software at all Covered Properties, whether owned, managed or franchised by Licensee or any of its Affiliates.\" Section 5.2 extends \"competing hospitality software\" to \"(a) property management; (b) point-of-sale for food, beverage, spa or retail outlets; (c) revenue management and rate optimization; and (d) guest messaging and guest communications.\"",
+            "reason": "The restriction binds Steireis, the Licensee, so it is the client that carries the burden. The Agreement (Section 1.3) defines Covered Properties as any property owned, managed or franchised by Licensee or an Affiliate, at any location, including properties acquired later. Section 5.3 forces newly acquired properties to switch to Nesesk within 180 days. Together these extend exclusivity to every current and future property and to four software categories, including point-of-sale and revenue management, which Steireis does not license from Nesesk at all. The term sheet (Section 4) recorded a much narrower deal: PMS only, at the seven listed properties, with Steireis expressly free to use other software for other functions and at other properties. The term sheet is non-binding (Section 8.1). Under Agreement Section 15.4 the Order Form controls over the Agreement. No amendment cures the gap, and the proposed side letter does not touch Section 5. Section 5.4 makes any breach a material breach with injunctive relief. The issue remains actionable. Renewal is disputed and Steireis has not signed the side letter, so it can still use the renewal negotiation or the dispute to seek a narrower covenant. The burden would also last until 2029 if the renewal holds."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 11.2: \"Licensee shall defend, indemnify and hold harmless Licensor and its Affiliates ... from and against any and all third-party claims, actions, regulatory investigations, losses, damages, fines, penalties, costs and expenses (including reasonable attorneys' fees) arising out of or relating to Guest Data processed through the Licensed Software...\" Section 12.3: \"Sections 12.1 and 12.2 do not apply to: ... (b) Licensee's obligations under Section 11.2\".",
+            "reason": "Steireis is the indemnitor under 11.2. Its duty covers any claim relating to Guest Data, with no fault qualifier and no exception for Nesesk's own security failures. Section 12.3(b) removes both the cap and the consequential-damages exclusion for that duty, so Steireis's exposure for guest privacy, breach and regulatory claims is unlimited even where Nesesk's platform caused the loss. Nesesk's only indemnity, the IP indemnity in 11.1, is not carved out of the cap. Section 12.3(a) does leave Nesesk's Section 9 breaches uncapped, but that does not stop Nesesk from passing breach-related third-party claims back to Steireis under 11.2. The term sheet promised only an IP indemnity from Nesesk and never contemplated this licensee indemnity. The proposed side letter does not change 11.2 or 12.3(b), and it would narrow 12.3(a) to gross negligence or wilful misconduct, which makes the imbalance worse. The side letter is unsigned and the renewal is disputed, so Steireis has not accepted these terms. The issue is still actionable in the renewal and side-letter negotiation."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 2.1: \"Agreement Section 12.3(a) is deleted and replaced in its entirety with the following: '(a) Licensor's breach of its obligations under Section 9 (Data Security), to the extent resulting from Licensor's gross negligence or willful misconduct;'\"",
+            "reason": "Under Agreement Section 12.3(a), any breach by Nesesk (Licensor) of its Section 9 data-security obligations is currently outside the Section 12.1 damages exclusion and the Section 12.2 cap of 12 months' fees. Section 2 of the side letter narrows that carve-out to breaches caused by gross negligence or willful misconduct. New York public policy already generally bars limiting liability for gross negligence or willful misconduct, so the amendment adds little. Its practical effect is to put ordinary data-security failures by Nesesk back under the cap and the consequential-damages exclusion. The change appears in a letter framed as a pricing concession. If signed, it would control under Section 15.4, which ranks signed side letters first. Section 12.3(b) stays unchanged, so Steireis's broad Section 11.2 indemnity for anything relating to Guest Data remains uncapped. The result is that Steireis carries uncapped guest-data exposure while Nesesk's data-security exposure is capped. The side letter is unsigned, and Steireis disputes the renewal it would acknowledge. Steireis can therefore still refuse or negotiate this term, so the problem is present and actionable."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 3.2: \"At the end of the Initial Term and each Renewal Term, this Agreement and each Order Form then in effect shall automatically renew for an additional period of thirty-six (36) months (each, a \"Renewal Term\"), unless either Party gives the other written notice of non-renewal at least ninety (90) days before the end of the then-current term.\" The Order Form sets the Subscription Start Date at December 1, 2023. The side letter records Steireis's non-renewal letter dated September 18, 2026 and that \"Licensee has told Licensor that it disputes that the Agreement has renewed.\"",
+            "reason": "The Initial Term runs 36 months from December 1, 2023 and ends November 30, 2026, so the 90-day non-renewal deadline was about September 1, 2026. Steireis's September 18, 2026 letter missed it by roughly 17 days. Under Section 3.2 that triggers an automatic 36-month renewal through November 30, 2029. Steireis, as Licensee, would be locked into about $164k a year in fees plus the Order Form's broad exclusivity. Today is November 10, 2026, and the matter is still actionable: the folder shows Steireis has not accepted the renewal. It has not countersigned the proposed side letter (the signature block is blank), it records no payment for a renewal term, and Recital C confirms Steireis disputes the renewal. Steireis can still contest the renewal, for example by challenging the auto-renewal or Nesesk's waiver or conduct, or negotiate terms before the December 1, 2026 invoice. That negotiation matters because the side letter would also narrow the uncapped data-security carve-out in Section 12.3(a) in exchange for the 8% discount."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 18,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C13 asks for fact F6, which only issue I3 uses: a memo that misses I3 need not state it",
+          "criterion C14 asks for fact F3, which only issue I4 uses: a memo that misses I4 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4",
+          "C5",
+          "C6"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.065,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

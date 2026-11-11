@@ -1,0 +1,184 @@
+{
+  "task_id": "s34-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Steireis Hospitality Group, LLC, which operates boutique hotels and is licensing software from Nesesk Hospitality Systems, Inc. Before the client commits, it needs a clear view of where the licensing package leaves it exposed and what we should push back on.\n\nPlease review the following documents in the matter folder:\n- steireis_nesesk_software_license_agreement.md\n- nesesk_order_form_no1.md\n- steireis_nesesk_term_sheet.md\n- nesesk_proposed_side_letter_2026-10-14.md\n\nThe folder also holds ardmoor_linen_services_agreement.md, which is filed as an unrelated vendor agreement. Satisfy yourself whether it has any bearing here, and don't spend time on it if it doesn't.\n\nPlease send me a memo that lists each issue you identify. For each one, give the document and section where it appears, explain why it matters to Steireis, and recommend a fix. Where possible, the fix should be specific drafting or a negotiating position. Put the issues that matter most to the client first. Flag anything you can't resolve from the documents alone so we can raise it with the client.",
+  "documents": [
+    "ardmoor_linen_services_agreement.md",
+    "nesesk_order_form_no1.md",
+    "nesesk_proposed_side_letter_2026-10-14.md",
+    "steireis_nesesk_software_license_agreement.md",
+    "steireis_nesesk_term_sheet.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the Order Form exclusivity covenant binds Steireis at all hotels owned, managed or franchised by Steireis or its Affiliates anywhere, across all hospitality software categories, far beyond the term sheet's agreed scope of the property management module at the seven listed Hudson Valley properties.",
+      "kind": "issue",
+      "hints": [
+        "competing hospitality software",
+        "owned, managed or franchised",
+        "property management module only"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the overbroad exclusivity issue in Section 5 of the Order Form (nesesk_order_form_no1.md).",
+      "kind": "issue",
+      "hints": [
+        "Order Form Section 5",
+        "Exclusivity"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "For the overbroad exclusivity issue, the response explains why it matters to Steireis and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "amend the Order Form",
+        "limit exclusivity"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Steireis's guest-data indemnity is excluded from the liability cap, leaving Steireis with unlimited liability for guest-data claims, including claims caused by Nesesk.",
+      "kind": "issue",
+      "hints": [
+        "arising out of or relating to Guest Data",
+        "uncapped",
+        "unlimited exposure"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response locates the uncapped indemnity issue in Section 11.2 and/or Section 12.3(b) of the Software License Agreement.",
+      "kind": "issue",
+      "hints": [
+        "Section 11.2",
+        "Section 12.3(b)"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "For the uncapped guest-data indemnity issue, the response explains why it matters to Steireis and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "limit the indemnity",
+        "subject to the cap"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response concludes that the proposed side letter would narrow the data-security carve-out from the liability cap, so that ordinary (non-grossly-negligent) Nesesk data-security breaches would fall under the cap.",
+      "kind": "issue",
+      "hints": [
+        "gross negligence or willful misconduct",
+        "data security carve-out",
+        "Section 12.3(a)"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response locates the carve-out narrowing issue in Section 2 of the proposed side letter (nesesk_proposed_side_letter_2026-10-14.md).",
+      "kind": "issue",
+      "hints": [
+        "side letter Section 2",
+        "proposed side letter"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "For the side letter carve-out issue, the response explains why it matters to Steireis and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "strike Section 2",
+        "do not countersign"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response concludes that Steireis's September 18, 2026 non-renewal letter was sent after the September 1, 2026 notice deadline and was therefore late.",
+      "kind": "issue",
+      "hints": [
+        "September 1, 2026",
+        "17 days late",
+        "November 30, 2026"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response locates the expired notice window issue in Section 3.2 of the Software License Agreement.",
+      "kind": "issue",
+      "hints": [
+        "Section 3.2",
+        "shall automatically renew"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "For the late non-renewal notice issue, the response explains why it matters to Steireis and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "do not sign the acknowledgment",
+        "negotiate an exit",
+        "preserve the dispute"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response states that the Software License Agreement's liability cap is the fees paid or payable in the 12 months preceding the claim.",
+      "kind": "fact",
+      "hints": [
+        "12 months",
+        "fees paid or payable"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response states that the Initial Term of the Software License Agreement is 36 months.",
+      "kind": "fact",
+      "hints": [
+        "36 months",
+        "Initial Term"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "The response is a memo that presents each issue separately and, for each, identifies the document and section, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "The response includes a section or list flagging open questions or points that cannot be resolved from the documents alone, for follow-up with the client.",
+      "kind": "format",
+      "hints": [
+        "open questions",
+        "confirm with the client"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "The response claims that Steireis's September 18, 2026 non-renewal letter was timely under the Software License Agreement.",
+      "kind": "negative",
+      "hints": []
+    },
+    {
+      "id": "C18",
+      "text": "The response claims that the term sheet is binding and limits the Order Form exclusivity covenant to the property management module at the seven listed properties.",
+      "kind": "negative",
+      "hints": []
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

@@ -1,0 +1,187 @@
+{
+  "matter_id": "s34-m0001",
+  "summary": "Steireis Hospitality Group, LLC (client) operates boutique hotels in New York's Hudson Valley. It licenses a cloud property management and guest-services software suite from Nesesk Hospitality Systems, Inc. under a Software License Agreement dated November 15, 2023 and an Order Form. The license runs for 36 months from December 1, 2023. Steireis sent a non-renewal letter dated September 18, 2026. Nesesk now says that letter came too late and that the agreement auto-renewed for another 36 months. On October 14, 2026 Nesesk sent a proposed side letter for Steireis to countersign. In it, Steireis would acknowledge the renewal in exchange for a fee discount, and Steireis's data-security carve-out from the liability cap would be quietly narrowed. Steireis has not signed. The folder holds five documents: the agreement, the Order Form, the original non-binding term sheet, the proposed side letter, and an unrelated linen services agreement. Read together, they also show an uncapped client indemnity for guest-data claims and an exclusivity covenant far broader than the term sheet's deal. The partner wants an issue-spotting memo.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Steireis Hospitality Group, LLC",
+      "role": "Licensee; operator of boutique hotels; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Nesesk Hospitality Systems, Inc.",
+      "role": "Licensor; provider of cloud property management and guest-services software"
+    },
+    {
+      "id": "P3",
+      "name": "Ardmoor Linen Services, LLC",
+      "role": "Commercial linen and laundry vendor to Steireis (distractor agreement counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "November 15, 2023",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Subscription Start Date",
+      "value": "December 1, 2023",
+      "doc": "D2",
+      "section": "Section 2 (Subscription Term)"
+    },
+    {
+      "id": "F3",
+      "key": "Software License Agreement Initial Term",
+      "value": "36 months from the Subscription Start Date",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F4",
+      "key": "Non-renewal notice period",
+      "value": "written notice at least 90 days before the end of the then-current term",
+      "doc": "D1",
+      "section": "Section 3.2"
+    },
+    {
+      "id": "F5",
+      "key": "Renewal Term length",
+      "value": "36 months, automatic absent timely non-renewal notice",
+      "doc": "D1",
+      "section": "Section 3.2"
+    },
+    {
+      "id": "F6",
+      "key": "Software License Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "signed amendments or side letters, then Order Form, then Software License Agreement",
+      "doc": "D1",
+      "section": "Section 15.4"
+    },
+    {
+      "id": "F8",
+      "key": "Agreed exclusivity scope",
+      "value": "property management module only, at the seven Hudson Valley properties listed in the term sheet",
+      "doc": "D3",
+      "section": "Section 4 (Exclusivity)"
+    },
+    {
+      "id": "F9",
+      "key": "Software License Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 15.1"
+    },
+    {
+      "id": "F10",
+      "key": "Date of Steireis non-renewal letter",
+      "value": "September 18, 2026",
+      "doc": "D4",
+      "section": "Recital B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "steireis_nesesk_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "nesesk_order_form_no1.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "steireis_nesesk_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "nesesk_proposed_side_letter_2026-10-14.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "ardmoor_linen_services_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Order Form Section 5 bars Licensee, for the full Subscription Term including all Renewal Terms, from licensing, using or evaluating 'any competing hospitality software' at 'all Covered Properties'. The covenant covers property management, point-of-sale, revenue management and guest messaging. D1 Section 1 defines 'Covered Properties' as any hotel 'owned, managed or franchised' by Licensee or any Affiliate, anywhere. Read together, these two provisions bind every current and future Steireis property and every hospitality software category worldwide. The term sheet (D3 Section 4) records the agreed deal: exclusivity for the property management module only, at the seven listed Hudson Valley properties. D3 Section 8 states the term sheet is non-binding. D1 Section 15.4 ranks the Order Form above the Software License Agreement. So the broad Order Form covenant controls, and nothing in the folder narrows it. The harm grows if the disputed auto-renewal (I4) extends the term to 2029.",
+      "doc": "D2",
+      "section": "Section 5 (Exclusivity)",
+      "detect_terms": [
+        "competing hospitality software",
+        "owned, managed or franchised"
+      ],
+      "expected_finding": "The Order Form exclusivity, read with D1's 'Covered Properties' definition and given priority by D1 Section 15.4, binds all Steireis and Affiliate hotels anywhere across all hospitality software categories. That is far beyond the term sheet's agreed PMS-only, seven-property scope, so Steireis should require an amendment limiting exclusivity to the PMS module at the listed properties.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Under D1 Section 11.2, Licensee must defend and indemnify Licensor against any third-party claim 'arising out of or relating to Guest Data' processed through the Licensed Software. The duty applies regardless of cause, so it reaches breaches caused by Licensor's own platform. D1 Section 12.3(b) excludes 'Licensee's obligations under Section 11.2' from both the Section 12.2 cap and the consequential-damages exclusion. Licensor's only indemnity, the IP indemnity in Section 11.1, is not carved out and remains subject to the cap. Read together, these provisions leave Steireis with unlimited exposure for guest privacy and data-breach claims, including claims caused by Nesesk, while Nesesk's indemnity is capped. The proposed side letter (D4) offers a fee discount but does not touch Section 11.2 or 12.3(b).",
+      "doc": "D1",
+      "section": "Section 11.2 and Section 12.3(b)",
+      "detect_terms": [
+        "arising out of or relating to Guest Data",
+        "Licensee's obligations under Section 11.2"
+      ],
+      "expected_finding": "Section 12.3(b) removes Steireis's Section 11.2 guest-data indemnity from the cap and the consequential-damages exclusion, exposing Steireis to unlimited liability even for breaches caused by Nesesk, so the indemnity should be limited to claims caused by Steireis and brought within a cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "D1 Section 12.3(a) currently excludes Licensor's breach of its Section 9 (Data Security) obligations from the 12-month-fees cap in Section 12.2. Section 2 of Nesesk's proposed side letter (D4), presented as a pricing concession, would replace Section 12.3(a). The carve-out would then apply only to Section 9 breaches 'to the extent resulting from Licensor's gross negligence or willful misconduct'. Under New York law, a cap generally cannot shield gross negligence or willful misconduct anyway, so the narrowed carve-out adds almost nothing. Ordinary data-security failures by Nesesk would fall under the cap. Once signed, D4 would control under D1 Section 15.4, which ranks signed side letters first. Combined with Steireis's uncapped guest-data indemnity (I2), Steireis would bear uncapped data-breach exposure while Nesesk's would be capped. D4 is unsigned, so Steireis can still refuse.",
+      "doc": "D4",
+      "section": "Section 2 (Amendment to Section 12.3(a))",
+      "detect_terms": [
+        "to the extent resulting from Licensor's gross negligence or willful misconduct"
+      ],
+      "expected_finding": "The proposed side letter would narrow D1 Section 12.3(a) so that ordinary Nesesk data-security breaches fall under the 12-month-fees cap, and it would prevail once signed under D1 Section 15.4, so Steireis should strike Section 2 and keep the existing carve-out before countersigning anything.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "The Order Form (D2 Section 2) sets the Subscription Start Date at December 1, 2023. D1 Section 3.1 sets a 36-month Initial Term, which ends November 30, 2026. D1 Section 3.2 requires written non-renewal notice 'at least ninety (90) days' before term end, which puts the deadline at September 1, 2026; otherwise the agreement 'shall automatically renew' for a 36-month Renewal Term. D4 Recital B records Steireis's non-renewal letter dated September 18, 2026, which is 17 days late. D4 Recital C records that Steireis disputes that the agreement has renewed. D4 Section 1 asks Steireis to acknowledge renewal through November 30, 2029 in exchange for an 8% fee discount. Steireis has not signed D4, so it has not accepted the renewal and can still contest or negotiate it.",
+      "doc": "D1",
+      "section": "Section 3.2 (Renewal)",
+      "detect_terms": [
+        "at least ninety (90) days",
+        "shall automatically renew"
+      ],
+      "expected_finding": "The non-renewal deadline was September 1, 2026 (90 days before the November 30, 2026 end of the term that began December 1, 2023), so Steireis's September 18, 2026 letter was late and Nesesk claims a renewal through November 30, 2029. Steireis should not sign the D4 Section 1 acknowledgment and should negotiate an exit or a shortened renewal while preserving its dispute.",
+      "contradicts": null
+    }
+  ]
+}
