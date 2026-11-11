@@ -33,7 +33,7 @@ Spreads are min / p10 / median / p90 / max. LAB maxima come from a few outlier t
 | Instruction words (mean, median) | 159.6, 160 | 25.1, 25 | 76.1, 74 |
 | Instructions naming every file | 96% | 0.2% | 0% |
 | Deliverable | reply (memo) 73 | file 1262 (.docx 1247, .xlsx 39, .md 11) | reply (not stated) 498 |
-| Work types | issue-spotting memo 73 | analyze 488, draft 444, review 306, research 24 (all LAB, incl. firm-knowledge: 24 research) | not stated |
+| Work types | issue-spotting memo 73 | analyze 488, draft 444, review 306, research 24 | not stated |
 | Practice areas | commercial contracts 41, M&A 32 | 24 areas, largest corporate-ma 161, intellectual-property 147, corporate-governance 97 | contracts 498 |
 | Issues per task | 3 / 4 / 5 (min / median / max), 293 in all | n/a | n/a |
 | Issue types | 10 distinct; top: change_of_control_consent 36, defined_term_inconsistency 34, expired_notice_window 34 | n/a | n/a |
