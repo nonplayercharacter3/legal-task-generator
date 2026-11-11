@@ -1,0 +1,168 @@
+{
+  "matter_id": "s36-m0001",
+  "summary": "Laseisk Auto Remarketing, LLC (client) runs physical wholesale used-car auctions and a simulcast online bidding platform. Under a Distribution Agreement effective March 1, 2025, it appointed Konais Dealer Networks, Inc. to distribute Auction Access Subscriptions (dealer buyer/seller licences) to dealers. The folder holds five documents: the Distribution Agreement, a Service Level Schedule (platform uptime and condition-report turnaround), Amendment No. 1 dated May 20, 2026 (revising wholesale subscription pricing), a Side Letter signed with the Agreement recording the commercial scope from the letter of intent, and a pre-deal mutual NDA. Three issues are planted. First, the Agreement grants Konais exclusivity across the United States and Canada and across all wholesale remarketing channels, and it bars Laseisk from selling direct. The Side Letter records a tri-state, franchised-dealer scope, but the precedence clause makes the Agreement control. Second, Laseisk's right to strip Konais's exclusivity for the Contract Year 1 volume shortfall lapsed on April 14, 2026. The Amendment's later 'reservation of rights' does not revive it. Third, the assignment clause lets Konais assign without consent to a 'Permitted Assignee', and that defined term includes any acquirer of its business, competitors included.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Laseisk Auto Remarketing, LLC",
+      "role": "Supplier / auction and online bidding platform operator (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Konais Dealer Networks, Inc.",
+      "role": "Exclusive distributor of Auction Access Subscriptions to dealers"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Order of precedence",
+      "value": "Amendment No. 1, then Distribution Agreement, then Service Level Schedule, then Side Letter",
+      "doc": "D1",
+      "section": "Section 17.3"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement governing law",
+      "value": "New York",
+      "doc": "D1",
+      "section": "Section 17.1"
+    },
+    {
+      "id": "F4",
+      "key": "Contract Year",
+      "value": "each consecutive 12-month period beginning on the Distribution Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 1 (Definitions)"
+    },
+    {
+      "id": "F5",
+      "key": "Minimum Annual Volume",
+      "value": "1,200 Dealer Subscriptions per Contract Year",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F6",
+      "key": "Exclusivity termination notice window",
+      "value": "45 days after the end of the relevant Contract Year",
+      "doc": "D1",
+      "section": "Section 9.3"
+    },
+    {
+      "id": "F7",
+      "key": "Agreed exclusive scope per Side Letter",
+      "value": "franchised dealers in New York, New Jersey and Connecticut",
+      "doc": "D4",
+      "section": "Section 2"
+    },
+    {
+      "id": "F8",
+      "key": "Amendment No. 1 date",
+      "value": "May 20, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Contract Year 1 Dealer Subscriptions sold",
+      "value": "940",
+      "doc": "D3",
+      "section": "Recital B"
+    },
+    {
+      "id": "F10",
+      "key": "Platform uptime commitment",
+      "value": "99.5% per calendar month",
+      "doc": "D2",
+      "section": "Section 2.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Several provisions combine to make the exclusivity far broader than the deal. Section 1 of the Distribution Agreement defines 'Territory' as 'the United States and Canada'. Section 3.1 grants Konais exclusive rights to distribute Auction Access Subscriptions in the Territory 'through all wholesale remarketing channels', including physical lanes, simulcast and online-only auctions. Section 3.2 bars Laseisk from appointing any other distributor in the Territory and from selling subscriptions direct. The Side Letter, Section 2, records the agreed commercial scope from the letter of intent: franchised dealers in New York, New Jersey and Connecticut. Section 17.3 of the Agreement ranks the Side Letter last in precedence, so the broader grant controls. The result is that Laseisk is locked out of direct and other-distributor sales nationwide and in Canada, for every dealer type, which goes well beyond the bargained scope.",
+      "doc": "D1",
+      "section": "Section 1 (definition of Territory) and Section 3.1",
+      "detect_terms": [
+        "the United States and Canada",
+        "all wholesale remarketing channels"
+      ],
+      "expected_finding": "Read with Section 3.2's ban on other distributors and direct sales, the Agreement's Territory definition and Section 3.1 give Konais exclusivity across the United States and Canada and all remarketing channels. That is far broader than the tri-state franchised-dealer scope in Side Letter Section 2, and because Section 17.3 makes the Agreement prevail over the Side Letter, the broader grant controls. Laseisk should seek an amendment narrowing the Territory and channel to the agreed scope.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under Section 9.3 of the Distribution Agreement, if Konais misses the Minimum Annual Volume (1,200 Dealer Subscriptions, Section 9.1), Laseisk may convert the appointment to non-exclusive. It must give notice within 45 days after the end of the Contract Year, 'failing which such right is waived for that Contract Year'. Contract Year 1 runs from the March 1, 2025 Effective Date (Section 1 definition of Contract Year), ends February 28, 2026, and the window closed April 14, 2026. Amendment No. 1 is dated May 20, 2026. Its Recital B records that Konais sold only 940 subscriptions in Contract Year 1, that Konais claims the shortfall is excused by a platform outage, and that Laseisk disputes this. Its Section 3 states that Laseisk 'reserves all rights under Section 9.3'. The Amendment does not extend the window and does not record any acceptance by Laseisk. Read against the dates, the reservation came after the right had already lapsed, so it preserves nothing for Contract Year 1. Laseisk's disputed position remains open to negotiation.",
+      "doc": "D3",
+      "section": "Recital B and Section 3",
+      "detect_terms": [
+        "reserves all rights under Section 9.3"
+      ],
+      "expected_finding": "Laseisk's Section 9.3 right to end Konais's exclusivity for the Contract Year 1 shortfall (940 against 1,200) expired on April 14, 2026, which is 45 days after Contract Year 1 ended on February 28, 2026, counting from the March 1, 2025 Effective Date. The May 20, 2026 Amendment's reservation of rights therefore does not preserve it. Laseisk should seek Konais's written waiver or extension of the window, and should calendar a timely notice for Contract Year 2 (ending February 28, 2027, window closing April 14, 2027).",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 16.2 of the Distribution Agreement requires consent for assignment 'except that either party may assign this Agreement to a Permitted Assignee without consent'. Section 1 defines 'Permitted Assignee' as any Affiliate or 'any person acquiring all or substantially all of its assets' or the business to which the Agreement relates. The definition does not exclude competing auction operators or remarketing platforms. Although the clause is mutual, it hurts Laseisk in particular. Laseisk has granted Konais exclusive distribution rights (Section 3) and will share dealer data and wholesale pricing. Konais could therefore sell its dealer-services business, and transfer the exclusive appointment, to a direct Laseisk competitor without Laseisk's consent and with no termination right.",
+      "doc": "D1",
+      "section": "Section 16.2 and Section 1 (definition of Permitted Assignee)",
+      "detect_terms": [
+        "to a Permitted Assignee without consent",
+        "all or substantially all of its assets"
+      ],
+      "expected_finding": "Section 16.2 read with the Section 1 definition of Permitted Assignee lets Konais assign the exclusive distribution appointment without Laseisk's consent to any acquirer of its business, including a competing auction operator. Laseisk should require consent for assignments by Konais (or at least exclude competitors from the definition) and add a termination right on a change of control of Konais.",
+      "contradicts": null
+    }
+  ]
+}

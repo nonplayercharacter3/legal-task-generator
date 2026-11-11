@@ -1,0 +1,149 @@
+{
+  "task_id": "s36-m0001",
+  "split": "dev",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Laseisk Auto Remarketing, LLC, which supplies vehicles and runs the auction and online bidding platform under a distribution arrangement with Konais Dealer Networks, Inc. The client wants a clear picture of where it stands under the documents as they currently exist, and what it should push to fix or clarify, before it next deals with Konais on this relationship.\n\nPlease review the full set in the matter folder: distribution_agreement.md, service_level_schedule.md, amendment_no_1.md, side_letter.md and mutual_nda.md. Then send me a memo that sets out each issue you identify. For each one, give the document and section where it appears, explain why it matters for Laseisk, and recommend a fix, such as proposed drafting or a negotiating position.\n\nPlease order the issues by importance to the client. If any point turns on facts we would need to confirm with Laseisk, flag it rather than assume. Keep the memo practical. I would rather have a tight list I can take to the client than a clause-by-clause summary.",
+  "documents": [
+    "amendment_no_1.md",
+    "distribution_agreement.md",
+    "mutual_nda.md",
+    "service_level_schedule.md",
+    "side_letter.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the Distribution Agreement gives Konais exclusivity across the United States and Canada and through all wholesale remarketing channels, that this is far broader than the tri-state (New York, New Jersey, Connecticut) franchised-dealer scope recorded in the Side Letter, and that the Agreement's broader grant controls.",
+      "kind": "issue",
+      "hints": [
+        "United States and Canada",
+        "all wholesale remarketing channels",
+        "franchised dealers in New York, New Jersey and Connecticut"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the overbroad exclusivity issue in the Distribution Agreement's definition of Territory (Section 1) and/or Section 3.1.",
+      "kind": "issue",
+      "hints": [
+        "Section 1",
+        "Section 3.1",
+        "Territory"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "For the overbroad exclusivity issue, the response explains why it matters to Laseisk and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "locked out",
+        "narrow the Territory",
+        "amendment"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Laseisk's Section 9.3 right to end Konais's exclusivity for the Contract Year 1 volume shortfall expired on April 14, 2026, so the May 20, 2026 Amendment No. 1 reservation of rights does not preserve it.",
+      "kind": "issue",
+      "hints": [
+        "April 14, 2026",
+        "waived",
+        "reserves all rights under Section 9.3"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response locates the expired notice window issue in Amendment No. 1 (Recital B and/or Section 3) or in Distribution Agreement Section 9.3.",
+      "kind": "issue",
+      "hints": [
+        "Amendment No. 1, Section 3",
+        "Recital B",
+        "Section 9.3"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "For the expired notice window issue, the response explains why it matters to Laseisk and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Contract Year 2",
+        "written waiver",
+        "calendar"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response concludes that Konais can assign the Distribution Agreement, including its exclusive appointment, without Laseisk's consent to any acquirer of its business, including a competitor of Laseisk.",
+      "kind": "issue",
+      "hints": [
+        "Permitted Assignee",
+        "without consent",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response locates the assignment issue in Distribution Agreement Section 16.2 and/or the Section 1 definition of Permitted Assignee.",
+      "kind": "issue",
+      "hints": [
+        "Section 16.2",
+        "Permitted Assignee",
+        "Section 1"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "For the assignment issue, the response explains why it matters to Laseisk and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "consent",
+        "exclude competitors",
+        "change of control"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response states that the Distribution Agreement's Effective Date is March 1, 2025.",
+      "kind": "fact",
+      "hints": [
+        "March 1, 2025",
+        "Effective Date"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response is a memo that presents the issues as a list ordered by importance to the client, not as a clause-by-clause summary.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "most important",
+        "priority"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response claims that Amendment No. 1's reservation of rights preserves Laseisk's right to convert Konais's appointment to non-exclusive for the Contract Year 1 shortfall.",
+      "kind": "negative",
+      "hints": [
+        "reservation preserves",
+        "right remains exercisable"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response claims that the Side Letter's tri-state franchised-dealer scope prevails over the Distribution Agreement's Territory and exclusivity grant.",
+      "kind": "negative",
+      "hints": [
+        "Side Letter controls",
+        "Side Letter prevails"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

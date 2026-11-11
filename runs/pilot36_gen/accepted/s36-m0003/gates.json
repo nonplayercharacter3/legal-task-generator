@@ -1,0 +1,121 @@
+{
+  "matter_id": "s36-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "DPA Section 12.1: \"This DPA, and any dispute arising out of or relating to it, is governed by the laws of the State of Delaware, without regard to its conflict-of-laws principles. This Section 12.1 applies notwithstanding Section 15.1 of the Supply Agreement.\" DPA Section 12.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in the State of Delaware for any action arising out of or relating to this DPA.\" Supply Agreement Section 15.1 selects New York law and the exclusive jurisdiction of New York County courts. Supply Agreement Section 17.3(a) puts the DPA first in precedence \"on Personal Data matters.\"",
+            "reason": "The Supply Agreement's New York law and forum clause and the DPA's Delaware law and forum clause are both exclusive. The DPA expressly overrides Section 15.1, and Section 17.3 lets the DPA control on Personal Data matters, so nothing in the documents resolves the conflict. Two kinds of claim fall under Delaware: claims for Security Incidents involving patient data in serialization and adverse-event records, and claims under the DPA Section 11 indemnity. A single serialization or complaint-intake failure could be both a supply breach under SA Sections 8.1 and 8.2 and a DPA breach. That could split one dispute across New York and Delaware and invite fights over which forum applies. This hurts Drulun, the party that would bring claims against Pruvax. No document cures the problem, and it is still actionable: the DPA can be amended under Section 14.1, and the agreements are ongoing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Order Form No. 3, Section 4.1: \"In this Order Form, \"Delivery\" means tender to the first carrier at Pruvax's facility at 2100 Ellis Road, Durham, North Carolina 27703, FCA Pruvax Facility (Incoterms 2020).\" Section 4.2 adds: \"Pruvax shall book carriage on Drulun's behalf...\" By contrast, Supply Agreement Section 1.7 says \"Delivery\" means \"receipt of Product at Drulun's designated distribution center in Edison, New Jersey.\"",
+            "reason": "The problem is present and hurts Drulun. Section 5.3 of the Supply Agreement passes title and risk to Drulun on Delivery and leaves Pruvax with transit and temperature-excursion risk. Section 6.2 runs Drulun's 30-day rejection window from Delivery. Section 17.3(b) makes the Order Form prevail on delivery terms. Reading the Order Form's FCA Durham definition, with Pruvax booking carriage \"on Drulun's behalf,\" into those provisions moves cold-chain transit risk onto Drulun for a refrigerated oncology injectable. It also starts the rejection clock at Pruvax's dock rather than on receipt. At best, the \"In this Order Form\" wording creates an argument about which definition controls. Nothing in the folder cures or limits the change. Price inclusions in Section 3.2 still cover carriage, but they do not address risk. The signature blocks are blank, and Section 7.1 makes the Order Form binding only once both Parties sign. Drulun has therefore not accepted the term and can still push back before signing, so the issue remains actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Recital C: \"Drulun delivered to Pruvax a written notice of non-renewal of the Supply Agreement under Section 2.2 of the Supply Agreement, dated August 14, 2026 (the \"Non-Renewal Notice\"). Each Party reserves all rights regarding the effectiveness of the Non-Renewal Notice and the expiry or continuation of the Term.\" Supply Agreement §2.2: \"A non-renewal notice is timely only if a Party gives written notice of non-renewal to the other Party under Section 17.6 at least 180 days before expiry of the then-current term.\"",
+            "reason": "The notice was late, and the risk falls on Drulun. Under §2.1 the Initial Term runs three years from February 1, 2024, so it ends January 31, 2027. Counting back 180 days under §2.2 gives a deadline of August 4, 2026. The notice is dated August 14, 2026, and under §17.6 it takes effect only on receipt, so it is at least 10 days late. That exposes Drulun, as the party that gave the notice, to automatic renewal for a two-year Renewal Term through January 31, 2029. During that term it would remain bound by the §3.4 Annual Minimum of 60,000 vials per Contract Year and the 35% shortfall charge. Nothing in the folder cures the problem. Pruvax has not agreed to treat the notice as effective, the agreement has no extension or waiver, and Recital C expressly reserves Pruvax's rights. Drulun has not accepted renewal either, since it reserved its own rights too, and Order Form No. 3 is still unsigned. The issue therefore remains live and actionable. Drulun could negotiate a mutual termination or waiver, or prepare its position before the Initial Term ends."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 18,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C14 asks for fact F1, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": [
+          "criterion C13 asks for the whole ranking in fact F7 ('DPA (Personal Data matters), then Order Form (Products, quantities, pricing, delivery terms), then Supply Agreement'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C9",
+          "C10",
+          "C11",
+          "C12"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

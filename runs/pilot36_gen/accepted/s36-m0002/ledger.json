@@ -1,0 +1,209 @@
+{
+  "matter_id": "s36-m0002",
+  "summary": "Teivav ColdLink Holdings, LLC (client, Buyer) signed an asset purchase agreement on March 3, 2026 to acquire the temperature-controlled warehousing, refrigerated transport and cross-dock business of Vaipith Refrigerated Logistics, Inc. (Seller) for $42,000,000. Closing has not yet occurred. The folder holds four documents. The first is the signed APA. The second is the agreed-form Escrow Agreement with Pellucid National Trust Company, attached as an APA exhibit and to be signed at Closing. The third is the agreed-form Key Employee Agreement between Buyer and Seller's Chief Operating Officer, Dashiell Okonkwo-Brandt. The fourth is the Buyer deal team's integration-planning meeting notes. Five issues are planted. (1) Buyer's indemnity of Seller is uncapped and reaches Seller's pre-Closing liabilities under customer contracts. (2) Seller's largest customer contract needs consent to assignment, but that consent is not a closing condition and the contract simply drops out without a price adjustment. (3) The environmental and refrigerant representations survive only for a 90-day escrow period. (4) The Escrow Agreement, which controls on indemnification claims, removes Excluded Liabilities from the cap carve-outs. (5) The Key Employee Agreement's non-compete uses a narrower 'Business' definition that leaves out refrigerated transport and cross-dock services.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Teivav ColdLink Holdings, LLC",
+      "role": "Buyer (client)"
+    },
+    {
+      "id": "P2",
+      "name": "Vaipith Refrigerated Logistics, Inc.",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Pellucid National Trust Company",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P4",
+      "name": "Dashiell Okonkwo-Brandt",
+      "role": "Key Employee (Seller's Chief Operating Officer, to be employed by Buyer)"
+    },
+    {
+      "id": "P5",
+      "name": "Norrbeck Biologics, Inc.",
+      "role": "Seller's largest customer under a Master Temperature-Controlled Storage Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing Date",
+      "value": "March 3, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$42,000,000",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Escrow Amount",
+      "value": "$4,200,000",
+      "doc": "D1",
+      "section": "3.3"
+    },
+    {
+      "id": "F4",
+      "key": "APA indemnity Cap",
+      "value": "$4,200,000 (10% of the Purchase Price)",
+      "doc": "D1",
+      "section": "9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "APA Cap carve-outs",
+      "value": "Fraud, breach of Fundamental Representations, and Excluded Liabilities",
+      "doc": "D1",
+      "section": "9.5(b)"
+    },
+    {
+      "id": "F6",
+      "key": "APA general representation survival period",
+      "value": "12 months after the Closing Date",
+      "doc": "D1",
+      "section": "9.1(a)"
+    },
+    {
+      "id": "F7",
+      "key": "Escrow Period",
+      "value": "90 days after the Closing Date",
+      "doc": "D2",
+      "section": "1.1"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "APA prevails over Ancillary Agreements, except the Escrow Agreement controls on indemnification claims and limits",
+      "doc": "D1",
+      "section": "11.9"
+    },
+    {
+      "id": "F9",
+      "key": "APA governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "11.6"
+    },
+    {
+      "id": "F10",
+      "key": "APA definition of Business",
+      "value": "temperature-controlled warehousing, refrigerated and frozen freight transportation, and cross-dock services",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F11",
+      "key": "Key Employee non-compete period",
+      "value": "24 months after the Closing Date",
+      "doc": "D3",
+      "section": "6.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_teivav_vaipith.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement_agreed_form.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "key_employee_agreement_okonkwo_brandt.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "integration_planning_meeting_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 9.3(c) of the APA makes Buyer indemnify Seller for all Losses arising from the Transferred Customer Contracts 'whether arising before or after the Closing'. Section 9.5(d) then states that Buyer's obligations under Section 9.3 'shall not be subject to the Cap or any other limitation'. Read together, Buyer takes on unlimited liability for Seller's own pre-Closing performance failures, such as temperature excursions, spoiled product or SLA credits. Those same liabilities would otherwise be Excluded Liabilities that Seller keeps under Section 2.4. Meanwhile Seller's indemnity of Buyer is capped at $4,200,000.",
+      "doc": "D1",
+      "section": "9.3(c); 9.5(d)",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "shall not be subject to the Cap or any other limitation"
+      ],
+      "expected_finding": "Buyer's indemnity under Section 9.3(c), made uncapped by Section 9.5(d), exposes Buyer to unlimited liability for Seller's pre-Closing customer-contract liabilities, and should be limited to post-Closing matters and made subject to a cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Schedule 4.7 of the APA lists the Master Temperature-Controlled Storage Agreement with Norrbeck Biologics, Inc. as a Material Contract. The schedule notes that the contract (a) cannot be assigned without Norrbeck's prior written consent, (b) is terminable by Norrbeck on any assignment made without that consent, and (c) that the consent has not yet been obtained. Section 7.2(c) conditions Buyer's obligation to close only on the 'Required Consents' listed in Schedule 7.2(c), and that schedule lists only the two warehouse landlord consents. Under Section 2.7, any contract whose consent is not obtained by Closing becomes an Excluded Asset 'without adjustment to the Purchase Price'. Read together, Buyer must close and pay the full price even if it loses Seller's largest customer contract. Nothing requires Seller to seek the consent, and no price protection applies.",
+      "doc": "D1",
+      "section": "2.7; 7.2(c); Schedule 4.7; Schedule 7.2(c)",
+      "detect_terms": [
+        "without adjustment to the Purchase Price",
+        "Norrbeck Biologics"
+      ],
+      "expected_finding": "The Norrbeck Biologics consent to assignment is not yet obtained and not a Required Consent under Section 7.2(c), so under Section 2.7 Buyer could be forced to close without the contract at the full price; it should be added to Schedule 7.2(c) as a closing condition, or the price should be adjusted.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Section 9.1(a) of the APA has general representations survive 12 months after the Closing Date. Section 9.1(b), however, provides that the Environmental Representations in Section 4.12 survive only 'until the expiration of the Escrow Period (as defined in the Escrow Agreement)'. Section 4.12 covers ammonia and refrigerant systems, EPA Risk Management Program compliance and refrigerant leak records. The agreed-form Escrow Agreement defines the Escrow Period in Section 1.1 as 90 days after the Closing Date. Read together, environmental and refrigerant claims must be noticed within 90 days. That is too short to complete a post-Closing compliance audit or to discover leaks or contamination, which typically surface over a full seasonal cycle.",
+      "doc": "D1",
+      "section": "9.1(b); Escrow Agreement Section 1.1",
+      "detect_terms": [
+        "until the expiration of the Escrow Period"
+      ],
+      "expected_finding": "Because Section 9.1(b) ties survival of the Environmental Representations to the 90-day Escrow Period in Section 1.1 of the Escrow Agreement, Buyer has only 90 days after Closing to bring environmental and refrigerant claims; survival should be extended to at least the 12-month general period or longer.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 9.5(b) of the APA excludes Fraud, breach of Fundamental Representations and Excluded Liabilities from the $4,200,000 Cap. Section 6.3 of the agreed-form Escrow Agreement, which Buyer and Seller both sign, provides that the Cap 'shall apply to all claims under Section 9.2 of the Purchase Agreement other than claims for Fraud or breach of Fundamental Representations'. That wording drops the Excluded Liabilities carve-out. Section 11.9 of the APA would normally let the APA prevail, but it states that the Escrow Agreement controls on indemnification claims and limits. Read together, Buyer's Section 9.2(c) claims for Seller's retained Excluded Liabilities become capped at $4,200,000. Those liabilities include pre-Closing customer spoilage claims, pre-Closing payroll and taxes, and fleet liabilities.",
+      "doc": "D2",
+      "section": "6.3",
+      "detect_terms": [
+        "other than claims for Fraud or breach of Fundamental Representations"
+      ],
+      "expected_finding": "Section 6.3 of the Escrow Agreement drops Excluded Liabilities from the Cap carve-outs, and APA Section 11.9 makes the Escrow Agreement control on indemnification limits, so Buyer's Excluded Liability claims would be capped at $4,200,000; Section 6.3 should be conformed to APA Section 9.5(b), or Section 11.9 amended so the APA prevails.",
+      "contradicts": "F5"
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "The APA (Section 1.1) defines 'Business' as temperature-controlled warehousing, refrigerated and frozen freight transportation, and cross-dock services. The Key Employee Agreement recites that Okonkwo-Brandt is employed in connection with Buyer's acquisition of the Business. However, Section 1.1 of that agreement defines 'Business' only as 'the operation of temperature-controlled warehouse facilities'. The 24-month non-compete and non-solicit in Section 6.1 restrict competition only in that 'Business'. APA Section 11.9 does not cure the gap, because its precedence rule governs only conflicts among the parties to the APA, and the employee is not a party. In addition, Section 10.4 of the Key Employee Agreement makes it the entire agreement between the employee and Buyer. Read together, Seller's COO, who runs the reefer fleet, is free to compete in refrigerated transport and cross-dock services immediately after Closing.",
+      "doc": "D3",
+      "section": "1.1; 6.1",
+      "detect_terms": [
+        "the operation of temperature-controlled warehouse facilities"
+      ],
+      "expected_finding": "The Key Employee Agreement's narrower definition of 'Business', used in the Section 6.1 non-compete, leaves the key employee free to compete in refrigerated transportation and cross-dock services, and APA Section 11.9 does not bind him; the definition should be conformed to APA Section 1.1.",
+      "contradicts": "F10"
+    }
+  ]
+}

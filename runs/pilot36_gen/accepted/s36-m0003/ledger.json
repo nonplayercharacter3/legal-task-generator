@@ -1,0 +1,165 @@
+{
+  "matter_id": "s36-m0003",
+  "summary": "Drulun Therapeutics, Inc. (client), a specialty pharmaceutical company that markets a refrigerated oncology injectable, buys fill-finish finished product from contract manufacturer Pruvax Biologics Manufacturing, LLC. The folder holds four documents: the New York-law Supply Agreement (effective February 1, 2024), Order Form No. 3 (dated September 8, 2026), a Data Processing Addendum covering patient and complaint data that Pruvax handles for serialization and adverse-event intake, and a superseded November 2023 draft of the Supply Agreement. Three issues are planted. First, the DPA selects Delaware law and Delaware courts, and the Supply Agreement's precedence clause lets the DPA control on data matters. Second, the Order Form redefines 'Delivery' as tender to the first carrier, and the precedence clause lets that definition override the Supply Agreement on delivery terms. That moves the rejection window and risk of loss. Third, the Order Form recitals record Drulun's non-renewal notice dated August 14, 2026. That date is after the 180-day deadline computed from the Supply Agreement's term provisions, so the agreement likely auto-renewed. The Order Form also records that both parties reserve their positions.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Drulun Therapeutics, Inc.",
+      "role": "Customer / purchaser of finished drug product (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Pruvax Biologics Manufacturing, LLC",
+      "role": "Supplier / contract fill-finish manufacturer and data processor"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "February 1, 2024",
+      "doc": "D1",
+      "section": "Preamble and Section 1 (Definitions)"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "three years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 2.1 (Initial Term)"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement non-renewal notice period",
+      "value": "at least 180 days before expiry of the then-current term",
+      "doc": "D1",
+      "section": "Section 2.2 (Renewal)"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement Renewal Term",
+      "value": "successive two-year periods, automatic absent timely non-renewal notice",
+      "doc": "D1",
+      "section": "Section 2.2 (Renewal)"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement governing law",
+      "value": "laws of the State of New York",
+      "doc": "D1",
+      "section": "Section 15.1 (Governing Law; Forum)"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement forum",
+      "value": "exclusive jurisdiction of state and federal courts in New York County, New York",
+      "doc": "D1",
+      "section": "Section 15.1 (Governing Law; Forum)"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "DPA (Personal Data matters), then Order Form (Products, quantities, pricing, delivery terms), then Supply Agreement",
+      "doc": "D1",
+      "section": "Section 17.3 (Order of Precedence)"
+    },
+    {
+      "id": "F8",
+      "key": "Supply Agreement definition of Delivery",
+      "value": "receipt of Product at Drulun's designated distribution center in Edison, New Jersey",
+      "doc": "D1",
+      "section": "Section 1 (Definitions)"
+    },
+    {
+      "id": "F9",
+      "key": "Supply Agreement rejection window",
+      "value": "30 days after Delivery",
+      "doc": "D1",
+      "section": "Section 6.2 (Inspection and Rejection)"
+    },
+    {
+      "id": "F10",
+      "key": "Drulun Non-Renewal Notice date",
+      "value": "August 14, 2026",
+      "doc": "D2",
+      "section": "Recital C"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "drulun_pruvax_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "order_form_no_3.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "supply_agreement_draft_nov2023.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_supply_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "DPA selects Delaware law and forum, and the precedence clause lets it control",
+      "description": "Supply Agreement Section 15.1 (D1) chooses New York law and the exclusive jurisdiction of New York County courts. DPA Section 12 (D3) instead provides that the DPA, and any dispute arising out of or relating to it, is governed by the laws of the State of Delaware and is subject to the exclusive jurisdiction of Delaware courts. That covers claims for Security Incidents involving patient data in serialization and adverse-event records, and Pruvax's DPA indemnity. Section 12 applies 'notwithstanding Section 15.1 of the Supply Agreement'. Supply Agreement Section 17.3 (D1) gives the DPA precedence over all other documents on Personal Data matters, so the conflict is not cured. Instead, the Delaware choice controls for data claims. A single event, such as a serialization or complaint-handling failure that is both a supply breach and a data incident, could therefore have to be litigated in two forums under two bodies of law. That exposes Drulun to inconsistent results, duplicated cost, and procedural fights over which clause governs. The problem appears only when DPA Section 12 is read together with Supply Agreement Sections 15.1 and 17.3.",
+      "doc": "D3",
+      "section": "Section 12 (Governing Law and Jurisdiction)",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "notwithstanding Section 15.1"
+      ],
+      "expected_finding": "DPA Section 12 selects Delaware law and Delaware courts notwithstanding Supply Agreement Section 15.1. Because Supply Agreement Section 17.3 gives the DPA precedence on Personal Data matters, data-related claims would be split from New York-governed supply claims, so the DPA should be conformed to New York law and the New York County forum, or Section 17.3 should exclude governing law and forum from the DPA's precedence.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "Order Form redefines 'Delivery' as carrier tender, overriding the Supply Agreement",
+      "description": "Supply Agreement Section 1 (D1) defines 'Delivery' as receipt of Product at Drulun's distribution center in Edison, New Jersey. Section 5.3 passes title and risk of loss on Delivery, and Section 6.2 gives Drulun 30 days after Delivery to reject nonconforming Product. Order Form No. 3 Section 4 (D2) instead defines 'Delivery' as tender to the first carrier at Pruvax's Durham, North Carolina facility, FCA Pruvax Facility (Incoterms 2020). Supply Agreement Section 17.3 makes the Order Form prevail over the Supply Agreement on delivery terms, so the Order Form definition controls for the batches it covers. As a result, risk of loss for a temperature-sensitive refrigerated injectable passes to Drulun before cold-chain transit. The 30-day rejection clock also starts at Pruvax's dock rather than on receipt, which shortens Drulun's real inspection time and may leave excursion damage in transit as Drulun's loss. The problem appears only when D2 Section 4 is read with D1 Sections 1, 5.3, 6.2 and 17.3.",
+      "doc": "D2",
+      "section": "Section 4 (Delivery Terms)",
+      "detect_terms": [
+        "tender to the first carrier",
+        "FCA Pruvax Facility"
+      ],
+      "expected_finding": "Under Supply Agreement Section 17.3, the Order Form's definition of 'Delivery' as tender to the first carrier at Pruvax's facility overrides the Supply Agreement definition (receipt in Edison). This shifts risk of loss under Section 5.3 to Drulun during cold-chain transit and starts the Section 6.2 30-day rejection window before Drulun receives the Product, so the Order Form should be conformed to the Supply Agreement definition or should state that the Supply Agreement definition of Delivery controls.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "Drulun's non-renewal notice was sent after the 180-day deadline",
+      "description": "Under Supply Agreement Section 2.1 (D1), the Initial Term runs three years from the February 1, 2024 Effective Date, so it ends January 31, 2027. Under Section 2.2, the agreement renews automatically for a two-year Renewal Term unless a party gives non-renewal notice at least 180 days before expiry. That makes the deadline August 4, 2026. Recital C of Order Form No. 3 (D2, dated September 8, 2026) records that Drulun delivered its Non-Renewal Notice dated August 14, 2026, which is 10 days late. Recital C also states that each party reserves all rights regarding whether that notice was effective. Drulun has therefore not accepted renewal, but it is likely bound to a Renewal Term through January 31, 2029, including the annual minimum purchase commitment in Section 3.4. New York General Obligations Law 5-903 covers service and maintenance contracts, not a goods supply agreement, so it does not rescue Drulun. Finding the problem requires computing the deadline from D1 and comparing it with the date recorded in D2.",
+      "doc": "D2",
+      "section": "Recital C",
+      "detect_terms": [
+        "dated August 14, 2026",
+        "reserves all rights"
+      ],
+      "expected_finding": "The Initial Term ends January 31, 2027, so non-renewal notice under Supply Agreement Section 2.2 was due by August 4, 2026. Drulun's Non-Renewal Notice dated August 14, 2026, recorded in Order Form No. 3 Recital C, was therefore untimely, and the agreement likely auto-renews for a two-year Renewal Term. The memo should advise that Drulun's reserved position is weak and recommend negotiating a written waiver or a short extension with Pruvax, or identifying another exit right.",
+      "contradicts": null
+    }
+  ]
+}

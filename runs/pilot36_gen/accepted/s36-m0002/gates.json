@@ -1,0 +1,126 @@
+{
+  "matter_id": "s36-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 44
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.3(c): Buyer shall indemnify Seller from all Losses arising out of or resulting from \"the Transferred Customer Contracts, whether arising before or after the Closing.\" Section 9.5(d): \"Buyer's obligations under Section 9.3 shall not be subject to the Cap or any other limitation.\"",
+            "reason": "The problem is present and hurts the Buyer (our client). Buyer is the indemnifying party under 9.3(c). Read with 9.5(d), Buyer gives Seller an unlimited indemnity for every Loss on the Transferred Customer Contracts, including Seller's own pre-Closing failures. Section 2.4(b) lists those failures as Excluded Liabilities that Seller keeps: temperature excursions, spoiled product, service-level credits and chargebacks. Seller's indemnity of Buyer, by contrast, is capped at $4.2M (9.5(a)), and the escrow lasts only 90 days. The two clauses collide: Seller indemnifies Buyer for Excluded Liabilities under 9.2(c), while Buyer indemnifies Seller for the same pre-Closing contract losses with no limit. That at minimum creates a circular dispute and at worst shifts the pre-Closing risk back to Buyer. Nothing in the folder cures it. The Escrow Agreement's cap and deductible (Sections 6.2 and 6.3), which control under APA 11.9, address only Seller's liability under 9.2. The integration notes say they do not amend the APA. Closing had not occurred as of the March 2026 notes, so Buyer can still seek an amendment, and the provision remains a live exposure in any case."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 2.7: \"If any consent to assignment of any Assigned Contract has not been obtained as of the Closing, such Assigned Contract shall not be assigned to Buyer at the Closing and shall be deemed an Excluded Asset for all purposes of this Agreement, without adjustment to the Purchase Price.\" Schedule 4.7, item 1 (Norrbeck Biologics): \"Required. The agreement may not be assigned by Seller without the prior written consent of Norrbeck Biologics, Inc., and Norrbeck Biologics, Inc. may terminate the agreement upon any assignment made without such consent. Consent has not been obtained as of the date of this Agreement.\" Schedule 7.2(c) lists only the Linden and Allentown landlord consents.",
+            "reason": "The problem is present and hurts Buyer. Buyer's closing condition in Section 7.2(c) covers only the Required Consents on Schedule 7.2(c), which are the two landlord consents. The Norrbeck consent is not among them. Seller's efforts covenant in Section 6.3 also reaches only Required Consents, so Seller has no obligation to seek Norrbeck's consent. If the consent is missing at Closing, Section 2.7 turns the Norrbeck contract into an Excluded Asset with no price reduction, and Buyer must still pay the full $42,000,000. No escrow, indemnity or MAE provision fills that gap: losing the contract is a disclosed outcome the agreement provides for, not a breach. Nothing in the folder shows that Closing has occurred or that Buyer has accepted this result; the integration notes say Closing has not yet occurred. Buyer can still act before Closing by seeking an amendment that adds Norrbeck to Schedule 7.2(c), requires Seller to pursue the consent, or provides a price adjustment."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "APA §9.1(b): \"The Environmental Representations shall survive the Closing until the expiration of the Escrow Period (as defined in the Escrow Agreement).\" Escrow Agreement §1.1: \"'Escrow Period' means the period beginning on the Closing Date and ending at 5:00 p.m. Eastern Time on the date that is 90 days after the Closing Date.\" APA §9.1(d): \"No claim for indemnification under Section 9.2(a) ... may be asserted after the expiration of the applicable survival period.\"",
+            "reason": "The gap is present and hurts the client. Buyer is the indemnified party, and Seller gives the §9.2(a) indemnity for breach of the §4.12 environmental representations. Under §9.1(b) and the agreed-form Escrow Agreement, those representations survive only 90 days, while general representations survive 12 months. Section 4.12 covers ammonia RMP/PSM compliance, refrigerant leak records and releases. Under §9.1(d), any claim not noticed within 90 days is barred. The Excluded Liabilities indemnity (§2.4(f) via §9.2(c)) covers pre-Closing liabilities under Environmental Laws, but that is only a partial cure. It does not reach losses that flow from the representations themselves, such as incomplete leak records, deficient hazard analyses or RMP programs, or equipment out of compliance that Buyer must remediate going forward. Escrow Agreement §6.3, which controls on limits under APA §11.9, may also cap those claims. The folder shows Closing had not occurred as of the March 17 notes, the documents are unsigned forms, and nothing shows Buyer accepted the 90-day period. The point can therefore still be negotiated, for example by aligning environmental survival with the 12-month general period or longer."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Escrow Agreement Section 6.3: \"The Cap shall apply to all claims under Section 9.2 of the Purchase Agreement other than claims for Fraud or breach of Fundamental Representations.\" APA Section 11.9: \"...this Agreement shall prevail over the Ancillary Agreements, except that the Escrow Agreement shall control on indemnification claims and limits.\"",
+            "reason": "APA 9.5(b) carves Fraud, breach of Fundamental Representations and Excluded Liabilities out of the $4.2M Cap. Escrow Agreement 6.3 keeps only the first two carve-outs and applies the Cap to all other Section 9.2 claims, which brings 9.2(c) Excluded Liability claims under the Cap. Seller is the indemnitor here. Because APA 11.9 makes the Escrow Agreement control on indemnification limits, Seller's liability to Buyer for retained liabilities would be capped at $4.2M. Those liabilities include pre-Closing spoilage claims, taxes, payroll, fleet and environmental liabilities, so the cap directly hurts Buyer. The Escrow Agreement is still an unsigned agreed form ([●], 2026), so Buyer can still fix the wording before Closing. Nothing in the folder cures the conflict."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 1.1 of the Key Employee Agreement defines the term narrowly: \"'Business' means the operation of temperature-controlled warehouse facilities.\" Section 6.1(a) then restricts the Executive only from engaging \"in, or own, manage, operate or provide services to any Person that engages in, the Business within the Restricted Territory.\" APA Section 1.1, by contrast, defines \"Business\" as \"temperature-controlled warehousing, refrigerated and frozen freight transportation, and cross-dock services.\"",
+            "reason": "The client is the Buyer and the employer, so it is the party that benefits from the restrictive covenants. The KEA's narrow definition of \"Business\" limits the non-compete and the customer non-solicit to warehousing. That leaves refrigerated transport and cross-dock services unprotected. These are the very lines the Executive runs: Section 2.3 lists fleet, transportation and dispatch, and cross-dock. Nothing in the folder cures the gap. The KEA defines \"Business\" itself rather than incorporating the APA definition. Section 10.4 makes the KEA the entire agreement with the Executive. APA Section 11.9 governs conflicts only \"as between the Parties,\" meaning Buyer and Seller, and the Executive is not one of them. Section 6.4 lets a court reform the covenant to make it enforceable, but it does not let a court broaden it. The document is an unsigned agreed form, and Closing had not occurred at the time of the folder's latest record. Nothing in the folder shows the client accepted the narrow scope, so the point remains actionable."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

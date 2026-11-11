@@ -1,0 +1,5 @@
+We act for Laseisk Auto Remarketing, LLC, which supplies vehicles and runs the auction and online bidding platform under a distribution arrangement with Konais Dealer Networks, Inc. The client wants a clear picture of where it stands under the documents as they currently exist, and what it should push to fix or clarify, before it next deals with Konais on this relationship.
+
+Please review the full set in the matter folder: distribution_agreement.md, service_level_schedule.md, amendment_no_1.md, side_letter.md and mutual_nda.md. Then send me a memo that sets out each issue you identify. For each one, give the document and section where it appears, explain why it matters for Laseisk, and recommend a fix, such as proposed drafting or a negotiating position.
+
+Please order the issues by importance to the client. If any point turns on facts we would need to confirm with Laseisk, flag it rather than assume. Keep the memo practical. I would rather have a tight list I can take to the client than a clause-by-clause summary.

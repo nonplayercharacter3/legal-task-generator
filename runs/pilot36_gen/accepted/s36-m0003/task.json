@@ -1,0 +1,194 @@
+{
+  "task_id": "s36-m0003",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Drulun Therapeutics, Inc., which buys finished drug product from Pruvax Biologics Manufacturing, LLC under a supply agreement. Drulun wants a clear picture of where it stands under the current contract documents so it can decide what to raise with Pruvax. Please review everything in the matter folder: the supply agreement (drulun_pruvax_supply_agreement.md), Order Form No. 3 (order_form_no_3.md), the data processing addendum (data_processing_addendum.md), and the November 2023 prior draft of the supply agreement (supply_agreement_draft_nov2023.md). Then send me a memo that lists each issue you find. For each one, give the document and section where it appears, explain why it matters to Drulun, and recommend a fix. Rank the issues by how much they matter to the client, and flag anything that needs a quick decision or action from Drulun. Keep it practical: I want to be able to use it to brief the client without rewriting it.",
+  "documents": [
+    "data_processing_addendum.md",
+    "drulun_pruvax_supply_agreement.md",
+    "order_form_no_3.md",
+    "supply_agreement_draft_nov2023.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Data Processing Addendum selects Delaware law and Delaware courts, which control for data-related claims, so those claims are split from the New York-governed supply claims.",
+      "kind": "issue",
+      "hints": [
+        "laws of the State of Delaware",
+        "notwithstanding Section 15.1",
+        "two forums"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the Delaware governing law and forum issue in Section 12 of the Data Processing Addendum.",
+      "kind": "issue",
+      "hints": [
+        "DPA Section 12",
+        "Governing Law and Jurisdiction"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response explains why the Delaware governing law and forum split matters to Drulun.",
+      "kind": "issue",
+      "hints": [
+        "inconsistent results",
+        "duplicated cost",
+        "data incident"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response recommends a fix for the Delaware governing law and forum split.",
+      "kind": "issue",
+      "hints": [
+        "conform the DPA to New York law",
+        "New York County",
+        "amend Section 17.3"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that Order Form No. 3 defines 'Delivery' as tender to the first carrier at Pruvax's facility, and that this definition overrides the Supply Agreement's definition of Delivery as receipt in Edison, New Jersey.",
+      "kind": "issue",
+      "hints": [
+        "tender to the first carrier",
+        "FCA Pruvax Facility",
+        "Edison, New Jersey"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response locates the redefinition of 'Delivery' in Section 4 of Order Form No. 3.",
+      "kind": "issue",
+      "hints": [
+        "Order Form No. 3 Section 4",
+        "Delivery Terms"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response explains why the Order Form's redefinition of 'Delivery' matters to Drulun.",
+      "kind": "issue",
+      "hints": [
+        "risk of loss",
+        "cold-chain transit",
+        "rejection window"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response recommends a fix for the Order Form's redefinition of 'Delivery'.",
+      "kind": "issue",
+      "hints": [
+        "conform the Order Form",
+        "Supply Agreement definition controls"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response identifies that Drulun's non-renewal notice dated August 14, 2026 missed the 180-day deadline of August 4, 2026, so the Supply Agreement likely auto-renewed.",
+      "kind": "issue",
+      "hints": [
+        "August 4, 2026",
+        "untimely",
+        "auto-renew"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response locates the recorded non-renewal notice in Recital C of Order Form No. 3.",
+      "kind": "issue",
+      "hints": [
+        "Recital C",
+        "Order Form No. 3"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response explains why the late non-renewal notice matters to Drulun.",
+      "kind": "issue",
+      "hints": [
+        "two-year Renewal Term",
+        "January 31, 2029",
+        "minimum purchase"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response recommends a fix for the late non-renewal notice.",
+      "kind": "issue",
+      "hints": [
+        "written waiver",
+        "negotiate with Pruvax",
+        "exit right"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response states that the Supply Agreement's order-of-precedence clause (Section 17.3) lets other contract documents override the Supply Agreement in specified subject areas.",
+      "kind": "fact",
+      "hints": [
+        "Section 17.3",
+        "order of precedence",
+        "prevails"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response states that the Supply Agreement's Effective Date is February 1, 2024.",
+      "kind": "fact",
+      "hints": [
+        "February 1, 2024",
+        "Effective Date"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "The response is a memo that ranks or orders the issues by their importance to Drulun.",
+      "kind": "format",
+      "hints": [
+        "ranked",
+        "highest priority",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "The response flags at least one item as needing a quick decision or prompt action from Drulun.",
+      "kind": "format",
+      "hints": [
+        "urgent",
+        "immediate action",
+        "decision needed"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "The response claims that Drulun's non-renewal notice dated August 14, 2026 was timely.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely",
+        "validly terminated"
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "The response claims that the Supply Agreement's definition of Delivery (receipt in Edison, New Jersey) governs the batches covered by Order Form No. 3.",
+      "kind": "negative",
+      "hints": [
+        "Supply Agreement definition governs",
+        "Order Form cannot override"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

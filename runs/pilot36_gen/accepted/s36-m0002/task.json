@@ -1,0 +1,116 @@
+{
+  "task_id": "s36-m0002",
+  "split": "test",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Teivav ColdLink Holdings, LLC as buyer on its asset purchase from Vaipith Refrigerated Logistics, Inc. Before we go back to the other side, I need a clear picture of where the deal documents leave Teivav exposed or fail to deliver what it is paying for. Please review the full matter folder: the asset purchase agreement (asset_purchase_agreement_teivav_vaipith.md), the agreed-form escrow agreement (escrow_agreement_agreed_form.md), the key employee agreement (key_employee_agreement_okonkwo_brandt.md), and the integration planning meeting notes (integration_planning_meeting_notes.md). Send me a memo that lists each issue you find. For each one, say where it appears (document and section), explain why it matters for Teivav, and give a recommended fix, with proposed language where that would help. Put the most significant items first. If something is ambiguous or you need facts from the client to resolve it, flag it as an open question rather than guessing.",
+  "documents": [
+    "asset_purchase_agreement_teivav_vaipith.md",
+    "escrow_agreement_agreed_form.md",
+    "integration_planning_meeting_notes.md",
+    "key_employee_agreement_okonkwo_brandt.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Buyer's indemnity of Seller for Losses arising from the Transferred Customer Contracts is uncapped and reaches liabilities arising before Closing, exposing Buyer to unlimited liability for Seller's pre-Closing customer-contract liabilities. It locates this in APA Section 9.3(c) and/or Section 9.5(d), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "whether arising before or after the Closing",
+        "not subject to the Cap",
+        "Section 9.3(c)"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the Norrbeck Biologics consent to assignment has not been obtained and is not a closing condition (not a Required Consent), so Buyer could be required to close without the Norrbeck contract at the full Purchase Price. It locates this in the APA (any of Section 2.7, Section 7.2(c), Schedule 4.7 or Schedule 7.2(c)), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Norrbeck Biologics",
+        "Required Consents",
+        "without adjustment to the Purchase Price"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Environmental Representations survive only until the end of the 90-day Escrow Period, so Buyer has only 90 days after Closing to bring environmental and refrigerant claims. It locates this in APA Section 9.1(b) and/or Escrow Agreement Section 1.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "90 days",
+        "Environmental Representations",
+        "Section 9.1(b)"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Escrow Agreement's cap provision omits Excluded Liabilities from the carve-outs from the Cap, with the result that Buyer's indemnity claims for Seller's Excluded Liabilities would be capped at $4,200,000. It locates this in Escrow Agreement Section 6.3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 6.3",
+        "Excluded Liabilities",
+        "capped at $4,200,000"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the Key Employee Agreement defines 'Business' more narrowly than the APA (only temperature-controlled warehouse facilities), so the non-compete leaves Okonkwo-Brandt free to compete in refrigerated transportation and cross-dock services. It locates this in Key Employee Agreement Section 1.1 and/or Section 6.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "the operation of temperature-controlled warehouse facilities",
+        "refrigerated transport",
+        "cross-dock"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the APA indemnity Cap is $4,200,000 (10% of the Purchase Price).",
+      "kind": "fact",
+      "hints": [
+        "$4,200,000",
+        "10% of the Purchase Price"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Escrow Agreement controls over the APA on indemnification claims and limits.",
+      "kind": "fact",
+      "hints": [
+        "Section 11.9",
+        "Escrow Agreement controls",
+        "indemnification"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo that presents the issues as separate items, and for each item gives the document and section, why it matters for Teivav, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Buyer's indemnity claims against Seller for Excluded Liabilities remain uncapped under the deal documents as drafted.",
+      "kind": "negative",
+      "hints": [
+        "Excluded Liabilities uncapped"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the Environmental Representations survive for 12 months after the Closing Date under the documents as drafted.",
+      "kind": "negative",
+      "hints": [
+        "environmental representations survive 12 months"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

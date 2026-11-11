@@ -1,0 +1,118 @@
+{
+  "matter_id": "s36-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "dev",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 1.15: \"'Territory' means the United States and Canada.\" Section 3.1: \"Supplier appoints Distributor as its exclusive distributor of Auction Access Subscriptions in the Territory through all wholesale remarketing channels, including physical auction lanes, simulcast sales and online-only auctions.\" Section 3.2 bars Supplier from appointing other distributors or selling \"directly to Dealers in the Territory.\" Section 17.3 ranks the documents \"Amendment No. 1, then Distribution Agreement, then Service Level Schedule, then Side Letter.\"",
+            "reason": "The problem is present and still live for Laseisk. Side Letter Section 2.1 records the agreed exclusive scope as only franchised dealers in New York, New Jersey and Connecticut. The Agreement instead grants exclusivity across the US and Canada, for every Dealer type and every channel. Section 3.2 also stops Laseisk from selling direct or through anyone else in that whole Territory. Because Section 17.3 puts the Side Letter last in precedence, the broader grant prevails. Amendment No. 1 changed only pricing and left scope untouched, so nothing cures or limits the problem. The Year 1 conversion right under Section 9.3 appears to have lapsed: the 45-day window closed around April 14, 2026, before the May 20, 2026 Amendment, which only \"reserves\" those rights. The overbroad grant therefore still binds Laseisk for the rest of the three-year term. Laseisk can still seek an amendment or reformation, or use a later-year volume shortfall to convert the appointment to non-exclusive."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 3.1 of the Amendment reads: \"The Parties acknowledge the matters recorded in Recital B. Supplier reserves all rights under Section 9.3 of the Agreement in respect of the first Contract Year.\" Section 9.3 of the Agreement reads: \"Supplier exercises this right by written notice to Distributor given within 45 days after the end of the relevant Contract Year, failing which such right is waived for that Contract Year.\"",
+            "reason": "The conversion right is Laseisk's, and Laseisk must give the notice. Contract Year 1 ran from March 1, 2025 to February 28, 2026, so the 45-day window closed April 14, 2026. Nothing in the folder shows a conversion notice was given. Section 9.3 waives the right automatically when the window closes. The May 20, 2026 Amendment only \"reserves\" rights. It does not extend or revive the window, and Konais does not concede the right survives. So the reservation preserves nothing for Contract Year 1, and Laseisk's apparent leverage over the 940-subscription shortfall is illusory. Section 9.4 also makes conversion Laseisk's sole remedy for the shortfall. This is still actionable. Laseisk has not accepted the result; the Amendment records that it disputes Konais's position. Laseisk can still negotiate an express revival or extension of the Section 9.3 right with Konais. Under Section 17.3, Amendment No. 1 would take precedence over the Agreement."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 16.2: \"Neither Party may assign or transfer this Agreement, or any of its rights or obligations under it, without the prior written consent of the other Party, except that either party may assign this Agreement to a Permitted Assignee without consent.\" Section 1.10: \"'Permitted Assignee' means, for a Party, (a) any Affiliate of that Party, or (b) any person acquiring all or substantially all of its assets or of the business to which this Agreement relates, whether by merger, consolidation, sale of assets, sale of equity or otherwise.\"",
+            "reason": "The problem is present and still actionable for Laseisk.\n\n- **What the clause allows.** Konais can assign the Agreement without Laseisk's consent to any acquirer of its business. That includes a competing auction operator or remarketing platform, because nothing in the definition excludes competitors. Laseisk only gets notice after the assignment takes effect.\n- **What would pass to the acquirer.** The assignee would take over the exclusive appointment under Section 3.1. Section 3.2 would still bar Laseisk from selling directly or appointing anyone else. The assignee would also gain access to Wholesale Prices, Dealer Data and Platform roadmaps.\n- **No exit for Laseisk.** The Agreement has no change-of-control or competitor-assignment termination right.\n- **Nothing in the folder cures it.**\n  - Amendment No. 1 changes only pricing.\n  - The Side Letter's narrower exclusive scope ranks lowest in the order of precedence.\n  - The NDA's assignment clause does not govern the Agreement.\n- **Why it remains actionable.** The Minimum Annual Volume conversion right (Section 9.3) is only a partial safeguard. The Year 1 conversion window appears to have lapsed: 45 days from March 1, 2026, without a recorded notice. Conversion also does not prevent the assignment itself. Laseisk can still seek a competitor carve-out or a termination right, for example in further amendment negotiations."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 13,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C10 asks for fact F1, which only issue I2 uses: a memo that misses I2 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4",
+          "C5",
+          "C6"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.062,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
