@@ -668,3 +668,12 @@ def test_instruction_keys(tmp_path):
         led = Ledger.from_dict(json.loads((d / "ledger.json").read_text()))
         assert not validate_instruction((d / "instruction.md").read_text(), led, False, 90)
 
+
+def test_v2_config_loads():
+    root = Path(__file__).resolve().parent.parent / "configs"
+    v2, base = load_config(str(root / "pilot_generate_v2.toml")), load_config(str(root / "pilot_generate_only.toml"))
+    assert (v2.spec.n_documents, v2.spec.n_issues, v2.spec.min_distractors) == ([6, 10], [4, 6], 2)
+    assert (v2.instruction.name_files, v2.instruction.max_words) == (False, 90)
+    assert (v2.gates.solver_max_steps, base.gates.solver_max_steps) == (40, 28)
+    v2.gates.solver_max_steps = 28
+    assert v2.gates == base.gates and v2.backend == base.backend
