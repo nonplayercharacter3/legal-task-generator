@@ -28,6 +28,11 @@ spec:
               - key: nvidia.com/gpu.product   # nvidia.com/a100 also covers 40 GB cards
                 operator: In
                 values: [NVIDIA-A100-SXM4-80GB, NVIDIA-A100-80GB-PCIe]
+              # The weight cache (pvc.yaml, rook-ceph-block) lives on NRP's US West Ceph pool. Read from SDSC on
+              # 2026-11-02 the pod was ready in ~7 minutes; from Missouri on 2026-11-09, ~110 s per shard (~2 hours).
+              - key: topology.kubernetes.io/region
+                operator: In
+                values: [us-west]
   containers:
     - name: vllm
       image: vllm/vllm-openai:v0.30.0     # CUDA 13, needs driver 580+; every NRP GPU node had 580+ on 2026-10-18
@@ -38,6 +43,8 @@ spec:
         - --max-model-len=131072            # a solver prompt (~31k) plus a 32k memo, with room; native is 262k
         - --gpu-memory-utilization=0.90
         - --reasoning-parser=qwen3          # thinking goes to reasoning_content, not content
+        # Ceph serves one stream at ~19 MB/s but 8 at ~146 MB/s (Fullerton, 2026-11-10): read 8 shards at a time.
+        - '--model-loader-extra-config={"enable_multithread_load": true, "num_threads": 8}'
         - --port=8000
       env:
         - name: HF_HOME
