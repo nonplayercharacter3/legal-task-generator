@@ -605,3 +605,25 @@ def test_generate_only_config_is_the_nrp_pilot_with_solver_check_deferred(tmp_pa
     assert Pipeline(run).run(resume=True)["resumed"] == 1
     with pytest.raises(ValueError, match="settings changed"):
         Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}, "gates": {"solver_check": "defer"}})).run(resume=True)
+
+
+def test_min_distractors(tmp_path):
+    from ltg.config import SpecCfg
+    from ltg.stages import sample_specs
+
+    assert all(s.min_distractors == 1 for s in sample_specs(SpecCfg(), 6, 1))  # default unchanged
+    cfg = SpecCfg(n_documents=[6, 6], min_distractors=2)
+    specs = sample_specs(cfg, 4, 1)
+    assert all(s.min_distractors == 2 and len(s.supporting_kinds) <= 3 for s in specs)
+    run = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2, "seed": 3}, "spec": {"n_documents": [6, 6], "min_distractors": 2}})
+    Pipeline(run).run()
+    for f in (tmp_path / "accepted").glob("*/ledger.json"):
+        assert sum(d["distractor"] for d in json.loads(f.read_text())["documents"]) == 2
+    assert json.loads((tmp_path / "settings.json").read_text())["spec"]["min_distractors"] == 2
+
+
+def test_default_settings_omit_new_keys(tmp_path):
+    run = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}})
+    Pipeline(run).run()
+    s = json.loads((tmp_path / "settings.json").read_text())
+    assert "min_distractors" not in s["spec"] and "instruction" not in s

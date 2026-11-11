@@ -51,6 +51,7 @@ class SpecCfg:
     work_types: list[str] = field(default_factory=lambda: ["issue_spotting_memo"])
     n_documents: list[int] = field(default_factory=lambda: [3, 5])  # inclusive range
     n_issues: list[int] = field(default_factory=lambda: [3, 5])
+    min_distractors: int = 1  # distractor documents per matter (when it has 3 or more documents)
 
 
 @dataclass

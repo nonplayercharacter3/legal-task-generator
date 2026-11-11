@@ -261,7 +261,7 @@ class Pipeline:
         for k in ("n_matters", "concurrency", "out_dir"):
             s["run"].pop(k)
         # Keys added after runs began, left out at their default so those runs still resume (pilot28_nrp and later).
-        for section, k, default in (("backend", "timeout_retries", 1), ("gates", "solver_check", "inline")):
+        for section, k, default in (("backend", "timeout_retries", 1), ("gates", "solver_check", "inline"), ("spec", "min_distractors", 1)):
             if s[section].get(k) == default:
                 s[section].pop(k)
         # How a reply travels does not change what it says, so runs begun without streaming resume with it on.

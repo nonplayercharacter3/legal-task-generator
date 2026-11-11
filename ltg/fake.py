@@ -137,7 +137,7 @@ class FakeModel:
         roles = ("Buyer", "Seller") if is_ma else ("Customer", "Supplier")
 
         n_docs = spec["n_documents"]
-        n_distractors = 1 if n_docs >= 3 else 0
+        n_distractors = max(spec.get("min_distractors", 1), 1) if n_docs >= 3 else 0
         precedent_id = p["precedents"][0]["id"] if p.get("precedents") else None
         documents = [
             {
@@ -153,7 +153,7 @@ class FakeModel:
             kind = support[k % len(support)]
             documents.append({"id": f"D{len(documents) + 1}", "filename": f"{_slug(kind)}_{k + 1}.md", "kind": kind, "distractor": False, "precedent": None})
         for k in range(n_distractors):
-            kind = spec.get("distractor_kind") or ["email thread", "meeting notes"][k % 2]
+            kind = (spec.get("distractor_kind") if k == 0 else "") or ["email thread", "meeting notes"][k % 2]
             documents.append({"id": f"D{len(documents) + 1}", "filename": f"{_slug(kind)}.md", "kind": kind, "distractor": True, "precedent": None})
 
         year = 2025 + r.randint(0, 1)

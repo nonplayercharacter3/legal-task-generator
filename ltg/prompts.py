@@ -20,7 +20,8 @@ Rules:
 - Besides the main agreement, the documents should be the spec's `supporting_kinds` and, for the distractor, its
   `distractor_kind`. Adjust a kind only if it cannot fit the matter, and keep the same number of documents.
 - Create exactly `n_documents` documents. The first is the main agreement of type `agreement_type`.
-  When there are 3 or more documents, at least one must be a distractor (looks relevant, contains no issue).
+  When there are 3 or more documents, at least `min_distractors` (1 if absent) must be distractors (look relevant,
+  contain no issue); the first has the spec's `distractor_kind`, any others a kind a real folder would hold.
 - Plant exactly `n_issues` issues, one of each requested issue type, each in a specific non-distractor document
   and section. Spread issues across at least two documents when there are two or more issues.
 - Issues must be real problems for the client under the governing law (`jurisdiction`), not drafting trivia, and

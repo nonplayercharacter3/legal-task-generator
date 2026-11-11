@@ -56,7 +56,8 @@ def sample_specs(cfg: SpecCfg, n: int, seed: int, used_industries: dict[str, int
             if s not in used_stems:
                 used_stems.add(s)
                 stems.append(s)
-        n_support = max(n_docs - 1 - (1 if n_docs >= 3 else 0), 0)  # the rest: main agreement and one distractor
+        n_dis = min(cfg.min_distractors, n_docs - 1) if n_docs >= 3 else 0
+        n_support = max(n_docs - 1 - n_dis, 0)  # the rest: main agreement and the distractors
         specs.append(
             MatterSpec(
                 matter_id=f"s{seed}-m{k + 1:04d}",
@@ -73,6 +74,7 @@ def sample_specs(cfg: SpecCfg, n: int, seed: int, used_industries: dict[str, int
                 name_stems=stems,
                 supporting_kinds=r.sample(SUPPORTING_KINDS[area], min(n_support, len(SUPPORTING_KINDS[area]))),
                 distractor_kind=r.choice(DISTRACTOR_KINDS) if n_docs >= 3 else "",
+                min_distractors=max(n_dis, 1) if n_docs >= 3 else 1,
             )
         )
     return specs
