@@ -1,0 +1,116 @@
+{
+  "matter_id": "s44-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 1.1: \"'Post-Closing Show Liabilities' means all Liabilities and obligations under the Talent Agreements in respect of Shows scheduled to occur after the Closing Date, including artist guarantees, deposits, advances, bonuses, rider and production obligations, and settlement obligations, whether arising before or after the Closing Date.\" Section 9.3(b): Buyer shall indemnify Seller Indemnitees against all Losses relating to \"any Post-Closing Show Liabilities, including any Post-Closing Show Liabilities for which Seller or any of its Affiliates is or becomes liable as guarantor, co-promoter or otherwise.\" Section 9.5(a): \"The aggregate liability of Seller for claims under Section 9.2(a), and the aggregate liability of Buyer for claims under Section 9.3(a), shall not exceed the Escrow Amount.\"",
+            "reason": "The obligation runs from Talin, the client, to Seller. The definition expressly reaches liabilities 'arising before' Closing. That includes pre-closing breaches, deposits Seller handled, and Seller's own guarantor or co-promoter exposure. Section 9.5(a) caps only claims under 9.2(a) and 9.3(a), so the 9.3(b) indemnity has no cap, no basket and no survival limit. The result is lopsided: Seller's liability for misstating talent deposits under Section 4.9 is capped at $8.4M and ends at the 120-day escrow release, while Talin's indemnity back to Seller for the same talent obligations is unlimited. Nothing in the escrow agreement, the IP assignment or the board consent cures or limits this. Closing is not until December 1, 2026, so Talin can still seek an amendment, for example carving out pre-closing breaches and Seller-held amounts. The problem is present and actionable."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "IP Assignment Agreement §1.1: \"'Company IP' means solely the registered trademarks and service marks set out in Exhibit A, together with all registrations and pending applications for them.\" SPA §11.9: \"...except that the IP Assignment Agreement shall govern the conveyance of Intellectual Property.\"",
+            "reason": "SPA §1.1 defines Company IP broadly to cover all IP used in the business, expressly including the fan contact database and the ticketing software. SPA §7.2(d) conditions Buyer's closing on an assignment of 'all Company IP.' The IP Assignment, however, limits Company IP to the registered marks on Exhibit A. It therefore omits the database, the software, unregistered marks and trade dress, domain names and social media accounts. SPA §11.9 makes the IP Assignment control the conveyance of IP, so the narrow definition decides what Keelhaven actually receives. SPA §4.10 promises only that the Company will own the IP 'upon consummation of the IP Assignment Agreement,' which ties back to the same narrow scope. Any remaining fallback is a capped and time-limited indemnity claim: §9.5 caps it at the escrow amount and the escrow releases 120 days after closing. Neither is a cure. The document is still an unsigned draft and closing is set for December 1, 2026, so Talin can still fix this, for example by conforming the definition to the SPA or adding the unregistered assets to the assignment."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SPA 9.1: \"The representations and warranties of Seller and of Buyer contained in this Agreement and in any certificate delivered under it shall survive the Closing until the Escrow Release Date.\" SPA 9.4: \"No claim may be made under Section 9.2(a) or Section 9.3(a) unless a Claim Notice for it is delivered before the expiration of the applicable survival period under Section 9.1. Any claim for which a Claim Notice is not so delivered is irrevocably waived.\" Escrow Agreement 4.1: \"The 'Escrow Release Date' is the date that is 120 days after the Closing Date.\"",
+            "reason": "Talin is Buyer and the party that would bring rep-breach claims against Seller under 9.2(a). Read together, 9.1 and 9.4 cut those claims off about 120 days after Closing, around March 31, 2027 for a December 1, 2026 closing, and any claim not noticed by then is irrevocably waived. Talin's board consent shows the Lanternfall Festival runs in August and Talin's first post-closing audit follows the fiscal year ending June 30, 2027. Breaches of the financial statement, talent agreement, ticketing receipt and tax reps (4.5, 4.9, 4.12, 4.13) would therefore likely come to light only after the window closes. Nothing cures this: there is no carve-out for fundamental or tax reps, and the fraud exception in 9.5(c) does not extend survival. Pre-Closing Taxes under 9.2(c) are not subject to the 9.4 cutoff, but the tax rep in 9.2(a) is. The SPA has been signed, but Closing has not occurred and the Escrow Agreement is not yet effective. Talin can still negotiate a longer survival period or a later Escrow Release Date (for example, an amendment under 11.3) before Closing, so the problem is still actionable."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 15,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.107,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

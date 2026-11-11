@@ -1,0 +1,5 @@
+We represent Talin Live Entertainment Group, Inc., the buyer, in its acquisition of stock from Nasund Partners LLC. Before we go back to the other side, I need a full review of the deal package from Talin's perspective so we know what to push on and what Talin is actually getting.
+
+Please review everything in the matter folder: the stock purchase agreement (stock_purchase_agreement.md), the escrow agreement (escrow_agreement.md), the Talin board consent (talin_board_consent.md), the IP assignment agreement (ip_assignment_agreement.md), and the prior draft of the escrow agreement (escrow_agreement_prior_draft.md).
+
+Put your findings in a memo to me. For each issue, give the document and section where it appears, explain why it matters for Talin, and recommend a fix, with proposed language where that would help. Put the items that matter most first. If you can't resolve something from these documents alone, flag it as an open question and don't guess. Let me know if anything you'd expect to see is missing from the folder.

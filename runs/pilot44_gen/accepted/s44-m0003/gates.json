@@ -1,0 +1,125 @@
+{
+  "matter_id": "s44-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "dev",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "11.1 The laws of the State of Texas govern this Quality Agreement and all disputes arising out of or relating to the Services, without regard to conflict-of-laws principles. 11.2 Each Party submits to the exclusive jurisdiction of the state and federal courts located in Dallas County, Texas for any action arising out of or relating to this Quality Agreement or the Services.",
+            "reason": "The problem is present and still actionable. MSA Sections 16.1 and 16.2 choose Delaware law and exclusive New Castle County, Delaware courts, as the term sheet (Section 12) agreed. MSA Section 1.4 ranks an executed Quality Agreement above the MSA. The MSA defines the Services as essentially everything it covers. So the Texas clause, which reaches all disputes relating to the Services, would displace the Delaware choice for nearly every dispute. That would push Butex, the Delaware customer, into a Dallas forum and leave the governing law split or uncertain. Nothing in the folder cures or limits this. Section 13.1 of the QA imports only MSA Sections 9, 14 and 15.6, not Section 16. The QA is still an unsigned Provider draft, so Butex can still reject or revise Section 11 before execution."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"When the Initial Term expires, this Agreement shall automatically renew for successive three (3) year Renewal Terms ... Renewal does not occur if either Party delivers written notice of non-renewal to the other Party not more than one hundred twenty (120) and not less than ninety (90) days before the end of the then-current term.\"",
+            "reason": "MSA Section 12.2 sets three-year automatic renewals. It allows non-renewal only by notice given in a narrow window of about 30 days, between 120 and 90 days before the term ends. For the Initial Term ending 31 August 2029, that window runs roughly early May to early June 2029. Term sheet Section 4.2–4.3 instead provided one-year renewals, with notice permitted at any time at least 60 days before expiry. The departure works against Butex, the Customer. If it misses the narrow window, it is bound for three more years to Fanul as exclusive provider at designated Facilities (Section 2.5), on SOW pricing with no adjustment mechanism. Nothing else in the folder cures or limits this. The Quality Agreement draft does not address renewal, and no document shows Butex accepted the change. It is still actionable today (November 2026): the window has not opened and the term can be renegotiated or amended under Section 15.3. Note that the MSA's signature blocks are blank, yet the Quality Agreement draft and broker letter treat the MSA as effective. Even if it is already signed, an amendment can still fix this."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"Notwithstanding Section 10.3(d) of the MSA, Provider's liability for Vehicle Damage, including Vehicle Damage arising from any failure to meet the Inspection Standards, is subject to the limitation of liability in Section 10.2 of the MSA... Provider's liability for Vehicle Damage is further limited, for each Vehicle, to the reasonable cost of repairing that Vehicle, not to exceed $2,500 per Vehicle.\"",
+            "reason": "The cap carve-out protects Butex: under MSA Section 10.3(d), loss of or damage to Vehicles in Provider's custody is excluded from the 12-month fee cap, and the term sheet (7.3(d)) also treated it as uncapped. Draft QA Section 8.4 overrides that carve-out expressly. It puts Fanul's liability for Vehicle Damage back under the aggregate cap and adds a $2,500 per-Vehicle repair-cost ceiling. Because MSA Section 1.4 gives an executed Quality Agreement precedence over the MSA, the narrowing would control once signed. Butex would then bear consignor and buyer losses above those limits. Fanul's $1.5M garage keepers insurance does not cure this, because the limit caps Fanul's liability regardless of what insurance pays. The QA is still a provider-prepared draft that neither party has signed, so Butex can still object. The problem is present and actionable."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "15.2 **Assignment.** Customer shall not assign this Agreement or any SOW, in whole or in part, without Provider's prior written consent, except to an affiliate or to a successor to all or substantially all of the business to which this Agreement relates. Any purported assignment in violation of this Section 15.2 is void.",
+            "reason": "Section 15.2 restricts only Customer. Provider faces no consent requirement and no bar on assigning to a Competing Auction Operator. Section 15.4 binds 'successors and permitted assigns', and nothing else in the MSA limits Provider. Under Delaware's default rule, Fanul could therefore assign or delegate the MSA freely. That includes a transfer to a Butex competitor, which would then hold Customer Data and control lot operations. Section 3.5 (subcontracting consent) covers subcontracting, not outright assignment. Term sheet Section 9 required mutual consent and a bar on assignment to a Competing Auction Operator, and neither appears in the MSA. The draft Quality Agreement does not cure this. The MSA is effective, and Butex can still seek an amendment under Section 15.3, so the issue remains actionable for the client."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 21,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C17 asks for the whole ranking in fact F4 ('executed Quality Agreement, then this MSA, then Statements of Work'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.06,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "task_id": "s44-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Vepous Student Transportation, LLC, the school bus operator, in its supply relationship with Milon Fleet Parts Corp. The client wants a clear picture of where it stands under the arrangement as it currently exists: what its rights and obligations are, and where it is exposed. Please review the full set of documents in the matter folder: supply_agreement_vepous_milon.md, amendment_no1_supply_agreement.md, mutual_nda_vepous_milon.md, milon_notice_letter_2026-10-19.md and milon_parent_guaranty.md.\n\nPlease prepare a memo to me that lists each issue you identify. For each one, give the document and section where it appears, explain why it matters for Vepous, and recommend a fix. Where a fix calls for drafting, propose the language. Where it calls for a step such as sending a notice or opening a negotiation point, describe that step. Put the issues in order of importance to the client and keep the analysis practical. If anything in the file is missing, unclear or needs confirming with the client before we can advise, flag it separately at the end.",
+  "documents": [
+    "amendment_no1_supply_agreement.md",
+    "milon_notice_letter_2026-10-19.md",
+    "milon_parent_guaranty.md",
+    "mutual_nda_vepous_milon.md",
+    "supply_agreement_vepous_milon.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the pending sale of Vepous Transit Holdings, Inc. to Larchfield Mobility Partners, L.P. is an indirect Change of Control of Vepous that requires Milon's prior written consent. It locates the issue in the Supply Agreement at Section 14.3 and/or Section 1.4, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "indirect Change of Control",
+        "prior written consent of Supplier",
+        "Larchfield"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that the exclusivity obligation reaches beyond the two depots the agreement covers. It must say the obligation binds all current and future Affiliates for all their vehicles nationwide, while the deal covers only the Hempstead and Ronkonkoma depots. It locates the issue in the Supply Agreement at Section 3.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "anywhere in the United States",
+        "Affiliates",
+        "Hempstead and Ronkonkoma"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that Milon may assign the Supply Agreement without Vepous's consent, including to Rookwood Transit Supply, LLC, an affiliate of the competing operator Kestrel, as Milon's letter gives notice it will do. It locates the issue in the Supply Agreement at Section 14.2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without Customer's consent",
+        "Rookwood",
+        "Kestrel"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Amendment No. 1 limits the indemnity carve-out from the liability cap to Section 10.1(a) IP claims only. As a result, Milon's liability for product-defect bodily injury claims under Section 10.1(b) is now subject to the 12-month-fees cap. It locates the issue in Amendment No. 1 at Section 3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "solely under Section 10.1(a)",
+        "bodily injury",
+        "capped"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Supply Agreement's initial term is five years.",
+      "kind": "fact",
+      "hints": [
+        "five years",
+        "Initial Term"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that Milon Industrial Holdings, Inc. guarantees Milon's obligations under the Supply Agreement.",
+      "kind": "fact",
+      "hints": [
+        "Milon Industrial Holdings",
+        "guaranty",
+        "guarantor"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is a memo that presents the issues as a list ordered by importance to the client, giving the document and section for each issue.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "order of importance"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response includes a separate section at the end that flags items that are missing, unclear or need confirming with the client.",
+      "kind": "format",
+      "hints": [
+        "missing",
+        "confirm with the client",
+        "open points"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Milon's indemnity for product-defect bodily injury claims under Section 10.1(b) remains uncapped under the arrangement as it currently stands.",
+      "kind": "negative",
+      "hints": [
+        "remains uncapped",
+        "excluded from the cap"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the Supply Agreement requires Vepous's consent before Milon may assign it.",
+      "kind": "negative",
+      "hints": [
+        "requires Customer's consent",
+        "Supplier may not assign"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

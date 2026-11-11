@@ -1,0 +1,182 @@
+{
+  "matter_id": "s44-m0003",
+  "summary": "Butex Auto Auctions, Inc. (client) is a Delaware wholesale used-vehicle auction operator. It signed a Master Services Agreement, effective 1 September 2026, with Fanul Vehicle Services, LLC, a Texas provider of vehicle condition reports, reconditioning, lot management and yard transport. The folder holds four documents: the non-binding term sheet of 15 July 2026, the executed MSA, Fanul's proposed Quality Agreement draft dated 20 October 2026 (sent for signature as a supplement to the MSA), and a broker's cover letter enclosing Fanul's certificate of insurance. Four issues are planted. In the MSA, the renewal clause departs from the term sheet with long renewals and a narrow opt-out window, and Fanul's assignment is left unrestricted. In the draft Quality Agreement, Texas law and forum are imported, and vehicle-damage losses are pulled back under the liability cap. Because MSA Section 1.4 ranks an executed Quality Agreement above the MSA, the Quality Agreement draft would control once signed.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Butex Auto Auctions, Inc.",
+      "role": "Customer; Delaware wholesale used-vehicle auction operator and the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Fanul Vehicle Services, LLC",
+      "role": "Provider; Texas vehicle inspection, reconditioning, lot management and yard transport services company"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "1 September 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 16.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA dispute forum",
+      "value": "state or federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "Section 16.2"
+    },
+    {
+      "id": "F4",
+      "key": "MSA order of precedence",
+      "value": "executed Quality Agreement, then this MSA, then Statements of Work",
+      "doc": "D1",
+      "section": "Section 1.4"
+    },
+    {
+      "id": "F5",
+      "key": "MSA liability cap",
+      "value": "fees paid or payable to Provider in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 10.2"
+    },
+    {
+      "id": "F6",
+      "key": "MSA vehicle damage carve-out",
+      "value": "loss of or damage to Vehicles in Provider's care, custody or control is excluded from the cap",
+      "doc": "D1",
+      "section": "Section 10.3(d)"
+    },
+    {
+      "id": "F7",
+      "key": "MSA Initial Term",
+      "value": "three years from the MSA Effective Date",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F8",
+      "key": "Term Sheet renewal term",
+      "value": "one-year renewal terms",
+      "doc": "D2",
+      "section": "Section 4 (Term and Renewal)"
+    },
+    {
+      "id": "F9",
+      "key": "Term Sheet non-renewal notice",
+      "value": "written notice at any time at least 60 days before the end of the current term",
+      "doc": "D2",
+      "section": "Section 4 (Term and Renewal)"
+    },
+    {
+      "id": "F10",
+      "key": "Term Sheet assignment restriction",
+      "value": "neither party may assign without the other's consent; never to a Competing Auction Operator",
+      "doc": "D2",
+      "section": "Section 9 (Assignment)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "butex_fanul_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "butex_fanul_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "fanul_quality_agreement_draft.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "fanul_insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "MSA Sections 16.1 and 16.2 choose Delaware law and New Castle County, Delaware courts, consistent with the term sheet. Section 11 of Fanul's draft Quality Agreement (dated 20 October 2026) says the laws of the State of Texas govern 'this Quality Agreement and all disputes arising out of or relating to the Services', with exclusive jurisdiction in Dallas County, Texas. Under MSA Section 1.4, an executed Quality Agreement prevails over the MSA. Because the Services are the whole subject of the MSA, signing the draft would let the Texas clause override the Delaware choice for virtually every dispute. Butex would face a Texas forum and split or uncertain governing law, defeating the Delaware choice it bargained for.",
+      "doc": "D3",
+      "section": "Section 11 (Governing Law and Venue)",
+      "detect_terms": [
+        "laws of the State of Texas",
+        "Dallas County, Texas"
+      ],
+      "expected_finding": "Read with MSA Section 1.4, which ranks an executed Quality Agreement above the MSA, the draft's Texas law and Dallas County forum clause would displace the MSA's Delaware law and New Castle County forum for all Services disputes. Butex should require the clause to be deleted or conformed to MSA Sections 16.1 and 16.2 before signing.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA Section 12.2 renews the Agreement automatically after the three-year Initial Term (Section 12.1, running from the 1 September 2026 Effective Date to 31 August 2029) for successive three (3) year Renewal Terms. Renewal can be avoided only by written notice delivered not more than one hundred twenty (120) and not less than ninety (90) days before the end of the then-current term. That gives a roughly 30-day window of about 3 May to 2 June 2029 for the Initial Term. This departs from term sheet Section 4, which provides one-year renewals and notice at any time at least 60 days before expiry. A missed window locks Butex into another three years of exclusive-provider pricing.",
+      "doc": "D1",
+      "section": "Section 12.2 (Renewal)",
+      "detect_terms": [
+        "successive three (3) year Renewal Terms",
+        "not more than one hundred twenty (120)"
+      ],
+      "expected_finding": "MSA Section 12.2 automatically renews for three-year terms unless Butex gives notice within a narrow 30-day window (about 3 May to 2 June 2029 for the Initial Term ending 31 August 2029), contrary to the term sheet's one-year renewals and 60-day notice. Butex should seek an amendment conforming to the term sheet and, meanwhile, calendar the window.",
+      "contradicts": [
+        "F8",
+        "F9"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "MSA Section 10.2 caps each party's liability at fees paid or payable in the prior 12 months. Section 10.3(d) excludes from the cap loss of or damage to consigned Vehicles in Provider's care, custody or control. Section 8.4 of the draft Quality Agreement provides that 'Notwithstanding Section 10.3(d)' of the MSA, Provider's liability for Vehicle Damage, including damage from failure to meet the Inspection Standards, is subject to the cap in Section 10.2 and further limited to repair cost not exceeding $2,500 per Vehicle. Under MSA Section 1.4, an executed Quality Agreement prevails over the MSA, so the narrowing would control. Butex would then bear consignors' losses on vehicles damaged on Fanul-managed lots or in transport above $2,500 per Vehicle and above the aggregate fee cap. The term sheet treated vehicle damage as uncapped.",
+      "doc": "D3",
+      "section": "Section 8.4 (Vehicle Damage)",
+      "detect_terms": [
+        "Notwithstanding Section 10.3(d)",
+        "$2,500 per Vehicle"
+      ],
+      "expected_finding": "Draft Quality Agreement Section 8.4 overrides MSA Section 10.3(d) and puts vehicle-damage losses under the Section 10.2 cap with a $2,500 per-Vehicle limit, and MSA Section 1.4 would make that override control once signed. Butex should strike Section 8.4 or revise it to preserve the uncapped vehicle-damage carve-out.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "MSA Section 15.2 provides that 'Customer shall not assign' the Agreement or any SOW without Provider's prior written consent, but places no limit on Provider. Section 15.4 says the Agreement binds the parties' 'successors and permitted assigns'. Because Delaware law generally permits assignment of contract rights absent a contractual restriction, Fanul may assign or delegate the MSA without Butex's consent. That includes a transfer to a Competing Auction Operator, which would gain access to Butex's consignor, lane and pricing data and control of its lot operations. Term sheet Section 9 called for a mutual consent requirement and a bar on assignment to a Competing Auction Operator.",
+      "doc": "D1",
+      "section": "Section 15.2 (Assignment)",
+      "detect_terms": [
+        "Customer shall not assign",
+        "successors and permitted assigns"
+      ],
+      "expected_finding": "MSA Sections 15.2 and 15.4 restrict only Butex's assignment, so under Delaware's default rule Fanul may assign the MSA freely, including to a Competing Auction Operator, contrary to the term sheet's mutual consent requirement. Butex should seek an amendment making the restriction mutual and barring assignment to a Competing Auction Operator, with a termination right on any change of control of Fanul.",
+      "contradicts": "F10"
+    }
+  ]
+}

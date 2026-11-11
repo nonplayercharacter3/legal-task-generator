@@ -1,0 +1,181 @@
+{
+  "matter_id": "s44-m0002",
+  "summary": "Talin Live Entertainment Group, Inc. (buyer, firm's client) is buying all of the stock of Keelhaven Presents, Inc., a regional concert promoter that owns the annual Lanternfall Festival, from Nasund Partners LLC (seller). The deal is at the signed-but-not-closed stage. The folder holds the Stock Purchase Agreement, the Escrow Agreement, Talin's board consent, a pre-closing IP Assignment Agreement, and a superseded prior draft of the Escrow Agreement. Three issues are planted. First, the SPA's definition of Post-Closing Show Liabilities reaches pre-closing artist obligations, and Talin's indemnity for those liabilities sits outside the cap. Second, the IP Assignment defines Company IP far more narrowly than the SPA, and the SPA's precedence clause lets the IP Assignment govern the conveyance. Third, the SPA ties survival of the representations to the Escrow Release Date, which the Escrow Agreement sets only 120 days after Closing, before the August festival season and before the first audit cycle.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Talin Live Entertainment Group, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Nasund Partners LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Keelhaven Presents, Inc.",
+      "role": "Company (target concert promoter)"
+    },
+    {
+      "id": "P4",
+      "name": "Nasund Brands LLC",
+      "role": "Seller affiliate; assignor under IP Assignment Agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Pellucid Trust Company, N.A.",
+      "role": "Escrow Agent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement signing date",
+      "value": "October 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$84,000,000",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Escrow Amount",
+      "value": "$8,400,000",
+      "doc": "D1",
+      "section": "2.2"
+    },
+    {
+      "id": "F4",
+      "key": "Escrow Agent",
+      "value": "Pellucid Trust Company, N.A.",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F5",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "11.6"
+    },
+    {
+      "id": "F6",
+      "key": "Stock Purchase Agreement expected Closing Date",
+      "value": "December 1, 2026",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F7",
+      "key": "Indemnity cap under Sections 9.2(a) and 9.3(a)",
+      "value": "the Escrow Amount",
+      "doc": "D1",
+      "section": "9.5(a)"
+    },
+    {
+      "id": "F8",
+      "key": "Escrow Release Date",
+      "value": "120 days after the Closing Date",
+      "doc": "D2",
+      "section": "4.1"
+    },
+    {
+      "id": "F9",
+      "key": "Company IP (Stock Purchase Agreement definition)",
+      "value": "all IP used in Company business, including Lanternfall marks, fan contact database and ticketing software",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F10",
+      "key": "Order of precedence",
+      "value": "SPA prevails over Ancillary Agreements, except IP Assignment Agreement governs conveyance of Intellectual Property",
+      "doc": "D1",
+      "section": "11.9"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "talin_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "escrow_agreement_prior_draft.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "Buyer's uncapped indemnity for pre-closing talent liabilities",
+      "description": "Three SPA provisions combine here. Section 9.3(b) requires Talin to indemnify Seller for all Post-Closing Show Liabilities. Section 1.1 defines Post-Closing Show Liabilities as all obligations under Talent Agreements for shows scheduled after the Closing Date, 'whether arising before or after the Closing Date'. That wording sweeps in artist guarantees and deposits that Seller collected or owed before Closing. Section 9.5(a) caps indemnity only for claims under Sections 9.2(a) and 9.3(a), at the Escrow Amount. Section 9.3(b) is never mentioned, so it falls outside any cap. Read together, Talin carries unlimited liability for Seller's pre-closing talent obligations.",
+      "doc": "D1",
+      "section": "1.1; 9.3(b); 9.5(a)",
+      "detect_terms": [
+        "whether arising before or after the Closing Date"
+      ],
+      "expected_finding": "Because Section 9.5(a) caps only Sections 9.2(a) and 9.3(a), Talin's Section 9.3(b) indemnity for Post-Closing Show Liabilities is uncapped, and since Section 1.1 defines those liabilities to include obligations arising before Closing, Talin bears unlimited liability for Seller's pre-closing talent obligations; the definition should be limited to post-Closing obligations and Section 9.3(b) brought under the cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "Company IP defined narrowly in IP Assignment, which controls conveyance",
+      "description": "The SPA defines Company IP broadly in Section 1.1. It covers all IP used in the business, including the Lanternfall Festival marks, the fan contact database and the ticketing software. Under SPA Section 7.2(d), it is a closing condition that Nasund Brands LLC deliver the IP Assignment Agreement assigning all Company IP to the Company. The IP Assignment Agreement, however, defines Company IP in Section 1.1 as 'solely the registered trademarks and service marks' on its exhibit. The fan database and ticketing software are therefore left out. SPA Section 11.9 normally lets the SPA prevail over Ancillary Agreements, but it provides that the IP Assignment Agreement governs the conveyance of Intellectual Property. The narrow definition therefore controls what is actually transferred. As a result, Talin can close believing the condition is satisfied, while the key unregistered assets stay with the Seller affiliate.",
+      "doc": "D4",
+      "section": "1.1",
+      "detect_terms": [
+        "solely the registered trademarks and service marks"
+      ],
+      "expected_finding": "The IP Assignment Agreement's Company IP definition omits the fan contact database, ticketing software and other unregistered IP that the SPA's definition covers, and because SPA Section 11.9 makes the IP Assignment Agreement govern IP conveyance, those assets would not pass to the Company; the IP Assignment definition should be conformed to the SPA definition, or the Section 11.9 carve-out removed.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "Representations survive only until the 120-day Escrow Release Date",
+      "description": "SPA Section 9.1 provides that Seller's representations and warranties survive Closing only 'until the Escrow Release Date'. SPA Section 9.4 bars any claim not noticed before survival expires. The Escrow Agreement, Section 4.1, defines the Escrow Release Date as 120 days after the Closing Date. Measured from the expected Closing Date of December 1, 2026 in SPA Section 3.1, survival ends around March 31, 2027. Talin's board consent (D3) records two relevant facts. The Lanternfall Festival runs each August, and Talin's first post-closing audit of Keelhaven follows the fiscal year ending June 30, 2027. Breaches involving talent settlements, ticketing receipts and the financial statements would therefore come to light only after the claim window has closed.",
+      "doc": "D1",
+      "section": "9.1; 9.4",
+      "detect_terms": [
+        "until the Escrow Release Date"
+      ],
+      "expected_finding": "Because SPA Section 9.1 ties survival to the Escrow Release Date and Escrow Agreement Section 4.1 sets that date at 120 days after Closing (about March 31, 2027 on a December 1, 2026 Closing), Talin's representation claims expire before the August Lanternfall Festival and the first audit for the year ending June 30, 2027; survival should be decoupled from escrow release and set at no less than 18 months, with escrow held at least that long.",
+      "contradicts": null
+    }
+  ]
+}

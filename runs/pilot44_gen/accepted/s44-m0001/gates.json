@@ -1,0 +1,120 @@
+{
+  "matter_id": "s44-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 14.3: \"A Change of Control of Customer without the prior written consent of Supplier is a material breach of this Agreement, and Section 13.1's cure period does not apply to it. After that breach, Supplier may (a) terminate this Agreement on 30 days' written notice to Customer, and (b) recover from Customer, as liquidated damages and not as a penalty, the Annual Minimum Purchase Commitment shortfall for the remainder of the Initial Term.\" Section 1.4 includes \"(c) a sale, transfer or issuance of a controlling interest in Customer or in any entity that directly or indirectly controls Customer.\"",
+            "reason": "The problem is present and the client can still act on it. Customer (Vepous) carries the consent obligation, and Supplier holds the remedy. Section 1.4(c) covers a sale of a controlling interest in Customer's parent, so the Larchfield sale of Vepous Transit Holdings counts as a Change of Control. The Milon letter of October 19, 2026 states that consent was neither requested nor given. It also reserves Milon's Section 14.3 rights, which pass to Rookwood (an affiliate of Kestrel Student Coach) from December 1, 2026. The breach has no cure period. The liquidated damages are large: $1,850,000 for the current Contract Year and each remaining year of the Initial Term, less current-year purchases. Nothing in the folder cures, waives or limits this exposure. Amendment No. 1 does not touch Section 14.3, and Section 15.6 requires any waiver to be in writing. The folder does not show that the transaction has closed. Vepous can therefore still seek Supplier's written consent before closing, or negotiate a waiver."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 3.1: \"During the Term, Customer shall, and shall cause its Affiliates to, purchase all Fleet Components required for every vehicle owned, leased or operated by Customer or any of its Affiliates anywhere in the United States exclusively from Supplier.\" Section 1.2 defines Affiliate to include entities \"under common control with that Party, whether that relationship exists on the Effective Date or arises later.\" Schedule A lists only the Hempstead and Ronkonkoma depots.",
+            "reason": "Customer bears the exclusivity obligation. It covers every vehicle of Customer and its present and future Affiliates nationwide. Fleet Components is defined broadly to include functional equivalents for any passenger vehicle. Yet pricing, delivery and forecasts are limited to the two Covered Depots in Schedule A.\n\nNothing in the folder narrows the clause. Amendment No. 1 changes only pricing and Section 11.3. Milon's October 19, 2026 letter expressly reserves rights under Section 3.1 as to Customer and its Affiliates and asks for a list of post-Larchfield Affiliates. That shows the risk is live. Once Larchfield acquires control of Customer's parent, Larchfield's other portfolio companies become Affiliates under common control and could face breach claims. Rookwood would also inherit these rights as assignee.\n\nThe transaction had not closed as of the letter, and no waiver or acceptance appears in the folder. The issue therefore remains actionable for Customer, for example by negotiating a narrowing or consent before closing."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 14.2: \"Supplier may assign or transfer this Agreement, in whole or in part, without Customer's consent, to any Affiliate or to any purchaser of all or part of its business or assets.\" The October 19, 2026 letter states: \"Supplier gives notice that it will assign and transfer the Agreement, in whole, to Rookwood Transit Supply, LLC ... effective December 1, 2026\" and \"Rookwood is an affiliate of Kestrel Student Coach, Inc.\" It also says Supplier will transfer \"Customer's pricing, Purchase Order history, forecasts, volumes and Covered Depot delivery information.\"",
+            "reason": "Section 14.1 requires Supplier's consent before Customer can assign. Section 14.2 is the opposite for Supplier: it may assign to any purchaser without Customer's consent. The only conditions are 30 days' notice and a written assumption by the assignee. Nothing bars assignment to a competitor of Customer or an affiliate of one, and nothing protects Customer's data on such a transfer. Section 9.2 lets Supplier share Confidential Information with Affiliates, and the letter says Customer's commercial and depot data will go to Rookwood. Customer remains bound by Section 3.1, which requires it and its Affiliates to buy all Fleet Components exclusively from the supplier nationwide. That leaves Customer dependent on a rival's affiliate for safety-critical brake, steering and child-check parts for the rest of the five-year term. The issue is still actionable. Today is November 11, 2026 and the assignment does not take effect until December 1, 2026. Nothing in the folder shows Customer has consented to or accepted the assignment, so Customer can still object, negotiate protections or seek a release. No other document cures the problem. The Amendment leaves Section 14.2 unchanged, and the parent guaranty does not restrict assignment."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Amendment Section 3.1 replaces Section 11.3 with: \"Sections 11.1 and 11.2 do not apply to (a) Supplier's indemnification obligations for third-party claims arising solely under Section 10.1(a); (b) Supplier's obligations under Section 7.3; ...\" The original Section 11.3(a) had carved out \"all Section 10.1 indemnities, including 10.1(b) product-defect bodily injury claims.\"",
+            "reason": "Supplier gives the Section 10.1 indemnity and Customer (our client) receives it. The amendment narrows the cap carve-out to IP claims under 10.1(a). Supplier's indemnity for student bodily injury or death caused by defective brakes, steering or child-check alarms (10.1(b)), and for regulatory breach (10.1(c)), now falls under the Section 11.2 cap of 12 months' fees. Under Section 15.4, signed amendments prevail over the agreement body, and Section 4.1 ratifies the change. Nothing in the folder cures this. The surviving carve-outs reach only recall costs and gross negligence, fraud or willful misconduct, not ordinary defect claims. Section 2.2 of the Parent Guaranty is expressly subject to the Section 11 limits as they apply from time to time, so the guaranty does not fill the gap. The exposure is ongoing rather than a lapsed window. The Agreement runs to 2030, and the pending Rookwood assignment and the Larchfield change-of-control consent negotiation give Customer occasions to seek a corrective amendment."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

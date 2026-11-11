@@ -1,0 +1,162 @@
+{
+  "task_id": "s44-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Talin Live Entertainment Group, Inc., the buyer, in its acquisition of stock from Nasund Partners LLC. Before we go back to the other side, I need a full review of the deal package from Talin's perspective so we know what to push on and what Talin is actually getting.\n\nPlease review everything in the matter folder: the stock purchase agreement (stock_purchase_agreement.md), the escrow agreement (escrow_agreement.md), the Talin board consent (talin_board_consent.md), the IP assignment agreement (ip_assignment_agreement.md), and the prior draft of the escrow agreement (escrow_agreement_prior_draft.md).\n\nPut your findings in a memo to me. For each issue, give the document and section where it appears, explain why it matters for Talin, and recommend a fix, with proposed language where that would help. Put the items that matter most first. If you can't resolve something from these documents alone, flag it as an open question and don't guess. Let me know if anything you'd expect to see is missing from the folder.",
+  "documents": [
+    "escrow_agreement.md",
+    "escrow_agreement_prior_draft.md",
+    "ip_assignment_agreement.md",
+    "stock_purchase_agreement.md",
+    "talin_board_consent.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that Talin's indemnity to Seller for Post-Closing Show Liabilities is uncapped and, because that defined term includes obligations arising before Closing, leaves Talin with unlimited liability for Seller's pre-closing talent/artist obligations.",
+      "kind": "issue",
+      "hints": [
+        "whether arising before or after the Closing Date",
+        "uncapped",
+        "pre-closing artist obligations"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates this issue in the Stock Purchase Agreement, citing at least one of Section 1.1 (Post-Closing Show Liabilities definition), Section 9.3(b) or Section 9.5(a).",
+      "kind": "issue",
+      "hints": [
+        "Section 9.3(b)",
+        "Section 9.5(a)",
+        "Post-Closing Show Liabilities"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "For the uncapped pre-closing talent liability issue, the response explains why it matters to Talin and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "unlimited exposure",
+        "limit the definition",
+        "add to the cap"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that the IP Assignment Agreement's definition of Company IP is narrower than the SPA's and omits unregistered IP such as the fan contact database and ticketing software, so those assets would not be transferred to the Company.",
+      "kind": "issue",
+      "hints": [
+        "solely the registered trademarks and service marks",
+        "fan contact database",
+        "ticketing software"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response locates this issue in the IP Assignment Agreement, Section 1.1 (the Company IP definition).",
+      "kind": "issue",
+      "hints": [
+        "IP Assignment Agreement Section 1.1",
+        "Company IP definition"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "For the narrow Company IP definition issue, the response explains why it matters to Talin and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "conform the definition",
+        "assets remain with Nasund Brands"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response concludes that Seller's representations and warranties survive only until the Escrow Release Date, 120 days after Closing (about March 31, 2027), so Talin's claims for breach expire before the August Lanternfall Festival and before the first post-closing audit for the fiscal year ending June 30, 2027.",
+      "kind": "issue",
+      "hints": [
+        "until the Escrow Release Date",
+        "120 days",
+        "before the August festival"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response locates this issue in the Stock Purchase Agreement Section 9.1 (or Section 9.4), or in Escrow Agreement Section 4.1.",
+      "kind": "issue",
+      "hints": [
+        "Section 9.1",
+        "Escrow Agreement Section 4.1"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "For the short survival period issue, the response explains why it matters to Talin and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "claim window closes",
+        "extend survival",
+        "decouple from escrow release"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response states that the Purchase Price is $84,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$84,000,000",
+        "$84 million"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response states that the Escrow Amount is $8,400,000.",
+      "kind": "fact",
+      "hints": [
+        "$8,400,000",
+        "$8.4 million"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response is a memo addressed to the supervising partner in which each issue identifies the document and section where it appears.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Section"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response includes a section or list of open questions or missing items from the folder.",
+      "kind": "format",
+      "hints": [
+        "open questions",
+        "missing from the folder"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response claims that Talin's indemnity under SPA Section 9.3(b) is subject to the cap in Section 9.5(a).",
+      "kind": "negative",
+      "hints": [
+        "9.3(b) is capped"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "The response claims that the IP Assignment Agreement conveys the fan contact database and ticketing software to the Company.",
+      "kind": "negative",
+      "hints": [
+        "database is assigned"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

@@ -1,0 +1,202 @@
+{
+  "matter_id": "s44-m0001",
+  "summary": "Vepous Student Transportation, LLC runs school bus fleets out of two Long Island depots. Under a five-year Supply Agreement, it buys replacement brake, steering and suspension components and child-check alarm systems from Milon Fleet Parts Corp. Milon's parent guarantees Milon's obligations. Amendment No. 1 adjusted pricing and restated the liability carve-outs. In a later notice letter, Milon (a) announces it will assign the agreement to an affiliate of a competing school bus operator and (b) reserves rights over the reported pending acquisition of Vepous's parent. The firm acts for Vepous and must review the folder before that acquisition closes.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Vepous Student Transportation, LLC",
+      "role": "Customer; school bus operator and firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Milon Fleet Parts Corp.",
+      "role": "Supplier of school bus replacement components and child-check alarm systems"
+    },
+    {
+      "id": "P3",
+      "name": "Milon Industrial Holdings, Inc.",
+      "role": "Supplier's parent and guarantor"
+    },
+    {
+      "id": "P4",
+      "name": "Vepous Transit Holdings, Inc.",
+      "role": "Customer's parent, subject of pending acquisition"
+    },
+    {
+      "id": "P5",
+      "name": "Larchfield Mobility Partners, L.P.",
+      "role": "Proposed acquirer of Customer's parent"
+    },
+    {
+      "id": "P6",
+      "name": "Rookwood Transit Supply, LLC",
+      "role": "Proposed assignee of Supplier; affiliate of competing operator Kestrel Student Coach, Inc."
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "five years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Annual Minimum Purchase Commitment",
+      "value": "$1,850,000 per contract year",
+      "doc": "D1",
+      "section": "Section 3.4"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid or payable in the 12 months before the claim",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement cap carve-out for indemnities",
+      "value": "all Section 10.1 indemnities, including 10.1(b) product-defect bodily injury claims",
+      "doc": "D1",
+      "section": "Section 11.3"
+    },
+    {
+      "id": "F6",
+      "key": "Covered depots",
+      "value": "Hempstead and Ronkonkoma, New York",
+      "doc": "D1",
+      "section": "Schedule A"
+    },
+    {
+      "id": "F7",
+      "key": "Supply Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 15.1"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "signed amendments, then Supply Agreement body, then Schedules, then Purchase Orders",
+      "doc": "D1",
+      "section": "Section 15.4"
+    },
+    {
+      "id": "F9",
+      "key": "Amendment No. 1 date",
+      "value": "June 16, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Guarantor",
+      "value": "Milon Industrial Holdings, Inc.",
+      "doc": "D5",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement_vepous_milon.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_no1_supply_agreement.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "mutual_nda_vepous_milon.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "milon_notice_letter_2026-10-19.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "milon_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "D1 Section 1.4 defines Change of Control to include any direct or indirect change in control of Customer, including a sale of a controlling interest in any entity that controls Customer. D1 Section 14.3 provides that a Change of Control of Customer without the prior written consent of Supplier is a material breach. That breach lets Supplier terminate on 30 days' notice and recover the Annual Minimum Purchase Commitment shortfall for the remainder of the Initial Term. D4, Milon's notice letter dated October 19, 2026, records that Vepous Transit Holdings, Inc. signed a stock purchase agreement with Larchfield Mobility Partners, L.P. on September 28, 2026, and expressly reserves Milon's rights under Section 14.3. Read together, the definition and the consequence clause mean the parent-level sale triggers Supplier's consent right. Nothing in the folder shows that consent was obtained or waived.",
+      "doc": "D1",
+      "section": "Section 14.3 (with Section 1.4)",
+      "detect_terms": [
+        "directly or indirectly",
+        "prior written consent of Supplier"
+      ],
+      "expected_finding": "The pending sale of Vepous Transit Holdings to Larchfield is an indirect Change of Control under Sections 1.4 and 14.3 that requires Milon's prior written consent. Milon has reserved its rights in its October 19, 2026 letter. Without a written consent or waiver before closing, Milon could terminate and claim the minimum purchase shortfall for the rest of the term, so Vepous should obtain that consent or waiver before closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D1 Section 3.1 obliges Customer and its Affiliates to buy all Fleet Components for every vehicle they operate anywhere in the United States exclusively from Supplier. However, D1 Schedule A prices and covers only the Hempstead and Ronkonkoma depots. D1 Section 1.2 defines Affiliates to include any entity under common control with Customer, now or in the future. Read together, these provisions extend exclusivity far beyond the two-depot deal the agreement actually prices. Once the Larchfield acquisition recorded in D4 closes, Larchfield's other portfolio operators would also be bound and exposed to breach claims.",
+      "doc": "D1",
+      "section": "Section 3.1 (with Section 1.2 and Schedule A)",
+      "detect_terms": [
+        "all Fleet Components",
+        "anywhere in the United States"
+      ],
+      "expected_finding": "The Section 3.1 exclusivity reaches all current and future Affiliates nationwide, while the deal covers only the two Schedule A depots, and after the Larchfield closing it would bind the acquirer's other operations. It should be narrowed to Customer's purchases for the Hempstead and Ronkonkoma depots only, with future Affiliates excluded.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "D1 Section 14.1 restricts only Customer's assignment. D1 Section 14.2 states that Supplier may assign or transfer the agreement, in whole or in part, without Customer's consent, and contains no bar on assignment to a competitor of Customer. In D4, the October 19, 2026 letter, Milon gives notice that it will assign the agreement effective December 1, 2026 to Rookwood Transit Supply, LLC, an affiliate of the competing operator Kestrel Student Coach, Inc. That assignee would receive Vepous's pricing, volumes and depot data. The assignment would also leave Vepous dependent on a rival for safety-critical parts during the exclusive term.",
+      "doc": "D1",
+      "section": "Section 14.2",
+      "detect_terms": [
+        "Supplier may assign or transfer this Agreement",
+        "without Customer's consent"
+      ],
+      "expected_finding": "Section 14.2 lets Milon assign freely, including to Rookwood, an affiliate of the competitor Kestrel, as noticed for December 1, 2026. Vepous should object in writing and seek an amendment requiring its consent to any Supplier assignment and barring assignment to competitors, while preserving the guaranty.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "D1 Section 11.3 carves all Section 10.1 indemnities out of the Section 11.2 cap. Those indemnities include Section 10.1(b), which covers third-party bodily injury claims arising from defective Products. D2 Section 3, in Amendment No. 1 dated June 16, 2026, replaces Section 11.3 so that the indemnity carve-out applies solely to claims under Section 10.1(a), which covers IP infringement. Under the D1 Section 15.4 order of precedence, signed amendments prevail over the agreement body, so the amended text controls. As a result, Supplier's liability for student injuries caused by defective brake components or child-check alarms is now capped at 12 months' fees. D5 Section 2 guarantees Supplier's obligations only as limited by the Supply Agreement, so the guaranty does not fill the gap.",
+      "doc": "D2",
+      "section": "Section 3",
+      "detect_terms": [
+        "solely under Section 10.1(a)"
+      ],
+      "expected_finding": "Amendment No. 1 Section 3 controls under Section 15.4 and removes product-defect bodily injury indemnities under Section 10.1(b) from the cap carve-out. Milon's exposure for injuries to students from defective parts is therefore capped at 12 months' fees, and the parent guaranty is capped the same way. Vepous should negotiate an Amendment No. 2 that restores the Section 10.1(b) carve-out.",
+      "contradicts": "F5"
+    }
+  ]
+}
