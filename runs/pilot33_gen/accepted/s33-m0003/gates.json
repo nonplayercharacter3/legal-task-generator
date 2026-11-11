@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.333,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -106,8 +119,58 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 13,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "key_employee_agreement_venkataraman.md",
+                "office_lease_kingston.md",
+                "seller_note.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2"
+              ],
+              "steps": 13,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "key_employee_agreement_venkataraman.md",
+                "office_lease_kingston.md",
+                "seller_note.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C4"
+              ],
+              "steps": 13,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "key_employee_agreement_venkataraman.md",
+                "office_lease_kingston.md",
+                "seller_note.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

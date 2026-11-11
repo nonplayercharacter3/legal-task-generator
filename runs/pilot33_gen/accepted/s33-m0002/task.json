@@ -187,8 +187,21 @@
       ]
     }
   ],
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.333,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  }
 }

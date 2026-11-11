@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.333,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -113,8 +126,59 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C14"
+              ],
+              "steps": 10,
+              "files_opened": [
+                "amendment_no_1.md",
+                "distribution_agreement.md",
+                "quality_agreement.md",
+                "wilmington_office_lease.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5",
+                "C14"
+              ],
+              "steps": 11,
+              "files_opened": [
+                "amendment_no_1.md",
+                "distribution_agreement.md",
+                "quality_agreement.md",
+                "wilmington_office_lease.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 10,
+              "files_opened": [
+                "amendment_no_1.md",
+                "distribution_agreement.md",
+                "quality_agreement.md",
+                "wilmington_office_lease.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
