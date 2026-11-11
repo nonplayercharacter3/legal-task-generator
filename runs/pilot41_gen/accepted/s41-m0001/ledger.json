@@ -1,0 +1,169 @@
+{
+  "matter_id": "s41-m0001",
+  "summary": "Lalais Medical Systems, Inc. (client, Buyer) has signed a New York-law stock purchase agreement to buy all outstanding shares of Ostrevane Imaging Corp. from Trasirt Holdings Corp. (Seller). Ostrevane makes mobile C-arm and digital radiography systems and services an installed base of CT and MRI equipment. The SPA was signed on March 3, 2026 and Closing has not yet occurred. At Closing, Trasirt will also deliver two documents. The first is a Bill of Sale transferring Seller-held service tooling, calibration phantoms and service manuals to Ostrevane. The second is a Transition Services Agreement under which Trasirt will keep running remote service, field service dispatch and ERP hosting for 12 months. The folder also holds a superseded prior draft of the Bill of Sale. Three issues are planted:\n(1) The regulatory and product-liability representations survive only until the 90-day Escrow Release Date.\n(2) The sole-source detector supply agreement with Kestrevo Sensors GmbH needs Kestrevo's consent to the change of control. That consent is disclosed against the no-conflicts representation, but it is left off the closing-condition consent list.\n(3) Under the TSA, Trasirt may assign or delegate the agreement to any Person, and Trasirt may share Buyer's confidential service data with that assignee.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Lalais Medical Systems, Inc.",
+      "role": "Buyer under the Stock Purchase Agreement; Recipient under the Transition Services Agreement (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Trasirt Holdings Corp.",
+      "role": "Seller under the Stock Purchase Agreement; transferor under the Bill of Sale; Provider under the Transition Services Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrevane Imaging Corp.",
+      "role": "The Company whose shares are being sold; transferee under the Bill of Sale"
+    },
+    {
+      "id": "P4",
+      "name": "Kestrevo Sensors GmbH",
+      "role": "Sole-source supplier of flat-panel detectors to the Company under the Detector Supply Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement signing date",
+      "value": "March 3, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$186,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Escrow Amount",
+      "value": "$18,650,000",
+      "doc": "D1",
+      "section": "Section 2.4(a)"
+    },
+    {
+      "id": "F4",
+      "key": "Escrow Release Date",
+      "value": "the date 90 days after the Closing Date",
+      "doc": "D1",
+      "section": "Section 2.4(b)"
+    },
+    {
+      "id": "F5",
+      "key": "General survival period for Seller representations",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1(a)"
+    },
+    {
+      "id": "F6",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence among transaction documents",
+      "value": "Stock Purchase Agreement prevails over the Transition Services Agreement, then the Bill of Sale",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F8",
+      "key": "Bill of Sale transferee",
+      "value": "Ostrevane Imaging Corp.",
+      "doc": "D2",
+      "section": "Section 1"
+    },
+    {
+      "id": "F9",
+      "key": "Transition Services Agreement term",
+      "value": "12 months after the Closing Date",
+      "doc": "D3",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F10",
+      "key": "Transition Services Agreement monthly service fee",
+      "value": "$410,000 per month",
+      "doc": "D3",
+      "section": "Section 4.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_lalais_trasirt.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale_service_tooling.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "bill_of_sale_prior_draft.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Section 9.1(a) of the SPA gives Seller's representations a general 18-month survival period. Section 9.1(b) then carves out Section 4.12 (Product Liability; Recalls) and Section 4.14 (FDA and Regulatory Compliance, covering 510(k) clearances and quality-system compliance). Those two representations survive only \"until the Escrow Release Date\". Section 2.4(b) defines that date as 90 days after the Closing Date. Section 9.5 bars any indemnification claim not noticed before the applicable survival period expires, and New York enforces contractual survival periods that shorten the time to bring claims. Read together, these provisions mean that Buyer's protection for the highest-risk exposures in a medical imaging business lasts only 90 days. Those exposures are FDA inspection findings, recalls, adverse-event reporting failures and product-liability claims, and they typically surface well after 90 days. Buyer's claims for these breaches would be extinguished before they are likely to be discovered. Nothing else in the folder extends that period.",
+      "doc": "D1",
+      "section": "Section 9.1(b) (read with Section 2.4(b) and Section 9.5)",
+      "detect_terms": [
+        "until the Escrow Release Date"
+      ],
+      "expected_finding": "The associate should conclude that Section 9.1(b), read with the 90-day Escrow Release Date in Section 2.4(b) and the claim bar in Section 9.5, cuts off Buyer's indemnity claims for the product-liability/recall and FDA regulatory representations (Sections 4.12 and 4.14) after only 90 days, and should recommend extending their survival to at least the 18-month general period (or longer, e.g. statute of limitations) with escrow or holdback coverage to match.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Schedule 4.6(a)(iii) of the SPA discloses the Company's Detector Supply Agreement with Kestrevo Sensors GmbH. Kestrevo is the sole source of flat-panel detectors for the Company's mobile C-arm line. The schedule states that any change of control of the Company requires the prior written consent of Kestrevo, failing which Kestrevo may terminate. Section 4.5 (No Conflicts) makes Seller's representation that the transaction requires no third-party consents \"except as set forth on Schedule 4.6\", so the Kestrevo consent requirement is disclosed and is not a breach Buyer can claim indemnity for. However, Section 6.4 obliges Seller to seek only the consents listed on Schedule 7.2(d). The closing condition in Section 7.2(d) likewise requires only those consents. Schedule 7.2(d) lists the Company's facility lease consent but not the Kestrevo consent. Read together, these provisions mean Buyer must close without the Kestrevo consent and has no indemnity if Kestrevo terminates the supply after Closing. Closing has not occurred (the SPA was signed March 3, 2026), so the gap can still be addressed.",
+      "doc": "D1",
+      "section": "Section 7.2(d) and Schedule 7.2(d) (read with Section 4.5, Schedule 4.6(a)(iii) and Section 6.4)",
+      "detect_terms": [
+        "prior written consent of Kestrevo"
+      ],
+      "expected_finding": "The associate should conclude that the Kestrevo change-of-control consent, disclosed on Schedule 4.6(a)(iii) and therefore carved out of the Section 4.5 no-conflicts representation, is omitted from the Section 6.4 covenant and the Section 7.2(d) closing condition, leaving Buyer obliged to close with no remedy if Kestrevo terminates the sole-source detector supply, and should recommend adding the Kestrevo consent to Schedule 7.2(d) as a closing condition or obtaining a specific indemnity for losses from its termination.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 13.2 of the TSA bars Recipient (Lalais) from assigning without Provider's consent. It then allows Provider (Trasirt) to assign the TSA or delegate any Services, in whole or in part, to any Person without the consent of Recipient. There is no carve-out for competitors of Buyer or the Company. Section 9.3 separately permits Provider to disclose Recipient Confidential Information to its permitted assignees and delegates. That information includes the installed-base service records, customer site data and service firmware that Provider handles while delivering remote and field service. Trasirt could therefore hand the services, and Buyer's customer and service data, to a competing imaging OEM or independent service organization during the 12-month term. Buyer would have no consent right and no termination right. The SPA does not cure this: its assignment clause (Section 11.6) applies only to \"this Agreement\", meaning the SPA, and the order-of-precedence clause (Section 11.12) resolves only conflicts. The SPA contains no assignment provision covering the TSA that conflicts with Section 13.2.",
+      "doc": "D3",
+      "section": "Section 13.2 (read with Section 9.3)",
+      "detect_terms": [
+        "to any Person without the consent of Recipient"
+      ],
+      "expected_finding": "The associate should conclude that TSA Section 13.2 lets Trasirt assign or delegate the TSA to any Person, including a competitor, without Lalais's consent, and that Section 9.3 lets it pass Lalais's confidential customer and service data to that assignee, and should recommend making Provider assignment and delegation subject to Recipient's prior written consent (at minimum barring competitors) with a corresponding limit on disclosure to assignees.",
+      "contradicts": null
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "s41-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Lalais Medical Systems, Inc., the buyer under its stock purchase agreement with Trasirt Holdings Corp. and the recipient of services under the related transition services agreement. Before we go further with this deal, the client wants a clear picture of where the transaction documents leave it exposed. Please review the matter folder: the stock purchase agreement (stock_purchase_agreement_lalais_trasirt.md), the bill of sale for the service tooling (bill_of_sale_service_tooling.md), the transition services agreement (transition_services_agreement.md), and the prior draft of the bill of sale (bill_of_sale_prior_draft.md). Then prepare a memo to me covering every issue you find. For each issue, give the document and section where it appears, explain why it matters to Lalais, and recommend a specific fix, with proposed language where that helps. Put the issues that carry the most risk for the client first. Flag anything you could not resolve from the documents alone, and anything we should raise with the client before we respond to Trasirt.",
+  "documents": [
+    "bill_of_sale_prior_draft.md",
+    "bill_of_sale_service_tooling.md",
+    "stock_purchase_agreement_lalais_trasirt.md",
+    "transition_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the SPA lets Buyer's indemnity claims under the product-liability/recall and FDA/regulatory representations (Sections 4.12 and 4.14) survive only until the Escrow Release Date, 90 days after Closing, rather than the general 18-month period. It identifies the issue as arising in SPA Section 9.1(b), explains why this matters to Lalais, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "until the Escrow Release Date",
+        "90 days after the Closing",
+        "Section 9.1(b)"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that the Kestrevo Sensors change-of-control consent, although disclosed on Schedule 4.6(a)(iii), is not among the consents required by the closing condition in SPA Section 7.2(d) and Schedule 7.2(d). It finds that Buyer would therefore have to close without that consent and have no remedy if Kestrevo terminates the detector supply. It identifies the issue as arising in SPA Section 7.2(d)/Schedule 7.2(d), explains why this matters to Lalais, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Kestrevo",
+        "Schedule 7.2(d)",
+        "closing condition"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that TSA Section 13.2 allows Trasirt (Provider) to assign or delegate the TSA or the Services to any Person without Lalais's consent, and that Trasirt could pass Lalais's confidential information to that assignee or delegate. It identifies the issue as arising in TSA Section 13.2, explains why this matters to Lalais, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 13.2",
+        "to any Person without the consent of Recipient",
+        "assignee"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Escrow Amount under the SPA is $18,650,000.",
+      "kind": "fact",
+      "hints": [
+        "$18,650,000",
+        "Escrow Amount"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the TSA term runs for 12 months after the Closing Date.",
+      "kind": "fact",
+      "hints": [
+        "12 months",
+        "term"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is a memo addressed to the supervising partner. For each issue it identifies, the memo gives the document and section where the issue appears.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Section"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response includes a section or list that flags open points it could not resolve from the documents, or questions to raise with the client before responding to Trasirt.",
+      "kind": "format",
+      "hints": [
+        "open questions",
+        "raise with the client",
+        "could not resolve"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that the Kestrevo consent is already a condition to Buyer's obligation to close under SPA Section 7.2(d).",
+      "kind": "negative",
+      "hints": [
+        "Kestrevo consent is a closing condition"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that SPA Section 11.6 restricts Trasirt's ability to assign the TSA.",
+      "kind": "negative",
+      "hints": [
+        "Section 11.6 prevents assignment of the TSA"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

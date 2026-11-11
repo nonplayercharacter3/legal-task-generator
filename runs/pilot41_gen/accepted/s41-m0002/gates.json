@@ -1,0 +1,117 @@
+{
+  "matter_id": "s41-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 5.4 of the Service Level Schedule: \"Distributor's aggregate liability for Temperature Excursions and Handling Failures, including any indemnity or recall costs, is subject to Section 12.2 of the Agreement, notwithstanding Section 12.3 of the Agreement.\"",
+            "reason": "The obligations at stake are Distributor's (Pruran's): its Section 11.2 indemnity, its Section 8.6 recall costs and its liability for handling breaches. Fouveirt is the party protected by them. Agreement Section 12.3(a) and (d) normally leave those amounts uncapped. Schedule 5.4 overrides that 'notwithstanding Section 12.3' and puts them back under the 12.2 cap. Under Agreement 2.3, the Schedule ranks above the Agreement body, so 5.4 controls. The cap is Service Fees paid in the prior 12 months, about $462,000 at $38,500 per month, which is well below likely recall, chargeback and contamination losses. Temperature Excursions and Handling Failures are defined broadly enough to cover essentially every Section 8 breach. Nothing else in the folder cures or limits the provision. The SOW restatement does not address it. The issue remains actionable: the agreement runs to 2028, and the clause can be renegotiated by amendment or contested before any loss occurs."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Order Form Section 1: \"'Products' means all pet food manufactured by Supplier and sold under the Fouveirt brand. This includes the dry and canned dog and cat food listed in Exhibit A to the Agreement, including Veterinary Diet Products, and Supplier's freeze-dried dog and cat treats, as Supplier's product range is updated from time to time.\"",
+            "reason": "The problem is present and still actionable. Agreement Section 1.1 defines Products as Exhibit A dry and canned food excluding Veterinary Diet Products, and Recital B says Fouveirt sells the vet line through its own clinic channel. The Order Form instead pulls in the vet line, treats and future products. Agreement Section 2.3 gives the Order Form first precedence, so the broader definition controls. Under Section 3.1, that makes Pruran the exclusive distributor of the vet line in the Territory. Fouveirt would then be barred from appointing others or selling vet-line products directly to Customers there, which conflicts with its own clinic channel. Vet-line and treat purchases would also count toward the $6.2M minimum, making it easier for Pruran to meet. Both effects hurt Fouveirt. Nothing in the folder cures or limits this: the amended SOW does not amend the definition, and the email thread concerns only pallet labels. Fouveirt can still seek a written amendment under Order Form Section 8.2 or rely on interpretation arguments."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Supplier delivered a written notice of adjustment to Product prices for the Contract Year beginning March 1, 2026 to Distributor on January 20, 2026 (the \"2026 Price Adjustment Notice\"). Distributor rejected the 2026 Price Adjustment Notice in writing as untimely under Section 6.4 of the Agreement by letter dated January 27, 2026. Supplier maintains that the 2026 Price Adjustment Notice is effective. The Parties enter into this Statement of Work without prejudice to either Party's position on the 2026 Price Adjustment Notice. Nothing in this Statement of Work amends Section 6 of the Agreement.",
+            "reason": "The problem is present and still actionable. Under Agreement Section 6.4, Fouveirt had to deliver a price adjustment notice at least 60 days before the March 1, 2026 anniversary, so by about December 31, 2025. Its notice was delivered on January 20, 2026, which is late. Section 6.4 says that without a timely notice, prices for the following Contract Year remain unchanged. Nothing in the folder cures this: the SOW expressly does not amend Section 6, and it preserves both parties' positions. The Order Form ties prices to Section 6.4, and no other document waives the deadline. The result hurts Fouveirt, the party bearing the notice obligation, because its 2026–27 price increase is likely ineffective. Fouveirt has not accepted that result. It continues to maintain the notice is effective, and nothing records a payment or a restated price list it agreed to. The dispute is therefore live, and Fouveirt needs advice on the weakness of its position and on how to resolve or preserve it."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C4 asks for the whole ranking in fact F2 ('Order Form, then Service Level Schedule, then Distribution Agreement body, then Statement of Work'); ask for the pair an issue uses",
+          "criterion C5 asks for the whole ranking in fact F2 ('Order Form, then Service Level Schedule, then Distribution Agreement body, then Statement of Work'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.058,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

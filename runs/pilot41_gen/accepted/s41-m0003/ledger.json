@@ -1,0 +1,177 @@
+{
+  "matter_id": "s41-m0003",
+  "summary": "Nonaisk Event Rentals, LLC rents furniture for events (banquet seating, lounge sets, staging, tenting furniture). It is outsourcing delivery, on-site installation, strike/teardown and dispatch logistics to Zouduth Logistics Group, Inc. under a Master Services Agreement dated March 2, 2026. Zouduth runs its own dispatch platform. Its crews also collect event-client contact details and venue access information on site. The folder holds the MSA, a Data Processing Addendum, the earlier non-binding term sheet, and a joint press release announcing the partnership. The associate must write an issue-spotting memo for the partner. Four problems are planted. (1) Nonaisk's indemnity is carved out of the liability cap while Zouduth's indemnity stays capped. (2) The DPA picks New York law and forum, and the MSA's precedence clause lets the DPA control on personal data matters. (3) The DPA redefines 'Customer Data' narrowly, which strips protection from data Zouduth crews collect directly. (4) The MSA lets Zouduth assign freely, contrary to the mutual consent and non-competitor restriction in the term sheet.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Nonaisk Event Rentals, LLC",
+      "role": "Customer under the MSA; event furniture rental company and the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Zouduth Logistics Group, Inc.",
+      "role": "Provider under the MSA; delivery, installation, teardown and dispatch services vendor and data processor"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "three years from the MSA Effective Date",
+      "doc": "D1",
+      "section": "14.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA liability cap",
+      "value": "fees paid or payable by Customer in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F4",
+      "key": "MSA governing law",
+      "value": "laws of the State of Delaware",
+      "doc": "D1",
+      "section": "16.1"
+    },
+    {
+      "id": "F5",
+      "key": "MSA exclusive forum",
+      "value": "state or federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "16.2"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "DPA (for Personal Data matters only), then MSA, then Statements of Work",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F7",
+      "key": "MSA definition of Customer Data",
+      "value": "all data Provider receives from or collects for Customer in performing Services, including event-client contact details",
+      "doc": "D1",
+      "section": "1.4"
+    },
+    {
+      "id": "F8",
+      "key": "DPA Security Incident notification period",
+      "value": "48 hours after Provider becomes aware",
+      "doc": "D2",
+      "section": "6.1"
+    },
+    {
+      "id": "F9",
+      "key": "Term sheet assignment term",
+      "value": "neither party may assign without consent, except to a successor that is not a Competitor",
+      "doc": "D3",
+      "section": "7"
+    },
+    {
+      "id": "F10",
+      "key": "Annual minimum service commitment",
+      "value": "$1,850,000 per contract year",
+      "doc": "D3",
+      "section": "4"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "nonaisk_zouduth_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "nonaisk_zouduth_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "nonaisk_zouduth_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "nonaisk_zouduth_partnership_press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Three provisions of the MSA (D1) work together here. Section 10.2 requires Nonaisk to indemnify Zouduth against all third-party claims arising from the Rental Inventory, including bodily injury and property damage at events, 'regardless of whether caused in part by Provider's installation or handling'. Section 11.1 caps each party's liability at fees paid in the prior 12 months. Section 11.3 then removes 'Customer's obligations under Section 10.2' from that cap. It does not remove Zouduth's own indemnity under Section 10.1, which therefore stays capped. Read together, these sections give Nonaisk unlimited exposure for event injury claims, even claims caused in part by Zouduth crews' negligent setup. Zouduth's reciprocal exposure remains limited to 12 months of fees.",
+      "doc": "D1",
+      "section": "11.3",
+      "detect_terms": [
+        "Customer's obligations under Section 10.2",
+        "caused in part by Provider's installation"
+      ],
+      "expected_finding": "MSA Section 11.3 removes Nonaisk's broad Section 10.2 indemnity from the Section 11.1 cap while Zouduth's Section 10.1 indemnity stays capped. This leaves Nonaisk with unlimited liability for event injury claims, including claims caused in part by Zouduth's installation. The carve-out should be made mutual or the 10.2 indemnity should be capped (or a super-cap applied), and claims caused by Provider's negligence should be excluded from it.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "MSA (D1) Sections 16.1 and 16.2 choose Delaware law and the courts of Wilmington, Delaware. DPA (D2) Section 12 instead provides that the DPA and all disputes arising from it are governed by the laws of the State of New York and resolved exclusively in the courts of New York County. MSA Section 2.3 says the DPA prevails over the MSA on Personal Data matters, so the precedence clause does not cure the conflict. A single incident, such as a data breach involving event-client records, could therefore be split between New York and Delaware forums under different law. Nonaisk would face parallel litigation and inconsistent results.",
+      "doc": "D2",
+      "section": "12",
+      "detect_terms": [
+        "laws of the State of New York",
+        "courts of New York County"
+      ],
+      "expected_finding": "DPA Section 12's New York law and New York County forum conflict with MSA Sections 16.1–16.2 (Delaware law, Wilmington courts). Because MSA Section 2.3 gives the DPA precedence on Personal Data matters, the conflict is not cured and data disputes could be split across two forums. DPA Section 12 should be conformed to Delaware law and forum, or the precedence clause should expressly exclude governing law and forum.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "MSA (D1) Section 1.4 defines 'Customer Data' broadly. It covers all data Zouduth receives from or collects for Nonaisk in performing the Services, including event-client contact details and venue access information. MSA Section 8.2 provides that Customer Data that is Personal Data shall be processed in accordance with the DPA. DPA (D2) Section 1.3 redefines 'Customer Data' as only personal data 'uploaded by Customer to the Zouduth Dispatch Platform'. Under MSA Section 2.3, the DPA prevails for Personal Data matters. Three things therefore fall outside the DPA's protections: the 48-hour breach notification (DPA 6.1), the deletion-on-termination duty, and the subprocessor restrictions. Those protections do not reach personal data that Zouduth crews collect directly from Nonaisk's event clients, such as on-site delivery sign-offs, contact numbers and access codes. That data is the most sensitive data in the relationship.",
+      "doc": "D2",
+      "section": "1.3",
+      "detect_terms": [
+        "uploaded by Customer to the Zouduth Dispatch Platform"
+      ],
+      "expected_finding": "The DPA's narrow definition of 'Customer Data' (Section 1.3) controls Personal Data matters under MSA Section 2.3. It excludes personal data Zouduth collects directly from event clients, so that data loses the DPA's breach notification, deletion and subprocessor protections. The DPA definition should be conformed to the broader MSA Section 1.4 definition.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "MSA (D1) Section 15.1 bars Nonaisk from assigning without Zouduth's consent. Section 15.2, however, provides that Provider may assign this Agreement, in whole or in part, without Customer's consent, to any Affiliate or to any successor. It contains no exclusion of Competitors. This departs from the agreed term in the term sheet (D3) Section 7, which provides for mutual consent and permits assignment only to a successor that is not a Competitor. MSA Section 17.4 (entire agreement) supersedes the non-binding term sheet, so Nonaisk cannot rely on that agreed term. Zouduth could transfer the contract, together with Nonaisk's event-client data and pricing, to a rival event rental company or its logistics arm.",
+      "doc": "D1",
+      "section": "15.2",
+      "detect_terms": [
+        "Provider may assign this Agreement, in whole or in part, without Customer's consent"
+      ],
+      "expected_finding": "MSA Section 15.2 lets Zouduth assign freely, including to a competitor, contrary to the term sheet's mutual consent and non-competitor restriction. The term sheet is superseded by the MSA's entire agreement clause, so Section 15.2 should be revised to require Nonaisk's consent and prohibit assignment to a Competitor, with a termination right on any change of control.",
+      "contradicts": "F9"
+    }
+  ]
+}

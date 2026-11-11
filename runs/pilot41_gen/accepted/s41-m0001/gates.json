@@ -1,0 +1,116 @@
+{
+  "matter_id": "s41-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.1(b): \"The representations and warranties in Section 4.12 (Product Liability; Recalls) and Section 4.14 (FDA and Regulatory Compliance) shall survive the Closing until the Escrow Release Date.\" Section 2.4(b): \"On the date 90 days after the Closing Date (the \"Escrow Release Date\")...\" Section 9.5: \"...any such claim not so noticed shall be irrevocably barred.\"",
+            "reason": "Seller gives the indemnity under Section 9.2(a), and Buyer (the client) must give notice under Section 9.5. Section 9.1(b) cuts the survival of the product liability/recall and FDA representations from the general 18 months to the Escrow Release Date, which Section 2.4(b) sets at 90 days after Closing. Under Section 9.5, any claim not noticed by then is irrevocably barred. Recalls, Form 483 findings, missed MDR filings and product-liability claims usually surface later than 90 days, so Buyer's protection for its largest risks would lapse before those breaches are likely to be found. Nothing in the folder fixes this. The fraud carve-out in Section 9.4(c) does not extend survival, and the TSA's Section 11.6 only preserves rights Buyer already has under the SPA. The Bill of Sale and TSA are undated and unsigned, and nothing shows that Closing has happened or that the window has run. The term can therefore still be negotiated, and the issue remains actionable for Buyer."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Schedule 7.2(d) lists only the landlord consent: \"1. Consent of Westbridge Industrial Partners LLC, as landlord under the Facility Lease, to the change of control of the Company...\" Schedule 4.6(a)(iii), however, discloses that \"Under Section 14.2 of the Detector Supply Agreement, any change of control of the Company requires the prior written consent of Kestrevo, failing which Kestrevo may terminate the Detector Supply Agreement on written notice.\" Section 4.5 excepts conflicts and consents \"as set forth on Schedule 4.6.\" Section 6.4 requires Seller to seek only \"each of the third-party consents listed on Schedule 7.2(d).\"",
+            "reason": "Seller discloses the Kestrevo consent requirement through Section 4.5 and Schedule 4.6, so Buyer cannot claim a rep breach or indemnity for it. Seller's duty under Section 6.4 to seek consents covers only Schedule 7.2(d). The Buyer closing condition in Section 7.2(d) and Seller's deliverable in Section 3.2(e) are tied to the same schedule. That schedule omits the consent from Kestrevo, the sole source of flat-panel detectors for the C-arm line. Buyer (the client) therefore has no covenant, condition or indemnity protecting it if Kestrevo terminates after the change of control. Nothing in the other documents cures this. The undated TSA and Bill of Sale show no Closing, and nothing shows Buyer accepted the gap. Buyer can still act: it can add Kestrevo to Schedule 7.2(d), require the consent before closing, or negotiate a special indemnity."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 13.2: \"Recipient may not assign its rights or delegate its obligations under this Agreement without Provider's prior written consent, except that Recipient may assign this Agreement to the Company or to any other Affiliate of Recipient. Provider may assign this Agreement, or delegate the performance of any Services, in whole or in part, to any Person without the consent of Recipient.\" Section 9.3: \"Provider may also disclose Recipient Confidential Information to its permitted assignees and delegates under Section 13.2, to the extent needed for them to perform the Services.\"",
+            "reason": "The two parties' assignment rights are unequal. Lalais (Recipient) needs Provider's consent to assign to anyone other than its own Affiliates. Trasirt (Provider) may assign or delegate to any Person, with no exclusion for competitors and no requirement that it stay liable. Under Section 9.3, any such assignee or delegate becomes a permitted recipient of Recipient Confidential Information. That information expressly includes installed-base service records, Customer site data and service firmware. The TSA gives Lalais no consent right and no termination right if this happens: Section 12 covers only breach and insolvency. The SPA does not cure the problem. SPA Section 11.6 governs assignment of the SPA only. SPA Section 11.12 resolves only actual conflicts between documents. The SPA non-compete (6.8) and confidentiality covenant (6.7) bind only Seller and its Affiliates, so they would not reach an unaffiliated competing OEM or independent service organization acting as assignee or delegate. The TSA in the folder is still undated and unsigned, so Lalais can still negotiate changes, such as a consent right, a competitor carve-out, or Provider remaining liable after any assignment."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C5 asks for fact F9, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.077,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "matter_id": "s41-m0002",
+  "summary": "Fouveirt Pet Nutrition, Inc. (P1, the client) makes dry, canned and veterinary-diet pet food. It has appointed Pruran Distribution Partners LLC (P2) as its exclusive distributor in a four-state Northeast territory under a New York-law Distribution Agreement effective March 1, 2025. Under a Statement of Work, Pruran also provides warehousing and temperature-controlled logistics for a monthly Service Fee, backed by a Service Level Schedule. An Order Form sets the term and the minimum purchase commitment. The Agreement's precedence clause ranks the Order Form and Service Level Schedule above the Agreement body, which creates three problems. First, the Order Form's broader definition of Products pulls Fouveirt's veterinary-diet line into Pruran's exclusivity. Second, the Service Level Schedule pulls handling and recall losses back under the low liability cap. Third, Fouveirt's 2026 price increase notice was delivered after the contractual deadline and is now disputed. An email thread about launch-pallet labeling is a distractor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Fouveirt Pet Nutrition, Inc.",
+      "role": "Supplier / manufacturer (client)"
+    },
+    {
+      "id": "P2",
+      "name": "Pruran Distribution Partners LLC",
+      "role": "Exclusive distributor and logistics services provider"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Order of precedence",
+      "value": "Order Form, then Service Level Schedule, then Distribution Agreement body, then Statement of Work",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement definition of Products",
+      "value": "dry and canned dog and cat food listed in Exhibit A, excluding Veterinary Diet Products",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F4",
+      "key": "Territory",
+      "value": "New York, New Jersey, Connecticut and Pennsylvania",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F5",
+      "key": "Price adjustment notice deadline",
+      "value": "at least 60 days before each anniversary of the Effective Date",
+      "doc": "D1",
+      "section": "6.4"
+    },
+    {
+      "id": "F6",
+      "key": "Liability cap",
+      "value": "Service Fees paid under the Statement of Work in the 12 months before the claim",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F7",
+      "key": "Statement of Work monthly Service Fee",
+      "value": "$38,500",
+      "doc": "D2",
+      "section": "4.1"
+    },
+    {
+      "id": "F8",
+      "key": "2026 Price Adjustment Notice delivery date",
+      "value": "January 20, 2026",
+      "doc": "D2",
+      "section": "1.2"
+    },
+    {
+      "id": "F9",
+      "key": "Initial Term",
+      "value": "three years from the Distribution Agreement Effective Date",
+      "doc": "D4",
+      "section": "2"
+    },
+    {
+      "id": "F10",
+      "key": "Minimum annual purchase commitment",
+      "value": "$6,200,000 of Products per Contract Year",
+      "doc": "D4",
+      "section": "4"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "fouveirt_pruran_distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "statement_of_work_warehousing_logistics.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "order_form.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D5",
+      "filename": "email_thread_launch_pallet_labeling.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Distribution Agreement Section 12.2 caps each party's liability at the Service Fees paid under the SOW in the prior 12 months. At $38,500 per month (SOW 4.1), that is roughly $462,000. Section 12.3 excludes from the cap (a) indemnity obligations, (c) gross negligence or wilful misconduct and (d) losses from Distributor's breach of Section 8 (Product Handling and Food Safety), including recall and contamination costs. Service Level Schedule Section 5.4 provides that Distributor's aggregate liability for Temperature Excursions and Handling Failures, 'including any indemnity or recall costs', is subject to Section 12.2 'notwithstanding Section 12.3'. Agreement Section 2.3 ranks the Service Level Schedule above the Agreement body, so the Schedule controls. Read together, these provisions pull Fouveirt's largest exposure back under a cap far below likely recall losses: product recalls, retailer chargebacks and contamination claims caused by Pruran's storage failures.",
+      "doc": "D3",
+      "section": "5.4",
+      "detect_terms": [
+        "notwithstanding Section 12.3",
+        "including any indemnity or recall costs"
+      ],
+      "expected_finding": "Because Section 2.3 gives the Service Level Schedule precedence over the Agreement body, Schedule Section 5.4 strips the Section 12.3 carve-outs for Pruran's temperature and handling failures, so recall, indemnity and contamination losses are capped at about $462,000 of SOW fees; Section 5.4 should be amended to preserve Section 12.3 in full.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Distribution Agreement Section 1.1 defines Products as the dry and canned dog and cat food in Exhibit A, excluding Veterinary Diet Products. The recitals note that Fouveirt sells its Veterinary Diet Products through its own veterinary clinic channel. Order Form Section 1 instead defines Products as all pet food manufactured by Supplier, 'including Veterinary Diet Products' and freeze-dried treats. Agreement Section 2.3 makes the Order Form prevail over the Agreement body, so the broader definition controls. This has two effects. Through the exclusivity grant in Agreement Section 3.1, Fouveirt is barred from appointing other distributors or selling directly in the Territory for the veterinary line. And vet-line purchases count toward Pruran's $6,200,000 minimum annual purchase commitment (Order Form Section 4), which makes the minimum easier for Pruran to meet.",
+      "doc": "D4",
+      "section": "1",
+      "detect_terms": [
+        "including Veterinary Diet Products"
+      ],
+      "expected_finding": "Because the Order Form prevails under Section 2.3, its definition of Products that includes Veterinary Diet Products overrides the Agreement's exclusion, extending Pruran's Section 3.1 exclusivity over Fouveirt's veterinary clinic channel and inflating credit toward the minimum purchase commitment; the Order Form definition should be conformed to Agreement Section 1.1.",
+      "contradicts": "F3"
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Distribution Agreement Section 6.4 lets Supplier raise Product prices once per Contract Year, by written notice delivered at least 60 days before each anniversary of the March 1, 2025 Effective Date. For the March 1, 2026 anniversary, the deadline was December 31, 2025. SOW Section 1.2 (Background) records that Fouveirt delivered its 2026 Price Adjustment Notice on January 20, 2026, and that Pruran rejected it in writing as untimely. It also records that Fouveirt maintains the notice is effective, and that the SOW is entered into without prejudice to either party's position. Read with Section 6.4, the notice missed the window. Fouveirt has not accepted the result, so the dispute remains live.",
+      "doc": "D2",
+      "section": "1.2",
+      "detect_terms": [
+        "January 20, 2026",
+        "without prejudice"
+      ],
+      "expected_finding": "Fouveirt's January 20, 2026 notice missed the December 31, 2025 deadline under Section 6.4 (60 days before the March 1, 2026 anniversary), so the 2026 price increase is likely unenforceable and invoicing at the new prices risks overcharge claims; Fouveirt should seek a written pricing amendment and calendar a timely notice by December 31, 2026 for the next anniversary.",
+      "contradicts": null
+    }
+  ]
+}

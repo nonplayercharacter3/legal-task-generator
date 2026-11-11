@@ -1,0 +1,217 @@
+{
+  "task_id": "s41-m0003",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "master services agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Nonaisk Event Rentals, LLC, the event furniture rental company, which is the customer under a proposed master services agreement with Zouduth Logistics Group, Inc. Before Nonaisk commits, it needs to understand where this deal leaves it exposed and what we should push back on. Please review the four documents in the matter folder: the master services agreement (nonaisk_zouduth_master_services_agreement.md), the data processing addendum (nonaisk_zouduth_data_processing_addendum.md), the term sheet (nonaisk_zouduth_term_sheet.md) and the press release (nonaisk_zouduth_partnership_press_release.md). Then prepare a memo to me that lists each issue you identify. For each one, state where it appears (document and section), explain why it matters for Nonaisk, and give a recommended fix. Put the items most important to the client first, and flag anything you think needs a client decision rather than a drafting change. Please keep it concise and practical, as I'd like to be able to use it as the basis for our markup and client call.",
+  "documents": [
+    "nonaisk_zouduth_data_processing_addendum.md",
+    "nonaisk_zouduth_master_services_agreement.md",
+    "nonaisk_zouduth_partnership_press_release.md",
+    "nonaisk_zouduth_term_sheet.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the MSA carves Nonaisk's Section 10.2 indemnity out of the liability cap while Zouduth's Section 10.1 indemnity remains capped, leaving Nonaisk with uncapped exposure for event injury and property claims, including claims caused in part by Zouduth's installation or handling.",
+      "kind": "issue",
+      "hints": [
+        "Section 11.3",
+        "uncapped",
+        "Section 10.1 remains capped"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the uncapped indemnity issue in the MSA, citing Section 11.3 (or Sections 10.2 and 11.3 together).",
+      "kind": "issue",
+      "hints": [
+        "MSA Section 11.3",
+        "Section 10.2"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "For the uncapped indemnity issue, the response explains why it matters to Nonaisk.",
+      "kind": "issue",
+      "hints": [
+        "unlimited liability",
+        "event injury claims"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "For the uncapped indemnity issue, the response recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "make the carve-out mutual",
+        "cap the indemnity",
+        "super-cap"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that DPA Section 12's choice of New York law and New York County courts conflicts with the MSA's Delaware law and Wilmington forum, and concludes that the conflict is not resolved, so disputes over a single matter such as a data incident could be split across two forums or two governing laws.",
+      "kind": "issue",
+      "hints": [
+        "New York County",
+        "Delaware",
+        "parallel proceedings"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response locates the governing law conflict in DPA Section 12 (alone or together with MSA Sections 16.1–16.2).",
+      "kind": "issue",
+      "hints": [
+        "DPA Section 12",
+        "MSA Section 16"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "For the governing law conflict, the response explains why it matters to Nonaisk.",
+      "kind": "issue",
+      "hints": [
+        "split forums",
+        "inconsistent results",
+        "cost"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "For the governing law conflict, the response recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "conform to Delaware",
+        "exclude governing law from precedence"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response identifies that the DPA's narrower definition of 'Customer Data' (limited to data uploaded by Customer to the Zouduth Dispatch Platform) excludes personal data that Zouduth crews collect directly from event clients, so that data falls outside the DPA's protections.",
+      "kind": "issue",
+      "hints": [
+        "uploaded by Customer to the Zouduth Dispatch Platform",
+        "collected on site",
+        "outside the DPA"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response locates the Customer Data definition issue in DPA Section 1.3 (alone or together with MSA Section 1.4).",
+      "kind": "issue",
+      "hints": [
+        "DPA Section 1.3",
+        "MSA Section 1.4"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "For the Customer Data definition issue, the response explains why it matters to Nonaisk.",
+      "kind": "issue",
+      "hints": [
+        "breach notification",
+        "event-client data unprotected"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "For the Customer Data definition issue, the response recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "conform to MSA definition",
+        "broaden the DPA definition"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response identifies that the MSA lets Zouduth assign the agreement without Nonaisk's consent, including to a competitor, contrary to the term sheet's mutual consent and non-competitor assignment term.",
+      "kind": "issue",
+      "hints": [
+        "without Customer's consent",
+        "Competitor",
+        "term sheet Section 7"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response locates the assignment issue in MSA Section 15.2.",
+      "kind": "issue",
+      "hints": [
+        "MSA Section 15.2"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "For the assignment issue, the response explains why it matters to Nonaisk.",
+      "kind": "issue",
+      "hints": [
+        "competitor",
+        "client data and pricing"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "For the assignment issue, the response recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "require Nonaisk's consent",
+        "prohibit assignment to a Competitor",
+        "change of control"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "The response states that under the MSA's order of precedence the DPA prevails over the MSA on Personal Data matters.",
+      "kind": "fact",
+      "hints": [
+        "DPA prevails",
+        "Personal Data matters",
+        "Section 2.3"
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "The response is presented as a memo addressed to the supervising partner, with issues set out as separate items.",
+      "kind": "format",
+      "hints": [
+        "To:",
+        "Memorandum"
+      ]
+    },
+    {
+      "id": "C19",
+      "text": "The response flags at least one item as requiring a client decision rather than only a drafting change.",
+      "kind": "format",
+      "hints": [
+        "client decision",
+        "commercial point"
+      ]
+    },
+    {
+      "id": "C20",
+      "text": "The response claims that the MSA prevails over the DPA on Personal Data matters.",
+      "kind": "negative",
+      "hints": [
+        "MSA controls",
+        "MSA prevails"
+      ]
+    },
+    {
+      "id": "C21",
+      "text": "The response claims that the term sheet's assignment restriction is binding on Zouduth and enforceable by Nonaisk once the MSA is signed.",
+      "kind": "negative",
+      "hints": [
+        "term sheet binds",
+        "enforce the term sheet"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}
