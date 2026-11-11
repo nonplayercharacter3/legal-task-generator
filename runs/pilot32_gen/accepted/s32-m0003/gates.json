@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "test",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.333,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -109,8 +122,61 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 17,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "closing_press_release.md",
+                "indemnity_escrow_agreement.md",
+                "seller_disclosure_schedule.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C13"
+              ],
+              "steps": 17,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "closing_press_release.md",
+                "indemnity_escrow_agreement.md",
+                "seller_disclosure_schedule.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C14"
+              ],
+              "steps": 17,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "closing_press_release.md",
+                "indemnity_escrow_agreement.md",
+                "seller_disclosure_schedule.md",
+                "transition_services_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

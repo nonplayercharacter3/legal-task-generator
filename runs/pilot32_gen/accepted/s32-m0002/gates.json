@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.667,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -112,8 +125,59 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 11,
+              "files_opened": [
+                "dugein_press_release_new_flight_kitchen.md",
+                "lebix_dugein_catering_msa.md",
+                "lebix_dugein_food_safety_quality_agreement.md",
+                "lebix_dugein_msa_amendment_no1.md",
+                "lebix_notice_letter_to_dugein_2026-10-20.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 11,
+              "files_opened": [
+                "dugein_press_release_new_flight_kitchen.md",
+                "lebix_dugein_catering_msa.md",
+                "lebix_dugein_food_safety_quality_agreement.md",
+                "lebix_dugein_msa_amendment_no1.md",
+                "lebix_notice_letter_to_dugein_2026-10-20.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 11,
+              "files_opened": [
+                "dugein_press_release_new_flight_kitchen.md",
+                "lebix_dugein_catering_msa.md",
+                "lebix_dugein_food_safety_quality_agreement.md",
+                "lebix_dugein_msa_amendment_no1.md",
+                "lebix_notice_letter_to_dugein_2026-10-20.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

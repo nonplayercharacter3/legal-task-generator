@@ -49,9 +49,9 @@
     },
     "solver_check": {
       "evaluated": 3,
-      "passed": 0,
+      "passed": 3,
       "failed": 0,
-      "skipped": 3
+      "skipped": 0
     }
   },
   "rubric_repairs": {
@@ -60,8 +60,17 @@
     "bundled_after": 0
   },
   "unsolved": 0,
-  "label_pending": 3,
-  "difficulty": {},
+  "label_pending": 0,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 3,
+      "pass_rates": {
+        "0.33": 1,
+        "0.67": 1,
+        "1.00": 1
+      }
+    }
+  },
   "matters": [
     {
       "matter_id": "s32-m0001",
@@ -69,10 +78,17 @@
       "failed_gate": null,
       "reason": null,
       "split": "train",
-      "solver_pass_rate": null,
+      "solver_pass_rate": 1.0,
       "unsolved": false,
-      "difficulty": [],
-      "label_pending": true
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 3,
+          "pass_rate": 1.0
+        }
+      ],
+      "label_pending": false
     },
     {
       "matter_id": "s32-m0002",
@@ -80,10 +96,17 @@
       "failed_gate": null,
       "reason": null,
       "split": "train",
-      "solver_pass_rate": null,
+      "solver_pass_rate": 0.667,
       "unsolved": false,
-      "difficulty": [],
-      "label_pending": true
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 2,
+          "pass_rate": 0.667
+        }
+      ],
+      "label_pending": false
     },
     {
       "matter_id": "s32-m0003",
@@ -91,10 +114,17 @@
       "failed_gate": null,
       "reason": null,
       "split": "test",
-      "solver_pass_rate": null,
+      "solver_pass_rate": 0.333,
       "unsolved": false,
-      "difficulty": [],
-      "label_pending": true
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 1,
+          "pass_rate": 0.333
+        }
+      ],
+      "label_pending": false
     }
   ],
   "model_calls": {
@@ -147,9 +177,15 @@
       "errors": 0
     },
     "judge": {
-      "calls": 9,
-      "input_tokens": 68881,
-      "output_tokens": 7187,
+      "calls": 21,
+      "input_tokens": 190837,
+      "output_tokens": 20801,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 151,
+      "input_tokens": 1200048,
+      "output_tokens": 148670,
       "errors": 0
     }
   },

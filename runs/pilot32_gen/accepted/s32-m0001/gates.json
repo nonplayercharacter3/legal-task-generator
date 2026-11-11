@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 1.0,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -118,8 +131,54 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 3,
+            "pass_rate": 1.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 8,
+              "files_opened": [
+                "lusen_service_level_schedule_prior_draft.md",
+                "nipusk_lusen_software_license_agreement.md",
+                "nipusk_lusen_term_sheet_2023-10.md",
+                "nipusk_non_renewal_letter_2026-10-20.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 8,
+              "files_opened": [
+                "lusen_service_level_schedule_prior_draft.md",
+                "nipusk_lusen_software_license_agreement.md",
+                "nipusk_lusen_term_sheet_2023-10.md",
+                "nipusk_non_renewal_letter_2026-10-20.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 8,
+              "files_opened": [
+                "lusen_service_level_schedule_prior_draft.md",
+                "nipusk_lusen_software_license_agreement.md",
+                "nipusk_lusen_term_sheet_2023-10.md",
+                "nipusk_non_renewal_letter_2026-10-20.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
