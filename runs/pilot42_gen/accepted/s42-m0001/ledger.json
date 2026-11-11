@@ -1,0 +1,204 @@
+{
+  "matter_id": "s42-m0001",
+  "summary": "Gaimun Brewing Company, LLC, a Kingston, New York craft brewery and the firm's client, licenses Breneth Systems, Inc.'s cloud brewery-management platform 'BrewOps' from Breneth, which is based in Denver. BrewOps covers batch and recipe tracking, TTB excise reporting, inventory and distributor ordering. The folder holds five documents: the Software License Agreement dated November 2, 2026, a Service Level Schedule, a Side Letter on pricing, an Order Form and an onboarding email thread. The Side Letter's recital records that Gaimun signed a merger agreement on September 30, 2026 to become a wholly owned subsidiary of Ostrander Beverage Holdings LLC. The partner wants an issue-spotting memo before Gaimun countersigns the final package and before the Ostrander closing. Five issues are planted. The first is a five-year evergreen renewal with a 15-day opt-out window, found by reading Agreement §3.2 with the Order Form term. The second is a Service Level Schedule sole-remedy clause that, through the precedence clause, guts the uncapped data-security carve-out. The third is Breneth's unrestricted right to assign. The fourth is a Side Letter choice of Colorado law and a Denver forum that, under the precedence clause, displaces the agreed New York law and forum. The fifth is a change-of-control consent requirement, with fee acceleration, that the recorded Ostrander merger triggers and that no document addresses.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Gaimun Brewing Company, LLC",
+      "role": "Customer / licensee (firm's client); New York craft brewery"
+    },
+    {
+      "id": "P2",
+      "name": "Breneth Systems, Inc.",
+      "role": "Licensor / provider of the BrewOps brewery-management SaaS platform; Colorado corporation based in Denver"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Beverage Holdings LLC",
+      "role": "Proposed acquirer of Gaimun under a merger agreement dated September 30, 2026 (non-signatory)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "November 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Software License Agreement governing law",
+      "value": "Laws of the State of New York",
+      "doc": "D1",
+      "section": "16.1"
+    },
+    {
+      "id": "F3",
+      "key": "Software License Agreement forum",
+      "value": "Exclusive jurisdiction of state and federal courts in New York County, New York",
+      "doc": "D1",
+      "section": "16.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "Side Letter, then Order Form, then Service Level Schedule, then body of the Agreement",
+      "doc": "D1",
+      "section": "1.4"
+    },
+    {
+      "id": "F5",
+      "key": "Initial Subscription Term",
+      "value": "60 months",
+      "doc": "D4",
+      "section": "2 (Subscription Term)"
+    },
+    {
+      "id": "F6",
+      "key": "Subscription Start Date",
+      "value": "January 1, 2027",
+      "doc": "D4",
+      "section": "2 (Subscription Term)"
+    },
+    {
+      "id": "F7",
+      "key": "Annual Subscription Fee",
+      "value": "$186,000 per year, invoiced annually in advance",
+      "doc": "D4",
+      "section": "3 (Fees)"
+    },
+    {
+      "id": "F8",
+      "key": "General liability cap",
+      "value": "Fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.2"
+    },
+    {
+      "id": "F9",
+      "key": "Monthly availability commitment",
+      "value": "99.5% availability per calendar month",
+      "doc": "D2",
+      "section": "2.1"
+    },
+    {
+      "id": "F10",
+      "key": "Ostrander merger agreement date",
+      "value": "September 30, 2026",
+      "doc": "D3",
+      "section": "Recital B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "breneth_gaimun_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "schedule_b_service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "breneth_gaimun_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "brewops_order_form_001.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "onboarding_email_thread.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Agreement §3.2 makes the subscription renew automatically for successive Renewal Terms 'equal in length to the Initial Subscription Term'. A non-renewal notice is effective only if delivered 'no earlier than 60 days and no later than 45 days' before the end of the then-current term. Read alone, §3.2 looks routine. Combined with Order Form §2, which sets a 60-month Initial Subscription Term starting January 1, 2027 at $186,000 per year, Gaimun is locked into successive five-year renewals of about $930,000 each. The only opt-out is a 15-day window. For the first term that window is November 1 to November 16, 2031, measured from the term ending December 31, 2031. A notice sent early or late is ineffective. For a growing brewery facing an acquisition, this is a significant lock-in risk.",
+      "doc": "D1",
+      "section": "3.2",
+      "detect_terms": [
+        "equal in length to the Initial Subscription Term",
+        "no earlier than 60 days and no later than 45 days"
+      ],
+      "expected_finding": "Read with the 60-month Initial Subscription Term in the Order Form, Agreement §3.2 auto-renews Gaimun for successive five-year terms of about $930,000 each unless notice lands in a 15-day window (November 1–16, 2031 for the first term), so Gaimun should negotiate renewal terms of 12 months or less and a simple notice deadline of at least 90 days before expiry with no 'no earlier than' limit.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Agreement §11.3(b) excludes from the 12-month-fees cap in §11.2 any liability for breach of Breneth's data-security and confidentiality obligations in Section 8, including loss or corruption of Customer Data. For Gaimun, Customer Data includes proprietary recipes, batch records and distributor pricing. Service Level Schedule §5.4, however, states that Service Credits are Customer's 'sole and exclusive remedy' for any Service failure 'including loss or corruption of Customer Data'. Section 5.3 caps those credits at 10% of the monthly fee. Under the order of precedence in Agreement §1.4, the Service Level Schedule prevails over the body of the Agreement. The Schedule therefore controls, so the uncapped data carve-out Gaimun negotiated becomes a credit capped far below even the general cap. Neither the Side Letter nor the Order Form restores the carve-out.",
+      "doc": "D2",
+      "section": "5.4",
+      "detect_terms": [
+        "sole and exclusive remedy",
+        "including loss or corruption of Customer Data"
+      ],
+      "expected_finding": "Because Agreement §1.4 gives the Service Level Schedule precedence over the Agreement body, Schedule §5.4 makes credits capped at 10% of monthly fees Gaimun's sole remedy for loss or corruption of Customer Data, overriding the uncapped data-security carve-out in Agreement §11.3(b); §5.4 should be revised to exclude data loss and security breaches and to state that it does not limit §11.3.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Agreement §14.1 bars Gaimun from assigning without Breneth's prior written consent. Agreement §14.3 provides that Breneth 'may assign this Agreement without Customer's consent' to any affiliate, successor or acquirer of all or any part of its business or assets, without notice. Nothing excludes competitors. The clause would let Breneth transfer the contract, and with it hosting of Gaimun's recipes, production volumes and distributor pricing, to a brewing conglomerate's software arm or another rival of Gaimun. Gaimun would have no consent, notice or termination right.",
+      "doc": "D1",
+      "section": "14.3",
+      "detect_terms": [
+        "may assign this Agreement without Customer's consent"
+      ],
+      "expected_finding": "Agreement §14.3 lets Breneth assign freely, even to a Gaimun competitor and without notice, while §14.1 restricts Gaimun's own assignment, so Gaimun should require mutual consent (not to be unreasonably withheld), a bar on assignment to competitors, prior notice, and a right to terminate and recover its data if Breneth assigns.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Agreement §16.1–16.2 chooses New York law and the exclusive jurisdiction of the state and federal courts in New York County. Side Letter §4 states that 'this Side Letter and the Agreement as modified hereby' are governed by 'the laws of the State of Colorado', with exclusive jurisdiction in the state and federal courts in Denver, Colorado. Agreement §1.4 ranks the Side Letter first in the order of precedence, so the conflict resolves in favor of the Side Letter. The whole licence relationship therefore moves to Breneth's home law and forum, displacing the New York choice Gaimun negotiated. The two clauses also create competing exclusive-forum clauses that invite a jurisdictional fight.",
+      "doc": "D3",
+      "section": "4",
+      "detect_terms": [
+        "laws of the State of Colorado",
+        "Denver, Colorado"
+      ],
+      "expected_finding": "Side Letter §4 applies Colorado law and an exclusive Denver forum to the Agreement as a whole, and because Agreement §1.4 gives the Side Letter top precedence it overrides the New York law and New York County forum in Agreement §16.1–16.2, so Gaimun should strike Side Letter §4 or limit it to confirm that New York law and forum govern all documents.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Agreement §14.2 provides that any Change of Control of Customer is 'deemed an assignment' requiring Breneth's prior written consent. Change of Control is defined to include a merger in which Customer becomes a subsidiary of another entity. If Customer fails to obtain consent, Breneth may terminate, and 'all Fees for the remainder of the Subscription Term become immediately due'. Side Letter Recital B records that Gaimun signed a merger agreement dated September 30, 2026 under which it will become a wholly owned subsidiary of Ostrander Beverage Holdings LLC, with closing expected in Q1 2027. That transaction falls squarely within the definition. The Side Letter addresses only pricing and governing law. It says 'except as expressly set forth herein, the Agreement remains unchanged' and grants no consent. No other document in the folder gives or requests consent. Closing without consent would expose Gaimun to termination and acceleration of up to five years of fees, about $930,000, measured from the January 1, 2027 Subscription Start Date in the Order Form.",
+      "doc": "D1",
+      "section": "14.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "all Fees for the remainder of the Subscription Term become immediately due"
+      ],
+      "expected_finding": "The Ostrander merger recorded in Side Letter Recital B (merger agreement dated September 30, 2026) is a Change of Control under Agreement §14.2 for which no consent has been obtained, so unless Gaimun secures Breneth's written consent before closing (or amends §14.2 to exclude the transaction), Breneth may terminate and accelerate all remaining fees of up to about $930,000.",
+      "contradicts": null
+    }
+  ]
+}

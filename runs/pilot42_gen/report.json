@@ -1,0 +1,180 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 1
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s42-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s42-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s42-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12135,
+      "output_tokens": 21156,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 13,
+      "input_tokens": 192617,
+      "output_tokens": 59077,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 69160,
+      "output_tokens": 6271,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 2,
+      "input_tokens": 2866,
+      "output_tokens": 564,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 11,
+      "input_tokens": 215760,
+      "output_tokens": 7362,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4209,
+      "output_tokens": 1115,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 18595,
+      "output_tokens": 5729,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 147070,
+      "output_tokens": 36075,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 9,
+      "input_tokens": 54706,
+      "output_tokens": 6132,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "craft brewing": 1,
+      "outdoor apparel": 1,
+      "solar panel installation": 1
+    },
+    "agreement_types": {
+      "software license agreement": 2,
+      "master services agreement": 1
+    },
+    "issue_types": {
+      "auto_renewal": 2,
+      "uncapped_indemnity": 2,
+      "liability_cap_carveout": 1,
+      "missing_assignment_restriction": 1,
+      "governing_law_mismatch": 1,
+      "change_of_control_consent": 1,
+      "defined_term_inconsistency": 1,
+      "exclusivity_scope": 1,
+      "expired_notice_window": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

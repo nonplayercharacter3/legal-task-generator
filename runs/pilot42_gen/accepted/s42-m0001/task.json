@@ -1,0 +1,118 @@
+{
+  "task_id": "s42-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Gaimun Brewing Company, LLC, the New York craft brewery, as customer and licensee in its software license arrangement with Breneth Systems, Inc. Before the client relies further on this deal, I'd like a clear picture of where it stands and what we should push back on. Please review everything in the matter folder: the software license agreement (breneth_gaimun_software_license_agreement.md), the Schedule B service level schedule, the side letter, BrewOps Order Form 001, and the onboarding email thread. Then prepare a memo to me listing each issue you identify. For each one, tell me where it appears (document and section), why it matters to Gaimun, and what fix you recommend. Use plain language that I can adapt for the client. If something is ambiguous or you can't resolve it from the documents alone, say so rather than guessing, and note what we'd need to confirm with the client. Please keep it organized so I can move through it quickly.",
+  "documents": [
+    "breneth_gaimun_side_letter.md",
+    "breneth_gaimun_software_license_agreement.md",
+    "brewops_order_form_001.md",
+    "onboarding_email_thread.md",
+    "schedule_b_service_level_schedule.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Software License Agreement Section 3.2 automatic renewal, read with the Order Form's 60-month Initial Subscription Term, renews Gaimun for successive five-year terms unless non-renewal notice is given within a narrow 15-day window. It locates this in Agreement Section 3.2, explains why this matters to Gaimun, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 3.2",
+        "five-year renewal",
+        "15-day window"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the Service Level Schedule Section 5.4 sole-and-exclusive-remedy clause makes capped service credits Gaimun's only remedy for loss or corruption of Customer Data, overriding the uncapped data-security carve-out in Agreement Section 11.3(b). It locates this in Schedule Section 5.4, explains why this matters to Gaimun, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "sole and exclusive remedy",
+        "Section 5.4",
+        "Section 11.3(b) carve-out"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Agreement Section 14.3 lets Breneth assign the Agreement without Gaimun's consent, including to a competitor and without notice, while Gaimun's own assignment is restricted. It locates this in Agreement Section 14.3, explains why this matters to Gaimun, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 14.3",
+        "assign without Customer's consent",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that Side Letter Section 4's choice of Colorado law and an exclusive Denver forum overrides the New York law and New York County forum chosen in Agreement Sections 16.1–16.2. It locates this in Side Letter Section 4, explains why this matters to Gaimun, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Side Letter Section 4",
+        "Colorado law",
+        "Denver forum"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the Ostrander merger recorded in the Side Letter recital is a Change of Control under Agreement Section 14.2 for which Breneth's consent has not been obtained, exposing Gaimun to termination and acceleration of remaining fees. It locates this in Agreement Section 14.2, explains why this matters to Gaimun, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Ostrander",
+        "Change of Control",
+        "fees become immediately due"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Initial Subscription Term under the Order Form is 60 months (five years).",
+      "kind": "fact",
+      "hints": [
+        "60 months",
+        "five-year term"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Annual Subscription Fee is $186,000 per year.",
+      "kind": "fact",
+      "hints": [
+        "$186,000",
+        "per year"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo addressed to the supervising partner that presents the issues separately, and for each issue gives its location (document and section), why it matters to Gaimun, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Location",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Breneth has already consented to Gaimun's change of control or merger with Ostrander.",
+      "kind": "negative",
+      "hints": [
+        "Breneth has consented",
+        "consent obtained"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the subscription renews for one-year (12-month) renewal terms.",
+      "kind": "negative",
+      "hints": [
+        "renews annually",
+        "one-year renewal terms"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

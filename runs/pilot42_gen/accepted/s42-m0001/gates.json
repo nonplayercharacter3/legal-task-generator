@@ -1,0 +1,129 @@
+{
+  "matter_id": "s42-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "§3.2: \"Upon expiry of the Initial Subscription Term, the subscription shall automatically renew for successive renewal periods, each equal in length to the Initial Subscription Term (each, a \"Renewal Term\"), unless either Party delivers written notice of non-renewal to the other Party no earlier than 60 days and no later than 45 days before the end of the then-current Initial Subscription Term or Renewal Term. A notice of non-renewal delivered outside that period shall not be effective.\" Order Form §2.2: \"The Initial Subscription Term is 60 months, starting on the Subscription Start Date\" (January 1, 2027); Order Form §3.1: \"$186,000 per year.\"",
+            "reason": "The problem is present and still actionable for Gaimun. Read with the Order Form, §3.2 renews the subscription automatically for successive 60-month terms at about $930,000 each. Under §3.3, fees carry over at the final-year rate. Gaimun's only way out is a 15-day window, roughly November 1 to November 16, 2031 for the first term, and any notice sent earlier or later is void. Nothing in the folder cures this. The Side Letter outranks the Agreement and covers pricing, onboarding, expansion and governing law, but says nothing about renewal length or the notice window. The Order Form repeats §3.2. Gaimun also has no termination for convenience; it can terminate only for cause or insolvency. The lock-in is more serious because of the pending Ostrander merger. That merger is a Change of Control under §14.2, and if Breneth has not consented, Breneth may terminate and accelerate all remaining Fees, so a long auto-renewed term increases that exposure. The Agreement was dated November 2, 2026 and the signature blocks are blank. Gaimun has accepted nothing that would make the point moot, so the window can still be renegotiated or widened, or the renewal term shortened."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Schedule B §5.4: \"Service Credits are Customer's sole and exclusive remedy, and Breneth's sole liability, for any Service failure, including any failure to meet the Availability Commitment or the response times in Section 4.3, and including loss or corruption of Customer Data arising from or in connection with any Service failure.\" Agreement §1.4: \"...the Side Letter, then the Order Form, then the Service Level Schedule, then the body of this Agreement.\"",
+            "reason": "The problem is present and hurts Gaimun, the customer. Agreement §11.3(b) removes the §11.2 cap for Breneth's breaches of Section 8, \"including liability for any loss or corruption of Customer Data and the costs of restoring it.\" Schedule B §5.4 makes Service Credits the sole remedy for data loss or corruption arising from any Service failure, and §5.3 caps those credits at 10% of the Monthly Fee (about $1,550 a month on $186,000 a year). Because §1.4 ranks the Service Level Schedule above the body of the Agreement, Breneth can argue that the Schedule controls. On that reading, the uncapped remedy for loss of recipes, batch records and distributor pricing shrinks to a small credit. Neither the Side Letter (pricing, onboarding and expansion only) nor the Order Form restores the carve-out. The documents are unsigned and dated November 2, 2026, and nothing shows Gaimun has accepted this result, so the point can still be raised and renegotiated."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "14.3 Assignment by Breneth. Breneth may assign this Agreement without Customer's consent to any Affiliate, to any successor by merger or reorganization, or to any acquirer of all or any part of Breneth's business or assets.",
+            "reason": "Breneth's assignment right in §14.3 is unrestricted. It can assign to an acquirer of even 'any part' of its business. It need not give Gaimun notice, competitors are not excluded, and Gaimun gets no termination right. By contrast, §14.1–14.2 require Breneth's consent before Gaimun can assign. They also treat Gaimun's own pending Ostrander merger as an assignment, which lets Breneth terminate and accelerate fees. No other document in the folder (Side Letter, Order Form, Service Level Schedule) limits §14.3. The Side Letter addresses only pricing and governing law. §14.4 would bind an assignee to the confidentiality and data-security terms. That does not stop a rival from becoming the counterparty that hosts Gaimun's recipes, production data and distributor pricing. The agreement is not yet performed and the issue can still be negotiated, so it is a real and actionable risk for Gaimun as customer."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Side Letter §4.1: \"This Side Letter and the Agreement as modified hereby, and any dispute arising out of or relating to any of them, are governed by the laws of the State of Colorado, without regard to its conflict-of-laws principles.\" §4.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Denver, Colorado, for any action arising out of or relating to this Side Letter or the Agreement as modified hereby...\" By contrast, Agreement §16.1–16.2 choose New York law and the exclusive jurisdiction of the courts in New York County, and Agreement §1.4 provides: \"the following order of precedence applies: the Side Letter, then the Order Form, then the Service Level Schedule, then the body of this Agreement.\"",
+            "reason": "The problem is present and hurts Gaimun.\n\n- **The conflict.** The Side Letter is meant to be a pricing letter, but its §4 replaces the Agreement's New York law and New York County forum with Colorado law and Denver courts. It does this for the whole Agreement \"as modified hereby,\" not just for the pricing terms.\n- **The Side Letter wins.** Agreement §1.4 puts the Side Letter first in the order of precedence. Nothing in the folder narrows §4 or keeps the New York choice in place.\n- **Effect on Gaimun.** Gaimun is a Kingston, New York customer. It would lose its home law and forum and have to litigate any dispute in Breneth's home state, Colorado. That includes disputes over Change of Control termination, accelerated fees and data loss, which are live risks given the pending Ostrander merger.\n- **Competing forum clauses.** Two exclusive-forum clauses that both claim the Agreement invite a fight over where a case can be brought.\n- **Still actionable.** Both signature blocks are unsigned, and nothing shows Gaimun accepted or waived the change. It can still be negotiated or struck before execution."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "§14.2: \"Any Change of Control of Customer shall be deemed an assignment of this Agreement by Customer requiring Breneth's prior written consent under Section 14.1. If a Change of Control of Customer occurs without Breneth's prior written consent, Breneth may terminate this Agreement by written notice to Customer, and upon such termination all Fees for the remainder of the Subscription Term become immediately due and payable.\" Side Letter Recital B: \"on September 30, 2026 Customer entered into a merger agreement under which Customer will become a wholly owned subsidiary of Ostrander Beverage Holdings LLC, with closing expected in the first quarter of 2027.\"",
+            "reason": "The problem is present and still actionable for Gaimun. Under §1.1(c)(i), a Change of Control includes a merger in which Customer \"becomes a subsidiary of another entity\", so the disclosed Ostrander merger falls within §14.2. The Side Letter only recites the merger; it grants no consent. It confirms that \"except as expressly set forth herein, the Agreement remains unchanged\", and §15.4 requires any waiver to be in writing. Breneth's knowledge of the merger is therefore not consent. No other document in the folder requests or records consent. Closing has not happened yet (expected Q1 2027), so Gaimun can still get Breneth's written consent before closing. If it closes without consent, Breneth may terminate and accelerate the remaining fees. That could be up to 60 months at $186,000 a year, roughly $930,000. The exposure falls entirely on Gaimun as the party that must obtain consent and would owe the accelerated fees."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F5, which only issue I1 uses: a memo that misses I1 need not state it",
+          "criterion C7 asks for fact F7, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

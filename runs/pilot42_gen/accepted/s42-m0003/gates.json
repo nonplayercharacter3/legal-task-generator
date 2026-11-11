@@ -1,0 +1,118 @@
+{
+  "matter_id": "s42-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 4.3: \"In consideration of the pricing set out in the initial Order Form, during the Term Licensee shall not use, license or develop any Competing Product for any Solar Project in the Territory.\" Section 1.1(n) defines \"Territory\" as \"the United States and Canada.\" Section 1.1(l) defines \"Solar Project\" as \"any solar photovoltaic project of any size or type, including residential, commercial and industrial, community and utility-scale installations.\" Side Letter Recital B records that the Term Sheet limited exclusivity \"to residential rooftop projects in Arizona and Nevada only.\"",
+            "reason": "The covenant binds Fosais, the client. Read with the defined terms, it bars Fosais from using any other solar design tool for every project type across the US and Canada. That goes far beyond the residential rooftop, Arizona/Nevada scope the parties agreed in the Term Sheet. The Side Letter does not fix this. The narrower scope appears only in a recital. Side Letter Section 1.2 says nothing outside the fee terms is amended. Agreement Section 16.2 makes the License Agreement prevail over any Side Letter, and Section 16.5 requires a signed amendment. The problem is still actionable. The Term runs to at least February 28, 2027. Licensor claims the Agreement will auto-renew for another three years, which Fosais disputes with its rights reserved. Nothing in the folder shows Fosais accepted the broad scope. Recital B gives Fosais evidence for reformation or renegotiation, but the operative text still hurts Fosais as written."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 12.3: \"The limitations in Sections 12.1 and 12.2 do not apply to: (a) a party's indemnification obligations under Section 11...\" Section 11.2: \"Licensee shall defend, indemnify and hold harmless Licensor ... arising from any claim brought by a third party arising out of or relating to any Installation, including claims for bodily injury, death, property damage, roof or water damage, fire, electrical failure, code violations or permitting deficiencies...\"",
+            "reason": "The exclusion in 12.3 is mutual on its face, but the indemnities it uncaps are not balanced. Dreitoul's indemnity in 11.1 covers only US IP infringement claims, and its own carve-outs narrow it further. Fosais is the indemnitor under 11.2, and that indemnity reaches every third-party claim relating to any Installation, even one not designed with the Platform. Because 12.3 removes the 12-month-fees cap and the consequential-damages exclusion, Fosais carries unlimited liability for ordinary construction-type claims under a software license. Nothing in the folder cures this. Side Letter §1.2 amends only fee terms, and its §4 keeps the dispute over non-renewal open. Licensor says the Agreement renews for a three-year Renewal Term, so the exposure continues. The Parent Guaranty §1.2(c) and §2.1 guarantee all of Licensee's indemnification obligations, so Fosais Holdings Corp. bears the same uncapped exposure. The issue is still actionable: it can be raised in the renewal dispute and in any negotiation."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 4.1: \"Licensee's written notice of non-renewal of the Agreement under Section 14.1 of the Agreement ... was delivered on November 2, 2026 by email to legal@dreitoul.com\"; Section 4.2: \"Licensor's position is that the Non-Renewal Notice was not delivered within the period required by Section 14.1 of the Agreement, is untimely and is of no effect, and that the Agreement will accordingly renew for a Renewal Term\"; Agreement Section 14.1: \"automatically renews for successive three-year terms ... unless either party gives the other written notice of non-renewal at least 120 days before the end of the then-current term\" (Initial Term ending February 28, 2027).",
+            "reason": "Counting back 120 days from February 28, 2027 gives October 31, 2026. Fosais delivered its notice on November 2, 2026, two days late. That exposes Fosais to an automatic three-year Renewal Term, during which the Section 4.3 exclusivity covenant (all Solar Projects in the Territory) and the Seat fees would continue to bind it. Fosais has not accepted renewal. Section 4.3 records that it disputes Dreitoul's position and reserves all rights, and Section 4.4 says the fee adjustment is not an admission or waiver on either side. Nothing in the folder shows Fosais acquiescing, such as paying renewal-term fees. The Initial Term has not yet ended, so the dispute can still be raised and resolved before February 28, 2027. The problem is real and remains actionable for the client."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [
+          "criterion C3 requires a harm, remedy or provision that issue I3's expected_finding does not name: 'It also concludes that the License Agreement is therefore at risk of automatically renewing for a further three-year term'; ask that the response explains why it matters and recommends a fix"
+        ],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C5 asks for fact F9, which only issue I2 uses: a memo that misses I2 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

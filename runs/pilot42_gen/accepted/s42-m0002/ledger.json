@@ -1,0 +1,154 @@
+{
+  "matter_id": "s42-m0002",
+  "summary": "Timais Outdoor Co., an outdoor apparel brand, is negotiating a Master Services Agreement with Pesith Apparel Manufacturing, LLC. Pesith will manufacture technical waterproof shell jackets and insulated layers and run direct-to-consumer order fulfillment. The folder holds four documents: the draft MSA, a Quality Agreement, a Data Processing Addendum covering consumer shipping and order data, and a cover letter from Pesith's insurance broker sending a certificate of insurance. Three issues are planted. (1) The MSA's replacement and credit remedy imports a Quality Agreement definition of 'Nonconforming Product' that leaves out failures of waterproofing and other performance Specifications. (2) The MSA renews automatically for successive three-year terms, with a 30-day opt-out window and no termination for convenience after the Initial Term. (3) The DPA prevails over the MSA on data matters under the MSA's precedence clause, and it imposes on Timais an indemnity outside any cap for all Personal Data claims, including those Pesith causes.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Timais Outdoor Co.",
+      "role": "Customer; outdoor apparel brand procuring manufacturing and fulfillment services (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Pesith Apparel Manufacturing, LLC",
+      "role": "Provider; contract manufacturer and fulfillment services provider"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "three years from the MSA Effective Date",
+      "doc": "D1",
+      "section": "Section 14.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA liability cap",
+      "value": "fees paid or payable in the 12 months preceding the event giving rise to the claim",
+      "doc": "D1",
+      "section": "Section 11.1"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "DPA (as to Personal Data), then MSA, then Quality Agreement, then Statements of Work",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F5",
+      "key": "MSA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 16.1"
+    },
+    {
+      "id": "F6",
+      "key": "Provider commercial general liability minimum",
+      "value": "$5,000,000 per occurrence",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F7",
+      "key": "Shell jacket waterproofing Specification",
+      "value": "minimum 20,000 mm hydrostatic head with fully taped seams",
+      "doc": "D1",
+      "section": "Schedule A"
+    },
+    {
+      "id": "F8",
+      "key": "Quality Agreement inspection and rejection period",
+      "value": "30 days after delivery to Customer's designated warehouse",
+      "doc": "D2",
+      "section": "Section 5.2"
+    },
+    {
+      "id": "F9",
+      "key": "Quality Agreement Effective Date",
+      "value": "March 1, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "timais_pesith_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "timais_pesith_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "timais_pesith_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "pesith_broker_insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "defined_term_inconsistency",
+      "label": "Imported 'Nonconforming Product' definition excludes performance failures",
+      "description": "The MSA sets a performance standard and then attaches its main remedy to a narrower defined term from another document. MSA Section 1 defines 'Specifications' to include the performance requirements in Schedule A, including the 20,000 mm hydrostatic head and fully taped seam requirement (F7). MSA Section 6.1 has Provider warrant that Products conform to the Specifications. However, MSA Section 6.2, the exclusive replacement and credit remedy, applies only to 'Nonconforming Product (as defined in the Quality Agreement)'. Quality Agreement Section 1.6 defines Nonconforming Product as Product failing the visual and workmanship criteria in Appendix A, which are AQL cosmetic checks covering stitching, color and labeling. Waterproofing, seam-tape and other performance failures therefore fall outside the only contractual remedy. The MSA-over-Quality-Agreement precedence in Section 2.3 (F4) does not cure this. The MSA does not conflict with the Quality Agreement here; it expressly incorporates the Quality Agreement's definition. Timais, a technical outerwear brand, would be left without replacement or credit for its most commercially important defect category.",
+      "doc": "D2",
+      "section": "Section 1.6",
+      "detect_terms": [
+        "visual and workmanship criteria in Appendix A"
+      ],
+      "expected_finding": "MSA Section 6.2 limits Timais's replacement and credit remedy to 'Nonconforming Product' as defined in Quality Agreement Section 1.6. That definition covers only Appendix A visual and workmanship defects, so failures of the Schedule A waterproofing and other performance Specifications warranted in MSA Section 6.1 have no remedy. The definition should be conformed to cover any failure to meet the Specifications.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "Three-year evergreen renewal with 30-day opt-out window",
+      "description": "MSA Section 14.1 provides a three-year Initial Term from the March 1, 2026 MSA Effective Date (F1, F2). The agreement then renews automatically for successive three-year renewal terms. The only way to prevent renewal is written notice given no earlier than 90 days and no later than 60 days before the end of the then-current term, a 30-day window. Section 14.3 allows termination for convenience only during the Initial Term, so once a renewal term begins Timais is locked in for a further three years. The minimum volume commitments in Section 4.4 also continue through each renewal term. This is visible from Section 14 on its own reading.",
+      "doc": "D1",
+      "section": "Section 14.1",
+      "detect_terms": [
+        "successive three (3) year renewal terms",
+        "no earlier than ninety (90) days and no later than sixty (60) days"
+      ],
+      "expected_finding": "MSA Section 14.1 automatically renews the agreement for successive three-year terms unless Timais gives notice within a 30-day window 60 to 90 days before expiry. Because Section 14.3 removes termination for convenience after the Initial Term, a missed window would bind Timais to three more years of minimum volumes. Timais should seek one-year renewals, a longer or open notice window, or a convenience termination right during renewal terms.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "Customer's DPA indemnity is uncapped and controls over the MSA",
+      "description": "MSA Section 11.1 caps each party's liability at fees paid or payable in the prior 12 months (F3). However, DPA Section 8.2 requires Timais, as Controller, to indemnify Pesith against all losses, regulatory fines and third-party claims arising out of or relating to any processing of Customer Personal Data performed by Processor on Customer's behalf. This includes consumer order and shipping data processed in fulfillment. DPA Section 8.2 also states that this indemnity shall not be subject to any limitation of liability in the Agreement. MSA Section 2.3 (F4) gives the DPA precedence over the MSA as to Personal Data, so the DPA carve-out controls and the MSA cap cannot be relied on. The indemnity has no exception for losses caused by Pesith's own breach of the DPA or its security failures. Timais would therefore bear unlimited liability for a data breach at Pesith's fulfillment center. Reading DPA Section 8.2 together with MSA Sections 2.3 and 11.1 shows the exposure.",
+      "doc": "D3",
+      "section": "Section 8.2",
+      "detect_terms": [
+        "shall not be subject to any limitation of liability",
+        "performed by Processor on Customer's behalf"
+      ],
+      "expected_finding": "DPA Section 8.2 makes Timais indemnify Pesith, without any cap, for all claims and fines relating to Pesith's processing of Customer Personal Data, even claims Pesith itself causes. Because MSA Section 2.3 gives the DPA precedence on Personal Data, this overrides the MSA Section 11.1 cap. The indemnity should be limited to losses caused by Timais's unlawful instructions, should exclude Pesith-caused breaches, and should be made subject to a cap.",
+      "contradicts": null
+    }
+  ]
+}

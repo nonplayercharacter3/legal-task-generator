@@ -1,0 +1,171 @@
+{
+  "matter_id": "s42-m0003",
+  "summary": "Fosais Solar Installations, LLC, a residential rooftop solar installer operating in Arizona and Nevada, licenses Dreitoul Software, Inc.'s HelioDraft solar design and permitting platform under a Software License Agreement effective March 1, 2024 and governed by Delaware law. Fosais's parent, Fosais Holdings Corp., guaranteed Fosais's obligations under a Parent Guaranty of the same date. A Side Letter dated November 4, 2026 does three things: it adjusts seat fees, records in a recital the exclusivity scope from the January 2024 term sheet, and records that Dreitoul treats Fosais's November 2, 2026 non-renewal notice as untimely, which Fosais disputes. An insurance broker's cover letter enclosing Fosais's certificate of insurance completes the folder. The partner wants an issue-spotting memo before Fosais responds to Dreitoul.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Fosais Solar Installations, LLC",
+      "role": "Licensee (client)"
+    },
+    {
+      "id": "P2",
+      "name": "Dreitoul Software, Inc.",
+      "role": "Licensor"
+    },
+    {
+      "id": "P3",
+      "name": "Fosais Holdings Corp.",
+      "role": "Guarantor; parent of Licensee"
+    },
+    {
+      "id": "P4",
+      "name": "Sunvale Risk Partners, LLC",
+      "role": "Licensee's insurance broker"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "License Agreement Initial Term",
+      "value": "three years from the Effective Date, ending February 28, 2027",
+      "doc": "D1",
+      "section": "Section 14.1"
+    },
+    {
+      "id": "F3",
+      "key": "License Agreement non-renewal notice period",
+      "value": "at least 120 days before the end of the then-current term",
+      "doc": "D1",
+      "section": "Section 14.1"
+    },
+    {
+      "id": "F4",
+      "key": "License Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "License Agreement prevails over the Side Letter and any Order Form",
+      "doc": "D1",
+      "section": "Section 16.2"
+    },
+    {
+      "id": "F6",
+      "key": "Agreed exclusivity scope (January 10, 2024 Term Sheet)",
+      "value": "residential rooftop projects in Arizona and Nevada only",
+      "doc": "D2",
+      "section": "Recital B"
+    },
+    {
+      "id": "F7",
+      "key": "Side Letter date",
+      "value": "November 4, 2026",
+      "doc": "D2",
+      "section": "Heading"
+    },
+    {
+      "id": "F8",
+      "key": "Non-Renewal Notice delivery date",
+      "value": "November 2, 2026",
+      "doc": "D2",
+      "section": "Section 4"
+    },
+    {
+      "id": "F9",
+      "key": "Parent Guaranty guarantor",
+      "value": "Fosais Holdings Corp.",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Required commercial general liability coverage",
+      "value": "$2,000,000 per occurrence",
+      "doc": "D1",
+      "section": "Section 13.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "side_letter_2026-11-04.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Under D1 Section 4.3, Licensee may not use, license or develop any Competing Product for any Solar Project in the Territory. Section 4.3 is harmful only when read with the Section 1.1 definitions. 'Territory' means the United States and Canada. 'Solar Project' covers residential, commercial and utility-scale installations. The deal was narrower: D2 Recital B records that the January 10, 2024 Term Sheet limited exclusivity to residential rooftop projects in Arizona and Nevada. D2 does not cure the gap. The point appears only in a non-operative recital, D2 states that it does not amend the Agreement except for the fee terms, and D1 Section 16.2 makes the License Agreement prevail over the Side Letter. The result is that Fosais is barred from using any other design software for commercial projects and in any new state or in Canada, far beyond the agreed scope.",
+      "doc": "D1",
+      "section": "Section 4.3 (read with Section 1.1 definitions of 'Territory' and 'Solar Project' and Section 16.2)",
+      "detect_terms": [
+        "any Competing Product",
+        "United States and Canada"
+      ],
+      "expected_finding": "Section 4.3, read with the Section 1.1 definitions of Territory and Solar Project, extends Fosais's exclusivity to all project types across the United States and Canada, beyond the residential Arizona/Nevada scope recorded in the Side Letter's Recital B; because Section 16.2 makes the License Agreement prevail, the definitions or Section 4.3 must be amended to the agreed scope.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "D1 Section 12.3 excludes 'indemnification obligations under Section 11' from the Section 12.1 cap, which is fees paid or payable in the prior 12 months. The exclusion applies to both parties' indemnities, but in practice it falls almost entirely on Fosais. Dreitoul's indemnity in Section 11.1 is limited to IP infringement claims. Fosais's indemnity in Section 11.2 covers all third-party claims 'arising out of or relating to any Installation', including property damage, roof leaks, fires and personal injury from Fosais's solar installations. Read together, Sections 11.2 and 12.3 leave Fosais with unlimited liability for ordinary installation claims under a software license. D3 Section 2 has the parent guarantee all of Licensee's obligations under the Agreement, so the uncapped exposure also reaches Fosais Holdings Corp.",
+      "doc": "D1",
+      "section": "Section 12.3 (read with Sections 11.2 and 12.1, and D3 Section 2)",
+      "detect_terms": [
+        "indemnification obligations under Section 11",
+        "arising out of or relating to any Installation"
+      ],
+      "expected_finding": "Section 12.3 removes Fosais's broad Section 11.2 installation-claims indemnity from the Section 12.1 cap, leaving Fosais (and, through the Parent Guaranty, Fosais Holdings Corp.) with unlimited liability; the carve-out should be narrowed to IP infringement indemnity, or Section 11.2 should be limited and made subject to a cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under D1 Section 14.1, the Initial Term runs three years from the March 1, 2024 Effective Date and ends February 28, 2027. The Agreement then renews automatically for a three-year term unless a party gives non-renewal notice at least 120 days before the end of the term, which makes the deadline October 31, 2026. D2 Section 4 records that Fosais delivered its Non-Renewal Notice on November 2, 2026, two days late. In the same section, Dreitoul asserts the notice is untimely, while Fosais disputes that position and reserves all rights. The deadline can be found only by computing it from D1 Section 14.1 and comparing it with the delivery date in D2. Fosais is therefore exposed to an automatic three-year renewal. Because Fosais has not accepted renewal, the issue remains actionable before February 28, 2027.",
+      "doc": "D2",
+      "section": "Section 4 (read with D1 Section 14.1)",
+      "detect_terms": [
+        "delivered on November 2, 2026"
+      ],
+      "expected_finding": "The non-renewal deadline under Section 14.1 was October 31, 2026, so the Non-Renewal Notice delivered November 2, 2026 was late and the License Agreement risks auto-renewing for three years from February 28, 2027; because Fosais disputed the point and reserved its rights in Side Letter Section 4, it should promptly seek a written waiver or mutual non-renewal agreement from Dreitoul before February 28, 2027.",
+      "contradicts": null
+    }
+  ]
+}

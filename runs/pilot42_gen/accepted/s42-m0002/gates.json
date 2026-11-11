@@ -1,0 +1,118 @@
+{
+  "matter_id": "s42-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 36
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Quality Agreement Section 1.6: \"'Nonconforming Product' means any Product, or any unit of a Product, that fails the visual and workmanship criteria in Appendix A, as determined by inspection under Section 4 or Section 5.\" MSA Section 6.2: \"If any Product is Nonconforming Product (as defined in the Quality Agreement), Provider shall, at Customer's election, (a) replace the Nonconforming Product ... or (b) issue Customer a credit ... The remedies in this Section 6.2 are Customer's sole and exclusive remedy for Nonconforming Product.\"",
+            "reason": "The problem is present and still actionable for Timais. Appendix A covers only cosmetic and workmanship AQL defects: stitching, color, labeling, trims and appearance. It does not cover hydrostatic head, breathability, DWR, seam-tape adhesion or fill power. Yet the MSA's Specifications and Section 6.1 warranty expressly include those Schedule A performance requirements. Because MSA 6.2 ties replacement and credit to the QA definition, a jacket that leaks or delaminates gets no contractual replacement or credit right. The rejection right in QA 5.2 is limited the same way, and a failed lab test under QA 4.2 or 7.1 triggers only a CAP. Timais would be left with a general warranty damages claim, which is subject to the MSA 11.1 cap and the 11.2 bar on lost profits. The MSA 2.3 precedence clause does not help, because there is no conflict: the MSA adopts the QA definition expressly. Provider bears the replacement and credit obligation, so the narrow definition benefits Provider and harms Timais. The agreements are unsigned drafts dated March 2026, and nothing in the folder shows Timais has accepted this outcome. It can still be fixed by broadening the definition to include failure to meet the Specifications, or by amending QA 10.2."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"Thereafter, this Agreement shall automatically renew for successive three (3) year renewal terms (each, a \"Renewal Term\"), unless either Party gives the other written notice of non-renewal no earlier than ninety (90) days and no later than sixty (60) days before the end of the then-current Initial Term or Renewal Term.\" (MSA §14.1); \"During the Initial Term, Customer may terminate this Agreement for convenience...\" (MSA §14.3)",
+            "reason": "Section 14.1 sets a three-year Initial Term starting March 1, 2026, followed by automatic three-year renewals. Timais can stop a renewal only by written notice inside a 30-day window, 90 to 60 days before the term ends. Section 14.3 gives Timais its convenience termination right only during the Initial Term, so once a renewal starts Timais has no exit for another three years. The Section 4.4 Minimum Volume Commitments and shortfall fees apply in every Contract Year of the Term, and Section 1.15 defines the Term to include Renewal Terms. The Section 11.3(d) carve-out leaves those shortfall fees uncapped. The two other agreements in the folder (Quality Agreement and DPA) do not change this, and the broker letter only covers insurance. The issue is still actionable: today is November 11, 2026, and the first opt-out window does not open until about December 2028, so Timais can still diary the window, negotiate changes, or rely on the Initial Term convenience right."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"Customer, as Controller, shall defend, indemnify and hold harmless Processor and its Affiliates, officers, directors and employees from and against all losses, damages, regulatory fines and penalties, costs, reasonable attorneys' fees and third-party claims. This applies to all such amounts arising out of or relating to any processing of Customer Personal Data performed by Processor on Customer's behalf. Customer's obligations under this Section 8.2 shall not be subject to any limitation of liability in the Agreement.\" (DPA §8.2); MSA §2.3: \"the DPA (as to Personal Data), then the MSA...\"",
+            "reason": "The indemnity in DPA §8.2 runs from Timais, the client, to Pesith. It covers all losses arising from any processing Pesith performs. It has no carve-out for losses caused by Pesith's own breach, negligence or security failures. It is also expressly excluded from any limitation of liability. Under MSA §2.3 the DPA prevails as to Personal Data, so the MSA §11.1 cap does not protect Timais. Nothing in the folder cures this. The DPA has no reciprocal Provider data indemnity, and the MSA §13.2 Customer indemnity is limited to IP and Customer negligence. The MSA §13.1(b)/(c) Provider indemnity is arguably overridden for data matters, and in any event Timais would still owe Pesith first. The signature blocks in the DPA are blank and there is no record that Timais accepted this risk. As drafted, Timais bears uncapped liability for a breach at Pesith's fulfillment center. The issue is present and actionable."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C4 asks for fact F2, which only issue I2 uses: a memo that misses I2 need not state it"
+        ],
+        "ranking_facts": [
+          "criterion C5 asks for the whole ranking in fact F4 ('DPA (as to Personal Data), then MSA, then Quality Agreement, then Statements of Work'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.077,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
