@@ -1,0 +1,164 @@
+{
+  "task_id": "s40-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Soulor Veterinary Diagnostics, Inc., the buyer in its proposed asset purchase from Diseil Animal Health Laboratories, LLC. Before we go back to the other side, I need to know where our client stands on the current documents and what we should push for. Please review everything in the matter folder: the asset purchase agreement (asset_purchase_agreement.md), the bill of sale (bill_of_sale.md), the letter of intent (letter_of_intent.md), and the closing logistics email thread (closing_logistics_email_thread.md). Then send me a memo that lists each issue you find. For each one, say where it appears (document and section), explain why it matters for Soulor as buyer, and give a recommended fix, with proposed language where that helps. Put the items that most affect Soulor's position or the closing at the top. If anything turns on facts we don't have, flag it as a question for the client rather than assuming an answer.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "bill_of_sale.md",
+    "closing_logistics_email_thread.md",
+    "letter_of_intent.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the Bill of Sale defines 'Purchased Assets' as only assets located at the Seller Facility in Fort Collins, so the finished-kit inventory at the Reno, Nevada warehouse would not be conveyed to Soulor.",
+      "kind": "issue",
+      "hints": [
+        "located at the Seller Facility",
+        "Reno warehouse inventory",
+        "not conveyed"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the Purchased Assets problem in Section 1 of the Bill of Sale.",
+      "kind": "issue",
+      "hints": [
+        "Bill of Sale Section 1",
+        "Definitions; Conveyance"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response explains why the narrower Bill of Sale definition of Purchased Assets matters to Soulor.",
+      "kind": "issue",
+      "hints": [
+        "paying for",
+        "title",
+        "Reno inventory"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response recommends a fix for the narrower Bill of Sale definition of Purchased Assets.",
+      "kind": "issue",
+      "hints": [
+        "conform",
+        "wherever located"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that the Bill of Sale's choice of Colorado law and exclusive Larimer County, Colorado forum conflicts with the APA's choice of Delaware law and the exclusive Delaware Court of Chancery forum.",
+      "kind": "issue",
+      "hints": [
+        "laws of the State of Colorado",
+        "District Court for Larimer County",
+        "Court of Chancery"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response locates the governing law and forum conflict in Section 7 of the Bill of Sale.",
+      "kind": "issue",
+      "hints": [
+        "Bill of Sale Section 7",
+        "Governing Law; Jurisdiction"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response explains why the governing law and forum conflict matters to Soulor.",
+      "kind": "issue",
+      "hints": [
+        "split forums",
+        "title claims",
+        "inconsistent"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response recommends a fix for the governing law and forum conflict.",
+      "kind": "issue",
+      "hints": [
+        "conform to Delaware",
+        "Court of Chancery"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response finds that Pellwyn's consent to assignment of the Exclusive Reagent Supply Agreement is required but is omitted from the APA's Required Consents, so the APA does not make obtaining it a closing condition for Soulor.",
+      "kind": "issue",
+      "hints": [
+        "Pellwyn consent",
+        "Required Consents",
+        "closing condition"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response locates the missing Pellwyn consent in the APA's Schedule 4.4 (Required Consents) or Section 7.2(c).",
+      "kind": "issue",
+      "hints": [
+        "Schedule 4.4",
+        "Section 7.2(c)"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response explains why the omission of Pellwyn's consent matters to Soulor.",
+      "kind": "issue",
+      "hints": [
+        "sole source",
+        "CanineScreen",
+        "terminate"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response recommends a fix for the omission of Pellwyn's consent.",
+      "kind": "issue",
+      "hints": [
+        "add Pellwyn to Schedule 4.4",
+        "before Closing"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response states that under APA Section 10.4 the Bill of Sale controls the conveyance of title to the Purchased Assets.",
+      "kind": "fact",
+      "hints": [
+        "Section 10.4",
+        "Bill of Sale controls",
+        "conveyance of title"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response is a memo that presents the issues individually, giving for each its location (document and section), why it matters to Soulor, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Location",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "The response claims that the APA's 'wherever located' definition of Purchased Assets governs the conveyance, so the Reno warehouse inventory is transferred to Soulor under the current documents.",
+      "kind": "negative",
+      "hints": [
+        "APA prevails",
+        "Reno inventory conveyed"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

@@ -1,0 +1,106 @@
+{
+  "task_id": "s40-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Rirux Linen Systems, LLC, which supplies and manufactures commercial laundry equipment and dosing systems. Rirux distributes through Brisosk Laundry Solutions, Inc., and the client wants a clear picture of where it stands under the documents governing that relationship before it decides on its next steps with Brisosk. Please review the full set in the matter folder: the distribution agreement (rirux_brisosk_distribution_agreement.md), the field engineering statement of work (field_engineering_statement_of_work.md), the rebate and marketing side letter (rebate_and_marketing_side_letter.md), Amendment No. 1 on the product schedule (amendment_no_1_product_schedule.md), and the November 2023 prior draft of the distribution agreement (distribution_agreement_prior_draft_nov2023.md). Send me a memo that lists each issue you find. For each one, say where it appears (document and section), explain why it matters for Rirux, and give a recommended fix. Rank the items so the ones that matter most to the client come first. Where you can't reach a firm view without facts the documents don't supply, flag that and tell me what we need to ask the client.",
+  "documents": [
+    "amendment_no_1_product_schedule.md",
+    "distribution_agreement_prior_draft_nov2023.md",
+    "field_engineering_statement_of_work.md",
+    "rebate_and_marketing_side_letter.md",
+    "rirux_brisosk_distribution_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the Distribution Agreement grants Brisosk exclusivity over all customers across the full five-state Territory and bars Rirux's own direct and national-account sales in that Territory. It also concludes that this goes far beyond the healthcare-only, Pennsylvania/New Jersey exclusivity recorded in the side letter, and that the side letter does not cure the breadth. The response locates the issue in Distribution Agreement Section 2.1, explains why this matters to Rirux, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "all Customers in the Territory",
+        "Healthcare Laundry Accounts in Pennsylvania and New Jersey",
+        "national accounts"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that Rirux's December 10, 2025 non-renewal notice was untimely under the 90-day notice requirement, so the agreement has likely renewed automatically for a three-year term. The response locates the issue in Distribution Agreement Section 9.2, explains why this matters to Rirux, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "November 30, 2025",
+        "December 10, 2025",
+        "February 28, 2029"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that the Statement of Work defines 'Critical Failure' to include any malfunction reducing rated throughput by 10% or more, far broader than the Distribution Agreement's 'wholly inoperable' definition. It also concludes that this broader SOW definition governs the four-hour response obligation and service credits. The response locates the issue in SOW Section 3.1, explains why this matters to Rirux, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "10% or more",
+        "wholly inoperable",
+        "four-hour"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Distribution Agreement's Effective Date is March 1, 2024.",
+      "kind": "fact",
+      "hints": [
+        "March 1, 2024",
+        "Effective Date"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Distribution Agreement's Initial Term is two years.",
+      "kind": "fact",
+      "hints": [
+        "two-year Initial Term",
+        "two years"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is a memo that lists the issues in ranked order, with the items most important to Rirux placed first.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "ranked",
+        "priority"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response identifies at least one point that needs facts the documents do not supply, and states what to ask the client about it.",
+      "kind": "format",
+      "hints": [
+        "questions for the client",
+        "confirm with the client"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that Rirux's December 10, 2025 non-renewal notice was timely under the Distribution Agreement.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the side letter's narrower healthcare-only, Pennsylvania/New Jersey exclusivity scope prevails over the Distribution Agreement's exclusivity grant.",
+      "kind": "negative",
+      "hints": [
+        "side letter controls",
+        "side letter prevails"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

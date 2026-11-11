@@ -1,0 +1,173 @@
+{
+  "matter_id": "s40-m0002",
+  "summary": "Soulor Veterinary Diagnostics, Inc. (client, buyer) is acquiring the companion-animal diagnostic assay business of Diseil Animal Health Laboratories, LLC (seller) under an Asset Purchase Agreement signed September 14, 2026, for $18,400,000. Closing is scheduled for December 15, 2026. The business includes reagents, test kits, a reference lab in Fort Collins, Colorado, finished-kit inventory held at a third-party warehouse in Reno, Nevada, and an exclusive reagent supply agreement with Pellwyn Reagents, Inc. The folder holds four documents: the APA, the agreed form of Bill of Sale, the earlier Letter of Intent, and a closing-logistics email thread, which is the distractor. Three issues are planted. First, the Bill of Sale defines 'Purchased Assets' as only assets located at the Fort Collins facility, which drops the Reno warehouse inventory. The APA's precedence clause lets the Bill of Sale control conveyance of title, so the narrower definition governs. Second, the Bill of Sale chooses Colorado law and Larimer County courts. That same precedence carve-out routes title claims there, away from the APA's Delaware law and exclusive Court of Chancery forum. Third, the LOI records that the Pellwyn supply agreement requires Pellwyn's consent to an assignment by asset sale or change of control. The APA nevertheless omits Pellwyn from its Required Consents, so neither the closing condition nor the consent covenant covers it.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Soulor Veterinary Diagnostics, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Diseil Animal Health Laboratories, LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Pellwyn Reagents, Inc.",
+      "role": "Third-party counterparty to Seller's Exclusive Reagent Supply Agreement (consent holder)"
+    },
+    {
+      "id": "P4",
+      "name": "Kestrin Logistics, LLC",
+      "role": "Third-party warehouse operator holding Seller's finished-kit inventory in Reno, Nevada"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Buyer",
+      "value": "Soulor Veterinary Diagnostics, Inc., a Delaware corporation",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Seller",
+      "value": "Diseil Animal Health Laboratories, LLC, a Colorado limited liability company",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "APA signing date",
+      "value": "September 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F4",
+      "key": "APA Purchase Price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F5",
+      "key": "APA scheduled Closing Date",
+      "value": "December 15, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F6",
+      "key": "APA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 10.8"
+    },
+    {
+      "id": "F7",
+      "key": "APA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 10.9"
+    },
+    {
+      "id": "F8",
+      "key": "APA order of precedence",
+      "value": "APA prevails over Ancillary Documents, except Bill of Sale controls conveyance of title and title claims",
+      "doc": "D1",
+      "section": "Section 10.4"
+    },
+    {
+      "id": "F9",
+      "key": "APA 'Purchased Assets' definition",
+      "value": "all assets used in the Business, wherever located, including inventory at third-party warehouses",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F10",
+      "key": "Pellwyn Supply Agreement consent requirement",
+      "value": "Pellwyn prior written consent required for assignment, including by asset sale or change of control",
+      "doc": "D3",
+      "section": "Section 5 (Key Contracts)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "closing_logistics_email_thread.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Section 1.1 of the APA (D1) defines 'Purchased Assets' as all assets used in the Business, wherever located. That definition expressly includes finished test-kit and reagent inventory held at the Kestrin Logistics warehouse in Reno, Nevada. Section 1 of the Bill of Sale (D2) defines 'Purchased Assets' differently: only the assets 'located at the Seller Facility', defined as Seller's Fort Collins, Colorado laboratory. Normally the APA's precedence clause would cure this, because the APA prevails over Ancillary Documents. Here it does not. Section 10.4 of the APA carves out the Bill of Sale, which controls the conveyance of title to the Purchased Assets. Read together, the operative conveyance instrument transfers title only to Fort Collins assets. The Reno inventory, which Buyer is paying for, is left untransferred.",
+      "doc": "D2",
+      "section": "Section 1 (Definitions; Conveyance)",
+      "detect_terms": [
+        "located at the Seller Facility"
+      ],
+      "expected_finding": "The Bill of Sale's narrower 'Purchased Assets' definition is limited to assets at the Fort Collins Seller Facility. It controls title under the APA Section 10.4 carve-out, so the Reno warehouse inventory would not be conveyed to Soulor. The Bill of Sale should be conformed to the APA's 'wherever located' definition, or the Section 10.4 carve-out should be removed, before Closing.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Section 7 of the Bill of Sale (D2) says the instrument is governed by the laws of the State of Colorado. It also requires that disputes be brought exclusively in the District Court for Larimer County, Colorado. The APA (D1) takes a different approach: Section 10.8 chooses Delaware law and Section 10.9 gives the Delaware Court of Chancery exclusive jurisdiction. The APA's general precedence rule does not resolve the conflict. Section 10.4 makes the Bill of Sale control 'conveyance of title and any claims concerning title to the Purchased Assets'. Under that carve-out, title disputes, including any dispute over the excluded Reno inventory in I1, go to a Colorado court under Colorado law. All other claims go to Chancery under Delaware law. Buyer faces split forums, inconsistent law, and possibly conflicting judgments on a single dispute.",
+      "doc": "D2",
+      "section": "Section 7 (Governing Law; Jurisdiction)",
+      "detect_terms": [
+        "laws of the State of Colorado",
+        "District Court for Larimer County"
+      ],
+      "expected_finding": "The Bill of Sale's Colorado governing law and exclusive Larimer County forum conflict with the APA's Delaware law and exclusive Chancery forum. Because APA Section 10.4 lets the Bill of Sale control title claims, Soulor would have to litigate title disputes in Colorado under Colorado law, separately from other claims. The Bill of Sale should be conformed to Delaware law and the Chancery forum.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 5 of the Letter of Intent (D3) describes the Exclusive Reagent Supply Agreement with Pellwyn Reagents, Inc. It identifies the agreement as a Key Contract and the sole source of reagents for Seller's flagship CanineScreen panel. It also records that the agreement requires Pellwyn's prior written consent to any assignment, including by sale of substantially all assets or change of control. The APA (D1) lists the Pellwyn agreement as an Assigned Contract on Schedule 1.1(c). However, Schedule 4.4 (Required Consents) lists only the landlord consent under the Fort Collins Laboratory Lease. Two other provisions depend on that list. Section 6.3 obliges Seller to obtain only the Required Consents. Section 7.2(c) conditions Buyer's obligation to close only on receipt of the Required Consents. Read together, Buyer is obligated to close on December 15, 2026 without Pellwyn's consent. Pellwyn could then treat the assignment as a breach and terminate the sole-source supply. The deal is still pre-closing, so this can be fixed.",
+      "doc": "D1",
+      "section": "Schedule 4.4 (Required Consents) and Section 7.2(c) (Conditions to Buyer's Obligations)",
+      "detect_terms": [
+        "Fort Collins Laboratory Lease"
+      ],
+      "expected_finding": "Pellwyn's consent to assignment of the Exclusive Reagent Supply Agreement is required, as recorded in the LOI, but is omitted from the APA's Required Consents on Schedule 4.4. As a result, Seller has no covenant under Section 6.3 to obtain it, and Soulor has no closing condition under Section 7.2(c) protecting it. Pellwyn's consent should be added to Schedule 4.4 so that it becomes a covenant and a closing condition before the December 15, 2026 Closing.",
+      "contradicts": null
+    }
+  ]
+}

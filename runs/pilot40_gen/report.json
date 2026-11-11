@@ -1,0 +1,168 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 2,
+  "errors": 0,
+  "resumed": 1,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 2,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 2
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 2,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s40-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s40-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s40-m0003",
+      "accepted": false,
+      "failed_gate": "consistency",
+      "reason": "mismatches: [{\"fact\": \"F8\", \"key\": \"Order of precedence\", \"filename\": \"bill_of_sale.md\", \"ledger\": \"SPA prevails over Ancillary Documents, except Seller Note controls its payment terms and enforcement\", \"document\": \"For purposes of Section 12.9 of the Purchase Agreement, this Section 5 controls with respect to ",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    }
+  ],
+  "model_calls": {
+    "fact_extractor": {
+      "calls": 2,
+      "input_tokens": 60476,
+      "output_tokens": 5118,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 3,
+      "input_tokens": 79927,
+      "output_tokens": 2114,
+      "errors": 0
+    },
+    "ledger_writer": {
+      "calls": 1,
+      "input_tokens": 4181,
+      "output_tokens": 9656,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 2,
+      "input_tokens": 62548,
+      "output_tokens": 13430,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 3,
+      "input_tokens": 19208,
+      "output_tokens": 1867,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 4,
+      "input_tokens": 70245,
+      "output_tokens": 28653,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 1,
+      "input_tokens": 1482,
+      "output_tokens": 277,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "commercial laundry services": 1,
+      "veterinary diagnostics": 1,
+      "boutique hotels": 1
+    },
+    "agreement_types": {
+      "distribution agreement": 1,
+      "asset purchase agreement": 1,
+      "stock purchase agreement": 1
+    },
+    "issue_types": {
+      "expired_notice_window": 2,
+      "defined_term_inconsistency": 2,
+      "governing_law_mismatch": 2,
+      "exclusivity_scope": 1,
+      "change_of_control_consent": 1,
+      "missing_assignment_restriction": 1,
+      "survival_gap": 1,
+      "liability_cap_carveout": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

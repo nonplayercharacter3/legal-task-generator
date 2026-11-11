@@ -1,0 +1,90 @@
+{
+  "run": {
+    "seed": 40
+  },
+  "backend": {
+    "kind": "claude_sdk",
+    "base_url": "http://localhost:8000/v1",
+    "api_key_env": "LTG_API_KEY",
+    "default_model": "opus",
+    "models": {},
+    "roles": {
+      "solver": {
+        "kind": "openai_compat",
+        "base_url": "https://ellm.nrp-nautilus.io/v1",
+        "model": "qwen3-small",
+        "api_key_env": "NRP_LLM_API_KEY",
+        "max_tokens": 32000,
+        "max_retries": 6,
+        "extra_body": {
+          "reasoning_effort": "low"
+        }
+      }
+    },
+    "temperature": 0.7,
+    "max_tokens": 8000,
+    "timeout": 600,
+    "max_retries": 3,
+    "extra_body": {}
+  },
+  "fake": {
+    "solver_skill": 0.85,
+    "fault": "",
+    "fault_rate": 0.0
+  },
+  "spec": {
+    "practice_areas": [
+      "commercial_contracts",
+      "mergers_acquisitions"
+    ],
+    "jurisdictions": [
+      "Delaware",
+      "New York"
+    ],
+    "work_types": [
+      "issue_spotting_memo"
+    ],
+    "n_documents": [
+      4,
+      5
+    ],
+    "n_issues": [
+      3,
+      5
+    ]
+  },
+  "gates": {
+    "solver_attempts": 3,
+    "solver_models": [
+      "solver"
+    ],
+    "solver_max_steps": 28,
+    "solver_page_chars": 6000,
+    "probe_without_documents": true,
+    "solver_check": "defer",
+    "judge_hints": true,
+    "verifier_sees_terms": false,
+    "check_bundling": "warn",
+    "decontam_ngram": 8,
+    "decontam_threshold": 0.5,
+    "decontam_bloom_bits": 4294967296,
+    "reference_dirs": [
+      "../harvey-labs"
+    ],
+    "decontam_cache_dir": "runs/.decontam_cache",
+    "decontam_group_depth": 3
+  },
+  "splits": {
+    "ratios": {
+      "train": 0.8,
+      "dev": 0.1,
+      "test": 0.1
+    },
+    "salt": "ltg-v0"
+  },
+  "sources": {
+    "precedent_dirs": [],
+    "precedents_per_matter": 1,
+    "precedent_chars": 6000
+  }
+}

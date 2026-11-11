@@ -1,0 +1,116 @@
+{
+  "matter_id": "s40-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 55
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"Rirux appoints Brisosk as its exclusive distributor of all Products to all Customers in the Territory during the Term ... During the Term, Rirux shall not sell, lease, market or distribute any Products to any Customer in the Territory, including Rirux's national accounts.\" (§2.1); \"'Territory' means the States of Pennsylvania, New Jersey, Delaware, Maryland and New York.\" (§1.14)",
+            "reason": "The signed agreement gives Brisosk exclusivity over every customer segment across five states. It also bars Rirux from selling directly, including to its own national accounts. The side letter's Recital A records that the negotiated deal was exclusivity for Healthcare Laundry Accounts in PA and NJ only. The November 2023 draft confirms that narrower scope. Under §14.3, side letters rank below the Distribution Agreement, and the side letter does not amend §2.1 in any case, so the broader grant controls. Amendment No. 1 did not narrow it. That amendment reserves both parties' positions on renewal, and Brisosk contends the agreement renewed for a three-year term. If Brisosk is right, Rirux remains locked out of hospitality, industrial and national-account sales in three extra states. The problem is real and still actionable for Rirux, through reformation, renegotiation or its non-renewal position."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "§9.2: \"At the end of the Initial Term and of each Renewal Term, this Agreement shall automatically renew for a further term (each, a \"Renewal Term\") unless either Party gives the other written notice of non-renewal at least 90 days before expiry of the then-current term. To be effective, such notice must be received no later than ninety (90) days prior to the last day of the then-current term. Each Renewal Term is three years, automatic absent timely non-renewal notice.\" Amendment No. 1, Recital B: \"On December 10, 2025, Rirux gave Brisosk written notice of non-renewal of the Agreement under Section 9.2.\"",
+            "reason": "The problem is present and still actionable for Rirux. The Effective Date is March 1, 2024, and the two-year Initial Term in §9.1 ends February 28, 2026. Under §9.2 the non-renewal notice had to be received by about November 30, 2025. Rirux sent its notice on December 10, 2025, so it was late on the face of the documents. Brisosk contends the Agreement renewed for three years, to February 28, 2029. That would keep in place §2.1's broad exclusivity, which covers all Products, all Customers, five states and even Rirux's national accounts. It would also keep the $3.5M minimum structure in place. This is the burden Rirux tried to escape. Nothing cures the defect. The Amendment expressly does not amend §9, and §4 of the Amendment preserves both sides' positions. Rirux has not accepted renewal: it disputes Brisosk's position and has reserved its rights, and nothing in the folder shows acquiescence. The dispute is therefore live, not history. Rirux still needs advice on its exposure and options, such as negotiating an exit, terminating for cause under §9.3, or arguing for a different measure of the term."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SOW §3.1(a): \"'Critical Failure' means any malfunction of Covered Equipment that stops the equipment from operating, or that reduces the rated throughput of the equipment by ten percent (10%) or more, measured against Rirux's published specifications for that equipment\"; compare Agreement §1.4: \"'Critical Failure' means a failure rendering a Product wholly inoperable.\"",
+            "reason": "The SOW's definition is much broader than the Agreement's. Under it, any malfunction cutting throughput by 10% or more is a Critical Failure, not only a total outage. Rirux bears the obligations attached to that term: §3.2 sets a 4-hour on-site response and a 5% Service Credit per miss, and §3.3 makes Critical Failure response available 24/7. Agreement §14.3 gives SOWs precedence \"as to Services and Service Levels,\" so the broader SOW definition governs Rirux's response duties. That pushes Rirux's 24/7 four-hour exposure and credit liability out to partial-performance faults. Nothing in the folder cures this. Amendment No. 1 amended SOW tables in 2026 but left §3.1 unchanged. Section 3.6 excuses delays only for access, inaccurate information or force majeure. The issue is still actionable. The SOW runs as long as the Agreement, and whether the Agreement renewed for a three-year term is expressly disputed and reserved. Rirux can still seek an amendment or rely on the inconsistency in any dispute over service levels."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C4 asks for fact F1, which only issue I2 uses: a memo that misses I2 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.07,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

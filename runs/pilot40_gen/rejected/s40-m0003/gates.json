@@ -1,0 +1,38 @@
+{
+  "matter_id": "s40-m0003",
+  "accepted": false,
+  "failed_gate": "consistency",
+  "reason": "mismatches: [{\"fact\": \"F8\", \"key\": \"Order of precedence\", \"filename\": \"bill_of_sale.md\", \"ledger\": \"SPA prevails over Ancillary Documents, except Seller Note controls its payment terms and enforcement\", \"document\": \"For purposes of Section 12.9 of the Purchase Agreement, this Section 5 controls with respect to ",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": false,
+      "details": {
+        "mismatches": [
+          {
+            "fact": "F8",
+            "key": "Order of precedence",
+            "filename": "bill_of_sale.md",
+            "ledger": "SPA prevails over Ancillary Documents, except Seller Note controls its payment terms and enforcement",
+            "document": "For purposes of Section 12.9 of the Purchase Agreement, this Section 5 controls with respect to the matters set forth in Section 5.2."
+          }
+        ],
+        "reworded": 1,
+        "checked": 40
+      }
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "matter_id": "s40-m0001",
+  "summary": "Rirux Linen Systems, LLC (client) makes industrial washer-extractors, tunnel washers and automated chemical dosing systems for commercial laundries. It appointed Brisosk Laundry Solutions, Inc. as distributor under a Distribution Agreement effective March 1, 2024. The folder holds five documents: the Distribution Agreement; a Field Engineering Statement of Work under which Rirux supports Brisosk's installed customer base; a side letter on volume rebates and co-marketing funds that also records the term-sheet deal on exclusivity; Amendment No. 1, which adds folding and finishing equipment to the product schedule; and a superseded prior draft of the agreement. Rirux wants a memo on its exposure. The agreement grants exclusivity well beyond the healthcare-only, two-state deal, and the side letter cannot cure this because it is subordinate under the precedence clause. Rirux's non-renewal notice was sent after the 90-day window closed, so the agreement has arguably auto-renewed for three years. The SOW redefines 'Critical Failure' far more broadly than the agreement, and the SOW controls on service levels, so Rirux's four-hour response duty and service-credit exposure are much larger.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Rirux Linen Systems, LLC",
+      "role": "Supplier and manufacturer of commercial laundry equipment and dosing systems (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Brisosk Laundry Solutions, Inc.",
+      "role": "Distributor and reseller of commercial laundry equipment to institutional laundry operators"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Initial Term",
+      "value": "two years from the Effective Date",
+      "doc": "D1",
+      "section": "9.1"
+    },
+    {
+      "id": "F3",
+      "key": "Non-renewal notice period",
+      "value": "at least 90 days before expiry of the then-current term",
+      "doc": "D1",
+      "section": "9.2"
+    },
+    {
+      "id": "F4",
+      "key": "Renewal Term",
+      "value": "three years, automatic absent timely non-renewal notice",
+      "doc": "D1",
+      "section": "9.2"
+    },
+    {
+      "id": "F5",
+      "key": "Date of Rirux non-renewal notice",
+      "value": "December 10, 2025",
+      "doc": "D4",
+      "section": "Recital B"
+    },
+    {
+      "id": "F6",
+      "key": "Amendment No. 1 date",
+      "value": "January 15, 2026",
+      "doc": "D4",
+      "section": "Preamble"
+    },
+    {
+      "id": "F7",
+      "key": "Agreed exclusivity scope",
+      "value": "Healthcare Laundry Accounts in Pennsylvania and New Jersey only",
+      "doc": "D3",
+      "section": "Recital A"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "Amendments; then SOWs as to Services and Service Levels; then Distribution Agreement; then side letters",
+      "doc": "D1",
+      "section": "14.3"
+    },
+    {
+      "id": "F9",
+      "key": "Critical Failure (Distribution Agreement definition)",
+      "value": "a failure rendering a Product wholly inoperable",
+      "doc": "D1",
+      "section": "1.4"
+    },
+    {
+      "id": "F10",
+      "key": "Critical Failure on-site response time",
+      "value": "4 hours",
+      "doc": "D2",
+      "section": "3.2"
+    },
+    {
+      "id": "F11",
+      "key": "Distribution Agreement governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "14.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "rirux_brisosk_distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "field_engineering_statement_of_work.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "rebate_and_marketing_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "amendment_no_1_product_schedule.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "distribution_agreement_prior_draft_nov2023.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_supply_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D1 §2.1 appoints Brisosk exclusive distributor of all Products to all Customers in the Territory. D1 §1 defines the Territory as Pennsylvania, New Jersey, Delaware, Maryland and New York. §2.1 also bars Rirux from selling directly in the Territory, including to its own national accounts. Read together, these provisions grant exclusivity across every customer segment and five states. The side letter (D3 Recital A) records the agreed deal: exclusivity limited to Healthcare Laundry Accounts in Pennsylvania and New Jersey. Under D1 §14.3, side letters rank below the Distribution Agreement, so the narrower side-letter scope does not control. Rirux is therefore locked out of hospitality, industrial and its own national-account sales in three states it never agreed to give up.",
+      "doc": "D1",
+      "section": "2.1",
+      "detect_terms": [
+        "all Customers in the Territory",
+        "including Rirux's national accounts"
+      ],
+      "expected_finding": "D1 §2.1, read with the D1 §1 Territory definition, grants Brisosk exclusivity over all customer segments in five states and bars Rirux's direct and national-account sales, far beyond the healthcare-only Pennsylvania/New Jersey scope recorded in D3 Recital A. Because D1 §14.3 subordinates side letters to the agreement, D3 does not cure the breadth. Rirux should seek an amendment narrowing §2.1 and the Territory to the agreed scope.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Three provisions combine. D1 Preamble sets the Effective Date at March 1, 2024. D1 §9.1 sets a two-year Initial Term, which ends February 28, 2026. D1 §9.2 requires non-renewal notice at least ninety days before expiry, a deadline of November 30, 2025; absent timely notice, the agreement automatically renews for three years. D4 Recital B records that Rirux sent its non-renewal notice on December 10, 2025, ten days late. D4 Recital C states that Brisosk contends the notice was untimely and the agreement renewed. D4 Recital C and §4 record Rirux's dispute and a mutual reservation of rights; Amendment No. 1 (dated January 15, 2026) does not amend §9. Rirux has not accepted renewal, but on the documents the notice was untimely. The agreement, including the exclusivity, likely runs to February 28, 2029.",
+      "doc": "D1",
+      "section": "9.2",
+      "detect_terms": [
+        "ninety (90) days prior to",
+        "automatically renew"
+      ],
+      "expected_finding": "Measured from the March 1, 2024 Effective Date and the two-year Initial Term, the 90-day non-renewal deadline under D1 §9.2 was November 30, 2025. Rirux's December 10, 2025 notice (D4 Recital B) was therefore late, and the agreement likely auto-renewed for three years to February 28, 2029, along with its exclusivity. Rirux has preserved its dispute in D4 Recital C and §4, so it should not rely on the notice and should pursue a negotiated termination or other exit rights.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 §1.4 defines 'Critical Failure' as a failure rendering a Product wholly inoperable. D2 §3.1 redefines 'Critical Failure' as any malfunction that reduces a Product's rated throughput by 10% or more. D2 §3.2 attaches a four-hour on-site response obligation to Critical Failures, plus service credits of 5% of monthly support fees per missed response. Under D1 §14.3, a SOW prevails over the Distribution Agreement as to Services and Service Levels, so the broader SOW definition controls. Rirux's four-hour response duty and credit exposure now extend to routine partial-performance faults across Brisosk's installed base.",
+      "doc": "D2",
+      "section": "3.1",
+      "detect_terms": [
+        "reduces the rated throughput"
+      ],
+      "expected_finding": "D2 §3.1 defines 'Critical Failure' to include any malfunction reducing rated throughput by 10% or more, far broader than D1 §1.4's 'wholly inoperable' standard. Because D1 §14.3 gives the SOW precedence on service levels, this definition governs the four-hour response obligation and 5% service credits in D2 §3.2, greatly expanding Rirux's exposure. Rirux should conform the SOW definition to D1 §1.4.",
+      "contradicts": "F9"
+    }
+  ]
+}

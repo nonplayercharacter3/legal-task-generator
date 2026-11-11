@@ -1,0 +1,117 @@
+{
+  "matter_id": "s40-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Bill of Sale §1.1: \"'Purchased Assets' means all of Seller's right, title and interest in, to and under the assets used in the Business that are located at the Seller Facility\" (Seller Facility being the Fort Collins, Colorado premises). APA §1.1, by contrast: \"'Purchased Assets' means all assets used in the Business, wherever located, including inventory at third-party warehouses ... including Inventory held at the Seller Facility and at the Kestrin Warehouse.\" APA §10.4: \"this Agreement shall prevail, except that the Bill of Sale shall control the conveyance of title and any claims concerning title to the Purchased Assets.\"",
+            "reason": "The Bill of Sale is the agreed-form operative conveyance. It overrides the APA's definition of Purchased Assets with a narrower one limited to Fort Collins. Under APA §10.4, the Bill of Sale controls conveyance of title, so the APA's general precedence rule does not cure the conflict. As a result, the Reno inventory at the Kestrin Warehouse, which the APA lists as a Purchased Asset and Schedule 4.7 lists as an inventory location, is not conveyed, even though Buyer pays the full $18.4M. The further assurances covenant (§6.8) and the indemnity are only partial, after-the-fact remedies and do not fix the conveyance itself. The closing has not yet occurred: the closing is set for December 15, 2026, and the documents are still unsigned. The defect can therefore still be fixed before signing, either by conforming the Bill of Sale definition to 'wherever located, including the Kestrin Warehouse' or by incorporating the APA definition. This is a real and actionable risk for Buyer."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Bill of Sale Section 7.1: \"This Bill of Sale is governed by and construed in accordance with the laws of the State of Colorado...\" and Section 7.2: \"Any action or proceeding arising out of or relating to this Bill of Sale, or to the conveyance of the Purchased Assets, must be brought exclusively in the District Court for Larimer County, Colorado.\" Compare APA Sections 10.8 (Delaware law) and 10.9 (exclusive Court of Chancery jurisdiction), and APA Section 10.4: \"this Agreement shall prevail, except that the Bill of Sale shall control the conveyance of title and any claims concerning title to the Purchased Assets.\"",
+            "reason": "The problem is present and still actionable. The Bill of Sale is an agreed-form exhibit that has not yet been signed. It is dated for the December 15, 2026 closing, and the signature blocks are blank. Its Section 7 sends disputes to a Colorado court under Colorado law. The APA sends disputes to the Delaware Court of Chancery under Delaware law. APA Section 10.4 does not resolve the conflict, because it carves out title conveyance and title claims for the Bill of Sale to control. As a result, title disputes go to Larimer County under Colorado law and all other claims go to Chancery under Delaware law. The Bill of Sale's narrower definition of Purchased Assets, limited to assets at the Seller Facility, makes such a title dispute likely, for example over the Kestrin/Reno inventory. Buyer is the party asserting title and indemnity claims, so the split forum and inconsistent law hurt the client. Buyer also signs to acknowledge acceptance, and Section 7.2 expressly binds Buyer to the Colorado forum. Nothing in the folder shows Buyer has accepted this, so it can still be fixed before closing."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Schedule 4.4: \"1. Consent of the landlord under the Fort Collins Laboratory Lease to the assignment of the Fort Collins Laboratory Lease to Buyer.\" Section 7.2(c): \"Seller has obtained and delivered to Buyer each of the Required Consents, in form and substance reasonably satisfactory to Buyer.\" Schedule 1.1(c) lists the \"Exclusive Reagent Supply Agreement between Seller and Pellwyn Reagents, Inc., as amended.\" LOI Section 5.1: \"Pellwyn prior written consent is required for assignment, including by asset sale or change of control... Seller has advised that it has not previously sought Pellwyn's consent to any assignment.\"",
+            "reason": "The problem is present and still actionable for Buyer. The LOI records that the sole-source Pellwyn agreement cannot be assigned without Pellwyn's prior written consent. The APA lists Pellwyn as an Assigned Contract, but Schedule 4.4 names only the landlord consent. As a result, Seller's duty to seek consents (Section 6.3) and Buyer's consent condition to closing (Section 7.2(c)) do not reach Pellwyn. The closing emails track only the landlord consent and the Kestrin notice, and nothing shows anyone seeking Pellwyn's consent. Buyer's fallback protection is weak. It could argue that the Section 4.4 consents representation is inaccurate and rely on the Section 7.2(a) bring-down condition. That argument is contestable, and any post-closing indemnity is capped at $2.76M, far below the value of losing the CanineScreen reagent supply. Closing is set for December 15, 2026 and today is November 10, 2026, so Buyer can still add Pellwyn to Schedule 4.4 and make its consent a closing condition."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 15,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C9",
+          "C10",
+          "C11",
+          "C12"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.06,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

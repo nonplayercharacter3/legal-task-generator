@@ -1,0 +1,197 @@
+{
+  "matter_id": "s40-m0003",
+  "summary": "Pegail Hospitality Holdings, LLC (buyer, the firm's client) is buying all outstanding shares of Wrenfield Boutique Hotels, Inc., which owns five boutique hotels, from Nakin Hotel Group, Inc. for $42,000,000. The price is paid partly in cash and partly by an $8,000,000 seller note. At Closing, Nakin conveyed certain brand assets and FF&E it held outside the Company by bill of sale. The folder holds the SPA, the bill of sale, the seller note and a pre-signing mutual NDA. The planted problems are: an unrestricted note transfer right with competitor-sensitive reporting; a New York law and forum clause in the note that controls setoff disputes through the SPA's precedence carve-back; a tax indemnity cut to the 9-month general survival period; a bill of sale that pulls title claims back under the cap; and a title objection notice delivered after the SPA window had closed.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Pegail Hospitality Holdings, LLC",
+      "role": "Buyer under the SPA; Maker of the Seller Note; firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Nakin Hotel Group, Inc.",
+      "role": "Seller under the SPA; Holder of the Seller Note; transferor under the Bill of Sale"
+    },
+    {
+      "id": "P3",
+      "name": "Wrenfield Boutique Hotels, Inc.",
+      "role": "Company whose shares are sold; owner of five boutique hotel properties; transferee under the Bill of Sale"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "February 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Closing Date",
+      "value": "April 15, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "SPA Purchase Price",
+      "value": "$42,000,000",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note principal amount",
+      "value": "$8,000,000",
+      "doc": "D3",
+      "section": "1.1"
+    },
+    {
+      "id": "F5",
+      "key": "SPA indemnity Cap",
+      "value": "$4,200,000",
+      "doc": "D1",
+      "section": "9.4(a)"
+    },
+    {
+      "id": "F6",
+      "key": "SPA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "12.7"
+    },
+    {
+      "id": "F7",
+      "key": "SPA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "12.8"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "SPA prevails over Ancillary Documents, except Seller Note controls its payment terms and enforcement",
+      "doc": "D1",
+      "section": "12.9"
+    },
+    {
+      "id": "F9",
+      "key": "Title Objection Notice date",
+      "value": "February 27, 2026",
+      "doc": "D3",
+      "section": "2.4"
+    },
+    {
+      "id": "F10",
+      "key": "General Survival Date",
+      "value": "nine months after the Closing Date",
+      "doc": "D1",
+      "section": "9.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Seller Note Section 10.2 lets Holder transfer the Note, in whole or in part, to any Person without the consent of Maker. It expressly includes Persons engaged in the hospitality business. Read with Note Section 7.1, which requires Maker to deliver monthly hotel operating reports (ADR, RevPAR, rate strategy and budgets) to 'Holder', a competing hotel operator could buy the Note and receive Pegail's confidential operating data. SPA Section 11.6 restricts assignment of the SPA only and does not reach the Note.",
+      "doc": "D3",
+      "section": "10.2",
+      "detect_terms": [
+        "without the consent of Maker"
+      ],
+      "expected_finding": "Seller Note Section 10.2 lets Nakin transfer the Note freely, including to a hotel competitor, which would then receive Pegail's confidential operating reports under Section 7.1; Pegail should require its consent to any transfer (or at least a ban on transfers to competitors) and limit the reporting to the original Holder.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The SPA chooses Delaware law (Section 12.7) and the exclusive jurisdiction of the Delaware Court of Chancery (Section 12.8). Seller Note Section 12 instead chooses New York law and the exclusive jurisdiction of courts in the County of New York for any dispute 'arising out of or relating to this Note, including any right of setoff'. SPA Section 12.9 makes the SPA prevail but carves back that the Seller Note controls its payment terms and enforcement, so the precedence clause does not cure the conflict. Pegail's indemnity claims would be decided in Delaware while its setoff against Note payments (SPA Section 2.5) and Nakin's collection suit would proceed in New York. That exposes Pegail to inconsistent rulings and to fast-track New York note enforcement (CPLR 3213) before its indemnity claims are resolved.",
+      "doc": "D3",
+      "section": "12",
+      "detect_terms": [
+        "laws of the State of New York",
+        "County of New York"
+      ],
+      "expected_finding": "Seller Note Section 12's New York law and forum clause conflicts with SPA Sections 12.7 and 12.8, and because SPA Section 12.9 lets the Note control its own enforcement, Pegail's setoff rights would be litigated in New York separately from its Delaware indemnity claims; the Note should be conformed to Delaware law and Chancery jurisdiction.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1 has the tax representations in Section 4.14 survive only 'until the General Survival Date', which is nine months after the Closing Date. SPA Section 9.2(c), the special indemnity for Pre-Closing Taxes, is made 'subject to the survival periods set forth in Section 9.1'. Read together, any claim for pre-Closing hotel occupancy, sales or income taxes must be noticed within nine months of the April 15, 2026 Closing Date. Taxing authorities normally audit hotel occupancy and income taxes years later, within their statutes of limitations, so the tax indemnity would expire before most exposures surface.",
+      "doc": "D1",
+      "section": "9.1",
+      "detect_terms": [
+        "until the General Survival Date",
+        "subject to the survival periods set forth in Section 9.1"
+      ],
+      "expected_finding": "Because SPA Section 9.2(c) ties the Pre-Closing Tax indemnity to the nine-month General Survival Date in Section 9.1, Pegail would lose tax claims that surface in later audits; the tax representations and the Section 9.2(c) indemnity should survive until 60 days after the applicable statute of limitations expires.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 9.4(a) caps Seller's indemnity at $4,200,000. Section 9.4(b) excludes from the cap Fraud, breaches of Fundamental Representations (which include Section 4.6, Title to Assets) and Pre-Closing Taxes. Bill of Sale Section 5, signed by Seller and accepted and countersigned by Buyer at Closing, provides that 'notwithstanding Section 9.4(b)' of the SPA, all claims for breach of Section 4.6 relating to the Conveyed Assets (the hotel trade names, domain names and FF&E) shall be subject to the Cap. The Bill of Sale expressly refers to SPA Section 12.9 and states that it controls, and SPA Section 12.10 allows amendment by a writing signed by Buyer and Seller. The SPA's precedence clause therefore does not save the carve-out, and title failures on the brand assets are now capped.",
+      "doc": "D2",
+      "section": "5",
+      "detect_terms": [
+        "notwithstanding Section 9.4(b)",
+        "shall be subject to the Cap"
+      ],
+      "expected_finding": "Bill of Sale Section 5, which satisfies the override and amendment requirements of SPA Sections 12.9 and 12.10, removes the Fundamental Representation carve-out in SPA Section 9.4(b) for title to the Conveyed Assets, so title claims on the brand assets and FF&E are now limited to the $4,200,000 Cap; Pegail should obtain a corrective amendment that restores the uncapped treatment.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "SPA Section 6.9(a) requires Buyer to deliver any Title Objection Notice 'within fifteen (15) days after the Signing Date'. The Signing Date is February 2, 2026 (SPA preamble), so the deadline was February 17, 2026. Section 6.9(b) provides that title matters not timely objected to are 'deemed Permitted Encumbrances', which also takes them outside the title representation in Section 4.6. Seller Note Section 2.4 records that Buyer delivered its Title Objection Notice on February 27, 2026, objecting to an unrecorded parking easement and encroachment at the Savannah hotel. It also records that Holder contends the notice was untimely and that Maker disputes this and reserves all rights. The window had lapsed, but Pegail has not accepted the result.",
+      "doc": "D1",
+      "section": "6.9",
+      "detect_terms": [
+        "within fifteen (15) days after the Signing Date",
+        "deemed Permitted Encumbrances"
+      ],
+      "expected_finding": "Pegail's February 27, 2026 Title Objection Notice (recorded in Seller Note Section 2.4) came after the February 17, 2026 deadline under SPA Section 6.9(a), so under Section 6.9(b) Nakin can treat the Savannah easement and encroachment as Permitted Encumbrances outside the Section 4.6 title representation; because Pegail reserved its rights in Note Section 2.4, it should press for a negotiated resolution, such as a price reduction or specific indemnity, rather than rely on the lapsed objection.",
+      "contradicts": null
+    }
+  ]
+}
