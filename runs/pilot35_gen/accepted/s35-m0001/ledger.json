@@ -1,0 +1,175 @@
+{
+  "matter_id": "s35-m0001",
+  "summary": "Stepair Outfitters, Inc. (client, Buyer) is acquiring the technical outerwear shell business of Risel Alpine Gear, LLC (Seller) under an Asset Purchase Agreement dated September 14, 2026, for $18,400,000. The folder holds four documents: the APA, Seller's board consent approving the sale, the Bill of Sale delivered at the October 30, 2026 closing, and the Brooklyn design-studio office lease being assigned with landlord consent. The lease is the distractor. Three issues are planted. First, the APA lets Seller assign its post-closing indemnity and non-compete obligations to any successor without Buyer's consent, and Seller is then released. Second, Seller's board consent shows that the core membrane technology license needs the licensor's consent to assignment, yet the APA represents that no consents are required and does not address the point. Third, the Bill of Sale chooses Delaware law and courts, and the APA's precedence clause lets the Bill of Sale control on matters it specifically addresses.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Stepair Outfitters, Inc.",
+      "role": "Buyer (client)"
+    },
+    {
+      "id": "P2",
+      "name": "Risel Alpine Gear, LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Fjellbrand AG",
+      "role": "Licensor under the Membrane Technology License Agreement (third-party consent holder)"
+    },
+    {
+      "id": "P4",
+      "name": "Kestrow Canal Properties LLC",
+      "role": "Landlord under the Brooklyn design studio lease"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Asset Purchase Agreement date",
+      "value": "September 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F3",
+      "key": "Closing Date",
+      "value": "October 30, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F4",
+      "key": "Asset Purchase Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.7"
+    },
+    {
+      "id": "F5",
+      "key": "Asset Purchase Agreement forum",
+      "value": "state or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Ancillary Documents control as to matters specifically addressed therein; otherwise the Asset Purchase Agreement controls",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F7",
+      "key": "Membrane Technology License Agreement",
+      "value": "license dated March 3, 2023 between Fjellbrand AG and Seller; a Purchased Asset",
+      "doc": "D1",
+      "section": "Schedule 2.1(c)"
+    },
+    {
+      "id": "F8",
+      "key": "Seller board consent date",
+      "value": "September 11, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Studio lease premises",
+      "value": "Suite 4B, 118 Carroll Basin Street, Brooklyn, New York",
+      "doc": "D4",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F10",
+      "key": "Studio lease monthly base rent",
+      "value": "$21,750",
+      "doc": "D4",
+      "section": "Section 3.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seller_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "brooklyn_studio_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "APA Section 11.5 requires Seller's consent before Buyer may assign. It then provides that Seller may assign this Agreement without the consent of Buyer to any Affiliate or to any Person acquiring all or substantially all of Seller's remaining assets. The assignment expressly includes Seller's obligations under Article VIII (Indemnification) and Section 6.8 (Non-Competition), and upon assignment Seller shall be released from those obligations. Seller could therefore move its post-closing indemnity to an undercapitalized acquirer, or move the non-compete to a competitor in the outerwear market, and walk away. Buyer would lose its creditworthy indemnitor and the practical value of the restrictive covenant. This is the one issue visible from a single clause.",
+      "doc": "D1",
+      "section": "Section 11.5",
+      "detect_terms": [
+        "without the consent of Buyer",
+        "shall be released from"
+      ],
+      "expected_finding": "Section 11.5 lets Seller assign its indemnification and non-compete obligations to any Affiliate or acquirer without Buyer's consent and be released, so Buyer risks losing a creditworthy indemnitor and an enforceable non-compete. The clause should be made mutual, requiring Buyer's consent, with no release of Seller and Seller remaining jointly liable.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Under APA Section 2.1(c) and Schedule 2.1(c), the Membrane Technology License Agreement with Fjellbrand AG is a Purchased Asset. That license is the waterproof membrane technology underlying the shell product line. APA Section 4.4 represents that no third-party consent is required, and Schedule 4.4 reads 'None'. The closing conditions in Section 7.2 do not mention any Fjellbrand consent, and the APA has no clause dealing with non-assignable assets. Seller's board consent (D2, dated September 11, 2026), in its recitals and Resolution 3, states three things. First, the license requires the prior written consent of Fjellbrand for any assignment, including on a sale of the shell business. Second, Fjellbrand may terminate the license on any assignment made without that consent. Third, the officers are authorized to close without first obtaining that consent. The Bill of Sale (D3) then purports to convey the license at the October 30, 2026 Closing. Reading D1 together with D2 shows that the consent was neither obtained nor addressed. Buyer's only recourse is a capped indemnity claim for breach of Section 4.4.",
+      "doc": "D2",
+      "section": "Recitals; Resolution 3",
+      "detect_terms": [
+        "prior written consent of Fjellbrand",
+        "close without first obtaining"
+      ],
+      "expected_finding": "Seller's board consent shows that the Fjellbrand membrane license cannot be assigned without Fjellbrand's prior written consent and may be terminated if assigned without it. The APA misrepresents in Section 4.4 that no consents are needed, and neither the closing conditions nor any other provision addresses this consent. Buyer should immediately obtain Fjellbrand's written consent or a waiver, and should secure an uncapped special indemnity or purchase-price holdback for loss of the license.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "APA Section 11.7 chooses New York law, and APA Section 11.8 chooses exclusive jurisdiction in the state or federal courts in New York County. Bill of Sale Section 6 instead provides that it, and any claim relating to the conveyance of or title to the Purchased Assets, is governed by the laws of the State of Delaware, with exclusive jurisdiction in the Court of Chancery of the State of Delaware. APA Section 11.9 does not cure this conflict. It provides that Ancillary Documents control as to matters specifically addressed in them, and the Bill of Sale specifically addresses governing law and forum for title and conveyance claims. As a result, Buyer's claims about title to the Purchased Assets, including any claim over the Fjellbrand license, would be split from its other APA claims and sent to a different law and forum. Buyer faces inconsistent rulings and duplicated litigation.",
+      "doc": "D3",
+      "section": "Section 6",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery"
+      ],
+      "expected_finding": "The Bill of Sale's Delaware governing law and Chancery forum clause conflicts with the APA's New York law and New York County forum. Because APA Section 11.9 lets Ancillary Documents control matters they specifically address, Delaware law and forum would govern Buyer's title and conveyance claims. The Bill of Sale should be amended to conform to New York law and forum, or Section 11.9 should be revised so that the APA controls governing law and forum.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "matter_id": "s35-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "SOW Section 10.1: \"This SOW and all disputes arising out of or relating to the Services are governed by the laws of the Commonwealth of Pennsylvania, without regard to its conflict-of-laws principles.\" Section 10.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Allegheny County, Pennsylvania, for any action arising out of or relating to this SOW or the Services.\" Agreement Section 15.6: \"Amendments, then Statements of Work, then the Software License Agreement, then side letters.\"",
+            "reason": "The Agreement chooses Delaware law and exclusive Wilmington, Delaware courts (Sections 15.2 and 15.3). SOW No. 1 instead chooses Pennsylvania law and exclusive Allegheny County courts, which is Vopein's home forum in Pittsburgh. The SOW clause reaches all disputes relating to the Services. Under Section 15.6, Statements of Work rank above the Agreement, so the SOW forum controls for implementation disputes. SOW Section 11.1 does not cure this, because it applies the Agreement's terms only 'except as stated in this SOW.' The result is that Proudert would litigate implementation and go-live failures in Vopein's home forum under Pennsylvania law, while license and indemnity claims stay in Delaware. That means split proceedings over one rollout. No document in the folder waives, amends or otherwise resolves this conflict. Because the forum clause governs any future dispute, it remains actionable: Proudert can still seek a conforming amendment or raise the conflict before any dispute begins."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Side Letter Section 3.1: \"During the Term and for twenty-four (24) months after its expiration or termination, Licensee shall not, and shall cause its Affiliates not to, license, develop or use any competing manufacturing execution or quality inspection software at any facility owned or operated by Licensee or any of its Affiliates, anywhere in the world.\"",
+            "reason": "Proudert gives this covenant, so the burden falls on the client. The license covers only the Greenville plant (Agreement Sections 1.8 and 2.1). Yet Section 3.1 bars Proudert and its Affiliates from using any competing MES or quality-inspection software at every facility worldwide, including facilities with no LoomSight rights, and for 24 months after the Term ends. Section 3.2 widens the reach further: it covers internally developed tools and functions such as SPC and defect logging. The Agreement is silent on exclusivity, so the precedence rule in Section 15.6 resolves no conflict. Section 15.5 brings same-day side letters into the entire agreement, so the covenant binds Proudert. Nothing in the folder narrows, waives or cures it, and the Term is running, so the issue remains live and can still be addressed. The burden is also disproportionate to the $22,320 annual discount. The post-term tail invites an enforceability dispute under Delaware reasonableness standards."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 1.1 of the Amendment restates Section 1.2 of the Agreement in full: \"1.2 'Authorized User,' as used in the Agreement and this Amendment, means: (a) a Licensee employee at the Licensed Site issued individual LoomSight login credentials; (b) each contractor, consultant or other individual engaged by or on behalf of Licensee who has system access to the Software, whether through individual login credentials, shared credentials or an interface; and (c) each networked inspection camera or sensor station at the Licensed Site that captures, transmits or receives data through the Software.\"",
+            "reason": "The original Agreement (Section 1.2) counts as Authorized Users only Licensee employees with individual credentials. The Amendment restates that definition for the whole Agreement, not just the new Module Fee, and adds contractors with any system access and every networked camera or sensor station. Section 4.1 of the Amendment says Agreement references include the Amendment, and Section 15.6 of the Agreement ranks Amendments first, so the broader count drives the core fee tiers in Section 5.1, the true-up in Section 5.4 and the audit in Section 6.3. Proudert is the Licensee and pays all of these, so any rise in the count raises its core fees, triggers prorated true-up invoices and audit cost exposure, and multiplies the $145 per-user Module Fee. The folder does not state how many cameras are installed, but deploying a vision inspection module by its nature means networked cameras. Nothing in the Amendment limits clause (c) to the Module Fee. The Amendment's signature blocks are blank, and nothing in the folder shows Proudert has signed it or paid on the expanded count. The point is still actionable: Proudert can limit the expanded definition to Section 2.2 or remove the device and contractor limbs before it signs."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 12.3: \"The limitations in Sections 12.1 and 12.2 shall not apply to Licensee's obligations under Section 11.2, to Licensee's obligation to pay Fees properly due under this Agreement, or to either Party's liability for fraud or willful misconduct.\" Section 11.2: \"Licensee shall defend Licensor ... against all third-party claims arising from or relating to ... (b) use of the Software in combination with Licensee equipment, looms, loom controllers or third-party systems, including Licensee Systems. Licensee shall also indemnify them against all damages, losses, costs and attorneys' fees arising from such claims.\"",
+            "reason": "Proudert is the indemnitor under Section 11.2, and Section 12.3 removes both the cap and the consequential-damages exclusion for that obligation. Vopein's IP indemnity under Section 11.1 is not carved out, so it stays limited to 12 months' fees under Section 12.1. The 11.2(b) combination language covers any claim tied to use with Proudert's loom controllers and Licensee Systems, and it is not limited to Proudert's fault. Section 11.1(ii) also excludes combination claims from Vopein's indemnity, so infringement claims involving the integrated LoomSight Connect interfaces fall on Proudert without limit. Amendment No. 1 makes vision cameras and sensors Licensee Systems, which widens this reach. Nothing in the side letter, the SOW or the amendment fixes the asymmetry. The agreement is in its first term, so Proudert can still raise and renegotiate the point."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "At the end of the Initial Term, this Agreement shall automatically renew for successive three-year Renewal Terms (each a \"Renewal Term\" and, together with the Initial Term, the \"Term\") at Licensor's then-current list fees. Either Party may prevent renewal by giving the other Party written notice of non-renewal not less than 180 days and not more than 210 days before the end of the then-current Initial Term or Renewal Term. Any notice of non-renewal given outside that period shall be void and of no effect.",
+            "reason": "Section 13.2 renews the Agreement automatically for three-year terms at Vopein's then-current list fees, with no cap on increases. Proudert, the licensee, can only stop renewal by giving notice inside a 30-day window, and a notice given outside that window is expressly void. The Initial Term runs until about March 2029, so the window has not opened yet. Nothing in the folder cures or limits this. The Side Letter's discount carries into renewals because it runs for the 'Term', but that does not cap list-price increases or widen the notice window. The SOW and Amendment do not touch renewal. The problem is still actionable for Proudert: it can renegotiate the clause or, at minimum, docket the window. Missing it would lock Proudert into three more years at uncapped pricing, and the Side Letter's 24-month post-term exclusivity sharpens that lock-in."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 20,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4",
+          "C5",
+          "C6"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.08,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

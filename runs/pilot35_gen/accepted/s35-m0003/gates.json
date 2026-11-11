@@ -1,0 +1,129 @@
+{
+  "matter_id": "s35-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 14.2: \"Any Change of Control of Licensee, including by merger, is deemed an assignment of this Agreement by Licensee and requires the prior written consent of Licensor. If Licensee undergoes a Change of Control without obtaining that consent, Licensor may terminate this Agreement on written notice, and all License Fees for the remainder of the then-current term become immediately due and payable.\" The March 20, 2026 letter states: \"For information only, Gliruth advises Breibeith that on March 12, 2026, Gliruth signed a merger agreement under which Gliruth is to be acquired by Ostrander Venue Group, Inc.\"",
+            "reason": "The problem is present and actionable for Gliruth. Gliruth is the Licensee, so it bears the duty to get Breibeith's consent and it bears the acceleration risk. Gliruth's acquisition by Ostrander by merger is a Change of Control under clauses (a) and (b) of the definition. Section 14.2 treats that as a deemed assignment needing Breibeith's prior written consent. The March 20 letter discloses the merger 'for information only' and does not ask for consent. Nothing in the folder shows consent was requested or given, or any waiver signed under Section 17.5. The folder also does not show that the merger has closed, that Breibeith has terminated, or that Gliruth has paid or accepted an acceleration. So Gliruth can still act by seeking consent before closing. The exposure is large. The Section 12.2 non-renewal notice was due by about March 2, 2026, but the letter was sent March 20. Breibeith can therefore argue the Agreement renewed through June 30, 2028. Uncapped acceleration under Section 10.3(b) could then reach roughly two years of fees at $384,000 or more per year."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Quality Agreement §9.1: \"This Quality Agreement, and any dispute arising out of or relating to the performance, availability or accuracy of the Software, are governed by the laws of the State of New York\"; §9.2 gives \"exclusive jurisdiction of the state and federal courts located in New York County, New York.\" License Agreement §16.1–16.2 instead choose Delaware law and \"the state or federal courts located in Wilmington, Delaware,\" and §17.4 provides that \"the Quality Agreement controls on matters it addresses.\"",
+            "reason": "The two concurrent agreements choose different governing law and different exclusive fora. Section 17.4 does not reconcile them. It makes the Quality Agreement's New York clause control for performance, availability and accuracy disputes, while everything else stays in Delaware. Those performance and accuracy disputes are Gliruth's likely warranty, service-credit and chronic-failure claims, and they cannot be separated from License Agreement issues: the §8.2 remedies, the §13.2 termination right and the §10 cap. That splits proceedings and risks inconsistent rulings. The problem is still actionable. Gliruth's March 20, 2026 non-renewal notice appears to have missed the 120-day window, and Gliruth disputes that any renewal occurred. The relationship may therefore continue or be contested, so disputes are live. In addition, Quality Agreement §9 survives termination under §8.1. Nothing in the folder shows that Gliruth has accepted the split or waived it."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"Under Section 12.2 of the Agreement, Gliruth gives Breibeith written notice of non-renewal of the Agreement. The Initial Term under Section 12.1 is three years, ending June 30, 2026.\" The letter is dated March 20, 2026. Section 12.2 of the License Agreement requires non-renewal notice \"at least 120 days before the end of the then-current term.\"",
+            "reason": "The Initial Term ends June 30, 2026, so 120 days before that is March 2, 2026. Gliruth's notice is dated March 20, 2026, 18 days after the deadline. Nothing in the folder extends or waives the deadline: Section 17.5 requires a signed written waiver, and none exists. On the face of the documents, the Agreement therefore renewed automatically for a two-year Renewal Term through June 30, 2028, at $384,000 per year (subject to Section 4.4 increases). That exposes Gliruth to about $768,000 of further fees. It also keeps the worldwide exclusivity covenant in Section 3.3 binding on Gliruth and its Affiliates, which would include Ostrander after the merger. And it raises the Section 14.2 risk that all remaining fees are accelerated if the merger closes without Breibeith's consent. The burden falls on Gliruth as the party that had to give the notice. The letter never acknowledges that it is late; it simply asserts that no renewal has occurred, so the problem is visible but not solved. Gliruth has not accepted the renewal: the letter expressly disputes it, and the folder shows no payment of Renewal Term fees and no signed acknowledgment. The point is therefore still open and actionable, for example by negotiating a release from the renewal or developing arguments against it."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 10.3: \"The exclusions and limitations in Sections 10.1 and 10.2 do not apply to: (a) Licensee's obligations under Section 9.2 ...\" Section 9.2: \"Licensee shall defend, indemnify and hold harmless Licensor ... from and against all third-party claims ... arising out of or relating to Licensee's use of the Software or the Licensee Data.\"",
+            "reason": "Gliruth, the Licensee, is the indemnitor under Section 9.2, so this problem hurts the client. The indemnity reaches every third-party claim 'relating to' Gliruth's use of the platform or its data. That could include injury or property claims from events booked or dispatched through RentFlow. Section 10.3(a) removes both the consequential-damages exclusion and the 12-month fee cap for that indemnity. Breibeith's own IP indemnity in Section 9.1 gets no such carve-out, so its exposure stays capped at 12 months of fees. Nothing in the folder cures this. The Quality Agreement does not touch it. Gliruth's CGL and umbrella policies may respond to some claims, but they are capped and coverage for contractual liability is uncertain. The exposure is still live. Section 13.4 makes Sections 9 and 10 survive termination, so claims arising from past use remain covered. The agreement may also still be running: Gliruth's March 20, 2026 non-renewal notice came about 102 days before June 30, 2026, short of the 120 days Section 12.2 requires. Breibeith may therefore treat the agreement as renewed to 2028, and Gliruth disputes that. The pending Ostrander merger, which requires Breibeith's consent under Section 14.2, gives Gliruth a chance to renegotiate. The new parent may also need to diligence this unlimited exposure."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 3.3: \"During the Term, Licensee and its Affiliates shall not license, develop or use any inventory management, booking, logistics or point-of-sale software other than the Software, anywhere in the world.\" Section 1.1: \"With respect to Licensee, Affiliate includes any entity that now or hereafter controls Licensee, together with each entity controlled by that entity.\"",
+            "reason": "The exclusivity covenant binds Gliruth, the client. Because 'Affiliate' reaches any future parent and that parent's subsidiaries, the covenant would extend to Ostrander Venue Group and its whole group once the merger disclosed in the March 20, 2026 letter closes. It would then bar their worldwide use of logistics and point-of-sale systems unrelated to Gliruth's rental business. The non-renewal notice is dated March 20, 2026, which is after the 120-day deadline of March 2, 2026. The Agreement may therefore have renewed through June 30, 2028, so the covenant could still be in force. Gliruth's letter expressly disputes the renewal and reserves its rights. Nothing in the folder shows it accepted a Renewal Term, paid a renewal invoice, or that the deal has closed. No other provision limits the covenant. The risk is real and still actionable for the merger and for the renewal dispute."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 25,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5",
+          "C6",
+          "C7",
+          "C8"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.072,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

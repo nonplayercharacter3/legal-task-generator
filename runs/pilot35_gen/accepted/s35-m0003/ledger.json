@@ -1,0 +1,202 @@
+{
+  "matter_id": "s35-m0003",
+  "summary": "Gliruth Event Rentals, LLC (client), a rental company for event furniture and staging, licenses Breibeith Software, Inc.'s 'RentFlow' inventory, booking and dispatch platform under a Software License Agreement dated July 1, 2023. A companion Quality Agreement sets uptime, data-accuracy and support standards. In a letter dated March 20, 2026, Gliruth gave notice of non-renewal and disputed any automatic renewal. The same letter tells Breibeith, for information only, that Gliruth signed a merger agreement on March 12, 2026 to be acquired by Ostrander Venue Group, Inc. A broker's cover letter enclosing Gliruth's certificate of insurance is also in the folder. The supervising partner wants an issue-spotting memo before the acquisition closes. The memo should cover the change-of-control consent problem, a late non-renewal notice, a New York choice of law and forum that the precedence clause lets control, a licensee indemnity carved out of the cap, and an exclusivity covenant that will reach the acquirer's whole group.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Gliruth Event Rentals, LLC",
+      "role": "Licensee; the firm's client; event furniture and staging rental company"
+    },
+    {
+      "id": "P2",
+      "name": "Breibeith Software, Inc.",
+      "role": "Licensor of the RentFlow inventory, booking and dispatch software"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Venue Group, Inc.",
+      "role": "Prospective acquirer of Gliruth under a merger agreement signed March 12, 2026"
+    },
+    {
+      "id": "P4",
+      "name": "Pellacott Risk Partners, LLC",
+      "role": "Gliruth's insurance broker"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "July 1, 2023",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "License Agreement Initial Term",
+      "value": "three years, ending June 30, 2026",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F3",
+      "key": "License Agreement non-renewal notice period",
+      "value": "at least 120 days before the end of the then-current term",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F4",
+      "key": "License Agreement renewal term",
+      "value": "successive two-year terms",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F5",
+      "key": "Annual License Fee",
+      "value": "$384,000 per year",
+      "doc": "D1",
+      "section": "4.1"
+    },
+    {
+      "id": "F6",
+      "key": "License Agreement liability cap",
+      "value": "fees paid by Licensee in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "10.2"
+    },
+    {
+      "id": "F7",
+      "key": "License Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "16.1"
+    },
+    {
+      "id": "F8",
+      "key": "License Agreement forum",
+      "value": "state or federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "16.2"
+    },
+    {
+      "id": "F9",
+      "key": "Order of precedence",
+      "value": "Quality Agreement controls on matters it addresses; otherwise License Agreement controls",
+      "doc": "D1",
+      "section": "17.4"
+    },
+    {
+      "id": "F10",
+      "key": "Required commercial general liability insurance",
+      "value": "$2,000,000 per occurrence",
+      "doc": "D1",
+      "section": "11.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "gliruth_breibeith_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "2026-03-20_gliruth_letter_to_breibeith.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "rentflow_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "pellacott_insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "D1 Section 14.2 provides that any change of control of Licensee, including by merger, is deemed an assignment requiring Breibeith's prior written consent. If consent is not obtained, Breibeith may terminate and accelerate all License Fees for the remainder of the then-current term. D2, the letter dated March 20, 2026, discloses that Gliruth signed a merger agreement on March 12, 2026 to be acquired by Ostrander Venue Group, Inc. The letter informs Breibeith 'for information only' and does not request consent. Nothing in the folder shows consent was sought or given. Read with the renewal issue (I3), acceleration could reach fees through June 30, 2028.",
+      "doc": "D1",
+      "section": "14.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "prior written consent of Licensor"
+      ],
+      "expected_finding": "The Ostrander merger disclosed in the March 20, 2026 letter is a change of control that Section 14.2 treats as an assignment requiring Breibeith's prior written consent. That consent has not been requested, so Gliruth must obtain written consent or a waiver before closing to avoid termination and acceleration of the remaining License Fees.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "D3 Section 9 provides that the Quality Agreement, and any dispute relating to the performance, availability or accuracy of the Software, is governed by New York law and subject to exclusive jurisdiction of the courts in New York County. D1 Sections 16.1 and 16.2 choose Delaware law and Wilmington, Delaware courts. D1 Section 17.4 does not cure the conflict, because it makes the Quality Agreement control on matters it addresses. Performance and warranty disputes, which are Gliruth's most likely claims, would therefore go to New York under New York law, while other claims stay in Delaware. That splits fora and risks inconsistent results.",
+      "doc": "D3",
+      "section": "9",
+      "detect_terms": [
+        "laws of the State of New York",
+        "courts located in New York County"
+      ],
+      "expected_finding": "Under D1 Section 17.4, the Quality Agreement's New York law and New York County forum clause controls software-performance disputes. That conflicts with the License Agreement's Delaware law and Wilmington forum, so the Quality Agreement should be amended to conform to Delaware law and forum, or Section 17.4 should be carved back so the License Agreement governs choice of law and forum.",
+      "contradicts": [
+        "F7",
+        "F8"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "D1 Section 12.1 sets an Initial Term ending June 30, 2026. Section 12.2 renews the Agreement automatically for two-year terms unless a party gives notice of non-renewal at least 120 days before the term ends, which put the deadline at March 2, 2026. D2, Gliruth's notice of non-renewal, is dated March 20, 2026, 18 days late. On the face of the documents, the Agreement renewed through June 30, 2028 at $384,000 per year. The same letter disputes that any renewal has occurred, so Gliruth has not accepted the renewal and the point remains open.",
+      "doc": "D2",
+      "section": "Paragraph 1 (notice of non-renewal)",
+      "detect_terms": [
+        "notice of non-renewal"
+      ],
+      "expected_finding": "Gliruth's March 20, 2026 non-renewal notice missed the March 2, 2026 deadline under Section 12.2, so Breibeith can argue the Agreement auto-renewed through June 30, 2028. Because Gliruth disputed renewal in that letter, the firm should pursue a negotiated termination or a waiver from Breibeith rather than rely on the late notice.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "D1 Section 9.2 requires Licensee to indemnify Breibeith against all third-party claims arising out of or relating to Licensee's use of the Software or Licensee Data. That would reach injury or property claims from events booked or dispatched through the platform. D1 Section 10.3 states that the cap in Section 10.2 does not apply to Licensee's obligations under Section 9.2. Breibeith's own IP indemnity in Section 9.1 stays subject to the cap. Read together, Gliruth carries unlimited liability for a very broad category of claims, while Breibeith's exposure is limited to 12 months of fees.",
+      "doc": "D1",
+      "section": "10.3",
+      "detect_terms": [
+        "Licensee's obligations under Section 9.2",
+        "arising out of or relating to Licensee's use"
+      ],
+      "expected_finding": "Section 10.3 removes Gliruth's broad Section 9.2 use-based indemnity from the 12-month-fees cap while Breibeith's Section 9.1 indemnity stays capped, leaving Gliruth with unlimited liability. The fix is to narrow Section 9.2 and bring it under a cap, or a reciprocal super-cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D1 Section 3.3 bars 'Licensee and its Affiliates' from licensing, developing or using any inventory management, booking, logistics or point-of-sale software other than the Software, anywhere in the world, during the term. D1 Section 1.1 defines Affiliates to include any entity that now or hereafter controls Licensee, together with that entity's controlled subsidiaries. D2 discloses the pending acquisition by Ostrander Venue Group, Inc. Read together, after closing the covenant would bind Ostrander and its entire group worldwide, across logistics and point-of-sale systems unrelated to Gliruth's rental business. The term may also run through 2028 if the renewal issue (I3) goes against Gliruth.",
+      "doc": "D1",
+      "section": "3.3",
+      "detect_terms": [
+        "anywhere in the world",
+        "Licensee and its Affiliates"
+      ],
+      "expected_finding": "Read with the Section 1.1 Affiliate definition and the Ostrander merger disclosed in the March 20, 2026 letter, the Section 3.3 exclusivity would bind the acquirer's entire group worldwide across unrelated software categories. It should be narrowed to Gliruth's own event-rental inventory and booking operations, and existing and future acquirer affiliates should be expressly excluded.",
+      "contradicts": null
+    }
+  ]
+}

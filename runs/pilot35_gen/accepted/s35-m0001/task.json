@@ -1,0 +1,99 @@
+{
+  "task_id": "s35-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Stepair Outfitters, Inc., the buyer, on its asset purchase from Risel Alpine Gear, LLC. Before we go back to the other side, I need to know where the deal package leaves Stepair exposed, so we can tell the client what still needs negotiating or fixing before signing and closing.\n\nPlease review the four documents in the matter folder: the asset purchase agreement (asset_purchase_agreement.md), the board consent (seller_board_consent.md), the bill of sale (bill_of_sale.md), and the Brooklyn studio lease (brooklyn_studio_lease.md). Then prepare a memo to me. For each issue you find, the memo should say where it appears, by document and section, why it matters to Stepair as buyer, and what you recommend we do to fix it. Please put the most significant points first. Keep the memo practical so I can use it directly when I talk with the client. If something is unclear or depends on facts we do not have, flag it as an open question rather than assuming an answer.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "bill_of_sale.md",
+    "brooklyn_studio_lease.md",
+    "seller_board_consent.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the APA lets Seller assign the Agreement, including its indemnification and non-compete obligations, to an Affiliate or an acquirer of its remaining assets without Buyer's consent, and that Seller is then released from those obligations. The response places this in APA Section 11.5, explains why this matters to Stepair, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 11.5",
+        "without the consent of Buyer",
+        "released"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that Seller's board consent shows the Fjellbrand membrane technology license cannot be assigned without Fjellbrand's prior written consent, and that the APA does not secure or address that consent, representing instead that no consents are required. The response places this in the Seller board consent (its recitals and/or Resolution 3), explains why this matters to Stepair, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "prior written consent of Fjellbrand",
+        "Section 4.4",
+        "Resolution 3"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that the Bill of Sale's choice of Delaware law and Delaware Court of Chancery forum conflicts with the APA's New York law and New York County forum, so Buyer's title and conveyance claims would be governed by Delaware law and heard in a Delaware forum. The response places this in Bill of Sale Section 6, explains why this matters to Stepair, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Bill of Sale Section 6",
+        "Delaware",
+        "Court of Chancery"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response states that the Membrane Technology License Agreement with Fjellbrand AG is one of the Purchased Assets being transferred to Buyer under the APA.",
+      "kind": "fact",
+      "hints": [
+        "Purchased Asset",
+        "Schedule 2.1(c)",
+        "Fjellbrand"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response is a memo addressed to the supervising partner that, for each issue it raises, identifies the document and section, explains why the issue matters to Stepair, and gives a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "recommendation",
+        "why it matters"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response flags at least one point as an open question or as depending on facts not in the documents, rather than assuming an answer.",
+      "kind": "format",
+      "hints": [
+        "open question",
+        "confirm",
+        "unclear"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response claims that the APA's New York governing law and forum clauses control over the Bill of Sale's Delaware clause for claims about title to or conveyance of the Purchased Assets.",
+      "kind": "negative",
+      "hints": [
+        "New York law controls",
+        "APA prevails"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that, under the APA, Seller may not assign the Agreement without Buyer's consent.",
+      "kind": "negative",
+      "hints": [
+        "Seller may not assign",
+        "Buyer's consent required"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

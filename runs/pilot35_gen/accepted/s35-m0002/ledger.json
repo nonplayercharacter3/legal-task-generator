@@ -1,0 +1,199 @@
+{
+  "matter_id": "s35-m0002",
+  "summary": "Proudert Technical Fabrics, Inc., a Delaware-incorporated maker of industrial technical textiles (conveyor belting fabrics, geotextiles, filtration media), licenses Vopein Systems LLC's LoomSight manufacturing-execution and quality-inspection software for its Greenville, South Carolina weaving plant. The folder holds five documents. The first is the Software License Agreement, effective March 2, 2026. The second is a side letter signed the same day that grants a fee discount in exchange for exclusivity. The third is an implementation Statement of Work dated March 16, 2026. The fourth is Amendment No. 1, dated September 8, 2026, which adds a Vision Inspection Module. The fifth is a superseded prior draft of the data security schedule. The firm represents Proudert, the licensee, and is preparing an issue-spotting memo to the supervising partner. Five problems are planted. (1) Through the precedence clause, the Statement of Work moves services disputes to Pennsylvania law and Pittsburgh courts. (2) The side letter sets a worldwide, all-affiliate exclusivity that runs past the term, although the license covers one site. (3) The Amendment redefines 'Authorized User' for the whole Agreement to cover cameras and contractors, which inflates fees. (4) Proudert's indemnity is carved out of the cap, while Vopein's IP indemnity stays capped. (5) The Agreement renews automatically for three-year terms with a 30-day opt-out window.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Proudert Technical Fabrics, Inc.",
+      "role": "Licensee; the firm's client; manufacturer of industrial technical textiles operating the Greenville, South Carolina weaving plant"
+    },
+    {
+      "id": "P2",
+      "name": "Vopein Systems LLC",
+      "role": "Licensor; Pittsburgh, Pennsylvania-based developer of the LoomSight manufacturing-execution and quality-inspection software and provider of implementation services"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Licensed Site",
+      "value": "Proudert's weaving plant at 410 Haywood Industrial Parkway, Greenville, South Carolina",
+      "doc": "D1",
+      "section": "Section 1.8"
+    },
+    {
+      "id": "F3",
+      "key": "Software License Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 15.2"
+    },
+    {
+      "id": "F4",
+      "key": "Software License Agreement dispute forum",
+      "value": "state or federal courts located in Wilmington, Delaware, exclusively",
+      "doc": "D1",
+      "section": "Section 15.3"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Amendments, then Statements of Work, then the Software License Agreement, then side letters",
+      "doc": "D1",
+      "section": "Section 15.6"
+    },
+    {
+      "id": "F6",
+      "key": "Authorized User (Software License Agreement meaning)",
+      "value": "a Licensee employee at the Licensed Site issued individual LoomSight login credentials",
+      "doc": "D1",
+      "section": "Section 1.2"
+    },
+    {
+      "id": "F7",
+      "key": "Initial Term",
+      "value": "three years from the Software License Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 13.1"
+    },
+    {
+      "id": "F8",
+      "key": "Annual core license fee",
+      "value": "$186,000",
+      "doc": "D1",
+      "section": "Section 5.1"
+    },
+    {
+      "id": "F9",
+      "key": "Liability cap",
+      "value": "fees paid or payable by Licensee in the prior 12 months",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F10",
+      "key": "Vision Inspection Module fee",
+      "value": "$145 per Authorized User per month",
+      "doc": "D4",
+      "section": "Section 2.2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "proudert_vopein_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "proudert_vopein_side_letter_pricing.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "proudert_vopein_sow_1_implementation.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D4",
+      "filename": "proudert_vopein_amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "proudert_vopein_schedule_b_data_security_prior_draft.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Sections 15.2 and 15.3 of the License Agreement choose Delaware law and exclusive Wilmington, Delaware courts. SOW No. 1 (D3), Section 10, states that the SOW and 'all disputes arising out of or relating to the Services' are governed by the laws of the Commonwealth of Pennsylvania and resolved exclusively in the courts of Allegheny County, Pennsylvania, which is Vopein's home forum. The conflict is not cured by the Agreement. Section 15.6 ranks Statements of Work above the Agreement, so the SOW clause controls for services disputes. Implementation failures are where most go-live disputes arise, and they would be heard in Pennsylvania under Pennsylvania law. License and indemnity disputes would stay in Delaware. Proudert faces split proceedings over a single failed rollout and loses its chosen home forum. The issue appears only when D3 Section 10 is read together with D1 Sections 15.2, 15.3 and 15.6.",
+      "doc": "D3",
+      "section": "Section 10",
+      "detect_terms": [
+        "Commonwealth of Pennsylvania",
+        "Allegheny County"
+      ],
+      "expected_finding": "Because D1 Section 15.6 gives the SOW precedence over the Agreement, SOW Section 10's Pennsylvania law and exclusive Allegheny County forum override the Agreement's Delaware choice for services disputes, splitting forums against Proudert. SOW Section 10 should be deleted or conformed to Delaware law and Wilmington courts.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "The side letter (D2), Section 3, grants Proudert a 12% discount on the annual core license fee. In return, Proudert and its Affiliates may not license, develop or use 'any competing manufacturing execution or quality inspection software at any facility owned or operated' by them anywhere in the world, during the term and for 24 months afterwards. The deal is a license for one site: D1 Section 1.8 limits the Licensed Site to the Greenville, South Carolina plant, and Section 2.1 grants rights only for that site. The covenant is therefore not cured by the Agreement. The Agreement says nothing on exclusivity, so the lower ranking of side letters in Section 15.6 resolves no conflict. D1 Section 15.5 expressly folds side letters executed on the Effective Date into the entire agreement, so the side letter is binding. The result is that Proudert's other plants and future acquisitions cannot adopt other MES or inspection tools, for which they hold no LoomSight license. The 24-month post-term tail also risks unenforceability or a dispute under Delaware reasonableness standards. The issue appears only when D2 Section 3 is read against D1 Sections 1.8, 2.1, 15.5 and 15.6.",
+      "doc": "D2",
+      "section": "Section 3",
+      "detect_terms": [
+        "any facility owned or operated",
+        "competing manufacturing execution"
+      ],
+      "expected_finding": "The side letter's exclusivity, made binding by D1 Section 15.5, bars Proudert and all Affiliates worldwide from using competing MES or inspection software during the term and 24 months after. The license covers only the Greenville Licensed Site, so the covenant should be narrowed to the Licensed Site and the term, with no tail.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 Section 1.2 defines 'Authorized User' as a Licensee employee at the Licensed Site who is issued individual login credentials. The core fee tiers in D1 Section 5.1, the user-count true-up in Section 5.4 and the audit right in Section 6.3 are all measured by Authorized Users. Amendment No. 1 (D4), Section 1.1, states that 'as used in the Agreement and this Amendment' Authorized User includes each contractor with system access and each networked inspection camera or sensor station. Section 15.6 ranks Amendments first, so the broader definition replaces the original throughout the Agreement. Its effect is not limited to the new module fee in D4 Section 2.2. Because roughly 60 inspection cameras are installed at Greenville, Proudert's user count would jump. That triggers higher core fee tiers, Section 5.4 true-up invoices and audit exposure, besides inflating the per-user module fee. The issue appears only when D4 Section 1.1 is read with D1 Sections 1.2, 5.1, 5.4 and 15.6.",
+      "doc": "D4",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "each networked inspection camera",
+        "as used in the Agreement and this Amendment"
+      ],
+      "expected_finding": "Amendment Section 1.1 redefines 'Authorized User' to include contractors and inspection cameras and sensor stations across the whole Agreement, and Amendments prevail under D1 Section 15.6. This inflates the core license fee tiers, the Section 5.4 true-ups and the audit exposure, beyond the new module fee. The redefinition should be confined to the Vision Inspection Module, or a separate term such as 'Inspection Endpoint' should be used.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "D1 Section 11.2 requires Proudert to defend and indemnify Vopein against all third-party claims arising from Licensee Data, or from use of the Software in combination with Licensee equipment, looms or third-party systems. Read with the combination language, this reaches IP infringement claims involving Proudert's integrated loom controllers. Section 12.3 provides that the Section 12.1 cap 'shall not apply to Licensee's obligations under Section 11.2'. It does not exclude Vopein's IP indemnity in Section 11.1, which remains capped at 12 months' fees. Proudert therefore carries unlimited exposure while its protection from Vopein is capped. The issue appears only when Sections 11.1, 11.2, 12.1 and 12.3 are read together.",
+      "doc": "D1",
+      "section": "Section 12.3",
+      "detect_terms": [
+        "shall not apply to Licensee's obligations under Section 11.2"
+      ],
+      "expected_finding": "Section 12.3 removes the cap only for Proudert's broad Section 11.2 indemnity, which covers data and combination claims, while Vopein's Section 11.1 IP indemnity stays capped at 12 months' fees. Proudert's indemnity should be capped, for example at a multiple of fees, or the carve-out made mutual.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "D1 Section 13.2 renews the Agreement automatically after the three-year Initial Term in Section 13.1, for successive three-year Renewal Terms at Vopein's then-current list fees. The only way out is a non-renewal notice given 'not less than 180 days and not more than 210 days' before the end of the current term. That leaves a 30-day window, and a notice sent outside it is expressly void. Missing the window locks Proudert into three more years at uncapped list pricing. This is the single clause that is visible on its own reading.",
+      "doc": "D1",
+      "section": "Section 13.2",
+      "detect_terms": [
+        "not more than 210 days",
+        "successive three-year Renewal Terms"
+      ],
+      "expected_finding": "Section 13.2 renews the Agreement automatically for three-year terms at Vopein's then-current list fees unless Proudert gives notice in a 30-day window 180 to 210 days before expiry. It should be changed to one-year renewals, a notice deadline of at least 90 days with no earliest date, and a cap on renewal fee increases.",
+      "contradicts": null
+    }
+  ]
+}

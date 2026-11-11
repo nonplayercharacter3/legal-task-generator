@@ -1,0 +1,198 @@
+{
+  "task_id": "s35-m0002",
+  "split": "test",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Proudert Technical Fabrics, Inc., the licensee under a software license arrangement with Vopein Systems LLC relating to its Greenville, South Carolina weaving plant. Proudert needs a clear picture of where it stands under this contract set and what it should be pushing to change. Please review the full matter folder: the software license agreement (proudert_vopein_software_license_agreement.md), the pricing side letter (proudert_vopein_side_letter_pricing.md), SOW 1 for implementation (proudert_vopein_sow_1_implementation.md), Amendment No. 1 (proudert_vopein_amendment_no_1.md), and the prior draft of Schedule B on data security (proudert_vopein_schedule_b_data_security_prior_draft.md). Send me a memo that lists each issue you identify, where it appears (document and section), why it matters for Proudert, and a recommended fix. Keep it practical, since I'd like to be able to use it in advising the client on next steps. Flag anything you can't resolve from the documents alone and note what you would need to close it out.",
+  "documents": [
+    "proudert_vopein_amendment_no_1.md",
+    "proudert_vopein_schedule_b_data_security_prior_draft.md",
+    "proudert_vopein_side_letter_pricing.md",
+    "proudert_vopein_software_license_agreement.md",
+    "proudert_vopein_sow_1_implementation.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that SOW No. 1's Pennsylvania governing law and exclusive Allegheny County, Pennsylvania forum control disputes relating to the implementation services, displacing the License Agreement's Delaware law and Wilmington, Delaware courts for those disputes.",
+      "kind": "issue",
+      "hints": [
+        "Commonwealth of Pennsylvania",
+        "Allegheny County",
+        "split forums"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the governing law and forum conflict in SOW No. 1, Section 10.",
+      "kind": "issue",
+      "hints": [
+        "SOW Section 10"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response explains why the governing law and forum conflict matters to Proudert and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "conform to Delaware",
+        "delete Section 10"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the side letter's exclusivity covenant bars Proudert and all its Affiliates, at any facility worldwide, from using competing manufacturing execution or quality inspection software during the term and for 24 months after it, even though the license covers only the Greenville site.",
+      "kind": "issue",
+      "hints": [
+        "any facility owned or operated",
+        "Affiliates",
+        "24 months"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response locates the exclusivity covenant in the side letter, Section 3.",
+      "kind": "issue",
+      "hints": [
+        "side letter Section 3"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response explains why the exclusivity covenant matters to Proudert and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "narrow to the Licensed Site",
+        "remove the tail"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response identifies that Amendment No. 1 redefines 'Authorized User' to include contractors and networked inspection cameras or sensor stations for the whole Agreement, so that the definition applies to the core license fees and user counts, not only to the Vision Inspection Module fee.",
+      "kind": "issue",
+      "hints": [
+        "as used in the Agreement and this Amendment",
+        "inspection camera",
+        "core fee tiers"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response locates the Authorized User redefinition in Amendment No. 1, Section 1.1.",
+      "kind": "issue",
+      "hints": [
+        "Amendment Section 1.1"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response explains why the Authorized User redefinition matters to Proudert and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "confine to the Vision Inspection Module",
+        "Inspection Endpoint"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response identifies that Proudert's indemnity under Section 11.2 is excluded from the liability cap, while Vopein's IP indemnity under Section 11.1 remains subject to the cap.",
+      "kind": "issue",
+      "hints": [
+        "shall not apply to Licensee's obligations under Section 11.2",
+        "uncapped",
+        "Vopein's IP indemnity capped"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response locates the asymmetric cap carve-out in the Software License Agreement, Section 12.3.",
+      "kind": "issue",
+      "hints": [
+        "Section 12.3"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response explains why the asymmetric indemnity cap treatment matters to Proudert and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "make the carve-out mutual",
+        "cap Proudert's indemnity"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response identifies that the Agreement renews automatically for successive three-year terms unless Proudert gives non-renewal notice within a 30-day window of 180 to 210 days before the end of the term.",
+      "kind": "issue",
+      "hints": [
+        "not more than 210 days",
+        "30-day window",
+        "three-year Renewal Terms"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response locates the automatic renewal provision in the Software License Agreement, Section 13.2.",
+      "kind": "issue",
+      "hints": [
+        "Section 13.2"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "The response explains why the automatic renewal provision matters to Proudert and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "one-year renewals",
+        "cap on fee increases"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "The response states that the licensed site is Proudert's single weaving plant in Greenville, South Carolina.",
+      "kind": "fact",
+      "hints": [
+        "Greenville, South Carolina",
+        "Licensed Site"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "The response is written as a memo to the supervising partner, setting out for each issue its location (document and section), why it matters to Proudert, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "To:",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "The response flags at least one point that cannot be resolved from the documents alone and states what information would be needed to resolve it.",
+      "kind": "format",
+      "hints": [
+        "open items",
+        "information needed",
+        "confirm with client"
+      ]
+    },
+    {
+      "id": "C19",
+      "text": "The response claims that disputes about the SOW No. 1 implementation services are governed by Delaware law and resolved in the Wilmington, Delaware courts.",
+      "kind": "negative",
+      "hints": []
+    },
+    {
+      "id": "C20",
+      "text": "The response claims that the pricing side letter is not binding or does not form part of the parties' agreement.",
+      "kind": "negative",
+      "hints": []
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

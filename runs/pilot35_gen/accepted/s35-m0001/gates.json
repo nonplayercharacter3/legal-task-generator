@@ -1,0 +1,114 @@
+{
+  "matter_id": "s35-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Seller may assign this Agreement, in whole or in part, without the consent of Buyer to any Affiliate or to any Person acquiring all or substantially all of Seller's remaining assets. Any such assignment shall include Seller's obligations under Article VIII (Indemnification) and Section 6.8 (Non-Competition), and upon such assignment Seller shall be released from those obligations.",
+            "reason": "Seller bears the Article VIII indemnity and the Section 6.8 non-compete, and Buyer (the client) is the party those obligations protect. Section 11.5 is lopsided: Buyer needs Seller's consent to assign, but Seller can assign without Buyer's consent to an Affiliate or to an acquirer of its remaining assets, and is then released from both obligations. The clause sets no creditworthiness test for the assignee, no requirement that the assignee not be a competitor, and no continuing guarantee from Seller. Seller could therefore move its indemnity (up to $1.84M, or up to the Purchase Price for fundamental reps) to a thinly capitalized entity, or move the non-compete to a party already in the outerwear market, and walk away. Nothing in the folder fixes this. The Bill of Sale and the board consent are silent on it, and Section 11.9 gives Ancillary Documents precedence only on matters they specifically address. The issue remains actionable: the indemnity survives for 18 months or longer and the non-compete runs for 5 years, and nothing shows Buyer has accepted an assignment by Seller."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Recital 1.4(a)–(b): \"Under Section 14.2 of the Membrane Technology License Agreement, the Company may not assign the license, or any of its rights under it, without the prior written consent of Fjellbrand. This restriction applies ... to any assignment made in connection with a sale of the shell business...\" and \"Under Section 14.3 ... Fjellbrand may terminate the license on written notice if any assignment is made without that consent.\" Resolution 4.2: \"The Authorized Officers may proceed to close without first obtaining the prior written consent of Fjellbrand, and may deliver the Bill of Sale and the other Ancillary Documents at the Closing on that basis.\"",
+            "reason": "The problem is present and it hurts Buyer. Seller's own board acknowledges that the Fjellbrand license, which covers the core membrane technology of the shell line, cannot be assigned without consent and can be terminated if assigned without it. The board then authorizes closing without that consent. The APA does not cure this. Section 4.4 and Schedule 4.4 ('None') say no consent is needed. Section 7.2 has no Fjellbrand consent condition. There is no clause dealing with non-assignable assets. The Bill of Sale nonetheless purports to convey the license on October 30, 2026. Buyer is therefore exposed to Fjellbrand terminating the license. Buyer's remedy is limited to an indemnity claim for breach of Sections 4.3 and 4.4. Those are not fundamental representations, so the claim is subject to the $184,000 basket and the $1,840,000 cap, against an $18.4M price. Exclusive remedy applies under Section 8.6, absent fraud. The issue is still actionable. Nothing in the folder shows Buyer knowingly waived the point or accepted the result. The 18-month survival period is running. Buyer can still seek Fjellbrand's consent, demand further assurances, or pursue an indemnity or fraud claim, since Seller knew of the consent requirement when it gave Section 4.4."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Bill of Sale Section 6.1 provides that the Bill of Sale, \"and any claim, controversy or cause of action arising out of or relating to the conveyance of, or title to, any of the Purchased Assets, are governed by and construed in accordance with the laws of the State of Delaware.\" Section 6.2 adds: \"Any suit, action or proceeding arising out of or relating to this Bill of Sale, or to the conveyance of, or title to, any of the Purchased Assets, shall be brought exclusively in the Court of Chancery of the State of Delaware.\"",
+            "reason": "APA Section 11.7 chooses New York law, and Section 11.8 sends all claims relating to the APA or the transactions it contemplates exclusively to the New York County courts. APA Section 11.9 says Ancillary Documents control \"as to matters specifically addressed therein.\" The Bill of Sale specifically addresses law and forum for title and conveyance claims, so Section 11.9 lets the Delaware clauses override the APA rather than curing the conflict. Stepair is the indemnified party and the likely claimant. Its title claims, including over the Fjellbrand license (assigned without the consent that Seller's board knew was required), would go to Delaware law in Chancery. Its related claims under Article VIII and the Section 4.5 title representation would stay in New York. That split invites duplicated litigation and inconsistent rulings against the Buyer. The signature blocks are blank, nothing records that Stepair accepted the conflicting terms, and the Section 5.1 further assurances mechanism remains available, so the issue is still actionable for the client."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.105,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
