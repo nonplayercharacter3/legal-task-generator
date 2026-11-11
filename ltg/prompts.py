@@ -157,7 +157,9 @@ Rules:
 - Say who the client is and, in general terms, what it needs the review for. Name no party but the client and
   the counterparty: no "other parties involved", no licensor, buyer, guarantor or affiliate. Who else takes part,
   and how, is for the associate to find in the documents.
-- Ask for the deliverable described; say which files to review.
+- Ask for the deliverable described; say which files to review. If the input has `name_no_file`, `files` is only a
+  count: say "the folder" or "the documents" and name no file, filename or document title.
+- If the input has `max_words`, stay under it.
 - You know each file only by its filename and kind. Never state what a document says, who wrote or sent it, or
   when, or which law governs it, and invent no deal events: a guess the documents contradict misleads the
   associate (a real draft called the client's own renewal letter "the counterparty's renewal notice").

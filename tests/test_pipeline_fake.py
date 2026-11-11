@@ -627,3 +627,44 @@ def test_default_settings_omit_new_keys(tmp_path):
     Pipeline(run).run()
     s = json.loads((tmp_path / "settings.json").read_text())
     assert "min_distractors" not in s["spec"] and "instruction" not in s
+
+
+def test_instruction_keys(tmp_path):
+    from ltg.fake import FakeModel
+    from ltg.schema import validate_instruction
+    from ltg.stages import write_instruction
+
+    run = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 5}})
+    Pipeline(run).run()
+    folder = next((tmp_path / "accepted").iterdir())
+    from ltg.schema import Ledger, MatterSpec
+    ledger = Ledger.from_dict(json.loads((folder / "ledger.json").read_text()))
+    spec = MatterSpec.from_dict(json.loads((folder / "spec.json").read_text()))
+    fake = FakeModel(seed=1)
+    default = write_instruction(fake, spec, ledger)
+    assert ledger.documents[0].filename in default  # default: files named, as before
+    short = write_instruction(fake, spec, ledger, name_files=False, max_words=90)
+    assert not validate_instruction(short, ledger, False, 90) and ledger.documents[0].filename not in short
+    assert len(short.split()) <= 90
+    assert validate_instruction(default, ledger, False, 10)  # names a file, and is over 10 words
+    assert not validate_instruction(default, ledger)
+
+    class Stubborn(FakeModel):  # ignores the repair: send back once, then leak_check rejects
+        calls = 0
+
+        def _instruction_writer(self, p):
+            Stubborn.calls += 1
+            return {"instruction": default}
+
+    assert write_instruction(Stubborn(seed=1), spec, ledger, name_files=False) == default and Stubborn.calls == 2
+    from ltg import gates
+    g = gates.leak_check(default, ledger, {}, name_files=False)
+    assert not g.passed and g.details["instruction_form"]
+
+    v2 = load_config(None, {"run": {"out_dir": str(tmp_path / "v2"), "n_matters": 2, "seed": 5}, "instruction": {"name_files": False, "max_words": 90}})
+    Pipeline(v2).run()
+    assert json.loads((tmp_path / "v2" / "settings.json").read_text())["instruction"] == {"name_files": False, "max_words": 90}
+    for d in (tmp_path / "v2" / "accepted").iterdir():
+        led = Ledger.from_dict(json.loads((d / "ledger.json").read_text()))
+        assert not validate_instruction((d / "instruction.md").read_text(), led, False, 90)
+

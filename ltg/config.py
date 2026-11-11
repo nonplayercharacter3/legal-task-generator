@@ -55,6 +55,12 @@ class SpecCfg:
 
 
 @dataclass
+class InstructionCfg:
+    name_files: bool = True  # false: the instruction says "the folder", never a file name
+    max_words: int = 0  # 0 = no limit
+
+
+@dataclass
 class GatesCfg:
     solver_attempts: int = 3
     # Roles that label difficulty, each making solver_attempts attempts; the first is the default solver. Route each
@@ -105,6 +111,7 @@ class Config:
     backend: BackendCfg = field(default_factory=BackendCfg)
     fake: FakeCfg = field(default_factory=FakeCfg)
     spec: SpecCfg = field(default_factory=SpecCfg)
+    instruction: InstructionCfg = field(default_factory=InstructionCfg)
     gates: GatesCfg = field(default_factory=GatesCfg)
     splits: SplitsCfg = field(default_factory=SplitsCfg)
     sources: SourcesCfg = field(default_factory=SourcesCfg)

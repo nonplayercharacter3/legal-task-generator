@@ -13,7 +13,7 @@ from typing import Any, Callable
 from . import prompts
 from .decontam import BloomIndex
 from .models import ModelClient, call_json, render_input
-from .schema import Answers, Ledger, MatterSpec, Rubric, bundling_errors, validate_answers, validate_ledger, validate_rubric
+from .schema import Answers, Ledger, MatterSpec, Rubric, bundling_errors, validate_answers, validate_instruction, validate_ledger, validate_rubric
 from .solver import Solution, solve
 from .stages import Documents, judge, judge_with_reasons
 
@@ -77,7 +77,7 @@ def _words(s: str) -> str:
     return " " + " ".join(re.findall(r"[a-z0-9]+", s.lower())) + " "
 
 
-def leak_check(instruction: str, ledger: Ledger, docs: Documents) -> GateResult:
+def leak_check(instruction: str, ledger: Ledger, docs: Documents, name_files: bool = True, max_words: int = 0) -> GateResult:
     """Nothing the solver sees outside the document text may name an issue or quote its multi-word detect terms.
 
     That covers the instruction, and the filenames and document kinds, which the ledger writer chose while
@@ -91,8 +91,12 @@ def leak_check(instruction: str, ledger: Ledger, docs: Documents) -> GateResult:
                 if _words(phrase).strip() and _words(phrase) in _words(text):
                     hits.append({"issue": i.id, "phrase": phrase, "in": where})
     comments = sorted(n for n, c in docs.items() if "<!--" in c)
-    passed = bool(instruction.strip()) and not hits and not comments
-    return GateResult("leak_check", passed, {"hits": hits, "html_comments": comments, "empty": not instruction.strip()})
+    form = validate_instruction(instruction, ledger, name_files, max_words)  # file names, length (v2 settings only)
+    passed = bool(instruction.strip()) and not hits and not comments and not form
+    details = {"hits": hits, "html_comments": comments, "empty": not instruction.strip()}
+    if form:
+        details["instruction_form"] = form
+    return GateResult("leak_check", passed, details)
 
 
 def rubric_trace(rubric: Rubric, ledger: Ledger, answers: Answers, bundling: str = "warn", repair: dict | None = None) -> GateResult:

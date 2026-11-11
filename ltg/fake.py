@@ -254,6 +254,12 @@ class FakeModel:
 
     def _instruction_writer(self, p: dict) -> dict:
         m, files = p["matter"], p["files"]
+        if p.get("name_no_file"):
+            text = (
+                f"Our client, {m['client']}, is reviewing its {m['agreement_type']} with {m['counterparty']}. "
+                f"Please review the documents in the folder and prepare {m['deliverable']}."
+            )
+            return {"instruction": text}
         listing = ", ".join(f["filename"] for f in files)
         text = (
             f"Our client, {m['client']}, is reviewing its {m['agreement_type']} ahead of a board meeting next week "

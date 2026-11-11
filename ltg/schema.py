@@ -346,3 +346,16 @@ def validate_answers(answers: Answers, ledger: Ledger) -> list[str]:
         if i not in issue_ids:
             errs.append(f"flawed_omits names unknown issue {i}")
     return errs
+
+
+def validate_instruction(text: str, ledger: Ledger, name_files: bool = True, max_words: int = 0) -> list[str]:
+    errs: list[str] = []
+    if max_words and len(text.split()) > max_words:
+        errs.append(f"{len(text.split())} words; the limit is {max_words}")
+    if not name_files:
+        low = text.lower()
+        for d in ledger.documents:
+            stem = d.filename.rsplit(".", 1)[0].lower()
+            if d.filename.lower() in low or (("_" in stem or "-" in stem) and stem in low):
+                errs.append(f"names the file {d.filename}; say \"the folder\" instead")
+    return errs
