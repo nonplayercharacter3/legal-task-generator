@@ -1,0 +1,121 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response identifies that, read together, the TSA indemnity from Recipient (Trouseind) to Provider (Reitaisk) covers Losses including Provider's own negligence and is excluded from the liability cap, leaving Trouseind with unlimited liability for Reitaisk's own negligence. It locates this in TSA Sections 8.1 and 9.2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "including any negligence of Provider",
+        "other than Article VIII",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the Escrow Agreement defines Fundamental Representation Claims more narrowly (Sections 3.1, 3.2 and 3.3 only) than the SPA's Seller Fundamental Representations, so the $3,000,000 Extended Holdback does not secure claims under the Tax (3.14) and Food Safety (3.17) representations. It locates this in Escrow Agreement Section 1.1 and/or 5.3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "Fundamental Representation Claims",
+        "3.14 and 3.17",
+        "Extended Holdback"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the TSA lets Provider (Reitaisk) assign or delegate the TSA to any person without Trouseind's consent. It locates this in TSA Section 12.3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "Provider may assign",
+        "without Recipient's consent",
+        "Section 12.3"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Escrow Agreement's Delaware governing law and exclusive Delaware Court of Chancery forum conflict with the SPA's New York law and New York County forum. It locates this in Escrow Agreement Section 10.2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "Delaware",
+        "Court of Chancery",
+        "New York County"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the side letter's nine-month survival for the Tax representation and the Pre-Closing Taxes indemnity expires (around December 31, 2026) before Seller's 2026 consolidated tax return covering the Company is even due. It locates this in Section 2 of the side letter, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I5",
+      "hints": [
+        "nine (9) months",
+        "December 31, 2026",
+        "April 15, 2027"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the SPA's order of precedence gives the Escrow Agreement control over disbursement of Escrow Funds.",
+      "kind": "fact",
+      "source": "F5",
+      "hints": [
+        "Section 11.10",
+        "governs disbursement of Escrow Funds"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the SPA is governed by New York law.",
+      "kind": "fact",
+      "source": "F3",
+      "hints": [
+        "New York law",
+        "Section 11.8"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo whose issues are ordered with the items that matter most to the client first.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "memo",
+        "priority",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "For each issue it lists, the response gives the document and section where it appears, why it matters for Trouseind, and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Location",
+        "Why it matters",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the side letter's nine-month survival period for the Tax representation is at least as protective for Trouseind as the SPA Section 9.1 tax survival period.",
+      "kind": "negative",
+      "source": "F10",
+      "hints": [
+        "consistent with the SPA",
+        "no change to tax protection"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the Escrow Agreement's definition of Fundamental Representation Claims includes the SPA Section 3.14 Tax representation.",
+      "kind": "negative",
+      "source": "I2",
+      "hints": [
+        "includes Section 3.14",
+        "covers tax claims"
+      ]
+    }
+  ]
+}

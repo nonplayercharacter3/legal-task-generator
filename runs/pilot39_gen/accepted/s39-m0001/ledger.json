@@ -1,0 +1,212 @@
+{
+  "matter_id": "s39-m0001",
+  "summary": "Trouseind Provisioning Group, Inc. (buyer, the firm's client) proposes to buy all outstanding stock of Cobbelly Inflight Kitchens, Inc. from Reitaisk Aviation Services, Inc. Cobbelly is a regional airline catering company running flight kitchens at three Midwest airports. The purchase price is $86,400,000, with $8,640,000 placed in escrow, and the target Closing Date is March 31, 2026. The folder holds pre-signing drafts circulated in February 2026: the Stock Purchase Agreement (New York law, exclusive New York County forum), an Escrow Agreement with Lanterwick Trust Company, N.A., a Transition Services Agreement under which Reitaisk will keep producing meals for Cobbelly's airline customers from its Milwaukee commissary, and a Seller-proposed side letter amending tax survival. A broker cover letter enclosing Cobbelly's insurance certificates is also included. Five issues are planted. In the TSA, an indemnity covering Provider's own negligence is carved out of the cap, and Provider may assign freely. In the Escrow Agreement, a narrower 'Fundamental Representation Claims' definition controls disbursement through the SPA precedence clause, and Delaware law and forum govern escrow disputes. In the side letter, tax survival ends before Seller's 2026 consolidated return covering the Company is even due.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Trouseind Provisioning Group, Inc.",
+      "role": "Buyer under the Stock Purchase Agreement; Recipient under the Transition Services Agreement; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Reitaisk Aviation Services, Inc.",
+      "role": "Seller under the Stock Purchase Agreement; Provider under the Transition Services Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Cobbelly Inflight Kitchens, Inc.",
+      "role": "Company whose shares are being sold; regional airline catering operator"
+    },
+    {
+      "id": "P4",
+      "name": "Lanterwick Trust Company, N.A.",
+      "role": "Escrow Agent under the Escrow Agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Pembury & Vane Insurance Brokers, LLC",
+      "role": "Company's insurance broker; author of the insurance certificate cover letter"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Purchase Price",
+      "value": "$86,400,000",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Escrow Amount",
+      "value": "$8,640,000, including a $3,000,000 Extended Holdback Amount",
+      "doc": "D1",
+      "section": "2.4"
+    },
+    {
+      "id": "F3",
+      "key": "SPA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "11.8"
+    },
+    {
+      "id": "F4",
+      "key": "SPA exclusive forum",
+      "value": "State or federal courts in New York County, New York, including for Transaction Document disputes",
+      "doc": "D1",
+      "section": "11.9"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "SPA prevails over Transaction Documents, except Escrow Agreement governs disbursement of Escrow Funds",
+      "doc": "D1",
+      "section": "11.10"
+    },
+    {
+      "id": "F6",
+      "key": "SPA target Closing Date",
+      "value": "March 31, 2026",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F7",
+      "key": "SPA general representation survival period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "9.1"
+    },
+    {
+      "id": "F8",
+      "key": "SPA Seller Fundamental Representations",
+      "value": "Sections 3.1, 3.2, 3.3, 3.14 (Taxes) and 3.17 (Food Safety and Regulatory Compliance)",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F9",
+      "key": "SPA general indemnity cap",
+      "value": "10% of the Purchase Price ($8,640,000)",
+      "doc": "D1",
+      "section": "9.5"
+    },
+    {
+      "id": "F10",
+      "key": "SPA Tax representation and Pre-Closing Tax indemnity survival",
+      "value": "60 days after expiration of the applicable statute of limitations",
+      "doc": "D1",
+      "section": "9.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_trouseind_reitaisk.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement_lanterwick.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_side_letter_tax_survival.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "insurance_certificate_cover_letter_cobbelly.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Two TSA provisions combine to make Trouseind's exposure unlimited. TSA Section 8.1 has Trouseind, as Recipient, indemnify Reitaisk, as Provider, for all Losses arising out of the provision or receipt of the Services, expressly 'including any negligence of Provider'. That covers contamination or allergen incidents in meals Reitaisk produces at its Milwaukee commissary for Cobbelly's airline customers. TSA Section 9.2 caps each party's liability at the TSA fees 'other than Article VIII' obligations, so the Section 8.1 indemnity is uncapped. Provider's reciprocal indemnity in Section 8.2 reaches only Provider's gross negligence or willful misconduct. Under New York law, an indemnity for the indemnitee's own negligence is enforceable when the intent is unmistakably clear, as it is here. Trouseind would therefore carry unlimited liability for Reitaisk's own ordinary negligence in food production.",
+      "doc": "D3",
+      "section": "8.1 and 9.2",
+      "detect_terms": [
+        "including any negligence of Provider",
+        "other than Article VIII"
+      ],
+      "expected_finding": "Read together, TSA Section 8.1 (Recipient indemnifies Provider for Losses including Provider's own negligence) and Section 9.2 (cap carves out Article VIII) expose Trouseind to unlimited liability for Reitaisk's own negligent meal production, which New York will enforce as clearly expressed. The indemnity should be limited to Recipient's own negligence or misconduct and brought under the cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "The two documents define the key term differently, and the narrower definition controls. SPA Section 1.1 defines Seller Fundamental Representations to include Sections 3.1, 3.2, 3.3, 3.14 (Taxes) and 3.17 (Food Safety and Regulatory Compliance). SPA Section 2.4 states that the $3,000,000 Extended Holdback secures claims for breach of the Seller Fundamental Representations. Escrow Agreement Section 1.1 instead defines 'Fundamental Representation Claims' as claims for breach of 'Sections 3.1, 3.2 and 3.3 of the Purchase Agreement'. Escrow Agreement Section 5.3 makes the Extended Holdback available solely for Fundamental Representation Claims. SPA Section 11.10 provides that the Escrow Agreement governs disbursement of Escrow Funds, so the narrower escrow definition controls. As a result, tax and food-safety claims brought after the 12-month Initial Release Date cannot be paid from the holdback. Trouseind would have to pursue Reitaisk directly with no security.",
+      "doc": "D2",
+      "section": "1.1 and 5.3",
+      "detect_terms": [
+        "Sections 3.1, 3.2 and 3.3 of the Purchase Agreement"
+      ],
+      "expected_finding": "Because SPA Section 11.10 lets the Escrow Agreement govern disbursement, the escrow's narrower definition of Fundamental Representation Claims (Sections 3.1–3.3 only) strips the $3,000,000 Extended Holdback of its intended coverage of the Tax (3.14) and Food Safety (3.17) representations. The escrow definition should cross-refer to the SPA definition of Seller Fundamental Representations.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 12.3 bars Trouseind from assigning without Reitaisk's consent. It also provides that 'Provider may assign' or delegate the TSA, in whole or in part, to any Person without Recipient's consent. Reitaisk could therefore hand meal production for Cobbelly's airline customers, and access to Cobbelly's menus, customer specifications and pricing shared under the TSA, to a competing airline caterer or an unvetted subcontractor. Trouseind would have no consent right and no termination right.",
+      "doc": "D3",
+      "section": "12.3",
+      "detect_terms": [
+        "Provider may assign"
+      ],
+      "expected_finding": "TSA Section 12.3 lets Reitaisk assign or delegate the TSA to anyone, including a competing caterer, without Trouseind's consent. It should be made mutual: consent required, with no assignment to competitors, and Trouseind given a termination right on any change of provider.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "SPA Sections 11.8 and 11.9 choose New York law and an exclusive New York County forum for disputes under the SPA and any Transaction Document. Escrow Agreement Section 10.2 instead applies the 'laws of the State of Delaware'. It also gives the 'Court of Chancery of the State of Delaware' exclusive jurisdiction over any dispute about disbursement of, or entitlement to, Escrow Funds, including whether a Claim is valid. SPA Section 11.10 makes the Escrow Agreement govern disbursement of Escrow Funds, so the Delaware clause controls escrow disputes. Trouseind would then have to establish Seller's breach in New York and fight over release of the escrow in Delaware. That means duplicative proceedings, a risk of inconsistent rulings and delayed recovery.",
+      "doc": "D2",
+      "section": "10.2",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery of the State of Delaware"
+      ],
+      "expected_finding": "Escrow Agreement Section 10.2's Delaware law and exclusive Chancery forum conflict with SPA Sections 11.8–11.9 (New York law and forum), and SPA Section 11.10 lets the escrow clause control escrow disputes. This splits Trouseind's indemnity recovery across two forums. The Escrow Agreement should adopt New York law and the New York County forum.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Seller's draft side letter dated February 20, 2026 is drafted as an amendment under SPA Section 11.6. Its Section 2 cuts survival of the Section 3.14 Tax representation and the Section 9.2(c) Pre-Closing Taxes indemnity to 'nine (9) months after the Closing Date'. Measured from the March 31, 2026 Closing Date stated in SPA Section 3.1, survival ends December 31, 2026. SPA Section 6.8 has Seller prepare and file its 2026 consolidated federal income Tax Return, which includes the Company through the Closing Date, by its due date including extensions. That return is not due until April 15, 2027 (October 15, 2027 if extended). Survival therefore expires before the pre-closing tax return is even filed, and long before any audit could surface a deficiency. The side letter is still an unsigned Seller proposal, so the point can be rejected.",
+      "doc": "D4",
+      "section": "2",
+      "detect_terms": [
+        "nine (9) months after the Closing Date"
+      ],
+      "expected_finding": "The side letter's nine-month survival for the Tax representation and the Pre-Closing Taxes indemnity ends December 31, 2026, measured from the March 31, 2026 Closing Date. Under SPA Section 6.8 Seller's 2026 consolidated return is not due until April 15, 2027, so tax claims become practically impossible. Trouseind should reject the side letter and keep SPA Section 9.1's survival to 60 days after the statute of limitations.",
+      "contradicts": "F10"
+    }
+  ]
+}

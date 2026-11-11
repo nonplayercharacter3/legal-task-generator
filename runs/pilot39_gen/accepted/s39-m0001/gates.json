@@ -1,0 +1,128 @@
+{
+  "matter_id": "s39-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 8.1: \"Recipient shall indemnify, defend and hold harmless Provider ... from and against all Losses arising out of or relating to the provision or receipt of the Services, including any negligence of Provider. The only exception is Losses for which Provider is obligated to indemnify the Recipient Indemnitees under Section 8.2.\" Section 9.2: \"The aggregate liability of each party under this Agreement, other than Article VIII obligations, shall not exceed the total Fees paid and payable under this Agreement.\"",
+            "reason": "Trouseind, as Recipient, is the party giving the broad Section 8.1 indemnity. That indemnity expressly covers Provider's own ordinary negligence, so it would reach contamination or allergen incidents in meals Reitaisk produces at the Milwaukee Commissary. Provider's reciprocal indemnity in Section 8.2 covers only gross negligence or willful misconduct. Section 9.2 carves Article VIII out of the cap, so Trouseind's indemnity is unlimited. Section 9.1 also exempts third-party indemnity amounts from the consequential-damages exclusion, which widens the exposure further. Nothing else in the folder cures or limits this. Seller's SPA indemnity under Section 9.2 covers pre-Closing matters and SPA breaches, not post-Closing TSA production losses. The insurance requirements in Section 7 cover Provider's own liability and do not cap Trouseind's indemnity. The TSA is still an unsigned draft, so the point remains actionable and should be negotiated before Closing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Escrow Agreement §1.1: \"'Fundamental Representation Claims' means Claims for any inaccuracy in or breach of the representations and warranties of Seller set forth in Sections 3.1, 3.2 and 3.3 of the Purchase Agreement.\" §5.3(a): \"The Extended Holdback Amount shall be available solely for Fundamental Representation Claims ... The Escrow Agent shall not disburse any portion of the Extended Holdback Amount to Buyer for any other Claim.\"",
+            "reason": "The escrow definition is narrower than the deal the SPA describes, and the escrow version controls payment out of the holdback. SPA §1.1 defines Seller Fundamental Representations to include §3.14 (Taxes) and §3.17 (Food Safety). SPA §2.4 and §9.6(b) say the $3,000,000 Extended Holdback secures those claims and Pre-Closing Tax claims under §9.2(c). The escrow definition covers only §§3.1–3.3, and §5.3(a) bars payment from the holdback for any other Claim. SPA §11.10 says the Escrow Agreement governs disbursement of the Escrow Funds, and §6.1 states the Escrow Agent is not bound by the SPA. After the General Escrow Amount is released at 12 months, Buyer's tax and food-safety claims would have no escrow security. Buyer would have to pursue Seller directly. Nothing in the folder fixes this. The seller side letter, which would shorten tax survival to 9 months, is an unexecuted seller draft. Even if it were signed, it would not address food-safety claims. The Escrow Agreement is still an unsigned draft exhibit, and nothing shows Buyer accepted the narrower definition. The point therefore remains actionable for Buyer, either by revising the draft or, if it has been signed, by amendment under §10.4."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 12.3: \"Recipient may not assign or delegate this Agreement or any of its rights or obligations hereunder without the prior written consent of Provider. Provider may assign or delegate this Agreement, or any of its rights or obligations hereunder, in whole or in part, to any Person without the consent of Recipient.\"",
+            "reason": "The problem is present and hurts Trouseind, the Recipient. Reitaisk, as Provider, can assign or delegate the TSA, in whole or in part, to any Person with no consent, vetting or notice requirement. Meanwhile Trouseind cannot assign at all without Reitaisk's consent. Nothing else in the folder cures this. Section 12.2 only requires that meal production stay at the Milwaukee Commissary; it does not restrict who performs it. The Article VI confidentiality duties and the SPA 6.2 non-compete bind Reitaisk and its Affiliates, not an unaffiliated assignee such as a competing caterer. The SPA itself bars Seller from assigning without consent, which makes the TSA carve-out an outlier. Trouseind can terminate for convenience on 30 days' notice under Section 11.1, so the issue's claim of 'no termination right' is overstated. That right is not a real remedy, though: Trouseind would lose the transitional meal production it depends on. The TSA is still an unsigned draft, so the point remains open to negotiate."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Escrow Agreement §10.2: \"This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware ... The Court of Chancery of the State of Delaware shall have exclusive jurisdiction over any suit, action or proceeding arising out of or relating to this Agreement. This includes any dispute concerning the disbursement of, or entitlement to, the Escrow Funds, including whether a Claim is valid.\" Compare SPA §11.9: \"Any legal suit, action or proceeding arising out of or based upon this Agreement, any other Transaction Document ... shall be instituted exclusively in the state or federal courts in New York County, New York, including for Transaction Document disputes.\" SPA §11.10: \"the Escrow Agreement shall govern the disbursement of the Escrow Funds.\"",
+            "reason": "The SPA defines the Escrow Agreement as a Transaction Document. SPA §11.9 sends all Transaction Document disputes exclusively to New York County courts, and §11.8 chooses New York law. Escrow §10.2 instead chooses Delaware law and makes the Delaware Court of Chancery the exclusive forum for escrow disbursement disputes, expressly including 'whether a Claim is valid.' SPA §11.10 lets the Escrow Agreement control disbursement, so the Delaware clause would likely govern escrow fights. Buyer is the party asserting Claims against the escrow. It would therefore have to prove Seller's breach and indemnity liability under the SPA in New York, then obtain a Final Order on release of escrow funds in Delaware. That creates two forums, conflicting exclusive-jurisdiction clauses, a risk of inconsistent rulings and delayed recovery, all of which hurt Buyer. The documents are drafts dated before the March 31, 2026 closing date, and nothing in the folder shows the provision was accepted, waived or cured. The issue therefore remains actionable for the client."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 2.1 of the side letter replaces SPA Section 9.1(b) with: \"(b) The representations and warranties in Section 3.14 (Taxes) and the obligations of Seller under Section 9.2(c) (Pre-Closing Taxes) shall survive the Closing until the date that is nine (9) months after the Closing Date.\" Section 2.3 ties the Closing Date to the March 31, 2026 date in SPA Section 3.1(c).",
+            "reason": "Trouseind is Buyer. Reitaisk, as Seller, gives the Section 3.14 tax representation and the Section 9.2(c) Pre-Closing Taxes indemnity, so a shorter survival period hurts the client. The current SPA keeps both alive until 60 days after the statute of limitations expires. The side letter cuts that to nine months, which ends December 31, 2026 on a March 31, 2026 Closing. Under SPA Section 6.8(a), Seller files its 2026 consolidated return, which covers the Company through the Closing Date. That return is not due until April 15, 2027, or October 15, 2027 if extended. Survival would therefore end before that return is filed and before any audit could find a deficiency. The cut also undercuts the three-year Extended Holdback, which SPA Section 2.4 earmarks partly for Pre-Closing Taxes. Nothing in the folder cures or limits the cut. The letter is still an unsigned Seller draft marked \"subject to Buyer review,\" and nothing shows Buyer agreed to it. The client can still reject it, and even if it had been signed, the December 31, 2026 cutoff has not yet passed. The point remains actionable."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F3, which only issue I4 uses: a memo that misses I4 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.09,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

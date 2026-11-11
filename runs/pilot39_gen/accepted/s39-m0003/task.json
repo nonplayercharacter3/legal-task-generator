@@ -1,0 +1,209 @@
+{
+  "task_id": "s39-m0003",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Laimul Baking Holdings, Inc. in its acquisition from Dekes Family Bakeries, LLC under a stock purchase agreement. Laimul is the buyer and is also the maker of the seller note. Before we advise the client on its position and next steps, I need a clear picture of where the deal documents leave it exposed. Please review the four files in the matter folder: the stock purchase agreement (laimul_hearthline_stock_purchase_agreement.md), the amended and restated escrow agreement (amended_restated_escrow_agreement.md), the seller promissory note (seller_promissory_note.md), and the mutual NDA (laimul_dekes_mutual_nda.md). Prepare a memo to me listing each issue you identify. For each one, state where it appears (document and section), explain why it matters for Laimul, and give a recommended fix. Rank the issues so the ones with the most commercial or legal consequence come first. If you have to make an assumption because something in the documents is unclear, say so in the memo. Don't paper over it.",
+  "documents": [
+    "amended_restated_escrow_agreement.md",
+    "laimul_dekes_mutual_nda.md",
+    "laimul_hearthline_stock_purchase_agreement.md",
+    "seller_promissory_note.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the general representations, including the food safety/product recall representation, survive only until about January 1, 2027 (six months after the July 1, 2026 Closing), and that a claim is preserved only if Buyer has actually commenced a lawsuit/Action by then, not merely given notice.",
+      "kind": "issue",
+      "hints": [
+        "six months after the Closing Date",
+        "January 1, 2027",
+        "commenced an Action"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the survival issue in the Stock Purchase Agreement, Section 9.1 (9.1(a) and/or 9.1(c)).",
+      "kind": "issue",
+      "hints": [
+        "Section 9.1(a)",
+        "Section 9.1(c)"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "For the survival issue, the response explains why it matters to Laimul and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "file suit before",
+        "extend survival"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that the Pellucid Grocers Co-Manufacturing and Supply Agreement requires Pellucid's consent to a change of control, that the July 1, 2026 sale triggered this requirement, and that the consent was never obtained (it was not listed on Schedule 4.4), so Pellucid can terminate on 30 days' notice.",
+      "kind": "issue",
+      "hints": [
+        "Pellucid's prior written consent",
+        "Schedule 4.4",
+        "38%"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response locates the Pellucid consent issue in the Stock Purchase Agreement Disclosure Schedules (Schedule 4.9(a)(iii) and/or Schedule 4.4).",
+      "kind": "issue",
+      "hints": [
+        "Schedule 4.9(a)(iii)",
+        "Schedule 4.4"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "For the Pellucid consent issue, the response explains why it matters to Laimul and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "seek Pellucid's consent",
+        "waiver"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response concludes that Buyer's September 28, 2026 working-capital dispute notice was late under the 30-day Notice of Disagreement window running from the August 25, 2026 Closing Statement delivery (which closed on about September 24, 2026), so Seller may treat its Closing Statement as final and binding.",
+      "kind": "issue",
+      "hints": [
+        "September 28, 2026",
+        "September 24, 2026",
+        "final and binding"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response locates the late-notice issue in the Amended and Restated Escrow Agreement recitals (Recitals C and/or D) and/or Stock Purchase Agreement Section 2.4.",
+      "kind": "issue",
+      "hints": [
+        "Recital C",
+        "Recital D",
+        "Section 2.4(b)"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "For the late-notice issue, the response explains why it matters to Laimul and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "written waiver",
+        "$750,000 Adjustment Escrow"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response concludes that Dekes can assign or transfer the Seller Note to any person, including a competitor, without Laimul's consent, and that the assignee would then receive Laimul's financial statements and customer-level sales information under the Note's information covenant.",
+      "kind": "issue",
+      "hints": [
+        "without the consent of Maker",
+        "competitor",
+        "customer-level sales reports"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response locates the assignment issue in the Seller Promissory Note, Section 9.2 (with or without reference to Section 6.1).",
+      "kind": "issue",
+      "hints": [
+        "Section 9.2",
+        "Section 6.1"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "For the Note assignment issue, the response explains why it matters to Laimul and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "require Maker's consent",
+        "bar transfers to competitors"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response concludes that the Seller Note's narrower definition of Losses, which excludes attorneys' fees, diminution in value and product withdrawal or recall costs, governs set-off against the Note, so Buyer cannot set off recall and similar indemnity losses against Note payments despite the broader SPA definition.",
+      "kind": "issue",
+      "hints": [
+        "as defined in this Note",
+        "excluding attorneys' fees",
+        "product withdrawal or recall"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response locates the set-off issue in the Seller Promissory Note, Section 4.2 and/or its Section 1 definition of Losses.",
+      "kind": "issue",
+      "hints": [
+        "Section 4.2",
+        "Section 1"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "For the set-off issue, the response explains why it matters to Laimul and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "conform the definition",
+        "amend the Note"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "The response states that the Stock Purchase Agreement was signed and closed on July 1, 2026.",
+      "kind": "fact",
+      "hints": [
+        "July 1, 2026",
+        "Closing Date"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "The response is a memo addressed to the supervising partner that presents each issue separately, with its location, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "The response ranks or orders the issues by commercial or legal consequence, with the most significant first.",
+      "kind": "format",
+      "hints": [
+        "ranked",
+        "most significant",
+        "priority"
+      ]
+    },
+    {
+      "id": "C19",
+      "text": "The response claims that Buyer's September 28, 2026 Notice of Disagreement was timely under the Stock Purchase Agreement.",
+      "kind": "negative",
+      "hints": [
+        "timely",
+        "within the 30-day period"
+      ]
+    },
+    {
+      "id": "C20",
+      "text": "The response claims that the food safety / product recall representation (Section 4.15) is a Fundamental Representation.",
+      "kind": "negative",
+      "hints": [
+        "Fundamental Representation",
+        "Section 4.15"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

@@ -1,0 +1,224 @@
+{
+  "task_id": "s39-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "master services agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Zaseil Technical Fabrics, Inc., the customer under its master services agreement with Prodous Coating Services LLC for FR coating work on Zaseil's industrial fabrics. Zaseil wants a clear picture of where it stands under this contract package before it relies on it further, and I'd like your review to give it that. Please review the full matter folder: the MSA (zaseil_prodous_master_services_agreement.md), SOW No. 1 for FR coating services (sow_01_fr_coating_services.md), the parent guaranty (prodous_parent_guaranty.md), Order Form 03 (order_form_03.md), and the mutual NDA (zaseil_prodous_mutual_nda.md). Prepare a memo to me that lists each issue you identify. For each one, state where it appears (document and section), explain why it matters for Zaseil, and give a recommended fix. Please rank the issues so the most significant come first. Where a fix needs Prodous's agreement, or the agreement of anyone else who is party to these documents, say so. Flag anything you could not resolve from the documents alone, along with what we would need from the client to close it out.",
+  "documents": [
+    "order_form_03.md",
+    "prodous_parent_guaranty.md",
+    "sow_01_fr_coating_services.md",
+    "zaseil_prodous_master_services_agreement.md",
+    "zaseil_prodous_mutual_nda.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Prodous may assign the MSA or any SOW to any person without Zaseil's consent, including a Zaseil competitor.",
+      "kind": "issue",
+      "hints": [
+        "without Customer's consent",
+        "assign to a competitor",
+        "Section 14.2"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the unrestricted assignment issue in MSA Section 14.2.",
+      "kind": "issue",
+      "hints": [
+        "MSA Section 14.2",
+        "Section 14.2"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response explains why Prodous's unrestricted assignment right matters to Zaseil.",
+      "kind": "issue",
+      "hints": [
+        "competitor",
+        "know-how",
+        "credit support"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response recommends a fix for Prodous's unrestricted assignment right.",
+      "kind": "issue",
+      "hints": [
+        "prior written consent",
+        "amend Section 14.2"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the Parent Guaranty's 45-day Demand window, measured from the August 3, 2026 Default Notice, expired on or about September 17, 2026 without a Demand, so the Guarantor can argue it is released for the Lot 2207 claims.",
+      "kind": "issue",
+      "hints": [
+        "45 days",
+        "September 17, 2026",
+        "no Demand"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response locates the expired Demand window issue in Parent Guaranty Section 4.",
+      "kind": "issue",
+      "hints": [
+        "Guaranty Section 4",
+        "Section 4"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response explains why the expired Demand window matters to Zaseil.",
+      "kind": "issue",
+      "hints": [
+        "lose guaranty",
+        "Lot 2207",
+        "parent recourse"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response recommends a fix or next step for the expired Demand window.",
+      "kind": "issue",
+      "hints": [
+        "serve a Demand",
+        "reservation of rights",
+        "waiver"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response identifies that SOW No. 1 makes Prodous's third-party bodily injury and property damage indemnity subject to the Liability Cap, and that this SOW provision controls over the MSA's carve-out.",
+      "kind": "issue",
+      "hints": [
+        "shall be subject to the Liability Cap",
+        "Section 11.3(a)",
+        "SOW prevails"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response locates the liability cap carve-out issue in SOW No. 1 Section 9.2.",
+      "kind": "issue",
+      "hints": [
+        "SOW No. 1 Section 9.2",
+        "Section 9.2"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response explains why capping the third-party injury and property damage indemnity matters to Zaseil.",
+      "kind": "issue",
+      "hints": [
+        "fire injury",
+        "FR failure",
+        "uncovered exposure"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response recommends a fix for the SOW's capping of the third-party indemnity.",
+      "kind": "issue",
+      "hints": [
+        "delete Section 9.2",
+        "restore the carve-out"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response identifies that Zaseil's pending merger with Kestrel Fiberworks Group is a Change of Control treated as an assignment requiring Prodous's prior written consent, which has not been obtained.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "deemed an assignment by Customer",
+        "Kestrel"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response locates the change of control consent issue in MSA Section 14.3.",
+      "kind": "issue",
+      "hints": [
+        "MSA Section 14.3",
+        "Section 14.3"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "The response explains why the change of control consent requirement matters to Zaseil.",
+      "kind": "issue",
+      "hints": [
+        "terminate",
+        "Early Termination Fee",
+        "closing"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "The response recommends a fix for the change of control consent requirement.",
+      "kind": "issue",
+      "hints": [
+        "obtain written consent",
+        "before closing",
+        "waive Section 14.3"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "The response states that Prodous Industrial Holdings, Inc. is the Guarantor under the Parent Guaranty.",
+      "kind": "fact",
+      "hints": [
+        "Prodous Industrial Holdings",
+        "Guarantor",
+        "parent guaranty"
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "The response is in the form of a memo addressed to the supervising partner, with the issues ranked or ordered by significance.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "ranked"
+      ]
+    },
+    {
+      "id": "C19",
+      "text": "The response states, for at least one recommended fix, that it requires the agreement of Prodous or another party to the documents (such as the Guarantor).",
+      "kind": "format",
+      "hints": [
+        "requires Prodous's agreement",
+        "Guarantor consent",
+        "negotiate with Prodous"
+      ]
+    },
+    {
+      "id": "C20",
+      "text": "The response claims that the Guaranty Demand window for the August 3, 2026 default is still open or that a Demand made now would be timely under Guaranty Section 4.",
+      "kind": "negative",
+      "hints": [
+        "window still open",
+        "Demand remains timely"
+      ]
+    },
+    {
+      "id": "C21",
+      "text": "The response claims that Prodous's third-party bodily injury and property damage indemnity under SOW No. 1 remains uncapped because the MSA carve-out prevails over the SOW.",
+      "kind": "negative",
+      "hints": [
+        "remains uncapped",
+        "MSA prevails over SOW"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

@@ -1,0 +1,123 @@
+{
+  "matter_id": "s39-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "MSA Section 14.2: \"Provider may assign or transfer the Agreement or any SOW, in whole or in part, to any person without Customer's consent, upon written notice to Customer.\" Parent Guaranty Section 6.2: \"This Guaranty terminates automatically, without further action by any person, on any assignment or transfer by Provider of the Agreement or any SOW that is permitted under the MSA.\"",
+            "reason": "The assignment rights are one-sided. Customer needs Provider's consent to assign (Section 14.1), and a Change of Control of Customer counts as an assignment (Section 14.3). Provider needs no consent and can assign to anyone. Nothing in the MSA, SOW No. 1 or Order Form No. 3 limits who the assignee can be. There is no carve-out for competitors, no financial-strength or creditworthiness test, and no assumption-of-obligations requirement. Because any such assignment is \"permitted under the MSA,\" Guaranty Section 6.2 ends the parent guaranty automatically, even for a partial assignment. The guaranty would then also stop covering the open Lot 2207 default. Assignment would also hand Customer Process Information and volumes to the assignee, while Customer stays bound to the $2.4M Minimum Annual Commitment. Nothing in the folder cures or limits this. The issue is still actionable for Zaseil: it can seek an amendment under MSA 16.6 and Guaranty 11.3, and it should make a Demand on the Guarantor for Lot 2207 before any assignment."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 4.1: \"Guarantor is liable for a Guaranteed Obligation only if Beneficiary delivers a Demand to Guarantor within forty-five (45) days after Beneficiary first notifies Provider of the Default giving rise to that Guaranteed Obligation.\" Order Form No. 3, Special Terms, Paragraph 2: \"On August 3, 2026, Customer delivered to Provider a written notice of default ... As of the Order Form Date, no Demand has been made on the Guarantor under the Parent Guaranty for the matters described in the Default Notice.\"",
+            "reason": "Section 4.1 makes a timely Demand a condition of the Guarantor's liability. Zaseil, the Beneficiary, is the party that must deliver the Demand. The 45-day clock ran from the August 3, 2026 Default Notice, so the window closed on September 17, 2026. Order Form No. 3, dated October 20, 2026, confirms no Demand had been made by then. Nothing in the folder extends or cures the condition. Section 5.2 lets Beneficiary and Provider change the Agreement without the Guarantor's consent, but the Guaranty itself can be amended or waived only by a writing the Guarantor signs (Section 11.3). The Guarantor did not sign Order Form No. 3, so the reservation of rights there does not bind it or revive the Demand right. Section 2.3 also lets the Guarantor raise the Guaranty's own conditions as defenses. The result is that the parent's backing for the Lot 2207 nonconformity, including any Section 10.1 indemnity exposure, appears lost. That leaves Zaseil only with Provider, a subsidiary that may be thinly capitalized. This is still actionable. Zaseil has not accepted the outcome: it expressly reserved its rights against the Guarantor and has signed no settlement or release. It can still make a Demand and argue the point, for example by treating later field failures or claims as new Defaults with their own notice, or by seeking a Guarantor-signed waiver. It should also fix the 45-day trap for future defaults."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SOW No. 1 Section 9.2: \"With respect to Section 11.3(a) of the MSA, for Claims arising from Coating Services performed under this SOW, Provider's indemnification obligations under Section 10.1 of the MSA shall be subject to the Liability Cap.\"",
+            "reason": "The problem is present and hurts Zaseil. Provider gives the Section 10.1 indemnity and Zaseil receives it. That indemnity covers third-party bodily injury and property damage from failed FR coatings, and MSA Section 11.3(a) leaves it uncapped. SOW Section 9.2 names Section 11.3(a) and puts that indemnity under the Liability Cap, which is 12 months of SOW fees. MSA Section 1.3 gives the SOW top precedence where it expressly modifies an identified MSA section, so the cap controls. Nothing else in the folder fixes this. Order Form No. 3 does not address it. Parent Guaranty Section 2.3 limits the Guarantor to Provider's own liability, so the guaranty is capped too. This is still actionable. It is a forward-looking risk allocation on a live SOW, not a lapsed right, and Zaseil can seek a change order or amendment to remove the cap."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "MSA §14.3: \"A Change of Control of Customer is deemed an assignment by Customer requiring Provider's prior written consent under Section 14.1. If Customer undergoes a Change of Control without that consent, Provider may terminate the Agreement and all SOWs by written notice to Customer, and Customer shall pay Provider the Early Termination Fee within thirty (30) days after the effective date of termination.\" Order Form No. 3, Special Terms ¶1: \"...under which Customer will become a wholly owned subsidiary of Kestrel. Closing is expected to occur on December 1, 2026... Customer shall notify Provider in writing within five (5) business days after closing occurs.\"",
+            "reason": "The Kestrel merger makes Zaseil a wholly owned subsidiary of Kestrel. That is a Change of Control under §1.4(b)(i) and (ii). Under §14.3 it needs Provider's prior written consent. Order Form No. 3 discloses the deal but does not grant that consent. It only requires a notice after closing, which is the opposite of prior consent. It also does not waive or modify §14.3. A waiver would have to be express and signed under §16.6, and the Order Form ranks last in the §1.3 order of precedence in any case. Nothing else in the folder records Prodous's consent. If closing happens without consent, Provider may terminate everything and collect the Early Termination Fee. Under Order Form §2.5, that fee is the $2,400,000 Minimum Annual Commitment for the Contract Year beginning March 2, 2026, less amounts counted to date. That is significant exposure. The terms are also one-sided: under §14.2, Provider may assign freely. Today is November 10, 2026 and closing is expected December 1, 2026, so Zaseil can still act by obtaining written consent or an amendment before closing. The issue is real and actionable."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 21,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.072,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

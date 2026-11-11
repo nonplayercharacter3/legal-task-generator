@@ -1,0 +1,203 @@
+{
+  "matter_id": "s39-m0003",
+  "summary": "Laimul Baking Holdings, Inc. (Buyer, the firm's client) bought all outstanding shares of Hearthline Bread Co., a commercial wholesale bakery making sliced bread, buns and par-baked rolls for grocery chains. The seller was Dekes Family Bakeries, LLC. The Stock Purchase Agreement was signed and closed on July 1, 2026. The $48,500,000 price was paid in cash at Closing, with $3,600,000 deposited in an indemnity escrow, $750,000 in an adjustment escrow, and $6,000,000 by a Seller Note issued by Buyer to Seller. On October 6, 2026 the parties entered an Amended and Restated Escrow Agreement with Ashgrove Trust Company, N.A. It records that Seller delivered its Closing Statement on August 25, 2026, that Buyer delivered a working-capital dispute notice on September 28, 2026, and that Buyer reserves all rights. The folder also holds the pre-deal Mutual NDA between Laimul and Dekes. The partner wants a post-closing issue-spotting memo on the client's exposure.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Laimul Baking Holdings, Inc.",
+      "role": "Buyer under the Stock Purchase Agreement; Maker of the Seller Note; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Dekes Family Bakeries, LLC",
+      "role": "Seller under the Stock Purchase Agreement; Holder of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Hearthline Bread Co.",
+      "role": "Target company whose shares were sold; commercial wholesale bakery"
+    },
+    {
+      "id": "P4",
+      "name": "Pellucid Grocers, Inc.",
+      "role": "Grocery chain customer of Hearthline under a Co-Manufacturing and Supply Agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Ashgrove Trust Company, N.A.",
+      "role": "Escrow Agent under the Amended and Restated Escrow Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement signing and Closing Date",
+      "value": "July 1, 2026 (simultaneous sign-and-close)",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$3,600,000",
+      "doc": "D1",
+      "section": "Section 2.2(b)"
+    },
+    {
+      "id": "F4",
+      "key": "Adjustment Escrow Amount",
+      "value": "$750,000",
+      "doc": "D1",
+      "section": "Section 2.2(c)"
+    },
+    {
+      "id": "F5",
+      "key": "Seller Note principal amount",
+      "value": "$6,000,000",
+      "doc": "D3",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F6",
+      "key": "Notice of Disagreement deadline under the Stock Purchase Agreement",
+      "value": "30 days after Seller's delivery of the Closing Statement",
+      "doc": "D1",
+      "section": "Section 2.4(b)"
+    },
+    {
+      "id": "F7",
+      "key": "Closing Statement delivery date",
+      "value": "August 25, 2026",
+      "doc": "D2",
+      "section": "Recital C"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "SPA prevails over Ancillary Agreements; Seller Note controls its own payment, set-off and acceleration terms",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F9",
+      "key": "Stock Purchase Agreement definition of Losses",
+      "value": "Includes reasonable attorneys' fees, diminution in value and product withdrawal or recall costs",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F10",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 11.6"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "laimul_hearthline_stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amended_restated_escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_promissory_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "laimul_dekes_mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Three SPA provisions combine. Section 1.1 defines Fundamental Representations as only Sections 4.1 (organization), 4.2 (capitalization), 4.3 (authority) and 4.20 (brokers). Every other representation is therefore a general representation, including Section 4.15 (Food Safety; Product Recalls) and Section 4.9 (Material Contracts). Under Section 9.1(a), general representations survive only until six months after the Closing Date. Section 9.1(c) adds that a claim is barred unless Buyer has commenced an Action in court before that survival date expires; a claim notice alone is not enough. Measured from the July 1, 2026 Closing Date (Section 3.1), Buyer has until January 1, 2027 to discover and actually litigate any breach. For a bakery, problems such as undeclared allergens, FDA inspection findings or customer audit failures often surface later. Delaware enforces shortened contractual survival periods as limitations periods (10 Del. C. § 8106(c)), so Buyer's indemnity protection is largely illusory.",
+      "doc": "D1",
+      "section": "Section 9.1(a) and 9.1(c), read with Section 1.1 (Fundamental Representations)",
+      "detect_terms": [
+        "six months after the Closing Date",
+        "commenced an Action"
+      ],
+      "expected_finding": "Under SPA Sections 1.1, 9.1(a) and 9.1(c), the food safety and other general representations survive only until January 1, 2027 (six months after the July 1, 2026 Closing), and a claim survives only if Buyer files suit by then; Buyer should promptly complete post-closing diligence, file any claims before that date, and seek an amendment extending survival.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Disclosure Schedule 4.9(a)(iii) lists Hearthline's Co-Manufacturing and Supply Agreement with Pellucid Grocers, Inc. It states that Pellucid accounts for about 38% of Hearthline's net sales and may terminate on 30 days' notice if Hearthline undergoes a change of control without Pellucid's prior written consent. However, Schedule 4.4 (Consents; Non-Contravention) states 'None.' Both the Section 6.4 covenant to obtain consents and the Section 7.2(c) closing condition reach only consents listed on Schedule 4.4. The deal closed on July 1, 2026 (Section 3.1). Nothing in the folder shows that Pellucid's consent was obtained, and the sale of all of Hearthline's stock to Buyer is a change of control. Pellucid therefore holds a live termination right. Buyer also cannot easily recover under the indemnity. Section 10.13 deems a disclosure in any schedule section to be disclosed for every section where its relevance is reasonably apparent, so the Schedule 4.9 disclosure likely defeats a claim that Section 4.4 was breached.",
+      "doc": "D1",
+      "section": "Disclosure Schedule 4.9(a)(iii), read with Schedule 4.4, Sections 6.4, 7.2(c) and 10.13",
+      "detect_terms": [
+        "without Pellucid's prior written consent"
+      ],
+      "expected_finding": "Pellucid's change-of-control consent was triggered by the July 1, 2026 Closing but was omitted from Schedule 4.4, so it was never a covenant or closing condition and was never obtained; Pellucid (about 38% of net sales) can terminate on 30 days' notice, and the Section 10.13 cross-disclosure likely bars an indemnity claim; Buyer should promptly seek Pellucid's written consent or waiver and press Seller for a special indemnity backed by the escrow or by set-off against the Seller Note.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under SPA Section 2.4(b), Buyer must deliver any Notice of Disagreement within 30 days after Seller delivers the Closing Statement. Under Section 2.4(c), the Closing Statement becomes final and binding if Buyer does not do so. Recital C of the October 6, 2026 Amended and Restated Escrow Agreement states that Seller delivered the Closing Statement on August 25, 2026. Recital D states that Buyer delivered its notice disputing Closing Net Working Capital, claiming a $612,000 shortfall, on September 28, 2026. The window therefore closed on September 24, 2026, and Buyer's notice was four days late. Seller can argue that its Closing Statement is final, which would defeat the $612,000 claim and allow it to demand release of the $750,000 Adjustment Escrow under Section 3.2 of the Escrow Agreement. The Escrow Agreement records Buyer's reservation of all rights and states that no party has accepted the Closing Statement. Buyer has therefore not acquiesced, and the point remains actionable.",
+      "doc": "D2",
+      "section": "Recitals C and D and Section 3.2, read with SPA Section 2.4(b)-(c)",
+      "detect_terms": [
+        "September 28, 2026"
+      ],
+      "expected_finding": "Buyer's September 28, 2026 Notice of Disagreement fell outside the 30-day window in SPA Section 2.4(b), which ran from the August 25, 2026 Closing Statement delivery and closed on September 24, 2026; Seller may therefore treat its Closing Statement as final under Section 2.4(c) and claim the $750,000 Adjustment Escrow, so Buyer should secure Seller's written waiver or extension (or develop timeliness and estoppel arguments) before any joint release instruction is given.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Seller Note Section 9.2 lets Holder assign or transfer the Note, in whole or in part, to any Person without the consent of Maker. Maker may not assign without Holder's consent. Section 6.1 of the same Note obliges Maker to give Holder monthly financial statements, customer-level sales reports and access to its books while any principal remains outstanding. Read together, these provisions let Dekes sell the Note to a competing commercial bakery or to a distressed-debt buyer allied with one. That transferee would then receive Laimul's and Hearthline's customer and pricing data for the Note's four-year life. Nothing in the SPA restricts the Note's transfer.",
+      "doc": "D3",
+      "section": "Section 9.2, read with Section 6.1",
+      "detect_terms": [
+        "without the consent of Maker",
+        "customer-level sales reports"
+      ],
+      "expected_finding": "Seller Note Section 9.2 lets Dekes assign the Note to anyone, including a competitor, without Laimul's consent, and Section 6.1 would then give that assignee Laimul's monthly financials and customer-level sales data; Buyer should seek an amendment requiring Maker's consent to any transfer (or at least barring transfers to competitors) and limiting the information rights.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 9.8 lets Buyer set off indemnifiable Losses against amounts due under the Seller Note. SPA Section 1.1 defines Losses to include reasonable attorneys' fees, diminution in value and product withdrawal or recall costs. Seller Note Section 4.2 limits Maker's set-off to 'Losses (as defined in this Note)'. Note Section 1 defines that term as out-of-pocket damages excluding attorneys' fees, diminution in value, consequential damages and costs of any product withdrawal or recall. The SPA order-of-precedence clause (Section 11.9) does not cure the conflict, because it makes the Seller Note control its own set-off terms. For a bakery buyer, recall and allergen-related costs are the most likely indemnity losses. Buyer therefore cannot withhold them from Note payments and must keep paying Dekes while pursuing those claims separately.",
+      "doc": "D3",
+      "section": "Section 4.2 (Set-Off) and Section 1 (definition of Losses), read with SPA Sections 1.1, 9.8 and 11.9",
+      "detect_terms": [
+        "excluding attorneys' fees",
+        "product withdrawal or recall"
+      ],
+      "expected_finding": "Because SPA Section 11.9 makes the Seller Note control its own set-off terms, the Note's narrower definition of Losses (excluding attorneys' fees, diminution in value and recall costs) overrides the SPA definition used in Section 9.8, so Buyer cannot set off recall and similar indemnity losses against Note payments; Buyer should amend the Note to adopt the SPA definition of Losses for set-off.",
+      "contradicts": null
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "matter_id": "s39-m0002",
+  "summary": "Zaseil Technical Fabrics, Inc., a maker of flame-retardant (FR) industrial fabrics, outsources FR coating and finishing to Prodous Coating Services LLC under a Delaware-law Master Services Agreement dated March 2, 2026. The folder also holds SOW No. 1 for FR coating of tarpaulin and curtain fabric, a parent guaranty from Prodous Industrial Holdings, Inc., Order Form No. 3 dated October 20, 2026, and a mutual NDA that is a distractor. Order Form No. 3 records three events: Zaseil's pending acquisition by Kestrel Fiberworks Group, Inc. under a merger agreement dated October 1, 2026; Zaseil's August 3, 2026 default notice to Prodous over defective coating; and Zaseil's reservation of rights. Four issues are planted. Prodous may assign freely, and any assignment releases the guaranty. The guaranty's 45-day demand window has run. SOW No. 1 pulls third-party injury indemnity under the liability cap, and the SOW controls because of the precedence clause. Zaseil's merger triggers a Provider consent right that has not been obtained.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Zaseil Technical Fabrics, Inc.",
+      "role": "Customer under the MSA; manufacturer of FR industrial fabrics; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Prodous Coating Services LLC",
+      "role": "Provider of fabric coating and finishing services under the MSA"
+    },
+    {
+      "id": "P3",
+      "name": "Prodous Industrial Holdings, Inc.",
+      "role": "Parent of Provider; Guarantor under the Parent Guaranty"
+    },
+    {
+      "id": "P4",
+      "name": "Kestrel Fiberworks Group, Inc.",
+      "role": "Acquirer of Customer under a pending merger agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 16.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA Liability Cap",
+      "value": "fees paid or payable under the applicable SOW in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "SOW (only provisions expressly modifying an identified MSA section), then MSA, then Order Form",
+      "doc": "D1",
+      "section": "Section 1.3"
+    },
+    {
+      "id": "F5",
+      "key": "SOW No. 1 Effective Date",
+      "value": "April 6, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F6",
+      "key": "Guarantor",
+      "value": "Prodous Industrial Holdings, Inc.",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F7",
+      "key": "Default Notice date",
+      "value": "August 3, 2026",
+      "doc": "D4",
+      "section": "Special Terms, paragraph 2"
+    },
+    {
+      "id": "F8",
+      "key": "Order Form No. 3 date",
+      "value": "October 20, 2026",
+      "doc": "D4",
+      "section": "Header"
+    },
+    {
+      "id": "F9",
+      "key": "Merger agreement date",
+      "value": "October 1, 2026, between Zaseil Technical Fabrics, Inc. and Kestrel Fiberworks Group, Inc.",
+      "doc": "D4",
+      "section": "Special Terms, paragraph 1"
+    },
+    {
+      "id": "F10",
+      "key": "Minimum Annual Commitment",
+      "value": "$2,400,000 per Contract Year",
+      "doc": "D4",
+      "section": "Section 2 (Commercial Terms)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "zaseil_prodous_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "sow_01_fr_coating_services.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D3",
+      "filename": "prodous_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "order_form_03.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "zaseil_prodous_mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Under MSA Section 14.1, Customer needs Provider's consent to assign. Under MSA Section 14.2, Provider may assign the Agreement or any SOW, in whole or in part, to any person without Customer's consent, on notice only. Nothing excludes competitors of Zaseil or financially weaker assignees. Parent Guaranty Section 6 makes it worse: the Guaranty terminates automatically on any assignment by Provider permitted under the MSA. Read together, Prodous can move the coating work to a Zaseil competitor or a thinly capitalized entity, Zaseil's process know-how and volumes go to that assignee, and the parent credit support ends at the same moment.",
+      "doc": "D1",
+      "section": "Section 14.2",
+      "detect_terms": [
+        "without Customer's consent"
+      ],
+      "expected_finding": "MSA Section 14.2 lets Prodous assign freely to anyone, including a Zaseil competitor, and under Parent Guaranty Section 6 any such assignment releases the Guarantor. Section 14.2 should require Customer's prior written consent, with a carve-out at most for a solvent successor that is not a competitor, and the Guaranty should continue after any assignment.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under Parent Guaranty Section 4, the Guarantor is liable for a Guaranteed Obligation only if Beneficiary delivers a written Demand within forty-five (45) days after Beneficiary first notifies Provider of the underlying default. Order Form No. 3 (Special Terms, paragraph 2) records three things: Zaseil's Default Notice to Prodous dated August 3, 2026 over defective FR coating on Lot 2207; that no Demand has yet been made on the Guarantor; and Zaseil's reservation of all rights against Provider and Guarantor. The window closed on September 17, 2026, before the October 20, 2026 Order Form date. Nothing in the MSA extends or overrides the Guaranty's condition. Zaseil has not accepted the release: the reservation of rights preserves its position.",
+      "doc": "D3",
+      "section": "Section 4",
+      "detect_terms": [
+        "within forty-five (45) days"
+      ],
+      "expected_finding": "The 45-day Demand window in Guaranty Section 4 ran on September 17, 2026, measured from the August 3, 2026 Default Notice, so the Guarantor will argue it is released for the Lot 2207 defect claims. Zaseil should serve a Demand at once and rely on its reservation of rights in Order Form No. 3, and should press for a written Guarantor acknowledgment or waiver of the condition.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "MSA Section 11.3(a) carves Provider's indemnification obligations under Section 10.1, which cover third-party bodily injury and property damage claims, out of the Section 11.2 Liability Cap. SOW No. 1 Section 9.2 expressly references Section 11.3(a) and states that, for Claims arising from Coating Services under the SOW, those indemnification obligations shall be subject to the Liability Cap. MSA Section 1.3 lets an SOW provision that expressly modifies an identified MSA section prevail. The narrowing therefore controls and is not cured by the MSA. Third-party fire-injury claims from failed FR coating on Zaseil's tarpaulins and curtains, Zaseil's largest exposure, are now capped at 12 months of SOW fees.",
+      "doc": "D2",
+      "section": "Section 9.2",
+      "detect_terms": [
+        "shall be subject to the Liability Cap"
+      ],
+      "expected_finding": "Because MSA Section 1.3 lets the SOW prevail, SOW No. 1 Section 9.2 brings Prodous's third-party injury and property damage indemnity under the 12-month-fees cap, which leaves Zaseil largely uncovered for FR-failure claims. Section 9.2 should be deleted or amended so that the Section 11.3(a) carve-out applies in full.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Under MSA Section 14.3, a Change of Control of Customer is deemed an assignment by Customer requiring Provider's prior written consent under Section 14.1. If consent is not obtained, Provider may terminate the Agreement and all SOWs and collect the Early Termination Fee, which Order Form No. 3 sets as the remaining Minimum Annual Commitment for the current Contract Year at $2,400,000 per Contract Year. Order Form No. 3 (Special Terms, paragraph 1) records Zaseil's merger agreement with Kestrel Fiberworks Group, Inc. dated October 1, 2026, with closing expected December 1, 2026. No consent from Prodous appears in the folder, and the Order Form does not waive Section 14.3.",
+      "doc": "D1",
+      "section": "Section 14.3",
+      "detect_terms": [
+        "deemed an assignment by Customer"
+      ],
+      "expected_finding": "The pending Kestrel merger recorded in Order Form No. 3 is a Change of Control that MSA Section 14.3 treats as an assignment requiring Prodous's prior written consent. Without that consent, Prodous may terminate and claim the Early Termination Fee. Zaseil should obtain written consent before the expected December 1, 2026 closing or negotiate removal of Section 14.3.",
+      "contradicts": null
+    }
+  ]
+}

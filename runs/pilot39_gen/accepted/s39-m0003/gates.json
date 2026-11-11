@@ -1,0 +1,128 @@
+{
+  "matter_id": "s39-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 5,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.1(a)(iii): \"all other representations and warranties shall survive until the date that is six months after the Closing Date.\" Section 9.1(c): \"No claim for indemnification under Section 9.2(a) or Section 9.3(a) may be brought or maintained unless the Indemnified Party has commenced an Action with respect to such claim in a court specified in Section 11.7 before the expiration of the applicable survival period set forth in Section 9.1(a). Any claim for which an Action has not been so commenced shall be forever barred.\"",
+            "reason": "The problem is present and hurts the client. Section 1.1 limits Fundamental Representations to Sections 4.1, 4.2, 4.3 and 4.20, so the food safety rep (4.15) and the material contracts rep (4.9) fall into the six-month bucket. Seller gives the indemnity and Buyer is the claimant, so the short survival period is entirely the client's exposure. Section 9.1(c) requires Buyer to actually file suit in Delaware before the survival date, and a Claim Notice is not enough. It also invokes 10 Del. C. § 8106(c), so the period will be enforced as a limitations period. With Closing on July 1, 2026, the bar falls on January 1, 2027. Section 9.9 also releases the Indemnity Escrow Fund to Seller at that point, except for amounts tied to Actions already pending. Nothing in the folder cures this. The Amended and Restated Escrow Agreement leaves the survival periods untouched. The Seller Note's set-off right depends on an Article 9 indemnity entitlement, and it uses an even narrower definition of Losses that excludes recall costs. The issue is still actionable: today is November 10, 2026, and the deadline has not passed. Buyer can still diligence potential breaches of 4.15 and 4.9 (for example, allergen issues, FDA findings, or the Pellucid change-of-control termination right), file protective Actions before January 1, 2027, or negotiate a written amendment under Section 11.10 to extend survival."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Schedule 4.9(a)(iii): \"Pellucid accounted for approximately 38% of the Company's net sales for the year ended December 31, 2025. Pellucid may terminate the agreement on 30 days' notice if the Company undergoes a change of control without Pellucid's prior written consent.\" Schedule 4.4: \"None.\" Section 7.2(c): \"all consents set forth on Schedule 4.4 shall have been obtained...\"",
+            "reason": "Buyer's purchase of all of Hearthline's stock on July 1, 2026 is a change of control under the Pellucid agreement. Pellucid's consent was never listed on Schedule 4.4. So neither Seller's Section 6.4 covenant to pursue consents nor Buyer's Section 7.2(c) closing condition covered it, and nothing in the folder shows the consent was obtained. Pellucid, about 38% of net sales, therefore still holds a 30-day termination right. Buyer's indemnity route is also weak. Section 10.13 cross-disclosure likely carries the Schedule 4.9 disclosure over to Section 4.4, which would defeat a breach claim. Any general-rep claim would be capped at the escrow, subject to the Deductible, and has to be filed in court by January 1, 2027. The problem is still actionable. Buyer can seek Pellucid's consent now, and the general-rep survival window has not yet expired. Nothing in the folder shows Buyer accepted this result or waived it."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Recital C: \"Under Section 2.4(a) of the Purchase Agreement, Seller delivered its Closing Statement to Buyer on August 25, 2026.\" Recital D: \"On September 28, 2026, Buyer delivered to Seller a written notice disputing Seller's calculation of Closing Net Working Capital in the Closing Statement (the \"Buyer Dispute Notice\"). In the Buyer Dispute Notice, Buyer asserts that Closing Net Working Capital is less than Target Net Working Capital by $612,000.\"",
+            "reason": "SPA Section 2.4(b) requires Buyer, the client, to deliver a Notice of Disagreement within 30 days after the Closing Statement is delivered. Under Section 10.3 the delivery date is excluded, so the window closed on September 24, 2026. That date was a Thursday and a Business Day, so it does not roll forward. Buyer's notice of September 28 was four days late. Under Section 2.4(c), the Closing Statement is therefore final and binding if no timely notice is given. Seller can use that to defeat Buyer's $612,000 claim. It can also serve a Release Demand under Escrow Agreement Section 3.2(b), certifying that Closing Net Working Capital is finally determined. That would put the $750,000 Adjustment Escrow at risk on a 10-Business-Day objection clock. Nothing in the Escrow Agreement or the SPA extends the deadline, excuses the delay, or records Seller's waiver. Recital E (\"no Party has accepted the Closing Statement. Buyer reserves all of its rights\") shows Buyer has not acquiesced, and the parties have made no disbursement or settlement. The issue therefore remains live and actionable for Buyer. Buyer should seek Seller's written waiver or extension, or prepare to object to any Release Demand and argue that the late notice should still be given effect."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 9.2: \"Holder may assign or transfer this Note, in whole or in part, to any Person without the consent of Maker, on written notice to Maker identifying the assignee. Each assignee succeeds to all rights of Holder under this Note to the extent of the interest assigned.\" Section 6.1(b): Maker shall deliver \"customer-level sales reports for the Company for that month, showing net sales, unit volumes and average net pricing by customer and by product category\". Section 6.1(d) adds access \"to the books, records and personnel of Maker and the Company for the purpose of inspecting and copying them.\"",
+            "reason": "The problem is present and hurts Laimul. Laimul is Maker, so it bears the Section 6.1 duty to deliver the reports and allow access. Holder can assign freely to \"any Person,\" and each assignee takes \"all rights of Holder,\" including the Section 6.1 information rights. That would include a competing bakery or a debt buyer allied with one.\n\nNothing in the folder cures this:\n- The Note has no confidentiality clause, no limit on who may be a transferee, and no competitor carve-out.\n- SPA Section 6.1 binds only Seller and its Affiliates, not third-party transferees.\n- SPA Section 11.4 restricts assignment of rights under the SPA, not transfer of the Note.\n- SPA Section 11.9 makes the Note control its own payment terms.\n- The NDA binds only Laimul and Dekes and runs only to March 2028.\n- The NDA's clean-team concept for pricing data does not reach the Note.\n\nThe risk is still actionable. Principal stays outstanding until July 2030, so the reporting duty runs for about four more years. Nothing shows a transfer has happened or that Laimul has accepted one. Laimul can still seek an amendment under Section 9.5 adding a competitor transfer restriction or confidentiality terms, or reduce the information it must deliver."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Note Section 4.2: \"Maker may set off against any payment of principal or interest due under this Note the amount of any Losses (as defined in this Note) for which a Buyer Indemnitee is entitled to indemnification under Article 9 of the Purchase Agreement.\" Note Section 1 defines \"Losses\" as \"out-of-pocket damages, liabilities, judgments, fines and penalties actually paid by Maker or the Company to a Person other than Maker, the Company or any of their Affiliates, excluding attorneys' fees, diminution in value, consequential damages and costs of any product withdrawal or recall.\" SPA Section 11.9: \"the Seller Note shall control with respect to its own payment, set-off and acceleration terms.\"",
+            "reason": "The problem is present and still actionable. Laimul, the client, is the Maker, and the set-off right exists for its benefit. SPA Section 1.1 defines Losses broadly, including attorneys' fees, diminution in value and recall costs, and SPA Section 9.8 lets Buyer set off any indemnifiable Losses against the Note. The Note narrows set-off to its own much tighter definition. The Note's definition also requires amounts actually paid to unaffiliated third parties, so the Company's own recall costs are excluded. SPA Section 11.9 does not fix the conflict because it makes the Note control its own set-off terms. As a result, the losses most likely to arise for a bakery buyer (recall and allergen-related costs, fees and value loss) cannot be withheld from Note payments. Laimul must keep paying Dekes and pursue those amounts directly, after the $3.6M escrow is exhausted. Nothing in the folder shows that Laimul waived this point or accepted it. The Note runs to 2030, so the issue remains live, for example through amendment under Note Section 9.5 or a reservation of rights."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 20,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C7",
+          "C8",
+          "C9"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.07,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
