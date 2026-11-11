@@ -49,9 +49,9 @@
     },
     "solver_check": {
       "evaluated": 2,
-      "passed": 0,
+      "passed": 2,
       "failed": 0,
-      "skipped": 2
+      "skipped": 0
     }
   },
   "rubric_repairs": {
@@ -60,8 +60,15 @@
     "bundled_after": 0
   },
   "unsolved": 0,
-  "label_pending": 2,
-  "difficulty": {},
+  "label_pending": 0,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 2,
+      "pass_rates": {
+        "1.00": 2
+      }
+    }
+  },
   "matters": [
     {
       "matter_id": "s34-m0001",
@@ -69,10 +76,17 @@
       "failed_gate": null,
       "reason": null,
       "split": "train",
-      "solver_pass_rate": null,
+      "solver_pass_rate": 1.0,
       "unsolved": false,
-      "difficulty": [],
-      "label_pending": true
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 3,
+          "pass_rate": 1.0
+        }
+      ],
+      "label_pending": false
     },
     {
       "matter_id": "s34-m0002",
@@ -80,10 +94,17 @@
       "failed_gate": null,
       "reason": null,
       "split": "train",
-      "solver_pass_rate": null,
+      "solver_pass_rate": 1.0,
       "unsolved": false,
-      "difficulty": [],
-      "label_pending": true
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 3,
+          "pass_rate": 1.0
+        }
+      ],
+      "label_pending": false
     },
     {
       "matter_id": "s34-m0003",
@@ -147,10 +168,16 @@
       "errors": 0
     },
     "judge": {
-      "calls": 9,
-      "input_tokens": 74235,
-      "output_tokens": 9656,
+      "calls": 17,
+      "input_tokens": 153011,
+      "output_tokens": 22272,
       "errors": 0
+    },
+    "solver": {
+      "calls": 100,
+      "input_tokens": 661967,
+      "output_tokens": 90209,
+      "errors": 2
     }
   },
   "variety": {
