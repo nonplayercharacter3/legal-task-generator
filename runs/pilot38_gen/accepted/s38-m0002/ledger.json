@@ -1,0 +1,164 @@
+{
+  "matter_id": "s38-m0002",
+  "summary": "Binond Releasing LLC, an independent film distributor based in Delaware, is the firm's client and the Customer. It signed a Supply Agreement with Favaiv Digital Cinema Services, Inc., the Supplier. Favaiv supplies digital cinema package (DCP) mastering, key delivery messages (KDMs), drive duplication and secure watermarked digital screeners. The folder holds four documents: the Supply Agreement, a Data Processing Addendum covering screener-viewer and festival-attendee data, SOW No. 1 for theatrical DCP mastering, and an earlier mutual NDA. Three issues are planted. (1) The Supply Agreement's exclusivity clause, read with its definitions, locks Binond into using Favaiv for every distribution deliverable worldwide. The deal recorded in SOW No. 1 covers only theatrical DCP mastering for the US and Canada. (2) The DPA's one-way Customer indemnity, read with the Supply Agreement's cap carve-out for indemnities under 'any Addendum', exposes Binond to uncapped liability, including for Favaiv's own negligence. (3) SOW No. 1 chooses New York law and New York County courts. The Supply Agreement's order-of-precedence clause makes the SOW prevail on matters arising under it, so service disputes split away from the Agreement's Delaware law and forum. The mutual NDA is a distractor: it is consistent with the folder and contains no issue.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Binond Releasing LLC",
+      "role": "Customer; independent film distributor (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Favaiv Digital Cinema Services, Inc.",
+      "role": "Supplier of DCP mastering, KDM, drive duplication and secure screener services"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "19.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement dispute forum",
+      "value": "Exclusive jurisdiction of state and federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "19.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "DPA (as to personal data), then any SOW (as to matters arising under it), then Supply Agreement",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement liability cap",
+      "value": "Fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "13.2"
+    },
+    {
+      "id": "F6",
+      "key": "Agreed exclusivity scope",
+      "value": "Theatrical DCP mastering for releases in the United States and Canada",
+      "doc": "D3",
+      "section": "1 (Background)"
+    },
+    {
+      "id": "F7",
+      "key": "Supply Agreement Initial Term",
+      "value": "Three years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "4.1"
+    },
+    {
+      "id": "F8",
+      "key": "SOW No. 1 mastering fee",
+      "value": "$4,850 per feature-length DCP master",
+      "doc": "D3",
+      "section": "5"
+    },
+    {
+      "id": "F9",
+      "key": "DPA Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Mutual NDA governing law",
+      "value": "State of Delaware",
+      "doc": "D4",
+      "section": "10"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "sow_no_1.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Supply Agreement Section 3.1 states: 'Notwithstanding anything in any SOW, Customer shall procure all Distribution Deliverables exclusively from Supplier throughout the Territory during the Term.' Section 1.6 defines 'Distribution Deliverables' as every theatrical, home entertainment, streaming, broadcast, airline and festival deliverable for any picture Customer distributes. Section 1.12 defines 'Territory' as the entire world. Clause 3.1 does not look overbroad on its own. The breadth appears only when it is read with the two definitions, and then against SOW No. 1 Section 1 (Background). That section records the parties' agreed exclusivity as theatrical DCP mastering for US and Canada releases only. The SOW does not cure the conflict. The 'Notwithstanding anything in any SOW' lead-in overrides the SOW-prevails rule in Section 2.3. The result is that Binond is barred, for the three-year Initial Term, from using any other vendor for streaming masters, foreign deliverables, broadcast or festival deliverables.",
+      "doc": "D1",
+      "section": "3.1 (with 1.6 and 1.12)",
+      "detect_terms": [
+        "exclusively from Supplier",
+        "all Distribution Deliverables"
+      ],
+      "expected_finding": "Section 3.1, read with the worldwide 'Territory' and the all-format 'Distribution Deliverables' definitions, binds Binond to buy every distribution deliverable worldwide from Favaiv for the Initial Term, far beyond the theatrical US/Canada DCP mastering exclusivity recorded in SOW No. 1, and its 'notwithstanding anything in any SOW' wording defeats the SOW precedence rule, so Section 3.1 should be narrowed to theatrical DCP mastering in the US and Canada.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "DPA Section 9.1 is a one-way indemnity. Binond, as Controller, must indemnify Favaiv for all Losses from any third-party claim, regulatory fine or data subject action relating to Customer Personal Data (screener viewer names, emails and watermark logs, and festival attendee lists). The indemnity applies 'regardless of whether caused in part by Supplier'. Favaiv gives no corresponding indemnity. The DPA itself is silent on liability limits. The exposure appears only when Section 9.1 is read with Supply Agreement Section 13. Section 13.2 caps each party's liability at 12 months' fees. Section 13.3 then removes from that cap 'indemnification obligations under Section 12 or any Addendum', and the DPA is an Addendum. Section 2.3 also gives the DPA precedence on personal data. Together these leave Binond exposed without limit for privacy claims, including breaches caused by Favaiv's own screener platform.",
+      "doc": "D2",
+      "section": "9.1 (with D1 13.2 and 13.3)",
+      "detect_terms": [
+        "regardless of whether caused in part by Supplier"
+      ],
+      "expected_finding": "Read with Supply Agreement Section 13.3's carve-out of indemnities 'under any Addendum' from the 12-month-fees cap, DPA Section 9.1 makes Binond's one-way data indemnity, which covers claims caused in part by Favaiv's own processing, uncapped, so Binond should limit the indemnity to its own breaches, exclude Supplier-caused incidents, add a reciprocal Supplier indemnity, and bring it under a cap or super-cap.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "SOW No. 1 Section 9 states that the SOW and 'any dispute arising under or relating to this SOW' are governed by the laws of the State of New York. It also submits such disputes to the exclusive jurisdiction of the state and federal courts in New York County. This conflicts with Supply Agreement Sections 19.1 and 19.2, which choose Delaware law and New Castle County, Delaware courts. The conflict is not cured, because Supply Agreement Section 2.3 makes any SOW prevail over the Agreement 'as to the Services, Deliverables and any matters arising under that SOW'. Section 19 contains no 'notwithstanding any SOW' language. As a result, disputes over mastering quality, delivery failures and fees go to New York under New York law. Disputes over exclusivity, the cap and the DPA indemnity stay in Delaware. Binond, a Delaware company, faces parallel proceedings and possibly inconsistent results across two forums.",
+      "doc": "D3",
+      "section": "9 (with D1 2.3 and 19)",
+      "detect_terms": [
+        "laws of the State of New York",
+        "New York County"
+      ],
+      "expected_finding": "Because Supply Agreement Section 2.3 lets an SOW prevail on matters arising under it, SOW No. 1 Section 9's New York law and New York County exclusive forum displace the Agreement's Delaware law and New Castle County forum for service disputes and split Binond's disputes across two forums, so SOW Section 9 should be deleted or conformed to Delaware and Section 19 should apply notwithstanding any SOW.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ]
+    }
+  ]
+}

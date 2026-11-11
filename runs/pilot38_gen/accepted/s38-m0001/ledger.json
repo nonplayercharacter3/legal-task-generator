@@ -1,0 +1,176 @@
+{
+  "matter_id": "s38-m0001",
+  "summary": "Bredeix Organic Creamery, LLC, an organic dairy processor, licenses Laipeisk Systems, Inc.'s 'HerdLedger' supply-chain and milk-procurement software. The license runs on an Agreement effective April 1, 2025, with a Phase 2 Statement of Work, a Data Processing Addendum covering farmer-supplier and employee personal data, and a broker's cover letter enclosing Laipeisk's certificate of insurance. Four problems sit in the folder. The DPA overrides the Agreement's data-breach carve-out from the liability cap, and the Agreement's precedence clause lets the DPA control. A pending sale of Bredeix's parent, recorded in the SOW, triggers the Agreement's indirect change-of-control consent requirement. Bredeix's Phase 1 rejection notice, recorded in the SOW, came after the Agreement's 10-day acceptance window, and Bredeix disputes the deemed acceptance. The Agreement also renews automatically for five-year terms with only a 30-day opt-out window.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Bredeix Organic Creamery, LLC",
+      "role": "Licensee (client); organic dairy processor and milk-procurement operator"
+    },
+    {
+      "id": "P2",
+      "name": "Laipeisk Systems, Inc.",
+      "role": "Licensor; provider of HerdLedger dairy supply-chain software and implementation services"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "April 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "License Agreement Initial Term",
+      "value": "three (3) years from the License Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 14.1"
+    },
+    {
+      "id": "F3",
+      "key": "License Agreement Renewal Term length",
+      "value": "five (5) years each, renewing automatically",
+      "doc": "D1",
+      "section": "Section 14.2"
+    },
+    {
+      "id": "F4",
+      "key": "Non-renewal notice window",
+      "value": "not more than 120 nor fewer than 90 days before the end of the then-current term",
+      "doc": "D1",
+      "section": "Section 14.2"
+    },
+    {
+      "id": "F5",
+      "key": "Liability cap",
+      "value": "fees paid by Licensee in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F6",
+      "key": "Liability cap exclusion for data obligations",
+      "value": "breach of Section 9 (Confidentiality and Data Security) is excluded from the cap",
+      "doc": "D1",
+      "section": "Section 11.3(c)"
+    },
+    {
+      "id": "F7",
+      "key": "Acceptance rejection period",
+      "value": "ten (10) days after Delivery; otherwise deemed accepted",
+      "doc": "D1",
+      "section": "Section 6.2"
+    },
+    {
+      "id": "F8",
+      "key": "Phase 1 Delivery date",
+      "value": "July 20, 2026",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F9",
+      "key": "Phase 1 Rejection Notice date",
+      "value": "August 7, 2026",
+      "doc": "D2",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F10",
+      "key": "Order of precedence",
+      "value": "DPA (as to Personal Data), then License Agreement, then any Statement of Work",
+      "doc": "D1",
+      "section": "Section 1.3"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "bredeix_laipeisk_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "statement_of_work_phase2.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D3",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "DPA pulls data-breach liability back under the cap",
+      "description": "D1 Section 11.2 caps liability at fees paid in the prior 12 months. D1 Section 11.3(c) excludes from that cap any breach of Section 9 (Confidentiality and Data Security). D3 Section 8.1 then provides: 'Notwithstanding Section 11.3(c) of the Agreement, each party's aggregate liability arising out of or relating to this Addendum, including any Personal Data Breach, shall be subject to the Cap.' Under D1 Section 1.3, the DPA prevails over the Agreement as to Personal Data. Read together, these provisions make the DPA's override control. The clause binds both parties alike, but only Laipeisk processes personal data, namely Bredeix's farmer-supplier payment records and employee data. In practice, it caps Laipeisk's exposure for a data breach at roughly one year's fees. That exposure includes breach-notification costs and claims under the New York SHIELD Act (GBL Section 899-aa/bb). The uncapped protection Bredeix bargained for in Section 11.3(c) is lost.",
+      "doc": "D3",
+      "section": "Section 8.1",
+      "detect_terms": [
+        "Notwithstanding Section 11.3(c)",
+        "shall be subject to the Cap"
+      ],
+      "expected_finding": "Because D1 Section 1.3 makes the DPA control on Personal Data, D3 Section 8.1 overrides the D1 Section 11.3(c) carve-out and caps Laipeisk's data-breach liability at 12 months' fees; D3 Section 8.1 should be struck or conformed so that Personal Data Breach liability remains uncapped.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "Pending parent sale requires Laipeisk's consent",
+      "description": "D1 Section 16.2 bars Licensee from assigning without Licensor's prior written consent. It defines Change of Control to include any direct or indirect change in control of Licensee, including at the parent level, and treats any Change of Control as 'deemed an assignment.' If a Change of Control occurs without consent, Laipeisk may terminate on 30 days' notice. D2 Section 1.2 (Background) records two facts. First, on August 28, 2026, the sole owner of Bredeix's parent, Bredeix Dairy Holdings, LLC, signed a Unit Purchase Agreement with Northfold Provisions Group, expected to close in Q1 2027. Second, 'nothing in this SOW constitutes Licensor's consent under Section 16.2.' Read together, the transaction will trigger the consent requirement. No consent has been obtained. At closing, Laipeisk would hold a termination right over Bredeix's core procurement system, plus leverage to renegotiate.",
+      "doc": "D1",
+      "section": "Section 16.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "direct or indirect change in control"
+      ],
+      "expected_finding": "The Northfold acquisition of Bredeix's parent recorded in D2 Section 1.2 is an indirect Change of Control under D1 Section 16.2. Without Laipeisk's prior written consent, which the SOW expressly withholds, Laipeisk could terminate on 30 days' notice. Bredeix should obtain written consent or a waiver before closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "Phase 1 rejection notice sent after acceptance window",
+      "description": "D1 Section 6.2 requires Licensee to deliver a written rejection within ten (10) days after Delivery. Otherwise, the deliverable is 'deemed accepted' and the Phase 1 milestone fee becomes payable. D2 Section 2.1 records Phase 1 Delivery on July 20, 2026, so the window closed July 30, 2026. D2 Section 2.2 records Bredeix's Rejection Notice dated August 7, 2026, eight days late. The same section states that Laipeisk contends the notice was untimely and that Bredeix disputes deemed acceptance and reserves all rights. The SOW does not extend the window, and the D1 Section 1.3 precedence clause makes the Agreement's 10-day period control. Bredeix therefore faces a deemed acceptance of defective software and the milestone payment, but the point remains in dispute and can still be acted on.",
+      "doc": "D2",
+      "section": "Section 2.2",
+      "detect_terms": [
+        "dated August 7, 2026",
+        "reserves all rights"
+      ],
+      "expected_finding": "Measured from the July 20, 2026 Delivery date, D1 Section 6.2's 10-day window closed July 30, 2026, so Bredeix's August 7, 2026 Rejection Notice was untimely and risks deemed acceptance and the Phase 1 milestone fee. Because Bredeix has reserved its position in D2 Section 2.2, it should press its defect claims, for example under the warranty or by arguing waiver, and negotiate a written extension or re-test of acceptance.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "auto_renewal",
+      "label": "Five-year automatic renewal with 30-day opt-out window",
+      "description": "D1 Section 14.2 renews the Agreement automatically after the three-year Initial Term for successive five (5) year Renewal Terms. Either party may stop renewal only by notice given not more than one hundred twenty (120) nor fewer than ninety (90) days before the end of the then-current term. Each renewal therefore commits Bredeix for longer than the original term. A notice sent outside the narrow 30-day window, whether early or late, is ineffective, and New York courts enforce such windows as written. With the parent sale and integration pending, this risks locking Bredeix into the platform for five more years.",
+      "doc": "D1",
+      "section": "Section 14.2",
+      "detect_terms": [
+        "successive five (5) year Renewal Terms",
+        "not more than one hundred twenty (120) days"
+      ],
+      "expected_finding": "D1 Section 14.2 automatically renews the Agreement for five-year terms unless notice falls within a 30-day window 120 to 90 days before term end. Bredeix should seek shorter (e.g., one-year) renewals and a wider opt-out or termination-for-convenience right, and diarize the window.",
+      "contradicts": null
+    }
+  ]
+}

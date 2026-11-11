@@ -1,0 +1,181 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 2,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 2,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 2
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 2,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s38-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s38-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s38-m0003",
+      "accepted": false,
+      "failed_gate": "rubric_tests",
+      "reason": "gold_fails: [\"C9\", \"C10\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12289,
+      "output_tokens": 22335,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 12,
+      "input_tokens": 175198,
+      "output_tokens": 67059,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 77896,
+      "output_tokens": 6120,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 5686,
+      "output_tokens": 983,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 12,
+      "input_tokens": 274814,
+      "output_tokens": 7855,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 4170,
+      "output_tokens": 985,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 18964,
+      "output_tokens": 7556,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 168564,
+      "output_tokens": 49202,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 9,
+      "input_tokens": 68924,
+      "output_tokens": 7316,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "organic dairy": 1,
+      "independent film distribution": 1,
+      "seed genetics": 1
+    },
+    "agreement_types": {
+      "software license agreement": 1,
+      "supply agreement": 1,
+      "master services agreement": 1
+    },
+    "issue_types": {
+      "liability_cap_carveout": 2,
+      "change_of_control_consent": 2,
+      "governing_law_mismatch": 2,
+      "expired_notice_window": 1,
+      "auto_renewal": 1,
+      "exclusivity_scope": 1,
+      "uncapped_indemnity": 1,
+      "defined_term_inconsistency": 1,
+      "missing_assignment_restriction": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

@@ -1,0 +1,5 @@
+We act for Bredeix Organic Creamery, LLC, an organic dairy processor that also runs milk procurement, which is licensing software from Laipeisk Systems, Inc. Before Bredeix commits, the client wants to know what in this package exposes it to risk and what we should push back on.
+
+Please review all four documents in the matter folder: the software license agreement (bredeix_laipeisk_software_license_agreement.md), the Phase 2 statement of work (statement_of_work_phase2.md), the data processing addendum (data_processing_addendum.md), and the insurance certificate cover letter (insurance_certificate_cover_letter.md).
+
+Send me a memo that lists each issue you find. For each one, give the document and section where it appears, explain why it matters to Bredeix in light of how the client operates, and recommend a fix. Where you can, put the fix in proposed language. Order the issues by how much they matter to the client, and flag anything you think needs a call with the client before we respond to Laipeisk.

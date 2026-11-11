@@ -1,0 +1,204 @@
+{
+  "matter_id": "s38-m0003",
+  "summary": "Stukand Seed Genetics, Inc. (client), a corn and soybean seed breeder, signed a master services agreement with Padouth Genomic Services LLC for high-throughput genotyping, marker-assisted selection and doubled-haploid services. The folder holds four documents. (1) The MSA, effective March 2, 2026, which chooses New York law and forum. (2) A non-binding term sheet dated January 14, 2026. (3) Statement of Work No. 1, dated May 18, 2026, for a doubled-haploid and genotyping program on Stukand's elite inbred lines. Its recital also records that Stukand's parent signed a stock purchase agreement to be acquired by Varnell AgriSciences, Inc. (4) Stukand's lease of its Ames, Iowa breeding office and lab, which is a distractor. The MSA lets each SOW prevail for its own Services. Statement of Work No. 1 uses that rule to do three things: narrow 'Client Germplasm' so that derived genotypic data falls outside it, strip the uncapped carve-out for germplasm misuse, and move disputes to Iowa law and courts. The MSA also lets Padouth assign freely to any successor or acquirer, despite the term sheet's mutual consent term. It also treats an indirect change of control of Stukand as an assignment requiring Padouth's consent, and nothing in the folder shows that consent has been sought for the pending Varnell acquisition.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Stukand Seed Genetics, Inc.",
+      "role": "Client; seed breeder purchasing genotyping and breeding services (the firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Padouth Genomic Services LLC",
+      "role": "Provider of genotyping, marker-assisted selection and doubled-haploid services"
+    },
+    {
+      "id": "P3",
+      "name": "Stukand Holdings Corp.",
+      "role": "Parent company of Stukand Seed Genetics, Inc.; seller under the pending stock purchase agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Varnell AgriSciences, Inc.",
+      "role": "Buyer of Stukand Holdings Corp. under the stock purchase agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Oskaloo Park Properties LLC",
+      "role": "Landlord under the Ames, Iowa office and lab lease"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA governing law",
+      "value": "Laws of the State of New York",
+      "doc": "D1",
+      "section": "17.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA dispute forum",
+      "value": "State or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "17.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "An SOW prevails over the MSA only for its own Services; the MSA prevails over the Term Sheet",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F5",
+      "key": "MSA liability cap",
+      "value": "Fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "10.2"
+    },
+    {
+      "id": "F6",
+      "key": "MSA uncapped carve-out for germplasm",
+      "value": "Misuse or misappropriation of Client Germplasm is excluded from the cap (Section 10.3(c))",
+      "doc": "D1",
+      "section": "10.3(c)"
+    },
+    {
+      "id": "F7",
+      "key": "MSA definition of Client Germplasm",
+      "value": "Client seed, parent and inbred lines, tissue, DNA, and all genotypic data derived from them",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F8",
+      "key": "Term Sheet assignment term",
+      "value": "Neither party may assign without the other party's prior written consent",
+      "doc": "D2",
+      "section": "7"
+    },
+    {
+      "id": "F9",
+      "key": "SOW No. 1 date",
+      "value": "May 18, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Stock purchase agreement signing date",
+      "value": "May 4, 2026, between Stukand Holdings Corp. and Varnell AgriSciences, Inc.",
+      "doc": "D3",
+      "section": "Recital B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stukand_padouth_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "stukand_padouth_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "stukand_padouth_sow_no1_doubled_haploid_program.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D4",
+      "filename": "stukand_ames_office_lab_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "MSA Section 1.1 defines 'Client Germplasm' to include all genotypic data derived from Stukand's lines. Statement of Work No. 1, Section 1.2, redefines the term 'for purposes of this SOW' as only seed physically delivered to Provider. Section 7.1 of the same SOW then limits Padouth's confidentiality, return and no-use obligations to 'Client Germplasm'. MSA Section 2.3 lets an SOW prevail for its own Services, so the narrower SOW definition controls. The result is that the marker and genotypic data Padouth generates from Stukand's elite inbreds falls outside the protected term, and Padouth may keep and use it.",
+      "doc": "D3",
+      "section": "1.2",
+      "detect_terms": [
+        "seed physically delivered to Provider"
+      ],
+      "expected_finding": "SOW No. 1 Section 1.2 narrows 'Client Germplasm' to delivered seed, and MSA Section 2.3 lets the SOW prevail. Derived genotypic data on Stukand's inbred lines therefore loses the protections of SOW Section 7.1 and MSA Section 1.1. The SOW definition should be conformed to the MSA definition, or the SOW should state expressly that the MSA definition governs.",
+      "contradicts": "F7"
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "MSA Section 15.2 forbids Stukand from assigning without consent. It lets Padouth assign the MSA or any SOW, in whole or in part, to any Affiliate or to any successor or acquirer of all or part of its business, without consent. Under that clause, a competing seed company that buys Padouth's genotyping unit would receive Stukand's germplasm and data. The term sheet, Section 7, recorded a mutual consent requirement. Because the term sheet is non-binding and MSA Section 2.3 makes the MSA prevail over it, the MSA wording controls.",
+      "doc": "D1",
+      "section": "15.2",
+      "detect_terms": [
+        "successor or acquirer of all or part of its business"
+      ],
+      "expected_finding": "MSA Section 15.2 lets Padouth assign freely to any acquirer, including a competitor, which departs from the mutual consent term in Term Sheet Section 7. The MSA should require Stukand's prior written consent to any Padouth assignment, or at least bar assignment to a competitor.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "MSA Section 10.2 caps all liability under the MSA or any SOW at fees paid or payable in the prior 12 months. Section 10.3(c) excludes misuse or misappropriation of Client Germplasm from that cap. Statement of Work No. 1, Section 9.4, states that Section 10.3(c) of the MSA shall not apply and that all liability for Services under the SOW is subject to the Section 10.2 cap. Under MSA Section 2.3 the SOW prevails for its Services. As a result, misappropriation of Stukand's elite inbred lines during the doubled-haploid program is capped at about twelve months of fees.",
+      "doc": "D3",
+      "section": "9.4",
+      "detect_terms": [
+        "Section 10.3(c) of the MSA shall not apply"
+      ],
+      "expected_finding": "SOW No. 1 Section 9.4 removes the MSA Section 10.3(c) carve-out, and the SOW controls under MSA Section 2.3. Misuse or misappropriation of Stukand's germplasm is therefore capped at 12 months' fees. Section 9.4 should be deleted, or the SOW should state expressly that MSA Section 10.3 applies without modification.",
+      "contradicts": "F6"
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "MSA Section 15.3 treats any direct or indirect change of control of Stukand, including a change of control of its parent, as an assignment requiring Padouth's prior written consent. If the change occurs without consent, Padouth may terminate and retain all prepaid SOW fees. Recital B of Statement of Work No. 1 records that Stukand Holdings Corp. signed a stock purchase agreement with Varnell AgriSciences, Inc. on May 4, 2026, expected to close on or about December 15, 2026. Neither the SOW nor any other document in the folder obtains, waives or addresses Padouth's consent.",
+      "doc": "D1",
+      "section": "15.3",
+      "detect_terms": [
+        "deemed an assignment requiring Provider's prior written consent"
+      ],
+      "expected_finding": "The Varnell acquisition of Stukand Holdings Corp., recorded in SOW No. 1 Recital B and signed May 4, 2026, is an indirect change of control. Under MSA Section 15.3 it needs Padouth's prior written consent, and closing without consent would let Padouth terminate and keep prepaid fees. Stukand should obtain a written consent or waiver from Padouth before closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "MSA Sections 17.1 and 17.2 choose New York law and the courts of New York County. Statement of Work No. 1, Section 12, provides that the SOW and disputes arising from its Services are governed by the laws of the State of Iowa and resolved exclusively in the courts of Polk County, Iowa. MSA Section 2.3 lets the SOW prevail for its own Services, so the most valuable disputes, those over the doubled-haploid program and germplasm misuse, would go to a different law and forum. MSA-level claims would stay in New York, which risks parallel proceedings.",
+      "doc": "D3",
+      "section": "12",
+      "detect_terms": [
+        "laws of the State of Iowa",
+        "Polk County"
+      ],
+      "expected_finding": "SOW No. 1 Section 12 selects Iowa law and Polk County courts, and it prevails over MSA Sections 17.1 and 17.2 under MSA Section 2.3. That splits governing law and forum and risks parallel proceedings. Section 12 should be deleted, or the SOW should state that the MSA's New York law and forum provisions govern.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ]
+    }
+  ]
+}

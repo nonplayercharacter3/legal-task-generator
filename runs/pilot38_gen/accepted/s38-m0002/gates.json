@@ -1,0 +1,118 @@
+{
+  "matter_id": "s38-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 3.1: \"Notwithstanding anything in any SOW, Customer shall procure all Distribution Deliverables exclusively from Supplier throughout the Territory during the Term.\" Read with Section 1.6 (Distribution Deliverables covers \"every deliverable of any kind required for the exploitation of any Picture that Customer distributes, including all theatrical ... home entertainment, streaming and video-on-demand, broadcast and cable television, airline and in-flight, and festival and market deliverables\") and Section 1.12 (\"'Territory' means the entire world\"). Compare SOW No. 1 Section 1.2: \"Supplier will be Customer's exclusive provider of theatrical DCP mastering for releases in the United States and Canada.\"",
+            "reason": "Customer (the client, Binond) bears the exclusivity obligation. Read with the two definitions, Section 3.1 binds Binond to buy every type of distribution deliverable, worldwide, only from Favaiv. That reaches well beyond the narrow deal recorded in SOW No. 1: theatrical DCP mastering for US and Canada releases. SOW No. 1 Section 2.3 even excludes non-theatrical deliverables, KDMs, duplication and screeners from its scope. The SOW cannot narrow the exclusivity. Section 2.3 of the Agreement normally lets an SOW prevail, but the 'Notwithstanding anything in any SOW' lead-in to Section 3.1 overrides that rule. The exclusivity runs for a three-year Initial Term with automatic renewal. Its only relief is limited: force majeure substitution under Section 16.1, or termination for breach. As a result, Binond cannot use other vendors for streaming, broadcast, airline, foreign or festival deliverables. The signature blocks are blank and the effective date is recent, and nothing in the folder shows Binond has accepted this result. The point is still actionable and can be negotiated or corrected, for example by deleting the lead-in and limiting exclusivity to the SOW scope."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "DPA Section 9.1: \"Customer shall defend, indemnify and hold harmless Supplier and its Affiliates, officers, employees and agents from and against all Losses arising out of or relating to any third-party claim, regulatory investigation, fine or penalty, or Data Subject action relating to Customer Personal Data or its Processing under the Agreement, regardless of whether caused in part by Supplier.\" Supply Agreement Section 13.3: \"The limitations in Sections 13.1 and 13.2 do not apply to (a) indemnification obligations under Section 12 or any Addendum...\"",
+            "reason": "The indemnity runs one way only. Binond, the client, is the indemnifying party, and Favaiv gives no corresponding data indemnity in the DPA. The scope covers everything relating to Customer Personal Data, including fines and Data Subject actions, and expressly applies even where Supplier contributed to the harm. The DPA sets no liability limit of its own. Agreement Section 1.1 defines the DPA as an Addendum, so Section 13.3(a) takes these indemnity obligations out of both the 12-month fee cap (13.2) and the exclusion of indirect damages (13.1). Section 2.3 gives the DPA precedence on personal data, so nothing in the Agreement narrows the indemnity. Favaiv's breach-notice duty (DPA 7.1) and its responsibility for sub-processors (6.2) do not offset or limit it. Supplier's indemnity in Agreement 12.1(b) covers only Customer Materials (content), not personal data. The DPA is dated March 2, 2026, and nothing in the folder shows a claim, payment or acceptance that would make the issue moot. The result is that Binond carries uncapped exposure for privacy claims, including breaches caused by Favaiv's own screener platform. This is a live, material problem for the client."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SOW No. 1 §9.1: \"This SOW and any dispute arising under or relating to this SOW are governed by and construed in accordance with the laws of the State of New York\". §9.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in New York County, New York\". Supply Agreement §2.3 gives precedence to \"(b) any SOW, as to the Services, Deliverables and any matters arising under that SOW; then (c) the body of this Agreement\". §19.1 and §19.2 choose Delaware law and New Castle County courts.",
+            "reason": "The conflict is real and nothing in the folder cures it. Under §2.3 the SOW controls SOW matters, so SOW §9 sends disputes over mastering, delivery and fees to New York courts under New York law. The Agreement's other matters stay in Delaware: exclusivity (§3), the liability cap (§13) and the DPA indemnity (DPA §9.1, which applies Agreement §12.3). Section 19 has no override of conflicting SOWs, and the SOW's change-order clause does not reconcile the two. Many disputes will touch both sets of terms, for example a delivery failure tied to the cap or to exclusivity. Binond, a Delaware LLC, therefore faces split forums, competing exclusive-jurisdiction clauses, possible parallel proceedings and inconsistent results. The signature blocks are blank and the SOW is at the drafting or negotiation stage, so Binond can still raise the point and align SOW §9 with Delaware."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 14,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C10 asks for the whole ranking in fact F4 ('DPA (as to personal data), then any SOW (as to matters arising under it), then Supply Agreement'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.072,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

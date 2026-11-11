@@ -1,0 +1,124 @@
+{
+  "matter_id": "s38-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 6,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "8.1 Cap. Notwithstanding Section 11.3(c) of the Agreement, each party's aggregate liability arising out of or relating to this Addendum, including any Personal Data Breach, shall be subject to the Cap.",
+            "reason": "Section 11.2 of the Agreement caps liability at Fees paid in the prior 12 months. Section 11.3(c) removes breaches of Section 9 (Confidentiality and Data Security) from that cap. DPA Section 8.1 expressly overrides 11.3(c) for all liability relating to the Addendum, including any Personal Data Breach. Under Agreement Section 1.3, the DPA prevails as to Personal Data, so the override controls. Laipeisk is the only party processing Personal Data and the only party giving the Section 7.5 breach-cost reimbursement. The cap therefore limits Bredeix's recovery for a breach involving farmer-supplier bank and tax data, including notification costs, credit monitoring and SHIELD Act exposure. That recovery would otherwise have been uncapped. No other document cures this. The insurance letter shows $5M cyber coverage, but that does not raise the contractual cap. The DPA governs Phase 2 payment-data processing that is now beginning, and the Agreement is in its Initial Term. Bredeix can still raise this and seek an amendment under DPA Section 12.3, so the problem is actionable."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 16.2: \"Any direct or indirect change in control of Licensee, including any change in control of any entity that directly or indirectly controls Licensee, whether by merger, sale of equity, sale of assets or otherwise (a \"Change of Control\"), shall be deemed an assignment for purposes of this Section 16.2. If a Change of Control occurs without Licensor's prior written consent, Licensor may terminate this Agreement on thirty (30) days' written notice to Licensee.\" SOW No. 2 §1.2(b)-(c): the sole owner of Bredeix Dairy Holdings, LLC signed a Unit Purchase Agreement with Northfold Provisions Group on August 28, 2026, with closing expected Q1 2027, and \"Nothing in this SOW constitutes Licensor's consent under Section 16.2 of the Agreement.\"",
+            "reason": "The consent requirement binds Bredeix, the Licensee, and the termination right belongs to Laipeisk, so the risk falls on the client. Section 16.2 expressly covers a change of control at the parent level. The sale of Bredeix's parent signed on August 28, 2026 will therefore be a deemed assignment when it closes. SOW No. 2 expressly says it does not give consent, and no other document in the folder records consent. The transaction has not closed yet (expected Q1 2027, and today is November 10, 2026), so the issue is still actionable. Bredeix can seek Laipeisk's written consent before closing. Without it, Laipeisk could terminate on 30 days' notice the platform that runs Bredeix's procurement and producer payments, or use that threat to renegotiate terms in the middle of the Phase 2 implementation."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Licensee delivered to Licensor a Rejection Notice dated August 7, 2026. ... Licensor contends that the Rejection Notice was not delivered within the period required by Section 6.2 of the Agreement and that the Phase 1 Deliverable has been accepted. Licensee disputes that the Phase 1 Deliverable has been deemed accepted and reserves all rights under the Agreement and SOW No. 1 in respect of the Phase 1 Deliverable and the Phase 1 milestone fee.",
+            "reason": "Under Agreement Section 6.2, Bredeix (the Licensee) had to deliver any Rejection Notice within ten days after Delivery. Otherwise the Deliverable is deemed accepted. SOW Section 2.1 records Delivery on July 20, 2026, so the window closed July 30. The notice is dated August 7, which is late. Deemed acceptance would make the Phase 1 milestone fee payable under Section 5.2. It would also cut off Bredeix's correction and refund rights under Sections 6.3 and 6.4, even though the notice lists real defects (duplicate producer records, misposted component tests, wrong organic premiums). Nothing in the SOW cures the late notice. It does not extend the window or waive deemed acceptance. Section 2.3 commits Licensor only to 'investigate' the defects and leaves both positions unchanged. Under Agreement Section 1.3, the Agreement prevails over the SOW, and Section 16.7 requires any waiver to be in writing. The issue is still actionable: the folder shows no payment of the Phase 1 fee and no concession by Bredeix, and Bredeix has expressly reserved its rights. The SOW is also unsigned, so Bredeix can still negotiate this point before execution."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "On expiry of the Initial Term, this Agreement shall renew automatically for successive five (5) year Renewal Terms (each a \"Renewal Term\" and, together with the Initial Term, the \"Term\"), unless either Party gives the other written notice of non-renewal not more than one hundred twenty (120) days nor fewer than ninety (90) days before the end of the then-current term.",
+            "reason": "Section 14.2 renews the three-year Initial Term automatically for five-year terms. Non-renewal notice is valid only in a 30-day window, 120 to 90 days before term end. That falls roughly December 3, 2027 to January 2, 2028, before the March 31, 2028 expiry. Nothing in the SOW, DPA or insurance letter changes this clause. Bredeix has no termination-for-convenience right. The change-of-control termination right in Section 16.2 belongs only to Licensor. So the pending Northfold sale and integration give Bredeix no exit, and a missed window would bind it for five more years at the same fees. The window has not yet opened (today is November 10, 2026), so the issue remains actionable. Bredeix can calendar the window or negotiate an amendment."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 17,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C13 asks for the whole ranking in fact F10 ('DPA (as to Personal Data), then License Agreement, then any Statement of Work'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C7",
+          "C8",
+          "C9"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.065,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

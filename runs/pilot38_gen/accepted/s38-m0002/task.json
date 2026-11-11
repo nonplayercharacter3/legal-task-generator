@@ -1,0 +1,153 @@
+{
+  "task_id": "s38-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Binond Releasing LLC, an independent film distributor, which is the customer under a supply arrangement with Favaiv Digital Cinema Services, Inc. Before the client commits, it needs a clear picture of where these documents leave it exposed and what we should push back on. Please review the full set in the matter folder: supply_agreement.md, data_processing_addendum.md, sow_no_1.md and mutual_nda.md. Then prepare a memo to me. For each issue you identify, state where it appears (document and section), explain why it matters for Binond, and give a recommended fix. Where a fix calls for specific drafting, propose language we could send. Put the most significant points first, and flag anything you think needs a business decision from the client rather than a drafting change. Keep it practical; the client will use this to decide its negotiating position. Let me know if you run into anything in the folder that seems incomplete or that you need from the client to finish the analysis.",
+  "documents": [
+    "data_processing_addendum.md",
+    "mutual_nda.md",
+    "sow_no_1.md",
+    "supply_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the Supply Agreement's exclusivity obligation, read with its definitions of 'Distribution Deliverables' and 'Territory', requires Binond to procure every distribution deliverable (all formats, worldwide) exclusively from Favaiv for the Term, far beyond the theatrical DCP mastering for the US and Canada exclusivity recorded in SOW No. 1.",
+      "kind": "issue",
+      "hints": [
+        "all Distribution Deliverables",
+        "worldwide",
+        "theatrical DCP mastering in the US and Canada"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response locates the overbroad exclusivity issue in Supply Agreement Section 3.1.",
+      "kind": "issue",
+      "hints": [
+        "Section 3.1",
+        "Supply Agreement"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response explains why the overbroad exclusivity matters to Binond and recommends a fix for it.",
+      "kind": "issue",
+      "hints": [
+        "narrow exclusivity",
+        "other vendors"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Binond's one-way indemnity to Favaiv for personal-data claims, which applies even where Favaiv is partly at fault, is uncapped (falls outside the Supply Agreement's 12-month-fees liability cap).",
+      "kind": "issue",
+      "hints": [
+        "uncapped",
+        "regardless of whether caused in part by Supplier",
+        "one-way indemnity"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response locates the uncapped indemnity issue in Data Processing Addendum Section 9.1.",
+      "kind": "issue",
+      "hints": [
+        "DPA Section 9.1",
+        "Data Processing Addendum"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response explains why the uncapped data indemnity matters to Binond and recommends a fix for it.",
+      "kind": "issue",
+      "hints": [
+        "unlimited exposure",
+        "cap or super-cap",
+        "mutual indemnity"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response concludes that SOW No. 1's choice of New York law and New York County courts displaces the Supply Agreement's Delaware law and forum for disputes arising under the SOW, splitting Binond's disputes across two jurisdictions.",
+      "kind": "issue",
+      "hints": [
+        "New York law",
+        "New York County",
+        "two forums"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response locates the governing law mismatch issue in SOW No. 1 Section 9.",
+      "kind": "issue",
+      "hints": [
+        "SOW No. 1 Section 9"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response explains why the governing law and forum mismatch matters to Binond and recommends a fix for it.",
+      "kind": "issue",
+      "hints": [
+        "parallel proceedings",
+        "conform to Delaware",
+        "delete SOW Section 9"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response states that under the Supply Agreement's order of precedence an SOW prevails over the Supply Agreement as to matters arising under that SOW.",
+      "kind": "fact",
+      "hints": [
+        "order of precedence",
+        "SOW prevails",
+        "Section 2.3"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response is written as a memo addressed to the supervising partner that sets out issues individually.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Re:"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response proposes specific drafting language for at least one recommended fix.",
+      "kind": "format",
+      "hints": [
+        "proposed language",
+        "replace with",
+        "insert"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "The response claims that Binond's indemnity under DPA Section 9.1 is subject to the Supply Agreement's 12-month-fees liability cap.",
+      "kind": "negative",
+      "hints": [
+        "capped at 12 months' fees"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "The response claims that SOW No. 1 effectively limits Binond's exclusivity obligation to theatrical DCP mastering in the US and Canada.",
+      "kind": "negative",
+      "hints": [
+        "SOW limits exclusivity",
+        "SOW controls exclusivity"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}
