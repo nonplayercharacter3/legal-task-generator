@@ -33,7 +33,7 @@ projection is 2,554, over the 2,000 limit in the task. Sirui She decides how to 
   adapter driven by `BASETEN_BASE_URL` and `BASETEN_API_KEY`; NRP's chat endpoint returns native `tool_calls` for
   Qwen. We use it, pointed at NRP, and add `reasoning_effort = "low"` (as in our solver config; the adapter's own
   switch only sets `enable_thinking`, which leaves NRP at its default "xhigh") and drop the reply's reasoning text
-  from the history. Not hosted on the vLLM pod path: `/v1/responses` was not needed.
+  from the history.
 - **Grade** (`python -m lab_core.evaluation.run_eval`): one judge call per criterion (LAB's `rubric_criterion` prompt:
   task title, the output files named by the criterion, criterion title, `match_criteria`; reply `verdict` and
   `reasoning`). The default is **two judges** (Sonnet 4.6 and GPT-5.5) averaged; `--judges MODEL` uses one. A .docx
@@ -84,8 +84,8 @@ Qwen on NRP at `reasoning_effort = low`, judge Opus; 5 runs, 0 grading errors, 1
 ## The 50-task sample: projection and decision
 
 `scripts/lab_sample.py draw` (seed 46) drew 20 LAB tasks from corporate-ma and contracts, 10 from other areas, and 20 of
-ours (5 per label 0, 0.33, 0.67, 1.0; pool sizes 13, 15, 10, 15). Its criteria add up to **2,554 judge calls** (LAB 2,298:
-one drawn task, `diligence/aerospace-vertical-integration`, alone has 498 criteria; ours 190 to 256). The rule in T46 says
+ours (5 per label 0, 0.33, 0.67, 1.0; pool sizes 13, 15, 10, 15). Its criteria add up to **2,554 judge calls** (LAB 2,352:
+one drawn task, `diligence/aerospace-vertical-integration`, alone has 498 criteria; ours 202). The rule in T46 says
 stop after the smoke at over 2,000, so nothing of the sample was run. Time is not the limit: about 4.5 minutes of agent
 time per task at 4 in parallel, so roughly 1.3 hours of agent time plus about 1 hour of judging, about 2.5 hours.
 Options: (a) allow the 2,554 calls; (b) drop the 498-criteria task and redraw one (about 2,100, still over); (c) draw 15

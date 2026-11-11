@@ -50,6 +50,7 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 | fact_matcher | 3 | 4528 | 676 | 0 |
 | instruction_writer | 2 | 2836 | 719 | 0 |
 | issue_verifier | 12 | 319276 | 10674 | 0 |
-| judge | 6 | 41005 | 4148 | 0 |
+| judge | 15 | 43988 | 4812 | 8 |
 | ledger_writer | 3 | 12285 | 26544 | 0 |
 | rubric_writer | 2 | 14311 | 3959 | 0 |
+| solver | 82 | 140143 | 25413 | 0 |
