@@ -51,6 +51,7 @@ class SpecCfg:
     work_types: list[str] = field(default_factory=lambda: ["issue_spotting_memo"])
     n_documents: list[int] = field(default_factory=lambda: [3, 5])  # inclusive range
     n_issues: list[int] = field(default_factory=lambda: [3, 5])
+    cross_document_share: float = 0.0  # share of issues (rounded up) that need two documents read together
 
 
 @dataclass

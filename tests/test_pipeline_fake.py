@@ -605,3 +605,60 @@ def test_generate_only_config_is_the_nrp_pilot_with_solver_check_deferred(tmp_pa
     assert Pipeline(run).run(resume=True)["resumed"] == 1
     with pytest.raises(ValueError, match="settings changed"):
         Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}, "gates": {"solver_check": "defer"}})).run(resume=True)
+
+
+# ---- two-document issues (spec.cross_document_share)
+
+
+def _cross_cfg(tmp_path, share=0.5, fault="", n=3):
+    return load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": n, "seed": 11}, "fake": {"fault": fault},
+                              "spec": {"cross_document_share": share, "n_issues": [4, 4], "n_documents": [4, 5]}})
+
+
+def _issue_results(folder):
+    gates_ = json.loads((folder / "gates.json").read_text())["gates"]
+    return next(g for g in gates_ if g["name"] == "issue_check")["details"]["results"]
+
+
+def test_default_settings_leave_the_share_out_and_specs_unchanged(tmp_path):
+    from ltg.stages import sample_specs
+
+    cfg = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1}})
+    assert "cross_document_share" not in Pipeline(cfg)._settings()["spec"]
+    assert all(s.n_cross_document == 0 for s in sample_specs(cfg.spec, 5, seed=3))
+    assert Pipeline(_cross_cfg(tmp_path))._settings()["spec"]["cross_document_share"] == 0.5
+    assert [s.n_cross_document for s in sample_specs(_cross_cfg(tmp_path).spec, 3, seed=3)] == [2, 2, 2]  # ceil(0.5 * 4)
+
+
+def test_two_document_issues_are_planted_checked_and_accepted(tmp_path):
+    report = Pipeline(_cross_cfg(tmp_path)).run()
+    assert report["accepted"] == 3
+    for m in sorted((Path(tmp_path) / "accepted").iterdir()):
+        ledger = Ledger.from_dict(json.loads((m / "ledger.json").read_text()))
+        cross = [i for i in ledger.issues if i.doc2]
+        assert len(cross) == 2 and all(i.doc2 != i.doc and i.section2 and i.detect_terms2 for i in cross)
+        res = {r["issue"]: r for r in _issue_results(m)}
+        for i in cross:  # both blind answers are stored, and neither half gives the issue away
+            assert len(res[i.id]["alone"]) == 2 and not any(a["findable"] for a in res[i.id]["alone"].values())
+        assert all("alone" not in res[i.id] for i in ledger.issues if not i.doc2)
+
+
+def test_an_issue_one_document_gives_away_is_rejected_at_issue_check(tmp_path):
+    report = Pipeline(_cross_cfg(tmp_path, fault="single_doc_giveaway")).run()
+    assert report["accepted"] == 0
+    assert {m["failed_gate"] for m in report["matters"]} == {"issue_check"}
+    assert any("alone" in r["reason"] for r in _issue_results(next((Path(tmp_path) / "rejected").iterdir())))
+
+
+def test_validate_ledger_wants_the_two_document_issues_the_spec_asks_for(tmp_path):
+    from ltg.schema import validate_ledger
+    from ltg.stages import sample_specs
+
+    spec = sample_specs(_cross_cfg(tmp_path).spec, 1, seed=3)[0]
+    fake = FakeModel(seed=1)
+    ledger = Ledger.from_dict(fake._ledger_writer({"spec": spec.to_dict(), "precedents": []}))
+    assert validate_ledger(ledger, spec) == []
+    ledger.issues[0].doc2 = ledger.issues[0].doc  # the same document twice
+    assert any("both its documents" in e for e in validate_ledger(ledger, spec))
+    ledger.issues[0].doc2 = None
+    assert any("expected 2 issues that need two documents" in e for e in validate_ledger(ledger, spec))

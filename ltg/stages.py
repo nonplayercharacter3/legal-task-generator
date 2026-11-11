@@ -8,6 +8,7 @@ Isolation, by construction:
 
 from __future__ import annotations
 
+import math
 import random
 
 from . import prompts
@@ -73,6 +74,7 @@ def sample_specs(cfg: SpecCfg, n: int, seed: int, used_industries: dict[str, int
                 name_stems=stems,
                 supporting_kinds=r.sample(SUPPORTING_KINDS[area], min(n_support, len(SUPPORTING_KINDS[area]))),
                 distractor_kind=r.choice(DISTRACTOR_KINDS) if n_docs >= 3 else "",
+                n_cross_document=min(math.ceil(cfg.cross_document_share * n_issues), n_issues) if n_docs >= 2 else 0,
             )
         )
     return specs

@@ -14,6 +14,8 @@ It can also inject faults on purpose, to prove each gate rejects what it should:
                          (rubric_trace fails only when check_bundling = "repair" and the writer does not correct it)
   weak_gold              gold answer misses an issue              -> rubric_tests fails
   absent_party           an issue rests on a buyer no document names -> issue_check fails (never drawn by fault_rate)
+  single_doc_giveaway    a two-document issue is fully planted in its first document -> issue_check fails (never drawn
+                         by fault_rate; needs spec.cross_document_share)
 
 Its "legal knowledge" is the issue library's detect_terms, so the fake solver finds
 an issue by spotting those phrases, with probability `solver_skill` per issue.
@@ -30,7 +32,7 @@ from typing import Any
 from .models import CallLog, CallRecord, extract_input
 from .taxonomy import ISSUE_LIBRARY
 
-FAULTS = ("drop_issue", "wrong_fact", "conflicting_restatement", "leaky_filename", "untraceable_criterion", "weak_gold", "bundled_criterion", "absent_party")
+FAULTS = ("drop_issue", "wrong_fact", "conflicting_restatement", "leaky_filename", "untraceable_criterion", "weak_gold", "bundled_criterion", "absent_party", "single_doc_giveaway")
 
 COMPANY_NAMES = [
     "Ostrava Industrial Supply Co.",
@@ -102,8 +104,8 @@ class FakeModel:
         if self.fault_rate > 0:
             r = _rng(self.seed, "fault", matter_id)
             if r.random() < self.fault_rate:
-                # not bundled_criterion (the writer corrects it, so it rejects nothing) nor absent_party: either would only reshuffle the demo
-                return r.choice(FAULTS[:-2])
+                # not bundled_criterion (the writer corrects it, so it rejects nothing), absent_party nor single_doc_giveaway: they would only reshuffle the demo
+                return r.choice(FAULTS[:-3])
         return ""
 
     def complete(self, role: str, system: str, user: str) -> str:
@@ -172,6 +174,7 @@ class FakeModel:
         issues = []
         for idx, itype in enumerate(spec["issue_types"]):
             lib = ISSUE_LIBRARY[itype]
+            cross = idx < spec.get("n_cross_document", 0) and len(live_docs) > 1 and len(lib["detect_terms"]) > 1
             issues.append(
                 {
                     "id": f"I{idx + 1}",
@@ -180,7 +183,11 @@ class FakeModel:
                     "description": lib["description"],
                     "doc": live_docs[idx % len(live_docs)],
                     "section": f"{idx + 5}.2",
-                    "detect_terms": list(lib["detect_terms"]),
+                    "detect_terms": list(lib["detect_terms"][:1] if cross else lib["detect_terms"]),
+                    # a two-document issue: the first term in one document, the rest in another
+                    "doc2": live_docs[(idx + 1) % len(live_docs)] if cross else None,
+                    "section2": f"{idx + 5}.3" if cross else None,
+                    "detect_terms2": list(lib["detect_terms"][1:]) if cross else [],
                     "expected_finding": lib["finding"],
                     # governing law (F3) is stated in D1, so only a conflicting choice elsewhere contradicts it
                     "contradicts": "F3" if itype == "governing_law_mismatch" and live_docs[idx % len(live_docs)] != "D1" else None,
@@ -215,6 +222,7 @@ class FakeModel:
 
         facts = [f for f in ledger["facts"] if f["doc"] == doc["id"]]
         issues = [i for i in ledger["issues"] if i["doc"] == doc["id"]]
+        halves = [i for i in ledger["issues"] if i.get("doc2") == doc["id"]]
         if fault == "drop_issue" and issues and issues[0]["id"] == ledger["issues"][0]["id"]:
             issues = issues[1:]
         first_fact = ledger["facts"][0]["id"]
@@ -228,7 +236,12 @@ class FakeModel:
             f = ledger["facts"][0]
             lines += ["## 0. Background", "", f"{f['key']}: {f['value']} (as revised)", ""]
         for i in issues:
-            lines += [f"## {i['section']}. General Provisions", "", ISSUE_LIBRARY[i["type"]]["planted_text"], "", r.choice(BOILERPLATE), ""]
+            text = ISSUE_LIBRARY[i["type"]]["planted_text"]
+            if i.get("doc2") and fault != "single_doc_giveaway":  # only this half: the first term, nothing else of the problem
+                text = f"This document addresses {i['detect_terms'][0]} as the other documents of the matter provide."
+            lines += [f"## {i['section']}. General Provisions", "", text, "", r.choice(BOILERPLATE), ""]
+        for i in halves:
+            lines += [f"## {i['section2']}. Supplementary Terms", "", f"For this document, {' and '.join(i['detect_terms2'])} apply as stated here.", "", r.choice(BOILERPLATE), ""]
         return "\n".join(lines)
 
     def _fact_extractor(self, p: dict) -> dict:
@@ -245,12 +258,19 @@ class FakeModel:
         return {"results": [{"id": x["id"], "same": words(x["ledger"]) == words(x["document"]), "reason": ""} for x in p["pairs"]]}
 
     def _issue_verifier(self, p: dict) -> dict:
-        content = p["document"]["content"]
+        content = p["document"]["content"] + (p["second_document"]["content"] if "second_document" in p else "")
         lib = next((v for v in ISSUE_LIBRARY.values() if v["label"] == p["issue"]["label"]), {})
         terms = p["issue"].get("detect_terms") or lib.get("detect_terms", [])
         present = bool(terms) and all(t.lower() in content.lower() for t in terms)
         evidence = next((ln for ln in content.splitlines() if terms and terms[0].lower() in ln.lower()), "")
         return {"present": present, "evidence": evidence, "reason": "all detect terms found" if present else "detect terms missing"}
+
+    def _issue_solo_verifier(self, p: dict) -> dict:
+        content = p["document"]["content"]
+        lib = next((v for v in ISSUE_LIBRARY.values() if v["label"] == p["issue"]["label"]), {})
+        terms = lib.get("detect_terms", [])
+        found = bool(terms) and all(t.lower() in content.lower() for t in terms)  # the whole problem is on this page
+        return {"findable": found, "evidence": "", "reason": "every term of the problem is here" if found else "only part of the problem is here"}
 
     def _instruction_writer(self, p: dict) -> dict:
         m, files = p["matter"], p["files"]

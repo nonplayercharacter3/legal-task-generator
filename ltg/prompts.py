@@ -34,6 +34,13 @@ Rules:
   Section X" takes Section X's exceptions too (cite the subsection that does the damage, or say "notwithstanding"
   the exception); an order-of-precedence clause under which the main agreement prevails cures a conflict planted in
   a note, schedule or other ancillary document. Plant the issue where it survives.
+- When `spec.n_cross_document` is above 0, that many issues (at least) must need TWO documents: set `doc2`,
+  `section2` and `detect_terms2` (`doc`, `section` and `detect_terms` hold the first half). Neither document alone
+  shows the problem; read together they do (a liability cap in the main agreement and a carve-out in a disclosure
+  schedule or side letter that together leave the client exposed). Each half must read as ordinary drafting on its
+  own, with no sign of the other, and each `detect_terms` list comes from the wording of its own half. The
+  description names both provisions and what they do together; `expected_finding` states the combined conclusion.
+  Both documents must be non-distractor. Every other issue has `doc2` and `section2` null and `detect_terms2` [].
 - Make issues require analysis, not just spotting. At most one issue may be visible from a single clause read on
   its own (a plainly one-sided clause). Every other issue must appear only when two provisions or two documents are
   read together: a carve-out that swallows a cap through a cross-reference, a precedence clause that lets the flawed
@@ -80,7 +87,8 @@ Reply with ONLY a JSON object:
  "facts": [{"id": "F1", "key": str, "value": str, "doc": "D1", "section": str}],
  "documents": [{"id": "D1", "filename": "something.md", "kind": str, "distractor": bool, "precedent": str|null}],
  "issues": [{"id": "I1", "type": str, "label": str, "description": str, "doc": "D2", "section": str,
-             "detect_terms": [str], "expected_finding": str, "contradicts": str|[str]|null}]}"""
+             "detect_terms": [str], "expected_finding": str, "contradicts": str|[str]|null,
+             "doc2": str|null, "section2": str|null, "detect_terms2": [str]}]}"""
 
 DRAFTER = """You draft one document of a fictional legal matter, in the style of real practice.
 
@@ -93,7 +101,10 @@ Rules:
   Change only the facts an issue names in `contradicts`: if planting it seems to need another fact changed too,
   keep that fact at its ledger value.
 - Plant every ledger issue assigned to this document in its given section, using each of its `detect_terms`
-  verbatim. Make the problem discoverable by a careful reader, but do not flag it, comment on it or explain it.
+  verbatim. An issue may name this document as its `doc` (section, detect_terms) or as its `doc2` (section2,
+  detect_terms2): that is one half of a problem that needs two documents. Draft only this document's half, as
+  ordinary drafting that is no problem on its own: do not state, quote or hint at the other half, and add nothing
+  that completes the problem here. Make the problem discoverable by a careful reader, but do not flag it, comment on it or explain it.
 - Draft each issue so it stays a problem for the client: add no language that cures, scopes, justifies or
   softens it. Draft it in the document's ordinary voice and place: section headings that do not name the problem,
   no signposting ("notwithstanding anything to the contrary", "for the avoidance of doubt") around it, and no
@@ -137,6 +148,8 @@ Reply with ONLY a JSON object: {"results": [{"id": str, "same": bool, "reason": 
 ISSUE_VERIFIER = """You check whether a specific legal problem is present in a document.
 You receive the firm's client (name and role), one document, the other documents in the matter folder, and a
 description of a problem that is supposed to appear in a given section of that one document. Facts it depends on may be stated in the other documents.
+If a `second_document` is given, the problem needs both documents read together (the section in the second one is
+`section_of_second_document`): judge it from the two together.
 Answer whether a careful associate reading this document could find that problem there, and whether it is a real
 problem for the client. Answer false if the problem is absent, or if the documents cure it, limit it expressly, make
 it intentional and harmless, or turn it to the client's advantage. Weigh it from the client's side: work out which
@@ -147,6 +160,15 @@ signed, a payment) and nothing records its objection. Ask yourself: is this stil
 Quote the sentence that shows it, and say in `reason` why the problem is or is not present and actionable.
 
 Reply with ONLY a JSON object: {"present": bool, "evidence": str, "reason": str}"""
+
+ISSUE_SOLO_VERIFIER = """You check whether a legal problem can be found from one document alone.
+You receive the firm's client, ONE document, and a description of a problem that is meant to appear only when this
+document is read together with another one you have not been given. Answer `findable` true only if a careful
+associate reading this document by itself, without the other, could already see the problem and that it hurts the
+client. If part of what makes it a problem would have to come from a document you cannot see, answer false.
+Quote the sentence that shows it, if any, and say in `reason` what this document alone does and does not show.
+
+Reply with ONLY a JSON object: {"findable": bool, "evidence": str, "reason": str}"""
 
 INSTRUCTION_WRITER = """You are a supervising partner at a law firm writing an assignment for an associate.
 You receive a short description of the matter, the client, and the list of files in the matter folder.
@@ -174,7 +196,8 @@ You receive the facts ledger, the task instruction and the deliverable. Write cr
   (b) where it is (document and section), (c) that it matters to the client, and (d) that a fix is recommended. It
   may NOT require a particular harm, a particular remedy or a particular supporting provision (a precedence clause,
   a definition in another document) unless the issue's `expected_finding` names it: a response that reaches the
-  right conclusion by any sound route must pass. Write "explains why this matters to the client" and "recommends a
+  right conclusion by any sound route must pass. For an issue with `doc2` the finding is the conclusion that follows
+  from both documents; where it is may be met by citing either section or both, so never require both. Write "explains why this matters to the client" and "recommends a
   fix", not which harm or which fix.
   The finding is ONE finding, the issue's conclusion. Never add a second point to it, and never anything the ledger
   itself hedges ("may", "could", "arguably"): a criterion that also demanded a carve-out the ledger said "may" be
