@@ -132,7 +132,7 @@ fault), and 12 of 20 are accepted with labels (pass rates 0.33: 5, 0.67: 5, 1.00
 1. **Sirui She reads round 9 and s12-m0003:** `runs/pilot9_nrp/accepted/s9-m0002` (glass supply), `s9-m0003` (dental
    MSA renewal) and `runs/pilot12_vllm/accepted/s12-m0003` (data center cooling distribution agreement), against the
    checklist in "How to verify changes". Done: each holds up, or its defect is written down as a class to fix.
-2. **Overnight batches on `main` toward a v1 dataset of about 250 tasks.** `configs/pilot_nrp_solver.toml` (the vLLM
+2. **Overnight batches on `main` toward a v1 dataset of about 250 tasks.** **Paused 2026-11-11 (Sirui She):** no new batches after seeds 37 to 44 until the LAB comparison (T45, T46) is in; the generator gets the v2 changes first (T47, T48). `configs/pilot_nrp_solver.toml` (the vLLM
    pod, `configs/vllm_nautilus_solver.toml`, is the fallback). Sirui She's seeds run from 28 up (`runs/pilot<seed>_nrp`),
    the lab mate's from 500 (`runs/lm_s<seed>_nrp`, see "Lab mate"). Each batch's results go to `main`, every rejection
    is read and each false rejection fixed as a defect class. Done: the full export holds about 250 sound tasks.
