@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "test",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -121,8 +134,71 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C13",
+                "C14",
+                "C15",
+                "C16"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "2026-03-20_gliruth_letter_to_breibeith.md",
+                "gliruth_breibeith_software_license_agreement.md",
+                "pellacott_insurance_certificate_cover_letter.md",
+                "rentflow_quality_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C19"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "2026-03-20_gliruth_letter_to_breibeith.md",
+                "gliruth_breibeith_software_license_agreement.md",
+                "pellacott_insurance_certificate_cover_letter.md",
+                "rentflow_quality_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C13",
+                "C14",
+                "C15",
+                "C16",
+                "C19"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "2026-03-20_gliruth_letter_to_breibeith.md",
+                "gliruth_breibeith_software_license_agreement.md",
+                "pellacott_insurance_certificate_cover_letter.md",
+                "rentflow_quality_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
