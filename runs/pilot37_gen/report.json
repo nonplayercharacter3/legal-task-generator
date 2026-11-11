@@ -1,0 +1,178 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 2,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 2,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 2
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 2,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s37-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s37-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s37-m0003",
+      "accepted": false,
+      "failed_gate": "issue_check",
+      "reason": "missing: [\"I2\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 12285,
+      "output_tokens": 26544,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 13,
+      "input_tokens": 233956,
+      "output_tokens": 85675,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 94198,
+      "output_tokens": 7622,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4528,
+      "output_tokens": 676,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 12,
+      "input_tokens": 319276,
+      "output_tokens": 10674,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 2,
+      "input_tokens": 2836,
+      "output_tokens": 719,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 2,
+      "input_tokens": 14311,
+      "output_tokens": 3959,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 4,
+      "input_tokens": 125166,
+      "output_tokens": 27766,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 6,
+      "input_tokens": 41005,
+      "output_tokens": 4148,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "architectural glass": 1,
+      "marine shipping": 1,
+      "orthopedic implants": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 2,
+      "software license agreement": 1
+    },
+    "issue_types": {
+      "change_of_control_consent": 2,
+      "governing_law_mismatch": 2,
+      "defined_term_inconsistency": 2,
+      "expired_notice_window": 2,
+      "survival_gap": 2,
+      "liability_cap_carveout": 1,
+      "uncapped_indemnity": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

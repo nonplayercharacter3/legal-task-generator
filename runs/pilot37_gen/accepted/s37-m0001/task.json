@@ -1,0 +1,120 @@
+{
+  "task_id": "s37-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Namaith Facade Systems, Inc., the licensee under its software license arrangement with Lavas Glazing Software, LLC. Namaith wants to understand where it stands under the license package before it relies on it further, and I need your help identifying the issues that matter to the client.\n\nPlease review the full set of documents in the matter folder: the software license agreement (namaith_lavas_software_license_agreement.md), the term sheet (glazecore_license_term_sheet.md), the parent guaranty (lavas_parent_guaranty.md), Amendment No. 1 (license_amendment_no_1.md), and the insurance certificate cover letter (lavas_insurance_certificate_cover_letter.md).\n\nSend me a memo that lists each issue you find. For each one, tell me where it appears (document and section), why it matters for Namaith, and what fix you recommend. Keep it practical. I'll use it to decide what we raise with Lavas and how. If anything in the file is ambiguous or seems incomplete, flag it rather than assume. Let me know if you have questions as you go.",
+  "documents": [
+    "glazecore_license_term_sheet.md",
+    "lavas_insurance_certificate_cover_letter.md",
+    "lavas_parent_guaranty.md",
+    "license_amendment_no_1.md",
+    "namaith_lavas_software_license_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the pending acquisition of Namaith Holdings Corp. by Orvand Partners, recorded in Amendment No. 1's recitals, is an indirect change of Control under License Agreement Section 14.2 that requires Lavas's prior written consent, which has not been given. It identifies License Agreement Section 14.2 as where the issue arises, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "indirect change of Control",
+        "Section 14.2",
+        "prior written consent"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that Amendment No. 1's restated Section 10.3 no longer carves Licensor's Section 9.1 IP infringement indemnity out of the liability cap, so that indemnity is now capped. It identifies Amendment No. 1 Section 2 (restating License Agreement Section 10.3) as where the issue arises, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "restated Section 10.3",
+        "Section 9.1 IP infringement indemnity",
+        "now subject to the cap"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that Namaith's Section 9.2 indemnity covers all building and structure claims, including those caused by the software, and is excluded from the liability cap, leaving Namaith with unlimited exposure. It identifies License Agreement Section 9.2 as where the issue arises, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 9.2",
+        "any building, curtain wall or structure",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that the Parent Guaranty's New York governing law and exclusive Manhattan forum conflict with the License Agreement's Delaware governing law and Wilmington forum. It identifies Parent Guaranty Section 12 as where the issue arises, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York law",
+        "Borough of Manhattan",
+        "Delaware"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that the Parent Guaranty does not cover the ThermaStress Analysis Module added by Amendment No. 1, because the Guaranty fixes 'Licensed Software' as Schedule A as in effect on its date. It identifies Parent Guaranty Section 1 as where the issue arises, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "as in effect on the date hereof",
+        "ThermaStress",
+        "not covered by the Guaranty"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the License Agreement's liability cap is the fees paid or payable by the Licensee in the 12 months preceding the claim.",
+      "kind": "fact",
+      "hints": [
+        "12 months",
+        "fees paid or payable",
+        "Section 10.1"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that, under the License Agreement's order of precedence, amendments prevail over the body of the Agreement.",
+      "kind": "fact",
+      "hints": [
+        "Section 16.3",
+        "amendments prevail",
+        "order of precedence"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is in memo form addressed to the supervising partner and presents the issues as separately identified items.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Issue 1"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Amendment No. 1 gives Lavas's consent to, or waives, the change of Control resulting from the Orvand acquisition.",
+      "kind": "negative",
+      "hints": [
+        "Amendment constitutes consent",
+        "consent already obtained"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the Parent Guaranty already covers Licensor's obligations for the ThermaStress Analysis Module.",
+      "kind": "negative",
+      "hints": [
+        "Guaranty extends to ThermaStress",
+        "module is guaranteed"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

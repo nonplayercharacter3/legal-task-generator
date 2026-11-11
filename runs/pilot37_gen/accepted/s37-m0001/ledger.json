@@ -1,0 +1,213 @@
+{
+  "matter_id": "s37-m0001",
+  "summary": "Namaith Facade Systems, Inc. is an architectural glass fabricator and the firm's client. It licenses Lavas Glazing Software, LLC's GlazeCore facade-engineering and tempering-control software under a Delaware-law Software License Agreement dated March 3, 2026. Lavas's parent, Lavas Technologies Holdings, Inc., guarantees Lavas's performance in a Parent Guaranty of the same date. A January 2026 term sheet records the agreed deal. Amendment No. 1, dated September 14, 2026, adds the ThermaStress Analysis Module and restates the liability carve-outs. Its recitals also record that the client's parent has agreed to be acquired by Orvand Partners. The folder also holds a broker's cover letter enclosing Lavas's insurance certificate. The partner wants an issue-spotting memo before the acquisition closes.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Namaith Facade Systems, Inc.",
+      "role": "Licensee; architectural glass and curtain-wall fabricator; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Lavas Glazing Software, LLC",
+      "role": "Licensor of the GlazeCore facade-engineering and tempering-control software"
+    },
+    {
+      "id": "P3",
+      "name": "Lavas Technologies Holdings, Inc.",
+      "role": "Parent of Lavas Glazing Software, LLC; guarantor of Licensor's obligations"
+    },
+    {
+      "id": "P4",
+      "name": "Namaith Holdings Corp.",
+      "role": "Parent company of the Licensee; party to the pending acquisition"
+    },
+    {
+      "id": "P5",
+      "name": "Orvand Partners Fund III, L.P.",
+      "role": "Proposed acquirer of Namaith Holdings Corp."
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "March 3, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Annual License Fee",
+      "value": "$1,240,000 per contract year",
+      "doc": "D1",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F3",
+      "key": "License Agreement liability cap",
+      "value": "fees paid or payable by Licensee in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 10.1"
+    },
+    {
+      "id": "F4",
+      "key": "License Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 15.1"
+    },
+    {
+      "id": "F5",
+      "key": "License Agreement forum",
+      "value": "state or federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "Section 15.2"
+    },
+    {
+      "id": "F6",
+      "key": "License Agreement definition of Licensed Software",
+      "value": "GlazeCore platform and all modules listed in Schedule A, as amended from time to time",
+      "doc": "D1",
+      "section": "Section 1.8"
+    },
+    {
+      "id": "F7",
+      "key": "License Agreement order of precedence",
+      "value": "Amendments, then the body of the Agreement, then the Schedules; supersedes the Term Sheet",
+      "doc": "D1",
+      "section": "Section 16.3"
+    },
+    {
+      "id": "F8",
+      "key": "Term Sheet treatment of Licensor IP infringement indemnity",
+      "value": "excluded from the liability cap (uncapped)",
+      "doc": "D2",
+      "section": "Item 7"
+    },
+    {
+      "id": "F9",
+      "key": "Term Sheet treatment of Licensee indemnity",
+      "value": "limited to claims from Licensee's negligence or modifications; subject to liability cap",
+      "doc": "D2",
+      "section": "Item 7"
+    },
+    {
+      "id": "F10",
+      "key": "Amendment No. 1 date",
+      "value": "September 14, 2026",
+      "doc": "D4",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "namaith_lavas_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "glazecore_license_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "lavas_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "license_amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "lavas_insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "Pending parent acquisition triggers Licensor consent right",
+      "description": "Section 14.2 of D1 treats any direct or indirect change of Control of Licensee as an assignment. That assignment needs Licensor's prior written consent, and Licensor may terminate if consent is not obtained. Control is defined to include a change in ownership of any entity that controls Licensee. The Recitals of D4 (Amendment No. 1, dated September 14, 2026) record that Namaith Holdings Corp. has signed a definitive agreement to be acquired by Orvand Partners Fund III, L.P. That would be an indirect change of Control of Namaith. Section 5 of D4 states that nothing in the amendment is a waiver of or consent under any provision of the Agreement. No consent has therefore been obtained, and closing would hand Lavas a termination right over production-critical software.",
+      "doc": "D1",
+      "section": "Section 14.2",
+      "detect_terms": [
+        "direct or indirect change of Control",
+        "deemed an assignment"
+      ],
+      "expected_finding": "The Orvand acquisition of Namaith Holdings recorded in Amendment No. 1's recitals is an indirect change of Control under Section 14.2. That requires Lavas's prior written consent, which the amendment expressly does not give. Namaith must obtain written consent or a waiver before closing, or Lavas may terminate the license.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "Amendment drops Licensor IP indemnity from cap carve-outs",
+      "description": "Section 2 of D4 deletes and restates Section 10.3 of D1. The original 10.3 excluded both parties' indemnities under Sections 9.1 and 9.2 from the cap. The restated clause lists only (a) Licensee's indemnification obligations under Section 9.2, (b) Licensee's confidentiality breaches and (c) unpaid fees. It no longer excludes Licensor's IP infringement indemnity under Section 9.1. Under D1 Section 16.3, amendments prevail over the Agreement, so the restated clause controls. Licensor's infringement indemnity is now limited to the 12-month-fees cap in Section 10.1. This departs from Term Sheet Item 7 (D2), which made Licensor's IP indemnity uncapped. Infringement claims over facade designs produced with the software could far exceed one year's fees.",
+      "doc": "D4",
+      "section": "Section 2",
+      "detect_terms": [
+        "shall not apply to",
+        "Licensee's indemnification obligations under Section 9.2"
+      ],
+      "expected_finding": "Amendment No. 1's restated Section 10.3 prevails under Section 16.3. It removes Licensor's Section 9.1 IP infringement indemnity from the cap carve-outs, contrary to the Term Sheet, so that indemnity is now capped at 12 months' fees. Namaith should require the Section 9.1 carve-out to be reinstated.",
+      "contradicts": "F8"
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "Licensee's broad building-claims indemnity is uncapped",
+      "description": "Section 9.2 of D1 requires Licensee to indemnify Licensor against all claims arising from any building, curtain wall or structure incorporating glass products fabricated using the Software. That includes claims caused by software defects, and the indemnity is not limited to Licensee's negligence or modifications. Section 10.3(a) of D1, and the restatement of that section in D4 Section 2, exclude Licensee's Section 9.2 obligations from the Section 10.1 cap. Read together, these leave Namaith with unlimited exposure to facade-failure and glass-breakage claims, even those caused by Lavas's software. This contradicts Term Sheet Item 7 (D2), which limited Licensee's indemnity to its own negligence or modifications and made it subject to the cap.",
+      "doc": "D1",
+      "section": "Section 9.2",
+      "detect_terms": [
+        "any building, curtain wall or structure"
+      ],
+      "expected_finding": "Section 9.2 makes Namaith indemnify Lavas for all building and structure claims, including those caused by the software. Section 10.3(a), as restated by Amendment No. 1, carves that indemnity out of the cap, so Namaith's exposure is unlimited, contrary to the Term Sheet. Namaith should narrow Section 9.2 to its own negligence or modifications and bring it under the cap.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "Parent Guaranty chooses New York law and exclusive New York forum",
+      "description": "Section 12 of D3 states that the Guaranty is governed by the laws of the State of New York. It also submits disputes exclusively to courts in the Borough of Manhattan, and it applies notwithstanding any provision of the License Agreement. Sections 15.1 and 15.2 of D1 choose Delaware law and Wilmington, Delaware courts. The precedence clause in D1 Section 16.3 covers only the Agreement, its Schedules and amendments, so it does not reach the Guaranty and does not cure the conflict. Namaith would have to sue Lavas in Delaware and the guarantor in New York under different law. That risks inconsistent results and makes the guaranty harder to enforce.",
+      "doc": "D3",
+      "section": "Section 12",
+      "detect_terms": [
+        "laws of the State of New York",
+        "Borough of Manhattan"
+      ],
+      "expected_finding": "The Parent Guaranty's New York law and exclusive Manhattan forum conflict with the License Agreement's Delaware law and Wilmington forum. The Agreement's precedence clause does not reach the Guaranty, so claims against Lavas and its parent would split across forums. The Guaranty should be conformed to Delaware law and the Delaware forum.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "Guaranty's frozen 'Licensed Software' excludes ThermaStress module",
+      "description": "D1 Section 1.8 defines Licensed Software as the GlazeCore platform and all Schedule A modules 'as amended from time to time'. D4 Section 1 adds the ThermaStress Analysis Module to Schedule A. D3 Section 1 defines the Guaranteed Obligations as Licensor's obligations with respect to Licensed Software. However, D3 defines Licensed Software as the software in Schedule A 'as in effect on the date hereof', which is March 3, 2026. Read together, these provisions mean Licensor's warranty, support and indemnity obligations for the ThermaStress module added in September 2026 fall outside the parent guaranty. Nothing in D4 extends the guaranty to the new module.",
+      "doc": "D3",
+      "section": "Section 1",
+      "detect_terms": [
+        "as in effect on the date hereof"
+      ],
+      "expected_finding": "The Guaranty fixes 'Licensed Software' at Schedule A as of March 3, 2026, while the License Agreement's definition picks up later amendments. The ThermaStress module added by Amendment No. 1 is therefore not covered by the parent guaranty. Namaith should obtain a guarantor joinder or confirmation extending the Guaranty to Schedule A as amended.",
+      "contradicts": "F6"
+    }
+  ]
+}

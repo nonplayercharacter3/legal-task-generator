@@ -1,0 +1,106 @@
+{
+  "task_id": "s37-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Pralor Maritime Holdings, LLC, the buyer in its proposed acquisition of stock from Brimain Shipping Group, Inc. Before we go back to the other side, I need a clear view of where the current documents leave Pralor exposed or out of step with what it is expecting from this deal. Please review the full matter folder: the stock purchase agreement (stock_purchase_agreement_pralor_brimain.md), the escrow agreement (escrow_agreement_selbrook.md), the agreed-form transition services agreement (transition_services_agreement_agreed_form.md), and the integration call notes (integration_call_notes.md). Prepare a memo to me that lists each issue you identify. For each one, state where it appears, giving the document and section; explain why it matters to Pralor; and recommend a fix, with proposed language where that would help. Please put the most significant points first, and flag anything you think needs a client decision rather than a drafting change. Keep it practical. I'd like to be able to use it directly in preparing our markup and our next call with the client.",
+  "documents": [
+    "escrow_agreement_selbrook.md",
+    "integration_call_notes.md",
+    "stock_purchase_agreement_pralor_brimain.md",
+    "transition_services_agreement_agreed_form.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that Buyer's Vessel Condition Notice on M/T Kalvesund Cygnet, dated June 12, 2026, was delivered after the SPA deadline of May 6, 2026. It identifies the issue as arising under SPA Section 6.4, explains why this matters to Pralor, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "May 6, 2026",
+        "June 12, 2026",
+        "Section 6.4"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that the TSA's definition of 'Company Vessels' (owned vessels only) excludes the two bareboat-chartered tankers (M/T Kalvesund Aurora and M/T Kalvesund Borealis) from the transition services. It identifies the issue as located in the TSA (Section 1.1 and/or Section 2.1), explains why this matters to Pralor, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "owned by the Company and registered in its name",
+        "Aurora and Borealis",
+        "TSA Section 1.1"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that the Torvenne bareboat charters' requirement for owner consent to a change of control is not included among the consents Seller must obtain or the closing conditions. It identifies the issue as located in the SPA (Section 6.3, Schedule 6.3 and/or Section 8.2(c), or Schedule 4.7), explains why this matters to Pralor, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Torvenne consent",
+        "Schedule 6.3",
+        "change of control"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that the general (non-fundamental) representations survive only until the Escrow Release Date, which is six months after Closing, a period too short for vessel-condition and environmental claims. It identifies the issue as located in the Escrow Agreement Section 1.1 and/or SPA Section 9.1, explains why this matters to Pralor, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "six (6) months after the Closing Date",
+        "Escrow Release Date",
+        "Section 9.1"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the SPA defines 'Company Vessels' as all seven vessels owned or bareboat chartered-in by the Company.",
+      "kind": "fact",
+      "hints": [
+        "owned or bareboat chartered-in",
+        "seven vessels",
+        "Schedule 1.1"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is structured as a memo that presents each issue as a separate item. Each item states the document and section where the issue appears, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Location",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response expressly flags at least one point as requiring a client decision rather than only a drafting change.",
+      "kind": "format",
+      "hints": [
+        "client decision",
+        "needs instructions from Pralor"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that Buyer's June 12, 2026 Vessel Condition Notice was timely under SPA Section 6.4.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the TSA as drafted obliges Seller to provide transition services for all seven vessels, including M/T Kalvesund Aurora and M/T Kalvesund Borealis.",
+      "kind": "negative",
+      "hints": [
+        "TSA covers all seven vessels"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

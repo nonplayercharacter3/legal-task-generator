@@ -1,0 +1,5 @@
+We represent Namaith Facade Systems, Inc., the licensee under its software license arrangement with Lavas Glazing Software, LLC. Namaith wants to understand where it stands under the license package before it relies on it further, and I need your help identifying the issues that matter to the client.
+
+Please review the full set of documents in the matter folder: the software license agreement (namaith_lavas_software_license_agreement.md), the term sheet (glazecore_license_term_sheet.md), the parent guaranty (lavas_parent_guaranty.md), Amendment No. 1 (license_amendment_no_1.md), and the insurance certificate cover letter (lavas_insurance_certificate_cover_letter.md).
+
+Send me a memo that lists each issue you find. For each one, tell me where it appears (document and section), why it matters for Namaith, and what fix you recommend. Keep it practical. I'll use it to decide what we raise with Lavas and how. If anything in the file is ambiguous or seems incomplete, flag it rather than assume. Let me know if you have questions as you go.

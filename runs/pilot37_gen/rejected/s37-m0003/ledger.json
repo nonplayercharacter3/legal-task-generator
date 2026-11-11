@@ -1,0 +1,175 @@
+{
+  "matter_id": "s37-m0003",
+  "summary": "Leisand Orthopaedics Holdings, Inc. (client, Buyer) acquired all outstanding stock of Wabeno Implant Systems, Inc., an Indiana-based maker of knee and hip implants, from Pesas MedTech Partners, LLC (Seller) under a New York-law Stock Purchase Agreement signed April 14, 2026. Closing occurred June 2, 2026. Three problems for the Buyer sit in the folder. First, the special indemnity for a disclosed tibial-tray recall is cut off at the general 12-month survival period, although revision-surgery claims emerge over years. Second, the CTO's Key Employee Agreement chooses Indiana law and Indiana courts, and the SPA's precedence clause lets that choice control. Third, Buyer delivered its Closing Statement after the SPA's 60-day window, and Seller now says Buyer's working-capital adjustment is forfeited. A prior draft of the SPA is a distractor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Leisand Orthopaedics Holdings, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Pesas MedTech Partners, LLC",
+      "role": "Seller and sole stockholder of the Company"
+    },
+    {
+      "id": "P3",
+      "name": "Wabeno Implant Systems, Inc.",
+      "role": "Company (target), Indiana corporation based in Warsaw, Indiana"
+    },
+    {
+      "id": "P4",
+      "name": "Dr. Ilse Kranwick",
+      "role": "Chief Technology Officer of the Company; Key Employee (holds no equity)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement signing date",
+      "value": "April 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Closing Date",
+      "value": "June 2, 2026",
+      "doc": "D3",
+      "section": "Recitals"
+    },
+    {
+      "id": "F3",
+      "key": "Base Purchase Price",
+      "value": "$186,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F5",
+      "key": "Stock Purchase Agreement forum",
+      "value": "State or federal courts located in New York County, New York (exclusive)",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "SPA controls over Ancillary Agreements, except each Ancillary Agreement's own governing law and forum provisions",
+      "doc": "D1",
+      "section": "Section 11.17"
+    },
+    {
+      "id": "F7",
+      "key": "General survival period",
+      "value": "12 months following the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F8",
+      "key": "Closing Statement delivery deadline",
+      "value": "60 days after the Closing Date",
+      "doc": "D1",
+      "section": "Section 2.4(a)"
+    },
+    {
+      "id": "F9",
+      "key": "Closing Statement delivery date",
+      "value": "August 28, 2026",
+      "doc": "D3",
+      "section": "Recitals"
+    },
+    {
+      "id": "F10",
+      "key": "Key Employee Agreement non-compete period",
+      "value": "24 months after termination of employment",
+      "doc": "D2",
+      "section": "Section 5.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_executed.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "kranwick_key_employee_agreement.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "leisand_board_written_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "stock_purchase_agreement_draft_march_2026.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_stock_purchase_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "Recall special indemnity expires with general reps after 12 months",
+      "description": "Three SPA provisions combine to defeat the recall indemnity. Section 4.14 discloses the April 2025 voluntary recall of a lot of Tibiax cobalt-chrome tibial trays. It also states that affected patients may need revision surgery over several years after implantation. Section 9.2(c) gives Buyer a special, dollar-one indemnity for Recall Losses arising from that matter. Section 9.1, however, provides that all claims under Section 9.2, including claims under Section 9.2(c), survive only until 12 months after the Closing Date. Under Section 9.1 a claim notice must be given within that period. New York enforces contractually shortened survival and limitations periods (CPLR 201). Revision and product-liability claims typically surface well after June 2, 2027, and toxic-tort-style discovery rules under CPLR 214-c let patients sue years later. The special indemnity therefore lapses before most of the Recall Losses it was negotiated to cover can arise, which leaves Buyer and the Company bearing them.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "including claims under Section 9.2(c)",
+        "twelve (12) months following the Closing Date"
+      ],
+      "expected_finding": "The Section 9.2(c) Recall Losses indemnity is subject to Section 9.1's 12-month survival period. Because revision-surgery claims from the recall disclosed in Section 4.14 will largely arise after June 2, 2027, Buyer should seek an amendment extending the recall indemnity's survival to at least six years or until the applicable statute of limitations expires.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "Key Employee Agreement chooses Indiana law and courts, which the precedence clause lets control",
+      "description": "The SPA (D1 Section 11.8) selects New York law and exclusive New York County courts. Under Section 7.2(d), delivery of the Key Employee Agreement is a closing deliverable that Buyer relies on to protect the acquired implant technology. However, Section 7 of the Key Employee Agreement with Dr. Kranwick (D2) provides that it is governed by the laws of the State of Indiana. It also gives exclusive jurisdiction to courts in Kosciusko County, Indiana. The SPA's order-of-precedence clause (D1 Section 11.17) does not cure the conflict. It makes the SPA control over Ancillary Agreements, but it expressly preserves each Ancillary Agreement's own governing law and forum provisions. The Indiana choice therefore governs. The effect is that a single breach can be split between two forums: Seller's covenant under SPA Section 6.9 to cause Key Employee retention and confidentiality, and Dr. Kranwick's own non-compete. Dr. Kranwick holds no equity, so the sale-of-business latitude for noncompetes does not apply to her. Her 24-month non-compete (D2 Section 5.1) would also be tested under Indiana's strict, blue-pencil-only approach rather than the New York standard the parties priced in.",
+      "doc": "D2",
+      "section": "Section 7",
+      "detect_terms": [
+        "laws of the State of Indiana",
+        "Kosciusko County"
+      ],
+      "expected_finding": "Under SPA Section 11.17, the Key Employee Agreement's Indiana law and Kosciusko County forum control and conflict with the SPA's New York law and forum. This splits related disputes and exposes the 24-month non-compete to Indiana's strict, blue-pencil-only enforcement, so Buyer should obtain an amendment conforming D2 Section 7 to New York law and the New York County forum.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "Closing Statement delivered after the 60-day window",
+      "description": "SPA Section 2.4(a) requires Buyer to deliver its Closing Statement within 60 days after the Closing Date. If Buyer does not, Seller's Estimated Closing Statement is deemed final and binding. Buyer's Board Written Consent (D3) recites that the Closing Date was June 2, 2026, so the deadline was August 1, 2026. D3 also recites that Buyer's Closing Statement was delivered on August 28, 2026, 27 days late. That statement shows Closing Working Capital $2,300,000 below the estimate. D3 further records that Seller's counsel, by letter dated September 4, 2026, asserted that the Estimated Closing Statement is final. The Board rejected that position, directed management to contest it and reserved all rights, so Buyer has not accepted the result. No SPA provision extends the deadline or excuses late delivery. Seller therefore has a strong contractual argument that Buyer forfeited the $2,300,000 downward adjustment.",
+      "doc": "D1",
+      "section": "Section 2.4(a)",
+      "detect_terms": [
+        "within sixty (60) days after the Closing Date",
+        "deemed final and binding"
+      ],
+      "expected_finding": "Measured from the June 2, 2026 Closing Date recited in the Board Consent, Buyer's August 28, 2026 Closing Statement missed the August 1, 2026 deadline in SPA Section 2.4(a). This puts the $2,300,000 working-capital adjustment at risk, so Buyer should preserve its objection to Seller's September 4, 2026 letter and pursue waiver, estoppel or a negotiated extension.",
+      "contradicts": null
+    }
+  ]
+}

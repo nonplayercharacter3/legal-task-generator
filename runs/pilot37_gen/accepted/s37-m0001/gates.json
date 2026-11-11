@@ -1,0 +1,128 @@
+{
+  "matter_id": "s37-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 50
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 14.2: \"Any direct or indirect change of Control of Licensee, whether by merger, sale of equity, sale of assets, reorganization or otherwise, shall be deemed an assignment of this Agreement by Licensee requiring Licensor's prior written consent under Section 14.1. If any such change of Control occurs without Licensor's prior written consent, Licensor may terminate this Agreement by written notice to Licensee given at any time within one hundred twenty (120) days after Licensor becomes aware of the change of Control.\" Section 1.4: \"A change of Control of a Party includes any change in the ownership or Control of any entity that Controls that Party.\" Amendment No. 1, Recital D: \"Namaith Holdings Corp., the parent company of Licensee, has signed a definitive agreement under which Namaith Holdings Corp. will be acquired by Orvand Partners Fund III, L.P.\" Amendment No. 1, Section 5: \"Nothing in this Amendment is a waiver of, or a consent under, any provision of the Agreement.\"",
+            "reason": "The consent right and the termination right both sit with Lavas, and the burden falls on Namaith. Section 1.4 counts a change in ownership of Namaith's parent as a change of Control of Namaith. The Orvand acquisition of Namaith Holdings would therefore be an indirect change of Control. Under Section 14.2 that is a deemed assignment needing Lavas's prior written consent. Lavas has known of the deal since the amendment, but Section 5 of the amendment expressly says it gives no consent, and nothing else in the folder records one. Nothing shows the acquisition has closed, so this remains forward-looking and actionable. Namaith can still seek Lavas's written consent before closing. Otherwise Lavas gains a 120-day right to terminate a license for production-critical tempering-control software, where termination leaves only 90 days of wind-down use. Nothing in the documents cures or limits this exposure."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 2 of the Amendment: \"Section 10.3 of the Agreement is deleted in its entirety and replaced with the following: > 10.3 Exceptions. The limitations in Sections 10.1 and 10.2 shall not apply to: (a) Licensee's indemnification obligations under Section 9.2; (b) Licensee's breach of Section 7; or (c) Licensee's obligation to pay fees due under Section 4.\"",
+            "reason": "The original Section 10.3(b) carved out Licensor's Section 9.1 IP indemnity from the cap and from the consequential-damages exclusion. The restatement deletes that carve-out, while keeping Licensee's own uncapped 9.2 indemnity and Licensee's uncapped fee obligation. Under Section 16.3 of the Agreement, amendments prevail, and Section 5 of the Amendment preserves nothing that the restatement expressly replaces. As a result, the IP indemnity that Licensor gives to Namaith becomes subject to the 12-month-fees cap in Section 10.1. The Parent Guaranty does not cure this: under its Section 3.2, Guarantor's liability is no greater than Licensor's under Section 10. This contradicts Term Sheet Item 7, which made Licensor's IP indemnity uncapped. The restated clause is also one-sided in another way: only Licensee's confidentiality breach stays uncapped. The amendment adds nothing in return for this change. Nothing in the folder shows that Namaith has accepted or acted on the restated clause, so the problem remains live and should be raised before execution or reversed by a corrective amendment."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 9.2: \"Licensee shall defend, indemnify and hold harmless Licensor ... from and against any and all third-party claims ... arising out of or relating to any building, curtain wall or structure incorporating glass products fabricated, tempered or processed using the Licensed Software. This includes claims for property damage, personal injury, death, glass breakage, spontaneous breakage, facade failure ... and claims alleging that the Licensed Software, any engineering output it generated or any tempering parameter it applied was defective or erroneous.\" Section 10.3 (as restated by Amendment No. 1, Section 2): \"The limitations in Sections 10.1 and 10.2 shall not apply to: (a) Licensee's indemnification obligations under Section 9.2.\"",
+            "reason": "Namaith is the indemnitor under Section 9.2. The indemnity covers every building, facade-failure and glass-breakage claim. It expressly includes claims that Lavas's own software, outputs or tempering parameters were defective, and it is not limited to Namaith's negligence or modifications. Section 10.3(a) carves this indemnity out of both the 12-month fees cap and the consequential-damages exclusion. Amendment No. 1 carried that carve-out forward unchanged. It also deleted the uncapped treatment of Licensor's IP indemnity, so the imbalance now runs further against Namaith. The Parent Guaranty does not help: it covers only Licensor's obligations and is limited to Licensor's liability under Section 10. Nothing in the folder caps, narrows or otherwise cures this exposure. Term Sheet Item 7 had limited Licensee's indemnity to Licensee's own negligence or modifications and made it subject to the cap. That term sheet was non-binding and is superseded by Section 16.3, so it gives Namaith no legal protection. It does show the definitive agreement departs from the agreed deal. This is a continuing, open-ended liability for future claims, not a lapsed window. Namaith can still raise it, for example in a further amendment or in connection with the pending Orvand change-of-control consent. It therefore remains a real and actionable problem for the client."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 12.1: \"This Guaranty, and any dispute arising out of or relating to it, is governed by the laws of the State of New York, without regard to its conflict-of-laws rules.\" Section 12.2: \"Guarantor and Beneficiary each irrevocably submit to the exclusive jurisdiction of the state courts of the State of New York sitting in the Borough of Manhattan and the United States District Court for the Southern District of New York for any action arising out of or relating to this Guaranty.\"",
+            "reason": "The conflict is present and still actionable. The Guaranty picks New York law and exclusive Manhattan courts. The License Agreement (Sections 15.1–15.2) picks Delaware law and exclusive Wilmington courts. Section 16.3 of the License Agreement sets precedence only among Amendments, the Agreement body and the Schedules, so it does not reach the separate Guaranty. Nothing in either document reconciles the two clauses. The Guaranty does not actually say it applies 'notwithstanding' the License Agreement, but the conflict exists without that wording. The result for Namaith, the beneficiary: a claim against Licensor and Guarantor together must be split between Delaware and New York courts under different governing law. That brings duplicative litigation and a risk of inconsistent rulings. The risk is sharpened because Section 3.1 lets Guarantor raise Licensor's defenses, which arise under Delaware law, in a New York forum. Section 2.3 does let Namaith sue Guarantor alone, which softens the problem but does not remove it. Nothing in the folder shows Namaith has waived or settled the point, so it can still be raised and fixed, for example by amending the Guaranty to align law and forum or to allow consolidated proceedings."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Guaranty §1.2: \"'Licensed Software' means the GlazeCore platform and the modules listed in Schedule A to the License Agreement as in effect on the date hereof...\" and §1.3: \"'Guaranteed Obligations' means all obligations, liabilities and undertakings of Licensor to Beneficiary under the License Agreement with respect to the Licensed Software...\"",
+            "reason": "The problem is present and still actionable. License §1.8 defines Licensed Software by reference to Schedule A \"as amended from time to time\". The Guaranty instead freezes Schedule A as of March 3, 2026. Amendment No. 1 (September 14, 2026) added the ThermaStress Analysis Module as A-6 and made it Licensed Software for §§2, 3, 5, 8 and 9 of the License. Because Guaranteed Obligations are limited to obligations \"with respect to the Licensed Software\" as the Guaranty defines it, Lavas Holdings' guaranty does not reach Licensor's delivery, support, warranty, refund or IP-indemnity obligations for ThermaStress. Guaranty §4.1(b) does not cure this. It only says amendments do not release the guarantor; it does not widen the frozen definition. The Amendment does not mention the Guaranty, and Guaranty §13.3 requires a signed writing to amend it. The gap hurts Namaith, the beneficiary, which pays $165,000 a year for a module whose obligations are backed only by the subsidiary. Nothing in the folder shows Namaith accepted the gap, and it can still seek a guaranty amendment or a parent joinder."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C7 asks for the whole ranking in fact F7 ('Amendments, then the body of the Agreement, then the Schedules; supersedes the Term Sheet'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.07,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

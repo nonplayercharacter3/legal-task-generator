@@ -1,0 +1,194 @@
+{
+  "matter_id": "s37-m0002",
+  "summary": "The firm represents Pralor Maritime Holdings, LLC (Buyer). Pralor is buying all of the stock of Kalvesund Tankers, Inc., a Delaware company operating seven product tankers, from Brimain Shipping Group, Inc. (Seller) under a Delaware-law Stock Purchase Agreement signed March 2, 2026, for $186,000,000. Five tankers are owned outright. Two (M/T Kalvesund Aurora and M/T Kalvesund Borealis) are bareboat chartered-in from Torvenne Ship Leasing Ltd. The deal is between signing and Closing. The folder holds four documents: the SPA; an Escrow Agreement dated June 19, 2026 with Selbrook Trust Company, N.A. (indemnity escrow, plus a holdback for a disputed vessel-repair claim); the agreed-form Transition Services Agreement, under which Seller will provide technical management, crewing and ISM services after Closing; and notes from an integration call (distractor). Four issues are planted. (1) Buyer's Vessel Condition Notice on M/T Kalvesund Cygnet, dated June 12, 2026, was delivered after the SPA deadline of May 6, 2026. That deadline is computed from the March 2 signing date, the 45-day Inspection Period and the 20-day notice window. Seller says the notice is untimely and Buyer disputes this, as recorded in the Escrow Agreement recitals. (2) The TSA defines 'Company Vessels' as owned vessels only, so the two bareboat-chartered tankers are left out of the transition services. Under the SPA precedence clause, the TSA controls on services. (3) The Torvenne bareboat charters require the owner's consent to a change of control of the Company. That requirement is disclosed in Schedule 4.7, but it is missing from the consents Seller must obtain and from the closing condition. Disclosed matters are also carved out of the indemnity. (4) The SPA ties survival of general representations to the 'Escrow Release Date', and the Escrow Agreement sets that date at only six months after Closing. That is too short for vessel-condition and MARPOL/environmental claims, which typically surface at later surveys and port state inspections.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Pralor Maritime Holdings, LLC",
+      "role": "Buyer; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Brimain Shipping Group, Inc.",
+      "role": "Seller; sole stockholder of the Company and TSA service provider"
+    },
+    {
+      "id": "P3",
+      "name": "Kalvesund Tankers, Inc.",
+      "role": "Company being acquired; owner or bareboat charterer of the seven product tankers"
+    },
+    {
+      "id": "P4",
+      "name": "Selbrook Trust Company, N.A.",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P5",
+      "name": "Torvenne Ship Leasing Ltd.",
+      "role": "Registered owner and bareboat lessor of M/T Kalvesund Aurora and M/T Kalvesund Borealis"
+    },
+    {
+      "id": "P6",
+      "name": "Aldmoor Bank",
+      "role": "Lender under the Company's fleet credit facility"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$186,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Inspection Period",
+      "value": "45 days after the SPA Signing Date",
+      "doc": "D1",
+      "section": "Section 6.4(a)"
+    },
+    {
+      "id": "F4",
+      "key": "Vessel Condition Notice deadline",
+      "value": "within 20 days after the last day of the Inspection Period",
+      "doc": "D1",
+      "section": "Section 6.4(b)"
+    },
+    {
+      "id": "F5",
+      "key": "Date of Buyer's Vessel Condition Notice",
+      "value": "June 12, 2026",
+      "doc": "D2",
+      "section": "Recital C"
+    },
+    {
+      "id": "F6",
+      "key": "Disputed Repair Amount",
+      "value": "$2,400,000",
+      "doc": "D2",
+      "section": "Section 2.1(b)"
+    },
+    {
+      "id": "F7",
+      "key": "Indemnity Escrow Amount",
+      "value": "$9,300,000",
+      "doc": "D2",
+      "section": "Section 2.1(a)"
+    },
+    {
+      "id": "F8",
+      "key": "Escrow Release Date",
+      "value": "six (6) months after the Closing Date",
+      "doc": "D2",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F9",
+      "key": "SPA definition of Company Vessels",
+      "value": "the seven vessels owned or bareboat chartered-in by the Company listed on Schedule 1.1",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F10",
+      "key": "Order of precedence",
+      "value": "SPA prevails, except TSA controls as to Transition Services and Escrow Agreement as to escrow mechanics",
+      "doc": "D1",
+      "section": "Section 11.9"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_pralor_brimain.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement_selbrook.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement_agreed_form.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "integration_call_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "Vessel Condition Notice delivered after the SPA deadline",
+      "description": "Two SPA provisions and one Escrow Agreement recital combine to show the deadline was missed. SPA Section 6.4(a) gives Buyer an Inspection Period of 45 days after the March 2, 2026 Signing Date (stated in the SPA preamble), which ends April 16, 2026. SPA Section 6.4(b) requires any Vessel Condition Notice within 20 days after the last day of the Inspection Period, so the deadline was May 6, 2026. If no timely notice is given, Buyer is deemed to have accepted the condition of the Company Vessels and to have waived any repair or price-reduction claim. Recital C of the Escrow Agreement (D2), dated June 19, 2026, records that Buyer delivered its Vessel Condition Notice on M/T Kalvesund Cygnet on June 12, 2026, five weeks late. The same recital records that Seller asserts the notice is untimely under Section 6.4, that Buyer disputes this, and that the $2,400,000 Disputed Repair Amount is held pending resolution. Buyer has not accepted the result, so the point is live. On the face of Section 6.4, however, Seller is likely to obtain release of the holdback.",
+      "doc": "D1",
+      "section": "Section 6.4",
+      "detect_terms": [
+        "within 20 days after the last day of the Inspection Period",
+        "deemed to have accepted the condition"
+      ],
+      "expected_finding": "Buyer's June 12, 2026 Vessel Condition Notice missed the May 6, 2026 deadline under SPA Section 6.4 (45-day Inspection Period from the March 2, 2026 signing plus 20 days), so Buyer risks being deemed to have accepted the vessels' condition and losing the $2,400,000 Disputed Repair Amount held under the Escrow Agreement; Buyer should obtain Seller's written waiver of the deadline or an SPA amendment (or a price reduction) before Closing.",
+      "contradicts": null
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "'Company Vessels' in the TSA excludes the bareboat-chartered tankers",
+      "description": "SPA Section 1.1 defines 'Company Vessels' as all seven vessels owned or bareboat chartered-in by the Company, as listed on Schedule 1.1. TSA Section 1.1 defines 'Company Vessels' as vessels 'owned by the Company and registered in its name'. TSA Section 2.1 then obliges Seller to provide technical management, crewing and ISM/document-of-compliance services only for the 'Company Vessels'. Read together, the definitions leave the two Torvenne bareboat-chartered tankers (M/T Kalvesund Aurora and M/T Kalvesund Borealis) without transition services after Closing. Under SPA Section 11.9, the TSA controls as to Transition Services, so the SPA's broader definition does not cure the gap. Buyer would have no contractual right to management or ISM coverage for two of the seven vessels.",
+      "doc": "D3",
+      "section": "Section 1.1 and Section 2.1",
+      "detect_terms": [
+        "owned by the Company and registered in its name"
+      ],
+      "expected_finding": "The TSA's narrower definition of 'Company Vessels', which controls on services under SPA Section 11.9, excludes the two bareboat-chartered tankers from technical management, crewing and ISM services under TSA Section 2.1, so the TSA definition should be conformed to the SPA definition (owned or bareboat chartered-in vessels on Schedule 1.1) before the TSA is signed at Closing.",
+      "contradicts": "F9"
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "Torvenne bareboat charter change-of-control consent not required for Closing",
+      "description": "SPA Schedule 4.7 (Material Contracts) discloses that each Torvenne bareboat charter 'requires the prior written consent of the Owner to any change of control of the Charterer', and that the Owner may terminate and repossess the vessel if consent is not given. SPA Section 6.3 obliges Seller to obtain only the consents listed on Schedule 6.3. Closing condition Section 8.2(c) likewise requires only the Schedule 6.3 consents. Schedule 6.3 lists only Aldmoor Bank's consent under the fleet credit facility. In addition, SPA Section 9.2(d) excludes indemnification for matters disclosed in the Disclosure Schedule. Reading Schedule 4.7, Section 6.3 / Schedule 6.3, Section 8.2(c) and Section 9.2(d) together, the sale will trigger Torvenne's consent right with no obligation on Seller to obtain consent and no closing protection. Buyer would also have no indemnity recourse if Torvenne terminates the charters and repossesses two of the seven tankers.",
+      "doc": "D1",
+      "section": "Section 6.3, Schedule 6.3 and Section 8.2(c), read with Schedule 4.7 and Section 9.2(d)",
+      "detect_terms": [
+        "requires the prior written consent of the Owner to any change of control"
+      ],
+      "expected_finding": "The Torvenne bareboat charters disclosed in Schedule 4.7 require owner consent to the change of control, but that consent is missing from Schedule 6.3 and therefore from Seller's consent covenant (Section 6.3) and the closing condition (Section 8.2(c)), and the disclosed-matter carve-out in Section 9.2(d) leaves Buyer without indemnity if Torvenne terminates and repossesses the two tankers; Buyer should add the Torvenne consents to Schedule 6.3 as a closing condition, or obtain a specific indemnity that overrides the disclosure carve-out.",
+      "contradicts": null
+    },
+    {
+      "id": "I4",
+      "type": "survival_gap",
+      "label": "General representations survive only six months through the Escrow Release Date",
+      "description": "SPA Section 9.1 provides that all representations other than Fundamental Representations (including vessel condition and classification, MARPOL/environmental and Material Contracts) survive 'until the Escrow Release Date (as defined in the Escrow Agreement)'. SPA Section 9.4 bars any claim not noticed before the survival period expires. Escrow Agreement Section 1.1 defines the Escrow Release Date as 'six (6) months after the Closing Date'. Under SPA Section 11.9, the Escrow Agreement controls escrow mechanics, and the SPA adopts that definition without any conflict to resolve. Read together, Buyer has only six months after Closing to bring claims for breaches of the operational and environmental representations. Defects in hull, ballast-water and pollution-prevention systems, and port state control or flag-state violations, typically surface only at the next annual class survey, intermediate survey or drydocking. A six-month window makes such claims impractical, and the $9,300,000 Indemnity Escrow Amount would be released before those defects are likely to be found.",
+      "doc": "D2",
+      "section": "Section 1.1 (Escrow Release Date), read with SPA Sections 9.1 and 9.4",
+      "detect_terms": [
+        "six (6) months after the Closing Date",
+        "until the Escrow Release Date"
+      ],
+      "expected_finding": "Because SPA Section 9.1 ties survival of the general representations to the Escrow Agreement's Escrow Release Date of six months after Closing, and Section 9.4 bars later claims, Buyer's indemnity for vessel-condition and environmental breaches expires before such defects are typically discovered at later surveys; Buyer should lengthen the survival period (for example to 18–24 months) and conform the Escrow Release Date so the $9,300,000 Indemnity Escrow remains in place for that period.",
+      "contradicts": null
+    }
+  ]
+}

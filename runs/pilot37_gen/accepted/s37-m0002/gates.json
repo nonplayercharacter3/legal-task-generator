@@ -1,0 +1,120 @@
+{
+  "matter_id": "s37-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "SPA §6.4(b): \"Any Vessel Condition Notice must be delivered within 20 days after the last day of the Inspection Period.\" SPA §6.4(c): \"If Buyer does not deliver a Vessel Condition Notice for a Company Vessel within the period in Section 6.4(b), Buyer shall be deemed to have accepted the condition of that Company Vessel. Buyer shall also be deemed to have waived any claim for repair, or for a reduction of the Purchase Price, under this Section 6.4 for that vessel.\" Escrow Agreement Recital C: \"On June 12, 2026, Buyer delivered to Seller a Vessel Condition Notice under Section 6.4(b) of the Purchase Agreement for M/T Kalvesund Cygnet ... Seller asserts that the Cygnet Notice is untimely under Section 6.4 of the Purchase Agreement and disputes Buyer's claim. Buyer disputes Seller's position.\"",
+            "reason": "The SPA was signed March 2, 2026, so the 45-day Inspection Period under §6.4(a) ended April 16, 2026, and the §6.4(b) notice deadline was May 6, 2026. Buyer delivered the Cygnet notice on June 12, 2026, about five weeks late. On the face of §6.4(c), Buyer is deemed to have accepted Cygnet's condition and to have waived the $2.4M repair or price-reduction claim. Buyer bears the notice obligation, so the missed deadline hurts the client directly. The SPA contains no extension, cure or relief mechanism. The folder shows Buyer has not accepted the result: it expressly disputes Seller's untimeliness position, and the $2.4M sits in a separate Disputed Repair Account. That account is released only on a Joint Written Instruction or a Final Order, and nothing in the folder shows either has occurred. The dispute is therefore still live and actionable, but Buyer is exposed to losing the holdback to Seller."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "TSA Section 1.1: \"'Company Vessels' means the vessels owned by the Company and registered in its name\"; TSA Section 2.1: \"During the Term, Provider shall provide the following services to the Company for the Company Vessels\"; SPA Section 1.1: \"'Company Vessels' means the seven vessels owned or bareboat chartered-in by the Company listed on Schedule 1.1.\"",
+            "reason": "The gap is real and still open for Pralor.\n\n- **The TSA definition is narrower.** It covers only vessels \"owned by the Company and registered in its name.\" SPA Schedule 1.1 and Section 4.8(b) show that M/T Kalvesund Aurora and M/T Kalvesund Borealis are bareboat chartered-in from Torvenne, not owned. They fall outside the TSA definition.\n- **The SPA definition does not fill the gap.** TSA Section 1.1 borrows SPA meanings only for terms \"not defined\" in the TSA, and the TSA defines 'Company Vessels' itself. SPA Section 11.9 also makes the TSA control as to Transition Services.\n- **The effect on the client.** Seller (Provider) owes technical management, crewing and ISM/DOC/SMC coverage under Section 2.1 and Schedule A only for the five owned vessels. The Company, and Pralor as Section 10.5 third-party beneficiary, would have no contractual right to those services for two of the seven tankers. That leaves possible ISM and safety-management certification gaps on those two vessels at Closing.\n- **Nothing in the folder fixes it.** No document cures the point. The TSA is still an unsigned agreed form with a blank Effective Date, and nothing shows Pralor has accepted the narrower scope. The definition can still be corrected before the TSA is executed at Closing."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Schedule 4.7, items 2 and 3: \"Clause 31 (Change of Control) of the additional clauses requires the prior written consent of the Owner to any change of control of the Charterer. If the change of control occurs without that consent, the Owner may terminate the charter and repossess the vessel.\" Schedule 6.3 lists only: \"1. Written consent of Aldmoor Bank under the Aldmoor Facility...\" Section 8.2(c): \"each Required Consent listed on Schedule 6.3 has been obtained and is in full force and effect\". Section 9.2(d): \"Seller shall have no liability under Section 9.2(a) for any Losses arising from any matter disclosed in the Disclosure Schedule.\"",
+            "reason": "The problem is present and hurts Buyer. Seller's duty under Section 6.3 to seek consents covers only the 'Required Consents' on Schedule 6.3, which lists only Aldmoor Bank. Buyer's closing condition in Section 8.2(c) is tied to the same list. Torvenne's change-of-control consent is therefore neither a Seller covenant nor a closing condition, even though the share sale will trigger it. Schedule 4.7 forms part of the Disclosure Schedule, so the Torvenne consent right is a disclosed matter. That means the Section 4.4 no-conflicts rep and the Section 4.7 rep give no recourse, because Section 9.2(d) bars indemnity for disclosed matters. If Torvenne terminates and repossesses the Aurora and Borealis (two of the seven tankers), Buyer bears the loss. Nothing in the other documents fixes this. The Escrow Agreement covers only the indemnity escrow and the Cygnet dispute. The integration notes address only the Aldmoor consent and the Gannet charter notice, and never mention Torvenne. The folder does not show that Closing has occurred or that Buyer accepted the risk. Even after Closing, the indemnity gap stays open while Torvenne's termination right exists, so the issue is still actionable."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Escrow Agreement Section 1.1: \"'Escrow Release Date' means the date that is six (6) months after the Closing Date.\" SPA Section 9.1: \"All other representations and warranties of the parties survive the Closing until the Escrow Release Date (as defined in the Escrow Agreement).\" SPA Section 9.4: \"No claim for indemnification under Section 9.2(a) ... may be made unless that notice is delivered before the expiration of the survival period applicable to that representation or warranty under Section 9.1.\"",
+            "reason": "The problem is present and hurts Buyer. Seller gives the Article IV representations and the indemnity, and Buyer bears the burden of noticing claims. The SPA ties survival of every non-fundamental representation to the Escrow Release Date. The signed Escrow Agreement fixes that date at six months after Closing, and SPA Section 9.4 bars any claim not noticed by then. That covers the vessel condition, class, environmental/MARPOL and Material Contracts representations. On the Escrow Release Date the $9.3M balance goes to Seller under Section 5.1, less only claims already noticed. Section 9.5(b) caps Seller's liability for these representations at the Indemnity Escrow Amount, so Buyer has no recovery outside that window. No provision extends survival, carves out latent defects found at later surveys or drydockings, or prolongs the escrow. The Disputed Repair Account covers only the Cygnet dispute. The issue is still actionable. The Escrow Agreement was signed on June 19, 2026, and Closing had not occurred as of June 24, 2026, with a target of late July. Nothing in the folder shows that Closing has since taken place. The six-month window therefore has not started, or at most is still running. Section 11.2 of the Escrow Agreement allows a three-party amendment. At minimum, Buyer needs advice to accelerate surveys and deliver Claim Notices before the release date. Nothing records that Buyer accepted the six-month limit as a lapsed result."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.065,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

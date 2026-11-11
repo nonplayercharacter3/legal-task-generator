@@ -1,0 +1,60 @@
+{
+  "matter_id": "s37-m0003",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I2\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 40
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I2"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.1: \"All claims for indemnification under Section 9.2, including claims under Section 9.2(c), shall survive only until twelve (12) months following the Closing Date, other than claims for breach of the Fundamental Representations or Section 4.11. ... No claim may be made under this Article IX unless the Indemnified Party delivers written notice of the claim to the Indemnifying Party within the applicable survival period. ... The parties intend that the survival periods in this Section 9.1 shorten the otherwise applicable statute of limitations.\" Section 4.14(b): \"Affected patients may experience aseptic loosening and may need revision surgery over several years after implantation.\"",
+            "reason": "Seller gives the Section 9.2(c) indemnity and Buyer is the indemnified party, so the 12-month cut-off hurts Buyer. Section 9.4(c) lifts the Deductible and cap for Recall Losses, but nothing extends the survival period for them. Section 9.1 expressly includes 9.2(c) claims in the 12-month survival period, requires notice within that period, and states that this shortens the statute of limitations. Closing was June 2, 2026, so the window ends June 2, 2027. Section 4.14(b) itself expects revision surgeries over several years. Most Recall Losses will therefore arise after the indemnity has lapsed. Section 9.6 makes this worse by releasing the escrow at 12 months. No other document in the folder cures this; the board consent deals only with working capital. The window is still open as of November 2026. Buyer can still act: it can give notice of known and anticipated Recall Matter claims before June 2, 2027, so that they survive under the 'survive until finally resolved' language, or it can negotiate an amendment under Section 11.3. The problem is present and actionable."
+          },
+          {
+            "issue": "I2",
+            "present": false,
+            "evidence": "Section 7: \"This Agreement shall be governed by and construed in accordance with the laws of the State of Indiana ... Each party irrevocably submits to the exclusive jurisdiction of the state courts located in Kosciusko County, Indiana...\" SPA Section 11.17: \"However, the governing law and forum provisions of each Ancillary Agreement shall govern that Ancillary Agreement.\"",
+            "reason": "The Indiana choice of law and forum is present, but it is a deliberate, harmless choice rather than a defect. SPA Section 11.17 expressly carves out each Ancillary Agreement's governing law and forum, so the parties chose this result. The Key Employee Agreement is between the Indiana Company and an Indiana-resident executive who works in Warsaw, Indiana. Indiana law and a local Kosciusko County forum are the natural, and most enforceable, choice for her employment covenants. A New York choice would likely not change the analysis of her non-compete, because the governing law would be tested against Indiana's interest. Her lack of equity removes sale-of-business latitude under either New York or Indiana law, so nothing turns on the choice. The claimed \"split\" is also not real. SPA Section 6.9 is Seller's separate covenant, owed to Buyer, and it runs only through Closing. Dr. Kranwick's covenants are her own obligations under a different contract with a different party. Two forums for two obligors is ordinary, not a conflict that hurts Buyer. Buyer is also protected: it is an express third-party beneficiary with direct enforcement rights (KEA Section 8.4), and it has injunctive relief without bond (Section 6.1). Nothing here is a real, actionable problem for Buyer."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"If Buyer does not deliver the Closing Statement within that period, the Estimated Closing Statement shall be deemed final and binding on the parties for all purposes of this Agreement.\" (SPA Section 2.4(a)). The Board Written Consent recites that \"The Closing under the Purchase Agreement occurred on June 2, 2026\" and that \"The Corporation delivered the Closing Statement to Seller on August 28, 2026.\"",
+            "reason": "Section 2.4(a) puts the delivery obligation on Buyer, the client: deliver the Closing Statement within 60 days after the Closing Date, or Seller's Estimated Closing Statement becomes final and binding. Closing was June 2, 2026, so the deadline was August 1, 2026. Buyer delivered on August 28, 27 days late. That statement shows a $2,300,000 shortfall that Seller would otherwise owe Buyer. Nothing in the SPA extends the deadline or excuses late delivery. The March draft had no deemed-final sentence, so the forfeiture language was added in the executed version. Seller has already invoked the clause by letter of September 4, 2026. This hurts the client: Seller has a strong contractual argument that Buyer forfeited the $2.3M downward adjustment. The matter is still actionable. Buyer has not accepted the result: the Board rejected Seller's position, directed management to contest it and reserved all rights. Nothing in the folder shows a settlement, payment or acquiescence."
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}
