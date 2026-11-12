@@ -13,7 +13,7 @@ from typing import Any, Callable
 from . import prompts
 from .decontam import BloomIndex
 from .models import ModelClient, call_json, render_input
-from .schema import Answers, Ledger, MatterSpec, Rubric, bundling_errors, validate_answers, validate_ledger, validate_rubric
+from .schema import Answers, Ledger, MatterSpec, Rubric, bundling_errors, split_issue_errors, validate_answers, validate_ledger, validate_rubric
 from .solver import Solution, solve
 from .stages import Documents, judge, judge_with_reasons
 
@@ -106,6 +106,7 @@ def rubric_trace(rubric: Rubric, ledger: Ledger, answers: Answers, bundling: str
     bundled = bundling_errors(rubric, ledger) if bundling != "off" else []
     if bundling == "repair":
         errs += bundled
+    errs += split_issue_errors(rubric, ledger)  # always: the writer had its one repair in `stages.write_rubric`
     details = {"errors": errs, "n_criteria": len(rubric.criteria), "bundled": bundled, "repair": repair or {"ran": False},
                "single_issue_facts": single_issue_facts(rubric, ledger), "ranking_facts": ranking_facts(rubric, ledger)}  # recorded only
     return GateResult("rubric_trace", not errs, details)

@@ -7,6 +7,7 @@ Validation returns a list of human-readable errors; an empty list means valid.
 from __future__ import annotations
 
 import re
+from collections import Counter
 from dataclasses import asdict, dataclass, field
 from typing import Any
 
@@ -297,6 +298,14 @@ def bundling_errors(rubric: Rubric, ledger: Ledger) -> list[str]:
             f"{clause!r}; ask that the response explains why it matters and recommends a fix"
             for c in rubric.criteria if c.kind == "issue" and c.source in issues
             for clause in bundled_elements(c.text, issues[c.source])]
+
+
+def split_issue_errors(rubric: Rubric, ledger: Ledger) -> list[str]:
+    """One error per ledger issue graded by more than one issue criterion (T44: s29-m0001 had 20 criteria)."""
+    n = Counter(c.source for c in rubric.criteria if c.kind == "issue")
+    return [f"issue {i.id} has {n[i.id]} issue criteria ({', '.join(c.id for c in rubric.criteria if c.kind == 'issue' and c.source == i.id)}); "
+            f"merge them into ONE criterion that asks for the finding, where it is, why it matters and a recommended fix"
+            for i in ledger.issues if n[i.id] > 1]
 
 
 def validate_rubric(rubric: Rubric, ledger: Ledger, bundling: bool = True) -> list[str]:
