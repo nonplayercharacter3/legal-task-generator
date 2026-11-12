@@ -52,6 +52,7 @@ class SpecCfg:
     n_documents: list[int] = field(default_factory=lambda: [3, 5])  # inclusive range
     n_issues: list[int] = field(default_factory=lambda: [3, 5])
     min_distractors: int = 1  # distractor documents per matter (when it has 3 or more documents)
+    cross_document_share: float = 0.0  # share of issues (rounded up) that need two documents read together
 
 
 @dataclass

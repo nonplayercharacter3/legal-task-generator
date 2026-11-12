@@ -267,6 +267,8 @@ class Pipeline:
         s["instruction"] = {k: v for k, v in s["instruction"].items() if v != getattr(InstructionCfg, k)}
         if not s["instruction"]:
             s.pop("instruction")
+        if not s["spec"].get("cross_document_share"):
+            s["spec"].pop("cross_document_share", None)
         # How a reply travels does not change what it says, so runs begun without streaming resume with it on.
         for b in (s["backend"], *s["backend"]["roles"].values()):
             for k in ("stream", "max_seconds"):

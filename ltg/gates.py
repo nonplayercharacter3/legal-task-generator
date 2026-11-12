@@ -87,7 +87,7 @@ def leak_check(instruction: str, ledger: Ledger, docs: Documents, name_files: bo
     hits = []
     for where, text in visible.items():
         for i in ledger.issues:
-            for phrase in [i.label, *[t for t in i.detect_terms if len(t.split()) > 1]]:
+            for phrase in [i.label, *[t for t in [*i.detect_terms, *i.detect_terms2] if len(t.split()) > 1]]:
                 if _words(phrase).strip() and _words(phrase) in _words(text):
                     hits.append({"issue": i.id, "phrase": phrase, "in": where})
     comments = sorted(n for n, c in docs.items() if "<!--" in c)
@@ -189,7 +189,7 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
     # Each query names the instrument the fact belongs to: an NDA in the folder has its own "Effective Date", and
     # reading that as the supply agreement's Effective Date rejected a sound task (2026-10-18 pilot).
     owner = {d.id: f"{d.kind} ({d.filename})" for d in ledger.documents}
-    planted = {(fid, fname.get(i.doc)) for i in ledger.issues for fid in i.contradicted()}
+    planted = {(fid, fname.get(d)) for i in ledger.issues for d in i.docs() for fid in i.contradicted()}
     # An issue whose own description quotes a fact's value, word for word, is about that fact in its document even
     # when the ledger writer left `contradicts` empty (round 9: an escrow agreement that cut the SPA's cap carve-outs).
     # Short values ("30 days") turn up in descriptions by chance, so only values of 5 words or more count.
@@ -263,17 +263,38 @@ def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms
     for i in ledger.issues:
         content = docs.get(fname[i.doc], "")
         missing_terms = [t for t in i.detect_terms if _plain(t) not in _plain(content)]
+        if i.doc2:
+            missing_terms += [t for t in i.detect_terms2 if _plain(t) not in _plain(docs.get(fname.get(i.doc2, ""), ""))]
         if missing_terms:
             results.append({"issue": i.id, "present": False, "missing_terms": missing_terms})
             continue
         issue = {"label": i.label, "description": i.description, "section": i.section}
         if show_terms:
             issue["detect_terms"] = i.detect_terms
-        others = [{"filename": n, "content": c} for n, c in docs.items() if n != fname[i.doc]]
+        if i.doc2:
+            issue["section_of_second_document"] = i.section2
+            second = {"filename": fname[i.doc2], "content": docs.get(fname[i.doc2], "")}
+        used = {fname[d] for d in i.docs()}
+        others = [{"filename": n, "content": c} for n, c in docs.items() if n not in used]
         payload = {"client": party, "document": {"filename": fname[i.doc], "content": content}, "other_documents": others, "issue": issue}
+        if i.doc2:
+            payload["second_document"] = second
         out = call_json(client, "issue_verifier", prompts.ISSUE_VERIFIER, render_input(payload))
         # The reason goes to gates.json too: round 12's s12-m0002 was rejected here and its grounds were not on disk.
-        results.append({"issue": i.id, "present": bool(out.get("present")), "evidence": out.get("evidence", ""), "reason": out.get("reason", "")})
+        r = {"issue": i.id, "present": bool(out.get("present")), "evidence": out.get("evidence", ""), "reason": out.get("reason", "")}
+        if i.doc2 and r["present"]:
+            # Blind second look at each half alone: a two-document issue that one document gives away is a one-document issue.
+            r["alone"] = {}
+            for d in i.docs():
+                solo = {"client": party, "document": {"filename": fname[d], "content": docs.get(fname[d], "")},
+                        "issue": {"label": i.label, "description": i.description}}
+                o = call_json(client, "issue_solo_verifier", prompts.ISSUE_SOLO_VERIFIER, render_input(solo))
+                r["alone"][fname[d]] = {"findable": bool(o.get("findable")), "evidence": o.get("evidence", ""), "reason": o.get("reason", "")}
+            giveaways = [n for n, a in r["alone"].items() if a["findable"]]
+            if giveaways:
+                r["present"] = False
+                r["reason"] = f"findable from {', '.join(giveaways)} alone, so it does not need two documents"
+        results.append(r)
     missing = [r["issue"] for r in results if not r["present"]]
     # s9-m0002: issue I1 rested on a sale to a buyer no document names, so a solver could only guess it. T31 found
     # it on 1 of 95 real matters and nowhere else, so it rejects.

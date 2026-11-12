@@ -39,6 +39,7 @@ class MatterSpec:
     supporting_kinds: list[str] = field(default_factory=list)
     distractor_kind: str = ""
     min_distractors: int = 1
+    n_cross_document: int = 0  # issues that need two documents read together (spec.cross_document_share)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -88,6 +89,13 @@ class Issue:
     detect_terms: list[str]
     expected_finding: str
     contradicts: str | list[str] | None = None  # fact id(s) this issue deliberately states differently in its document
+    # A two-document issue: `doc`/`section` hold one half and these the other. Neither document alone shows the problem.
+    doc2: str | None = None
+    section2: str | None = None
+    detect_terms2: list[str] = field(default_factory=list)  # verbatim in doc2, as detect_terms are in doc
+
+    def docs(self) -> list[str]:
+        return [self.doc, self.doc2] if self.doc2 else [self.doc]
 
     def contradicted(self) -> list[str]:
         """The contradicted fact ids as a list: one issue can move several facts (governing law and forum)."""
@@ -225,6 +233,19 @@ def validate_ledger(ledger: Ledger, spec: MatterSpec) -> list[str]:
                 errs.append(f"issue {i.id} contradicts {fact.id} inside {fact.doc}, the document that states it; "
                             "a contradiction needs the fact stated in a different document, otherwise leave it out")
         issue_docs.add(i.doc)
+        if i.doc2:
+            doc2 = ledger.doc_by_id(i.doc2)
+            if doc2 is None:
+                errs.append(f"issue {i.id} points to unknown second document {i.doc2}")
+            elif doc2.distractor:
+                errs.append(f"issue {i.id} is planted in distractor document {i.doc2}")
+            if i.doc2 == i.doc:
+                errs.append(f"issue {i.id} names {i.doc} as both its documents; a two-document issue needs two different ones")
+            if not i.section2 or not i.detect_terms2:
+                errs.append(f"issue {i.id} needs section2 and detect_terms2 for its second document")
+    if sum(1 for i in ledger.issues if i.doc2) < spec.n_cross_document:
+        errs.append(f"expected {spec.n_cross_document} issues that need two documents (doc2, section2, detect_terms2), got "
+                    f"{sum(1 for i in ledger.issues if i.doc2)}")
     if spec.n_issues >= 2 and len(issue_docs) < 2:
         errs.append("all issues sit in one document; spread them across documents")
     for party, stem in zip(ledger.parties, spec.name_stems):
