@@ -1,0 +1,138 @@
+{
+  "matter_id": "s45-m0001",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I4\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I4"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"Provider may assign this Agreement, or delegate the performance of any of the Services, including the Dispatch Services, the Routing Software Services and the furnishing of Transition Drivers, to any Person without the consent of Recipient.\" (TSA Section 10.3)",
+            "reason": "Section 10.3 lets Provider (Glusask) assign the TSA or delegate any Service to any Person without Famairt's consent. Recipient, by contrast, needs Provider's consent except for assignments to Affiliates and lenders. APA Section 11.6 covers assignment of the APA only, not the Ancillary Agreements. APA Section 6.8 bars Seller itself from competing, but it does not stop Seller from handing the TSA to a competing contractor. That assignee would gain access to Recipient Data, student rider information and the District relationship. Famairt would also have no say in who drives its students. The data, confidentiality and qualification covenants still bind the performing party, but none of them requires consent or limits who the assignee can be. Nothing in the folder shows the issue was resolved or accepted, and the TSA is still a draft agreement whose Effective Date is left blank. The point is therefore a real, live problem for Famairt as Recipient."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "APA Section 9.5(b) says the 10% cap \"shall not apply to Losses arising from any breach of Section 6.9 with respect to any driver furnished by Seller, including Transition Drivers.\" TSA Section 8.3 says \"Provider's aggregate liability arising out of or relating to this Agreement or the Services, including the furnishing of Transition Drivers, whether under this Agreement, the Purchase Agreement or otherwise, shall not exceed the Service Fees paid in the three months preceding the event giving rise to the claim.\" APA Section 11.10 says \"the Transition Services Agreement shall control as to the Services and the liabilities arising from them.\"",
+            "reason": "Seller, as Provider, is the party liable for driver qualification under APA Section 6.9 and TSA Section 2.2(c). Buyer (Famairt) is the indemnified party, so the problem falls on the client. The APA carves Section 6.9 driver breaches, expressly including Transition Drivers, out of the 10% cap, which leaves Seller liable up to the full Purchase Price. However, TSA Section 8.3 caps all of Provider's liability relating to the Services, including furnishing Transition Drivers, even when the claim is brought under the Purchase Agreement. APA Section 11.10 gives the TSA priority as to the Services and the liabilities arising from them. Read together, a post-Closing accident caused by an unqualified Transition Driver would be limited to about $255,000 (3 x $85,000). That cuts back the uncapped protection Buyer bargained for on its highest-risk exposure. Nothing in the folder cures, limits or waives this conflict. The TSA Term runs for 120 days after the August 14, 2026 Closing, so the exposure is ongoing. The client can still act by seeking an amendment or a side letter, and by preparing its interpretive position for any claim.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.10: \"In the event of any conflict between this Agreement and any Ancillary Agreement, this Agreement shall control, except that the Transition Services Agreement shall control as to the Services and the liabilities arising from them.\"",
+                "reason": "The APA alone shows two things. Section 9.5(b) takes Section 6.9 driver-qualification breaches, expressly including Transition Drivers, out of the 10% cap. Section 11.10 makes the TSA control over the Services and the liabilities arising from them. A careful associate might see a theoretical risk that the TSA could override the carve-out. The APA does not show that the TSA actually contains a liability cap. It also does not show that any such cap covers the furnishing of Transition Drivers, applies to claims brought under the Purchase Agreement, or is set at three months of Service Fees (about $255,000). Those facts are in TSA Section 8.3, which is not in this document. Without them, the conflict and the harm to Buyer cannot be established from the APA alone."
+              },
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "Provider's aggregate liability arising out of or relating to this Agreement or the Services, including the furnishing of Transition Drivers, whether under this Agreement, the Purchase Agreement or otherwise, shall not exceed the Service Fees paid in the three months preceding the event giving rise to the claim.",
+                "reason": "The TSA alone shows a low cap: three months of the $85,000 monthly fee, about $255,000. The cap covers driver-related claims and claims under the Purchase Agreement. That is a visible concern next to the $10M auto insurance requirement. But the specific problem cannot be seen from this document. It depends on three APA terms the TSA does not show. First, APA Section 6.9, the driver-qualification covenant covering Transition Drivers. Second, APA Section 9.5(b), which carves Section 6.9 breaches out of the 10% cap so they are uncapped. Third, APA Section 11.10, which makes the TSA control over liabilities arising from the Services. Without the APA, an associate cannot tell that the client loses an uncapped indemnity, or that the TSA cap would prevail over it."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "APA Section 6.6: \"Buyer may, by written notice to Seller delivered within 45 days after the Signing Date, designate any Contract listed on Schedule 2.1(c) as an Excluded Contract.\" The Signing Date is June 2, 2026. Board Consent Resolution 4 (July 28, 2026) directs officers \"to prepare and deliver to Seller ... a written notice to designate the Ostrander Fleet Lease as an Excluded Contract. That notice shall be delivered promptly following the Consent Date.\" It also notes \"Seller has informally taken the position that a designation ... would be untimely. The Company disputes the position taken by Seller and does not accept that the Ostrander Fleet Lease is to be assumed by the Company at the Closing.\"",
+            "reason": "The 45-day window under Section 6.6 belongs to Buyer (the client) and ran from June 2 to July 17, 2026. The board did not direct the notice until July 28, so any notice comes at least 11 days late. Nothing in the APA extends or tolls the window: Section 11.3 requires a signed written amendment or waiver, and none appears in the folder. Without Seller's agreement, the above-market Ostrander lease ($57,200 per month through 2031) stays an Assigned Contract that Buyer must assume. Section 6.6 also says a designation would not reduce the Purchase Price. The folder shows no acceptance by the client: the board expressly disputes Seller's position, reserves all rights and requires board approval for any amendment. The issue therefore remains live and actionable for the client, and the client is the party it harms.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Buyer may, by written notice to Seller delivered within 45 days after the Signing Date, designate any Contract listed on Schedule 2.1(c) as an Excluded Contract.",
+                "reason": "From the APA alone, the Section 6.6 designation window can be worked out: the Signing Date is June 2, 2026, so the window closes 45 days later, on July 17, 2026. But the APA does not show that Buyer missed it. It says nothing about when a designation notice was given, or whether one was given at all. It does not mention the Ostrander fleet lease or say that it is above-market. It also does not record Seller's objection that the designation was untimely. The late July 28 board-directed notice and the dispute appear only in the board consent. A reader of the APA alone would see a deadline, not a missed deadline that leaves Buyer bound to assume an unwanted lease."
+              },
+              "famairt_board_written_consent.md": {
+                "findable": false,
+                "evidence": "FURTHER RESOLVED, that the Board notes management's report that Seller has informally taken the position that a designation of the Ostrander Fleet Lease as an Excluded Contract would be untimely. The Company disputes the position taken by Seller and does not accept that the Ostrander Fleet Lease is to be assumed by the Company at the Closing.",
+                "reason": "On its own, the consent shows several facts. The Purchase Agreement is dated June 2, 2026, and the consent is dated July 28, 2026. The consent directs officers to deliver a Section 6.6 notice designating the above-market Ostrander Fleet Lease as an Excluded Contract. It also records that Seller calls the designation untimely and that the Company disputes this. That is enough to flag a dispute over timing. It is not enough to see that the notice is actually late. The consent never states the Section 6.6 deadline, which is 45 days after the Signing Date. It also never says the window closed on July 17, 2026. Without the APA's notice-window terms, an associate cannot tell whether Seller's position or the Company's position is correct. So the associate cannot conclude that the lease will remain an Assigned Contract the client must assume."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": false,
+            "evidence": "APA §9.1: \"the representations and warranties in Section 4.14 (Fleet Condition) shall survive until the date that is 90 days after the Fleet Inspection Date.\" Disclosure Schedule 4.14: \"Fleet Inspection Date: May 20, 2026.\" APA §3.1 sets Closing for \"August 14, 2026.\"",
+            "reason": "findable from asset_purchase_agreement.md alone, so it does not need two documents",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": true,
+                "evidence": "\"Fleet Inspection Date\" means the date on which the pre-acquisition inspection of the Vehicles was completed, as set forth on Schedule 4.14. ... (b) the representations and warranties in Section 4.14 (Fleet Condition) shall survive until the date that is 90 days after the Fleet Inspection Date. ... The closing ... shall take place ... on August 14, 2026",
+                "reason": "The APA alone shows that the Section 4.14 fleet representations run from the inspection date, not from Closing, while general representations run 18 months from Closing. The definition says the inspection 'was completed', in the past tense, in an agreement signed June 2, 2026. So the inspection date is no later than the Signing Date, and survival ends no later than about August 31, 2026. That is at most about 17 days after the scheduled August 14 Closing, around the start of school-year service. A careful associate could therefore see from this document alone that the fleet representations have almost no post-Closing life, which hurts the Buyer. What the document does not show is the exact date: only Schedule 4.14 gives May 20, 2026, and so the precise four-day window ending August 18. The problem itself is visible without the schedule."
+              },
+              "seller_disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "Fleet Inspection Date: May 20, 2026",
+                "reason": "The schedule sets the Fleet Inspection Date at May 20, 2026 and shows the Section 4.14 fleet condition disclosures are tied to that date. It does not say how long the Section 4.14 representations survive. It does not mention a 90-day survival period keyed to the Fleet Inspection Date, the 18-month general survival in APA Section 9.1, or the August 14, 2026 scheduled Closing Date in APA Section 3.1. Without those APA terms, an associate cannot tell that the representations expire four days after Closing, before the buses go into school-year service. The harm comes from APA terms not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "APA Section 1.1: \"'Routes' means all student transportation routes operated by Seller under the Assigned Contracts, including general education home-to-school routes, special education and IEP routes, McKinney-Vento routes, and athletic and field-trip routes.\" APA Section 6.12 requires Seller to provide transition dispatch services, routing software access and support, and Transition Drivers \"for the Routes, so that Buyer may operate the Routes without interruption following the Closing.\" TSA Section 1.1: \"'Routes' means the general education home-to-school routes listed in Exhibit A.\" TSA Section 2.1: \"During the Term, Provider shall provide the Services to Recipient for the Routes.\" APA Section 11.10: \"the Transition Services Agreement shall control as to the Services and the liabilities arising from them.\"",
+            "reason": "The two documents conflict. The APA defines Routes broadly, and Section 6.12 promises transition support for all of them. The TSA narrows Routes to the 12 general education routes in Exhibit A (all Pellston) and limits the Services to those routes. APA Section 11.10 says the TSA controls as to the Services, so the narrower definition likely governs. That leaves special education/IEP, McKinney-Vento and athletic and field-trip routes without dispatch, routing support or Transition Drivers. This hurts Buyer, the firm's client and the Recipient. Buyer takes on the Pellston Agreement, about 81% of revenue, which requires special education and McKinney-Vento transport. Buyer will have no drivers or dispatch for those routes until its own hires start at the end of the TSA Term. Nothing in the folder cures the gap. Section 2.6 additional services depend on Seller agreeing in good faith, and an Exhibit A amendment needs Seller's consent. It is still actionable because the TSA signature block, effective date and Buyer signatory are blank, and the board allowed changes to the TSA form at signing. Even if the TSA has since been signed, Buyer can still pursue the APA 6.12 covenant or renegotiate.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Services\" has the meaning given in the Transition Services Agreement. ... 11.10 ... except that the Transition Services Agreement shall control as to the Services and the liabilities arising from them.",
+                "reason": "The APA by itself defines Routes broadly to include special education, IEP, McKinney-Vento and athletic routes. Section 6.12 promises transition dispatch, routing support and Transition Drivers for the Routes. Section 11.10 makes the TSA control as to the Services, and 'Services' is defined only by reference to the TSA. An associate could flag a general risk that the TSA might define scope differently and override the APA. Nothing in the APA shows that the TSA actually defines Routes more narrowly as only general education home-to-school routes, or that TSA Section 2.1 limits the Services to those routes. The conflict and the resulting gap in support for mandated routes can only be seen in the TSA."
+              },
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"Routes\" means the general education home-to-school routes listed in Exhibit A, as Exhibit A may be amended by written agreement of the Parties.",
+                "reason": "On its own, the TSA shows that Routes is limited to general education home-to-school routes listed in Exhibit A, and Section 2.1 confines the Services to those Routes. The word \"general education\" might make a careful reader wonder whether other route types exist. But the TSA never says the business runs special education, IEP, McKinney-Vento or athletic and field-trip routes under the Assigned Contracts. It also does not show that the APA defines Routes more broadly, that APA Section 6.12 promises transition support for all Routes, or that APA Section 11.10 makes the TSA control. Section 2.6 even provides a path to add services, so the narrow scope could look deliberate. The conflict between definitions and the resulting gap in coverage for legally mandated routes can only be seen with the APA."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "APA Section 7.2(d): \"the Required Consents shall have been obtained and shall be in full force and effect\". Section 4.4 defines Required Consents as the consents on Schedule 4.4, and Schedule 4.4 lists only \"Consent of Ostrander Coach Leasing, LLC, as lessor\". Disclosure Schedule 3.1(a)(v) quotes Pellston Agreement Section 14.2: \"Contractor shall not assign this Agreement ... or effect any sale of all or substantially all of the assets used in the performance of this Agreement, without the prior written approval of the District's Board of Education. If Contractor does so without that approval, the District may terminate this Agreement upon thirty (30) days' written notice\".",
+            "reason": "Famairt is Buyer, and this gap hurts it. The Pellston Agreement brings in about 81% of Business revenue, and the asset sale needs the District Board's prior written approval. Yet the closing condition in 7.2(d) and Seller's efforts covenant in 6.4 cover only the Required Consents, which means the Ostrander consent alone. Nothing in the APA makes District approval a condition to Buyer closing or requires Seller to seek it. The fallback protections are weak. The bring-down condition in 7.2(a) and the no-conflicts rep in 4.3(c) are qualified by the Disclosure Schedule, and the Pellston restriction is disclosed in Schedule 4.8. The MAC condition in 7.2(f) is not triggered just because a termination right exists. Any indemnity claim falls under the 10% cap in 9.5(a), because the carve-outs in 9.5(b) do not reach this. The folder does not show that Closing has happened or that Famairt accepted this result, so the point is still actionable.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Except for the consents set forth on Schedule 4.4 of the Disclosure Schedule (the \"Required Consents\"), no consent, approval or notice of or to any Person is required in connection with the execution and performance of this Agreement by Seller.\"",
+                "reason": "The APA alone shows how the consent structure works. The closing condition in 7.2(d) and Seller's efforts covenant in 6.4 cover only the Required Consents, meaning those listed on Schedule 4.4. Section 9.5(a) caps indemnity for breach of representations at 10% of the Purchase Price. The APA does not show what Schedule 4.4 actually lists, so it does not show that only the Ostrander lessor consent appears there. It also does not identify the Pellston Unified School District agreement or contain its Section 14.2, which requires Board approval for an assignment, change of control or sale of substantially all assets and allows termination on 30 days' notice. Without the Disclosure Schedule and that district contract, an associate cannot see that a needed consent was left out of the closing condition and covenant. Section 4.4 actually represents that no other consents are required."
+              },
+              "seller_disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "\"2.1 The following consent is required in connection with the execution and performance of the Agreement by Seller: (a) Consent of Ostrander Coach Leasing, LLC...\" and Section 14.2 of the Pellston Agreement: \"Contractor shall not assign this Agreement ... or effect any sale of all or substantially all of the assets used in the performance of this Agreement, without the prior written approval of the District's Board of Education. If Contractor does so without that approval, the District may terminate this Agreement upon thirty (30) days' written notice to Contractor.\"",
+                "reason": "On its own, the schedule shows a mismatch. Schedule 4.4 lists only the Ostrander consent. Schedule 4.8 quotes Section 14.2, which requires District Board approval for this asset sale and lets the District terminate on 30 days' notice. The Pellston Agreement is about 81% of revenue. A careful associate would notice that the District approval is missing from the consents list. The schedule does not show that this omission leaves Famairt exposed, because that depends on the APA, which I do not have. The APA would have to show three things: (1) the closing condition in Section 7.2(d) is limited to consents listed in Schedule 4.4; (2) Seller's efforts covenant in Section 6.4 is limited to the same consents; and (3) any indemnity recovery is capped at 10%. If the APA instead conditioned closing on all third-party consents, or gave full recourse for an inaccurate consents representation, the omission might not harm Famairt in the way described. The harm comes from that APA structure, so the problem cannot be fully identified from this document alone."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

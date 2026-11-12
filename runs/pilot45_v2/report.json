@@ -1,0 +1,207 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 1,
+  "errors": 0,
+  "resumed": 2,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 1,
+      "failed": 2,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 1,
+  "label_pending": 0,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 1,
+      "pass_rates": {
+        "0.00": 1
+      }
+    }
+  },
+  "matters": [
+    {
+      "matter_id": "s45-m0001",
+      "accepted": false,
+      "failed_gate": "issue_check",
+      "reason": "missing: [\"I4\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    },
+    {
+      "matter_id": "s45-m0002",
+      "accepted": false,
+      "failed_gate": "issue_check",
+      "reason": "missing: [\"I2\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    },
+    {
+      "matter_id": "s45-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "dev",
+      "solver_pass_rate": 0.0,
+      "unsolved": true,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 0,
+          "pass_rate": 0.0
+        }
+      ],
+      "label_pending": false
+    }
+  ],
+  "model_calls": {
+    "drafter": {
+      "calls": 8,
+      "input_tokens": 182815,
+      "output_tokens": 35031,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 1,
+      "input_tokens": 39389,
+      "output_tokens": 3756,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 1,
+      "input_tokens": 1294,
+      "output_tokens": 121,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 6,
+      "input_tokens": 192819,
+      "output_tokens": 4194,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 8,
+      "input_tokens": 52199,
+      "output_tokens": 4074,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 1,
+      "input_tokens": 1318,
+      "output_tokens": 148,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 1,
+      "input_tokens": 7696,
+      "output_tokens": 2566,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 2,
+      "input_tokens": 77482,
+      "output_tokens": 13842,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 7,
+      "input_tokens": 54652,
+      "output_tokens": 6730,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 83,
+      "input_tokens": 703096,
+      "output_tokens": 68235,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "school bus operations": 1,
+      "marine shipping": 1,
+      "used car auctions": 1
+    },
+    "agreement_types": {
+      "asset purchase agreement": 1,
+      "stock purchase agreement": 1,
+      "master services agreement": 1
+    },
+    "issue_types": {
+      "missing_assignment_restriction": 2,
+      "liability_cap_carveout": 2,
+      "expired_notice_window": 2,
+      "defined_term_inconsistency": 2,
+      "change_of_control_consent": 2,
+      "governing_law_mismatch": 2,
+      "uncapped_indemnity": 2,
+      "survival_gap": 1,
+      "auto_renewal": 1,
+      "exclusivity_scope": 1
+    },
+    "repeated_names": {
+      "ostrander": [
+        "s45-m0001",
+        "s45-m0003"
+      ]
+    },
+    "repeated_issue_sets": {}
+  }
+}

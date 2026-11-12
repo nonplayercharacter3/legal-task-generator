@@ -1,0 +1,252 @@
+{
+  "matter_id": "s45-m0002",
+  "summary": "Varav Maritime Holdings, LLC (client, Buyer) agreed under a Stock Purchase Agreement dated September 14, 2026 to buy all outstanding shares of Norrhaven Bulk Carriers, Inc. from Prumul Shipping Group, Inc. (Seller). Norrhaven owns and operates five Supramax dry-bulk vessels. The price is $186,000,000, of which $24,000,000 is paid by a Seller Note. Closing is pending. The folder holds the signed SPA, the form of Seller Note, a Side Letter signed with the SPA, the Disclosure Schedule, the earlier non-binding Letter of Intent, a prior SPA draft and Varav's board consent. Five issues are planted. (1) The Side Letter, which prevails over the SPA, moves indemnity disputes to English law and London arbitration. (2) The Side Letter drops the special USCG/MARPOL indemnity from the cap carve-outs, contrary to the LOI. (3) Buyer's indemnity for Seller's charter guarantees is uncapped and reaches pre-Closing periods. (4) The Seller Note's narrower definition of 'Losses', which controls set-off, strips Buyer's right to set off off-hire and loss-of-hire losses. (5) A key time charter needs the charterer's consent to the change of control, but that consent is not a Required Consent or closing condition.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Varav Maritime Holdings, LLC",
+      "role": "Buyer; maker of the Seller Note (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Prumul Shipping Group, Inc.",
+      "role": "Seller; holder of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Norrhaven Bulk Carriers, Inc.",
+      "role": "Company being acquired; owner of five Supramax bulk carriers"
+    },
+    {
+      "id": "P4",
+      "name": "Lindqvist Grain Trading AG",
+      "role": "Time charterer of the MV Norrhaven Crest under a charter with a change-of-control consent right"
+    },
+    {
+      "id": "P5",
+      "name": "Skaldern Ship Finance ASA",
+      "role": "Lender under the Company's vessel mortgage facility"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA governing law",
+      "value": "Laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F2",
+      "key": "SPA dispute forum",
+      "value": "Exclusive jurisdiction of the Delaware Court of Chancery",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F3",
+      "key": "SPA date",
+      "value": "September 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F4",
+      "key": "Purchase Price",
+      "value": "$186,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F5",
+      "key": "Seller Note principal amount",
+      "value": "$24,000,000",
+      "doc": "D2",
+      "section": "Section 1"
+    },
+    {
+      "id": "F6",
+      "key": "Seller Note maturity",
+      "value": "36 months after the Closing Date",
+      "doc": "D2",
+      "section": "Section 2"
+    },
+    {
+      "id": "F7",
+      "key": "SPA general indemnity cap (General Cap)",
+      "value": "10% of the Purchase Price ($18,600,000)",
+      "doc": "D1",
+      "section": "Section 8.5(a)"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "Side Letter, then SPA, then Disclosure Schedule; Seller Note controls its own payment and set-off terms",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F9",
+      "key": "SPA definition of Losses",
+      "value": "Includes diminution in value, loss of hire, off-hire and demurrage",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F10",
+      "key": "LOI treatment of USCG MARPOL matter",
+      "value": "Seller indemnifies Buyer from the first dollar, without cap",
+      "doc": "D5",
+      "section": "Paragraph 4"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_executed.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seller_promissory_note_form.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "letter_of_intent_norrhaven.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "spa_prior_draft_august.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D7",
+      "filename": "varav_board_written_consent.md",
+      "kind": "board written consent",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Two provisions, read together, split the governing law and forum for the same claims. Side Letter Section 5 provides that the letter and any claim for indemnification under Article VIII of the Purchase Agreement are governed by English law and referred to London arbitration under the LMAA Terms. SPA Sections 11.8 and 11.9 choose Delaware law and the exclusive jurisdiction of the Court of Chancery for all disputes arising out of the Agreement. SPA Section 11.12 ranks the Side Letter first in the order of precedence, so the English-law and arbitration clause controls Buyer's indemnity claims, including the special USCG/MARPOL indemnity. Set-off disputes under the Delaware-law Seller Note stay in Delaware. The result: Varav's main post-closing remedy is moved to a foreign law and seat that it did not bargain for, and the same Losses risk being decided in two forums with inconsistent outcomes.",
+      "doc": "D3",
+      "section": "Section 5",
+      "detect_terms": [
+        "governed by English law",
+        "LMAA Terms"
+      ],
+      "expected_finding": "Because SPA Section 11.12 gives the Side Letter precedence, Side Letter Section 5 overrides the Delaware law and Chancery forum in SPA Sections 11.8 and 11.9 for all Article VIII indemnity claims, sending Varav's indemnity claims to English-law London arbitration while Seller Note set-off disputes stay in Delaware, so the Side Letter clause should be conformed to Delaware law and forum before Closing.",
+      "contradicts": [
+        "F1",
+        "F2"
+      ],
+      "doc2": "D1",
+      "section2": "Sections 11.8, 11.9 and 11.12",
+      "detect_terms2": [
+        "exclusive jurisdiction of the Court of Chancery"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 8.2(d) gives Buyer a special indemnity for the pending USCG investigation into oil record book and MARPOL Annex I compliance on the MV Norrhaven Spirit, which Disclosure Schedule Part 4.14 describes. SPA Section 8.5(c) as signed carves Fraud, Fundamental Representations and Section 8.2(d) claims out of the General Cap in Section 8.5(a). Side Letter Section 2 deletes and replaces Section 8.5(c) so that only Fraud and the breach of any Fundamental Representation fall outside the cap. Under SPA Section 11.12 the Side Letter prevails. The special MARPOL indemnity is therefore subject to the $18,600,000 General Cap and shares that cap with every general rep claim. This contradicts LOI Paragraph 4, which records the agreed deal that Seller indemnifies the USCG matter from the first dollar, without cap.",
+      "doc": "D3",
+      "section": "Section 2",
+      "detect_terms": [
+        "Fraud or the breach of any Fundamental Representation"
+      ],
+      "expected_finding": "Side Letter Section 2, which prevails under SPA Section 11.12, removes Section 8.2(d) claims from the Section 8.5(c) carve-out, so the special indemnity for the disclosed USCG MARPOL investigation is now capped at the $18,600,000 General Cap and shares it with all other claims, contrary to the uncapped treatment agreed in LOI Paragraph 4, and Varav should require the carve-out for Section 8.2(d) to be restored before Closing.",
+      "contradicts": "F10",
+      "doc2": "D1",
+      "section2": "Sections 8.2(d) and 8.5(c)",
+      "detect_terms2": [
+        "claims under Section 8.2(d)"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "SPA Section 8.3(c) requires Buyer to indemnify the Seller Indemnitees for all Losses arising out of the Charter Guarantees, which are Prumul's parent guarantees of the Company's time charters, whether relating to periods before or after the Closing. SPA Section 8.5(e) caps Buyer's aggregate indemnity liability under Section 8.3 at the General Cap but provides that the cap does not apply to claims under Section 8.3(c). Read together, Varav carries unlimited liability for guarantee calls, including calls caused by the Company's pre-Closing charter performance while under Seller's control. Those are risks Seller should bear, and they should be capped and limited to post-Closing periods.",
+      "doc": "D1",
+      "section": "Sections 8.3(c) and 8.5(e)",
+      "detect_terms": [
+        "whether relating to periods before or after the Closing",
+        "shall not apply to claims under Section 8.3(c)"
+      ],
+      "expected_finding": "SPA Section 8.5(e) excludes Buyer's Section 8.3(c) Charter Guarantee indemnity from any cap, and Section 8.3(c) reaches pre-Closing periods, so Varav faces unlimited liability for guarantee claims caused by Seller's pre-Closing operations; the indemnity should be limited to post-Closing periods and made subject to a cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines 'Losses' to include diminution in value, loss of hire, off-hire and demurrage. SPA Section 8.8 lets Buyer set off Losses claimed in good faith against Seller Note payments. Seller Note Section 1 defines 'Losses' as out-of-pocket amounts actually paid, excluding loss of hire, off-hire, demurrage, diminution in value and consequential damages. Seller Note Section 5.2 permits set-off only of 'Losses' as defined in the Note. Under SPA Section 11.12, the Seller Note controls its own payment and set-off terms, so the narrower Note definition governs. In this business the typical losses from vessel condition or class breaches are off-hire and lost hire. Varav therefore cannot withhold those amounts against the $24,000,000 Note. It must pay in full and pursue Prumul separately, carrying Seller credit risk.",
+      "doc": "D2",
+      "section": "Sections 1 and 5.2",
+      "detect_terms": [
+        "excluding loss of hire",
+        "out-of-pocket"
+      ],
+      "expected_finding": "Because SPA Section 11.12 makes the Seller Note control its set-off terms, the Note's narrow definition of 'Losses' in Sections 1 and 5.2 overrides the SPA Section 1.1 definition used in Section 8.8, so Varav cannot set off loss-of-hire, off-hire, demurrage or diminution-in-value losses against the $24,000,000 Note; the Note should be amended to use the SPA definition of Losses.",
+      "contradicts": "F9",
+      "doc2": "D1",
+      "section2": "Sections 1.1, 8.8 and 11.12",
+      "detect_terms2": [
+        "loss of hire, off-hire and demurrage",
+        "asserted in good faith"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "The SPA recitals and Section 1.1 provide for the sale of 100% of the Company's shares to Buyer, which is a change of control of the Company. Disclosure Schedule Part 4.9(a)(iii) summarizes the time charter of the MV Norrhaven Crest to Lindqvist Grain Trading AG, the Company's largest revenue contract. That charter lets the charterer terminate on a change of control of Owners without Charterers' prior written consent. Disclosure Schedule Part 4.5, which defines the Required Consents, lists only the Skaldern Ship Finance lender consent. SPA Section 7.2(d) conditions Buyer's obligation to close only on the Required Consents having been obtained. The Disclosure Schedule's cross-disclosure clause treats the Part 4.9 summary as disclosure against the Section 4.5 no-conflicts representation. Varav could therefore be required to close without the Lindqvist consent, and it would have no rep claim if the charter is terminated.",
+      "doc": "D1",
+      "section": "Section 7.2(d) and recitals",
+      "detect_terms": [
+        "Required Consents shall have been obtained"
+      ],
+      "expected_finding": "The Lindqvist time charter for the MV Norrhaven Crest gives the charterer a termination right on a change of control without its prior written consent, and this transaction triggers it, but the consent is omitted from the Required Consents in Part 4.5 and so is not a closing condition under SPA Section 7.2(d), while the cross-disclosure in Part 4.9 defeats a rep claim; Varav should require the consent to be added as a Required Consent and closing condition, or obtain a special indemnity, before Closing.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Parts 4.5 and 4.9(a)(iii)",
+      "detect_terms2": [
+        "change of control of Owners",
+        "without Charterers' prior written consent"
+      ]
+    }
+  ]
+}

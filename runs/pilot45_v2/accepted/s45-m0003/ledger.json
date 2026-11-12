@@ -1,0 +1,265 @@
+{
+  "matter_id": "s45-m0003",
+  "summary": "Noubin Auto Exchange, LLC (client) runs wholesale used-vehicle auctions from a Delaware headquarters, with lanes in New Castle, DE and Elkton and Salisbury, MD. It has signed a Master Services Agreement with Trupel Lanecast, Inc., a Georgia company. Trupel supplies an online simulcast bidding platform and inspector-prepared vehicle condition reports. The folder holds eight documents: the MSA, the Order Form, the Service Level Schedule, the Statement of Work, a side letter on Q3 2026 service credits, the pre-signing term sheet, and two distractors. The distractors are an unrelated lot-sweeping vendor agreement and Trupel's certificate of insurance. Six problems are planted, three of which need two documents read together. First, the SOW chooses Georgia law and a Georgia forum, and the MSA's precedence clause lets the SOW prevail. Second, the MSA auto-renews for renewal terms equal to the Initial Term, which the Order Form sets at 60 months, with only a 30-day opt-out window. Third, Noubin's indemnity is uncapped, and the SOW extends it to Trupel's own condition reports. Fourth, Noubin's chronic-SLA termination notice missed the 15-day window; the side letter records the notice date and Noubin's position. Fifth, the MSA's exclusivity, through its definitions, is far broader than the deal in the term sheet. Sixth, Trupel may assign freely while Noubin cannot.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Noubin Auto Exchange, LLC",
+      "role": "client; Delaware LLC operating wholesale used-vehicle auctions; customer under the MSA"
+    },
+    {
+      "id": "P2",
+      "name": "Trupel Lanecast, Inc.",
+      "role": "counterparty; Georgia corporation providing simulcast bidding platform and vehicle condition report services"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Lot Sweeping Co.",
+      "role": "unrelated vendor under Noubin's lot maintenance agreement (distractor)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA governing law",
+      "value": "Laws of the State of Delaware",
+      "doc": "D1",
+      "section": "14.1"
+    },
+    {
+      "id": "F2",
+      "key": "MSA forum",
+      "value": "State or federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "14.2"
+    },
+    {
+      "id": "F3",
+      "key": "Order of precedence among MSA documents",
+      "value": "Side Letter, then Statement of Work, then Order Form, then Service Level Schedule, then MSA",
+      "doc": "D1",
+      "section": "1.3"
+    },
+    {
+      "id": "F4",
+      "key": "Order Form Effective Date",
+      "value": "April 1, 2026",
+      "doc": "D2",
+      "section": "1"
+    },
+    {
+      "id": "F5",
+      "key": "Order Form Initial Term",
+      "value": "Sixty (60) months from the Order Form Effective Date",
+      "doc": "D2",
+      "section": "3"
+    },
+    {
+      "id": "F6",
+      "key": "Platform simulcast fee",
+      "value": "$42 per vehicle sold through simulcast bidding",
+      "doc": "D2",
+      "section": "4"
+    },
+    {
+      "id": "F7",
+      "key": "Platform Go-Live Date",
+      "value": "June 1, 2026",
+      "doc": "D4",
+      "section": "4"
+    },
+    {
+      "id": "F8",
+      "key": "Monthly Availability Service Level",
+      "value": "99.5% Platform availability per calendar month",
+      "doc": "D3",
+      "section": "2"
+    },
+    {
+      "id": "F9",
+      "key": "MSA liability cap",
+      "value": "Fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F10",
+      "key": "Agreed exclusivity scope (term sheet)",
+      "value": "Online simulcast bidding only, at the New Castle, Elkton and Salisbury auction sites",
+      "doc": "D6",
+      "section": "4"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "noubin_trupel_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "trupel_order_form_no1.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "sow_simulcast_and_condition_reports.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D5",
+      "filename": "side_letter_q3_2026_service_credits.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "noubin_trupel_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "ostrander_lot_sweeping_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "trupel_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "MSA §14.1 and §14.2 choose Delaware law and New Castle County courts. SOW §10, however, provides that the SOW and all claims arising out of or relating to the Services performed under it are governed by Georgia law, with exclusive jurisdiction in the courts of Fulton County, Georgia. MSA §1.3 sets an order of precedence in which the Statement of Work prevails over the MSA. Read together, the precedence clause makes the SOW's Georgia choice control the very disputes most likely to arise: platform outages and condition-report errors. Noubin would have to litigate in Trupel's home forum under Georgia law. It would also face split proceedings, with MSA-level claims in Delaware and service claims in Georgia. Neither document alone shows the conflict being resolved against Noubin.",
+      "doc": "D4",
+      "section": "10",
+      "detect_terms": [
+        "laws of the State of Georgia",
+        "Fulton County, Georgia"
+      ],
+      "expected_finding": "Because MSA §1.3 gives the SOW precedence over the MSA, SOW §10's Georgia law and exclusive Fulton County forum override the MSA's Delaware choice for all Services-related claims, so the SOW clause should be deleted or the precedence clause amended to make MSA §14 control.",
+      "contradicts": [
+        "F1",
+        "F2"
+      ],
+      "doc2": "D1",
+      "section2": "1.3",
+      "detect_terms2": [
+        "descending order of precedence",
+        "the Statement of Work shall prevail"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA §12.2 renews the Agreement automatically for successive renewal terms, each equal in length to the Initial Term. It allows a non-renewal notice only if delivered not earlier than 210 days and not later than 180 days before expiration. The MSA does not state the length of the Initial Term; Order Form §3 sets it at sixty (60) months from April 1, 2026. Read together, the clauses lock Noubin into successive five-year renewals unless it hits a single 30-day window. The first window falls roughly between September 2030 and October 2030, ahead of the March 31, 2031 expiry. Missing it commits Noubin to platform fees through 2036.",
+      "doc": "D1",
+      "section": "12.2",
+      "detect_terms": [
+        "each equal in length to the Initial Term",
+        "not earlier than two hundred ten (210) days"
+      ],
+      "expected_finding": "Combined with the 60-month Initial Term in the Order Form, MSA §12.2 automatically renews Noubin for successive five-year terms unless it gives notice within a 30-day window, so renewal should be changed to short (e.g., one-year) renewals or mutual agreement with a simple notice-at-any-time opt-out before expiry.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "3",
+      "detect_terms2": [
+        "sixty (60) months"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Under MSA §9.2, Noubin indemnifies Trupel against third-party claims arising from Consignor Content. MSA §11.3 provides that the §11.1 cap does not apply to either party's obligations under Section 9. In isolation that reads as an ordinary mutual carve-out. SOW §6.2, however, defines Consignor Content for purposes of MSA §9.2 to include all Vehicle Disclosures displayed on the Platform, including condition reports prepared by Trupel Inspectors. Because the SOW prevails over the MSA under MSA §1.3, the two provisions make Noubin's indemnity unlimited. It would cover buyer arbitration, odometer and title-brand claims caused by Trupel's own inspectors' errors, and would shift Trupel's own negligence to Noubin without any cap.",
+      "doc": "D4",
+      "section": "6.2",
+      "detect_terms": [
+        "including condition reports prepared by Trupel Inspectors"
+      ],
+      "expected_finding": "SOW §6.2 expands Noubin's MSA §9.2 indemnity to Trupel-prepared condition reports while MSA §11.3 removes Section 9 indemnities from the cap, leaving Noubin with uncapped liability for Trupel's own inspection errors; the SOW expansion should be struck and Noubin's indemnity capped or limited to content Noubin or consignors supply.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "11.3",
+      "detect_terms2": [
+        "shall not apply to either party's obligations under Section 9"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Service Level Schedule §6.2 lets Noubin terminate for Chronic Failure, meaning three consecutive months below the 99.5% Monthly Availability level. The right must be exercised by written notice delivered within fifteen (15) days after the end of the third consecutive month of failure. The Side Letter dated October 26, 2026 (§2) records that availability fell below the Service Level in July, August and September 2026. It also records that Noubin delivered its notice of Chronic Failure on October 19, 2026, and that Trupel disputes the notice's timeliness. The Side Letter preserves Noubin's position that the notice was valid and states that nothing in it waives either party's rights. Counting from the end of September 2026, the window closed October 15, 2026, so Noubin's notice was four days late. The termination right is therefore likely lapsed. Noubin has not accepted that result.",
+      "doc": "D3",
+      "section": "6.2",
+      "detect_terms": [
+        "within fifteen (15) days after the end of the third consecutive"
+      ],
+      "expected_finding": "The chronic-failure termination window closed October 15, 2026 (15 days after September 30, 2026), so Noubin's October 19, 2026 notice recorded in the Side Letter is likely untimely; Noubin should seek a written extension or waiver from Trupel, preserve alternative grounds such as material breach under the MSA, and avoid accepting the Q3 credits as a sole remedy.",
+      "contradicts": null,
+      "doc2": "D5",
+      "section2": "2",
+      "detect_terms2": [
+        "notice of Chronic Failure dated October 19, 2026",
+        "Trupel disputes the timeliness"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "MSA §3.4 bars Noubin from procuring any Auction Technology Services from any provider other than Trupel at any Noubin Facility. Under MSA §1.1, Noubin Facility means any auction site owned, operated or managed by Noubin or any of its Affiliates, anywhere. Auction Technology Services is defined to include simulcast bidding, condition reports, transport scheduling, title processing and arbitration management. Read together, the provisions extend exclusivity to every current and future affiliate site nationwide and to services well beyond simulcast. The term sheet (§4) limited exclusivity to online simulcast bidding at the New Castle, Elkton and Salisbury sites only. The overbroad clause would block Noubin's existing transport and title vendors and constrain any auction acquisitions.",
+      "doc": "D1",
+      "section": "3.4",
+      "detect_terms": [
+        "owned, operated or managed by Noubin or any of its Affiliates",
+        "any Auction Technology Services"
+      ],
+      "expected_finding": "Read with the §1.1 definitions, MSA §3.4 extends exclusivity to all services and all present and future Noubin and affiliate sites, exceeding the term sheet's simulcast-only, three-site deal, so it should be narrowed to simulcast bidding at the three named sites.",
+      "contradicts": "F10",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I6",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "MSA §15.1 prohibits Noubin from assigning without Trupel's prior written consent. MSA §15.2, however, lets Trupel assign the Agreement, in whole or in part, without Noubin's consent to any person on mere notice. Nothing excludes competing auction operators. Trupel's assignee could therefore be a rival auction house that would receive Noubin's dealer buyer lists, consignor data and bid histories, while Noubin stays locked in by exclusivity.",
+      "doc": "D1",
+      "section": "15.2",
+      "detect_terms": [
+        "Trupel may assign this Agreement, in whole or in part, without Noubin's consent"
+      ],
+      "expected_finding": "MSA §15.2 lets Trupel assign freely, including to a competing auction operator that would receive Noubin's customer and bid data, so assignment by Trupel should require Noubin's consent (with a carve-out at most for non-competitor successors) and give Noubin a termination right on any assignment to a competitor.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

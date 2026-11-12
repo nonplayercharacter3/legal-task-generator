@@ -1,0 +1,257 @@
+{
+  "matter_id": "s45-m0001",
+  "summary": "Famairt Student Transit, LLC (client, Buyer) signed an asset purchase agreement on June 2, 2026 to acquire the school bus operations of Glusask Pupil Transportation, Inc. for $42,000,000. The acquisition covers the fleet, depot assets and district route contracts, and Closing is scheduled for August 14, 2026. At Closing, Glusask will provide transition dispatch, routing software and Transition Drivers under a Transition Services Agreement. Famairt's Board of Managers signed a written consent on July 28, 2026. It ratifies the APA, approves the agreed-form TSA, and directs officers to designate the Ostrander fleet lease as an Excluded Contract. It also records the company's dispute of Glusask's position that the designation is late. The folder includes the APA, the board consent, the TSA, the Seller disclosure schedule, integration kickoff meeting notes (distractor) and a fleet vehicle roster (distractor). The supervising partner wants an issue-spotting memo before Closing.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Famairt Student Transit, LLC",
+      "role": "Buyer under the APA; Recipient under the TSA; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Glusask Pupil Transportation, Inc.",
+      "role": "Seller under the APA; Provider under the TSA"
+    },
+    {
+      "id": "P3",
+      "name": "Pellston Unified School District",
+      "role": "Counterparty to the District transportation agreement being assigned to Buyer"
+    },
+    {
+      "id": "P4",
+      "name": "Ostrander Coach Leasing, LLC",
+      "role": "Lessor under Seller's fleet lease covering 22 buses"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing Date",
+      "value": "June 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "APA Purchase Price",
+      "value": "$42,000,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "APA indemnification cap",
+      "value": "10% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F4",
+      "key": "APA scheduled Closing Date",
+      "value": "August 14, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "APA controls over Ancillary Agreements, except the TSA controls as to the Services and liabilities arising from them",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F6",
+      "key": "APA governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F7",
+      "key": "TSA monthly service fee",
+      "value": "$85,000",
+      "doc": "D3",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F8",
+      "key": "TSA Initial Term",
+      "value": "120 days after the Closing Date",
+      "doc": "D3",
+      "section": "Section 7.1"
+    },
+    {
+      "id": "F9",
+      "key": "Fleet Inspection Date",
+      "value": "May 20, 2026",
+      "doc": "D4",
+      "section": "Schedule 4.14"
+    },
+    {
+      "id": "F10",
+      "key": "Board consent date",
+      "value": "July 28, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "famairt_board_written_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "integration_kickoff_meeting_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "fleet_vehicle_roster.md",
+      "kind": "fleet vehicle roster",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 10.3 lets Provider (Glusask) assign the TSA, or delegate any Services including dispatch, routing software and the furnishing of Transition Drivers, to any person without Recipient's consent. The assignee could be a competing school bus contractor. APA Section 11.6 restricts assignment only of the APA itself and does not reach the Ancillary Agreements, so nothing in the folder limits this right. A competitor taking over the TSA would gain access to Famairt's route data, student rider information and district relationships during the transition, and Famairt would have no say in who drives its students.",
+      "doc": "D3",
+      "section": "Section 10.3",
+      "detect_terms": [
+        "Provider may assign this Agreement",
+        "without the consent of Recipient"
+      ],
+      "expected_finding": "TSA Section 10.3 lets Glusask assign the TSA or delegate the Services, including Transition Drivers and access to student route data, to anyone, including a competitor, without Famairt's consent, so the TSA should be amended to require Famairt's prior written consent for any assignment or delegation.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "APA Section 9.5(b) removes from the 10% cap in Section 9.5(a) any Losses from Seller's breach of Section 6.9. Section 6.9 is Seller's covenant that every driver it furnishes, including Transition Drivers under the TSA, holds a valid CDL with passenger and school bus endorsements and has completed background checks and drug testing. TSA Section 8.3 caps Provider's aggregate liability arising out of or relating to the Services, including the furnishing of Transition Drivers, at the Service Fees paid in the three months before the claim. That cap applies whether the claim is brought under the TSA, the Purchase Agreement or otherwise. Under APA Section 11.10, the TSA controls as to the Services and liabilities arising from them. Read together, an accident caused by an unqualified Transition Driver falls under the TSA cap of about $255,000 (3 x $85,000), not uncapped APA indemnity. This defeats the APA carve-out for the highest-risk exposure in the business.",
+      "doc": "D1",
+      "section": "Section 9.5(b)",
+      "detect_terms": [
+        "shall not apply to Losses arising from any breach of Section 6.9",
+        "including Transition Drivers"
+      ],
+      "expected_finding": "Because APA Section 11.10 lets the TSA control liabilities arising from the Services, TSA Section 8.3 limits Glusask's liability for unqualified Transition Drivers to about three months of fees ($255,000), overriding the uncapped driver-qualification carve-out in APA Section 9.5(b). The TSA cap should exclude breaches of APA Section 6.9 and personal injury claims, or Section 11.10 should make the APA control.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Section 8.3",
+      "detect_terms2": [
+        "Service Fees paid in the three months preceding",
+        "whether under this Agreement, the Purchase Agreement or otherwise"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "APA Section 6.6 lets Buyer designate any Contract listed on Schedule 2.1(c) as an Excluded Contract by written notice within 45 days after the Signing Date. The APA preamble states the Signing Date as June 2, 2026, so the window closed on July 17, 2026. The Famairt board consent (D2), dated July 28, 2026, directs officers to deliver a notice designating the above-market Ostrander fleet lease as an Excluded Contract. It also records that Seller has called the designation untimely and that the company disputes that position. The designation is therefore 11 days late. Unless Seller agrees, the Ostrander lease remains an Assigned Contract that Famairt must assume at Closing. The client has not accepted this result, so the point remains open before Closing.",
+      "doc": "D1",
+      "section": "Section 6.6",
+      "detect_terms": [
+        "within 45 days after the Signing Date",
+        "designate any Contract"
+      ],
+      "expected_finding": "The 45-day exclusion window under APA Section 6.6 closed on July 17, 2026 (45 days after the June 2, 2026 Signing Date), so the July 28, 2026 board-directed designation of the Ostrander lease is untimely. Famairt should seek Glusask's written agreement or an APA amendment before Closing, while preserving its dispute, or it will assume the Ostrander lease.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Resolution 4",
+      "detect_terms2": [
+        "designate the Ostrander Fleet Lease as an Excluded Contract",
+        "disputes the position"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 9.1 provides that general representations survive 18 months after Closing. The Fleet Condition representations in Section 4.14 survive only until 90 days after the Fleet Inspection Date. Disclosure Schedule 4.14 sets the Fleet Inspection Date at May 20, 2026, so the Section 4.14 representations expire on August 18, 2026. That is four days after the August 14, 2026 scheduled Closing Date in APA Section 3.1, and before the buses go into school-year service. Read together, the fleet condition representations have practically no post-Closing survival, and the defects most likely to appear in service cannot be claimed.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "90 days after the Fleet Inspection Date"
+      ],
+      "expected_finding": "Because the Fleet Inspection Date in Disclosure Schedule 4.14 is May 20, 2026, the Section 4.14 fleet condition representations expire on August 18, 2026, only four days after the scheduled August 14, 2026 Closing. Famairt should negotiate an amendment before Closing so these representations survive at least as long as the 18-month general survival period.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Schedule 4.14",
+      "detect_terms2": [
+        "Fleet Inspection Date: May 20, 2026"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 defines Routes to cover all student transportation routes under the Assigned Contracts. This includes general education, special education and IEP, McKinney-Vento, and athletic and field-trip routes. APA Section 6.12 obligates Seller to provide transition dispatch and routing support for the Routes through the TSA. TSA Section 1.1 instead defines Routes as only the general education home-to-school routes listed in Exhibit A. TSA Section 2.1 limits the Services to those Routes. Because APA Section 11.10 makes the TSA control as to the Services, the narrower TSA definition governs. Special education, IEP and McKinney-Vento routes, which are legally mandated, therefore receive no transition dispatch or routing support.",
+      "doc": "D1",
+      "section": "Section 1.1 (Routes) and Section 6.12",
+      "detect_terms": [
+        "special education and IEP routes",
+        "McKinney-Vento routes"
+      ],
+      "expected_finding": "The TSA's definition of Routes covers only Exhibit A general education routes, and under APA Section 11.10 the TSA controls as to the Services. Seller's APA Section 6.12 transition support obligation therefore does not reach special education, IEP and McKinney-Vento routes, and the TSA definition should be conformed to the APA definition before Closing.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Section 1.1 (Routes) and Section 2.1",
+      "detect_terms2": [
+        "general education home-to-school routes listed in Exhibit A"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Under APA Section 7.2(d), Buyer's obligation to close is conditioned only on the Required Consents having been obtained. Section 4.4 defines Required Consents as the consents listed in the disclosure schedule's consents section, and Seller's efforts covenant in Section 6.4 is limited to the same consents. The disclosure schedule lists only the Ostrander lessor consent there. Disclosure Schedule 4.8 describes the Pellston Unified School District transportation agreement, which is an Assigned Contract and the core revenue contract. Section 14.2 of that agreement prohibits assignment, any change in control of the contractor, and any sale of all or substantially all of the assets used to perform it without prior written approval of the District's Board of Education. Without approval, the District may terminate on 30 days' notice. Read together, the asset sale triggers the District approval right, but no closing condition or covenant requires that approval. Famairt could be required to close and then lose the District contract. An indemnity claim for that loss would be limited by the 10% cap.",
+      "doc": "D1",
+      "section": "Section 7.2(d)",
+      "detect_terms": [
+        "Required Consents shall have been obtained"
+      ],
+      "expected_finding": "The Pellston District agreement requires District Board approval for this asset sale, but that approval is not a Required Consent, so Famairt could be required to close without it and face termination of its core contract. The District approval should be added as a Required Consent and closing condition, with a Seller covenant to obtain it before Closing.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Schedule 4.8",
+      "detect_terms2": [
+        "prior written approval of the District's Board of Education",
+        "sale of all or substantially all of the assets"
+      ]
+    }
+  ]
+}

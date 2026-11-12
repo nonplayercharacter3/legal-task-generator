@@ -1,0 +1,259 @@
+{
+  "matter_id": "s45-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "dev",
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "SOW §10.1–10.2: \"This Statement of Work and all claims arising out of or relating to the Services performed under it are governed by and construed in accordance with the laws of the State of Georgia... Each party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Fulton County, Georgia...\" MSA §1.3: \"if there is a conflict between the Statement of Work and this MSA, the Statement of Work shall prevail.\" MSA §14.1–14.2 choose Delaware law and New Castle County courts.",
+            "reason": "The two documents conflict directly. The MSA chooses Delaware law and New Castle County courts. SOW §10 chooses Georgia law and exclusive Fulton County courts for all claims relating to the Services. MSA §1.3 ranks the SOW above the MSA, so Georgia law and Trupel's home forum control service-related claims, such as outages and condition-report errors. This departs from the term sheet's Delaware choice and risks split proceedings for Noubin. Nothing in the folder fixes this. The Side Letter leaves the Agreement unchanged and reserves all rights. The issue is still actionable: a live dispute exists over the Q3 2026 outages and the validity of Noubin's chronic-failure termination notice, and the forum and governing law for that dispute are now directly at stake.",
+            "alone": {
+              "sow_simulcast_and_condition_reports.md": {
+                "findable": false,
+                "evidence": "\"This Statement of Work and all claims arising out of or relating to the Services performed under it are governed by and construed in accordance with the laws of the State of Georgia...\" (§10.1); \"Each party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Fulton County, Georgia...\" (§10.2); \"It forms part of the Agreement and is governed by it.\" (§1.2)",
+                "reason": "On its own, the SOW shows a Georgia law and exclusive Fulton County forum for service claims. Trupel is a Georgia corporation and Noubin is a Delaware LLC, so an associate could note that this forum is Trupel's home and unfavorable to Noubin. The SOW does not show the actual problem, which is a conflict with the MSA. It does not say the MSA picks Delaware law and New Castle County courts (MSA §14.1–14.2). It also does not say the SOW prevails over the MSA (MSA §1.3). In fact, SOW §1.2 says the SOW 'is governed by' the MSA, which points toward the MSA controlling. Without the MSA, the reader cannot see that there are two competing forums, that claims could be split between them, or that the precedence clause settles the conflict against Noubin."
+              },
+              "noubin_trupel_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "If there is any conflict or inconsistency among the documents that make up the Agreement, those documents govern in the following descending order of precedence: (a) any Side Letter; (b) the Statement of Work; (c) the Order Form; (d) the Service Level Schedule; and (e) this MSA. Accordingly, if there is a conflict between the Statement of Work and this MSA, the Statement of Work shall prevail.",
+                "reason": "The MSA alone shows Delaware law and exclusive New Castle County courts (§14.1–14.2), which favor Noubin. It also shows a precedence clause (§1.3) under which the SOW overrides the MSA. That is a general risk flag, but nothing more. The MSA does not say the SOW has its own governing-law or forum clause, much less that it picks Georgia law and Fulton County courts. Without SOW §10 there is no conflict for the precedence clause to settle against Noubin, and no sign of split proceedings or litigation in Trupel's home forum. The harmful part comes only from the unseen SOW."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "MSA §12.2: \"At the end of the Initial Term, this Agreement renews automatically for successive renewal terms, each equal in length to the Initial Term ... This automatic renewal does not apply if either party delivers written notice of non-renewal to the other party not earlier than two hundred ten (210) days and not later than one hundred eighty (180) days before the expiration of the then-current Initial Term or Renewal Term.\" Order Form §3.2: \"The Initial Term under Section 12.1 of the MSA begins on April 1, 2026 and continues for sixty (60) months.\"",
+            "reason": "Read together, the two documents create successive five-year evergreen renewals. Noubin can avoid each renewal only by giving notice inside a single 30-day window, roughly early September to early October 2030 before the 2031 expiry. Missing it commits Noubin, the customer, to another five years of Trupel fees. The full Agreement's exclusivity covenant in MSA §3.4 compounds the effect. The term sheet left renewal mechanics \"to be agreed,\" so this outcome was not a negotiated benefit to Noubin. The problem is still actionable. Noubin's October 19, 2026 Chronic Failure termination notice is disputed by Trupel and appears late under SLS §6.2, which required notice within 15 days after September 30, 2026. The Agreement may therefore continue. The first renewal window has not yet opened, and Noubin can still seek an amendment or manage the window. Nothing in the folder shows Noubin waived or accepted the renewal mechanics.",
+            "alone": {
+              "noubin_trupel_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"At the end of the Initial Term, this Agreement renews automatically for successive renewal terms, each equal in length to the Initial Term ... This automatic renewal does not apply if either party delivers written notice of non-renewal to the other party not earlier than two hundred ten (210) days and not later than one hundred eighty (180) days before the expiration of the then-current Initial Term or Renewal Term.\" (§12.2); \"continues for the initial term stated in the Order Form\" (§12.1)",
+                "reason": "Read alone, the MSA shows that the Agreement renews automatically, that each renewal term equals the Initial Term, and that Noubin can opt out only in a narrow 30-day notice window. An associate could flag that window as a general drafting risk. The MSA does not show how much is at stake. It never states the Initial Term and leaves that to the Order Form (§12.1). The problem described is a five-year lock-in, with the first window around September–October 2030 ahead of a March 31, 2031 expiry, and fees running through 2036. That depends on the Order Form's 60-month term. Without it, the renewal length, the deadline dates and the size of the commitment cannot be determined. If the term were short, the narrow window would be a minor point. The part that makes this a serious problem comes from the Order Form, which was not provided."
+              },
+              "trupel_order_form_no1.md": {
+                "findable": false,
+                "evidence": "3.2 The Initial Term under Section 12.1 of the MSA begins on April 1, 2026 and continues for sixty (60) months, unless the Agreement is terminated earlier in accordance with its terms.",
+                "reason": "The Order Form shows only the 60-month Initial Term starting April 1, 2026 and points to MSA §12.1. It says nothing about renewal: no automatic renewal, no renewal terms equal to the Initial Term, and no narrow 210-to-180-day non-renewal window. Read alone, it describes a fixed five-year term that ends March 31, 2031. The lock-in into successive five-year renewals comes from MSA §12.2, which is not in this document. An associate could not see the renewal trap from this document by itself."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SOW §6.2: \"For purposes of Section 9.2 of the MSA, \"Consignor Content\" includes all Vehicle Disclosures displayed on the Platform, including condition reports prepared by Trupel Inspectors.\" MSA §11.3: \"The limitations in Sections 11.1 and 11.2 shall not apply to either party's obligations under Section 9...\"",
+            "reason": "Noubin (the client) is the indemnitor under MSA §9.2. It must defend and indemnify Trupel against third-party claims arising from Consignor Content. The MSA defines Consignor Content as content supplied by or on behalf of Noubin or Consignors. SOW §6.2 widens that definition to every Vehicle Disclosure, expressly including Condition Reports prepared by Trupel's own inspectors. Under MSA §1.3 the SOW prevails over the MSA. Under MSA §11.3 the §11.1 cap and the §11.2 consequential-damages exclusion do not apply to Section 9 obligations. Read together, Noubin owes an uncapped indemnity to Trupel for buyer, odometer, title-brand and arbitration claims caused by Trupel's own inspection errors. That shifts Trupel's negligence onto Noubin. It also departs from the term sheet, which limited Noubin's indemnity to content supplied by Noubin or its consignors. Nothing in the folder cures or limits this, and the Q3 side letter does not touch it. The issue is also still actionable. The agreement continues while the termination dispute is unresolved, and the indemnity survives termination under MSA §12.6. Noubin can still seek an amendment, or contest the scope of the indemnity if a claim is made.",
+            "alone": {
+              "sow_simulcast_and_condition_reports.md": {
+                "findable": false,
+                "evidence": "6.2 Consignor Content. For purposes of Section 9.2 of the MSA, \"Consignor Content\" includes all Vehicle Disclosures displayed on the Platform, including condition reports prepared by Trupel Inspectors.",
+                "reason": "On its own, the SOW shows that §6.2 puts Trupel's own inspector-prepared condition reports into 'Consignor Content' for purposes of MSA §9.2. A careful reader would find that odd. But the SOW never says what MSA §9.2 does. It does not show that §9.2 is Noubin's indemnity of Trupel. It also does not show that MSA §11.3 removes the liability cap for Section 9 obligations, or that the SOW prevails over the MSA under §1.3. Without the MSA, an associate cannot tell that the definition shifts Trupel's inspector errors onto Noubin, or that the exposure is uncapped. The harm to the client depends on the MSA."
+              },
+              "noubin_trupel_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"Consignor Content\" means vehicle information, descriptions, photographs, announcements, disclosures and other content supplied by or on behalf of Noubin or any Consignor for display on the Platform. / ...The limitations in Sections 11.1 and 11.2 shall not apply to either party's obligations under Section 9...",
+                "reason": "The MSA alone shows that Noubin's §9.2 indemnity for Consignor Content is excluded from the §11.1 cap by §11.3. It also shows that §1.3 lets the SOW prevail over the MSA. Read alone, though, the indemnity is limited to content supplied by Noubin or its Consignors. Condition Reports are separately defined as reports Trupel prepares under the SOW, and §6.4 treats them as Trupel deliverables. Nothing in the MSA brings Trupel-prepared condition reports into Consignor Content. So the uncapped carve-out looks like an ordinary mutual exclusion that covers Noubin's own content risk. The problem is that Noubin would uncappedly indemnify Trupel for its own inspectors' errors on buyer arbitration, odometer and title-brand claims. That depends entirely on SOW §6.2 redefining Consignor Content to include Trupel inspector condition reports, and that document is not provided."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Schedule §6.2: \"The notice must be delivered within fifteen (15) days after the end of the third consecutive Measurement Period in which Monthly Availability fell below the Service Level.\" Side Letter §2.3: \"Noubin delivered to Trupel a written notice of Chronic Failure dated October 19, 2026\"; §2.4: \"Trupel disputes the timeliness of the notice under Section 6.2 of the Service Level Schedule and does not accept that the notice is effective to terminate the Agreement.\"",
+            "reason": "The problem is present and still live for Noubin. Side Letter §2.1 confirms a Chronic Failure: July 99.1%, August 98.6% and September 98.9%, all below 99.5%. The third failed Measurement Period ended September 30, 2026, so the 15-day window under §6.2 closed October 15, 2026. Noubin's notice was delivered October 19, four days late. Trupel expressly disputes timeliness, so the January 15, 2027 termination that Noubin relies on is at serious risk of being held ineffective. If so, Noubin stays bound by the 60-month term, including the broad exclusivity in MSA §3.4. Nothing in the folder cures the problem: the Side Letter has top precedence under MSA §1.3, but it does not amend or extend §6.2. It is also still actionable, because Noubin has not accepted the result. Side Letter §2.5 preserves Noubin's position that the notice is valid, and §5.1–5.2 say nothing waives either party's rights and that accepting credits is no admission. Noubin can still: argue the notice is valid; serve a protective MSA §12.3 breach-and-cure notice; or track October to December 2026 availability for a fresh, timely Chronic Failure notice.",
+            "alone": {
+              "service_level_schedule.md": {
+                "findable": false,
+                "evidence": "The notice must be delivered within fifteen (15) days after the end of the third consecutive Measurement Period in which Monthly Availability fell below the Service Level.",
+                "reason": "The Schedule alone sets out the Chronic Failure termination right and its strict 15-day notice window (§6.2). A careful associate would see that the window is short and must be watched. The Schedule does not show any actual failure months (July–September 2026), when Noubin's notice was delivered (October 19, 2026), or that Trupel disputes timeliness. All of these facts come from the Side Letter. Without them, there is no way to tell that the window closed on October 15 or that Noubin's notice was late. The harm to the client, a likely lapsed termination right, therefore cannot be seen from this document alone."
+              },
+              "side_letter_q3_2026_service_credits.md": {
+                "findable": false,
+                "evidence": "Trupel acknowledges that it received the notice on October 19, 2026. Trupel disputes the timeliness of the notice under Section 6.2 of the Service Level Schedule and does not accept that the notice is effective to terminate the Agreement.",
+                "reason": "The Side Letter shows that availability fell below 99.5% in July, August and September 2026. It shows Noubin delivered its Chronic Failure termination notice on October 19, 2026, and that Trupel disputes its timeliness under SLS §6.2. It does not state the notice window: the requirement to deliver notice within fifteen days after the end of the third failing month. Without that term from the Service Level Schedule, an associate can see that timeliness is contested. But they cannot tell that the window closed October 15, that the notice was four days late, or that Noubin's termination right has likely lapsed."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "MSA §3.4: \"During the Term, Noubin shall not, and shall cause its Affiliates not to, procure any Auction Technology Services from any provider other than Trupel at any Noubin Facility, being any auction site, lane or facility owned, operated or managed by Noubin or any of its Affiliates.\"",
+            "reason": "The problem is present and still hurts Noubin. Noubin, the client, is the party bound by §3.4, and the clause reaches much further than the deal it agreed. Under §1.1, \"Auction Technology Services\" covers transport scheduling, title processing and arbitration management, plus \"any similar or related service.\" \"Noubin Facility\" covers any site of Noubin or its Affiliates, \"wherever located, whether now existing or later acquired or established.\" Term sheet §4 limited exclusivity to simulcast bidding at the three named sites. It expressly left out condition reports, transport, title and arbitration, and any later-acquired sites. That term sheet is non-binding, and nothing in the Order Form, Statement of Work, Service Level Schedule or Side Letter narrows §3.4. The order-of-precedence clause does not cure it, and §5.1 of the Side Letter keeps all terms unchanged. The restriction runs for the whole Term, and Trupel disputes that Noubin's termination notice is effective, so the clause still binds Noubin now. It puts Noubin's existing transport and title vendor arrangements in breach and constrains any auction acquisitions. Noubin has accepted no outcome that would make this history, so it remains actionable."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "MSA §15.2: \"Trupel may assign this Agreement, in whole or in part, without Noubin's consent to any person, upon written notice to Noubin.\" By contrast, §15.1 says Noubin \"may not assign or transfer this Agreement ... without Trupel's prior written consent.\"",
+            "reason": "The assignment clause runs one way against Noubin. Trupel may assign to any person, including a competing auction operator, on mere notice. There is no carve-out for competitors and no consent or termination right for Noubin. An assignee would take over hosting of Customer Data, which §1.1 defines to include Buyer and dealer lists, Consignor data, bid histories and pricing data. The §5.2 use limit and the §8 confidentiality duties only restrict use. They do not stop a rival from receiving and holding that data. Meanwhile §3.4 keeps Noubin locked in exclusively for the 60-month term. Nothing in the Order Form, SOW, SLS or Side Letter cures this. The issue is still actionable. Trupel disputes Noubin's chronic-failure termination notice, and the Side Letter (§2.6) keeps the Agreement in force and reserves all rights, so Trupel could still assign. Noubin should raise this and seek a consent requirement, at least for assignments to competitors or on change of control, plus a termination right."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C7 asks for the whole ranking in fact F3 ('Side Letter, then Statement of Work, then Order Form, then Service Level Schedule, then MSA'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.062,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 17,
+              "files_opened": [
+                "noubin_trupel_master_services_agreement.md",
+                "noubin_trupel_term_sheet.md",
+                "ostrander_lot_sweeping_agreement.md",
+                "service_level_schedule.md",
+                "side_letter_q3_2026_service_credits.md",
+                "sow_simulcast_and_condition_reports.md",
+                "trupel_certificate_of_insurance.md",
+                "trupel_order_form_no1.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 17,
+              "files_opened": [
+                "noubin_trupel_master_services_agreement.md",
+                "noubin_trupel_term_sheet.md",
+                "ostrander_lot_sweeping_agreement.md",
+                "service_level_schedule.md",
+                "side_letter_q3_2026_service_credits.md",
+                "sow_simulcast_and_condition_reports.md",
+                "trupel_certificate_of_insurance.md",
+                "trupel_order_form_no1.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 17,
+              "files_opened": [
+                "noubin_trupel_master_services_agreement.md",
+                "noubin_trupel_term_sheet.md",
+                "ostrander_lot_sweeping_agreement.md",
+                "service_level_schedule.md",
+                "side_letter_q3_2026_service_credits.md",
+                "sow_simulcast_and_condition_reports.md",
+                "trupel_certificate_of_insurance.md",
+                "trupel_order_form_no1.md"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

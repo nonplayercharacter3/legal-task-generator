@@ -1,0 +1,108 @@
+{
+  "matter_id": "s45-m0002",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I2\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I2"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Side Letter 5.1: \"This letter, any claim for indemnification under Article VIII of the Purchase Agreement, and any dispute arising out of or in connection with this letter or any such claim (including any non-contractual obligation) shall be governed by English law.\" Section 5.2 refers any such dispute to London arbitration under the LMAA Terms. SPA 11.8 and 11.9 choose Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery \"for all disputes arising out of or relating to this Agreement.\" SPA 11.12 says \"the Side Letter shall prevail ... provided that the Seller Note shall control its own payment and set-off terms.\"",
+            "reason": "Read together, the two documents split governing law and forum for the same claims. Under SPA 11.12 the Side Letter prevails, so English law and LMAA London arbitration govern every Article VIII indemnity claim by Buyer. That includes the uncapped USCG/MARPOL indemnity in 8.2(d), which is Varav's main post-closing protection. The Seller Note keeps Delaware law and the Chancery forum (Note 10.5 and 10.6), and SPA 11.12 makes the Note control its own set-off terms. A dispute over a set-off, or the true-up, can therefore go to Delaware while the underlying indemnity claim goes to London. The same Losses could be decided twice, with inconsistent results. The Losses definitions also differ between the SPA and the Note, which makes a split outcome more likely. Neither the LOI nor the August draft contemplated English law or arbitration; both chose Delaware. Nothing in the folder cures, limits or waives the conflict. Closing has not been shown to have occurred and no indemnity claim has yet been made, so the issue remains actionable. Varav could still negotiate an amendment, which under its board consent would need prior Board approval, or plan its claims strategy around the conflict.",
+            "alone": {
+              "seller_side_letter.md": {
+                "findable": false,
+                "evidence": "This letter, any claim for indemnification under Article VIII of the Purchase Agreement, and any dispute arising out of or in connection with this letter or any such claim (including any non-contractual obligation) shall be governed by English law.",
+                "reason": "On its own, the Side Letter shows that Article VIII indemnity claims go to English law and London LMAA arbitration. It does not show the other half of the conflict. Nothing in it says the SPA chooses Delaware law and the exclusive jurisdiction of the Court of Chancery (Sections 11.8 and 11.9). Nothing says SPA Section 11.12 ranks the Side Letter first, so this clause controls. Nothing says the Seller Note set-off disputes stay in Delaware. Section 1.3 says the SPA otherwise stays in force, and Section 6.1 does not incorporate any SPA governing-law or forum clause. Without the SPA and the Note, an associate sees only a stand-alone English-law arbitration clause. They cannot see that it splits governing law and forum for the same Losses, or that it overrides a Delaware forum the client bargained for."
+              },
+              "stock_purchase_agreement_executed.md": {
+                "findable": false,
+                "evidence": "11.12 Order of Precedence. In the event of any conflict or inconsistency among the Side Letter, this Agreement and the Disclosure Schedule, the Side Letter shall prevail, then this Agreement, then the Disclosure Schedule; provided that the Seller Note shall control its own payment and set-off terms.",
+                "reason": "The SPA alone shows three things. Sections 11.8 and 11.9 choose Delaware law and exclusive Chancery jurisdiction. Section 11.12 lets the Side Letter override the SPA. The Seller Note controls its own set-off terms. A careful reader would see that the Side Letter could change any SPA term, including governing law and forum. But nothing in the SPA says what the Side Letter contains. It does not show that the Side Letter picks English law and LMAA London arbitration for Article VIII indemnity claims. The split forum, the foreign seat, and the risk of inconsistent results for Varav all depend on Side Letter Section 5, which was not provided. The SPA alone shows only that a conflict is possible, not that one exists."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": false,
+            "evidence": "SPA 8.5(a): \"Seller's aggregate liability for Losses under Section 8.2(a) shall not exceed 10% of the Purchase Price ($18,600,000) (the \"General Cap\").\" Side Letter 2.1: \"(c) The limitations in Sections 8.5(a) and 8.5(b) shall not apply to Losses arising from Fraud or the breach of any Fundamental Representation.\"",
+            "reason": "The Side Letter does delete the express reference to Section 8.2(d) from the carve-out. That deletion does not put the USCG indemnity under the cap. The General Cap in 8.5(a) and the basket in 8.5(b) apply only to Losses \"under Section 8.2(a)\", which covers breach of representations. The USCG Matter indemnity is a separate head of recovery under 8.2(d), so neither limitation reaches it, with or without the carve-out. The carve-out for 8.2(d) was surplusage. Nor can the cap come in through a representation claim. Rep 4.14 expressly excepts the USCG Matter, so those losses are recovered under 8.2(d), not 8.2(a). The only ceiling on 8.2(d) is the Purchase Price limit in 8.5(d), which appeared in every draft and is not changed. So the $18.6M cap does not apply to the MARPOL indemnity, the claimed conflict with the LOI's first-dollar, uncapped USCG indemnity does not arise, and Buyer is not prejudiced. At most, Buyer could ask for a clarifying confirmation as a drafting point."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 8.3(c): Buyer shall indemnify the Seller Indemnitees against all Losses arising out of or relating to \"the Charter Guarantees, including any demand, call or claim made under any Charter Guarantee, whether relating to periods before or after the Closing.\" Section 8.5(e): \"Buyer's aggregate liability for Losses under Section 8.3 shall not exceed the General Cap; provided that this limitation shall not apply to claims under Section 8.3(c).\"",
+            "reason": "The executed SPA makes Varav, the client, indemnify Seller for every call on Prumul's parent guarantees of the Company's charters. That covers calls caused by the Company's pre-Closing performance while Seller controlled it. Section 8.5(e) then expressly removes those claims from Buyer's cap, so the exposure has no limit. Part 1.1(a) of the Disclosure Schedule makes this concrete. The Lindqvist guarantee on the Crest charter is \"Unlimited as to amount\" and stays in force until the charterer releases it. Section 6.6 requires only commercially reasonable efforts to replace the guarantees, so the exposure may run indefinitely. Nothing in the folder cures this. The Side Letter changes only Section 8.5(c), and it does so against Buyer by removing the USCG carve-out; it leaves Sections 8.3(c) and 8.5(e) untouched. The Seller Note does not address Buyer's indemnity. Buyer's own August draft limited the indemnity to post-Closing performance and kept it under the cap, which shows the final terms moved against the client. The matter is still actionable. Closing has not been shown to occur, the Outside Date is January 2027, and the Board consent contemplates amendments with Board approval, so the point can be renegotiated or reserved."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Seller Note §1.2: \"'Losses' means out-of-pocket losses, liabilities, damages, fines, penalties, costs and expenses (including reasonable attorneys' fees) actually paid by Maker or any Buyer Indemnitee to a third party, excluding loss of hire, off-hire, demurrage, diminution in value, lost profits, and consequential, special, indirect and punitive damages.\" Seller Note §5.2: \"The amount Maker may set off under Section 5.1 is limited to Losses, as defined in this Note, claimed in good faith by a Buyer Indemnitee under Article VIII of the Purchase Agreement.\" SPA §11.12: \"provided that the Seller Note shall control its own payment and set-off terms.\"",
+            "reason": "The problem is present and hurts the client. The SPA §1.1 definition of Losses expressly includes diminution in value, loss of hire, off-hire and demurrage. SPA §8.8 lets Buyer set off any Losses asserted in good faith. The Note, however, limits set-off to its own much narrower definition: third-party out-of-pocket amounts actually paid, with off-hire, loss of hire, demurrage and diminution in value excluded. SPA §11.12 makes the Note control its own set-off terms, so the narrower Note definition governs. Varav is the Maker of the Note and the party with the set-off right, so it bears the loss of that right. This reaches even the uncapped USCG indemnity in SPA §8.2(d), which expressly covers off-hire and loss of hire. The disclosure schedule already records $97,280 of USCG-related off-hire. Varav would have to pay the full $24M Note and pursue Prumul separately, carrying Prumul's credit risk. The folder does nothing to cure this. The Side Letter only amends §8.5(c), and its other terms do not touch set-off. The Note is still a form to be issued at Closing, and the board resolutions allow changes by an Authorized Officer, so the point can still be fixed.",
+            "alone": {
+              "seller_promissory_note_form.md": {
+                "findable": false,
+                "evidence": "\"Losses\" means out-of-pocket losses ... actually paid by Maker or any Buyer Indemnitee to a third party, excluding loss of hire, off-hire, demurrage, diminution in value, lost profits, and consequential, special, indirect and punitive damages. ... The amount Maker may set off under Section 5.1 is limited to Losses, as defined in this Note",
+                "reason": "Read alone, the Note shows that Varav's set-off right is narrow. It covers only third-party out-of-pocket amounts and expressly excludes off-hire, loss of hire, demurrage and diminution in value. The wording \"as defined in this Note\" also signals a deliberate departure from the Purchase Agreement's definitions. What the Note cannot show is the core of the problem. It does not say that the SPA's Section 1.1 'Losses' definition includes those excluded categories, so it does not show a gap between what Varav is indemnified for and what it can withhold. If the SPA defined Losses just as narrowly, the indemnity and the set-off would match and there would be no inconsistency. The Note also does not show that SPA Section 11.12 makes the Note control its own payment and set-off terms. Without that, a reader cannot tell which definition governs, or whether SPA Section 8.8 might allow a broader set-off. Section 5.4's statement that any excess 'remains recoverable under the Purchase Agreement' hints that recovery could be split. But showing that the definitions conflict, and that the narrower one wins, requires the SPA."
+              },
+              "stock_purchase_agreement_executed.md": {
+                "findable": false,
+                "evidence": "Section 11.12: \"...provided that the Seller Note shall control its own payment and set-off terms.\"",
+                "reason": "On its own, the SPA works in Buyer's favor. Section 1.1 defines 'Losses' broadly to include diminution in value, loss of hire, off-hire and demurrage, and Section 8.8 lets Buyer set off any Losses asserted in good faith against the Seller Note. Section 11.12 does tell a careful reader that the Note controls its own set-off terms, which is a reason to go check the Note. But the SPA does not show that the Note defines 'Losses' more narrowly, or that the Note limits set-off to that narrower definition. The harm to Varav is losing the ability to withhold off-hire and lost-hire amounts, and that depends entirely on Note Sections 1 and 5.2. Exhibit A, the form of Note, is not attached here. From this document alone there is no visible conflict and no visible harm."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "SPA Section 7.2(d) makes Buyer's closing obligation conditional only on the following: \"the Required Consents shall have been obtained and shall be in full force and effect.\" Disclosure Schedule Part 5.1 says \"The following consent constitutes the Required Consents: (a) the written consent of Skaldern Ship Finance ASA.\" Part 4.9(a)(iii)1, Clause 47 of the Lindqvist charter, says: \"Should there be any change of control of Owners without Charterers' prior written consent, Charterers shall be entitled, by written notice to Owners, to terminate this Charter Party ... without liability to Owners.\" Part 1.4 deems any disclosed matter \"disclosed for the purposes of each other Part and each other Section of Article IV\".",
+            "reason": "The problem is present and hurts Varav, the Buyer. The Company is the Owner under the MV Norrhaven Crest charter. Buying 100% of its shares, as the recitals and Section 2.1 provide, is a change of control of Owners, so it triggers Lindqvist's right under Clause 47 to terminate the Company's largest revenue contract. The Lindqvist consent is not a Required Consent, so Section 7.2(d) does not let Varav refuse to close without it. Clause 47 is disclosed in Parts 4.9(a)(iii) and 4.9(a)(v). Under the Part 1.4 cross-disclosure clause, that disclosure qualifies the Section 4.5(d) no-conflicts rep, which covers termination rights under Material Contracts. The result is no indemnity claim under Section 8.2(a) if Lindqvist terminates. Nothing in the Side Letter, the Note or any other document cures this, and the folder shows no closing yet. Varav can still act before closing, for example by seeking Lindqvist's consent, adding it as a Required Consent or closing condition, or negotiating a specific indemnity. The issue is therefore still actionable.",
+            "alone": {
+              "stock_purchase_agreement_executed.md": {
+                "findable": false,
+                "evidence": "\"Required Consents\" means the consents, waivers and approvals listed in Part 4.5 of the Disclosure Schedule. ... (d) the Required Consents shall have been obtained and shall be in full force and effect;",
+                "reason": "Read alone, the SPA shows a sale of 100% of the Shares, which is a change of control. It also shows that the Required Consents are whatever Part 4.5 of the Disclosure Schedule lists, and that Buyer's closing condition in 7.2(d) covers only those Required Consents. The no-conflicts rep in 4.5(d) is limited by 'Except for the Required Consents' and by the Disclosure Schedule. The SPA does not show three things: that the Lindqvist charter has a change-of-control termination right, that Part 4.5 lists only the Skaldern lender consent, or that a cross-disclosure clause turns the Part 4.9 summary into disclosure against Section 4.5. Those facts all come from the Disclosure Schedule. A careful associate could flag the general risk that the consent condition depends on the schedule. They could not see from the SPA alone the specific gap that harms Varav: a missing Lindqvist consent and no rep claim if the charter is terminated."
+              },
+              "seller_disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "Part 5.1: \"The following consent constitutes the Required Consents: (a) the written consent of Skaldern Ship Finance ASA...\"; Part 4.9(a)(iii)1, Clause 47: \"Should there be any change of control of Owners without Charterers' prior written consent, Charterers shall be entitled... to terminate this Charter Party...\"; Part 1.4: \"Any matter disclosed in any Part of this Disclosure Schedule is deemed disclosed for the purposes of each other Part and each other Section of Article IV...\"",
+                "reason": "On its own, the schedule shows several things. The sale is of all of the Company's shares. The Crest charter, the Company's largest revenue contract, can be terminated on a change of control without Lindqvist's consent. Lindqvist's consent is left out of the Required Consents, which list only Skaldern. The cross-disclosure clause would likely carry the Clause 47 disclosure over to other Article IV representations. An associate would notice that the Lindqvist consent is not a Required Consent. The schedule does not show the consequence that makes this harmful to Varav. That depends on SPA Section 7.2(d), which conditions Buyer's obligation to close only on the Required Consents. The schedule also does not give the wording of the Section 4.5 no-conflicts representation, which shows what the disclosure removes. Without the SPA, it cannot be established that Varav could be forced to close without Lindqvist's consent. The schedule shows only that the consent is not on this list."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}
