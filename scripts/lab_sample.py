@@ -25,12 +25,13 @@ import to_lab_format  # noqa: E402
 MAIN = Path("/Users/shesirui/Projects/legal-task-generator")
 LAB = Path("/Users/shesirui/Projects/harvey-labs/tasks")
 ROOT, OUT = MAIN / "runs/lab_root", MAIN / "runs/lab_sample"
-SEED, TAG, WORKERS = 46, "s1", 4
+SEED, TAG, WORKERS, MAX_CRITERIA = 46, "s1", 4, 200
 LABELS = (0.0, 0.333, 0.667, 1.0)
 
 
 def lab_tasks() -> dict[str, int]:
-    return {str(p.parent.relative_to(LAB)): len(json.loads(p.read_text())["criteria"]) for p in sorted(LAB.rglob("task.json"))}
+    n = {str(p.parent.relative_to(LAB)): len(json.loads(p.read_text())["criteria"]) for p in sorted(LAB.rglob("task.json"))}
+    return {t: c for t, c in n.items() if c <= MAX_CRITERIA}  # outliers (498 criteria) cost 9 tasks of judge calls
 
 
 def ours() -> dict[float, list[Path]]:
