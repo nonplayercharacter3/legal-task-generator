@@ -38,6 +38,7 @@ class MatterSpec:
     name_stems: list[str] = field(default_factory=list)  # client's name starts with [0], counterparty's with [1]
     supporting_kinds: list[str] = field(default_factory=list)
     distractor_kind: str = ""
+    min_distractors: int = 1
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -188,8 +189,8 @@ def validate_ledger(ledger: Ledger, spec: MatterSpec) -> list[str]:
         errs.append(f"expected {spec.n_documents} documents, got {len(ledger.documents)}")
     if len(ledger.issues) != spec.n_issues:
         errs.append(f"expected {spec.n_issues} issues, got {len(ledger.issues)}")
-    if spec.n_documents >= 3 and not any(d.distractor for d in ledger.documents):
-        errs.append("no distractor document")
+    if spec.n_documents >= 3 and sum(d.distractor for d in ledger.documents) < spec.min_distractors:
+        errs.append("no distractor document" if spec.min_distractors == 1 else f"fewer than {spec.min_distractors} distractor documents")
     if len(ledger.parties) < 2:
         errs.append("fewer than two parties")
     if not ledger.facts:
@@ -353,4 +354,17 @@ def validate_answers(answers: Answers, ledger: Ledger) -> list[str]:
     for i in answers.flawed_omits:
         if i not in issue_ids:
             errs.append(f"flawed_omits names unknown issue {i}")
+    return errs
+
+
+def validate_instruction(text: str, ledger: Ledger, name_files: bool = True, max_words: int = 0) -> list[str]:
+    errs: list[str] = []
+    if max_words and len(text.split()) > max_words:
+        errs.append(f"{len(text.split())} words; the limit is {max_words}")
+    if not name_files:
+        low = text.lower()
+        for d in ledger.documents:
+            stem = d.filename.rsplit(".", 1)[0].lower()
+            if d.filename.lower() in low or (("_" in stem or "-" in stem) and stem in low):
+                errs.append(f"names the file {d.filename}; say \"the folder\" instead")
     return errs

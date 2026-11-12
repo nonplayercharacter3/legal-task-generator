@@ -20,7 +20,8 @@ Rules:
 - Besides the main agreement, the documents should be the spec's `supporting_kinds` and, for the distractor, its
   `distractor_kind`. Adjust a kind only if it cannot fit the matter, and keep the same number of documents.
 - Create exactly `n_documents` documents. The first is the main agreement of type `agreement_type`.
-  When there are 3 or more documents, at least one must be a distractor (looks relevant, contains no issue).
+  When there are 3 or more documents, at least `min_distractors` (1 if absent) must be distractors (look relevant,
+  contain no issue); the first has the spec's `distractor_kind`, any others a kind a real folder would hold.
 - Plant exactly `n_issues` issues, one of each requested issue type, each in a specific non-distractor document
   and section. Spread issues across at least two documents when there are two or more issues.
 - Issues must be real problems for the client under the governing law (`jurisdiction`), not drafting trivia, and
@@ -156,7 +157,9 @@ Rules:
 - Say who the client is and, in general terms, what it needs the review for. Name no party but the client and
   the counterparty: no "other parties involved", no licensor, buyer, guarantor or affiliate. Who else takes part,
   and how, is for the associate to find in the documents.
-- Ask for the deliverable described; say which files to review.
+- Ask for the deliverable described; say which files to review. If the input has `name_no_file`, `files` is only a
+  count: say "the folder" or "the documents" and name no file, filename or document title.
+- If the input has `max_words`, stay under it.
 - You know each file only by its filename and kind. Never state what a document says, who wrote or sent it, or
   when, or which law governs it, and invent no deal events: a guess the documents contradict misleads the
   associate (a real draft called the client's own renewal letter "the counterparty's renewal notice").

@@ -634,3 +634,75 @@ def test_split_issue_criteria_the_writer_keeps_reject_at_rubric_trace(tmp_path, 
     assert {m["failed_gate"] for m in rep["matters"]} == {"rubric_trace"} and rep["model_calls"]["rubric_writer"]["calls"] == 4
     trace = read_json(Path(tmp_path) / "rejected" / rep["matters"][0]["matter_id"] / "gates.json")["gates"][-1]
     assert not trace["details"]["repair"]["cleared"] and "issue criteria" in trace["details"]["errors"][0]
+
+
+def test_min_distractors(tmp_path):
+    from ltg.config import SpecCfg
+    from ltg.stages import sample_specs
+
+    assert all(s.min_distractors == 1 for s in sample_specs(SpecCfg(), 6, 1))  # default unchanged
+    cfg = SpecCfg(n_documents=[6, 6], min_distractors=2)
+    specs = sample_specs(cfg, 4, 1)
+    assert all(s.min_distractors == 2 and len(s.supporting_kinds) <= 3 for s in specs)
+    run = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 2, "seed": 3}, "spec": {"n_documents": [6, 6], "min_distractors": 2}})
+    Pipeline(run).run()
+    for f in (tmp_path / "accepted").glob("*/ledger.json"):
+        assert sum(d["distractor"] for d in json.loads(f.read_text())["documents"]) == 2
+    assert json.loads((tmp_path / "settings.json").read_text())["spec"]["min_distractors"] == 2
+
+
+def test_default_settings_omit_new_keys(tmp_path):
+    run = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 7}})
+    Pipeline(run).run()
+    s = json.loads((tmp_path / "settings.json").read_text())
+    assert "min_distractors" not in s["spec"] and "instruction" not in s
+
+
+def test_instruction_keys(tmp_path):
+    from ltg.fake import FakeModel
+    from ltg.schema import validate_instruction
+    from ltg.stages import write_instruction
+
+    run = load_config(None, {"run": {"out_dir": str(tmp_path), "n_matters": 1, "seed": 5}})
+    Pipeline(run).run()
+    folder = next((tmp_path / "accepted").iterdir())
+    from ltg.schema import Ledger, MatterSpec
+    ledger = Ledger.from_dict(json.loads((folder / "ledger.json").read_text()))
+    spec = MatterSpec.from_dict(json.loads((folder / "spec.json").read_text()))
+    fake = FakeModel(seed=1)
+    default = write_instruction(fake, spec, ledger)
+    assert ledger.documents[0].filename in default  # default: files named, as before
+    short = write_instruction(fake, spec, ledger, name_files=False, max_words=90)
+    assert not validate_instruction(short, ledger, False, 90) and ledger.documents[0].filename not in short
+    assert len(short.split()) <= 90
+    assert validate_instruction(default, ledger, False, 10)  # names a file, and is over 10 words
+    assert not validate_instruction(default, ledger)
+
+    class Stubborn(FakeModel):  # ignores the repair: send back once, then leak_check rejects
+        calls = 0
+
+        def _instruction_writer(self, p):
+            Stubborn.calls += 1
+            return {"instruction": default}
+
+    assert write_instruction(Stubborn(seed=1), spec, ledger, name_files=False) == default and Stubborn.calls == 2
+    from ltg import gates
+    g = gates.leak_check(default, ledger, {}, name_files=False)
+    assert not g.passed and g.details["instruction_form"]
+
+    v2 = load_config(None, {"run": {"out_dir": str(tmp_path / "v2"), "n_matters": 2, "seed": 5}, "instruction": {"name_files": False, "max_words": 90}})
+    Pipeline(v2).run()
+    assert json.loads((tmp_path / "v2" / "settings.json").read_text())["instruction"] == {"name_files": False, "max_words": 90}
+    for d in (tmp_path / "v2" / "accepted").iterdir():
+        led = Ledger.from_dict(json.loads((d / "ledger.json").read_text()))
+        assert not validate_instruction((d / "instruction.md").read_text(), led, False, 90)
+
+
+def test_v2_config_loads():
+    root = Path(__file__).resolve().parent.parent / "configs"
+    v2, base = load_config(str(root / "pilot_generate_v2.toml")), load_config(str(root / "pilot_generate_only.toml"))
+    assert (v2.spec.n_documents, v2.spec.n_issues, v2.spec.min_distractors) == ([6, 10], [4, 6], 2)
+    assert (v2.instruction.name_files, v2.instruction.max_words) == (False, 90)
+    assert (v2.gates.solver_max_steps, base.gates.solver_max_steps) == (40, 28)
+    v2.gates.solver_max_steps = 28
+    assert v2.gates == base.gates and v2.backend == base.backend

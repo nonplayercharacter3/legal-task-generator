@@ -51,6 +51,13 @@ class SpecCfg:
     work_types: list[str] = field(default_factory=lambda: ["issue_spotting_memo"])
     n_documents: list[int] = field(default_factory=lambda: [3, 5])  # inclusive range
     n_issues: list[int] = field(default_factory=lambda: [3, 5])
+    min_distractors: int = 1  # distractor documents per matter (when it has 3 or more documents)
+
+
+@dataclass
+class InstructionCfg:
+    name_files: bool = True  # false: the instruction says "the folder", never a file name
+    max_words: int = 0  # 0 = no limit
 
 
 @dataclass
@@ -104,6 +111,7 @@ class Config:
     backend: BackendCfg = field(default_factory=BackendCfg)
     fake: FakeCfg = field(default_factory=FakeCfg)
     spec: SpecCfg = field(default_factory=SpecCfg)
+    instruction: InstructionCfg = field(default_factory=InstructionCfg)
     gates: GatesCfg = field(default_factory=GatesCfg)
     splits: SplitsCfg = field(default_factory=SplitsCfg)
     sources: SourcesCfg = field(default_factory=SourcesCfg)

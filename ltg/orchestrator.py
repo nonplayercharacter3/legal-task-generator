@@ -28,7 +28,7 @@ from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
 
 from . import gates, stages
-from .config import Config, GatesCfg, build_client
+from .config import Config, GatesCfg, InstructionCfg, build_client
 from .decontam import BloomIndex
 from .models import CallLog, ModelClient
 from .schema import Answers, Ledger, MatterSpec, Rubric
@@ -87,7 +87,7 @@ def _read(path: Path):
 
 def _first_reason(g: gates.GateResult) -> str:
     d = g.details
-    for key in ("reason", "errors", "mismatches", "missing", "hits", "html_comments", "gold_fails", "blank_passes", "flawed_wrongly_passes", "flawed_wrongly_fails", "flagged"):
+    for key in ("reason", "errors", "mismatches", "missing", "hits", "html_comments", "instruction_form", "gold_fails", "blank_passes", "flawed_wrongly_passes", "flawed_wrongly_fails", "flagged"):
         if d.get(key):
             v = d[key]
             return v if isinstance(v, str) else f"{key}: {json.dumps(v)[:300]}"
@@ -191,9 +191,9 @@ class Pipeline:
             step("issue_check")
             check(gates.issue_check(self.client, ledger, docs, show_terms=cfg.gates.verifier_sees_terms))
 
-            instruction = stage("instruction", lambda: stages.write_instruction(self.client, spec, ledger),
+            instruction = stage("instruction", lambda: stages.write_instruction(self.client, spec, ledger, cfg.instruction.name_files, cfg.instruction.max_words),
                                 lambda v: _write(work / "instruction.md", v), lambda: (work / "instruction.md").read_text(encoding="utf-8"))
-            check(gates.leak_check(instruction, ledger, docs))
+            check(gates.leak_check(instruction, ledger, docs, cfg.instruction.name_files, cfg.instruction.max_words))
 
             rubric, repair = stage("rubric", lambda: stages.write_rubric(self.client, spec, ledger, instruction, cfg.gates.check_bundling),
                                    save_rubric, lambda: (Rubric.from_dict(_read(work / "rubric.json")), made["rubric_repair"]))
@@ -261,9 +261,12 @@ class Pipeline:
         for k in ("n_matters", "concurrency", "out_dir"):
             s["run"].pop(k)
         # Keys added after runs began, left out at their default so those runs still resume (pilot28_nrp and later).
-        for section, k, default in (("backend", "timeout_retries", 1), ("gates", "solver_check", "inline")):
+        for section, k, default in (("backend", "timeout_retries", 1), ("gates", "solver_check", "inline"), ("spec", "min_distractors", 1)):
             if s[section].get(k) == default:
                 s[section].pop(k)
+        s["instruction"] = {k: v for k, v in s["instruction"].items() if v != getattr(InstructionCfg, k)}
+        if not s["instruction"]:
+            s.pop("instruction")
         # How a reply travels does not change what it says, so runs begun without streaming resume with it on.
         for b in (s["backend"], *s["backend"]["roles"].values()):
             for k in ("stream", "max_seconds"):

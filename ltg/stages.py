@@ -13,7 +13,7 @@ import random
 from . import prompts
 from .config import SpecCfg
 from .models import ModelClient, call_json, call_text, render_input
-from .schema import Answers, Ledger, MatterSpec, Rubric, bundling_errors, split_issue_errors, validate_ledger, validate_rubric
+from .schema import Answers, Ledger, MatterSpec, Rubric, bundling_errors, split_issue_errors, validate_instruction, validate_ledger, validate_rubric
 from .sources import Precedent
 from .taxonomy import (
     DISTRACTOR_KINDS,
@@ -56,7 +56,8 @@ def sample_specs(cfg: SpecCfg, n: int, seed: int, used_industries: dict[str, int
             if s not in used_stems:
                 used_stems.add(s)
                 stems.append(s)
-        n_support = max(n_docs - 1 - (1 if n_docs >= 3 else 0), 0)  # the rest: main agreement and one distractor
+        n_dis = min(cfg.min_distractors, n_docs - 1) if n_docs >= 3 else 0
+        n_support = max(n_docs - 1 - n_dis, 0)  # the rest: main agreement and the distractors
         specs.append(
             MatterSpec(
                 matter_id=f"s{seed}-m{k + 1:04d}",
@@ -73,6 +74,7 @@ def sample_specs(cfg: SpecCfg, n: int, seed: int, used_industries: dict[str, int
                 name_stems=stems,
                 supporting_kinds=r.sample(SUPPORTING_KINDS[area], min(n_support, len(SUPPORTING_KINDS[area]))),
                 distractor_kind=r.choice(DISTRACTOR_KINDS) if n_docs >= 3 else "",
+                min_distractors=max(n_dis, 1) if n_docs >= 3 else 1,
             )
         )
     return specs
@@ -124,7 +126,7 @@ def draft_documents(client: ModelClient, ledger: Ledger, precedents: dict[str, P
     return docs
 
 
-def write_instruction(client: ModelClient, spec: MatterSpec, ledger: Ledger) -> str:
+def write_instruction(client: ModelClient, spec: MatterSpec, ledger: Ledger, name_files: bool = True, max_words: int = 0) -> str:
     client_party = ledger.parties[0]
     payload = {
         "matter": {
@@ -139,7 +141,18 @@ def write_instruction(client: ModelClient, spec: MatterSpec, ledger: Ledger) -> 
         },
         "files": [{"filename": d.filename, "kind": d.kind} for d in ledger.documents],
     }
-    return call_json(client, "instruction_writer", prompts.INSTRUCTION_WRITER, render_input(payload)).get("instruction", "")
+    if not name_files:  # the writer gets no file names to repeat
+        payload["files"] = len(ledger.documents)
+        payload["name_no_file"] = True
+    if max_words:
+        payload["max_words"] = max_words
+    user = render_input(payload)
+    text = call_json(client, "instruction_writer", prompts.INSTRUCTION_WRITER, user).get("instruction", "")
+    errs = validate_instruction(text, ledger, name_files, max_words)
+    if errs:  # one repair attempt; leak_check rejects what is still wrong
+        repair = user + "\n\nYour previous instruction had these problems; fix all of them:\n- " + "\n- ".join(errs)
+        text = call_json(client, "instruction_writer", prompts.INSTRUCTION_WRITER, repair).get("instruction", "")
+    return text
 
 
 def write_rubric(client: ModelClient, spec: MatterSpec, ledger: Ledger, instruction: str, bundling: str = "warn") -> tuple[Rubric, dict]:
