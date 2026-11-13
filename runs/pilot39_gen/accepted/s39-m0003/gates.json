@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.333,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -120,8 +133,61 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C10"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "amended_restated_escrow_agreement.md",
+                "laimul_dekes_mutual_nda.md",
+                "laimul_hearthline_stock_purchase_agreement.md",
+                "seller_promissory_note.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 16,
+              "files_opened": [
+                "amended_restated_escrow_agreement.md",
+                "laimul_dekes_mutual_nda.md",
+                "laimul_hearthline_stock_purchase_agreement.md",
+                "seller_promissory_note.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C7",
+                "C8",
+                "C9",
+                "C10"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "amended_restated_escrow_agreement.md",
+                "laimul_dekes_mutual_nda.md",
+                "laimul_hearthline_stock_purchase_agreement.md",
+                "seller_promissory_note.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
