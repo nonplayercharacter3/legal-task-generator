@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.667,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -108,8 +121,56 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C4"
+              ],
+              "steps": 15,
+              "files_opened": [
+                "bill_of_sale_prior_draft.md",
+                "bill_of_sale_service_tooling.md",
+                "stock_purchase_agreement_lalais_trasirt.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 15,
+              "files_opened": [
+                "bill_of_sale_prior_draft.md",
+                "bill_of_sale_service_tooling.md",
+                "stock_purchase_agreement_lalais_trasirt.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 17,
+              "files_opened": [
+                "bill_of_sale_prior_draft.md",
+                "bill_of_sale_service_tooling.md",
+                "stock_purchase_agreement_lalais_trasirt.md",
+                "transition_services_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
