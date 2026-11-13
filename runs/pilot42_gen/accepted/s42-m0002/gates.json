@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -110,8 +123,61 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C5"
+              ],
+              "steps": 12,
+              "files_opened": [
+                "pesith_broker_insurance_certificate_cover_letter.md",
+                "timais_pesith_data_processing_addendum.md",
+                "timais_pesith_master_services_agreement.md",
+                "timais_pesith_quality_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 12,
+              "files_opened": [
+                "pesith_broker_insurance_certificate_cover_letter.md",
+                "timais_pesith_data_processing_addendum.md",
+                "timais_pesith_master_services_agreement.md",
+                "timais_pesith_quality_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 12,
+              "files_opened": [
+                "pesith_broker_insurance_certificate_cover_letter.md",
+                "timais_pesith_data_processing_addendum.md",
+                "timais_pesith_master_services_agreement.md",
+                "timais_pesith_quality_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

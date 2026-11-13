@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -121,8 +134,63 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "breneth_gaimun_side_letter.md",
+                "breneth_gaimun_software_license_agreement.md",
+                "brewops_order_form_001.md",
+                "onboarding_email_thread.md",
+                "schedule_b_service_level_schedule.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "breneth_gaimun_side_letter.md",
+                "breneth_gaimun_software_license_agreement.md",
+                "brewops_order_form_001.md",
+                "onboarding_email_thread.md",
+                "schedule_b_service_level_schedule.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 9,
+              "files_opened": [
+                "breneth_gaimun_side_letter.md",
+                "breneth_gaimun_software_license_agreement.md",
+                "brewops_order_form_001.md",
+                "onboarding_email_thread.md",
+                "schedule_b_service_level_schedule.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
