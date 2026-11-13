@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "test",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 1.0,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -114,8 +127,57 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 3,
+            "pass_rate": 1.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 18,
+              "files_opened": [
+                "asset_purchase_agreement_dilur_glesar.md",
+                "dilur_board_consent.md",
+                "ip_assignment_agreement_emberfall.md",
+                "key_employee_agreement_okoro.md",
+                "nightjar_localization_services_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 18,
+              "files_opened": [
+                "asset_purchase_agreement_dilur_glesar.md",
+                "dilur_board_consent.md",
+                "ip_assignment_agreement_emberfall.md",
+                "key_employee_agreement_okoro.md",
+                "nightjar_localization_services_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 18,
+              "files_opened": [
+                "asset_purchase_agreement_dilur_glesar.md",
+                "dilur_board_consent.md",
+                "ip_assignment_agreement_emberfall.md",
+                "key_employee_agreement_okoro.md",
+                "nightjar_localization_services_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
