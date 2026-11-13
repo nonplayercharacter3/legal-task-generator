@@ -14,7 +14,7 @@ Backend: `claude_sdk`. Accepted **2 of 3** candidate matters.
 | rubric_trace | 2 | 2 | 0 | 0 |
 | rubric_tests | 2 | 2 | 0 | 0 |
 | decontamination | 2 | 2 | 0 | 0 |
-| solver_check | 2 | 0 | 0 | 2 |
+| solver_check | 2 | 2 | 0 | 0 |
 
 ## Difficulty
 
@@ -22,15 +22,14 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 
 | Model | Tasks | Pass rate: tasks |
 | --- | ---: | --- |
-
-**2 accepted task(s) wait for `ltg label`: solver_check was deferred, so they have no difficulty label and no leak probe yet.**
+| qwen3-small | 2 | 1.00: 2 |
 
 ## Matters
 
 | Matter | Result | Split | Pass rate per model | Reason |
 | --- | --- | --- | --- | --- |
-| s40-m0001 | accepted (label pending) | train |  |  |
-| s40-m0002 | accepted (label pending) | train |  |  |
+| s40-m0001 | accepted | train | qwen3-small 1.00 |  |
+| s40-m0002 | accepted | train | qwen3-small 1.00 |  |
 | s40-m0003 | rejected at consistency |  |  | mismatches: [{"fact": "F8", "key": "Order of precedence", "filename": "bill_of_sale.md", "ledger": "SPA prevails over Ancillary Documents, except Seller Note co |
 
 ## Variety
@@ -50,5 +49,6 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 | fact_extractor | 2 | 60476 | 5118 | 0 |
 | fact_matcher | 1 | 1482 | 277 | 0 |
 | issue_verifier | 3 | 79927 | 2114 | 0 |
-| judge | 3 | 19208 | 1867 | 0 |
+| judge | 11 | 100191 | 9718 | 0 |
 | ledger_writer | 1 | 4181 | 9656 | 0 |
+| solver | 98 | 735789 | 124839 | 0 |
