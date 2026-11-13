@@ -25,8 +25,9 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 os.environ.setdefault("LAB_ROOT", str(Path(os.environ.get("LAB_ROOT_DIR", "/Users/shesirui/Projects/legal-task-generator/runs/lab_root"))))
-os.environ["BASETEN_API_KEY"] = os.environ["NRP_LLM_API_KEY"]
-os.environ["BASETEN_BASE_URL"] = "https://ellm.nrp-nautilus.io/v1"
+# LAB_BASE_URL and LAB_MODEL_NAME point the agent at our vLLM pod instead (no key needed there); results paths stay qwen3-small-low.
+os.environ["BASETEN_API_KEY"] = os.environ.get("NRP_LLM_API_KEY", "none")
+os.environ["BASETEN_BASE_URL"] = os.environ.get("LAB_BASE_URL", "https://ellm.nrp-nautilus.io/v1")
 
 import openai  # noqa: E402
 from lab_core import paths  # noqa: E402
@@ -43,6 +44,7 @@ MAX_TOKENS = 32000  # one reply, thinking included; 16000 was cut off mid-though
 class NRPAdapter(BasetenAdapter):
     def __init__(self, **kw):
         super().__init__(**{**kw, "reasoning_effort": None, "max_tokens": MAX_TOKENS})
+        self.model = os.environ.get("LAB_MODEL_NAME", self.model)
         self.client = openai.OpenAI(api_key=os.environ["BASETEN_API_KEY"], base_url=os.environ["BASETEN_BASE_URL"],
                                     timeout=1200, max_retries=4)
         create = self.client.chat.completions.create
