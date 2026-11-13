@@ -4,11 +4,24 @@
   "failed_gate": null,
   "reason": null,
   "split": "dev",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 1.0,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -117,8 +130,54 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 3,
+            "pass_rate": 1.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 10,
+              "files_opened": [
+                "butex_fanul_master_services_agreement.md",
+                "butex_fanul_term_sheet.md",
+                "fanul_insurance_certificate_cover_letter.md",
+                "fanul_quality_agreement_draft.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 10,
+              "files_opened": [
+                "butex_fanul_master_services_agreement.md",
+                "butex_fanul_term_sheet.md",
+                "fanul_insurance_certificate_cover_letter.md",
+                "fanul_quality_agreement_draft.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 10,
+              "files_opened": [
+                "butex_fanul_master_services_agreement.md",
+                "butex_fanul_term_sheet.md",
+                "fanul_insurance_certificate_cover_letter.md",
+                "fanul_quality_agreement_draft.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
