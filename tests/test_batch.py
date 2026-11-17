@@ -119,7 +119,7 @@ def test_batch_on_a_branch_pushes_it_and_opens_one_pr(ws, monkeypatch):
     prs = []
     monkeypatch.setattr(batch, "open_pr", lambda branch, title: prs.append((branch, title)) or True)
     a = [x for x in args("--seeds", "9-10") if x != "--no-commit"]
-    assert main(a + ["--branch", "lm/v2-test"]) == 0
+    assert main(a + ["--branch", "lm/v2-test", "--author", "Lab Mate <lm@example.com>"]) == 0
     assert git("rev-parse", "--abbrev-ref", "HEAD", cwd=ws).strip() == "lm/v2-test"
     assert git("rev-parse", "HEAD", cwd=ws) == git("rev-parse", "origin/lm/v2-test", cwd=ws)
     assert git("rev-parse", "origin/main", cwd=ws) == git("rev-parse", "main", cwd=ws)  # main untouched
