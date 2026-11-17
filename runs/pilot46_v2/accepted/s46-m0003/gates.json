@@ -1,0 +1,176 @@
+{
+  "matter_id": "s46-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Supply Agreement §14.2: \"Any Change of Control of Customer or of its ultimate parent shall be deemed an assignment of this Agreement by Customer requiring Supplier's prior written consent under Section 14.1. A Change of Control of Customer or of its ultimate parent effected without Supplier's prior written consent shall constitute a material breach of this Agreement, not subject to cure under Section 13.2(a), and Supplier may ... (a) terminate this Agreement with immediate effect, and (b) require Customer to pay the Minimum Purchase Shortfall...\" Side Letter Recital B: \"Customer's parent, Pounirt Holdings, Inc., entered into an Agreement and Plan of Merger with Kestrelbay Animal Health Partners, L.P. on August 14, 2026.\" Side Letter §3.1: \"Except as expressly set out in Section 1, the Agreement remains unchanged and in full force and effect. Each party reserves all of its rights and remedies under the Agreement.\"",
+            "reason": "The problem is present and actionable. Section 14.2 puts the obligation on Customer (Pounirt) to get Supplier's prior written consent to any Change of Control of Customer or its ultimate parent. The Side Letter records a signed merger agreement between Pounirt's parent and Kestrelbay. That merger will almost certainly be a Change of Control under §1.4. The Side Letter shows Supplier already knows of the deal, yet it grants only volume relief. Sections 3.1 and 3.2 expressly reserve all rights and rule out any implied waiver, and nothing in the folder records Supplier's consent. If closing occurs without consent, Supplier gets an incurable material breach, a right to terminate immediately, and acceleration of the Minimum Purchase Shortfall. The Initial Term ends February 2027 and renewal is disputed; if the term has auto-renewed for 3 years, the shortfall covers every remaining contract year at $3.6M per year, which would be a severe exposure. The 90-day notice window runs from Supplier's awareness of the Change of Control itself, so it likely starts at closing. Nothing indicates the merger has closed, so Pounirt can still seek consent before closing. The problem is not cured and remains live for the client.",
+            "alone": {
+              "pounirt_reigein_supply_agreement.md": {
+                "findable": false,
+                "evidence": "Any Change of Control of Customer or of its ultimate parent shall be deemed an assignment of this Agreement by Customer requiring Supplier's prior written consent under Section 14.1. A Change of Control of Customer or of its ultimate parent effected without Supplier's prior written consent shall constitute a material breach of this Agreement, not subject to cure under Section 13.2(a), and Supplier may ... (a) terminate this Agreement with immediate effect, and (b) require Customer to pay the Minimum Purchase Shortfall...",
+                "reason": "The Supply Agreement alone shows that Section 14.2 treats a Change of Control of Customer or its ultimate parent as an assignment needing consent. It also shows that doing so without consent is an incurable material breach, which allows termination and accelerated payment of the Minimum Purchase Shortfall. An associate could flag this as a provision that is unfavorable to the client. The agreement does not show that any Change of Control is pending or has happened. It does not identify Pounirt Holdings, Inc. as the ultimate parent, and it does not mention the August 14, 2026 merger agreement with Kestrelbay. It also does not show that Supplier's consent was not obtained or that the Side Letter left consent unaddressed. Those facts come only from the Side Letter. Without them, the actual exposure, an unconsented Change of Control that triggers termination and acceleration, cannot be seen."
+              },
+              "side_letter_2026-10-05.md": {
+                "findable": false,
+                "evidence": "Customer's parent, Pounirt Holdings, Inc., entered into an Agreement and Plan of Merger with Kestrelbay Animal Health Partners, L.P. on August 14, 2026.",
+                "reason": "The Side Letter by itself records the parent-level merger and says it grants only volume relief. It reserves all other rights (Sections 3.1 and 3.2) and says nothing about consent to the merger. It does not show that the Supply Agreement requires Supplier's consent to a Change of Control of Customer or its ultimate parent. It also does not show that an unconsented Change of Control is a material breach permitting termination and acceleration of the shortfall. Those terms are in Section 14.2 of the Supply Agreement, which is not provided. An associate reading only this letter would know a merger is pending. They could not tell whether the merger triggers any consent requirement or hurts the client."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Order Form Section 9: \"This Order Form, all Purchase Orders issued under it, and all disputes arising out of or relating to Products supplied under it are governed by the laws of the State of Minnesota... Each Party irrevocably submits to the exclusive jurisdiction and venue of the state and federal courts located in Hennepin County, Minnesota for any action arising out of or relating to this Order Form, any Purchase Order or any Products supplied under it.\" Supply Agreement 16.4: \"the documents shall control in the following order: Order Form, then Supply Agreement, then Data Processing Addendum.\"",
+            "reason": "The problem is present. Supply Agreement Sections 15.1 and 15.2 choose Delaware law and exclusive Wilmington courts. Order Form Section 9 chooses Minnesota law and exclusive Hennepin County venue for the Order Form, all Purchase Orders and all product disputes. Section 16.4 makes the Order Form control, so the Minnesota clause prevails rather than being cured. The result is that most disputes for Pounirt, a Delaware customer, move to Reigein's home forum. It also leaves the relationship split between two regimes, with possible fights over which clause governs a given claim. The October 2026 side letter adopts Delaware law only for the side letter itself, so it does not fix this. The problem is still actionable. The pending dispute over the timeliness of the non-renewal notice arises under Order Form Section 1. It would arguably have to be litigated in Minnesota under Minnesota law, which matters to Pounirt's strategy now. Pounirt can also seek to fix the clause by amendment under Section 16.5."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Order Form §1.2: \"It does not renew if either Party gives the other written notice of non-renewal at least 180 days before expiration of the then-current term.\" Side Letter §2: \"Customer delivered a written notice of non-renewal of the Agreement to Supplier on September 21, 2026 ... Supplier has informed Customer that it considers the Non-Renewal Notice untimely under Section 1 of the Order Form. Customer has not accepted Supplier's position. The parties reserve all rights with respect to the Non-Renewal Notice, its effectiveness and the term of the Agreement.\"",
+            "reason": "The Initial Term ends February 28, 2027, so the 180-day notice deadline was September 1, 2026. Pounirt's notice of September 21, 2026 was about 20 days late. Supplier says it is untimely, which would renew the Agreement for three more years through February 28, 2030. That would carry Pounirt's exclusivity and $3.6M-per-year minimum commitment through 2030, at the moment its parent is in a merger. The Side Letter expressly preserves Pounirt's objection and says it is no admission. Nothing in the folder shows Pounirt has accepted the renewal. The issue is therefore live and actionable: Pounirt can contest timeliness, negotiate an exit or argue waiver or estoppel.",
+            "alone": {
+              "order_form_reagents_consumables.md": {
+                "findable": false,
+                "evidence": "It does not renew if either Party gives the other written notice of non-renewal at least 180 days before expiration of the then-current term.",
+                "reason": "The Order Form alone shows the Initial Term ending February 28, 2027, three-year automatic renewals, and a 180-day non-renewal notice deadline (about September 1, 2026). It does not show when, or whether, Pounirt gave notice. The late delivery on September 21, 2026, Supplier's claim that the notice was untimely, and the reservation of rights all come from the Side Letter. The auto-renewal mechanism by itself is a standard term, not a problem. The harm, an unwanted renewal through 2030 caused by late notice, cannot be seen without the other document."
+              },
+              "side_letter_2026-10-05.md": {
+                "findable": false,
+                "evidence": "Supplier has informed Customer that it considers the Non-Renewal Notice untimely under Section 1 of the Order Form. Customer has not accepted Supplier's position. The parties reserve all rights with respect to the Non-Renewal Notice, its effectiveness and the term of the Agreement.",
+                "reason": "On its own, the Side Letter shows that Customer delivered a non-renewal notice on September 21, 2026, that Supplier says it was untimely under Order Form Section 1, and that the parties are disputing the point with rights reserved. That reads as one party's position in a dispute, not as an established problem. The Side Letter does not give the Initial Term expiration date, the 180-day notice requirement, or the three-year auto-renewal term. It says February 28, 2027 is the last day of the 'current contract year', not the end of the term. Without the Order Form, an associate cannot confirm that the notice deadline was September 1, 2026, that the notice was 20 days late, or that the consequence is renewal through February 28, 2030. Those facts, which make this a real problem that hurts Pounirt, come only from the other document."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Order Form Section 3.2: \"As used in this Order Form, \"Customer Sites\" means all laboratory facilities owned or operated by Customer or any Affiliate, now or in the future.\" Section 3.1 requires Customer to \"source 100% of its hematology and chemistry reagent requirements for the Customer Sites from Supplier.\" Supply Agreement Section 1.5, by contrast, defines \"Customer Sites\" as \"the four Customer laboratory facilities listed in Exhibit C,\" and Section 16.4 says the Order Form controls in a conflict.",
+            "reason": "The two documents define the same term differently. Because Section 16.4 gives the Order Form priority, the broader Order Form definition governs the exclusivity obligation, and that obligation falls on the client, Pounirt. As written, it covers every present and future Affiliate laboratory, not just the four Exhibit C sites. The Side Letter records the August 2026 Kestrelbay merger, after which Kestrelbay-related laboratories could become Affiliates and be pulled into the 100% exclusivity. That would restrict the combined group's sourcing and expose Pounirt to breach claims. Nothing in the folder fixes this. The Side Letter changes only the volume commitment and says the Agreement is otherwise unchanged. The non-renewal dispute is still open, with both parties reserving all rights, so the Agreement continues in effect and the issue remains live and actionable for the client.",
+            "alone": {
+              "order_form_reagents_consumables.md": {
+                "findable": false,
+                "evidence": "3.2 Customer Sites. As used in this Order Form, \"Customer Sites\" means all laboratory facilities owned or operated by Customer or any Affiliate, now or in the future.",
+                "reason": "On its own, the Order Form shows a broad exclusivity clause. Section 3.1 requires 100% sourcing for the Customer Sites, and Section 3.2 defines Customer Sites to include every present and future Affiliate laboratory. An associate could see that this scope is wide. The flagged problem, though, is an inconsistency in a defined term, and this document does not show it. It does not show that Supply Agreement Section 1.5 defines Customer Sites as the four Exhibit C facilities. The Analyzer table in Section 5.1 lists four labs but defines nothing. It also does not show that Supply Agreement Section 16.4 makes the Order Form prevail over that narrower definition. Read alone, Section 3.2 looks like the only definition of the term, not a conflicting redefinition. The Kestrelbay merger, which turns the breadth into concrete harm, appears only in the Side Letter. The essential elements of the problem therefore come from documents not provided."
+              },
+              "pounirt_reigein_supply_agreement.md": {
+                "findable": false,
+                "evidence": "1.5 \"Customer Sites\" means the four Customer laboratory facilities listed in Exhibit C. ... 16.4 Order of Precedence. In the event of any conflict or inconsistency among the documents comprising this Agreement, the documents shall control in the following order: Order Form, then Supply Agreement, then Data Processing Addendum.",
+                "reason": "The Supply Agreement by itself defines Customer Sites narrowly as the four Exhibit C facilities. It also makes the Order Form prevail over it in any conflict. Nothing in this document creates an exclusivity or 100% sourcing obligation. It also does not redefine Customer Sites to cover Affiliate facilities or mention a Kestrelbay merger. Those pieces sit in the Order Form and the Side Letter, which are not provided. An associate reading only this document would see a narrow, client-favorable definition and a precedence clause that only matters if the Order Form conflicts. They could not see that the Order Form actually broadens the exclusivity scope to the client's harm."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Supply Agreement §12.3: \"The limitations set forth in Sections 12.1 and 12.2 shall not apply to a Party's indemnification obligations under this Agreement...\" DPA §8.2: \"Customer shall defend, indemnify and hold harmless Processor ... from and against all Losses arising from the Customer Data or Customer's processing instructions, including Losses arising out of third-party claims and any fines or penalties imposed by a governmental authority, regardless of whether such Losses also arise in part from Processor's acts or omissions.\"",
+            "reason": "Pounirt is the indemnitor under DPA §8.2, so this obligation runs against the client. §1.1 makes the DPA part of the 'Agreement', so §12.3 lifts both the §12.1 cap and the §12.2 damages exclusion from this indemnity. The DPA sets no cap of its own. The indemnity is very broad. It reaches all Losses 'arising from the Customer Data', not only third-party claims, and it covers regulatory fines. It also applies expressly where Reigein is partly at fault. Reigein's reciprocal indemnity in §8.1 is narrow: it covers only third-party claims resulting from Reigein's breach of §5. Nothing in the folder cures this. The side letter amends only the volume terms and keeps everything else unchanged. The order of precedence clause does not help, because the Supply Agreement itself creates the carve-out. The agreement is still in force, and Pounirt has not yet faced a claim under this indemnity. The exposure therefore continues and can still be addressed, for example by negotiating an amendment, particularly given the pending merger and the disputed renewal.",
+            "alone": {
+              "pounirt_reigein_supply_agreement.md": {
+                "findable": false,
+                "evidence": "12.3 Exceptions. The limitations set forth in Sections 12.1 and 12.2 shall not apply to a Party's indemnification obligations under this Agreement, to a Party's breach of Section 10, to a Party's gross negligence, fraud or willful misconduct, or to Customer's obligation to pay amounts due for Products under this Agreement.",
+                "reason": "The Supply Agreement alone shows that indemnification obligations are carved out of the cap (12.3). It also shows that 'Agreement' includes the Data Processing Addendum (1.1). But the only Customer indemnity in this document (11.2) is narrow and mutual in structure. It covers off-spec use and Customer's gross negligence or willful misconduct, and Supplier's own indemnity is similarly carved out. Nothing here is lopsided or harmful to Pounirt. The harmful part is that the DPA imposes on Customer a broad indemnity for all data-related Losses, including fines and Losses partly caused by the Processor, with no cap of its own. That provision exists only in the DPA, which was not provided. An associate reading this document alone could flag that any DPA indemnity would be uncapped, but could not see the actual one-sided, unlimited exposure."
+              },
+              "data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "Customer shall defend, indemnify and hold harmless Processor and its Affiliates, officers, directors and employees from and against all Losses arising from the Customer Data or Customer's processing instructions, including Losses arising out of third-party claims and any fines or penalties imposed by a governmental authority, regardless of whether such Losses also arise in part from Processor's acts or omissions.",
+                "reason": "On its own, the DPA shows that Section 8.2 is a broad, one-sided indemnity from Pounirt. It covers regulatory fines and Losses partly caused by Reigein. It is much wider than Processor's narrow indemnity in 8.1, which covers only breaches of Section 5. The DPA also says it 'forms part of the Agreement' and states no cap of its own. But the flagged problem is that the indemnity is uncapped, and the DPA does not show that. Whether Pounirt's exposure is unlimited depends on the Supply Agreement, which is not provided. Its Section 12.1 sets a liability cap, Section 12.3 carves indemnification obligations out of that cap, and Section 1.1 defines 'Agreement' to include the DPA. Reading the DPA alone, an associate could reasonably assume the Supply Agreement's general liability cap covers this indemnity. The unlimited exposure only appears when the two documents are read together."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C6 asks for the whole ranking in fact F4 ('Order Form, then Supply Agreement, then Data Processing Addendum'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.07,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

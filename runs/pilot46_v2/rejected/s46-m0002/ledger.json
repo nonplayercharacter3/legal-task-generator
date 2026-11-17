@@ -1,0 +1,268 @@
+{
+  "matter_id": "s46-m0002",
+  "summary": "Stivor Therapeutics, Inc., a specialty pharmaceutical company, buys trelaparin sodium active pharmaceutical ingredient (API) for its injectable product from Vevail Fine Chemicals, LLC under a Supply Agreement dated March 1, 2023. Stivor has signed a merger agreement with Ostrander Pharma Group, Inc. (recorded in Amendment No. 1). Stivor also sent a non-renewal notice on October 14, 2026. The partner wants an issue-spotting memo on the supply folder before the merger closes. The folder holds the Supply Agreement, the 2022 term sheet, a Data Processing Addendum covering pharmacovigilance data, Amendment No. 1, a Service Level Schedule, Stivor's non-renewal letter, an operations email thread and Vevail's certificate of insurance. Six issues are planted, all of which need two documents read together: (1) an unaddressed change-of-control consent right with a shortfall payment; (2) three-year auto-renewals that depart from the term sheet; (3) a non-renewal notice sent after the window closed; (4) a broader 'Supply Failure' definition in the Service Level Schedule that, through the precedence clause, makes service credits the sole remedy; (5) a Stivor-only DPA indemnity that escapes the liability cap; and (6) no restriction at all on Vevail assigning the agreement.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Stivor Therapeutics, Inc.",
+      "role": "Purchaser of API; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Vevail Fine Chemicals, LLC",
+      "role": "Supplier and manufacturer of trelaparin sodium API"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Pharma Group, Inc.",
+      "role": "Counterparty to Stivor's pending merger"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 1, 2023",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "four years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement non-renewal notice window",
+      "value": "30-day period ending 180 days before expiration of the then-current term",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 14.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Amendments, then Service Level Schedule, then Supply Agreement body, then Data Processing Addendum",
+      "doc": "D1",
+      "section": "Section 20.3"
+    },
+    {
+      "id": "F6",
+      "key": "Term sheet renewal term",
+      "value": "successive one-year renewal terms",
+      "doc": "D2",
+      "section": "Term and Renewal"
+    },
+    {
+      "id": "F7",
+      "key": "Term sheet assignment restriction",
+      "value": "neither party may assign without the other's consent, except to a non-competitor successor",
+      "doc": "D2",
+      "section": "Assignment"
+    },
+    {
+      "id": "F8",
+      "key": "Minimum annual purchase commitment",
+      "value": "$4.2 million per Contract Year",
+      "doc": "D1",
+      "section": "Section 4.2"
+    },
+    {
+      "id": "F9",
+      "key": "Supply Agreement governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 20.1"
+    },
+    {
+      "id": "F10",
+      "key": "Stivor-Ostrander merger agreement date",
+      "value": "September 8, 2026",
+      "doc": "D4",
+      "section": "Recital B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stivor_vevail_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "api_supply_term_sheet_2022.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "amendment_no_1_supply_agreement.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "stivor_letter_to_vevail_2026-10-14.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "email_thread_q4_forecast_and_labeling.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "vevail_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "D1 Section 16.2 treats any Change of Control of Purchaser as an assignment that needs Supplier's prior written consent. If no consent is given, Supplier may terminate and Purchaser must pay a Shortfall Payment equal to the Minimum Annual Purchase Commitment for each remaining Contract Year. D4 Recital B records that Stivor entered into an Agreement and Plan of Merger with Ostrander Pharma Group, Inc. on September 8, 2026. Yet Amendment No. 1, signed September 22, 2026, grants no consent and does not mention Section 16.2. Read together, the pending merger will trigger the consent right, and nothing in the folder shows that consent has been obtained. Closing without consent would expose Stivor to termination and an accelerated shortfall payment.",
+      "doc": "D1",
+      "section": "Section 16.2",
+      "detect_terms": [
+        "Change of Control of Purchaser",
+        "deemed an assignment",
+        "Shortfall Payment"
+      ],
+      "expected_finding": "The Ostrander merger recorded in Amendment No. 1 is a Change of Control requiring Vevail's prior written consent under Section 16.2, which has not been obtained; closing without it lets Vevail terminate and claim a Shortfall Payment of the minimum commitment for the remaining Contract Years, so Stivor must obtain a written consent and waiver before closing.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Recital B",
+      "detect_terms2": [
+        "Agreement and Plan of Merger",
+        "Ostrander Pharma Group"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "D1 Section 2.2 renews the agreement automatically for successive three-year Renewal Terms. Under D1 Section 4.2, the $4.2 million minimum annual purchase commitment applies in every Contract Year, including Renewal Terms. The D2 term sheet agreed only to successive one-year renewal terms. D1's entire-agreement clause supersedes the term sheet, so the three-year lock-in controls. This hurts Stivor in particular because it carries the minimum purchase commitment for three years at a time.",
+      "doc": "D1",
+      "section": "Section 2.2",
+      "detect_terms": [
+        "successive three-year Renewal Terms"
+      ],
+      "expected_finding": "Section 2.2 departs from the term sheet's one-year renewals and, combined with the Section 4.2 minimum purchase commitment applying in Renewal Terms, locks Stivor into three-year renewal periods with at least $4.2 million of annual purchases each, so Stivor should seek an amendment restoring one-year renewals.",
+      "contradicts": "F6",
+      "doc2": "D2",
+      "section2": "Term and Renewal",
+      "detect_terms2": [
+        "successive one-year renewal terms"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under D1 Sections 2.1 and 2.3, the Initial Term runs four years from March 1, 2023 and ends February 28, 2027. Non-renewal notice may be given only during the 30-day period ending 180 days before expiration, which is August 3 through September 1, 2026. Stivor's D6 letter giving notice of non-renewal is dated October 14, 2026, about six weeks after the window closed. The letter asserts that the notice is timely and effective, so Stivor has not accepted renewal. On the documents, however, the notice is late. The agreement will renew on March 1, 2027 for a three-year Renewal Term unless Vevail agrees otherwise.",
+      "doc": "D1",
+      "section": "Section 2.3",
+      "detect_terms": [
+        "30-day period ending 180 days"
+      ],
+      "expected_finding": "Stivor's October 14, 2026 non-renewal notice falls outside the August 3 to September 1, 2026 window under Section 2.3, so it is likely ineffective and the agreement will auto-renew on March 1, 2027 for three years; Stivor's asserted position is weak, and it should negotiate a written termination or non-renewal agreement with Vevail, possibly as part of the change-of-control consent.",
+      "contradicts": null,
+      "doc2": "D6",
+      "section2": "Paragraphs 1-2",
+      "detect_terms2": [
+        "notice of non-renewal",
+        "timely and effective"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 Section 1.18 defines 'Supply Failure' narrowly: failure to deliver at least 90% of a Firm Purchase Order quantity within 30 days after the Delivery Date. For that event, D1 Section 6.5 lets Purchaser buy substitute Product at Supplier's cost and terminate after repeated Supply Failures. D5 Section 1.4 defines 'Supply Failure' far more broadly as any late or short delivery. D5 Section 4.3 then makes Service Credits, capped at 5% of the monthly invoice, Purchaser's sole and exclusive remedy for any Supply Failure. D1 Section 20.3 ranks the Service Level Schedule above the Agreement body, so D5's definition and exclusive-remedy clause control. Together they wipe out Stivor's cover and termination rights for even the most serious supply shortfalls.",
+      "doc": "D5",
+      "section": "Sections 1.4 and 4.3",
+      "detect_terms": [
+        "sole and exclusive remedy",
+        "any late or short delivery"
+      ],
+      "expected_finding": "Because Section 20.3 gives the Service Level Schedule precedence, its broader 'Supply Failure' definition and sole-remedy clause displace Stivor's cover and termination rights under Section 6.5, limiting Stivor to capped service credits for any supply shortfall; the schedule should be conformed to the Agreement's definition and the sole-remedy language should carve out Section 6.5.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Sections 1.18, 6.5 and 20.3",
+      "detect_terms2": [
+        "at least 90%",
+        "substitute Product"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Under D3 Section 7.2, Purchaser alone must indemnify Supplier for all losses arising out of or relating to the Shared Personal Data, which consists of adverse-event and product-complaint data. The indemnity is not limited to Purchaser's own breach, so it reaches claims caused by Supplier's own processing. On its face the indemnity is 'subject to the limitations of liability in Section 14 of the Agreement.' However, D1 Section 14.3 provides that the Section 14.2 cap and the Section 14.1 exclusion of consequential damages do not apply to indemnification obligations under the Agreement or any addendum. Read together, Stivor's DPA indemnity is uncapped and covers Vevail's own data-protection failures.",
+      "doc": "D3",
+      "section": "Section 7.2",
+      "detect_terms": [
+        "Purchaser shall indemnify",
+        "arising out of or relating to the Shared Personal Data"
+      ],
+      "expected_finding": "Because Section 14.3 excludes indemnification obligations under any addendum from the cap and the consequential-damages exclusion, Stivor's one-way DPA indemnity under Section 7.2 is unlimited and covers losses caused by Vevail's own processing, so it should be made mutual, fault-based and subject to the Section 14.2 cap.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 14.3",
+      "detect_terms2": [
+        "indemnification obligations under this Agreement or any addendum"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "D1 Section 16.1 bars only Purchaser from assigning without consent. Nothing in D1 restricts Supplier, and Section 16.4 binds 'successors and assigns.' Under Delaware law contract rights are freely assignable unless the contract restricts them, so Vevail may assign the agreement, including to a competitor of Stivor or to a manufacturer Stivor has not qualified. The D2 term sheet agreed a mutual restriction: neither party may assign without the other's consent, except to a non-competitor successor. D1's integration clause supersedes that, leaving the agreed protection out of the binding document.",
+      "doc": "D1",
+      "section": "Sections 16.1 and 16.4",
+      "detect_terms": [
+        "Purchaser shall not assign"
+      ],
+      "expected_finding": "Section 16.1 restricts only Stivor, so under Delaware law Vevail can freely assign the supply agreement, including to a Stivor competitor, contrary to the term sheet's mutual restriction; Stivor should require a mutual consent requirement with a non-competitor successor exception.",
+      "contradicts": "F7",
+      "doc2": "D2",
+      "section2": "Assignment",
+      "detect_terms2": [
+        "Neither party may assign"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "matter_id": "s46-m0002",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I6\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I6"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Agreement §16.2: \"Any Change of Control of Purchaser shall be deemed an assignment of this Agreement requiring Supplier's prior written consent under Section 16.1. If a Change of Control of Purchaser occurs without that consent, Supplier may terminate ... Purchaser shall pay Supplier an amount (the \"Shortfall Payment\") equal to the Minimum Annual Purchase Commitment for each Contract Year remaining in the then-current Term, including the Contract Year in which termination takes effect.\" Amendment No. 1, Recital B: \"On September 8, 2026, Purchaser entered into an Agreement and Plan of Merger with Ostrander Pharma Group, Inc.\"",
+            "reason": "Stivor is the Purchaser, so it is the party that needs Vevail's consent and that owes the Shortfall Payment. A merger with Ostrander in which Stivor is a constituent entity and its holders lose majority control fits the §1.6(a) definition of Change of Control. Amendment No. 1 records the merger agreement but amends only §§5.1, 5.2, 5.4, Exhibit A and 20.4. Its §4.1 says the rest of the Agreement \"remains unchanged.\" It grants no consent and does not touch §16.2. Under §20.5 a waiver must be in writing and signed, so Vevail's knowledge of the merger does not count as consent. No other document in the folder shows consent was obtained. The merger appears not to have closed yet, so the issue is still actionable: Stivor can seek written consent or negotiate a waiver before closing. The exposure is serious. The Oct 14, 2026 non-renewal notice appears untimely, because the §2.3 window ended about 180 days before Feb 28, 2027, i.e. around Sept 1, 2026. If the notice is ineffective, the Term auto-renews for three years. Termination after an unconsented closing could then trigger a Shortfall Payment of $4.2M for each remaining Contract Year. Even if the notice is effective, at least the current Contract Year's commitment would be accelerated.",
+            "alone": {
+              "stivor_vevail_supply_agreement.md": {
+                "findable": false,
+                "evidence": "Any Change of Control of Purchaser shall be deemed an assignment of this Agreement requiring Supplier's prior written consent under Section 16.1. If a Change of Control of Purchaser occurs without that consent, Supplier may terminate this Agreement ... Purchaser shall pay Supplier an amount (the \"Shortfall Payment\") equal to the Minimum Annual Purchase Commitment for each Contract Year remaining in the then-current Term",
+                "reason": "The supply agreement alone shows a harsh change-of-control clause. Any Change of Control of Stivor needs Vevail's prior written consent. Without consent, Vevail may terminate, and Stivor must pay the Minimum Annual Purchase Commitment ($4.2M) for each remaining Contract Year. An associate would flag this as a contingent risk to Stivor. The agreement does not show that any merger has been signed or is pending, that a Change of Control is coming, or that consent has not been obtained. The September 8, 2026 merger with Ostrander and the later amendment that is silent on consent appear only in the other document. Without them, there is only a risky clause, not the actual problem that a pending merger will trigger termination and an accelerated shortfall payment."
+              },
+              "amendment_no_1_supply_agreement.md": {
+                "findable": false,
+                "evidence": "B. On September 8, 2026, Purchaser entered into an Agreement and Plan of Merger with Ostrander Pharma Group, Inc.",
+                "reason": "The amendment shows that Stivor has a pending merger with Ostrander. It also shows that the amendment does not grant any change-of-control or assignment consent and never mentions Section 16.2. What it does not show is that the Supply Agreement treats a Change of Control as an assignment needing Supplier's prior written consent. It also does not show the Supplier's termination right or the accelerated Shortfall Payment tied to the Minimum Annual Purchase Commitment. Those terms are in the underlying Agreement, which is not provided here. An associate reading only this amendment could see a merger and wonder about change-of-control provisions, but could not confirm that a consent requirement exists or that missing consent would hurt the client."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 2.2: \"At the end of the Initial Term, this Agreement shall renew automatically for successive three-year Renewal Terms (each, a \"Renewal Term\"), unless a Party gives notice of non-renewal under Section 2.3.\" Section 4.2: \"In each Contract Year during the Term, including each Contract Year in any Renewal Term, Purchaser shall purchase Product with an aggregate invoice value of at least $4.2 million per Contract Year.\" Term sheet Section 3: \"the agreement will renew automatically for successive one-year renewal terms.\"",
+            "reason": "The problem is present and still actionable for Stivor.\n\n1. **The executed term departs from the deal.** The term sheet agreed one-year renewals. The signed agreement provides three-year renewals.\n\n2. **The term sheet cannot be relied on.** It is non-binding, and Section 20.2 supersedes all prior understandings. Amendment No. 1 left Section 2.2 unchanged. The three-year lock-in therefore controls.\n\n3. **Stivor carries the cost.** As Purchaser, Stivor bears the $4.2M per year minimum commitment for each renewal year. That is about $12.6M per Renewal Term.\n\n4. **The risk is live, not historical.**\n   - Section 2.3 requires notice in the 30-day window ending 180 days before expiration. With expiration on Feb 28, 2027, that window is roughly Aug 2 to Sept 1, 2026.\n   - Stivor's non-renewal letter is dated Oct 14, 2026, outside that window. Under Section 2.3 it is likely ineffective.\n   - The agreement would then renew on March 1, 2027 for three years.\n\n5. **The pending merger magnifies the exposure.** Stivor signed a merger agreement with Ostrander on Sept 8, 2026. Under Section 16.2, a Shortfall Payment would cover every remaining Contract Year of the then-current Term. A three-year Renewal Term would greatly increase that payment.\n\n6. **Stivor has not accepted the result.** Nothing in the folder shows acceptance. Stivor's letter asserts the notice is timely and refuses any renewal. The renewal has not yet taken effect, so Stivor can still negotiate a written waiver or amendment with Vevail before March 1, 2027.",
+            "alone": {
+              "stivor_vevail_supply_agreement.md": {
+                "findable": false,
+                "evidence": "Section 2.2: \"At the end of the Initial Term, this Agreement shall renew automatically for successive three-year Renewal Terms...\"; Section 4.2: \"In each Contract Year during the Term, including each Contract Year in any Renewal Term, Purchaser shall purchase Product with an aggregate invoice value of at least $4.2 million per Contract Year.\"",
+                "reason": "Read alone, the agreement shows that it renews automatically for three-year terms, that the $4.2 million annual minimum applies in every Renewal Term, and that the non-renewal window is narrow (Section 2.3). An associate could see that this is an onerous commitment for Stivor. It could also be flagged that the window to stop the first renewal (roughly August 3 to September 2, 2026) appears to have closed by today. However, the issue described is that these terms depart from the deal: the term sheet agreed only one-year renewals, and the entire-agreement clause (Section 20.2) wiped out that bargain. Nothing in this document shows that one-year renewals were ever agreed. On its face, the three-year renewal looks like a negotiated term, not a drafting error or a deviation. The fact that turns it into the problem described (the term sheet's one-year renewal) is only in the other document."
+              },
+              "api_supply_term_sheet_2022.md": {
+                "findable": false,
+                "evidence": "Renewal: After the initial term, the agreement will renew automatically for successive one-year renewal terms.",
+                "reason": "The term sheet by itself shows only the deal the parties first agreed: automatic one-year renewal terms, non-renewal possible by notice, and a $4.2 million minimum purchase per Contract Year (Section 5). It is also expressly non-binding on these points (Section 14). Nothing in it shows three-year renewal terms, a minimum commitment that runs through Renewal Terms, or an entire-agreement clause that supersedes the term sheet. Those facts are in the Definitive Agreement (D1), which is not provided. An associate reading only this term sheet would see a fairly client-friendly one-year renewal and would have no reason to spot the three-year lock-in or the harm to Stivor."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 2.3: \"Either Party may prevent the automatic renewal of this Agreement by giving the other Party written notice of non-renewal during the 30-day period ending 180 days before expiration of the then-current term. A notice of non-renewal is effective only if given within that period and in accordance with Section 20.4.\" Read with the October 14, 2026 letter: \"Stivor gives Vevail Fine Chemicals, LLC (\"Vevail\") written notice of non-renewal... Stivor considers this notice timely and effective to prevent automatic renewal of the Agreement under Section 2.2.\"",
+            "reason": "The problem is present and still actionable for Stivor. Under Section 2.1 the Initial Term runs four years from March 1, 2023, so it expires February 28, 2027. Counting 180 days back from that date gives September 1, 2026. The notice window under Section 2.3 is therefore August 3 to September 1, 2026. Stivor's notice is dated October 14, 2026, about six weeks after the window closed. Section 2.3 says a notice is effective only if given within that period. On the documents, the Agreement will renew automatically on March 1, 2027 for a three-year Renewal Term (Section 2.2). Section 4.2 then binds Stivor to the $4.2 million Minimum Annual Purchase Commitment for each of those Contract Years. Nothing in the folder cures this. Amendment No. 1 did not change Sections 2.2 or 2.3. Vevail has not countersigned the acknowledgment or agreed to the non-renewal, and Section 20.5 requires any waiver to be in writing. Stivor has not accepted the renewal: its letter asserts the notice is timely and refuses consent to any renewal. The expiry is still months away, so Stivor can still act, for example by seeking Vevail's written agreement to non-renewal or reconsidering its position. This matters more given the pending Ostrander merger and the Change of Control exposure under Section 16.2.",
+            "alone": {
+              "stivor_vevail_supply_agreement.md": {
+                "findable": false,
+                "evidence": "Either Party may prevent the automatic renewal of this Agreement by giving the other Party written notice of non-renewal during the 30-day period ending 180 days before expiration of the then-current term. A notice of non-renewal is effective only if given within that period and in accordance with Section 20.4.",
+                "reason": "The supply agreement alone sets the timing rules. Under Section 2.1 the Initial Term runs from March 1, 2023 through February 28, 2027. Under Section 2.3, together with the three-year Renewal Term in Section 2.2, non-renewal notice may be given only in a narrow window of roughly August 3 to September 1, 2026, and a notice outside that window is ineffective. An associate could therefore see the risk of an auto-renewal that locks Stivor into the $4.2M annual minimum. The agreement does not show that Stivor actually missed the window. The fact that Stivor's notice was dated October 14, 2026 and claimed to be timely comes only from the separate letter. Without it, nothing here shows that notice was given late or not at all, so the problem cannot be identified from this document alone."
+              },
+              "stivor_letter_to_vevail_2026-10-14.md": {
+                "findable": false,
+                "evidence": "Under Sections 2.2 and 2.3 of the Agreement, Stivor gives Vevail Fine Chemicals, LLC (\"Vevail\") written notice of non-renewal of the Agreement. ... Stivor considers this notice timely and effective to prevent automatic renewal of the Agreement under Section 2.2.",
+                "reason": "The letter shows its own date (October 14, 2026) and the Initial Term expiry (February 28, 2027). It also shows that Stivor treats the notice as timely and is relying on it to prevent automatic renewal. It does not state the notice window in Section 2.3, which is the 30-day period ending 180 days before expiration. It also does not give the length of a Renewal Term. Reading the letter alone, an associate cannot tell whether a notice given about four and a half months before expiration is late. Seeing that problem requires the notice-period terms of the Supply Agreement, which is a document not provided."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Schedule §1.4: \"'Supply Failure' means any late or short delivery of Product against a Firm Purchase Order.\" Schedule §4.3: \"The total Service Credits for any Measurement Month shall not exceed five percent (5%) of the Monthly Invoice Amount for that month. Service Credits are Purchaser's sole and exclusive remedy for any Supply Failure.\" Agreement §1.18 instead defines Supply Failure as a failure \"to deliver at least 90% of the quantity of Product ordered under a Firm Purchase Order within thirty (30) days after the applicable Delivery Date.\" Agreement §6.5 grants cover and termination rights \"in addition to its other rights and remedies.\" Agreement §20.3 ranks documents: \"Amendments, then Service Level Schedule, then Supply Agreement body.\"",
+            "reason": "The same defined term means two different things in the two documents. The Schedule's version is broad enough to cover every event that counts as a Supply Failure under the Agreement. The Schedule also makes capped Service Credits the sole and exclusive remedy. Under §20.3 the Schedule prevails over the Agreement body when they conflict. That gives Vevail a strong argument that Stivor's cover-cost reimbursement under §6.5(a) and its termination right under §6.5(b) are displaced, leaving at most a 5% monthly credit. Amendment No. 1 did not change any of these provisions. The issue is still actionable. Firm Purchase Orders remain open through February 2027, including PO 4500-0187 and PO 4500-0193. Stivor could need cover rights for any serious shortfall before the Agreement expires. Nothing in the folder shows Stivor has accepted this result.",
+            "alone": {
+              "service_level_schedule.md": {
+                "findable": false,
+                "evidence": "\"Supply Failure\" means any late or short delivery of Product against a Firm Purchase Order. ... Service Credits are Purchaser's sole and exclusive remedy for any Supply Failure.",
+                "reason": "On its own, this Schedule shows a broad 'Supply Failure' definition (Section 1.4) and makes Service Credits, capped at 5% of the monthly invoice, the sole and exclusive remedy for any Supply Failure (Section 4.3). A careful associate would see that this is an unfavourable remedy limit for Stivor. The described problem, though, is an inconsistency between defined terms, and the Schedule does not show any of its other parts. It does not show that the Agreement defines 'Supply Failure' more narrowly (the 90% within 30 days test in Section 1.18). It does not show that the Agreement gives Stivor cover-at-Supplier's-cost and termination rights tied to that definition (Section 6.5). And it does not show that Section 20.3 of the Agreement ranks the Schedule above the Agreement body. Section 1.1 even suggests defined terms come from the Agreement, so the clash only appears when the Agreement is read. Without D1, you cannot tell that this clause conflicts with the Agreement, controls over it, and removes Stivor's cover and termination rights."
+              },
+              "stivor_vevail_supply_agreement.md": {
+                "findable": false,
+                "evidence": "20.3 Order of Precedence. If there is a conflict among the documents comprising this Agreement, they shall govern in the following order: Amendments, then Service Level Schedule, then Supply Agreement body, then Data Processing Addendum.",
+                "reason": "This document alone shows the narrow 'Supply Failure' definition (Section 1.18), the cover and termination remedies (Section 6.5), and that the Service Level Schedule ranks above the Agreement body (Section 20.3). An associate could see that a conflicting Service Level Schedule would override the body. This document does not show that the Service Level Schedule actually redefines 'Supply Failure' more broadly. It also does not show that the Schedule makes Service Credits, capped at 5%, the sole and exclusive remedy. Section 6.5 says its remedies are 'in addition to its other rights and remedies', so nothing here cuts down Stivor's cover or termination rights. The harm comes from the content of the other document."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "DPA Section 7.2: \"Purchaser shall indemnify, defend and hold harmless Supplier and its Affiliates, and their officers, directors and employees, from and against any and all claims, losses, damages, fines, penalties, costs and expenses (including reasonable attorneys' fees) arising out of or relating to the Shared Personal Data, subject to the limitations of liability in Section 14 of the Agreement.\" Supply Agreement Section 14.3: \"Sections 14.1 and 14.2 do not apply to: (a) a Party's indemnification obligations under this Agreement or any addendum...\"",
+            "reason": "The indemnity runs one way only, from Stivor (Purchaser) to Vevail. It covers any loss \"arising out of or relating to\" the Shared Personal Data. It has no fault or breach qualifier, so it reaches losses caused by Vevail's own processing, security incidents and sub-processors. This is broader than the fault-based mutual indemnities in SA Sections 13.1 and 13.2 and the mutual indemnities the term sheet contemplated. The reference to \"the limitations of liability in Section 14\" gives Stivor no real protection. Section 14.3(a) expressly removes indemnification obligations under \"any addendum\" from both the cap and the consequential-damages exclusion. The order-of-precedence clause does not help, because there is no conflict to resolve: Section 14 itself excludes indemnities. The exposure remains actionable. DPA Sections 7 and 8.2 and SA Sections 13, 14 and 15.4 survive expiration. Vevail may keep Shared Personal Data after February 28, 2027 under DPA Sections 6.2 and 6.3. Stivor's own October 2026 letter contemplates continued forwarding of adverse-event information. So Stivor faces continuing uncapped exposure for Vevail's data-protection failures, and should raise it in the wind-down discussions or seek an amendment.",
+            "alone": {
+              "data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "Purchaser shall indemnify, defend and hold harmless Supplier and its Affiliates, and their officers, directors and employees, from and against any and all claims, losses, damages, fines, penalties, costs and expenses (including reasonable attorneys' fees) arising out of or relating to the Shared Personal Data, subject to the limitations of liability in Section 14 of the Agreement.",
+                "reason": "On its own, the DPA shows that Section 7.2 is a one-way indemnity from Stivor that is not tied to Stivor's own breach. It would therefore reach losses caused by Vevail's processing, which an associate could flag as unfavorable. The DPA does not show that the indemnity is uncapped. It expressly makes the indemnity subject to the Section 14 limitations of liability, so read alone it appears capped. Finding that the cap and the consequential-damages exclusion do not apply to indemnities under any addendum requires Section 14.3 of the Supply Agreement, which is not provided. The central harm, uncapped exposure, cannot be seen from this document alone."
+              },
+              "stivor_vevail_supply_agreement.md": {
+                "findable": false,
+                "evidence": "14.3 Exceptions. Sections 14.1 and 14.2 do not apply to: (a) a Party's indemnification obligations under this Agreement or any addendum;",
+                "reason": "Section 14.3(a) in the supply agreement removes the cap and the consequential-damages exclusion for indemnities in 'any addendum,' and Section 1.8 shows that a Data Processing Addendum covers adverse-event and product-complaint data. The supply agreement's own indemnities (Section 13) are mutual and fault-based. They do not make Purchaser alone indemnify Supplier for losses caused by Supplier's own processing. The one-sided, non-fault-based DPA indemnity, and its 'subject to Section 14' wording that seems to cap it but does not, exist only in the DPA's Section 7.2, which was not provided. From this document alone, an associate could see that addendum indemnities are uncapped. They could not see that a harmful, one-sided indemnity against Stivor exists."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": false,
+            "evidence": "Section 16.1: \"Purchaser shall not assign or otherwise transfer this Agreement, or any of its rights or obligations under it, whether voluntarily, by operation of law or otherwise, without Supplier's prior written consent.\" Section 16.4: \"This Agreement binds and benefits the Parties and their respective successors and assigns.\" Term sheet Section 11: \"Neither party may assign the Definitive Agreement without the other's consent, except to a non-competitor successor.\"",
+            "reason": "findable from stivor_vevail_supply_agreement.md alone, so it does not need two documents",
+            "alone": {
+              "stivor_vevail_supply_agreement.md": {
+                "findable": true,
+                "evidence": "16.1 Assignment by Purchaser. Purchaser shall not assign or otherwise transfer this Agreement, or any of its rights or obligations under it, whether voluntarily, by operation of law or otherwise, without Supplier's prior written consent. … 16.4 Successors. This Agreement binds and benefits the Parties and their respective successors and assigns.",
+                "reason": "Read alone, the agreement shows that Section 16 restricts only Purchaser's assignment. Section 16.2 also treats a change of control of Purchaser as an assignment and attaches a heavy Shortfall Payment to it. Nothing restricts Supplier from assigning or undergoing a change of control, and Section 16.4 expressly contemplates assigns. A careful associate would see this one-sided structure and know that Delaware law lets contract rights be freely assigned unless the contract restricts them. That associate could therefore spot, from this document alone, that Vevail could transfer the agreement to a Stivor competitor or to a manufacturer Stivor has not qualified, which hurts Stivor. The other document is needed only to show that the parties had agreed a mutual restriction with a non-competitor-successor exception in the term sheet, and that the Section 20.2 integration clause wiped out that negotiated protection. That fact makes the problem worse and supports a drafting-error argument, but it is not needed to see the problem."
+              },
+              "api_supply_term_sheet_2022.md": {
+                "findable": false,
+                "evidence": "Neither party may assign the Definitive Agreement without the other's consent, except to a non-competitor successor.",
+                "reason": "This term sheet shows only that the parties planned a mutual assignment restriction. It also says that restriction is non-binding (Section 14 binds only Sections 13–16). It does not show what the definitive supply agreement actually says. It therefore cannot show that the agreement restricts only the Purchaser, binds successors and assigns, or contains an integration clause that overrides the term sheet. The problem is that Vevail is left free to assign while Stivor is not. Seeing that requires the definitive agreement, which was not provided."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

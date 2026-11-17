@@ -1,0 +1,230 @@
+{
+  "matter_id": "s46-m0001",
+  "summary": "The firm represents Brugev Orthopedic Distribution, LLC, a regional distributor of orthopedic implants, in its exclusive distribution relationship with Tesaisk Medical Technologies, Inc., which makes knee and hip arthroplasty systems. The Distribution Agreement took effect on September 1, 2025. It is governed by Delaware law, with a Delaware forum. Tesaisk processes patient implant-tracking and surgeon data for Brugev under a Data Processing Addendum dated October 15, 2025. The Agreement's precedence clause makes that Addendum control on matters of personal-data processing. The folder also holds the non-binding term sheet that set the agreed commercial terms. It also holds Brugev's March 20, 2026 letter objecting to a Tesaisk price increase. That increase was noticed by letter dated February 9, 2026 and delivered by courier on February 11, 2026. Kickoff meeting notes and a certificate of insurance complete the folder. Five problems are planted. The Addendum switches to New York law and forum, and through the precedence clause that choice controls. The Agreement's non-compete is far broader than the term sheet. The client's product-handling indemnity is uncapped and reaches surgical use. The Addendum pulls Tesaisk's data-protection liability back under the cap. Brugev's price objection missed the 30-day window.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Brugev Orthopedic Distribution, LLC",
+      "role": "Distributor (firm's client); exclusive distributor of Tesaisk implant systems in the Territory and controller of patient implant-tracking data"
+    },
+    {
+      "id": "P2",
+      "name": "Tesaisk Medical Technologies, Inc.",
+      "role": "Manufacturer and supplier of knee and hip arthroplasty implant systems; processor of Brugev's personal data under the DPA"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "September 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Territory",
+      "value": "Pennsylvania, New Jersey, Delaware and Maryland",
+      "doc": "D1",
+      "section": "Section 1.14"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement governing law",
+      "value": "Laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 20.1"
+    },
+    {
+      "id": "F4",
+      "key": "Distribution Agreement forum",
+      "value": "State or federal courts located in Wilmington, Delaware, exclusively",
+      "doc": "D1",
+      "section": "Section 20.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "DPA (as to personal-data processing and DPA claims), then Distribution Agreement, then Exhibits",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F6",
+      "key": "Distribution Agreement liability cap",
+      "value": "Amounts paid or payable under the Agreement in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F7",
+      "key": "Liability cap carve-out for data protection",
+      "value": "Breach of a party's obligations under the DPA is excluded from the cap",
+      "doc": "D1",
+      "section": "Section 12.3(b)"
+    },
+    {
+      "id": "F8",
+      "key": "Price adjustment objection window",
+      "value": "30 days after Distributor's receipt of the price adjustment notice",
+      "doc": "D1",
+      "section": "Section 5.4"
+    },
+    {
+      "id": "F9",
+      "key": "Agreed Distributor non-compete scope",
+      "value": "Competing knee and hip arthroplasty systems, within the Territory, during the term only",
+      "doc": "D3",
+      "section": "Section 4 (Exclusivity)"
+    },
+    {
+      "id": "F10",
+      "key": "DPA Effective Date",
+      "value": "October 15, 2025",
+      "doc": "D2",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "brugev_tesaisk_distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "brugev_tesaisk_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "brugev_tesaisk_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "brugev_letter_to_tesaisk_2026-03-20.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "kickoff_meeting_notes_2025-09-10.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "brugev_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Two clauses combine to split the governing law and forum. DPA Section 12.1 provides that the DPA, and any dispute arising under it, is governed by New York law and subject to the exclusive jurisdiction of the courts in New York County. The Distribution Agreement selects Delaware law and exclusive Wilmington courts (Sections 20.1–20.2). Agreement Section 2.3 then makes the DPA prevail over the Agreement for the processing of Personal Data and any claim arising under the DPA. So the New York clause is not overridden: it controls. A data-breach or recall-data dispute would therefore be heard in New York, under New York law. Related contract claims would stay in Delaware. Brugev faces parallel proceedings, inconsistent results and the loss of its bargained-for Delaware forum on the claims most likely to involve patient data.",
+      "doc": "D2",
+      "section": "Section 12.1",
+      "detect_terms": [
+        "laws of the State of New York",
+        "courts located in New York County"
+      ],
+      "expected_finding": "Because Agreement Section 2.3 makes the DPA prevail on personal-data matters, the DPA's New York law and exclusive New York County forum clause controls DPA disputes and splits them from the Delaware law and forum of Agreement Sections 20.1–20.2. The DPA should be amended to adopt the Agreement's Delaware governing law and forum, or Section 2.3 should exclude governing law and forum from the DPA's precedence.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ],
+      "doc2": "D1",
+      "section2": "Section 2.3",
+      "detect_terms2": [
+        "the DPA shall prevail",
+        "processing of Personal Data"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Agreement Section 3.3 bars Brugev from distributing any orthopedic implant or instrument product from another manufacturer anywhere in North America. The bar runs during the term and for 24 months afterwards. The term sheet (Section 4) records the agreed restriction: only competing knee and hip arthroplasty systems, only within the four-state Territory, and only during the term. The Agreement's appointment is limited to that Territory (Section 1.14), so a continent-wide, all-implant, post-term ban goes far beyond what Tesaisk needs to protect. It would block Brugev's existing spine, trauma and extremity product lines, as well as any growth outside the Territory. A post-term restraint of this breadth also risks being found unreasonable under Delaware law. Brugev should not rely on that outcome: the clause is enforceable as written until it is challenged.",
+      "doc": "D1",
+      "section": "Section 3.3",
+      "detect_terms": [
+        "any orthopedic implant",
+        "anywhere in North America"
+      ],
+      "expected_finding": "Agreement Section 3.3's non-compete (all orthopedic implants and instruments, all of North America, plus 24 months post-term) exceeds the deal recorded in term sheet Section 4. It should be narrowed to competing knee and hip arthroplasty systems within the Territory during the term only.",
+      "contradicts": "F9",
+      "doc2": "D3",
+      "section2": "Section 4 (Exclusivity)",
+      "detect_terms2": [
+        "competing knee and hip arthroplasty systems"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Three provisions of the Agreement combine. Section 11.2 requires Brugev to indemnify Tesaisk against all Claims arising from Brugev's 'Handling' of Products, including Claims that also allege a defect in the Products. Section 1.8 defines 'Handling' to include storage, transport, promotion, sale and the surgical use of Products. Section 12.3(a) removes Brugev's obligations under Section 11.2 from the liability cap, but leaves Tesaisk's own product-defect indemnity under Section 11.1 subject to the cap. Every patient product-liability suit over a failed knee or hip implant arises from surgical use, so it falls within Brugev's indemnity. The result is that Brugev carries uncapped liability for implant defects it neither designed nor made, while Tesaisk's matching obligation is capped.",
+      "doc": "D1",
+      "section": "Sections 1.8, 11.2 and 12.3(a)",
+      "detect_terms": [
+        "surgical use of Products",
+        "Distributor's obligations under Section 11.2"
+      ],
+      "expected_finding": "Read with the Section 1.8 definition of Handling, Section 11.2 makes Brugev indemnify Tesaisk for implant product-liability claims, including defect claims, and Section 12.3(a) leaves that indemnity uncapped while Tesaisk's Section 11.1 defect indemnity stays capped. Surgical use and defect claims should be removed from Brugev's indemnity, and the cap treatment should be made symmetrical or the indemnity capped.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Agreement Section 12.3(b) excludes from the Section 12.2 cap any breach of a party's obligations under the DPA. Under the DPA, Tesaisk is the processor of Brugev's patient implant-tracking and surgeon data, so this carve-out mainly protects Brugev. The later-signed DPA (dated October 15, 2025) states in Section 9.1 that each party's total liability arising out of or relating to the DPA is subject to the limitation in Agreement Section 12.2. Agreement Section 2.3 gives the DPA precedence for claims arising under it, so DPA Section 9.1 overrides the carve-out. Tesaisk's liability for a data breach involving Brugev's patient data is therefore capped at 12 months of fees. Breach notification, regulatory and hospital-customer losses could easily exceed that amount.",
+      "doc": "D2",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "subject to the limitation set out in Section 12.2"
+      ],
+      "expected_finding": "Through the Section 2.3 precedence clause, DPA Section 9.1 subjects DPA liability to the Agreement Section 12.2 cap and so overrides the Section 12.3(b) carve-out. Tesaisk's liability for breaches involving Brugev's patient data is capped at 12 months of fees, and Section 9.1 should be deleted or conformed to preserve the uncapped carve-out.",
+      "contradicts": "F7",
+      "doc2": "D1",
+      "section2": "Section 12.3(b)",
+      "detect_terms2": [
+        "obligations under the DPA"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Brugev's letter of March 20, 2026 objects to a 9% list-price increase. It recites that Tesaisk's price adjustment notice was dated February 9, 2026 and delivered by courier to Brugev's Wilmington office on February 11, 2026. Agreement Section 5.4 lets Brugev object only within 30 days after receipt of the notice. Section 22.2 deems a courier notice received on the day of delivery. The window therefore closed on March 13, 2026, a week before the letter. Under Section 5.4, absent a timely objection the increase takes effect 60 days after receipt, on April 12, 2026. Brugev also loses the negotiation and termination rights that a timely objection triggers. The March 20, 2026 letter shows that Brugev disputes the increase and has not accepted it, so the point can still be acted on.",
+      "doc": "D4",
+      "section": "Paragraphs 1–2",
+      "detect_terms": [
+        "delivered by courier",
+        "February 11, 2026"
+      ],
+      "expected_finding": "Under Agreement Sections 5.4 and 22.2, the 30-day objection window ran from courier delivery on February 11, 2026 and closed on March 13, 2026. Brugev's March 20, 2026 objection is therefore untimely, and the 9% increase will take effect on April 12, 2026 unless Tesaisk agrees to a written waiver or a negotiated amendment, which Brugev should seek promptly.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 5.4",
+      "detect_terms2": [
+        "within thirty (30) days after receipt"
+      ]
+    }
+  ]
+}

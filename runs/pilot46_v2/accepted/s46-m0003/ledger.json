@@ -1,0 +1,242 @@
+{
+  "matter_id": "s46-m0003",
+  "summary": "Pounirt Veterinary Laboratories, Inc. runs four veterinary reference laboratories. It buys hematology and chemistry reagent cartridges and analyzer consumables from Reigein Diagnostics Corp. under a Supply Agreement effective March 1, 2024, an Order Form, a Data Processing Addendum and an October 5, 2026 Side Letter. The Side Letter records that Pounirt's parent, Pounirt Holdings, Inc., signed an Agreement and Plan of Merger with Kestrelbay Animal Health Partners, L.P. on August 14, 2026, and grants volume relief during integration. The partner wants a memo before closing. The folder hides five problems. First, a change-of-control consent right is triggered by the merger and has not been addressed. Second, the controlling Order Form chooses Minnesota law and forum against the Supply Agreement's Delaware choice. Third, the non-renewal notice was delivered after the 180-day window, and Reigein disputes its timeliness. Fourth, the Order Form's broader 'Customer Sites' definition expands exclusivity to every present and future Affiliate facility. Fifth, the DPA's customer data indemnity escapes the liability cap through the Supply Agreement's indemnity carve-out.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Pounirt Veterinary Laboratories, Inc.",
+      "role": "Customer (firm's client); operator of veterinary reference laboratories"
+    },
+    {
+      "id": "P2",
+      "name": "Reigein Diagnostics Corp.",
+      "role": "Supplier of veterinary diagnostic reagent cartridges and analyzer consumables; data processor"
+    },
+    {
+      "id": "P3",
+      "name": "Pounirt Holdings, Inc.",
+      "role": "Customer's parent company; party to the pending merger"
+    },
+    {
+      "id": "P4",
+      "name": "Kestrelbay Animal Health Partners, L.P.",
+      "role": "Acquirer of Pounirt Holdings, Inc. under the August 14, 2026 merger agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement governing law",
+      "value": "laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 15.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement dispute forum",
+      "value": "state or federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "Section 15.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "Order Form, then Supply Agreement, then Data Processing Addendum",
+      "doc": "D1",
+      "section": "Section 16.4"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement 'Customer Sites' meaning",
+      "value": "the four Customer laboratory facilities listed in Exhibit C",
+      "doc": "D1",
+      "section": "Section 1.5"
+    },
+    {
+      "id": "F7",
+      "key": "Initial Term expiration date",
+      "value": "February 28, 2027",
+      "doc": "D3",
+      "section": "Section 1"
+    },
+    {
+      "id": "F8",
+      "key": "Non-renewal notice period",
+      "value": "at least 180 days before expiration of the then-current term",
+      "doc": "D3",
+      "section": "Section 1"
+    },
+    {
+      "id": "F9",
+      "key": "Customer Non-Renewal Notice delivery date",
+      "value": "September 21, 2026",
+      "doc": "D2",
+      "section": "Section 2"
+    },
+    {
+      "id": "F10",
+      "key": "Merger Agreement signing date",
+      "value": "August 14, 2026",
+      "doc": "D2",
+      "section": "Recital B"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "pounirt_reigein_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "side_letter_2026-10-05.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "order_form_reagents_consumables.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "reigein_press_release_analyzer_launch.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "reigein_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Supply Agreement Section 14.2 provides two things. First, any Change of Control of Customer or of its ultimate parent is deemed an assignment requiring Supplier's prior written consent. Second, a Change of Control without that consent is a material breach that lets Supplier terminate and accelerate the minimum-purchase shortfall. Read alone, Section 14.2 is standard drafting. Recital B of the Side Letter (D2), dated October 5, 2026, records that Pounirt Holdings, Inc. signed an Agreement and Plan of Merger with Kestrelbay Animal Health Partners, L.P. on August 14, 2026. That merger is a Change of Control of Customer's ultimate parent. The Side Letter gives integration-period volume relief only. It expressly preserves all other rights and does not grant consent. Supplier's consent has therefore been neither obtained nor addressed before closing. Delaware courts enforce change-of-control and anti-assignment provisions as written.",
+      "doc": "D1",
+      "section": "Section 14.2",
+      "detect_terms": [
+        "deemed an assignment",
+        "Change of Control"
+      ],
+      "expected_finding": "The Kestrelbay merger recorded in the Side Letter is a Change of Control under Supply Agreement Section 14.2, so Pounirt must obtain Reigein's prior written consent before closing; otherwise Reigein may treat closing as a material breach, terminate and accelerate the shortfall payment.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Recital B",
+      "detect_terms2": [
+        "Agreement and Plan of Merger",
+        "Kestrelbay"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Order Form Section 9 provides that the Order Form, all Purchase Orders and all disputes relating to Products supplied under it are governed by the laws of the State of Minnesota. It also sets exclusive venue in the state and federal courts in Hennepin County, Minnesota. The Supply Agreement (D1, Sections 15.1 and 15.2) chooses Delaware law and the Wilmington, Delaware courts. Supply Agreement Section 16.4 ranks the Order Form ahead of the Supply Agreement. The Minnesota choice therefore controls rather than being cured. As a result, most product disputes move to Reigein's home forum, and the matter is split between two legal regimes and forums.",
+      "doc": "D3",
+      "section": "Section 9",
+      "detect_terms": [
+        "laws of the State of Minnesota",
+        "Hennepin County"
+      ],
+      "expected_finding": "Because Supply Agreement Section 16.4 gives the Order Form precedence, its Minnesota governing law and Hennepin County venue override the agreed Delaware law and Wilmington forum for product disputes, so the Order Form should be amended to conform to Delaware.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under Order Form Section 1, the Initial Term expires February 28, 2027. The term renews automatically for successive three-year terms unless a party gives non-renewal notice at least 180 days before expiration. That makes September 1, 2026 the last day for notice. Section 2 of the Side Letter (D2, dated October 5, 2026) records that Customer delivered its Non-Renewal Notice on September 21, 2026, which is 20 days late. The same section records that Supplier asserts the notice was untimely and that the parties reserve all rights. Read together, the documents show the term will renew through February 28, 2030 unless the point is resolved. The reservation shows that Pounirt has not accepted the renewal.",
+      "doc": "D3",
+      "section": "Section 1",
+      "detect_terms": [
+        "at least 180 days",
+        "February 28, 2027"
+      ],
+      "expected_finding": "The non-renewal deadline was September 1, 2026, 180 days before the February 28, 2027 Initial Term expiry, so Pounirt's September 21, 2026 notice recorded in the Side Letter was late and the agreement risks auto-renewing through February 28, 2030; Pounirt, which has reserved its rights, should negotiate a mutual termination or waiver before closing.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Section 2",
+      "detect_terms2": [
+        "September 21, 2026",
+        "reserve all rights"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Supply Agreement Section 1.5 defines 'Customer Sites' as the four laboratory facilities listed in Exhibit C. Order Form Section 3 sets Customer's exclusivity obligation: it must source 100% of its hematology and chemistry reagent requirements for the Customer Sites from Supplier. Section 3 also redefines 'Customer Sites' to mean all laboratory facilities owned or operated by Customer or any Affiliate, now or in the future. Supply Agreement Section 16.4 makes the Order Form prevail, so the broader definition controls the exclusivity obligation. The obligation therefore reaches every present and future Affiliate laboratory, including the facilities that would become Affiliates on the Kestrelbay merger recorded in the Side Letter.",
+      "doc": "D3",
+      "section": "Section 3",
+      "detect_terms": [
+        "owned or operated by Customer or any Affiliate",
+        "now or in the future"
+      ],
+      "expected_finding": "The Order Form's broader 'Customer Sites' definition prevails under Supply Agreement Section 16.4 and expands Pounirt's 100% exclusivity obligation from the four Exhibit C laboratories to all present and future Affiliate facilities, so the Order Form definition should be conformed to the Exhibit C list.",
+      "contradicts": "F6",
+      "doc2": "D1",
+      "section2": "Section 1.5",
+      "detect_terms2": [
+        "listed in Exhibit C"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Supply Agreement Section 12.1 caps each party's liability at fees paid or payable in the prior 12 months. Section 12.3 provides that the cap does not apply to a Party's indemnification obligations under this Agreement. Section 1.1 defines 'Agreement' to include the Order Form and the Data Processing Addendum. DPA Section 8.2 requires Customer to indemnify Supplier for all Losses arising from the Customer Data or Customer's processing instructions, including third-party claims and regulatory fines. That duty applies regardless of whether the Losses also arise in part from Processor's acts. The DPA states no cap of its own. Read together, the provisions leave Pounirt with unlimited liability for data losses that may be partly caused by Reigein. Delaware enforces indemnities for the indemnitee's own fault when the language is clear, as it is here.",
+      "doc": "D1",
+      "section": "Section 12.3",
+      "detect_terms": [
+        "shall not apply to a Party's indemnification obligations"
+      ],
+      "expected_finding": "Because Supply Agreement Section 12.3 excludes all indemnification obligations under the Agreement, which includes the DPA, from the Section 12.1 cap, Pounirt's DPA Section 8.2 indemnity for Customer Data losses, including losses partly caused by Reigein, is unlimited and should be capped or narrowed to Pounirt's own fault.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Section 8.2",
+      "detect_terms2": [
+        "arising from the Customer Data",
+        "in part from Processor's acts"
+      ]
+    }
+  ]
+}

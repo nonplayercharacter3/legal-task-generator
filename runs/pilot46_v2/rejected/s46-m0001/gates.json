@@ -1,0 +1,38 @@
+{
+  "matter_id": "s46-m0001",
+  "accepted": false,
+  "failed_gate": "consistency",
+  "reason": "mismatches: [{\"fact\": \"F4\", \"key\": \"Distribution Agreement forum\", \"filename\": \"brugev_tesaisk_distribution_agreement.md\", \"ledger\": \"State or federal courts located in Wilmington, Delaware, exclusively\", \"document\": \"the state or federal courts located in Wilmington, Delaware\"}]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": false,
+      "details": {
+        "mismatches": [
+          {
+            "fact": "F4",
+            "key": "Distribution Agreement forum",
+            "filename": "brugev_tesaisk_distribution_agreement.md",
+            "ledger": "State or federal courts located in Wilmington, Delaware, exclusively",
+            "document": "the state or federal courts located in Wilmington, Delaware"
+          }
+        ],
+        "reworded": 5,
+        "checked": 60
+      }
+    }
+  ]
+}

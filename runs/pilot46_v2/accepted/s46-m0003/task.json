@@ -1,0 +1,119 @@
+{
+  "task_id": "s46-m0003",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Pounirt Veterinary Laboratories, Inc., which runs veterinary reference laboratories, on its supply agreement with Reigein Diagnostics Corp. Before we advise the client on where it stands, please review all six documents in the folder. Then send me a memo that lists each issue you find. For each one, give its location (document and section), explain why it matters to Pounirt, and recommend a fix. Keep it practical and tied to the client's position.",
+  "documents": [
+    "data_processing_addendum.md",
+    "order_form_reagents_consumables.md",
+    "pounirt_reigein_supply_agreement.md",
+    "reigein_certificate_of_insurance.md",
+    "reigein_press_release_analyzer_launch.md",
+    "side_letter_2026-10-05.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the Kestrelbay merger recorded in the Side Letter is a Change of Control of Pounirt's ultimate parent, so Pounirt needs Reigein's prior written consent before closing and has not obtained it. It locates the issue in Supply Agreement Section 14.2 or Side Letter Recital B, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "prior written consent",
+        "Kestrelbay"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that the Order Form's Minnesota governing law and Hennepin County venue control product disputes in place of the Supply Agreement's Delaware law and Wilmington forum. It locates the issue in Order Form Section 9, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Minnesota",
+        "Hennepin County",
+        "Delaware"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that the non-renewal deadline was September 1, 2026, so Pounirt's September 21, 2026 notice was late and the agreement risks auto-renewing through February 28, 2030. It locates the issue in Order Form Section 1 or Side Letter Section 2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "September 1, 2026",
+        "untimely",
+        "February 28, 2030"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that the Order Form's broader 'Customer Sites' definition controls and expands Pounirt's 100% exclusivity obligation from the four Exhibit C laboratories to all present and future Affiliate facilities. It locates the issue in Order Form Section 3 or Supply Agreement Section 1.5, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Customer Sites",
+        "any Affiliate",
+        "Exhibit C"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that Pounirt's DPA indemnity for Customer Data losses, including losses partly caused by Reigein, is not subject to the liability cap and is therefore unlimited. It locates the issue in Supply Agreement Section 12.3 or DPA Section 8.2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "uncapped",
+        "indemnif",
+        "Customer Data"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Order Form takes precedence over the Supply Agreement where they conflict.",
+      "kind": "fact",
+      "hints": [
+        "order of precedence",
+        "Order Form prevails",
+        "Section 16.4"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is presented as a memo to the supervising partner.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Re:"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is organised as a list of discrete issues. For each issue it gives a location (document and section), an explanation of why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Issue 1",
+        "Location",
+        "Recommendation"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Pounirt's September 21, 2026 non-renewal notice was timely.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the Side Letter grants Reigein's consent to the Kestrelbay merger or change of control.",
+      "kind": "negative",
+      "hints": [
+        "Side Letter consents"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}
