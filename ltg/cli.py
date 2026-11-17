@@ -1,4 +1,4 @@
-"""Command line: `python -m ltg run ...`, `label ...`, `index ...`, `inspect ...` and `export ...`."""
+"""Command line: `python -m ltg run ...`, `batch ...`, `label ...`, `index ...`, `inspect ...` and `export ...`."""
 
 from __future__ import annotations
 
@@ -136,6 +136,10 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--resume", action="store_true", help="keep matters already finished in the output folder; retry errors")
     r.add_argument("--allow-seed-reuse", action="store_true", help="run a --seed another run folder beside --out has already used")
     r.set_defaults(func=cmd_run)
+
+    from .batch import add_parser as add_batch
+
+    add_batch(sub)
 
     x = sub.add_parser("index", help="build or load the decontamination reference index (e.g. LAB) and report it")
     x.add_argument("--config", required=True, help="TOML config with gates.reference_dirs")
