@@ -98,6 +98,28 @@ api_key_env = "SOLVER_API_KEY"      # the key is read from this environment vari
 
 Start with a few matters and read every output before scaling up.
 
+### A whole batch in one command: `ltg batch`
+
+```bash
+nohup caffeinate -i .venv/bin/python -m ltg batch --config configs/pilot_generate_v2.toml --seeds 46-53 \
+  --out-pattern 'runs/pilot{seed}_v2' --author "Sirui She <email>" --export-out runs/export_batch > runs/batch.log 2>&1 &
+```
+
+For each seed it runs `ltg run` (resumed until no matter ends in an error), then `ltg label` with `--label-config`
+(default: `--config`; `--no-label` leaves labels for later), and commits the seed's results by the run-output rule
+(see `CLAUDE.md`): a "Round N" commit with the numbers and every rejection's cause, then a "Labels for seed N" commit.
+At the end it prints the pass-rate spread and, with `--export-out`, exports the batch's folders (unsolved included).
+
+- **Errors:** a try with errors waits and resumes, up to `--max-tries` (12). A Claude usage limit waits until the reset
+  time the error states ("resets 8:40pm"), otherwise `--retry-wait` minutes (30). An NRP refusal (HTTP 403 with a body)
+  stops the batch with exit code 2.
+- **Commits:** to `main` by default (`git pull --ff-only` first, then push). `--branch lm/v2-s500-507` commits to that
+  branch instead, pushes it and opens one PR into `main` (the lab mate's way). `--no-commit` writes files only. Commits
+  take `runs/.git-commit.lock`.
+- **Control:** one batch per checkout (`runs/.batch.lock`); `touch runs/.batch.stop` stops it between steps. Rerunning
+  the same command skips seeds already finished and labels whatever is still pending. A seed another run folder has
+  used is skipped.
+
 ## The gates
 
 Cheap deterministic checks run first and the solver (the most expensive) runs last, so a broken task is dropped as
@@ -187,7 +209,7 @@ ltg/
   splits.py        per-matter split assignment
   orchestrator.py  runs matters through the stages and writes the report
   export.py        accepted tasks to JSONL training data
-  cli.py           `run`, `label` (deferred solver_check), `index` (build the LAB screen), `inspect` and `export`
+  cli.py           `run`, `batch` (batch.py), `label` (deferred solver_check), `index` (build the LAB screen), `inspect` and `export`
 configs/           fake demo, real-endpoint example, Claude pilot, NRP and vLLM solver configs
 scripts/           LAB index check, cloud setup, solver-only reruns, judge leniency check
 deploy/nautilus/   vLLM pod and weight cache for Nautilus
