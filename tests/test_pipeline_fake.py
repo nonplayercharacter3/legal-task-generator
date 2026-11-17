@@ -546,7 +546,8 @@ def test_label_runs_the_deferred_solver_check_retries_errors_and_rejects_leaks(t
     for i in ids[1:]:
         task, g = read_json(run / "accepted" / i / "task.json"), read_json(run / "accepted" / i / "gates.json")
         assert "label_pending" not in task and task["difficulty"][0]["model"] == "solver"
-        assert task["labelled_by"] == {"config": "solver.toml", "models": ["solver"], "probe_without_documents_passed": False}
+        assert task["labelled_by"] == {"config": "solver.toml", "models": ["solver"], "probe_without_documents_passed": False,
+                                       "solver_max_steps": 20}
         assert g["difficulty"] == task["difficulty"] and not g["label_pending"] and g["gates"][-1]["name"] == "solver_check"
         assert not g["gates"][-1]["details"].get("skipped") and (run / "accepted" / i / "solver" / "attempt_3.md").exists()
     rep = read_json(run / "report.json")
@@ -569,6 +570,18 @@ def test_label_runs_the_deferred_solver_check_retries_errors_and_rejects_leaks(t
     rep = read_json(run / "report.json")
     assert rep["accepted"] == 2 and rep["label_pending"] == 0 and rep["gates"]["solver_check"]["failed"] == 1
     assert orchestrator.label_runs(first, [str(run)]) == {"labelled": 0, "leak": 0, "error": 0}  # nothing left
+
+
+def test_label_keeps_the_runs_larger_step_budget(tmp_path, read_json):
+    from ltg.orchestrator import label_runs
+
+    run = tmp_path / "run"
+    Pipeline(load_config(None, {"run": {"out_dir": str(run), "n_matters": 2, "seed": 7},
+                                "gates": {"solver_check": "defer", "solver_max_steps": 40}})).run()
+    assert label_runs(load_config(None, {"gates": {"solver_max_steps": 28}}), [str(run)])["labelled"] >= 1
+    tasks = [read_json(t) for t in (run / "accepted").glob("*/task.json")]
+    assert tasks and all(t["labelled_by"]["solver_max_steps"] == 40 for t in tasks)
+    assert label_runs(load_config(None, {"gates": {"solver_max_steps": 50}}), [str(run)])["labelled"] == 0  # nothing pending
 
 
 def test_deferred_run_then_label_equals_an_inline_run(tmp_path, read_json):
