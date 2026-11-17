@@ -327,19 +327,23 @@ class Pipeline:
 def label_runs(cfg: Config, run_dirs: list[str], config_path: str | None = None) -> dict:
     """`ltg label`: run solver_check on every accepted task with label_pending, `cfg.run.concurrency` at a time, with
     the solver roles and attempts of `cfg` (a solver config). A task that errors stays pending for the next call.
+    The solver's step budget is the larger of `cfg`'s and the one the run was generated with (settings.json): a run
+    whose folders are sized for 40 steps is not labelled with a solver config's 28.
     Appends calls to each run's calls.jsonl and refreshes its report."""
-    pending, clients = [], {}
+    pending, clients, gates_for = [], {}, {}
     for r in map(Path, run_dirs):
         found = [t.parent for t in sorted((r / "accepted").glob("*/task.json")) if _read(t).get("label_pending")]
         if found:
             log = CallLog(path=str(r / "calls.jsonl"))  # appends: the run's own calls stay
             clients[r] = (build_client(cfg, log), log)
+            run_steps = _read(r / "settings.json").get("gates", {}).get("solver_max_steps", 0) if (r / "settings.json").exists() else 0
+            gates_for[r] = replace(cfg.gates, solver_max_steps=max(cfg.gates.solver_max_steps, run_steps))
             pending += [(r, m) for m in found]
 
     def one(item) -> str:
         run, m = item
         try:
-            return label_task(clients[run][0], cfg.gates, m, config_path)
+            return label_task(clients[run][0], gates_for[run], m, config_path)
         except Exception as e:  # stays pending; rerunning `ltg label` retries it
             beat(f"{run.name}/{m.name}", f"label error, still pending: {type(e).__name__}: {e}")
             _write(m / "label_error.txt", traceback.format_exc())
@@ -366,7 +370,8 @@ def label_task(client: ModelClient, g: GatesCfg, m: Path, config_path: str | Non
     res = solve_and_label(client, g, m, task["instruction"], docs, Rubric.from_dict({"criteria": task["rubric"]}), step)
     _take_labels(result, res)
     result.labelled_by = {"config": config_path, "models": [getattr(client, "model_for", lambda r: "")(r) or r for r in g.solver_models],
-                          "probe_without_documents_passed": res.details.get("probe_without_documents_passed")}
+                          "probe_without_documents_passed": res.details.get("probe_without_documents_passed"),
+                          "solver_max_steps": g.solver_max_steps}
     result.gates = [x for x in result.gates if x["name"] != "solver_check"] + [asdict(res)]
     (m / "label_error.txt").unlink(missing_ok=True)
     if not res.passed:
