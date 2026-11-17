@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-17 15:15, autopilot iteration 1.
+Last updated: 2026-11-17 15:30, autopilot iteration 1.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -22,10 +22,12 @@ agent. Full definition of done: PROMPT.md.
 - Handoff package code exists (`scripts/build_handoff.py`, `scripts/handoff_evaluate.py`).
 - kubectl works again (checked 2026-11-17 15:05); no ltg pods or jobs in `ecepxie`.
 - PR #35 (LAB runner can use the vLLM pod) merged; PR #37 (`scripts/autopilot.sh`) merged.
+- PR #38: `ltg label` uses the larger of the label config's and the run's step budget (v2: 40), and records it in
+  `labelled_by.solver_max_steps`. Seed 45 was labelled with 28 (its attempts took 17 actions, so the cap did not bite).
 
 ## Milestones
 - [x] M0 Bootstrap: docs in `docs/autopilot/`, loop script PR #37, label `needs-sirui`, lab-mate issue #36 (old #20 closed)
-- [ ] M1 `ltg batch` command
+- [x] M1 `ltg batch` command: PR #39 (tests in `tests/test_batch.py`, README section); lab mate told on #36
 - [ ] M2 At least 20 v2 tasks, labelled (ours seeds 46-53, lab mate 500-507)
 - [ ] M3 LAB baseline frozen and scored; v2 tasks through LAB's tool
 - [ ] M4 Generator passes EVALUATION.md levels 1-3 (or hardened until it does)
@@ -41,9 +43,11 @@ agent. Full definition of done: PROMPT.md.
   around midnight. Commits each seed to main by itself (`commit_round.py`, git lock `runs/.git-commit.lock`).
 
 ## Next
-1. M1 `ltg batch`: build it in a worktree while the batch runs (code only, fake backend tests, no model calls).
-2. When the batch ends: read every rejection, then M2 step-budget check (label config 28 steps vs v2's 40), then label.
-3. Daytime after labelling: finish the LAB sample in chunks of ~8 (one heavy Opus job at a time).
+1. When the batch ends (wait file set on its PID): read every rejection of seeds 46-53 (false ones become defect fixes
+   by PR), then label them: `ltg batch --config configs/pilot_generate_v2.toml --seeds 46-53` (finished seeds are
+   skipped, pending tasks labelled, label commits go to main). One heavy job at a time: not while generation runs.
+2. After labelling: finish the LAB sample (M3) in chunks of ~8 (inbox.md T46 "Continue 2" says how).
+3. Later batches use `ltg batch`, not the `.inbox/` scripts.
 
 ## Needs Sirui
 - Someone with legal training to read 10 tasks (EVALUATION.md level 1, human check). Not blocking batches.

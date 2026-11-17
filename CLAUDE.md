@@ -4,7 +4,12 @@ Context for any Claude Code session working in this repo (for people, `docs/stag
 English). A person should read `docs/overview.md` first, the high-level picture. Then read this file, then README.md,
 then "Working with other people and sessions" below before you change anything.
 
-## Now (updated 2026-11-08)
+## Now (updated 2026-11-17)
+
+**Autopilot (2026-11-17).** An unattended loop (`scripts/autopilot.sh`, prompt and state in `docs/autopilot/`) now
+plans and runs the work; `docs/autopilot/STATE.md` is the current picture and supersedes `inbox.md`. `ltg batch`
+(PR #39) runs a whole batch in one command; `ltg label` keeps a run's larger step budget (PR #38, v2 uses 40).
+v2 batch seeds 46 to 53 started 2026-11-17; the lab mate's v2 seeds 500 to 507 are issue #36.
 
 **Goal.** Generate long-horizon contract-review tasks (instruction, matter folder, all-pass rubric) that the lab can
 train open models on. The tasks must be sound by construction. The generator is model-neutral: every sound task is

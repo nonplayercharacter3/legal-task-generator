@@ -60,6 +60,7 @@ assignments have passed every check so far, all screened against LAB's text.
 
 - **Running:** the university's hosted Qwen works again since November 5; the Qwen pod on Nautilus is the fallback.
 - **Paused 2026-11-11 (Sirui She):** no new batches after seeds 37 to 44 until the LAB comparison is in; the generator gets the v2 changes first (bigger folders, more distractors, issues that need two documents).
+- **From 2026-11-17 an autopilot drives the project** (`docs/autopilot/`: goal, milestones, state). Batches now run with one command, `ltg batch` (README). First v2 batch, seeds 46 to 53, started 2026-11-17 to get about 20 v2 tasks and judge whether v2 is hard enough.
 - **Not blocked:** preparing the LAB run (step 5).
 - **Waiting on a person:** a read-through of the round 9 assignments and s12-m0003, and someone with legal training to
   review the list of planted problems.
