@@ -1,0 +1,259 @@
+{
+  "matter_id": "s56-m0002",
+  "summary": "Laivoul Student Transit, LLC (Buyer, the firm's client) is acquiring the New York school bus division of Boliv Coachlines, Inc. (Seller, a Pennsylvania corporation). The deal is an asset purchase governed by New York law. The assets are 212 school buses, the Dutchess County depot leasehold, and pupil transportation contracts with Hudson Valley school districts. The $18.4 million price is paid partly through a $4.2 million Seller Note. Seller will provide drivers and its operating authority under a 150-day transition services agreement while Buyer obtains its own authority. The pre-closing folder holds the execution drafts of the APA and the disclosure schedule, and the transition services agreement, seller note, side letter and IP assignment that accompany it. It also holds two unrelated-looking items: Buyer's uniform supply contract and a depot landlord estoppel. Planted issues: (1) the seller note's Pennsylvania law and forum, made controlling by the APA precedence clause, which splits enforcement from Buyer's New York-law set-off rights; (2) a survival period tied to the note's first payment date, which works out to only 120 days after Closing; (3) the TSA cap carves out a defined term borrowed from the APA, leaving Buyer's indemnity of Seller for accidents by Seller's own drivers uncapped; (4) a district contract requiring board approval of assignment is described in the schedules but left out of the consent list that drives the APA covenant and closing condition; (5) Seller may freely assign or subcontract the TSA, including to a competitor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Laivoul Student Transit, LLC",
+      "role": "Buyer; the firm's client; maker of the Seller Note; recipient under the TSA; assignee under the IP assignment"
+    },
+    {
+      "id": "P2",
+      "name": "Boliv Coachlines, Inc.",
+      "role": "Seller, a Pennsylvania corporation; holder of the Seller Note; provider under the TSA; assignor under the IP assignment"
+    },
+    {
+      "id": "P3",
+      "name": "Hollis Ridge Central School District",
+      "role": "school district counterparty to a pupil transportation contract being assigned to Buyer"
+    },
+    {
+      "id": "P4",
+      "name": "Wexcombe Workwear Co.",
+      "role": "uniform and safety vest vendor to Buyer (distractor agreement)"
+    },
+    {
+      "id": "P5",
+      "name": "Ashgrove Depot Realty LLC",
+      "role": "landlord of the Dutchess County bus depot (estoppel certificate)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA governing law",
+      "value": "laws of the State of New York",
+      "doc": "D1",
+      "section": "11.8"
+    },
+    {
+      "id": "F2",
+      "key": "APA exclusive forum",
+      "value": "state and federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "11.9"
+    },
+    {
+      "id": "F3",
+      "key": "Purchase Price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "2.5"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note principal amount",
+      "value": "$4,200,000",
+      "doc": "D4",
+      "section": "1"
+    },
+    {
+      "id": "F5",
+      "key": "Seller Note Issue Date",
+      "value": "the Closing Date under the APA",
+      "doc": "D4",
+      "section": "1"
+    },
+    {
+      "id": "F6",
+      "key": "Seller Note first principal installment due date",
+      "value": "120 days after the Issue Date",
+      "doc": "D4",
+      "section": "2.2"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "APA controls over Ancillary Agreements, except the Seller Note controls as to its payment, enforcement and collection",
+      "doc": "D1",
+      "section": "11.12"
+    },
+    {
+      "id": "F8",
+      "key": "APA indemnity cap",
+      "value": "12% of the Purchase Price",
+      "doc": "D1",
+      "section": "9.5"
+    },
+    {
+      "id": "F9",
+      "key": "TSA Transition Period",
+      "value": "150 days after the Closing Date",
+      "doc": "D3",
+      "section": "2.1"
+    },
+    {
+      "id": "F10",
+      "key": "Number of Purchased Vehicles",
+      "value": "212 school buses",
+      "doc": "D2",
+      "section": "Schedule 2.1(a)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_promissory_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "side_letter_driver_retention.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "uniform_supply_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "depot_lease_estoppel_certificate.md",
+      "kind": "landlord estoppel certificate",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Seller Note Section 10 states that the note is governed by the laws of the Commonwealth of Pennsylvania. It also submits disputes to the exclusive jurisdiction of the state and federal courts in Allegheny County, Pennsylvania. The APA chooses New York law (Section 11.8) and exclusive New York County courts (Section 11.9). APA Section 9.7 gives Buyer the right to set off indemnity claims against payments on the Seller Note. Read alone, the note's clause is ordinary. The damage comes from APA Section 11.12. It makes the APA prevail over Ancillary Agreements generally, but provides that the Seller Note shall control with respect to the payment, enforcement and collection of amounts owing under it. The APA's New York forum therefore cannot displace the note's Pennsylvania forum. Boliv can sue on the note in Allegheny County, where Buyer's set-off defense, which arises under the New York-law APA, must be raised in a foreign forum. Buyer instead faces parallel proceedings with a risk of inconsistent results. The APA's assignment and other boilerplate does not address this, and no other document realigns the note's law or forum.",
+      "doc": "D4",
+      "section": "10",
+      "detect_terms": [
+        "laws of the Commonwealth of Pennsylvania",
+        "Allegheny County"
+      ],
+      "expected_finding": "The Seller Note's Pennsylvania governing law and exclusive Allegheny County forum, which control note enforcement under the APA's precedence exception in Section 11.12, conflict with the APA's New York law and forum and would force Buyer to litigate its Section 9.7 set-off rights in Pennsylvania or in split proceedings; the note should be conformed to New York law and forum, or the precedence exception narrowed so that APA disputes, including set-off, stay in New York.",
+      "contradicts": [
+        "F1",
+        "F2"
+      ],
+      "doc2": "D1",
+      "section2": "11.12",
+      "detect_terms2": [
+        "shall control with respect to the payment, enforcement and collection"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 9.1 provides that Seller's general representations and warranties survive the Closing until the Survival Date. Buyer's indemnification claims under Section 9.2 for breach of those representations must be noticed before that date. The general representations include vehicle condition and safety inspections, district reimbursement and mileage billing, and compliance with laws. APA Section 1.1 defines Survival Date as the first Scheduled Payment Date under the Seller Note, which looks like a sensible tie to the set-off mechanics. Seller Note Section 2.2 sets the first principal installment at 120 days after the Issue Date, which is the Closing Date. Read together, general representations survive only about four months. That window closes before NYSDOT's periodic school bus inspection cycle and before district year-end audits of mileage and reimbursement billing are completed, which is where breaches would surface. Under the APA precedence clause (Section 11.12), the note controls its own payment terms, so the 120-day date governs. No document extends the survival period.",
+      "doc": "D1",
+      "section": "9.1",
+      "detect_terms": [
+        "until the Survival Date",
+        "first Scheduled Payment Date"
+      ],
+      "expected_finding": "Because the APA ties survival of Seller's general representations to the Seller Note's first payment date, which the note fixes at 120 days after Closing, Buyer's indemnity claims for vehicle condition, inspection and district billing breaches expire before those breaches can realistically be discovered; Buyer should replace the Survival Date with a fixed period of at least 18 months after Closing.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "2.2",
+      "detect_terms2": [
+        "120 days after the Issue Date"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "During the Transition Period, Boliv supplies CDL drivers and operates the Purchased Vehicles on Buyer's routes under Boliv's own operating authority. TSA Section 8.1 requires Recipient (Buyer) to indemnify Provider (Boliv) against Losses arising out of the Services, except to the extent caused by Provider's gross negligence or willful misconduct. Section 8.4 caps each Party's liability at the Service Fees paid, which on its own makes the indemnity tolerable. However, Section 8.4 also states that the limitations shall not apply to Operational Liabilities (as defined in the Purchase Agreement). APA Section 1.1 defines Operational Liabilities as Liabilities arising out of the operation of the Vehicles from and after the Closing. In the APA that definition is a harmless carve-out from the cap on Buyer's indemnity for its own post-closing operations. Imported into the TSA, it covers every bus accident during the Transition Period, including those caused by the ordinary negligence of Boliv's own drivers. The result is that Buyer's indemnity of Boliv for student injury and accident claims is unlimited. The APA cap in Section 9.5 covers only claims under APA Section 9.3, so it does not reach the TSA. The APA precedence clause does not help, because nothing in the APA conflicts with the TSA.",
+      "doc": "D3",
+      "section": "8.4",
+      "detect_terms": [
+        "shall not apply to Operational Liabilities",
+        "except to the extent caused by Provider's gross negligence"
+      ],
+      "expected_finding": "Because the TSA cap excludes Operational Liabilities as defined in the APA (all post-closing vehicle operation liabilities), Buyer's TSA Section 8.1 indemnity of Boliv for accidents during the Transition Period, including those caused by Boliv's own drivers' ordinary negligence, is uncapped; Buyer should limit its indemnity to Losses not caused by Provider's negligence and remove the Operational Liabilities carve-out from the TSA cap, or define a TSA-specific carve-out.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "1.1",
+      "detect_terms2": [
+        "operation of the Vehicles from and after the Closing"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "The Hollis Ridge Central School District Pupil Transportation Contract is an Assigned Contract worth about $3.1 million a year. In the disclosure schedule, Schedule 4.8 (Material Contracts) describes that contract and notes that it requires the prior written approval of the District's Board of Education for any assignment of the contract or any change in control of the Contractor. Schedule 4.4 (Consents) lists only the Dunmore Union Free School District contract and the depot landlord. The schedule's preamble states that a disclosure in any Schedule is deemed disclosed for every other Section where its relevance is reasonably apparent. In the APA, Seller's consent covenant (Section 6.4) and Buyer's closing condition (Section 7.2(c)) reach only each Consent listed on Schedule 4.4. The APA contains no mechanism for holding non-assigned contracts for Buyer's benefit. Read together, the transaction triggers the Hollis Ridge board approval right, but Seller has no obligation to obtain approval and Buyer cannot refuse to close without it. Under the cross-disclosure language, the Schedule 4.8 description likely defeats any indemnity claim for breach of the Section 4.4 consents representation. Under New York General Municipal Law Section 109, assigning a public contract without the district's consent exposes the contract to annulment.",
+      "doc": "D2",
+      "section": "Schedule 4.8",
+      "detect_terms": [
+        "change in control of the Contractor",
+        "prior written approval of the District's Board of Education"
+      ],
+      "expected_finding": "The Hollis Ridge district contract requires Board of Education approval of the assignment, but that approval is missing from the consent list that drives the APA consent covenant (Section 6.4) and closing condition (Section 7.2(c)), and the cross-disclosure language likely bars an indemnity claim, so Buyer could close without approval and lose the contract under General Municipal Law Section 109; the Hollis Ridge approval should be added as a required consent and closing condition.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "7.2(c)",
+      "detect_terms2": [
+        "shall have been obtained and delivered to Buyer"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 12.3 lets Provider (Boliv) assign, delegate or subcontract the TSA or any of its rights or obligations, in whole or in part, to any Person without the consent of Recipient. Recipient may not assign without Provider's consent. The Services include CDL drivers, dispatch, routing software access and handling of Buyer's student rider rosters. Boliv could therefore hand performance, together with Buyer's route data and rider information, to a competing pupil transportation contractor bidding on the same districts, or to an unqualified subcontractor operating under a different authority. The APA anti-assignment clause (Section 11.4) restricts assignment of 'this Agreement' only, so it does not reach the TSA. The APA precedence clause is not engaged, because the two documents do not conflict.",
+      "doc": "D3",
+      "section": "12.3",
+      "detect_terms": [
+        "assign, delegate or subcontract",
+        "without the consent of Recipient"
+      ],
+      "expected_finding": "TSA Section 12.3 lets Boliv freely assign or subcontract the transition services, including to a competing bus contractor that would gain access to Buyer's routes and student rider data; the clause should require Buyer's prior written consent, at minimum for any assignment to a competitor or any subcontracting of driver services.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

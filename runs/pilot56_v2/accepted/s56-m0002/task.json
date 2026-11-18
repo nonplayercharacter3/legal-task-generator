@@ -1,0 +1,119 @@
+{
+  "task_id": "s56-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Laivoul Student Transit, LLC as buyer in its asset purchase from Boliv Coachlines, Inc. Before we sign off, please review all eight documents in the folder and send me a memo. For each issue you find, list where it appears (document and section), explain why it matters for Laivoul, and recommend a fix. Keep it practical; I'll use it to decide what we push back on.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "depot_lease_estoppel_certificate.md",
+    "ip_assignment_agreement.md",
+    "seller_disclosure_schedule.md",
+    "seller_promissory_note.md",
+    "side_letter_driver_retention.md",
+    "transition_services_agreement.md",
+    "uniform_supply_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the Seller Note's Pennsylvania governing law and exclusive Allegheny County forum govern enforcement of the note despite the APA's New York law and New York County forum, so Buyer would have to litigate its APA set-off rights against the note in Pennsylvania or in split proceedings. It identifies where the issue appears (Seller Note Section 10 or APA Section 11.12), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Allegheny County",
+        "set-off",
+        "Commonwealth of Pennsylvania"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that Seller's general representations survive only until the Seller Note's first payment date, which falls 120 days after Closing, so Buyer's indemnity claims for those breaches expire before the breaches can realistically be discovered. It identifies where the issue appears (APA Section 9.1 or Seller Note Section 2.2), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Survival Date",
+        "120 days",
+        "first Scheduled Payment Date"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that Buyer's TSA indemnity of Boliv for vehicle accidents during the Transition Period is uncapped, including accidents caused by the ordinary negligence of Boliv's own drivers, because the TSA cap excludes Operational Liabilities. It identifies where the issue appears (TSA Section 8.4 or APA Section 1.1), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Operational Liabilities",
+        "uncapped",
+        "Boliv's drivers"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that the Hollis Ridge Central School District contract requires Board of Education approval of the assignment, but that approval is missing from the Schedule 4.4 consent list that drives the APA consent covenant and closing condition, so Seller need not obtain it and Buyer could be required to close without it. It identifies where the issue appears (Disclosure Schedule 4.8 or APA Section 7.2(c)), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Hollis Ridge",
+        "Board of Education",
+        "Schedule 4.4"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that Boliv may assign, delegate or subcontract the TSA without Buyer's consent, including to a competing bus contractor. It identifies where the issue appears (TSA Section 12.3), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 12.3",
+        "without the consent of Recipient",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Seller Note has a principal amount of $4,200,000.",
+      "kind": "fact",
+      "hints": [
+        "$4.2 million",
+        "$4,200,000"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the TSA Transition Period runs for 150 days after the Closing Date.",
+      "kind": "fact",
+      "hints": [
+        "150 days",
+        "Transition Period"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo to the supervising partner that addresses each issue separately and, for each one, gives its location (document and section), why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the APA's anti-assignment clause (Section 11.4) restricts Boliv's assignment of the TSA.",
+      "kind": "negative",
+      "hints": [
+        "Section 11.4 covers the TSA"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the APA indemnity cap in Section 9.5 limits Buyer's indemnity liability under the TSA.",
+      "kind": "negative",
+      "hints": [
+        "APA cap applies to TSA"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

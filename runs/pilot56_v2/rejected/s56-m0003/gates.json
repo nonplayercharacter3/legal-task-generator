@@ -1,0 +1,114 @@
+{
+  "matter_id": "s56-m0003",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I3\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I3"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 11.2: \"Customer shall defend, indemnify and hold harmless Supplier, its Affiliates and their respective officers, directors and employees from and against all Losses arising out of or relating to any Finished Goods, including their manufacture, labeling, marketing, distribution, sale or consumption, regardless of whether such Losses are attributable to the Products.\" Section 12.4: \"Sections 12.1 and 12.2 do not apply to (a) a party's obligations under Section 11...\"",
+            "reason": "Trobeil, the client, is the indemnitor under 11.2. The indemnity covers all Losses relating to Finished Goods, even where the Products caused them. 'Losses' is defined in 1.7 to include recall, withdrawal and destruction costs, so contaminated-flour recalls and illness claims fall back on Trobeil. Section 12.4 removes Section 11 obligations from both the cap and the consequential-damages exclusion, so this exposure is unlimited. Liran's reciprocal indemnity in 11.1 covers only trademark infringement. Nothing in the folder cures this. Amendment No. 1 does not touch Sections 11 or 12. Quality Agreement 12.4 sends recall cost allocation back to the Supply Agreement. The term sheet only contemplated 'customary indemnities', and it is non-binding. The agreement is in force through 2029 and governs ongoing Order Forms, so the exposure is current and Trobeil can still act on it, for example by negotiating an amendment."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 2.2: \"At the end of the Initial Term, and at the end of each Renewal Term, this Agreement will renew automatically for a successive Renewal Term unless either Party gives the other written notice of non-renewal at least 120 days before the end of the then-current Initial Term or Renewal Term.\" Section 1.13: \"'Renewal Term' means a period equal to the Initial Term.\" Section 2.1 sets the Initial Term at five years.",
+            "reason": "Read together, Sections 2.2, 1.13 and 2.1 roll the agreement over in five-year blocks. Each renewal carries forward Section 3.1, which binds Trobeil and its Affiliates to buy 100% of their milled-grain requirements from Liran across the US and Canada. A missed 120-day notice would lock Trobeil in for five more years. The term sheet called for one-year renewals that either party could end on 90 days' notice, so the draft departs from the deal to Trobeil's detriment. Amendment No. 1 does not change the term or renewal provisions. The Section 3.5 release applies only after a price increase above 8%, and only to the affected Product. The Initial Term runs to December 31, 2029, and the first non-renewal deadline falls around early September 2029. The issue is therefore still live and actionable for Trobeil, either by amending the renewal terms or by calendaring the notice deadline."
+          },
+          {
+            "issue": "I3",
+            "present": false,
+            "evidence": "Supply Agreement 8.1: \"Supplier warrants to Customer that all Products delivered under this Agreement will, at the time of delivery and through the end of their stated shelf life, (a) conform to the Specifications, as defined in the Quality Agreement...\" Quality Agreement 1.9: \"'Specifications' means, for each Product, Supplier's standard published product data sheets for that Product, as in effect from time to time.\"",
+            "reason": "findable from trobeil_liran_quality_agreement.md alone, so it does not need two documents",
+            "alone": {
+              "trobeil_liran_supply_agreement.md": {
+                "findable": false,
+                "evidence": "1.14 \"Specifications\" has the meaning given in the Quality Agreement.",
+                "reason": "Read alone, the Supply Agreement shows that the Section 8.1 conformity warranty is measured against \"Specifications\" and that this term is defined only by reference to the Quality Agreement. Section 20.3 gives the Quality Agreement priority on quality matters. A careful associate would therefore know to check the Quality Agreement's definition. Nothing here says what that definition is. The document does not show that Specifications means Liran's standard published data sheets as in effect from time to time, which Liran can change unilaterally. It also does not show that Trobeil's protein, ash and falling-number requirements appear only as development-acceptance \"Customer Specifications\" in a Statement of Work. Those facts are what make the warranty weak and harmful to Trobeil, and they come only from the other documents. So this document alone does not reveal the problem."
+              },
+              "trobeil_liran_quality_agreement.md": {
+                "findable": true,
+                "evidence": "1.9 \"Specifications\" means, for each Product, Supplier's standard published product data sheets for that Product, as in effect from time to time.",
+                "reason": "This document alone shows that 'Specifications' are Liran's own data sheets, which Liran can change at any time. The same document makes that term the yardstick for quality: 'Nonconforming Product' (1.7), lot testing (5.1), COAs (5.2) and supplier holds (9.1) are all measured against it, and rejection under 9.3 depends on nonconformity. A careful associate could therefore see without the other documents that Trobeil's quality protection rests on a standard the supplier controls and can change unilaterally. That is a clear harm to Trobeil. What this document does not show is how far the problem reaches: that Supply Agreement 8.1 ties the production warranty to this definition, that Trobeil's protein, ash and falling-number requirements appear only as SOW 'Customer Specifications' limited to development acceptance, and that Supply Agreement 20.3 gives the Quality Agreement priority on quality matters. Those points require the Supply Agreement and the SOW. The core defect and its harm to Trobeil are still visible here."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Quality Agreement §14.1: \"This Quality Agreement, and any dispute arising out of or relating to quality, food-safety or recall matters, is governed by the laws of the State of Illinois...\"; §14.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the Circuit Court of Cook County, Illinois, for any action arising out of or relating to this Quality Agreement or to quality, food-safety or recall matters...\" Supply Agreement §20.3: \"the documents control in the following order: (a) any Amendment; (b) the Quality Agreement, as to quality, food-safety and recall matters; (c) this Agreement...\"",
+            "reason": "The Supply Agreement §§20.1–20.2 choose New York law and New York County courts, which is also what the term sheet contemplated. Quality Agreement §14 instead chooses Illinois law and exclusive Cook County jurisdiction for all quality, food-safety and recall disputes. Cook County is Liran's home forum. The precedence clause in Supply Agreement §20.3 ranks the Quality Agreement above the Supply Agreement for exactly those matters, so the Illinois clause likely controls. As a result, Trobeil's most valuable claims against the Supplier (contamination, warranty and recall losses) would go to Liran's home law and court. Nothing in the folder cures this. Amendment No. 1 does not address it, and nothing shows Trobeil accepted it after a dispute arose. The agreements remain in effect, so the point is still actionable: Trobeil can seek an amendment conforming §14, and it matters in any pending or future recall dispute.",
+            "alone": {
+              "trobeil_liran_quality_agreement.md": {
+                "findable": false,
+                "evidence": "14.1 Governing Law. This Quality Agreement, and any dispute arising out of or relating to quality, food-safety or recall matters, is governed by the laws of the State of Illinois... 14.2 Forum. Each Party irrevocably submits to the exclusive jurisdiction of the Circuit Court of Cook County, Illinois, for any action arising out of or relating to this Quality Agreement or to quality, food-safety or recall matters",
+                "reason": "On its own, this document shows that quality, food-safety and recall disputes go to Illinois law and the exclusive jurisdiction of a Cook County court. It also identifies Liran as an Illinois corporation, so an associate could tell this is the supplier's home forum. It does not show the actual problem, which is a mismatch. Nothing here says the Supply Agreement chooses New York law and New York County courts. Nothing here says Section 20.3 of the Supply Agreement ranks the Quality Agreement above the Supply Agreement on quality, food-safety and recall matters. Without that, an associate cannot tell that this clause conflicts with the main contract's choice of law and forum, or that it would override it. The QA's own references, such as 12.4 sending recall costs to the Supply Agreement, would suggest the main contract still controls those claims. Seeing that Trobeil's recall and contamination claims are pulled out of its agreed New York forum requires the Supply Agreement."
+              },
+              "trobeil_liran_supply_agreement.md": {
+                "findable": false,
+                "evidence": "20.3 Order of Precedence. If there is any conflict among the documents that make up the Parties' agreement, the documents control in the following order: (a) any Amendment; (b) the Quality Agreement, as to quality, food-safety and recall matters; (c) this Agreement; ...",
+                "reason": "Read alone, the Supply Agreement chooses New York law (20.1) and exclusive New York County courts (20.2). It also ranks the Quality Agreement above itself for quality, food-safety and recall matters (20.3). An associate could note in general terms that the Quality Agreement would control those matters if it conflicted. But nothing here says what law or forum the Quality Agreement picks. The Illinois-law and Cook County provision, and so the actual conflict that moves recall and contamination disputes to Liran's home forum, appears only in Section 14 of the Quality Agreement, which is not provided. On this document alone the governing-law and forum terms look consistent and favorable to the client."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 3.1: \"During the Term, Customer shall purchase, and shall cause each of its Affiliates to purchase, from Supplier 100% of its requirements of all flour, flour blends, premixes and other milled grain products used at any bakery or production facility owned, operated or controlled by Customer or any of its Affiliates in the United States and Canada, whether that facility exists on the Effective Date or is acquired or opened later.\"",
+            "reason": "Section 3.1 is much broader than the term sheet. Term sheet §4.1–4.2 limited exclusivity to hard red winter bread flour for the Paterson and Allentown bakeries only. It expressly left specialty flours, blends, premixes and any other bakery free of exclusivity. Section 3.1 instead binds Trobeil and its Affiliates for all milled grain products at every current and future facility in the US and Canada, for a five-year term with auto-renewal. Nothing in the folder cures this. Amendment No. 1's new §3.5 lets Trobeil release a single Product only after a price increase of more than 8%, and only by notice within 45 days. The carve-outs in §6.2 and §16.2 cover only late delivery and force majeure. None of these narrows the product or facility scope. The burden falls on Trobeil as buyer. It cannot source specialty products or supply future plants elsewhere, so this remains a live issue to raise with Liran."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Amendment §4.1 (new §3.5(a)): \"Customer may end the application of Section 3.1 to that Product by written notice to Supplier delivered within 45 days after the applicable Price Adjustment Date.\" Order Form No. 7 §5.2: \"Price Adjustment Date: August 1, 2026 – Price before adjustment: $412 per metric ton – Price after adjustment: $468 per metric ton\"; §5.3: \"Customer places this order under protest. Customer disputes the August 1, 2026 price adjustment ... Customer reserves all rights and remedies under the Agreement and at law with respect to the adjustment.\"",
+            "reason": "The release right in new §3.5 belongs to Trobeil. Read with Order Form No. 7, the increase from $412 to $468 is about 13.6%, above the 8% trigger. The 45-day window runs from the August 1, 2026 Price Adjustment Date, so it closed on September 15, 2026. The folder contains no release notice, and the Order Form (October 30, 2026) re-commits Trobeil's Item 1 bread flour volumes to Liran, so Trobeil appears to have lost the right to leave exclusivity. This is still actionable. Trobeil has not accepted the result: §5.3 records that it orders under protest, disputes the adjustment and states that signing and payment are not acceptance or waiver. Counsel can still argue the window never validly opened or should be treated as open. For example, Liran's notice may not have met the amended §4.3 content and addressee requirements, or the adjustment may not be supported by documented costs. Trobeil should also give a protective §3.5 notice now. The risk is real for Trobeil, because §3.1 exclusivity otherwise binds it to the higher price for the full Order Period.",
+            "alone": {
+              "supply_agreement_amendment_no1.md": {
+                "findable": false,
+                "evidence": "Customer may end the application of Section 3.1 to that Product by written notice to Supplier delivered within 45 days after the applicable Price Adjustment Date.",
+                "reason": "The amendment sets up the right to escape exclusivity: a price increase over 8% and written notice within 45 days after the Price Adjustment Date. By itself it does not show that any price adjustment happened. It does not show the August 1, 2026 Price Adjustment Date, the bread flour increase from $412 to $468 (about 13.6%), or that the window closed on September 15, 2026. It also does not show that no notice was given or that Trobeil is ordering under protest. Those facts come only from Order Form No. 7. An associate reading only the amendment would see a deadline-based right, but not that the deadline has passed or that Trobeil lost the right."
+              },
+              "liran_order_form_no7.md": {
+                "findable": false,
+                "evidence": "Price Adjustment Date: August 1, 2026 ... Price before adjustment: $412 per metric ton ... Price after adjustment: $468 per metric ton",
+                "reason": "The Order Form on its own shows a price adjustment dated August 1, 2026 that raises the price from $412 to $468 per metric ton, about 13.6%. It also shows that Trobeil is ordering under protest and reserving its rights. It says nothing about exclusivity. It does not mention any right to end exclusivity when a price rises more than 8%, or any 45-day notice window. Those terms come only from Amendment No. 1, which I have not been given. Reading this document alone, an associate would see a disputed price increase. They would not see that a time-limited exclusivity exit right existed and has already lapsed, which is what makes this a problem for Trobeil."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "matter_id": "s56-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Seller Note §10.1: \"This Note shall be governed by and construed in accordance with the laws of the Commonwealth of Pennsylvania...\" and §10.2: \"Maker and Holder each irrevocably submit to the exclusive jurisdiction of the state and federal courts located in Allegheny County, Pennsylvania...\" APA §11.12: \"However, the Seller Note shall control with respect to the payment, enforcement and collection of amounts owing thereunder.\" APA §11.8 and §11.9 choose New York law and exclusive New York County courts.",
+            "reason": "Buyer is the Maker of the note and holds the APA §9.7 set-off right, which the note's Section 5 brings in by reference. Because APA §11.12 carves out payment, enforcement and collection from the APA's precedence clause, the note's Pennsylvania law and exclusive Allegheny County forum govern any suit Boliv brings to collect. Buyer's set-off defense depends on indemnity claims under the New York-law APA, which must be heard exclusively in New York County. The result is a split forum: Buyer must defend in Pennsylvania on a defense that turns on New York law, and faces parallel proceedings and a risk of inconsistent results. No other document realigns the law or forum. The documents are unsigned closing forms (dated as of the Closing Date), so nothing shows Buyer has accepted this outcome, and the clause can still be negotiated. This is a real, actionable problem for the client.",
+            "alone": {
+              "seller_promissory_note.md": {
+                "findable": false,
+                "evidence": "10.1 ... This Note shall be governed by and construed in accordance with the laws of the Commonwealth of Pennsylvania ... 10.2 ... Maker and Holder each irrevocably submit to the exclusive jurisdiction of the state and federal courts located in Allegheny County, Pennsylvania",
+                "reason": "Read alone, the note shows that it is governed by Pennsylvania law with an exclusive Allegheny County forum. It also shows, in Section 5, that Maker's set-off right depends on Article IX and Section 9.7 of the APA. A Pennsylvania forum clause in a note payable to a Pennsylvania seller is ordinary, and nothing in the note says it conflicts with anything. The note does not state the APA's governing law or forum, which are New York law and New York County courts under Sections 11.8 and 11.9. It also does not show APA Section 11.12, which makes the Seller Note control on payment, enforcement and collection, so the APA's New York forum cannot override the note's Pennsylvania forum. Without those APA terms, an associate could not see that Buyer's New York-law set-off defense would be split from a Pennsylvania collection suit, with a risk of parallel proceedings and inconsistent results."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "11.12 Order of Precedence. ... However, the Seller Note shall control with respect to the payment, enforcement and collection of amounts owing thereunder.",
+                "reason": "The APA alone shows New York governing law and exclusive New York County courts (11.8, 11.9), the Buyer's right to set off indemnity claims against Seller Note payments (9.7), and a carve-out in 11.12 that lets the Seller Note control on payment, enforcement and collection. An associate could note that this carve-out gives way to whatever the note says. The APA does not show that the note picks Pennsylvania law or an exclusive Allegheny County forum. Without the note's Section 10 there is no conflicting law or forum, so the parallel-proceedings and foreign-forum set-off harm to Buyer cannot be seen from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "APA §9.1: \"All other representations and warranties of Seller and Buyer contained in this Agreement shall survive the Closing until the Survival Date, being the first Scheduled Payment Date under the Seller Note.\" Seller Note §2.2: \"The first Principal Installment shall be due and payable on the date that is 120 days after the Issue Date.\"",
+            "reason": "Read together, the two provisions limit survival of Seller's general representations to about 120 days after Closing. Those representations include §4.6 vehicle condition and NYSDOT inspections, §4.9 district billing, and §4.10 compliance with laws. Buyer is the client and the indemnified party under §9.2(a). It must give notice of any claim before the Survival Date or lose the claim. Breaches of the billing and inspection representations typically surface through district year-end audits and later inspection cycles, which fall after the window has closed. The short survival period also weakens Buyer's set-off right under §9.7, which applies to the remaining note installments that run for about two years. Several provisions do not cure the problem. §11.12 makes the Note control its own payment terms, which fixes the 120-day date. The §2.4 Excluded Liability coverage for pre-Closing district refund claims under §9.2(c) does not depend on the representations, so it only partly mitigates the gap and leaves the vehicle-condition and compliance representations exposed. No document extends the survival period. The APA is unsigned (Closing is still pending), so the term can still be negotiated and the issue remains actionable for Buyer.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Survival Date\" means the first Scheduled Payment Date under the Seller Note. ... All other representations and warranties of Seller and Buyer contained in this Agreement shall survive the Closing until the Survival Date, being the first Scheduled Payment Date under the Seller Note.",
+                "reason": "The APA shows that general rep survival, and so the notice deadline for Buyer's Section 9.2(a) claims, is tied to the first Scheduled Payment Date. It also says that term is defined only in the Seller Note. It does not say when that date falls. The fact that makes this a problem is that the first installment is due 120 days after Closing, so the survival window is only about four months and closes before inspection cycles and district audits would reveal breaches. That fact comes only from Seller Note Section 2.2. Reading the APA alone, an associate could note that survival depends on an outside document, but could not see that the period is harmfully short. It could just as well be a year or longer."
+              },
+              "seller_promissory_note.md": {
+                "findable": false,
+                "evidence": "The first Principal Installment shall be due and payable on the date that is 120 days after the Issue Date.",
+                "reason": "On its own, the note sets the first Scheduled Payment Date at 120 days after Closing. It also allows set-off for Article IX amounts under APA Section 9.7. Neither is harmful by itself, and the note never says that survival of representations or indemnity claim deadlines depend on its payment dates. The harm exists only because APA Section 1.1 defines the Survival Date as the first Scheduled Payment Date under the Seller Note, which cuts general representation survival to about four months. That definition, the scope of the representations, and the Section 11.12 precedence clause are all in the APA, which was not provided. An associate reading only the note would see an ordinary amortization schedule."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "TSA 8.4: \"The limitations in this Section 8.4 and in Section 8.3 shall not apply to Operational Liabilities (as defined in the Purchase Agreement), to a Party's fraud or willful misconduct, or to Recipient's obligation to pay the Service Fees.\" APA 1.1: \"'Operational Liabilities' means all Liabilities arising out of the operation of the Vehicles from and after the Closing.\"",
+            "reason": "The Buyer (Recipient, our client) is the indemnitor. TSA 8.1 requires it to indemnify Boliv for all Losses from the Services or the operation of the Purchased Vehicles during the Transition Period. The only exception is Boliv's gross negligence or willful misconduct, so the ordinary negligence of Boliv's own drivers is covered. Section 8.4 caps liability at the Service Fees paid but then excludes Operational Liabilities. The APA defines those as all Liabilities from operating the Vehicles after Closing, which is every bus accident during the Transition Period while Boliv's employees drive under Boliv's authority. That leaves the Buyer's indemnity for student injury and accident claims uncapped. Nothing in the folder cures this. The APA 9.5 cap applies only to APA claims and itself excludes Operational Liabilities. The APA precedence clause applies only to conflicts, and there is none. Under 7.1 Boliv's insurance names the Buyer as additional insured, but that does not limit the indemnity. The TSA is unsigned and still in draft, so the Buyer can still negotiate this point.",
+            "alone": {
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "The limitations in this Section 8.4 and in Section 8.3 shall not apply to Operational Liabilities (as defined in the Purchase Agreement), to a Party's fraud or willful misconduct, or to Recipient's obligation to pay the Service Fees.",
+                "reason": "On its own, the TSA shows three things. Section 8.1 makes Recipient indemnify Provider for all Losses from the Services and vehicle operation, except for Provider's gross negligence or willful misconduct. Section 8.4 caps liability at the Service Fees paid. And the cap is carved out for 'Operational Liabilities', a term defined only in the Purchase Agreement. A careful associate would flag that carve-out as something to check, but could not tell from this document what it covers. The problem depends on the APA defining Operational Liabilities as all Liabilities from operating the Vehicles after the Closing. Only that definition makes the carve-out reach every Transition Period accident, including those caused by Boliv drivers' ordinary negligence, and leaves Buyer's indemnity uncapped. The points that the APA's own cap and precedence clause do not help also come from the APA. Without that definition, the TSA does not show that the carve-out swallows the cap or that the client is exposed."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Operational Liabilities\" means all Liabilities arising out of the operation of the Vehicles from and after the Closing. ... The foregoing limitation shall not apply to ... (c) Buyer's obligations under Section 9.3(c) with respect to Operational Liabilities.",
+                "reason": "The APA alone shows several things. It defines Operational Liabilities broadly. Buyer assumes them and indemnifies Seller for them without a cap under Sections 9.3(c) and 9.5(c). Section 6.6 also shows that Seller will supply drivers and operating authority under the TSA after Closing. A careful associate might notice that the definition reaches post-closing vehicle operation by Seller's own drivers. However, the APA does not show the TSA's own terms. It does not show that the TSA requires Buyer to indemnify Provider for Losses arising out of the Services. It does not show the negligence standard limited to gross negligence or willful misconduct. It does not show the Section 8.4 cap. Most importantly, it does not show that the TSA imports the Operational Liabilities definition to remove that cap. The core problem is an unlimited Buyer indemnity of Boliv for accidents caused by Boliv's own drivers' ordinary negligence. That problem arises only from the TSA's indemnity and its cap carve-out, neither of which appears in this document."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Schedule 4.8, item 1: \"Assignment and change of control (Section 14): the Contractor may not assign, transfer or sublet the contract or any part of it, and no change in control of the Contractor may occur, without the prior written approval of the District's Board of Education.\" Schedule 4.4 lists only the Dunmore consent and the Ashgrove landlord consent. APA 7.2(c): \"each Consent listed on Schedule 4.4 shall have been obtained and delivered to Buyer...\" APA 6.4: \"Seller shall use commercially reasonable efforts to obtain... each Consent listed on Schedule 4.4 before the Closing.\"",
+            "reason": "The Hollis Ridge Contract is an Assigned Contract worth about $3.1M a year, and its assignment to Buyer needs prior Board of Education approval. That approval is missing from Schedule 4.4. So Seller has no covenant under 6.4 to obtain it, and Buyer, the client, has no closing condition under 7.2(c) that lets it refuse to close without it. The cross-disclosure clause in Preliminary Statement 1.3 likely means the Schedule 4.8 description counts as an exception to the Section 4.4 consents representation and the 4.3(c) no-conflicts representation. That would undercut any indemnity claim under 9.2(a). The APA also has no mechanism for holding non-assigned contracts for Buyer's benefit. Assigning the contract without approval risks annulment under GML §109, so Buyer could pay for the District's largest contract and not receive it. Nothing in the folder shows the approval was obtained, and the TSA and other ancillaries do not cure the gap. The documents are still drafts with closing pending (dates [●]), so Buyer can still add the Hollis Ridge approval to Schedule 4.4. The problem is present and actionable.",
+            "alone": {
+              "seller_disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "Assignment and change of control (Section 14): the Contractor may not assign, transfer or sublet the contract or any part of it, and no change in control of the Contractor may occur, without the prior written approval of the District's Board of Education.",
+                "reason": "The schedule alone shows that the $3.1 million Hollis Ridge Contract needs Board of Education approval to be assigned. It also shows that this approval is missing from Schedule 4.4, which lists only Dunmore and the Depot landlord. Section 1.3 adds cross-disclosure language that would likely treat the Schedule 4.8 description as disclosed against the consents representation. A careful associate would notice the inconsistency. What makes it actually harm Buyer is in the APA, which I have not seen. Only the APA shows that Seller's consent covenant (Section 6.4) and Buyer's closing condition (Section 7.2(c)) reach only consents listed on Schedule 4.4. Only the APA shows there is no mechanism to hold non-assigned contracts for Buyer's benefit. Without the APA, the agreement could still contain a general covenant or condition covering all required consents, which would cure the omission. So the schedule shows a red flag but not the full problem."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 6.4: \"Seller shall use commercially reasonable efforts to obtain, at its sole cost, each Consent listed on Schedule 4.4 before the Closing.\" Section 7.2(c): \"each Consent listed on Schedule 4.4 shall have been obtained and delivered to Buyer...\"",
+                "reason": "The APA alone shows a structural weakness. Seller's consent covenant (6.4) and Buyer's closing condition (7.2(c)) reach only Consents actually listed on Schedule 4.4. Nothing in the APA holds back unassigned contracts for Buyer's benefit. The only protection for an omitted consent is the Section 4.4 representation, which is subject to the deductible, cap and Survival Date limits. The APA does not show the problem itself. It never mentions the Hollis Ridge contract, its value, or its board-approval requirement for assignment or change of control. It does not show that Schedule 4.4 omits that contract while Schedule 4.8 discloses the requirement. It does not contain the cross-disclosure preamble that would defeat an indemnity claim under the Section 4.4 representation. Those facts are all in the Disclosure Schedule. Without that schedule, an associate could flag only a generic drafting risk, not the specific unaddressed consent that harms Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 12.3: \"Provider may assign, delegate or subcontract this Agreement or any of its rights or obligations hereunder, in whole or in part, to any Person without the consent of Recipient. Recipient may not assign this Agreement or any of its rights or obligations hereunder without the prior written consent of Provider.\"",
+            "reason": "The assignment right is one-sided against the client (Recipient/Buyer). Boliv may delegate or subcontract the drivers, dispatch, routing access and Rider Data handling to any Person. Nothing limits that right: no consent requirement, no qualification standard, no bar on competitors, and no requirement that the operating authority stay Provider's. Section 3.2 requires operation under Provider's own USDOT authority, but an assignee or subcontractor is not clearly held to that. The Section 6.2 confidentiality duty binds only the Parties, and the IP Assignment use restrictions bind Assignor and its Affiliates, not third-party delegates. APA Section 11.4 restricts assignment of the APA only, not the Ancillary Agreements, and the precedence clause in Section 11.12 does not apply because the documents do not conflict. The TSA is an unsigned draft still in negotiation, so the client can still act on this."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.065,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

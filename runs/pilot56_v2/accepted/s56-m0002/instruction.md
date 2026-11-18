@@ -1,0 +1,1 @@
+We represent Laivoul Student Transit, LLC as buyer in its asset purchase from Boliv Coachlines, Inc. Before we sign off, please review all eight documents in the folder and send me a memo. For each issue you find, list where it appears (document and section), explain why it matters for Laivoul, and recommend a fix. Keep it practical; I'll use it to decide what we push back on.

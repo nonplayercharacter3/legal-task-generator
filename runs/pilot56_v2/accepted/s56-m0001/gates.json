@@ -1,0 +1,184 @@
+{
+  "matter_id": "s56-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 12.2: \"Upon expiration of the Initial Subscription Term, this Agreement shall automatically renew for successive renewal terms, each equal in length to the Initial Subscription Term (each, a \"Renewal Term\"), unless either Party gives the other written notice of non-renewal. A notice of non-renewal is effective only if delivered during the thirty (30) day period ending 180 days before the expiration of the then-current Initial Subscription Term or Renewal Term.\" Order Form Section 2.2: \"The Initial Subscription Term is 60 months from the Subscription Start Date\" (July 1, 2025).",
+            "reason": "The problem is present and hurts Logith. Read with Order Form Section 2.2, Section 12.2 renews the agreement for successive 60-month terms. Logith can stop that only by giving notice in a single 30-day window that closes about six months before each term ends. The term sheet (Section 3.2) contemplated 12-month renewals and allowed notice at any time up to 90 days before expiry. Section 16.2 supersedes the term sheet, which was non-binding in any event, so that bargain is lost. The renewal burden falls on Logith, and the exposure is serious. Section 3.4 makes the Platform Logith's exclusive provider across the US and Canada. Section 12.5 accelerates all fees for the remainder of the current term if Logith defaults. Section 15.2 lets Draibav terminate on a change of control without its consent, again triggering acceleration, and the Ostrander merger is pending. A five-year renewal therefore multiplies the amount at risk. The issue is still actionable. The first non-renewal window runs roughly from November to December 2029 and has not passed. Logith's May 2026 chronic-failure termination notice is disputed, and Amendment No. 1 Section 6 reserves both parties' rights on it. If that termination fails, the renewal mechanics continue to govern Logith. The amendment did not change Section 12.2, and nothing in the folder shows Logith accepted the renewal term."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 3.4: \"During the Term, Licensee shall not, and shall cause its Affiliates not to, directly or indirectly license, use, develop or procure, anywhere in the United States or Canada, any online, simulcast or mobile vehicle auction software, bidding software or condition reporting software other than the Platform, whether provided by a third party or developed internally.\"",
+            "reason": "The problem is present and still actionable for Logith. Section 3.4 is much broader than the deal agreed in the term sheet. Term sheet Section 4 confined exclusivity to simulcast bidding software at the six Licensed Sites, and expressly left Logith and its affiliates free as to any other software or facility. Section 3.4 instead covers all online, simulcast, mobile, bidding and condition-reporting software, across the US and Canada, for Logith and every Affiliate. Section 16.2 supersedes the term sheet, and the term sheet was non-binding in any event, so the broader clause controls. Amendment No. 1 does not touch Section 3.4 and its Section 7.1 ratifies the Agreement. Recital B records that Holdings' merger with Ostrander is expected to close in Q4 2026. Under the control-based Affiliate definition, that would bring Ostrander's existing auction businesses and their incumbent software within the restriction. The issue has not lapsed. Draibav disputes Logith's Termination Notice and both parties reserved their rights in Amendment Section 6. The Agreement may therefore still be in force for a 60-month term with auto-renewal. Its Term could extend through the merger closing, which would expose Logith to breach claims and to the accelerated-fee consequences under Section 12.5."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 15.2: \"Any direct or indirect change of control of Licensee, whether by merger ... including any such transaction involving any entity that directly or indirectly controls Licensee, shall be deemed an assignment of this Agreement requiring the prior written consent of Licensor. Any such change of control without that consent is a material breach of this Agreement that is not capable of cure, and Licensor may terminate this Agreement on written notice, in which case Section 12.5 applies.\" Amendment No. 1, Recital B: \"Licensee has informed Licensor that Logith Holdings, Inc. ... the parent of Licensee ... has entered into an Agreement and Plan of Merger dated April 20, 2026 with Ostrander Remarketing Partners, L.P. ... expected to close in the fourth quarter of 2026.\"",
+            "reason": "Logith is the client and Licensee, so it bears the obligation to get consent. The Holdings–Ostrander merger is an indirect change of control of Logith and falls within Section 15.2. Amendment No. 1 only recites that Draibav was told about the merger. It grants no consent. Section 7.2 of the Amendment preserves all rights, Section 16.4 requires any waiver to be in writing, and Section 7.1 ratifies the Agreement unchanged. Draibav's knowledge is therefore not written consent. If the merger closes without consent, Draibav can call it an incurable material breach, terminate, and accelerate the remaining Subscription Fees under Section 12.5. At $78,000 a month through June 2030, that is several million dollars. The issue is still live. As of today the folder does not show the merger has closed. Logith's Chronic Failure termination, effective October 31, 2026, is disputed by Draibav and reserved under Amendment Section 6, so the Agreement may still be in force. Logith should get Draibav's written consent before closing, or make sure the termination is confirmed first.",
+            "alone": {
+              "logith_draibav_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "15.2 Change of Control. Any direct or indirect change of control of Licensee, whether by merger, consolidation, sale of equity, sale of all or substantially all assets, or otherwise, including any such transaction involving any entity that directly or indirectly controls Licensee, shall be deemed an assignment of this Agreement requiring the prior written consent of Licensor. Any such change of control without that consent is a material breach of this Agreement that is not capable of cure, and Licensor may terminate this Agreement on written notice, in which case Section 12.5 applies.",
+                "reason": "On its own, the License Agreement shows a strict change-of-control clause. It covers indirect changes at the parent level, treats an unconsented change as a non-curable material breach, and through Section 12.5 accelerates all remaining Subscription Fees. An associate could flag this as a risky term in the abstract. The document does not show that any change of control is actually pending. Nothing in it mentions Logith Holdings, Inc., the April 20, 2026 merger agreement with Ostrander Remarketing Partners, or the Q4 2026 closing. Those facts appear only in Recital B of Amendment No. 1. Without them, Section 15.2 reads as a standard anti-assignment provision, and nothing here shows a live breach or termination risk for the client. The point that Draibav has recited the merger but given no written consent, plus the no-waiver clause, also comes from the Amendment."
+              },
+              "amendment_no_1.md": {
+                "findable": false,
+                "evidence": "Licensee has informed Licensor that Logith Holdings, Inc., a Delaware corporation and the parent of Licensee (\"Holdings\"), has entered into an Agreement and Plan of Merger dated April 20, 2026 with Ostrander Remarketing Partners, L.P., ... and that the transactions contemplated by that agreement are expected to close in the fourth quarter of 2026.",
+                "reason": "Read alone, the Amendment shows three things. Recital B records a pending merger of Logith's parent, which would be an indirect change of control of Logith. No provision grants Draibav's consent to it. Section 7.2 says nothing in the Amendment waives or modifies any right under the Agreement. It does not show that the Agreement restricts changes of control at all. The Amendment never mentions Section 15.2 and says nothing about assignment or change of control. The parts that make this a problem are the treatment of an indirect change of control as an assignment needing Licensor's prior written consent, the material-breach consequence, and Draibav's right to terminate and accelerate the remaining fees. All of these come only from the License Agreement. An associate could suspect a consent issue as a general matter, but could not confirm from this document that one exists or that it harms Logith."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Order Form §4.1: \"'Licensee Data' means data and information uploaded to the Platform by Licensee's Authorized Users in connection with Licensee's use of the Platform.\" Read with SLA §2.3 (\"Amendments, then Order Form, then body of License Agreement\") and SLA §7.4: \"Licensor may collect, use, aggregate, analyze and commercialize data and information relating to the operation and use of the Platform other than Licensee Data, including ... data generated by the Platform, and may use such data ... to develop and sell analytics products, market reports and market pricing benchmarks to third parties.\"",
+            "reason": "The License Agreement §1.9 defines Licensee Data broadly. It expressly covers Bidder and Consignor registration data, bid histories, hammer and reserve prices, condition reports, transaction data, and data generated by the Platform. Order Form §4.1 redefines the term narrowly as data uploaded by Licensee's Authorized Users. Under §2.3 the Order Form prevails over the body of the Agreement. On that reading, data entered by Bidders and Consignors (who are not Authorized Users under §1.2) and data generated by the Platform fall outside Licensee Data. That data then becomes 'Platform Data' that Draibav may commercialize under §7.4, including by selling pricing benchmarks to competing auctions. The narrow definition also cuts back Logith's ownership (§7.1), its data return and deletion rights (§7.3), and the security protections. This defeats the term sheet's data-ownership deal (§7.1–7.2). Amendment No. 1 does not cure it: new §8A keeps using 'Licensee Data' without redefining it, and the amendment ratifies the Agreement otherwise unchanged. The issue remains actionable for Logith. The Termination Notice is disputed and all rights are reserved, so the Agreement may still be in force. Draibav's use and retention of the data, and the scope of the export and deletion obligations, remain live questions. Logith should seek a written clarification or amendment conforming the Order Form definition to §1.9.",
+            "alone": {
+              "order_form.md": {
+                "findable": false,
+                "evidence": "4.1 Licensee Data. \"Licensee Data\" means data and information uploaded to the Platform by Licensee's Authorized Users in connection with Licensee's use of the Platform.",
+                "reason": "The Order Form does define 'Licensee Data' narrowly, as data uploaded by Licensee's Authorized Users. An attentive associate could see that bidder, consignor, bid and Platform-generated data fall outside that wording. But the Order Form never uses the term in any operative provision, so it does not show what the narrow definition costs the client. The harm depends on three things only the Agreement shows: (1) the Agreement's broader Section 1 definition, which creates the conflict; (2) Section 7.4, which lets Draibav use and commercialize data 'other than Licensee Data', including through pricing benchmarks; and (3) Section 2.3, under which the Order Form prevails. Without the Agreement, the definition reads as a neutral definition, not a clear harm to Logith."
+              },
+              "logith_draibav_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "1.9 \"Licensee Data\" means all data and information, in any form, that is submitted to, collected by, entered into, stored in or generated by the Platform in connection with Licensee's auctions ... including (a) Bidder and Consignor registration data ... (b) bid histories ... (c) hammer prices ...; 7.4 Licensor may collect, use, aggregate, analyze and commercialize data ... other than Licensee Data ... and to develop and sell analytics products, market reports and market pricing benchmarks to third parties.; 2.3 ... Amendments, then Order Form, then body of License Agreement, then Service Level Schedule.",
+                "reason": "This document alone sets a broad definition of Licensee Data in Section 1.9. That definition covers bidder and consignor data, bid histories, hammer prices and data generated by the Platform. Read with that definition, Section 7.4 protects the client, because it keeps Licensee Data out of Draibav's commercialization rights. The document also shows that the Order Form prevails over the body of the agreement (Section 2.3). An associate could note that an Order Form term might override the definition, but that is only a general risk. The actual problem depends on Order Form Section 4 narrowing Licensee Data to data uploaded by Authorized Users, and that document is not provided. Without it, nothing here shows a narrower definition or any exposure of bidder, consignor or pricing data to commercialization."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Agreement §10.4(b): \"Sections 10.1 and 10.3 do not apply to: ... (b) a Party's breach of Section 8;\" Amendment No. 1 §3.1: \"Sections 8.4 through 8.7 of the Agreement are deleted in their entirety.\" Amendment No. 1 §3.2: \"The following new Section 8A is inserted in the Agreement immediately after Section 8.\"",
+            "reason": "Licensor (Draibav) bears all the data-security, incident-notification and incident-cost obligations, so the cap on their breach hurts Logith.\n\n- **What Amendment No. 1 does.** It moves those obligations out of Section 8 into a new, separately numbered Section 8A. It does not touch §10.4(b), which still removes from the cap only a breach of \"Section 8\".\n- **Why the parties treated 8A as separate.** The Amendment's own change to §12.8 lists \"8, 8A\" as distinct sections. The amended §8.1 also refers to Licensee Data as governed by \"Sections 7 and 8A\".\n- **Why §8 no longer covers data breaches.** §8.1 still excludes Licensee Data from Confidential Information. So a data breach cannot be pleaded as a breach of the remaining §8 confidentiality terms.\n- **No other uncapped route.** The §9 indemnity covers only IP infringement.\n- **Order of precedence.** Under §2.3 the Amendment ranks first.\n- **Result.** Draibav's breach of the strengthened 8A obligations, including the 8A.7 incident-cost reimbursement, is now subject to the 12-month-fees cap and the §10.1 exclusion of consequential damages. The term sheet contemplated that data-security breaches would be excluded from the cap.\n\nThe issue is still actionable:\n- The Agreement remains in force.\n- The termination dispute is unresolved, with an October 31, 2026 termination date contested.\n- 8A survives while Licensee Data is retained.\n- Logith can still seek a corrective amendment adding 8A to §10.4(b), or rely on it in negotiations.",
+            "alone": {
+              "logith_draibav_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "10.4 Exclusions. Sections 10.1 and 10.3 do not apply to: ... (b) a Party's breach of Section 8;",
+                "reason": "On its own, this agreement protects the client. Section 10.4(b) lifts the cap and the indirect-damages exclusion for any breach of Section 8. Section 8 currently contains the data-security, SOC 2, incident-notification and incident-response obligations in Sections 8.4–8.7, so Draibav's data-breach liability is uncapped. The document does show some background facts: Section 8.1 excludes Licensee Data from Confidential Information, Section 9 indemnifies only IP claims, and Section 2.3 ranks amendments first. These make Sections 8.4–8.7 the only route to uncapped data-breach liability, but they cause no harm while those sections stay in Section 8. The harm depends on Amendment No. 1, which deletes Sections 8.4–8.7, moves them to a new Section 8A, and leaves Section 10.4(b) unchanged. That amendment is not in this document, so a reader of this agreement alone would see no gap in the carve-out."
+              },
+              "amendment_no_1.md": {
+                "findable": false,
+                "evidence": "3.1 Deletion. Sections 8.4 through 8.7 of the Agreement are deleted in their entirety. ... The following new Section 8A is inserted in the Agreement immediately after Section 8",
+                "reason": "The amendment shows that the data-security obligations are moved out of Section 8 into a new standalone Section 8A. It also shows that the parties updated two other cross-references to account for the move: Section 8.1 (amendment Section 2) and the Section 12.8 survival clause (amendment Section 5). That might prompt an associate to check other cross-references. But the amendment says nothing about a liability cap. It does not show that Section 10.4(b) carves 'breach of Section 8' out of a 12-month-fees cap. It does not show that Licensee Data is excluded from Confidential Information, or that the indemnity is limited to IP infringement. Without the License Agreement, the reader cannot see that moving these obligations into 8A takes data-breach liability out of the uncapped carve-out and leaves it capped, which is the harm to Logith."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "SLS §5.2: \"Licensee may terminate the Agreement ... by giving Licensor written notice within thirty (30) days after the end of the third affected month.\" Amendment No. 1, Recital C: \"Monthly Availability of 98.1% for January 2026, 97.6% for February 2026 and 98.4% for March 2026. Licensee delivered to Licensor a written notice dated May 4, 2026 ... By letter dated May 11, 2026, Licensor disputed the effectiveness of the Termination Notice.\"",
+            "reason": "January, February and March 2026 were all below 99.0%, so a Chronic Failure occurred and March 2026 was the third affected month. Under §5.2 the notice was due by April 30, 2026. Logith's May 4 notice was four days late, which gives Draibav a strong argument that the fee-free termination (effective October 31, 2026) is ineffective. If so, Logith stays bound to a 60-month term with broad exclusivity and could face accelerated fees. That exposure is sharpened by the pending Ostrander change of control. The matter is still actionable. Logith has not accepted the result: Amendment No. 1 §6.1 expressly reserves both parties' positions on 'whether the Termination Notice was timely and effective', and §6.2 says nothing in the Amendment is an acceptance or admission. The lateness defect is therefore a live dispute Logith must address, not settled history.",
+            "alone": {
+              "service_level_schedule.md": {
+                "findable": false,
+                "evidence": "If a Chronic Failure occurs, Licensee may terminate the Agreement, in whole or with respect to any one or more Licensed Sites, by giving Licensor written notice within thirty (30) days after the end of the third affected month.",
+                "reason": "On its own, the Schedule sets out the Chronic Failure test (below 99.0% in three months within a rolling six-month period) and the 30-day notice deadline after the third affected month. That is only a generic deadline. Nothing in this document shows that a Chronic Failure actually happened: it has no January–March 2026 availability figures, no record of when Logith gave its termination notice (May 4, 2026), and no record of Draibav's dispute or the reservation of positions. Those facts appear only in Amendment No. 1. Without them, an associate cannot work out that the window closed April 30, 2026 or that the notice was late and harms Logith."
+              },
+              "amendment_no_1.md": {
+                "findable": false,
+                "evidence": "Recital C: \"Licensee delivered to Licensor a written notice dated May 4, 2026, stating that a Chronic Failure had occurred and that Licensee was terminating the Agreement under Section 5.2 of the Service Level Schedule...\" Section 6.1: \"...including as to whether a Chronic Failure occurred, whether the Termination Notice was timely and effective...\"",
+                "reason": "The amendment does show several facts. It records the January–March 2026 availability figures. It records Logith's termination notice dated May 4, 2026, and Draibav's May 11 letter disputing it. Section 6.1 reserves the parties' positions on whether that notice was timely. So an associate would see that timeliness is disputed. The amendment does not show the terms of Service Level Schedule Section 5.2. It does not state the 99.0% Chronic Failure threshold or that notice must be given within thirty days after the third affected month ends. Without that deadline, a reader cannot tell that the window closed April 30, 2026 or that the May 4 notice was four days late. The fact that makes the notice late, and harmful to Logith, comes from the Service Level Schedule, which is not provided."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C8 asks for fact F8, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": [
+          "criterion C7 asks for the whole ranking in fact F2 ('Amendments, then Order Form, then body of License Agreement, then Service Level Schedule'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.07,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

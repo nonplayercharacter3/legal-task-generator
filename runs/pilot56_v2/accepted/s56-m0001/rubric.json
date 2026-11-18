@@ -1,0 +1,133 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the License Agreement automatically renews for further 60-month terms unless Logith gives non-renewal notice within a single 30-day window ending 180 days before expiry, a departure from the 12-month renewals in the term sheet. It locates the issue in License Agreement Section 12.2 or Order Form Section 2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "60-month renewal",
+        "30-day window",
+        "180 days before"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the exclusivity clause binds Logith and all its Affiliates to use only Draibav software for all online, simulcast, mobile auction, bidding and condition-reporting functions throughout the United States and Canada. It also identifies that this goes beyond the term sheet's exclusivity, which covered only simulcast bidding software at the six sites. It locates the issue in License Agreement Section 3.4, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "all Affiliates",
+        "United States or Canada",
+        "six Licensed Sites"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Logith Holdings–Ostrander merger is an indirect change of control of Logith that requires Draibav's prior written consent, and that this consent has not been obtained. It locates the issue in License Agreement Section 15.2 or Amendment No. 1 Recital B, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "indirect change of control",
+        "prior written consent",
+        "Ostrander"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Order Form's narrower definition of 'Licensee Data' (data uploaded by Licensee's Authorized Users) controls. As a result, bidder, consignor, bid and transaction data fall outside 'Licensee Data', and Draibav may use and commercialize that data. It locates the issue in Order Form Section 4 or License Agreement Section 7.4, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "uploaded by Licensee's Authorized Users",
+        "Licensee Data",
+        "commercialize"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that Amendment No. 1 moved the data-security obligations out of Section 8 into a new Section 8A. As a result, Draibav's liability for a breach of those data-security obligations is no longer within the uncapped 'breach of Section 8' carve-out and is capped at 12 months' fees. It locates the issue in License Agreement Section 10.4(b) or Amendment No. 1 Section 3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I5",
+      "hints": [
+        "Section 8A",
+        "breach of Section 8",
+        "capped"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response identifies that Logith's May 4, 2026 Chronic Failure termination notice was sent after the 30-day window closed on April 30, 2026, leaving its termination right vulnerable. It locates the issue in Service Level Schedule Section 5.2 or Amendment No. 1 Recital C, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I6",
+      "hints": [
+        "May 4, 2026",
+        "April 30, 2026",
+        "four days late"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Order Form prevails over the body of the License Agreement in the event of conflict.",
+      "kind": "fact",
+      "source": "F2",
+      "hints": [
+        "Order Form prevails",
+        "order of precedence"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that Logith's parent, Logith Holdings, Inc., has signed a merger agreement with Ostrander Remarketing Partners, L.P.",
+      "kind": "fact",
+      "source": "F8",
+      "hints": [
+        "Logith Holdings",
+        "Ostrander Remarketing Partners",
+        "merger agreement"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is in the form of a memo addressed to the supervising partner. It presents the issues in an evident order of priority, for example ranked or grouped by severity.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memo",
+        "priority",
+        "To:"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "For each issue it lists, the response gives the location (document and section), why it matters for Logith, and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Location",
+        "Why it matters",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that Logith's May 4, 2026 Chronic Failure termination notice was timely under Service Level Schedule Section 5.2.",
+      "kind": "negative",
+      "source": "I6",
+      "hints": [
+        "timely notice",
+        "within the window"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response claims that Amendment No. 1 grants Draibav's consent to the Logith Holdings–Ostrander merger.",
+      "kind": "negative",
+      "source": "I3",
+      "hints": [
+        "consent granted",
+        "Amendment No. 1 consents"
+      ]
+    }
+  ]
+}

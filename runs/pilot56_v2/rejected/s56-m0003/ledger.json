@@ -1,0 +1,260 @@
+{
+  "matter_id": "s56-m0003",
+  "summary": "Trobeil Hearth Bakeries, Inc., a commercial wholesale bakery with plants in Paterson, NJ and Allentown, PA, buys bread flour, specialty blends and premixes from Liran Milling Company, an Illinois flour miller, under a New York-law Supply Agreement effective January 1, 2025. The folder holds the following documents: the original term sheet, the Supply Agreement, Order Form No. 7, a Statement of Work for a custom sourdough blend, a 2026 Amendment, a Quality Agreement, and two unrelated vendor contracts. The partner wants an issue-spotting memo. The planted problems are: an uncapped downstream-product indemnity running from Trobeil; five-year automatic renewals; exclusivity far broader than the term sheet; a warranty tied to a Quality Agreement definition that points to Liran's own changeable data sheets; an Illinois law and forum clause in the Quality Agreement that the precedence clause lets control recall disputes; and a lapsed 45-day exclusivity-exit window, measured from a price adjustment date that Trobeil disputes.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Trobeil Hearth Bakeries, Inc.",
+      "role": "Customer; commercial bakery and the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Liran Milling Company",
+      "role": "Supplier; flour miller and blender based in Illinois"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "January 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement governing law",
+      "value": "Laws of the State of New York",
+      "doc": "D1",
+      "section": "20.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement forum",
+      "value": "State and federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "20.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "Amendment; Quality Agreement (quality, food-safety, recall matters); Supply Agreement; Statement of Work; Order Form",
+      "doc": "D1",
+      "section": "20.3"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement liability cap",
+      "value": "Fees paid or payable in the 12 months before the claim",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F6",
+      "key": "Term sheet exclusivity scope",
+      "value": "Hard red winter bread flour for the Paterson, NJ and Allentown, PA bakeries only",
+      "doc": "D2",
+      "section": "Exclusivity"
+    },
+    {
+      "id": "F7",
+      "key": "Term sheet renewal term",
+      "value": "One-year renewals, either party may opt out on 90 days' notice",
+      "doc": "D2",
+      "section": "Term and Renewal"
+    },
+    {
+      "id": "F8",
+      "key": "Amendment Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D5",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Supply Agreement Initial Term",
+      "value": "Five years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F10",
+      "key": "Adjusted bread flour price",
+      "value": "$468 per metric ton (previously $412)",
+      "doc": "D3",
+      "section": "Pricing"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "trobeil_liran_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "trobeil_liran_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "liran_order_form_no7.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "sourdough_blend_statement_of_work.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "supply_agreement_amendment_no1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "trobeil_liran_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "ostrander_pest_services_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "kessridge_mixer_equipment_lease.md",
+      "kind": "equipment lease",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Under Supply Agreement Section 11.2, Trobeil indemnifies Liran for all Losses arising out of or relating to any Finished Goods (Trobeil's baked goods), regardless of whether such Losses are attributable to the Products, which reaches recalls and illness claims caused by Liran's contaminated flour. Section 12.4 removes 'a party's obligations under Section 11' from the 12-month-fees cap in Section 12.2. The carve-out applies to both parties alike. Liran's own indemnity in Section 11.1, however, covers only infringement of Liran's trademarks, so in practice only Trobeil carries a large uncapped exposure. Read together, the two provisions leave Trobeil with unlimited liability for downstream food-safety losses, including losses Liran caused.",
+      "doc": "D1",
+      "section": "11.2",
+      "detect_terms": [
+        "regardless of whether such Losses are attributable to the Products",
+        "a party's obligations under Section 11"
+      ],
+      "expected_finding": "Section 11.2 makes Trobeil indemnify Liran for all Finished Goods losses, even those caused by Liran's flour, and Section 12.4 excludes that indemnity from the Section 12.2 cap, so Trobeil faces unlimited liability; the indemnity should be limited to losses not caused by the Products and made subject to a cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Supply Agreement Section 2.2 renews the agreement automatically for successive Renewal Terms unless a party gives notice of non-renewal at least 120 days before the end of the current term. Section 1 defines 'Renewal Term' as a period equal to the Initial Term, and Section 2.1 sets the Initial Term at five years. Read together, these provisions roll the agreement over in five-year blocks, together with the exclusivity and volume commitments. The term sheet contemplated one-year renewals that either party could end on 90 days' notice.",
+      "doc": "D1",
+      "section": "2.2",
+      "detect_terms": [
+        "a period equal to the Initial Term",
+        "at least 120 days before"
+      ],
+      "expected_finding": "Read with the Section 1 definition and the five-year Initial Term in Section 2.1, Section 2.2 renews the agreement automatically for five-year terms unless Trobeil opts out 120 days ahead, departing from the one-year renewals in the term sheet; renewals should be shortened to one year with a termination right on 90 days' notice.",
+      "contradicts": "F7",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Supply Agreement Section 8.1 warrants that Products will conform to the Specifications, a term the Supply Agreement defines by reference to the Quality Agreement. Section 1.9 of the Quality Agreement defines 'Specifications' as Liran's standard published product data sheets as in effect from time to time. Trobeil's protein, ash and falling-number requirements appear only as 'Customer Specifications' in the Statement of Work, where they govern development acceptance alone. Read together, the two definitions mean the ongoing production warranty is measured against standards Liran sets and can change on its own, rather than against Trobeil's requirements. Under Supply Agreement Section 20.3, the Quality Agreement also controls on quality matters.",
+      "doc": "D1",
+      "section": "8.1",
+      "detect_terms": [
+        "conform to the Specifications",
+        "as defined in the Quality Agreement"
+      ],
+      "expected_finding": "Because the Supply Agreement's warranty incorporates the Quality Agreement definition of Specifications, which means Liran's own data sheets as amended from time to time, Trobeil has no warranty that production flour meets its own Customer Specifications; the definition should be changed to incorporate the Customer Specifications and to bar unilateral changes.",
+      "contradicts": null,
+      "doc2": "D6",
+      "section2": "1.9",
+      "detect_terms2": [
+        "Supplier's standard published product data sheets",
+        "as in effect from time to time"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The Supply Agreement chooses New York law (Section 20.1) and courts in New York County (Section 20.2). Section 14 of the Quality Agreement provides that it, and any dispute about quality, food-safety or recall matters, is governed by Illinois law and subject to the exclusive jurisdiction of the Circuit Court of Cook County, which is Liran's home forum. Section 20.3 of the Supply Agreement normally lets the Supply Agreement prevail, but it ranks the Quality Agreement above the Supply Agreement 'as to quality, food-safety and recall matters'. Read together, these provisions send Trobeil's highest-value disputes, recall and contamination claims, to Illinois law and an Illinois court.",
+      "doc": "D6",
+      "section": "14",
+      "detect_terms": [
+        "laws of the State of Illinois",
+        "Circuit Court of Cook County"
+      ],
+      "expected_finding": "Because Supply Agreement Section 20.3 gives the Quality Agreement priority on quality, food-safety and recall matters, the Quality Agreement's Section 14 choice of Illinois law and exclusive Cook County jurisdiction overrides the New York law and forum for recall and contamination disputes; Section 14 should be conformed to New York law and forum, or the precedence clause should exclude governing law and forum.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ],
+      "doc2": "D1",
+      "section2": "20.3",
+      "detect_terms2": [
+        "as to quality, food-safety and recall matters"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Supply Agreement Section 3.1 requires Trobeil and its Affiliates to buy from Liran 100% of their requirements of all flour, flour blends, premixes and other milled grain products, for every bakery anywhere in the United States and Canada. The term sheet limited exclusivity to hard red winter bread flour for the Paterson and Allentown bakeries. The clause locks Trobeil's specialty and future plants into Liran.",
+      "doc": "D1",
+      "section": "3.1",
+      "detect_terms": [
+        "100% of its requirements",
+        "United States and Canada"
+      ],
+      "expected_finding": "Section 3.1 extends exclusivity to all milled grain products for every Trobeil and Affiliate bakery in the United States and Canada, far beyond the term sheet's limit of bread flour for the Paterson and Allentown bakeries, and should be narrowed to that agreed scope.",
+      "contradicts": "F6",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I6",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 4 of Amendment No. 1 (effective March 2, 2026) lets Trobeil end exclusivity for any Product whose price rises more than 8%, by written notice delivered within 45 days after the applicable Price Adjustment Date. Order Form No. 7, dated October 30, 2026, records a Price Adjustment Date of August 1, 2026 and an increase in the bread flour price from $412 to $468 per metric ton, about 13.6%. The 45-day window therefore closed on September 15, 2026, before the date of the Order Form, and no notice appears in the folder. Trobeil has not accepted the result: the Order Form records that Trobeil places the order under protest, disputes the August 1, 2026 price adjustment and reserves all rights.",
+      "doc": "D5",
+      "section": "4",
+      "detect_terms": [
+        "within 45 days after the applicable Price Adjustment Date"
+      ],
+      "expected_finding": "Measured from the August 1, 2026 Price Adjustment Date in Order Form No. 7, the 45-day window in Amendment Section 4 to exit exclusivity for the more-than-8% bread flour increase closed on September 15, 2026 without notice, so Trobeil must act now on its under-protest reservation in the Order Form: challenge the adjustment, or seek Liran's written agreement to reopen or extend the exit right.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Pricing",
+      "detect_terms2": [
+        "Price Adjustment Date: August 1, 2026",
+        "under protest"
+      ]
+    }
+  ]
+}
