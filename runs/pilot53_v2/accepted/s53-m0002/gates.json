@@ -1,0 +1,162 @@
+{
+  "matter_id": "s53-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "dev",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Seller Note §5.2: \"Set-off against this Note under Section 5.1 is the sole and exclusive means by which Maker and the other Buyer Indemnitees may recover from Holder any Losses in excess of the Escrow Funds. The aggregate amount set off under this Note, together with all amounts disbursed to the Buyer Indemnitees from the Escrow Funds, shall not exceed the Cap, including claims for breach of Fundamental Representations and claims for Taxes. This Section 5.2 does not limit recovery for Losses arising out of Fraud.\" SPA §12.10: \"...with respect to payment, set-off and recourse under the Seller Note, the Seller Note shall control.\"",
+            "reason": "The SPA keeps Fundamental Representation and Pre-Closing Tax claims outside the $4,850,000 Cap. Under SPA §9.5(c) they are limited only by the Purchase Price, and SPA §9.6(c) allows recovery directly from Seller. Note §5.2 does two things against that. First, it makes set-off the sole means of recovery beyond the escrow, which removes direct recourse against Seller. Second, it caps escrow plus set-off at the Cap even for Fundamental Representation and Tax claims. Only Fraud is carved out. SPA §12.10 says the Note controls on set-off and recourse, so the narrower Note terms arguably govern. Saitosk is the indemnified party, so this limit hurts it. Its recovery for title, capitalization and tax breaches falls from up to $48.5M to $4.85M in total, and the $6M Note balance is the only source beyond the escrow. The folder contains no amendment, waiver or other document that cures this. The 18-month survival periods are still running, so the issue remains live and actionable: Saitosk can seek a corrective amendment or a clarification of the precedence clause.",
+            "alone": {
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "Set-off against this Note under Section 5.1 is the sole and exclusive means by which Maker and the other Buyer Indemnitees may recover from Holder any Losses in excess of the Escrow Funds. The aggregate amount set off under this Note, together with all amounts disbursed to the Buyer Indemnitees from the Escrow Funds, shall not exceed the Cap, including claims for breach of Fundamental Representations and claims for Taxes. This Section 5.2 does not limit recovery for Losses arising out of Fraud.",
+                "reason": "What the Note shows: Section 5.2 makes set-off the exclusive recourse beyond escrow. It also caps that recovery at the 'Cap', expressly including Fundamental Representation and Tax claims and excepting only Fraud. An associate would notice this is buyer-unfavorable. What the Note does not show: (1) the SPA's own position. 'Cap' is defined only by reference to the Purchase Agreement, so the Note does not reveal the $4,850,000 amount or that SPA Section 9.5(c) carves Fundamental Representation and Pre-Closing Tax claims out of the Cap. If the SPA also capped those claims, Section 5.2 would change nothing. (2) Which document controls. Nothing in the Note says it overrides the SPA on recourse. That comes from SPA Section 12.10. Without it, the SPA's uncapped indemnity could arguably govern. So the actual harm, a narrower carve-out than the SPA gives that governs over the SPA, depends on the unseen SPA."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 12.10: \"...except that ... (b) with respect to payment, set-off and recourse under the Seller Note, the Seller Note shall control.\"",
+                "reason": "Read alone, the SPA protects Buyer. Section 9.5(c) takes Fraud, Fundamental Representation breaches and Pre-Closing Taxes outside the $4,850,000 Cap, up to the Purchase Price. Section 9.6 lets Buyer recover from the Escrow, then by set-off, and then 'directly from Seller'. Section 12.10 does say the Seller Note controls on set-off and recourse, so a careful associate could flag that the Note's terms need checking. But nothing in the SPA shows that the Note makes set-off Buyer's exclusive recovery beyond the Escrow, applies the Cap to Fundamental Representation and Tax claims, or excepts only Fraud. Those terms appear only in Seller Note Section 5.2, which I was not given. Without it, the SPA shows no conflict and no capped recovery that hurts Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 9.3(b): Buyer shall indemnify Seller Indemnitees \"from and against ... any and all Losses arising under the Seller Guarantees, whether arising before or after the Closing.\" Section 9.5(a): \"the aggregate liability of Buyer under Section 9.3(a) shall not ... exceed $4,850,000 (10% of Purchase Price) (the \"Cap\").\"",
+            "reason": "Buyer is the client and is the party giving the 9.3(b) indemnity. The Cap in Section 9.5(a) applies only to Buyer's liability under 9.3(a), so the 9.3(b) Seller Guarantees indemnity has no limit. The words \"whether arising before or after the Closing\" make Buyer bear Losses from pre-Closing defaults under the Flight Kitchen lease and the supply contracts, which occurred while Seller controlled the Company. Nothing carves out matters Seller must itself indemnify under 9.2, including Pre-Closing Food Safety Matters that could trigger supply-contract or lease defaults. Section 6.5 only requires efforts to obtain Seller's release, so the exposure can continue indefinitely. No other document in the folder cures or limits this. The issue remains actionable because the indemnity survives and Buyer will carry this liability going forward."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 9.1: \"Holder may assign or transfer this Note, in whole or in part, to any Person without the consent of Maker. ... Each transferee succeeds to all rights of Holder under this Note. Maker may not assign or delegate any of its obligations under this Note without the prior written consent of Holder.\"",
+            "reason": "The problem is present and hurts the client. Saitosk is the Maker (Buyer), so it bears the burden of this one-sided clause. Holder (Seller) may transfer the Note to anyone, including a rival inflight caterer, without Saitosk's consent, and there is no carve-out for competitors. Under the same section, any transferee 'succeeds to all rights of Holder.' Those rights include the Section 7.1 monthly Company balance sheets and income and cash-flow statements, other financial information on request, notice and default rights, and acceleration under Section 8.2. Nothing in the folder fixes this. Section 9.3 keeps Saitosk's set-off rights and defenses against a transferee, but it does not restrict who can take the Note or what information they receive. There is no confidentiality covenant binding a transferee; SPA Section 6.6 binds only Seller. SPA Section 12.4 restricts assignment of the SPA, not the Note. SPA Section 12.10(b) makes the Note control on payment, set-off and recourse. The Note's own Section 10.3 lets its terms be amended by a writing signed by Maker and Holder, so the issue can still be raised and dealt with, for example through a competitor exclusion, a consent right, or confidentiality conditions on transfer. Nothing in the folder shows Saitosk has accepted a transfer or given up the point."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Escrow Agreement §11.2: \"This Escrow Agreement, and any dispute as to entitlement to the Escrow Funds, including any dispute concerning the underlying indemnification claim that is the subject of a Claim Notice, shall be governed by and construed in accordance with the laws of the State of Delaware ... Each party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware ...\" versus SPA §12.8: \"This Agreement shall be governed by and construed in accordance with the laws of the State of New York ... Each party irrevocably submits to the exclusive jurisdiction of the state or federal courts located in the Borough of Manhattan, New York, in any action or proceeding arising out of or relating to this Agreement or any Ancillary Agreement ...\"",
+            "reason": "The two clauses conflict. The Escrow Agreement sends disputes over the underlying Article IX indemnity claim to Delaware law and an exclusive Delaware Chancery forum. The SPA sends any dispute relating to the SPA or any Ancillary Agreement, which by definition includes the Escrow Agreement, to New York law and an exclusive Manhattan forum. The SPA's general precedence rule would normally resolve this, but SPA §12.10(a) carves out that the Escrow Agreement controls \"with respect to the release of Escrow Funds.\" Under Escrow §4.4 and the definition of Final Order, a disputed claim can only be released on a Final Order of a Delaware court (or joint instructions). The release mechanics therefore point to Delaware, while the SPA indemnity, the Seller Note set-off (§10.5) and direct recourse all point to Manhattan under New York law. This hurts Buyer, the indemnified party, most. Buyer must recover first from escrow (SPA §9.6). If Seller objects to a Claim Notice, Buyer may face parallel Delaware and New York proceedings, inconsistent results, and delay in reaching the $4.85M escrow. Seller can use the conflict to stall, and Seller benefits from Funds staying in escrow until the 18-month release. The issue is still actionable. The escrow runs to October 2027 and nothing in the folder shows a claim has been resolved or that Buyer has accepted the outcome. Buyer can seek an amendment under Escrow §11.3 to conform the forum and law.",
+            "alone": {
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.2: \"This Escrow Agreement, and any dispute as to entitlement to the Escrow Funds, including any dispute concerning the underlying indemnification claim that is the subject of a Claim Notice, shall be governed by and construed in accordance with the laws of the State of Delaware ... Each party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware...\"",
+                "reason": "The escrow agreement alone shows that Delaware law and an exclusive Delaware Chancery forum reach the underlying Article IX indemnification claim, not just the escrow mechanics. A careful reader might find that broad. But this document does not show a conflict. Nothing in it reveals that SPA Section 12.8 picks New York law and an exclusive Manhattan forum for disputes under the SPA and Ancillary Agreements. Nor does it show that SPA Section 12.10 lets the Escrow Agreement control release of Escrow Funds and so defeats the SPA's precedence clause. Section 1.2 even says the Escrow Agent is not charged with knowledge of the Purchase Agreement's terms. The harm to Buyer is the risk of litigating the same claim in two forums under two laws, with inconsistent results and delayed access to the escrow. That harm depends entirely on SPA provisions that cannot be seen from this document."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "with respect to the release of Escrow Funds, the Escrow Agreement shall control",
+                "reason": "Read alone, the SPA picks New York law and an exclusive Manhattan forum for disputes under the SPA and any Ancillary Agreement (Section 12.8). Section 12.10(a) also gives the Escrow Agreement control over release of Escrow Funds. That carve-out could prompt a careful associate to check the Escrow Agreement, but the SPA itself shows no conflict. The problem depends on Escrow Agreement Section 11.2 choosing Delaware law and exclusive Court of Chancery jurisdiction, and extending that to the underlying indemnification claim. That content appears only in the Escrow Agreement, which was not provided, so the split-forum, split-law risk to the Buyer cannot be seen from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Escrow Agreement §1.1: \"'Losses' means losses, damages, liabilities, deficiencies, judgments, interest, awards, costs and expenses, including reasonable attorneys' fees, actually incurred by a Buyer Indemnitee, excluding fines, penalties and other amounts paid to any Governmental Authority.\" §4.5: \"The Escrow Agent shall disburse Escrow Funds to Buyer under this Article 4 only in respect of Losses.\" SPA §9.4: \"Seller shall indemnify the Buyer Indemnitees from and against all Losses, including fines, penalties, recall and remediation costs and amounts paid to any Governmental Authority ... shall be payable first from the Escrow Funds.\" SPA §12.10: \"with respect to the release of Escrow Funds, the Escrow Agreement shall control.\"",
+            "reason": "Seller gives the food-safety indemnity and Buyer, our client, benefits from it. That indemnity expressly covers FDA fines, penalties and payments to a Governmental Authority, and it is to be paid first from escrow. The Escrow Agreement defines Losses to exclude exactly those amounts and lets the agent release funds only for Losses. SPA §12.10 makes the Escrow Agreement control on release, so the $4.85M escrow cannot fund the regulatory fines from the listeria finding and FDA warning letter that it was meant to secure. Buyer is pushed onto Seller Note set-off, which is subordinated, limited and capped. The problem is still actionable. The escrow runs until about October 2027, no claim has yet been rejected on this ground, and Buyer can still seek an amendment under §11.3 or a joint instruction from Seller.",
+            "alone": {
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "\"Losses\" means losses, damages, liabilities, deficiencies, judgments, interest, awards, costs and expenses, including reasonable attorneys' fees, actually incurred by a Buyer Indemnitee, excluding fines, penalties and other amounts paid to any Governmental Authority.\" and \"The Escrow Agent shall disburse Escrow Funds to Buyer under this Article 4 only in respect of Losses.\"",
+                "reason": "On its own, the Escrow Agreement shows that it defines Losses itself, that the definition excludes fines, penalties and payments to Governmental Authorities, and that Section 4.5 limits disbursements to Buyer to Losses so defined. An associate could notice that the escrow will not cover regulatory fines, which is somewhat unfavorable to Buyer. The document does not show the actual problem. It never mentions Pre-Closing Food Safety Matters, the January 2026 listeria finding or the FDA warning letter. It does not show that SPA Section 9.4 gives a specific indemnity covering fines and penalties payable first from escrow, or that the SPA's own definition of Losses includes fines. It also does not show that SPA Section 12.10 makes the Escrow Agreement control release. Without the SPA there is no inconsistency to see, and no sign that the excluded fines are the exact exposure the escrow was meant to secure."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Claims for the Pre-Closing Food Safety Matters are not subject to Section 9.5(b), shall be payable first from the Escrow Funds, and to the extent the Escrow Funds are insufficient or unavailable, shall be recovered in accordance with Section 9.6.\" (Section 9.4); \"In the event of any conflict or inconsistency between this Agreement and any Ancillary Agreement, this Agreement shall prevail; except that (a) with respect to the release of Escrow Funds, the Escrow Agreement shall control...\" (Section 12.10)",
+                "reason": "The SPA alone shows three things. Section 9.4 gives a specific indemnity for fines, penalties and amounts paid to Governmental Authorities, payable first from the Escrow Funds. The SPA definition of Losses expressly includes fines and penalties. Section 12.10 lets the Escrow Agreement control release of Escrow Funds. An associate might note that this carve-out creates a risk if the Escrow Agreement is drafted differently. The SPA alone does not show the actual conflict. That conflict is the Escrow Agreement's narrower definition of Losses, which excludes fines, penalties and governmental payments and limits release to Losses as so defined. That narrower definition is only in the Escrow Agreement. Without it, the SPA reads as internally consistent, and the escrow appears able to fund regulatory fines. The fallback to Seller Note set-off and direct recovery under Section 9.6 also looks intact on the face of this document."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

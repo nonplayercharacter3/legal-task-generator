@@ -1,0 +1,102 @@
+{
+  "matter_id": "s53-m0003",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I2\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I2"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 4.2: \"At the end of the Initial Term, this Order Form renews automatically for successive 24-month Renewal Terms ... unless Moupeis gives Lorail written notice of non-renewal no earlier than 180 days and no later than 150 days before the expiry of the Initial Term or the then-current Renewal Term. ... the Minimum Annual Commitment for each Contract Year in a Renewal Term is 110% of the Minimum Annual Commitment that applied in the last Contract Year of the immediately preceding Initial Term or Renewal Term.\"",
+            "reason": "The problem is present and it falls on Moupeis. Only Moupeis has to give the non-renewal notice, and only within a 30-day window. If it misses that window, it is bound for 24 more months. Its US$1.8M per Contract Year minimum (Section 5.1) then rises 10% and keeps compounding in each later Renewal Term. The Section 6.1 exclusivity also continues during that time. Nothing elsewhere in the folder cures this. MSA Section 14.2 confirms that each Order Form stays in effect for its stated term \"including any renewal provided for in it.\" The MSA has no convenience termination right, and no amendment touches this term. The Initial Term began April 1, 2025 and runs until about March 31, 2028. The notice window therefore falls around October 2027, which is still in the future as of November 2026. The issue remains actionable, either by negotiating an amendment now or by diarizing the window."
+          },
+          {
+            "issue": "I2",
+            "present": false,
+            "evidence": "Order Form §6.1: \"During the Term and for twelve (12) months after the expiry or termination of this Order Form, Moupeis shall not perform itself or procure from any third party any QA testing, Certification Testing, localization testing or player support services for any Moupeis Title in any territory.\" MSA §1.1(i): \"'Moupeis Title' means any video game, interactive entertainment product or related downloadable content, expansion, update or port, on any platform, that is developed, published, co-published, sublicensed or distributed by Moupeis or any of its Affiliates.\"",
+            "reason": "findable from order_form_001.md alone, so it does not need two documents",
+            "alone": {
+              "order_form_001.md": {
+                "findable": true,
+                "evidence": "6.1 Exclusivity. During the Term and for twelve (12) months after the expiry or termination of this Order Form, Moupeis shall not perform itself or procure from any third party any QA testing, Certification Testing, localization testing or player support services for any Moupeis Title in any territory.",
+                "reason": "The Order Form alone shows the overbreadth and the harm to Moupeis. Section 2.1 limits scope to two named 'Covered Titles', calling them 'the Moupeis Titles *Ashfall Run* and *Tidebreak Legends*', which marks 'Moupeis Title' as a wider category. Section 6.1 then switches to 'any Moupeis Title'. It also bars in-house work, covers player support that is not in scope at all, applies in any territory, and runs for the Term plus 12 months. A careful associate would see that Moupeis is locked out of using its own teams or other vendors beyond the two covered games. What this document does not show is the MSA Section 1.1 definition: that 'Moupeis Title' reaches every game published, co-published, sublicensed or distributed by Moupeis or any Affiliate. So the reach into affiliates' catalogs depends on the MSA. That point adds to the scope of the problem but is not needed to spot it."
+              },
+              "master_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"Moupeis Title\" means any video game, interactive entertainment product or related downloadable content, expansion, update or port, on any platform, that is developed, published, co-published, sublicensed or distributed by Moupeis or any of its Affiliates.",
+                "reason": "The MSA alone shows only a broad definition of 'Moupeis Title' covering the whole catalog of Moupeis and its Affiliates. On its own that definition is harmless. The MSA has no exclusivity, non-compete or restriction on Moupeis using in-house teams or other vendors. The problem depends on the Order Form: its Section 2.1 limits the engagement to Ashfall Run and Tidebreak Legends, and its Section 6.1 uses the defined term in an exclusivity covenant for the term plus 12 months. Neither appears in this document. A careful associate reading only the MSA could not see the overbroad exclusivity or that it hurts Moupeis."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Amendment No. 1, Section 2.1: \"Section 11.3(b) of the Agreement is deleted in its entirety and replaced with the following: '(b) a Party's breach of Section 9 (Confidentiality) to the extent that breach consists of the unauthorized disclosure of Pre-Release Builds;'\". DPA Section 8.1: \"Each Party's liability arising out of or relating to this DPA ... is subject to the limitations and exclusions of liability in Section 11 of the Agreement.\"",
+            "reason": "As originally signed, MSA 11.3(b) excluded from the cap and the indirect-damages bar all breaches of Section 9 and of the DPA. The amendment replaces that carve-out with one limited to unauthorized disclosure of Pre-Release Builds, and it drops the DPA reference entirely. DPA 8.1 then sends all DPA liability back to Section 11. Amendments rank first in the MSA 2.3 order of precedence, so nothing restores the carve-out. The obligations at stake are Lorail's: security of player personal data, breach costs under DPA 6.4, and confidentiality of non-build information such as player data and release schedules. Lorail's direct liability to Moupeis for those breaches is now capped at 12 months' fees, and lost profits and consequential losses are excluded. That hurts Moupeis, which is the controller and bears the regulatory and reputational exposure. There is a partial mitigation: Lorail's indemnity for third-party claims under 10.1(b) stays uncapped through 11.3(a). Moupeis's own first-party losses and remediation costs remain capped. This is a live allocation of risk under a contract still in force, not a lapsed deadline. Moupeis can still raise it by renegotiating the clause or through a further amendment.",
+            "alone": {
+              "amendment_no_1.md": {
+                "findable": false,
+                "evidence": "\"(b) a Party's breach of Section 9 (Confidentiality) to the extent that breach consists of the unauthorized disclosure of Pre-Release Builds;\"",
+                "reason": "The amendment by itself shows only that Section 11.3(b) is replaced with narrower wording limited to unauthorized disclosure of Pre-Release Builds. It does not show that Section 11.3 lists exclusions from a liability cap, or what the Section 11.2 cap is (fees in the prior 12 months). It also does not show that the original 11.3(b) covered all confidentiality breaches and Data Processing Addendum breaches, so it is unclear what was removed. Nor does it show that DPA Section 8 ties DPA liability to the Section 11 limits, or that Lorail processes player personal data. Those points are what make the change harmful: Lorail's liability for player data breaches ends up capped. They come from the MSA and DPA, not from this document."
+              },
+              "data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "8.1 Each Party's liability arising out of or relating to this DPA, whether in contract, tort or under any other theory of liability, is subject to the limitations and exclusions of liability in Section 11 of the Agreement.",
+                "reason": "The DPA alone shows two things. First, liability under the DPA is subject to the limitations and exclusions in MSA Section 11. Second, Lorail processes player personal data through player support (Section 1.1 and Annex 1). The DPA does not show what Section 11 says: not the size of the cap, and not whether data or confidentiality breaches are carved out of it. It also says nothing about Amendment No. 1 narrowing the Section 11.3(b) carve-out to Pre-Release Builds. As originally signed, the MSA excluded DPA breaches from the cap, so Section 8.1 by itself would not have hurt Moupeis. The harm comes only from the amendment, which is not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Quality Agreement §5.2: \"Moupeis shall give Lorail a Nonconformity Notice within ten (10) Business Days after Delivery of that Deliverable... A Deliverable for which Lorail has not received a Nonconformity Notice within that period is deemed accepted on the expiry of that period. Lorail may then invoice it under the applicable Order Form.\" The Notice of Nonconformity, dated September 10, 2026, states: \"Lorail delivered on August 21, 2026 by upload to the Delivery Channel, with a delivery notification email to Moupeis's producer and QA lead on the same date.\"",
+            "reason": "The obligation is Moupeis's: as the customer, it must give the Nonconformity Notice. Delivery was Friday, August 21, 2026. The tenth Business Day after that was Friday, September 4, before Labor Day on September 7. The September 10 notice therefore falls outside the window. MSA §4.4 makes the Quality Agreement procedure the governing acceptance procedure. The Report is therefore deemed accepted, so Lorail can invoice the US$9,500-per-report fixed fee (Order Form §5.6) and argue that the re-test Moupeis demands is chargeable additional Services under QA §5.6, at the 1.5x rate for any overtime work Moupeis requests. This hurts Moupeis, which needs a no-charge re-test before a scheduled platform submission. The folder records no restated acceptance, payment or waiver. The letter expressly rejects the Report and asks Lorail not to invoice it, so the point is live and actionable. There is partial mitigation: the MSA §8.2(b) 90-day conformity warranty and §8.3 no-charge re-performance remedy are in the MSA body, which prevails over the Quality Agreement. But they do not undo deemed acceptance or invoiceability. The warranty runs out about November 19, 2026, two days from today, so Moupeis should promptly assert a warranty claim as a fallback.",
+            "alone": {
+              "quality_agreement.md": {
+                "findable": false,
+                "evidence": "A Deliverable for which Lorail has not received a Nonconformity Notice within that period is deemed accepted on the expiry of that period. Lorail may then invoice it under the applicable Order Form.",
+                "reason": "The Quality Agreement alone sets the 10 Business Day rejection window, provides that a deliverable is deemed accepted when it lapses, and says that re-tests after acceptance are chargeable additional Services (Section 5.6). An associate would see this as a general risk for Moupeis. But the document has no facts about the Ashfall Run Certification Test Report. It does not give its August 21, 2026 Delivery date or the September 10, 2026 date of Moupeis's Nonconformity Notice. Those facts come only from the notice letter. Without them, the agreement shows no actual late notice and no live dispute, so the specific problem cannot be found from this document alone."
+              },
+              "notice_of_nonconformity_2026-09-10.md": {
+                "findable": false,
+                "evidence": "Lorail delivered on August 21, 2026 by upload to the Delivery Channel, with a delivery notification email to Moupeis's producer and QA lead on the same date.",
+                "reason": "The letter alone shows the delivery date (August 21, 2026), the notice date (September 10, 2026), and that the notice is given under Quality Agreement Section 5.2. It never states how long Moupeis has to give a Nonconformity Notice. It also does not say that a missed deadline means the Report is deemed accepted and can be invoiced. The ten-Business-Day window and the deemed-acceptance consequence come only from the Quality Agreement (and MSA Section 4.4), which I was not given. A careful associate could notice the roughly three-week gap and decide to check the deadline. Without the other document, though, they could not tell that the notice is late or that this hurts Moupeis."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "matter_id": "s53-m0003",
+  "summary": "Moupeis Interactive Publishing, Inc., a video game publisher and the firm's client, buys pre-release QA and certification testing, localization testing and player support from Lorail Quality Labs LLC under a Master Services Agreement dated March 3, 2025. The folder holds the MSA, a Quality Agreement, an Order Form, a Service Level Schedule, a Data Processing Addendum, Amendment No. 1, and a September 10, 2026 Notice of Nonconformity that Moupeis sent Lorail about a Certification Test Report. It also holds two distractors: a prior MSA draft and Lorail's certificate of insurance. Four problems are planted. The Order Form auto-renews for long terms with a narrow opt-out window. The Order Form's exclusivity reaches every Moupeis and affiliate title through the MSA's definition. Amendment No. 1 narrows the data-breach carve-out from the cap, and the DPA routes data liability into that cap. The Nonconformity Notice was sent after the Quality Agreement's 10-Business-Day rejection window had closed.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Moupeis Interactive Publishing, Inc.",
+      "role": "Client; video game publisher and customer receiving QA, localization testing and player support services"
+    },
+    {
+      "id": "P2",
+      "name": "Lorail Quality Labs LLC",
+      "role": "Service provider of game QA and certification testing, localization testing and player support"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 3, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "16.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA liability cap",
+      "value": "fees paid or payable under the Agreement in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "Amendments; MSA body; Data Processing Addendum; Service Level Schedule; Quality Agreement; Order Form",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F5",
+      "key": "Order Form Effective Date",
+      "value": "April 1, 2025",
+      "doc": "D7",
+      "section": "Header"
+    },
+    {
+      "id": "F6",
+      "key": "Order Form Initial Term",
+      "value": "36 months from the Order Form Effective Date",
+      "doc": "D7",
+      "section": "4.1"
+    },
+    {
+      "id": "F7",
+      "key": "Order Form Minimum Annual Commitment",
+      "value": "US$1,800,000 per contract year",
+      "doc": "D7",
+      "section": "5.1"
+    },
+    {
+      "id": "F8",
+      "key": "Order Form Covered Titles",
+      "value": "Ashfall Run and Tidebreak Legends",
+      "doc": "D7",
+      "section": "2.1"
+    },
+    {
+      "id": "F9",
+      "key": "Amendment No. 1 date",
+      "value": "June 16, 2026",
+      "doc": "D5",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Notice of Nonconformity date",
+      "value": "September 10, 2026",
+      "doc": "D3",
+      "section": "Date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "notice_of_nonconformity_2026-09-10.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "order_form_001.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "msa_draft_v3_feb2025.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "lorail_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Order Form Section 4.2 renews the Order Form automatically after its 36-month Initial Term for successive 24-month Renewal Terms. Moupeis can avoid renewal only by giving non-renewal notice within a 30-day window that opens 180 days and closes 150 days before the current term expires. Each Renewal Term carries forward the US$1,800,000 Minimum Annual Commitment at a 110% uplift. A single missed 30-day window therefore locks Moupeis into two more years of escalating committed spend. The MSA lets each Order Form set its own term, so nothing in the MSA overrides this.",
+      "doc": "D7",
+      "section": "4.2",
+      "detect_terms": [
+        "successive 24-month Renewal Terms",
+        "no earlier than 180 days and no later than 150 days"
+      ],
+      "expected_finding": "Order Form Section 4.2 auto-renews for 24-month terms at a 110% uplifted minimum commitment unless Moupeis gives notice in a narrow 30-day window 150-180 days before expiry. Moupeis should negotiate a shorter renewal term, a longer and broader opt-out period (or termination for convenience on renewal), and removal of the uplift.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Order Form Section 2.1 limits the engagement to QA and localization testing for two Covered Titles, Ashfall Run and Tidebreak Legends. Order Form Section 6.1 nonetheless provides that Moupeis shall not perform itself or procure from any third party QA, localization testing or player support services for 'any Moupeis Title' in any territory, during the Order Form term plus 12 months. MSA Section 1.1 defines 'Moupeis Title' to mean every game published, co-published, sublicensed or distributed by Moupeis or any of its Affiliates. Read together, the two documents bar Moupeis and its affiliates from using in-house teams or other vendors across the entire catalog worldwide, not just the two titles the deal covers. MSA precedence does not cure this because the documents do not conflict: the Order Form simply uses the MSA's defined term.",
+      "doc": "D7",
+      "section": "6.1",
+      "detect_terms": [
+        "any Moupeis Title",
+        "shall not perform itself or procure"
+      ],
+      "expected_finding": "Read with the MSA Section 1.1 definition of 'Moupeis Title', Order Form Section 6.1 bars Moupeis and its Affiliates from in-house or third-party QA, localization testing and player support for its entire catalog worldwide for the term plus 12 months. Exclusivity should be limited to the Covered Titles and the contracted services, with in-house work and Affiliates carved out.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "1.1",
+      "detect_terms2": [
+        "published, co-published, sublicensed or distributed by Moupeis or any of its Affiliates"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "As originally signed, MSA Section 11.3(b) excluded from the Section 11.2 cap (fees in the prior 12 months) any breach of Section 9 (Confidentiality) or of the Data Processing Addendum. Amendment No. 1, dated June 16, 2026, Section 2 deletes and replaces Section 11.3(b) so that the carve-out reaches only unauthorized disclosure of Pre-Release Builds. DPA Section 8 provides that each party's liability under the DPA is subject to the limitations and exclusions of liability in Section 11 of the Agreement. Lorail processes player personal data through its player support services. Read together, the amendment and DPA Section 8 cap Lorail's liability for a player data breach, and for other confidentiality breaches, at 12 months' fees. Amendments rank first in the order of precedence, so nothing restores the carve-out.",
+      "doc": "D5",
+      "section": "2",
+      "detect_terms": [
+        "unauthorized disclosure of Pre-Release Builds"
+      ],
+      "expected_finding": "Amendment No. 1 Section 2 narrows the MSA Section 11.3(b) carve-out to Pre-Release Build disclosures. Combined with DPA Section 8, which subjects DPA liability to the MSA Section 11 limits, Lorail's liability for player personal-data breaches and other confidentiality breaches is now capped at 12 months' fees, so Moupeis should seek a further amendment restoring the uncapped (or separately super-capped) carve-out for DPA and confidentiality breaches.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "8",
+      "detect_terms2": [
+        "subject to the limitations and exclusions of liability"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Quality Agreement Section 5.2 requires Moupeis to give a Nonconformity Notice within ten (10) Business Days after Delivery of a deliverable; otherwise the deliverable is deemed accepted and becomes invoiceable. Under MSA Section 4.4, deliverable acceptance procedures are those in the Quality Agreement. Moupeis's Notice of Nonconformity, dated September 10, 2026, rejects the Ashfall Run Certification Test Report, which the notice states Lorail delivered on August 21, 2026. Ten Business Days after August 21, 2026 ended on September 4, 2026, so the notice is six days late. Lorail can treat the report as deemed accepted, invoice for it, and charge for any re-test. The notice letter shows that Moupeis disputes the report and has not accepted it, so the question is still live.",
+      "doc": "D2",
+      "section": "5.2",
+      "detect_terms": [
+        "within ten (10) Business Days after Delivery",
+        "deemed accepted"
+      ],
+      "expected_finding": "Moupeis's September 10, 2026 Notice of Nonconformity was sent after the Quality Agreement Section 5.2 window closed on September 4, 2026 (ten Business Days after the August 21, 2026 delivery), so Lorail can argue the Certification Test Report was deemed accepted. Moupeis should reserve its rights, pursue the defects under the MSA warranty remedies instead, and seek Lorail's written agreement to extend or waive the window.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Paragraph 1",
+      "detect_terms2": [
+        "delivered on August 21, 2026"
+      ]
+    }
+  ]
+}

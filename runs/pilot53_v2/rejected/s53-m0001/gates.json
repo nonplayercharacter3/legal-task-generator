@@ -1,0 +1,38 @@
+{
+  "matter_id": "s53-m0001",
+  "accepted": false,
+  "failed_gate": "consistency",
+  "reason": "mismatches: [{\"fact\": \"F7\", \"key\": \"Stock Purchase Agreement definition of 'Losses'\", \"filename\": \"stock_purchase_agreement.md\", \"ledger\": \"excludes punitive and consequential damages, lost profits, and diminution in value or multiple-based damages\", \"document\": \"\\\"Losses\\\" means losses, damages, Liabilities, j",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": false,
+      "details": {
+        "mismatches": [
+          {
+            "fact": "F7",
+            "key": "Stock Purchase Agreement definition of 'Losses'",
+            "filename": "stock_purchase_agreement.md",
+            "ledger": "excludes punitive and consequential damages, lost profits, and diminution in value or multiple-based damages",
+            "document": "\"Losses\" means losses, damages, Liabilities, judgments, settlements, interest, awards, penalties, fines, costs and expenses, including reasonable attorneys' fees, actually incurred by an Indemnified Party; provided that Losses shall not include consequential or punitive damages, lost profits, or diminution in value or multiple-based damages, except to the extent actually paid to a third party in respect of a Third-Party Claim."
+          }
+        ],
+        "reworded": 3,
+        "checked": 80
+      }
+    }
+  ]
+}

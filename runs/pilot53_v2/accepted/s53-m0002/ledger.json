@@ -1,0 +1,258 @@
+{
+  "matter_id": "s53-m0002",
+  "summary": "Saitosk Aviation Provisions, Inc. (Buyer, the firm's client) is acquiring all outstanding stock of Noumisk Skyline Catering, Inc., a regional airline catering and galley-provisioning company, from its parent Noumisk Holdings, LLC under a New York-law Stock Purchase Agreement signed March 9, 2026. The deal has five parts: a $48,500,000 purchase price, a $4,850,000 indemnity escrow, a $6,000,000 Seller Note issued by Buyer as deferred consideration, a bill of sale conveying Seller-owned high-lift catering trucks to the Company, and a specific indemnity for a pre-closing listeria finding and FDA warning letter at the Company's flight kitchen. Five issues are planted. (1) The Seller Note makes set-off Buyer's sole recourse beyond escrow and caps it at the Cap, including Fundamental Representation and Tax claims. The SPA's precedence clause lets the Note control on set-off and recourse, so this undoes the SPA's carve-outs. (2) Buyer's indemnity for Seller Guarantees falls outside the SPA cap and covers pre-closing defaults. (3) The holder of the Seller Note may assign it freely, along with its financial-information rights. (4) The Escrow Agreement chooses Delaware law and a Delaware forum for entitlement disputes, while the SPA chooses New York law and an exclusive New York forum. (5) The Escrow Agreement's definition of Losses excludes fines and penalties, so the escrow cannot fund the food-safety specific indemnity that the SPA says is paid first from escrow. For issues (4) and (5), the SPA's precedence clause gives the Escrow Agreement control over releases.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Saitosk Aviation Provisions, Inc.",
+      "role": "Buyer (firm's client); purchaser of the Company stock and maker of the Seller Note"
+    },
+    {
+      "id": "P2",
+      "name": "Noumisk Holdings, LLC",
+      "role": "Seller; sole stockholder of the Company and holder of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Noumisk Skyline Catering, Inc.",
+      "role": "Company being acquired; regional airline catering and galley provisioning business"
+    },
+    {
+      "id": "P4",
+      "name": "Pelloway Trust Company, N.A.",
+      "role": "Escrow Agent under the Escrow Agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Corriedale Regional Airways, Inc.",
+      "role": "Airline customer of the Company giving change-of-control consent"
+    },
+    {
+      "id": "P6",
+      "name": "Ashgrove Airport Properties LLC",
+      "role": "Landlord under the Company's administrative office lease"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement signing date",
+      "value": "March 9, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Stock Purchase Agreement Closing Date",
+      "value": "April 30, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Escrow Amount",
+      "value": "$4,850,000",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F5",
+      "key": "Seller Note principal amount",
+      "value": "$6,000,000",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F6",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 12.8"
+    },
+    {
+      "id": "F7",
+      "key": "Exclusive forum for disputes under SPA and Ancillary Agreements",
+      "value": "state or federal courts located in the Borough of Manhattan, New York",
+      "doc": "D1",
+      "section": "Section 12.8"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence among transaction documents",
+      "value": "SPA prevails over Ancillary Agreements, except Escrow Agreement on escrow releases and Seller Note on payment, set-off, recourse",
+      "doc": "D1",
+      "section": "Section 12.10"
+    },
+    {
+      "id": "F9",
+      "key": "Indemnity Cap",
+      "value": "$4,850,000 (10% of Purchase Price)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F10",
+      "key": "General representation survival period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "bill_of_sale_catering_trucks.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "airline_customer_consent_letter.md",
+      "kind": "customer change-of-control consent letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Under SPA Section 9.5(c), claims for Fraud, breach of Fundamental Representations and Pre-Closing Taxes are carved out of the $4,850,000 Indemnity Cap. Seller Note Section 5.2 changes that result. It makes set-off against the Note Buyer's sole and exclusive means of recovering Losses from Seller beyond the Escrow Funds, and it says the aggregate amount set off shall not exceed the Cap, including claims for breach of Fundamental Representations and Taxes. Only Fraud is excepted. Read alone, Section 5.2 looks like an ordinary set-off mechanic. But SPA Section 12.10 provides that the Seller Note controls with respect to payment, set-off and recourse, so the Note's narrower carve-out governs. The result is that Buyer's recovery for title, capitalization and tax breaches is effectively capped, even though the SPA left those claims uncapped.",
+      "doc": "D4",
+      "section": "Section 5.2",
+      "detect_terms": [
+        "shall not exceed the Cap",
+        "including claims for breach of Fundamental Representations"
+      ],
+      "expected_finding": "Because SPA Section 12.10 lets the Seller Note control set-off and recourse, Seller Note Section 5.2 caps Buyer's recovery for Fundamental Representation and Tax claims at $4,850,000, overriding the SPA Section 9.5(c) carve-outs. The Note should be conformed to exclude Fundamental Representation and Tax claims from the Cap and from the sole-recourse limitation.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 12.10",
+      "detect_terms2": [
+        "the Seller Note shall control",
+        "payment, set-off and recourse"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "SPA Section 9.3(b) obliges Buyer to indemnify Seller for any and all Losses arising under the Seller Guarantees, whether arising before or after the Closing. The Seller Guarantees are Seller's guarantees of the Company's flight-kitchen lease and its food supply contracts. Buyer's only limitation, SPA Section 9.5(a), limits Buyer's aggregate liability under Section 9.3(a) only, so the Section 9.3(b) indemnity has no cap at all. Read together, the two provisions also make Buyer bear, without limit, pre-closing defaults that occurred while Seller controlled the Company. There is no exclusion for matters Seller itself must indemnify under Section 9.2.",
+      "doc": "D1",
+      "section": "Section 9.3(b)",
+      "detect_terms": [
+        "any and all Losses arising under the Seller Guarantees",
+        "whether arising before or after the Closing"
+      ],
+      "expected_finding": "Buyer's indemnity for Seller Guarantees in SPA Section 9.3(b) is uncapped, because the Section 9.5(a) cap reaches only Section 9.3(a). It also covers pre-closing defaults, exposing Buyer to unlimited liability. It should be capped and limited to post-Closing obligations, excluding matters for which Seller indemnifies under Section 9.2.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Seller Note Section 9.1 lets Holder (Seller) assign or transfer the Note, in whole or in part, to any person without the consent of Maker, while Maker (Buyer) may not assign without Holder's consent. Nothing limits transfer to a competitor. Any assignee would therefore acquire Holder's rights under the Note, which include the right to receive the Company's monthly financial statements and the acceleration rights. A rival inflight caterer could buy the Note and obtain those rights.",
+      "doc": "D4",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "Holder may assign or transfer this Note",
+        "without the consent of Maker"
+      ],
+      "expected_finding": "The Seller Note lets Seller assign the Note freely to anyone, including a competitor that would gain the Company's financial information and enforcement rights. Holder's assignments should require Buyer's consent, and transfers to competitors should be prohibited.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Escrow Agreement Section 11.2 does two things. It makes the Escrow Agreement and any dispute as to entitlement to the Escrow Funds, including the underlying indemnification claim, subject to the laws of the State of Delaware. It also requires that such disputes be brought exclusively in the Court of Chancery of the State of Delaware. SPA Section 12.8 chooses New York law and an exclusive forum in the Borough of Manhattan for any dispute arising out of the SPA or any Ancillary Agreement. Ordinarily the SPA's precedence clause would resolve the conflict, but SPA Section 12.10 gives the Escrow Agreement control over release of Escrow Funds. The same indemnity claim could therefore have to be litigated in two forums under two laws, with risk of inconsistent results and delayed access to escrow.",
+      "doc": "D2",
+      "section": "Section 11.2",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery of the State of Delaware"
+      ],
+      "expected_finding": "The Escrow Agreement's Delaware law and exclusive Delaware forum for escrow entitlement disputes conflict with the SPA's New York law and exclusive Manhattan forum. Because SPA Section 12.10 lets the Escrow Agreement control releases, the conflict is not cured and indemnity claims would be split across forums. The Escrow Agreement should be conformed to New York law and forum.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ],
+      "doc2": "D1",
+      "section2": "Section 12.8",
+      "detect_terms2": [
+        "Borough of Manhattan",
+        "any Ancillary Agreement"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 9.4 gives Buyer a specific indemnity for Pre-Closing Food Safety Matters. These are the January 2026 listeria finding and the FDA warning letter at the Company's flight kitchen. The indemnity covers fines and penalties, which are covered by the SPA's definition of Losses, and is payable first from the Escrow Funds. Escrow Agreement Section 1.1, however, defines Losses as excluding fines, penalties and amounts paid to any Governmental Authority, and the Escrow Agent may release funds only for Losses as so defined. SPA Section 12.10 makes the Escrow Agreement control release of Escrow Funds. As a result, the escrow cannot fund the very regulatory fines the specific indemnity was designed to secure.",
+      "doc": "D2",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "excluding fines, penalties",
+        "paid to any Governmental Authority"
+      ],
+      "expected_finding": "The Escrow Agreement's narrower definition of Losses excludes fines and penalties. Because the Escrow Agreement controls releases under SPA Section 12.10, the escrow cannot pay the FDA/USDA fines covered by the SPA Section 9.4 food-safety specific indemnity, leaving that indemnity unsecured. The Escrow Agreement should adopt the SPA definition of Losses.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 9.4",
+      "detect_terms2": [
+        "Pre-Closing Food Safety Matters",
+        "first from the Escrow Funds"
+      ]
+    }
+  ]
+}

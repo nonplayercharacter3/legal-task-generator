@@ -1,0 +1,130 @@
+{
+  "task_id": "s53-m0002",
+  "split": "dev",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Saitosk Aviation Provisions, Inc., the buyer of the Company stock from Noumisk Holdings, LLC, which will also issue the Seller Note. Before we advise the client on the deal, please review all seven documents in the folder. Then send me a memo that lists each issue you find. For each one, give the document and section, explain why it matters to Saitosk, and recommend a fix. Flag anything that needs my attention right away.",
+  "documents": [
+    "airline_customer_consent_letter.md",
+    "bill_of_sale_catering_trucks.md",
+    "escrow_agreement.md",
+    "letter_of_intent.md",
+    "office_lease.md",
+    "seller_note.md",
+    "stock_purchase_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the Seller Note's set-off and sole-recourse provision limits Buyer's recovery for breaches of Fundamental Representations and for Tax claims to the Cap ($4,850,000). This defeats the SPA's carve-outs that left those claims uncapped. The response locates the issue in Seller Note Section 5.2 or SPA Section 12.10, explains why this matters to Saitosk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "shall not exceed the Cap",
+        "Fundamental Representations",
+        "sole and exclusive"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that Buyer's indemnity for Losses under the Seller Guarantees has no cap and also covers defaults arising before Closing. The response locates the issue in SPA Section 9.3(b), explains why this matters to Saitosk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Seller Guarantees",
+        "uncapped",
+        "before or after the Closing"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that Seller, as Holder, may assign or transfer the Seller Note to anyone, including a competitor, without Buyer's consent, and that the assignee would gain the Holder's rights such as financial information and enforcement rights. The response locates the issue in Seller Note Section 9.1, explains why this matters to Saitosk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without the consent of Maker",
+        "competitor",
+        "financial statements"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that the Escrow Agreement's choice of Delaware law and an exclusive Delaware forum for escrow entitlement disputes conflicts with the SPA's New York law and exclusive Manhattan forum, so indemnity claims could be split across forums and governing laws. The response locates the issue in Escrow Agreement Section 11.2 or SPA Section 12.8, explains why this matters to Saitosk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Court of Chancery",
+        "Delaware",
+        "Borough of Manhattan"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that the Escrow Agreement's definition of Losses excludes fines and penalties, so the escrow cannot fund the fines covered by the SPA's food-safety specific indemnity. The response locates the issue in Escrow Agreement Section 1.1 or SPA Section 9.4, explains why this matters to Saitosk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "excluding fines, penalties",
+        "Pre-Closing Food Safety Matters",
+        "Losses"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the SPA Indemnity Cap is $4,850,000.",
+      "kind": "fact",
+      "hints": [
+        "$4,850,000",
+        "Cap"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Seller Note has a principal amount of $6,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$6,000,000",
+        "Seller Note"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo addressed to the supervising partner. For each issue it lists, the memo gives the document and section, why the issue matters to the client, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response explicitly identifies which issues need the partner's immediate attention.",
+      "kind": "format",
+      "hints": [
+        "immediate attention",
+        "priority",
+        "urgent"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the SPA Section 9.5(a) cap limits Buyer's indemnity obligation for the Seller Guarantees under Section 9.3(b).",
+      "kind": "negative",
+      "hints": [
+        "9.5(a)",
+        "9.3(b)"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the Escrow Agreement is governed by New York law.",
+      "kind": "negative",
+      "hints": [
+        "Escrow Agreement",
+        "New York law"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

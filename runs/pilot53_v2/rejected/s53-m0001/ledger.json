@@ -1,0 +1,241 @@
+{
+  "matter_id": "s53-m0001",
+  "summary": "The firm represents Brotin Glass Holdings, LLC (Seller). Brotin sold all of the issued and outstanding stock of its architectural glass tempering and fabrication subsidiary, Ostrel Tempered Glass, Inc., to Broukaiv Facade Group, Inc. (Buyer) for $40,500,000. The Stock Purchase Agreement was signed February 10, 2026, and Closing was set for March 2, 2026. Consideration is cash at Closing, a $2,025,000 indemnity escrow and a $6,000,000 subordinated Seller Note. The folder holds the SPA, the escrow agreement, the disclosure schedule, the Seller Note, a bill of sale carving the Seller's retained low-E coating line out of the Company, and an IP assignment. It also holds a pre-deal mutual NDA and a lender payoff letter. The associate must review the closing set from the Seller's perspective. There are four planted problems: (1) the indemnity cap is swallowed by an uncapped 'Specified Matters' carve-out whose schedule covers all historic product liability; (2) the Seller Note's broader definition of 'Losses' controls Buyer's setoff rights through the precedence clause; (3) the Company's sole float-glass supply contract requires supplier consent to a change of control, and that consent was neither obtained nor scheduled as a required consent; (4) the Seller's election to retain the coating equipment was delivered after the SPA's 15-day window.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Brotin Glass Holdings, LLC",
+      "role": "Seller; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Broukaiv Facade Group, Inc.",
+      "role": "Buyer; maker of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrel Tempered Glass, Inc.",
+      "role": "the Company (target whose stock is sold)"
+    },
+    {
+      "id": "P4",
+      "name": "Wexford Pier Trust Company",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P5",
+      "name": "Sanvoral Float Glass Co.",
+      "role": "the Company's float glass supplier"
+    },
+    {
+      "id": "P6",
+      "name": "Kestrelmont Bank, N.A.",
+      "role": "the Company's existing lender being paid off at Closing"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement Date",
+      "value": "February 10, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Closing Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Purchase Price",
+      "value": "$40,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Indemnity Cap Amount",
+      "value": "$4,860,000",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "Indemnity Escrow Amount",
+      "value": "$2,025,000",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F6",
+      "key": "Seller Note principal amount",
+      "value": "$6,000,000",
+      "doc": "D4",
+      "section": "Section 1.2"
+    },
+    {
+      "id": "F7",
+      "key": "Stock Purchase Agreement definition of 'Losses'",
+      "value": "excludes punitive and consequential damages, lost profits, and diminution in value or multiple-based damages",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "Stock Purchase Agreement controls over Ancillary Documents, except Seller Note controls payment, setoff and subordination",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F9",
+      "key": "Governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.6"
+    },
+    {
+      "id": "F10",
+      "key": "Retained Equipment Election deadline",
+      "value": "15 days after the Stock Purchase Agreement Date",
+      "doc": "D1",
+      "section": "Section 6.7"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "payoff_letter.md",
+      "kind": "payoff letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "SPA Section 9.5(a) caps the Seller's aggregate liability under Article IX at the $4,860,000 Cap Amount. Section 9.5(c) provides that the cap and the deductible 'shall not apply to Losses arising from' Fraud, the Fundamental Representations or the Specified Matters. Section 9.2(d) obligates the Seller to indemnify for Losses arising from the Specified Matters, and Section 1.1 defines 'Specified Matters' as the matters listed in Schedule 9.2(d). Read alone, the SPA looks like an ordinary carve-out for a known pending claim. But Schedule 9.2(d) of the disclosure schedule (D3) lists more than the pending Ridley Tower curtain-wall claim. It also lists any Liability relating to insulated, laminated or tempered glass manufactured, sold or installed by the Company prior to the Closing. That second item covers essentially the Company's entire historic product-warranty and product-liability exposure, which sits outside the cap and the deductible. The Seller is therefore exposed to unlimited liability, beyond the escrow and the Purchase Price, for all pre-Closing product claims.",
+      "doc": "D1",
+      "section": "Section 9.5(c)",
+      "detect_terms": [
+        "shall not apply to Losses arising from",
+        "Specified Matters"
+      ],
+      "expected_finding": "Because SPA Section 9.5(c) removes the Specified Matters from the $4,860,000 cap and Schedule 9.2(d) defines them to include all Liability for glass products manufactured, sold or installed by the Company before Closing, the Seller bears uncapped indemnity liability for the Company's entire historic product exposure, and Schedule 9.2(d) should be narrowed to the specific Ridley Tower claim or those matters brought under the cap.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Schedule 9.2(d)",
+      "detect_terms2": [
+        "manufactured, sold or installed by the Company prior to the Closing"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines 'Losses' to exclude punitive and consequential damages, lost profits, and diminution in value or multiple-based damages. Seller Note Section 1.1 separately defines 'Losses' to include lost profits, consequential damages and diminution in value or multiple-of-earnings damages. Seller Note Section 6.1 then lets the Buyer, as Maker, set off against principal and interest payments the amount of any Losses it claims in good faith in a Claim Notice, whether or not finally determined. The conflict is not cured by the SPA. SPA Section 11.9 gives the SPA precedence over Ancillary Documents but expressly lets the Seller Note control payment, setoff and subordination. The Buyer can therefore withhold the Seller's $6,000,000 note payments for categories of damages the SPA bars, and before any claim is resolved.",
+      "doc": "D4",
+      "section": "Section 6.1",
+      "detect_terms": [
+        "multiple-of-earnings",
+        "whether or not finally determined"
+      ],
+      "expected_finding": "The Seller Note's broader definition of 'Losses' governs the Buyer's setoff right under the Section 11.9 precedence exception. The Buyer can therefore withhold payments on the $6,000,000 Seller Note for consequential, lost-profit and multiple-based damages the SPA excludes, and before any determination. The Note should adopt the SPA definition of Losses and limit setoff to finally determined, indemnifiable amounts.",
+      "contradicts": "F7",
+      "doc2": "D1",
+      "section2": "Section 1.1",
+      "detect_terms2": [
+        "shall not include consequential"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Schedule 4.10(a)(iii) of the disclosure schedule (D3) describes the Company's float glass supply agreement with Sanvoral Float Glass Co., the Company's sole source of float glass. That agreement allows the supplier to terminate upon a change of control of the Company made without the prior written consent of Supplier. A sale of all of the Company's stock to the Buyer triggers that right. Schedule 4.4 (Consents) lists only the Kestrelmont Bank consent, and no Sanvoral consent is recorded anywhere in the folder. Under the lead-in to SPA Article IV and Section 4.4, each schedule qualifies only the correspondingly numbered section. The disclosure under 4.10 therefore does not qualify the Seller's representation in Section 4.4 that no third-party consent is required beyond Schedule 4.4. The result is that the supplier can terminate the Company's critical supply contract, and the Buyer has an indemnity claim against the Seller for breach of Section 4.4.",
+      "doc": "D3",
+      "section": "Schedule 4.10(a)(iii)",
+      "detect_terms": [
+        "change of control of the Company",
+        "prior written consent of Supplier"
+      ],
+      "expected_finding": "The stock sale triggers Sanvoral's consent right under the float glass supply agreement, but that consent was neither obtained nor listed on Schedule 4.4. The supplier may therefore terminate, and the Seller is exposed to an indemnity claim for breach of the Section 4.4 no-consents representation. The Seller should obtain Sanvoral's written consent or waiver promptly and seek the Buyer's acknowledgment of the disclosure.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "SPA Section 6.7 lets the Seller elect, by written notice delivered within fifteen (15) days after the Agreement Date of February 10, 2026, to have the Company transfer the low-E sputter coating line (the Retained Equipment) to the Seller before Closing. Absent a timely election, the equipment remains Company property. That deadline was February 25, 2026. The recitals of the bill of sale (D5), under which the Company transfers the Retained Equipment to the Seller, state that the Seller delivered its election on February 27, 2026, two days late. The same recitals record the Seller's position that the election is effective and timely. The Buyer has not countersigned or acknowledged the bill of sale. The Buyer can therefore treat the transfer as unauthorized under Section 6.7, claim the coating line as Company property, and assert a breach of the Seller's pre-Closing covenants.",
+      "doc": "D1",
+      "section": "Section 6.7",
+      "detect_terms": [
+        "within fifteen (15) days after the Agreement Date"
+      ],
+      "expected_finding": "The Seller's Retained Equipment election was delivered on February 27, 2026, after the Section 6.7 deadline of February 25, 2026 (15 days after the February 10, 2026 Agreement Date). The bill of sale transfer of the coating line is therefore open to challenge by the Buyer, and the Seller should obtain the Buyer's written waiver or an SPA amendment confirming the election and the transfer.",
+      "contradicts": null,
+      "doc2": "D5",
+      "section2": "Recitals",
+      "detect_terms2": [
+        "February 27, 2026"
+      ]
+    }
+  ]
+}
