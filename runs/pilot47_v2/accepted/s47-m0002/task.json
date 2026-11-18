@@ -1,0 +1,135 @@
+{
+  "task_id": "s47-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Tretort Linen Holdings, LLC, the buyer, in its stock purchase from Drusisk Holdings, Inc. Before we go back to the other side, I need to know where the client stands. Please review all ten documents in the folder and send me a memo listing each issue you find. For each one, give the document and section where it appears, why it matters for Tretort, and your recommended fix. Keep it concise and practical.",
+  "documents": [
+    "board_consent.md",
+    "equipment_service_agreement.md",
+    "escrow_agreement.md",
+    "ip_assignment_agreement.md",
+    "letter_of_intent.md",
+    "office_lease.md",
+    "seller_note.md",
+    "side_letter.md",
+    "stock_purchase_agreement.md",
+    "transition_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the stock sale is a Change of Control under the 2021 IP Assignment Agreement that lets Odile Fenwright reacquire the Company's wash-chemistry formulas and dosing software for $1, and that the SPA's Required Consents do not include her consent. It cites the IP Assignment Agreement Section 8.3 or SPA Section 7.2(d) (or the Required Consents provisions), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "reacquire the Assigned IP",
+        "Fenwright's consent",
+        "Required Consents"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Buyer's Environmental Objection Notice of September 4, 2026 was delivered after the 15-Business-Day window under SPA Section 6.7 had closed, counting from the August 3, 2026 Phase I Report delivery recorded in the board consent. It cites SPA Section 6.7 or the board consent recitals, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "August 24, 2026",
+        "deemed to have accepted",
+        "September 4, 2026"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Seller Note's narrow definition of 'Losses' governs set-off and so restricts Buyer's SPA Section 9.6 set-off right against the note. That definition is limited to judgment-awarded out-of-pocket damages and excludes attorneys' fees, remediation costs and diminution in value. The response cites Seller Note Section 1 or SPA Section 9.6, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "non-appealable judgment",
+        "set-off",
+        "definition of Losses"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Escrow Agreement's choice of New York law and exclusive Manhattan forum conflicts with the SPA's choice of Delaware law and the Delaware Court of Chancery, splitting escrow-release disputes from indemnity disputes. It cites Escrow Agreement Section 12.6, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York law",
+        "Borough of Manhattan",
+        "Court of Chancery"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the nine-month survival period for General Representations in SPA Section 9.1 expires before the Section 9.4(c) bar on claims under Sections 4.7 and 4.12 lifts, which happens only on delivery of audited statements for the first full post-closing fiscal year. Such claims therefore cannot be brought in time. The response cites SPA Section 9.1 or Section 9.4(c), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "nine (9) months",
+        "first full fiscal year",
+        "survival"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response identifies that TSA Section 11.3 lets the Provider (Seller) assign the TSA or delegate services to any person without the Company's consent, including a competitor that would then gain access to the Company's customer, pricing or route data. It cites TSA Section 11.3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Provider may assign",
+        "without the consent of Recipient",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that, under the SPA's order of precedence, each Ancillary Agreement controls the matters it specifically governs.",
+      "kind": "fact",
+      "hints": [
+        "Section 11.12",
+        "specifically governs",
+        "Ancillary Agreement controls"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo addressed to the supervising partner.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Re:"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response presents its findings as separate issues, and for each issue gives the document and section, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Why it matters",
+        "Recommended fix",
+        "Location"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Buyer's Environmental Objection Notice of September 4, 2026 was timely under SPA Section 6.7.",
+      "kind": "negative",
+      "hints": [
+        "timely",
+        "within the window"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that SPA Section 11.3 restricts the Seller's assignment of the TSA.",
+      "kind": "negative",
+      "hints": [
+        "SPA Section 11.3",
+        "assignment of the TSA"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

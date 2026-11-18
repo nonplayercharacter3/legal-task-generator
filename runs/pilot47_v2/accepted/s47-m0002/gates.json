@@ -1,0 +1,168 @@
+{
+  "matter_id": "s47-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "IP Assignment Agreement §8.3: \"If the Company undergoes a Change of Control without Assignor's prior written consent, Assignor may reacquire the Assigned IP from the Company for a purchase price of one dollar ($1.00).\" SPA §7.2(d): \"Required Consents means the following, each of which shall have been obtained and delivered to Buyer ...: an estoppel certificate from the Landlord ...\"",
+            "reason": "The problem is present and the client can still act on it.\n\n- **Change of Control is triggered.** Under the IP Assignment Agreement, a Change of Control is any acquisition of more than 50% of the Company's voting stock. Buyer is buying 100% of Pelmont's stock, so closing triggers Fenwright's right to take back the wash-chemistry formulas and PelDose software for $1, unless she consents in writing first.\n- **Reversion is not a cure.** The going-concern carve-out appears only in §8.2 (reversion on dissolution). It does not apply to §8.3.\n- **The SPA does not cover her consent.** It limits Required Consents to the Landlord estoppel in §7.2(d). Seller's covenant in §6.4 reaches only those Required Consents. Nothing makes Fenwright's consent a closing condition or a delivery.\n- **The IP representation does not fix it.** §4.11 is a general statement of ownership. Any claim for its breach survives only 9 months and is capped at $4.85M, which is inadequate protection against losing core IP.\n- **The lease does not help.** It concerns only the Landlord.\n- **Still actionable.** As of November 2026 the deal has not closed (the board consent contemplates a future Closing before 12/31/2026). Buyer can still require Fenwright's consent or waiver as a condition or covenant before closing.",
+            "alone": {
+              "ip_assignment_agreement.md": {
+                "findable": false,
+                "evidence": "If the Company undergoes a Change of Control without Assignor's prior written consent, Assignor may reacquire the Assigned IP from the Company for a purchase price of one dollar ($1.00).",
+                "reason": "This document shows that Fenwright can take back the Assigned IP (the formulas and PelDose) for $1 if the Company has a Change of Control without her prior written consent. It also shows that a sale of more than 50% of the voting stock is a Change of Control. It never mentions Tretort, the stock sale or its terms. The actual problem is that the SPA's Required Consents, the consent covenant in Section 6.4 and the closing condition in Section 7.2(d) leave out Fenwright's consent, so closing as drafted would trigger her right. That gap is only visible in the SPA. On its own, this document shows a consent requirement the buyer would need to handle, not that the deal fails to handle it."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Required Consents\" means the consents listed in Section 7.2(d). ... Required Consents means the following ...: an estoppel certificate from the Landlord ...",
+                "reason": "The SPA alone shows that the only third-party consent required as a closing condition, and the only one Seller must obtain under Section 6.4, is the Landlord estoppel. It also says the Company uses proprietary wash-chemistry formulations and dosing software (Section 4.11). But nothing in the SPA mentions Fenwright, the 2021 IP Assignment Agreement, or any right to reacquire the IP on a change of control. A narrow consent list is common and is not a defect by itself. A careful associate might ask whether other consents are needed, but could not see this specific problem without D2. The SPA does not show that a change-of-control consent exists, that the stock sale triggers it, or that the IP can be reacquired for $1."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "SPA §6.7: \"Buyer may object to any recognized environmental condition or other matter identified in the Phase I Report by delivering a written notice to Seller (an \"Environmental Objection Notice\") within fifteen (15) Business Days after Seller delivers the Phase I Report... If Buyer does not deliver an Environmental Objection Notice within that period, Buyer is deemed to have accepted the environmental conditions identified in the Phase I Report. Buyer also waives any right to indemnification under Section 9.2(d) for those conditions.\" Board consent recitals: \"Seller delivered the Phase I Report to the Company on August 3, 2026\" and \"the Company's officers delivered to Seller, on September 4, 2026, a written Environmental Objection Notice\"; and \"Seller has informed the Company that it may take the position that the Company has accepted the environmental conditions identified in the Phase I Report, and the Company does not agree with that position.\"",
+            "reason": "The notice was late. August 3, 2026 is a Monday, and with no bank holidays in August, fifteen Business Days runs to August 24, 2026. The notice went out on September 4, eleven days after that. Under §6.7, missing the deadline means Buyer is deemed to accept the Phase I conditions and waives the §9.2(d) environmental indemnity for them. §9.2(d) is itself expressly \"subject to Section 6.7.\" These conditions include perchloroethylene contamination from former dry-cleaning operations and historical wastewater discharges. That waiver strips Buyer, our client, of an uncapped specific indemnity on a potentially large liability. The issue is still actionable. Buyer has not accepted the result: the board expressly disputes any deemed acceptance, reserves its §9.2(d) rights, and authorizes negotiation of a Phase II investigation, pre-Closing remediation, a specific indemnity or an SPA amendment. Closing has not occurred, and the Outside Date of December 31, 2026 has not passed. Nothing in the folder cures the lateness. There is no amendment or written waiver by Seller, and §11.4 requires any waiver to be in writing.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "If Buyer does not deliver an Environmental Objection Notice within that period, Buyer is deemed to have accepted the environmental conditions identified in the Phase I Report. Buyer also waives any right to indemnification under Section 9.2(d) for those conditions.",
+                "reason": "The SPA alone sets up the 15-Business-Day objection window and the penalty for missing it: deemed acceptance and loss of the Section 9.2(d) environmental indemnity. Read by itself, it shows a risk to Buyer, not a breach that has already happened. It does not say when Seller delivered the Phase I Report (August 3, 2026) or when Buyer delivered its Environmental Objection Notice (September 4, 2026). Without those dates, no one can work out that the window closed on August 24 and that the notice was late. Those facts come only from the board consent. So a careful associate reading only the SPA could not see that Buyer has already lost its right to object or its environmental indemnity."
+              },
+              "board_consent.md": {
+                "findable": false,
+                "evidence": "WHEREAS, Seller delivered the Phase I Report to the Company on August 3, 2026. ... the Company's officers delivered to Seller, on September 4, 2026, a written Environmental Objection Notice under Section 6.7 of the Purchase Agreement ... WHEREAS, Seller has informed the Company that it may take the position that the Company has accepted the environmental conditions identified in the Phase I Report",
+                "reason": "The board consent gives both dates: Phase I delivered August 3, 2026, and Objection Notice delivered September 4, 2026. It also records that Seller may claim deemed acceptance, and the board reserves rights under Section 9.2(d). That is a warning sign. But the consent never states the deadline in SPA Section 6.7. It does not say the notice is due within fifteen Business Days, and it does not say that missing the deadline means deemed acceptance and waiver of the Section 9.2(d) indemnity. Without the SPA, an associate cannot calculate the August 24 cutoff or confirm that the notice was late and that the indemnity is lost. Both the deadline and the consequence come only from the Purchase Agreement."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Seller Note Section 1: \"'Losses' means out-of-pocket damages actually paid or payable by a Buyer Indemnitee that are finally awarded by a non-appealable judgment of a court of competent jurisdiction in favor of that Buyer Indemnitee and against Holder ... excluding attorneys' fees, consultants' fees, costs of investigation, sampling, monitoring, removal, remediation or other environmental response, diminution in value, lost profits, and any amount agreed or settled between Maker and Holder that has not been reduced to such a judgment.\" Compare SPA Section 9.6: \"Buyer may set off the amount of any Losses for which a Buyer Indemnitee is entitled to indemnification under this Article IX, including Losses consisting of diminution in value, attorneys' fees or Remediation Costs.\"",
+            "reason": "The problem is present and actionable. The SPA defines Losses broadly. SPA 9.6 expressly lets Buyer (the client, as Maker) set off diminution in value, attorneys' fees and Remediation Costs. It also contemplates set-off before the claim is finally determined, with a true-up if the claim turns out smaller. Note Section 5.1 limits set-off to Note-defined 'Losses', which means only damages awarded by a non-appealable judgment. That definition excludes fees, remediation and diminution in value, and also excludes amounts the parties agree or settle. SPA 11.12 lets the Note control matters it specifically governs, so the narrow definition would likely govern set-off. That hurts Buyer, which must keep paying Seller during litigation. This matters most for the perchloroethylene and wastewater conditions identified in the Phase I Report, where Remediation Costs are the main exposure. The Note is unsigned (Issue Date blank, signature blocks empty), and the board's authority lets officers approve changes, so Buyer can still fix this before Closing.",
+            "alone": {
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "\"Losses\" means out-of-pocket damages actually paid or payable by a Buyer Indemnitee that are finally awarded by a non-appealable judgment ... excluding attorneys' fees, consultants' fees, costs of investigation, sampling, monitoring, removal, remediation or other environmental response, diminution in value, lost profits, and any amount agreed or settled between Maker and Holder that has not been reduced to such a judgment.\" (Section 1); \"Maker may set off against any amount of principal or interest then due or thereafter becoming due under this Note the amount of any Losses.\" (Section 5.1); \"Except as provided in this Section 5, Maker shall make all payments under this Note without set-off\" (Section 5.3)",
+                "reason": "The note alone shows that Buyer's set-off is narrow. Section 5 limits it to 'Losses', and the note defines that term as judgment-only, non-appealable damages, excluding fees, remediation costs, diminution in value and settled amounts. Section 5.3 bars any other set-off. A careful associate could see that this is buyer-unfavorable. But the issue described is an inconsistency between two documents, and three needed pieces are in the SPA, which I was not given: (1) SPA Section 1.1's broader definition of 'Losses'; (2) SPA Section 9.6's grant of set-off for those broader Losses; (3) SPA Section 11.12's rule that the Ancillary Agreement controls, which makes the narrow note definition override the broader SPA right. The note says SPA definitions apply only to terms the note does not define. It never shows that the SPA defines 'Losses' differently or grants a broader set-off. Without the SPA, the conflict cannot be identified, and neither can the fact that the note cuts back a broader right Buyer bargained for."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Buyer may set off the amount of any Losses for which a Buyer Indemnitee is entitled to indemnification under this Article IX, including Losses consisting of diminution in value, attorneys' fees or Remediation Costs. ... The SPA prevails over the Ancillary Agreements, except that each Ancillary Agreement controls matters it specifically governs.",
+                "reason": "The SPA by itself shows a broad definition of 'Losses' and a broad set-off right against the Seller Note that covers diminution in value, attorneys' fees and Remediation Costs. It also contains the Section 11.12 carve-out under which an Ancillary Agreement controls matters it specifically governs. Read alone, the SPA's set-off provisions look favorable to Buyer. The problem depends on the Seller Note (Exhibit B), which is not provided. That note narrowly redefines 'Losses' as adjudicated out-of-pocket damages only, and its Section 5 limits set-off to those Losses. Only with the note's text does the 11.12 carve-out override the SPA's broad set-off right. An associate could flag 11.12 as a general risk, but could not see the actual conflict or the harm to Buyer without the note."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 12.6 of the Escrow Agreement: \"This Agreement, and all claims arising out of or relating to it, are governed by and construed in accordance with the laws of the State of New York... Each party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in the Borough of Manhattan, The City of New York, for any action arising out of or relating to this Agreement or the Escrow Funds.\" The SPA points the other way: Section 11.8 chooses Delaware law, Section 11.9 gives exclusive jurisdiction to the Delaware Court of Chancery, and Section 11.12 says \"each Ancillary Agreement controls matters it specifically governs.\"",
+            "reason": "The two documents pick different laws and different exclusive forums, so the problem is present.\n\n- **Where each dispute goes.** The Escrow Agreement is an Ancillary Agreement and expressly governs the Escrow Funds. Under SPA Section 11.12, it therefore controls disputes over escrow release, sending them to New York courts under New York law. The underlying Article IX indemnity claims stay in Delaware Chancery under Delaware law.\n- **How this hurts Buyer.** Buyer is the indemnified party. The escrow is its first source of recovery under SPA Section 9.7(a). Disputed amounts are released only on Joint Written Instructions or a Final Order (Escrow Agreement Section 5.4). Seller can withhold joint instructions, which may force Buyer to litigate escrow release in New York separately from the merits in Delaware. That means duplicative proceedings, possibly inconsistent rulings, and delay.\n- **Nothing cures it.** The Escrow Agreement is still unsigned (dated [●], 2026), and the Board consent of September 10, 2026 allows officers to approve changes. So it is still actionable: Buyer can negotiate conforming governing-law and forum terms, or a carve-out letting a Delaware Final Order bind the Escrow Agent."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 9.1: \"The General Representations survive the Closing until nine (9) months after the Closing Date. ... No claim for breach of any representation or warranty may be made after the expiration of its survival period.\" Section 9.4(c): \"No Buyer Indemnitee may assert any claim under Section 9.2(a) for breach of Section 4.7 (Financial Statements) or Section 4.12 (Customer Contracts and Rebates) until Buyer has delivered to Seller audited financial statements of the Company for the first full fiscal year beginning after the Closing Date.\"",
+            "reason": "Sections 4.7 and 4.12 are General Representations, so they survive only nine months after Closing. Closing must occur by the December 31, 2026 Outside Date, so that period ends no later than late 2027. Section 9.4(c) bars Buyer from asserting any claim under those two reps until it delivers audited statements for the first full fiscal year after Closing. That is fiscal 2027 for a 2026 closing, with the audit due within 120 days after December 31, 2027, so in 2028. The notice-preservation proviso in 9.1 does not help, because 9.4(c) forbids asserting the claim at all before the audit is delivered. The two provisions together leave Buyer with no window to claim on the financial-statement and rebate reps. The Escrow Agreement makes this worse: it releases the escrow to Seller at the nine-month Release Date, before any such claim could be brought. The LOI contemplated 18 months of survival. This hurts Buyer, the firm's client and the indemnified party. It is still actionable: Closing has not occurred, the Board consent shows ongoing negotiation and authority to amend, and nothing shows Buyer has accepted the gap."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Section 11.3: \"Provider may assign this Agreement or delegate any Services, in whole or in part, to any Person without the consent of Recipient. Recipient may not assign this Agreement without the prior written consent of Provider.\"",
+            "reason": "The clause is one-sided. Seller (Provider) can assign the TSA or delegate the billing, dispatch and portal services to any Person, including a competing laundry operator, with no consent from the Company. Those services expose the Recipient Data, defined to include customer lists, pricing, rebate terms and route data. Nothing in the folder fills the gap. SPA 6.6 (confidentiality) and SPA 6.10 (non-compete and non-solicit) bind only Seller and its Affiliates, not an unrelated assignee or subcontractor. SPA 11.3 governs only the SPA, and under SPA 11.12 the TSA controls matters it specifically governs. The TSA also has no clause keeping Provider liable after an assignment, and no requirement that a delegate be bound by Section 6. This harms Buyer's acquired company. It is still actionable: the TSA is an unsigned form (Effective Date [●]), the board consent authorizes officers to approve changes before Closing, and nothing shows Closing has occurred."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C6"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.07,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

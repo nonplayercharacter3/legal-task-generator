@@ -1,0 +1,265 @@
+{
+  "matter_id": "s47-m0003",
+  "summary": "Sasos Reefer Logistics, LLC (Buyer, the firm's client) bought the refrigerated warehousing and reefer trucking business of Teivil Cold Chain Holdings, Inc. (Seller). The business has three temperature-controlled distribution centers, a reefer fleet and customer cold-storage contracts. The deal ran under an Asset Purchase Agreement signed and closed on June 30, 2026. Pemberly Trust Company, N.A. holds a $4,850,000 indemnity escrow. Buyer issued Seller a $7,000,000 subordinated Seller Note. Seller provides warehouse-management-system hosting and temperature telemetry under a 9-month Transition Services Agreement. Buyer's board consent dated October 20, 2026 records that Seller delivered its Closing Statement on September 2, 2026. The board disputes the inventory and receivables values in that statement. The planted issues are:\n- The Seller Note picks New York law and New York courts, and the APA lets the Note control.\n- The escrow agreement narrows the meaning of 'Indemnity Claim'.\n- Seller may assign the TSA freely.\n- Representations survive only until a 90-day Escrow Release Date set in the escrow agreement.\n- A side letter moves pre-Closing customer spoilage claims into Assumed Liabilities, which the Buyer must indemnify without a cap.\n- The 30-day window to dispute the Closing Statement lapsed on October 2, 2026.\nThe folder also holds two distractors: a press release and a landlord estoppel certificate.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Sasos Reefer Logistics, LLC",
+      "role": "Buyer; issuer of the Seller Note; service recipient under the TSA (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Teivil Cold Chain Holdings, Inc.",
+      "role": "Seller; holder of the Seller Note; service provider under the TSA"
+    },
+    {
+      "id": "P3",
+      "name": "Pemberly Trust Company, N.A.",
+      "role": "Escrow Agent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing and Closing Date",
+      "value": "June 30, 2026",
+      "doc": "D1",
+      "section": "Preamble; Section 3.1"
+    },
+    {
+      "id": "F2",
+      "key": "APA Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$7,000,000",
+      "doc": "D4",
+      "section": "Section 1"
+    },
+    {
+      "id": "F4",
+      "key": "Escrow Amount",
+      "value": "$4,850,000",
+      "doc": "D3",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F5",
+      "key": "APA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F6",
+      "key": "APA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "APA prevails over Ancillary Agreements, except Seller Note and Escrow Agreement control as to their own subject matter",
+      "doc": "D1",
+      "section": "Section 11.4"
+    },
+    {
+      "id": "F8",
+      "key": "APA Assumed Liabilities core meaning",
+      "value": "Liabilities under the Assigned Contracts arising after the Closing",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F9",
+      "key": "TSA Term",
+      "value": "9 months after the APA Closing Date",
+      "doc": "D2",
+      "section": "Section 7.1"
+    },
+    {
+      "id": "F10",
+      "key": "Closing Statement dispute period",
+      "value": "30 days after delivery of the Closing Statement",
+      "doc": "D1",
+      "section": "Section 2.4(b)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "buyer_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "landlord_estoppel_certificate.md",
+      "kind": "landlord estoppel certificate",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Seller Note Section 9 makes the Note governed by New York law. It also submits all disputes 'arising out of or relating to this Note', including any claimed setoff, to the exclusive jurisdiction of the state and federal courts in New York County. APA Sections 11.9 and 11.10 choose Delaware law and the Delaware Court of Chancery. APA Section 9.7 gives Buyer a right to set off indemnity claims against Note payments. APA Section 11.4 does not cure the conflict: it says the APA prevails over Ancillary Agreements 'except that the Seller Note and the Escrow Agreement shall control as to their own subject matter', so the Note's choice of law and forum controls Note disputes. The result is that Buyer's indemnity claims would be heard in Delaware while any Seller suit on the Note, and Buyer's setoff defense to it, would be heard in New York. That splits a single dispute between two forums and two bodies of law and risks inconsistent rulings on the same indemnity facts.",
+      "doc": "D4",
+      "section": "Section 9 (Governing Law; Jurisdiction)",
+      "detect_terms": [
+        "laws of the State of New York",
+        "County of New York"
+      ],
+      "expected_finding": "Because APA Section 11.4 lets the Seller Note control its own subject matter, the Note's New York law and exclusive New York forum clause will govern Seller's payment claims and Buyer's Section 9.7 setoff, while the indemnity claims themselves go to the Delaware Court of Chancery under Delaware law. The Note should be amended to adopt Delaware law and the Chancery forum, or the APA precedence carve-out should be narrowed so it excludes governing law and forum.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ],
+      "doc2": "D1",
+      "section2": "Section 11.4 (Order of Precedence)",
+      "detect_terms2": [
+        "shall control as to their own subject matter"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 defines 'Indemnity Claim' as any claim for indemnification under Section 9.2. That covers Seller representation breaches (9.2(a)), covenant breaches (9.2(b)) and Excluded Liabilities (9.2(c)). APA Section 2.5 says the Escrow Amount secures all Indemnity Claims. Escrow Agreement Section 1 defines 'Indemnity Claim' more narrowly, as only a claim for breach of a representation or warranty under Section 9.2(a). Escrow Agreement Section 4 lets the Escrow Agent withhold funds only against a timely noticed Indemnity Claim. Escrow Agreement Section 8.2 says the Escrow Agent's duties are determined solely by the Escrow Agreement. APA Section 11.4 makes the Escrow Agreement control as to its own subject matter. Read together, Buyer's claims for Excluded Liabilities and covenant breaches are not escrow-protected. The Escrow Agent will release funds over a Buyer notice that asserts them, so Buyer can recover those claims only by suing Seller directly.",
+      "doc": "D3",
+      "section": "Section 1 (Definitions)",
+      "detect_terms": [
+        "breach of any representation or warranty under Section 9.2(a)"
+      ],
+      "expected_finding": "The Escrow Agreement's narrower definition of 'Indemnity Claim' controls the escrow under APA Section 11.4, so the $4,850,000 escrow does not secure Buyer's claims for Excluded Liabilities or covenant breaches, contrary to APA Section 2.5. The escrow definition should be conformed to cover all claims under APA Section 9.2.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 1.1 (Definition of Indemnity Claim) and Section 2.5",
+      "detect_terms2": [
+        "any claim for indemnification under Section 9.2"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 11.3 lets Seller, as Service Provider, assign the TSA or delegate any Services to any Person without Buyer's consent. Buyer has no matching right. The Services include hosting the warehouse management system and the temperature telemetry and alarm monitoring for Buyer's newly acquired facilities. That gives the service provider access to Buyer's customer, pricing and lane data. Under the clause, Seller could assign the TSA to a competing cold-storage operator or an unvetted vendor partway through the 9-month term. The APA's anti-assignment clause in Section 11.5 does not help: it covers only 'this Agreement', and the APA defines that term to exclude the Ancillary Agreements.",
+      "doc": "D2",
+      "section": "Section 11.3 (Assignment)",
+      "detect_terms": [
+        "without the consent of Recipient",
+        "assign this Agreement or delegate any Services to any Person"
+      ],
+      "expected_finding": "Seller may assign the TSA or delegate services to anyone, including a competitor, without Buyer's consent, which exposes Buyer's customer and telemetry data and puts service continuity at risk. The clause should require Buyer's prior written consent, allowing at most assignment to affiliates or a successor to all of Seller, and should never permit assignment to a competitor.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 9.1(a) says Seller's representations and warranties, other than Fundamental Representations, survive the Closing 'until the Escrow Release Date (as defined in the Escrow Agreement)'. Claims must be noticed before that date. Escrow Agreement Section 1 defines 'Escrow Release Date' as the date ninety (90) days after the Closing Date. With a June 30, 2026 Closing, that date is September 28, 2026. Neither document alone shows how short the period is. Read together, Buyer had only 90 days to find and notice breaches of the operational representations. These include the condition of the refrigeration plant and reefer units, refrigerant leak-rate and EPA compliance records, and customer contract performance. Problems of that kind typically surface only through a full seasonal cycle or a regulatory audit. The same date also releases the escrow funds.",
+      "doc": "D1",
+      "section": "Section 9.1(a) (Survival)",
+      "detect_terms": [
+        "until the Escrow Release Date (as defined in the Escrow Agreement)"
+      ],
+      "expected_finding": "Read with the Escrow Agreement's 90-day Escrow Release Date, APA Section 9.1(a) cuts off Buyer's claims for breach of Seller's general representations about 90 days after the June 30, 2026 Closing, which is too short to find latent equipment, refrigerant-compliance or contract problems. Buyer should seek an amendment that sets a fixed survival period of at least 18 months and aligns the escrow release date with it.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Section 1 (Definition of Escrow Release Date)",
+      "detect_terms2": [
+        "ninety (90) days after the Closing Date"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "The Side Letter, Paragraph 2, states that it amends the APA under Section 11.6. It is therefore an amendment that binds the parties, not an Ancillary Agreement that the APA overrides. It provides that Assumed Liabilities include all Liabilities under the Customer Contracts 'whether arising before, at or after the Closing', including cargo loss, product spoilage and temperature-excursion claims. APA Section 9.3(b) requires Buyer to indemnify Seller for all Assumed Liabilities. APA Section 9.5(c) provides that the Cap and Basket 'shall not apply to any claim under Section 9.3(b)'. Read together, Buyer now carries unlimited indemnity exposure for Seller's own pre-Closing spoilage and excursion losses. Those claims also fall out of Excluded Liabilities, so Buyer loses its Section 9.2(c) recourse against Seller for them.",
+      "doc": "D6",
+      "section": "Paragraph 2 (Assumed Liabilities)",
+      "detect_terms": [
+        "whether arising before, at or after the Closing"
+      ],
+      "expected_finding": "The Side Letter expands Assumed Liabilities to include pre-Closing Customer Contract spoilage and cargo claims, and APA Section 9.5(c) excludes Section 9.3(b) Assumed Liability claims from the Cap, so Buyer must indemnify Seller without limit for Seller's pre-Closing losses. The Side Letter should be revised to limit the expansion to post-Closing liabilities, or those pre-Closing claims should be made subject to the Cap.",
+      "contradicts": "F8",
+      "doc2": "D1",
+      "section2": "Section 9.5(c) (Exceptions to Limitations)",
+      "detect_terms2": [
+        "shall not apply to any claim under Section 9.3(b)"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "APA Section 2.4(a) requires Seller to deliver the Closing Statement within 90 days after Closing. Section 2.4(b) gives Buyer thirty (30) days after delivery to serve a Notice of Disagreement. If Buyer does not, the Closing Statement becomes final and binding. The Buyer board consent dated October 20, 2026 recites the following. Seller delivered the Closing Statement on September 2, 2026, which was timely. Management believes the statement overstates the value of the Closing Inventory and the Accounts Receivable. The board authorizes management to dispute it. Computed from those dates, the dispute window closed on October 2, 2026, before the board acted. The consent does not record any notice already sent. Buyer has not accepted the statement, since the board directs that it be disputed, but the APA deadline has run.",
+      "doc": "D5",
+      "section": "Recitals and Resolution 1",
+      "detect_terms": [
+        "delivered the Closing Statement on September 2, 2026",
+        "authorized and directed to dispute"
+      ],
+      "expected_finding": "Under APA Section 2.4(b), the 30-day window to dispute the Closing Statement delivered on September 2, 2026 expired on October 2, 2026, before the board's October 20, 2026 consent, so the statement is at risk of being deemed final and binding. Buyer should immediately serve a Notice of Disagreement, seek Seller's written waiver or extension of the deadline, and preserve any arguments that the statement was deficient.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 2.4(b) (Closing Statement Disputes)",
+      "detect_terms2": [
+        "within thirty (30) days after delivery of the Closing Statement"
+      ]
+    }
+  ]
+}

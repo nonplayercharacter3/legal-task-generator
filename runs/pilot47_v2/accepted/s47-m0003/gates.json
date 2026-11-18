@@ -1,0 +1,194 @@
+{
+  "matter_id": "s47-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Seller Note §9.1: \"This Note shall be governed by and construed in accordance with the laws of the State of New York...\" §9.2: \"Maker and Holder each irrevocably submit to the exclusive jurisdiction of the state courts of the State of New York sitting in the County of New York and the United States District Court for the Southern District of New York for any action arising out of or relating to this Note, including any action to collect amounts payable under this Note and any claimed setoff against those amounts.\" APA §11.4: \"this Agreement shall prevail, except that the Seller Note and the Escrow Agreement shall control as to their own subject matter.\"",
+            "reason": "The Note chooses New York law and exclusive New York courts, and it expressly sends any claimed setoff there. The APA (§§11.9–11.10) chooses Delaware law and the exclusive jurisdiction of the Court of Chancery for any Action relating to the APA, which covers the Article IX indemnity claims. APA §11.4 does not resolve the conflict, because it lets the Note control its own subject matter, so the New York clause governs Note collection suits and setoff defenses. Buyer is the Maker and depends on the §9.7 setoff to recover indemnity Losses once the escrow is exhausted or released. Buyer would therefore have to prove its indemnity entitlement in Delaware while defending a Seller collection suit, and asserting the setoff, in New York under different law. That creates a risk of inconsistent rulings and duplicated cost, and it weakens Buyer's practical self-help remedy. Nothing in the folder cures or waives this. The Note's jurisdiction clause remains operative, and the conflict will matter for any future indemnity setoff, so it is still actionable, for example by amending the Note or agreeing a consolidated forum.",
+            "alone": {
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "Section 9.2: \"Maker and Holder each irrevocably submit to the exclusive jurisdiction of the state courts of the State of New York sitting in the County of New York and the United States District Court for the Southern District of New York for any action arising out of or relating to this Note, including any action to collect amounts payable under this Note and any claimed setoff against those amounts.\"",
+                "reason": "On its own, the Note shows three things. Section 9.1 chooses New York law. Section 9.2 sends all Note disputes, expressly including setoff claims, to exclusive New York courts. Section 5.1 ties the setoff right to indemnity entitlements under Article IX and Section 9.7 of the Purchase Agreement. The Note does not show what law or forum the Purchase Agreement chooses. It does not reveal that the APA selects Delaware law and the Court of Chancery (APA Sections 11.9 and 11.10). It also does not show that APA Section 11.4 makes the Note control its own subject matter. Without those APA terms, a reader sees only a standard New York law and forum clause and a cross-reference to APA setoff. The split between the indemnity forum and the Note and setoff forum, and the risk of inconsistent rulings that harms Buyer, can only be seen with the APA."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "If there is any conflict between this Agreement and any Ancillary Agreement, this Agreement shall prevail, except that the Seller Note and the Escrow Agreement shall control as to their own subject matter.",
+                "reason": "The APA alone shows several relevant pieces. It picks Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery (Sections 11.9 and 11.10). It lets Buyer set off indemnity claims against Seller Note payments (Section 9.7). And Section 11.4 says the Seller Note controls as to its own subject matter. A careful associate might note in general terms that the Note could carry its own law and forum. But nothing in the APA says what law or forum the Note actually chooses. The problem depends on the Note selecting New York law and New York County courts for all disputes relating to the Note, including setoff. That fact appears only in the Seller Note. Without it, there is no visible conflict and no visible split of forums that hurts Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Escrow Agreement Section 1: \"'Indemnity Claim' means a claim by Buyer for indemnification for Losses arising out of any inaccuracy in or breach of any representation or warranty under Section 9.2(a) of the Purchase Agreement.\" APA Section 1.1: \"'Indemnity Claim' means any claim for indemnification under Section 9.2.\" APA Section 2.5: \"The Escrow Amount shall be held by the Escrow Agent as security for all Indemnity Claims.\"",
+            "reason": "The APA makes the $4.85M escrow security for every Seller indemnity under Section 9.2. That covers representation breaches (9.2(a)), covenant breaches (9.2(b)) and Excluded Liabilities (9.2(c)). The Escrow Agreement narrows 'Indemnity Claim' to 9.2(a) only. Three provisions make the narrow version govern how the escrow actually works: Escrow Section 4.5 lets the Escrow Agent withhold funds only against an Indemnity Claim; Escrow Section 8.2 says its duties are determined solely by the Escrow Agreement and it need not interpret the APA; and APA Section 11.4 makes the Escrow Agreement control as to its own subject matter. The result is that Buyer, our client, loses escrow protection for Excluded Liabilities and covenant breaches. Those claims are uncapped up to the Purchase Price and are not subject to the Basket. Seller is the one giving the indemnity, so the gap benefits Seller and hurts Buyer. The Side Letter shifts Customer Contract cargo claims to Buyer, but it leaves the other Excluded Liabilities with Seller, so it does not cure the gap. The 90-day Escrow Release Date (about September 28, 2026) has probably passed. However, nothing in the folder shows that Buyer accepted a release or waived the point. Buyer can therefore still raise the inconsistency with Seller, for example as a breach of APA Section 2.5 or in connection with setoff against the Seller Note.",
+            "alone": {
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "\"Indemnity Claim\" means a claim by Buyer for indemnification for Losses arising out of any inaccuracy in or breach of any representation or warranty under Section 9.2(a) of the Purchase Agreement.",
+                "reason": "On its own, the Escrow Agreement shows that the escrow covers only representation and warranty claims under APA Section 9.2(a). Section 4.5 lets the Escrow Agent withhold funds only against those noticed claims, and Section 8.2 limits the agent's duties to this agreement. The reference to '9.2(a)' hints that other indemnity categories may exist. Recital B, however, says the deposit secures only 'certain' indemnification obligations of Seller, so a reader could take the narrow scope as a negotiated deal term rather than a mistake. The problem only appears with the Purchase Agreement, which this document does not include: the broader APA Section 1.1 definition covering 9.2(b) covenant breaches and 9.2(c) Excluded Liabilities, APA Section 2.5 saying the escrow secures all Indemnity Claims, and APA Section 11.4 making the Escrow Agreement control. Without those, the reader cannot tell whether the narrow definition departs from the deal or what Buyer loses because of it."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Indemnity Claim\" means any claim for indemnification under Section 9.2. ... The Escrow Amount shall be held by the Escrow Agent as security for all Indemnity Claims. (Section 2.5) ... except that the Seller Note and the Escrow Agreement shall control as to their own subject matter. (Section 11.4)",
+                "reason": "Read alone, the APA looks favorable to Buyer. It defines 'Indemnity Claim' broadly to cover all of Section 9.2, meaning rep breaches, covenant breaches and Excluded Liabilities. Section 2.5 says the escrow secures all Indemnity Claims, and Section 9.6 makes the escrow the first source of recovery. Section 11.4 does let the Escrow Agreement control its own subject matter, and Section 9.1(a) refers to an Escrow Release Date defined elsewhere. That signals the escrow terms could differ, but it does not show that they do. The problem depends on facts found only in the Escrow Agreement: its narrower definition limited to Section 9.2(a), Section 4 limiting withholding to that kind of claim, and Section 8.2 limiting the Agent's duties to that agreement. Without those provisions, an associate reading only the APA could not see that covenant and Excluded Liability claims fall outside the escrow."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 11.3: \"Service Provider may, without the consent of Recipient, assign this Agreement or delegate any Services to any Person. Recipient may not assign this Agreement or any of its rights or obligations under it without the prior written consent of Service Provider.\"",
+            "reason": "The problem is present and still actionable for Sasos. The right is one-sided. Seller (Teivil), as Service Provider, may assign the TSA or delegate the Services to any Person without consent. Sasos, as Recipient, needs Seller's consent to assign. The Services are WMS hosting, telemetry and alarm monitoring, so the provider handles Business Data, including customer records, pricing and lane data and temperature logs. Nothing elsewhere in the folder cures this. APA Section 11.5 restricts assignment only of \"this Agreement\", and the APA defines that term to exclude the Ancillary Agreements, including the TSA. APA Section 11.4 (order of precedence) applies only to actual conflicts, so it does not reach this. APA Section 6.4 confidentiality and the Article X non-compete bind Seller and its Affiliates only, not an unaffiliated assignee or delegate. TSA Sections 5.2 and 5.3 bind the \"Service Provider\", but nothing requires an assignee to be vetted or to meet any qualification. The TSA term runs until 9 months after the June 30, 2026 Closing, roughly March 30, 2027. It is therefore still in effect as of November 2026. Sasos can still press for a consent requirement, or an amendment under TSA Section 11.5, before any transfer happens."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "APA §9.1(a): \"The representations and warranties of Seller in Article IV, other than the Fundamental Representations, shall survive the Closing until the Escrow Release Date (as defined in the Escrow Agreement)... No claim for breach of any such representation or warranty may be made unless written notice of the claim is delivered under Section 9.4 before that date.\" Escrow Agreement §1: \"'Escrow Release Date' means the date that is ninety (90) days after the Closing Date.\"",
+            "reason": "The gap only shows when the two documents are read together. The APA ties survival of Seller's non-fundamental reps to a term it does not define. The Escrow Agreement sets that term at 90 days after the June 30, 2026 Closing, which is September 28, 2026. That gave Buyer, the client and the indemnified party, about three months to find and notice breaches of operational reps: equipment and reefer condition (§4.8), refrigerant and EPA leak-rate records (§4.9), and Customer Contract performance (§4.10). Such defects typically surface only over a full seasonal cycle or in an audit. The same date also released the $4.85M escrow (Escrow §5.1), so the main recovery source and the claim right lapsed together. Nothing in the folder cures this. The Side Letter shifts Customer Contract claims onto Buyer rather than narrowing the gap. The Fundamental Representations, covenants and Excluded Liabilities carve-outs do not reach the operational reps. The window closed before today (November 17, 2026), but the folder contains no Claim Notice, release, payment or other document showing Buyer accepted the result. The issue therefore remains actionable: for example, assessing any noticed claims, fraud claims under §9.8, recharacterizing losses as Excluded Liabilities under §9.2(c), and setoff strategy against the Seller Note.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "The representations and warranties of Seller in Article IV, other than the Fundamental Representations, shall survive the Closing until the Escrow Release Date (as defined in the Escrow Agreement).",
+                "reason": "The APA ties the survival period for general representations to the Escrow Release Date, but it defines that date only by reference to the Escrow Agreement. Nothing in the APA states the length of the period. A careful associate would see that survival and escrow release are linked and that the term is set in another document. They could not tell from the APA that the period is only 90 days (ending September 28, 2026), which is too short to surface equipment, refrigerant-compliance, or customer-performance breaches. The shortness of the window, which is the actual harm to Buyer, comes only from Escrow Agreement Section 1."
+              },
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "\"Escrow Release Date\" means the date that is ninety (90) days after the Closing Date. ... Section 4.5: The Escrow Agent shall withhold Escrow Funds from release only against an Indemnity Claim set out in a Claim Notice delivered before the Escrow Release Date",
+                "reason": "This document alone shows that Buyer's right to make claims against the $4.85M escrow ends 90 days after the June 30, 2026 Closing, around September 28, 2026. After that date the funds go to Seller, apart from claims already noticed. A careful associate could flag that as a short escrow window. But the document does not show that Seller's non-fundamental representations stop surviving on that date. It does not show that Buyer's whole indemnity right, not just its access to the escrow, ends after 90 days. That link comes only from APA Section 9.1(a), which ties survival to the 'Escrow Release Date (as defined in the Escrow Agreement)'. Read alone, the Purchase Agreement could allow claims outside the escrow for a longer period. So the core harm described cannot be seen from this document alone: Buyer losing all recourse for operational breaches that typically surface later."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Side Letter ¶2.2: \"'Assumed Liabilities' means ... (b) all Liabilities under the Customer Contracts, whether arising before, at or after the Closing, including all cargo loss, product spoilage and temperature-excursion claims relating to goods received, stored, handled or transported under the Customer Contracts.\" ¶2.3 also carves these claims out of Excluded Liabilities: \"other than claims under the Customer Contracts\". APA §9.5(c): \"The Cap and the Basket shall not apply to any claim under Section 9.3(b).\"",
+            "reason": "The problem is present and it hurts the client. Paragraph 2.1 states that the Side Letter amends the Purchase Agreement under APA §11.6, and ¶4.1 makes the APA read as amended. So it is a binding amendment, not an Ancillary Agreement that §11.4 would subordinate. The new definition puts Seller's pre-Closing Customer Contract claims into Assumed Liabilities, including spoilage, cargo loss and temperature-excursion claims, and including Seller's own pre-Closing breaches. Under APA §9.3(b), Buyer (the client) must indemnify Seller for all Assumed Liabilities. Under §9.5(c), neither the Cap nor the Basket applies to §9.3(b) claims, so that exposure has no limit. The revised Excluded Liabilities clause (ii) removes the same claims from Seller's §9.2(c) indemnity. That also takes away Buyer's recourse to the escrow and its setoff against the Seller Note for these claims. Nothing in the folder cures, limits or reallocates this. The October 2026 board consent deals only with the working capital dispute and does not show that Buyer has accepted or released this exposure. The exposure is ongoing, so it is still actionable: Buyer can seek a corrective amendment or contest the provision.",
+            "alone": {
+              "side_letter.md": {
+                "findable": false,
+                "evidence": "\"Assumed Liabilities\" means ... (b) all Liabilities under the Customer Contracts, whether arising before, at or after the Closing, including all cargo loss, product spoilage and temperature-excursion claims relating to goods received, stored, handled or transported under the Customer Contracts.",
+                "reason": "The Side Letter alone shows that it amends the APA under Section 11.6. It shows that Buyer assumes Seller's pre-Closing Customer Contract liabilities, including spoilage and temperature-excursion claims. It also shows those claims are removed from Excluded Liabilities clause (ii). So an associate could already see that Buyer is taking on Seller's pre-Closing losses. The labeled issue, however, is an uncapped indemnity. That depends on the APA: Section 9.3(b) makes Buyer indemnify Seller for Assumed Liabilities, Section 9.5(c) excludes 9.3(b) claims from the Cap and Basket, and Section 9.2(c) is the recourse Buyer loses. None of those terms appear here. This document does not mention indemnification, the Cap, the Basket, or Section 9 at all, so it cannot show the unlimited indemnity exposure or the loss of indemnity recourse."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Assumed Liabilities\" means Liabilities under the Assigned Contracts arising after the Closing, but only to the extent such Liabilities do not relate to any breach, default or violation by Seller occurring on or before the Closing.\" Also: \"The Cap and the Basket shall not apply to any claim under Section 9.3(b).\"",
+                "reason": "Read alone, the APA shows that Buyer's indemnity for Assumed Liabilities (Section 9.3(b)) has no cap or basket. That is lopsided, but here the Assumed Liabilities are narrowly defined. They cover only post-Closing liabilities under the Assigned Contracts that do not relate to a pre-Closing breach by Seller. Pre-Closing cargo loss, spoilage and temperature-excursion claims are expressly Excluded Liabilities, and Seller indemnifies Buyer for them under Section 9.2(c) without the Cap or Basket. So under this document alone, Buyer has no exposure for Seller's pre-Closing spoilage or excursion losses. The harm depends on the Side Letter, which amends the APA under Section 11.6 and pulls pre-Closing Customer Contract claims into the Assumed Liabilities. That turns the uncapped Section 9.3(b) indemnity into unlimited exposure for Seller's pre-Closing losses and removes Buyer's Section 9.2(c) recourse. Nothing in this APA mentions or anticipates the Side Letter."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Consent recital 1.3: \"Under Section 2.4(a) of the Purchase Agreement, Seller delivered the Closing Statement on September 2, 2026.\" Resolution 1 authorizes the Authorized Officers \"to prepare, execute and deliver to Seller a Notice of Disagreement.\" APA Section 2.4(b): \"Buyer may dispute the Closing Statement by delivering to Seller a written notice (a \"Notice of Disagreement\") within thirty (30) days after delivery of the Closing Statement... If Buyer does not deliver a Notice of Disagreement within that period, the Closing Statement shall be final and binding on the Parties.\"",
+            "reason": "The Closing Statement was delivered on September 2, 2026, so the 30-day window under APA Section 2.4(b) closed on October 2, 2026. The board consent is dated October 20, 2026, after that date. It speaks of a Notice of Disagreement only as something still to be prepared and delivered, and it records no notice already sent. Resolution 7 ratifies prior officer actions in general terms but does not show that any timely notice exists. Nothing in the folder cures the gap: there is no Seller waiver or extension, and no amendment of Section 2.4. Under the APA's terms, the Closing Statement Buyer believes is overstated would therefore have become final and binding against the Buyer, our client. That would block the working capital reduction for the inventory and receivables items. The folder does not show that Buyer accepted the result, such as by paying any adjustment or signing anything. The board in fact directs that the statement be disputed. The issue is therefore still live and actionable. Counsel needs to confirm whether any notice went out by October 2. If none did, the board is authorizing a dispute that Seller can treat as time-barred. Options include seeking a written waiver or extension from Seller under Section 11.6, or developing other theories, such as a Section 4.6 indemnity claim, though that path faces the escrow and survival timing limits.",
+            "alone": {
+              "buyer_board_consent.md": {
+                "findable": false,
+                "evidence": "Under Section 2.4(a) of the Purchase Agreement, Seller delivered the Closing Statement on September 2, 2026. ... Dated: October 20, 2026 ... authorized and directed to dispute the Closing Statement on behalf of the Company under Section 2.4 of the Purchase Agreement.",
+                "reason": "The consent shows that Seller delivered the Closing Statement on September 2, 2026, and that the board authorized a dispute on October 20, 2026, 48 days later. It records no Notice of Disagreement already sent. It does not state how long Buyer has to deliver a Notice of Disagreement, or that an unchallenged Closing Statement becomes final and binding. Both terms are in APA Section 2.4(b), which is not provided. Without the 30-day period and the deemed-acceptance consequence, this document alone does not show that the dispute window closed on October 2, 2026, or that the client is now bound. An associate might want to check the deadline, but the problem and its harm depend on the APA."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Buyer may dispute the Closing Statement by delivering to Seller a written notice (a \"Notice of Disagreement\") within thirty (30) days after delivery of the Closing Statement. ... If Buyer does not deliver a Notice of Disagreement within that period, the Closing Statement shall be final and binding on the Parties.",
+                "reason": "The APA alone sets out the 90-day delivery period and the 30-day dispute window, and says an undisputed Closing Statement becomes final and binding. It does not show when Seller delivered the Closing Statement (September 2, 2026). It also does not show that Buyer's board only authorized a dispute on October 20, 2026, after the window closed on October 2, or that no notice had been sent. Those facts come only from the board consent. Without them, a reader of the APA sees a standard deadline mechanism but cannot tell that the deadline has passed or that Buyer missed it."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C8 asks for fact F4, which only issue I2 uses: a memo that misses I2 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.08,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "matter_id": "s47-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 5,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Article I: \"'Seller Guarantees' means each guarantee, letter of credit, keep-well, surety bond or other credit support that Seller or any of its Affiliates has given for any obligation of the Company, whether arising before or after the Closing. The term includes Seller's guarantees of the Company's minimum guarantee payment obligations to producers and licensors of motion pictures.\" Section 9.3(c): Buyer shall indemnify Seller for all Losses arising out of \"any Seller Guarantee, including any payment made or obligation incurred by Seller or any of its Affiliates under any Seller Guarantee.\" Section 9.5(e): \"The Cap, the Basket and the other limitations in this Section 9.5 shall not apply to claims under Section 9.3(c).\"",
+            "reason": "Buyer, the client, is the indemnifying party under 9.3(c). The definition reaches guarantees of Company obligations that arose before Closing, while Seller owned and ran the Company. That includes minimum-guarantee payments to producers. Section 9.5(e) removes every limit on Buyer's exposure, and nothing ties the indemnity to obligations first arising after Closing. Nothing excludes defaults caused by Seller's pre-closing breaches either. Seller's own indemnity under 9.2(a) is limited by the $230,000 Basket and the $4.6M Cap. On top of that, Escrow Agreement Section 7.4 makes the $3.45M escrow Buyer's sole source of recovery against Seller. No other document in the folder cures or narrows this. It is an open-ended contingent liability that continues after Closing, not a lapsed deadline, so it remains actionable. Buyer can seek an amendment, resist pre-closing-origin claims, or prioritize releasing the guarantees under Section 6.7."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Bill of Sale Section 1.1: \"'Film Library' means all motion picture titles, whether feature-length or short-form, that Seller or any of its Affiliates owns or holds distribution rights in and that were theatrically released on or before December 31, 2024...\" SPA Section 1.1: \"'Film Library' means all released and unreleased motion picture titles that Seller or any of its Affiliates distribute, including the 2026 Release Slate.\" SPA Section 11.9: \"If any provision of this Agreement conflicts with any provision of an Ancillary Agreement, the Ancillary Agreement governs with respect to its own subject matter.\"",
+            "reason": "The two definitions conflict. Bill of Sale Section 1.1 sets its own Film Library definition, and it limits that definition to titles released on or before December 31, 2024. That overrides the SPA definition the Bill of Sale otherwise incorporates. Section 2.1 then conveys only that narrower set, and Section 2.2 says Seller keeps everything else. As a result, 2025 releases, unreleased titles and the 2026 Release Slate are not contributed to the Company. The SPA defines the Film Library as all released and unreleased titles, including the 2026 Release Slate. Section 6.8 requires all of it to be contributed by the Bill of Sale. Section 11.9 lets an Ancillary Agreement govern its own subject matter, so the Bill of Sale's narrower definition likely controls what is actually transferred. That hurts Buyer, which pays $46M for a Company that is meant to hold the full library. Bill of Sale Section 6.2 does not fix the gap, because it only preserves the SPA representations. Buyer's recovery would then depend on indemnity claims, which run against an escrow that Escrow Agreement Section 7.4 makes the exclusive source of recovery, subject to the Cap and the 120-day survival period. Nothing in the folder shows that Buyer accepted the narrower scope. The Bill of Sale amendment provision requires Buyer's consent. Buyer also keeps further-assurances rights and specific-performance and covenant-breach claims under SPA 6.8. So the problem is present and still actionable.",
+            "alone": {
+              "bill_of_sale_library_contribution.md": {
+                "findable": false,
+                "evidence": "\"Film Library\" means all motion picture titles ... that Seller or any of its Affiliates owns or holds distribution rights in and that were theatrically released on or before December 31, 2024 ...; Section 2.2: \"Seller and its Affiliates retain all assets not included in the Contributed Assets.\"",
+                "reason": "This document alone shows that only titles released on or before December 31, 2024 are conveyed. It also shows that Seller keeps everything else, which would include 2025 titles and unreleased titles, even though the agreement is dated March 30, 2026. What it does not show is that this is a problem. Recital B says only that SPA Section 6.8 requires the contribution of \"certain motion picture assets.\" Nothing in this document says the deal covered more than this narrower set. The defect only appears with the SPA. Its Section 1.1 defines Film Library to include unreleased titles and the 2026 Release Slate. Its Section 6.8 requires that full library to be contributed. Its Section 11.9 lets this Bill of Sale control what is transferred. The $46,000,000 price is also in the SPA, not here. Without the SPA, an associate could see the cutoff but could not tell that it departs from the deal or hurts Buyer."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Film Library\" means all released and unreleased motion picture titles that Seller or any of its Affiliates distribute, including the 2026 Release Slate. ... 11.9 Ancillary Agreements. If any provision of this Agreement conflicts with any provision of an Ancillary Agreement, the Ancillary Agreement governs with respect to its own subject matter.",
+                "reason": "The SPA by itself defines 'Film Library' broadly to include the 2026 Release Slate. Section 6.8 requires Seller to contribute the entire Film Library through the Bill of Sale, and Section 11.9 lets an Ancillary Agreement (which includes the Bill of Sale) govern its own subject matter. An associate could see a general risk: the Bill of Sale could override the SPA on what gets conveyed. The SPA does not show that the Bill of Sale actually narrows the definition to titles released on or before December 31, 2024. The actual problem, that the 2025 titles and the 2026 Release Slate are left out, exists only in the Bill of Sale, which I was not given."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Escrow Agreement Section 7.4: \"The Escrow Funds shall be the sole and exclusive source of recovery of the Buyer Indemnified Parties for all Losses under Article IX of the Purchase Agreement, whether or not subject to the Cap.\" SPA Section 9.5(d): \"The Cap and the Basket shall not apply to Losses arising from Fraud, breaches of Fundamental Representations, or Taxes.\" SPA Section 11.9: \"If any provision of this Agreement conflicts with any provision of an Ancillary Agreement, the Ancillary Agreement governs with respect to its own subject matter.\"",
+            "reason": "The problem is present, it hurts the client, and it is still actionable. The SPA makes the escrow only the first source of recovery: Section 9.6 says amounts \"shall first be satisfied from the Escrow Funds.\" It also leaves Fraud, Fundamental Representation and Tax claims uncapped. Escrow Section 7.4 instead makes the $3,450,000 escrow the sole source for all Article IX Losses, including those outside the Cap. SPA Section 11.9 gives the Escrow Agreement priority on its own subject matter. Read together, these provisions confine Seller's uncapped indemnity to an amount below even the $4,600,000 general Cap. Escrow Section 7.1 makes this worse. Claim Notices may be given only before the Initial Release Date, 120 days after Closing. The Fundamental Representations, however, survive until 60 days after the statute of limitations. Once the escrow is released, Buyer's long-tail Fundamental Representation and pre-Closing Tax indemnities (SPA 9.2(c), 6.10) effectively have no source of recovery. Buyer is the indemnified party, so the restriction falls entirely on the client. Nothing in the folder cures the problem: the funds flow memo expressly does not amend the agreements. Nothing shows Buyer knowingly accepted this outcome or waived the carve-outs. Buyer can still raise it, either by seeking an amendment under Escrow Section 11.2 or by asserting the SPA carve-outs, and the SPA Section 9.7 Fraud carve-out supports that position. The exposure is large and continuing because Fundamental Representation and Tax claims survive for years.",
+            "alone": {
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "The Escrow Funds shall be the sole and exclusive source of recovery of the Buyer Indemnified Parties for all Losses under Article IX of the Purchase Agreement, whether or not subject to the Cap. Payments to the Buyer Indemnified Parties under this Section 7 shall be made solely from the Escrow Funds, as contemplated by Section 9.6 of the Purchase Agreement.",
+                "reason": "On its own, the escrow agreement shows that Buyer's indemnity recovery is limited to the $3,450,000 escrow. That limit applies 'whether or not subject to the Cap', which hints that some claims sit outside the Cap. Several parts of the problem can only be found in the SPA. This document does not name the carve-outs (Fraud, Fundamental Representations, Taxes) or state the $4,600,000 Cap amount, so it cannot show the escrow is smaller than the Cap. It also does not say whether the SPA lets carve-out claims be recovered beyond the escrow. In fact, the reference to SPA Section 9.6 suggests the SPA may already make the escrow the exclusive source, which would mean there is no conflict. Finally, it does not show whether this agreement or the SPA controls if they conflict (SPA Section 11.9). Without the SPA, an associate could notice a possible concern but could not confirm that this provision overrides bargained-for carve-outs to Buyer's detriment."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 9.6: \"Any amount owed to a Buyer Indemnified Party under this Article IX shall first be satisfied from the Escrow Funds in accordance with the Escrow Agreement.\" Section 11.9: \"If any provision of this Agreement conflicts with any provision of an Ancillary Agreement, the Ancillary Agreement governs with respect to its own subject matter.\"",
+                "reason": "Read alone, the SPA protects Buyer on this point. Section 9.5(d) takes Fraud, Fundamental Representation and Tax claims out of the Cap and the Basket. Section 9.6 makes the escrow only the 'first' source of recovery, not the only one. Section 9.7 preserves Fraud claims outside the exclusive-remedy clause. Nothing in the SPA limits recovery to the $3,450,000 Escrow Amount. Section 11.9 does let an Ancillary Agreement prevail on its own subject matter. A careful associate might see that as a general risk, but only as speculation. The actual problem is the language in Escrow Agreement Section 7.4: the Escrow Funds are the 'sole and exclusive source of recovery' for all Article IX Losses, 'whether or not subject to the Cap'. That provision is in the Escrow Agreement, which was not provided. Without it, the SPA alone shows no override of the carve-outs and no harm to Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "SPA §9.1: \"The General Representations shall survive the Closing until the Initial Release Date.\" Escrow Agreement §5.1: \"The 'Initial Release Date' is the date that is 120 days following the Closing Date, or if that date is not a Business Day, the next Business Day.\" SPA §4.12: \"Producer participation statements are rendered within 90 days after each June 30 and December 31.\"",
+            "reason": "Section 4.12 (participations, residuals and receivables) is a General Representation, not a Fundamental one. It therefore survives only until the Initial Release Date: 120 days after the March 31, 2026 Closing, which is July 29, 2026. The first post-closing participation statement, covering the period ending June 30, 2026, is not due until about September 28, 2026. That is two months after the survival period ends. Buyer would have no realistic chance to find participation or receivables errors and serve a claim in time. Nothing in the folder cures this. §9.1 preserves only claims actually asserted before the survival period ends. The Escrow Agreement makes the escrow the sole source of recovery (§7.4) and allows Claim Notices only before the Initial Release Date (§7.1). The risk sits entirely with Buyer, the firm's client, as the indemnified party under §9.2(a). Although July 29, 2026 has now passed, the folder contains only unsigned and draft documents. Nothing shows the escrow was released or that Buyer accepted the outcome without objection. The gap therefore remains a live point to raise or renegotiate, not settled history.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Initial Release Date\" has the meaning given in the Escrow Agreement. ... 9.1 Survival. The General Representations shall survive the Closing until the Initial Release Date.",
+                "reason": "The SPA alone shows that the General Representations, including the Section 4.12 participations and receivables rep, survive only until the 'Initial Release Date'. It also shows that the Closing Date is March 31, 2026 and that participation statements are rendered within 90 days after each June 30 and December 31, so the first post-closing statement would come around late September 2026. However, the SPA does not say when the Initial Release Date falls. That term is defined only by reference to the Escrow Agreement. Without the Escrow Agreement's 120-days-after-Closing release date (July 29, 2026), an associate cannot tell that the survival period ends before the first statement arrives. Tying survival to an escrow release date may be worth checking, but the actual gap that harms the Buyer depends on the other document."
+              },
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "Section 5.1: \"The \"Initial Release Date\" is the date that is 120 days following the Closing Date...\"; Section 7.1: \"At any time before the Initial Release Date, Buyer may deliver to Seller and the Escrow Agent a written notice (a \"Claim Notice\")...\"; Section 7.4: \"The Escrow Funds shall be the sole and exclusive source of recovery of the Buyer Indemnified Parties for all Losses under Article IX of the Purchase Agreement...\"",
+                "reason": "On its own, the escrow agreement shows three things. Buyer's claim window closes 120 days after Closing. The escrow is Buyer's exclusive source of recovery. Funds are released to Seller after that date. An associate could flag the window as short. But the escrow agreement does not show that the SPA ties survival of the General Representations to the Initial Release Date. Nor does it show the SPA Section 4.12 reporting cycle, under which participation statements are rendered within 90 days after June 30 and December 31. That cycle puts the first post-closing statement at September 28, 2026, after the window closes. The specific harm, that Buyer cannot discover participation, receivables or exhibitor-settlement inaccuracies before the representations expire, depends on SPA terms not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 12.3: \"Recipient may not assign this Agreement or any of its rights or obligations under it without Provider's prior written consent. Provider may assign this Agreement, or delegate the performance of any Service, in whole or in part, to any Person without the consent of Recipient.\"",
+            "reason": "The clause is one-sided against the client's side. The Company (Recipient, now owned by Buyer) needs Seller's consent to assign. Seller (Provider) may assign the TSA or delegate any Service to any Person, which could include a competing distributor, with no consent, notice, qualification or competitor carve-out.\n\nThe risk is real because of what the Services touch. Booking, participation accounting and DCP delivery require access to information the TSA itself lists as Confidential Information: exhibitor terms, release calendars, booking strategies and participant data.\n\nNothing in the folder cures this:\n- Section 3.3 makes Provider responsible only for 'its personnel', not for delegates.\n- Section 8 limits the use of information but does not bar a competitor from receiving it.\n- Section 9.3 allows termination only for an uncured material breach, and an assignment allowed under 12.3 is not a breach.\n- Section 9.2 lets the Company drop individual Services for convenience on 30 days' notice. That is a costly partial fix: it leaves the Company without critical functions mid-release.\n\nThe issue is still actionable. The Term runs nine months from the March 31, 2026 Closing, to about December 31, 2026, so the agreement is live. Under Section 2.3 the Company may extend a Service by up to 60 days. Buyer can enforce the Company's rights under Section 12.9 and can seek an amendment under Section 12.5 or other protective steps. Nothing in the folder shows Buyer accepted an assignment or waived the point."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "SPA §4.6: \"No consent, approval or waiver of any Person is required for the execution, delivery and performance of this Agreement or the consummation of the transactions it contemplates, other than the consent of Kestrelwave Streaming, Inc. under its output agreement with the Company.\" SPA §7.2(d) conditions Closing only on the Kestrelwave consent. Ventrice Employment Agreement §10.2: \"The Company shall not undergo a Change of Control without the Executive's prior written consent.\" If that happens, §10.2(a)–(c) let her resign for Good Reason within 90 days, take a lump sum of 24 months' Base Salary, and have the Executive Titles revert to her.",
+            "reason": "The sale of 100% of Ashgrove's stock to Buyer is a Change of Control under Employment Agreement §10.1(a), so it needs Ventrice's prior written consent. The burden falls on the Company, which Buyer will own after Closing. Without her consent, the Company would owe her 24 months' salary, about $850,000, and would lose the Executive Titles from the Film Library that Buyer is paying for. The SPA's consent representation names only Kestrelwave. The only consent-related closing condition is §7.2(d), which also covers only Kestrelwave. No document in the folder shows that Ventrice's consent was disclosed, requested or obtained. Buyer's protection after Closing is weak: it is an indemnity claim for breach of a General Representation, subject to the $230,000 Basket and $4.6M Cap. That claim survives only until the Initial Release Date, 120 days after Closing, and Escrow Agreement §7.4 limits recovery to the $3.45M escrow. Nothing in the folder shows that the deal closed or that Buyer accepted the result or waived the issue. The other documents are unsigned forms and drafts. The problem is therefore present, adverse to Buyer, and still one Buyer can raise.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "No consent, approval or waiver of any Person is required for the execution, delivery and performance of this Agreement or the consummation of the transactions it contemplates, other than the consent of Kestrelwave Streaming, Inc. under its output agreement with the Company.",
+                "reason": "The SPA alone shows only that Seller represents Kestrelwave's consent is the only one needed, and that Closing is conditioned on that consent alone (Section 7.2(d)). Section 4.9(d) mentions officer employment agreements in general, but nothing in the SPA reveals that the President's employment agreement has a change-of-control consent right, a Good Reason resignation trigger, 24-month severance, or reversion of Executive Titles. Those facts come only from the employment agreement. Reading the SPA by itself, an associate would see a standard consent rep and would have no reason to think it is wrong or that the Buyer is exposed."
+              },
+              "ventrice_executive_employment_agreement.md": {
+                "findable": false,
+                "evidence": "The Company shall not undergo a Change of Control without the Executive's prior written consent. If a Change of Control occurs without that consent: (a) the Change of Control constitutes Good Reason... (b) ... severance equal to 24 months of her Base Salary... (c) ... all of the Company's right, title and interest in and to the Executive Titles reverts to the Executive.",
+                "reason": "On its own, the employment agreement shows that Ventrice must consent to any Change of Control, including a sale of more than 50% of Ashgrove's voting stock. It also shows what follows if she does not consent: a Good Reason resignation, 24 months' salary as severance, and reversion of the Executive Titles. An associate would flag this as a consent item for any acquirer. But the document never mentions Semeith, the transaction, or how the deal is structured, so it does not show that the deal is a stock sale that triggers Section 10.2. The actual problem is that SPA Section 4.6 says the only consent needed is Kestrelwave's, and Section 7.2(d) conditions Closing only on that consent. The rep is therefore inaccurate, and nothing in the SPA requires Ventrice's consent before Closing. Seeing that requires the SPA, which this document does not provide. Exhibit A is also blank, so even the size of the library exposure cannot be judged from this document."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C8 asks for fact F3, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.09,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

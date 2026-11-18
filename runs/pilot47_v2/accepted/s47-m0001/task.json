@@ -1,0 +1,120 @@
+{
+  "task_id": "s47-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Semeith Pictures Holdings, LLC as buyer in its proposed stock purchase from Prudond Media Group, Inc. Please review all eight documents in the folder and send me a memo identifying every issue you find that affects our client's position. For each issue, give the document and section where it appears, explain why it matters to Semeith, and recommend a fix. Please keep the memo organized so I can work through it quickly with the client.",
+  "documents": [
+    "bill_of_sale_library_contribution.md",
+    "closing_funds_flow_memorandum.md",
+    "deal_call_meeting_notes.md",
+    "escrow_agreement.md",
+    "seller_board_consent.md",
+    "stock_purchase_agreement.md",
+    "transition_services_agreement.md",
+    "ventrice_executive_employment_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that Buyer faces unlimited, uncapped liability to indemnify Seller for Losses under the Seller Guarantees, including guaranty defaults on obligations arising before Closing such as producer minimum-guarantee payments. It identifies the issue as located in the SPA (Seller Guarantees definition, Section 9.3(c) and/or Section 9.5(e)), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Seller Guarantees",
+        "shall not apply to claims under Section 9.3(c)",
+        "unlimited"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that the Bill of Sale's narrower Film Library definition (titles theatrically released on or before December 31, 2024) controls what is conveyed, so the Company, and therefore Buyer, would not acquire the 2025 titles or the 2026 Release Slate. It identifies the issue as located in the Bill of Sale (Section 1 and/or Section 2) or in the SPA (Section 1.1, 6.8 and/or 11.9), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "on or before December 31, 2024",
+        "2026 Release Slate",
+        "Film Library"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that the Escrow Agreement's sole-and-exclusive-source-of-recovery clause limits Buyer's recovery for Fraud, Fundamental Representation and Tax claims to the $3,450,000 escrow, eliminating the SPA's carve-outs from the Cap. It identifies the issue as located in the Escrow Agreement (Section 7.4) or in the SPA (Section 9.5(d) and/or Section 11.9), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "sole and exclusive source of recovery",
+        "whether or not subject to the Cap",
+        "$3,450,000"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that the General Representations survive only until the Initial Release Date, 120 days after Closing (about July 29, 2026), which is before the first post-closing producer participation statement is due. Buyer therefore has no practical window to discover breaches and bring a claim. The response identifies the issue as located in the SPA (Section 9.1 and/or Section 4.12) or in the Escrow Agreement (Section 5.1), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "120 days following the Closing Date",
+        "July 29, 2026",
+        "participation statement"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that the TSA lets Seller, as Provider, assign the agreement or delegate Services to any Person, including a competitor, without Buyer's consent, while Buyer's own assignment requires Seller's consent. It identifies the issue as located in the TSA (Section 12.3), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without the consent of Recipient",
+        "competitor",
+        "Section 12.3"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response finds that the stock sale is a Change of Control requiring Marisol Ventrice's prior written consent under her employment agreement, and that the SPA neither discloses this consent nor makes it a closing condition. It identifies the issue as located in the SPA (Section 4.6 and/or Section 7.2(d)) or in the Ventrice employment agreement (Section 10.2), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without the Executive's prior written consent",
+        "Change of Control",
+        "closing condition"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that under the SPA's order-of-precedence clause, each Ancillary Agreement governs its own subject matter over the SPA where they conflict.",
+      "kind": "fact",
+      "hints": [
+        "Section 11.9",
+        "Ancillary Agreement",
+        "governs its own subject matter"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that the SPA's general indemnity Cap is 10% of the Purchase Price ($4,600,000).",
+      "kind": "fact",
+      "hints": [
+        "$4,600,000",
+        "10% of the Purchase Price"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is formatted as a memo with each issue presented as a separately identifiable item (for example, a heading or numbered entry per issue).",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Issue 1",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the SPA's closing conditions already require Marisol Ventrice's consent to the transaction.",
+      "kind": "negative",
+      "hints": []
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

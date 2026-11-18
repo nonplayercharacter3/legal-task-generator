@@ -1,0 +1,190 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s47-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s47-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s47-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 5,
+      "input_tokens": 23569,
+      "output_tokens": 72818,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 26,
+      "input_tokens": 836957,
+      "output_tokens": 150281,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 163278,
+      "output_tokens": 10755,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4531,
+      "output_tokens": 754,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 18,
+      "input_tokens": 855478,
+      "output_tokens": 15685,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 24,
+      "input_tokens": 223612,
+      "output_tokens": 12736,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 3924,
+      "output_tokens": 502,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 24402,
+      "output_tokens": 7278,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 328088,
+      "output_tokens": 47300,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 9,
+      "input_tokens": 70013,
+      "output_tokens": 6940,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "independent film distribution": 1,
+      "commercial laundry services": 1,
+      "cold chain logistics": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 2,
+      "asset purchase agreement": 1
+    },
+    "issue_types": {
+      "defined_term_inconsistency": 3,
+      "missing_assignment_restriction": 3,
+      "survival_gap": 3,
+      "uncapped_indemnity": 2,
+      "change_of_control_consent": 2,
+      "expired_notice_window": 2,
+      "governing_law_mismatch": 2,
+      "liability_cap_carveout": 1
+    },
+    "repeated_names": {
+      "ostrander": [
+        "s47-m0001",
+        "s47-m0002"
+      ]
+    },
+    "repeated_issue_sets": {}
+  }
+}

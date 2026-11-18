@@ -1,0 +1,128 @@
+{
+  "task_id": "s47-m0003",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Sasos Reefer Logistics, LLC, the buyer in its asset purchase from Teivil Cold Chain Holdings, Inc. Please review all eight documents in the folder and prepare a memo to me that lists each issue you find. For each issue, give the document and section where it appears, explain why it matters for Sasos, and recommend a fix. Sasos needs this to understand its exposure before the deal moves forward.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "buyer_board_consent.md",
+    "escrow_agreement.md",
+    "landlord_estoppel_certificate.md",
+    "press_release.md",
+    "seller_note.md",
+    "side_letter.md",
+    "transition_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the Seller Note's New York governing law and exclusive New York forum will govern disputes over the Note, including Buyer's setoff of indemnity claims against Note payments, while Buyer's indemnity claims themselves are governed by Delaware law in the Delaware Court of Chancery, so one dispute is split between two forums and two bodies of law. It identifies this as arising in the Seller Note Section 9 or APA Section 11.4, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York law",
+        "Court of Chancery",
+        "setoff"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that the Escrow Agreement defines 'Indemnity Claim' more narrowly than the APA, limiting it to breaches of representations or warranties, so the escrow does not secure Buyer's claims for Excluded Liabilities or covenant breaches. It identifies this as arising in the Escrow Agreement Section 1 or APA Section 1.1 or 2.5, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Indemnity Claim",
+        "Section 9.2(a)",
+        "Excluded Liabilities"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that Seller may assign the TSA or delegate the Services to any person, including a competitor, without Buyer's consent. It identifies this as arising in TSA Section 11.3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without the consent of Recipient",
+        "assign",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Seller's general (non-fundamental) representations and warranties survive only until the Escrow Release Date, about 90 days after the June 30, 2026 Closing (around September 28, 2026), which cuts off Buyer's claims for breach of those representations. It identifies this as arising in APA Section 9.1(a) or the Escrow Agreement Section 1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Escrow Release Date",
+        "90 days",
+        "survival"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that the Side Letter expands Assumed Liabilities to include pre-Closing Customer Contract liabilities such as spoilage, cargo loss or temperature-excursion claims, so Buyer must indemnify Seller for them without the Cap. It identifies this as arising in Side Letter Paragraph 2 or APA Section 9.5(c), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "whether arising before, at or after the Closing",
+        "Assumed Liabilities",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response concludes that the 30-day window to dispute the Closing Statement delivered on September 2, 2026 expired on October 2, 2026, before the board's October 20, 2026 consent, so the Closing Statement is at risk of being final and binding. It identifies this as arising in the Buyer board consent or APA Section 2.4(b), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "October 2, 2026",
+        "Notice of Disagreement",
+        "final and binding"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that under the APA's order of precedence, the Seller Note and the Escrow Agreement control as to their own subject matter.",
+      "kind": "fact",
+      "hints": [
+        "control as to their own subject matter",
+        "Section 11.4"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that the indemnity escrow amount is $4,850,000.",
+      "kind": "fact",
+      "hints": [
+        "$4,850,000"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is a memo addressed to the supervising partner, and it presents each issue separately with its document and section, why it matters for the client, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Buyer's period to dispute the Closing Statement is still open, or that the board's October 20, 2026 consent was a timely dispute.",
+      "kind": "negative",
+      "hints": [
+        "still within the dispute period"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that APA Section 11.5 restricts Seller's assignment of the TSA.",
+      "kind": "negative",
+      "hints": [
+        "APA Section 11.5 prohibits assignment of the TSA"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}
