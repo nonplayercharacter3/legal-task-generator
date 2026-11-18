@@ -405,3 +405,8 @@ def test_consistency_rejects_a_reworded_value_only_if_a_second_matcher_look_agre
     reworded = {"F1@a.md": "New York law"}
     flaky = Flaky(reworded, same=False)
     assert gates.consistency(flaky, _ledger(), {"a.md": "...", "b.md": "..."}).passed and len(flaky.matched) == 2
+
+
+def test_issue_verifier_ignores_real_date():
+    # s60-m0002: the verifier called a 2025 survival window lapsed against the real date and rejected a sound issue
+    assert "Never measure a deadline against today's real date" in prompts.ISSUE_VERIFIER

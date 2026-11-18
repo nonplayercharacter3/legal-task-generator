@@ -164,6 +164,8 @@ party bears each obligation the problem touches (who gives the indemnity, who mu
 whom it hurts. Answer false also if the client can no longer act on it: a missed deadline or lapsed window is
 history, not a problem to raise, when the folder shows the client has since accepted the result (a restated note it
 signed, a payment) and nothing records its objection. Ask yourself: is this still actionable for the client?
+Never measure a deadline against today's real date: the matter is set at the latest date the folder states, so a
+window that closes after that date is still open.
 Quote the sentence that shows it, and say in `reason` why the problem is or is not present and actionable.
 
 Reply with ONLY a JSON object: {"present": bool, "evidence": str, "reason": str}"""
