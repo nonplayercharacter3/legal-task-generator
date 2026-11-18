@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -174,8 +188,73 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 24,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "austin_studio_office_lease.md",
+                "daibaind_member_consent.md",
+                "disclosure_schedule.md",
+                "escrow_agreement.md",
+                "ip_assignment_agreement.md",
+                "key_employee_agreement_fenwright.md",
+                "side_letter_2026-10-21.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5",
+                "C7"
+              ],
+              "steps": 24,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "austin_studio_office_lease.md",
+                "daibaind_member_consent.md",
+                "disclosure_schedule.md",
+                "escrow_agreement.md",
+                "ip_assignment_agreement.md",
+                "key_employee_agreement_fenwright.md",
+                "side_letter_2026-10-21.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 24,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "austin_studio_office_lease.md",
+                "daibaind_member_consent.md",
+                "disclosure_schedule.md",
+                "escrow_agreement.md",
+                "ip_assignment_agreement.md",
+                "key_employee_agreement_fenwright.md",
+                "side_letter_2026-10-21.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
