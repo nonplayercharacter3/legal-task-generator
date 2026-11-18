@@ -1,0 +1,162 @@
+{
+  "matter_id": "s54-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Escrow Agreement §8.2: \"This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware ... Any action or proceeding arising out of or relating to this Agreement or the Escrow Funds, including any dispute over entitlement to any release of Escrow Funds, shall be brought exclusively in the Court of Chancery of the State of Delaware.\" SPA §11.9: \"This Agreement, and all claims arising out of or relating to it, shall be governed by ... the laws of the State of New York\". SPA §11.10: \"Any action arising out of or relating to this Agreement or any Transaction Document shall be brought exclusively in the state or federal courts located in the County of New York, New York.\"",
+            "reason": "The two clauses conflict. The SPA expressly defines the Escrow Agreement as a Transaction Document and sends any action relating to it to New York courts under New York law. The Escrow Agreement sends any dispute over escrow release exclusively to Delaware Chancery under Delaware law. Nothing in the folder cures this. SPA §11.4 ranks the SPA only over the Disclosure Schedule, Bill of Sale and IP Assignment, and does not mention the Escrow Agreement. The Escrow Agreement was signed later and also binds the Escrow Agent, who is not party to the SPA, which supports reading it as controlling for escrow disputes. The issue is live and actionable for Buyer. The October 2026 side letter records a contested $1,300,000 Claim Notice and Seller's demand for release of the Initial Release Amount. Both parties reserve all rights, and the Escrow Agent may interplead under §6.5 into Delaware. Buyer could therefore have to litigate the underlying rep breach in New York under New York law while the fight over its main source of recovery runs in Delaware. That creates a real risk of parallel proceedings and inconsistent rulings.",
+            "alone": {
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware ... Any action or proceeding arising out of or relating to this Agreement or the Escrow Funds, including any dispute over entitlement to any release of Escrow Funds, shall be brought exclusively in the Court of Chancery of the State of Delaware.",
+                "reason": "This document alone shows that the Escrow Agreement picks Delaware law and the exclusive jurisdiction of Delaware courts for disputes over the escrow and its release. Seen alone, that is an ordinary clause. The document says nothing about which law or forum the Purchase Agreement chooses. The Company is a New York corporation and Business Days are tied to New York banks, but neither fact shows that the SPA requires New York law or New York County courts. An associate reading only this document could not see that indemnity claims must be brought in New York while escrow release disputes must be brought in Delaware. Nor could they see that the SPA's precedence clause fails to rank the SPA above this agreement. The conflict depends on SPA Sections 11.9, 11.10 and 11.4, which are not in this document."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "11.10 Jurisdiction; Venue. Any action arising out of or relating to this Agreement or any Transaction Document shall be brought exclusively in the state or federal courts located in the County of New York, New York.",
+                "reason": "The SPA by itself shows several things. It chooses New York law (11.9) and exclusive New York County courts for disputes under the SPA or any Transaction Document, including the Escrow Agreement (11.10). It makes the $4,850,000 escrow Buyer's first source of indemnity recovery (2.3, 9.6). Its precedence clause (11.4) does not mention the Escrow Agreement. An associate might notice that 11.4 leaves out the Escrow Agreement, but that alone is not a conflict. The actual problem depends on the Escrow Agreement's own Section 8.2, which sets Delaware law and the exclusive Delaware Chancery forum, and on that agreement being signed later by the Escrow Agent, who is not an SPA party. None of that appears in this document. Exhibit A is only referenced, not attached. Reading the SPA alone, nothing indicates that the escrow is subject to a competing forum or governing-law clause."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "SPA Section 9.5(c): \"The Cap and the Deductible shall apply only to claims under Section 9.2(a) and Section 9.3(a).\" Side Letter Section 3(b): \"Buyer shall indemnify Seller and the other Seller Indemnitees against, and hold them harmless from, all Losses arising out of or resulting from the Retained Credit Support ... whether the claim arises before or after the Extended Release Date. Buyer's obligations under this Section 3(b) are deemed an obligation of Buyer under Section 9.3(b) of the Purchase Agreement.\"",
+            "reason": "Read together, the two provisions leave Buyer, our client, with an uncapped indemnity of Seller for the Retained Credit Support. The side letter slots the new indemnity into Section 9.3(b), the covenant indemnity. Section 9.5(c), which does not appear in the February draft, limits the $4,850,000 Cap and the $485,000 Deductible to rep-and-warranty claims under 9.2(a) and 9.3(a). The remaining limits in 9.5(d)-(e) only net out insurance, require mitigation and exclude punitive damages; none of them caps the amount. Under 9.1(c), covenants survive until fully performed, so there is no time limit either. The exposure covers the Yonkers lease guaranty, which runs through June 30, 2034 at about $1,150,000 per year plus additional charges, and the $3,000,000 Saint Odile bond. It applies even after the Extended Release Date. The original SPA gave Buyer only an efforts covenant, with no indemnity for the credit support. The side letter was proposed by Seller and is still awaiting Buyer's countersignature, and nothing in the folder shows that Buyer has accepted or performed under it. Buyer can therefore still negotiate a cap, a time limit or a carve-out before signing, so the issue remains live and actionable.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"The Cap and the Deductible shall apply only to claims under Section 9.2(a) and Section 9.3(a).\" (Section 9.5(c)); \"Buyer shall use commercially reasonable efforts to cause Seller to be fully and unconditionally released from the Retained Credit Support on or before October 31, 2026.\" (Section 6.6)",
+                "reason": "The SPA alone shows that covenant indemnities under Sections 9.2(b) and 9.3(b) are uncapped and have no deductible, and that this applies to both sides. It also shows that Buyer has only a commercially reasonable efforts obligation to release Seller's Retained Credit Support. Buyer's exposure under 9.3(b) for breach of Section 6.6 is therefore uncapped but narrow. The SPA contains no Buyer indemnity for all Losses under the Yonkers lease guaranty or the $3,000,000 bond. It also says nothing about the lease running through 2034 or its roughly $1,150,000 annual rent. The harmful part is the Side Letter's new indemnity being 'deemed an obligation of Buyer under Section 9.3(b),' and that appears only in the Side Letter. On its face, the SPA's uncapped covenant indemnity looks mutual and balanced, so an associate reading it alone would not see the problem."
+              },
+              "side_letter_credit_support_oct_2026.md": {
+                "findable": false,
+                "evidence": "Buyer's obligations under this Section 3(b) are deemed an obligation of Buyer under Section 9.3(b) of the Purchase Agreement. Claims under this Section 3(b) shall be asserted and resolved in accordance with Section 9.4 of the Purchase Agreement.",
+                "reason": "The side letter alone shows that Buyer agrees to indemnify Seller for 'all Losses' under the Yonkers lease guaranty and the $3,000,000 Saint Odile bond, whether the claim arises before or after the Extended Release Date. It states no cap of its own, and it gives the size of the underlying exposure (lease through June 2034 at about $1,150,000 per year plus other charges). But it routes the indemnity into SPA Section 9.3(b). A careful associate reading only this letter would reasonably assume the SPA's Article IX limits (Cap, Deductible, survival) govern it. Nothing here says whether those limits apply to Section 9.3(b) claims. The key fact is that SPA Section 9.5(c) applies the Cap and Deductible only to Sections 9.2(a) and 9.3(a), which leaves this indemnity completely uncapped. That fact appears only in the SPA, so the problem cannot be identified from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Escrow Agreement §4.2: \"On the date that is 180 days after the Closing Date (the \"Initial Release Date\"), the Escrow Agent shall release to Seller the Initial Release Amount, less the aggregate Disputed Amount under all Claim Notices delivered before the Initial Release Date. The Escrow Agent shall make the release without further instruction from Buyer or Seller.\" Side Letter §5(a): \"Buyer delivered to Seller and the Escrow Agent a Claim Notice dated October 19, 2026,\" and §5(c): \"Buyer reserves its position that $1,300,000 must be withheld from any release of Escrow Funds pending final resolution of the claim.\"",
+            "reason": "The Closing was April 15, 2026, so the Initial Release Date was October 12, 2026. Section 4.2 lets the Initial Release Amount be reduced only by Claim Notices delivered before that date, and the release happens automatically without instruction. Buyer's $1,300,000 Saint Odile Claim Notice is dated October 19, 2026, seven days late. Under the text, it does not reduce the $2,425,000 initial release to Seller. That undercuts Buyer's stated position that $1,300,000 must be withheld from the initial release. The claim stays secured only against the remaining funds before the Final Release Date. The point is still actionable: Side Letter §5 records that Buyer disputes Seller's release demand, has not signed Joint Written Instructions, and reserves all rights. Nothing in the folder shows Buyer accepting the release. Counsel needs to deal with the late notice now: assess Buyer's weak withholding position and its exposure in a dispute, and rely on the Final Release holdback.",
+            "alone": {
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "On the date that is 180 days after the Closing Date (the \"Initial Release Date\"), the Escrow Agent shall release to Seller the Initial Release Amount, less the aggregate Disputed Amount under all Claim Notices delivered before the Initial Release Date. The Escrow Agent shall make the release without further instruction from Buyer or Seller.",
+                "reason": "This document sets up the mechanism. The Closing Date is April 15, 2026, so the Initial Release Date falls on October 12, 2026. On that date $2,425,000 is released automatically to Seller, and only Claim Notices delivered before that date reduce the release. A careful associate could see that this structure carries risk for Buyer. But the document says nothing about any actual claim. It does not mention the October 19, 2026 Claim Notice, the $1,300,000 Saint Odile overbilling claim, Seller's demand for release, or Buyer's dispute. Those facts come only from the Side Letter. Without them, there is no late notice and no live problem to identify."
+              },
+              "side_letter_credit_support_oct_2026.md": {
+                "findable": false,
+                "evidence": "Buyer delivered to Seller and the Escrow Agent a Claim Notice dated October 19, 2026. ... Seller has demanded that Buyer join in joint written instructions to the Escrow Agent directing release of the Initial Release Amount to Seller, without reduction for the amount stated in the Claim Notice.",
+                "reason": "The side letter gives the Closing Date (April 15, 2026) and the Claim Notice date (October 19, 2026). It also shows that Seller wants the Initial Release Amount released without reduction and that Buyer refuses. But it never says when the Initial Release Date falls, and it gives no release mechanics. 'Initial Release Amount' and 'Claim Notice' are expressly defined by reference to the Escrow Agreement. The 180-day period, the October 12, 2026 date, and the rule that only Claim Notices delivered before that date reduce the release all come from Escrow Agreement Section 4.2, which is not provided. From this document alone, an associate could not tell that the notice was late or that Buyer's withholding position is weak. Seller's demand reads as an ordinary merits dispute, not a timing defect."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 9.1(c): \"The obligations of Seller under Section 9.2(c) survive until the end of the survival period applicable to the representations in Section 4.16.\" Section 9.1(a) gives non-Fundamental representations, which include Section 4.16, a survival period of only \"12 months after the Closing Date.\"",
+            "reason": "The problem is present. Section 9.1(b) does not list Section 4.16 as a Fundamental Representation, so the Taxes representation survives only 12 months. By cross-reference, Seller's Pre-Closing Tax indemnity under Section 9.2(c) ends on April 15, 2027 (Closing was April 15, 2026, per the side letter). Schedule 4.16 shows the exposure runs well past that date: 2022–2025 income and franchise returns remain open, and a New York sales and use tax audit for March 2023 to November 2024 is pending with no assessment issued. Buyer's February 18, 2026 draft had the tax indemnity survive until 60 days after the statute of limitations. The executed SPA shortened it, which hurts Buyer as the indemnified party. The October 26, 2026 side letter amends only Section 6.6 and adds a Buyer indemnity, so it leaves this point untouched. The escrow's Final Release Date is also 12 months after Closing, so escrow security ends at the same time. The issue is still actionable: today is November 17, 2026 and the period has not yet expired. Buyer can still seek an amendment under Section 11.5, which matters because the side letter shows Seller is already negotiating amendments. Buyer can also preserve claims under Section 9.1(d) by giving notice of the pending NY audit with reasonable specificity before April 15, 2027."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "KEA Section 1: \"'Business' means commercial laundry and linen services provided to hotels, resorts and restaurants, including linen rental, laundering, pressing and the delivery and collection of linens and related textile products.\" Section 7.1 bars Executive only from participating in \"any Person that engages in the Business,\" and Section 7.2 bars soliciting customers only \"for the purpose of providing services that are part of the Business.\" SPA Section 1.1, by contrast, defines \"Business\" as \"commercial laundry, linen rental and textile processing services for healthcare, hospitality and industrial customers.\" Disclosure Schedule 4.10 shows healthcare at $25,780,000 (61.9%) of revenue, led by Saint Odile at 23.7%.",
+            "reason": "The Key Employee Agreement has its own definition of 'Business' that covers only hospitality customers. It leaves out healthcare and industrial work, which is about 76% of the Company's revenue according to the Disclosure Schedule. Because of that, the President's non-compete and customer non-solicit in Section 7 do not stop her from serving or soliciting Saint Odile, Bergen Meridian or the other healthcare accounts once she leaves. Those accounts are the core goodwill that Recital C and Section 7.5 say the covenants are meant to protect for Parent. Nothing in the folder fixes this. The KEA does not refer to the SPA definition. SPA Section 11.4 (order of precedence) covers only the Disclosure Schedule, the Bill of Sale and the IP Assignment Agreement, not the KEA. Section 7.5's power for a court to modify a covenant only narrows overbroad restrictions; it cannot widen this one. The point hurts the client, Buyer/Parent, which owns the Company that holds these covenants. It is still actionable: Executive is still employed and the Restricted Period has not started running after termination. The Company can still seek an amendment under KEA Section 9.4, and nothing shows the client has accepted the narrower scope."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

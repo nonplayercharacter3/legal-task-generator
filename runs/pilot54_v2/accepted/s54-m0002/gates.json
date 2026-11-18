@@ -1,0 +1,164 @@
+{
+  "matter_id": "s54-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 7.1: \"Recipient shall indemnify, defend and hold harmless Provider ... from and against any and all Losses arising out of or relating to the Services ... including Losses arising from Provider's negligence in performing the Services, except to the extent such Losses result from Provider's gross negligence or willful misconduct.\" Section 8.3: \"The limitation in Section 8.2 shall not apply to Recipient's obligations under Section 7.1 ...\"",
+            "reason": "The client is Buyer (Recipient), and Recipient is the party giving the Section 7.1 indemnity. That indemnity expressly covers Provider's own ordinary negligence in performing the Services. Delaware enforces this kind of clause when the wording is clear and unequivocal, as it is here. Section 8.3 removes Recipient's 7.1 obligation from the Service Fee cap. Provider's reciprocal indemnity in Section 7.2 covers only gross negligence or willful misconduct and remains capped at fees paid. The exposure is therefore unlimited and one-sided against the client. It reaches Seller's negligent hosting of the Monitoring Platform, permitting, and call-center work. Nothing else in the folder cures this: the APA does not override the TSA on this point, and the Side Letter is limited to the installer classification matter. The TSA is an agreed form to be signed at Closing, and nothing shows Closing has occurred, so the issue can still be raised and negotiated."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 12.3: \"Provider may assign this Agreement, in whole or in part, or delegate the performance of any of the Services, to any Person without the consent of Recipient. Recipient may not assign this Agreement or any of its rights or obligations under it without the prior written consent of Provider.\"",
+            "reason": "The problem is present and it hurts Buyer. Section 12.3 lets Provider (Seller) assign the TSA, or delegate any Service, to any Person with no consent, notice, qualification or competitor carve-out. Recipient (Buyer, our client) cannot assign at all without Seller's consent. Nothing else in the folder cures this. APA Section 11.6 governs only the APA. APA Section 11.10 ranks the APA above the Ancillary Agreements, but only for a 'conflict or inconsistency', and there is none, because APA 11.6 never addresses TSA assignment. APA Section 6.6 bars Seller itself from engaging in the Business. It does not stop Seller from handing TSA performance to a competing installer. The Services in scope are sensitive. A-1 is running the Monitoring Platform, which holds all of Buyer's newly acquired Customer Data. A-3 is staffing the call center that answers Buyer's customers. A-4 is collecting Buyer's receivables. A delegate could therefore gain direct access to Buyer's customers and data. Buyer's remedies are weak. TSA confidentiality and data-use duties bind Provider, not an assignee. Provider's liability is capped at fees paid. Buyer's only exit is to terminate each Service on 15 days' notice, which forfeits the transition support it needs. The TSA is still an agreed form to be signed at Closing, and nothing shows Buyer has accepted this outcome. Buyer can still negotiate a consent requirement, a competitor bar, or a rule that Provider stays liable for its delegates."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "APA §9.1: \"the representations and warranties in Section 4.9 shall survive until the expiration of the Specified Warranty Period.\" Disclosure Schedule 4.9, Part A: \"'Specified Warranty Period' means the period beginning on the Closing Date and ending ninety (90) days after the Closing Date, during which Seller continues to administer warranty claims under Customer Contracts that were submitted to Seller before the Closing Date.\"",
+            "reason": "Read together, the two provisions cut the Installed Systems representations to 90 days after Closing. Those representations cover workmanlike installation, code compliance and the absence of roof-penetration, leak or structural defects. Every other general representation survives 18 months. §9.4 bars any §9.2(a) claim not noticed within the survival period, and §9.1 expressly replaces the statute of limitations. Delaware enforces that kind of contractual shortening. Schedule 4.8 shows 6,842 residential contracts carrying 10-to-25-year workmanship and roof-penetration warranties, and Schedule 4.9 records a history of roof leaks. Latent installation defects across that base will mostly surface well after 90 days. The APA does not override the schedule definition; it adopts it by cross-reference. The Side Letter, which ranks first in precedence, deals only with the installer classification matter. The §9.2(c) Excluded Liability indemnity offers partial protection: it covers Seller's pre-Closing warranty and performance liabilities and is not tied to the §9.1 deadline. It does not replace a representation-based claim for Buyer's own losses from defective systems. Nothing in the folder shows that Closing has occurred or that the 90-day window has lapsed and been accepted. The Transition Services Agreement and the Escrow Agreement are unexecuted forms, and the outside date is December 31, 2026. The gap is therefore still actionable for Buyer, for example through an amendment of the definition or an extended survival period before or at Closing.",
+            "alone": {
+              "asset_purchase_agreement_executed.md": {
+                "findable": false,
+                "evidence": "\"(b) the representations and warranties in Section 4.9 shall survive until the expiration of the Specified Warranty Period.\" / \"\\\"Specified Warranty Period\\\" has the meaning given in Schedule 4.9.\"",
+                "reason": "The APA alone shows that the survival of the Section 4.9 Installed Systems representations is tied to the Specified Warranty Period. It also shows that this term is defined only by reference to Schedule 4.9, which is not part of this document. The APA does not say how long that period is. Read alone, it looks like an extended survival tied to warranty terms. A careful associate would flag the cross-reference as a point to check. But the actual harm cannot be seen from the APA: the period ends 90 days after Closing, so the workmanship representations expire early and latent defect claims are cut off. That fact comes only from the Disclosure Schedule."
+              },
+              "seller_disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "\"Specified Warranty Period\" means the period beginning on the Closing Date and ending ninety (90) days after the Closing Date, during which Seller continues to administer warranty claims under Customer Contracts that were submitted to Seller before the Closing Date.",
+                "reason": "The schedule defines the Specified Warranty Period as a 90-day post-Closing period for administering pre-Closing warranty claims. Read alone, this looks like an ordinary transition-services definition. Nothing in the schedule ties the term to survival of representations or indemnity. The harmful link comes only from the APA: Section 9.1 uses this term to measure survival of the Section 4.9 Installed Systems representations, and Section 9.4 requires claim notices before survival ends. An associate reading only this schedule could not see that the workmanship and roof-leak representations expire 90 days after Closing. The schedule's long warranty terms (10 to 25 years) and its roof-leak history do not reveal the survival gap without the APA text."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "KEA Section 1.1: \"'Business' means the installation of residential solar photovoltaic systems.\" KEA Section 7.1(a): \"engage in the Business anywhere in the Territory...\" Compare APA Section 1.1: \"'Business' means the design, sale, installation, maintenance and monitoring of residential and commercial solar energy and battery storage systems, as conducted by Seller as of the date of this Agreement.\" APA Section 11.10: \"As between Buyer and Seller, in the event of any conflict or inconsistency among the following documents...\"",
+            "reason": "The firm's client is Buyer. Buyer gets the benefit of Renfeld's restrictive covenants. Under KEA 7.1, Renfeld agrees not to compete, solicit Customers, or interfere with business relations, but only as to 'the Business.' The KEA defines that term narrowly as residential solar PV installation. The APA defines the acquired Business much more broadly: design, sale, maintenance and monitoring, plus commercial solar and battery storage. The KEA defines the term itself and does not refer to the APA. The APA precedence clause in 11.10 applies only 'as between Buyer and Seller,' and Renfeld is a party to the KEA in his individual capacity. Nothing else in the folder fixes this. The Seller non-compete in APA 6.6 binds Seller and its Affiliates. Renfeld, as majority shareholder, may be an Affiliate, but that is uncertain and does not cure the gap in the KEA itself. The KEA's Recitals and the acknowledgments in 7.3 say the covenants protect the acquired goodwill, but recitals do not expand an operative defined term. The reformation clause in 7.5 lets a court narrow covenants, not widen them. So Renfeld could compete in commercial solar, battery storage, O&M and monitoring right after Closing. As of November 2026 the folder shows the deal signed and no amendment. The issue can still be fixed by amending the KEA under 10.5, so it remains a real and actionable risk for Buyer.",
+            "alone": {
+              "key_employee_agreement_renfeld.md": {
+                "findable": false,
+                "evidence": "\"Business\" means the installation of residential solar photovoltaic systems.",
+                "reason": "On its own, the KEA shows only that 'Business' is defined narrowly and that Section 7.1 restricts only that 'Business'. A careful associate might wonder about the narrowness, since Section 8.1 mentions 'the remote monitoring platform acquired from Seller'. But that could be an internal tool supporting installations, not a separate revenue line. Nothing in the KEA says Seller's business, or what Buyer is buying, includes commercial installations, battery storage, maintenance or monitoring services. The gap, and the harm of Renfeld being free to compete in those segments right after Closing, appears only when the KEA is set against the APA's broader Section 1.1 definition. Whether the APA's precedence clause could import that definition is also an APA question. The KEA alone shows a narrow definition, not an inconsistency."
+              },
+              "asset_purchase_agreement_executed.md": {
+                "findable": false,
+                "evidence": "\"Business\" means the design, sale, installation, maintenance and monitoring of residential and commercial solar energy and battery storage systems, as conducted by Seller as of the date of this Agreement.",
+                "reason": "The APA defines the Business broadly. It names the Key Employee Agreement with Renfeld as an inducement, a closing deliverable and a closing condition. Section 6.6 binds only Seller and its Affiliates, not Renfeld personally. Section 11.10's precedence clause applies only as between Buyer and Seller. Nothing in the APA states how the KEA defines 'Business' or what its non-compete in Section 7.1 covers. The narrower definition in the KEA, limited to residential PV installation, can be seen only in the KEA itself. An associate reading the APA alone might note that the founder's covenants sit in a separate document and should be checked. They could not see that those covenants actually leave out the commercial, battery storage, maintenance and monitoring lines."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Side Letter Paragraph 2: \"any Losses incurred by any Buyer Indemnitee arising out of or relating to the Installer Classification Matter shall be recoverable by Buyer under Article IX of the Purchase Agreement solely as Losses arising from a breach of the representations and warranties of Seller in Section 4.13(c) of the Purchase Agreement.\" APA Section 9.5(c): \"The limitations in Sections 9.5(a) and 9.5(b) shall not apply to Losses arising from any inaccuracy in or breach of a Fundamental Representation or from fraud, and shall not apply to claims under Section 9.2(b) or Section 9.2(c).\"",
+            "reason": "Without the Side Letter, the DOL misclassification exposure would be recovered by Buyer under the Excluded Liabilities indemnity. Section 2.4(d) of the APA expressly covers pre-Closing independent contractor classification, and claims under Section 9.2(c) are carved out of the 15% cap ($5.775M) and the $385,000 basket. They are also not limited by the 18-month notice period, which Section 9.4 applies only to Section 9.2(a) claims. Paragraph 2 of the Side Letter makes recovery \"solely\" a Section 4.13(c) rep breach. Section 4.13(c) is not a Fundamental Representation, so the claim becomes a Section 9.2(a) claim. That makes it subject to the cap, the basket and the 18-month survival. APA Section 11.10 gives the Side Letter first precedence, so it controls over Section 9.2(c). This hurts Buyer, the firm's client, as indemnitee: the known and potentially large audit exposure (137 contractors since 2023) moves from an uncapped bucket into a capped, time-limited one, and it competes with other rep claims for the same cap. Nothing in the folder cures this, limits it, or shows Buyer accepting it after the fact. Buyer's signature block is not completed, and no closing or settlement is recorded. The point can still be raised and renegotiated, for example by making recovery cumulative with Section 9.2(c).",
+            "alone": {
+              "side_letter_aug_2026.md": {
+                "findable": false,
+                "evidence": "The Parties agree that any Losses incurred by any Buyer Indemnitee arising out of or relating to the Installer Classification Matter shall be recoverable by Buyer under Article IX of the Purchase Agreement solely as Losses arising from a breach of the representations and warranties of Seller in Section 4.13(c) of the Purchase Agreement.",
+                "reason": "On its own, the Side Letter shows only that recovery for the DOL misclassification audit is channelled 'solely' through a breach of the Section 4.13(c) representation, and that disclosure will not qualify that representation. Read alone, this looks protective of Buyer, because it overrides the disclosure and knowledge defenses. The word 'solely' signals some limit, but the document does not say what is lost or what limits apply. Three facts that make this harmful to the client come only from the APA. First, Section 2.4(d) treats pre-Closing misclassification liabilities as Excluded Liabilities with uncapped indemnity under Sections 9.2(c) and 9.5(c). Second, Section 4.13(c) is not a Fundamental Representation, so claims under it fall within the 15% cap, the basket and the 18-month survival period. Third, Section 11.10 gives the Side Letter precedence. Without the APA, an associate could not tell that this clause moves the exposure from uncapped to capped recovery."
+              },
+              "asset_purchase_agreement_executed.md": {
+                "findable": false,
+                "evidence": "\"**11.10 Order of Precedence.** As between Buyer and Seller, in the event of any conflict or inconsistency among the following documents, they shall govern in the following order: the concurrent Side Letter, then this Agreement, then the Disclosure Schedule, then the other Ancillary Agreements.\"",
+                "reason": "The APA by itself is favourable to Buyer on misclassification. Section 2.4(d) makes pre-Closing employment and misclassification liabilities Excluded Liabilities. Section 9.2(c) indemnifies them, and Section 9.5(c) removes the 15% cap and the basket for 9.2(c) claims. The APA also shows that Section 4.13(c) is not a Fundamental Representation, that a Side Letter exists outside the Ancillary Agreements, and that the Side Letter ranks first under 11.10. A careful associate might flag that unseen Side Letter as a risk in general. However, nothing in the APA mentions the Installer Classification Matter or the DOL audit. Nor does it say that the Side Letter moves those Losses into the 4.13(c) representation bucket, where they would be capped, subject to the basket, and limited to 18 months of survival. That reallocation, which is what harms Buyer, comes only from the Side Letter."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F4, which only issue I5 uses: a memo that misses I5 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.1,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

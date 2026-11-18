@@ -1,0 +1,185 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 2,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 2,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 2
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 2,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s54-m0001",
+      "accepted": false,
+      "failed_gate": "consistency",
+      "reason": "mismatches: [{\"fact\": \"F8\", \"key\": \"Asset Purchase Agreement order of precedence\", \"filename\": \"asset_purchase_agreement.md\", \"ledger\": \"Section 11.8 written amendments, then the APA, then the Disclosure Schedule, then other Ancillary Documents\", \"document\": \"(a) first, any written amendment executed in accorda",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    },
+    {
+      "matter_id": "s54-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s54-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 14349,
+      "output_tokens": 49243,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 28,
+      "input_tokens": 967672,
+      "output_tokens": 177042,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 194989,
+      "output_tokens": 11875,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 4,
+      "input_tokens": 5471,
+      "output_tokens": 1399,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 10,
+      "input_tokens": 590861,
+      "output_tokens": 8658,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 12,
+      "input_tokens": 108892,
+      "output_tokens": 5646,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 2,
+      "input_tokens": 2621,
+      "output_tokens": 299,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 2,
+      "input_tokens": 15676,
+      "output_tokens": 4966,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 4,
+      "input_tokens": 263180,
+      "output_tokens": 32849,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 6,
+      "input_tokens": 45982,
+      "output_tokens": 4832,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "event furniture rental": 1,
+      "solar panel installation": 1,
+      "commercial laundry services": 1
+    },
+    "agreement_types": {
+      "asset purchase agreement": 2,
+      "stock purchase agreement": 1
+    },
+    "issue_types": {
+      "missing_assignment_restriction": 2,
+      "expired_notice_window": 2,
+      "governing_law_mismatch": 2,
+      "liability_cap_carveout": 2,
+      "uncapped_indemnity": 2,
+      "survival_gap": 2,
+      "defined_term_inconsistency": 2,
+      "change_of_control_consent": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

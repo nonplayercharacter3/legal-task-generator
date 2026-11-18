@@ -1,0 +1,125 @@
+{
+  "task_id": "s54-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Brukaisk Solar Holdings, LLC as buyer in its asset purchase from Rebous Rooftop Energy, Inc. Please review all nine documents in the folder and send me a memo identifying each issue you find. For each, state the document and section where it appears, explain why it matters to Brukaisk, and recommend a fix. We need this to advise the client before signing, so prioritize accordingly.",
+  "documents": [
+    "apa_prior_draft_july_2026.md",
+    "asset_purchase_agreement_executed.md",
+    "bill_of_sale_form.md",
+    "buyer_board_consent.md",
+    "indemnity_escrow_agreement.md",
+    "key_employee_agreement_renfeld.md",
+    "seller_disclosure_schedule.md",
+    "side_letter_aug_2026.md",
+    "transition_services_agreement_form.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Buyer must indemnify Seller (Provider) without any cap for Losses arising from the transition services, including Losses caused by Seller's own negligence; locates this in the Transition Services Agreement (Section 7.1 or Section 8.3); explains why this matters to Brukaisk; and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Provider's own negligence",
+        "cap does not apply to Recipient's obligations under Section 7.1",
+        "uncapped indemnity"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Seller (Provider) may assign the Transition Services Agreement, or delegate the services, to any third party without Buyer's consent; locates this in Transition Services Agreement Section 12.3; explains why this matters to Brukaisk; and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 12.3",
+        "assign without consent of Recipient",
+        "delegate to a third party"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Section 4.9 installed-systems / workmanship representations survive only 90 days after Closing, because their survival is tied to the Specified Warranty Period, so Buyer's claims for latent installation defects expire after 90 days; locates this in APA Section 9.1 or Disclosure Schedule 4.9; explains why this matters to Brukaisk; and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Specified Warranty Period",
+        "90 days after the Closing Date",
+        "Section 4.9 representations"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Key Employee Agreement defines 'Business' only as the installation of residential solar photovoltaic systems, which is narrower than the APA definition, so Renfeld's non-compete and non-solicit leave him free to compete in the acquired commercial, battery storage, maintenance or monitoring businesses; locates this in the Key Employee Agreement (Section 1.1 or 7.1) or APA Section 1.1; explains why this matters to Brukaisk; and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "installation of residential solar photovoltaic systems",
+        "narrower definition of Business",
+        "non-compete"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the Side Letter makes Losses from the Installer Classification Matter recoverable only as a breach of the Section 4.13(c) representation, which converts it from an uncapped Excluded Liability indemnity claim into a claim subject to the 15% cap, basket and 18-month survival; locates this in the Side Letter (Paragraph 2) or APA Section 9.5(c); explains why this matters to Brukaisk; and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Installer Classification Matter",
+        "solely as Losses arising from a breach",
+        "subject to the cap"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the general survival period for representations under the APA is 18 months after the Closing Date.",
+      "kind": "fact",
+      "hints": [
+        "18 months after the Closing Date",
+        "Section 9.1"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the APA's general indemnity cap is 15% of the Purchase Price.",
+      "kind": "fact",
+      "hints": [
+        "15% of the Purchase Price",
+        "Section 9.5(a)"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo that presents the issues one by one and, for each issue, gives the document and section, why it matters to the client, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response prioritizes the issues, for example by ranking them or labelling each with a severity or priority level.",
+      "kind": "format",
+      "hints": [
+        "High priority",
+        "ranked by severity"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the Installer Classification Matter remains recoverable by Buyer outside the 15% indemnity cap after the Side Letter.",
+      "kind": "negative",
+      "hints": []
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the Section 4.9 installed-systems representations survive for 18 months or longer after Closing.",
+      "kind": "negative",
+      "hints": []
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

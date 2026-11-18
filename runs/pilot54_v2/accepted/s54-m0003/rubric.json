@@ -1,0 +1,120 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Escrow Agreement's choice of Delaware law and an exclusive Delaware (Court of Chancery) forum conflicts with the SPA's choice of New York law and an exclusive New York forum. It cites the location as Escrow Agreement Section 8.2 and/or SPA Section 11.9 (or 11.10), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "Court of Chancery of the State of Delaware",
+        "New York law",
+        "conflicting exclusive forum"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Buyer's indemnity of Seller for the Retained Credit Support (the Yonkers lease guaranty and the performance bond) is treated as a Section 9.3(b) covenant obligation and is therefore not subject to the Cap, leaving Buyer with uncapped liability. It cites the location as SPA Section 9.5(c) and/or Side Letter Section 3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "deemed an obligation of Buyer under Section 9.3(b)",
+        "uncapped",
+        "Retained Credit Support"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Buyer's Claim Notice dated October 19, 2026 was delivered after the Initial Release Date (180 days after the Closing Date, i.e. October 12, 2026), so the notice does not prevent release of the Initial Release Amount to Seller. It cites the location as Escrow Agreement Section 4.2 and/or Side Letter Section 5, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "October 12, 2026",
+        "Claim Notice dated October 19, 2026",
+        "Initial Release Date"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Pre-Closing Tax indemnity survives only as long as the 12-month survival period of the tax representation (Section 4.16), so it lapses around April 15, 2027, before the applicable tax assessment periods close. It cites the location as SPA Section 9.1(c), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "Pre-Closing Taxes",
+        "Section 4.16",
+        "statute of limitations"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the Key Employee Agreement defines 'Business' as services to hotels, resorts and restaurants, which omits the healthcare linen services covered by the SPA definition, so the President's non-compete and non-solicit do not protect the Company's healthcare business. It cites the location as Key Employee Agreement Section 1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I5",
+      "hints": [
+        "hotels, resorts and restaurants",
+        "healthcare",
+        "non-compete"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Closing Date was April 15, 2026.",
+      "kind": "fact",
+      "source": "F3",
+      "hints": [
+        "April 15, 2026",
+        "Closing Date"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the general representations survive for 12 months after the Closing Date.",
+      "kind": "fact",
+      "source": "F10",
+      "hints": [
+        "12 months after the Closing Date",
+        "survival period"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is written as a memo that presents each issue with its document-and-section location, its significance to the client and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Location"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response flags at least one matter as urgent at or near the top of the memo, before the detailed issue-by-issue discussion.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Urgent",
+        "Immediate action"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Buyer's October 19, 2026 Claim Notice was delivered on time, before the Initial Release Date.",
+      "kind": "negative",
+      "source": "I3",
+      "hints": [
+        "timely",
+        "before the Initial Release Date"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that SPA Section 11.4 (order of precedence) makes the SPA prevail over the Escrow Agreement.",
+      "kind": "negative",
+      "source": "I1",
+      "hints": [
+        "Section 11.4",
+        "SPA controls over the Escrow Agreement"
+      ]
+    }
+  ]
+}

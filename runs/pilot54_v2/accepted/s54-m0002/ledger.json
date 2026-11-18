@@ -1,0 +1,249 @@
+{
+  "matter_id": "s54-m0002",
+  "summary": "Brukaisk Solar Holdings, LLC (client, Buyer) is acquiring substantially all of the assets of Rebous Rooftop Energy, Inc. (Seller), a residential and commercial solar and battery storage installer, under an Asset Purchase Agreement signed August 21, 2026. Closing is still pending. The folder holds the signed APA, a concurrent side letter, the Disclosure Schedule, a Key Employee Agreement with Seller's founder and CEO Tobias Renfeld, the agreed forms of Transition Services Agreement and Bill of Sale, Buyer's board consent, the indemnity escrow agreement and a superseded July draft of the APA. Five issues are planted. Two sit in the TSA: Buyer's uncapped indemnity of Seller, which covers Seller's own negligence, and Seller's unrestricted right to assign. Three need two documents read together: the survival period of the installation-workmanship representation, which the Disclosure Schedule shrinks to 90 days; the KEA's narrower definition of 'Business', which guts the founder non-compete; and the side letter, which moves the installer misclassification liability out of the uncapped Excluded Liabilities indemnity and into the capped representation-breach bucket.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Brukaisk Solar Holdings, LLC",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Rebous Rooftop Energy, Inc.",
+      "role": "Seller; Provider under the Transition Services Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Tobias Renfeld",
+      "role": "Seller's founder, CEO and majority shareholder; key employee of Buyer after Closing"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Asset Purchase Agreement signing date",
+      "value": "August 21, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$38,500,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$3,850,000",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F4",
+      "key": "Asset Purchase Agreement general indemnity cap",
+      "value": "15% of the Purchase Price, applying to claims under Section 9.2(a)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "General representation survival period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F6",
+      "key": "Asset Purchase Agreement definition of 'Business'",
+      "value": "design, sale, installation, maintenance and monitoring of residential and commercial solar energy and battery storage systems",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence between Buyer and Seller",
+      "value": "concurrent Side Letter, then Asset Purchase Agreement, then Disclosure Schedule, then other Ancillary Agreements",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F8",
+      "key": "Governing law of Asset Purchase Agreement",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F9",
+      "key": "Transition Services Agreement term",
+      "value": "6 months after the Closing Date",
+      "doc": "D4",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F10",
+      "key": "Specified Warranty Period",
+      "value": "90 days after the Closing Date",
+      "doc": "D5",
+      "section": "Schedule 4.9"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_executed.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "key_employee_agreement_renfeld.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "side_letter_aug_2026.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "transition_services_agreement_form.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "apa_prior_draft_july_2026.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D7",
+      "filename": "buyer_board_consent.md",
+      "kind": "board consent",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "bill_of_sale_form.md",
+      "kind": "bill of sale",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "indemnity_escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Two TSA provisions combine to create the exposure. TSA Section 7.1 requires Recipient (Buyer) to indemnify Provider (Seller) for all Losses arising out of the Services, expressly including Losses arising from Provider's own negligence. Provider's indemnity in Section 7.2 reaches only its gross negligence or willful misconduct. Section 8.2 caps each party's liability at the Service Fees paid, but Section 8.3 states that the cap does not apply to Recipient's obligations under Section 7.1. Delaware enforces indemnities for the indemnitee's own negligence when the language is clear and unequivocal, as it is here. Read together, Buyer bears unlimited liability for Seller's negligent performance of the monitoring-platform, permitting and call-center services, while Seller's reciprocal exposure stays capped and narrow.",
+      "doc": "D4",
+      "section": "Sections 7.1 and 8.3",
+      "detect_terms": [
+        "including Losses arising from Provider's negligence",
+        "shall not apply to Recipient's obligations under Section 7.1"
+      ],
+      "expected_finding": "Under TSA Sections 7.1 and 8.3 together, Buyer must indemnify Seller without any cap for Losses caused even by Seller's own negligence in performing the services, which Delaware will enforce as written, so the indemnity should be limited to Buyer's own negligence or misconduct and brought under the Section 8.2 cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 12.3 lets Provider (Seller) assign the TSA, or delegate any Services, to any Person without Recipient's consent, while Recipient (Buyer) may not assign without Provider's consent. APA Section 11.6 restricts assignment of the APA only and does not reach the TSA. Seller could therefore hand the services to a competing installer during the 6-month term. Those services include running the monitoring platform that holds Buyer's newly acquired customer data and staffing the call center that answers Buyer's customers.",
+      "doc": "D4",
+      "section": "Section 12.3",
+      "detect_terms": [
+        "Provider may assign this Agreement",
+        "without the consent of Recipient"
+      ],
+      "expected_finding": "TSA Section 12.3 lets Seller assign or delegate the transition services to any third party, including a competitor that would gain access to Buyer's customers and customer data, so it should be made mutual and require Buyer's prior written consent, with no assignment to competitors.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 9.1 provides that representations survive 18 months after the Closing Date. It then provides that the Section 4.9 representations (Installed Systems: workmanlike installation, code compliance, no roof-penetration, leak or structural defects) survive until the expiration of the Specified Warranty Period, a term that APA Section 1.1 says has the meaning given in Schedule 4.9. On its own that reads like an extended survival tied to long installation warranties. Disclosure Schedule 4.9 defines the Specified Warranty Period as the period, ending 90 days after the Closing Date, during which Seller continues to administer warranty claims under Customer Contracts. That is ordinary on its own. Read together, the workmanship representations die 90 days after Closing. APA Section 9.4 requires claim notices before the survival period ends, and Delaware (10 Del. C. § 8106(c)) enforces contractual survival periods. Buyer therefore cannot practically claim for latent leak and installation defects across Seller's installed base, which typically surface years later.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "until the expiration of the Specified Warranty Period"
+      ],
+      "expected_finding": "Because APA Section 9.1 ties survival of the Section 4.9 installed-systems representations to the Specified Warranty Period, which Schedule 4.9 defines as 90 days after Closing, Buyer's indemnity claims for latent installation defects expire after only 90 days, so the survival should be fixed at a stated period at least as long as the general 18-month survival (preferably matching the customer workmanship warranties), independent of the Schedule definition.",
+      "contradicts": null,
+      "doc2": "D5",
+      "section2": "Schedule 4.9",
+      "detect_terms2": [
+        "ending ninety (90) days after the Closing Date"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 defines the Business Buyer is acquiring as the design, sale, installation, maintenance and monitoring of residential and commercial solar energy and battery storage systems. The Key Employee Agreement with Tobias Renfeld, Seller's founder and CEO, defines 'Business' in its own Section 1.1 as the installation of residential solar photovoltaic systems. Its non-compete and non-solicit in Section 7.1 restrict only 'the Business' as so defined. The KEA is between Buyer and Renfeld, and the APA precedence clause in Section 11.10 governs only as between Buyer and Seller, so it does not import the APA definition. Read together, the founder's covenant does not cover the commercial installation, battery storage, maintenance and monitoring lines that Buyer is paying for. Renfeld could compete in those segments immediately after Closing.",
+      "doc": "D2",
+      "section": "Sections 1.1 and 7.1",
+      "detect_terms": [
+        "installation of residential solar photovoltaic systems"
+      ],
+      "expected_finding": "The KEA's definition of 'Business' covers only residential solar installation, far narrower than the APA's definition, so Renfeld's non-compete and non-solicit leave him free to compete in the acquired commercial, battery storage, maintenance and monitoring businesses, and the KEA should adopt the APA definition of Business.",
+      "contradicts": "F6",
+      "doc2": "D1",
+      "section2": "Section 1.1",
+      "detect_terms2": [
+        "residential and commercial solar energy and battery storage systems"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Under the APA, Excluded Liabilities (Section 2.4(d)) include all liabilities from Seller's pre-Closing employment or engagement of individuals, including misclassification. Section 9.2(c) indemnifies Buyer for Excluded Liabilities, and Section 9.5(c) states that the 15% cap and basket in Sections 9.5(a) and 9.5(b) do not apply to claims under Section 9.2(b) or Section 9.2(c). The concurrent Side Letter records Seller's disclosure of the Installer Classification Matter, a U.S. Department of Labor audit of installers engaged as independent contractors. It provides that Losses from that matter are recoverable by Buyer solely as Losses arising from a breach of the Section 4.13(c) labor representations, whether or not disclosed. Read alone, that looks favourable to Buyer because disclosure cannot defeat the claim. But Section 4.13(c) is not a Fundamental Representation, so claims under it fall under Section 9.2(a) and are subject to the 15% cap, the basket and the 18-month survival. Under APA Section 11.10 the Side Letter ranks first in precedence, so it controls. Together, the provisions pull the known misclassification exposure out of the uncapped Excluded Liabilities indemnity and into the capped bucket.",
+      "doc": "D3",
+      "section": "Paragraph 2",
+      "detect_terms": [
+        "solely as Losses arising from a breach",
+        "Installer Classification Matter"
+      ],
+      "expected_finding": "Read with APA Sections 9.2(c), 9.5(a) and 9.5(c) and the precedence clause in Section 11.10, the Side Letter converts the Installer Classification Matter from an uncapped Excluded Liability into a capped representation claim subject to the 15% cap, basket and 18-month survival, so the Side Letter should be revised to keep that matter recoverable under Section 9.2(c) outside the cap.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 9.5(c)",
+      "detect_terms2": [
+        "shall not apply to claims under Section 9.2(b) or Section 9.2(c)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "matter_id": "s54-m0001",
+  "accepted": false,
+  "failed_gate": "consistency",
+  "reason": "mismatches: [{\"fact\": \"F8\", \"key\": \"Asset Purchase Agreement order of precedence\", \"filename\": \"asset_purchase_agreement.md\", \"ledger\": \"Section 11.8 written amendments, then the APA, then the Disclosure Schedule, then other Ancillary Documents\", \"document\": \"(a) first, any written amendment executed in accorda",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": false,
+      "details": {
+        "mismatches": [
+          {
+            "fact": "F8",
+            "key": "Asset Purchase Agreement order of precedence",
+            "filename": "asset_purchase_agreement.md",
+            "ledger": "Section 11.8 written amendments, then the APA, then the Disclosure Schedule, then other Ancillary Documents",
+            "document": "(a) first, any written amendment executed in accordance with Section 11.8; (b) second, this Agreement; (c) third, the Disclosure Schedule; and (d) fourth, the other Ancillary Documents; provided that the governing law and dispute resolution provisions of each Ancillary Document shall govern that Ancillary Document",
+            "matcher": [
+              "The order is the same: Section 11.8 amendments, then the APA, then the Disclosure Schedule, then other Ancillary Documents. But the document adds a proviso that each Ancillary Document's governing law and dispute resolution provisions govern that document. This carve-out narrows the APA's precedence over Ancillary Documents, and the unqualified answer-key value omits it.",
+              "The ranking matches: Section 11.8 amendments, then the APA, then the Disclosure Schedule, then other Ancillary Documents. However, the document adds a proviso the answer key omits: each Ancillary Document's own governing law and dispute resolution provisions govern that document. This is a substantive carve-out that narrows the APA's precedence, not merely added detail."
+            ]
+          }
+        ],
+        "reworded": 0,
+        "checked": 100
+      }
+    }
+  ]
+}
