@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.333,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -174,8 +188,65 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5",
+                "C6"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "figos_certificate_of_insurance_2026.md",
+                "figos_order_form_OF-001.md",
+                "meeting_notes_gebv_validation_2026-08-19.md",
+                "sow_02_data_migration_transition.md",
+                "traimand_figos_quality_agreement.md",
+                "traimand_figos_software_license_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 16,
+              "files_opened": [
+                "figos_certificate_of_insurance_2026.md",
+                "figos_order_form_OF-001.md",
+                "meeting_notes_gebv_validation_2026-08-19.md",
+                "sow_02_data_migration_transition.md",
+                "traimand_figos_quality_agreement.md",
+                "traimand_figos_software_license_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "figos_certificate_of_insurance_2026.md",
+                "figos_order_form_OF-001.md",
+                "meeting_notes_gebv_validation_2026-08-19.md",
+                "sow_02_data_migration_transition.md",
+                "traimand_figos_quality_agreement.md",
+                "traimand_figos_software_license_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

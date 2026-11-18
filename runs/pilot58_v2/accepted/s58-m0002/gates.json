@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "test",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.333,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -154,8 +168,70 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 23,
+              "files_opened": [
+                "disclosure_schedule_kettlebrook.md",
+                "email_thread_closing_logistics.md",
+                "ip_assignment_agreement_brouloul_farmstead.md",
+                "lepund_board_resolutions.md",
+                "letter_of_intent_lepund_brouloul.md",
+                "seller_note_lepund.md",
+                "stock_purchase_agreement_kettlebrook.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C7"
+              ],
+              "steps": 23,
+              "files_opened": [
+                "disclosure_schedule_kettlebrook.md",
+                "email_thread_closing_logistics.md",
+                "ip_assignment_agreement_brouloul_farmstead.md",
+                "lepund_board_resolutions.md",
+                "letter_of_intent_lepund_brouloul.md",
+                "seller_note_lepund.md",
+                "stock_purchase_agreement_kettlebrook.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C7"
+              ],
+              "steps": 23,
+              "files_opened": [
+                "disclosure_schedule_kettlebrook.md",
+                "email_thread_closing_logistics.md",
+                "ip_assignment_agreement_brouloul_farmstead.md",
+                "lepund_board_resolutions.md",
+                "letter_of_intent_lepund_brouloul.md",
+                "seller_note_lepund.md",
+                "stock_purchase_agreement_kettlebrook.md",
+                "transition_services_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
