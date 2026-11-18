@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.667,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -164,8 +178,73 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 22,
+              "files_opened": [
+                "data_processing_addendum.md",
+                "notice_letter.md",
+                "order_form.md",
+                "prior_draft_license_agreement.md",
+                "quality_agreement.md",
+                "side_letter.md",
+                "software_license_agreement.md",
+                "statement_of_work.md",
+                "term_sheet.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 24,
+              "files_opened": [
+                "data_processing_addendum.md",
+                "implementation_kickoff_emails.md",
+                "notice_letter.md",
+                "order_form.md",
+                "prior_draft_license_agreement.md",
+                "quality_agreement.md",
+                "side_letter.md",
+                "software_license_agreement.md",
+                "statement_of_work.md",
+                "term_sheet.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2"
+              ],
+              "steps": 24,
+              "files_opened": [
+                "data_processing_addendum.md",
+                "implementation_kickoff_emails.md",
+                "notice_letter.md",
+                "order_form.md",
+                "prior_draft_license_agreement.md",
+                "quality_agreement.md",
+                "side_letter.md",
+                "software_license_agreement.md",
+                "statement_of_work.md",
+                "term_sheet.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

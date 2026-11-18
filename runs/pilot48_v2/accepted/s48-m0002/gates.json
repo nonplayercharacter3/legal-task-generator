@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -138,8 +152,74 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C5"
+              ],
+              "steps": 17,
+              "files_opened": [
+                "baineind_notice_letter_2026-11-02.md",
+                "beipeiv_certificate_of_insurance.md",
+                "implementation_kickoff_meeting_notes.md",
+                "platform_license_term_sheet.md",
+                "quality_agreement_inventory_data.md",
+                "service_level_schedule.md",
+                "side_letter_peak_season_pricing.md",
+                "software_license_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C5"
+              ],
+              "steps": 17,
+              "files_opened": [
+                "baineind_notice_letter_2026-11-02.md",
+                "beipeiv_certificate_of_insurance.md",
+                "implementation_kickoff_meeting_notes.md",
+                "platform_license_term_sheet.md",
+                "quality_agreement_inventory_data.md",
+                "service_level_schedule.md",
+                "side_letter_peak_season_pricing.md",
+                "software_license_agreement.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 17,
+              "files_opened": [
+                "baineind_notice_letter_2026-11-02.md",
+                "beipeiv_certificate_of_insurance.md",
+                "implementation_kickoff_meeting_notes.md",
+                "platform_license_term_sheet.md",
+                "quality_agreement_inventory_data.md",
+                "service_level_schedule.md",
+                "side_letter_peak_season_pricing.md",
+                "software_license_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
