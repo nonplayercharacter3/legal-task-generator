@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-17 18:30, autopilot iteration 3.
+Last updated: 2026-11-17 20:10, autopilot iteration 4.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -13,7 +13,11 @@ to be sound, LAB-like and useful for training (EVALUATION.md), at least 250 of t
 agent. Full definition of done: PROMPT.md.
 
 ## Where things are (2026-11-17)
-- Pool: 88 accepted tasks (70 without unsolved). 87 are v1 (too easy and too small next to LAB); 1 is v2 (s45-m0003).
+- Pool: 101 accepted tasks. 87 are v1 (too easy and too small next to LAB); 14 are v2 (s45-m0003, plus 13 from
+  seeds 46-53: 1, 3, 3, 1, 1, 2, 1, 1 of 3), the 13 being labelled now.
+- v2 batch rejections (11 of 24), all read: 8 at issue_check, a two-document issue findable from one document
+  (correct; the ledger writer planted a one-sided clause as one half); 3 at consistency, 2 false (matcher noise,
+  s46-m0001, s49-m0001) and 1 correct (s53-m0001). Both classes fixed in PR #40 (merged), from seed 54 on.
 - 250 target paused since 2026-11-11 until v2 is shown hard enough.
 - v2 generator merged (`configs/pilot_generate_v2.toml`). First round, seed 45: 1 of 3 kept, both rejections correct;
   Qwen failed the kept one 3 of 3, on the second-document half of one problem.
@@ -37,22 +41,27 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- v2 generation batch, seeds 46-53, `configs/pilot_generate_v2.toml`, folders `runs/pilot<seed>_v2`, labels deferred.
-  Script `.inbox/2026-11-17-gen-v2/generate.sh` (copy of the 2026-11-10 one), PID 59738 (caffeinate), log
-  `runs/gen-v2-2026-11-17.log`, stop file `runs/.gen-v2-2026-11-17.stop`. Started 15:06; ~45 min per seed (46: 1, 47: 3, 48: 3, 49: 1 of 3
-  committed; 50 running at 18:25), so done around 21:30. Commits each seed to main by itself (`commit_round.py`, git lock `runs/.git-commit.lock`).
+- Labelling seeds 46-53 with Qwen (`ltg batch ... --label-config configs/pilot_nrp_solver.toml --seeds 46-53`, finished
+  seeds skipped), PID 66636 (caffeinate), log `runs/label-v2-2026-11-17.log`. Started 19:59, ~8 min per task, 13 tasks:
+  ends ~21:45. Commits "Labels for seed N" to main itself.
+- Queued behind it: v2 generation batch seeds 54-61 with labels after each seed, waiter PID 71591 (starts when 66636
+  exits), log `runs/gen-v2-54-61.log`, stop file `runs/.batch.stop`. ~70 min per seed: ends ~07:00 on 2026-11-18.
 
 ## Next
-1. When the batch ends (wait file set on its PID): read every rejection of seeds 46-53 (false ones become defect fixes
-   by PR), then label them: `ltg batch --config configs/pilot_generate_v2.toml --seeds 46-53` (finished seeds are
-   skipped, pending tasks labelled, label commits go to main). One heavy job at a time: not while generation runs.
-2. After labelling: finish the LAB sample (M3) in chunks of ~8 (inbox.md T46 "Continue 2" says how).
-3. Later batches use `ltg batch`, not the `.inbox/` scripts.
+1. When labelling ends: read the 13 labels (pass-rate spread for v2 vs v1; is v2 harder?). Note in LOG.md that seeds
+   46-53 were labelled with 40 steps (PR #38).
+2. When seeds 54-61 end: read every rejection; check the PR #40 fixes cut the issue_check and consistency losses
+   (before: 8 and 2 false-ish of 24). M2 is met at 20 labelled v2 tasks.
+3. In the day (2026-11-18), while no generation runs: finish the LAB sample (M3) in chunks of ~8 (inbox.md T46
+   "Continue 2"), then put v2 tasks through LAB's tool.
 
 ## Needs Sirui
 - Someone with legal training to read 10 tasks (EVALUATION.md level 1, human check). Not blocking batches.
 
 ## Decisions
+- 2026-11-17: issue_check rejections for a two-document issue findable alone stay rejections (v2 is meant to be
+  harder); fixed upstream in the ledger writer instead of relaxing the gate.
+- 2026-11-17: chain seeds 54-61 right after labelling so the night is used; still one heavy job at a time.
 - 2026-11-17: start the v2 batch at 15:00 instead of waiting for night: it is the only heavy Opus job, and M1 work is light.
 - 2026-11-17: the autopilot replaces the planning-chat-plus-inbox flow (Sirui She does not want to decide each step).
 - 2026-11-17: our seeds 46-499, the lab mate's 500-999; his work reaches main only through PRs the autopilot merges.
@@ -63,4 +72,4 @@ agent. Full definition of done: PROMPT.md.
   rewritten 2026-11-17 16:35 for `ltg batch`, and 18:26 with a "For Aarush: start here" block, no NRP key, and only
   two comments (started; ended or failed) (seeds 500-507, `configs/pilot_generate_v2.toml`, `runs/lm_s{seed}_v2`,
   `--no-label`, `--branch lm/v2-s500-507`); every command test-run on the fake backend in a scratch clone first.
-- On: not started. Last seen activity: none yet. Open PR: none.
+- On: not started. Last seen activity: none yet. Open PR: none. Header bumped to main b78f204 at 20:05 (PR #40 note).

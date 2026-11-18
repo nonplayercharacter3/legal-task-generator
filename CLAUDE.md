@@ -9,7 +9,7 @@ then "Working with other people and sessions" below before you change anything.
 **Autopilot (2026-11-17).** An unattended loop (`scripts/autopilot.sh`, prompt and state in `docs/autopilot/`) now
 plans and runs the work; `docs/autopilot/STATE.md` is the current picture and supersedes `inbox.md`. `ltg batch`
 (PR #39) runs a whole batch in one command; `ltg label` keeps a run's larger step budget (PR #38, v2 uses 40).
-v2 batch seeds 46 to 53 started 2026-11-17; the lab mate's v2 seeds 500 to 507 are issue #36.
+v2 batch seeds 46 to 53 (2026-11-17): 13 of 24 accepted, labels running; 8 rejections were two-document issues findable from one document, 2 were matcher noise, both fixed in PR #40 from seed 54. The lab mate's v2 seeds 500 to 507 are issue #36.
 
 **Goal.** Generate long-horizon contract-review tasks (instruction, matter folder, all-pass rubric) that the lab can
 train open models on. The tasks must be sound by construction. The generator is model-neutral: every sound task is
