@@ -1,0 +1,144 @@
+{
+  "matter_id": "s52-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 12.2: \"At the end of the Initial Term, this Agreement will automatically renew for successive three-year periods (each, a \"Renewal Term\"). A renewal does not occur if either Party gives the other written notice of non-renewal delivered not more than 120 days nor fewer than 90 days before the end of the then-current term. A notice delivered outside that period is of no effect. The terms of this Agreement, including the Minimum Annual Commitment under Section 4.3, apply to each Contract Year of each Renewal Term.\"",
+            "reason": "The problem is present and still actionable for Diril. Section 12.2 renews the MSA automatically for successive three-year terms. Each Renewal Term carries the $4,200,000 Minimum Annual Commitment that Diril, as purchaser, must pay. Diril can stop a renewal only by notice within a narrow window of about 30 days, and a notice outside that window is expressly of no effect. The agreed deal was different: Section 5.2 of the term sheet provides for one-year renewals only by mutual written agreement. The term sheet is non-binding on this point, and MSA Section 2.3 gives the MSA precedence, so nothing in the folder cures the departure. Amendment No. 1 and the side letter do not change Section 12.2. The burden falls on Diril. A missed window would bind it to three more years of minimum spend. Under the Section 16.3 remedy, it could also face a larger Minimum Commitment Shortfall, which is relevant given the pending Pellbrook change of control. The Initial Term ends February 29, 2028, so the notice window (roughly November 1 to December 1, 2027) has not yet opened. Diril can still diary the window, give notice, or negotiate an amendment."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "MSA §1.1: \"'Provider Personnel' means individuals employed by Provider who perform Services.\" MSA §10.1: Provider indemnifies claims \"to the extent caused by the negligence or willful misconduct of Provider or Provider Personnel.\" SOW No. 7 §3.2: \"All rigging, flying and pyrotechnic work on the Tour will be performed by Provider Personnel, including the Local Crew engaged by Provider as independent contractors.\"",
+            "reason": "The problem is present and still actionable for Diril.\n\n- **Who bears what.** Kevond gives the §10.1 indemnity and Diril receives it. The indemnity reaches only Kevond and its employees.\n- **The conflict.** The SOW labels independent-contractor Local Crew (up riggers, down riggers, fly operators and pyrotechnic technicians) as \"Provider Personnel.\" Under MSA §2.3 the MSA prevails over SOWs, so the employee-only definition controls. The SOW's broader label likely cannot extend the indemnity.\n- **No cure elsewhere in the folder.**\n  - MSA §3.5 and Quality Agreement §3.3 only require Kevond to coordinate local labor and confirm certifications.\n  - Nothing makes Kevond responsible for the acts of its contractors. The DPA's flow-down covers only data subprocessors.\n  - Insurance does not replace a contractual indemnity.\n- **What remains covered.** Diril could still claim for Kevond's own negligent supervision through the Head Rigger. It would have no indemnity for the contractors' own negligence in the tour's highest-risk work.\n- **Still actionable.** The tour starts in April 2027, so the gap can still be fixed by an amendment or change order. Diril has accepted nothing that waives the point.",
+            "alone": {
+              "diril_kevond_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"Provider Personnel\" means individuals employed by Provider who perform Services. (§1.1); \"...to the extent caused by the negligence or willful misconduct of Provider or Provider Personnel.\" (§10.1); \"Where a SOW so provides, Provider may arrange for local stagehands, riggers and other labor at a Venue to support the Services.\" (§3.5)",
+                "reason": "From the MSA alone, a careful associate can see three things. Provider Personnel is limited to Provider's employees. The §10.1 indemnity reaches only negligence of Provider or Provider Personnel. And §3.5 allows Provider to bring in local labor, so there is a theoretical gap for non-employee labor. The MSA does not show the issue as described. That depends on SOW §3.2, which states that the Ember Season 2027 tour's rigging, flying and pyrotechnic work will be done by Local Crew engaged as independent contractors and calls them Provider Personnel. That is what creates the defined-term conflict. Through the §2.3 order of precedence, it also leaves Diril without indemnity for the tour's highest-risk work. Without the SOW, there is no conflicting use of the term. There is also no showing that contractors will actually do that work, as opposed to a §3.5 option that may never be used. So the inconsistency and its concrete harm to Diril cannot be found from this document alone."
+              },
+              "sow_ember_season_2027_tour.md": {
+                "findable": false,
+                "evidence": "All rigging, flying and pyrotechnic work on the Tour will be performed by Provider Personnel, including the Local Crew engaged by Provider as independent contractors.",
+                "reason": "The SOW, read alone, shows that it describes independent-contractor Local Crew as 'Provider Personnel' and puts the high-risk rigging, flying and pyrotechnic work with them. It does not define 'Provider Personnel'. It says capitalized terms take their meaning from the Agreement. It does not set out the indemnity, and it does not show that the MSA controls over the SOW. The harm depends on three MSA terms the SOW does not contain: the Section 1.1 definition limiting Provider Personnel to employees, the Section 10.1 indemnity tied to 'Provider or Provider Personnel', and the Section 2.3 precedence clause. Without the MSA, an associate could not tell that the contractors fall outside the indemnity or that Diril loses cover. At most they might note that it is unusual to call contractors 'Personnel'."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "MSA §16.2: \"Any Change of Control of Client is deemed an assignment for purposes of this Section 16.2.\" MSA §1.1 defines Change of Control to include \"(b) the acquisition by any person or group of more than 50% of the voting equity of any entity that directly or indirectly Controls Client.\" MSA §16.3: \"Provider may terminate this Agreement by written notice given within 90 days after Provider learns of the assignment. Upon such termination, Client shall pay Provider ... (b) the Minimum Commitment Shortfall calculated as of the termination date for the remainder of the then-current term.\" GC email ¶2.1: \"Pellbrook Live Group will acquire 100% of the issued and outstanding shares of Diril Entertainment Holdings, Inc.\" ¶2.3 then lists six contracts needing consent or notice, and the Kevond MSA is not one of them.",
+            "reason": "The term sheet confirms Holdings is Diril's parent, so Pellbrook buying 100% of Holdings is a Change of Control under §1.1(b). Under §16.2 that is a deemed assignment needing Kevond's prior written consent. The GC's belief that no consent is needed because 'no contracts will be assigned out of it' is wrong, given the deemed-assignment language. The Kevond MSA is missing from the consent list, so closing on December 15, 2026 would give Kevond a 90-day right to terminate and to demand the Minimum Commitment Shortfall for the rest of the Initial Term, which runs to February 29, 2028. Under §14.3(d) that payment is outside the liability cap. The exposure could reach about $4.2M or more for the 2027 Contract Year, plus any unmet 2026 commitment. It also gives Kevond leverage in the live dispute over the reduction notice and puts the Ember Season tour at risk. No document cures the problem: there is no consent, waiver or carve-out, and the Affiliate exception does not apply to Change of Control. It is still actionable because closing has not happened (today is November 17, 2026) and the GC has asked for comments on the consent list. Diril can still request Kevond's consent before closing, though the confidentiality instruction in ¶2.5 and the commitment dispute make that request sensitive.",
+            "alone": {
+              "diril_kevond_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "Any Change of Control of Client is deemed an assignment for purposes of this Section 16.2.",
+                "reason": "The MSA alone shows the risk mechanism. A Change of Control, including acquisition of more than 50% of any entity that Controls Client, is deemed an assignment requiring Kevond's consent. Section 16.3 lets Kevond terminate and collect the Minimum Commitment Shortfall. The MSA does not show that any transaction is planned. It does not identify Diril Entertainment Holdings as a parent or mention Pellbrook's acquisition or the December 15, 2026 closing. It also does not show that the consent list omits Kevond. Without the GC email, an associate sees only a standard clause with a costly remedy, not a pending breach that hurts the client."
+              },
+              "gc_email_to_outside_counsel_nov_2026.md": {
+                "findable": false,
+                "evidence": "Pellbrook's deal counsel has worked with our corporate team on the consent list. The contracts identified as requiring counterparty consent or notice before closing are: ... (f) the festival site license for the Harborline Festival grounds (consent).",
+                "reason": "The email shows a parent-level change of control: Pellbrook is buying 100% of Diril Entertainment Holdings, Inc., with closing on December 15, 2026. It also says Diril Live Presents LLC stays the contracting party and no contracts are assigned. The consent list leaves out the Kevond MSA, even though Kevond is described as the main production vendor. The email does not show that the MSA restricts assignment, treats an indirect Change of Control as an assignment, or lets Kevond terminate and collect the Minimum Commitment Shortfall. Those terms come from MSA Sections 1.1, 16.2 and 16.3, which are not in this document. A careful associate might ask whether the Kevond MSA should be on the list. Without the MSA, though, they could not tell that leaving it off is a problem, or that it hurts the client through termination and shortfall exposure."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Amendment No. 1, Section 3.1: \"A Reduction Notice must be delivered within 60 days after the Amendment Effective Date.\" Section 1.1 sets that date as August 1, 2026. The GC email (Nov. 2, 2026) states: \"We delivered our Reduction Notice to Kevond on October 9, 2026,\" and Kevond's October 20 letter rejected it \"as untimely.\"",
+            "reason": "The 60-day window under Section 3.1 ran from August 1, 2026 and closed on September 30, 2026. Diril's Reduction Notice was delivered on October 9, 2026, nine days late. Section 3.5 provides that if no conforming notice is delivered, the 2027 commitment stays at $4,200,000. Diril therefore faces $1,300,000 of extra 2027 commitment, which also feeds the true-up under MSA Section 4.4 and the Minimum Commitment Shortfall definition. The issue is still actionable for Diril. Nothing in the folder shows Diril accepted the result. The GC says Diril has objected in writing, has not signed anything confirming the $4,200,000 figure, and wants advice on waiver, estoppel, negotiation or amendment options. Those options rest on Kevond's continued engagement on the reduction through late September without raising timing. This is a live, unresolved exposure, not settled history."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.06,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

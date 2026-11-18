@@ -1,0 +1,126 @@
+{
+  "matter_id": "s52-m0001",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I4\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I4"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "18.2 By Supplier. Supplier may assign this Agreement, or delegate any of its rights or obligations under it, in whole or in part, to any Person without the consent of Customer.",
+            "reason": "Section 18.2 lets Supplier assign or delegate, in whole or in part, to any Person with no consent, notice, assumption or competitor restriction. Customer, by contrast, needs Supplier's consent under 18.1 and faces the change-of-control restrictions in 18.3. The executed version dropped the v3 draft's mutual consent standard and its bar on assignment to branded outdoor apparel companies. Nothing in the folder cures this: the First Amendment, side letter, Quality Agreement and Order Form leave 18.2 untouched. Glilend's Customer Specifications, tech packs, forecasts and pricing could therefore pass to a competitor's affiliate or a weak entity, and the guaranty's link to the original Supplier would come into doubt. The issue is still actionable. Glilend's October 20, 2026 non-renewal notice came less than 90 days before the December 31, 2026 expiry, so under Order Form 2.2–2.3 the Agreement likely renews for 24 months. The clause will keep governing the relationship, and Glilend can seek to amend it, including while it seeks Supplier's consent to the Cairnbridge merger."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 1.9: \"'Excluded Claims' means: (a) Customer's obligations under Section 12.1; (b) Customer's obligations to pay amounts due under Section 5 and Section 18.3; (c) a Party's breach of Section 15 (Confidentiality); and (d) a Party's fraud.\" Section 13.2: \"Except with respect to Excluded Claims, each Party's aggregate liability arising out of or relating to this Agreement, whether in contract, tort or otherwise, shall not exceed the fees paid or payable in the 12 months preceding the claim.\"",
+            "reason": "The problem is present and runs against Glilend. Section 1.9 lists only Customer's Section 12.1 indemnity as an Excluded Claim, so Section 13.2's cap does not apply to it. That indemnity is broad: it covers any third-party claim 'arising out of or relating to' the Customer Specifications, trademarks or garment designs, expressly including product liability and recall. Since nearly every Product is made to Customer Specifications, Glilend's exposure is effectively unlimited. Leiseiv's Section 12.2 indemnity is not an Excluded Claim, so it stays capped at 12 months' fees. The prior draft v3 had made both parties' Section 12 obligations Excluded Claims, so the final text is a one-sided change. Nothing in the First Amendment, side letter, Quality Agreement or Order Form cures or limits this. The parent guaranty covers Supplier's obligations only and does not address Glilend's exposure. The issue is still actionable. Sections 12 and 13 survive expiry under Section 17.3(c). Glilend's non-renewal notice and the pending Cairnbridge merger make it timely to negotiate a cap, carve-back or narrowing of the indemnity before or after the term ends."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Guaranty Clause 9.2: \"The Guarantor and the Beneficiary each irrevocably agree that the courts of England shall have exclusive jurisdiction to settle any dispute or claim... arising out of or in connection with this Deed\" (with Clause 9.1 choosing English law). Supply Agreement Section 20.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Wilmington, Delaware for any action arising out of or relating to this Agreement\" (with Section 20.1 choosing Delaware law).",
+            "reason": "The two dispute clauses are inconsistent. The Guaranty sends every claim against Leiseiv Holdings to the English courts exclusively, under English law. The Supply Agreement sends claims against the Supplier to Wilmington, Delaware exclusively, under Delaware law. Nothing in the folder reconciles them. Section 2.3 of the Supply Agreement sets an order of precedence only among the First Amendment, Supply Agreement, Quality Agreement and Order Form, and the Guarantor is not a party to it. The Guaranty makes the Guarantor a principal obligor (Clause 2.4) and waives any need to sue the Supplier first (Clause 4.2), but that does not help. If Glilend does sue the Supplier, the claim must go to Delaware, while any claim against the Guarantor must go to England. That means split proceedings, possibly inconsistent results, and an English court interpreting obligations governed by Delaware law. The 10.3 conclusive-demand provision softens this only partly. This hurts Glilend because it is the Beneficiary that must enforce. The problem is still actionable. The Guaranty continues until all Guaranteed Obligations are performed (Clause 11.5). Guaranteed obligations will survive the December 31, 2026 expiry, including the 12-month product warranty, indemnities and Customer Tooling return. Nothing shows Glilend has accepted or waived the forum split. Glilend could still seek an amendment to the Guaranty under Clause 11.3, or plan its enforcement strategy around the split.",
+            "alone": {
+              "parent_guaranty_leiseiv_holdings.md": {
+                "findable": false,
+                "evidence": "9.1 Governing Law. This Deed ... [is] governed by and shall be construed in accordance with the laws of England and Wales. 9.2 Jurisdiction. ... the courts of England shall have exclusive jurisdiction to settle any dispute or claim ... arising out of or in connection with this Deed",
+                "reason": "On its own, the guaranty shows one side of the problem. It is governed by English law, gives exclusive jurisdiction to the English courts, and guarantees obligations under the Supply Documents, which take their defined terms from the Supply Agreement (Cl. 1.2). It never says what law governs the Supply Agreement or where disputes under it must be brought. The problem is a mismatch: the Supply Agreement uses Delaware law and Wilmington courts, which would force Glilend into split proceedings in Delaware and England and risk inconsistent results. That Delaware choice appears only in the Supply Agreement (Sections 20.1–20.2), which was not provided. Likewise, the point that the Section 2.3 precedence clause does not reach the guaranty depends on the other documents. An associate could note that the guaranty uses English law and English courts, but could not tell from this document alone that this conflicts with the underlying contract and hurts the client."
+              },
+              "supply_agreement_glilend_leiseiv.md": {
+                "findable": false,
+                "evidence": "This Agreement and any dispute arising out of or relating to it are governed by the laws of the State of Delaware, without regard to its conflict of laws principles. ... Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Wilmington, Delaware for any action arising out of or relating to this Agreement.",
+                "reason": "The Supply Agreement shows Delaware governing law and exclusive Wilmington jurisdiction (Sections 20.1–20.2). It also shows a precedence clause (Section 2.3) that lists only the First Amendment, Supply Agreement, Quality Agreement and Order Form. On their own these terms are ordinary and do not hurt the client. The agreement never mentions a parent guaranty, Leiseiv Holdings Ltd., or any English-law or English-court provision. The conflict depends on the Parent Guaranty's English governing law and exclusive English jurisdiction, and that document is not provided. An associate reading this agreement alone could not see that recovery would require split proceedings in Delaware and England."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": false,
+            "evidence": "Supply Agreement §1.6: \"'Defect' means a defect in materials or workmanship visible upon visual inspection at the time of delivery.\" §9.2: \"Supplier warrants that, for twelve (12) months after delivery, the Products will be free from Defects.\" §2.3: \"...First Amendment, then Supply Agreement, then Quality Agreement, then Order Form.\" Quality Agreement §2.1(b)–(d) defines Defect to include hydrostatic head and breathability failures \"whether as delivered or after wash testing\" and delamination \"whether it appears at delivery, after wash testing under Section 3.3, during garment manufacture or in use by consumers.\"",
+            "reason": "findable from supply_agreement_glilend_leiseiv.md alone, so it does not need two documents",
+            "alone": {
+              "supply_agreement_glilend_leiseiv.md": {
+                "findable": true,
+                "evidence": "1.6 \"Defect\" means a defect in materials or workmanship visible upon visual inspection at the time of delivery. ... 9.2 Product Warranty. Supplier warrants that, for twelve (12) months after delivery, the Products will be free from Defects. ... 9.5 ... NEITHER PARTY MAKES ANY OTHER WARRANTY, EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.",
+                "reason": "The Supply Agreement alone shows the core harm to Glilend. The 12-month warranty in 9.2 covers only 'Defects', and 1.6 limits these to defects visible on inspection at delivery. Section 9.5 disclaims implied warranties of merchantability and fitness. A careful buyer-side associate would see that latent failures fall outside every warranty remedy, such as loss of waterproofing or breathability and delamination after washing or use. These are the main quality risks for laminated shell fabric. The 12-month period is therefore largely illusory. The document also shows, through Section 2.3, that the Supply Agreement prevails over the Quality Agreement. What it does not show is the Quality Agreement's broader 'Defect' definition (hydrostatic head, breathability, delamination). So the specific conflict between the two definitions, and Glilend's reliance on the Quality Agreement standards, cannot be confirmed from this document. That conflict only reinforces a problem that is already visible here."
+              },
+              "quality_agreement_laminated_fabrics.md": {
+                "findable": false,
+                "evidence": "2.1 \"Defect\" means any failure of a Product, or of any lot or roll of a Product, to conform to the Specifications or to the Performance Standards. This includes: ... (d) delamination, bubbling or separation of any layer of the laminate, whether it appears at delivery, after wash testing under Section 3.3, during garment manufacture or in use by consumers;",
+                "reason": "Read by itself, the Quality Agreement favors Glilend. Its 'Defect' definition is broad and covers latent hydrostatic head, breathability and delamination failures. Section 1.2 sends undefined terms to the Agreement, but 'Defect' is defined here, so no conflict shows on the face of this document. The problem depends on facts only the Supply Agreement contains: the narrow Section 1.6 definition (visible defects at delivery), the 12-month warranty in Section 9.2 that uses that definition, and the Section 2.3 precedence clause that makes the Supply Agreement control. Section 7.5 mentions the Agreement's Sections 7 and 9 but does not reveal their content. An associate reading only this document could not see that the warranty excludes latent waterproofing failures."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Order Form §2.2: \"A Renewal Term does not begin if either Party has given the other Party written notice of non-renewal at least ninety (90) days prior to the expiry of the then-current term.\" §2.3 adds that the notice \"is received at least 90 days before expiry of the then-current term.\" Glilend letter ¶2: \"This notice is given on October 20, 2026 in accordance with Section 19 of the Agreement.\"",
+            "reason": "The Initial Term expires December 31, 2026, so a non-renewal notice had to be received by about October 2, 2026. Glilend's notice is dated October 20, 2026, roughly 18 days late. Under §2.2 and §2.3 the notice is therefore ineffective. Unless Leiseiv agrees otherwise, the Agreement renews automatically through December 31, 2028, and Glilend becomes bound to the higher $4,200,000 per-year Minimum Annual Commitment in §3.2. Shortfalls are invoiceable under SA §3.4. This hurts Glilend, the client. Nothing in the documents cures the late notice. No document records Leiseiv accepting the notice or Glilend accepting the renewal. The Renewal Term has not yet begun, and Glilend's letter makes clear it wants the program to end. The issue is therefore still actionable: Glilend can seek Leiseiv's written agreement to non-renewal or an amendment under Order Form §8.2, and can plan around the renewal exposure.",
+            "alone": {
+              "order_form_2024_program.md": {
+                "findable": false,
+                "evidence": "A Renewal Term does not begin if either Party has given the other Party written notice of non-renewal at least ninety (90) days prior to the expiry of the then-current term.",
+                "reason": "The Order Form shows the auto-renewal mechanism, the 90-day notice requirement (deadline around October 2, 2026), and the higher $4,200,000 renewal-term minimum commitment. Reading it alone, an associate would see a risk of auto-renewal. It does not show whether or when Glilend gave notice. The problem is the October 20, 2026 letter arriving 18 days late, and that is only in D7. Without it, there is no missed deadline that can be identified."
+              },
+              "glilend_letter_to_leiseiv.md": {
+                "findable": false,
+                "evidence": "Under Section 2.2 of the Order Form, Glilend hereby gives Leiseiv Technical Textiles Co. (\"Supplier\") written notice that Glilend elects not to renew the Agreement and the Order Form at the end of the Initial Term on December 31, 2026. This notice is given on October 20, 2026 in accordance with Section 19 of the Agreement.",
+                "reason": "The letter shows that Glilend gave non-renewal notice on October 20, 2026, 72 days before the Initial Term ends on December 31, 2026. It does not say what Section 2.2 of the Order Form requires. Nothing in it mentions a 90-day notice period, automatic renewal, 24-month Renewal Terms, or the $4.2M Minimum Annual Commitment. Read alone, the letter looks like a timely and proper notice. To see that the notice is late and that Glilend is bound to a renewal with large minimum purchases, you need the Order Form's terms, which are not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Section 18.3: \"Customer shall not undergo any Change of Control of Customer without the prior written consent of Supplier. If a Change of Control of Customer occurs without that consent, Supplier may terminate this Agreement ... Customer shall pay Supplier ... (c) the amount by which the Minimum Annual Commitment for each Contract Year remaining in the Term exceeds the Products purchased by Customer in that Contract Year.\" Letter, Paragraph 1: \"Under the Agreement and Plan of Merger, that subsidiary will merge with and into Glilend. Glilend will survive the merger as a wholly owned subsidiary of Cairnbridge Brands. Closing ... is currently expected to occur in the first quarter of 2027.\"",
+            "reason": "The obligation and the exposure both fall on Glilend, our client. Section 1.2(b) expressly treats as a Change of Control a merger in which the Party survives as another Person's subsidiary, which is exactly the reverse triangular merger described in the letter. Section 18.3 requires Leiseiv's prior written consent. The letter only gives notice of the transaction and does not ask for consent. No consent or waiver appears anywhere in the folder, and Section 21.3 requires any waiver to be in writing. Nothing in the parent guaranty, side letter, Quality Agreement or First Amendment cures this. The exposure is likely large. The non-renewal notice dated October 20, 2026 falls inside the 90-day window before the December 31, 2026 expiry, so it appears late. If so, the Agreement renews for a 24-month Renewal Term carrying a $4.2M Minimum Annual Commitment per year. An unconsented closing in Q1 2027 would let Leiseiv terminate and claim WIP, raw materials and the shortfall for the remaining Contract Years. Closing has not yet happened, so the issue is still actionable: Glilend can seek Leiseiv's consent or negotiate a waiver before closing.",
+            "alone": {
+              "supply_agreement_glilend_leiseiv.md": {
+                "findable": false,
+                "evidence": "18.3 Change of Control of Customer. Customer shall not undergo any Change of Control of Customer without the prior written consent of Supplier. If a Change of Control of Customer occurs without that consent, Supplier may terminate this Agreement ... Customer shall pay Supplier ... (c) the amount by which the Minimum Annual Commitment for each Contract Year remaining in the Term exceeds the Products purchased by Customer in that Contract Year.",
+                "reason": "This document shows the risk only in the abstract. It contains the consent requirement in Section 18.3, the broad Change of Control definition in Section 1.2(b), which covers a reverse-triangular-style merger where Customer survives as a subsidiary, and the punitive termination payment. It does not show that any Change of Control is actually happening. The signed Agreement and Plan of Merger with Cairnbridge Brands, the expected Q1 2027 closing, and the fact that Leiseiv's consent was not requested all come from Glilend's letter (D7). The size of the shortfall exposure through a renewal term also depends on the Order Form and the late renewal notice (I5), which this document does not contain. An associate could flag the clause as one-sided, but could not see from this document alone that it is triggered and harms the client."
+              },
+              "glilend_letter_to_leiseiv.md": {
+                "findable": false,
+                "evidence": "On September 28, 2026, Glilend entered into an Agreement and Plan of Merger with Cairnbridge Brands, Inc. (\"Cairnbridge Brands\") and a wholly owned subsidiary of Cairnbridge Brands. Under the Agreement and Plan of Merger, that subsidiary will merge with and into Glilend. Glilend will survive the merger as a wholly owned subsidiary of Cairnbridge Brands.",
+                "reason": "The letter by itself shows that a reverse triangular merger is pending, that Glilend will become Cairnbridge's subsidiary, that closing is expected in Q1 2027, and that the letter asks for no consent. It does not show that the Supply Agreement requires Supplier consent for a Change of Control of Customer (Section 18.3), that such a merger counts as a Change of Control, or that closing without consent would give Supplier a termination right with payment of WIP, raw materials and the Minimum Annual Commitment shortfall. Those facts come from the Supply Agreement. The letter also presents the agreement as ending December 31, 2026, before closing. It would take another document to show that the non-renewal notice was late and that the Term therefore extends into 2027. From this letter alone, an associate would see the merger but could not tell that it breaches anything or harms the client."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

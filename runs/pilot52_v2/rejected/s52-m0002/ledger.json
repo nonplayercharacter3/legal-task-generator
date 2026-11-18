@@ -1,0 +1,248 @@
+{
+  "matter_id": "s52-m0002",
+  "summary": "Logov Bakeries, Inc., a commercial bakery and the firm's client, buys plant sanitation, allergen-changeover cleaning, pest control and environmental monitoring services from Brikeith Food Safety Services, LLC under a Delaware-law Master Services Agreement dated March 1, 2025. A Statement of Work covers the Reading, PA and Hagerstown, MD bakeries. Logov Holdings, Inc. (Logov's parent) guarantees Logov's payment obligations. Amendment No. 1 (September 22, 2026) adds allergen-changeover cleaning for a new gluten-free line. Its recitals note that Logov Holdings has signed a merger agreement with Fenwright Foods Group, Inc., with closing expected around December 15, 2026. A side letter (October 6, 2026) gives Logov a price discount in exchange for exclusivity. The partner wants an issue-spotting memo before closing. Four problems are planted: (1) the Quality Agreement caps recall costs that the MSA carves out of the cap, and the MSA precedence clause lets the Quality Agreement control; (2) an aggressive auto-renewal in the MSA; (3) side-letter exclusivity that, read through the MSA definitions, reaches every affiliate facility and every type of food-safety service; (4) an MSA change-of-control consent right, triggered by the merger recited in the Amendment, that has not been addressed.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Logov Bakeries, Inc.",
+      "role": "Customer; commercial bakery operator; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Brikeith Food Safety Services, LLC",
+      "role": "Provider of sanitation, pest control and food safety services"
+    },
+    {
+      "id": "P3",
+      "name": "Logov Holdings, Inc.",
+      "role": "Parent of Logov Bakeries, Inc.; Guarantor under the Parent Guaranty"
+    },
+    {
+      "id": "P4",
+      "name": "Fenwright Foods Group, Inc.",
+      "role": "Counterparty to the pending merger with Logov Holdings, Inc."
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA Initial Term",
+      "value": "four years from the MSA Effective Date",
+      "doc": "D1",
+      "section": "14.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA liability cap",
+      "value": "fees paid or payable by Customer in the 12 months before the claim",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "Signed amendments and side letters; Quality Agreement (food safety, sanitation, recalls); MSA; SOWs; schedules and addenda",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F5",
+      "key": "SOW Covered Facilities",
+      "value": "Reading, Pennsylvania bakery and Hagerstown, Maryland bakery",
+      "doc": "D2",
+      "section": "2"
+    },
+    {
+      "id": "F6",
+      "key": "SOW Monthly Service Fee",
+      "value": "$118,500 per month",
+      "doc": "D2",
+      "section": "5.1"
+    },
+    {
+      "id": "F7",
+      "key": "Parent Guaranty Guarantor",
+      "value": "Logov Holdings, Inc.",
+      "doc": "D4",
+      "section": "1"
+    },
+    {
+      "id": "F8",
+      "key": "MSA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "20.1"
+    },
+    {
+      "id": "F9",
+      "key": "Amendment No. 1 date",
+      "value": "September 22, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Side Letter date",
+      "value": "October 6, 2026",
+      "doc": "D8",
+      "section": "Heading"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "statement_of_work_1.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "side_letter_pricing.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "email_thread_hagerstown_onboarding.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D10",
+      "filename": "certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "MSA Section 12.3 excludes from the Section 12.2 cap (fees paid or payable in the prior 12 months) Provider's indemnification obligations under Section 11.1. Those obligations expressly include Recall Costs arising from Provider's breach of the Sanitation Standards. Quality Agreement Section 9.4 states that Provider's aggregate liability for Recall Costs, whether in contract, indemnity or otherwise, shall not exceed the aggregate cap in MSA Section 12.2. On its own, the MSA carve-out would prevail. However, MSA Section 2.3 provides that the Quality Agreement controls over the MSA on food safety, sanitation and product recall matters. Read together, the Quality Agreement removes the recall-cost carve-out. A contamination-driven recall at a Logov bakery, caused by Brikeith's sanitation failure, is therefore capped at roughly one year of fees (about $1.42 million at the $118,500 monthly fee). That sum is far below the likely cost of a multi-retailer bakery recall, and the loss falls on Logov.",
+      "doc": "D7",
+      "section": "9.4",
+      "detect_terms": [
+        "Recall Costs",
+        "shall not exceed the aggregate cap"
+      ],
+      "expected_finding": "Because MSA Section 2.3 makes the Quality Agreement control on recall matters, Quality Agreement Section 9.4 subjects Brikeith's liability for Recall Costs to the Section 12.2 twelve-month-fees cap, overriding the MSA Section 12.3 carve-out and leaving Logov to bear recall losses above the cap; Section 9.4 should be conformed to preserve the uncapped carve-out (or Section 2.3 amended so the MSA controls on liability).",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "2.3",
+      "detect_terms2": [
+        "Quality Agreement shall control"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA Section 14.1 sets a four-year Initial Term. The MSA then automatically renews for successive three-year Renewal Terms, at Brikeith's then-current rates, unless Customer gives notice of non-renewal within a single thirty (30) day period ending 180 days before the end of the then-current term. Notice given outside that narrow window is ineffective. If Logov misses the window, it is locked into another three years of sanitation spending at both bakeries at rates Brikeith sets unilaterally, with no termination for convenience. This is the most serious exposure facing Logov, the Customer.",
+      "doc": "D1",
+      "section": "14.1",
+      "detect_terms": [
+        "automatically renew for successive three-year",
+        "thirty (30) day period"
+      ],
+      "expected_finding": "MSA Section 14.1 auto-renews the agreement for three-year terms at Brikeith's then-current rates unless Logov gives notice in a single 30-day window ending 180 days before term end, so Logov should calendar the window and negotiate a shorter renewal term, a broader notice period (e.g., any time before 90 days prior) and capped renewal pricing.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Side Letter Section 2 (October 6, 2026) gives Logov a 3% discount on the SOW Monthly Service Fee for the two Covered Facilities in Reading and Hagerstown. In exchange, Customer must engage Provider as the exclusive provider of Sanitation Services at all Facilities during the Term and for 18 months after it. The side letter uses the MSA's defined terms. MSA Section 1 defines 'Facilities' as every bakery, warehouse or distribution facility owned, leased or operated by Customer or any of its Affiliates. It defines 'Sanitation Services' to include pest control, environmental monitoring and allergen validation testing as well as cleaning. Read together, the exclusivity reaches every affiliate site and every food-safety service line. The deal and the discount concern only the two Covered Facilities listed in SOW Section 2. Once the merger recited in Amendment No. 1 closes, 'Affiliates' could also sweep in Fenwright group plants. MSA Section 2.3 gives signed side letters top precedence, so nothing in the folder narrows the clause. Any use of another vendor at a non-covered site would breach it.",
+      "doc": "D8",
+      "section": "2",
+      "detect_terms": [
+        "exclusive provider of Sanitation Services",
+        "all Facilities"
+      ],
+      "expected_finding": "Read with the MSA Section 1 definitions of 'Facilities' and 'Sanitation Services', Side Letter Section 2 binds Logov and all its Affiliates to use Brikeith exclusively for every food-safety service at every site for the Term plus 18 months, far beyond the two Covered Facilities the discount pays for, so the exclusivity should be limited to cleaning services at the Covered Facilities, exclude Affiliates, and drop the post-term tail.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "1",
+      "detect_terms2": [
+        "owned, leased or operated by Customer or any of its Affiliates"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "MSA Section 17.2 treats any Change of Control of Customer as an assignment requiring Provider's prior written consent, which Provider may withhold in its sole discretion. Change of Control includes a merger of any entity that directly or indirectly Controls Customer. If consent is not obtained, Provider may terminate and Customer must pay an Early Termination Fee equal to the Monthly Service Fees for the remainder of the term. The recitals of Amendment No. 1 (dated September 22, 2026) state that Logov Holdings, Inc. entered into an Agreement and Plan of Merger with Fenwright Foods Group, Inc. dated August 14, 2026, with closing expected on or about December 15, 2026. That merger is a Change of Control of Logov's parent. Amendment No. 1 only recites the merger and adds gluten-free changeover services. It contains no consent or waiver. MSA Section 19.4 provides that no waiver arises from knowledge or acknowledgment unless it is in a writing expressly granting it. Nothing else in the folder records Brikeith's consent. Closing without consent would let Brikeith terminate and claim the Early Termination Fee.",
+      "doc": "D1",
+      "section": "17.2",
+      "detect_terms": [
+        "Change of Control",
+        "sole discretion",
+        "Early Termination Fee"
+      ],
+      "expected_finding": "The Logov Holdings–Fenwright merger recited in Amendment No. 1 (merger agreement dated August 14, 2026, closing expected around December 15, 2026) is a Change of Control under MSA Section 17.2 requiring Brikeith's prior written consent, which has not been obtained, so Logov must secure an express written consent or waiver before closing or face termination and an Early Termination Fee for the remaining term.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Recitals",
+      "detect_terms2": [
+        "Agreement and Plan of Merger",
+        "Fenwright Foods Group"
+      ]
+    }
+  ]
+}

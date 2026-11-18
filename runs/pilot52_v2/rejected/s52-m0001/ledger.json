@@ -1,0 +1,281 @@
+{
+  "matter_id": "s52-m0001",
+  "summary": "Glilend Outfitters, Inc., an outdoor apparel brand and the firm's client, buys three-layer waterproof-breathable laminated shell fabrics from Leiseiv Technical Textiles Co. under a Delaware-law Supply Agreement effective January 1, 2024. The agreement is supported by a First Amendment, a pricing and tooling side letter, a Quality Agreement, an English-law Parent Guaranty from Leiseiv Holdings Ltd., an Order Form setting the Initial Term and renewal economics, and an October 20, 2026 letter from Glilend to Leiseiv. That letter discloses Glilend's September 28, 2026 merger agreement with Cairnbridge Brands, Inc. and gives notice of non-renewal. The folder also holds a superseded prior draft of the Supply Agreement and a 2023 mutual NDA. The partner wants a memo spotting the issues before the merger closes. Six issues are planted: unrestricted supplier assignment, a guaranty governed by different law and forum, an uncapped customer indemnity, a narrow 'Defect' definition that defeats the Quality Agreement's performance standards, a late non-renewal notice that locks in a renewal minimum, and an unaddressed change-of-control consent triggered by the merger.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Glilend Outfitters, Inc.",
+      "role": "Customer / buyer of laminated shell fabrics (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Leiseiv Technical Textiles Co.",
+      "role": "Supplier of waterproof-breathable laminated fabrics"
+    },
+    {
+      "id": "P3",
+      "name": "Leiseiv Holdings Ltd.",
+      "role": "Supplier's English parent company and guarantor under the Parent Guaranty"
+    },
+    {
+      "id": "P4",
+      "name": "Cairnbridge Brands, Inc.",
+      "role": "Counterparty to Glilend's pending merger (acquirer of Glilend)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "January 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement governing law",
+      "value": "laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 20.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement exclusive forum",
+      "value": "state and federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "Section 20.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence among supply documents",
+      "value": "First Amendment, then Supply Agreement, then Quality Agreement, then Order Form",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F5",
+      "key": "Initial Term expiry date",
+      "value": "December 31, 2026",
+      "doc": "D6",
+      "section": "Section 2"
+    },
+    {
+      "id": "F6",
+      "key": "Non-renewal notice period",
+      "value": "at least 90 days before expiry of the then-current term",
+      "doc": "D6",
+      "section": "Section 2"
+    },
+    {
+      "id": "F7",
+      "key": "Renewal Term Minimum Annual Commitment",
+      "value": "$4,200,000 per contract year",
+      "doc": "D6",
+      "section": "Section 3"
+    },
+    {
+      "id": "F8",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 13.2"
+    },
+    {
+      "id": "F9",
+      "key": "Glilend–Cairnbridge merger agreement date",
+      "value": "September 28, 2026",
+      "doc": "D7",
+      "section": "Paragraph 1"
+    },
+    {
+      "id": "F10",
+      "key": "Glilend non-renewal letter date",
+      "value": "October 20, 2026",
+      "doc": "D7",
+      "section": "Date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement_glilend_leiseiv.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "first_amendment_supply_agreement.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "side_letter_pricing_tooling.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "quality_agreement_laminated_fabrics.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "parent_guaranty_leiseiv_holdings.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "order_form_2024_program.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "glilend_letter_to_leiseiv.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "supply_agreement_prior_draft_v3.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D9",
+      "filename": "mutual_nda_2023.md",
+      "kind": "mutual nondisclosure agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 18.2 of the Supply Agreement (D1) lets Supplier assign or delegate the Agreement, or any of its rights or obligations, to any Person without Customer's consent. Customer, by contrast, needs Supplier's prior written consent to assign. Leiseiv could therefore move Glilend's supply program, and with it Glilend's confidential tech packs, Customer Specifications and pricing, to a competing apparel brand's affiliate or to a thinly capitalized entity. Glilend would have no consent right and no ability to terminate. Nothing elsewhere in the folder limits this right.",
+      "doc": "D1",
+      "section": "Section 18.2",
+      "detect_terms": [
+        "may assign this Agreement",
+        "without the consent of Customer"
+      ],
+      "expected_finding": "Section 18.2 of the Supply Agreement lets Leiseiv assign or delegate the agreement to anyone, including a Glilend competitor, without Glilend's consent, so Glilend should require its prior written consent (or a mutual restriction with a termination right) for any Supplier assignment.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 13.2 of the Supply Agreement (D1) caps each party's aggregate liability at the fees paid or payable in the prior 12 months 'except with respect to Excluded Claims'. Section 1.9 defines 'Excluded Claims' to include Customer's obligations under Section 12.1. Section 12.1 makes Glilend indemnify Leiseiv for all claims arising out of or relating to Customer Specifications, trademarks or garment designs, which reaches product liability and recall claims. Supplier's own indemnity under Section 12.2 is not listed as an Excluded Claim and stays capped. Read together, the cap, the definition and the indemnity leave Glilend with unlimited indemnity exposure while Leiseiv's exposure is capped.",
+      "doc": "D1",
+      "section": "Section 1.9 and Section 13.2",
+      "detect_terms": [
+        "Excluded Claims",
+        "Customer's obligations under Section 12.1"
+      ],
+      "expected_finding": "Because Section 1.9 defines Excluded Claims to include Glilend's Section 12.1 indemnity and Section 13.2 exempts Excluded Claims from the 12-month-fees cap, Glilend's broad indemnity for claims relating to its specifications and designs is uncapped while Leiseiv's Section 12.2 indemnity is capped, so Glilend should remove its indemnity from the Excluded Claims or subject it to a cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The Supply Agreement (D1, Sections 20.1–20.2) is governed by Delaware law, with exclusive jurisdiction in the state and federal courts in Wilmington, Delaware. The Parent Guaranty (D5, Section 9), under which Leiseiv Holdings Ltd. guarantees Leiseiv's supply obligations, is governed by the laws of England and Wales and submits to the exclusive jurisdiction of the courts of England. The Section 2.3 precedence clause covers only the First Amendment, Supply Agreement, Quality Agreement and Order Form, and the guarantor is not party to it, so it does not reconcile the two. To recover on a supply default, Glilend would have to sue Leiseiv in Delaware and the guarantor separately in England. That means duplicative proceedings, the risk of inconsistent results, and an English court construing the guaranteed obligations.",
+      "doc": "D5",
+      "section": "Section 9",
+      "detect_terms": [
+        "laws of England and Wales",
+        "courts of England"
+      ],
+      "expected_finding": "The Parent Guaranty's English governing law and exclusive English forum conflict with the Supply Agreement's Delaware law and exclusive Wilmington forum, and no precedence clause reconciles them, so Glilend would have to bring split proceedings against Leiseiv and its guarantor; the guaranty should be conformed to Delaware law and forum (or at least the guarantor should submit to Delaware jurisdiction).",
+      "contradicts": [
+        "F2",
+        "F3"
+      ],
+      "doc2": "D1",
+      "section2": "Sections 20.1 and 20.2",
+      "detect_terms2": [
+        "laws of the State of Delaware",
+        "Wilmington, Delaware"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Section 9.2 of the Supply Agreement (D1) warrants Products free from Defects for 12 months. Section 1.6 defines 'Defect' as a defect in materials or workmanship visible upon visual inspection at the time of delivery. The Quality Agreement (D4, Section 2.1) uses 'Defect' far more broadly. Its definition covers failure to meet minimum hydrostatic head and breathability ratings, and laminate delamination appearing after wash testing or in use. These latent waterproofing failures are the principal quality risk for shell fabrics. Under the Section 2.3 precedence clause the Supply Agreement prevails over the Quality Agreement, so the narrow D1 definition controls the warranty. Latent waterproofing and delamination failures, which by nature are not visible at delivery, therefore fall outside the warranty, despite the Quality Agreement standards Glilend relies on.",
+      "doc": "D1",
+      "section": "Section 1.6 and Section 9.2",
+      "detect_terms": [
+        "visible upon visual inspection at the time of delivery"
+      ],
+      "expected_finding": "Because the Supply Agreement defines 'Defect' as defects visible on visual inspection at delivery and prevails over the Quality Agreement under Section 2.3, the 12-month warranty does not cover the hydrostatic head, breathability and delamination failures that the Quality Agreement treats as Defects, so Glilend should conform the Supply Agreement definition to the Quality Agreement's performance-based definition.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Section 2.1",
+      "detect_terms2": [
+        "hydrostatic head",
+        "delamination"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Under Section 2 of the Order Form (D6), the Initial Term expires December 31, 2026 and renews automatically for successive 24-month Renewal Terms. The only way out is a notice of non-renewal given at least ninety (90) days before expiry, so the deadline was October 2, 2026. Section 3 of the Order Form imposes a $4,200,000 Minimum Annual Commitment for each contract year of a Renewal Term. Glilend's letter to Leiseiv (D7) is dated October 20, 2026, 18 days after the window closed, and states that Glilend elects not to renew at the end of the Initial Term. The letter shows that Glilend's position is that the program should end, and nothing in the folder shows Glilend accepting the renewal. As a contractual matter, however, the notice is untimely. The agreement will renew through December 31, 2028 and bind Glilend to the minimum commitment unless Leiseiv agrees otherwise.",
+      "doc": "D6",
+      "section": "Section 2",
+      "detect_terms": [
+        "at least ninety (90) days prior",
+        "December 31, 2026"
+      ],
+      "expected_finding": "Measured against the December 31, 2026 Initial Term expiry, the 90-day non-renewal window closed October 2, 2026, so Glilend's October 20, 2026 notice is late and the agreement auto-renews for 24 months with a $4,200,000 Minimum Annual Commitment per year unless Glilend obtains Leiseiv's written agreement to accept the late notice or a negotiated exit.",
+      "contradicts": null,
+      "doc2": "D7",
+      "section2": "Paragraph 2",
+      "detect_terms2": [
+        "October 20, 2026",
+        "elects not to renew"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 18.3 of the Supply Agreement (D1) bars any Change of Control of Customer without the prior written consent of Supplier. 'Change of Control' covers a merger in which Customer survives as another person's subsidiary. If a Change of Control occurs without consent, Supplier may terminate, and Customer must then pay for all work-in-process and raw materials plus the Minimum Annual Commitment shortfall for the remainder of the Term. Glilend's letter to Leiseiv (D7, Paragraph 1) discloses that Glilend signed an Agreement and Plan of Merger with Cairnbridge Brands, Inc. on September 28, 2026, with closing expected in the first quarter of 2027. The letter does not ask for Leiseiv's consent, and no consent or waiver appears anywhere in the folder. Read with I5, the remainder of the Term includes the renewal term triggered by the late notice. Closing without consent would therefore hand Leiseiv a termination right carrying a large shortfall payment.",
+      "doc": "D1",
+      "section": "Section 18.3",
+      "detect_terms": [
+        "Change of Control of Customer",
+        "prior written consent of Supplier"
+      ],
+      "expected_finding": "Glilend's September 28, 2026 merger agreement with Cairnbridge Brands will be a Change of Control of Customer requiring Leiseiv's prior written consent under Section 18.3, and no consent has been sought, so closing without it would let Leiseiv terminate and claim work-in-process, raw materials and the Minimum Annual Commitment shortfall; Glilend should obtain Leiseiv's written consent or waiver before closing.",
+      "contradicts": null,
+      "doc2": "D7",
+      "section2": "Paragraph 1",
+      "detect_terms2": [
+        "Agreement and Plan of Merger",
+        "Cairnbridge Brands"
+      ]
+    }
+  ]
+}

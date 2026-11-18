@@ -1,0 +1,186 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 1,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 1,
+      "failed": 2,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 1,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 1,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s52-m0001",
+      "accepted": false,
+      "failed_gate": "issue_check",
+      "reason": "missing: [\"I4\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    },
+    {
+      "matter_id": "s52-m0002",
+      "accepted": false,
+      "failed_gate": "issue_check",
+      "reason": "missing: [\"I3\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    },
+    {
+      "matter_id": "s52-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 4,
+      "input_tokens": 18120,
+      "output_tokens": 45755,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 29,
+      "input_tokens": 779530,
+      "output_tokens": 136505,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 151005,
+      "output_tokens": 12177,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 14,
+      "input_tokens": 586074,
+      "output_tokens": 10797,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 18,
+      "input_tokens": 129089,
+      "output_tokens": 8999,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 2,
+      "input_tokens": 3259,
+      "output_tokens": 536,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 1,
+      "input_tokens": 1300,
+      "output_tokens": 142,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 1,
+      "input_tokens": 6873,
+      "output_tokens": 2563,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 2,
+      "input_tokens": 90900,
+      "output_tokens": 16026,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 3,
+      "input_tokens": 20364,
+      "output_tokens": 1829,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "outdoor apparel": 1,
+      "commercial bakery": 1,
+      "concert promotion": 1
+    },
+    "agreement_types": {
+      "master services agreement": 2,
+      "supply agreement": 1
+    },
+    "issue_types": {
+      "change_of_control_consent": 3,
+      "defined_term_inconsistency": 2,
+      "expired_notice_window": 2,
+      "auto_renewal": 2,
+      "missing_assignment_restriction": 1,
+      "governing_law_mismatch": 1,
+      "uncapped_indemnity": 1,
+      "liability_cap_carveout": 1,
+      "exclusivity_scope": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

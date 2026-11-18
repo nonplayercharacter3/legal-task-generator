@@ -1,0 +1,102 @@
+{
+  "matter_id": "s52-m0002",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I3\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I3"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "QA §9.4: \"Provider's aggregate liability for Recall Costs, whether in contract, indemnity or otherwise, shall not exceed the aggregate cap in Section 12.2 of the Agreement.\" MSA §2.3: \"on any food safety, sanitation or product recall matter, the Quality Agreement shall control over this Agreement, the Statements of Work and the schedules and addenda.\"",
+            "reason": "Brikeith (Provider) gives the indemnity, and the cap limits its liability, so any shortfall falls on Logov. MSA §11.1 makes Provider's indemnity cover Recall Costs arising from its breach of the Sanitation Standards, and MSA §12.3(a) takes that indemnity outside the §12.2 cap of 12 months' fees. QA §9.4 then caps Recall Costs at the §12.2 amount, including those claimed 'in indemnity'. MSA §2.3 ranks the Quality Agreement above the MSA on product recall matters, so §9.4 overrides the §12.3 carve-out. A recall caused by Brikeith's sanitation failure is therefore capped at about $1.42M (12 x $118,500, adjusted slightly for the gluten-free line fee and the side-letter discount). That is likely far below the cost of a multi-retailer bakery recall. Neither Amendment No. 1 nor the October 2026 side letter changes §9.4 or the order of precedence, so nothing cures the problem. The agreements are still in force and no recall has occurred, so Logov can still act on this, for example by amending §9.4 or §2.3.",
+            "alone": {
+              "quality_agreement.md": {
+                "findable": false,
+                "evidence": "Provider's aggregate liability for Recall Costs, whether in contract, indemnity or otherwise, shall not exceed the aggregate cap in Section 12.2 of the Agreement.",
+                "reason": "Section 9.4 shows that Logov agreed to cap Brikeith's recall-cost liability, indemnity included, at the MSA Section 12.2 cap. A careful associate would notice this as a client-unfavorable term. But the problem described is a conflict, and every element of that conflict sits in the MSA. This document does not show: (1) that MSA Section 12.3 carves Section 11.1 indemnity, including Recall Costs, out of the cap; (2) that MSA Section 2.3 makes the Quality Agreement control on recall matters, so that 9.4 overrides the carve-out instead of yielding to it; or (3) the size of the cap (12 months of fees, about $1.42M). Without the MSA, the reader cannot tell whether 9.4 actually removes protection Logov would otherwise have, whether 9.4 is effective at all, or whether the cap is inadequate. So the harm as described cannot be established from this document alone."
+              },
+              "master_services_agreement.md": {
+                "findable": false,
+                "evidence": "The limitations in Sections 12.1 and 12.2 do not apply to: (a) Provider's indemnification obligations under Section 11.1 ... Accordingly, on any food safety, sanitation or product recall matter, the Quality Agreement shall control over this Agreement, the Statements of Work and the schedules and addenda.",
+                "reason": "Read alone, the MSA works in Logov's favor on this point. Section 11.1 makes Provider liable for Recall Costs caused by its breach of the Sanitation Standards. Section 12.3(a) then removes those indemnity obligations from the 12-month fee cap in Section 12.2, so recall exposure is uncapped. Section 2.3 does say the Quality Agreement controls on product recall matters, which tells a careful reader to check the Quality Agreement. But the MSA does not say what the Quality Agreement contains. The fact that turns this into a problem for Logov is Quality Agreement Section 9.4, which caps Recall Costs at the Section 12.2 amount. That clause, and the resulting cap of about $1.42 million, appear only in the other document. On this document alone, an associate would see full recovery of recall costs and no harm to the client."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Upon expiration of the Initial Term, this Agreement and each Statement of Work then in effect shall automatically renew for successive three-year terms (each, a \"Renewal Term\"), at Provider's then-current rates, unless Customer gives Provider written notice of non-renewal during the thirty (30) day period ending one hundred eighty (180) days before the expiration of the then-current Initial Term or Renewal Term. A notice of non-renewal given at any other time shall have no effect.",
+            "reason": "Section 14.1 sets a four-year Initial Term from March 1, 2025, ending about March 1, 2029. The Agreement and SOW No. 1 then renew automatically for three-year terms at Brikeith's unilaterally set rates. Logov's only way out is a non-renewal notice given inside a single 30-day window, roughly August–September 2028. Any notice outside that window is expressly void. Nothing in the folder cures this: there is no termination for convenience, and Section 15 gives only for-cause, food-safety, insolvency and nonpayment rights. The side letter (Section 4) confirms that renewal pricing is set under Section 14.1, and the 3% discount does not carry into a renewal term without written agreement. The side letter also binds Logov to use Brikeith exclusively, which adds to the lock-in. As of today (November 17, 2026) the notice window has not yet opened, so this is still a live, actionable risk for Logov to diary or renegotiate."
+          },
+          {
+            "issue": "I3",
+            "present": false,
+            "evidence": "Side Letter §2.2: \"In consideration of the discount in Section 2.1, Customer shall engage Provider as the exclusive provider of Sanitation Services at all Facilities during the Term and for eighteen (18) months after the expiration or termination of the Agreement. During that period, Customer shall not engage, and shall not permit any person other than Provider to perform, Sanitation Services at any Facility.\" MSA §1: \"'Facilities' means each bakery, warehouse or distribution facility owned, leased or operated by Customer or any of its Affiliates\" and \"'Sanitation Services' means cleaning and sanitation of production equipment, production lines and premises, allergen-changeover cleaning, pest control, environmental monitoring ..., allergen validation testing, and related food safety services.\"",
+            "reason": "findable from side_letter_pricing.md alone, so it does not need two documents",
+            "alone": {
+              "side_letter_pricing.md": {
+                "findable": true,
+                "evidence": "\"Provider shall reduce the Monthly Service Fee ... by three percent (3%) for the Covered Facilities, being the Reading Bakery and the Hagerstown Bakery.\" ... \"Customer shall engage Provider as the exclusive provider of Sanitation Services at all Facilities during the Term and for eighteen (18) months after the expiration or termination of the Agreement. During that period, Customer shall not engage, and shall not permit any person other than Provider to perform, Sanitation Services at any Facility.\"",
+                "reason": "The side letter itself sets the narrow discount against the broad exclusivity. The discount applies only to the two named Covered Facilities, yet the exclusivity covers \"all Facilities\" and \"any Facility.\" A careful associate reading this letter alone would see that Logov is promising exclusivity beyond the sites that earn the discount. The letter also shows that this exclusivity runs for 18 months after the Agreement ends. Under Section 2.4, a breach lets Provider claw back the entire discount credited since November 1, 2026. That mismatch and its harm to Logov are clear without the MSA. What the letter does not show is how far the defined terms actually reach. It does not show that the MSA defines \"Facilities\" to include every Affiliate's bakery, warehouse and distribution site. It does not show that \"Sanitation Services\" includes pest control, environmental monitoring and allergen testing. It does not show that post-merger Fenwright plants could become Affiliates, or that MSA Section 2.3 gives side letters top precedence. Those points add to the scale of the problem, but the core overbreadth is visible from this document alone."
+              },
+              "master_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"Facilities\" means each bakery, warehouse or distribution facility owned, leased or operated by Customer or any of its Affiliates ... Section 2.3: (a) signed amendments to this Agreement and signed side letters between the Parties",
+                "reason": "The MSA alone has no exclusivity obligation. It contains broad definitions of 'Facilities' (all Customer and Affiliate sites) and 'Sanitation Services' (including pest control, environmental monitoring and allergen validation testing). It also gives signed side letters top precedence. Neither of these is harmful by itself, because the MSA only binds Provider's services to Covered Facilities under an SOW. Section 19.1 even assumes Customer may use substitute providers. The problem only exists because of the side letter's exclusivity covenant, which binds Customer at all 'Facilities' during the Term plus 18 months in exchange for a 3% discount on two sites. That covenant is not in this document. The Fenwright affiliate sweep also depends on Amendment No. 1, which is also not provided."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "MSA §17.2: \"Any Change of Control of Customer shall be deemed an assignment of this Agreement by Customer requiring the prior written consent of Provider, which Provider may grant or withhold in its sole discretion. 'Change of Control' means ... (b) any merger, consolidation or reorganization of Customer or of any entity that directly or indirectly Controls Customer...\" Amendment No. 1, Recital B: \"Customer's parent, Logov Holdings, Inc., entered into an Agreement and Plan of Merger with Fenwright Foods Group, Inc. dated August 14, 2026. The closing of the transactions under that agreement is expected to occur on or about December 15, 2026.\"",
+            "reason": "Logov Holdings is Customer's parent (Parent Guaranty Recital B: Customer is a wholly owned subsidiary), so its merger with Fenwright is a Change of Control under §17.2(b). Amendment No. 1 only recites the merger and grants no consent or waiver. The October 2026 side letter and the other documents do not record consent either. MSA §19.4 rules out any implied waiver from Brikeith's knowledge or acknowledgment unless a signed writing expressly grants it. If the merger closes without consent, Brikeith may terminate and claim the Early Termination Fee: all Monthly Service Fees for the rest of the four-year term, roughly $3M+. It could also use the threat of that fee to force renegotiation. Closing is expected December 15, 2026, after today's date (November 17, 2026), so Logov can still seek Brikeith's express written consent. The problem is present and actionable.",
+            "alone": {
+              "master_services_agreement.md": {
+                "findable": false,
+                "evidence": "Any Change of Control of Customer shall be deemed an assignment of this Agreement by Customer requiring the prior written consent of Provider, which Provider may grant or withhold in its sole discretion.",
+                "reason": "Read by itself, the MSA shows a harsh clause. Section 17.2 counts a merger of any entity that Controls Customer as a Change of Control. That includes Logov Holdings, Inc., the parent named in the Parent Guaranty definition. Such a change needs Provider's consent, which Provider may withhold in its sole discretion. Without consent, Provider may terminate and collect the Early Termination Fee. Section 19.4 also bars any waiver or consent from arising through knowledge or acknowledgment. An associate could flag all of this as a general risk term. But the MSA says nothing about any actual or pending merger involving Logov Holdings. The Fenwright merger agreement, its expected December 15, 2026 closing, and the fact that the amendment recites the merger without granting consent all come from Amendment No. 1, which was not provided. So the specific problem, an imminent unconsented Change of Control that exposes the client to termination and the fee, cannot be seen from this document alone."
+              },
+              "amendment_no_1.md": {
+                "findable": false,
+                "evidence": "Customer's parent, Logov Holdings, Inc., entered into an Agreement and Plan of Merger with Fenwright Foods Group, Inc. dated August 14, 2026. The closing of the transactions under that agreement is expected to occur on or about December 15, 2026.",
+                "reason": "The amendment shows that a merger of the Customer's parent is pending, with closing expected around December 15, 2026. It also shows that the amendment itself contains no consent from Provider and no waiver. It does not show what makes this a problem for the client. That comes from the MSA, which is not provided: MSA Section 17.2 treats a Change of Control, including a merger of a controlling parent, as an assignment that needs Provider's consent, which Provider may withhold in its sole discretion. The MSA also gives Provider a termination right and an Early Termination Fee if consent is not obtained, and Section 19.4 says knowledge or acknowledgment does not amount to a waiver. Reading this document alone, an associate could see that a merger is coming but could not tell whether the MSA has a change-of-control clause, what happens if it is breached, or whether reciting the merger here could count as consent. The harm to the client depends on the other document."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}
