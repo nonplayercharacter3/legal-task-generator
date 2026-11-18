@@ -107,10 +107,15 @@ Each one says what done looks like. Mark them `[x]` in STATE.md with the commit 
 The lab mate is GitHub user `aarushnarayanan` (a collaborator: he pushes branches and opens PRs). His Claude Code
 agent works from one issue, unattended, so the issue must always be current and runnable without questions.
 - **The issue body is the single current work order** (now issue #36, assigned to him). Its first line reads "Last
-  updated <date time PST>, matches main at <short sha>." It holds: why the batch matters, ground rules, one-time
-  setup, the exact `ltg batch` command, how to check progress, how to stop and resume, what to comment after each
-  seed, what "done" is, and what to do if something fails. It tells his agent to re-read it with
+  updated <date time PST>, matches main at <short sha>." (the real time: run `date`). Right under it comes a short
+  "For Aarush: start here" block for the person: three to five plain steps (log in, open `claude` in a folder, paste
+  one given sentence, leave the laptop on), with how long it takes. Then for his agent: why the batch matters, ground
+  rules, one-time setup, the exact `ltg batch` command, how to check progress, how to stop and resume, the two
+  comments (batch started; batch ended or failed), what "done" is, and what to do if something fails. It tells his agent to re-read it with
   `gh issue view <n> --comments` before starting and before each new batch.
+- **Never ask him for steps that need someone watching** (per-seed comments, babysitting a log): his agent session
+  ends once the batch starts. Read seed numbers from his PR's commits instead. Ask only for what a fresh session can do
+  in one go. Do not ask for credentials a step does not use (a `--no-label` batch needs no NRP key).
 - **Every iteration** compare the body with STATE.md (seeds, config, command, next step) and fix mismatches first.
 - **Test-run every command before posting it**, from a scratch clone (`/tmp/ltg-labmate-test`, origin pointed at a
   local bare repo so nothing is pushed) on `configs/fake_demo.toml` with the same flags (`--seeds`, `--out-pattern`,

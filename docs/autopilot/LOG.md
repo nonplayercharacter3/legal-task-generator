@@ -27,3 +27,14 @@ Dated, append-only. One entry per iteration.
 - Added "Lab mate work order" to PROMPT.md (checked every iteration), his username to CLAUDE.md, a Lab mate section
   to STATE.md.
 - v2 batch: seeds 46 (1 of 3) and 47 (3 of 3) committed; seed 48 running; ~30 min per seed.
+
+## 2026-11-17 18:30, iteration 3
+- Sirui's note (lab mate confused by #36): rewrote the body's top with a "For Aarush: start here" block (log in,
+  open `claude` in an empty folder, paste one sentence, leave the laptop on; ~40 min setup, 30 to 60 min per seed).
+  NRP key now "not needed" (labels deferred; `ltg/models.py` sends no Authorization header when the key is empty).
+  Per-seed comments dropped: only "started" and "ended or failed"; seed numbers come from the PR's commits.
+  "Last updated" now uses the real time (18:26 PST). Deleted my 23:19 UTC comment (it pointed at the old shell
+  loop) and commented what changed. No new commands, so nothing new to test-run.
+- PROMPT.md lab-mate rules: the work order opens with a human "start here" block; never ask him for steps that need
+  someone watching or credentials the step does not use.
+- v2 batch: seeds 46 to 49 committed (1, 3, 3, 1 of 3); seed 50 running; ~49 min per seed, end ~21:40.

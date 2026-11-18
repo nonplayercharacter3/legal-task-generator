@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-17 16:35, autopilot iteration 2.
+Last updated: 2026-11-17 18:30, autopilot iteration 3.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -39,8 +39,8 @@ agent. Full definition of done: PROMPT.md.
 ## Running jobs
 - v2 generation batch, seeds 46-53, `configs/pilot_generate_v2.toml`, folders `runs/pilot<seed>_v2`, labels deferred.
   Script `.inbox/2026-11-17-gen-v2/generate.sh` (copy of the 2026-11-10 one), PID 59738 (caffeinate), log
-  `runs/gen-v2-2026-11-17.log`, stop file `runs/.gen-v2-2026-11-17.stop`. Started 15:06; seeds take ~30 min (46: 1 of 3, 47: 3 of 3
-  committed), so done around 19:45. Commits each seed to main by itself (`commit_round.py`, git lock `runs/.git-commit.lock`).
+  `runs/gen-v2-2026-11-17.log`, stop file `runs/.gen-v2-2026-11-17.stop`. Started 15:06; ~45 min per seed (46: 1, 47: 3, 48: 3, 49: 1 of 3
+  committed; 50 running at 18:25), so done around 21:30. Commits each seed to main by itself (`commit_round.py`, git lock `runs/.git-commit.lock`).
 
 ## Next
 1. When the batch ends (wait file set on its PID): read every rejection of seeds 46-53 (false ones become defect fixes
@@ -60,6 +60,7 @@ agent. Full definition of done: PROMPT.md.
 
 ## Lab mate
 - GitHub `aarushnarayanan`, collaborator since 2026-11-17. Work order: **body of issue #36** (assigned to him),
-  rewritten 2026-11-17 16:35 for `ltg batch` (seeds 500-507, `configs/pilot_generate_v2.toml`, `runs/lm_s{seed}_v2`,
+  rewritten 2026-11-17 16:35 for `ltg batch`, and 18:26 with a "For Aarush: start here" block, no NRP key, and only
+  two comments (started; ended or failed) (seeds 500-507, `configs/pilot_generate_v2.toml`, `runs/lm_s{seed}_v2`,
   `--no-label`, `--branch lm/v2-s500-507`); every command test-run on the fake backend in a scratch clone first.
 - On: not started. Last seen activity: none yet. Open PR: none.
