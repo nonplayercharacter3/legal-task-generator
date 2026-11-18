@@ -17,7 +17,9 @@ import argparse
 import json
 import re
 import shutil
+import signal
 import subprocess
+import sys
 import time
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -29,6 +31,7 @@ GIT_LOCK = Path("runs/.git-commit.lock")
 LIMIT = re.compile(r"hit your .{0,40}limit|usage limit", re.I)
 RESETS = re.compile(r"resets\s+(?:[A-Za-z]{3,9}\s+\d{1,2},?\s+)?(\d{1,2})(?::(\d\d))?\s*([ap]m)", re.I)
 REFUSED = re.compile(r"HTTP 403: b'[^']")  # a bare 403 (empty body) is NRP's flaky gateway, which the client retries
+HEARTBEAT = 600  # a long wait logs a line this often, so a watchdog on the log's age does not take it for a hang
 
 
 def log(msg: str) -> None:
@@ -232,10 +235,13 @@ def run_batch(args, sleep=time.sleep) -> int:
     except FileExistsError:
         log(f"another batch holds {lock}; exiting")
         return 4
+    # A `kill` (SIGTERM) would otherwise end Python without running `finally`, leaving a stale lock.
+    old = signal.signal(signal.SIGTERM, lambda *_: sys.exit(143))
     try:
         return _batch(args, seeds, stop, sleep)
     finally:
         lock.rmdir()
+        signal.signal(signal.SIGTERM, old)
 
 
 def _batch(args, seeds: list[int], stop: Path, sleep) -> int:
@@ -345,7 +351,15 @@ def _wait(args, text: str, stop: Path, sleep, what: str) -> str | None:
         return "stopped"
     wait = limit_wait(text, args.retry_wait * 60)
     log(f"{what}: " + ("usage limit" if wait is not None else "errors") + f", waiting {(wait or args.retry_wait * 60) / 60:.0f} min")
-    sleep(wait if wait is not None else args.retry_wait * 60)
+    left = wait if wait is not None else args.retry_wait * 60
+    while left > 0:
+        sleep(min(left, HEARTBEAT))
+        left -= HEARTBEAT
+        if stop.exists():
+            log(f"{what}: stop file {stop} found")
+            return "stopped"
+        if left > 0:
+            log(f"{what}: still waiting, {left / 60:.0f} min left")
     return None
 
 
