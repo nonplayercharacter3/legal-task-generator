@@ -86,3 +86,4 @@ Dated, append-only. One entry per iteration.
 - `git push --delete` hung (killed); deleted the merged branch through `gh api` instead.
 - Issue #36 header bumped to 119b8dd.
 - kubectl hung on an expired OIDC login; opened needs-sirui issue #43.
+- s61-m0002 errored at 13:56: "Your computer went to sleep mid-response" (lid closed? caffeinate -i stops only idle sleep). The batch retries errored matters on its next try.
