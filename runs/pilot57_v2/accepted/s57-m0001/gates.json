@@ -1,0 +1,170 @@
+{
+  "matter_id": "s57-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.3(c): Buyer shall indemnify the Seller Indemnified Parties against all Losses arising out of \"any payment or performance by any Seller Indemnified Party under any Seller Guarantee, whether arising before or after the Closing.\" Section 9.6(b): \"The aggregate liability of Buyer under Section 9.3(a) shall not exceed the General Cap.\"",
+            "reason": "Buyer, the firm's client, is the indemnitor under Section 9.3(c). Seller is the guarantor and is the party protected. The Seller Guarantees are Seller's guaranties of the Company's obligations under the Facility Lease (Halvern, running to 2033 with renewals) and the API Supply Agreement (Kessington, running to 2029). The indemnity expressly covers payments 'arising before … the Closing.' That shifts to Buyer Seller's exposure for defaults that occurred while Seller owned the Company. Seller bears none of it: there is no exclusion for pre-Closing defaults and no carve-back to Seller's own indemnity in Section 9.2. Section 9.6(b) caps only Section 9.3(a). The Deductible in Section 9.4 applies only to Seller's liability under Section 9.2(a). Section 9.6(c) caps only Seller's liability. So Section 9.3(c) is uncapped and has no deductible, and nothing in the folder caps it or requires the guaranties to be released. Seller's draft side letter amends only Section 9.6(c), in Seller's favor, and the management services agreement. The Disclosure Schedule simply lists the guaranties. The issue is still actionable: Closing has not occurred (it is targeted for the week of December 7), and a side letter amending the SPA is under negotiation. Buyer can seek a cap, an exclusion for pre-Closing defaults, or a release or replacement of the guaranties before Closing."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 2.2: \"With effect from the date of this Letter Agreement, Section 9.6(c) of the Agreement is amended by deleting the words \"or Section 4.12 (Regulatory Compliance)\".\" Section 2.3: \"This Letter Agreement shall form part of the Agreement.\"",
+            "reason": "Seller's side letter, styled as a closing-coordination letter, quietly amends SPA Section 9.6(c) under Section 11.8. Once both parties sign it, Seller's liability for breaches of the Section 4.12 regulatory compliance representation drops from the Purchase Price ($186M) to the General Cap ($18.6M). That reverses the carve-out agreed in the LOI and the signed SPA. The Section 11.6 precedence clause does not help, because Section 2.3 makes the letter part of the Agreement itself rather than an Ancillary Agreement. Section 5.1 then confirms the amendment. The exposure is real for Buyer. The Company is a sterile-injectable manufacturer with a prior Form 483, a Lorvexa market withdrawal, and pending product claims, so regulatory breaches are a meaningful risk. Buyer gets nothing in return for the change. The letter is an unsigned Seller draft, so the issue is still actionable: Buyer can strike Section 2 before signing."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "\"(c) any Taxes of the Company for any Pre-Closing Tax Period and any Taxes of Seller, provided that claims under this Section 9.2(c) may be made only during the survival period applicable to the representations and warranties in Section 4.11\" (Section 9.2(c)), read with Section 9.1: \"The representations and warranties in this Agreement shall survive the Closing until twelve (12) months after the Closing Date, except that the Fundamental Representations shall survive until the sixth anniversary of the Closing Date,\" and the Section 1.1 definition of Fundamental Representations, which covers only Sections 4.1, 4.2, 4.3 and 4.20.",
+            "reason": "Section 4.11 (Taxes) is not a Fundamental Representation. Its survival period is therefore the general 12 months, and Section 9.2(c) ties the pre-Closing tax indemnity to that same period. Seller is the indemnitor, and Buyer (the client) bears the risk that taxing authorities assess pre-Closing Taxes after month 12 but within the usual three-year or longer statute of limitations. Under the New York governing law in Section 11.10, a contractual survival period that shortens the limitations period is enforceable, so Buyer would lose that protection. Nothing in the folder cures this. The Disclosure Schedule does not address it, and the Seller side letter only amends Section 9.6(c). The Seller Note set-off is limited to Product Liability Claims, so it gives no backstop for tax claims. The LOI did not list taxes among the representations that survive six years. Closing has not yet occurred: the email thread targets the week of December 7, 2026. The Agreement can still be amended under Section 11.8 before Closing, for example as part of the side letter negotiation, so the issue is still actionable for Buyer."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Seller Note §1.1: \"'Company Products' means the products listed on Exhibit A to this Note.\" Exhibit A lists only Velnarix and Ostrevan. Seller Note §4.1: \"The Maker may set off ... the amount of any Losses arising from Product Liability Claims relating to Company Products for which any Buyer Indemnified Party is entitled to indemnification by the Holder under Article IX of the Purchase Agreement.\" SPA §1.1: \"'Company Products' means all products manufactured, sold or distributed by or on behalf of the Company at any time prior to the Closing.\" SPA §9.9 allows set-off \"subject to the terms of the Seller Note\", and SPA §11.6 provides that \"the Seller Note shall govern with respect to its payment, set-off and dispute resolution terms.\"",
+            "reason": "The two definitions do not match. The SPA's definition reaches every pre-Closing product, including the discontinued Lorvexa oral suspension. That product is the subject of all the pending and threatened Product Liability Claims on Schedule 4.15 and is covered by the specific indemnity in SPA §9.2(d). The Seller Note defines Company Products by reference to Exhibit A, which lists only Velnarix and Ostrevan. Because SPA §9.9 and §11.6 make the Note's set-off terms control, Peitort, as Maker, could not set off indemnified Lorvexa Losses against the $24M note. It would have to pay the Holder in full and pursue Bratousk separately. That is a real credit-risk exposure for Peitort, given the Lorvexa claims, the insurer's reservation of rights and the $410K in accrued defense costs. The general reference in Note §1.2 to SPA definitions does not cure this, because the Note expressly defines the term itself. Nothing in the folder reconciles the definitions; the Seller side letter does not address them. The Note is still a form, and the November email thread shows the execution version has not yet been circulated, with Closing expected in December. The point can therefore still be fixed before signing.",
+            "alone": {
+              "form_of_seller_note.md": {
+                "findable": false,
+                "evidence": "\"Company Products\" means the products listed on Exhibit A to this Note. … 4.1 Right of Set-Off. The Maker may set off … the amount of any Losses arising from Product Liability Claims relating to Company Products for which any Buyer Indemnified Party is entitled to indemnification by the Holder under Article IX of the Purchase Agreement.",
+                "reason": "On its own, the Note shows that set-off is limited to Product Liability Claims for the two products on Exhibit A (Velnarix and Ostrevan). It does not mention Lorvexa or any discontinued product. It also does not say that the Purchase Agreement defines \"Company Products\" more broadly, as all products sold before Closing. It does not show that Section 9.2(d) indemnifies pending Lorvexa claims, or that the SPA's set-off and precedence clauses make the Note's narrower terms control. An associate reading only the Note would see a closed product list that looks complete. Nothing here signals that the list conflicts with the SPA definition or leaves out indemnified Losses the Buyer expects to set off. Seeing the gap, and that it forces the client to pay the full $24,000,000 and pursue Seller separately, requires the SPA and Disclosure Schedule 4.15."
+              },
+              "stock_purchase_agreement_peitort_bratousk.md": {
+                "findable": false,
+                "evidence": "Section 9.9: \"Buyer may set off any amount to which any Buyer Indemnified Party is entitled under this Article IX against any amount otherwise payable by Buyer under the Seller Note, subject to the terms of the Seller Note.\" Section 11.6: \"...except that the Seller Note shall govern with respect to its payment, set-off and dispute resolution terms.\"",
+                "reason": "The SPA alone shows three things. It defines 'Company Products' broadly as all products made or sold before Closing. It gives a product liability indemnity in 9.2(d) that covers pending Schedule 4.15 claims. It also makes set-off subject to the Seller Note, and the Note controls its own set-off terms. An associate could see that set-off rights depend on the Note's terms. The SPA does not show what those terms are. It does not show that the Note narrowly defines 'Company Products' by reference to an Exhibit A list of currently marketed products, or that Lorvexa is left out. The Note is attached separately and is not in this document. The SPA also does not name Lorvexa or the contents of Schedule 4.15. The definitional conflict and the resulting harm to Buyer can only be seen from the Seller Note."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Seller Note Section 10.1: \"This Note, and all claims or causes of action arising out of or relating to it, including any dispute regarding payment or set-off under it, shall be governed by and construed in accordance with the laws of the State of Delaware...\" Section 10.2: \"The Maker and the Holder irrevocably submit to the exclusive jurisdiction of the Superior Court of the State of Delaware for any action or proceeding arising out of or relating to this Note.\" SPA Section 11.10 selects New York law. SPA Section 11.11 gives exclusive jurisdiction to \"the state or federal courts located in New York County, New York ... including any claim for indemnification under Article IX.\" SPA Section 11.6 provides that \"the Seller Note shall govern with respect to its payment, set-off and dispute resolution terms.\"",
+            "reason": "Peitort's set-off right under Note Section 4.1 exists only for Losses for which it 'is entitled to indemnification by the Holder under Article IX of the Purchase Agreement.' That entitlement must be decided in New York under New York law (SPA 11.10 and 11.11). However, SPA 11.6 gives the Note control over its own payment, set-off and dispute resolution terms. Note 4.3 lets Peitort withhold disputed amounts only until 'a final, non-appealable judgment under Section 10,' which means the Delaware Superior Court applying Delaware law. The same question, whether Seller owes indemnity for a Product Liability Claim such as the pending Lorvexa suits, could therefore be litigated in two exclusive forums under two bodies of law. That creates risks of parallel proceedings and inconsistent rulings. It also risks a Delaware ruling against the set-off triggering a payment default or acceleration under Note 7.1 and 7.2 while the New York indemnity claim is still pending. This hurts Peitort, which is the Maker relying on set-off as its security for Seller's indemnity. The Note is still an unexecuted form, with closing expected the week of December 7, and nothing in the folder reconciles the clauses. The problem is present and can still be fixed.",
+            "alone": {
+              "form_of_seller_note.md": {
+                "findable": false,
+                "evidence": "This Note, and all claims or causes of action arising out of or relating to it, including any dispute regarding payment or set-off under it, shall be governed by and construed in accordance with the laws of the State of Delaware... The Maker and the Holder irrevocably submit to the exclusive jurisdiction of the Superior Court of the State of Delaware for any action or proceeding arising out of or relating to this Note",
+                "reason": "On its own, the Note shows three things. Set-off and payment disputes go exclusively to Delaware Superior Court under Delaware law (Sections 4.3 and 10). Set-off depends on Buyer being entitled to indemnification under Article IX of the Purchase Agreement (Section 4.1). Withheld amounts are held until a final judgment 'under Section 10' (Section 4.3). The Note does not say which law or forum governs the Purchase Agreement or its indemnity claims. Nothing in it shows that the SPA picks New York law and New York County courts (Sections 11.10 and 11.11), or that SPA Section 11.6 defers to the Note's dispute terms. A Delaware clause in a Note that goes with an SPA among Delaware entities looks ordinary when read alone. The conflict that could produce parallel proceedings and inconsistent results only shows up when the SPA's New York clauses are read alongside the Note."
+              },
+              "stock_purchase_agreement_peitort_bratousk.md": {
+                "findable": false,
+                "evidence": "Section 11.6: \"...except that the Seller Note shall govern with respect to its payment, set-off and dispute resolution terms.\" Section 11.11: \"Each Party irrevocably submits to the exclusive jurisdiction of the state or federal courts located in New York County, New York, for any action or proceeding arising out of or relating to this Agreement, including any claim for indemnification under Article IX...\"",
+                "reason": "The SPA alone shows three things: it selects New York law (11.10), it gives New York County courts exclusive jurisdiction over indemnity claims (11.11), and it lets the Seller Note's own payment, set-off and dispute resolution terms override the SPA (11.6, 9.9). A careful associate could see that these provisions might conflict with the Note. However, the SPA does not say what the Note's governing law or forum is, and Exhibit B is 'attached separately.' The actual problem is that the Note selects Delaware law and the Delaware Superior Court, which splits the set-off and acceleration dispute from the New York indemnity claim. That fact appears only in the Seller Note, so the conflict and the harm to Buyer cannot be confirmed from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Schedule 4.4, item 2.1: \"the Company may not assign the Exclusive License Agreement, and no change of control of the Company may occur, without the prior written consent of Orlund... If a change of control of the Company occurs without that consent, Orlund may terminate the Exclusive License Agreement by written notice to the Company. The consummation of the transactions contemplated by the Agreement will constitute a change of control... The Company delivered written notice of the proposed transaction to Orlund on August 27, 2026.\" The SPA's Schedule 7.2(d) lists only the four state board of pharmacy approvals. Section 1.1 defines \"Required Consents\" as those \"listed on Schedule 7.2(d).\" Section 7.2(d) conditions closing on \"each Required Consent.\"",
+            "reason": "The Orlund change-of-control consent appears only as an exception to the Section 4.4 representation. Because of that, its absence is not a breach Peitort could claim indemnity for under Section 9.2(a). It is also not a Required Consent. As a result, the Section 7.2(d) closing condition and Seller's Section 6.4 reasonable-best-efforts covenant do not reach it. The schedule records only that notice was given, not that consent was received. Nothing in the folder shows Orlund has consented. The November closing emails track only the state board approvals. Peitort, as Buyer, would therefore have to close without the Orlund consent. If Orlund then terminates the license for Velnarix, the Company's lead product, Peitort would have no closing walk right and no indemnity. The MAE condition looks only at the period before closing and does not cover a termination after closing. Closing has not yet occurred: it is targeted for the week of December 7, pending California approval. Peitort can therefore still act on this, for example by adding the Orlund consent to Schedule 7.2(d) or obtaining a special indemnity through an amendment such as the pending side letter. The problem is present and actionable.",
+            "alone": {
+              "disclosure_schedule_elmcrest.md": {
+                "findable": false,
+                "evidence": "If a change of control of the Company occurs without that consent, Orlund may terminate the Exclusive License Agreement by written notice to the Company. The consummation of the transactions contemplated by the Agreement will constitute a change of control of the Company for purposes of Section 14.3 of the Exclusive License Agreement.",
+                "reason": "The schedule shows three things. First, the Orlund license for Velnarix needs Orlund's consent to a change of control. Second, the deal will trigger that requirement, and Orlund may terminate if it does not consent. Third, only a notice had been sent as of August 27, 2026, with no consent reported. Section 1.3 states that disclosure is not an admission of breach, which suggests the risk may be disclosed away against the Section 4.4 rep. The schedule does not show the SPA's closing mechanics. It does not show that Schedule 7.2(d) and the 'Required Consents' definition leave out the Orlund consent. It does not show that the Seller's Section 6.4 covenant covers only Required Consents, or how the Section 9.2(a) indemnity works. Read alone, the consent requirement looks like a routine disclosure that would normally be paired with a closing condition. The harmful part is that Buyer must close without Orlund's consent and has no remedy, and seeing that requires the SPA."
+              },
+              "stock_purchase_agreement_peitort_bratousk.md": {
+                "findable": false,
+                "evidence": "\"Required Consents\" means the consents, approvals and authorizations of Governmental Authorities and other Persons listed on Schedule 7.2(d). ... SCHEDULE 7.2(d): REQUIRED CONSENTS 1. Approval of the change of ownership ... by the New Jersey Board of Pharmacy. [items 2–4 are other state boards of pharmacy]",
+                "reason": "The SPA alone shows that the closing condition in Section 7.2(d) and the Seller's efforts covenant in Section 6.4 cover only the Schedule 7.2(d) consents. That schedule lists only state board of pharmacy approvals. The Exclusive License Agreement with Orlund is defined but is not listed as needing consent. A careful associate might note that gap as a general diligence point. But nothing in the SPA says the Orlund license actually requires consent to a change of control, or that Orlund may terminate without it. That fact appears only in Disclosure Schedule 4.4, which we were not given. The SPA also does not show that the Orlund consent requirement was disclosed against Section 4.4. Without that disclosure, the Section 4.4(c) representation about consents under Material Contracts would be breached, and the Buyer could recover under Section 9.2(a). So the harm to the Buyer (having to close with no condition protecting it and no indemnity) depends on the contents of the other document."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C8 asks for fact F3, which only issue I4 uses: a memo that misses I4 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.102,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

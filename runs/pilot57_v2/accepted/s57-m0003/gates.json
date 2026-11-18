@@ -1,0 +1,171 @@
+{
+  "matter_id": "s57-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "D1 §3.2: \"At the end of the Initial Term, this Agreement automatically renews for successive renewal terms, each equal in length to the Initial Term (each, a \"Renewal Term\"), unless either party gives the other written notice of non-renewal at least ninety (90) days before the end of the then-current Initial Term or Renewal Term.\" Order Form §2: \"The Initial Term of the Agreement is sixty (60) months from the Effective Date.\"",
+            "reason": "Read together, the two clauses make every renewal a further five-year term. One missed 90-day notice keeps Supplier (Fougeil) bound for five more years. That includes the Supplier-only covenant in D1 §2.3, which bars Fougeil from selling any Competing Product worldwide during the Term and for 24 months after. The agreement gives Fougeil no termination-for-convenience right. Termination is available only for breach (§13.1) or insolvency (§13.2). The First Amendment changed only §11 and does not cure this. The Order Form (§3.3) confirms the appointment is exclusive. Fougeil's October 28, 2026 notice converting the appointment to non-exclusive does not remove the risk. First, §2.3 is an independent covenant that runs for the whole Term, and conversion leaves it in place. Second, the notice appears to fall outside the §4.4 window, which closed 60 days after June 30, 2026, so the conversion itself may be contestable. The Initial Term ends June 30, 2028, so the non-renewal deadline is about April 1, 2028. That deadline has not passed (today is November 2026). The issue is therefore live: Fougeil can calendar the deadline or negotiate one-year renewals or a convenience exit.",
+            "alone": {
+              "fougeil_treireis_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "3.2 Renewal. At the end of the Initial Term, this Agreement automatically renews for successive renewal terms, each equal in length to the Initial Term (each, a \"Renewal Term\"), unless either party gives the other written notice of non-renewal at least ninety (90) days before the end of the then-current Initial Term or Renewal Term.",
+                "reason": "This document shows the evergreen mechanism. Renewal terms mirror the Initial Term and require a 90-day non-renewal notice. The document also contains the Supplier's worldwide non-compete (Section 2.3) and has no termination-for-convenience right. But Section 3.1 says the Initial Term is the one 'stated in the Order Form', so this document never says how long the Initial Term is. With a one-year Initial Term, this would be an ordinary annual auto-renewal. What makes it a serious problem for Fougeil is that each missed deadline locks it in for five more years, and that 60-month figure appears only in the Order Form, which I was not given. An associate reading this document alone would see a standard renewal clause tied to an unknown term length, not the multi-year lock-in."
+              },
+              "order_form_initial_appointment.md": {
+                "findable": false,
+                "evidence": "The Initial Term of the Agreement is sixty (60) months from the Effective Date.",
+                "reason": "This Order Form sets a 60-month Initial Term and an exclusive appointment (Section 3.3). It does not mention renewal at all. Nothing here shows that the Agreement renews automatically, that each Renewal Term equals the Initial Term, that the non-renewal notice window is 90 days, that there is a non-compete, or that there is no right to terminate for convenience. Those facts are all in the Distribution Agreement. Read alone, a 60-month initial term with exclusivity is ordinary, and the five-year lock-in on renewal cannot be seen without the Agreement's renewal clause."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"During the Term and for twenty-four (24) months thereafter, Supplier shall not, and shall cause its Affiliates not to, directly or indirectly, sell, distribute, license or otherwise supply any Competing Product anywhere in the world, whether through its own sales force, any distributor, agent, reseller, original equipment manufacturer, online channel or any other channel, other than to or through Distributor under this Agreement.\" (Section 2.3, read with Section 1.2 defining 'Competing Product' as any veterinary diagnostic analyzer, test, assay, reagent or consumable for companion-animal, livestock, equine or other species, point-of-care or reference-laboratory, 'other than the Products when sold to or through Distributor')",
+            "reason": "The covenant restricts Fougeil, the client. The commercial deal in Order Form Section 3 is U.S.-only exclusivity for companion-animal point-of-care chemistry and hematology analyzers and consumables. Section 2.3 goes much further. It applies worldwide, through every channel, during the Term and for 24 months after, and it survives termination under Section 13.5. Because Section 1.2 excludes only Products sold to or through Distributor, Fougeil's own Products sold outside the U.S. or through anyone else count as 'Competing Products.' The clause therefore bars Fougeil's non-U.S. sales and any other veterinary diagnostic line. Section 17.3 makes the Distribution Agreement prevail over the Order Form, so the narrower Order Form scope does not cure the breadth. The First Amendment changed only Section 11, and no side letter narrows Section 2.3. The prior draft v3 had a narrow covenant limited to the Territory and Field, which shows the executed text departs from the intended deal. Converting Distributor to non-exclusive under Section 4.4, effective November 27, 2026, does not clearly release Section 2.3, which is a separate covenant. Paragraph 4 of the conversion notice states that all other terms remain in full force. The problem is real, current and actionable: Fougeil can seek reformation or an amendment, or argue the clause is unenforceable as an overbroad restraint, and it faces breach exposure in the meantime."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 15.1: \"Supplier shall not assign this Agreement or any of its rights or obligations under it, whether voluntarily, by operation of law or otherwise, without Distributor's prior written consent.\" Section 15.4: \"This Agreement binds and benefits the parties and their respective successors and assigns.\"",
+            "reason": "The anti-assignment clause binds only Supplier (Fougeil). Nothing restricts Distributor (Treireis): there is no consent right, no change-of-control trigger and no termination right. Section 15.4 says the Agreement benefits \"successors and assigns,\" not \"permitted assigns.\" Under Delaware's default rule that contract rights are freely assignable, Treireis could therefore transfer the appointment to anyone, including a competing diagnostics manufacturer. The assignee would also take the benefit of Fougeil's very broad worldwide non-compete in Section 2.3, which survives for 24 months after the Term. Nothing in the folder fixes this. Supplier's own prior draft v3 had a mutual consent requirement, treated a change of control as an assignment, and let Supplier terminate on assignment to a competitor. All of that was dropped from the executed text. The Guaranty (s.3.2(d)) also contemplates \"any assignment of the Agreement by Distributor.\" Fougeil's October 28, 2026 notice converts the appointment to non-exclusive from November 27, 2026, which reduces the value of what could be assigned. But the appointment, the supply obligations and the non-compete benefit all remain assignable for the rest of a term that runs to 2028 and auto-renews. The problem is therefore still live and actionable for Fougeil, for example by seeking an amendment."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "D1 Section 12.3(a): \"Sections 12.1 and 12.2 do not apply to: (a) a party's obligations under Section 11.1;\" read with First Amendment Section 2: \"Section 11 of the Agreement is deleted in its entirety and replaced with the following: ... 11.1 Supplier Indemnification. Supplier shall defend, indemnify and hold harmless Distributor ... 11.2 Distributor Indemnification. Distributor shall defend, indemnify and hold harmless Supplier...\"",
+            "reason": "In the signed Agreement, Section 11.1 was Treireis's indemnity of Fougeil, so the 12.3(a) carve-out kept the distributor's indemnity uncapped. That favoured Fougeil. The First Amendment replaces Section 11 and renumbers it, so 11.1 is now Fougeil's own indemnity, which the Amendment also widens to cover labeling and embedded software. Section 12.3 was not changed to match. Amendment Section 3.1 says the Agreement is otherwise unchanged and the two are read as one instrument, and Section 17.3 gives signed amendments precedence. The result is that Fougeil's indemnity is now uncapped and excluded from the indirect-damages bar. Treireis's indemnity for cold-chain failures, unauthorized claims and regulatory breaches is now subject to the 12-month fees cap. This applies to every claim first asserted on or after February 15, 2024, so the exposure continues through the rest of the Term. The problem remains actionable: Fougeil can seek a corrective amendment, or argue scrivener's error or mutual mistake before a claim arises. Nothing in the folder shows Fougeil accepting this result as intended.",
+            "alone": {
+              "fougeil_treireis_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "12.3 Exclusions. Sections 12.1 and 12.2 do not apply to: (a) a party's obligations under Section 11.1;",
+                "reason": "Read alone, the Distribution Agreement works in Fougeil's favour. Section 11.1 is Distributor's indemnity of Supplier, so the 12.3(a) carve-out leaves Treireis's indemnity uncapped while Fougeil's indemnity under 11.2 stays capped. The wording 'a party's obligations under Section 11.1' points to a section number rather than naming whose indemnity it is, which a careful reader might flag as fragile drafting, but on these terms it does not hurt the client. The harm only arises from the amendment (D3), which replaces Section 11 and swaps the order so that new 11.1 is Supplier's indemnity, without updating 12.3. Section 17.3 shows that signed amendments take precedence, but the renumbering and the resulting reversal can only be seen in the other document."
+              },
+              "first_amendment_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11 of the Agreement is deleted in its entirety and replaced with the following: ... 11.1 **Supplier Indemnification.** Supplier shall defend, indemnify and hold harmless Distributor...",
+                "reason": "The amendment shows that Section 11 is replaced, that new 11.1 is Supplier's indemnity and new 11.2 is Distributor's, and that nothing else in the Agreement changes (Section 3.1). It says nothing about a liability cap. It does not mention Section 12.2 or 12.3, does not say that 12.3(a) carves out 'obligations under Section 11.1', and does not show that the original 11.1 was Distributor's indemnity. Without D1, an associate could not tell that the renumbering moves the uncapped carve-out from Treireis's indemnity to Fougeil's, or that Treireis's indemnity is now limited by the fees cap. The renumbering is visible here, but the harm to the client depends on D1's cap and carve-out wording."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Guaranty Section 9.2: \"Guarantor and Supplier, by its acceptance of this Guaranty, each irrevocably submit to the exclusive jurisdiction of the state courts of the State of New York sitting in New York County and the United States District Court for the Southern District of New York for any action arising out of or relating to this Guaranty.\" Section 9.1 selects New York law. By contrast, Agreement Section 16.1 selects Delaware law, and Section 16.2 gives exclusive jurisdiction to the courts in Wilmington, Delaware.",
+            "reason": "The mismatch is real, and nothing in the folder reconciles it. The Guaranty is not in the Agreement's order of precedence (Section 17.3). Neither document addresses joinder or consolidation, and no amendment aligns the clauses. The New York forum clause is exclusive and binds Fougeil through its acceptance, so Fougeil cannot bring the Guarantor into a Delaware action against Distributor. Section 2.2 lets Fougeil sue the Guarantor directly without first suing Distributor, but that only partly helps. Section 4.3 lets the Guarantor raise Distributor's own defenses under the Agreement, so the underlying payment obligation may be argued twice: under Delaware law in Wilmington against Distributor, and in New York against the Guarantor. That creates a risk of parallel proceedings and inconsistent rulings. Guarantor defenses would also be governed by New York law. The Guaranty is continuing and in force (the October 2026 notice was copied to the Guarantor), and the Guaranty can be amended with the Guarantor's signature (Section 10.3). The issue therefore remains live and actionable for Fougeil."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Letter ¶2: \"Accordingly, Supplier hereby exercises its right under Section 4.4 of the Agreement to convert the appointment to non-exclusive. Distributor's appointment under Section 2.1 of the Agreement will become a non-exclusive appointment ... effective thirty (30) days after the date of this notice, on November 27, 2026.\" Executed Agreement §4.4: \"Supplier may, by written notice to Distributor given within sixty (60) days after the end of the applicable Contract Year, convert Distributor's appointment under Section 2.1 to a non-exclusive appointment.\"",
+            "reason": "Contract Year 3 ended June 30, 2026 (Agreement §1.3; Order Form §6.1). The 60-day window under §4.4 therefore closed on August 29, 2026. Fougeil's notice is dated October 28, 2026, about two months late. Nothing in the folder extends the window, and §17.4 requires any waiver or amendment to be in a signed writing. Treireis can therefore treat the conversion as ineffective, and its exclusive appointment under §2.1 and Order Form §3.3 continues. This is a live problem for Fougeil, the party relying on the notice. If Fougeil acts on the purported non-exclusivity after November 27, 2026, for example by appointing other distributors or selling directly, it risks breaching §2.1 and §2.3 and facing a claim from Treireis. The issue is still actionable: today is November 18, 2026, the stated effective date has not arrived, and nothing shows Fougeil has acted on the conversion. Fougeil can still withdraw or recharacterize the notice, avoid acting on it, and prepare a timely §4.4 notice for any Contract Year 4 shortfall. The lapsed-window exception does not apply, because Fougeil has not accepted the result; it is affirmatively relying on a defective notice.",
+            "alone": {
+              "fougeil_notice_letter_2026-10-28.md": {
+                "findable": false,
+                "evidence": "Section 6.1 of the Order Form sets the Minimum Purchase Commitment for Contract Year 3, the period from July 1, 2025 through June 30, 2026 ... Supplier hereby exercises its right under Section 4.4 of the Agreement to convert the appointment to non-exclusive.",
+                "reason": "The letter shows that Contract Year 3 ended June 30, 2026, that the letter is dated October 28, 2026 (about four months later), and that Fougeil relies on Section 4.4 to convert the appointment to non-exclusive. It never says that Section 4.4 requires notice within sixty days after the end of the Contract Year, and it states no deadline of any kind. Without the Agreement's Section 4.4 text, an associate could not tell that the notice was late or that the conversion may be ineffective. A late notice is not obviously a defect, because many such provisions allow notice at any time."
+              },
+              "fougeil_treireis_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "If Distributor fails to meet the Minimum Purchase Commitment for a Contract Year, Supplier may, by written notice to Distributor given within sixty (60) days after the end of the applicable Contract Year, convert Distributor's appointment under Section 2.1 to a non-exclusive appointment, effective thirty (30) days after the date of the notice.",
+                "reason": "On its own, the agreement sets up the 60-day notice window in Section 4.4 and defines Contract Years as starting July 1 in Section 1.3. From that, an associate can work out that Contract Year 3 ended June 30, 2026 and the window closed around August 29, 2026. The agreement does not show that Fougeil actually sent a conversion notice, that the notice was dated October 28, 2026, or that Distributor missed the Contract Year 3 minimum. The late notice that hurts Fougeil comes only from the D7 letter. Read alone, the agreement shows only a deadline that applies to the client, not that it was missed."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F5, which only issue I2 uses: a memo that misses I2 need not state it",
+          "criterion C8 asks for fact F2, which only issue I5 uses: a memo that misses I5 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.095,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "matter_id": "s57-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "SPA §2.4(b): \"Buyer may dispute the Closing Statement by delivering to Seller a written notice (a \"Notice of Disagreement\") within forty-five (45) days after delivery of the Closing Statement... If Buyer does not deliver a Notice of Disagreement within that period, the Closing Statement will be final and binding on the parties.\" Side Letter Recital B: \"Seller delivered the Closing Statement on March 30, 2026, by email to Buyer's General Counsel... Buyer delivered a Notice of Disagreement to Seller on May 22, 2026.\"",
+            "reason": "Forty-five days from the March 30, 2026 delivery ran out on May 14, 2026. Buyer's May 22 Notice of Disagreement was therefore eight days late. On the SPA's plain terms, Seller's Closing Statement, which puts Closing Net Working Capital at $2,318,400, is final and binding. Buyer, the firm's client, loses its roughly $1.2M working-capital challenge. Section 9.7 sends Section 2.4 disputes to that mechanism and keeps them out of indemnity, which limits Buyer's other routes to recovery. Nothing in the folder cures the lapse. The side letter is expressly \"without prejudice to either party's rights,\" says it does not amend the Agreement, and records that Seller has accepted none of the items. No signed writing from Seller waives the deadline, as SPA §11.3 would require. The problem is still actionable. The folder shows no acceptance by Buyer of the Closing Statement, no true-up payment and no settlement, and Buyer's dispute stays on record through the Buyer Notice and the side letter. Buyer can still respond, for example by seeking a written waiver or extension from Seller, building waiver or estoppel arguments, or looking for other sources of recovery. Seller can be expected to rely on the deadline, and Delaware courts enforce such deadlines strictly.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Buyer may dispute the Closing Statement by delivering to Seller a written notice (a \"Notice of Disagreement\") within forty-five (45) days after delivery of the Closing Statement. ... If Buyer does not deliver a Notice of Disagreement within that period, the Closing Statement will be final and binding on the parties.",
+                "reason": "On its own, the SPA shows only the 45-day Notice of Disagreement deadline in Section 2.4(b) and the rule that the Closing Statement becomes final and binding if that deadline passes. It does not say when Seller delivered the Closing Statement (March 30, 2026) or when Buyer sent its Notice of Disagreement (May 22, 2026). Both dates appear only in the Post-Closing Side Letter. Without those dates, an associate reading only the SPA would see an ordinary deadline but could not tell that it was missed or that Buyer's roughly $1.2M working capital dispute is now barred."
+              },
+              "post_closing_side_letter.md": {
+                "findable": false,
+                "evidence": "Seller delivered the Closing Statement on March 30, 2026, by email to Buyer's General Counsel. ... Buyer delivered a Notice of Disagreement to Seller on May 22, 2026, by email to Seller's Chief Executive Officer (the \"Buyer Notice\").",
+                "reason": "The side letter gives both dates: the Closing Statement was delivered March 30, 2026 and the Buyer Notice on May 22, 2026, 53 days later. It says Section 2.4(b) lets Buyer dispute the Closing Statement by a Notice of Disagreement. It says the meeting is without prejudice to either party's rights, and that the letter does not amend the Agreement. It does not state how long Buyer has to deliver the Notice of Disagreement. It also does not say what happens if Buyer misses that deadline, such as the Closing Statement becoming final and binding. Nothing in the letter suggests the notice was late. The 45-day period and its consequence come only from Section 2.4(b) of the SPA, which is not provided. Reading this document alone, an associate cannot tell that the window closed on May 14 or that Buyer's $1.2M dispute is at risk."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 12.3: \"Provider may assign this Agreement, or delegate the performance of any of the Services in whole or in part, to any Person without the consent of Recipient. Recipient may not assign this Agreement or any of its rights or obligations under this Agreement without the prior written consent of Provider.\"",
+            "reason": "The problem is present and hurts the client. Section 12.3 lets Provider (Seller) assign the TSA, or delegate any Service, to any Person without Recipient's (Kateix's) consent. Recipient, by contrast, needs Provider's consent to assign. Those Services are Medicaid/CHIP and payer claims submitted under the Company's provider identifiers, hosting of the PM System and patient records containing PHI, and clinic IT and security. The TSA puts no limits on that right: there is no vetting requirement, no business associate agreement requirement, no bar on competitors, and no rule that Provider stays liable after assigning. Nothing elsewhere in the folder cures it. SPA Section 11.6 restricts assignment of 'this Agreement' (the SPA) only. SPA Section 11.10 resolves conflicts in the SPA's favour, but there is no conflict here, because the SPA says nothing about assigning the TSA. TSA Section 9.3 only preserves rights under the SPA. The issue is still actionable. The Term runs until nine months after March 2, 2026, which is December 2, 2026, so the TSA is still in force today (November 18, 2026). Nothing shows that Kateix has accepted an assignment or delegation. Kateix can still seek an amendment or object to any proposed transfer, and it must manage the risk through migration."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SPA Section 9.6: \"Any Losses payable to a Buyer indemnified party under Section 9.2(a) for breaches of General Representations shall be recovered solely and exclusively from the Indemnity Escrow Fund, and Buyer shall have no right of set-off against the Seller Note for those Losses.\" Escrow Agreement Section 4.2: \"On the date that is nine (9) months after the Closing Date (the \"Release Date\"), the Escrow Agent shall disburse to Seller all Escrow Funds then remaining in the Escrow Account, less the aggregate amount of all claims set out in Claim Notices delivered on or before the Release Date...\"",
+            "reason": "The gap is real, it hurts Buyer, and Buyer can still act on it. Section 9.1 of the SPA keeps the General Representations alive for 18 months after the March 2, 2026 Closing, to September 2027. These include the healthcare billing, payer-compliance and licensure representations. Section 9.6 makes the Indemnity Escrow Fund Buyer's only source of recovery for those breaches and bars set-off against the Seller Note. The SPA defines the Fund as reduced by disbursements under the Escrow Agreement. Escrow Agreement Section 4.2 releases the remaining funds to Seller on December 2, 2026, keeping back only claims noticed by that date. Seller is the indemnitor and Buyer the indemnitee, so claims arising from December 2026 to September 2027 would have no source of recovery. Nothing in the folder cures this. SPA Section 11.10 (precedence) does not help, because the SPA states no conflicting release date. Escrow Agreement Section 5.5 preserves the parties' SPA rights, but those rights are themselves limited to the escrow. Today is November 18, 2026, before the Release Date. Buyer can therefore still deliver Claim Notices for known or expected matters, or seek an amendment extending the escrow.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 9.6: \"Any Losses payable to a Buyer indemnified party under Section 9.2(a) for breaches of General Representations shall be recovered solely and exclusively from the Indemnity Escrow Fund, and Buyer shall have no right of set-off against the Seller Note for those Losses.\" Section 2.3: \"The Indemnity Escrow Fund ... shall be held and disbursed by the Escrow Agent in accordance with this Agreement and the Escrow Agreement.\"",
+                "reason": "On its own, the SPA shows three things. General Representations survive 18 months (Section 9.1). Recovery for breaches of them is limited to the Indemnity Escrow Fund, with no set-off against the Seller Note (Section 9.6). Escrow disbursement is left to the Escrow Agreement (Section 2.3). An associate might note that Buyer's recovery depends entirely on how long the escrow stays funded. The SPA, however, states no escrow release date. It does not show that the fund will be paid out to Seller nine months after Closing (December 2, 2026), before the 18-month survival period ends. That release date, which creates the period with no source of recovery, appears only in Section 4.2 of the Escrow Agreement. Without it, the SPA reads as ordinary drafting, and the gap that harms Buyer cannot be seen."
+              },
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "On the date that is nine (9) months after the Closing Date (the \"Release Date\"), the Escrow Agent shall disburse to Seller all Escrow Funds then remaining in the Escrow Account, less the aggregate amount of all claims set out in Claim Notices delivered on or before the Release Date that have not been paid or otherwise resolved as of the Release Date",
+                "reason": "This document alone shows that the escrow releases to Seller nine months after the March 2, 2026 closing (December 2, 2026), and that only claims noticed by then are held back. It does not show the 18-month survival period for General Representations, and it does not show that the escrow is the sole and exclusive remedy with no set-off against the Seller Note. Section 5.5 in fact says nothing here limits Buyer's rights under the Purchase Agreement, which suggests other remedies may exist. A nine-month release is ordinary on its own terms. The gap that hurts Buyer, with no recovery source for claims raised after the release, only appears when this document is read with SPA Sections 9.1 and 9.6."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Disclosure Schedule 5.1: \"Any such change of control of the Company requires the prior written consent of Pellucid. ... If a change of control occurs without that consent, Pellucid may terminate the agreement on thirty (30) days' written notice to the Company.\" SPA Section 6.4: \"Seller delivered to Buyer at the Closing the consents of the landlords under the Clinic Leases to the change in ownership of the Company contemplated by this Agreement...\" SPA Section 9.2(a): \"Seller will have no liability under this clause (a) for any matter disclosed in the Disclosure Schedule.\"",
+            "reason": "Read together, the documents leave a real and still-open gap for Buyer. The 100% stock sale was a change of control under the Pellucid agreement, which accounts for about 38% of net patient revenue. Pellucid's consent therefore had to be obtained before Closing. SPA Section 6.4 covers only the landlord consents, and Section 3.2(e) requires delivery only of the consents described in 6.4. Section 6.5 (further assurances) reaches only actions to carry out the transfer of the Shares. Nothing in the SPA requires Seller to obtain or pursue Pellucid's consent, and nothing in the folder shows that consent was obtained or waived. Because Schedule 4.5(b) discloses the requirement, Section 9.2(a) bars any indemnity claim against Seller if Pellucid terminates. There is also no breached covenant that would support a claim under 9.2(b). Pellucid's termination right does not lapse, so it remains a live exposure for Buyer and the Company that Buyer can still address.",
+            "alone": {
+              "disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "Section 14.2 of the agreement treats a change of control of the Company as an assignment of the agreement by the Company. ... Any such change of control of the Company requires the prior written consent of Pellucid. ... If a change of control occurs without that consent, Pellucid may terminate the agreement on thirty (30) days' written notice to the Company.",
+                "reason": "On its own, the Disclosure Schedule shows three things. Pellucid's prior written consent is required for a change of control. Pellucid may terminate on 30 days' notice without that consent. Pellucid patients produced about 38% of net patient revenue. It also notes that the Clinic Leases need landlord consent. That is a significant risk an associate would flag, but disclosing a required consent is normal and is not itself a problem. The schedule does not show whether the SPA made Pellucid's consent a closing deliverable or condition. It does not show whether the SPA requires the consent to be pursued after Closing, or that Section 6.4 covers only the landlord consents. Nor does it show that Section 9.2(a) excludes disclosed matters from indemnity. Section 1.3 mentions only how disclosures qualify the representations under Section 11.5. The harm to Buyer is that the consent was unaddressed and Buyer has no indemnity if Pellucid terminates. That harm depends on SPA terms not found in this document."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Seller delivered to Buyer at the Closing the consents of the landlords under the Clinic Leases to the change in ownership of the Company contemplated by this Agreement, each in form and substance reasonably satisfactory to Buyer. (Section 6.4); see also Section 9.2(a): \"Seller will have no liability under this clause (a) for any matter disclosed in the Disclosure Schedule\"",
+                "reason": "The SPA alone shows three things. Section 6.4 covers only landlord consents. Section 4.5(b) contemplates a schedule of Material Contracts with change-of-control consent or termination rights, including payer network agreements. Section 9.2(a) carves disclosed matters out of indemnity. A careful associate might flag in the abstract that any contracts listed on Schedule 4.5(b) are not covered by a consent covenant and would not be indemnifiable. But the SPA does not show that any such contract actually exists. It never mentions Pellucid, its consent requirement, its 30-day termination right, or that Pellucid patients produce about 38% of revenue. Those facts come only from the Disclosure Schedule. Without it, there is no concrete unobtained consent and no showing of material harm to Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 9.1: \"Except for (i) obligations under Section 8.2, and (ii) a party's fraud, each party's aggregate liability arising out of or relating to this Agreement ... shall not exceed the total Service Fees paid in the six (6) months preceding the event giving rise to the claim.\" Section 8.2: \"Recipient shall indemnify, defend and hold harmless Provider ... from and against all Losses arising out of or relating to any third-party claim arising out of or relating to the Services or the operation of the Clinics, including any claim by any patient, payer or Governmental Authority.\"",
+            "reason": "The carve-out reads as mutual, but only Recipient (Kateix, the client) gives an indemnity under Section 8.2. So Kateix alone carries uncapped liability. That indemnity is not limited to Recipient's fault. It reaches payer recoupment, overpayment and patient claims caused by Provider's own claim submission and PM System hosting under Schedule A. Provider's reciprocal indemnity in Section 8.1 covers only its gross negligence or willful misconduct, and it stays inside the cap of roughly $510,000 (six months at $85,000). Nothing else in the folder fixes this. SPA Section 9.5 caps only Losses under SPA Article IX. SPA Sections 9.2 and 4.12 cover pre-closing billing, not Provider's post-closing work. TSA Section 9.3 keeps the SPA separate. SPA Section 11.10 applies only where the two agreements conflict, and there is no conflict here. The exposure is still live: Section 10.3 says Articles 8 and 9 survive expiration, so the risk continues past the end of the Term. It remains a real issue for Kateix to raise, either by amending the TSA or by managing the risk."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F1, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

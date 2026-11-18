@@ -1,0 +1,187 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s57-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s57-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s57-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 14511,
+      "output_tokens": 46463,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 27,
+      "input_tokens": 821541,
+      "output_tokens": 151942,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 169336,
+      "output_tokens": 11340,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4269,
+      "output_tokens": 501,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 17,
+      "input_tokens": 818724,
+      "output_tokens": 13455,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 18,
+      "input_tokens": 158501,
+      "output_tokens": 8421,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 3963,
+      "output_tokens": 429,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 23718,
+      "output_tokens": 6966,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 330150,
+      "output_tokens": 47380,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 9,
+      "input_tokens": 68639,
+      "output_tokens": 6691,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "specialty pharmaceuticals": 1,
+      "dental clinics": 1,
+      "veterinary diagnostics": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 2,
+      "distribution agreement": 1
+    },
+    "issue_types": {
+      "uncapped_indemnity": 2,
+      "liability_cap_carveout": 2,
+      "governing_law_mismatch": 2,
+      "survival_gap": 2,
+      "change_of_control_consent": 2,
+      "expired_notice_window": 2,
+      "missing_assignment_restriction": 2,
+      "defined_term_inconsistency": 1,
+      "auto_renewal": 1,
+      "exclusivity_scope": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

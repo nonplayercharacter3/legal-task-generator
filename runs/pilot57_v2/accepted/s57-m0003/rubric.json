@@ -1,0 +1,131 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response identifies that, because each Renewal Term equals the Initial Term and the Order Form sets that term at 60 months, the Agreement renews the exclusive appointment automatically for further five-year terms unless non-renewal notice is given at least 90 days before expiry. It locates the issue in Distribution Agreement Section 3.2 or Order Form Section 2, explains why this matters to Fougeil, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "equal in length to the Initial Term",
+        "five-year renewal",
+        "90 days before"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the non-compete binding Fougeil is worldwide, covers all channels and all veterinary diagnostic products, and continues for 24 months after the Term, so it goes well beyond the agreed U.S. companion-animal point-of-care exclusivity. It locates the issue in Distribution Agreement Section 2.3, explains why this matters to Fougeil, and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "anywhere in the world",
+        "24 months after",
+        "Competing Product"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the assignment restriction binds only the Supplier, so Treireis can freely assign its exclusive distributorship without Fougeil's consent, including to a Fougeil competitor. It locates the issue in Distribution Agreement Section 15.1 and/or 15.4, explains why this matters to Fougeil, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "Supplier shall not assign",
+        "Distributor may assign",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the First Amendment renumbered the indemnities without conforming the liability-cap carve-out, so the carve-out now leaves Fougeil's own Supplier indemnity uncapped while Treireis's indemnity of Fougeil is capped. It locates the issue in Distribution Agreement Section 12.3(a) or First Amendment Section 2, explains why this matters to Fougeil, and recommends a fix.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "Section 11.1",
+        "Supplier Indemnification",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the Parent Guaranty's New York governing law and exclusive New York forum conflict with the Distribution Agreement's Delaware law and Wilmington, Delaware forum. It locates the issue in Parent Guaranty Section 9, explains why this matters to Fougeil, and recommends a fix.",
+      "kind": "issue",
+      "source": "I5",
+      "hints": [
+        "New York law",
+        "New York County",
+        "Delaware"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response identifies that Fougeil's October 28, 2026 notice converting the appointment to non-exclusive for the Contract Year 3 shortfall was sent after the 60-day exercise window (ending around August 29, 2026, after Contract Year 3 ended June 30, 2026) had closed, so the conversion is likely ineffective and Treireis remains exclusive. It locates the issue in the October 28, 2026 notice letter or Distribution Agreement Section 4.4, explains why this matters to Fougeil, and recommends a fix.",
+      "kind": "issue",
+      "source": "I6",
+      "hints": [
+        "August 29, 2026",
+        "60 days after the end of",
+        "likely ineffective"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that Treireis's exclusive territory is the United States.",
+      "kind": "fact",
+      "source": "F5",
+      "hints": [
+        "United States",
+        "exclusive U.S. distributor"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that the Distribution Agreement is governed by Delaware law.",
+      "kind": "fact",
+      "source": "F2",
+      "hints": [
+        "Delaware law",
+        "governed by the laws of the State of Delaware"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is a memo addressed to the supervising partner that presents each issue with its document and section, why it matters for Fougeil, and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memo",
+        "Location",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response flags at least one urgent or time-sensitive item at or near the beginning of the memo, before the detailed issue discussion.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Urgent",
+        "Immediate attention",
+        "Executive summary"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that Fougeil's October 28, 2026 notice validly and effectively converted Treireis's appointment to non-exclusive.",
+      "kind": "negative",
+      "source": "I6",
+      "hints": [
+        "conversion is effective",
+        "notice was timely"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response claims that the Distribution Agreement requires Fougeil's consent before Treireis may assign it.",
+      "kind": "negative",
+      "source": "I3",
+      "hints": [
+        "Distributor may not assign without consent"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "matter_id": "s57-m0002",
+  "summary": "Kateix Dental Partners, Inc. (client, Buyer) bought all outstanding stock of Mesquite Ridge Dental Group, Inc., an operator of 14 general dentistry clinics, from Laleis Dental Holdings, LLC (Seller). The Stock Purchase Agreement was signed and closed simultaneously on March 2, 2026 and is governed by Delaware law. The price was $48,500,000. Of that, $3,000,000 went into an indemnity escrow and $6,000,000 was paid by a Seller promissory note. Seller provides billing, practice-management software and IT services to the clinics under a nine-month Transition Services Agreement. A post-closing side letter dated May 26, 2026 records the Closing Statement dispute. The folder contains five problems for the client. (1) Buyer's working-capital Notice of Disagreement was sent after the 45-day window had closed. (2) The TSA lets Seller assign the agreement and delegate services, which include patient-records and billing data, to anyone. (3) The 18-month survival period is effectively cut to nine months, because escrow is Buyer's sole recourse and the escrow is released at nine months. (4) A disclosed change-of-control consent from the clinics' largest PPO network was never obtained or covered by any covenant. (5) Buyer's broad TSA indemnity sits outside the TSA liability cap.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Kateix Dental Partners, Inc.",
+      "role": "Buyer; recipient under the Transition Services Agreement; maker of the Seller Note (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Laleis Dental Holdings, LLC",
+      "role": "Seller; provider under the Transition Services Agreement; holder of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Mesquite Ridge Dental Group, Inc.",
+      "role": "Company whose stock was acquired; operator of 14 dental clinics"
+    },
+    {
+      "id": "P4",
+      "name": "Pinecrest Trust Company, N.A.",
+      "role": "Escrow Agent under the Escrow Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement Closing Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F2",
+      "key": "Base Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$3,000,000",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note principal amount",
+      "value": "$6,000,000",
+      "doc": "D6",
+      "section": "Section 1"
+    },
+    {
+      "id": "F5",
+      "key": "General Representations survival period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Stock Purchase Agreement controls over any conflicting Ancillary Agreement",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F7",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F8",
+      "key": "Transition Services Agreement monthly service fee",
+      "value": "$85,000 per month",
+      "doc": "D5",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F9",
+      "key": "Closing Statement delivery date",
+      "value": "March 30, 2026",
+      "doc": "D4",
+      "section": "Recital B"
+    },
+    {
+      "id": "F10",
+      "key": "Transition Services Agreement term",
+      "value": "nine months after the Closing Date",
+      "doc": "D5",
+      "section": "Section 2.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "post_closing_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "seller_promissory_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "dental_supply_vendor_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "landlord_estoppel_certificate.md",
+      "kind": "landlord estoppel and consent certificate",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 2.4(b) of the SPA gives Buyer forty-five days after Seller delivers the Closing Statement to deliver a Notice of Disagreement. If Buyer does not, the Closing Statement becomes final and binding. Recital B of the Post-Closing Side Letter dated May 26, 2026 (D4) records that Seller delivered the Closing Statement on March 30, 2026. The 45-day window therefore closed on May 14, 2026. The same side letter records that Buyer delivered its Notice of Disagreement on May 22, 2026, disputing Closing Net Working Capital by about $1,200,000. The side letter states the parties will meet to discuss the dispute 'without prejudice to either party's rights'. Seller has not waived the deadline, and Buyer has not accepted the Closing Statement. Delaware courts enforce contractual notice deadlines in purchase price adjustment mechanisms strictly. Each document reads normally on its own; the lapse appears only when the side letter's dates are measured against the SPA's 45-day period.",
+      "doc": "D1",
+      "section": "Section 2.4(b)",
+      "detect_terms": [
+        "within forty-five (45) days after delivery",
+        "final and binding"
+      ],
+      "expected_finding": "Buyer's May 22, 2026 Notice of Disagreement came after the 45-day window under SPA Section 2.4(b) closed on May 14, 2026 (measured from the March 30, 2026 delivery recorded in the side letter), so Seller can argue the Closing Statement is final and binding and Buyer's roughly $1.2 million working-capital claim is lost unless Buyer promptly obtains a written waiver or extension from Seller.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Recital B",
+      "detect_terms2": [
+        "delivered the Closing Statement on March 30, 2026",
+        "May 22, 2026"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 12.3 of the TSA lets Provider (Seller) assign the TSA, or delegate any Services in whole or in part, to any person without Recipient's consent. Recipient (Buyer) may assign only with Provider's consent. The Services include revenue-cycle billing, hosting of the practice-management and patient-records system, and IT support for the clinics. Provider could therefore hand patient data and payer billing to a competing dental service organization or an unvetted vendor. The SPA's assignment restriction (Section 11.6) applies only to 'this Agreement'. The SPA's precedence clause does not reach the TSA's separate assignment provision, so nothing in the folder restricts Provider.",
+      "doc": "D5",
+      "section": "Section 12.3",
+      "detect_terms": [
+        "Provider may assign this Agreement",
+        "without the consent of Recipient"
+      ],
+      "expected_finding": "TSA Section 12.3 lets Seller assign the TSA or delegate the billing and patient-records services to any person, including a competing dental group, without Buyer's consent, while Buyer needs Seller's consent; it should be amended to require Buyer's consent (or bar assignment to competitors) and to require HIPAA business associate protections for any delegate.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Section 9.1 of the SPA says the General Representations survive for 18 months after the March 2, 2026 Closing Date. These include billing, payer-compliance and dental-licensure representations. Section 9.6 makes the Indemnity Escrow Fund the sole and exclusive source of recovery for breaches of General Representations and bars set-off against the Seller Note. Section 2.3 of the SPA says the escrow is held and disbursed under the Escrow Agreement. Section 4.2 of the Escrow Agreement releases all remaining escrow funds to Seller, less pending claims, nine months after the Closing Date, which is December 2, 2026. Read together, Buyer has no source of recovery for General Representation claims raised between December 2, 2026 and the end of the 18-month survival period. Payer audits and overpayment demands in dental practices often surface more than nine months after closing. Each document reads as ordinary drafting on its own. The SPA precedence clause does not cure the problem, because the SPA defers escrow disbursement to the Escrow Agreement and states no conflicting release date.",
+      "doc": "D1",
+      "section": "Section 9.6",
+      "detect_terms": [
+        "solely and exclusively from the Indemnity Escrow Fund",
+        "no right of set-off against the Seller Note"
+      ],
+      "expected_finding": "Because SPA Section 9.6 limits recovery for General Representation breaches to the escrow and the Escrow Agreement releases the escrow nine months after Closing (December 2, 2026), the 18-month survival period in SPA Section 9.1 is effectively cut to nine months, and Buyer should seek an amendment extending the escrow release to the end of the survival period or a set-off right against the Seller Note.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Section 4.2",
+      "detect_terms2": [
+        "nine (9) months after the Closing Date"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Schedule 4.5(b) of the Disclosure Schedule discloses the Company's Network Participation Agreement with Pellucid Dental Benefits Network. That agreement requires Pellucid's prior written consent to any change of control of the Company and lets Pellucid terminate on 30 days' notice if consent is not obtained. Pellucid patients produce about 38% of clinic revenue. Section 6.4 of the SPA covers third-party consents only by stating that Seller delivered at Closing the consents of the landlords under the Clinic Leases. Pellucid is not mentioned, and there is no covenant to pursue its consent after Closing. Section 9.2(a) of the SPA excludes from indemnity any matter disclosed in the Disclosure Schedule. The stock sale therefore triggered Pellucid's consent right. The consent was neither obtained nor addressed, and Buyer has no indemnity if Pellucid terminates. Neither the disclosure nor the landlord-consent provision is unusual on its own; the gap appears only when they are read together.",
+      "doc": "D3",
+      "section": "Schedule 4.5(b)",
+      "detect_terms": [
+        "change of control of the Company",
+        "prior written consent of Pellucid"
+      ],
+      "expected_finding": "The stock sale triggered Pellucid's change-of-control consent right disclosed in Schedule 4.5(b), but SPA Section 6.4 covered only landlord consents and the disclosure bars indemnity under SPA Section 9.2(a), so Buyer faces possible termination of a network producing about 38% of clinic revenue with no recourse and should immediately seek Pellucid's consent and a special indemnity or price protection from Seller.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 6.4",
+      "detect_terms2": [
+        "consents of the landlords under the Clinic Leases"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 9.1 of the TSA caps each party's aggregate liability at the fees paid in the prior six months, which is about $510,000 at $85,000 per month. Clause (i) of Section 9.1 carves out 'obligations under Section 8.2'. The carve-out is worded mutually, but Section 8.2 imposes an indemnity only on Recipient (Buyer). Under Section 8.2, Buyer indemnifies Provider for all third-party claims arising out of or relating to the Services or the operation of the Clinics. That language reaches payer overpayment claims and patient claims caused by Provider's own billing and records-hosting work. Provider's own indemnity in Section 8.1 covers only its gross negligence or willful misconduct, and Provider's indemnity is capped. The SPA cap in Section 9.5 applies only to Losses under SPA Article IX and does not reach the TSA. The uncapped exposure falls only on Buyer, and it appears only when the Section 9.1 carve-out is traced to the breadth of Section 8.2.",
+      "doc": "D5",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "obligations under Section 8.2",
+        "fees paid in the six (6) months preceding"
+      ],
+      "expected_finding": "The carve-out in TSA Section 9.1 removes the cap only for the Section 8.2 indemnity, which only Buyer gives and which covers all claims relating to the Services, including those caused by Seller's own billing and records work, so Buyer bears unlimited liability; Section 8.2 should be narrowed to exclude Provider-caused Losses and brought under the cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}
