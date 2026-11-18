@@ -13,7 +13,7 @@ Backend: `claude_sdk`. Accepted **1 of 3** candidate matters.
 | rubric_trace | 1 | 1 | 0 | 0 |
 | rubric_tests | 1 | 1 | 0 | 0 |
 | decontamination | 1 | 1 | 0 | 0 |
-| solver_check | 1 | 0 | 0 | 1 |
+| solver_check | 1 | 1 | 0 | 0 |
 
 ## Difficulty
 
@@ -21,8 +21,7 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 
 | Model | Tasks | Pass rate: tasks |
 | --- | ---: | --- |
-
-**1 accepted task(s) wait for `ltg label`: solver_check was deferred, so they have no difficulty label and no leak probe yet.**
+| qwen3-small | 1 | 0.33: 1 |
 
 ## Matters
 
@@ -30,7 +29,7 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 | --- | --- | --- | --- | --- |
 | s46-m0001 | rejected at consistency |  |  | mismatches: [{"fact": "F4", "key": "Distribution Agreement forum", "filename": "brugev_tesaisk_distribution_agreement.md", "ledger": "State or federal courts lo |
 | s46-m0002 | rejected at issue_check |  |  | missing: ["I6"] |
-| s46-m0003 | accepted (label pending) | train |  |  |
+| s46-m0003 | accepted | train | qwen3-small 0.33 |  |
 
 ## Variety
 
@@ -51,6 +50,7 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 | instruction_writer | 1 | 1313 | 157 | 0 |
 | issue_solo_verifier | 20 | 141045 | 9523 | 0 |
 | issue_verifier | 11 | 305101 | 9113 | 0 |
-| judge | 3 | 19604 | 2527 | 0 |
+| judge | 7 | 51511 | 6830 | 0 |
 | ledger_writer | 5 | 23312 | 59919 | 0 |
 | rubric_writer | 1 | 7101 | 2008 | 0 |
+| solver | 60 | 396796 | 43035 | 0 |
