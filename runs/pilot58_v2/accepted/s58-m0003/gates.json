@@ -1,0 +1,182 @@
+{
+  "matter_id": "s58-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "License Agreement §14.2: \"A Change of Control of Customer is deemed an assignment for purposes of this Section 14.2 and requires Licensor's prior written consent. If a Change of Control of Customer occurs without Licensor's prior written consent, Licensor may terminate this Agreement by giving Customer thirty (30) days' written notice.\" SOW No. 02 Recital C: \"On September 22, 2026, Customer entered into an Agreement and Plan of Merger with Kestrel Row Crop Holdings, Inc. ... Under that agreement, Customer will become a wholly owned subsidiary of Kestrel.\"",
+            "reason": "The merger makes Traimand a wholly owned subsidiary of Kestrel. That is an acquisition of more than 50% of Traimand's voting interests, so it is a Change of Control under limb (b) of the definition. Under §14.2 it is deemed an assignment that needs Figos's prior written consent. Figos signed the SOW, which recites the merger, but the SOW only acknowledges the transaction; it does not grant consent. Section 15.6 also requires waivers to be in writing and says delay is not a waiver. Nothing in the folder shows consent was requested or given. The merger had not closed as of the SOW date, so Traimand can still seek consent before closing. Without consent, Figos can terminate the platform license on 30 days' notice after closing. Figos could also use the consent right as leverage in the non-renewal dispute it has preserved in SOW §8, since it is contesting Traimand's notice. This risk falls on Traimand alone. It is a real, live issue for the client.",
+            "alone": {
+              "traimand_figos_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "A Change of Control of Customer is deemed an assignment for purposes of this Section 14.2 and requires Licensor's prior written consent. If a Change of Control of Customer occurs without Licensor's prior written consent, Licensor may terminate this Agreement by giving Customer thirty (30) days' written notice.",
+                "reason": "On its own, the license agreement shows a standard anti-assignment clause. A Change of Control of Traimand needs Figos's consent, and if consent is not obtained Figos may terminate on 30 days' notice. That is a common, abstract risk. Nothing here says a merger or Change of Control is pending. The key fact is Traimand's September 22, 2026 merger agreement with Kestrel, under which Traimand would become a wholly owned subsidiary. That fact appears only in the SOW Recitals, which I was not given. The disputed renewal is also absent from this document. So an associate reading only this agreement could not tell that the consent right has been triggered or that termination is a real threat to the client."
+              },
+              "sow_02_data_migration_transition.md": {
+                "findable": false,
+                "evidence": "On September 22, 2026, Customer entered into an Agreement and Plan of Merger with Kestrel Row Crop Holdings, Inc. (\"Kestrel\"). Under that agreement, Customer will become a wholly owned subsidiary of Kestrel.",
+                "reason": "The SOW by itself shows the pending merger: Traimand will become a wholly owned subsidiary of Kestrel. It also shows that Figos already disputes Traimand's non-renewal notice. But the SOW contains no change of control or anti-assignment provision. Nothing in it says a merger counts as an assignment, needs Licensor's consent, or lets Figos terminate. Figos even signed the SOW knowing about the merger, so on its face the merger reads as a known and accepted fact rather than a risk to Traimand. The consent requirement and the 30-day termination right come only from License Agreement Section 14.2, which is not in this document. An associate reading the SOW alone would not see that the merger puts the license at risk."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Order Form OF-001, Special Terms Section 4: \"Section 11.3(b) shall apply only to Licensor's willful disclosure of Customer Data in breach of Section 9. All other breaches of Section 9 by Licensor are subject to the cap in Section 11.1.\" License Agreement Section 1.3: \"the documents control in the following order: the Order Form; then the Quality Agreement ...; then this License Agreement; then SOWs.\"",
+            "reason": "The problem is present and actionable. License Agreement Section 11.3(b) removes Licensor's Section 9 data security and confidentiality breaches from the cap. Special Terms Section 4 of the Order Form cuts that carve-out down to willful disclosure only, and Section 1.3 makes the Order Form control. Every negligent or ordinary security failure by Licensor (a Security Incident, encryption lapses, misuse of Customer Data) is therefore capped at the Fees paid or payable in the prior 12 months, roughly $493k. The Section 11.2 consequential-damages exclusion also applies to those breaches. The obligations are Licensor's and Traimand bears the loss, so this hurts the client. Nothing in the folder cures it. Section 11.3(c) still uncaps gross negligence and willful misconduct, so ordinary negligence remains capped, and willful disclosure would likely already fall under 11.3(c), which leaves the 11.3(b) carve-out largely empty. Licensor's $5M cyber insurance does not raise its contractual liability to Traimand. The exposure is live: Licensor still hosts Traimand's genotype and germplasm data, and SOW No. 02 (October 2026) adds further legacy trial data and a full Transition Package. The subscription term is also in dispute and may continue. Traimand can still negotiate an amendment or factor this into the data migration and transition."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Order Form §2.2–2.4: \"Initial Subscription Term: 36 months, beginning on the Subscription Start Date [February 1, 2024]... automatically renews for successive Renewal Terms of 24 months each, in accordance with Section 12.2... Subscription Fees for each Renewal Term are charged at Licensor's then-current list pricing.\" License Agreement §12.2: \"It does not renew if either Party gives the other written notice of non-renewal at least one hundred twenty (120) days before the end of the then-current term.\" SOW 02 §8.1: \"On October 14, 2026, Customer delivered to Licensor written notice of non-renewal... Licensor has notified Customer in writing that it disputes the effectiveness of that notice.\"",
+            "reason": "The Initial Subscription Term runs to January 31, 2027. Section 12.2 required notice at least 120 days before that date, which makes the deadline October 3, 2026. Traimand's notice of October 14, 2026 was 11 days late. Figos disputes the notice's effectiveness. Absent relief, the Order Form auto-renews for 24 months at Figos's then-current list pricing, which is uncapped. That happens while Traimand plans to migrate off the platform after the Kestrel merger. The problem is not cured or waived: SOW §8.2 expressly reserves both parties' positions. Nothing in the folder shows Traimand accepting the renewal, such as signing a renewal or paying renewal fees. The renewal has not yet started (it begins February 1, 2027), so the issue remains live. Traimand can still negotiate, look for other exit routes, or contest the renewal.",
+            "alone": {
+              "figos_order_form_OF-001.md": {
+                "findable": false,
+                "evidence": "2.3 Renewal Term: The Initial Subscription Term automatically renews for successive Renewal Terms of 24 months each, in accordance with Section 12.2.",
+                "reason": "The Order Form shows a 36-month initial term starting February 1, 2024, which ends January 31, 2027. It also shows automatic 24-month renewals at then-current list pricing. What it does not show is the length of the notice period, which sits in Section 12.2 of the License Agreement, so the October 3, 2026 deadline cannot be worked out from this document. It also does not show that Traimand gave notice on October 14, 2026, that Figos disputes it, or that Traimand plans to migrate. Without those facts from the other documents, an associate could see only an ordinary auto-renewal clause, not a missed notice window that harms the client."
+              },
+              "traimand_figos_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "It does not renew if either Party gives the other written notice of non-renewal at least one hundred twenty (120) days before the end of the then-current term. Fees for a Renewal Term are as stated in the applicable Order Form.",
+                "reason": "This license agreement sets out only the general automatic-renewal mechanism and the 120-day non-renewal notice requirement in Section 12.2. It does not give the Subscription Start Date, the 36-month Initial Subscription Term, the length of the Renewal Term, or the renewal pricing. Those terms are in the Order Form. The date Traimand delivered its non-renewal notice and Figos's dispute over it are recorded in the SOW. Without the term end date and the notice date, an associate reading this document alone cannot tell that the October 3, 2026 deadline was missed, or that Traimand faces a 24-month renewal at list price."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 14.3: \"Licensor may assign this Agreement, in whole or in part, without Customer's consent to any Affiliate or any successor or acquirer of all or part of its business or assets to which this Agreement relates. Licensor shall give Customer written notice of the assignment within thirty (30) days after it takes effect.\"",
+            "reason": "Section 14.3 lets Figos assign the Agreement without Traimand's consent to any Affiliate, successor or acquirer. It has no carve-out for Traimand's competitors, and Traimand gets notice only after the assignment takes effect. Section 14.2 is the opposite for Traimand: any assignment or Change of Control needs Figos's consent, and Figos may terminate if one happens without it. Nothing in the folder gives Traimand a termination or objection right if Figos assigns or changes control. The Order Form, Quality Agreement and SOW 02 do not limit 14.3 either. The data-use limits in Section 9 and Quality Agreement Section 5 would bind an assignee, but they do not stop a rival seed company from hosting Traimand's genomic, pedigree and migrated legacy trial data and running the platform Traimand relies on. Liability for most Section 9 breaches is also capped by Special Term 4. The risk is still live and actionable. The relationship is ongoing: SOW 02 is in progress, and Traimand's October 14, 2026 non-renewal notice is disputed. That notice came after the 120-day deadline of about October 3, 2026, so the subscription may renew for 24 months. Traimand can still negotiate an amendment, such as a competitor exclusion, a termination right, or data-return rights on assignment."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "QA §2.1: \"'Customer Data' means the raw data files uploaded by Customer to the Platform, including genotype call files, marker panels, phenotypic trial records, pedigree files and associated metadata, in the form in which Customer or its Authorized Users upload them.\" License Agreement §1.1, by contrast: \"'Customer Data' means all data Customer provides, including all Derived Data generated from it by the Platform.\" License Agreement §1.3 ranks \"the Quality Agreement (for quality and data-handling matters)\" ahead of the License Agreement.",
+            "reason": "Traimand is the party protected by these obligations. Figos owes the no-training, no-combination, retention and deletion duties.\n\n**The routing.** License §9.3 sends data use, retention, return and deletion to the Quality Agreement, and License §12.4 says deletion \"is governed by Section 9.3.\" The Quality Agreement then uses its own, narrower definition of Customer Data: only the raw uploaded files. Under QA §1.3, the License Agreement definition applies only to terms the Quality Agreement leaves undefined, and this term is defined.\n\n**The gap.** QA §5.2 (no training or benchmarking of models for other customers) and QA §§5.6–5.7 (deletion within 30 days and officer certification) therefore reach only raw files. They do not reach the following Derived Data built on Traimand's proprietary germplasm:\n- GEBVs\n- marker-effect estimates\n- relationship matrices\n- trained or calibrated models\n\nBecause §1.3 gives the Quality Agreement precedence on data-handling matters, Figos can argue the narrower scope controls.\n\n**Traimand's counter-arguments are only partial.** Traimand can rely on License §7.2 (license to use Customer Data solely to serve Customer) and the second sentence of §9.3. These are uncertain on reuse, and nothing in either document imposes a deletion obligation for Derived Data at all.\n\n**Why it matters now.** The issue is live and actionable:\n- Traimand served non-renewal notice on October 14, 2026, which Figos disputes.\n- Traimand has a pending merger with Kestrel.\n- SOW 02 is already preparing transition and exit.\n\nNo document cures the inconsistency, and Traimand has not accepted the narrower result.",
+            "alone": {
+              "traimand_figos_quality_agreement.md": {
+                "findable": false,
+                "evidence": "\"Customer Data\" means the raw data files uploaded by Customer to the Platform, including genotype call files, marker panels, phenotypic trial records, pedigree files and associated metadata, in the form in which Customer or its Authorized Users upload them.",
+                "reason": "On its own, the Quality Agreement defines Customer Data narrowly as raw uploaded files. Its Section 5.2 no-training duty and Section 5.6 deletion duty attach only to that defined term, so an associate might notice that GEBVs, marker-effect estimates and trained models are not expressly covered. But the actual problem depends on facts this document does not contain: (1) the License Agreement defines Customer Data broadly to include Derived Data; (2) License Section 9.3 hands the data use, retention and deletion obligations to the Quality Agreement; and (3) License Section 1.3 makes the Quality Agreement prevail on data-handling matters. Without the License Agreement, the reader cannot tell whether that agreement separately protects Derived Data, which would leave no gap. Nor can the reader tell that the two definitions conflict, or that the narrower one controls. Section 1.3 of the Quality Agreement only borrows License definitions for terms not defined here. So the inconsistency, and the resulting harm to Traimand, cannot be established from this document alone."
+              },
+              "traimand_figos_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "Licensor shall use, retain, return and delete Customer Data in accordance with the Quality Agreement. Licensor shall not use Customer Data for any purpose other than providing the Platform and Services to Customer, except as the Quality Agreement permits.",
+                "reason": "Read alone, the License Agreement protects the client. Section 1.1 defines 'Customer Data' broadly to include Derived Data (GEBVs, marker-effect estimates, trained models). Section 7.2 gives Customer ownership and limits Licensor's use to providing the Platform to Customer. Sections 9.3 and 1.3 do send data use, retention and deletion to the Quality Agreement and give it precedence on data-handling matters. An associate could flag that as something to check. But this document does not show that the Quality Agreement defines 'Customer Data' more narrowly as raw uploaded files. It also does not show that the Quality Agreement's no-training and deletion duties therefore leave out Derived Data. That narrower definition, which is what lets Figos keep and reuse models built on Traimand's germplasm, appears only in the Quality Agreement. Without it, there is a delegation risk but no visible inconsistency or harm to the client."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "SOW Section 7.1: \"Customer shall defend Licensor and its Affiliates ... against any third-party claim arising from the Legacy Trial Data ... This includes any claim that the Legacy Trial Data was collected, used or transferred in breach of grower agreements, cooperator trial agreements, third-party germplasm licenses, material transfer agreements or other obligations owed by Customer to any third party. Customer shall indemnify those persons against all Losses arising from any such claim.\" License Agreement Section 1.2: \"References to 'this Agreement' include each of those documents.\" Section 11.3(a): \"Sections 11.1 and 11.2 do not apply to: (a) either Party's indemnification obligations under this Agreement.\"",
+            "reason": "Traimand gives this indemnity, so the exposure falls on the client. Section 4.2 and Section 1.2 of the License Agreement make SOW No. 02 part of the \"Agreement\". That makes the Section 7 indemnity an indemnification obligation \"under this Agreement\", which Section 11.3(a) carves out of both the Section 11.1 cap and the Section 11.2 exclusion of consequential damages. The SOW indemnity is also much broader than the License Agreement's Section 10.3 customer indemnity, which covers only IP claims. The SOW version reaches any claim \"arising from\" the Legacy Trial Data, including breach of grower, cooperator, germplasm-license and MTA obligations. That fits the data described: cooperator-site data and data on in-licensed germplasm. Nothing in the SOW caps or limits the indemnity. Section 7.2 excludes only Licensor's unauthorized use, and Section 7.3 imports only the procedure in Section 10.4. The order of precedence offers no fix because there is no conflict to resolve. The result is unlimited liability for Traimand, including consequential losses. The issue is still actionable. The SOW is dated October 28, 2026, and the migration and transition work is ongoing, with Legacy Trial Data still to be delivered. Traimand can seek an amendment or change order to cap the indemnity, or can manage which data it supplies, before the exposure arises.",
+            "alone": {
+              "sow_02_data_migration_transition.md": {
+                "findable": false,
+                "evidence": "Customer shall indemnify those persons against all Losses arising from any such claim.",
+                "reason": "The SOW alone shows a broad one-way indemnity from Traimand covering third-party claims from Legacy Trial Data, including claims for breach of grower agreements, cooperator agreements and germplasm licenses. It says the SOW 'forms part of' the License Agreement. It says nothing about a liability cap or whether this indemnity falls inside or outside one. Whether the indemnity is uncapped depends on two provisions in the License Agreement: the Section 1.2 definition of 'Agreement' to include SOWs, and the Section 11.3(a) carve-out of indemnification obligations from the cap. Neither appears here. On this document alone, an associate would see a broad indemnity and would reasonably assume it sits within the License Agreement's limitation of liability. The unlimited exposure cannot be seen without the other document."
+              },
+              "traimand_figos_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "\"Sections 11.1 and 11.2 do not apply to: (a) either Party's indemnification obligations under this Agreement;\" read with Section 1.2: \"'Agreement' means this Software License Agreement together with each Order Form, each Statement of Work, and the Quality Agreement.\"",
+                "reason": "This document shows that any indemnity in a SOW would sit outside the liability cap, because SOWs are part of the 'Agreement' and Section 11.3(a) carves indemnities out of the cap. It also shows that Traimand's own Section 10.3 indemnity is uncapped. But 10.3 covers only third-party IP infringement or misappropriation claims about Customer Data. It does not reach claims that data was collected or transferred in breach of grower agreements or germplasm licenses. The License Agreement contains no such broad indemnity, and it does not show that any SOW adds one. The core of the problem is the SOW Section 7 indemnity, which covers all Losses from Legacy Trial Data, including contract-breach claims by growers and licensors. That indemnity appears only in the SOW. Without it, an associate reading this document would see mutual, ordinary drafting and no specific unlimited exposure to grower or licensor claims."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F4, which only issue I2 uses: a memo that misses I2 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.083,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "matter_id": "s58-m0003",
+  "summary": "Traimand Seed Genetics, Inc. (client, licensee) licenses Figos Analytics, LLC's genomic selection platform, which computes genomic estimated breeding values (GEBVs) from Traimand's proprietary genotypic, phenotypic and pedigree data. The folder holds the Software License Agreement (effective January 15, 2024), the initial Order Form, a Quality Agreement covering data handling and model validation, and an October 2026 Statement of Work for data migration and transition services, plus two distractors: model-validation meeting notes and a certificate of insurance. The SOW recites that Traimand signed a merger agreement on September 22, 2026 under which it will become a wholly owned subsidiary of Kestrel Row Crop Holdings, Inc. The SOW also records that Traimand sent a non-renewal notice on October 14, 2026, and that Figos disputes it. The partner wants an issue-spotting memo under New York law before closing. Six issues are planted. (1) The license treats a change of control of Traimand as an assignment needing Figos's consent, and the pending merger is not addressed. (2) The Order Form, which takes precedence, narrows the uncapped data-breach carve-out. (3) The non-renewal notice was late when computed from the Order Form term and the 120-day notice period. (4) Figos may assign freely to any acquirer, including a seed competitor. (5) The Quality Agreement, which governs data handling, defines 'Customer Data' to exclude Derived Data, so the no-training and deletion duties do not reach GEBV outputs. (6) An SOW indemnity by Traimand becomes uncapped through the license's carve-out for all indemnities 'under this Agreement', a term defined to include SOWs.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Traimand Seed Genetics, Inc.",
+      "role": "Licensee/Customer; the firm's client; a corn and soybean breeding company"
+    },
+    {
+      "id": "P2",
+      "name": "Figos Analytics, LLC",
+      "role": "Licensor; provider of the genomic selection software platform"
+    },
+    {
+      "id": "P3",
+      "name": "Kestrel Row Crop Holdings, Inc.",
+      "role": "Acquirer of Traimand under a pending merger recited in the Statement of Work; not a party to the license"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "January 15, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Software License Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "15.1"
+    },
+    {
+      "id": "F3",
+      "key": "Order of precedence",
+      "value": "Order Form; then Quality Agreement (quality and data-handling matters); then License Agreement; then SOWs",
+      "doc": "D1",
+      "section": "1.3"
+    },
+    {
+      "id": "F4",
+      "key": "General liability cap",
+      "value": "Fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F5",
+      "key": "Non-renewal notice period",
+      "value": "At least 120 days before the end of the then-current term",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F6",
+      "key": "Subscription Start Date",
+      "value": "February 1, 2024",
+      "doc": "D2",
+      "section": "2"
+    },
+    {
+      "id": "F7",
+      "key": "Initial Subscription Term",
+      "value": "36 months",
+      "doc": "D2",
+      "section": "2"
+    },
+    {
+      "id": "F8",
+      "key": "Customer Data (License Agreement definition)",
+      "value": "All data Customer provides, including all Derived Data generated from it by the Platform",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F9",
+      "key": "Traimand non-renewal notice date",
+      "value": "October 14, 2026",
+      "doc": "D4",
+      "section": "8"
+    },
+    {
+      "id": "F10",
+      "key": "Traimand-Kestrel merger agreement date",
+      "value": "September 22, 2026",
+      "doc": "D4",
+      "section": "Recitals"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "traimand_figos_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "figos_order_form_OF-001.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "traimand_figos_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "sow_02_data_migration_transition.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D5",
+      "filename": "meeting_notes_gebv_validation_2026-08-19.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "figos_certificate_of_insurance_2026.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "D1 Section 14.2 is an ordinary anti-assignment clause on its own. It says a Change of Control of Customer is deemed an assignment that needs Licensor's prior written consent, and that Licensor may terminate on 30 days' notice if consent is not obtained. The D4 SOW Recitals separately state that Traimand signed an Agreement and Plan of Merger with Kestrel Row Crop Holdings, Inc. on September 22, 2026, under which Traimand will become a wholly owned subsidiary of Kestrel. Read together, the merger triggers Figos's consent right. Nothing in the folder shows that consent has been requested or obtained. On closing, Figos could terminate the platform license that Traimand's breeding pipeline depends on, or use the consent right as leverage in the disputed renewal.",
+      "doc": "D1",
+      "section": "14.2",
+      "detect_terms": [
+        "Change of Control of Customer",
+        "deemed an assignment"
+      ],
+      "expected_finding": "The Kestrel merger recited in the SOW is a Change of Control deemed an assignment under License Agreement Section 14.2. Traimand must obtain Figos's written consent before closing (or negotiate a waiver) or Figos may terminate the license on 30 days' notice.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Recitals",
+      "detect_terms2": [
+        "Agreement and Plan of Merger",
+        "wholly owned subsidiary"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "D1 Section 11.3(b) excludes Licensor's breach of Section 9 (Data Security and Confidentiality) from the Section 11.1 cap. That cap is fees paid in the prior 12 months. The D2 Order Form Special Terms Section 4 provides that Section 11.3(b) 'shall apply only to Licensor's willful disclosure' of Customer Data. All other Section 9 breaches are made subject to the cap in Section 11.1. Under the D1 Section 1.3 order of precedence, the Order Form prevails over the License Agreement. The narrowing therefore controls. Negligent security failures that expose Traimand's proprietary germplasm and genotype data, the client's most valuable asset, are now capped at roughly one year's fees.",
+      "doc": "D2",
+      "section": "Special Terms, Section 4",
+      "detect_terms": [
+        "shall apply only to Licensor's willful disclosure",
+        "subject to the cap in Section 11.1"
+      ],
+      "expected_finding": "Because the Order Form prevails under Section 1.3, its Special Terms Section 4 narrows the License Agreement Section 11.3(b) data-breach carve-out to willful disclosure. Negligent data-security breaches by Figos are therefore capped at 12 months' fees. Traimand should amend the Order Form to restore the full uncapped carve-out.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "The D2 Order Form Section 2 sets a Subscription Start Date of February 1, 2024 and an Initial Subscription Term of 36 months, so the term ends January 31, 2027. It also provides for automatic renewal for a 24-month Renewal Term at then-current list pricing. D1 Section 12.2 requires notice of non-renewal at least 120 days before the end of the then-current term, so the deadline was October 3, 2026. The D4 SOW Section 8 records that Traimand delivered its non-renewal notice on October 14, 2026, eleven days late. It also records that Figos disputes the notice's effectiveness and that neither party waives its position. Traimand has not accepted the renewal, so the point is still live. Absent relief, Traimand is locked into a 24-month renewal at list price while it plans to migrate off the platform.",
+      "doc": "D2",
+      "section": "2",
+      "detect_terms": [
+        "February 1, 2024",
+        "36 months"
+      ],
+      "expected_finding": "The 120-day non-renewal deadline under License Agreement Section 12.2 fell on October 3, 2026, computed from the Order Form's February 1, 2024 start and 36-month term. Traimand's October 14, 2026 notice recorded in the SOW was therefore late, and the subscription will auto-renew for 24 months at list price unless Traimand negotiates a waiver or an amended end date with Figos.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "12.2",
+      "detect_terms2": [
+        "at least one hundred twenty (120) days"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "D1 Section 14.3 permits Licensor to assign the Agreement, in whole or in part, without Customer's consent to any Affiliate or any successor or acquirer of its business. There is no exclusion for competitors of Traimand. Traimand's own assignment is tightly restricted under Section 14.2. Figos could therefore be acquired by, or assign the license to, a rival seed company. That party would then hold Traimand's genomic and pedigree data and operate the platform it relies on.",
+      "doc": "D1",
+      "section": "14.3",
+      "detect_terms": [
+        "without Customer's consent",
+        "any successor or acquirer"
+      ],
+      "expected_finding": "License Agreement Section 14.3 lets Figos assign the agreement, and with it Traimand's germplasm data, to any acquirer including a seed-genetics competitor without consent. Traimand should require its consent for assignment, or at minimum a competitor exclusion plus a termination right and data-return right on any Figos assignment or change of control.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 Section 1.1 defines 'Customer Data' broadly to include all Derived Data, meaning GEBVs, marker-effect estimates and trained models generated from Traimand's data. D1 Section 9.3 delegates Licensor's data use, retention and deletion obligations to the Quality Agreement. D1 Section 1.3 gives the Quality Agreement precedence over the License Agreement on quality and data-handling matters. The D3 Quality Agreement Section 2.1 separately defines 'Customer Data' as the raw data files uploaded by Customer to the Platform. D3 Section 5 then prohibits Licensor from using Customer Data to train models offered to other customers and requires deletion within 30 days after termination. Read together, the narrower Quality Agreement definition controls those obligations. Derived Data built from Traimand's proprietary germplasm falls outside both the no-training and the deletion duties, so Figos may retain it and reuse it for other customers.",
+      "doc": "D3",
+      "section": "2.1 and 5",
+      "detect_terms": [
+        "raw data files uploaded by Customer"
+      ],
+      "expected_finding": "Because the Quality Agreement controls data-handling matters under License Agreement Section 1.3, its narrower 'Customer Data' definition excludes Derived Data from the no-training and deletion obligations. Figos may therefore retain and reuse models and breeding values derived from Traimand's germplasm. The Quality Agreement definition should be conformed to the License Agreement definition.",
+      "contradicts": "F8",
+      "doc2": "D1",
+      "section2": "1.1 and 1.3",
+      "detect_terms2": [
+        "including all Derived Data"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "D1 Section 1.2 defines 'Agreement' to include each Order Form and Statement of Work. D1 Section 11.3(a) excludes from the liability cap any party's indemnification obligations under this Agreement. On its face this is mutual, and it is ordinary drafting. The D4 SOW Section 7 adds an indemnity by Traimand covering all Losses arising from Legacy Trial Data supplied for migration. This includes claims that the data was collected or transferred in breach of grower agreements or third-party germplasm licenses. Read on its own, that indemnity looks like an ordinary SOW obligation within the License Agreement cap. Read together, the SOW indemnity is an indemnification obligation 'under this Agreement' and sits outside the cap, which exposes Traimand to unlimited liability for third-party grower and licensor claims.",
+      "doc": "D4",
+      "section": "7",
+      "detect_terms": [
+        "Legacy Trial Data",
+        "grower agreements"
+      ],
+      "expected_finding": "The SOW Section 7 indemnity for Legacy Trial Data is part of the 'Agreement' under License Agreement Section 1.2 and is excluded from the cap by Section 11.3(a). Traimand therefore faces uncapped liability for grower and third-party germplasm-license claims, and should cap the SOW indemnity or carve it out of Section 11.3(a).",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "1.2 and 11.3(a)",
+      "detect_terms2": [
+        "indemnification obligations under this Agreement"
+      ]
+    }
+  ]
+}

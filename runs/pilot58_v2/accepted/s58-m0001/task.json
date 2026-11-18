@@ -1,0 +1,130 @@
+{
+  "task_id": "s58-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Fikoul Orthopedics, Inc., the licensee under a software license agreement with Kivon Systems LLC. Fikoul needs to understand where it stands under this arrangement before it makes decisions. Please review all six documents in the folder and send me a memo that lists each issue you find, where it appears (document and section), why it matters for Fikoul, and your recommended fix. Flag anything you can't resolve from the documents alone.",
+  "documents": [
+    "fikoul_kivon_mutual_nda.md",
+    "fikoul_kivon_quality_agreement.md",
+    "fikoul_kivon_software_license_agreement.md",
+    "kivon_order_form_qualitrace.md",
+    "press_release_fikoul_selects_qualitrace.md",
+    "qualitrace_term_sheet_march_2026.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that Order Form Section 6's 12-month-fee liability cap on claims relating to Hosted Services, Data Migration Services or Customer Data has no carve-outs and controls over the License Agreement's Section 10.3 exclusion for breaches of Section 7 (Data Security and Confidentiality). As a result, Kivon's liability for data-security or patient-data breaches is capped rather than uncapped. The response identifies where this appears (Order Form Section 6 or License Agreement Section 10.3), explains why this matters to Fikoul, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Order Form Section 6",
+        "Section 10.3 carve-out",
+        "12 months of Subscription Fees"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that Order Form Section 2 automatically renews the subscription for successive 36-month terms unless non-renewal notice is given within a 30-day window (no more than 150 and no less than 120 days before expiry). It also concludes that this departs from the term sheet's one-year renewals terminable on 60 days' notice. The response identifies where this appears (Order Form Section 2), explains why this matters to Fikoul, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "36-month renewal terms",
+        "150 to 120 days",
+        "term sheet one-year renewal"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that the 30-day rejection window under License Agreement Section 4.2 ran from the June 22, 2026 Delivery Date and closed on July 22, 2026. It therefore concludes that Fikoul's August 3, 2026 rejection notice was likely untimely and the Software is at risk of being deemed accepted. The response identifies where this appears (License Agreement Section 4.2 or Order Form Section 3), explains why this matters to Fikoul, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "July 22, 2026",
+        "August 3, 2026",
+        "deemed accepted"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that the License Agreement Section 2.6 exclusivity covenant extends beyond the term sheet's eQMS-only, Warsaw-only scope. Specifically, it covers manufacturing execution and product lifecycle management software and all Fikoul and Affiliate facilities worldwide. The response identifies where this appears (License Agreement Section 2.6), explains why this matters to Fikoul, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 2.6",
+        "manufacturing execution or product lifecycle management",
+        "worldwide"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that the Quality Agreement's Indiana governing law and Kosciusko County, Indiana forum displace the License Agreement's New York law and New York County forum for disputes over software validation, nonconformances or CAPA (Quality Matters). The response identifies where this appears (Quality Agreement Section 14 or License Agreement Section 16.3), explains why this matters to Fikoul, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Kosciusko County",
+        "Indiana law",
+        "Quality Matters"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Order Form takes precedence over the License Agreement in the event of conflict.",
+      "kind": "fact",
+      "hints": [
+        "Order Form prevails",
+        "order of precedence",
+        "Section 16.3"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Annual Subscription Fee is $386,000.",
+      "kind": "fact",
+      "hints": [
+        "$386,000",
+        "Annual Subscription Fee"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo addressed to the supervising partner. For each issue it identifies, the memo states the document and section where the issue appears, why it matters to Fikoul, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response flags at least one point that cannot be resolved from the documents alone.",
+      "kind": "format",
+      "hints": [
+        "cannot be determined from the documents",
+        "need to confirm",
+        "open question"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Fikoul's August 3, 2026 rejection notice was timely under License Agreement Section 4.2.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely",
+        "within the acceptance period"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that Kivon's liability for breaches of data security or Customer Data obligations remains uncapped notwithstanding Order Form Section 6.",
+      "kind": "negative",
+      "hints": [
+        "data breach uncapped",
+        "carve-out preserved"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

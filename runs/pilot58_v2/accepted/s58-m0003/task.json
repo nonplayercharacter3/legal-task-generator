@@ -1,0 +1,118 @@
+{
+  "task_id": "s58-m0003",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "Traimand Seed Genetics, Inc., a corn and soybean breeding company, is the licensee under a software license arrangement with Figos Analytics, LLC, and we need to advise it on its position. Please review all six documents in the folder and prepare a memo to me listing each issue you find, where it appears (document and section), why it matters for Traimand, and your recommended fix.",
+  "documents": [
+    "figos_certificate_of_insurance_2026.md",
+    "figos_order_form_OF-001.md",
+    "meeting_notes_gebv_validation_2026-08-19.md",
+    "sow_02_data_migration_transition.md",
+    "traimand_figos_quality_agreement.md",
+    "traimand_figos_software_license_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the pending merger with Kestrel Row Crop Holdings, under which Traimand becomes a wholly owned subsidiary, is a Change of Control deemed an assignment requiring Figos's prior written consent, failing which Figos may terminate the license on 30 days' notice. It locates the issue in License Agreement Section 14.2 or the SOW Recitals, explains why this matters to Traimand, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "deemed an assignment",
+        "Figos's consent before closing"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that the Order Form, which prevails over the License Agreement, narrows the uncapped data-breach carve-out to Figos's willful disclosure, so negligent data-security breaches by Figos are subject to the 12-month-fees cap. It locates the issue in Order Form Special Terms Section 4, explains why this matters to Traimand, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "willful disclosure",
+        "subject to the cap",
+        "Order Form prevails"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that the 120-day non-renewal deadline fell on October 3, 2026, so Traimand's October 14, 2026 notice was late and the subscription will auto-renew for 24 months. It locates the issue in Order Form Section 2, License Agreement Section 12.2 or SOW Section 8, explains why this matters to Traimand, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "October 3, 2026",
+        "notice was late",
+        "24-month Renewal Term"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that Figos may assign the agreement without Traimand's consent to any successor or acquirer, including a seed-genetics competitor of Traimand. It locates the issue in License Agreement Section 14.3, explains why this matters to Traimand, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without Customer's consent",
+        "any successor or acquirer",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that the Quality Agreement, which controls data-handling matters, defines 'Customer Data' as raw uploaded data files and so excludes Derived Data (such as GEBVs and trained models) from the no-training and deletion obligations. It locates the issue in Quality Agreement Section 2.1 or 5, or in License Agreement Section 1.1 or 1.3, explains why this matters to Traimand, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "raw data files",
+        "Derived Data excluded",
+        "no-training and deletion"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response finds that Traimand's SOW indemnity for Legacy Trial Data is an indemnification obligation under the Agreement and is excluded from the liability cap, leaving Traimand with uncapped liability for grower and third-party germplasm-license claims. It locates the issue in SOW Section 7 or License Agreement Section 1.2 or 11.3(a), explains why this matters to Traimand, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Legacy Trial Data",
+        "uncapped",
+        "indemnification obligations under this Agreement"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the License Agreement's general liability cap is the fees paid or payable in the 12 months preceding the claim.",
+      "kind": "fact",
+      "hints": [
+        "12 months",
+        "fees paid or payable"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is presented as a memo to the supervising partner and identifies, for each issue it raises, the document and section where the issue appears.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Section"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Traimand's October 14, 2026 non-renewal notice was timely.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the License Agreement requires Traimand's consent before Figos may assign the agreement to an acquirer.",
+      "kind": "negative",
+      "hints": [
+        "Figos needs Traimand's consent to assign"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

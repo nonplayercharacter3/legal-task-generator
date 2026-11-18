@@ -1,0 +1,166 @@
+{
+  "matter_id": "s58-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Order Form Section 6: \"Licensor's total aggregate liability arising out of or relating to the Hosted Services, Data Migration Services or Customer Data under this Order Form shall not exceed the Subscription Fees paid by Licensee under this Order Form in the twelve (12) months preceding the claim.\" License Agreement Section 10.3: \"Sections 10.1 and 10.2 do not apply to: ... (b) Licensor's breach of Section 7 (Data Security and Confidentiality)\". Section 16.3: \"If they conflict, the following order of precedence applies: (a) the Order Form; then (b) the Quality Agreement ...; then (c) this Agreement.\"",
+            "reason": "The License Agreement leaves Kivon's data-security and confidentiality breaches uncapped. That carve-out protects Fikoul, since Kivon is the party that bears the Section 7 obligations. Order Form Section 6 sets a separate cap of 12 months' Subscription Fees paid, roughly $386,000, on any liability relating to Hosted Services, Data Migration Services or Customer Data. It has no carve-outs. Section 16.3 puts the Order Form first in precedence, so Kivon can argue the Order Form cap controls Customer Data breach and data-loss claims. That would override the 10.3(b) carve-out. The same argument could reach the Security Incident indemnity and cost reimbursement where those claims relate to Customer Data. Customer Data here includes device history records and complaint files that may contain health information. The cap is also lower than the License Agreement's own 24-month cap, and it falls far short of Kivon's $10M cyber insurance. Nothing in the folder cures this. The Quality Agreement ranks below the Order Form and governs only Quality Matters, and it adds no carve-out. The term sheet's 24-month cap and its data-security exclusion are non-binding and were superseded under Section 16.4. The issue remains actionable: no breach has occurred yet, and Fikoul can still seek an amendment adding carve-outs to Section 6. Fikoul can also raise the point if it renegotiates in connection with the pending rejection dispute.",
+            "alone": {
+              "kivon_order_form_qualitrace.md": {
+                "findable": false,
+                "evidence": "Licensor's total aggregate liability arising out of or relating to the Hosted Services, Data Migration Services or Customer Data under this Order Form shall not exceed the Subscription Fees paid by Licensee under this Order Form in the twelve (12) months preceding the claim.",
+                "reason": "On its own, the Order Form shows a 12-month fee cap on Hosted Services, Data Migration Services and Customer Data claims, with no carve-outs. It also shows that the hosted records include complaint files and device history records. A reader could call the cap low, but it looks like an ordinary order-level cap. The problem described depends on two License Agreement provisions this document does not contain. Section 10.3 leaves Kivon's breach of Section 7 (data security) uncapped, and Section 16.3 gives the Order Form precedence. The Order Form does not say it controls over the License Agreement, and it does not mention any uncapped data-security carve-out. So the core harm, that this cap overrides protection the client otherwise has, cannot be seen without the License Agreement."
+              },
+              "fikoul_kivon_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "If they conflict, the following order of precedence applies: (a) the Order Form; then (b) the Quality Agreement, solely as to Quality Matters (as defined in the Quality Agreement); then (c) this Agreement.",
+                "reason": "Read alone, the License Agreement looks protective for Fikoul. Section 10.3(b) removes Kivon's breach of Section 7 from the 24-month cap and from the damages exclusion. Section 16.3 puts the Order Form first in the order of precedence. A careful associate could flag a general risk that a conflicting Order Form term would override the carve-out. But nothing in this document shows that the Order Form actually contains a conflicting term. That term is the 12-month, no-carve-out cap on liability relating to Hosted Services, Data Migration Services or Customer Data, worth about $386,000. Without that Order Form provision, there is no conflict to resolve, and the carve-out stands uncapped as written. The actual harm to Fikoul depends on the Order Form, which has not been provided."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"At the end of the Initial Term, this Order Form renews automatically for successive thirty-six (36) month renewal terms (each, a \"Renewal Term\"). Either Party may prevent a renewal by giving the other Party written notice of non-renewal not more than one hundred fifty (150) days and not less than one hundred twenty (120) days before the end of the Initial Term or the then-current Renewal Term.\"",
+            "reason": "Order Form Section 2.2 renews the subscription automatically for 36-month terms. Non-renewal notice must fall in a 30-day window, 150 to 120 days before the term ends, and must be sent by formal notice under License Agreement Section 15. Under License Agreement Section 16.3 the Order Form controls over the License Agreement, and nothing in the License Agreement or Quality Agreement softens this clause. The term sheet contemplated one-year renewals that either party could decline on 60 days' notice, so this is a material change against the deal. The clause applies to both parties, but the risk falls on Fikoul. If it misses the window, it owes three more years of fees (more than $1.16M at $386,000 per year, rising up to 3% a year). It also stays bound by the worldwide exclusivity covenant in License Agreement Section 2.6, which lasts for the Term, and the Term continues while any Order Form is in effect. The Initial Term runs 36 months from the June 22, 2026 Delivery Date, so the first window is in early 2029 and has not passed. Fikoul can still negotiate an amendment (Section 16.5) or calendar the window, so the problem is real and still actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "License Agreement §4.2: \"Licensee may reject the Software by written notice to Licensor delivered within thirty (30) days after the Delivery Date (the \"Acceptance Period\")... If Licensor does not receive a rejection notice within the Acceptance Period, the Software shall be deemed accepted.\" Order Form §3.1: \"Delivery Date: June 22, 2026\". Quality Agreement Recital C: \"On August 3, 2026, Licensee delivered to Licensor a written notice rejecting the Software under Section 4.2... Licensor contends that the notice was untimely and that the Software has been deemed accepted. Licensee disputes Licensor's position. Neither Party waives any right...\"",
+            "reason": "Section 4.2 ties the Acceptance Period to the Delivery Date, which the Order Form fixes at June 22, 2026. The window therefore closed on July 22, 2026. Fikoul's rejection notice is dated August 3, 2026, twelve days late. Under the deemed-acceptance language, that puts Fikoul's rejection right at serious risk. It also puts at risk the remedy chain in §4.3: redelivery, termination after two failed redeliveries, and a refund of the $148,500 Implementation Fees and prepaid Subscription Fees. Nothing in the folder cures this. The Quality Agreement sets no separate acceptance period, and the Order Form does not extend the window. No document records that Kivon delivered late or that Fikoul delayed. The issue is still actionable because Fikoul has not accepted the result. Recital C records its dispute and both parties' express reservation of their positions. The folder shows no restated agreement or payment that would show acquiescence. The risk falls on Fikoul as the party that had to give notice, so it is a live, material problem for the client.",
+            "alone": {
+              "fikoul_kivon_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "Licensee may reject the Software by written notice to Licensor delivered within thirty (30) days after the Delivery Date (the \"Acceptance Period\"). ... If Licensor does not receive a rejection notice within the Acceptance Period, the Software shall be deemed accepted.",
+                "reason": "The License Agreement alone shows the 30-day rejection window, the deemed-acceptance rule, and that the Section 4.3 refund of Implementation Fees depends on a timely rejection. It does not show the Delivery Date, because Section 4.1 leaves that date to the Order Form. It also does not show when or whether Fikoul sent a rejection notice, or that Kivon says the notice was late. Those facts come from the Order Form (Delivery Date of June 22, 2026) and Quality Agreement Recital C (notice sent August 3, 2026). Read by itself, this document describes a standard acceptance mechanism and shows no missed deadline or harm to Fikoul."
+              },
+              "kivon_order_form_qualitrace.md": {
+                "findable": false,
+                "evidence": "Delivery Date: June 22, 2026",
+                "reason": "The Order Form fixes the Delivery Date at June 22, 2026, and Section 7.4 refers to acceptance criteria 'for the purposes of Section 4.2 of the License Agreement.' It does not state the 30-day rejection window, the deemed-acceptance rule, or the tie between rejection and the implementation-fee refund. All of those are in the License Agreement. Nothing here records that Fikoul sent its rejection notice on August 3, 2026, or that Kivon contends the notice was untimely; that comes from the Quality Agreement recital. Read alone, this document shows only a delivery date. It does not show a late notice or any harm to the client."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 2.6: \"During the Term, Licensee shall not, and shall cause its Affiliates not to, license, subscribe to, use or develop, directly or through any third party, any quality management, manufacturing execution or product lifecycle management software from or with any person other than Licensor, at any facility of Licensee or its Affiliates worldwide.\" Term Sheet Section 8: \"Fikoul will use Kivon as its exclusive provider of eQMS software only, at Fikoul's Warsaw, Indiana manufacturing facility only. Fikoul and its affiliates remain free to select any vendor for other software categories and for other facilities.\"",
+            "reason": "The obligation falls on Fikoul, the client. Section 2.6 goes well beyond the term sheet. It covers MES and PLM software as well as eQMS, applies to every facility of Fikoul and its Affiliates worldwide rather than only Warsaw, and requires acquired businesses to move to Kivon within 12 months. Section 16.4 makes the agreement the entire agreement and supersedes prior proposals, and the term sheet says it is non-binding. So the term sheet cannot narrow the covenant. The restriction runs for the Term, which lasts as long as any Order Form is in effect. Order Form Section 2.2 renews automatically for 36-month terms, and non-renewal notice is only possible in a narrow 120–150 day window, so the covenant could last many years. Nothing in the Order Form or the Quality Agreement limits or cures it. The Quality Agreement's precedence covers only Quality Matters and does not address exclusivity. The covenant is ongoing and Fikoul has not accepted it through any later conduct, so it remains a live, actionable restriction that harms Fikoul."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "QA §1.6: \"'Quality Matters' means all matters addressed in this Agreement, including ... any dispute arising from software validation, Nonconformances or CAPA.\" QA §14.1–14.2: \"This Agreement, and any dispute arising out of or relating to Quality Matters, are governed by the laws of the State of Indiana ... Each Party irrevocably submits to the exclusive jurisdiction of the state courts located in Kosciusko County, Indiana for any action arising out of or relating to this Agreement or any Quality Matter.\" License Agreement §16.3: \"(b) the Quality Agreement, solely as to Quality Matters (as defined in the Quality Agreement); then (c) this Agreement.\"",
+            "reason": "License Agreement §16.1–16.2 choose New York law and exclusive New York County courts, as the term sheet contemplated. §16.3 gives the Quality Agreement precedence 'solely as to Quality Matters' but lets the Quality Agreement define that term. The Quality Agreement defines it very broadly, to cover any dispute arising from software validation, Nonconformances or CAPA. 'Nonconformance' includes failure to meet the Order Form acceptance criteria. Section 14 then sends those disputes to Indiana law and an exclusive Kosciusko County forum. The result is that the core software-defect and validation claims, likely including the pending §4.2 acceptance and rejection dispute in Recital C, move out of the New York forum Fikoul negotiated. Contract, fee and other claims stay in New York, so Fikoul (a New York company) faces split proceedings and possibly inconsistent results. Fikoul bears this harm, and nothing in the documents cures or limits it. The Quality Agreement's signature blocks are blank, so it appears still unsigned and the terms can still be negotiated. The issue is therefore present and actionable.",
+            "alone": {
+              "fikoul_kivon_quality_agreement.md": {
+                "findable": false,
+                "evidence": "\"Each Party irrevocably submits to the exclusive jurisdiction of the state courts located in Kosciusko County, Indiana for any action arising out of or relating to this Agreement or any Quality Matter\" (Section 14.2), read with Section 1.6 defining Quality Matters to include \"any dispute arising from software validation, Nonconformances or CAPA.\"",
+                "reason": "This document alone shows three things. Quality Matters is defined broadly to reach validation, nonconformance and CAPA disputes. Those matters go to Indiana law and exclusive Kosciusko County venue. Recital C notes a pending acceptance dispute. Because the agreement covers a plant in Warsaw, Indiana, an Indiana forum looks natural on its face. What it does not show is the harm. Nothing here says the License Agreement chose New York law and New York County courts. Nothing shows that License Agreement Section 16.3 makes the Quality Agreement control over the License Agreement as to Quality Matters, which is what lets these clauses displace the forum Fikoul negotiated. Without those terms, a reader cannot see the conflict, the split proceedings, the risk of inconsistent results, or that the pending acceptance dispute would leave New York. All of that depends on the License Agreement."
+              },
+              "fikoul_kivon_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "16.3 Order of Precedence. ... If they conflict, the following order of precedence applies: (a) the Order Form; then (b) the Quality Agreement, solely as to Quality Matters (as defined in the Quality Agreement); then (c) this Agreement.",
+                "reason": "The License Agreement on its own chooses New York law (16.1) and exclusive New York County courts (16.2). It also gives the Quality Agreement precedence 'solely as to Quality Matters,' with that term defined only in the Quality Agreement. An associate could see that a different document governs some matters, and that the scope depends on a definition found elsewhere. That is worth flagging. But this document does not show the two facts that create the harm. First, Quality Matters is defined broadly enough to cover all validation, nonconformance and CAPA disputes. Second, the Quality Agreement chooses Indiana law and Kosciusko County courts. Without those, nothing here shows that defect and acceptance disputes leave New York, or that proceedings would be split. On its face, the carve-out reads as a narrow precedence for quality and regulatory responsibilities, not as a change of law or forum."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F6, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": [
+          "criterion C6 asks for the whole ranking in fact F4 ('Order Form, then Quality Agreement (solely as to Quality Matters), then License Agreement'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.065,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

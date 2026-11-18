@@ -1,0 +1,119 @@
+{
+  "task_id": "s58-m0002",
+  "split": "test",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Lepund Creamery Holdings, Inc. as buyer in its stock purchase from Brouloul Family Dairy Partners, LLC, including its roles as maker of the seller note and recipient of transition services. Please review all eight documents in the folder and prepare a memo to me listing each issue you find, where it appears (document and section), why it matters for Lepund, and your recommended fix. We need this to protect the client's position before signing.",
+  "documents": [
+    "disclosure_schedule_kettlebrook.md",
+    "email_thread_closing_logistics.md",
+    "ip_assignment_agreement_brouloul_farmstead.md",
+    "lepund_board_resolutions.md",
+    "letter_of_intent_lepund_brouloul.md",
+    "seller_note_lepund.md",
+    "stock_purchase_agreement_kettlebrook.md",
+    "transition_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the SPA's cap carve-out for 'Pre-Closing Environmental Liabilities' does not reach the Ridgeview Farm groundwater nitrate contamination, because that defined term covers only Part B of Schedule 4.17 and the contamination is listed in Part A, so Buyer's recovery for it stays limited by the $4,620,000 Cap. The response identifies where this arises (SPA Section 9.5(c) or Section 1.1, or Disclosure Schedule 4.17), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Part B of Schedule 4.17",
+        "Ridgeview nitrate contamination",
+        "subject to the Cap"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that the IP Assignment Agreement conveys only IP used in the organic fluid milk business, so the yogurt, butter and cheese IP (such as recipes, starter cultures or the cheese brand) is not transferred to the Company even though the SPA's 'Business' includes those products. The response identifies where this arises (SPA Section 1.1 or 4.12, or IP Assignment Agreement Section 1.1), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "definition of Business",
+        "fluid milk only",
+        "starter cultures and cheese brand"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that Seller's Pre-Closing Taxes indemnity survives only until the Seller Note's Maturity Date, 18 months after Closing, so it expires before the applicable tax statutes of limitations run. The response identifies where this arises (SPA Section 9.1(b) or Seller Note Section 1), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Maturity Date",
+        "18 months after Closing",
+        "statute of limitations"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that under the TSA Buyer must indemnify Seller for losses from the Services, including those caused by Seller's own negligence, and that this indemnity is excluded from the TSA liability cap while Seller's liability remains capped at TSA fees. The response identifies where this arises (TSA Section 8.2 or 8.4), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Provider's negligence",
+        "willful misconduct only",
+        "not subject to the cap"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that the TSA allows Seller to assign the agreement or delegate Services to any person, including a competitor, without Buyer's consent, giving that person access to the Company's producer, pricing or customer data. The response identifies where this arises (TSA Section 12.3), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Provider may assign",
+        "without the consent of Recipient",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the SPA indemnity Cap is 10% of the Purchase Price, or $4,620,000.",
+      "kind": "fact",
+      "hints": [
+        "$4,620,000",
+        "10% of the Purchase Price"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that under the SPA each Ancillary Agreement controls over the SPA as to its subject matter.",
+      "kind": "fact",
+      "hints": [
+        "Section 11.9",
+        "controls as to its subject matter"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo addressed to the supervising partner that, for each issue, gives the location (document and section), why it matters for Lepund, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the Ridgeview Farm nitrate contamination falls outside the SPA indemnity Cap as the documents are currently drafted.",
+      "kind": "negative",
+      "hints": [
+        "Ridgeview uncapped"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the SPA's Pre-Closing Taxes indemnity survives until 60 days after expiration of the applicable statute of limitations.",
+      "kind": "negative",
+      "hints": [
+        "60 days after statute of limitations"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

@@ -1,0 +1,228 @@
+{
+  "matter_id": "s58-m0001",
+  "summary": "Fikoul Orthopedics, Inc. makes hip and knee implants. It is headquartered in Rochester, New York and manufactures at a facility in Warsaw, Indiana. Fikoul licensed Kivon QualiTrace, a cloud-hosted electronic quality management system (eQMS) used for device history records, complaint files, nonconformance and CAPA workflows, from Kivon Systems LLC. The folder holds six documents: the Software License Agreement (Effective Date May 4, 2026), the Order Form, the Quality Agreement (dated September 15, 2026), a non-binding March 2026 term sheet, a joint press release and an earlier mutual NDA. The license deal departs from the term sheet on exclusivity and renewal. The Order Form adds an uncarved liability cap for hosted services and customer data, which displaces the data-security carve-out under the Order Form-first precedence rule. The Quality Agreement moves quality disputes to Indiana law and courts through the same precedence clause. Fikoul's software rejection notice of August 3, 2026 came after the 30-day acceptance window that runs from the June 22, 2026 Delivery Date, and Kivon contends the software was deemed accepted.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Fikoul Orthopedics, Inc.",
+      "role": "Licensee; orthopedic implant manufacturer; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Kivon Systems LLC",
+      "role": "Licensor; provider of the Kivon QualiTrace cloud eQMS software and hosted services"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "May 4, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "License Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 16.1"
+    },
+    {
+      "id": "F3",
+      "key": "License Agreement exclusive forum",
+      "value": "State and federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 16.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence among deal documents",
+      "value": "Order Form, then Quality Agreement (solely as to Quality Matters), then License Agreement",
+      "doc": "D1",
+      "section": "Section 16.3"
+    },
+    {
+      "id": "F5",
+      "key": "Order Form Delivery Date",
+      "value": "June 22, 2026",
+      "doc": "D2",
+      "section": "Section 3"
+    },
+    {
+      "id": "F6",
+      "key": "Annual Subscription Fee",
+      "value": "$386,000",
+      "doc": "D2",
+      "section": "Section 4"
+    },
+    {
+      "id": "F7",
+      "key": "License Agreement general liability cap",
+      "value": "Fees paid or payable in the 24 months preceding the event giving rise to the claim",
+      "doc": "D1",
+      "section": "Section 10.1"
+    },
+    {
+      "id": "F8",
+      "key": "Agreed exclusivity scope (term sheet)",
+      "value": "eQMS software only, at Fikoul's Warsaw, Indiana manufacturing facility only",
+      "doc": "D4",
+      "section": "Exclusivity"
+    },
+    {
+      "id": "F9",
+      "key": "Agreed renewal terms (term sheet)",
+      "value": "One-year renewal terms; either party may decline renewal on 60 days' notice",
+      "doc": "D4",
+      "section": "Term and Renewal"
+    },
+    {
+      "id": "F10",
+      "key": "Fikoul software rejection notice date",
+      "value": "August 3, 2026",
+      "doc": "D3",
+      "section": "Recital C"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "fikoul_kivon_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "kivon_order_form_qualitrace.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "fikoul_kivon_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "qualitrace_term_sheet_march_2026.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "press_release_fikoul_selects_qualitrace.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "fikoul_kivon_mutual_nda.md",
+      "kind": "mutual nondisclosure agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "Order Form cap displaces the data-security carve-out",
+      "description": "Two provisions in the License Agreement look protective on their own. Section 10.3 excludes Kivon's breach of Section 7 (Data Security and Confidentiality) from the 24-month fee cap in Section 10.1, and Section 16.3 ranks the Order Form first in precedence. Order Form Section 6 then caps Kivon's total liability 'arising out of or relating to the Hosted Services, Data Migration Services or Customer Data' at 12 months of Subscription Fees paid under the Order Form, with no carve-outs; read alone it looks like an ordinary order-level cap. Read together, Section 16.3 lets the Order Form cap control. Every data breach or data-loss claim involving Fikoul's hosted device history records and complaint files, which contain patient health information, is then capped at roughly one year's fees (about $386,000) instead of being uncapped. The cap therefore covers exactly the losses the License Agreement carve-out was written to protect.",
+      "doc": "D2",
+      "section": "Section 6 (Limitation of Liability – Hosted Services)",
+      "detect_terms": [
+        "Hosted Services, Data Migration Services or Customer Data",
+        "twelve (12) months preceding the claim"
+      ],
+      "expected_finding": "Because License Agreement Section 16.3 gives the Order Form precedence, Order Form Section 6's uncarved 12-month-fee cap on claims relating to Hosted Services and Customer Data overrides the Section 10.3 carve-out for breaches of Section 7, capping Kivon's exposure for patient-data breaches; the Order Form should be amended to make its cap expressly subject to License Agreement Section 10.3.",
+      "contradicts": "F7",
+      "doc2": "D1",
+      "section2": "Section 10.3 (Exclusions from Limitation)",
+      "detect_terms2": [
+        "breach of Section 7 (Data Security and Confidentiality)"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "36-month automatic renewal with a 30-day opt-out window",
+      "description": "Order Form Section 2 renews the subscription automatically for successive 36-month renewal terms. To stop a renewal, a party must give notice no more than 150 and no less than 120 days before the current term ends, which leaves a 30-day opt-out window. Because License Agreement Section 16.3 gives the Order Form precedence, this clause governs. The term sheet agreed one-year renewals that either party could decline on 60 days' notice. If Fikoul misses the narrow window, it is locked into another three years of fees (more than $1.1 million at the current Annual Subscription Fee) and into the License Agreement's exclusivity covenant.",
+      "doc": "D2",
+      "section": "Section 2 (Subscription Term and Renewal)",
+      "detect_terms": [
+        "successive thirty-six (36) month renewal terms",
+        "not more than one hundred fifty (150)"
+      ],
+      "expected_finding": "Order Form Section 2 automatically renews Fikoul for 36-month terms unless notice falls within a 30-day window 150 to 120 days before expiry, departing from the term sheet's one-year renewals on 60 days' notice; Fikoul should seek an amendment to one-year renewals with a simple notice-before-expiry opt-out and calendar the current window.",
+      "contradicts": "F9",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "Software rejection notice sent after the acceptance window closed",
+      "description": "License Agreement Section 4.2 lets Fikoul reject the Software by written notice delivered within thirty (30) days after the Delivery Date. Absent timely notice, the Software is deemed accepted, and Section 4.3 ties the refund of implementation fees to rejection. Section 4.2 defines the Delivery Date only by reference to the Order Form. Order Form Section 3 fixes the Delivery Date at June 22, 2026, so the window closed on July 22, 2026. Quality Agreement Recital C records that Fikoul delivered its rejection notice on August 3, 2026. The same recital records that Kivon contends the notice was untimely and the Software deemed accepted, that Fikoul disputes this, and that neither party waives its position. The Quality Agreement sets no separate acceptance or rejection period. Fikoul has not accepted the result, but on the face of the documents its rejection right and implementation-fee refund are at serious risk.",
+      "doc": "D1",
+      "section": "Section 4.2 (Acceptance)",
+      "detect_terms": [
+        "within thirty (30) days after the Delivery Date",
+        "deemed accepted"
+      ],
+      "expected_finding": "The 30-day rejection window under License Agreement Section 4.2 ran from the June 22, 2026 Delivery Date stated in Order Form Section 3 and closed on July 22, 2026, so Fikoul's August 3, 2026 rejection notice (recorded in Quality Agreement Recital C as disputed) is likely untimely and the Software deemed accepted, jeopardizing the implementation-fee refund; Fikoul should preserve its objection and negotiate a written extension or standstill, while falling back on warranty remedies.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Section 3 (Delivery)",
+      "detect_terms2": [
+        "Delivery Date: June 22, 2026"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "exclusivity_scope",
+      "label": "Exclusivity covenant broader than the agreed eQMS/Warsaw scope",
+      "description": "License Agreement Section 2.6 bars Fikoul and its Affiliates, during the Term, from licensing, using or developing any quality management, manufacturing execution or product lifecycle management software from anyone other than Kivon, at any facility of Fikoul or its Affiliates worldwide. The March 2026 term sheet limited exclusivity to eQMS software at Fikoul's Warsaw, Indiana facility. Under the License Agreement's entire-agreement clause, the non-binding term sheet does not limit Section 2.6. As drafted, the covenant blocks Fikoul's MES and PLM choices and reaches all of its plants and future acquisitions. Combined with the 36-month auto-renewal in Order Form Section 2, it could also run for many years.",
+      "doc": "D1",
+      "section": "Section 2.6 (Exclusivity)",
+      "detect_terms": [
+        "quality management, manufacturing execution or product lifecycle management software",
+        "any facility of Licensee or its Affiliates worldwide"
+      ],
+      "expected_finding": "License Agreement Section 2.6 extends Fikoul's exclusivity obligation to MES and PLM software and to all Fikoul and Affiliate facilities worldwide, well beyond the term sheet's eQMS-only, Warsaw-only scope, and the entire-agreement clause means the term sheet gives no relief; Section 2.6 should be narrowed to eQMS software at the Warsaw, Indiana facility.",
+      "contradicts": "F8",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "Quality Agreement routes software-defect disputes to Indiana law and courts",
+      "description": "License Agreement Sections 16.1 and 16.2 choose New York law and New York County courts. Section 16.3 gives the Quality Agreement precedence over the License Agreement 'solely as to Quality Matters', which reads as a narrow, ordinary carve-out. Quality Agreement Section 1 defines Quality Matters to include all matters addressed in the Quality Agreement, including any dispute arising from software validation, nonconformances or CAPA. Quality Agreement Section 14 chooses Indiana law and the courts of Kosciusko County, Indiana, which looks natural for an agreement about the Warsaw plant. Read together, these provisions send the most likely disputes, defects and validation failures in the eQMS (including the pending acceptance dispute), to Indiana law and an Indiana forum. All other claims stay in New York. Fikoul, a New York company, faces split proceedings, possibly inconsistent results, and loss of the New York forum it negotiated.",
+      "doc": "D3",
+      "section": "Section 14 (Governing Law and Venue)",
+      "detect_terms": [
+        "laws of the State of Indiana",
+        "Kosciusko County"
+      ],
+      "expected_finding": "Through License Agreement Section 16.3, which gives the Quality Agreement precedence as to Quality Matters, Quality Agreement Section 14's Indiana governing law and Kosciusko County forum displace the License Agreement's New York law and New York County forum for software validation and nonconformance disputes, fragmenting dispute resolution; the Quality Agreement should be amended to adopt the License Agreement's New York law and forum, or Section 16.3 should exclude governing law and venue from the Quality Agreement's precedence.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ],
+      "doc2": "D1",
+      "section2": "Section 16.3 (Order of Precedence)",
+      "detect_terms2": [
+        "solely as to Quality Matters"
+      ]
+    }
+  ]
+}

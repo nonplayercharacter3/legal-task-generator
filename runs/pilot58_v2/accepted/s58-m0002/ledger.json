@@ -1,0 +1,248 @@
+{
+  "matter_id": "s58-m0002",
+  "summary": "Lepund Creamery Holdings, Inc. (client, Buyer) is buying all outstanding stock of Kettlebrook Organic Creamery, Inc., a Delaware organic dairy (three certified-organic farms, a fluid milk and yogurt plant, and a farmstead cheese line), from Brouloul Family Dairy Partners, LLC (Seller). The SPA is dated November 6, 2026. The purchase price is $46,200,000, of which $6,000,000 is deferred through a Seller Note issued by Buyer. The folder also holds: a disclosure schedule; an IP assignment under which Seller's affiliate Brouloul Farmstead IP Holdings, LLC assigns brands, recipes and starter cultures to the Company; the earlier letter of intent; a transition services agreement under which Seller provides milk hauling, organic certification support and producer payroll to Buyer for 9 months; an email thread on closing logistics; and Buyer board resolutions approving the deal. Five issues are planted against Buyer:\n(1) The SPA excludes 'Pre-Closing Environmental Liabilities' from the indemnity cap, but the definition points to a disclosure schedule part that leaves out the known nitrate groundwater contamination.\n(2) The SPA defines 'Business' to include yogurt, butter and cheese, but the IP assignment, which controls as to its subject matter, conveys only IP used in fluid milk.\n(3) The SPA's Pre-Closing Taxes indemnity survives only until the Seller Note's Maturity Date, which the note sets at 18 months.\n(4) The TSA has Buyer indemnify Seller for Seller's own negligence and removes that indemnity from the TSA cap.\n(5) The TSA lets Seller assign freely, including to a competitor that would gain access to the Company's producer and pricing data.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Lepund Creamery Holdings, Inc.",
+      "role": "Buyer under the SPA; maker of the Seller Note; service recipient under the TSA (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Brouloul Family Dairy Partners, LLC",
+      "role": "Seller of all outstanding shares of the Company; holder of the Seller Note; service provider under the TSA"
+    },
+    {
+      "id": "P3",
+      "name": "Kettlebrook Organic Creamery, Inc.",
+      "role": "Target company, a Delaware corporation operating organic dairy farms and processing"
+    },
+    {
+      "id": "P4",
+      "name": "Brouloul Farmstead IP Holdings, LLC",
+      "role": "Seller affiliate; assignor under the IP Assignment Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Purchase Price",
+      "value": "$46,200,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "SPA date",
+      "value": "November 6, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$6,000,000",
+      "doc": "D5",
+      "section": "Section 1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note Maturity Date",
+      "value": "eighteen (18) months after the Issue Date (the Closing Date)",
+      "doc": "D5",
+      "section": "Section 1"
+    },
+    {
+      "id": "F5",
+      "key": "SPA general representation survival period",
+      "value": "15 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1(a)"
+    },
+    {
+      "id": "F6",
+      "key": "SPA indemnity Cap",
+      "value": "10% of the Purchase Price ($4,620,000)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence (SPA vs. Ancillary Agreements)",
+      "value": "Each Ancillary Agreement controls as to its subject matter; otherwise the SPA controls",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "LOI tax indemnity survival",
+      "value": "until 60 days after expiration of the applicable statute of limitations",
+      "doc": "D4",
+      "section": "Section 5"
+    },
+    {
+      "id": "F9",
+      "key": "LOI environmental indemnity cap treatment",
+      "value": "pre-closing environmental liabilities, including Ridgeview Farm nitrate contamination, not subject to the general cap",
+      "doc": "D4",
+      "section": "Section 5"
+    },
+    {
+      "id": "F10",
+      "key": "TSA term",
+      "value": "9 months after the Closing Date",
+      "doc": "D6",
+      "section": "Section 2.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_kettlebrook.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "disclosure_schedule_kettlebrook.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ip_assignment_agreement_brouloul_farmstead.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "letter_of_intent_lepund_brouloul.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "seller_note_lepund.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "email_thread_closing_logistics.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "lepund_board_resolutions.md",
+      "kind": "board resolutions approving the acquisition",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Three SPA provisions and one schedule combine here.\n- SPA Section 9.2(c) has Seller indemnify Buyer for all environmental liabilities arising from operation of the Farms before Closing.\n- SPA Section 9.5(a) subjects Losses under Sections 9.2(a) and 9.2(c) to the Cap of $4,620,000.\n- SPA Section 9.5(c) carves 'Pre-Closing Environmental Liabilities' out of the Cap.\n- SPA Section 1.1 defines that term as the matters 'set forth in Part B of Schedule 4.17'.\nRead alone, the SPA carve-out looks protective. Schedule 4.17 of the Disclosure Schedule (D2) also looks ordinary on its own. Part B lists only the decommissioned manure storage pond at the Hollis Farm. The groundwater nitrate contamination at Ridgeview Farm, which the Phase II report estimates could cost up to $7,800,000 to remediate, sits in Part A as a 'Disclosed Environmental Matter'.\nRead together, the largest known environmental exposure falls back under the $4,620,000 Cap. The LOI (D4, Section 5) shows the parties agreed that pre-closing environmental liabilities, expressly including the Ridgeview nitrate contamination, would be uncapped.",
+      "doc": "D1",
+      "section": "Section 9.5(c) (with Section 1.1 definition of Pre-Closing Environmental Liabilities, Sections 9.2(c) and 9.5(a))",
+      "detect_terms": [
+        "Pre-Closing Environmental Liabilities",
+        "shall not be subject to the Cap"
+      ],
+      "expected_finding": "Because the SPA's cap carve-out reaches only matters in Part B of Schedule 4.17 and the Ridgeview nitrate contamination is listed only in Part A, Buyer's recovery for that contamination under Section 9.2(c) is capped at $4,620,000 despite up to $7.8 million in estimated remediation and the LOI's agreed uncapped treatment, so the definition should be revised to cover all pre-closing environmental liabilities including the Ridgeview contamination (or the matter moved into Part B).",
+      "contradicts": "F9",
+      "doc2": "D2",
+      "section2": "Schedule 4.17 (Environmental Matters), Parts A and B",
+      "detect_terms2": [
+        "groundwater nitrate",
+        "Disclosed Environmental Matters"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "The two documents define 'Business' differently.\n- SPA Section 1.1 defines 'Business' as the production, processing, marketing and sale of organic fluid milk, yogurt, butter and cheese.\n- SPA Section 4.12 represents only that, upon execution of the IP Assignment Agreement, the Company will own the 'Assigned IP' (as defined there).\n- IP Assignment Agreement (D3) Section 1.1 separately defines 'Business' as the production, processing and sale of organic fluid milk.\n- D3 defines 'Assigned IP' as IP used in that Business.\nUnder SPA Section 11.9, each Ancillary Agreement controls as to its subject matter, so D3's narrower definition governs what is conveyed.\nAs a result, the yogurt recipes, the proprietary starter cultures and the 'Brouloul Farmstead' cheese brand stay with Seller's affiliate. SPA Section 4.12 gives no fallback because it warrants only the Assigned IP.",
+      "doc": "D1",
+      "section": "Section 1.1 (definition of Business) and Section 4.12",
+      "detect_terms": [
+        "organic fluid milk, yogurt, butter and cheese"
+      ],
+      "expected_finding": "The IP Assignment Agreement's narrower definition of 'Business', which controls under SPA Section 11.9, leaves the yogurt, butter and cheese IP (recipes, starter cultures and the cheese brand) with Seller's affiliate while SPA Section 4.12 warrants only the Assigned IP, so Buyer would not acquire IP essential to the Company's business; the IP Assignment Agreement's definition should be conformed to the SPA's (or the Assigned IP expressly scheduled).",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Section 1.1 (definitions of Business and Assigned IP)",
+      "detect_terms2": [
+        "production, processing and sale of organic fluid milk"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "The survival period for the tax indemnity is set by reference to the Seller Note.\n- SPA Section 9.1(b) provides that Seller's Pre-Closing Taxes indemnity in Section 9.2(b) survives 'until the Maturity Date (as defined in the Seller Note)'. On its own this reads as a sensible link to Buyer's set-off security.\n- The Seller Note (D5) Section 1 sets the Maturity Date at eighteen (18) months after the Issue Date, which is the Closing Date. That is ordinary payment drafting.\nRead together, Buyer can bring pre-closing tax claims for only 18 months after Closing. Federal and state assessments for the Company's 2024–2026 tax years can be made for at least three years after filing. The tax representation in Section 4.14 is a general representation surviving only 15 months under Section 9.1(a); it is not a Fundamental Representation. The LOI (D4, Section 5) records the agreed survival as 60 days after the applicable statute of limitations.",
+      "doc": "D1",
+      "section": "Section 9.1(b)",
+      "detect_terms": [
+        "until the Maturity Date (as defined in the Seller Note)"
+      ],
+      "expected_finding": "Because SPA Section 9.1(b) ties survival of the Pre-Closing Taxes indemnity to the Seller Note's Maturity Date, which the note sets at 18 months after Closing, Buyer loses tax indemnity protection well before the tax statute of limitations runs (with the 15-month tax rep giving no backstop), contrary to the LOI's agreed survival, so Section 9.1(b) should be revised to survive until 60 days after expiration of the applicable statute of limitations.",
+      "contradicts": "F8",
+      "doc2": "D5",
+      "section2": "Section 1 (Maturity Date)",
+      "detect_terms2": [
+        "eighteen (18) months after the Issue Date"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Two TSA provisions combine here.\n- TSA (D6) Section 8.2 requires Recipient (Buyer) to indemnify Provider (Seller) for all Losses arising out of the provision of the Services, 'except to the extent caused by Provider's willful misconduct'. Buyer therefore indemnifies Seller for Seller's own negligence in milk hauling and organic certification support.\n- TSA Section 8.4 caps each party's liability at the fees paid under the TSA but states that the limitations 'shall not apply to Recipient's obligations under Section 8.2'.\nRead together, Buyer bears unlimited liability for Seller's negligent performance, for example a contaminated raw-milk load leading to a product recall or loss of organic certification. Seller's own liability to Buyer stays capped at the TSA fees. SPA Section 11.9 makes the TSA control as to its subject matter, so the SPA cap structure does not help.",
+      "doc": "D6",
+      "section": "Sections 8.2 and 8.4",
+      "detect_terms": [
+        "except to the extent caused by Provider's willful misconduct",
+        "shall not apply to Recipient's obligations under Section 8.2"
+      ],
+      "expected_finding": "TSA Sections 8.2 and 8.4 together make Buyer's indemnity of Seller, which covers even Seller's negligent performance of the Services, unlimited while Seller's liability is capped at TSA fees, so the indemnity should exclude Provider's negligence and be made subject to the Section 8.4 cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA (D6) Section 12.3 bars Recipient (Buyer) from assigning without consent. It lets Provider (Seller) assign the Agreement or delegate any Services to any Person upon notice and without Recipient's consent. Nothing excludes competitors.\nUnder TSA Section 5, Provider has access to the Company's producer pay prices, milk supply contracts, herd records and customer orders in order to perform payroll and hauling. A competing organic dairy processor could therefore take over the Services and gain that data during the 9-month term. SPA Section 11.4 restricts assignment of the SPA only, and SPA Section 11.9 makes the TSA control as to its subject matter.",
+      "doc": "D6",
+      "section": "Section 12.3",
+      "detect_terms": [
+        "Provider may assign this Agreement",
+        "without the consent of Recipient"
+      ],
+      "expected_finding": "TSA Section 12.3 lets Seller assign or delegate the TSA to anyone, including a competitor that would gain access to the Company's producer, pricing and customer data, so Provider's assignment and delegation should be conditioned on Recipient's prior written consent with an express bar on transfers to competitors.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}
