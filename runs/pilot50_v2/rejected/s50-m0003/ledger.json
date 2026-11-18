@@ -1,0 +1,250 @@
+{
+  "matter_id": "s50-m0003",
+  "summary": "Stalaind Creamery Holdings, LLC (client, Buyer) bought substantially all assets of Proudul Organic Dairy Co. (Seller), an organic fluid milk, yogurt and cultured butter producer, under an Asset Purchase Agreement signed January 20, 2026 and closed March 2, 2026. The purchase price is $36,000,000, of which $3,600,000 sits in indemnity escrow and $6,000,000 is paid by a Seller Note. The folder holds the APA, the Escrow Agreement, the Seller Note, the Disclosure Schedule, the IP Assignment Agreement, the Bill of Sale, a Key Employee Agreement, an unrelated pallet-rental vendor agreement and Stalaind's July 14, 2026 claim letter. Four issues are planted. (1) The IP Assignment, signed at Closing, folds IP representation breaches back under the indemnity cap, and the APA's precedence clause lets it control. (2) A key organic milk supply contract needs cooperative consent on an asset sale, but that consent is not a Required Consent. (3) General representations survive only six months, while claims tied to the closing statement are barred until the adjustment process ends, which can take about 225 days. (4) The interim escrow release claim window ended June 30, 2026, before Stalaind's claim letter, which was also never sent to the Escrow Agent.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Stalaind Creamery Holdings, LLC",
+      "role": "Buyer; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Proudul Organic Dairy Co.",
+      "role": "Seller; maker-payee of the Seller Note; assignor of IP"
+    },
+    {
+      "id": "P3",
+      "name": "Fallowmere Trust Company",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P4",
+      "name": "Ashgrove Valley Organic Producers Cooperative",
+      "role": "Raw organic milk supplier under an Assigned Contract"
+    },
+    {
+      "id": "P5",
+      "name": "Wren Ostrova",
+      "role": "Seller's head of production; key employee hired by Buyer"
+    },
+    {
+      "id": "P6",
+      "name": "Lumenby Pallet Services, Inc.",
+      "role": "Counterparty to Buyer's unrelated pallet and crate rental agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Purchase Price",
+      "value": "$36,000,000",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F2",
+      "key": "APA Closing Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Escrow Agreement Escrow Amount",
+      "value": "$3,600,000",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note principal amount",
+      "value": "$6,000,000",
+      "doc": "D3",
+      "section": "Section 1"
+    },
+    {
+      "id": "F5",
+      "key": "APA indemnification Cap",
+      "value": "$3,600,000",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F6",
+      "key": "APA general representation survival period",
+      "value": "six (6) months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "APA controls over Ancillary Agreements unless an Ancillary Agreement expressly identifies the APA provision it modifies",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "APA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.6"
+    },
+    {
+      "id": "F9",
+      "key": "Escrow Agreement interim release date",
+      "value": "120th day following the Closing Date",
+      "doc": "D2",
+      "section": "Section 5.1"
+    },
+    {
+      "id": "F10",
+      "key": "Escrow Agreement interim release amount",
+      "value": "$1,800,000",
+      "doc": "D2",
+      "section": "Section 5.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "key_employee_agreement_ostrova.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "lumenby_pallet_rental_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "stalaind_indemnity_claim_letter.md",
+      "kind": "client claim letter",
+      "distractor": false,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "IP Assignment pulls IP representation breaches back under the Cap",
+      "description": "APA Section 9.5(b) carves losses from Fraud and from breach of Fundamental Representations out of the $3,600,000 Cap in Section 9.5(a). Section 1.1 defines Fundamental Representations to include Section 4.12 (Intellectual Property), which covers the organic brand trademarks, culture strains and recipes. The IP Assignment Agreement (D5), signed at Closing, provides in Section 5.3 that, notwithstanding Section 9.5(b) of the Purchase Agreement, Losses from breach of APA Section 4.12 or of the IP Assignment are subject to the Cap. Read alone, the APA would prevail over this. However, APA Section 11.9 says an Ancillary Agreement controls whenever it expressly identifies the APA provision it modifies, and D5 Section 5.3 does exactly that. Together, D5 Section 5.3 and D1 Section 11.9 remove the IP carve-out. Uncapped recovery for title and infringement defects in the core brand assets becomes capped at the escrow amount.",
+      "doc": "D5",
+      "section": "Section 5.3",
+      "detect_terms": [
+        "Notwithstanding Section 9.5(b)",
+        "subject to the Cap"
+      ],
+      "expected_finding": "Because APA Section 11.9 lets an Ancillary Agreement control when it expressly identifies the APA provision it modifies, IP Assignment Section 5.3 effectively removes Section 4.12 IP breaches from the Fundamental Representation carve-out in APA Section 9.5(b), capping Stalaind's recovery for defects in the acquired brand and recipe IP at $3,600,000, which should be fixed by an amendment deleting Section 5.3 or restoring the carve-out.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 11.9",
+      "detect_terms2": [
+        "expressly identifies the provision"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "Cooperative milk supply consent not obtained or required",
+      "description": "Disclosure Schedule Section 4.7(b) lists the Raw Organic Milk Supply Agreement with Ashgrove Valley Organic Producers Cooperative as an Assigned Contract. It discloses that assignment, including in connection with a sale of all or substantially all of Proudul's assets or a change of control, requires the Cooperative's prior written consent, and that the Cooperative may terminate if consent is not obtained. APA Section 7.2(d) makes only the listed Required Consents a closing condition: the Kettleby Glass Bottle supply agreement and the Marlow Road plant lease. Section 6.4 limits Seller's consent covenant to those Required Consents. The Cooperative consent appears in neither, and no document in the folder records that it was obtained. The asset sale closed on March 2, 2026, so Stalaind's main source of certified organic raw milk is exposed to termination.",
+      "doc": "D4",
+      "section": "Section 4.7(b)",
+      "detect_terms": [
+        "prior written consent of the Cooperative",
+        "sale of all or substantially all"
+      ],
+      "expected_finding": "The Ashgrove Cooperative supply agreement required the Cooperative's consent to assignment on this asset sale, but that consent was omitted from the Required Consents in APA Section 7.2(d) and the Section 6.4 covenant and was never obtained, leaving the Cooperative free to terminate Stalaind's key organic milk supply. Stalaind should promptly seek the Cooperative's written consent or ratification and pursue Seller under the APA for any resulting Losses.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 7.2(d)",
+      "detect_terms2": [
+        "Required Consents"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "Six-month survival expires before adjustment-related claims can be made",
+      "description": "APA Section 9.1 says general representations, including Section 4.9 (Inventory) and Section 4.10 (Accounts Receivable), survive until six (6) months after the Closing Date, which is September 2, 2026. Section 9.4(a) bars any indemnification claim on a matter reflected in the Closing Statement until the Final Closing Statement is determined. Under Section 2.6, Buyer has 120 days to deliver the Closing Statement, Seller has 45 days to dispute it, and the Independent Accountant has 60 days to decide. The Final Closing Statement can therefore arrive about 225 days after Closing, around mid-October 2026. Read together, Sections 9.1, 9.4(a) and 2.6 mean inventory and receivables claims can expire before Stalaind is allowed to assert them.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "six (6) months after the Closing Date",
+        "until the Final Closing Statement"
+      ],
+      "expected_finding": "Because Section 9.4(a) defers claims on Closing Statement matters until the Final Closing Statement, which Section 2.6 allows to take about 225 days, the six-month survival period in Section 9.1 can cut off Stalaind's inventory and receivables claims before they may be brought. The survival period should be extended (for example to 18 months) or tolled until 60 days after the Final Closing Statement.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "Interim escrow release claim window missed",
+      "description": "Escrow Agreement Section 5.1 requires the Escrow Agent to release $1,800,000 to Seller on the 120th day following the Closing Date. Only amounts covered by a Claim Notice delivered to the Escrow Agent before that day are held back. Using the APA Closing Date of March 2, 2026, the 120th day is June 30, 2026. Stalaind's claim letter (D9) is dated July 14, 2026. It asserts a $2,150,000 claim for organic certification losses (APA Section 4.14), is addressed only to Proudul, and states that the escrow 'remains fully available', disputing Proudul's position that the interim release occurred. Stalaind has not accepted the release. However, its notice was late and never reached the Escrow Agent, so only $1,800,000 of escrow can secure a $2,150,000 claim. Seller Note Section 5.4 bars setoff, so the note does not fill the gap.",
+      "doc": "D2",
+      "section": "Section 5.1",
+      "detect_terms": [
+        "120th day following the Closing Date",
+        "delivered to the Escrow Agent"
+      ],
+      "expected_finding": "Stalaind's July 14, 2026 claim notice came after the June 30, 2026 interim release date (the 120th day after the March 2, 2026 Closing) and was never delivered to the Escrow Agent, so $1,800,000 was releasable to Proudul and only $1,800,000 of escrow now secures the $2,150,000 claim. Stalaind should immediately deliver a compliant Claim Notice to the Escrow Agent for the remaining escrow and pursue the shortfall directly against Proudul under the APA, since Seller Note Section 5.4 bars setoff.",
+      "contradicts": null,
+      "doc2": "D9",
+      "section2": "Second paragraph",
+      "detect_terms2": [
+        "July 14, 2026",
+        "remains fully available"
+      ]
+    }
+  ]
+}

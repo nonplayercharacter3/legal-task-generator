@@ -1,0 +1,156 @@
+{
+  "matter_id": "s50-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "SPA §9.1(e): \"To exercise this right, Buyer must deliver written notice to Seller, accompanied by a copy of the Phase II Assessment report, no later than forty-five (45) days after the date of the Letter of Intent.\" LOI (dated February 9, 2026) §6(c): \"That notice is to be delivered no later than thirty (30) days following execution of the Definitive Agreement.\"",
+            "reason": "The Letter of Intent is dated February 9, 2026. Forty-five days from that date ran out on March 26, 2026. The SPA is dated May 11, 2026. So Buyer's right to walk away over Phase II remediation costs above $1.5M had already expired on the day the SPA was signed, and it protects Buyer not at all. That contradicts the position both parties signed in LOI §6(b)–(c): a notice window of 30 days measured from execution of the definitive agreement. The defect hurts Buyer, our client, because the right and the notice duty are both Buyer's. Nothing elsewhere in the SPA fixes it. The §8.2(d) indemnity for pre-Closing environmental releases is a different remedy and does not give Buyer an exit. The folder contains no amendment, waiver or other record that Buyer agreed to lose this right. The point is still worth raising: it should be corrected to match LOI §6, or, if the SPA has already been signed, fixed by amendment.",
+            "alone": {
+              "stock_purchase_agreement_kessrin.md": {
+                "findable": false,
+                "evidence": "To exercise this right, Buyer must deliver written notice to Seller, accompanied by a copy of the Phase II Assessment report, no later than forty-five (45) days after the date of the Letter of Intent.",
+                "reason": "The SPA alone shows a suspicious drafting choice. The Section 9.1(e) notice deadline runs from the date of the Letter of Intent, not from signing. Yet Section 6.2 lets the Phase II Assessment be performed only 'from the date of this Agreement' (May 11, 2026). A careful associate would see that the window is pegged to an earlier, unstated date and could be very short. But the SPA never gives the LOI's date. It therefore cannot show that the 45-day window closed on March 26, 2026, before signing, leaving Buyer with no environmental walk-away right. If the LOI had been dated in late March or April, the window would still be open, though tight. The SPA also does not show the LOI Section 6 agreement for a 30-day review period after the definitive agreement is signed. That the right has already expired, and departs from the agreed deal, can only be established with the LOI."
+              },
+              "letter_of_intent.md": {
+                "findable": false,
+                "evidence": "The Definitive Agreement will give Buyer the right to terminate it by written notice to Seller if the Phase II assessment reports estimated remediation costs exceeding $1,500,000. That notice is to be delivered no later than thirty (30) days following execution of the Definitive Agreement.",
+                "reason": "The LOI by itself sets the environmental termination window at 30 days after the Definitive Agreement is signed, and that works in Buyer's favor. It shows the agreed position and the LOI date of February 9, 2026. It does not show that the SPA measures the notice period as 45 days from the LOI date, or that the SPA is dated May 11, 2026, so that the window would already have closed when the SPA is signed. Both facts come from the SPA, which is not provided. Reading only the LOI, an associate would see no defect harming the client."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "IP Assignment Agreement Section 1.1: \"'Recycling Process Technology' means the Patents listed on Exhibit A.\" SPA Section 1.1: \"'Recycling Process Technology' means patents, trade secrets, know-how, process parameters and software used in the Company's hydrometallurgical metal recovery.\" SPA Section 6.6: \"This assignment shall be made by Seller's execution and delivery of the IP Assignment Agreement.\" SPA Section 11.4: \"each Ancillary Agreement controls as to its own subject matter.\"",
+            "reason": "The two definitions of the same term do not match. SPA 6.6 requires Seller to assign all Recycling Process Technology, and says the assignment is made by delivering the IP Assignment Agreement. But that agreement defines the term only as the patents listed on Exhibit A, and its granting clause (2.1) covers only the patents, the inventions claimed in them and related rights. Under SPA 11.4, the IP Assignment Agreement controls as to its own subject matter, so the narrower conveyance governs what actually transfers. Nothing in the IP Assignment Agreement conveys trade secrets, know-how, process parameters or software. The non-merger clause (6.1) and the further-assurances clause (4.1) do not fix this, because further assurances are limited to perfecting rights in the \"Assigned Rights\". Seller would keep the core process know-how. The SPA 6.9 non-compete limits Seller's own use for five years, but only in North America, and it does not stop Seller from licensing the know-how to others. Buyer (the client) bears the harm: it pays $86.4M for a business without the key technology. The IP Assignment Agreement is still a form with blanks, to be signed at Closing, and nothing in the folder shows Closing has occurred. The issue therefore remains actionable: the definition can still be conformed before signing.",
+            "alone": {
+              "ip_assignment_agreement.md": {
+                "findable": false,
+                "evidence": "1.1 Recycling Process Technology. \"Recycling Process Technology\" means the Patents listed on Exhibit A.",
+                "reason": "On its own, this document shows that the assignment covers only the six listed patents and applications, plus related inventions, priority rights and claims. It conveys no trade secrets, know-how, process parameters or software, even though Recital B describes a hydrometallurgical recovery business. A careful associate might flag that gap as a diligence question. But this document does not show that the deal promised more. It does not show that the Seller, rather than the Company, holds the leach chemistry, parameters or control software. It also does not show that the narrow definition here conflicts with a broader one elsewhere. Section 1.3 points to the SPA only for terms not defined here, and this term is defined here. The problem depends on three SPA provisions not in this document: the broad definition in SPA §1.1, the covenant in SPA §6.6 to assign all Recycling Process Technology using this form, and the precedence rule in SPA §11.4. Those provisions are what make the narrow definition a defined-term conflict that leaves the core know-how with the Seller, to the Buyer's harm."
+              },
+              "stock_purchase_agreement_kessrin.md": {
+                "findable": false,
+                "evidence": "Section 6.6: \"This assignment shall be made by Seller's execution and delivery of the IP Assignment Agreement.\" Section 11.4: \"This Agreement controls, except that each Ancillary Agreement controls as to its own subject matter.\"",
+                "reason": "On its own, the SPA defines 'Recycling Process Technology' broadly in Section 1.1: patents, trade secrets, know-how, process parameters and software. Section 6.6 requires all of it to be assigned through the IP Assignment Agreement, and Section 11.4 makes that Ancillary Agreement control its own subject matter. A careful associate could see a structural risk that the exhibit controls what is conveyed. But nothing in the SPA shows the exhibit defining the term more narrowly. The text of Exhibit B is not included, and nothing here suggests the definitions differ. The actual defect is that the IP Assignment Agreement covers only listed patents, so Seller keeps the trade secrets, parameters and software. That can only be seen in the other document."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "TSA Section 12.7: \"This Agreement is governed by the laws of the State of Texas... Each party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Harris County, Texas for any action arising out of or relating to this Agreement.\" SPA Section 11.10: \"Each party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in New York County, New York for any action arising out of or relating to this Agreement or any Ancillary Agreement.\" SPA Section 11.4: \"each Ancillary Agreement controls as to its own subject matter.\"",
+            "reason": "The two clauses conflict. The SPA defines the Transition Services Agreement as an Ancillary Agreement and sends all disputes over Ancillary Agreements to New York law and New York County courts. The TSA instead picks Texas law and exclusive Harris County courts, which is Seller's home forum because Seller is a Texas LLC. SPA Section 11.4 lets the TSA control its own subject matter, so service disputes would likely go to Texas. Related claims under the SPA, such as working capital, covenant and indemnity claims, would stay in New York. TSA Section 9.3 even imports the SPA's indemnity procedures, which makes overlap more likely. The Recipient (the Company) is the Buyer's subsidiary after Closing, so the Buyer side bears the risk of split proceedings, inconsistent results and litigating in Seller's forum. Nothing in the folder cures this, and nothing shows the client accepted it. The TSA is still an unsigned form with a blank effective date, so the clause can still be raised and conformed to the SPA.",
+            "alone": {
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "This Agreement is governed by the laws of the State of Texas, without regard to conflict of laws principles that would require application of the laws of another jurisdiction. Each party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Harris County, Texas for any action arising out of or relating to this Agreement.",
+                "reason": "On its own, the TSA shows Texas governing law and exclusive Harris County jurisdiction. It also shows that Provider is a Texas LLC with a Houston laboratory, so an associate could tell that the forum suits Seller. What it does not show is the mismatch. Nothing in the TSA says what law or forum the Purchase Agreement chooses. Sections 9.3, 10.1 and 12.1 refer to the SPA but never reveal its New York choice of law and forum, its coverage of 'any Ancillary Agreement', or a Section 11.4 rule on which agreement prevails. The harm comes from split proceedings under different laws with inconsistent results, and that only appears once you know the SPA points somewhere else. A Texas clause read alone is a common, negotiable term, not a visible conflict."
+              },
+              "stock_purchase_agreement_kessrin.md": {
+                "findable": false,
+                "evidence": "\"**11.4 Order of Precedence.** This Agreement controls, except that each Ancillary Agreement controls as to its own subject matter.\"",
+                "reason": "The SPA by itself shows that Section 11.9 and Section 11.10 pick New York law and New York County courts for the SPA and any Ancillary Agreement. It also shows that Section 11.4 lets each Ancillary Agreement, including the TSA, control as to its own subject matter. This creates a possible gap: if the TSA had its own governing-law clause, that clause would win. But the SPA does not show that the TSA actually picks Texas law and Harris County courts, or any different law or forum at all. The 9-month transition term is not stated in the SPA either. Without the TSA's Section 12.7, nothing in the SPA shows a real conflict or split forum, and nothing shows litigation in Seller's home forum. The problem therefore depends on the other document."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Provider may assign this Agreement, or delegate any of its obligations under it, in whole or in part, to any Person without the consent of Recipient. Recipient may not assign this Agreement without the prior written consent of Provider.",
+            "reason": "The problem is present and hurts the client. Under Section 12.3, Seller (the Provider, which owes the services) can assign or delegate the TSA to any Person, including a competing battery recycler, without consent. The Company (the Recipient, which Buyer will own) needs Seller's consent to assign. The TSA only binds such an assignee to perform 'on the terms of this Agreement'; nothing ensures it is qualified. The assignee would then receive Recipient Data, including plant operating data, feedstock supplier terms and offtake terms. Nothing in the folder cures this. SPA Section 11.5 restricts assignment only of the SPA. SPA Section 11.4 makes each Ancillary Agreement control as to its own subject matter. The SPA Section 6.9 non-compete binds only Seller and its Affiliates, not an unaffiliated assignee. Section 2.3, which makes Provider responsible for its subcontractors, does not reach a full assignment. The TSA is still an unexecuted form (undated, fees blank), and nothing shows the client has accepted the term. The point therefore remains actionable: the client can negotiate mutual consent, or limit assignment to Affiliates with Seller remaining liable and a carve-out for competitors."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 7,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

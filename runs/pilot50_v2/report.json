@@ -1,0 +1,188 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 1,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 1,
+      "failed": 2,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 1,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 1,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s50-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s50-m0002",
+      "accepted": false,
+      "failed_gate": "issue_check",
+      "reason": "missing: [\"I6\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    },
+    {
+      "matter_id": "s50-m0003",
+      "accepted": false,
+      "failed_gate": "issue_check",
+      "reason": "missing: [\"I1\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 4,
+      "input_tokens": 18418,
+      "output_tokens": 47284,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 23,
+      "input_tokens": 610020,
+      "output_tokens": 126448,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 139395,
+      "output_tokens": 10277,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4313,
+      "output_tokens": 759,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 14,
+      "input_tokens": 537182,
+      "output_tokens": 10632,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 18,
+      "input_tokens": 141719,
+      "output_tokens": 10091,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 1,
+      "input_tokens": 1313,
+      "output_tokens": 156,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 1,
+      "input_tokens": 6537,
+      "output_tokens": 2305,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 2,
+      "input_tokens": 75394,
+      "output_tokens": 12240,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 3,
+      "input_tokens": 18480,
+      "output_tokens": 1522,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "battery recycling": 1,
+      "industrial textiles": 1,
+      "organic dairy": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 1,
+      "supply agreement": 1,
+      "asset purchase agreement": 1
+    },
+    "issue_types": {
+      "expired_notice_window": 2,
+      "missing_assignment_restriction": 2,
+      "change_of_control_consent": 2,
+      "liability_cap_carveout": 2,
+      "defined_term_inconsistency": 1,
+      "governing_law_mismatch": 1,
+      "uncapped_indemnity": 1,
+      "auto_renewal": 1,
+      "exclusivity_scope": 1,
+      "survival_gap": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

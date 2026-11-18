@@ -1,0 +1,102 @@
+{
+  "matter_id": "s50-m0003",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I1\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I1"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": false,
+            "evidence": "IP Assignment Section 5.3: \"Notwithstanding Section 9.5(b) of the Purchase Agreement, all Losses arising out of any inaccuracy in or breach of Section 4.12 of the Purchase Agreement or any breach of this Agreement shall be subject to the Cap and shall be counted toward the Cap together with all other Losses recoverable under Section 9.2(a) of the Purchase Agreement.\" APA Section 11.9: \"Where an Ancillary Agreement expressly identifies the provision of this Agreement that it modifies, that Ancillary Agreement shall control with respect to such provision.\"",
+            "reason": "findable from ip_assignment_agreement.md alone, so it does not need two documents",
+            "alone": {
+              "ip_assignment_agreement.md": {
+                "findable": true,
+                "evidence": "\"5.3 Recovery. Notwithstanding Section 9.5(b) of the Purchase Agreement, all Losses arising out of any inaccuracy in or breach of Section 4.12 of the Purchase Agreement or any breach of this Agreement shall be subject to the Cap and shall be counted toward the Cap together with all other Losses recoverable under Section 9.2(a) of the Purchase Agreement.\" Also Section 5.1: the indemnities \"except as provided in this Article 5, are neither enlarged nor diminished by this Agreement.\"",
+                "reason": "Read alone, the document shows the problem and that it hurts the Buyer. Section 5.3 expressly overrides APA Section 9.5(b) so that Section 4.12 (IP) losses become subject to the Cap. Drafting it as 'notwithstanding Section 9.5(b)' only makes sense if 9.5(b) otherwise keeps those losses outside the Cap. Section 5.1 confirms that Article 5 is meant to change the APA indemnity terms. A careful associate for the Buyer would flag this as a narrowing of the client's IP indemnity recovery that the Buyer signed at Closing. The document does not show: (1) that 9.5(b) carves out Fundamental Representations and Fraud; (2) that Section 4.12 is a Fundamental Representation; (3) the $3,600,000 Cap amount; or (4) whether APA Section 11.9 makes this ancillary provision control over the APA. Those details confirm how large the harm is and that the override is enforceable. They are not needed to see that the client is giving up IP recovery outside the Cap."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.9: \"Where an Ancillary Agreement expressly identifies the provision of this Agreement that it modifies, that Ancillary Agreement shall control with respect to such provision.\"",
+                "reason": "Read alone, the APA protects the Buyer. Section 9.5(b) carves breaches of Fundamental Representations, which include Section 4.12 (Intellectual Property), out of the $3,600,000 Cap. Section 11.9 does let an Ancillary Agreement override an APA provision it expressly identifies, and an associate might flag that as a general drafting risk. But nothing in the APA shows that any Ancillary Agreement actually modifies Section 9.5(b) or brings IP losses back under the Cap. That override is in IP Assignment Agreement Section 5.3, which is not provided here. Without it, the APA shows an uncapped IP carve-out that favors the Buyer, so the specific harm cannot be found from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Disclosure Schedule §4.7(b), Item 1: \"Section 14.2 of the agreement provides that Seller may not assign the agreement, or any of its rights or obligations under it, without the prior written consent of the Cooperative... including an assignment in connection with a sale of all or substantially all of Seller's assets... Under Section 14.3, the Cooperative may terminate the agreement on sixty (60) days' written notice if Seller assigns, or purports to assign, the agreement without that consent.\" APA §7.2(d): Required Consents are only \"(i) the consent of Kettleby Glass Bottle Company ... and (ii) the consent of the landlord under the Lease.\"",
+            "reason": "The problem is present. The Ashgrove Cooperative contract supplies about 82% of the Business's raw organic milk and is an Assigned Contract. Its assignment needs the Cooperative's prior written consent, and an assignment without consent gives the Cooperative a termination right on 60 days' notice. The APA defines Required Consents (§7.2(d)) to cover only the Kettleby and lease consents, and Seller's consent covenant (§6.4) is limited to those Required Consents. Closing on March 2, 2026 therefore did not depend on the Cooperative's consent, and nothing in the folder shows that consent was obtained (the Bill of Sale, for example, mentions only the landlord's consent). Because the requirement was disclosed in Schedules 4.3 and 4.7(b), Stalaind likely has no indemnity claim for rep breach, so the risk sits with the Buyer. This is still actionable. The termination right is a continuing exposure, not a lapsed deadline, and nothing shows Stalaind accepted it or that the Cooperative has waived it. Stalaind can still seek the Cooperative's consent or a waiver, and can invoke Seller's further-assurances covenant (§6.8), to protect its main organic milk supply.",
+            "alone": {
+              "disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "Under Section 14.2, the consent requirement applies to any assignment by operation of law or otherwise, including an assignment in connection with a sale of all or substantially all of Seller's assets or a change of control of Seller. Under Section 14.3, the Cooperative may terminate the agreement on sixty (60) days' written notice if Seller assigns, or purports to assign, the agreement without that consent.",
+                "reason": "The schedule alone shows that assigning the Ashgrove Cooperative milk supply agreement needs the Cooperative's prior written consent. It also shows that the Cooperative can terminate if the agreement is assigned without consent, and that this supplier provides about 82% of the Business's raw milk. Section 4.3 lists this consent among those required. Read alone, the schedule therefore flags a consent that must be obtained, which is a routine item. It does not show the actual problem. That problem depends on the APA: Sections 7.2(d) and 6.4 define Required Consents as only the Kettleby and Marlow Road consents, so the Cooperative consent was not a closing condition and Seller had no covenant to obtain it. It also depends on the deal having closed on March 2, 2026 without that consent. Neither the Required Consents definition nor the closing facts can be seen from this document."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Seller shall have obtained the following consents (the \"Required Consents\"), each in form and substance reasonably satisfactory to Buyer: (i) the consent of Kettleby Glass Bottle Company to the assignment to Buyer of the glass bottle supply agreement between Kettleby Glass Bottle Company and Seller; and (ii) the consent of the landlord under the Lease to the assignment of the Lease for the Marlow Road plant to Buyer;\"",
+                "reason": "The APA shows only one side of the problem. Section 7.2(d) limits the Required Consents closing condition to the Kettleby bottle agreement and the Marlow Road lease, and Section 6.4 limits Seller's consent-seeking covenant to those consents. It also defines Assigned Contracts by reference to Disclosure Schedule Section 4.7(b), and Section 4.7(a) mentions raw milk supply agreements in general terms. Nowhere does the APA name the Ashgrove Valley cooperative or its Raw Organic Milk Supply Agreement. It also does not say that this agreement is an Assigned Contract, that it needs the counterparty's consent to assign on an asset sale, or that the cooperative can terminate if consent is not obtained. Those facts come only from the Disclosure Schedule. Reading the APA alone, an associate could at most wonder in general whether other assigned contracts need consent. They could not identify this specific consent gap or the risk that the client's organic milk supply could be terminated."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 9.1: \"The representations and warranties in this Agreement, other than the Fundamental Representations, shall survive the Closing until six (6) months after the Closing Date. ... No claim may be asserted in respect of any matter reflected in the Closing Statement until the Final Closing Statement has been determined under Section 2.6.\" Section 9.4(a) repeats the bar for \"any Inventory or Accounts Receivable included in Closing Working Capital.\"",
+            "reason": "Sections 4.9 (Inventory) and 4.10 (Accounts Receivable) are not Fundamental Representations, so they expire on September 2, 2026. Yet Sections 9.1 and 9.4(a) bar any claim on those items until the Final Closing Statement is set. Under Section 2.6 that can take about 225 days after the March 2 Closing: up to 120 days for the Closing Statement, 45 days for Seller's review and 60 days for the Independent Accountant. The tail in Section 9.1 only saves claims \"asserted ... before the expiration of the applicable survival period,\" and the same section forbids asserting these claims during that window. Buyer is the indemnified party under Section 9.2, so the gap falls on Stalaind. Two things do not cure it. The Section 2.6 true-up only captures working capital value; it does not compensate breaches of the inventory and receivables reps. The exclusive-remedy clause in Section 9.8 shuts out other routes. The issue remains actionable. The folder holds no settlement, payment or waiver showing that Stalaind accepted a loss of these claims. Its July 14, 2026 letter expressly reserves claims under Section 4.9. Stalaind can still argue that the conflicting provisions toll survival, or can seek an amendment or tolling agreement with Seller."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Escrow Agreement §5.1: \"On the 120th day following the Closing Date, the Escrow Agent shall release to Seller $1,800,000, less the aggregate Claimed Amounts of all Pending Claims under Claim Notices delivered to the Escrow Agent before that day.\" Claim letter: \"Stalaind does not accept that position. Stalaind has not agreed to any release, and the Escrow Amount of $3,600,000 deposited at Closing remains fully available to satisfy this claim as provided in Section 9.6 of the APA.\"",
+            "reason": "The Closing was on March 2, 2026, so the 120th day was June 30, 2026. Section 5.1 makes the interim release automatic: no Joint Written Instructions or further notice are needed. It holds back only amounts under Claim Notices delivered to the Escrow Agent before that day (see §§4.1 and 10.2). Stalaind's claim letter is dated July 14, 2026, which is after the cutoff. It is addressed only to Proudul, so it is not a Claim Notice to the Escrow Agent at all. Its statement that the full $3.6M 'remains fully available' is therefore wrong: at most $1,800,000 remains to secure a $2,150,000 claim. The roughly $350,000 shortfall must be collected from Seller directly, with that recovery risk falling on Stalaind. Seller Note §5.4 bars setoff, so the note does not close the gap. The problem is still actionable for Stalaind. The folder records its objection, and it has not accepted the release. It still needs to deliver a proper Claim Notice to the Escrow Agent before the Final Release Date (March 2, 2027) to protect the remaining $1.8M, and to plan direct recovery of the excess from Seller.",
+            "alone": {
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "On the 120th day following the Closing Date, the Escrow Agent shall release to Seller $1,800,000, less the aggregate Claimed Amounts of all Pending Claims under Claim Notices delivered to the Escrow Agent before that day. ... The Escrow Agent shall make the interim release without the need for Joint Written Instructions or any further notice from either Party.",
+                "reason": "This document shows only the mechanism behind the risk. Under Section 5.1, $1,800,000 is released automatically on day 120. Sections 4.1 and 10.2 say only a Claim Notice actually received by the Escrow Agent holds funds back. A notice sent only to Seller does not count. What it does not show is that anything went wrong. The Closing Date is defined by reference to the Purchase Agreement, so the June 30 deadline is not fixed here. The agreement date alone does not establish it. Nothing here shows Buyer's claim, its $2,150,000 amount, its July 14 date, or that it went only to Proudul. It also does not show the Seller Note's bar on setoff. The late notice that never reached the agent, and the resulting shortfall, can only be seen from the claim letter and the other deal documents."
+              },
+              "stalaind_indemnity_claim_letter.md": {
+                "findable": false,
+                "evidence": "We have also received your letter of July 8, 2026, which states that an interim release of escrow funds to Proudul has occurred under the Escrow Agreement. Stalaind does not accept that position. Stalaind has not agreed to any release, and the Escrow Amount of $3,600,000 deposited at Closing remains fully available to satisfy this claim as provided in Section 9.6 of the APA.",
+                "reason": "The letter alone shows several facts. It is dated July 14, 2026, the Closing was March 2, 2026, and it is addressed only to Proudul with no copy to the Escrow Agent. It claims $2,150,000 against a $3,600,000 escrow. It also records Proudul's position that an interim escrow release already happened, which Stalaind rejects. That is a warning sign an associate would notice. What the letter does not show is the release mechanism itself. Nothing in it says the Escrow Agreement releases $1,800,000 on the 120th day after Closing (June 30, 2026). Nothing says only amounts covered by a Claim Notice delivered to the Escrow Agent before that day are held back. Nothing says Seller Note Section 5.4 bars setoff. Without those Escrow Agreement and Seller Note terms, a reader cannot tell whether Proudul's release position is right, that the notice was late, or that only $1,800,000 now secures a $2,150,000 claim. Those core elements come from documents not provided."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

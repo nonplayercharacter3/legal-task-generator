@@ -1,0 +1,258 @@
+{
+  "matter_id": "s50-m0002",
+  "summary": "Progel Composites, Inc., a maker of ballistic armor panels and glass-fiber reinforced composite structures, buys technical fabrics from Peikain Industrial Weaving Co. under a Supply Agreement. The folder holds seven documents. The binding documents are the Supply Agreement, a later side letter, a data processing addendum covering Peikain's vendor-managed-inventory personnel and portal data, and a service level schedule. A non-binding term sheet records the agreed scope. Two distractors are an office lease for Progel's sales office and Peikain's certificate of insurance. The Supply Agreement's order-of-precedence clause ranks the side letter first and the DPA second on personal-data matters, which lets flawed terms in those documents control. Six issues are planted. (1) The change-of-control consent right is triggered by the pending acquisition of Progel's parent, which the side letter records but does not consent to. (2) The DPA brings data-breach losses back under the cap that the Supply Agreement excluded them from. (3) Progel's product indemnity is uncapped. (4) Renewal is automatic for long terms with a narrow opt-out window. (5) The side letter lets Peikain assign freely. (6) Exclusivity is far broader than the term sheet.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Progel Composites, Inc.",
+      "role": "Customer under the Supply Agreement; buyer of technical fabrics; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Peikain Industrial Weaving Co.",
+      "role": "Supplier under the Supply Agreement; manufacturer of woven technical fabrics"
+    },
+    {
+      "id": "P3",
+      "name": "Ashcombe Industrial Holdings, Inc.",
+      "role": "Parent company of Progel Composites, Inc.; party to a pending merger"
+    },
+    {
+      "id": "P4",
+      "name": "Tavistrel Partners LP",
+      "role": "Acquirer of Ashcombe Industrial Holdings, Inc. under the pending merger"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "February 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "36 months from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid by Customer in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "17.1"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Side Letter; then DPA as to personal data processing; then Supply Agreement; then Service Level Schedule",
+      "doc": "D1",
+      "section": "17.4"
+    },
+    {
+      "id": "F6",
+      "key": "Minimum annual purchase commitment",
+      "value": "$4,200,000 per contract year",
+      "doc": "D1",
+      "section": "4.3"
+    },
+    {
+      "id": "F7",
+      "key": "Term Sheet exclusivity scope",
+      "value": "para-aramid woven fabrics for ballistic panels, United States and Canada only",
+      "doc": "D3",
+      "section": "3"
+    },
+    {
+      "id": "F8",
+      "key": "Term Sheet renewal",
+      "value": "renewal only by mutual written agreement",
+      "doc": "D3",
+      "section": "2"
+    },
+    {
+      "id": "F9",
+      "key": "Side Letter date",
+      "value": "September 8, 2026",
+      "doc": "D2",
+      "section": "Heading"
+    },
+    {
+      "id": "F10",
+      "key": "On-time delivery target",
+      "value": "95% of Purchase Order lines per calendar quarter",
+      "doc": "D5",
+      "section": "2.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "progel_peikain_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "peikain_side_letter_2026-09.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "progel_peikain_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "progel_peikain_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "progel_peikain_service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "progel_sales_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "peikain_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "D1 Section 15.2 defines Change of Control to include any direct or indirect change of control of Customer, including through a parent entity. A Change of Control without Supplier's prior written consent is a material breach. It lets Supplier terminate on 10 days' notice and invoice the Minimum Purchase Shortfall against the $4,200,000 annual commitment. The Side Letter (D2), dated September 8, 2026, recites that Progel's parent, Ashcombe Industrial Holdings, Inc., signed a merger agreement on August 21, 2026 under which it will be acquired by Tavistrel Partners LP, with closing expected in Q1 2027. The Side Letter then grants only volume relief. Its Section 6 states that the Agreement otherwise remains unmodified, so Peikain's acknowledgment of the deal is not the consent Section 15.2 requires. Read alone, D1 shows only a standard consent right and D2 shows only a recital of a transaction. Read together, they show that the pending indirect change of control will trigger the consent right and that consent has not been obtained.",
+      "doc": "D1",
+      "section": "15.2",
+      "detect_terms": [
+        "direct or indirect change of control",
+        "prior written consent of Supplier"
+      ],
+      "expected_finding": "The pending acquisition of Progel's parent Ashcombe by Tavistrel, recited in the September 8, 2026 Side Letter, is an indirect Change of Control under Supply Agreement Section 15.2 for which Peikain's prior written consent has not been obtained, exposing Progel to termination and a Minimum Purchase Shortfall charge, so an express written consent should be obtained before closing.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Recitals",
+      "detect_terms2": [
+        "acquired by Tavistrel Partners"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "D1 Section 12.3 excludes from the Section 12.2 cap (fees paid in the prior 12 months) any liability for Supplier's breach of Section 10 (Data Security) or the Data Processing Addendum. D4 Section 9.3 states that all liability arising out of the Addendum, including for any Personal Data Breach, is subject to the cap in Section 12.2 of the Agreement. D1 Section 17.4 gives the DPA precedence over the Supply Agreement as to the processing of personal data, so D4 Section 9.3 controls. The result is that Peikain's liability for breaches involving Progel employee and portal data is capped, even though the Supply Agreement left it uncapped. Neither document alone shows this; it appears only when D4 Section 9.3 is read against D1 Sections 12.3 and 17.4.",
+      "doc": "D4",
+      "section": "9.3",
+      "detect_terms": [
+        "including for any Personal Data Breach",
+        "subject to the cap in Section 12.2"
+      ],
+      "expected_finding": "Because Supply Agreement Section 17.4 gives the DPA precedence on personal-data matters, DPA Section 9.3 subjects Peikain's data-breach liability to the Section 12.2 cap, removing the Section 12.3 carve-out and limiting Progel's recovery for data breaches, so DPA Section 9.3 should be amended to preserve the uncapped carve-out.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "12.3",
+      "detect_terms2": [
+        "breach of Section 10 (Data Security)"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "D1 Section 11.2 requires Customer (Progel) to indemnify Supplier for all Losses arising from Customer Specifications or from end products incorporating the Products, without regard to any limitation of liability in the Agreement. Supplier's corresponding indemnity in Section 11.1 remains subject to the Section 12.2 cap. Progel's end products are ballistic armor panels, so this exposes Progel to unlimited liability for third-party product and personal-injury claims. This is the one issue visible from a single clause.",
+      "doc": "D1",
+      "section": "11.2",
+      "detect_terms": [
+        "without regard to any limitation of liability",
+        "end products incorporating the Products"
+      ],
+      "expected_finding": "Supply Agreement Section 11.2 makes Progel's indemnity for specification and end-product claims unlimited while Peikain's indemnity is capped, exposing Progel to uncapped liability for ballistic-panel product claims, so the indemnity should be brought under a cap (or a separate negotiated cap) and limited to Losses caused by Customer Specifications.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "D1 Section 2.2 provides that after the 36-month Initial Term starting February 2, 2026, the Agreement automatically renews for successive 36-month Renewal Terms. The only exception is a notice of non-renewal delivered during the Non-Renewal Window. D1 Section 1 defines the Non-Renewal Window as the 15-day period ending 120 days before expiry of the then-current term. Each renewal carries forward the $4,200,000 minimum annual purchase commitment and the exclusivity obligation. The term sheet (D3 Section 2) contemplated renewal only by mutual written agreement. The trap appears only when Section 2.2 is read with the Section 1 definition.",
+      "doc": "D1",
+      "section": "2.2",
+      "detect_terms": [
+        "successive 36-month Renewal Terms",
+        "15-day period ending 120 days"
+      ],
+      "expected_finding": "Supply Agreement Section 2.2, read with the Non-Renewal Window definition in Section 1, renews the Agreement automatically for 36-month terms, carrying the minimum purchase and exclusivity commitments, unless Progel gives notice in a narrow 15-day window ending 120 days before expiry, contrary to the term sheet's mutual-agreement renewal, so renewal should require mutual agreement or the opt-out should be widened.",
+      "contradicts": "F8",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "D1 Section 15.1 requires each party's consent before the other assigns. D2 Section 4, however, permits Supplier to assign, delegate or transfer the Agreement in whole or in part to any person upon written notice to Customer. Under D1 Section 17.4 the Side Letter prevails over the Supply Agreement, so the Section 15.1 restriction no longer binds Peikain. Peikain could therefore transfer the contract, including Progel's exclusive supply relationship and confidential specifications, to a Progel competitor or to an unqualified weaver. Progel would have no consent right and no termination right.",
+      "doc": "D2",
+      "section": "4",
+      "detect_terms": [
+        "to any person upon written notice"
+      ],
+      "expected_finding": "Side Letter Section 4, which prevails over the Supply Agreement under Section 17.4, lets Peikain assign the Agreement to anyone, including a Progel competitor, on mere notice, overriding the mutual consent requirement in Supply Agreement Section 15.1, so the Side Letter should be amended to restore Progel's consent right (at least for assignments to competitors) or give Progel a termination right.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I6",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D1 Section 4.1 requires Customer to purchase one hundred percent of its requirements for Technical Fabrics from Supplier for use anywhere in the world. D1 Section 1 defines Technical Fabrics as all woven, knitted and nonwoven industrial fabrics of any fiber. The term sheet (D3 Section 3) limited exclusivity to para-aramid woven fabrics for ballistic panels in the United States and Canada. The executed clause therefore sweeps in Progel's glass-fiber composite lines and its plants outside North America. D3 alone records a narrow deal term, and D1 alone reads as an ordinary requirements clause. The overreach appears only when the two are compared.",
+      "doc": "D1",
+      "section": "4.1",
+      "detect_terms": [
+        "one hundred percent of its requirements",
+        "woven, knitted and nonwoven industrial fabrics"
+      ],
+      "expected_finding": "Supply Agreement Section 4.1, with the Technical Fabrics definition, imposes worldwide exclusivity over all industrial fabrics, far beyond the term sheet's para-aramid ballistic fabrics in the United States and Canada, locking Progel's glass-fiber and non-North American purchasing to Peikain, so the exclusivity and definition should be narrowed to the term sheet scope.",
+      "contradicts": "F7",
+      "doc2": "D3",
+      "section2": "3",
+      "detect_terms2": [
+        "para-aramid woven fabrics for ballistic panels"
+      ]
+    }
+  ]
+}

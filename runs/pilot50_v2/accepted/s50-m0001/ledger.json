@@ -1,0 +1,221 @@
+{
+  "matter_id": "s50-m0001",
+  "summary": "Mouloul Energy Materials, Inc. (the firm's client, Buyer) is buying all of the outstanding shares of Kessrin Cell Recovery, Inc. from Porert Industrial Holdings, LLC (Seller) for $86,400,000. Kessrin runs a lithium-ion battery recycling business that discharges, shreds and recovers lithium, cobalt and nickel by hydrometallurgy from black mass. The folder is the execution set: the execution draft of the stock purchase agreement, dated as of May 11, 2026, with the forms of bill of sale, IP assignment agreement and transition services agreement attached as exhibits; the signed letter of intent dated February 9, 2026; and two unrelated closing-folder items, a broker's cover letter and a landlord estoppel certificate. Four issues are planted. (1) The SPA's environmental termination right runs from the LOI date, so it lapsed before signing, although the LOI promised a review period running after signing. (2) The IP assignment defines 'Recycling Process Technology' far more narrowly than the SPA does, and the SPA's precedence clause lets it control. (3) The TSA picks Texas law and Texas courts, against the SPA's New York law and forum clause that expressly covers ancillary agreements. (4) The TSA lets Seller, as Provider, assign freely to anyone, including a competing recycler.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Mouloul Energy Materials, Inc.",
+      "role": "Buyer of all outstanding shares of the Company; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Porert Industrial Holdings, LLC",
+      "role": "Seller of the Company shares; Provider under the transition services agreement; assignor under the IP assignment and bill of sale"
+    },
+    {
+      "id": "P3",
+      "name": "Kessrin Cell Recovery, Inc.",
+      "role": "The Company being acquired; lithium-ion battery recycler; Recipient under the transition services agreement and assignee under the IP assignment and bill of sale"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Purchase Price",
+      "value": "$86,400,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "SPA date",
+      "value": "May 11, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "Letter of Intent date",
+      "value": "February 9, 2026",
+      "doc": "D5",
+      "section": "Date line"
+    },
+    {
+      "id": "F4",
+      "key": "LOI environmental review period",
+      "value": "30 days following execution of the definitive stock purchase agreement",
+      "doc": "D5",
+      "section": "Section 6"
+    },
+    {
+      "id": "F5",
+      "key": "SPA governing law",
+      "value": "New York",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F6",
+      "key": "SPA exclusive forum",
+      "value": "state and federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F7",
+      "key": "SPA order of precedence",
+      "value": "SPA controls, except each Ancillary Agreement controls as to its own subject matter",
+      "doc": "D1",
+      "section": "Section 11.4"
+    },
+    {
+      "id": "F8",
+      "key": "SPA definition of Recycling Process Technology",
+      "value": "patents, trade secrets, know-how, process parameters and software used in the Company's hydrometallurgical metal recovery",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F9",
+      "key": "SPA environmental termination threshold",
+      "value": "Remediation Costs exceeding $1,500,000",
+      "doc": "D1",
+      "section": "Section 9.1(e)"
+    },
+    {
+      "id": "F10",
+      "key": "TSA Service Term",
+      "value": "9 months after the Closing Date",
+      "doc": "D4",
+      "section": "Section 3.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_kessrin.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale_shredding_line.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "landlord_estoppel_baytown_facility.md",
+      "kind": "landlord estoppel certificate",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "SPA Section 9.1(e) lets Buyer terminate if the Phase II environmental assessment shows Remediation Costs above $1,500,000. Buyer must give written notice no later than 45 days after the date of the Letter of Intent. The LOI (D5) is dated February 9, 2026, so that window closed on March 26, 2026. The SPA is dated May 11, 2026, so the termination right has already expired on the day of signing and gives no protection. LOI Section 6 records the agreed position, signed by both parties: Buyer was to have an environmental review period of 30 days following execution of the definitive agreement. The SPA has not yet been signed, so the point can still be fixed. Neither document shows the problem alone. It appears only when the SPA's 45-day period is measured from the LOI's date and compared with the SPA date.",
+      "doc": "D1",
+      "section": "Section 9.1(e)",
+      "detect_terms": [
+        "forty-five (45) days after the date of the Letter of Intent"
+      ],
+      "expected_finding": "Because the LOI is dated February 9, 2026, the Section 9.1(e) environmental termination window closed on March 26, 2026, before the May 11, 2026 SPA date. Buyer would therefore sign with no usable environmental walk-away right, contrary to the LOI's 30-days-after-signing review period, and Section 9.1(e) should be redrafted so the window runs 30 days from the SPA date.",
+      "contradicts": "F4",
+      "doc2": "D5",
+      "section2": "Section 6",
+      "detect_terms2": [
+        "thirty (30) days following execution of the Definitive Agreement"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines 'Recycling Process Technology' broadly: patents, trade secrets, know-how, process parameters and software used in the Company's hydrometallurgical recovery. SPA Section 6.6 requires Seller to assign all Recycling Process Technology to the Company at Closing using the IP Assignment Agreement in the form attached as an exhibit. Section 1.1 of that IP Assignment Agreement (D3) defines the same term as only the patents and patent applications listed on Exhibit A. SPA Section 11.4 gives each Ancillary Agreement control over its own subject matter, so the narrower IP Assignment definition governs what is actually conveyed. As a result, Seller keeps the leach-chemistry trade secrets, process parameters and control software, which are the core value of the business, and remains free to use or license them.",
+      "doc": "D3",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "the Patents listed on Exhibit A"
+      ],
+      "expected_finding": "Because SPA Section 11.4 lets the IP Assignment Agreement control its own subject matter, its patents-only definition of 'Recycling Process Technology' means the Company would not receive the trade secrets, know-how, process parameters and software that SPA Sections 1.1 and 6.6 promise. The IP Assignment definition must be conformed to the SPA definition, or the SPA must be made to control.",
+      "contradicts": "F8",
+      "doc2": "D1",
+      "section2": "Section 6.6",
+      "detect_terms2": [
+        "assign to the Company all Recycling Process Technology"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "TSA Section 12.7 chooses Texas law and the exclusive jurisdiction of the state and federal courts in Harris County, Texas, which is Seller's home forum. SPA Sections 11.9 and 11.10 choose New York law and New York County courts for all disputes arising out of the SPA 'or any Ancillary Agreement'. SPA Section 11.4 makes each Ancillary Agreement control over its own subject matter, so the TSA's Texas clause prevails for service disputes. Service failures during the 9-month transition often overlap with SPA claims such as working capital, covenant and indemnity claims. Buyer would face split proceedings under different laws, a risk of inconsistent results, and litigation in Seller's home forum.",
+      "doc": "D4",
+      "section": "Section 12.7",
+      "detect_terms": [
+        "laws of the State of Texas",
+        "Harris County, Texas"
+      ],
+      "expected_finding": "The TSA's Texas law and exclusive Harris County forum conflict with the SPA's New York law and forum clause covering Ancillary Agreements, and SPA Section 11.4 lets the TSA clause control. Related disputes would be split across forums, so the TSA should be conformed to New York law and the New York County forum.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ],
+      "doc2": "D1",
+      "section2": "Section 11.10",
+      "detect_terms2": [
+        "or any Ancillary Agreement",
+        "New York County"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 12.3 lets the Provider (Seller) assign the TSA, in whole or in part, to any Person without the Recipient's consent. The Recipient (the Company, which Buyer will own) may not assign without the Provider's consent. Seller could therefore move the service obligations to a competing battery recycler. That assignee would then gain access to the plant operating data, feedstock supplier relationships and black-mass offtake information that the Company shares while it receives services. It would also control the quality of essential services. The SPA's own anti-assignment clause covers only the SPA and does not reach the TSA.",
+      "doc": "D4",
+      "section": "Section 12.3",
+      "detect_terms": [
+        "to any Person without the consent of Recipient"
+      ],
+      "expected_finding": "TSA Section 12.3 lets Seller assign its service obligations to anyone, including a competitor of the Company, without consent. The clause should require Recipient's prior written consent for any assignment by Provider, with no exception for transfers to competitors.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

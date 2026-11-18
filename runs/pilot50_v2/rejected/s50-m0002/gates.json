@@ -1,0 +1,114 @@
+{
+  "matter_id": "s50-m0002",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I6\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I6"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Supply Agreement §15.2: \"Any Change of Control that occurs without the prior written consent of Supplier is a material breach of this Agreement. In that event, Supplier may, notwithstanding Section 14.1, terminate this Agreement on 10 days' written notice to Customer and invoice Customer for the Minimum Purchase Shortfall for the then-current Contract Year.\" Side Letter Recital B: \"on August 21, 2026, Ashcombe entered into an agreement and plan of merger under which Ashcombe will be acquired by Tavistrel Partners LP ... Closing of the transaction is expected in the first quarter of 2027\"; Side Letter §6.2: \"Except as expressly set out in this Side Letter, the Agreement remains unmodified and in full force and effect.\"",
+            "reason": "Section 15.2 defines Change of Control to include a change of control of any entity that directly or indirectly controls Customer. Ashcombe, Progel's sole parent, is being acquired by Tavistrel, so closing will be a Change of Control. The Side Letter only recites the deal and gives volume relief. It contains no consent, and §6.2 confirms the Agreement is otherwise unmodified. Peikain's acknowledgment of the deal is therefore not the prior written consent §15.2 requires. Closing is still pending (expected Q1 2027), so the issue remains actionable: Progel should obtain Peikain's written consent before closing. Without it, Peikain could terminate on 10 days' notice and invoice the Minimum Purchase Shortfall against the $4.2M commitment. Under the Agreement's partial-year rule, that shortfall is measured against the full year's commitment. This is a material exposure for Progel.",
+            "alone": {
+              "progel_peikain_supply_agreement.md": {
+                "findable": false,
+                "evidence": "\"Change of Control\" means any direct or indirect change of control of Customer, whether by merger, consolidation, sale of equity, sale of all or substantially all assets, or otherwise, including any change of control of any entity that directly or indirectly controls Customer. ... Any Change of Control that occurs without the prior written consent of Supplier is a material breach of this Agreement. In that event, Supplier may, notwithstanding Section 14.1, terminate this Agreement on 10 days' written notice to Customer and invoice Customer for the Minimum Purchase Shortfall for the then-current Contract Year",
+                "reason": "Read alone, the Supply Agreement shows a broad consent right that is unfavorable to Progel. It covers indirect changes of control at the parent level, and a change of control without consent is a material breach. That breach allows termination on 10 days' notice and a shortfall invoice measured against the $4.2M annual commitment. An associate could flag this clause as a risk. The agreement does not show that any change of control is pending or has happened. It does not mention Ashcombe Industrial Holdings, the August 21, 2026 merger agreement with Tavistrel Partners, or the expected Q1 2027 closing. It also does not show whether Peikain has given consent. Those facts appear only in the Side Letter, including its recital of the deal and its Section 6 statement that the Agreement otherwise remains unmodified. So the actual problem, that a pending indirect change of control will trigger the clause without the required consent, cannot be seen from this document alone."
+              },
+              "peikain_side_letter_2026-09.md": {
+                "findable": false,
+                "evidence": "Recital B: \"Customer has informed Supplier that on August 21, 2026, Ashcombe entered into an agreement and plan of merger under which Ashcombe will be acquired by Tavistrel Partners LP ... Closing of the transaction is expected in the first quarter of 2027\"; Section 6.2: \"Except as expressly set out in this Side Letter, the Agreement remains unmodified and in full force and effect.\"",
+                "reason": "The Side Letter shows that Progel's parent will be acquired by Tavistrel, with closing expected in Q1 2027. It also shows that the letter grants only volume, forecast, lead-time and supplier-assignment arrangements and otherwise leaves the Agreement unmodified. It contains no consent to a change of control. It does not show, however, that the Agreement has any change-of-control provision. It does not show that such a provision reaches indirect changes through a parent, that consent is required, or that a change without consent is a material breach allowing termination on 10 days' notice plus a Minimum Purchase Shortfall invoice against a $4,200,000 commitment. All of that comes from Section 15.2 of the Supply Agreement, which is not provided. Read alone, the Side Letter is just a recital of a pending transaction alongside volume relief, so an associate could not see that the deal triggers an unsatisfied consent right that harms Progel."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "DPA Section 9.3: \"All liability of either Party arising out of or relating to this Addendum, including for any Personal Data Breach, is subject to the cap in Section 12.2 of the Agreement.\" Supply Agreement Section 12.3: \"Section 12.2 does not apply to liability for ... (b) breach of Section 10 (Data Security) or the DPA ...\" Section 17.4: \"(b) the DPA, as to personal data processing; then (c) this Agreement.\"",
+            "reason": "The two documents conflict. The Supply Agreement leaves Supplier's liability for data security and DPA breaches uncapped. DPA Section 9.3 puts all DPA and Personal Data Breach liability under the 12-month-fees cap. Section 17.4 gives the DPA priority over the Agreement for personal data processing, so Peikain can argue the DPA cap controls. Under that reading, Peikain's liability for breaches involving Progel personnel and Portal data is capped. That hurts Progel, the Customer: Peikain is the processor, gives the security and breach-cost obligations (DPA Sections 5.4 and 9.2), and benefits from the cap. Nothing in the folder cures this. The September 2026 Side Letter does not address the cap, the Service Level Schedule defers to the DPA, and the term sheet's intended data-security carve-out is non-binding. Progel has not accepted any result or waived the point, so it remains live and Progel can still seek to amend DPA Section 9.3.",
+            "alone": {
+              "progel_peikain_data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "9.3 Limitation. All liability of either Party arising out of or relating to this Addendum, including for any Personal Data Breach, is subject to the cap in Section 12.2 of the Agreement.",
+                "reason": "Section 9.3 of the Addendum does show that Supplier's data-breach liability is subject to a cap in Section 12.2 of the Agreement. On its face that is unfavorable to Progel. But this document alone does not show the problem as described. It does not give the cap amount (fees paid in the prior 12 months). It does not show that Supply Agreement Section 12.3 carves breaches of Section 10 and the DPA out of that cap and leaves them uncapped. And it does not show that Section 17.4 gives the DPA precedence on personal-data processing, which is what lets 9.3 override that carve-out. Without the Supply Agreement, an associate would read 9.3 as an ordinary cross-reference to a negotiated cap. They could not tell that it removes uncapped protection Progel had secured elsewhere."
+              },
+              "progel_peikain_supply_agreement.md": {
+                "findable": false,
+                "evidence": "Section 12.3: \"Section 12.2 does not apply to liability for ... (b) breach of Section 10 (Data Security) or the DPA ...\"; Section 17.4: \"they will prevail in the following order: (a) the Side Letter; then (b) the DPA, as to personal data processing; then (c) this Agreement ...\"",
+                "reason": "Read alone, the Supply Agreement favors Progel. Section 12.3 removes Supplier's liability for data security and DPA breaches from the 12-month fees cap, so that liability is uncapped. Section 17.4 puts the DPA ahead of the Agreement on personal data processing, which signals that a conflicting DPA term could override the carve-out. But this document does not show that the DPA contains any such term. The harm, that DPA Section 9.3 brings all Addendum liability (including Personal Data Breaches) back under the Section 12.2 cap, is only visible in the DPA. An associate could flag the precedence clause as a risk to check, but could not see from this document alone that the carve-out has actually been undone."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 11.2: \"Customer will defend, indemnify and hold harmless Supplier and its Affiliates ... from and against all Losses arising out of any third-party claim arising from (a) Customer Specifications, or (b) the design, manufacture, marketing, sale or use of end products incorporating the Products, in each case without regard to any limitation of liability in this Agreement.\" Compare Section 11.1: \"Supplier's obligations under this Section 11.1 are subject to Section 12.2.\"",
+            "reason": "Progel, the client, is the indemnitor under 11.2. Its indemnity is expressly uncapped, while Supplier's reciprocal indemnity in 11.1 is subject to the 12.2 cap. Progel's end products are ballistic armor panels. Clause (b) covers any claim arising from the design, manufacture, sale or use of those end products, with no fault carve-out. That could reach injury claims where Supplier's fabric was the actual cause, giving Progel unlimited personal-injury and product-liability exposure. Nothing in the folder cures this. The Side Letter leaves the Agreement otherwise unmodified, and the DPA and Service Level Schedule do not touch indemnity. The Agreement is in force through 2029 and auto-renews, so Progel can still raise this, for example by seeking an amendment or a cap in any renegotiation linked to the Side Letter or Change of Control discussions. The issue is still actionable."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 2.2: \"On expiry of the Initial Term, this Agreement will automatically renew for successive 36-month Renewal Terms (each, a \"Renewal Term\"), unless either Party delivers written notice of non-renewal to the other Party during the Non-Renewal Window. Each Renewal Term is on the terms of this Agreement then in effect, including Sections 4.1 and 4.3.\" Section 1.8: \"\"Non-Renewal Window\" means the 15-day period ending 120 days before the expiry of the then-current Term.\"",
+            "reason": "Read together, Sections 2.2 and 1.8 renew the Agreement automatically for 36-month terms unless notice falls inside a narrow 15-day window. For the Initial Term (expiring about February 2, 2029), that window runs roughly mid-September to early October 2028. A notice sent early or late does not stop renewal. Each renewal carries forward Progel's worldwide 100% requirements exclusivity (Section 4.1) and the $4.2M annual minimum with shortfall liability (Sections 4.3 and 4.4), and both obligations fall on Progel as Customer. This departs from the term sheet, which provided for renewal only by mutual written agreement. The Side Letter grants volume relief but does not change Section 2.2, and its Section 6.2 confirms the Agreement is otherwise unmodified. No window has yet opened or lapsed, so the risk is live and Progel can act on it now, for example by amending the clause or calendaring the window."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Side Letter Section 4.1: \"Supplier may assign, delegate or transfer the Agreement, in whole or in part, to any person upon written notice to Customer.\" Section 4.2 adds: \"On and after that effective date, Customer will issue Purchase Orders for the affected Products to the transferee.\"",
+            "reason": "Supply Agreement Section 15.1 bars either party from assigning without the other's consent (not to be unreasonably withheld). Section 17.4 makes the Side Letter prevail over the Agreement. Side Letter Section 4.1 therefore lets Peikain, the Supplier, transfer the Agreement to anyone on notice alone. That transfer could cover Progel's 100% exclusive requirements obligation and minimum purchase commitment under Sections 4.1 and 4.3, and its confidential Customer Specifications under Section 9.3. Progel must then issue Purchase Orders to whoever Peikain picks. The restriction runs one way only: Progel's own assignment and change-of-control restrictions in Sections 15.1 and 15.2 stay in place. Section 4.3 does not cure this. It only says Supplier will 'give Customer notice under Section 7.4' of a site change; it does not clearly keep Progel's approval right, and it gives no consent or termination right over who the transferee is. Nothing in the folder shows Progel has accepted a transfer, so this remains a live, actionable problem for Progel to negotiate or object to."
+          },
+          {
+            "issue": "I6",
+            "present": false,
+            "evidence": "Section 4.1: \"During the Term, Customer will purchase from Supplier one hundred percent of its requirements for Technical Fabrics for use anywhere in the world, whether by Customer or its Affiliates.\" Section 1.16 defines Technical Fabrics as \"all woven, knitted and nonwoven industrial fabrics of any fiber, including fabrics of para-aramid, ultra-high-molecular-weight polyethylene, glass, carbon, basalt and other fibers.\" The Term Sheet, Section 3.1, says: \"Progel will purchase from Peikain its requirements for para-aramid woven fabrics for ballistic panels, United States and Canada only.\"",
+            "reason": "findable from progel_peikain_supply_agreement.md alone, so it does not need two documents",
+            "alone": {
+              "progel_peikain_supply_agreement.md": {
+                "findable": true,
+                "evidence": "Recital A: \"Customer designs and manufactures ballistic armor panels and glass-fiber reinforced composite structures.\" Section 1.16: \"'Technical Fabrics' means all woven, knitted and nonwoven industrial fabrics of any fiber, including fabrics of para-aramid, ultra-high-molecular-weight polyethylene, glass, carbon, basalt and other fibers...\" Section 4.1: \"Customer will purchase from Supplier one hundred percent of its requirements for Technical Fabrics for use anywhere in the world, whether by Customer or its Affiliates.\"",
+                "reason": "The core harm can be seen from this document alone. The agreement itself says Progel runs two businesses: ballistic panels and glass-fiber composite structures. The Technical Fabrics definition expressly names glass fiber. Section 4.1 then locks Progel and its Affiliates into a 100% worldwide requirements obligation, and Section 4.2 gives only a narrow supply-failure carve-out. A careful associate acting for Progel would see that the exclusivity reaches the glass-fiber composites line and all global operations, well beyond the ballistic para-aramid supply that is the evident focus of the deal. That restricts the client's sourcing across its whole business, and it renews automatically. What this document does not show is that the parties negotiated a narrower term (para-aramid woven fabrics for ballistic panels in the US and Canada) in the term sheet. It also does not show that Progel has plants outside North America. So the claim that the clause departs from the agreed deal needs the term sheet, but the overbreadth and its harm to Progel are already visible here."
+              },
+              "progel_peikain_term_sheet.md": {
+                "findable": false,
+                "evidence": "3.1 **Scope:** Progel will purchase from Peikain its requirements for para-aramid woven fabrics for ballistic panels, United States and Canada only.",
+                "reason": "The term sheet shows only the narrow exclusivity the parties agreed: para-aramid woven fabrics for ballistic panels, limited to the United States and Canada. That term is reasonable for Progel and harms it in no way. The document does not show the executed Supply Agreement's worldwide, all-fabrics requirements clause or its broad definition of Technical Fabrics. Those are what pull in the glass-fiber lines and the non-North American plants. The overreach shows only when this document is compared with the executed agreement."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}
