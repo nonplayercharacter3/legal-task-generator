@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.667,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -163,8 +177,74 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 26,
+              "files_opened": [
+                "distribution_agreement_prior_draft_v3.md",
+                "first_amendment_distribution_agreement.md",
+                "fougeil_notice_letter_2026-10-28.md",
+                "fougeil_treireis_distribution_agreement.md",
+                "launch_support_side_letter.md",
+                "order_form_initial_appointment.md",
+                "product_price_list_2026.md",
+                "quality_agreement.md",
+                "service_level_schedule.md",
+                "treireis_holdings_parent_guaranty.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 26,
+              "files_opened": [
+                "distribution_agreement_prior_draft_v3.md",
+                "first_amendment_distribution_agreement.md",
+                "fougeil_notice_letter_2026-10-28.md",
+                "fougeil_treireis_distribution_agreement.md",
+                "launch_support_side_letter.md",
+                "order_form_initial_appointment.md",
+                "product_price_list_2026.md",
+                "quality_agreement.md",
+                "service_level_schedule.md",
+                "treireis_holdings_parent_guaranty.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 26,
+              "files_opened": [
+                "distribution_agreement_prior_draft_v3.md",
+                "first_amendment_distribution_agreement.md",
+                "fougeil_notice_letter_2026-10-28.md",
+                "fougeil_treireis_distribution_agreement.md",
+                "launch_support_side_letter.md",
+                "order_form_initial_appointment.md",
+                "product_price_list_2026.md",
+                "quality_agreement.md",
+                "service_level_schedule.md",
+                "treireis_holdings_parent_guaranty.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

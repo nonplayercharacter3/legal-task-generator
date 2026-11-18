@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -162,8 +176,78 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 26,
+              "files_opened": [
+                "closing_logistics_email_thread.md",
+                "disclosure_schedule_elmcrest.md",
+                "form_of_seller_note.md",
+                "letter_of_intent_june_2026.md",
+                "mutual_confidentiality_agreement.md",
+                "peitort_board_written_consent.md",
+                "sallow_key_employee_agreement.md",
+                "seller_side_letter_draft.md",
+                "stock_purchase_agreement_peitort_bratousk.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C4",
+                "C6"
+              ],
+              "steps": 26,
+              "files_opened": [
+                "closing_logistics_email_thread.md",
+                "disclosure_schedule_elmcrest.md",
+                "form_of_seller_note.md",
+                "letter_of_intent_june_2026.md",
+                "mutual_confidentiality_agreement.md",
+                "peitort_board_written_consent.md",
+                "sallow_key_employee_agreement.md",
+                "seller_side_letter_draft.md",
+                "stock_purchase_agreement_peitort_bratousk.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C3"
+              ],
+              "steps": 26,
+              "files_opened": [
+                "closing_logistics_email_thread.md",
+                "disclosure_schedule_elmcrest.md",
+                "form_of_seller_note.md",
+                "letter_of_intent_june_2026.md",
+                "mutual_confidentiality_agreement.md",
+                "peitort_board_written_consent.md",
+                "sallow_key_employee_agreement.md",
+                "seller_side_letter_draft.md",
+                "stock_purchase_agreement_peitort_bratousk.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
