@@ -1,0 +1,130 @@
+{
+  "task_id": "s51-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Develstrand Medical Holdings, Inc., the buyer under a stock purchase agreement with Proubeirt Imaging Group, LLC. Please review all seven documents in the folder before we advise the client on its position. Send me a memo listing each issue you find. For each issue, give the document and section where it appears, explain why it matters to Develstrand, and recommend a fix. Flag anything that needs my attention first.",
+  "documents": [
+    "escrow_agreement.md",
+    "key_employee_agreement_okafor_brandt.md",
+    "press_release_signing.md",
+    "seller_board_resolutions.md",
+    "side_letter_2026-11-05.md",
+    "stock_purchase_agreement.md",
+    "transition_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the agreed-form Key Employee Agreement defines 'Business' more narrowly than the SPA, so Dr. Okafor-Brandt's non-compete covers only CT detector modules and leaves competition in MRI receive coils, ultrasound transducer arrays and servicing unrestricted. It identifies where this appears (Key Employee Agreement Section 1.1 and/or 8.1, or SPA Section 1.1 and/or 6.2(e)), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "design and manufacture of CT detector modules",
+        "MRI receive coils",
+        "conform the definition of Business"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that the sale of Kestrova will trigger automatic termination of the Transition Services Agreement on a Change of Control because nothing secures Proubeirt's prior written consent. It identifies where this appears (TSA Section 9.3, or SPA Section 5.7 and/or 2.3(b)), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "terminate automatically upon a Change of Control",
+        "prior written consent of the Service Provider",
+        "closing deliverable"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that the Transition Services Agreement lets Proubeirt assign it to any person, including a competitor, without Kestrova's consent. It identifies where this appears (TSA Section 12.4), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "assign this Agreement, in whole or in part, to any Person",
+        "without consent",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that the side letter's redefinition of Fundamental Representations, limiting it to Sections 4.1 and 4.2, would take the capitalization and regulatory-compliance representations out of the cap carve-out, so losses from breach of those representations become subject to the $18,600,000 Indemnity Cap. It identifies where this appears (side letter Section 3, or SPA Section 9.4(b)), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Sections 4.1 and 4.2",
+        "Regulatory Compliance",
+        "subject to the Indemnity Cap"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that Buyer's 15-Business-Day window to respond to the September 8, 2026 Schedule Supplement expired before Buyer's October 20, 2026 dispute letter, so the FDA Form 483 matter is deemed cured and Buyer has lost its indemnity for it. It identifies where this appears (SPA Section 5.6(c), or the side letter Recitals), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "fifteen (15) Business Days",
+        "deemed to have cured",
+        "FDA Form 483"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Purchase Price is $186,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$186,000,000",
+        "Purchase Price"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the SPA Indemnity Cap is $18,600,000 (10% of the Purchase Price).",
+      "kind": "fact",
+      "hints": [
+        "$18,600,000",
+        "10% of the Purchase Price"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo that, for each issue listed, gives the document and section where it appears.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Section",
+        "Document"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response identifies which issue or issues need the partner's attention first, for example through a priority flag, ranking or summary placed at the top.",
+      "kind": "format",
+      "hints": [
+        "priority",
+        "attention first",
+        "urgent"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Buyer's October 20, 2026 letter was a timely response under SPA Section 5.6(c) that preserved Buyer's rights on the FDA Form 483 matter.",
+      "kind": "negative",
+      "hints": [
+        "timely",
+        "preserved"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the SPA's order-of-precedence clause makes the SPA definition of 'Business' govern Dr. Okafor-Brandt's non-compete, so the narrower Key Employee Agreement definition needs no change.",
+      "kind": "negative",
+      "hints": [
+        "SPA prevails",
+        "Section 10.9"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

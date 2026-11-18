@@ -1,0 +1,176 @@
+{
+  "matter_id": "s51-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "KEA Section 1.1: \"'Business' means the design and manufacture of CT detector modules.\" KEA Section 8.1: \"During her employment and for a period of 24 months after the Closing Date, the Executive shall not, directly or indirectly, anywhere in the world, engage in the Business.\" SPA Section 1.1: \"'Business' means the design, manufacture, sale and servicing of MRI receive coils, CT detector modules and ultrasound transducer arrays...\" SPA Section 6.2(e): Buyer shall have received the Key Employee Agreement \"in the agreed form attached as Exhibit C ... which includes the Key Employee's covenant not to compete with the Business for a period of 24 months after the Closing Date.\"",
+            "reason": "The KEA defines 'Business' on its own terms, so the SPA definition does not carry over. The non-compete therefore covers only the design and manufacture of CT detector modules. It leaves out MRI receive coils, ultrasound transducer arrays, and all sale and servicing, even though the SPA, the TSA and the press release describe those as part of Kestrova's business. The Executive, who leads engineering across all product lines, could compete in those areas immediately. Buyer (the client) bargained in SPA 6.2(e) for a non-compete over the full SPA-defined Business. SPA 10.9 (precedence) does not fix this, because it applies only as between Buyer and Seller and the Executive is not a party to the SPA. KEA 8.6 reformation allows a court only to narrow the covenant, not to broaden it. Nothing else in the folder, including the side letter, addresses the point. The KEA is still an unsigned agreed-form draft, and the closing condition has not yet been satisfied or waived. Buyer can therefore still insist on conforming the definition before Closing, so the problem remains actionable.",
+            "alone": {
+              "key_employee_agreement_okafor_brandt.md": {
+                "findable": false,
+                "evidence": "\"Business\" means the design and manufacture of CT detector modules.",
+                "reason": "On its own, this document shows that the Section 8.1 non-compete is tied to a narrow definition of 'Business': design and manufacture of CT detector modules only. It says nothing about MRI receive coils, ultrasound transducer arrays or servicing. It does not show that the target actually runs those other lines, or that the Buyer bargained for a non-compete covering them. The recitals refer only generally to 'trade secrets, product designs, customer relationships' and to the 'goodwill acquired by Parent.' The 'Imaging Systems' name hints at a wider business but establishes nothing. An associate reading this document alone would see a narrow but internally consistent definition. The mismatch, and the harm to the Buyer, appear only against the SPA's broader 'Business' definition and its Section 6.2(e) closing-deliverable requirement, which are not in this document."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 6.2(e): \"Buyer shall have received the Key Employee Agreement, in the agreed form attached as Exhibit C, duly executed by the Company and the Key Employee, which includes the Key Employee's covenant not to compete with the Business for a period of 24 months after the Closing Date...\"",
+                "reason": "Read alone, the SPA looks consistent. Section 1.1 defines 'Business' broadly (MRI receive coils, CT detector modules, ultrasound transducer arrays, including servicing). Section 6.2(e) describes the Key Employee Agreement as carrying a 24-month non-compete over that Business. Section 10.9 makes the SPA prevail only as between Buyer and Seller. An associate could flag a general risk that the employee is not bound by the SPA's definitions. Nothing here shows that the Key Employee Agreement actually defines 'Business' more narrowly, as CT detector modules only, or that its Section 8.1 non-compete is tied to that narrower term. That mismatch, which is the real problem, can only be seen in the Key Employee Agreement (Exhibit C), and that document is not provided."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "TSA §9.3: \"This Agreement shall terminate automatically upon a Change of Control of the Service Recipient, unless the Change of Control has received the prior written consent of the Service Provider.\" SPA §5.7: services \"shall be provided under the Transition Services Agreement in accordance with its terms through June 30, 2027.\" SPA §2.3(b) lists the Seller's closing deliverables, and none of them is Proubeirt's consent under TSA §9.3. Item (vii) only carves the TSA out of the required termination of Affiliate Contracts.",
+            "reason": "Buyer's purchase of 100% of Kestrova's shares is a Change of Control under TSA clause (a). That triggers automatic termination of the TSA unless Proubeirt gives prior written consent. SPA §5.7 ties post-Closing services to the TSA 'in accordance with its terms', which arguably imports §9.3. Nothing in the folder supplies the consent: not the SPA closing deliverables, not the draft side letter, and not the board resolutions. Seller could argue that signing the SPA, or the §10.9 precedence clause, implies consent or overrides §9.3. That argument is uncertain, because Buyer is not a party to the TSA and §10.9 governs only as between Buyer and Seller. The risk falls on Buyer and its new subsidiary Kestrova. Kestrova could lose ERP, regulatory filing and field dispatch services at Closing, during an open FDA Form 483 matter. Alternatively, Seller could use the termination to escape the 5% fee cap and Service Levels and renegotiate pricing. Closing has not occurred, since the side letter is still a draft for execution at closing. The point is therefore still actionable: Buyer can add an express TSA §9.3 consent to the side letter or to the SPA §2.3(b) deliverables.",
+            "alone": {
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "9.3 Change of Control. This Agreement shall terminate automatically upon a Change of Control of the Service Recipient, unless the Change of Control has received the prior written consent of the Service Provider.",
+                "reason": "The TSA by itself shows that the agreement ends automatically on a Change of Control of Kestrova unless Proubeirt consents in writing beforehand. It also shows that the Services (ERP hosting, regulatory affairs support, field service dispatch) are critical and that migration assistance after termination is charged to the recipient. It does not show that the client's Stock Purchase Agreement is a purchase of Kestrova's shares. It does not show that the SPA relies on the TSA continuing after Closing (SPA 5.7). It does not show that Proubeirt's consent is missing from Seller's closing deliverables (SPA 2.3(b)) or anywhere else. Without the SPA, an associate sees only a standard change-of-control clause. They cannot tell that it will be triggered against this client or that the client has no consent, so they cannot tell that it hurts the client."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 5.7: \"...which services shall be provided under the Transition Services Agreement in accordance with its terms through June 30, 2027.\"",
+                "reason": "The SPA shows that post-Closing ERP hosting, regulatory affairs support and field service dispatch depend on the TSA 'in accordance with its terms'. It also shows the TSA survives Closing (it is carved out of the Affiliate Contract terminations in Section 2.3(b)(vii)) and that Section 2.3(b) lists no Seller consent among the closing deliverables. But nothing in the SPA says the TSA ends on a change of control of the Company or needs Proubeirt's prior written consent. That trigger is in TSA Section 9.3, which is not in this document. Read alone, the SPA gives no reason to think the services would lapse at Closing, so an associate could not see the problem or the harm to Buyer without the TSA."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "TSA Section 12.4: \"The Service Provider may assign this Agreement, in whole or in part, to any Person without the consent of the Service Recipient, on written notice to the Service Recipient. The Service Recipient may not assign this Agreement, by operation of law or otherwise, without the prior written consent of the Service Provider.\"",
+            "reason": "The problem is present and actionable for Buyer. Section 12.4 lets Proubeirt assign the TSA to any Person, including a competitor, with only notice to Kestrova. Kestrova, Buyer's target, needs Proubeirt's consent to assign. The SPA continues the TSA through June 30, 2027 \"in accordance with its terms\" (SPA 5.7) and carves it out of the Affiliate Contract terminations (SPA 2.3(b)(vii)). None of the SPA protections closes the gap. The SPA non-compete (5.5) and confidentiality covenant (5.4) bind only Seller and its Affiliates, not an unaffiliated assignee. Section 10.9 (order of precedence) applies only where the documents conflict, and the SPA says nothing about TSA assignment, so there is no conflict to resolve. The draft side letter does not touch the TSA. An assignee would therefore host Kestrova's ERP data, prepare its FDA submissions and run its field service dispatch. Its only limits would be the TSA's confidentiality and data-use clauses, and Kestrova would be locked in through mid-2027. The side letter is still a draft for execution at Closing, so Closing has not occurred and Buyer can still negotiate a consent requirement or a non-competitor restriction."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Side Letter Section 3.1: \"Section 1.1 of the Purchase Agreement is amended by deleting the definition of \"Fundamental Representations\" in its entirety and replacing it with the following: \"Fundamental Representations\" means the representations and warranties set forth in Sections 4.1 and 4.2.\" SPA Section 9.4(b): \"The Deductible and the Indemnity Cap shall not apply to Losses arising out of or resulting from Fraud or any breach of a Fundamental Representation...\" SPA 10.9: \"any side letter between Buyer and Seller that expressly amends this Agreement shall control to the extent of such amendment.\"",
+            "reason": "The SPA's definition of Fundamental Representations covers Sections 4.1, 4.2, 4.3 (Capitalization) and 4.12 (Regulatory Compliance). Section 3 of the Seller's draft side letter cuts that definition back to Sections 4.1 and 4.2 only. Section 5.2 of the side letter states it is a signed written amendment under SPA 10.2, so under SPA 10.9 it would control. The result is that breaches of the capitalization and FDA regulatory-compliance representations would lose the 9.4(b) carve-out. They would become subject to the $1.86M Deductible and the $18.6M Indemnity Cap, instead of being capped at the full Purchase Price. The amendment would also shorten their survival to 18 months under 9.1. Those losses fall on Buyer, the client, as indemnified party. The Section 4 reservation of positions does not undo the amendment. The issue is still actionable: the side letter is an unsigned Seller draft for execution at Closing, and Buyer can refuse Section 3. The September Supplement may arguably be deemed to cure the specific Form 483 matter under 5.6(c), since Buyer did not terminate within 15 Business Days, and Buyer disputes this. Even so, the amendment would still cap all other regulatory and capitalization breaches. That matters for a medical device target with open FDA exposure.",
+            "alone": {
+              "side_letter_2026-11-05.md": {
+                "findable": false,
+                "evidence": "Section 1.1 of the Purchase Agreement is amended by deleting the definition of \"Fundamental Representations\" in its entirety and replacing it with the following: > \"Fundamental Representations\" means the representations and warranties set forth in Sections 4.1 and 4.2.",
+                "reason": "On its own, the side letter shows that the Seller's draft replaces the SPA definition of Fundamental Representations so that it covers only Sections 4.1 and 4.2. It also shows the draft expressly amends the SPA (Sections 5.2 and 3.2), and the recitals mention an open, disputed FDA Form 483 matter. It does not show what the original definition covered, so a reader cannot tell that Section 4.3 (Capitalization) and Section 4.12 (Regulatory Compliance) are being removed. It also says nothing about the role the term plays in indemnification: there is no mention of the $18,600,000 Indemnity Cap in Section 9.4(a) or the carve-out for Fundamental Representations in Section 9.4(b). An associate would likely flag that the definition is being narrowed. But seeing that the narrowing moves capitalization and FDA regulatory-compliance breaches under the cap, and so hurts the Buyer, requires the SPA's original definition and Article 9."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"As between Buyer and Seller, in the event of any conflict or inconsistency between this Agreement and any Ancillary Agreement, this Agreement shall prevail, except that any side letter between Buyer and Seller that expressly amends this Agreement shall control to the extent of such amendment.\" (Section 10.9)",
+                "reason": "Read alone, the SPA protects Buyer here. Section 1.1 defines Fundamental Representations to include 4.3 (Capitalization) and 4.12 (Regulatory Compliance). Section 9.4(b) then takes breaches of those representations out of the $1,860,000 Deductible and the $18,600,000 Indemnity Cap. Section 10.9 does let an express side-letter amendment override the SPA, but that is only a general precedence rule and does not narrow anything by itself. The narrowing comes from Section 3 of the Seller's side letter, which cuts Fundamental Representations down to Sections 4.1 and 4.2. That document is not here, so the SPA alone does not show the capitalization and FDA representations being pushed under the 10% cap."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "SPA §5.6(c): \"If Buyer does not deliver such notice within such period, Buyer shall be deemed to have irrevocably waived its right to terminate this Agreement with respect to such matter, and such Schedule Supplement shall be deemed to have cured any inaccuracy in or breach of any representation or warranty arising from such matter for all purposes of this Agreement, including for purposes of Section 6.2(a) and Article 9.\" Side Letter Recital A: \"Seller delivered to Buyer on September 8, 2026 a Schedule Supplement (the \"September Supplement\"). The September Supplement discloses the inspectional observations issued to the Company on FDA Form 483...\" Recital B: \"Buyer responded to the September Supplement by letter dated October 20, 2026 ... Buyer has not delivered a notice of termination of the Purchase Agreement.\"",
+            "reason": "Buyer, the firm's client, holds the termination right under §5.6(c), so the deadline was Buyer's to meet. September 8, 2026 was the Tuesday after Labor Day. Counting 15 Business Days from September 9 puts the end of the window at September 29, 2026. Buyer's only response was the October 20 letter, which was three weeks late and only disputed the supplement; it did not terminate. Under §5.6(c), the Form 483 Matter is therefore deemed cured for the §6.2(a) closing condition and for Article 9. That removes Buyer's indemnity for a breach of §4.12(c), even though §4.12 is a Fundamental Representation that would otherwise sit outside the Deductible and Cap. The harm to Buyer is real and material. It is also still actionable. The side letter is an unsigned Seller draft that takes effect only at Closing, and it expressly preserves each party's position (§4.1–4.2), so Buyer has not accepted the outcome. Before signing or closing, Buyer can negotiate a carve-out from the deemed-cure effect or a special indemnity. The same draft would also delete §4.12 from Fundamental Representations (§3.1), which makes this more urgent.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "If Buyer does not deliver such notice within such period, Buyer shall be deemed to have irrevocably waived its right to terminate this Agreement with respect to such matter, and such Schedule Supplement shall be deemed to have cured any inaccuracy in or breach of any representation or warranty arising from such matter for all purposes of this Agreement, including for purposes of Section 6.2(a) and Article 9.",
+                "reason": "The SPA alone shows the mechanism. Section 5.6(c) sets a 15-Business-Day termination window, and missing it means deemed waiver and deemed cure for both closing-condition and indemnity purposes. Section 7.1(c) also excludes supplemented matters from the general breach-termination right. A careful associate would flag this as a risky structure for Buyer. However, the SPA does not show that any Schedule Supplement was actually delivered, that it disclosed FDA Form 483 observations, that delivery was on September 8, 2026, or that Buyer responded only on October 20, 2026 without terminating. Those facts come only from the side letter. Without them, one cannot tell that the window has expired or that Buyer has lost its indemnity for the FDA 483 matter."
+              },
+              "side_letter_2026-11-05.md": {
+                "findable": false,
+                "evidence": "Under Section 5.6 of the Purchase Agreement, Seller delivered to Buyer on September 8, 2026 a Schedule Supplement (the \"September Supplement\"). ... Buyer responded to the September Supplement by letter dated October 20, 2026 ... Buyer has not delivered a notice of termination of the Purchase Agreement.",
+                "reason": "The side letter alone gives the facts on timing. It says the Schedule Supplement was delivered on September 8, 2026, that Buyer replied only on October 20, 2026, and that Buyer has not sent a termination notice. It also reserves both parties' positions. What it does not show is the rule that turns those facts into harm to Buyer. Nothing in it says SPA Section 5.6(c) deems a supplemented matter cured unless Buyer sends a termination notice within 15 Business Days. It also does not say the cure applies to closing conditions and indemnification. Without the SPA, an associate could not tell that a deadline existed, how long it ran, or that missing it means Buyer loses its indemnity for the Form 483 matter. The reservation in Section 4 even suggests the dispute is still open. The problem only appears once the SPA's 5.6(c) mechanism is read alongside this letter."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F3, which only issue I4 uses: a memo that misses I4 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.11,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

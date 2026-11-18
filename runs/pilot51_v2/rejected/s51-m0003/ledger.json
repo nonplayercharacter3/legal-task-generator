@@ -1,0 +1,251 @@
+{
+  "matter_id": "s51-m0003",
+  "summary": "Rupith Pet Nutrition, Inc. (client) sells direct-to-consumer subscription pet food. It buys private-label finished pet food from co-manufacturer Zidusk Co-Manufacturing, LLC under a Supply Agreement effective March 1, 2024. Zidusk drop-ships orders to Rupith's subscribers, so a DPA governs the subscriber data it handles. A Quality Agreement covers specifications, release testing and recalls. An Order Form sets the term. A pre-signing Term Sheet records the agreed exclusivity. In a notice letter dated October 14, 2026, Zidusk tells Rupith that it has signed an asset purchase agreement with Pellwyn Pet Brands, Inc., which runs a competing subscription dog food brand. Zidusk says it will assign the Supply Agreement and DPA to Pellwyn at closing. The partner wants an issue-spotting memo covering five issues: (1) the DPA's New York law and forum clause, which controls data disputes through the Supply Agreement's precedence clause; (2) exclusivity in the Supply Agreement that is far broader than the Term Sheet deal; (3) a successor and affiliate assignment clause that lets Zidusk move the contract to a competitor without consent; (4) a 36-month automatic renewal with a narrow opt-out window that closes November 30, 2026; and (5) a narrower 'Nonconforming Product' definition in the Quality Agreement that, through precedence, shifts post-release contamination recall costs to Rupith. The folder also holds two distractors: a mutual NDA and a certificate of insurance.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Rupith Pet Nutrition, Inc.",
+      "role": "Customer; direct-to-consumer subscription pet food brand; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Zidusk Co-Manufacturing, LLC",
+      "role": "Supplier; contract manufacturer and drop-ship fulfiller of Rupith's private-label pet food"
+    },
+    {
+      "id": "P3",
+      "name": "Pellwyn Pet Brands, Inc.",
+      "role": "Proposed acquirer of Zidusk's co-manufacturing business and proposed assignee; operates the competing TrailBowl subscription dog food brand"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 16.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement dispute forum",
+      "value": "State or federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "Section 16.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "DPA for Personal Data processing; Quality Agreement for quality and recall matters; otherwise Supply Agreement, then Order Form",
+      "doc": "D1",
+      "section": "Section 16.3"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement non-renewal notice window",
+      "value": "Not less than 90 nor more than 120 days before end of current term",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F6",
+      "key": "Initial Term",
+      "value": "36 months from the Supply Agreement Effective Date",
+      "doc": "D3",
+      "section": "Term"
+    },
+    {
+      "id": "F7",
+      "key": "Renewal Term",
+      "value": "36 months",
+      "doc": "D3",
+      "section": "Term"
+    },
+    {
+      "id": "F8",
+      "key": "Agreed exclusivity scope",
+      "value": "Hearthside dry kibble recipes sold in the United States only",
+      "doc": "D4",
+      "section": "Exclusivity"
+    },
+    {
+      "id": "F9",
+      "key": "Zidusk notice letter date",
+      "value": "October 14, 2026",
+      "doc": "D6",
+      "section": "Date line"
+    },
+    {
+      "id": "F10",
+      "key": "Proposed assignee",
+      "value": "Pellwyn Pet Brands, Inc.",
+      "doc": "D6",
+      "section": "Paragraph 1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "rupith_zidusk_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "rupith_zidusk_data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "rupith_zidusk_order_form.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "rupith_zidusk_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "rupith_zidusk_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "zidusk_notice_letter_2026-10-14.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "rupith_zidusk_mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "zidusk_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Supply Agreement Sections 16.1 and 16.2 choose Delaware law and Wilmington, Delaware courts. DPA Section 12 instead provides that the DPA, and any dispute arising out of or relating to the processing of Subscriber Personal Data under the Agreement, is governed by New York law, with exclusive jurisdiction in the courts of New York County. Read alone, the DPA clause looks like an ordinary standalone choice. Supply Agreement Section 16.3, however, provides that the DPA shall prevail with respect to the processing of Personal Data. That precedence rule gives the New York clause effect rather than curing the conflict. The result is that a subscriber-data breach claim by Rupith against Zidusk arising from drop-ship fulfillment would be litigated under New York law in New York County. Related supply, indemnity and quality claims would go to Delaware. Rupith faces split proceedings, inconsistent results and a forum fight. The exposure grows if the agreements are assigned to Pellwyn.",
+      "doc": "D2",
+      "section": "Section 12",
+      "detect_terms": [
+        "laws of the State of New York",
+        "New York County"
+      ],
+      "expected_finding": "Because Supply Agreement Section 16.3 makes the DPA prevail on Personal Data processing, the DPA's New York law and exclusive New York County forum clause would control subscriber-data disputes while all other claims go to Delaware, so Rupith should amend the DPA to adopt the Supply Agreement's Delaware law and Wilmington forum.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ],
+      "doc2": "D1",
+      "section2": "Section 16.3",
+      "detect_terms2": [
+        "prevail with respect to the processing of Personal Data"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "The Term Sheet's Exclusivity section records the agreed deal: Rupith buys exclusively from Zidusk only for its Hearthside dry kibble recipes sold in the United States. Supply Agreement Section 3.1 goes much further. It requires Rupith and its Affiliates to purchase 100% of their requirements for all Pet Food Products, wherever manufactured or sold. That sweeps in wet food, treats, other brands and all territories. The Supply Agreement's integration clause supersedes the Term Sheet, so Rupith is bound by the broader clause. Read together, the two documents show that the executed exclusivity exceeds the commercial deal. It blocks Rupith from using other co-manufacturers or expanding abroad. The harm grows because the clause would bind Rupith to Pellwyn, a competitor, after assignment.",
+      "doc": "D1",
+      "section": "Section 3.1",
+      "detect_terms": [
+        "all Pet Food Products",
+        "wherever manufactured or sold"
+      ],
+      "expected_finding": "Supply Agreement Section 3.1 requires Rupith and its Affiliates to buy all Pet Food Products worldwide from Zidusk, far beyond the Term Sheet's agreed Hearthside dry kibble, United States-only exclusivity, so Rupith should seek an amendment limiting exclusivity to the Term Sheet scope.",
+      "contradicts": "F8",
+      "doc2": "D4",
+      "section2": "Exclusivity",
+      "detect_terms2": [
+        "Hearthside dry kibble recipes"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Supply Agreement Section 17.2 lets either Party assign the Agreement without the other's consent to an Affiliate or to any successor to all or substantially all of the business or assets to which the Agreement relates. The clause binds both parties alike. Its harm to Rupith is that Zidusk can transfer the Agreement through a business sale to anyone, including a competitor, and the Agreement gives Rupith no consent right, no competitor carve-out and no termination right. The October 14, 2026 Zidusk notice letter states that Zidusk has signed an asset purchase agreement with Pellwyn Pet Brands, Inc. It notes that Pellwyn operates the competing TrailBowl subscription dog food brand. The letter says Zidusk will assign the Supply Agreement and DPA to Pellwyn at closing, expected in December 2026. Read together, the clause and the letter show that a direct competitor would receive Rupith's recipes, volume forecasts and subscriber data, and Rupith could not block the transfer.",
+      "doc": "D1",
+      "section": "Section 17.2",
+      "detect_terms": [
+        "without the consent of the other Party",
+        "successor to all or substantially all"
+      ],
+      "expected_finding": "Section 17.2 lets Zidusk assign the Supply Agreement without consent to the successor of its business, so under the assignment to competitor Pellwyn Pet Brands announced in the October 14, 2026 notice letter Rupith has no right to block the transfer, and Rupith should promptly demand a consent right or competitor carve-out and a termination right, using its non-renewal leverage.",
+      "contradicts": null,
+      "doc2": "D6",
+      "section2": "Paragraph 1",
+      "detect_terms2": [
+        "assign the Supply Agreement",
+        "TrailBowl"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Supply Agreement Section 2.2 provides that the Agreement shall automatically renew for successive Renewal Terms. It renews unless a Party gives non-renewal notice not less than 90 nor more than 120 days before the end of the then-current term. The Order Form sets both the Initial Term and each Renewal Term at 36 months, and the Effective Date is March 1, 2024. Read together, these provisions mean the Initial Term ends February 28, 2027. The only window to give non-renewal notice runs from October 31, 2026 through November 30, 2026. Measured from the October 14, 2026 notice letter, the window opens 17 days later and lasts only 31 days. If Rupith misses it, Rupith is locked into another three years of the overbroad exclusivity, possibly with Pellwyn as counterparty.",
+      "doc": "D1",
+      "section": "Section 2.2",
+      "detect_terms": [
+        "automatically renew for successive Renewal Terms",
+        "not less than ninety (90) days nor more than one hundred twenty (120) days"
+      ],
+      "expected_finding": "Combining the March 1, 2024 Effective Date, the 36-month Initial Term and Renewal Term in the Order Form, and the 90-to-120-day window in Section 2.2, Rupith can avoid a further three-year exclusive renewal only by giving non-renewal notice between October 31 and November 30, 2026, so it should calendar and serve protective notice in that window (or negotiate a shorter renewal and a wider window).",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Term",
+      "detect_terms2": [
+        "Renewal Term: thirty-six (36) months"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Supply Agreement Section 1.12 defines 'Nonconforming Product' to cover any Product that fails Specifications or is adulterated or misbranded under the FD&C Act, whether discovered before or after delivery. Supply Agreement Section 8.3 makes Zidusk bear recall costs attributable to Nonconforming Product. Quality Agreement Section 1.6 defines the same term more narrowly: only Product that fails release testing at the time of release from Supplier's facility. Supply Agreement Section 16.3 makes the Quality Agreement prevail on quality and recall matters. Read together, the narrower definition controls. Contamination found after shipment, such as Salmonella or mycotoxin detected at retail or by regulators, falls outside 'Nonconforming Product'. Rupith would bear those recall costs even though the Supply Agreement allocates them to Zidusk.",
+      "doc": "D5",
+      "section": "Section 1.6",
+      "detect_terms": [
+        "at the time of release from Supplier's facility"
+      ],
+      "expected_finding": "Because Supply Agreement Section 16.3 makes the Quality Agreement prevail on quality and recall matters, the Quality Agreement's narrower release-testing definition of 'Nonconforming Product' overrides the Supply Agreement's definition covering defects discovered after delivery and leaves Rupith bearing recall costs for post-release contamination under Section 8.3, so the Quality Agreement definition should be conformed to the Supply Agreement's.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Sections 1.12 and 16.3",
+      "detect_terms2": [
+        "whether discovered before or after delivery"
+      ]
+    }
+  ]
+}

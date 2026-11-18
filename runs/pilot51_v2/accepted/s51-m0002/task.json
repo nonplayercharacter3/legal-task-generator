@@ -1,0 +1,119 @@
+{
+  "task_id": "s51-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Doureth Water Solutions, Inc. as buyer in its asset purchase from Routand Chemical Company. Please review all ten documents in the folder and prepare a memo to me identifying each issue you find for Doureth. For each, give the document and section where it appears, explain why it matters to Doureth, and recommend a fix. Keep the memo practical; we will use it to prepare our comments.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "bill_of_sale.md",
+    "closing_funds_flow_memo.md",
+    "doureth_board_consent.md",
+    "indemnity_escrow_agreement.md",
+    "integration_meeting_notes.md",
+    "letter_of_intent.md",
+    "plant_director_employment_agreement.md",
+    "seller_promissory_note.md",
+    "transitional_supply_side_letter.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that recovery for breaches of the General Representations, including the environmental representation, is limited to the Escrow Fund, and that the escrow releases nine months after Closing, so the 18-month survival period is effectively cut to about nine months. It identifies where this appears (APA Section 9.4(b) or Escrow Agreement Section 4.1), explains why this matters to Doureth, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "sole and exclusive source of recovery",
+        "nine months after the Closing Date",
+        "18 months"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that the APA makes pre-Closing environmental liabilities Assumed Liabilities and leaves Doureth's indemnity of Routand for Assumed Liabilities outside the cap, so Doureth faces unlimited liability for Routand's historical contamination, contrary to the LOI. It identifies where this appears (APA Section 9.5(c), read with Sections 2.3(c) and 9.3(b)), explains why this matters to Doureth, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Assumed Liabilities",
+        "uncapped",
+        "Letter of Intent"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that the transitional supply side letter lets Routand assign the supply arrangement to any person, including a competitor, without Doureth's consent. It identifies where this appears (Side Letter Section 7), explains why this matters to Doureth, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without the consent of Buyer",
+        "competitor",
+        "assign"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that the Seller Note's New York governing law and exclusive Manhattan forum conflict with the APA's Delaware law and exclusive Chancery forum, and that because the Note controls its enforcement and set-off, indemnity and set-off disputes would be split across two forums under two laws, putting Doureth's set-off right at risk. It identifies where this appears (Seller Note Section 9 or APA Section 12.4), explains why this matters to Doureth, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York",
+        "Court of Chancery",
+        "set-off"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the purchase price is $86,400,000.",
+      "kind": "fact",
+      "hints": [
+        "$86.4 million",
+        "$86,400,000"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Seller Note has a principal amount of $12,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$12 million",
+        "$12,000,000"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is in the form of a memo addressed to the supervising partner.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "For each issue it raises, the response gives the document and section, why the issue matters to Doureth, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that, under the APA as drafted, Routand retains the pre-Closing environmental liabilities of the Lake Charles Facility.",
+      "kind": "negative",
+      "hints": [
+        "Routand retains pre-Closing environmental liabilities"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that APA Section 12.6 restricts Routand's assignment of the transitional supply side letter.",
+      "kind": "negative",
+      "hints": [
+        "Section 12.6 prohibits assignment of the side letter"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

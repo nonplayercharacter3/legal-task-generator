@@ -1,0 +1,247 @@
+{
+  "matter_id": "s51-m0001",
+  "summary": "Develstrand Medical Holdings, Inc. (client, Buyer) signed a Stock Purchase Agreement on July 14, 2026 to buy all shares of Kestrova Imaging Systems, Inc., a maker of MRI receive coils, CT detector modules and ultrasound transducer arrays. The seller is Proubeirt Imaging Group, LLC, and the price is $186,000,000. Closing is pending. The folder holds the signed SPA and several other documents: the agreed-form Key Employee Agreement for Kestrova's VP Engineering; the existing 2023 intercompany Transition Services Agreement between Proubeirt and Kestrova; a side letter proposed by Seller, dated November 5, 2026, for signature at Closing; the signing press release; the agreed-form Escrow Agreement; and Seller's board resolutions. The side letter records that Seller delivered a Schedule Supplement disclosing FDA Form 483 observations on September 8, 2026, and that Buyer disputed it by letter dated October 20, 2026. Five issues are planted: a narrower 'Business' definition in the Key Employee Agreement; a change-of-control termination in the TSA that the SPA does not address; free assignment of the TSA by Seller; a side-letter redefinition of 'Fundamental Representations' that brings regulatory breaches under the cap; and a lapsed 15-Business-Day Schedule Supplement window.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Develstrand Medical Holdings, Inc.",
+      "role": "Buyer under the Stock Purchase Agreement; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Proubeirt Imaging Group, LLC",
+      "role": "Seller under the Stock Purchase Agreement; Service Provider under the Transition Services Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Kestrova Imaging Systems, Inc.",
+      "role": "Target company whose shares are being sold; Service Recipient under the TSA; employer under the Key Employee Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Dr. Linnea Okafor-Brandt",
+      "role": "Kestrova VP Engineering; Key Employee"
+    },
+    {
+      "id": "P5",
+      "name": "Ashcombe Trust Company, N.A.",
+      "role": "Escrow Agent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement signing date",
+      "value": "July 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$186,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Cap",
+      "value": "$18,600,000 (10% of the Purchase Price)",
+      "doc": "D1",
+      "section": "Section 9.4(a)"
+    },
+    {
+      "id": "F4",
+      "key": "Escrow Amount",
+      "value": "$14,000,000",
+      "doc": "D6",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "As between Buyer and Seller, SPA prevails over Ancillary Agreements, except a side letter expressly amending the SPA",
+      "doc": "D1",
+      "section": "Section 10.9"
+    },
+    {
+      "id": "F6",
+      "key": "Fundamental Representations (SPA definition)",
+      "value": "Representations in Sections 4.1, 4.2, 4.3 and 4.12 (Regulatory Compliance)",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F7",
+      "key": "Schedule Supplement termination window",
+      "value": "15 Business Days after Buyer's receipt of a Schedule Supplement",
+      "doc": "D1",
+      "section": "Section 5.6(c)"
+    },
+    {
+      "id": "F8",
+      "key": "Transition Services Agreement term end date",
+      "value": "June 30, 2027",
+      "doc": "D3",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F9",
+      "key": "Key Employee non-competition period",
+      "value": "24 months after the Closing Date",
+      "doc": "D2",
+      "section": "Section 8.1"
+    },
+    {
+      "id": "F10",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 10.7"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "key_employee_agreement_okafor_brandt.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter_2026-11-05.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "press_release_signing.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "seller_board_resolutions.md",
+      "kind": "board resolutions",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines 'Business' as the design, manufacture, sale and servicing of MRI receive coils, CT detector modules and ultrasound transducer arrays. SPA Section 6.2(e) makes delivery of the Key Employee Agreement, in the agreed form, a closing deliverable carrying a non-competition covenant over the Business. The agreed-form Key Employee Agreement (D2) gives 'Business' its own definition in Section 1.1: only the design and manufacture of CT detector modules. Its 24-month non-compete in Section 8.1 is tied to that narrower term. Read together, Dr. Okafor-Brandt is free on day one to join or found a competitor in MRI coils, ultrasound transducers or servicing. That defeats the protection Buyer bargained for. The SPA precedence clause (Section 10.9) does not cure this. It operates only as between Buyer and Seller, and the employee is not a party to the SPA.",
+      "doc": "D2",
+      "section": "Section 1.1 (definition of Business) and Section 8.1",
+      "detect_terms": [
+        "design and manufacture of CT detector modules"
+      ],
+      "expected_finding": "The Key Employee Agreement's narrower definition of 'Business' limits Dr. Okafor-Brandt's non-compete to CT detector modules, leaving MRI coil, ultrasound transducer and servicing competition unrestricted contrary to the SPA's definition, so the agreed form must be conformed to the SPA definition before Closing.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 1.1 (definition of Business) and Section 6.2(e)",
+      "detect_terms2": [
+        "MRI receive coils, CT detector modules and ultrasound transducer arrays"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "TSA Section 9.3 (D3) provides that the TSA terminates automatically on a Change of Control of the Service Recipient (Kestrova) unless the Service Provider (Proubeirt) gives prior written consent. The sale of Kestrova's shares to Buyer is such a Change of Control. SPA Section 5.7 says only that post-Closing ERP hosting, regulatory affairs support and field service dispatch will be provided under the TSA 'in accordance with its terms', which picks up Section 9.3. SPA Section 2.3(b), the list of Seller's closing deliverables, does not include Proubeirt's consent. No other document in the folder supplies that consent. Kestrova will therefore lose critical services at Closing, or Seller gains leverage to reprice them.",
+      "doc": "D3",
+      "section": "Section 9.3",
+      "detect_terms": [
+        "shall terminate automatically upon a Change of Control",
+        "prior written consent of the Service Provider"
+      ],
+      "expected_finding": "Closing will trigger automatic termination of the TSA under Section 9.3 because neither SPA Section 5.7 nor Seller's closing deliverables in Section 2.3(b) secure Proubeirt's written consent, so Buyer should require that consent (or a waiver of Section 9.3) as a Seller closing deliverable.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 5.7 and Section 2.3(b)",
+      "detect_terms2": [
+        "in accordance with its terms"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 12.4 (D3) lets the Service Provider (Proubeirt) assign the TSA, in whole or in part, to any Person without Kestrova's consent. Kestrova itself may not assign without consent. After Closing, Proubeirt could transfer the TSA to a competing imaging equipment maker. That competitor would then host Kestrova's ERP data and run its regulatory submissions and field service dispatch. This exposes customer, pricing and FDA filing information, and leaves Buyer's subsidiary dependent on a rival.",
+      "doc": "D3",
+      "section": "Section 12.4",
+      "detect_terms": [
+        "may assign this Agreement, in whole or in part, to any Person"
+      ],
+      "expected_finding": "TSA Section 12.4 allows Proubeirt to assign the TSA to anyone, including a competitor, without Kestrova's consent, so Buyer should require a restriction requiring Kestrova's prior written consent and barring assignment to competitors.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 9.4(b) excludes Losses arising from breach of a Fundamental Representation from the $18,600,000 Indemnity Cap in Section 9.4(a). SPA Section 1.1 defines Fundamental Representations to include Section 4.3 (Capitalization) and Section 4.12 (Regulatory Compliance). Section 3 of the Seller-proposed side letter (D4) expressly amends Section 1.1 so that Fundamental Representations means only Sections 4.1 and 4.2. Under SPA Section 10.9, a side letter that expressly amends the SPA controls. Read together, breaches of the capitalization and FDA regulatory-compliance representations fall under the 10% cap. This matters most for a medical imaging target with open FDA exposure.",
+      "doc": "D4",
+      "section": "Section 3",
+      "detect_terms": [
+        "Sections 4.1 and 4.2"
+      ],
+      "expected_finding": "The side letter's redefinition of Fundamental Representations, which controls under SPA Section 10.9, removes the capitalization and regulatory-compliance representations from the Section 9.4(b) carve-out so those losses become subject to the $18,600,000 Indemnity Cap, and Buyer should strike Section 3 of the side letter before signing.",
+      "contradicts": "F6",
+      "doc2": "D1",
+      "section2": "Section 9.4(b)",
+      "detect_terms2": [
+        "breach of a Fundamental Representation"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "SPA Section 5.6(c) deems a matter disclosed in a Schedule Supplement to cure any breach, for closing-condition and indemnification purposes, unless Buyer delivers a termination notice within 15 Business Days after receipt. The side letter (D4) recites that Seller delivered the Schedule Supplement disclosing FDA Form 483 observations on September 8, 2026. Counting from that date, the window closed on September 29, 2026; Labor Day fell on September 7, before the count began. The side letter also records that Buyer disputed the supplement only by letter dated October 20, 2026, and did not terminate. The FDA 483 matter is therefore deemed cured and Buyer has lost its indemnity for it. Buyer has not accepted that result: the side letter preserves Buyer's dispute and Seller's disagreement, so the point can still be negotiated before Closing.",
+      "doc": "D1",
+      "section": "Section 5.6(c)",
+      "detect_terms": [
+        "within fifteen (15) Business Days",
+        "deemed to have cured"
+      ],
+      "expected_finding": "Buyer's 15-Business-Day window under SPA Section 5.6(c) expired on September 29, 2026, after the September 8, 2026 Schedule Supplement, so the FDA Form 483 matter is deemed cured and its indemnity lost despite Buyer's October 20, 2026 dispute letter, and Buyer should negotiate a special indemnity or escrow for the matter before Closing.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Recitals",
+      "detect_terms2": [
+        "September 8, 2026",
+        "letter dated October 20, 2026"
+      ]
+    }
+  ]
+}

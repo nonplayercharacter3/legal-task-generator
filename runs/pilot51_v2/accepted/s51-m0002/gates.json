@@ -1,0 +1,144 @@
+{
+  "matter_id": "s51-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "APA §9.4(b): \"The Escrow Fund shall be the sole and exclusive source of recovery for the Buyer Parties for any Losses under Section 9.2(a), other than Losses arising from a breach of any Fundamental Representation or from fraud.\" Escrow Agreement §4.1: \"On the first Business Day after the date that is nine (9) months after the Closing Date (the \"Release Date\"), the Escrow Agent shall release to Seller all remaining Escrow Funds, less the aggregate of all Claimed Amounts under Claim Notices delivered before the Release Date...\" APA §9.1: \"The General Representations shall survive the Closing until 18 months after the Closing Date.\"",
+            "reason": "Read together, the two documents leave Doureth (Buyer) with no source of recovery after about month nine. General-representation claims, including the §4.12 environmental representation, survive 18 months. But the escrow is the exclusive source of recovery for them, and it is released to Routand at nine months, keeping back only amounts under Claim Notices already delivered. A breach discovered in months 10 to 18 therefore has nothing to recover from. Set-off under §9.7 and Note §5.1 does not help, because it covers only amounts recoverable \"other than from the Escrow Fund.\" The gap is worse because APA §2.3(c) makes Doureth assume all environmental liabilities, including pre-Closing ones. That leaves the §4.12 representation as Doureth's only protection against contamination at the Lake Charles plant, and contamination is the kind of risk that surfaces late. APA §12.4 does not cure the conflict: the APA states no release date, and the Escrow Agreement is the only document that sets one. The problem is still actionable. Closing was October 1, 2026, so the Release Date is about July 2027. Doureth can still seek an amendment under Escrow Agreement §11.2, or make sure Claim Notices go in before the Release Date. Nothing in the folder shows Doureth accepted a release.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "The General Representations shall survive the Closing until 18 months after the Closing Date. ... The Escrow Fund shall be the sole and exclusive source of recovery for the Buyer Parties for any Losses under Section 9.2(a), other than Losses arising from a breach of any Fundamental Representation or from fraud.",
+                "reason": "The APA alone shows two of the three pieces. Section 9.1 gives General Representations, including the Section 4.12 environmental rep, an 18-month survival period. Section 9.4(b) makes the Escrow Fund the exclusive source of recovery for those claims, and Section 9.5(a) caps them at the Escrow Amount. But the APA never says when the Escrow Fund is released. It leaves disbursement to the Escrow Agreement (Exhibit C, not provided). The defect only arises because Escrow Agreement Section 4.1 releases the funds to Seller at nine months, which leaves claims found in months 10 to 18 with nothing to recover from. That release date is not in this document. A careful associate could flag a general drafting point: survival and escrow duration should match. But from the APA alone they could not see that the two actually conflict or that the survival period is cut short in practice."
+              },
+              "indemnity_escrow_agreement.md": {
+                "findable": false,
+                "evidence": "On the first Business Day after the date that is nine (9) months after the Closing Date (the \"Release Date\"), the Escrow Agent shall release to Seller all remaining Escrow Funds, less the aggregate of all Claimed Amounts under Claim Notices delivered before the Release Date that have not then been paid or finally resolved (the \"Retained Amount\").",
+                "reason": "The escrow agreement shows a nine-month release to Seller. Only amounts named in Claim Notices delivered before that date are held back. That alone is a normal escrow term. The document does not state that general representations, including the environmental representation, survive 18 months. It also does not say the escrow is Buyer's sole and exclusive source of recovery for general-representation Losses. Those facts come from APA Sections 9.1 and 9.4(b), which are not provided here. Without them, an associate cannot see that the release date cuts the survival period short or that Buyer has no recovery source for claims arising in months 10 to 18."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 2.3(c) makes Buyer assume \"all Liabilities arising under Environmental Laws relating to the Purchased Assets or the Lake Charles Facility, whether arising prior to, at or after the Closing.\" Section 9.3(b) requires Buyer to indemnify the Seller Parties for \"any Assumed Liability.\" Section 9.5(c) provides that the Basket and the Cap \"shall not apply to claims under Section 9.3(b).\"",
+            "reason": "Read together, these three provisions make Doureth (the Buyer) owe Routand an uncapped, basket-free indemnity for all environmental liabilities at the Lake Charles Facility, including historical contamination from before Closing when Routand operated the plant. Because those liabilities are Assumed Liabilities, they cannot also be Excluded Liabilities under 9.2(c). Doureth's own recovery for environmental problems is therefore limited to the Section 4.12 representation, which is a General Representation. That claim is subject to the Basket, is capped at the $8.64M escrow, survives only 18 months, and may face the argument that Doureth contractually assumed the very liability it is claiming for. This reverses LOI Paragraph 4, under which Routand retained pre-Closing environmental liabilities. That paragraph was expressly non-binding, so it gives no contractual cure. Nothing elsewhere in the folder limits or reverses 2.3(c). Closing occurred October 1, 2026, but this is an ongoing, open-ended exposure rather than a lapsed deadline. Doureth can still act on it, for example by seeking an amendment or a reformation argument based on the LOI deal terms, and by managing its claims strategy. It is a real and serious problem for the client."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 7: \"Seller may assign this letter agreement, or any of its rights or obligations under it, to any Person without the consent of Buyer. ... Buyer may not assign this letter agreement, or any of its rights or obligations under it, without the prior written consent of Seller.\"",
+            "reason": "The assignment right runs one way, against Doureth. Routand can transfer the 24-month supply relationship to anyone, including a competing water treatment chemicals producer. It only has to give notice afterwards. Doureth, by contrast, needs Routand's consent to assign.\n\nThe assignee would then receive Buyer Forecast Information under Section 2.1, meaning sodium hypochlorite volumes and municipal and industrial customer requirements, along with the Pricing Terms. Section 8 only limits use to the purposes of the letter agreement. Nothing excludes competitors as assignees.\n\nThe Purchase Agreement does not fix this:\n- **APA §12.6** restricts assignment of \"this Agreement\" only.\n- **APA §12.4 (precedence)** applies only to a conflict, and there is none, because §12.6 does not address the side letter.\n- **APA §6.5 non-compete** binds only Seller and its Affiliates, not an unaffiliated assignee.\n\nThe letter is in force for its full term, so the issue remains live for Doureth, for example by negotiating an amendment under Section 10.3."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Seller Note §9.2: \"Any legal suit, action or proceeding arising out of or relating to this Note, including the payment, enforcement or set-off of any amount under it, shall be instituted exclusively in the state courts of the State of New York sitting in the Borough of Manhattan or the United States District Court for the Southern District of New York.\" Read with APA §12.4: \"this Agreement shall prevail; provided, however, that the Seller Note shall control with respect to its payment, set-off and enforcement.\" APA §12.9 requires the Court of Chancery for any proceeding arising out of the APA.",
+            "reason": "The problem is present and still actionable for Doureth. The Seller Note sends all payment, enforcement and set-off disputes exclusively to Manhattan courts under New York law. The APA's precedence carve-out in §12.4 makes the Note control on exactly those matters, so the Note's forum governs them. Doureth's indemnity claims under APA Article IX remain subject to Delaware law and exclusive Chancery jurisdiction. Note §5.2 lets Doureth set off only amounts 'finally determined' by agreement or by a final non-appealable court order. Routand could therefore sue on the Note in New York and obtain a judgment while Doureth's indemnity claims are still pending in Chancery. Doureth would bear duplicate litigation and the risk of inconsistent rulings, and could lose the practical value of its set-off right. Nothing in the folder cures or limits this conflict. Doureth has not waived the issue: no payment default, judgment or later acceptance is shown, and the first Payment Date has not yet occurred.",
+            "alone": {
+              "seller_promissory_note.md": {
+                "findable": false,
+                "evidence": "Section 9.2: \"Any legal suit, action or proceeding arising out of or relating to this Note, including the payment, enforcement or set-off of any amount under it, shall be instituted exclusively in the state courts of the State of New York sitting in the Borough of Manhattan or the United States District Court for the Southern District of New York.\"",
+                "reason": "On its own, the Note shows that it is governed by New York law. It sends all Note disputes, including set-off disputes, exclusively to Manhattan courts. It also limits set-off under Section 5.1 to indemnity amounts that are 'finally determined' under Article IX of the APA, either by agreement or by a final court order. The Note does not show that the APA chooses Delaware law and the Court of Chancery for indemnity claims (Sections 12.8 and 12.9). It also does not show the APA's precedence clause (Section 12.4), which lets the Note's forum control payment, set-off and enforcement. Without those APA terms, a reader cannot see that Doureth's indemnity claims must be heard in a different forum under different law from Routand's suit on the Note. That split is what creates the risk of a Note judgment before set-off rights are decided, inconsistent rulings and duplicate litigation. Reading the Note alone, the New York choice is unremarkable."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "12.4 Order of Precedence. In the event of any conflict or inconsistency between this Agreement and any Ancillary Agreement, this Agreement shall prevail; provided, however, that the Seller Note shall control with respect to its payment, set-off and enforcement.",
+                "reason": "The APA alone shows Delaware governing law and exclusive jurisdiction in the Court of Chancery (Sections 12.8, 12.9). It also shows that the Seller Note controls its own payment, set-off and enforcement (Section 12.4), with set-off running 'in accordance with the terms of the Seller Note' (Section 9.7). It does not show that the Note picks New York law or an exclusive Manhattan forum. Without that, an associate could at most note a general risk that the Note's terms might override the APA. They could not see a split-forum conflict that lets Routand get a judgment on the Note in Manhattan while Doureth's indemnity and set-off claims must go to Chancery. That conflict depends on Note Section 9, which is not in this document."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.077,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

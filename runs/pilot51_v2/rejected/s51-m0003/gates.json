@@ -1,0 +1,132 @@
+{
+  "matter_id": "s51-m0003",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I3\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I3"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "DPA §12.1: \"This DPA, and any dispute arising out of or relating to the processing of Subscriber Personal Data under the Agreement, shall be governed by the laws of the State of New York...\" and §12.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in New York County, New York...\" Supply Agreement §16.1/16.2 choose Delaware law and Wilmington courts, and §16.3(a): \"the DPA shall prevail with respect to the processing of Personal Data.\"",
+            "reason": "The Supply Agreement chooses Delaware law and exclusive Wilmington, Delaware courts for any action arising out of or relating to the Agreement. The DPA instead chooses New York law and exclusive New York County courts for any dispute relating to the processing of Subscriber Personal Data. Section 16.3(a) of the Supply Agreement makes the DPA prevail on data-processing matters, so it enforces the New York clause rather than reconciling the two. A subscriber-data breach by Zidusk during drop-ship fulfillment would therefore be split from related claims. The data claim would go to New York under New York law. Indemnity claims under SA §10.1(b), quality, recall and supply claims would go to Delaware. Rupith, as the claimant who would most likely be enforcing both sets of claims, faces parallel proceedings, inconsistent results and forum disputes. Nothing in the folder fixes this. The DPA can be amended by a signed writing (§13.3), and Zidusk's pending assignment to Pellwyn, expected to close in December 2026, gives Rupith a current occasion to negotiate an aligning amendment. The issue is therefore still actionable.",
+            "alone": {
+              "rupith_zidusk_data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "This DPA, and any dispute arising out of or relating to the processing of Subscriber Personal Data under the Agreement, shall be governed by the laws of the State of New York, without regard to its conflict of laws rules.",
+                "reason": "The DPA alone shows a New York governing-law clause and exclusive jurisdiction in New York County for DPA and subscriber-data disputes. Read by itself, this is an ordinary standalone choice of law and forum. Nothing in the DPA says the Supply Agreement chooses Delaware law and Wilmington courts (Sections 16.1–16.2). It also does not contain the Supply Agreement's precedence rule (Section 16.3) that makes the DPA prevail on Personal Data processing. Those two facts create the split between New York and Delaware and the risk of parallel proceedings, and both come from the Supply Agreement, which is not provided. An associate reading only the DPA could not see the conflict or the harm to Rupith."
+              },
+              "rupith_zidusk_supply_agreement.md": {
+                "findable": false,
+                "evidence": "16.3 Order of Precedence. If the Agreement Documents conflict or are inconsistent, the following rules apply: (a) the DPA shall prevail with respect to the processing of Personal Data;",
+                "reason": "This Supply Agreement alone sets Delaware law and exclusive Wilmington, Delaware courts (16.1, 16.2), and says the DPA prevails on Personal Data processing (16.3(a)). An associate could note that the DPA might override on data matters. But nothing here shows that the DPA actually chooses a different law or forum. The New York law and New York County exclusive jurisdiction clause in DPA Section 12 is the source of the conflict and the split-forum harm to Rupith, and it can only be seen in the DPA. Without it there is no mismatch, only a precedence rule with nothing to apply to."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Supply Agreement §3.1: \"During the Term, Customer shall purchase from Supplier one hundred percent (100%) of its requirements for all Pet Food Products, wherever manufactured or sold, and shall cause its Affiliates to do the same. Customer shall not, and shall cause its Affiliates not to, engage any third party to manufacture, co-pack or fulfill any Pet Food Products.\" Term Sheet §4: \"Rupith will buy its requirements exclusively from Zidusk only for its Hearthside dry kibble recipes sold in the United States only. Rupith remains free to source any other product, format, brand or territory from any manufacturer. This includes wet food, treats, toppers and any product sold outside the United States.\"",
+            "reason": "The obligation falls on Rupith, the client. The signed clause is far broader than the deal recorded in the Term Sheet. 'Pet Food Products' (§1.15) covers every food, treat, chew, topper and supplement for dogs or cats in every format. The clause also reaches Affiliates and all territories. The Term Sheet limited exclusivity to Hearthside dry kibble sold in the US. The Supply Agreement has no express integration clause, but nothing cures the gap: the Term Sheet's exclusivity terms are expressly non-binding (Term Sheet §13), so the executed §3.1 governs. The clause bars Rupith and its Affiliates from using any other co-manufacturer for any pet food product, anywhere, for the whole Term, including automatic 36-month renewals. Zidusk's October 14, 2026 notice says it will assign the agreement to Pellwyn, a competitor that runs the TrailBowl subscription brand, at a December 2026 closing. §17.2(b) lets it do so without Rupith's consent, which makes the harm worse. The issue is still actionable. The Initial Term ends March 1, 2027, so the §2.2 non-renewal window (90–120 days before expiry, about Nov 1 to Dec 1, 2026) is open today (Nov 17, 2026). The closing has not happened yet, so Rupith can still use the renewal window to negotiate an amendment that narrows §3.1 to the agreed scope.",
+            "alone": {
+              "rupith_zidusk_supply_agreement.md": {
+                "findable": false,
+                "evidence": "3.1 Customer Purchase Commitment. During the Term, Customer shall purchase from Supplier one hundred percent (100%) of its requirements for all Pet Food Products, wherever manufactured or sold, and shall cause its Affiliates to do the same. Customer shall not, and shall cause its Affiliates not to, engage any third party to manufacture, co-pack or fulfill any Pet Food Products.",
+                "reason": "Read alone, the agreement shows a very broad exclusivity commitment. Section 3.1 covers all Pet Food Products, which the definition says include treats, wet, fresh and frozen formats. It covers products wherever made or sold, binds Affiliates, and bars any third-party co-packer. That reach goes beyond the 'Products' listed in the Order Form. A careful associate would likely call it aggressive for the client. But the issue is that the executed clause departs from the agreed deal, which was exclusivity only for Hearthside dry kibble sold in the United States. That agreed scope appears only in the Term Sheet. Nothing in this document records a narrower commercial bargain, and a broad requirements commitment could have been negotiated on purpose. This document also does not show that the Term Sheet was superseded: its General section has no integration clause. Nor does it show anything about Pellwyn or an assignment to a competitor; Section 17.2 merely permits assignment to a successor. So the key part of the problem, that the clause exceeds what Rupith agreed to, cannot be seen without the other document."
+              },
+              "rupith_zidusk_term_sheet.md": {
+                "findable": false,
+                "evidence": "Rupith will buy its requirements exclusively from Zidusk only for its Hearthside dry kibble recipes sold in the United States only. Rupith remains free to source any other product, format, brand or territory from any manufacturer. This includes wet food, treats, toppers and any product sold outside the United States.",
+                "reason": "The Term Sheet only states the narrow exclusivity the parties agreed on: Hearthside dry kibble sold in the US, with Rupith free to source wet food, treats, other brands and other territories elsewhere. Read alone, that is favorable to Rupith and shows no problem. The harm depends on the Supply Agreement: Section 3.1 imposes 100% requirements for all Pet Food Products everywhere, its integration clause supersedes the Term Sheet, and assignment to the competitor Pellwyn makes it worse. None of that appears in this document. The Term Sheet says it is non-binding and will be replaced by Definitive Agreements, but it gives no sign that the final terms will differ from this deal."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": false,
+            "evidence": "Supply Agreement §17.2: \"Either Party may assign this Agreement, in whole or in part, without the consent of the other Party: ... (b) to any successor to all or substantially all of the business or assets to which this Agreement relates, whether by merger, asset sale, stock sale or otherwise.\" Notice letter ¶1: \"Pellwyn is a pet food company that operates, among other businesses, the TrailBowl subscription dog food brand. At the closing of the transaction, Zidusk will assign the Supply Agreement, together with the Data Processing Addendum ... to Pellwyn.\"",
+            "reason": "findable from rupith_zidusk_supply_agreement.md alone, so it does not need two documents",
+            "alone": {
+              "rupith_zidusk_supply_agreement.md": {
+                "findable": true,
+                "evidence": "17.2 Permitted Assignment. Either Party may assign this Agreement, in whole or in part, without the consent of the other Party: (a) to an Affiliate; or (b) to any successor to all or substantially all of the business or assets to which this Agreement relates, whether by merger, asset sale, stock sale or otherwise. The assigning Party shall give written notice of the assignment to the other Party.",
+                "reason": "The contract alone is enough to show the problem and its harm to Rupith. Section 17.2 lets Zidusk transfer the Agreement in any sale of its business, and Rupith only gets notice. Nothing in the contract adds a consent right, a carve-out for competitors, or a right to terminate on change of control. Section 14 allows termination only for breach or insolvency, and Section 3.1 requires Rupith to buy 100% of its needs from Supplier for the whole Term. Under Sections 11.1, 4.2, 5.3–5.4 and 12.1, Supplier holds Rupith's recipes, formulations, Forecasts and Subscriber Personal Data. A careful associate could therefore see that a buyer of Zidusk, including a competitor, would take over the contract and that data, and that Rupith could neither block the transfer nor exit. What the contract does not show is that the risk is actually happening: the October 14, 2026 notice letter, the Pellwyn asset purchase agreement, Pellwyn's competing TrailBowl brand, and the December 2026 closing. Those facts make the harm concrete and immediate, but the structural problem is already visible on the face of the contract."
+              },
+              "zidusk_notice_letter_2026-10-14.md": {
+                "findable": false,
+                "evidence": "Pellwyn is a pet food company that operates, among other businesses, the TrailBowl subscription dog food brand. At the closing of the transaction, Zidusk will assign the Supply Agreement, together with the Data Processing Addendum dated as of March 1, 2024 (the \"DPA\") , to Pellwyn.",
+                "reason": "The letter alone shows the facts. Zidusk is selling its business to Pellwyn, Pellwyn runs a competing subscription dog food brand (TrailBowl), and the Supply Agreement, DPA, Order Form and Quality Agreement will move to Pellwyn at closing. It does not show that Rupith cannot stop this. The letter cites Section 17.2 only as the basis for giving notice, and it neither quotes nor describes what that section says. Nothing in the letter says the assignment needs no consent, that there is no competitor carve-out, or that Rupith has no termination right. The fact that Zidusk sends notice instead of asking for consent hints that it thinks consent is not needed. But an associate could not tell from this letter whether Rupith has a consent, objection or termination right. The core harm, that Rupith has no contractual way to block or exit the transfer, depends on the text of Section 17.2 in the Supply Agreement, which has not been provided."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Supply Agreement §2.2: \"At the end of the Initial Term, this Agreement shall automatically renew for successive Renewal Terms. It shall continue to do so unless either Party gives the other Party written notice of non-renewal not less than ninety (90) days nor more than one hundred twenty (120) days before the end of the then-current term.\" Order Form §2: \"2.1 Initial Term: 36 months from the Supply Agreement Effective Date. 2.2 Renewal Term: thirty-six (36) months, for each renewal under Section 2.2 of the Supply Agreement.\"",
+            "reason": "With a March 1, 2024 Effective Date, the 36-month Initial Term ends February 28, 2027. Non-renewal notice can therefore be given only between October 31 and November 30, 2026. Notice outside that window, early or late, does not count. If Rupith misses it, the agreement renews for another 36 months. That renewal carries the §3.1 exclusivity, which requires Rupith to buy all Pet Food Products everywhere from Supplier. This is far broader than the term sheet's deal (Hearthside dry kibble in the US only), and the counterparty would likely be Pellwyn, which runs the competing TrailBowl brand. Today is November 17, 2026, so the window is open with about 13 days left. Nothing in the folder shows that Rupith has given notice or accepted renewal. The problem is present, hurts the client, and is still actionable: Rupith should decide now and serve any notice by November 30 under §18.1 to the Order Form address.",
+            "alone": {
+              "rupith_zidusk_supply_agreement.md": {
+                "findable": false,
+                "evidence": "2.2 Renewal. At the end of the Initial Term, this Agreement shall automatically renew for successive Renewal Terms. It shall continue to do so unless either Party gives the other Party written notice of non-renewal not less than ninety (90) days nor more than one hundred twenty (120) days before the end of the then-current term.",
+                "reason": "The Supply Agreement alone shows an evergreen clause with a narrow 30-day non-renewal window. It also shows the March 1, 2024 Effective Date and the broad Section 3.1 exclusivity that would carry over on renewal. It does not state how long the Initial Term or the Renewal Terms last. Sections 1.9, 1.13 and 1.20 send both to the Order Form. Without the 36-month figures, an associate cannot work out that the Initial Term ends February 28, 2027, that the window runs October 31 to November 30, 2026 and is open or about to close, or that missing it locks Rupith in for three more years. The document flags a general auto-renewal risk, but the specific deadline and the harm to Rupith depend on the Order Form."
+              },
+              "rupith_zidusk_order_form.md": {
+                "findable": false,
+                "evidence": "2.2 **Renewal Term: thirty-six (36) months**, for each renewal under Section 2.2 of the Supply Agreement.",
+                "reason": "The Order Form shows that renewals of 36 months exist under Section 2.2 of the Supply Agreement, and that the Initial Term is 36 months, dated March 1, 2024. It does not say renewal is automatic, does not give the 90–120 day non-renewal notice window, and does not mention the October 14, 2026 notice letter, the exclusivity terms, or Pellwyn. Renewal may require mutual agreement, so a reader can't see the lock-in risk or the short notice window from this document alone. The automatic renewal mechanism and the window are in the Supply Agreement."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Quality Agreement Section 1.6: \"'Nonconforming Product' means any Product that fails Release Testing at the time of release from Supplier's facility.\" Supply Agreement Section 1.12: \"'Nonconforming Product' means any Product that fails to conform to the Specifications, or that is adulterated or misbranded within the meaning of the FD&C Act or any applicable state commercial feed law, whether discovered before or after delivery.\" Supply Agreement Section 16.3(b): \"the Quality Agreement shall prevail with respect to quality and recall matters.\"",
+            "reason": "The two agreements define the same term differently. The Supply Agreement covers any Product that fails Specifications or is adulterated or misbranded, whether found before or after delivery. The Quality Agreement covers only Product that fails Release Testing at release. Section 16.3(b) of the Supply Agreement makes the Quality Agreement prevail on recall matters, and Section 9.6 of the Quality Agreement routes recall costs to Supply Agreement Section 8.3. Zidusk could therefore argue the narrower definition governs the Section 8.3 recall-cost allocation. On that reading, contamination that passed release testing but is found later (for example, Salmonella or aflatoxin detected in the field or by regulators) would not be 'Nonconforming Product'. Rupith, the Customer, would then bear those recall costs under the last sentence of Section 8.3, even though the Supply Agreement and the Term Sheet ('to the extent attributable to nonconforming product') allocated them to Zidusk. Nothing in the folder cures or waives the conflict. The agreements are in force through the Term, and the pending assignment to Pellwyn makes it timely to fix by amendment. The problem is present and actionable for Rupith.",
+            "alone": {
+              "rupith_zidusk_quality_agreement.md": {
+                "findable": false,
+                "evidence": "1.6 \"Nonconforming Product\" means any Product that fails Release Testing at the time of release from Supplier's facility. ... 9.6 Recall Costs. Recall costs are allocated as provided in Section 8.3 of the Supply Agreement.",
+                "reason": "This document alone shows that 'Nonconforming Product' is defined narrowly: only Product that fails Release Testing when it leaves Supplier's facility. It also shows that recall costs are allocated by Supply Agreement Section 8.3. It does not show four things the problem depends on. First, that Section 8.3 ties Zidusk's recall cost responsibility to 'Nonconforming Product'. Second, that the Supply Agreement defines the term more broadly, covering failure of Specifications, adulteration or misbranding, and defects found after delivery. Third, that Supply Agreement Section 16.3 makes the Quality Agreement prevail on quality and recall matters. Section 12.2 here actually says the Quality Agreement is 'governed by the Supply Agreement', which points the other way. Fourth, and therefore, that contamination found after shipment would shift recall costs to Rupith. An associate could see that the definition is narrow but could not tell that it conflicts with anything or that it hurts the client without the Supply Agreement."
+              },
+              "rupith_zidusk_supply_agreement.md": {
+                "findable": false,
+                "evidence": "1.12 \"Nonconforming Product\" means any Product that fails to conform to the Specifications, or that is adulterated or misbranded within the meaning of the FD&C Act or any applicable state commercial feed law, whether discovered before or after delivery. ... 16.3 (b) the Quality Agreement shall prevail with respect to quality and recall matters",
+                "reason": "The Supply Agreement alone gives a broad definition of Nonconforming Product that covers defects found after delivery. Section 8.3 puts recall costs for that product on Zidusk, and Section 16.3(b) lets the Quality Agreement prevail on quality and recall matters. An associate could see that the Quality Agreement might override these terms, but this document does not show that the Quality Agreement actually defines the term more narrowly (release-testing failures at the time of release only). Without that narrower definition there is no conflict, and nothing shows that post-shipment contamination recall costs move to Rupith. On its face, the Supply Agreement favors Rupith."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}
