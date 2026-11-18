@@ -92,6 +92,7 @@ def test_consistency_asks_the_matcher_only_about_reworded_values():
     assert ok.passed and ok.details["reworded"] == 2
     bad = gates.consistency(Facts(reworded, same=False), _ledger(), docs)
     assert not bad.passed and len(bad.details["mismatches"]) == 2
+    assert len(bad.details["mismatches"][0]["matcher"]) == 2  # asked twice, both reasons kept
 
     missing = Facts({}, same=True)  # silent in its own document: rejected without asking the matcher
     g = gates.consistency(missing, _ledger(), docs)
@@ -392,3 +393,15 @@ def test_parties_absent_matches_a_common_word_stem_by_full_name():
     assert gates.parties_absent("The first notice was late.", ledger, {"a.md": "Besouth"}) == []
     # an ordinary stem still matches on the stem alone
     assert gates.parties_absent("Besouth must consent.", ledger, {"a.md": "First Harbor Bank, N.A."}) == [{"party": "P1", "name": "Besouth Holdings LLC"}]
+
+
+def test_consistency_rejects_a_reworded_value_only_if_a_second_matcher_look_agrees():
+    class Flaky(Facts):  # first verdict "different", second "same": the noise seen in seeds 46 and 49
+        def complete(self, role, system, user):
+            if role == "fact_matcher":
+                self.same = bool(self.matched)
+            return super().complete(role, system, user)
+
+    reworded = {"F1@a.md": "New York law"}
+    flaky = Flaky(reworded, same=False)
+    assert gates.consistency(flaky, _ledger(), {"a.md": "...", "b.md": "..."}).passed and len(flaky.matched) == 2
