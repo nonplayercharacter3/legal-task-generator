@@ -1,0 +1,120 @@
+{
+  "matter_id": "s49-m0003",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I2\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I2"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 12.5: \"Seller may assign this Agreement, or any of its rights or obligations under it, to any Person upon written notice to Buyer and without the consent of Buyer. Upon any such assignment, Seller shall be released from its obligations under this Agreement.\"",
+            "reason": "The clause is one-sided. Buyer (Glatind, our client) cannot assign without Seller's consent, except to take title through an Affiliate, and even then Buyer stays liable. Seller, by contrast, can assign to anyone on notice alone and is then automatically released. Seller carries the post-closing obligations Glatind depends on: the Article 9 indemnity, which is uncapped for Excluded Liabilities and recoverable directly from Seller once the six-month escrow is gone; the Heating Oil Tank and Pre-Closing Environmental Liabilities, which the Side Letter makes subject to the Cap but does not remove; the Section 6.6 transition assistance; and the employee payment covenants. Seller could move all of these to a shell or unrelated assignee and walk away. Nothing in the folder cures or limits this. The Side Letter and the Escrow Agreement do not address assignment. The Board consent ratifies the Transaction Documents without noting the issue. No Seller assignment has yet occurred or been accepted by Glatind, so the risk is live and can still be addressed, for example by an amendment requiring Buyer consent or no release, or by a guaranty."
+          },
+          {
+            "issue": "I2",
+            "present": false,
+            "evidence": "Side Letter ¶2(a): \"At the Closing, Buyer shall assume and agree to pay, perform and discharge all Liabilities under or relating to the Union Agreement, whether arising before or after the Closing, including any withdrawal liability under any multiemployer pension plan to which Seller contributes or has contributed...\"; ¶2(b): \"The Liabilities described in paragraph 2(a) shall constitute Assumed Liabilities for all purposes of the Purchase Agreement.\" APA §9.5(c): \"The Cap shall not apply to Buyer's obligations under Section 9.3(b).\"",
+            "reason": "findable from side_letter_tesel_glatind.md alone, so it does not need two documents",
+            "alone": {
+              "side_letter_tesel_glatind.md": {
+                "findable": true,
+                "evidence": "\"At the Closing, Buyer shall assume and agree to pay, perform and discharge all Liabilities under or relating to the Union Agreement, whether arising before or after the Closing, including any withdrawal liability under any multiemployer pension plan to which Seller contributes or has contributed on behalf of Hotel employees covered by the Union Agreement.\" (para. 2(a)); \"The Liabilities described in paragraph 2(a) shall constitute Assumed Liabilities for all purposes of the Purchase Agreement.\" (para. 2(b))",
+                "reason": "The Side Letter alone shows the core harm to Glatind. Glatind takes on Seller's pre-closing union liabilities, including multiemployer pension withdrawal liability built up by Seller's past contributions. That obligation has no dollar limit. Paragraph 3(a) makes environmental Losses subject to the Cap, but nothing in paragraph 2 caps or carves out the union liabilities, so the contrast signals that this exposure is unlimited. A careful associate would flag that Buyer is absorbing open-ended, Seller-generated pension liability, and that turning it into 'Assumed Liabilities for all purposes' likely triggers Buyer's indemnity duties. What the Side Letter does not show: that APA Section 9.3(b) requires Buyer to indemnify Seller for Assumed Liabilities, that Section 9.5(c) excludes that indemnity from the Cap, and that Section 12.9 makes the Side Letter prevail over the APA. Those details make the indemnity formally uncapped, but they only confirm and sharpen a harm the Side Letter already shows."
+              },
+              "asset_purchase_agreement_larkspur_hotel.md": {
+                "findable": false,
+                "evidence": "Section 2.5(a): \"Liabilities under the Assumed Contracts, including the Union Agreement, to the extent arising from performance required after the Closing and not from any breach or default by Seller before the Closing\"; Section 12.9: \"they shall govern in the following order of precedence: Side Letter, then Asset Purchase Agreement, then Escrow Agreement.\"",
+                "reason": "Read alone, the APA limits Buyer's assumption of Union Agreement liabilities to post-closing performance. It also expressly excludes Seller's pre-closing employee and benefit plan liabilities (Section 2.6(b)). So the uncapped Buyer indemnity in Sections 9.3(b) and 9.5(c) only reaches liabilities the Buyer chose to take on after closing. An associate could see that the Buyer indemnity is uncapped and that an undisclosed Side Letter takes priority over the APA under Section 12.9, which is a general warning sign. But nothing in this document moves pre-closing Union Agreement liabilities or pension withdrawal liability onto the Buyer. That shift appears only in Paragraph 2 of the Side Letter, which is not provided. The specific harm therefore cannot be identified from the APA alone."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Side Letter ¶3(a): \"Losses arising from Pre-Closing Environmental Liabilities, including Losses relating to the Heating Oil Tank, shall be subject to the Cap.\" Against APA §9.5(b): \"The Cap shall not apply to Losses arising from Fraud, any breach of a Fundamental Representation, or any Excluded Liability,\" and APA §12.9: \"Side Letter, then Asset Purchase Agreement, then Escrow Agreement.\"",
+            "reason": "Under the APA, Pre-Closing Environmental Liabilities are Excluded Liabilities (§2.6(a)). Seller indemnifies Glatind for them under §9.2(c), and §9.5(b) exempts them from the Cap. Side Letter ¶3(a) puts these Losses back under the Cap, and §12.9 makes the Side Letter prevail over the APA. So the Seller-favourable term controls. The result is that Seller's liability for the known, unremediated Heating Oil Tank is limited to 12% of $18.4M, which is $2,208,000. That amount is also shared with every other capped claim. Schedule 4.9 and §4.9 confirm the risk is real: the tank has been out of service since 2019 and was never closed in place or removed. This works against Glatind, the indemnified Buyer. Nothing in the folder cures or offsets the change: there is no price adjustment, environmental insurance or separate tank indemnity. The board's April 2026 ratification approved the documents generally. It is not an acceptance of a lapsed right or deadline, and the exposure remains live for any post-closing environmental claim. The point is still actionable: an associate should flag it for amendment, a specific tank indemnity or escrow, or another risk mitigant.",
+            "alone": {
+              "side_letter_tesel_glatind.md": {
+                "findable": false,
+                "evidence": "Losses arising from Pre-Closing Environmental Liabilities, including Losses relating to the Heating Oil Tank, shall be subject to the Cap.",
+                "reason": "On its own, the side letter shows that environmental losses, including those from a Heating Oil Tank Buyer is already testing, are subject to some 'Cap'. That limits Buyer's recovery for a known risk, which an associate would notice. It does not show the actual problem. It does not say the APA (Section 9.5(b)) otherwise excludes Excluded Liabilities, including Pre-Closing Environmental Liabilities, from the Cap, so the reader cannot tell this paragraph removes an uncapped carve-out rather than restating the deal. It also does not give the Cap amount (12% / $2,208,000) or show that Section 12.9 makes the side letter prevail. Paragraph 5 says only that the APA is otherwise unchanged. The conflict, and how much it hurts Glatind, can only be seen with the APA."
+              },
+              "asset_purchase_agreement_larkspur_hotel.md": {
+                "findable": false,
+                "evidence": "\"The Cap shall not apply to Losses arising from Fraud, any breach of a Fundamental Representation, or any Excluded Liability.\" (Section 9.5(b)); \"If there is any conflict among the transaction documents, they shall govern in the following order of precedence: Side Letter, then Asset Purchase Agreement, then Escrow Agreement.\" (Section 12.9)",
+                "reason": "Read alone, the APA protects Buyer on this point. Section 2.6(a) makes all Pre-Closing Environmental Liabilities, including the Heating Oil Tank, Excluded Liabilities. Section 9.5(b) removes Excluded Liabilities from the 12% Cap. Section 9.6 allows recovery directly from Seller once the escrow is used up. The APA does show that a Side Letter exists and that it prevails under Section 12.9. That gives an associate reason to read the Side Letter, but it does not show what the Side Letter says. Nothing in the APA puts environmental Losses back under the Cap or limits Buyer's recovery to $2,208,000. That harm comes entirely from Paragraph 3 of the Side Letter, which is not provided."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Escrow Agreement Section 4.2: \"On the date that is six (6) months after the Closing Date (the \"Release Date\"), the Escrow Agent shall disburse to Seller the balance of the Indemnity Escrow Fund.\" Section 4.3(a) lets Buyer deliver a Claim Notice only \"at any time before the Release Date.\" APA Section 9.1: Seller's non-fundamental representations \"shall survive the Closing until eighteen (18) months after the Closing Date.\" APA Section 9.6: amounts for breach of those representations \"shall be recovered solely from the Indemnity Escrow Fund.\"",
+            "reason": "The two documents read together leave Glatind exposed. The APA promises 18-month survival for Seller's general representations but makes the escrow the only source of recovery for them. The Escrow Agreement then pays the escrow balance to Seller at six months, keeping back only amounts covered by Claim Notices already delivered. Breaches Glatind discovers in months 7 to 18 therefore cannot be recovered from anyone, even though the claim technically survives. APA Section 12.9 does not help. The APA sets no escrow term of its own, so nothing in the two documents actually conflicts. The Side Letter does not address the point, and the April 2026 board consent only approved the documents generally. This harms Glatind as the indemnified Buyer. The folder does not show that the Closing has occurred, that the escrow has been released, or that Glatind has accepted a release. Glatind can therefore still act: it can seek an amendment under Escrow Section 8.3 to extend the Release Date to match the 18-month survival period, or deliver protective Claim Notices before the Release Date.",
+            "alone": {
+              "escrow_agreement_northcask.md": {
+                "findable": false,
+                "evidence": "On the date that is six (6) months after the Closing Date (the \"Release Date\"), the Escrow Agent shall disburse to Seller the balance of the Indemnity Escrow Fund.",
+                "reason": "This document shows that the indemnity escrow is released to Seller six months after Closing, less amounts held for Claim Notices delivered before the Release Date (Sections 4.2 and 4.3(a)). It also states that the escrow secures Seller's obligations under Article 9 of the Purchase Agreement. It does not show how long Seller's representations survive (18 months under APA Section 9.1). It also does not show that the escrow is Buyer's sole source of recovery for those breaches (APA Section 9.6). Without those terms, a six-month escrow could be an ordinary holdback, with Buyer free to pursue Seller directly afterward. The gap that hurts Buyer, a sole-source remedy that ends 12 months before survival expires, appears only when the APA is read alongside this agreement."
+              },
+              "asset_purchase_agreement_larkspur_hotel.md": {
+                "findable": false,
+                "evidence": "Section 9.6: \"Any amount payable to Buyer under Section 9.2(a) for breach of a representation or warranty other than a Fundamental Representation shall be recovered solely from the Indemnity Escrow Fund.\" Section 2.4: \"The Indemnity Escrow Fund shall be held and disbursed by the Escrow Agent in accordance with the Escrow Agreement as security for Seller's indemnification obligations under Article 9.\"",
+                "reason": "The APA alone shows that general representations survive 18 months (Section 9.1). It also shows that recovery for breach of those representations comes only from the Indemnity Escrow Fund (Section 9.6), and that the fund's holding and disbursement are left to the Escrow Agreement (Section 2.4). It sets no escrow term or release date of its own. A careful associate could note that Glatind's recovery depends on how long the escrow lasts, and could flag that as something to confirm. The APA does not show that the escrow is released early. The 6-month Release Date appears only in Section 4.2 of the Escrow Agreement, which I was not given. Without that document, nothing here shows a gap between the survival period and the escrow term, or any harm to Glatind."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Board consent Recital 1.5: \"Northcask Title & Escrow Company, as Title Company, delivered the Title Commitment for the Real Property to the Company on March 16, 2026.\" Resolution 2 (April 10, 2026): \"the Authorized Officers ... are authorized and directed to prepare, execute and deliver to Seller ... a Title Objection Notice under Section 6.3 of the Purchase Agreement setting out the Company's objection to the Parking Easement.\" APA Section 6.3: \"Buyer shall deliver to Seller written notice of any objection ... within fifteen (15) days after Buyer's receipt of the Title Commitment. If Buyer fails to deliver a Title Objection Notice within that period, Buyer shall be deemed to have accepted all exceptions and matters shown in the Title Commitment and the survey, and each of them shall be a \\\"Permitted Exception.\\\"\"",
+            "reason": "The problem is present and hurts Glatind. Glatind, as Buyer, is the party that must give the Title Objection Notice. It received the Title Commitment on March 16, 2026, so the 15-day window closed on March 31, 2026. The April 10 consent still treats the objection right as live. It directs a Section 6.3 notice, expects Seller to cure, and reserves to the Board any decision to terminate or waive. But under Section 6.3 the Parking Easement, which covers 14 of the Hotel's 31 parking spaces, is already deemed a Permitted Exception. That leaves Glatind with no cure mechanism, no Section 6.3/8.1(b) right to terminate with return of the Deposit, and the Section 7.1(c) title condition met despite the easement. The folder contains no amendment, extension or written waiver from Seller, which Section 12.3 would require. Nothing shows Glatind has accepted the result either: no closing, no restated agreement, no waiver. The consent records Glatind's objection. The issue therefore remains actionable before closing. Glatind could seek Seller's written extension or waiver, negotiate a price or easement solution, or reconsider the Board's approval and closing authority.",
+            "alone": {
+              "glatind_board_consent_april_2026.md": {
+                "findable": false,
+                "evidence": "Northcask Title & Escrow Company, as Title Company, delivered the Title Commitment for the Real Property to the Company on March 16, 2026 ... the Authorized Officers ... are authorized and directed to prepare, execute and deliver to Seller ... a Title Objection Notice under Section 6.3 of the Purchase Agreement setting out the Company's objection to the Parking Easement.",
+                "reason": "The consent shows the Title Commitment was delivered on March 16, 2026. It also shows that the objection under APA Section 6.3 was still only being authorized on April 10, 2026, 25 days later. It does not state the length of the Section 6.3 objection period. It also does not say that a missed deadline means the exceptions are deemed accepted as Permitted Exceptions. Those two terms appear only in the APA. Reading the consent alone, an associate could see the timing and might suspect a deadline. But the associate could not confirm that the window closed on March 31 or that Glatind is deemed to have accepted the Parking Easement. The consent instead treats the objection as still available."
+              },
+              "asset_purchase_agreement_larkspur_hotel.md": {
+                "findable": false,
+                "evidence": "Buyer shall deliver to Seller written notice of any objection to any exception in the Title Commitment or matter shown on the survey (a \"Title Objection Notice\") within fifteen (15) days after Buyer's receipt of the Title Commitment. If Buyer fails to deliver a Title Objection Notice within that period, Buyer shall be deemed to have accepted all exceptions and matters shown in the Title Commitment and the survey, and each of them shall be a \"Permitted Exception.\"",
+                "reason": "The APA sets out the 15-day objection window in Section 6.3 and states that missing it means every exception is deemed accepted. That is a risk to Buyer, but it is a general one. The APA does not say when the Title Commitment was delivered. It does not mention the Parking Easement or any objection Buyer plans to make. It also contains nothing showing that the window has passed. The March 16, 2026 delivery date and the April 10 decision to object come only from the board consent. Without that consent, an associate could not tell that the objection is late."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

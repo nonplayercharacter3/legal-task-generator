@@ -1,0 +1,216 @@
+{
+  "matter_id": "s49-m0002",
+  "summary": "Tanair Seed Genetics, Inc. (client) is a seed company that breeds hybrid corn and soybean lines. It has engaged Dronusk Genomic Services LLC to provide molecular-marker genotyping, seed purity testing and trait-introgression lab services under a Master Services Agreement dated March 2, 2026. The folder holds six documents: the MSA, a Quality Agreement governing sample handling, Order Form No. 1 for the 2026-27 breeding season, a notice letter from Tanair to Dronusk about a pending acquisition of Tanair's parent, a superseded prior draft of the MSA, and an earlier mutual NDA. The supervising partner wants an issue-spotting memo before the parent's acquisition closes. Four problems are planted. (1) The Quality Agreement defines 'Customer Germplasm' more narrowly than the MSA, and the MSA's precedence clause lets the Quality Agreement control sample handling. (2) The MSA's Permitted Assignee definition lets Dronusk assign to any buyer of its lab business, including a competing seed company. (3) Order Form No. 1 contains its own liability cap with no carve-outs, and it prevails over the MSA's uncapped carve-outs. (4) The notice letter records a pending merger that triggers Dronusk's change-of-control consent and termination right, and that consent has not been sought.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Tanair Seed Genetics, Inc.",
+      "role": "Customer under the MSA; the firm's client; a seed breeding company"
+    },
+    {
+      "id": "P2",
+      "name": "Dronusk Genomic Services LLC",
+      "role": "Provider of genotyping, seed purity testing and trait-introgression lab services"
+    },
+    {
+      "id": "P3",
+      "name": "Kelbrin Agronomics plc",
+      "role": "Proposed acquirer of Tanair Holdings Corp., the parent of Tanair Seed Genetics, Inc., under a pending merger agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 17.5"
+    },
+    {
+      "id": "F3",
+      "key": "MSA general liability cap",
+      "value": "Fees paid or payable under the MSA in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F4",
+      "key": "MSA order of precedence",
+      "value": "Quality Agreement (sample-handling and quality matters), then applicable Order Form, then MSA body",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F5",
+      "key": "Customer Germplasm (MSA definition)",
+      "value": "Customer seed, plant tissue, DNA extracted from them, and genotypic data derived from them",
+      "doc": "D1",
+      "section": "Section 1 (Definitions)"
+    },
+    {
+      "id": "F6",
+      "key": "Order Form No. 1 total Fees",
+      "value": "$186,400",
+      "doc": "D4",
+      "section": "Section 3 (Fees)"
+    },
+    {
+      "id": "F7",
+      "key": "Order Form No. 1 Effective Date",
+      "value": "June 15, 2026",
+      "doc": "D4",
+      "section": "Header"
+    },
+    {
+      "id": "F8",
+      "key": "MSA change-of-control termination notice period",
+      "value": "30 days",
+      "doc": "D1",
+      "section": "Section 14.3"
+    },
+    {
+      "id": "F9",
+      "key": "Notice letter date",
+      "value": "October 5, 2026",
+      "doc": "D3",
+      "section": "Date line"
+    },
+    {
+      "id": "F10",
+      "key": "Merger Agreement signing date",
+      "value": "September 28, 2026",
+      "doc": "D3",
+      "section": "Paragraph 1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "tanair_dronusk_master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "tanair_dronusk_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "tanair_letter_to_dronusk_2026-10-05.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "order_form_no_1_2026_breeding_season.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "msa_prior_draft_v2_superseded.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D6",
+      "filename": "tanair_dronusk_mutual_nda_2025.md",
+      "kind": "mutual nondisclosure agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "MSA Section 1 defines 'Customer Germplasm' to include Customer seed, plant tissue, DNA extracted from them, and genotypic data derived from them. MSA Section 7.4 requires Provider to segregate, maintain chain of custody over, and on termination return or destroy all Customer Germplasm 'as set out in the Quality Agreement.' The Quality Agreement, in its Section 1.2, redefines 'Customer Germplasm' as only seed lots, leaf punches and other living plant tissue physically delivered by Customer. Its Section 6 segregation, chain-of-custody and destruction-certification obligations attach only to that narrower class. Under MSA Section 2.3, the Quality Agreement prevails on sample-handling matters, so the narrower definition controls. The result is that DNA extracts and derived marker data, which are Tanair's most portable proprietary breeding assets, carry no segregation, chain-of-custody or destruction obligation and can remain with Dronusk after termination.",
+      "doc": "D2",
+      "section": "Section 1.2 (Definitions) and Section 6 (Segregation and Destruction)",
+      "detect_terms": [
+        "living plant tissue physically delivered by Customer",
+        "certificate of destruction"
+      ],
+      "expected_finding": "Because the Quality Agreement controls sample handling under MSA Section 2.3 and defines Customer Germplasm to exclude DNA extracts and derived genotypic data, Dronusk has no segregation, chain-of-custody or return/destruction obligation for those materials. The Quality Agreement definition should be conformed to the MSA definition, or the MSA definition should be made expressly controlling.",
+      "contradicts": "F5",
+      "doc2": "D1",
+      "section2": "Sections 1, 2.3 and 7.4",
+      "detect_terms2": [
+        "DNA extracted from them",
+        "as set out in the Quality Agreement"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "MSA Section 15.2 bars assignment without the other party's prior written consent, except that either party may assign without consent to a 'Permitted Assignee.' MSA Section 1 defines 'Permitted Assignee' as any Affiliate or any person that acquires all or substantially all of the assets or business to which this Agreement relates. The exception applies to both parties, but it hurts Tanair. Dronusk could sell its genotyping lab, together with this MSA, to a competing seed breeder or trait developer without Tanair's consent. That buyer would then hold Tanair's germplasm, marker data and breeding pipeline information. Tanair would have no consent right, no competitor exclusion and no termination right.",
+      "doc": "D1",
+      "section": "Section 15.2 (Assignment) and Section 1 (definition of Permitted Assignee)",
+      "detect_terms": [
+        "to a Permitted Assignee",
+        "all or substantially all of the assets or business to which this Agreement relates"
+      ],
+      "expected_finding": "Read with the Permitted Assignee definition, Section 15.2 lets Dronusk assign the MSA, together with custody of Tanair's germplasm and data, to any acquirer of its lab business, including a Tanair competitor, without consent. The exception should exclude competitors and require Tanair's consent, or give Tanair a termination and data-return right on any such assignment.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "MSA Section 11.3 provides that the Section 11.2 cap (fees in the prior 12 months) does not apply to breach of confidentiality, indemnification obligations, or loss, contamination or misappropriation of Customer Germplasm. Order Form No. 1, dated June 15, 2026, contains its own Section 6. That section limits Provider's total liability arising out of or relating to the Order Form to the total Fees payable under the Order Form ($186,400) and has no exclusions. MSA Section 2.3 makes the applicable Order Form prevail over the MSA body in a conflict. Read together, the Order Form's unqualified cap overrides the Section 11.3 carve-outs for all 2026-27 season services. Germplasm loss or misappropriation and confidentiality breaches during that work are therefore capped at $186,400, which is far below the value of proprietary breeding lines.",
+      "doc": "D4",
+      "section": "Section 6 (Limitation of Liability)",
+      "detect_terms": [
+        "arising out of or relating to this Order Form",
+        "shall not exceed the total Fees payable under this Order Form"
+      ],
+      "expected_finding": "Because MSA Section 2.3 gives the Order Form priority, the Order Form No. 1 cap of total Order Form Fees ($186,400) displaces the MSA Section 11.3 carve-outs. Germplasm loss or misappropriation, confidentiality breaches and indemnified claims for the season's work are therefore capped. The Order Form should be amended to state that its cap is subject to MSA Section 11.3, or Section 2.3 should be amended so that Order Forms cannot override Section 11.",
+      "contradicts": "F3",
+      "doc2": "D1",
+      "section2": "Section 2.3 (Order of Precedence) and Section 11.3 (Exclusions from Limitation)",
+      "detect_terms2": [
+        "the applicable Order Form shall prevail",
+        "Section 11.2 shall not apply to"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "MSA Section 14.3 provides that if Customer undergoes a Change of Control without Provider's prior written consent, Provider may terminate the MSA and all Order Forms on 30 days' notice. MSA Section 1 defines Change of Control to include the acquisition of more than 50% of the voting securities of Customer or any entity that directly or indirectly controls Customer. Tanair's letter to Dronusk dated October 5, 2026 (D3) states that Tanair Holdings Corp., Tanair's parent, signed an Agreement and Plan of Merger with Kelbrin Agronomics plc on September 28, 2026. It states that closing is expected on or about January 15, 2027. The letter is sent only as general notice under the MSA notices clause and asks for nothing from Dronusk. The transaction is therefore a Change of Control, and Dronusk's consent has been neither requested nor obtained. If the deal closes without consent, Dronusk can terminate mid-season and leave Tanair's genotyping pipeline without a provider.",
+      "doc": "D1",
+      "section": "Section 14.3 (Termination on Change of Control) and Section 1 (definition of Change of Control)",
+      "detect_terms": [
+        "without Provider's prior written consent",
+        "any entity that directly or indirectly controls Customer"
+      ],
+      "expected_finding": "The parent-level merger described in Tanair's October 5, 2026 letter is a Change of Control under MSA Section 14.3. Dronusk's prior written consent has not been requested, so Dronusk could terminate the MSA and all Order Forms on 30 days' notice after closing. Tanair should obtain Dronusk's written consent or a waiver before the expected January 15, 2027 closing.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Paragraphs 1-2",
+      "detect_terms2": [
+        "Agreement and Plan of Merger",
+        "expected to close on or about January 15, 2027"
+      ]
+    }
+  ]
+}

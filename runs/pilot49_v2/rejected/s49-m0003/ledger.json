@@ -1,0 +1,240 @@
+{
+  "matter_id": "s49-m0003",
+  "summary": "Glatind Hospitality Partners, LLC (Buyer, the firm's client) signed an Asset Purchase Agreement on March 2, 2026 with Tesel Inn Holdings, LLC (Seller) to buy The Larkspur Hotel, a 42-room boutique hotel in Hudson, New York, for $18,400,000. The deal has not closed. Three other deal papers were signed with it: an Escrow Agreement with Northcask Title & Escrow Company, which holds the deposit and, from Closing, the indemnity escrow; a Side Letter that the APA says prevails over it; and Glatind's board consent of April 10, 2026. The folder also holds two distractors: an unrelated linen services agreement for another Glatind property, and the pre-deal mutual NDA. The partner wants an issue-spotting memo. Five issues are planted. (1) Seller may assign the APA freely and is then released. (2) The Side Letter makes Buyer assume Seller's pre-closing union and pension withdrawal liability, which Buyer must indemnify with no cap. (3) The Side Letter puts pre-closing environmental liabilities, including a known heating oil tank, back under the cap. (4) The escrow releases at six months while general representations survive eighteen months and are payable only from the escrow. (5) The title objection deadline ran on March 31, 2026, before the April 10, 2026 board consent authorizing an objection to a parking easement.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Glatind Hospitality Partners, LLC",
+      "role": "Buyer; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Tesel Inn Holdings, LLC",
+      "role": "Seller; owner and operator of The Larkspur Hotel"
+    },
+    {
+      "id": "P3",
+      "name": "Northcask Title & Escrow Company",
+      "role": "Escrow Agent and Title Company"
+    },
+    {
+      "id": "P4",
+      "name": "Ashbury Linen Services, Inc.",
+      "role": "Linen vendor to a different Glatind hotel (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Asset Purchase Agreement signing date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$1,104,000",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller indemnity cap under the Asset Purchase Agreement",
+      "value": "12% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "Survival period of Seller's general representations",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F6",
+      "key": "Title objection period",
+      "value": "15 days after Buyer's receipt of the Title Commitment",
+      "doc": "D1",
+      "section": "Section 6.3"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence among transaction documents",
+      "value": "Side Letter, then Asset Purchase Agreement, then Escrow Agreement",
+      "doc": "D1",
+      "section": "Section 12.9"
+    },
+    {
+      "id": "F8",
+      "key": "Escrow Agent",
+      "value": "Northcask Title & Escrow Company",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Title Commitment delivery date",
+      "value": "March 16, 2026",
+      "doc": "D4",
+      "section": "Recitals"
+    },
+    {
+      "id": "F10",
+      "key": "Hotel property being acquired",
+      "value": "The Larkspur Hotel, 118 Orchard Lane, Hudson, New York",
+      "doc": "D1",
+      "section": "Recitals"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_larkspur_hotel.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement_northcask.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "side_letter_tesel_glatind.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "glatind_board_consent_april_2026.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "ashbury_linen_services_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "mutual_nondisclosure_agreement_tesel.md",
+      "kind": "mutual nondisclosure agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "APA Section 12.5 bars Buyer from assigning without Seller's consent. It lets Seller assign the Agreement, or any of its rights or obligations, to any Person on notice alone, and provides that Seller is then released from its obligations. Seller can therefore shift its indemnity, environmental and transition obligations to a thinly capitalized assignee or a competing hotel operator, walk away from them itself, and leave Glatind with no creditworthy indemnitor.",
+      "doc": "D1",
+      "section": "Section 12.5",
+      "detect_terms": [
+        "Seller may assign this Agreement",
+        "without the consent of Buyer",
+        "released from its obligations"
+      ],
+      "expected_finding": "Section 12.5 lets Seller assign the APA to anyone, including a competitor or shell, without Glatind's consent and releases Seller on assignment, so Glatind should require its consent for any Seller assignment and require that Seller stay liable after any assignment.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "APA Section 9.3(b) requires Buyer to indemnify Seller for all Assumed Liabilities, and Section 9.5(c) states that the Cap does not apply to Buyer's obligations under Section 9.3(b). Paragraph 2 of the Side Letter, which prevails over the APA under Section 12.9, adds to the Assumed Liabilities all liabilities under the hotel's Union Agreement whether they arose before or after the Closing, including any multiemployer pension withdrawal liability. Read on its own, the APA limits Buyer's uncapped indemnity to post-closing liabilities it chose to assume. Read together with the Side Letter, Glatind must pay and indemnify Seller, without limit, for Seller's pre-closing labor and pension withdrawal liability.",
+      "doc": "D3",
+      "section": "Paragraph 2",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "including any withdrawal liability"
+      ],
+      "expected_finding": "Because the Side Letter, which controls over the APA, adds Seller's pre-closing Union Agreement and pension withdrawal liabilities to the Assumed Liabilities, and APA Section 9.5(c) removes any cap on Buyer's indemnity for Assumed Liabilities, Glatind faces unlimited exposure for Seller's pre-closing liabilities; it should limit the assumption to post-closing obligations or cap and escrow-fund that indemnity.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 9.5(c)",
+      "detect_terms2": [
+        "Cap shall not apply to Buyer's obligations"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "APA Section 9.5(a) caps Seller's aggregate liability under Section 9.2 at 12% of the Purchase Price. Section 9.5(b) states that the Cap does not apply to Losses arising from Fraud, Fundamental Representations or Excluded Liabilities, and the Excluded Liabilities include Pre-Closing Environmental Liabilities. Paragraph 3 of the Side Letter, which prevails under Section 12.9, provides that Losses arising from Pre-Closing Environmental Liabilities, including those relating to the Heating Oil Tank, shall be subject to the Cap. Together, the Side Letter removes the environmental carve-out from Section 9.5(b), so Glatind's recovery for a known pre-closing contamination risk is limited to $2,208,000.",
+      "doc": "D3",
+      "section": "Paragraph 3",
+      "detect_terms": [
+        "Pre-Closing Environmental Liabilities",
+        "shall be subject to the Cap"
+      ],
+      "expected_finding": "The Side Letter, which controls over the APA, puts Pre-Closing Environmental Liabilities, including the known Heating Oil Tank, back under the 12% Cap even though APA Section 9.5(b) carves Excluded Liabilities out of it, so Glatind's remediation recovery is capped; it should delete Side Letter paragraph 3 or secure a separate uncapped environmental indemnity or escrow.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 9.5(b)",
+      "detect_terms2": [
+        "shall not apply to Losses arising from"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 9.1 provides that Seller's general representations survive eighteen (18) months after the Closing Date. Section 9.6 makes the Indemnity Escrow Fund the sole source of recovery for breaches of those representations, and Section 2.4 says the escrow is held and disbursed under the Escrow Agreement. Section 4.2 of the Escrow Agreement releases the remaining escrow funds to Seller on the Release Date, six (6) months after the Closing Date, less amounts reserved for claim notices already delivered. Because the APA sets no escrow term of its own, the two documents do not conflict and the precedence clause does not help. In practice, Glatind can recover only for breaches it discovers and notices within six months, which does not cover a full seasonal operating cycle for the hotel.",
+      "doc": "D2",
+      "section": "Section 4.2",
+      "detect_terms": [
+        "six (6) months after the Closing Date",
+        "Release Date"
+      ],
+      "expected_finding": "Because the escrow is released six months after Closing while APA Section 9.6 makes it the sole source of recovery for general representation claims, the 18-month survival in Section 9.1 is illusory after month six; Glatind should extend the Release Date to at least 18 months or remove the sole-source limit.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Sections 9.1 and 9.6",
+      "detect_terms2": [
+        "eighteen (18) months after the Closing Date",
+        "solely from the Indemnity Escrow Fund"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "APA Section 6.3 requires Buyer to deliver its Title Objection Notice within fifteen (15) days after receipt of the Title Commitment. If Buyer does not, it is deemed to have accepted every exception as a Permitted Exception. The recitals of Glatind's board consent dated April 10, 2026 state that the Title Commitment was delivered on March 16, 2026, so the window closed on March 31, 2026. The consent nonetheless resolves to authorize delivery of an objection to the Parking Easement benefiting the adjacent parcel. This records Glatind's position that it objects, but the objection is out of time. Neither document alone shows the lapse; only reading the period in the APA together with the delivery date in the board consent does. No amendment or waiver from Seller appears in the folder.",
+      "doc": "D4",
+      "section": "Recitals and Resolution 2",
+      "detect_terms": [
+        "on March 16, 2026",
+        "objection to the Parking Easement"
+      ],
+      "expected_finding": "The title objection period under APA Section 6.3 expired on March 31, 2026, fifteen days after the Title Commitment was delivered on March 16, 2026, so the objection the April 10, 2026 board consent authorizes is untimely and the Parking Easement is deemed a Permitted Exception; Glatind should promptly seek Seller's written waiver or an amendment reopening the objection, or a price credit or title endorsement, before Closing.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 6.3",
+      "detect_terms2": [
+        "within fifteen (15) days after Buyer's receipt",
+        "deemed to have accepted"
+      ]
+    }
+  ]
+}

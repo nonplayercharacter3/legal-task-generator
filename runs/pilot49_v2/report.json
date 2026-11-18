@@ -1,0 +1,149 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 1,
+  "errors": 0,
+  "resumed": 2,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 1,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 1,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s49-m0001",
+      "accepted": false,
+      "failed_gate": "consistency",
+      "reason": "mismatches: [{\"fact\": \"F10\", \"key\": \"APA representation survival period\", \"filename\": \"asset_purchase_agreement.md\", \"ledger\": \"earlier of 12 months after Closing or Seller Note paid in full\", \"document\": \"The representations and warranties of Seller contained in this Agreement shall survive the Closing until t",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    },
+    {
+      "matter_id": "s49-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s49-m0003",
+      "accepted": false,
+      "failed_gate": "issue_check",
+      "reason": "missing: [\"I2\"]",
+      "split": null,
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": false
+    }
+  ],
+  "model_calls": {
+    "drafter": {
+      "calls": 6,
+      "input_tokens": 136336,
+      "output_tokens": 35790,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 1,
+      "input_tokens": 40166,
+      "output_tokens": 3345,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 5,
+      "input_tokens": 170837,
+      "output_tokens": 4439,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 8,
+      "input_tokens": 67047,
+      "output_tokens": 4265,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "craft brewing": 1,
+      "seed genetics": 1,
+      "boutique hotels": 1
+    },
+    "agreement_types": {
+      "asset purchase agreement": 2,
+      "master services agreement": 1
+    },
+    "issue_types": {
+      "missing_assignment_restriction": 3,
+      "uncapped_indemnity": 2,
+      "change_of_control_consent": 2,
+      "survival_gap": 2,
+      "expired_notice_window": 2,
+      "liability_cap_carveout": 2,
+      "governing_law_mismatch": 1,
+      "defined_term_inconsistency": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}
