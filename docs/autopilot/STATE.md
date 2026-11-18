@@ -24,7 +24,7 @@ agent. Full definition of done: PROMPT.md.
 - LAB baseline: 12 of 30 LAB sample tasks scored, 0 grading errors: all-pass 2 of 12, items 625 of 714 (87.5%).
   18 LAB tasks and all of our side still to run. See inbox.md T46 "Continue 2" for how to resume.
 - Handoff package code exists (`scripts/build_handoff.py`, `scripts/handoff_evaluate.py`).
-- kubectl works again (checked 2026-11-17 15:05); no ltg pods or jobs in `ecepxie`.
+- kubectl login expired again on 2026-11-18 (issue #43); no ltg pods or jobs were left in `ecepxie` on 2026-11-17.
 - PR #35 (LAB runner can use the vLLM pod) merged; PR #37 (`scripts/autopilot.sh`) merged.
 - PR #38: `ltg label` uses the larger of the label config's and the run's step budget (v2: 40), and records it in
   `labelled_by.solver_max_steps`. Seed 45 was labelled with 28 (its attempts took 17 actions, so the cap did not bite).
@@ -69,6 +69,9 @@ agent. Full definition of done: PROMPT.md.
 4. If an NRP call stalls a batch (no log line for an hour outside a wait), add a wall-clock cap per solver call.
 
 ## Needs Sirui
+- Issue #43: kubectl login expired (waits for a browser sign-in; checked 2026-11-18 13:45). Needed for the vLLM
+  fallback and M6, not for batches. Close once `kubectl get pods -n ecepxie` answers. Never run kubectl without a
+  time cap until then: it hangs.
 - Someone with legal training to read 10 tasks (EVALUATION.md level 1, human check). Not blocking batches.
 
 ## Decisions

@@ -85,3 +85,4 @@ Dated, append-only. One entry per iteration.
 - M2 done: 30 v2 accepted, 24 labelled, mean 0.32. Level 2 stats: only folder length misses (15,704 vs 20,000).
 - `git push --delete` hung (killed); deleted the merged branch through `gh api` instead.
 - Issue #36 header bumped to 119b8dd.
+- kubectl hung on an expired OIDC login; opened needs-sirui issue #43.
