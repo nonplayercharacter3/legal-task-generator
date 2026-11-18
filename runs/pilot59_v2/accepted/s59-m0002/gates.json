@@ -1,0 +1,182 @@
+{
+  "matter_id": "s59-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "APA §9.5(b): \"The Cap and the threshold in Section 9.5(a) do not apply to Losses arising out of (i) Fraud, (ii) any inaccuracy in or breach of any Fundamental Representation, or (iii) Seller's obligations in respect of Excluded Liabilities pursuant to Section 9.2(c).\" Side Letter §2.1: \"Section 9.5(b) of the Agreement is hereby amended and restated in its entirety to read as follows: '(b) The Cap and the threshold in Section 9.5(a) do not apply to Losses arising out of Fraud or breach of any Fundamental Representation...'\"",
+            "reason": "Seller gives the indemnity for Excluded Liabilities under §9.2(c). Buyer, our client, is the indemnified party. The original §9.5(b)(iii) kept that indemnity uncapped. The Side Letter is an amendment under §11.9 and controls under §11.10. It describes itself only as a 'conforming clarification', but it restates §9.5(b) in its entirety and drops clause (iii). As a result, the §9.5(a) cap of $4,800,000, which applies to all Losses under §9.2, now covers Excluded Liabilities. That includes the Calloway loot-box class action listed on Schedule 2.4. The suit seeks nationwide restitution, statutory damages and injunctive relief, and the Texas AG inquiry is in the background. Buyer's recovery on that exposure is therefore limited to 10% of the Purchase Price, and that same cap is shared with all other claims. Nothing in the folder shows the parties meant to cap Excluded Liabilities, and the Side Letter's recitals point to an unflagged drafting error. The point is still actionable. Closing has not occurred (outside date December 31, 2026), and Buyer can require a corrective amendment before closing or seek reformation. Signing the Side Letter is the source of the problem, not an acceptance of a lapsed right.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "The Cap and the threshold in Section 9.5(a) do not apply to Losses arising out of (i) Fraud, (ii) any inaccuracy in or breach of any Fundamental Representation, or (iii) Seller's obligations in respect of Excluded Liabilities pursuant to Section 9.2(c).",
+                "reason": "Read alone, the APA protects Buyer. Section 9.5(b)(iii) expressly removes Excluded Liabilities, including pending litigation listed on Schedule 2.4 under Section 2.4(d), from the $4,800,000 Cap. Section 9.6 lets Buyer recover those Losses directly from Seller. Section 11.10 does say a Section 11.9 amendment controls over the APA, but nothing in this document shows that any amendment exists or that one has restated 9.5(b) to drop clause (iii). The harm, Excluded Liabilities including the player class action falling under the Cap, comes entirely from the October 21, 2026 Side Letter. This document does not contain it. An associate reading only the APA would conclude the carve-out is intact."
+              },
+              "side_letter_2026-10-21.md": {
+                "findable": false,
+                "evidence": "Section 9.5(b) of the Agreement is hereby amended and restated in its entirety to read as follows: \"(b) The Cap and the threshold in Section 9.5(a) do not apply to Losses arising out of Fraud or breach of any Fundamental Representation. ...\"",
+                "reason": "The Side Letter shows that Section 9.5(b) was replaced in full by a version that carves out only Fraud and Fundamental Representations. It also calls the change a 'conforming clarification' and confirms it is a binding amendment under Section 11.9. It does not show what the original Section 9.5(b) said. Nothing in it shows that the original carve-out covered Seller's Excluded Liabilities indemnity under Section 9.2(c), so a reader cannot see that this carve-out was dropped. It also does not give the Cap amount ($4.8M, or 10% of the Purchase Price), and it does not identify the Pre-Closing Player Litigation as an Excluded Liability on Schedule 2.4. The Orvenna recitals are a separate matter. Read alone, the restated text looks like an ordinary carve-out clause. The harm to Buyer only shows up when it is compared with the original APA text."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "APA 9.1: \"The General Representations shall survive the Closing until eighteen (18) months after the Closing Date.\" APA 9.6: \"The Indemnity Escrow Funds then held by the Escrow Agent are the sole and exclusive source of recovery for any Losses of Buyer under Section 9.2(a) arising out of any inaccuracy in or breach of any General Representation, except in the case of Fraud.\" Escrow Agreement 4.2: \"On the date that is six (6) months after the Closing Date (the \"Release Date\"), the Escrow Agent shall release all remaining Indemnity Escrow Funds to Seller, less the Pending Claim Amount as of the Release Date.\" Escrow 4.3(a) also limits Claim Notices to those delivered \"Before the Release Date.\"",
+            "reason": "The problem is present and hurts the Buyer, our client. Seller gives the indemnity, and Buyer is the party that recovers. Under APA 9.6, Buyer's only source of recovery for General Representation breaches is the escrow funds \"then held.\" The Escrow Agreement releases those funds to Seller at six months and accepts Claim Notices only before then. As a result, Buyer has no recovery for General Representation claims arising between month 6 and month 18, and the stated 18-month survival is in practice six months. The APA does not override the release date: APA 11.10 gives the APA precedence over Ancillary Agreements, but the APA says nothing about how long the escrow lasts. The October 21 Side Letter amended only Section 9.5(b) and did not fix this. The Escrow Agreement is still an unsigned form dated ____ 2026, and the folder does not show the Closing has occurred, so the gap can still be corrected. Options are extending the Release Date to 18 months, or carving General Representation claims made after the Release Date out of the sole-source limit.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "The Indemnity Escrow Funds then held by the Escrow Agent are the sole and exclusive source of recovery for any Losses of Buyer under Section 9.2(a) arising out of any inaccuracy in or breach of any General Representation, except in the case of Fraud.",
+                "reason": "The APA by itself shows that General Representations survive 18 months (Section 9.1). It also shows that recovery for those breaches is limited to the escrow funds 'then held' (Section 9.6), and it leaves the release timing to the Escrow Agreement. A careful associate could flag the 'then held' wording as a risk that should be checked. But nothing in the APA sets an escrow term or release date, so the APA alone does not show any gap between survival and the escrow's life. The six-month release that removes recovery for claims made in months 6 to 18 appears only in Escrow Agreement Section 4.2, which is not provided. The actual harm cannot be seen without that document."
+              },
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "On the date that is six (6) months after the Closing Date (the \"Release Date\"), the Escrow Agent shall release all remaining Indemnity Escrow Funds to Seller, less the Pending Claim Amount as of the Release Date.",
+                "reason": "This document shows only that the escrow releases to Seller at six months, net of pending claims, and that Claim Notices must be delivered before the Release Date (Section 4.3(a)). A six-month escrow is short but can be normal if Buyer can still sue Seller directly once it ends. The escrow does not state how long General Representations survive (18 months under APA 9.1). It also does not say the escrow funds 'then held' are Buyer's sole and exclusive remedy (APA 9.6). Recital B and Section 4.3 only say the escrow 'secures' Seller's Article IX obligations, which leaves recovery beyond the escrow open. The harm, a claim between month 6 and month 18 with nothing to recover from, appears only when this document is read with the APA."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 9.1: \"This Agreement shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of laws principles. Any action arising out of or relating to this Agreement shall be brought exclusively in the state or federal courts located in the County of Los Angeles, California.\" Section 6.1 imposes a 24-month non-compete covering the United States, Canada, the UK and the EU, extending to \"any role similar to the roles Executive held with Daibaind or holds with the Company.\"",
+            "reason": "The Key Employee Agreement is between Treikaith and Fenwright, not between Buyer and Seller. So APA Section 11.10, which gives the APA precedence only over Ancillary Agreements \"between Buyer and Seller\", does not override it. The agreement's own clause therefore governs, and it chooses California law and Los Angeles courts. That is an odd choice for an Austin-based employee and a deal otherwise governed by Delaware law in Delaware courts.\n\nUnder California law, Business and Professions Code Section 16600 voids non-competes, and Section 16600.5 makes them unenforceable regardless of where they were signed. The Section 6.1 covenant is tied in part to her employment role. The sale-of-business exception in Section 16601 may help, because Fenwright holds 34% of Daibaind, which is selling substantially all of its assets, and Section 6.4 refers to goodwill. But the agreement does not structure or expressly invoke the covenant under that exception. It is also drafted as an employment covenant, with a scope reaching her roles with the Company. California courts construe that exception narrowly, so whether the covenant survives is uncertain.\n\nThis puts at risk the 24-month restriction that Treikaith bargained for under APA Section 6.10 to protect the acquired goodwill. It also splits disputes between Los Angeles and Delaware Chancery. The agreement remains unsigned, so Treikaith can still fix this, for example by choosing Texas or Delaware law and venue, or by expressly relying on Section 16601. The issue is actionable."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Supplement No. 1: \"It was delivered to Buyer on October 2, 2026 by email to Buyer's General Counsel, with a copy by overnight courier to the address in Section 11.2 of the Agreement.\" APA Section 6.3(b): \"Buyer may object to a Schedule Supplement by written notice delivered to Seller within five (5) Business Days after receipt by Buyer of that Schedule Supplement. If Buyer does not deliver a written objection within that period, the Schedule Supplement is deemed accepted by Buyer.\" Side Letter recital 1.2(c): \"On October 16, 2026, Buyer delivered to Seller a written objection to Supplement No. 1.\"",
+            "reason": "The problem is present and still actionable. Supplement No. 1 was received by email on Friday, October 2, 2026. Five Business Days under the APA's New York bank-holiday definition ends Friday, October 9, 2026. Buyer's objection on October 16 falls outside that window. Under Section 6.3(b), deemed acceptance treats the Orvenna soundtrack claim as curing the breaches of Sections 4.7, 4.9 and 4.12 for Article IX indemnity and for the Section 7.2(a) bring-down condition. That could cost Treikaith both its indemnity and its walk right on a claim that seeks injunctive relief over the main theme. The documents do not cure this. The Side Letter only records that Seller asserts deemed acceptance, that Buyer disputes it, and that both sides reserve their rights. Treikaith has not accepted the result: Closing has not occurred and the APA remains open until the December 31, 2026 outside date. The issue therefore remains live and should be addressed, for example by negotiating a waiver or specific indemnity, or by preserving Buyer's arguments before Closing.",
+            "alone": {
+              "disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "Seller delivers this Supplement No. 1 under Section 6.3(a) of the Agreement. It was delivered to Buyer on October 2, 2026 by email to Buyer's General Counsel, with a copy by overnight courier to the address in Section 11.2 of the Agreement.",
+                "reason": "This document shows that Supplement No. 1 was delivered on October 2, 2026 under APA Section 6.3(a). It also shows that the supplement discloses the Orvenna Sound Collective copyright claim and injunction threat over the Emberfall Saga soundtrack, which plainly matters to Buyer. It does not state the APA Section 6.3(b) rule that a supplement is deemed accepted unless Buyer objects within five Business Days. Nor does it say that deemed acceptance cures representation inaccuracies for Article IX indemnity or the Section 7.2(a) bring-down condition. It also does not mention Buyer's October 16 objection or the dispute recorded in the Side Letter. Without the APA's objection window and those consequences, a reader cannot see that a deadline ran on October 9 or that Treikaith may have lost its protections."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "If Buyer does not deliver a written objection within that period, the Schedule Supplement is deemed accepted by Buyer. Upon that deemed acceptance, the Schedule Supplement is treated as having cured any inaccuracy in or breach of any representation or warranty disclosed in it, for purposes of Article IX and of the condition in Section 7.2(a).",
+                "reason": "Read alone, the APA shows the five-Business-Day objection window in Section 6.3(b) and the deemed-acceptance cure that removes Article IX indemnity and the Section 7.2(a) bring-down protection. A careful associate could see this as a risky provision for Buyer. The APA does not show that any Schedule Supplement was actually delivered. It does not give the October 2, 2026 delivery date, the Orvenna Sound Collective soundtrack claim, or Buyer's October 16 objection. Without those facts, nothing in this document shows that the deadline was missed or that Treikaith has lost protection for a specific claim. Those facts come from the supplement and the Side Letter."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "APA Section 4.12(a): \"Seller has good and valid title to all Assigned IP, free and clear of all Encumbrances other than Permitted Encumbrances.\" APA Section 1.1: \"'Assigned IP' has the meaning given in the IP Assignment Agreement.\" IP Assignment Agreement Section 1.1: \"'Assigned IP' means all of Assignor's right, title and interest in, to and under the following, in each case to the extent registered or applied-for and set forth on Exhibit A.\"",
+            "reason": "Section 2.1(b) of the APA conveys the broad 'Purchased IP': source code, build tools, unregistered copyrights, art and audio assets, and the unreleased sequel builds. But the title warranty in Section 4.12(a) is given only as to 'Assigned IP'. The APA expressly takes that term's definition from the IP Assignment Agreement, and there it covers only the registered or applied-for marks and copyright registrations listed on Exhibit A (four marks and two copyright registrations). As a result, Seller gives no title warranty over the source code, unregistered works or sequel builds that carry most of the value. Section 4.12(a) is a Fundamental Representation, which survives until the statute of limitations runs out, is outside the Cap and can be recovered directly from Seller. Buyer therefore loses that protection for the core assets and is left with narrower Knowledge-qualified or General Representations, which are capped and limited to the escrow. Section 11.10 (order of precedence) does not cure this, because the APA itself adopts the narrow definition, so there is no conflict between the documents to resolve. The October 21 side letter amends only Section 9.5(b) and leaves this gap untouched. The Fundamental Representation has not lapsed, and the definition can still be corrected by amendment or at Closing, so the problem is real and still actionable for Buyer (Treikaith).",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Assigned IP\" has the meaning given in the IP Assignment Agreement. ... (a) Seller has good and valid title to all Assigned IP, free and clear of all Encumbrances other than Permitted Encumbrances.",
+                "reason": "Read alone, the APA shows that the title warranty in Section 4.12(a), a Fundamental Representation, uses 'Assigned IP' rather than the 'Purchased IP' conveyed in Section 2.1(b). It also shows that 'Assigned IP' takes its definition from the IP Assignment Agreement. A careful associate would notice the switch in terms and might ask about it. The APA does not show what 'Assigned IP' covers. Nothing in it says the term is limited to registrations on Exhibit A or leaves out source code, unregistered copyrights and sequel builds. If the IP Assignment Agreement defined the term as broadly as Purchased IP, there would be no problem. The narrowing, and therefore the harm to Buyer, can only be seen in the IP Assignment Agreement's definition, which this document does not contain."
+              },
+              "ip_assignment_agreement.md": {
+                "findable": false,
+                "evidence": "\"Assigned IP\" means all of Assignor's right, title and interest in, to and under the following, in each case to the extent registered or applied-for and set forth on Exhibit A",
+                "reason": "On its own, this document defines Assigned IP narrowly: only registered or applied-for marks and copyright registrations listed on Exhibit A. That scope is normal for a short-form recordation instrument. Recital A separately refers to the broader \"Purchased IP\" being conveyed under the APA. Section 4.1 says only that the reps and warranties are in the Purchase Agreement. Nothing here shows that APA Section 4.12(a) gives the title warranty, or its Fundamental Representation status, only as to \"Assigned IP\" by borrowing this narrow definition. Nor does it show that source code, unregistered copyrights and unreleased builds would fall outside that warranty. The gap that harms the client depends on the APA's wording, which is not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Schedule 4.9, Item 3: \"Section 15.3 of the Kestrune Engine License provides that Seller may not assign or transfer the license, or any rights under it, without the prior written consent of Kestrune. This restriction applies to any assignment by operation of law, merger or change of control, or in connection with a sale of all or substantially all of the assets of the licensed business. Any assignment made without that consent is void.\" Schedule 4.5 lists only Halvern and Ostrava as Required Consents.",
+            "reason": "The problem is present and still actionable for Treikaith.\n\n- **The consent is triggered.** Schedule 2.1(c), Item 3 makes the Kestrune Engine License an Assigned Contract. Every Emberfall title and the sequel build run on that engine. Schedule 4.9 says the license cannot be assigned in an asset sale without Kestrune's written consent, and that an assignment made without consent is void.\n- **Nothing in the closing mechanics captures it.** Schedule 4.5 lists only the Halvern and Ostrava consents. APA Section 7.2(d) conditions Buyer's obligation to close only on \"each Required Consent set forth on Schedule 4.5\". Section 6.4 (Seller's efforts covenant) and Section 3.2(e) (closing deliverables) are also tied to Schedule 4.5. So no closing condition, covenant or deliverable reaches the Kestrune consent.\n- **The cross-reference rule does not fill the gap.** Under Schedule 1.2, a matter disclosed in Schedule 4.9 is not treated as disclosed in Schedule 4.5. That arguably makes the Section 4.5 representation inaccurate. But Buyer's remedy for that is post-closing indemnity, capped and limited to escrow recovery as a General Representation. It is not a right to refuse to close.\n- **Buyer bears the risk.** Treikaith could be required to close and pay $48M for a franchise without a valid engine license.\n- **No document in the folder cures it.** Nothing records that Kestrune has consented, and the Side Letter does not address it.\n- **It can still be fixed.** Closing has not yet occurred: the escrow and IP assignment agreements are undated, and the outside date is December 31, 2026. Treikaith can still add Kestrune to Schedule 4.5 or negotiate a specific closing condition."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C8 asks for fact F4, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.087,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

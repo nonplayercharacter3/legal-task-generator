@@ -1,0 +1,42 @@
+{
+  "matter_id": "s59-m0001",
+  "accepted": false,
+  "failed_gate": "consistency",
+  "reason": "mismatches: [{\"fact\": \"F6\", \"key\": \"MSA liability cap\", \"filename\": \"gaisirt_beputh_master_services_agreement.md\", \"ledger\": \"Fees paid or payable in the 12 months preceding the claim\", \"document\": \"the Fees paid or payable in the twelve (12) months preceding the event giving rise to the claim\", \"matcher\": [\"Th",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": false,
+      "details": {
+        "mismatches": [
+          {
+            "fact": "F6",
+            "key": "MSA liability cap",
+            "filename": "gaisirt_beputh_master_services_agreement.md",
+            "ledger": "Fees paid or payable in the 12 months preceding the claim",
+            "document": "the Fees paid or payable in the twelve (12) months preceding the event giving rise to the claim",
+            "matcher": [
+              "The 12-month lookback starts from a different date. The document measures it from the event giving rise to the claim; the ledger measures it from the claim itself. This can change the cap amount.",
+              "Both cap liability at Fees paid or payable over 12 months, but the lookback is anchored to different dates. The answer key counts back from the claim. The document counts back from the event giving rise to the claim. These can be different points in time and give a different cap amount."
+            ]
+          }
+        ],
+        "reworded": 6,
+        "checked": 100
+      }
+    }
+  ]
+}

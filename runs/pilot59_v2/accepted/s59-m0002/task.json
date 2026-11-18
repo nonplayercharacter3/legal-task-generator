@@ -1,0 +1,140 @@
+{
+  "task_id": "s59-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Treikaith Interactive, Inc., the buyer, in its proposed asset purchase from Daibaind Games, LLC. Before we go back to the other side, please review all eight documents in the folder and prepare a memo to me. For each issue, state where it appears (document and section), explain why it matters for Treikaith, and recommend a fix. Flag anything that needs my immediate attention.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "austin_studio_office_lease.md",
+    "daibaind_member_consent.md",
+    "disclosure_schedule.md",
+    "escrow_agreement.md",
+    "ip_assignment_agreement.md",
+    "key_employee_agreement_fenwright.md",
+    "side_letter_2026-10-21.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the October 21, 2026 Side Letter's restatement of APA Section 9.5(b) drops the carve-out for Seller's Excluded Liabilities indemnity, so that indemnity (including for the pending player/loot-box class action) is now limited by the $4,800,000 cap. It identifies where the issue is (APA Section 9.5(b) or Side Letter Section 2), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Side Letter drops Excluded Liabilities carve-out",
+        "Excluded Liabilities now subject to the cap",
+        "player class action capped at $4.8 million"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that the escrow is released six months after Closing while escrow funds then held are the sole source of recovery for General Representation breaches, so the 18-month survival period is effectively cut to six months. It identifies where the issue is (APA Sections 9.1/9.6 or Escrow Agreement Section 4.2), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "escrow released at six months",
+        "sole and exclusive source of recovery",
+        "18-month survival effectively six months"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that the Key Employee Agreement's selection of California law (and Los Angeles courts) puts Fenwright's 24-month non-compete at risk of being void or unenforceable under California law, inconsistent with the APA's Delaware law and forum. It identifies where the issue is (Key Employee Agreement Sections 6.1/9.1), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "California law",
+        "non-compete void or unenforceable",
+        "Section 16600"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Treikaith's October 16, 2026 objection to Supplement No. 1 (delivered October 2, 2026) came after the five-Business-Day objection window closed on or about October 9, 2026, so Seller can argue the Orvenna soundtrack claim was deemed accepted and cured. It identifies where the issue is (Disclosure Schedule Supplement No. 1 or APA Section 6.3(b)), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "objection on October 16 was late",
+        "window expired October 9",
+        "deemed accepted",
+        "Orvenna"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that the APA Section 4.12(a) title representation covers only 'Assigned IP', which the IP Assignment Agreement limits to the registered or applied-for items on Exhibit A, so Seller gives no title warranty for the source code, unregistered copyrights and other Purchased IP. It identifies where the issue is (APA Section 4.12(a) or IP Assignment Agreement Section 1.1), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Assigned IP versus Purchased IP",
+        "only registered or applied-for items on Exhibit A",
+        "source code not covered by title warranty"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response concludes that the asset sale requires Kestrune's prior written consent to assign the engine license, but that consent is missing from Schedule 4.5 Required Consents and so is not a closing condition. It identifies where the issue is (Disclosure Schedule Schedule 4.9 Item 3 or Schedule 4.5), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Kestrune consent required",
+        "omitted from Schedule 4.5",
+        "not a closing condition"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the purchase price is $48,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$48,000,000",
+        "$48 million"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that the APA indemnity cap is 10% of the Purchase Price ($4,800,000).",
+      "kind": "fact",
+      "hints": [
+        "10% of the Purchase Price",
+        "$4,800,000 cap"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is in memo form, addressed to the supervising partner, and presents the issues individually, each with its location, significance and recommended fix.",
+      "kind": "format",
+      "hints": [
+        "To:",
+        "Memorandum",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response explicitly flags one or more issues as needing the partner's immediate attention.",
+      "kind": "format",
+      "hints": [
+        "immediate attention",
+        "priority",
+        "urgent"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that Treikaith's October 16, 2026 objection to Supplement No. 1 was timely under APA Section 6.3(b).",
+      "kind": "negative",
+      "hints": [
+        "objection was timely"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response claims that Seller's indemnity for Excluded Liabilities remains uncapped after the October 21, 2026 Side Letter.",
+      "kind": "negative",
+      "hints": [
+        "Excluded Liabilities remain uncapped"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}
