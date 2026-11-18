@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-18 04:45, autopilot iteration 8.
+Last updated: 2026-11-18 13:45, autopilot iteration 10.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -32,7 +32,7 @@ agent. Full definition of done: PROMPT.md.
 ## Milestones
 - [x] M0 Bootstrap: docs in `docs/autopilot/`, loop script PR #37, label `needs-sirui`, lab-mate issue #36 (old #20 closed)
 - [x] M1 `ltg batch` command: PR #39 (tests in `tests/test_batch.py`, README section); lab mate told on #36
-- [ ] M2 At least 20 v2 tasks, labelled (ours seeds 46-53, lab mate 500-507)
+- [x] M2 At least 20 v2 tasks, labelled: 30 accepted (s45-s60), 24 labelled by 2026-11-18
 - [ ] M3 LAB baseline frozen and scored; v2 tasks through LAB's tool
 - [ ] M4 Generator passes EVALUATION.md levels 1-3 (or hardened until it does)
 - [ ] M5 250 tasks on the passing version, test split at least 30
@@ -41,29 +41,39 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- One batch, PID 40471 (caffeinate), log `runs/gen-v2-54-61.log` (appended), restarted 04:33: labels seed 57, then
-  generates and labels seeds 58-61 on `pilot_generate_v2.toml`, then labels the 6 unlabelled tasks of seeds 49-53.
-  ~70 min per seed: ends ~11:00 on 2026-11-18. Commits each seed to main itself. Runs the pre-PR #41 code (no
-  heartbeat), so a usage-limit wait over 60 min can still get it killed by the watchdog; just restart it if so.
-- Watchdog (not ours: the planning chat's, `~/.claude/jobs/14386149/tmp/watchdog.sh`, PID 35897): kills an
-  `ltg batch` whose log is silent 60 min, logs to `runs/.autopilot/watchdog.log`. At 03:41 it killed the first batch
-  (PID 35148) while that waited out a 106-min usage limit, leaving a stale lock. PR #41 fixes both sides.
+- One batch, PID 38866 (caffeinate), log `runs/gen-v2-54-61.log` (appended), started 12:29 on main 627e862 (PR #41
+  code, so it survives a usage-limit wait): generates and labels seed 61, then labels the 6 unlabelled tasks of
+  seeds 49-53. Expected end ~17:00 on 2026-11-18. The first seed 61 try (all 3 in error, usage limit) was moved to
+  `runs/_trash/2026-11-18/pilot61_v2`. PR #42 is not in this batch (prompts load at start).
+- Watchdog (planning chat's, PID 35897) killed the previous batch (40471) at 08:51 during a usage-limit wait.
+
+## v2 numbers (seeds 45-60)
+- 30 accepted of 46 matters; seeds 54-60 (after PR #40): 16 of 21. Rejections 54-60, all read: s54-m0001 and
+  s59-m0001 consistency (drafter added a qualifier that changes the fact: a governing-law proviso, a lookback from
+  the event not the claim; correct), s56-m0003 issue_check (two-document issue findable from one; correct),
+  s59-m0003 ledger_schema (all issues in one document; correct), s60-m0002 issue_check (false: the verifier used the
+  real date; fixed in PR #42). issue_check losses 8 of 24 before PR #40, 2 of 21 after.
+- Labels (24): 0.00: 10, 0.33: 6, 0.67: 7, 1.00: 1, mean 0.32; items passed 90.7%.
+- EVALUATION level 2 (`scripts/dataset_stats.py`, 30 tasks): documents median 8 (pass), instruction 71.5 words
+  (pass), naming every file 0% (pass), two-document problems 64% (pass), industries 23 (pass), folder words median
+  15,704 (MISS, needs 20,000), checklist median 10 (soft miss, needs 20).
 
 ## Next
-1. When the batch ends: read every rejection of seeds 54-61 (so far 54: 1, 56: 1 rejected) and check the PR #40 fixes
-   cut the issue_check and consistency losses (before: 8 and 3 of 24). Restart the batch (seeds still missing) if the
-   watchdog killed it; with PR #41 code it logs every 10 min while waiting.
-2. M2: 24 v2 tasks accepted (s45-s57), 15 labelled: 0.00: 6, 0.33: 4, 0.67: 4, 1.00: 1, mean 0.33 (v1 rounds 20-27:
-   0.42). M2 is met once the batch labels seed 57 and seeds 49-53 (24 labelled).
-3. After the batch, in the day: finish the LAB sample (M3) in chunks of ~8 (inbox.md T46 "Continue 2"), then put
-   v2 tasks through LAB's tool. Only one heavy Opus job at a time: do not start LAB grading while the batch runs.
-4. If an NRP call stalls a batch again (no log line for an hour outside a wait), add a hard wall-clock cap per
-   solver call.
+1. When the batch ends: read seed 61's rejections; commit nothing by hand (batch commits).
+2. M3, in the day, after the batch (one heavy Opus job at a time): score the 18 remaining LAB sample tasks in chunks
+   of ~8 (inbox.md T46 "Continue 2"), freeze `docs/autopilot/lab_sample.md`, then run 20+ v2 tasks (dev/test first)
+   through LAB's tool.
+3. M4 candidate fix for the level 2 miss: longer folders (v3 config: more or longer supporting documents, target
+   median 20,000+ words) and more checklist items via more facts and negative items. Decide after M3's level 3
+   numbers, so one v3 change can target both.
+4. If an NRP call stalls a batch (no log line for an hour outside a wait), add a wall-clock cap per solver call.
 
 ## Needs Sirui
 - Someone with legal training to read 10 tasks (EVALUATION.md level 1, human check). Not blocking batches.
 
 ## Decisions
+- 2026-11-18: M2 met; the two consistency rejections where the drafter added a meaning-changing qualifier stay
+  rejections (the answer key must match the documents); fix only if the class grows.
 - 2026-11-17: issue_check rejections for a two-document issue findable alone stay rejections (v2 is meant to be
   harder); fixed upstream in the ledger writer instead of relaxing the gate.
 - 2026-11-17: chain seeds 54-61 right after labelling so the night is used; still one heavy job at a time.
@@ -77,4 +87,4 @@ agent. Full definition of done: PROMPT.md.
   rewritten 2026-11-17 16:35 for `ltg batch`, and 18:26 with a "For Aarush: start here" block, no NRP key, and only
   two comments (started; ended or failed) (seeds 500-507, `configs/pilot_generate_v2.toml`, `runs/lm_s{seed}_v2`,
   `--no-label`, `--branch lm/v2-s500-507`); every command test-run on the fake backend in a scratch clone first.
-- On: not started. Last seen activity: none yet. Open PR: none. Header bumped to main b78f204 at 20:05 (PR #40 note).
+- On: not started. Last seen activity: none yet. Open PR: none. Header bumped to main 119b8dd at 2026-11-18 13:40 (PR #42; command unchanged).

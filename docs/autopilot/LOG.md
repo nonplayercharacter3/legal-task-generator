@@ -75,3 +75,13 @@ Dated, append-only. One entry per iteration.
 - PR #41 (merged, CI green, 159 tests): `_wait` sleeps in 10-minute steps with a log line and a stop-file check each,
   and SIGTERM exits through `finally` so the lock is removed.
 - v2 so far: 24 accepted (s45-s57), 15 labelled, mean pass rate 0.33 (0.00: 6, 0.33: 4, 0.67: 4, 1.00: 1).
+
+## 2026-11-18 12:13, iteration 10
+- Iteration 9 (08:56) hit the usage limit. The watchdog killed batch 40471 at 08:51 while it waited out a 105-min
+  limit on seed 61 (pre-PR #41 code). Removed `runs/.batch.lock`, moved the errored seed 61 folder to
+  `runs/_trash/2026-11-18/pilot61_v2`, restarted `--seeds 61,49-53` (PID 38866) on main 627e862.
+- Read all 5 rejections of seeds 54-60 (16 of 21 accepted); 1 false (s60-m0002, verifier used the real date to call
+  a 2025 survival window lapsed). PR #42 (merged, CI green, 160 tests) adds the rule to ISSUE_VERIFIER.
+- M2 done: 30 v2 accepted, 24 labelled, mean 0.32. Level 2 stats: only folder length misses (15,704 vs 20,000).
+- `git push --delete` hung (killed); deleted the merged branch through `gh api` instead.
+- Issue #36 header bumped to 119b8dd.
