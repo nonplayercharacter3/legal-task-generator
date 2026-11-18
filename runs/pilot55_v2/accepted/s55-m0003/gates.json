@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "test",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -168,8 +182,80 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2",
+                "C3",
+                "C9"
+              ],
+              "steps": 23,
+              "files_opened": [
+                "data_processing_addendum.md",
+                "implementation_kickoff_meeting_minutes.md",
+                "insurance_certificate_cover_letter.md",
+                "pakairt_notice_letter_2026-05-04.md",
+                "service_level_schedule.md",
+                "side_letter_phase2_modules.md",
+                "software_license_agreement.md",
+                "software_quality_agreement.md",
+                "statement_of_work_threadline_implementation.md",
+                "term_sheet_threadline_license.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 23,
+              "files_opened": [
+                "data_processing_addendum.md",
+                "implementation_kickoff_meeting_minutes.md",
+                "insurance_certificate_cover_letter.md",
+                "pakairt_notice_letter_2026-05-04.md",
+                "service_level_schedule.md",
+                "side_letter_phase2_modules.md",
+                "software_license_agreement.md",
+                "software_quality_agreement.md",
+                "statement_of_work_threadline_implementation.md",
+                "term_sheet_threadline_license.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3"
+              ],
+              "steps": 23,
+              "files_opened": [
+                "data_processing_addendum.md",
+                "implementation_kickoff_meeting_minutes.md",
+                "insurance_certificate_cover_letter.md",
+                "pakairt_notice_letter_2026-05-04.md",
+                "service_level_schedule.md",
+                "side_letter_phase2_modules.md",
+                "software_license_agreement.md",
+                "software_quality_agreement.md",
+                "statement_of_work_threadline_implementation.md",
+                "term_sheet_threadline_license.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
