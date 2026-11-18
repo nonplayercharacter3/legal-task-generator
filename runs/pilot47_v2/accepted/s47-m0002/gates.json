@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 1.0,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 3,
+      "pass_rate": 1.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -160,8 +174,72 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 1.0,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 3,
+            "pass_rate": 1.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 32,
+              "files_opened": [
+                "board_consent.md",
+                "equipment_service_agreement.md",
+                "escrow_agreement.md",
+                "ip_assignment_agreement.md",
+                "letter_of_intent.md",
+                "office_lease.md",
+                "seller_note.md",
+                "side_letter.md",
+                "stock_purchase_agreement.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 32,
+              "files_opened": [
+                "board_consent.md",
+                "equipment_service_agreement.md",
+                "escrow_agreement.md",
+                "ip_assignment_agreement.md",
+                "letter_of_intent.md",
+                "office_lease.md",
+                "seller_note.md",
+                "side_letter.md",
+                "stock_purchase_agreement.md",
+                "transition_services_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 32,
+              "files_opened": [
+                "board_consent.md",
+                "equipment_service_agreement.md",
+                "escrow_agreement.md",
+                "ip_assignment_agreement.md",
+                "letter_of_intent.md",
+                "office_lease.md",
+                "seller_note.md",
+                "side_letter.md",
+                "stock_purchase_agreement.md",
+                "transition_services_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
