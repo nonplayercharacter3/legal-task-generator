@@ -32,6 +32,8 @@ the loop stops when it sees it.
    `git fetch -q && git status -sb`, and check your recorded jobs (`ps -p <pid>`, `kubectl get pods,jobs -n ecepxie`
    if you use the cluster). Do not read `inbox.md`, `HANDOFF.md` or big logs in full: grep or tail them only when a step
    needs them.
+   **Lab mate check:** compare issue #36's body (or his current work-order issue) with STATE.md: seeds, config,
+   command, next step. Fix a mismatch before anything else (see "Lab mate work order").
 2. **If the main checkout is not clean** and you did not leave it so on purpose (a batch writing `runs/` files is fine,
    runs/ is gitignored), find out why and fix it before anything else: commit results by the run-output rule, or move
    stray code changes into a worktree branch. Never `git reset --hard`, never `git checkout -- <file>` on work you did
@@ -99,6 +101,23 @@ Each one says what done looks like. Mark them `[x]` in STATE.md with the commit 
   which base model, how many tasks he wants).
 - **M8. Finish.** Docs current (definition of done item 7), STATE.md says `STATUS: DONE` with a plain summary of what
   was built and the evaluation numbers.
+
+## Lab mate work order
+
+The lab mate is GitHub user `aarushnarayanan` (a collaborator: he pushes branches and opens PRs). His Claude Code
+agent works from one issue, unattended, so the issue must always be current and runnable without questions.
+- **The issue body is the single current work order** (now issue #36, assigned to him). Its first line reads "Last
+  updated <date time PST>, matches main at <short sha>." It holds: why the batch matters, ground rules, one-time
+  setup, the exact `ltg batch` command, how to check progress, how to stop and resume, what to comment after each
+  seed, what "done" is, and what to do if something fails. It tells his agent to re-read it with
+  `gh issue view <n> --comments` before starting and before each new batch.
+- **Every iteration** compare the body with STATE.md (seeds, config, command, next step) and fix mismatches first.
+- **Test-run every command before posting it**, from a scratch clone (`/tmp/ltg-labmate-test`, origin pointed at a
+  local bare repo so nothing is pushed) on `configs/fake_demo.toml` with the same flags (`--seeds`, `--out-pattern`,
+  `--no-label`, a throwaway `--branch`, `--author`). Never post a command that has not run.
+- **When his next work changes,** edit the body (`gh issue edit <n> --body-file ...`), then add a short comment
+  saying what changed, so he is notified.
+- Keep a "Lab mate" section in STATE.md: issue number, what he is on, last seen activity, his open PR.
 
 ## Decide for yourself
 

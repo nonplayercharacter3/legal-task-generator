@@ -245,10 +245,11 @@ round's numbers (accepted, pass rates, calls, tokens, errors) and the cause of e
 code fixes, one commit per defect class, as in "Pilot standard". Pull `main` before starting work; whoever changes
 the stage or plan updates "Now" in the same change.
 
-**Lab mate.** He works on his own machine with his own Max plan and his own NRP key. His tasks come only from GitHub
+**Lab mate** (GitHub `aarushnarayanan`, a collaborator since 2026-11-17). He works on his own machine with his own Max plan and his own NRP key. His tasks come only from GitHub
 issues labelled `lab-mate`; `inbox.md` and `HANDOFF.md` exist only on Sirui She's laptop and are not for him. His seeds
-are 500 to 999; his run folders are `runs/lm_s<seed>_nrp`. Code and round results both reach `main` only through his
-PRs, which he never merges himself; the planning session reviews and merges them. A round's PR follows
+are 500 to 999; his run folders are `runs/lm_s<seed>_nrp` (v2: `runs/lm_s<seed>_v2`); his current work order is the body of issue
+#36. Code and round results both reach `main` only through his
+PRs, which he never merges himself; the autopilot reviews and merges them. A round's PR follows
 the run-output rule and the commit message rule above. He reports each round in a comment on its issue and writes up
 every rejection's cause there; he fixes a defect only when an issue asks him to.
 

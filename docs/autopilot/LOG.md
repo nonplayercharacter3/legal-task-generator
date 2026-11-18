@@ -15,3 +15,15 @@ Dated, append-only. One entry per iteration.
   main. First CI run of #39 failed (branch test committed without an author on a runner with no git identity); fixed
   in the same PR. Commented on #36 with the `ltg batch --branch` command for the lab mate.
 - CLAUDE.md "Now" and docs/overview.md note the autopilot and `ltg batch`.
+
+## 2026-11-17 16:35, iteration 2
+- Sirui's note (lab mate `aarushnarayanan` now a collaborator): rewrote issue #36's body as his current work order
+  for `ltg batch` and assigned it to him. Every command in it was first run from a scratch clone
+  (`/tmp/ltg-labmate-test`, origin a local bare repo) on `configs/fake_demo.toml`: batch over seeds 500-501 with
+  `--no-label --branch lm/test-throwaway --author ...` committed one commit per seed to the branch and pushed;
+  the stop file stopped it (exit 1); a rerun skipped finished seeds and ran 502; the
+  `--author "$(git config user.name) <$(git config user.email)>"` form worked; `ltg index` with the v2 config hit the
+  cache in 7 s. Only `gh pr create` could not be tested (local remote), so the issue gives the manual fallback.
+- Added "Lab mate work order" to PROMPT.md (checked every iteration), his username to CLAUDE.md, a Lab mate section
+  to STATE.md.
+- v2 batch: seeds 46 (1 of 3) and 47 (3 of 3) committed; seed 48 running; ~30 min per seed.
