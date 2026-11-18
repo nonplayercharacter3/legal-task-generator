@@ -1,0 +1,222 @@
+{
+  "matter_id": "s55-m0001",
+  "summary": "Zilain Feeder Lines, Inc., a Delaware container feeder operator and the firm's client, has engaged Geilaind Marine Services LLC to provide third-party technical ship management for its U.S. Gulf Coast feeder fleet. The folder holds six documents: the Master Services Agreement (MSA) dated February 16, 2026; SOW No. 1, effective March 9, 2026; the Quality Agreement; a parent guaranty from Geilaind Holdings plc dated February 16, 2026; kickoff meeting notes; and a vessel takeover protocol. SOW No. 1 is executed by the Cypriot affiliate Geilaind Ship Management (Cyprus) Ltd. Four issues are planted. (1) The guaranty selects English law and English courts, against the Delaware law and forum of the MSA. (2) The SOW expressly overrides the MSA's narrow exclusivity and replaces it with fleet-wide, worldwide, all-services exclusivity that has a 24-month tail. (3) The MSA's carve-out from the cap for Environmental Losses borrows a Quality Agreement definition limited to governmental fines and penalties. Ordinary-negligence cleanup costs and third-party pollution claims therefore fall under the cap. (4) The guaranty defines 'Provider' as the US LLC only, but SOW No. 1 is a separate contract with the Cypriot affiliate. The guaranty therefore does not reach the affiliate that actually performs the services.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Zilain Feeder Lines, Inc.",
+      "role": "Customer under the MSA and SOW No. 1; beneficiary of the parent guaranty; firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Geilaind Marine Services LLC",
+      "role": "Provider under the MSA and party to the Quality Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Geilaind Ship Management (Cyprus) Ltd",
+      "role": "Provider Affiliate that executes and performs SOW No. 1"
+    },
+    {
+      "id": "P4",
+      "name": "Geilaind Holdings plc",
+      "role": "English parent company of the Geilaind entities; guarantor under the parent guaranty"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "February 16, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA governing law",
+      "value": "Laws of the State of Delaware, without regard to conflict-of-laws principles",
+      "doc": "D1",
+      "section": "18.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA dispute forum",
+      "value": "Exclusive jurisdiction of state and federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "18.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "MSA, then SOW, then Quality Agreement; SOW prevails only where it expressly identifies the MSA section modified",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F5",
+      "key": "MSA liability cap",
+      "value": "Fees paid or payable in the 12 months preceding the event giving rise to the claim",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F6",
+      "key": "MSA exclusivity scope",
+      "value": "Technical management of the Covered Vessels under each SOW, during that SOW's term only",
+      "doc": "D1",
+      "section": "2.4"
+    },
+    {
+      "id": "F7",
+      "key": "SOW No. 1 Covered Vessels",
+      "value": "Six feeder container vessels in U.S. Gulf Coast service, listed in Annex A",
+      "doc": "D3",
+      "section": "1.1"
+    },
+    {
+      "id": "F8",
+      "key": "SOW No. 1 Effective Date",
+      "value": "March 9, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "SOW No. 1 annual management fee",
+      "value": "US$1,860,000",
+      "doc": "D3",
+      "section": "6.1"
+    },
+    {
+      "id": "F10",
+      "key": "Parent Guaranty date",
+      "value": "February 16, 2026",
+      "doc": "D4",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "sow_no_1_gulf_feeder_fleet.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "kickoff_meeting_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "vessel_takeover_protocol.md",
+      "kind": "vessel takeover protocol",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Parent Guaranty Section 9 states that the guaranty is governed by the laws of England and Wales. It also submits all disputes to the exclusive jurisdiction of the courts of England. MSA Sections 18.1 and 18.2 select Delaware law and the exclusive jurisdiction of the New Castle County, Delaware courts. The MSA's order-of-precedence clause in Section 2.3 covers only the MSA, SOWs and the Quality Agreement. It does not reach the guaranty, which is a separate instrument given by a non-party, so nothing in the folder reconciles the two choices. To collect on the guaranty, Zilain would first have to establish Provider's liability in Delaware and then sue Geilaind Holdings plc in England under English law. That route risks parallel proceedings and inconsistent findings. It also lets the guarantor relitigate liability or raise English-law guarantor defences, such as discharge by variation of the underlying contract.",
+      "doc": "D4",
+      "section": "9",
+      "detect_terms": [
+        "laws of England and Wales",
+        "courts of England"
+      ],
+      "expected_finding": "The Parent Guaranty's English governing law and exclusive English forum conflict with the MSA's Delaware law and New Castle County forum, and no precedence clause reaches the guaranty. Zilain would therefore face split proceedings and English-law guarantor defences, so the guaranty should be conformed to Delaware law and the Delaware forum.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "MSA Section 2.4 limits Zilain's exclusivity commitment to technical management of the Covered Vessels under each SOW, and only during that SOW's term. For SOW No. 1, the Covered Vessels are the six Gulf Coast feeders listed in SOW Section 1.1 and Annex A. SOW No. 1 Section 5 expressly identifies and modifies MSA Section 2.4. Under the precedence exception in MSA Section 2.3, the SOW therefore controls. Section 5 requires Zilain to use Provider exclusively for all ship management, crewing and drydock supervision services. The commitment covers any vessel owned, operated or chartered by Zilain or its Affiliates, in any trading area, during the Term and for 24 months thereafter. This reaches far beyond the six-vessel Gulf deal. It binds Zilain's whole present and future fleet and its affiliates, and it survives termination.",
+      "doc": "D3",
+      "section": "5",
+      "detect_terms": [
+        "any vessel owned, operated or chartered",
+        "in any trading area",
+        "24 months thereafter"
+      ],
+      "expected_finding": "SOW No. 1 Section 5 validly overrides MSA Section 2.4 through the precedence exception in MSA Section 2.3. It replaces Covered-Vessel exclusivity with fleet-wide, affiliate-wide, worldwide, all-services exclusivity and a 24-month post-term tail. Section 5 should be cut back to technical management of the six Covered Vessels during the SOW term.",
+      "contradicts": "F6",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "MSA Section 12.3 excludes three categories from the Section 12.2 cap: (a) Provider's indemnity under Section 11.1, which covers only third-party bodily injury and IP infringement claims; (b) gross negligence or wilful misconduct; and (c) Environmental Losses. The MSA definitions section gives Environmental Losses the meaning stated in the Quality Agreement. Read alone, the MSA appears to leave pollution exposure uncapped. Quality Agreement Section 1 defines Environmental Losses only as fines, penalties and assessments imposed by a Governmental Authority under MARPOL or OPA 90 arising from a Pollution Incident. Read together, the carve-out excludes oil-removal and cleanup costs, third-party and natural-resource damage claims, and vessel detention losses from a Pollution Incident caused by Provider's ordinary negligence. All of those fall back under a cap of roughly one year's fees, about US$1.86 million under SOW No. 1. The precedence clause does not cure the gap because the MSA itself imports the narrow definition.",
+      "doc": "D1",
+      "section": "12.3",
+      "detect_terms": [
+        "Environmental Losses",
+        "gross negligence or wilful misconduct"
+      ],
+      "expected_finding": "The MSA's Environmental Losses carve-out imports the Quality Agreement definition, which covers only governmental fines and penalties. Cleanup costs and third-party pollution claims from Provider's ordinary negligence are therefore capped at 12 months' fees, so the MSA should define Environmental Losses itself to include all removal costs, third-party and natural-resource damages and related losses.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "1",
+      "detect_terms2": [
+        "fines, penalties and assessments",
+        "Pollution Incident"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "MSA Section 1 defines 'Provider' to include any Geilaind Affiliate that executes an SOW. MSA Section 2.2 makes each SOW a separate contract with the Provider entity that signs it. SOW No. 1 Preamble and Section 2.1 state that SOW No. 1 is a separate contract executed and performed by Geilaind Ship Management (Cyprus) Ltd, which is ordinary drafting. Parent Guaranty Section 1, in turn, defines 'Provider' as Geilaind Marine Services LLC, again ordinary on its own. It defines the Guaranteed Obligations as Provider's obligations under the MSA and any SOW. Read together, the guaranty covers only the US LLC. The LLC is not a party to SOW No. 1 and has no liability for the Cypriot affiliate's performance. The guaranty therefore does not reach the fee refunds, indemnities or damages arising under the only operative SOW, and Zilain is left with a claim against a Cypriot entity of uncertain substance.",
+      "doc": "D4",
+      "section": "1",
+      "detect_terms": [
+        "means Geilaind Marine Services LLC",
+        "Guaranteed Obligations"
+      ],
+      "expected_finding": "The guaranty's definition of 'Provider' covers only Geilaind Marine Services LLC, while SOW No. 1 is a separate contract with Geilaind Ship Management (Cyprus) Ltd. The guaranty therefore does not secure the obligations under the operative SOW, and the definition should be expanded to cover every Geilaind Affiliate that executes an SOW.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "2.1",
+      "detect_terms2": [
+        "Geilaind Ship Management (Cyprus) Ltd",
+        "separate contract"
+      ]
+    }
+  ]
+}

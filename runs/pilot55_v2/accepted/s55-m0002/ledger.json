@@ -1,0 +1,249 @@
+{
+  "matter_id": "s55-m0002",
+  "summary": "Trenex Flight Provisions, LLC (the client) acquired all of the stock of Lakeport Skykitchen, Inc., a regional airline catering and onboard provisioning company, from Dulaix Hospitality Holdings, Inc. under a Delaware-law stock purchase agreement signed July 15, 2026 and closed August 3, 2026. The purchase price was $48,000,000, made up of $42,000,000 in cash and a $6,000,000 Seller Note. The folder holds the following documents: the SPA; the Seller Note; a closing bill of sale for galley equipment; the key employee agreement of Lakeport's VP of Operations; the May 2026 letter of intent; a pre-deal mutual NDA; and Trenex's October 9, 2026 letter disputing Seller's Closing Statement. The planted issues are: (1) a working-capital dispute window that lapsed before Trenex's dispute letter was sent; (2) a change-of-control default in the Seller Note that is triggered by the pending merger of Trenex's parent, where the SPA waiver does not reach the Note; (3) a non-solicit that borrows a narrow SPA defined term; (4) an uncapped Buyer indemnity for Seller credit support that reaches pre-closing defaults; and (5) tax representations whose survival is tied to a 12-month note maturity.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Trenex Flight Provisions, LLC",
+      "role": "Buyer (client); maker of the Seller Note"
+    },
+    {
+      "id": "P2",
+      "name": "Dulaix Hospitality Holdings, Inc.",
+      "role": "Seller; holder of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Lakeport Skykitchen, Inc.",
+      "role": "Company whose stock is acquired; employer under the key employee agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Marisol Okafor-Brandt",
+      "role": "Key employee, Vice President of Operations of the Company"
+    },
+    {
+      "id": "P5",
+      "name": "Trenex Aviation Services Group, Inc.",
+      "role": "Buyer's parent; party to the pending Parent Merger and to the mutual NDA"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Closing Date",
+      "value": "August 3, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Purchase Price",
+      "value": "$48,000,000, consisting of $42,000,000 cash and the $6,000,000 Seller Note",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$6,000,000",
+      "doc": "D2",
+      "section": "Section 1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note Maturity Date",
+      "value": "twelve (12) months after the Issue Date (August 3, 2027)",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F5",
+      "key": "SPA Buyer indemnity cap",
+      "value": "$4,800,000",
+      "doc": "D1",
+      "section": "Section 9.5(b)"
+    },
+    {
+      "id": "F6",
+      "key": "SPA general representation survival period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1(a)"
+    },
+    {
+      "id": "F7",
+      "key": "SPA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "SPA controls over Ancillary Agreements; Seller Note controls its payment, maturity and subordination terms",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F9",
+      "key": "LOI key employee non-solicit scope",
+      "value": "all customers of the Company",
+      "doc": "D5",
+      "section": "Section 6"
+    },
+    {
+      "id": "F10",
+      "key": "SPA Closing Statement dispute period",
+      "value": "30 days after delivery of the Closing Statement",
+      "doc": "D1",
+      "section": "Section 2.5(b)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_trenex_dulaix.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seller_note_trenex_to_dulaix.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "bill_of_sale_galley_equipment.md",
+      "kind": "bill of sale",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "key_employee_agreement_okafor_brandt.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "letter_of_intent_lakeport.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "mutual_nda_trenex_dulaix.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "trenex_letter_to_dulaix_oct_2026.md",
+      "kind": "buyer dispute letter",
+      "distractor": false,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "SPA Section 2.5(b) gives Buyer thirty days after delivery of the Closing Statement to deliver a dispute notice. If Buyer does not, the Closing Statement becomes final and binding. Trenex's dispute letter (D7) is dated October 9, 2026. It states that Seller's Closing Statement was received by email on September 2, 2026, and it disputes a $1,150,000 net working capital shortfall. The window ended on October 2, 2026, so the letter came 37 days after delivery. Neither document alone shows the lapse: the SPA states the period and the letter states the dates. Because the letter disputes the figures, Trenex has not accepted the Closing Statement, so the point is still live.",
+      "doc": "D1",
+      "section": "Section 2.5(b)",
+      "detect_terms": [
+        "within thirty (30) days after delivery of the Closing Statement",
+        "final and binding"
+      ],
+      "expected_finding": "Trenex's October 9, 2026 dispute letter was sent 37 days after the Closing Statement was delivered on September 2, 2026, outside the 30-day window in SPA Section 2.5(b). Seller can therefore claim the Closing Statement is final and binding and defeat the $1,150,000 working capital dispute. Trenex should promptly seek Seller's written waiver or extension, or otherwise build its challenge to finality.",
+      "contradicts": null,
+      "doc2": "D7",
+      "section2": "Opening paragraph and Section 1",
+      "detect_terms2": [
+        "received on September 2, 2026",
+        "October 9, 2026"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "SPA Section 6.12 records that Buyer's parent, Trenex Aviation Services Group, Inc., has signed a merger agreement with Osprey Ridge Capital Partners (the Parent Merger), expected to close in the first quarter of 2027. In that section Seller agrees the Parent Merger shall not constitute a breach of 'this Agreement'. Seller Note Section 5.1(g) makes it an Event of Default, with acceleration, if Maker consummates a Change of Control without the Holder's prior written consent. Seller Note Section 1 defines Change of Control to include a change in control of any Person that directly or indirectly controls Maker. On its own, the SPA acknowledgement favours Buyer, and the Note covenant is ordinary. Read together, the Parent Merger will trigger the Note default, because the SPA waiver is limited to the SPA and no Holder consent appears anywhere in the folder. Under SPA Section 11.10 the Seller Note also controls its own payment and maturity terms, which include acceleration.",
+      "doc": "D1",
+      "section": "Section 6.12",
+      "detect_terms": [
+        "Parent Merger",
+        "shall not constitute a breach of this Agreement"
+      ],
+      "expected_finding": "Closing the Parent Merger will be a Change of Control under Seller Note Sections 1 and 5.1(g), allowing Dulaix to accelerate the $6,000,000 note, because the waiver in SPA Section 6.12 covers only the SPA. Trenex must obtain Dulaix's written consent as Holder, or amend the Note, before the Parent Merger closes.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Sections 1 and 5.1(g)",
+      "detect_terms2": [
+        "consummates a Change of Control without the prior written consent of the Holder",
+        "directly or indirectly controls Maker"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Key Employee Agreement Section 5.2 bars Marisol Okafor-Brandt from soliciting 'any Key Customer (as defined in the Purchase Agreement)'. SPA Section 1.1 defines 'Key Customers' for the customer representation in Section 4.12 as the ten largest airline customers by fiscal 2025 revenue. Read together, the non-solicit protects only those ten carriers. The letter of intent (D5, Section 6) says the key employee non-solicit would cover all customers of the Company. Each provision reads normally on its own. Combined, they leave the Company's other airline accounts unprotected against its head of operations. SPA Section 11.10 does not help, because the two documents do not conflict: the KEA expressly adopts the SPA definition.",
+      "doc": "D4",
+      "section": "Section 5.2",
+      "detect_terms": [
+        "any Key Customer (as defined in the Purchase Agreement)"
+      ],
+      "expected_finding": "Because the KEA non-solicit uses the SPA's 'Key Customers' definition, which covers only the ten largest fiscal 2025 airline customers, Okafor-Brandt is free to solicit every other Company customer. This is narrower than the all-customer scope agreed in the letter of intent, and the KEA should be amended to define the protected customers as all customers of the Company.",
+      "contradicts": "F9",
+      "doc2": "D1",
+      "section2": "Section 1.1 (definition of Key Customers)",
+      "detect_terms2": [
+        "ten largest airline customers"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "SPA Section 9.3(c) requires Buyer to indemnify Seller Indemnitees for Losses under the Seller Credit Support Obligations. These are Dulaix's guarantees of the Company's airport concession and commissary lease obligations. Section 9.5(b) caps Buyer's indemnity at $4,800,000 but provides that the cap shall not apply to Losses under Section 9.3(c). Section 1.1 defines Seller Credit Support Obligations to include obligations 'whether arising before or after the Closing'. Read together, Buyer carries unlimited liability for Seller's guarantee exposure, including defaults from Seller's own pre-closing period. Meanwhile Seller's indemnity to Buyer for pre-closing liabilities remains capped.",
+      "doc": "D1",
+      "section": "Sections 1.1, 9.3(c) and 9.5(b)",
+      "detect_terms": [
+        "shall not apply to Losses under Section 9.3(c)",
+        "whether arising before or after the Closing"
+      ],
+      "expected_finding": "Section 9.5(b) carves Section 9.3(c) out of Buyer's $4,800,000 cap, and the Seller Credit Support Obligations definition covers pre-closing obligations, so Trenex has uncapped liability for Dulaix's guarantee exposure, including pre-closing defaults. Trenex should limit Section 9.3(c) to obligations arising after the Closing and bring it within a cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1(b) provides that the tax representations in Section 4.14 survive until the Maturity Date of the Seller Note. Seller Note Section 2.1 sets the Maturity Date at twelve months after the Issue Date (the August 3, 2026 Closing Date), which is August 3, 2027. Tying survival to the note looks like an ordinary way to align claims with setoff, and a 12-month note is ordinary. Read together, the tax representations expire after only 12 months. That is shorter than the 18-month general survival period in Section 9.1(a), and far shorter than the period in which taxing authorities can assess the Company's 2023 to 2025 returns. SPA Section 11.10 confirms that the Note controls its maturity.",
+      "doc": "D1",
+      "section": "Section 9.1(b)",
+      "detect_terms": [
+        "until the Maturity Date of the Seller Note"
+      ],
+      "expected_finding": "Because SPA Section 9.1(b) ties tax representation survival to a Seller Note maturity of twelve months after the Issue Date, Trenex's tax indemnity claims expire on August 3, 2027, before most pre-closing tax assessments could arise and even before the 18-month general survival period ends. Survival should be reset to the applicable statute of limitations plus 60 days.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Section 2.1",
+      "detect_terms2": [
+        "twelve (12) months after the Issue Date"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+We act for Pakairt Outdoor Apparel, Inc., the licensee under its software license arrangement with Sairan Systems, LLC. Pakairt wants a clear view of where it stands before it relies on the deal. Please review all ten documents in the folder and send me a memo. For each issue, give the document and section where it appears, explain why it matters for Pakairt, and recommend a fix.

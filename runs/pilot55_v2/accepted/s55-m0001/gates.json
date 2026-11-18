@@ -1,0 +1,146 @@
+{
+  "matter_id": "s55-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "dev",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.1: \"This Guaranty, and any dispute or claim arising out of or in connection with it or its subject matter (including non-contractual disputes or claims), are governed by the laws of England and Wales.\" Section 9.2: \"...the courts of England have exclusive jurisdiction to settle any dispute or claim arising out of or in connection with this Guaranty...\" Against these, MSA 18.1 selects Delaware law and MSA 18.2 gives exclusive jurisdiction to the New Castle County, Delaware courts.",
+            "reason": "The mismatch is present and unreconciled. MSA Section 2.3 ranks only the MSA, the SOWs and the Quality Agreement, so it does not govern the guaranty. Nothing in the folder aligns the forums or makes the Delaware findings binding on Geilaind Holdings plc. The guaranty also cannot be amended except by a writing signed by both the Guarantor and Zilain (Section 10.1). Its liability measure ties the Guarantor's exposure to Provider's liability under the Delaware-law MSA (Section 2.5). As a result, an English court would have to decide Provider's liability itself, applying Delaware law. Zilain therefore faces parallel or duplicative proceedings, inconsistent findings, and the Guarantor relitigating liability. The primary-obligor clause (Section 3.2) removes the need to sue Provider first, but it does not stop the Guarantor contesting liability in England. Section 3.3 lists events that do not affect the guaranty, but it omits amendment or variation of the MSA or SOWs. So English-law discharge-by-variation arguments remain open, and the interpretive reference to the MSA \"as amended\" in Section 1.3 is only partial protection. Zilain is the beneficiary and bears the cost of this split. The guaranty appears unsigned, so the point can still be negotiated, for example by moving to Delaware law and forum, adding a submission to Delaware jurisdiction, or agreeing that the Guarantor is bound by judgments against Provider."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "\"5.1 Modification of MSA Section 2.4. This Section 5 modifies Section 2.4 of the MSA as it applies to this SOW.\" and \"5.2 Exclusive Engagement. During the SOW Term and for 24 months thereafter, Customer shall, and shall cause its Affiliates to, engage Provider exclusively for all ship management, crewing and drydock supervision services for any vessel owned, operated or chartered by Customer or any of its Affiliates, in any trading area.\"",
+            "reason": "MSA 2.4 limits Zilain's exclusivity to technical management of the Covered Vessels under each SOW, and only during that SOW's term. It otherwise leaves Zilain free to use other managers for any vessel. SOW Section 5.1 expressly identifies MSA 2.4 as the section it modifies, so the MSA 2.3 precedence exception lets the SOW control. Section 5.2 then binds Zilain, the Customer and the firm's client, in four ways: it must use Provider for all ship management, crewing and drydock supervision services; this covers every vessel it or any Affiliate owns, operates or charters, in any trading area; the restriction lasts for 24 months after the SOW Term; and Zilain must 'cause' its Affiliates to comply. Section 5.3 adds a duty to notify Provider of new vessels within 30 days. The SOW's own scope is six Gulf feeders under technical management only. This is a one-sided restriction that burdens only Zilain. No other document in the folder cures it, limits it or reflects an agreed commercial trade-off for it. The SOW is dated March 2026, and the clause remains a live restriction Zilain can still challenge, seek to amend under SOW 11.2, or contest."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "MSA §12.3: \"The limitations in Sections 12.1 and 12.2 do not apply to: (a) Provider's obligations under Section 11.1; (b) Losses arising from a Party's gross negligence or wilful misconduct; (c) Environmental Losses...\". MSA §1.1: \"'Environmental Losses' has the meaning given in the Quality Agreement.\" Quality Agreement §1.2: \"'Environmental Losses' means fines, penalties and assessments imposed by a Governmental Authority under MARPOL or OPA 90 arising from a Pollution Incident.\"",
+            "reason": "Read on its own, the MSA appears to leave pollution exposure uncapped. But the MSA imports the Quality Agreement's narrow definition, so the carve-out covers only regulatory fines, penalties and assessments. Other pollution losses caused by Provider's ordinary negligence stay under the §12.2 cap of 12 months' Fees (about US$1.86M under SOW No. 1). These include OPA 90 removal and cleanup costs, third-party and natural-resource damage claims, and detention losses. Section 12.1 also bars recovery of loss of hire. The §11.1 indemnity does not fill the gap because it covers only third-party bodily injury and IP claims. The §2.3 precedence clause does not cure the problem, because the MSA itself adopts the narrow definition. The Parent Guaranty (§2.5) is limited to the same Section 12 caps, so the guaranty does not help either. Customer, our client, bears the uncompensated exposure. Nothing in the folder shows that Customer accepted this result or that a later amendment fixed it, so the point remains open to raise in negotiation or an amendment.",
+            "alone": {
+              "master_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"Environmental Losses\" has the meaning given in the Quality Agreement.",
+                "reason": "On its own, the MSA shows that Environmental Losses are carved out of the Section 12.2 cap (Section 12.3(c)). It also shows that the term's meaning comes from the Quality Agreement. Read by itself, the MSA suggests pollution exposure is uncapped, so it does not show any gap. The problem depends on the Quality Agreement's narrow definition (government fines and penalties only), and that document was not provided. That definition is what leaves cleanup, third-party and natural-resource damage, and detention losses under the fee cap. An associate could see that the term is defined elsewhere and flag it for checking. They could not tell from the MSA alone that the carve-out is narrow or that it harms the client. The US$1.86 million cap figure also comes from SOW No. 1, which was not provided."
+              },
+              "quality_agreement.md": {
+                "findable": false,
+                "evidence": "\"Environmental Losses\" means fines, penalties and assessments imposed by a Governmental Authority under MARPOL or OPA 90 arising from a Pollution Incident.",
+                "reason": "On its own, the Quality Agreement gives a narrow definition of Environmental Losses that leaves out cleanup costs, third-party claims, natural-resource damages and detention losses. Nothing in this document uses that term to cap or limit liability, though. It has no liability cap, no carve-out from a cap, and no indemnity provisions. It also never mentions the term outside the definitions section. Seeing the harm requires three things from the MSA: that MSA Section 12.3 relies on this definition for its uncapped carve-out, that the cap is about one year's fees, and that the MSA definitions import the Quality Agreement meaning. A reader of this document alone would see a narrow definition with no visible consequence for Zilain."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Parent Guaranty Section 1.1: \"'Provider' means Geilaind Marine Services LLC, a limited liability company, and its successors and permitted assigns.\" and \"'Guaranteed Obligations' means every present and future obligation and liability of Provider to the Beneficiary under or in connection with the MSA and any SOW.\" SOW No. 1 Section 2.1: \"It constitutes a separate contract between Customer and Geilaind Ship Management (Cyprus) Ltd, which executes this SOW as Provider and shall perform the Services under it...\"",
+            "reason": "The Guaranty defines Provider narrowly as the US LLC and does not use the MSA's broader definition, which takes in any Affiliate that executes an SOW. Section 1.2 of the Guaranty imports MSA definitions only for terms the Guaranty does not itself define, so the narrow definition controls. MSA Section 2.2 makes each SOW a separate contract under which only the signing entity is responsible. SOW No. 1, the only operative SOW, was signed and is performed by the Cypriot affiliate. The guaranteed obligations, being the LLC's obligations, therefore do not reach the Cypriot entity's fee refunds, indemnities or damages under SOW No. 1. Nothing elsewhere in the folder cures this: the Guaranty contains no affiliate language, and nothing records an amendment or a waiver. Zilain, as the beneficiary, is the party exposed, and the point remains actionable while the SOW is in force, for example by seeking an amendment or a confirmatory guaranty from Geilaind Holdings plc.",
+            "alone": {
+              "parent_guaranty.md": {
+                "findable": false,
+                "evidence": "\"Provider\" means Geilaind Marine Services LLC, a limited liability company, and its successors and permitted assigns.",
+                "reason": "On its own, the guaranty defines 'Provider' as the US LLC alone and limits the Guaranteed Obligations to that LLC's obligations under the MSA and any SOW. Read by itself, that is ordinary drafting. The passive wording in Recital A ('services are to be provided... under one or more Statements of Work') might prompt a cautious reader to ask who signs the SOWs, but the guaranty never says another entity does. The gap only becomes a problem with facts from documents not given here: the MSA defines 'Provider' to include any Geilaind Affiliate that signs an SOW and makes each SOW a separate contract with that entity, and SOW No. 1 is signed and performed by Geilaind Ship Management (Cyprus) Ltd rather than the LLC. Without those facts, an associate could not tell that the guaranty misses the only operative SOW and so harms Zilain."
+              },
+              "sow_no_1_gulf_feeder_fleet.md": {
+                "findable": false,
+                "evidence": "It constitutes a separate contract between Customer and Geilaind Ship Management (Cyprus) Ltd, which executes this SOW as Provider and shall perform the Services under it from its management office in Limassol, Cyprus...",
+                "reason": "The SOW shows that the Cypriot affiliate, not Geilaind Marine Services LLC, is the contracting Provider. It also shows that SOW No. 1 is a separate contract from the MSA. That is ordinary drafting. The SOW does not mention the parent guaranty or how it defines 'Provider' or 'Guaranteed Obligations'. The harm to Zilain is that the guaranty covers only the US LLC and so does not reach the Cypriot entity's obligations. That can only be seen from the guaranty's definitions, which are not in this document. Read alone, the SOW shows no gap in credit support."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C5 asks for the whole ranking in fact F4 ('MSA, then SOW, then Quality Agreement; SOW prevails only where it expressly identifies the MSA section modified'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.065,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

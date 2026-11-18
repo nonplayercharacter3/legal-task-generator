@@ -1,0 +1,188 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s55-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "dev",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s55-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s55-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "test",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 4,
+      "input_tokens": 18907,
+      "output_tokens": 62400,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 23,
+      "input_tokens": 588543,
+      "output_tokens": 114879,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 131550,
+      "output_tokens": 11229,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4313,
+      "output_tokens": 630,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 14,
+      "input_tokens": 521627,
+      "output_tokens": 10832,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 20,
+      "input_tokens": 154163,
+      "output_tokens": 7149,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 3931,
+      "output_tokens": 536,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 21662,
+      "output_tokens": 6341,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 257558,
+      "output_tokens": 45896,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 9,
+      "input_tokens": 63961,
+      "output_tokens": 6018,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "marine shipping": 1,
+      "regional airline catering": 1,
+      "outdoor apparel": 1
+    },
+    "agreement_types": {
+      "master services agreement": 1,
+      "stock purchase agreement": 1,
+      "software license agreement": 1
+    },
+    "issue_types": {
+      "exclusivity_scope": 2,
+      "defined_term_inconsistency": 2,
+      "expired_notice_window": 2,
+      "uncapped_indemnity": 2,
+      "governing_law_mismatch": 1,
+      "liability_cap_carveout": 1,
+      "change_of_control_consent": 1,
+      "survival_gap": 1,
+      "auto_renewal": 1,
+      "missing_assignment_restriction": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

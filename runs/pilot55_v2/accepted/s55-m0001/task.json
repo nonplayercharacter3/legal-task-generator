@@ -1,0 +1,99 @@
+{
+  "task_id": "s55-m0001",
+  "split": "dev",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "master services agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Zilain Feeder Lines, Inc., the customer in its services relationship with Geilaind Marine Services LLC. Before the client relies on the arrangement, it needs to know where its position is weak or unclear. Please review all six documents in the folder and send me a memo that lists each issue you find, where it appears (document and section), why it matters for Zilain, and your recommended fix. Keep it practical so we can take it straight to the client.",
+  "documents": [
+    "kickoff_meeting_notes.md",
+    "master_services_agreement.md",
+    "parent_guaranty.md",
+    "quality_agreement.md",
+    "sow_no_1_gulf_feeder_fleet.md",
+    "vessel_takeover_protocol.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the Parent Guaranty's English governing law and exclusive English-court jurisdiction conflict with the MSA's Delaware governing law and exclusive New Castle County, Delaware forum. It identifies where this appears (Parent Guaranty Section 9, or MSA Sections 18.1/18.2), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "laws of England and Wales",
+        "New Castle County",
+        "conform the guaranty to Delaware"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that SOW No. 1 Section 5 overrides the MSA's narrow Covered-Vessel exclusivity. It must conclude that Section 5 replaces it with exclusivity for all ship management, crewing and drydock services across any vessel owned, operated or chartered by Zilain or its Affiliates, in any trading area, with a 24-month post-term tail. It identifies where this appears (SOW No. 1 Section 5), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "any vessel owned, operated or chartered",
+        "24 months thereafter",
+        "six Covered Vessels"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that the MSA's cap carve-out for Environmental Losses uses a Quality Agreement definition limited to governmental fines, penalties and assessments. It must conclude that cleanup/removal costs and third-party pollution claims arising from Provider's ordinary negligence remain subject to the liability cap. It identifies where this appears (MSA Section 12.3 or Quality Agreement Section 1), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "fines, penalties and assessments",
+        "cleanup costs",
+        "remain capped"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that the Parent Guaranty defines 'Provider' as Geilaind Marine Services LLC only, while SOW No. 1 is a separate contract with Geilaind Ship Management (Cyprus) Ltd. It must conclude that the guaranty does not secure the obligations under SOW No. 1. It identifies where this appears (Parent Guaranty Section 1 or SOW No. 1 Section 2.1/Preamble), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "means Geilaind Marine Services LLC",
+        "Geilaind Ship Management (Cyprus) Ltd",
+        "Guaranteed Obligations"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that under the MSA's order of precedence an SOW prevails over the MSA only where the SOW expressly identifies the MSA section it modifies.",
+      "kind": "fact",
+      "hints": [
+        "order of precedence",
+        "expressly identifies",
+        "Section 2.3"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is a memo that presents each issue separately, and for each one states the document and section where it appears.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "Document/Section",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response claims that the Parent Guaranty covers the obligations of Geilaind Ship Management (Cyprus) Ltd under SOW No. 1.",
+      "kind": "negative",
+      "hints": [
+        "guaranty covers the Cypriot affiliate"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that the MSA leaves all of Provider's pollution-related liability, including cleanup costs and third-party pollution claims, uncapped.",
+      "kind": "negative",
+      "hints": [
+        "environmental liability is uncapped"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

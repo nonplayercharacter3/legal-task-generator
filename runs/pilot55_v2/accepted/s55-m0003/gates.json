@@ -1,0 +1,176 @@
+{
+  "matter_id": "s55-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "LSA §12.2: \"At the end of the Initial Term, this Agreement shall renew automatically for successive renewal terms, each equal in length to the Order Term (each a \"Renewal Term\"). Either party may prevent renewal by written notice of non-renewal given during the thirty (30) day period beginning one hundred twenty (120) days before the expiry of the then-current Term.\" SOW §4.1: \"Order Term: sixty (60) months from the Phase 1 Acceptance Date.\"",
+            "reason": "Reading the two together, each Renewal Term is 60 months. If Pakairt misses one short 30-day non-renewal window, it is locked into another five years. The fee keeps running through that period, with annual CPI/3% escalation under SOW §4.3. The term sheet (§7.2) contemplated 12-month renewals, so the signed documents depart from the agreed deal. Nothing in the folder cures this. The Side Letter changes only fees and modules. The exclusivity in LSA §2.5 makes a lock-in worse for Pakairt. The issue is still actionable. Phase 1 was accepted on March 2, 2026, so the Initial Term runs to about March 2031 and the non-renewal window has not yet opened. Pakairt can seek an amendment to 12-month renewals or a wider notice window, and should diarize the window now. One correction to the description: after the May 2026 Phase 2 Election, the base fee is $855,000 rather than $1,140,000. That reduces the dollar exposure but does not change the problem.",
+            "alone": {
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "At the end of the Initial Term, this Agreement shall renew automatically for successive renewal terms, each equal in length to the Order Term (each a \"Renewal Term\"). Either party may prevent renewal by written notice of non-renewal given during the thirty (30) day period beginning one hundred twenty (120) days before the expiry of the then-current Term.",
+                "reason": "The License Agreement by itself shows an automatic renewal clause with a narrow 30-day non-renewal window, and that the $1,140,000 Annual License Fee keeps applying in each Renewal Term. It does not say how long the Order Term is. Section 1.1 and Section 12.2 only point to SOW Section 4.1 for that. The real harm is that each missed window locks Pakairt in for another five years, and that harm depends on the SOW fixing the Order Term at 60 months. The departure from the term sheet's 12-month renewals also needs the term sheet. Read alone, the clause looks like an ordinary evergreen provision of unknown length. An associate could flag the short window, but could not see the multi-year lock-in or the mismatch with the agreed deal."
+              },
+              "statement_of_work_threadline_implementation.md": {
+                "findable": false,
+                "evidence": "Section 4.1: \"Order Term: sixty (60) months from the Phase 1 Acceptance Date.\" Section 4.3: \"Licensor may adjust the Annual License Fee with effect from each anniversary of the Phase 1 Acceptance Date, including during any Renewal Term.\"",
+                "reason": "The SOW alone shows a 60-month Order Term, a $1,140,000 annual fee, and a passing reference to a 'Renewal Term', so some renewal mechanism exists. It does not say that renewal is automatic. It does not say that each Renewal Term equals the Order Term, so it does not show five-year renewals. It also does not mention the narrow 30-day non-renewal window opening 120 days before expiry. Those terms are in Section 12.2 of the License Agreement. Without that clause, a 60-month initial term looks like an ordinary negotiated term rather than a five-year evergreen lock-in. The departure from the term sheet's 12-month renewals also cannot be seen here."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Side Letter §2.1: \"Licensee must give Licensor written notice of its election within forty-five (45) days after the Phase 1 Acceptance Date.\" §2.3: \"If Licensee does not give notice under Section 2.1, the right to make a Phase 2 Election lapses. The Phase 2 Modules, the Phase 2 Services and the related fees then remain in effect as set out in the SOW.\" Notice letter dated May 4, 2026: \"Phase 1 was accepted on March 2, 2026... Under Section 2.1 of the Side Letter, Licensee gives notice that it elects not to proceed with Phase 2.\"",
+            "reason": "The problem is present and still actionable. Taking the Phase 1 Acceptance Date of March 2, 2026 stated in Pakairt's own letter, the 45-day window closed on April 16, 2026. The May 4 notice came 18 days late. Under §2.3 the right lapsed, so Sairan can treat the election as ineffective. It could then bill the $95,000 and $215,000 Phase 2 implementation fees and keep the full $1,140,000 Annual License Fee, $285,000 a year more than the reduced fee. That exposure falls on Pakairt, our client. Nothing in the documents extends the window or records a Sairan waiver. §17.4 says delay is not a waiver of a right, but it does not revive a lapsed option. Pakairt has not accepted the result: its letter still asserts the opt-out, demands a credit note and reserves its rights. Nothing in the folder shows Pakairt paying Phase 2 fees or signing a Phase 2 change order. The point therefore remains live. Pakairt needs advice on its exposure and on any arguments it has, such as negotiation, waiver or estoppel if Sairan conduct supports them, or the §4 re-add route.",
+            "alone": {
+              "side_letter_phase2_modules.md": {
+                "findable": false,
+                "evidence": "To do so, Licensee must give Licensor written notice of its election within forty-five (45) days after the Phase 1 Acceptance Date (the \"Phase 2 Election\").",
+                "reason": "The Side Letter by itself sets up the opt-out right. It requires written notice within 45 days after the Phase 1 Acceptance Date (Section 2.1). It also says the right lapses if no notice is given in that time, so Phase 2 fees stay in effect (Section 2.3). The document does not give the Phase 1 Acceptance Date, does not mention any notice Pakairt sent, and does not say when such a notice was sent. Without the March 2, 2026 acceptance date and the May 4, 2026 notice from D5, an associate cannot work out that the window closed on April 16 or that Pakairt's election was late. The 45-day deadline is an ordinary contract term and not a problem in itself. The problem only appears when the dates in the other document are added."
+              },
+              "pakairt_notice_letter_2026-05-04.md": {
+                "findable": false,
+                "evidence": "Phase 1 was accepted on March 2, 2026. The Phase 1 Acceptance Date is therefore March 2, 2026.",
+                "reason": "The letter is dated May 4, 2026, which is 63 days after the stated Phase 1 Acceptance Date of March 2, 2026. It invokes the Side Letter Section 2.1 opt-out. Nothing in the letter states a deadline for making the election. It does not mention the 45-day window or any other time limit. An associate reading only this letter would see the dates but would have no basis for treating the notice as late. That requires the Side Letter's 45-day requirement, which is in a document not provided. The letter alone therefore does not show the problem."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "License Agreement §10.3: \"The limitations in Section 10.1 and the exclusions in Section 10.2 shall not apply to either party's indemnification obligations under this Agreement, including any addendum.\" DPA §9: \"Customer shall indemnify Processor and its Affiliates against all losses, damages, regulatory fines and penalties, costs and reasonable attorneys' fees arising out of: (a) any Processing carried out in accordance with Customer's instructions; or (b) Customer's failure to provide notices to, or obtain consents from, Data Subjects... This indemnity is subject to Section 10 of the Agreement.\"",
+            "reason": "Read together, the two documents leave Pakairt with uncapped data-protection exposure.\n\n- **Who gives the indemnity.** DPA §9 is a one-way indemnity given by Pakairt (Customer) to Sairan. Sairan gives no matching DPA indemnity.\n- **Why it is uncapped.** §9 says it is \"subject to Section 10 of the Agreement,\" which looks like it applies the 12-month fee cap. But §10.3 removes both the cap and the exclusion of indirect damages for \"either party's indemnification obligations... including any addendum.\" So the DPA indemnity becomes unlimited.\n- **Why the mutual wording does not help.** The carve-out reads as mutual, but in practice it only adds to Pakairt's exposure. Sairan's only indemnity is the IP indemnity in §9.1.\n- **Why the DPA's priority does not help.** The DPA ranks above the Agreement on personal data under §1.4. That does not cure the problem, because the DPA itself points back to Section 10.\n- **Scope of the exposure.** Limb (a) covers any processing carried out on Pakairt's instructions. That includes employee, supplier and wholesale contact data in Phase 1, not just consumer data. Uncapped regulatory fines and class claims are therefore a live risk whatever happens with Phase 2.\n- **Phase 2 makes it worse, not better.** Pakairt's Phase 2 election appears late: it was made May 4, but the window ran 45 days from the March 2 acceptance, i.e. to about April 16. If so, the consumer and loyalty modules may still go ahead.\n- **Still actionable.** Nothing in the folder shows Pakairt accepted this result or waived the point. The exposure is continuing and can be addressed by amendment.",
+            "alone": {
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "The limitations in Section 10.1 and the exclusions in Section 10.2 shall not apply to either party's indemnification obligations under this Agreement, including any addendum.",
+                "reason": "On its own, this License Agreement shows a mutual carve-out from the cap for indemnities, including those in any addendum. The indemnities it contains (Sections 9.1 and 9.4) are roughly balanced and reciprocal. It does not show that the DPA has a one-way Licensee indemnity covering regulatory fines and consumer or loyalty-program claims. It also does not show that the DPA makes that indemnity 'subject to Section 10' and so pulls in the uncapped exception, or that Sairan gives no matching DPA indemnity. Without the DPA, an associate would read Section 10.3 as a neutral, mutual exception and could not see that Pakairt alone carries unlimited data-protection exposure."
+              },
+              "data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "This indemnity is subject to Section 10 of the Agreement.",
+                "reason": "The DPA alone shows a one-way indemnity from Pakairt to Sairan. It covers regulatory fines and class claims, and it is made subject to Section 10 of the Agreement. Read on its own, that cross-reference suggests the indemnity is capped by the Agreement's limitation of liability. The DPA does not show what Section 10 says. In particular, it does not show the Section 10.3 carve-out that excludes indemnification obligations, including those under any addendum, from the cap. That carve-out is what makes the indemnity uncapped. An associate reading only the DPA would see the one-sidedness, but would reasonably assume the exposure is limited. The unlimited-exposure problem depends on the License Agreement."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "License Agreement s.2.5: \"During the Term, Licensee shall use the Licensed Software as its exclusive solution for the Covered Functions. Licensee shall not, and shall cause its Affiliates not to, license, develop or use any other software that performs any Covered Function.\" SOW s.1.2: \"'Covered Functions' means ... (a) product lifecycle management ...; (b) demand planning; (c) wholesale order management; and (d) retail point-of-sale and e-commerce merchandising.\"",
+            "reason": "Read together, the two clauses bar Pakairt and its Affiliates for the whole Term from using any other software for demand planning, wholesale order management, retail POS or e-commerce merchandising. That is far wider than the term sheet, which limited exclusivity to 'PLM software for apparel and footwear design only' and left Pakairt 'free to select and use other systems for all other business functions.' Threadline does not perform these functions itself. Retail POS Connect only sends feeds to Pakairt's own POS environment, and the SOW itself assumes Pakairt runs third-party ERP, POS and e-commerce platforms (ss.3.3(c), 6.4(c)). So on a literal reading Pakairt is in breach just by running its existing store and webstore systems. The risk does not depend on Phase 2. Covered Functions is a fixed list in SOW 1.2, and the Side Letter's Phase 2 Election does not narrow it. The May 4 election also appears to fall outside the 45-day window after the March 2 acceptance date, but that does not change the analysis. No document in the folder narrows or waives the clause. It is an ongoing restriction for the 60-month Order Term plus renewals, so it remains actionable: Pakairt can seek an amendment or a clarifying letter, and should assess whether it is already in breach.",
+            "alone": {
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "\"Covered Functions\" has the meaning given in the Statement of Work. ... 2.5 Exclusivity. During the Term, Licensee shall use the Licensed Software as its exclusive solution for the Covered Functions. Licensee shall not, and shall cause its Affiliates not to, license, develop or use any other software that performs any Covered Function.",
+                "reason": "This document shows a broad exclusivity covenant. It extends to Affiliates and bars licensing, developing or using any other software that performs a Covered Function. But it does not say what the Covered Functions are; it leaves the definition to the SOW. Read alone, a careful associate would reasonably take the clause to cover the licensed Threadline PLM scope. The problem is that the SOW's definition reaches demand planning, wholesale order management, retail POS and e-commerce merchandising, which would bar Pakairt from other store and webstore systems. That comes only from the SOW, which is not here. The departure from the term sheet's PLM-only limit likewise depends on another document. This agreement alone cannot show that the clause is overbroad or that it harms Pakairt."
+              },
+              "statement_of_work_threadline_implementation.md": {
+                "findable": false,
+                "evidence": "\"Covered Functions\" means the business functions that the Licensed Software supports for Licensee and its Affiliates under this SOW. Those functions are: (a) product lifecycle management ... (b) demand planning; (c) wholesale order management; and (d) retail point-of-sale and e-commerce merchandising.",
+                "reason": "Read alone, the SOW defines Covered Functions broadly to cover PLM, demand planning, wholesale order management, and retail POS and e-commerce merchandising. In this document the definition only sets the implementation scope. Nothing in the SOW imposes an exclusivity obligation, and it does not bar Pakairt from using other POS, e-commerce or planning software. That restriction comes from Agreement Section 2.5, which is not provided. The narrower PLM-only exclusivity in the term sheet also cannot be seen here. An associate reading only the SOW would see an ordinary scope list. They could not tell that it limits Pakairt's use of other systems."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "\"Licensor may assign this Agreement, in whole or in part, to any person without Licensee's consent. Licensor shall give Licensee written notice of any assignment within thirty (30) days after it takes effect.\" (Section 15.3)",
+            "reason": "Section 15.2 requires Sairan's consent before Pakairt can assign, while Section 15.3 lets Sairan assign freely to anyone. Sairan only has to give notice after the fact. Pakairt has no consent right, no competitor carve-out and no right to terminate on assignment. Nothing in the SOW, DPA, Side Letter, Service Level Schedule or Quality Agreement restricts this. The DPA controls new sub-processors, not assignment of the Agreement itself. As a result, Pakairt's unreleased designs, tech packs and supplier pricing could pass to a competitor or its affiliate. Pakairt would still be bound by the Section 2.5 exclusivity and the 60-month term with auto-renewal. The Agreement is ongoing and the right has not been exercised, so Pakairt can still act on this, for example by negotiating an amendment."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F4, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.06,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

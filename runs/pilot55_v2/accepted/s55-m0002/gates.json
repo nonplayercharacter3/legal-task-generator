@@ -1,0 +1,174 @@
+{
+  "matter_id": "s55-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "SPA §2.5(b): \"Buyer may deliver to Seller a written notice of dispute within thirty (30) days after delivery of the Closing Statement ... If Buyer does not deliver a Dispute Notice within that period, the Closing Statement and Seller's calculation of Closing Net Working Capital shall be final and binding on the parties.\" Trenex letter: \"Seller's Closing Statement under Section 2.5(a) of the Agreement, which Buyer received on September 2, 2026 by email from Seller's finance team to finance@trenexflight.com.\" and \"This letter is Buyer's Dispute Notice under Section 2.5(b) of the Agreement, delivered on October 9, 2026.\"",
+            "reason": "The problem is present, and it hurts Trenex, the client. Seller's Closing Statement was timely: it was due 30 days after the August 3 Closing, and Seller emailed it on September 2 to Buyer's §11.2 notice address. That started Buyer's 30-day dispute window. The window closed on October 2, 2026. Even if the email counted as delivered on September 3, the window would close on October 3, and the SPA has no rollover to the next Business Day. Trenex's Dispute Notice is dated October 9, so it is about a week late. Under §2.5(b), Seller's NWC figure of $5,620,000 is therefore final and binding. That puts Trenex's $1,150,000 shortfall claim at risk, along with its related setoff rights under §9.6 and §3.1 of the Seller Note. Nothing in the folder shows that Seller extended or waived the deadline, and §11.3 requires any waiver to be in writing. Trenex has not accepted the Closing Statement; its letter actively disputes it and seeks negotiation and the Independent Accountant process. The issue is therefore still live and actionable. Counsel should promptly seek a written extension or waiver from Seller, or consider other routes such as manifest error, fraud claims, or indemnity under Article IX.",
+            "alone": {
+              "stock_purchase_agreement_trenex_dulaix.md": {
+                "findable": false,
+                "evidence": "If Buyer does not deliver a Dispute Notice within that period, the Closing Statement and Seller's calculation of Closing Net Working Capital shall be final and binding on the parties.",
+                "reason": "On its own, the SPA shows that Buyer has a 30-day window to dispute the Closing Statement and that the statement becomes final and binding if no notice is given. It also shows that delivery by email counts on the day sent before 5:00 p.m., or otherwise on the next Business Day. It does not show when the Closing Statement was actually delivered (September 2, 2026), when Trenex sent its dispute letter (October 9, 2026), or that a $1,150,000 shortfall is in dispute. The SPA sets Closing for August 3, 2026, so a statement due within 30 days would arrive around September 2. Even so, nothing in the SPA shows that Buyer's notice came late. The lapse, and the harm to Trenex, can only be seen from the dates in the dispute letter."
+              },
+              "trenex_letter_to_dulaix_oct_2026.md": {
+                "findable": false,
+                "evidence": "This letter is Buyer's Dispute Notice under Section 2.5(b) of the Agreement, delivered on October 9, 2026.",
+                "reason": "The letter gives both dates. It says the Closing Statement was received on September 2, 2026, and that the Dispute Notice was delivered on October 9, 2026, a gap of 37 days. It also shows Trenex disputing the full $1,150,000, so it has not accepted the figures. What the letter does not say is how long Section 2.5(b) allows for a dispute notice, or that a late notice makes the Closing Statement final and binding. It only cites the section. An associate reading this letter alone would see a 37-day gap but could not tell whether that gap is late, because the 30-day period and its effect are in the SPA."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "SPA Section 6.12: \"Seller agrees that the execution of the merger agreement for the Parent Merger, the consummation of the Parent Merger and any resulting change in the ownership or control of Buyer shall not constitute a breach of this Agreement.\" Seller Note Section 5.1(g): \"Maker consummates a Change of Control without the prior written consent of the Holder\"; Section 1 defines Change of Control to include where \"a change occurs in the Persons who control any Person that directly or indirectly controls Maker.\"",
+            "reason": "The problem is present and it hurts Trenex. The Parent Merger is expected to close in Q1 2027, which is before the Note's August 3, 2027 maturity. Osprey Ridge acquiring Trenex Aviation Services Group would be a change in control of the Person controlling Maker, so it falls within the Note's Change of Control definition. That would be an Event of Default under 5.1(g), and Holder could accelerate the $6M under Section 5.2. The SPA 6.12 acknowledgement covers only breach, termination and indemnity under 'this Agreement'. It does not give Holder's prior written consent under the Note. SPA 11.10 makes the Note control its own payment and maturity terms, which include acceleration. Note 7.3 requires any waiver to be a written instrument signed by Maker and Holder. Nothing in the folder records Holder's consent. The merger has not yet closed, so Trenex can still act by obtaining Dulaix's written consent or a Note amendment.",
+            "alone": {
+              "stock_purchase_agreement_trenex_dulaix.md": {
+                "findable": false,
+                "evidence": "Seller agrees that the execution of the merger agreement for the Parent Merger, the consummation of the Parent Merger and any resulting change in the ownership or control of Buyer shall not constitute a breach of this Agreement. None of them shall give rise to any right of Seller to terminate this Agreement or to claim indemnification under this Agreement.",
+                "reason": "The SPA alone shows three things. Section 6.12 records the Parent Merger. Its waiver is limited to 'this Agreement'. Section 11.10 says the Seller Note controls its own payment, maturity and subordination terms. Read alone, 6.12 looks favourable to Buyer. A careful associate might notice that the waiver does not extend to the Ancillary Agreements and wonder about the Note. But the SPA does not show that the Seller Note has a change-of-control Event of Default. It also does not show that the Note's Change of Control definition reaches a change in control of an indirect parent, or that such a default allows acceleration. Those terms are only in the Seller Note (Sections 1 and 5.1(g)). Without them, the SPA does not show a default or any harm to the client."
+              },
+              "seller_note_trenex_to_dulaix.md": {
+                "findable": false,
+                "evidence": "\"Change of Control\" means any transaction ... as a result of which ... (b) any Person that directly or indirectly controls Maker ceases to control Maker, or a change occurs in the Persons who control any Person that directly or indirectly controls Maker; ... (g) Maker consummates a Change of Control without the prior written consent of the Holder",
+                "reason": "Read alone, the Note has a broad Change of Control definition that reaches changes at the parent level, and makes a non-consented Change of Control an Event of Default that permits acceleration. A careful associate could see that this covenant is broad and could catch an upstream deal. The Note does not say that Buyer's parent has signed a merger agreement with Osprey Ridge, or that the deal is expected to close in Q1 2027, before the August 2027 maturity. It also does not show that the Seller's acknowledgement in the SPA covers only the SPA. Those facts come from SPA Section 6.12. Without them, the Note contains only an ordinary covenant, not a concrete default that is coming and hurts the client."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "KEA Section 5.2: \"During the Restricted Period, Executive shall not, directly or indirectly ... (a) solicit, induce or attempt to induce any Key Customer (as defined in the Purchase Agreement) to purchase airline catering, onboard provisioning or galley services from any Person other than the Company ...\" SPA Section 1.1: \"'Key Customers' means the ten largest airline customers of the Company, measured by revenue recognized by the Company for the fiscal year ended December 31, 2025, as listed in Section 4.12 of the Disclosure Schedule.\"",
+            "reason": "Each clause of KEA 5.2 adopts the SPA definition of Key Customers by express reference, so the customer non-solicit reaches only the ten largest fiscal-2025 airline customers. The LOI (Section 6(d)) contemplated a covenant not to solicit all customers of the Company. The KEA's other covenants do not close the gap. The 24-month restriction leaves every other airline account open to solicitation by the Company's VP of Operations, and the KEA has no separate non-compete. SPA 11.10 gives no help, because the two documents do not conflict: the KEA incorporates the SPA definition. The harm falls on the Company and on Buyer (Trenex, the client), which is an express third-party beneficiary under KEA 7.2 and paid for the goodwill. The issue is still actionable. Nothing in the folder shows Buyer accepted the narrower scope or waived the point, and the Company and Executive can still amend the KEA under Section 8.5, with Buyer pressing for the change.",
+            "alone": {
+              "key_employee_agreement_okafor_brandt.md": {
+                "findable": false,
+                "evidence": "During the Restricted Period, Executive shall not, directly or indirectly, ... (a) solicit, induce or attempt to induce any Key Customer (as defined in the Purchase Agreement) to purchase airline catering, onboard provisioning or galley services from any Person other than the Company",
+                "reason": "This document shows that Section 5.2's customer non-solicit is limited to 'Key Customers' and that the term takes its meaning from the Purchase Agreement. It does not show what that definition covers. Nothing here indicates that Key Customers means only the ten largest airline customers by fiscal 2025 revenue, as opposed to all customers. It also does not show that the letter of intent promised a non-solicit covering every customer of the Company. A careful associate might note that the reference to an outside definition should be checked. But the narrow scope that leaves other accounts unprotected, and the gap against the deal terms, both depend on the SPA definition and the LOI, which are not provided."
+              },
+              "stock_purchase_agreement_trenex_dulaix.md": {
+                "findable": false,
+                "evidence": "\"Key Customers\" means the ten largest airline customers of the Company, measured by revenue recognized by the Company for the fiscal year ended December 31, 2025, as listed in Section 4.12 of the Disclosure Schedule.",
+                "reason": "The SPA alone shows only that 'Key Customers' is a narrow defined term (the ten largest airline customers by fiscal 2025 revenue), used for the customer representation in Section 4.12. It also references the Key Employee Agreement with Marisol Okafor-Brandt, but it contains no employee non-solicit and does not say the KEA uses the 'Key Customers' definition. The SPA's own non-solicit in Section 6.7 binds Seller, not the employee, and covers employees, not customers. Two facts must come from documents not provided: (1) that KEA Section 5.2 limits her customer non-solicit to 'Key Customers (as defined in the Purchase Agreement)', and (2) that the LOI promised a non-solicit covering all customers. Without these, an associate reading only the SPA would see an ordinary definition with nothing wrong."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 9.3(c) has Buyer indemnify Seller Indemnitees against all Losses arising out of \"the Seller Credit Support Obligations, including any payment made or liability incurred by any Seller Indemnitee under the Seller Credit Support Obligations.\" Section 9.5(b) says: \"Buyer's aggregate liability under Section 9.3 shall not exceed $4,800,000; provided that this limitation shall not apply to Losses under Section 9.3(c).\" Section 1.1 defines Seller Credit Support Obligations to include \"all obligations of Seller or such Affiliate under that credit support, whether arising before or after the Closing.\"",
+            "reason": "Trenex, the client, is the indemnitor under 9.3(c), so this exposure falls on the client. Read together, the three provisions make Buyer liable without limit for Dulaix's guarantee, letter-of-credit and bond exposure on the airport concession agreements and commissary leases. That includes defaults and liabilities that arose while Seller owned the Company before Closing. Nothing in the agreement carves out pre-Closing defaults, and no other document does either. Section 6.9 only obliges Buyer to seek releases. Seller's matching protection for pre-Closing problems is limited. For example, a breach of the Section 4.8 Material Contracts rep is subject to the $360,000 deductible and the $4,800,000 cap in 9.5(a). The resulting allocation is asymmetric: Buyer bears uncapped liability for pre-Closing defaults, while its recourse against Seller for the same facts is capped. The folder shows no amendment, release or waiver that cures this. The exposure continues as long as the credit support is outstanding, so it remains live for Trenex. It can still be addressed, for example by an amendment, by pursuing releases under 6.9, or in defending any claim Seller makes."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "SPA §9.1(b): \"The representations and warranties in Section 4.14 (Taxes) shall survive the Closing until the Maturity Date of the Seller Note.\" Seller Note §2.1: principal is \"due and payable in full on the date that is twelve (12) months after the Issue Date (August 3, 2027) (the \"Maturity Date\").\" SPA §11.10: \"the Seller Note shall control as to its payment, maturity and subordination terms.\"",
+            "reason": "Read together, the Seller's tax representations (§4.14, covering the Company's 2023–2025 returns, payment of taxes, audits and limitation waivers) expire on August 3, 2027. That is only 12 months after Closing. It is shorter than the 18-month general survival period in §9.1(a), even though tax reps are usually given longer survival, and far shorter than the period in which taxing authorities can assess those returns. Seller is the indemnitor, so Buyer (our client) carries the gap. Any tax breach found after August 2027 cannot be claimed under §9.2(a). Setoff against the Note also disappears at maturity. Section 9.2(c) (pre-closing Taxes indemnity) does not cure the gap. It has no stated survival period of its own, so Seller can argue it falls with the rep. It also does not reach non-Tax losses from breaches of the return-accuracy or waiver reps. Nothing in the folder extends, waives or accepts this term. It is now November 2026, before expiry, so the client can still act: it can seek an amendment extending tax survival to the statute of limitations plus 60 days, and should diligence and assert any tax claims before August 3, 2027.",
+            "alone": {
+              "stock_purchase_agreement_trenex_dulaix.md": {
+                "findable": false,
+                "evidence": "\"The representations and warranties in Section 4.14 (Taxes) shall survive the Closing until the Maturity Date of the Seller Note.\" (Section 9.1(b)); see also Section 11.10: \"the Seller Note shall control as to its payment, maturity and subordination terms.\"",
+                "reason": "The SPA alone shows that tax-rep survival is tied to the Seller Note's Maturity Date, and that the Note controls its own maturity. It also shows an 18-month general survival period and tax reps covering 2023-2025 returns. It never states what the Maturity Date is or how long the Note runs. A careful associate could flag the cross-reference as worth checking. They could not tell from this document that tax survival is shorter than the 18-month general period, or shorter than the assessment period. Those facts depend on the 12-month maturity in Seller Note Section 2.1, which is not in this document. For all the SPA shows, the Note could run five years, and tying survival to it would then help the Buyer."
+              },
+              "seller_note_trenex_to_dulaix.md": {
+                "findable": false,
+                "evidence": "The entire unpaid principal balance of this Note ... shall be due and payable in full on the date that is twelve (12) months after the Issue Date (August 3, 2027) (the \"Maturity Date\").",
+                "reason": "The Note by itself sets a 12-month maturity and gives Maker a setoff right for amounts finally determined under SPA Article IX. Nothing in the Note says that survival of the SPA's tax representations is tied to this Maturity Date. On its own, a 12-month seller note is ordinary. The harm only appears with SPA Section 9.1(b), which makes the Section 4.14 tax representations expire at Note maturity. The 18-month general survival period in Section 9.1(a) and the tax assessment exposure for 2023 to 2025 also come from the SPA. An associate reading only the Note could not see that the client's tax indemnity is cut short."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.087,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
