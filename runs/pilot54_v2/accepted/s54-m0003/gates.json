@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.667,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -154,8 +168,71 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 31,
+              "files_opened": [
+                "bill_of_sale_newark_equipment.md",
+                "disclosure_schedule.md",
+                "escrow_agreement.md",
+                "ip_assignment_agreement_linenloop.md",
+                "key_employee_agreement_szabo_whitlock.md",
+                "mutual_nondisclosure_agreement_2025.md",
+                "side_letter_credit_support_oct_2026.md",
+                "spa_prior_draft_feb_2026.md",
+                "stock_purchase_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 31,
+              "files_opened": [
+                "bill_of_sale_newark_equipment.md",
+                "disclosure_schedule.md",
+                "escrow_agreement.md",
+                "ip_assignment_agreement_linenloop.md",
+                "key_employee_agreement_szabo_whitlock.md",
+                "mutual_nondisclosure_agreement_2025.md",
+                "side_letter_credit_support_oct_2026.md",
+                "spa_prior_draft_feb_2026.md",
+                "stock_purchase_agreement.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 31,
+              "files_opened": [
+                "bill_of_sale_newark_equipment.md",
+                "disclosure_schedule.md",
+                "escrow_agreement.md",
+                "ip_assignment_agreement_linenloop.md",
+                "key_employee_agreement_szabo_whitlock.md",
+                "mutual_nondisclosure_agreement_2025.md",
+                "side_letter_credit_support_oct_2026.md",
+                "spa_prior_draft_feb_2026.md",
+                "stock_purchase_agreement.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

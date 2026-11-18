@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.667,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -156,8 +170,71 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 31,
+              "files_opened": [
+                "apa_prior_draft_july_2026.md",
+                "asset_purchase_agreement_executed.md",
+                "bill_of_sale_form.md",
+                "buyer_board_consent.md",
+                "indemnity_escrow_agreement.md",
+                "key_employee_agreement_renfeld.md",
+                "seller_disclosure_schedule.md",
+                "side_letter_aug_2026.md",
+                "transition_services_agreement_form.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 33,
+              "files_opened": [
+                "apa_prior_draft_july_2026.md",
+                "asset_purchase_agreement_executed.md",
+                "bill_of_sale_form.md",
+                "buyer_board_consent.md",
+                "indemnity_escrow_agreement.md",
+                "key_employee_agreement_renfeld.md",
+                "seller_disclosure_schedule.md",
+                "side_letter_aug_2026.md",
+                "transition_services_agreement_form.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 31,
+              "files_opened": [
+                "apa_prior_draft_july_2026.md",
+                "asset_purchase_agreement_executed.md",
+                "bill_of_sale_form.md",
+                "buyer_board_consent.md",
+                "indemnity_escrow_agreement.md",
+                "key_employee_agreement_renfeld.md",
+                "seller_disclosure_schedule.md",
+                "side_letter_aug_2026.md",
+                "transition_services_agreement_form.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

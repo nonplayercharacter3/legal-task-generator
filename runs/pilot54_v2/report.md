@@ -13,7 +13,7 @@ Backend: `claude_sdk`. Accepted **2 of 3** candidate matters.
 | rubric_trace | 2 | 2 | 0 | 0 |
 | rubric_tests | 2 | 2 | 0 | 0 |
 | decontamination | 2 | 2 | 0 | 0 |
-| solver_check | 2 | 0 | 0 | 2 |
+| solver_check | 2 | 2 | 0 | 0 |
 
 ## Difficulty
 
@@ -21,16 +21,15 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 
 | Model | Tasks | Pass rate: tasks |
 | --- | ---: | --- |
-
-**2 accepted task(s) wait for `ltg label`: solver_check was deferred, so they have no difficulty label and no leak probe yet.**
+| qwen3-small | 2 | 0.67: 2 |
 
 ## Matters
 
 | Matter | Result | Split | Pass rate per model | Reason |
 | --- | --- | --- | --- | --- |
 | s54-m0001 | rejected at consistency |  |  | mismatches: [{"fact": "F8", "key": "Asset Purchase Agreement order of precedence", "filename": "asset_purchase_agreement.md", "ledger": "Section 11.8 written am |
-| s54-m0002 | accepted (label pending) | train |  |  |
-| s54-m0003 | accepted (label pending) | train |  |  |
+| s54-m0002 | accepted | train | qwen3-small 0.67 |  |
+| s54-m0003 | accepted | train | qwen3-small 0.67 |  |
 
 ## Variety
 
@@ -51,6 +50,7 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 | instruction_writer | 2 | 2621 | 299 | 0 |
 | issue_solo_verifier | 12 | 108892 | 5646 | 0 |
 | issue_verifier | 10 | 590861 | 8658 | 0 |
-| judge | 6 | 45982 | 4832 | 0 |
+| judge | 14 | 118916 | 13795 | 0 |
 | ledger_writer | 3 | 14349 | 49243 | 0 |
 | rubric_writer | 2 | 15676 | 4966 | 0 |
+| solver | 225 | 4127488 | 286223 | 0 |
