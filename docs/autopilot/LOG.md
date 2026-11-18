@@ -63,3 +63,15 @@ Dated, append-only. One entry per iteration.
 - v2 labels so far (s45-s48, 8 tasks): 0.00: 3, 0.33: 2, 0.67: 2, 1.00: 1 (mean 0.38; v1 rounds 20-27 mean 0.42).
 - Open question: the `max_seconds` check runs only when a line arrives, and the 600 s socket timeout did not fire
   either, so one call can stall a batch indefinitely. Fix if it recurs.
+
+## 2026-11-18 04:32, iteration 8
+- Iterations 6 and 7 (03:32, 04:02) hit the 5-hour limit at once and did nothing.
+- The batch (PID 35148) had labelled seeds 54-56 and generated 57 (54: 2, 55: 3, 56: 2, 57: 3 of 3 accepted), then
+  hit the usage limit labelling seed 57 at 02:36 and slept 106 min. At 03:41 the planning chat's watchdog
+  (`~/.claude/jobs/14386149/tmp/watchdog.sh`: kill a batch whose log is silent 60 min) killed it, which left
+  `runs/.batch.lock` (default SIGTERM skips `finally`). This is probably also how PID 66636 died at 23:27.
+- Removed the lock, restarted: `ltg batch --config configs/pilot_generate_v2.toml --label-config
+  configs/pilot_nrp_solver.toml --seeds 57-61,49-53` (PID 40471, same log).
+- PR #41 (merged, CI green, 159 tests): `_wait` sleeps in 10-minute steps with a log line and a stop-file check each,
+  and SIGTERM exits through `finally` so the lock is removed.
+- v2 so far: 24 accepted (s45-s57), 15 labelled, mean pass rate 0.33 (0.00: 6, 0.33: 4, 0.67: 4, 1.00: 1).

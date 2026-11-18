@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-17 23:35, autopilot iteration 5.
+Last updated: 2026-11-18 04:45, autopilot iteration 8.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -41,22 +41,24 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- One batch, PID 35148 (caffeinate), log `runs/gen-v2-54-61.log`, started 23:30: generates seeds 54-61 on
-  `pilot_generate_v2.toml` with Qwen labels after each seed, then labels the 6 unlabelled tasks of seeds 49-53.
-  ~70 min per seed: generation ends ~09:00 on 2026-11-18, labels ~10:30. Commits each seed to main itself.
-- The earlier labeller (PID 66636) hung on one NRP call from 22:14 to 23:27 (s49-m0002 attempt 3) and was then
-  killed from outside this session, leaving a stale `runs/.batch.lock`; the queued 54-61 waiter hit the lock and
-  exited. Lock removed, everything restarted as one batch. Seeds 46-48 labelled (8 tasks), 49-53 not yet.
+- One batch, PID 40471 (caffeinate), log `runs/gen-v2-54-61.log` (appended), restarted 04:33: labels seed 57, then
+  generates and labels seeds 58-61 on `pilot_generate_v2.toml`, then labels the 6 unlabelled tasks of seeds 49-53.
+  ~70 min per seed: ends ~11:00 on 2026-11-18. Commits each seed to main itself. Runs the pre-PR #41 code (no
+  heartbeat), so a usage-limit wait over 60 min can still get it killed by the watchdog; just restart it if so.
+- Watchdog (not ours: the planning chat's, `~/.claude/jobs/14386149/tmp/watchdog.sh`, PID 35897): kills an
+  `ltg batch` whose log is silent 60 min, logs to `runs/.autopilot/watchdog.log`. At 03:41 it killed the first batch
+  (PID 35148) while that waited out a 106-min usage limit, leaving a stale lock. PR #41 fixes both sides.
 
 ## Next
-1. Check the batch at ~03:30 (a stuck NRP call can stall it: no log line for over an hour means stuck). If it
-   happens again, add a hard wall-clock cap per solver call (the 3600 s `max_seconds` check did not end this one).
-2. When seeds 54-61 end: read every rejection; check the PR #40 fixes cut the issue_check and consistency losses
-   (before: 8 and 3 of 24). M2 is met at 20 labelled v2 tasks.
-3. Labels so far, v2 (8 tasks, s45 to s48): 0.00: 3, 0.33: 2, 0.67: 2, 1.00: 1, mean 0.38. v1 rounds 20-27: mean
-   0.42. Not clearly harder yet; judge again with all 20+.
-4. In the day (2026-11-18), after the batch: finish the LAB sample (M3) in chunks of ~8 (inbox.md T46
-   "Continue 2"), then put v2 tasks through LAB's tool.
+1. When the batch ends: read every rejection of seeds 54-61 (so far 54: 1, 56: 1 rejected) and check the PR #40 fixes
+   cut the issue_check and consistency losses (before: 8 and 3 of 24). Restart the batch (seeds still missing) if the
+   watchdog killed it; with PR #41 code it logs every 10 min while waiting.
+2. M2: 24 v2 tasks accepted (s45-s57), 15 labelled: 0.00: 6, 0.33: 4, 0.67: 4, 1.00: 1, mean 0.33 (v1 rounds 20-27:
+   0.42). M2 is met once the batch labels seed 57 and seeds 49-53 (24 labelled).
+3. After the batch, in the day: finish the LAB sample (M3) in chunks of ~8 (inbox.md T46 "Continue 2"), then put
+   v2 tasks through LAB's tool. Only one heavy Opus job at a time: do not start LAB grading while the batch runs.
+4. If an NRP call stalls a batch again (no log line for an hour outside a wait), add a hard wall-clock cap per
+   solver call.
 
 ## Needs Sirui
 - Someone with legal training to read 10 tasks (EVALUATION.md level 1, human check). Not blocking batches.
