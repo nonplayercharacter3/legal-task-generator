@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-17 20:10, autopilot iteration 4.
+Last updated: 2026-11-17 23:35, autopilot iteration 5.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -41,18 +41,21 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- Labelling seeds 46-53 with Qwen (`ltg batch ... --label-config configs/pilot_nrp_solver.toml --seeds 46-53`, finished
-  seeds skipped), PID 66636 (caffeinate), log `runs/label-v2-2026-11-17.log`. Started 19:59, ~8 min per task, 13 tasks:
-  ends ~21:45. Commits "Labels for seed N" to main itself.
-- Queued behind it: v2 generation batch seeds 54-61 with labels after each seed, waiter PID 71591 (starts when 66636
-  exits), log `runs/gen-v2-54-61.log`, stop file `runs/.batch.stop`. ~70 min per seed: ends ~07:00 on 2026-11-18.
+- One batch, PID 35148 (caffeinate), log `runs/gen-v2-54-61.log`, started 23:30: generates seeds 54-61 on
+  `pilot_generate_v2.toml` with Qwen labels after each seed, then labels the 6 unlabelled tasks of seeds 49-53.
+  ~70 min per seed: generation ends ~09:00 on 2026-11-18, labels ~10:30. Commits each seed to main itself.
+- The earlier labeller (PID 66636) hung on one NRP call from 22:14 to 23:27 (s49-m0002 attempt 3) and was then
+  killed from outside this session, leaving a stale `runs/.batch.lock`; the queued 54-61 waiter hit the lock and
+  exited. Lock removed, everything restarted as one batch. Seeds 46-48 labelled (8 tasks), 49-53 not yet.
 
 ## Next
-1. When labelling ends: read the 13 labels (pass-rate spread for v2 vs v1; is v2 harder?). Note in LOG.md that seeds
-   46-53 were labelled with 40 steps (PR #38).
+1. Check the batch at ~03:30 (a stuck NRP call can stall it: no log line for over an hour means stuck). If it
+   happens again, add a hard wall-clock cap per solver call (the 3600 s `max_seconds` check did not end this one).
 2. When seeds 54-61 end: read every rejection; check the PR #40 fixes cut the issue_check and consistency losses
-   (before: 8 and 2 false-ish of 24). M2 is met at 20 labelled v2 tasks.
-3. In the day (2026-11-18), while no generation runs: finish the LAB sample (M3) in chunks of ~8 (inbox.md T46
+   (before: 8 and 3 of 24). M2 is met at 20 labelled v2 tasks.
+3. Labels so far, v2 (8 tasks, s45 to s48): 0.00: 3, 0.33: 2, 0.67: 2, 1.00: 1, mean 0.38. v1 rounds 20-27: mean
+   0.42. Not clearly harder yet; judge again with all 20+.
+4. In the day (2026-11-18), after the batch: finish the LAB sample (M3) in chunks of ~8 (inbox.md T46
    "Continue 2"), then put v2 tasks through LAB's tool.
 
 ## Needs Sirui

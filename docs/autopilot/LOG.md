@@ -52,3 +52,14 @@ Dated, append-only. One entry per iteration.
   different and keeps its reasons in gates.json; the ledger writer tests each half of a two-document issue alone.
 - Started labelling seeds 46-53 (PID 66636), queued seeds 54-61 behind it (waiter PID 71591).
 - Issue #36 header now says main b78f204, with a comment that the fixes are on main; his command is unchanged.
+
+## 2026-11-17 23:26, iteration 5
+- Labeller PID 66636 made no progress after 22:14 (s49-m0002, attempt 3; attempt 2 had taken 47 min). NRP answered
+  a tiny request in 0.9 s at 23:28, so the connection was dead, not NRP. At 23:27 the process ended from outside this
+  session (someone else killed it; no finally ran) and left `runs/.batch.lock`; the 54-61 waiter (71591) then found
+  the lock and exited at 23:27:58. Removed the empty lock folder and started one batch: `--seeds 54-61,49-53`
+  (PID 35148, log `runs/gen-v2-54-61.log`), so the night goes to generation and seeds 49-53 get labelled after.
+- Seeds 46-48 were labelled with 40 solver steps (PR #38, `labelled_by.solver_max_steps`).
+- v2 labels so far (s45-s48, 8 tasks): 0.00: 3, 0.33: 2, 0.67: 2, 1.00: 1 (mean 0.38; v1 rounds 20-27 mean 0.42).
+- Open question: the `max_seconds` check runs only when a line arrives, and the 600 s socket timeout did not fire
+  either, so one call can stall a batch indefinitely. Fix if it recurs.
