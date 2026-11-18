@@ -42,6 +42,12 @@ Rules:
   own, with no sign of the other, and each `detect_terms` list comes from the wording of its own half. The
   description names both provisions and what they do together; `expected_finding` states the combined conclusion.
   Both documents must be non-distractor. Every other issue has `doc2` and `section2` null and `detect_terms2` [].
+  Test each half alone: if one clause already hurts the client by itself (a one-sided assignment right, an
+  overbroad exclusivity, a narrow warranty, an uncapped assumption, a clause that says "notwithstanding" the other
+  document's provision), it is a one-document issue, even when the other document shows a different deal was
+  planned (a term sheet) or supplies background. A two-document issue needs each half to be harmless, even
+  favourable, on its own: a cap and its carve-outs in one, a definition or precedence rule in the other that
+  quietly changes what they cover.
 - Make issues require analysis, not just spotting. At most one issue may be visible from a single clause read on
   its own (a plainly one-sided clause). Every other issue must appear only when two provisions or two documents are
   read together: a carve-out that swallows a cap through a cross-reference, a precedence clause that lets the flawed

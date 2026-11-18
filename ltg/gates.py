@@ -237,8 +237,23 @@ def consistency(client: ModelClient, ledger: Ledger, docs: Documents) -> GateRes
         source = {**{f.id: owner[f.doc] for f in ledger.facts}, **{d.filename: f"{d.kind} ({d.filename})" for d in ledger.documents}}
         pairs = [{"id": str(k), "fact": differ[k]["key"], "ledger": differ[k]["ledger"], "ledger_in": source[differ[k]["fact"]],
                   "document": differ[k]["document"], "document_in": source.get(differ[k]["filename"], differ[k]["filename"])} for k in worded]
-        out = call_json(client, "fact_matcher", prompts.FACT_MATCHER, render_input({"pairs": pairs}))
-        same = {int(r["id"]) for r in out.get("results", []) if r.get("same") is True and str(r.get("id", "")).isdigit()}
+        reasons: dict[int, list[str]] = {}
+
+        def match(ps):
+            out = call_json(client, "fact_matcher", prompts.FACT_MATCHER, render_input({"pairs": ps}))
+            rs = [r for r in out.get("results", []) if str(r.get("id", "")).isdigit()]
+            for r in rs:
+                reasons.setdefault(int(r["id"]), []).append(str(r.get("reason", "")))
+            return {int(r["id"]) for r in rs if r.get("same") is True}
+
+        same = match(pairs)
+        # One verdict over many pairs is noisy: in seeds 46 and 49 the matcher called a forum clause and a survival
+        # clause different, then the same twice each when asked again. A mismatch rejects only if a focused second look agrees.
+        if again := [p for p in pairs if int(p["id"]) not in same]:
+            same |= match(again)
+        for k in worded:
+            if k not in same and k in reasons:
+                differ[k]["matcher"] = reasons[k]  # why, in gates.json (seed 46: the grounds were not on disk)
     mismatches = [d for k, d in enumerate(differ) if k not in same]
     return GateResult(
         "consistency",
