@@ -1,0 +1,170 @@
+{
+  "matter_id": "s60-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 1.4: \"'Authorized User' means an individual employee of Licensee or its Affiliates whom Licensee has authorized to access and use the Platform...\" Section 2.3: \"The Platform may be accessed and used only by Authorized Users.\" Order Form Part B, Line 6: \"Driver Mobile seats (carrier drivers) | Authorized Users for drivers of Licensee's contracted third-party carriers ... | 400 seats\". Section 18.3: \"The Order Form controls only with respect to fees and quantities.\"",
+            "reason": "The Order Form buys 400 seats for third-party carrier drivers and calls them Authorized Users. Those drivers are not employees of Napais or its Affiliates, so they fall outside the Agreement's definition. Section 18.3 lets the Order Form control only fees and quantities, so the Agreement's employee-only definition governs who may use the Platform. Carrier-driver use for which Napais paid $57,600 a year is therefore outside the license. It also risks breaching Section 2.4(c), which bars making the Platform available to third parties. Nothing in the Side Letter or elsewhere in the folder cures this or records a waiver. The Agreement expired in 2026, but the problem is still actionable. Licensor can still bring a claim for past unlicensed use, and the Section 11 indemnity and the related exclusion for use in breach of the Agreement both survive. The exposure is also relevant to Napais's sale to Kelderhorn, and Napais has not accepted any result that would close the point.",
+            "alone": {
+              "napais_baivusk_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "1.4 \"Authorized User\" means an individual employee of Licensee or its Affiliates whom Licensee has authorized to access and use the Platform and to whom Licensee has issued user credentials.",
+                "reason": "On its own, this agreement limits Platform use to employees of Licensee or its Affiliates (Sections 1.4 and 2.3). Section 18.3 lets the Order Form control only as to fees and quantities. Nothing here, however, shows that Napais plans to give access to drivers of third-party contracted carriers, or that it has bought seats for them. That fact comes only from the Order Form (D5 Part B). Read alone, the employee-only definition looks like an ordinary restriction, and there is no visible conflict or harm to the client."
+              },
+              "coldtrace_order_form_001.md": {
+                "findable": false,
+                "evidence": "Driver Mobile seats (carrier drivers) | Authorized Users for drivers of Licensee's contracted third-party carriers hauling Licensee-controlled refrigerated trailers under Licensee's brokerage and power-only programs | 400 seats",
+                "reason": "The Order Form on its own shows that Napais bought 400 seats for third-party carrier drivers and labels them Authorized Users. Read by itself, that looks like an ordinary purchase of seats for those drivers. Authorized User is not defined here; the form says undefined capitalized terms take their meaning from the Agreement. The form also does not show three Agreement provisions the problem depends on: the employee-only definition in Section 1.4, the limit in Section 2.3 restricting use to Authorized Users, and the precedence clause in Section 18.3 limiting the Order Form's control to fees and quantities. Without the Agreement, an associate could not see that carrier drivers fall outside the license or that the Agreement's definition overrides the Order Form's description."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "SLA §12.2: \"Renewal will not occur if either party gives the other written notice of non-renewal at least 120 days before the end of the then-current term.\" Napais letter, dated November 14, 2025, ¶2.1–2.2: \"Licensee hereby gives Licensor written notice of non-renewal... Licensee intends that the Agreement... will expire at the end of the Initial Term on February 28, 2026.\"",
+            "reason": "The 36-month Initial Term under §12.1 runs from March 1, 2023 to February 28, 2026. The 120-day non-renewal deadline under §12.2 therefore fell on October 31, 2025. Napais's notice is dated November 14, 2025, and under §18.4 a notice is effective only on receipt, so it arrived at least two weeks late. Nothing in the folder cures this. There is no waiver or amendment from Baivusk (§18.2 requires a signed writing), and no agreement accepting the late notice. As a result, Baivusk can treat the Agreement as having auto-renewed for a 24-month Renewal Term through February 2028. Napais, as Licensee, would then be bound to: (a) roughly $684,000 a year in subscription fees; (b) the Side Letter's exclusivity, which runs for the Term plus 12 months; and (c) Baivusk's consent right over the Kelderhorn change of control. All of this cuts against Napais's stated plan to move onto Kelderhorn's systems. No document shows Napais accepting the renewal, for example by paying renewal-term fees or signing a restated agreement. Its letter records an objection to continuing and expressly reserves its rights. The issue therefore remains live and actionable: Napais can negotiate with Baivusk, seek an express waiver or termination, or rely on other exit routes.",
+            "alone": {
+              "napais_baivusk_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "12.2 Renewal. At the end of the Initial Term, this Agreement will renew automatically for successive 24-month periods (each, a \"Renewal Term\"). Renewal will not occur if either party gives the other written notice of non-renewal at least 120 days before the end of the then-current term.",
+                "reason": "From this agreement alone, an associate can work out that the Initial Term ends February 28, 2026, that the non-renewal notice deadline is about October 31, 2025, and that the agreement renews automatically for 24 months if no timely notice is given. That is a deadline to diarize, not a problem. Nothing here shows that Napais missed the deadline or sent notice late. The fact that creates the problem is Napais's November 14, 2025 notice letter, which is in another document. Without that date, there is no evidence of a lapse or of harm to the client."
+              },
+              "napais_letter_to_baivusk_nov_2025.md": {
+                "findable": false,
+                "evidence": "Under Section 12.2 of the Agreement, Licensee elects not to renew the Agreement. Licensee hereby gives Licensor written notice of non-renewal.",
+                "reason": "The letter alone shows it is dated November 14, 2025, invokes Section 12.2, and seeks expiration at the end of the Initial Term on February 28, 2026. It does not say what notice period Section 12.2 requires, or that the Agreement renews automatically for 24-month terms. Without the Agreement's 120-day requirement, which sets an October 31, 2025 deadline, an associate reading only this letter could not tell that the notice is late or that Napais may be bound to a renewal term."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 15.2: \"Notwithstanding Section 15.1, Licensor may assign or transfer this Agreement, in whole or in part, without Licensee's consent: (a) to any Affiliate; or (b) to any successor to all or any part of its business, whether by merger, acquisition, sale of assets or equity, or otherwise. Licensor shall give Licensee written notice within 30 days after any such assignment.\"",
+            "reason": "Section 15.2 lets Baivusk assign freely, including partial assignments to a buyer of any part of its business. It has no carve-out for Napais competitors and gives Napais no consent or termination right; Napais gets only after-the-fact notice. Napais's own assignments and changes of control, by contrast, need Baivusk's consent under Section 15.1. Baivusk hosts Napais's Customer Data, including shipment, route and customer/consignee records, and the Section 6 and 9 protections bind whoever the assignee is. A cold-chain competitor that bought ColdTrace would therefore hold that data and the contract. The issue is still live. Napais's non-renewal notice of November 14, 2025 came after the 120-day deadline of about October 31, 2025 under Section 12.2. The agreement therefore appears to have auto-renewed for a 24-month Renewal Term through February 2028, and nothing in the folder shows the parties agreed to an earlier expiry. The data obligations in Sections 6 and 9 also survive. So the one-sided assignment right remains a real, actionable exposure for Napais, which should seek a competitor carve-out and a termination or data-protection right."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Agreement §15.1: \"Any change of control of Licensee, whether by sale of equity, merger, consolidation or otherwise, is deemed an assignment requiring Licensor's prior written consent. Any purported assignment in breach of this Section 15.1 is void.\" Letter ¶1.1: \"Under that agreement, Kelderhorn will acquire 100% of the membership interests of Licensee, subject to customary closing conditions.\"",
+            "reason": "The Kelderhorn acquisition of 100% of Napais's equity is a change of control. Under §15.1 it is deemed an assignment that needs Baivusk's prior written consent. Under §13.2(c), closing without consent lets Baivusk terminate immediately and treat the transfer as a breach. The November 14, 2025 letter only discloses the deal and gives notice of non-renewal; it does not ask for consent. Nothing else in the folder shows consent was sought, obtained or waived. The obligation sits on Napais, the client, so the breach risk is Napais's. The issue is not moot just because the term was set to end on February 28, 2026: the closing date is not recorded, and closing before expiration or during the 90-day transition period would put Napais in breach. That breach could expose Napais to damages and early termination of the transition services and data export it requested. Some Side Letter and Agreement obligations also survive and bind Napais's permitted successors only. Nothing in the folder shows Napais has accepted or resolved this, so it should still be raised and closed out, for example by getting Baivusk's consent or a written waiver.",
+            "alone": {
+              "napais_baivusk_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "Any change of control of Licensee, whether by sale of equity, merger, consolidation or otherwise, is deemed an assignment requiring Licensor's prior written consent.",
+                "reason": "This license shows only the contract terms. Section 15.1 treats a change of control as an assignment that needs Baivusk's prior written consent, and Section 13.2(c) lets Baivusk terminate immediately for a non-consented assignment. Read alone, that is an ordinary anti-assignment and change-of-control clause. The client description says Napais is being acquired, but the agreement itself does not show that a change of control is actually happening. The key facts come from the other document: the October 30, 2025 Equity Purchase Agreement, Kelderhorn's purchase of 100% of the membership interests, and the fact that no consent has been requested. The license also says a Side Letter (Section 1.8) controls over the agreement (Section 18.3), and that letter is not provided. It could change these terms. So an associate reading only this document could flag the clause as a deal risk in general, but could not confirm that it is triggered or unaddressed."
+              },
+              "napais_letter_to_baivusk_nov_2025.md": {
+                "findable": false,
+                "evidence": "On October 30, 2025, Licensee and its members entered into an Equity Purchase Agreement with Kelderhorn Cold Freight Holdings, Inc. (\"Kelderhorn\"). Under that agreement, Kelderhorn will acquire 100% of the membership interests of Licensee, subject to customary closing conditions.",
+                "reason": "The letter alone shows a pending change of control of Napais: Kelderhorn will buy 100% of its membership interests. It also shows that the letter does not ask Baivusk for consent. It does not show that the Agreement treats a change of control as an assignment needing Licensor's prior written consent (Section 15.1). Nor does it show that Baivusk can terminate immediately for an unconsented assignment (Section 13.2(c)). The letter never cites Section 15 or any consent or assignment clause. It cites only the non-renewal, transition, data and fee sections. An associate might wonder about a consent right in general, but could not tell from this letter that one exists or that it puts the client at risk. That part comes only from the license agreement, which is not provided."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Side Letter §2.1: \"During the Term, and for 12 months after the expiration or termination of the Agreement, Licensee shall not license, develop or use any temperature monitoring, warehouse management, yard management or transportation management software from any provider other than Licensor, in any jurisdiction worldwide. Licensee shall cause each of its Affiliates to comply with the same restriction.\"",
+            "reason": "The problem is present and still actionable for Napais. The Term Sheet (§4.1, §4.3) agreed exclusivity only for temperature telemetry software on Napais's US refrigerated trailer fleet, during the term, and expressly left other software unrestricted. The Side Letter instead extends the restriction to warehouse, yard and transportation management software, worldwide, for a 12-month tail, and binds Affiliates. License Agreement §18.3 makes the Side Letter prevail over the Agreement. License Agreement §1.2 defines Affiliates by common control 'from time to time', so after Kelderhorn acquires 100% of Napais, Kelderhorn and its group become Affiliates. The obligation falls on Napais. Napais gave non-renewal notice, so the Agreement expired February 28, 2026, with up to 90 days of transition after that. The 12-month tail therefore runs to roughly February 2027 or later, and it is still running today (November 2026). Napais's stated plan to move to Kelderhorn group systems would breach the clause, and the §2.3 duty to notify Baivusk of discussions with other providers is also live. Nothing in the folder cures, narrows or waives the restriction, and Napais's November 2025 letter expressly reserves its rights under the Side Letter."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Side Letter Section 5.1: \"This Side Letter is governed by the laws of the State of New York, without regard to its conflict of laws principles.\" Section 5.2: \"Each party irrevocably submits to the exclusive jurisdiction of the state or federal courts located in New York County, New York, for any action arising out of or relating to this Side Letter.\" License Agreement Sections 17.1 and 17.2 choose Delaware law and the exclusive jurisdiction of the New Castle County courts. Section 18.3 says: \"first the Side Letter, then this Agreement.\"",
+            "reason": "The Side Letter picks New York law and an exclusive New York forum. The License Agreement picks Delaware law and an exclusive Delaware forum. The term sheet also called for Delaware. Section 18.3 makes the Side Letter control over the License Agreement, so the main agreement's choice does not cure the conflict. A dispute over exclusivity or pricing would go to New York, while related license issues would go to Delaware. That creates a risk of parallel proceedings and inconsistent results. The problem is still live for Napais. The Agreement expires on February 28, 2026, but the exclusivity restriction in Section 2.1 continues for 12 months after expiration, to about February 2027. It also binds Affiliates, which after closing could reach the Kelderhorn group. The Kelderhorn acquisition and the planned move to Kelderhorn's systems make a dispute with Baivusk over exclusivity likely. Napais's November 2025 letter expressly reserves its rights under the Side Letter, and nothing in the folder shows that Napais accepted or waived the forum split."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C7 asks for the whole ranking in fact F5 ('Side Letter, then License Agreement, then Order Form; Order Form controls only fees and quantities'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

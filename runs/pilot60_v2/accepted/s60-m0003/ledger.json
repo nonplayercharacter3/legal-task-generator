@@ -1,0 +1,260 @@
+{
+  "matter_id": "s60-m0003",
+  "summary": "Napais Cold Chain Logistics, LLC, a US refrigerated trucking and cold storage operator and the firm's client, licenses the ColdTrace temperature telemetry and fleet monitoring platform from Baivusk Software, Inc. under a Software License Agreement effective March 1, 2023. A same-day Side Letter, a pre-signing Term Sheet and an Order Form sit alongside it. On October 30, 2025 Napais signed an Equity Purchase Agreement under which Kelderhorn Cold Freight Holdings, Inc. will acquire all of Napais's membership interests. Napais then sent Baivusk a non-renewal notice dated November 14, 2025, which records that sale. The partner wants a memo spotting the issues in the Baivusk relationship before closing. The folder also holds two distractors: a reefer trailer maintenance agreement with an unrelated vendor and an earlier Napais-Baivusk mutual NDA.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Napais Cold Chain Logistics, LLC",
+      "role": "Licensee; firm's client; refrigerated carrier and cold storage operator being acquired"
+    },
+    {
+      "id": "P2",
+      "name": "Baivusk Software, Inc.",
+      "role": "Licensor of the ColdTrace temperature telemetry and fleet monitoring platform"
+    },
+    {
+      "id": "P3",
+      "name": "Kelderhorn Cold Freight Holdings, Inc.",
+      "role": "Buyer of 100% of Napais's membership interests under the October 30, 2025 Equity Purchase Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Ostrander Reefer Services, LLC",
+      "role": "Unrelated vendor providing refrigeration unit maintenance to Napais (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "March 1, 2023",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Software License Agreement Initial Term",
+      "value": "36 months beginning on the Effective Date",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F3",
+      "key": "Software License Agreement non-renewal notice period",
+      "value": "at least 120 days before the end of the then-current term",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F4",
+      "key": "Software License Agreement Renewal Term",
+      "value": "successive 24-month periods",
+      "doc": "D1",
+      "section": "12.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Side Letter, then License Agreement, then Order Form; Order Form controls only fees and quantities",
+      "doc": "D1",
+      "section": "18.3"
+    },
+    {
+      "id": "F6",
+      "key": "Software License Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "17.1"
+    },
+    {
+      "id": "F7",
+      "key": "Software License Agreement forum",
+      "value": "state or federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "17.2"
+    },
+    {
+      "id": "F8",
+      "key": "Term Sheet agreed exclusivity scope",
+      "value": "temperature telemetry software for Napais's United States refrigerated trailer fleet",
+      "doc": "D3",
+      "section": "4"
+    },
+    {
+      "id": "F9",
+      "key": "Order Form annual subscription fee",
+      "value": "$684,000",
+      "doc": "D5",
+      "section": "Part C"
+    },
+    {
+      "id": "F10",
+      "key": "Non-renewal notice letter date",
+      "value": "November 14, 2025",
+      "doc": "D4",
+      "section": "Date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "napais_baivusk_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "baivusk_side_letter_2023.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "coldtrace_license_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "napais_letter_to_baivusk_nov_2025.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "coldtrace_order_form_001.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "ostrander_reefer_maintenance_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D7",
+      "filename": "napais_baivusk_mutual_nda_2023.md",
+      "kind": "mutual nondisclosure agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Two provisions in D1 work together with the Order Form. D1 Section 1.4 defines \"Authorized User\" as an individual employee of Licensee or its Affiliates. D1 Section 2.3 permits use of the platform only by Authorized Users. D5 Part B buys 400 Driver Mobile seats described as Authorized Users for drivers of Licensee's contracted third-party carriers. Each document reads normally on its own. However, D1 Section 18.3 gives the Order Form control only over fees and quantities, so D1's employee-only definition governs. Napais's planned use by carrier drivers would therefore exceed the license even though Napais is paying for those seats.",
+      "doc": "D1",
+      "section": "1.4",
+      "detect_terms": [
+        "individual employee of Licensee"
+      ],
+      "expected_finding": "Because D1 Section 1.4 limits Authorized Users to employees and D1 Section 18.3 lets the Order Form control only fees and quantities, the 400 carrier-driver seats in the Order Form are not licensed uses, so their planned use would breach Section 2.3; the definition should be amended to cover contractors and carrier drivers.",
+      "contradicts": null,
+      "doc2": "D5",
+      "section2": "Part B",
+      "detect_terms2": [
+        "contracted third-party carriers"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "D1 Section 12.1 sets a 36-month Initial Term from the March 1, 2023 Effective Date, so the Initial Term ends February 28, 2026. D1 Section 12.2 renews the agreement automatically for 24-month Renewal Terms unless a party gives non-renewal notice at least 120 days before the term ends. That makes the deadline October 31, 2025. D4, Napais's letter dated November 14, 2025, gives notice of non-renewal effective at the end of the Initial Term, two weeks after the deadline. Neither document shows a problem on its own; only computing D1's dates against D4's date shows the lapse. D4 records Napais's position that the agreement should end. No document shows Napais accepting a renewal.",
+      "doc": "D1",
+      "section": "12.2",
+      "detect_terms": [
+        "at least 120 days",
+        "successive 24-month"
+      ],
+      "expected_finding": "Napais's November 14, 2025 notice missed the October 31, 2025 deadline (120 days before the February 28, 2026 end of the Initial Term), so under D1 Section 12.2 the agreement auto-renews through February 29, 2028 unless Napais obtains Baivusk's written waiver or a negotiated termination.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Paragraph 2",
+      "detect_terms2": [
+        "elects not to renew"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "D1 Section 15.2 lets Baivusk assign the agreement, in whole or in part and notwithstanding Section 15.1, without Licensee's consent to any Affiliate or to any successor to all or any part of its business. The clause has no carve-out for competitors of Napais. Napais's own assignments, by contrast, need Baivusk's consent under Section 15.1. Under this clause the license, together with Napais's shipment and temperature data held on the platform, could pass to a cold chain competitor that buys Baivusk or its ColdTrace line. Napais would have no consent or termination right.",
+      "doc": "D1",
+      "section": "15.2",
+      "detect_terms": [
+        "without Licensee's consent",
+        "any successor to all or any part of its business"
+      ],
+      "expected_finding": "D1 Section 15.2 lets Baivusk assign freely, including to a Napais competitor that would then hold Napais's operational data, so it should be conditioned on Napais's consent (or at least exclude competitors and give Napais a termination right on assignment).",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "D1 Section 15.1 states that any change of control of Licensee is deemed an assignment requiring Licensor's prior written consent. D1 Section 13.2(c) lets Baivusk terminate immediately if Licensee assigns without that consent. On its own, D1 is an ordinary anti-assignment clause. D4 (the November 14, 2025 letter) records that Napais signed an Equity Purchase Agreement on October 30, 2025 under which Kelderhorn Cold Freight Holdings, Inc. will acquire 100% of the membership interests of Napais. D4 does not request consent. Read together, the pending closing will trigger Baivusk's consent right, and nothing in the folder shows that the right has been obtained or addressed.",
+      "doc": "D1",
+      "section": "15.1",
+      "detect_terms": [
+        "deemed an assignment requiring Licensor's prior written consent"
+      ],
+      "expected_finding": "The Kelderhorn acquisition recorded in D4 is a change of control deemed an assignment under D1 Section 15.1 and needs Baivusk's prior written consent, which has not been sought; closing without it gives Baivusk a termination right under Section 13.2(c), so consent should be obtained before closing (or made a closing condition).",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Paragraph 1",
+      "detect_terms2": [
+        "100% of the membership interests"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "The D3 Term Sheet limits agreed exclusivity to temperature telemetry software for Napais's US refrigerated trailer fleet. D2 Section 2 goes much further. It bars Napais and its Affiliates from licensing, developing or using any temperature monitoring, warehouse management, yard management or transportation management software from any other provider in any jurisdiction worldwide, during the term and for 12 months after. D1 Section 18.3 makes the Side Letter prevail over the License Agreement, so this broader clause controls. D1 Section 1.2 defines Affiliates as entities under common control from time to time. After the Kelderhorn closing, the restriction would therefore reach the buyer's entire group.",
+      "doc": "D2",
+      "section": "2",
+      "detect_terms": [
+        "in any jurisdiction worldwide",
+        "warehouse management, yard management or transportation management software"
+      ],
+      "expected_finding": "D2 Section 2 extends exclusivity well beyond the Term Sheet's US trailer-fleet telemetry scope in products, territory, entities and duration, and because the Side Letter prevails and Affiliates include future controlling entities it will bind Kelderhorn's group after closing; it should be narrowed to the Term Sheet scope.",
+      "contradicts": "F8",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I6",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "D2 Section 5 states that the Side Letter is governed by New York law. It also submits disputes to the exclusive jurisdiction of the courts located in New York County. D1 Sections 17.1 and 17.2 choose Delaware law and the courts in New Castle County, Delaware. D1 Section 18.3 makes the Side Letter prevail over the License Agreement, so the main agreement's choice does not cure the conflict. The result is that disputes over the Side Letter's exclusivity and pricing terms are pulled into a different law and forum from the rest of the license, which invites parallel proceedings and inconsistent results.",
+      "doc": "D2",
+      "section": "5",
+      "detect_terms": [
+        "laws of the State of New York",
+        "courts located in New York County"
+      ],
+      "expected_finding": "The Side Letter's New York law and forum clause conflicts with the License Agreement's Delaware choice and, because the Side Letter prevails under D1 Section 18.3, splits governing law and forum for the core economic terms; it should be conformed to Delaware law and New Castle County courts.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

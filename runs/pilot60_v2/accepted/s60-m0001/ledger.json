@@ -1,0 +1,276 @@
+{
+  "matter_id": "s60-m0001",
+  "summary": "Moseth Filtration Media, Inc. (client, Buyer) buys needle-punched polyester and PPS filter felt rolls for industrial baghouse filtration from Soumeir Nonwovens, LLC (Supplier) under a Supply Agreement effective January 6, 2025. The agreement is supported by an Order Form, a Service Level Schedule, a Parent Guaranty from Soumeir Industrial Holdings, Inc., and Amendment No. 1 dated September 15, 2026. Amendment No. 1 records two events: Supplier's June 2026 delivery failures, which Buyer disputes, and the pending sale of Buyer by its parent to Larchfield Capital Partners. The folder also holds two distractors: a forklift maintenance agreement and an outbound freight rate confirmation. The partner wants an issue-spotting memo under Delaware law.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Moseth Filtration Media, Inc.",
+      "role": "Buyer under the Supply Agreement; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Soumeir Nonwovens, LLC",
+      "role": "Supplier of needle-punched filter felt rolls"
+    },
+    {
+      "id": "P3",
+      "name": "Soumeir Industrial Holdings, Inc.",
+      "role": "Supplier's parent; guarantor under the Parent Guaranty"
+    },
+    {
+      "id": "P4",
+      "name": "Moseth Group Holdings, LLC",
+      "role": "Buyer's parent and seller of Buyer's equity under the pending stock purchase"
+    },
+    {
+      "id": "P5",
+      "name": "Larchfield Capital Partners, L.P.",
+      "role": "Proposed purchaser of all equity in Buyer"
+    },
+    {
+      "id": "P6",
+      "name": "Pellingham Equipment Services, Inc.",
+      "role": "Forklift maintenance vendor to Buyer (distractor counterparty)"
+    },
+    {
+      "id": "P7",
+      "name": "Rusk Valley Freight Lines, Inc.",
+      "role": "Outbound freight carrier to Buyer (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "January 6, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid or payable by Buyer in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement order of precedence",
+      "value": "Amendments; Service Level Schedule (as to service levels); Supply Agreement; Order Form; Purchase Orders",
+      "doc": "D1",
+      "section": "17.4"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement definition of Delivery Date",
+      "value": "date Products arrive at Buyer's Delivery Location",
+      "doc": "D1",
+      "section": "1.4"
+    },
+    {
+      "id": "F5",
+      "key": "Initial Term",
+      "value": "three years from the Supply Agreement Effective Date",
+      "doc": "D4",
+      "section": "2"
+    },
+    {
+      "id": "F6",
+      "key": "Chronic failure termination window",
+      "value": "60 days after the third Critical Delivery Failure in a rolling 90-day period",
+      "doc": "D5",
+      "section": "4.2"
+    },
+    {
+      "id": "F7",
+      "key": "Amendment No. 1 date",
+      "value": "September 15, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F8",
+      "key": "Date of third Critical Delivery Failure",
+      "value": "June 12, 2026",
+      "doc": "D2",
+      "section": "Recital B"
+    },
+    {
+      "id": "F9",
+      "key": "Stock Purchase Agreement date",
+      "value": "August 28, 2026",
+      "doc": "D2",
+      "section": "Recital C"
+    },
+    {
+      "id": "F10",
+      "key": "Parent Guaranty guarantor",
+      "value": "Soumeir Industrial Holdings, Inc.",
+      "doc": "D3",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement_moseth_soumeir.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_no_1_supply_agreement.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "parent_guaranty_soumeir_holdings.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "order_form_filter_felt.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "forklift_maintenance_agreement_pellingham.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "outbound_freight_rate_confirmation_rusk_valley.md",
+      "kind": "freight carrier rate confirmation",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Service Level Schedule §4.2 lets Buyer terminate for chronic failure only by notice given within sixty days after the third Critical Delivery Failure in a rolling 90-day period. Amendment No. 1 (D2) Recital B states that the third Critical Delivery Failure occurred on June 12, 2026, so the window closed on August 11, 2026. That is 35 days before the September 15, 2026 date of Amendment No. 1. The same recital records Buyer's position: Buyer has notified Supplier that it disputes Supplier's characterization of the June 2026 failures as excused force majeure. Buyer has therefore not accepted the result. However, nothing in Amendment No. 1 tolls, extends or revives the §4.2 termination right. Neither document shows the problem alone: the deadline is in D5 and the dates are in D2.",
+      "doc": "D5",
+      "section": "4.2",
+      "detect_terms": [
+        "within sixty (60) days after the third Critical Delivery Failure"
+      ],
+      "expected_finding": "Buyer's §4.2 chronic-failure termination right lapsed on August 11, 2026, sixty days after the June 12, 2026 third failure and before Amendment No. 1 was signed, and Amendment No. 1 does not extend it. Buyer should seek a written waiver or extension from Supplier, or pursue its other remedies, while preserving the dispute it has already raised.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Recital B",
+      "detect_terms2": [
+        "June 12, 2026",
+        "disputes Supplier's characterization"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Supply Agreement §11.2 excludes from the §11.1 cap Supplier's obligations under Section 10.1, which in the original agreement is Supplier's product-liability and third-party bodily-injury and property-damage indemnity. Amendment No. 1 §2 deletes Section 10.1 in its entirety and makes two changes: the product-liability indemnity is restated as a new Section 10.3, and a new Section 10.1 now holds only a narrow intellectual-property infringement indemnity. Amendment No. 1 makes no conforming change to §11.2 and has no deemed-reference language. Under §17.4 the amendment controls. Read together, the §11.2 carve-out now reaches only the IP indemnity. The product-liability indemnity in new §10.3 is subject to the 12-month-fees cap. This matters because a failed filter felt can cause baghouse fires or emissions claims.",
+      "doc": "D1",
+      "section": "11.2",
+      "detect_terms": [
+        "obligations under Section 10.1"
+      ],
+      "expected_finding": "Because Amendment No. 1 moved the product-liability indemnity to new Section 10.3 without updating the §11.2 carve-out that points to Section 10.1, Supplier's product-liability indemnity is now capped at 12 months' fees. §11.2 should be amended to carve out Section 10.3, or all indemnities under Section 10.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "2",
+      "detect_terms2": [
+        "Section 10.1 is deleted in its entirety",
+        "new Section 10.3"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Order Form §2 states a three-year Initial Term. It then renews the Order Form automatically for successive three-year Renewal Terms unless a party gives notice of non-renewal not more than 210 days and not less than 180 days before expiry. That leaves a 30-day opt-out window. Each Renewal Term carries forward the §3 minimum annual purchase commitment of $6,200,000 per Contract Year. A missed window would lock Buyer into three more years of take-or-pay volume.",
+      "doc": "D4",
+      "section": "2",
+      "detect_terms": [
+        "successive three (3) year Renewal Terms",
+        "not more than two hundred ten (210) days"
+      ],
+      "expected_finding": "The Order Form renews automatically for three-year terms, each carrying the $6.2 million annual minimum, unless Buyer uses a 30-day window that runs from 210 to 180 days before expiry. Buyer should calendar the window and negotiate a longer notice period, shorter renewal terms, or termination for convenience on renewal.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Supply Agreement §15.2 appears to restrict assignment. It lets Supplier assign without Buyer's consent only to an assignee that assumes Supplier's obligations in writing and whose obligations constitute Guaranteed Obligations under the Parent Guaranty. Parent Guaranty §1, however, defines Guaranteed Obligations to include the obligations of Supplier and of any assignee or transferee of Supplier. Any assignee therefore satisfies the condition automatically. Read together, Supplier may assign freely, including to a competitor of Buyer in filtration media. That competitor would receive Buyer's specifications, forecasts and pricing. Meanwhile Buyer's own assignment requires Supplier's consent.",
+      "doc": "D1",
+      "section": "15.2",
+      "detect_terms": [
+        "Guaranteed Obligations under the Parent Guaranty"
+      ],
+      "expected_finding": "Because the Parent Guaranty automatically covers any assignee of Supplier, the guaranty condition in §15.2 is illusory and Supplier can assign the Supply Agreement without Buyer's consent to anyone, including a Buyer competitor. Buyer should require its consent for any Supplier assignment, or at least bar assignment to competitors.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "1",
+      "detect_terms2": [
+        "any assignee or transferee of Supplier"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Supply Agreement §15.3 treats any Change of Control of Buyer, defined as a direct or indirect acquisition of more than 50% of Buyer's voting equity, as an assignment. Such a Change of Control requires the prior written consent of Supplier, and without consent Supplier may terminate on 30 days' notice. Amendment No. 1 (D2) Recital C records that Moseth Group Holdings, LLC has entered into a Stock Purchase Agreement dated August 28, 2026 to sell all equity in Buyer to Larchfield Capital Partners, L.P., with closing expected in the first quarter of 2027. Amendment No. 1 contains no consent or waiver. Its operative terms only amend specified sections and confirm that the agreement otherwise remains in effect. The consent therefore has not been obtained.",
+      "doc": "D1",
+      "section": "15.3",
+      "detect_terms": [
+        "Change of Control of Buyer",
+        "prior written consent of Supplier"
+      ],
+      "expected_finding": "The pending sale of Buyer to Larchfield under the August 28, 2026 Stock Purchase Agreement is a Change of Control requiring Supplier's prior written consent, and no consent has been obtained, so Supplier could terminate after closing. Buyer should obtain Supplier's written consent or waiver before closing.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Recital C",
+      "detect_terms2": [
+        "Stock Purchase Agreement dated August 28, 2026"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Supply Agreement §1.4 defines Delivery Date as the date Products arrive at Buyer's Delivery Location. Service Level Schedule §1.3 defines Delivery Date as the date Supplier tenders the Products to the carrier at Supplier's facility. The Schedule uses that definition to measure On-Time Delivery, Service Credits and Critical Delivery Failures. Supply Agreement §17.4 makes the Service Level Schedule prevail over the Supply Agreement as to service levels, so the shipment-based definition controls. In-transit delays by Supplier's carrier therefore never count against the service levels. This reduces Buyer's Service Credits and makes chronic-failure termination harder to trigger.",
+      "doc": "D5",
+      "section": "1.3",
+      "detect_terms": [
+        "tenders the Products to the carrier"
+      ],
+      "expected_finding": "Because §17.4 gives the Service Level Schedule priority on service levels, its shipment-based Delivery Date overrides the Supply Agreement's arrival-based definition, so late arrivals caused by transit delays escape Service Credits and Critical Delivery Failure counting. The Schedule should be conformed to measure delivery on arrival at Buyer's Delivery Location.",
+      "contradicts": "F4",
+      "doc2": "D1",
+      "section2": "1.4",
+      "detect_terms2": [
+        "arrive at the Delivery Location"
+      ]
+    }
+  ]
+}

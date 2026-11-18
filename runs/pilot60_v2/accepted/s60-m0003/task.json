@@ -1,0 +1,122 @@
+{
+  "task_id": "s60-m0003",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "Napais Cold Chain Logistics, LLC, our client, is being acquired. It needs a clear picture of where it stands under its software license arrangements with Baivusk Software, Inc. Please review all seven documents in the folder and write me a memo. For each issue, state where it appears (document and section), why it matters to Napais, and the fix you recommend. Keep it practical; I'll use it to advise the client.",
+  "documents": [
+    "baivusk_side_letter_2023.md",
+    "coldtrace_license_term_sheet.md",
+    "coldtrace_order_form_001.md",
+    "napais_baivusk_mutual_nda_2023.md",
+    "napais_baivusk_software_license_agreement.md",
+    "napais_letter_to_baivusk_nov_2025.md",
+    "ostrander_reefer_maintenance_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the Software License Agreement limits Authorized Users to individual employees of Napais or its Affiliates, so the Order Form's 400 Driver Mobile seats for drivers of contracted third-party carriers are not licensed uses and using them that way would exceed the license. It identifies where the issue appears (Software License Agreement Section 1.4 or Order Form Part B), explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "individual employee of Licensee",
+        "contracted third-party carriers",
+        "400 Driver Mobile seats"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that Napais's November 14, 2025 non-renewal notice missed the October 31, 2025 deadline (120 days before the Initial Term ends on February 28, 2026), so the License Agreement auto-renews for a 24-month Renewal Term (through February 29, 2028). It identifies where the issue appears (Software License Agreement Section 12.2 or the November 14, 2025 letter), explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "October 31, 2025",
+        "auto-renew",
+        "24-month Renewal Term"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that Baivusk may assign the License Agreement without Napais's consent to any Affiliate or successor, including a Napais competitor that would then hold Napais's data. It identifies where the issue appears (Software License Agreement Section 15.2), explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without Licensee's consent",
+        "competitor",
+        "Section 15.2"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Kelderhorn's acquisition of 100% of Napais's membership interests is a change of control deemed an assignment that requires Baivusk's prior written consent, that consent has not been sought, and closing without it gives Baivusk a termination right. It identifies where the issue appears (Software License Agreement Section 15.1 or the November 14, 2025 letter), explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "change of control",
+        "prior written consent",
+        "Kelderhorn"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that the Side Letter's exclusivity clause goes well beyond the Term Sheet's agreed scope (temperature telemetry software for Napais's US refrigerated trailer fleet) and that, after closing, it would bind Kelderhorn's group as Affiliates. It identifies where the issue appears (Side Letter Section 2), explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "worldwide",
+        "warehouse management",
+        "Term Sheet"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response concludes that the Side Letter's New York governing law and New York County forum clause conflicts with the License Agreement's Delaware law and New Castle County forum, splitting law and forum across the arrangement. It identifies where the issue appears (Side Letter Section 5), explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York",
+        "Delaware",
+        "New Castle County"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that under the License Agreement's order of precedence the Side Letter prevails over the License Agreement.",
+      "kind": "fact",
+      "hints": [
+        "Side Letter prevails",
+        "order of precedence",
+        "Section 18.3"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is written as a memo to the supervising partner, and each issue is presented separately with its document and section.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Issue 1"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Napais's November 14, 2025 notice was a timely non-renewal notice that ends the License Agreement at the end of the Initial Term.",
+      "kind": "negative",
+      "hints": [
+        "timely notice",
+        "terminates February 28, 2026"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the Order Form's description of the Driver Mobile seats controls over the License Agreement's Authorized User definition, so carrier drivers are licensed users.",
+      "kind": "negative",
+      "hints": [
+        "Order Form controls",
+        "carrier drivers are licensed"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

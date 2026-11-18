@@ -1,0 +1,102 @@
+{
+  "matter_id": "s60-m0002",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I2\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I2"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Escrow Agreement §12.1: \"This Agreement, and all claims arising out of or relating to it, shall be governed by and construed in accordance with the internal laws of the State of Delaware...\" §12.2: \"Notwithstanding any other agreement among the parties, any suit, action or proceeding arising out of or relating to this Agreement, the Escrow Funds, or the entitlement of any party to all or any part of the Escrow Funds shall be brought exclusively in the Court of Chancery of the State of Delaware.\" Compare SPA §11.6 (New York law), §11.7 (exclusive New York County courts for disputes under the SPA and \"any Ancillary Agreement\"), and §11.9 (\"the Escrow Agreement shall govern the holding and release of the Escrow Funds\").",
+            "reason": "The conflict is real. The SPA sends disputes under it and every Ancillary Agreement, including the Escrow Agreement, to New York courts under New York law. The Escrow Agreement overrides that \"notwithstanding any other agreement\" and sends escrow entitlement disputes to Delaware under Delaware law. SPA §11.9 does not fix this. It defers to the Escrow Agreement on holding and release of the funds, which strengthens the Delaware forum for release fights. Buyer is hurt most. Escrow release needs Joint Written Instructions or a Final Order, and under SPA §9.6 the $8.64M escrow is Buyer's first source of recovery. So Buyer could win a New York judgment on the merits and still have to get a separate Delaware Final Order to release the funds. That means parallel proceedings, possibly inconsistent results, and delay. This is still actionable: there is an open working-capital dispute (Side Letter §3) and indemnity claims may still come. The Side Letter does not amend the Escrow Agreement, and an amendment would need the Escrow Agent's signature under §13.3. Nothing in the folder shows Buyer accepted a result that would close the issue."
+          },
+          {
+            "issue": "I2",
+            "present": false,
+            "evidence": "SPA §9.1: \"The representations and warranties in this Agreement shall survive the Closing until the General Survival Date\"; SPA §1.1: \"'General Survival Date' means the Escrow Release Date, as defined in the Escrow Agreement\"; Escrow Agreement §5.1: \"The 'Escrow Release Date' is the date that is ninety (90) days after the Closing Date.\" Side Letter §2.3 (Nov. 20, 2025): \"Except as amended by this Section 2, the Agreement remains unchanged and in full force and effect.\"",
+            "reason": "Read together, the two documents do create the gap. General representations survived only 90 days after the September 30, 2025 Closing, until about December 29, 2025. The non-binding LOI contemplated 18 months. The problem is no longer actionable for Buyer, however. Today is November 18, 2026, and the survival window closed almost 11 months ago, along with the scheduled escrow release. On November 20, 2025, before that window closed, Buyer signed a post-closing Section 11.10 amendment to the Article IX framework. That amendment redefined Fundamental Representations and dropped §3.18 environmental from them. It left the General Survival Date untouched and expressly confirmed the Agreement otherwise \"remains unchanged and in full force and effect.\" Nothing in the folder records any objection by Buyer to the 90-day survival period, or any claim made before it expired. The lapsed window is therefore history that Buyer accepted, not a live issue to raise."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "IP Assignment Agreement §1.1: \"'Assigned Inventions' means all Inventions that the Assignor ... conceives, develops, reduces to practice or otherwise creates during the Employment Period (as defined in the Key Employee Agreement)...\". Key Employee Agreement §1.1: \"The 'Employment Period' means the period of the Executive's employment with the Company, beginning on March 1, 2023...\". Recital B: \"the Leaching Patent Application ... filed September 14, 2021 ... embodies the Assignor's core hydrometallurgical lithium-recovery invention.\"",
+            "reason": "The problem is present and hurts the client. Section 1.2 assigns only 'Assigned Inventions'. The only date window for that term is the Employment Period, which the Key Employee Agreement starts on March 1, 2023. The Leaching Patent Application was filed in September 2021, so it was conceived before that date. The same is true of the related pre-2023 know-how. None of it falls within the assignment. Nothing in the IP Assignment Agreement separately assigns pre-existing inventions or the named application. The recital identifying the application does not operate as a grant. The further-assurances and power-of-attorney clauses reach only Assigned Inventions, so they do not cure the gap. The SPA (Company Intellectual Property definition, §3.10) and Disclosure Schedule 3.10 treat the application as Company-owned. Buyer bought the Company expecting to own the core process, as Letter of Intent §5.1 shows. If the founder retains title, Buyer's recourse under the SPA is limited. Section 3.10 is not a Fundamental Representation, and the side letter's amended definition still omits it. A claim under §3.10 is therefore subject to the 10% cap and to the General Survival Date, which is 90 days after closing (Escrow Agreement §5.1). The title defect itself is ongoing. Buyer has not accepted it, and nothing in the folder waives or settles it. It remains actionable: Buyer should obtain a confirmatory assignment of the application and pre-2023 know-how from Dr. Okoro-Brandt, and assess any remaining claims against Seller.",
+            "alone": {
+              "ip_assignment_agreement.md": {
+                "findable": false,
+                "evidence": "\"Assigned Inventions\" means all Inventions that the Assignor, alone or jointly with others, conceives, develops, reduces to practice or otherwise creates during the Employment Period (as defined in the Key Employee Agreement)",
+                "reason": "This document does show four things. The assignment in Section 1.2 covers only 'Assigned Inventions'. That definition is tied to an 'Employment Period' that is defined only in the Key Employee Agreement. The recitals describe the Leaching Patent Application, filed September 14, 2021, as the founder's core invention. Nothing in the operative provisions expressly assigns that application by number. A careful associate might therefore suspect a gap. But this document does not say when the Employment Period starts. Recital A says the Assignor founded the Company and serves as its CTO, so the Employment Period could plausibly reach back to founding and cover the 2021 invention. Whether the 2021 application and earlier know-how actually fall outside the assignment depends on the start date in Key Employee Agreement Section 1.1 (March 1, 2023). The conflict with the SPA's treatment of the invention as Company IP, and the limits on Buyer's representation remedy, also come from documents not provided. The decisive fact is in another document, so the problem is not findable from this one alone."
+              },
+              "key_employee_agreement.md": {
+                "findable": false,
+                "evidence": "The \"**Employment Period**\" means the period of the Executive's employment with the Company, beginning on March 1, 2023 and continuing until the date her employment ends under Section 5 (the \"**Termination Date**\").",
+                "reason": "This document alone shows that the Employment Period starts on March 1, 2023, and that the Executive's IP obligations are set out in a separate IP Assignment Agreement (Section 4.1, Recital C). On its own terms, the start date is a harmless backdated employment period. The document does not show three things the problem depends on: (1) that the IP Assignment Agreement limits 'Assigned Inventions' to those conceived 'during the Employment Period (as defined in the Key Employee Agreement)'; (2) that the founder's core Leaching Patent Application was filed on September 14, 2021, before that date; and (3) that the SPA treats that IP as Company-owned. Without the IP Assignment Agreement, an associate could not see that the 2023 start date leaves pre-2023 inventions with the founder and so hurts the Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "SPA §2.4(c): \"If Buyer does not deliver a Dispute Notice within that period, the Closing Statement shall be final and binding on the parties.\" Side Letter §3.1: \"Seller delivered the Closing Statement to Buyer under Section 2.4(b) of the Agreement on October 17, 2025.\" Side Letter §3.4: \"Each of Buyer and Seller reserves all of its rights, remedies and positions under Section 2.4 of the Agreement...\"",
+            "reason": "Counting thirty days from the October 17, 2025 delivery recited in the Side Letter, Buyer's Dispute Notice window closed on November 16, 2025 (a Sunday), or November 17 at the latest. Buyer first records its $1,275,000 dispute in the Side Letter dated November 20, 2025, and nothing in the folder shows an earlier Dispute Notice. Section 2.4(c) makes the Closing Statement final and binding if no timely notice is given. The Side Letter does not cure this: it extends no deadline, waives nothing, and Section 3 is not part of the Section 2 amendment made under Section 11.10. The mutual reservation of rights in Section 3.4 also preserves Seller's argument that the dispute is untimely. This hurts Buyer, the client, because it could lose the $1,275,000 shortfall claim and the escrow recovery under Section 2.4(e). The point is still actionable. Buyer has not accepted the Closing Statement, received or made any true-up payment, or signed anything conceding the result, and it is actively contesting. Buyer can still try to get an express waiver of timeliness or an extension from Seller, or argue for timeliness, before the dispute process goes further.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "If Buyer does not deliver a Dispute Notice within that period, the Closing Statement shall be final and binding on the parties.",
+                "reason": "The SPA alone sets the 30-day Dispute Notice window in Section 2.4(c) and the consequence of missing it: the Closing Statement becomes final and binding. It also sets the 60-day period for Seller to deliver the Closing Statement. It does not show when Seller actually delivered the Closing Statement (October 17, 2025), that Buyer disputes the working capital, or when Buyer first raised the dispute (the November 20, 2025 Side Letter). Without those dates, an associate reading only the SPA cannot tell that the window has closed or that Buyer's dispute is late. The problem depends on facts found only in the Side Letter."
+              },
+              "side_letter.md": {
+                "findable": false,
+                "evidence": "Seller delivered the Closing Statement to Buyer under Section 2.4(b) of the Agreement on October 17, 2025.",
+                "reason": "On its own, the Side Letter shows that Seller delivered the Closing Statement on October 17, 2025. It also shows that Buyer is first recording its $1,275,000 Closing Net Working Capital dispute in a letter dated November 20, 2025, and that each party reserves its rights 'under Section 2.4 of the Agreement.' It does not state that there is a deadline for a Dispute Notice, how long that deadline is (30 days), or that missing it makes the Closing Statement final and binding. Without SPA Section 2.4(c), a reader cannot work out that the window closed on November 16 or 17, 2025, or that Buyer's dispute is late. A careful associate might be prompted to check the SPA's dispute timing, but the problem itself only appears when the SPA's terms are read alongside this letter."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "\"The definition of \"Fundamental Representations\" in Section 1.1 of the Agreement is deleted and replaced in its entirety with the following, for all purposes of Article IX: > \"Fundamental Representations\" means the representations and warranties set forth in Sections 3.1, 3.2, 3.3 and 3.4.\" (Side Letter §2.2); see also §2.1: \"This Section 2 is an amendment to the Agreement made under Section 11.10 of the Agreement and signed by Buyer and Seller.\"",
+            "reason": "SPA §1.1 lists the Fundamental Representations as §§3.1, 3.2, 3.3 and 3.18 (Environmental Matters). That status gives the environmental representation two protections. Under §9.1 it survives six years rather than only to the General Survival Date. Under the Escrow Agreement §5.1, the General Survival Date is just 90 days after Closing. Under §9.5(a) it is also exempt from the $432,000 deductible and the 10% ($8,640,000) cap, and is capped only at the Purchase Price. Side Letter §2.2 replaces 3.18 with 3.4 (Brokers), with no explanation. Section 2 expressly invokes §11.10 and is to be signed by both parties. Under SPA §11.9, such an amendment controls over inconsistent provisions, so the change would be effective. The indemnity is Seller's obligation under §9.2(a), so the change benefits only Seller and strips Buyer, our client, of its key protection. Pre-closing contamination is the principal risk at a lead-acid and lithium-ion recycling site, and nothing in the folder shows Buyer bargained for this. It is presented as administrative post-closing housekeeping. If the letter is signed, environmental claims become capped at $8,640,000, subject to the deductible, and effectively time-barred after the 90-day survival period. The folder shows no executed version and no acceptance or consideration by Buyer, so the provision should be struck or corrected to restore §3.18 before signing (or corrected if signed in error)."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Section 4.1: \"Buyer assumes and agrees to pay, perform and discharge when due all Liabilities relating to the Line 2 Equipment, whether arising before, at or after the Closing ... and all Liabilities under Environmental Law arising from any Release of Hazardous Materials in connection with the use of the Line 2 Equipment by Seller or the Company before the Closing.\" Section 4.3: \"Buyer's obligations under this Section 4 shall not be subject to any limitation as to amount or time.\"",
+            "reason": "The obligations in Section 4 run from the client to Seller. Buyer assumes all Line 2 liabilities, including Seller's own pre-closing environmental Releases, and must indemnify Seller for them. Section 4.3 removes any cap or survival limit. Nothing in the folder offsets or limits this. The SPA has no Buyer-side cap. Section 9.5 limits only Seller's liability, and the SPA does not address liabilities for the transferred equipment. Seller's protection has also narrowed. The Side Letter took the environmental representation (3.18) out of the Fundamental Representations. General representations survive only until the Escrow Release Date, 90 days after the 9/30/2025 Closing. That date passed long before today. So Seller's environmental indemnity has expired, while Buyer's reverse indemnity to Seller for the same pre-closing contamination is unlimited and perpetual. The Side Letter and the other documents do not cure, carve back or limit Section 4. This is a continuing exposure, not a lapsed window the client has accepted. It remains actionable: the client can seek an amendment under Section 6.4, or argue that SPA Section 11.9 precedence should apply to the overlap with the Section 3.18 risk allocation."
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

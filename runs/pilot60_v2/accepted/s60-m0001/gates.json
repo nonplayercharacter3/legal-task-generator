@@ -1,0 +1,194 @@
+{
+  "matter_id": "s60-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Schedule §4.2: \"Buyer may terminate the Agreement ... by written notice to Supplier given within sixty (60) days after the third Critical Delivery Failure in that rolling ninety (90) day period.\" Amendment No. 1 Recital B: \"The third of these failures to constitute a Critical Delivery Failure, as defined in the Service Level Schedule, occurred on June 12, 2026. Buyer has notified Supplier in writing that it disputes Supplier's characterization of the June 2026 failures as excused force majeure.\"",
+            "reason": "The chronic-failure termination right belongs to Buyer, our client. It can only be used by notice given within 60 days after the third Critical Delivery Failure. Recital B places that failure on June 12, 2026, so the window closed on August 11, 2026. That is before the Amendment was signed on September 15, 2026, and the folder shows no termination notice. The Amendment does not toll, extend or revive the §4.2 right. Instead, §5.2 states the Schedule remains \"unchanged and in full force and effect\" and ratifies the Agreement, which works against any argument that the right survives. Read together, the two documents show the client let its strongest exit remedy lapse and then signed an amendment that does not preserve it. This is still actionable rather than settled history. Buyer has recorded its objection to Supplier's force majeure position, and Schedule §5.3 counts disputed exclusions as Critical Delivery Failures until the dispute is resolved. The client has not accepted the result, so counsel should raise the lapse and seek a tolling or revival provision, or another remedy.",
+            "alone": {
+              "service_level_schedule.md": {
+                "findable": false,
+                "evidence": "Buyer may terminate the Agreement, in whole or as to any affected Product, by written notice to Supplier given within sixty (60) days after the third Critical Delivery Failure in that rolling ninety (90) day period.",
+                "reason": "The Schedule alone sets out the 60-day notice window in §4.2. It also shows that disputed exclusions still count toward Critical Delivery Failures (§5.3). It does not say when any Critical Delivery Failure happened, that a third one occurred on June 12, 2026, or that Amendment No. 1 was signed on September 15, 2026 without tolling or reviving the termination right. Without those dates from Amendment No. 1, an associate reading only this document cannot see that the window has already closed to Buyer's detriment."
+              },
+              "amendment_no_1_supply_agreement.md": {
+                "findable": false,
+                "evidence": "The third of these failures to constitute a Critical Delivery Failure, as defined in the Service Level Schedule, occurred on June 12, 2026.",
+                "reason": "The amendment gives the date of the third Critical Delivery Failure (June 12, 2026). It records that Buyer disputes the force majeure characterization. It also confirms that the Service Level Schedule remains unchanged and contains no tolling or revival language. It does not say that Buyer's chronic-failure termination right exists, and it does not say that the right must be exercised by notice within sixty days after the third Critical Delivery Failure. That deadline appears only in Service Level Schedule §4.2, which is not provided. Without it, an associate could not tell that the termination window closed on August 11, 2026, before this amendment was signed, or that the amendment fails to preserve that right."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Supply Agreement §11.2: \"The limitation in Section 11.1, and the exclusion in Section 11.3, do not apply to: (a) Supplier's obligations under Section 10.1\". Amendment No. 1 §2.1: \"Section 10.1 is deleted in its entirety and replaced with the following: 10.1 Supplier Intellectual Property Indemnity...\" and §2.4 inserts the product indemnity as \"new Section 10.3 ... including fire, explosion or emissions events at any baghouse\".",
+            "reason": "Supplier gives the product indemnity and Buyer (our client) benefits from it. The Amendment moves that indemnity from §10.1 to new §10.3 and leaves the IP indemnity in §10.1. It does not change §11.2(a) and has no deemed-reference language. Its §1.2 only addresses references to \"this Agreement\", not section numbers. §5.2 confirms the rest of the Agreement is \"otherwise unchanged\", and amendments rank first under §17.4. Read literally, the uncapped carve-out now covers only the IP indemnity. The baghouse fire, emissions and bodily-injury indemnity becomes subject to the 12-month-fees cap and the consequential-damages exclusion. That is a material loss of protection for Buyer. The Amendment is recent (September 2026), and nothing in the folder shows Buyer has accepted this result. It can still be fixed by a corrective amendment, so it remains actionable.",
+            "alone": {
+              "supply_agreement_moseth_soumeir.md": {
+                "findable": false,
+                "evidence": "11.2 Exclusions. The limitation in Section 11.1, and the exclusion in Section 11.3, do not apply to: (a) Supplier's obligations under Section 10.1;",
+                "reason": "Read alone, this Supply Agreement favors the Buyer. Section 10.1 holds the product-liability, bodily-injury and property-damage indemnity, including baghouse fire and emissions events. Section 11.2(a) carves that indemnity out of the 12-month-fees cap and the consequential-damages exclusion. Nothing in this document shows the problem. The problem depends on Amendment No. 1, which deletes Section 10.1, restates the product-liability indemnity as a new Section 10.3, and puts only an IP indemnity in the new Section 10.1, without changing §11.2. Section 17.4 shows that amendments would control, but that does not reveal a broken reference. The renumbering, the leftover reference and the resulting cap on product-liability claims all come from the amendment, which was not provided."
+              },
+              "amendment_no_1_supply_agreement.md": {
+                "findable": false,
+                "evidence": "2.1 Deletion of Section 10.1. Section 10.1 is deleted in its entirety and replaced with the following: > 10.1 Supplier Intellectual Property Indemnity. ... 2.4 New Section 10.3. The following is inserted as new Section 10.3 of the Agreement: > 10.3 Supplier Product Indemnity.",
+                "reason": "The amendment shows that Section 10.1 is replaced with a narrow IP indemnity and that the product indemnity is restated as a new Section 10.3. It also shows there is no conforming or deemed-reference language for cross-references to 10.1. It does not mention Section 11, the liability cap, or any carve-out from the cap. It also does not show that the original 10.1 was the product-liability indemnity that §11.2 excluded from a 12-month-fees cap. An associate reading only this document could not tell that renumbering moves the product indemnity under the cap. That fact comes from §11.1–11.2 of the original Supply Agreement, which is not provided."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "At the end of the Initial Term, this Order Form and the Agreement shall renew automatically for successive three (3) year Renewal Terms (each, a \"Renewal Term\"), unless either Party gives the other Party written notice of non-renewal not more than two hundred ten (210) days and not less than one hundred eighty (180) days before the expiration of the Initial Term or the then-current Renewal Term.",
+            "reason": "Order Form §2.2 renews the deal automatically for three-year terms. Non-renewal notice is only valid inside a 30-day window. §2.3 carries §3 into each Renewal Term, so the $6,200,000 per Contract Year take-or-pay commitment and the Shortfall Amount liability continue. The Buyer bears that commitment, so this cuts against the client. A notice that is early or late renews the contract for three more years of minimum purchases. The problem is still actionable. The Initial Term runs from January 6, 2025 and ends around January 6, 2028, so the window runs roughly June–July 2027. That is still ahead as of November 2026. Nothing in the folder cures it: Amendment No. 1 left the Order Form unchanged. The pending Larchfield acquisition makes it more pressing, since the new owner may want to exit or renegotiate."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Supply Agreement §15.2: \"Supplier may not assign or transfer this Agreement, or delegate any of its obligations under this Agreement, except to an assignee that satisfies both of the following conditions: (a) the assignee assumes all of Supplier's obligations under this Agreement in a writing delivered to Buyer; and (b) the assignee's obligations under this Agreement constitute Guaranteed Obligations under the Parent Guaranty. Supplier may make an assignment that meets these conditions without Buyer's consent.\" Parent Guaranty §1.1: \"'Guaranteed Obligations' means all obligations, liabilities and covenants under the Supply Agreement of Supplier and of any assignee or transferee of Supplier...\"",
+            "reason": "The problem is present and still actionable. Guaranty §1.1 already treats the obligations of any assignee of Supplier as Guaranteed Obligations, so condition (b) of §15.2 is met for every assignee. Condition (a) only asks for a written assumption, which costs the assignee nothing. Supplier can therefore assign without Buyer's consent to anyone, including a filtration-media competitor. Buyer would get notice only within 10 business days after the assignment takes effect. The assignee would receive Buyer Materials, Specifications, forecasts and pricing, which §14 lets it use to perform the Agreement. By contrast, Buyer's own assignment, and a Change of Control of Buyer, need Supplier's consent under §15.1 and §15.3. That gap matters now, because Buyer's sale to Larchfield is pending. The Guaranty does keep Guarantor's credit support in place after an assignment, but that does nothing about who the counterparty is or about competitive exposure. Amendment No. 1 does not change §15. The Agreement runs until at least January 2028, so Buyer can still seek an amendment, for example a consent requirement or a bar on assignment to competitors, possibly as part of the consent it needs for the Change of Control.",
+            "alone": {
+              "supply_agreement_moseth_soumeir.md": {
+                "findable": false,
+                "evidence": "15.2 ... Supplier may not assign or transfer this Agreement ... except to an assignee that satisfies both of the following conditions: (a) the assignee assumes all of Supplier's obligations under this Agreement in a writing delivered to Buyer; and (b) the assignee's obligations under this Agreement constitute Guaranteed Obligations under the Parent Guaranty. Supplier may make an assignment that meets these conditions without Buyer's consent.",
+                "reason": "This document shows that Supplier may assign without Buyer's consent, while Buyer's assignment and change of control (§15.1, §15.3) need Supplier's consent. On its face, though, §15.2(b) reads as a real limit: the assignee's obligations must be covered by the Parent Guaranty. 'Guaranteed Obligations' is not defined here; §1.7 only describes the Guaranty generally. Whether the condition is empty depends on the Parent Guaranty's own definition, which reaches any assignee of Supplier. That definition is in the other document. Reading this agreement alone, an associate would see a consent asymmetry with what looks like a credit-support safeguard. They could not see that Supplier can in effect assign freely, including to a Buyer competitor that would receive Buyer Materials and Confidential Information."
+              },
+              "parent_guaranty_soumeir_holdings.md": {
+                "findable": false,
+                "evidence": "1.1 \"Guaranteed Obligations\" means all obligations, liabilities and covenants under the Supply Agreement of Supplier and of any assignee or transferee of Supplier, whether now existing or arising later...",
+                "reason": "The guaranty alone shows that Guaranteed Obligations automatically cover the obligations of any assignee or transferee of Supplier. Read by itself, this protects Buyer, because the parent's guaranty follows any assignment. The guaranty does not contain the Supply Agreement §15.2 condition that lets Supplier assign without consent whenever the assignee's obligations are Guaranteed Obligations. It also does not show that Buyer's own assignment needs Supplier's consent. Without those terms, nothing here shows that the definition makes the assignment restriction meaningless or harms Buyer. That harm, including the risk of Buyer's specifications, forecasts and pricing going to a competitor, appears only when §15.2 of the Supply Agreement is read alongside this definition."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Supply Agreement §15.3: \"A Change of Control of Buyer is deemed an assignment of this Agreement by Buyer and requires the prior written consent of Supplier... If a Change of Control of Buyer occurs without that consent, Supplier may terminate this Agreement by giving thirty (30) days' written notice to Buyer.\" Amendment No. 1 Recital C: \"Moseth Group Holdings, LLC, the parent of Buyer, has entered into a Stock Purchase Agreement dated August 28, 2026 with Larchfield Capital Partners, L.P. Under that agreement, Moseth Group Holdings, LLC will sell all of the outstanding equity of Buyer to Larchfield Capital Partners, L.P. The closing is expected to occur in the first quarter of 2027.\"",
+            "reason": "The planned sale is a Change of Control under §15.3. Larchfield will acquire 100% of Buyer's voting equity, well above the 50% threshold. That makes the sale a deemed assignment, which needs Supplier's prior written consent. Amendment No. 1 records the transaction but grants no consent and no waiver. Its operative sections amend only §§4.5, 10 and 12.1(a), and §5.2 confirms that everything else stays unchanged. The §15.1 reasonableness standard covers Buyer's consent requests, but nothing in the folder shows Supplier has consented. The risk falls on Buyer, the client: if the deal closes without consent, Supplier can terminate on 30 days' notice. Buyer would then lose its supply source, its §13.5 transition right (which does not apply when Supplier terminates under §13.1 or §13.2) and its leverage in the open force majeure dispute. Supplier may also use the consent requirement as leverage. Closing is not expected until Q1 2027, so Buyer can still seek a written consent or waiver before closing. The issue is live and actionable.",
+            "alone": {
+              "supply_agreement_moseth_soumeir.md": {
+                "findable": false,
+                "evidence": "15.3 Change of Control. A Change of Control of Buyer is deemed an assignment of this Agreement by Buyer and requires the prior written consent of Supplier. ... If a Change of Control of Buyer occurs without that consent, Supplier may terminate this Agreement by giving thirty (30) days' written notice to Buyer.",
+                "reason": "The Supply Agreement shows the change-of-control consent requirement and Supplier's termination right, which is a risk to Buyer in general. It does not show that any change of control is pending. The sale of all of Buyer's equity to Larchfield Capital Partners and the absence of any consent or waiver both come from Amendment No. 1, which was not provided. Reading this document alone, an associate would see only a standard clause, not a live problem for the client."
+              },
+              "amendment_no_1_supply_agreement.md": {
+                "findable": false,
+                "evidence": "Moseth Group Holdings, LLC, the parent of Buyer, has entered into a Stock Purchase Agreement dated August 28, 2026 with Larchfield Capital Partners, L.P. Under that agreement, Moseth Group Holdings, LLC will sell all of the outstanding equity of Buyer to Larchfield Capital Partners, L.P.",
+                "reason": "The amendment by itself shows that a sale of all of Buyer's equity is pending. It also shows that the amendment grants no consent or waiver, since Section 5.2 only confirms the Agreement otherwise remains in effect. It does not show that the Supply Agreement treats a Change of Control of Buyer as an assignment, that Supplier's prior written consent is required, or that Supplier may terminate on 30 days' notice without consent. Those terms come from Section 15.3 of the base Supply Agreement, which has not been provided. Without them, an associate cannot tell from this document whether the sale triggers a consent requirement or a termination right that harms the client."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Service Level Schedule §1.3: \"'Delivery Date' means, for purposes of this Schedule, the date Supplier tenders the Products to the carrier at Supplier's facility for shipment to the Delivery Location, as shown on the bill of lading.\" Supply Agreement §1.4: \"'Delivery Date' means the date Products arrive at Buyer's Delivery Location.\"",
+            "reason": "The two definitions conflict. The Supply Agreement measures delivery by arrival at Buyer's dock (DAP, with the carrier acting on Supplier's behalf). The Schedule measures it by tender to the carrier at Supplier's facility. Under §17.4(b) the Schedule prevails as to service levels, so the shipment-based definition governs On-Time Shipments, Late Shipment credits under §3.1 and Critical Delivery Failures under §4.1. Delays while Supplier's own carrier is in transit therefore never count. That cuts Buyer's Service Credits and makes chronic-failure termination under §4.2 harder to trigger, which hurts Moseth as Buyer. No document in the folder cures this. The Amendment leaves the Schedule \"unchanged\" (§5.2), and the issue is a continuing one that Buyer can still raise or renegotiate.",
+            "alone": {
+              "service_level_schedule.md": {
+                "findable": false,
+                "evidence": "1.3 \"Delivery Date\" means, for purposes of this Schedule, the date Supplier tenders the Products to the carrier at Supplier's facility for shipment to the Delivery Location, as shown on the bill of lading.",
+                "reason": "On its own, the Schedule shows that Delivery Date means the day Supplier hands the goods to the carrier. It also shows that this date drives Late Shipments, the On-Time Delivery Rate, Service Credits and Critical Delivery Failures. An associate could therefore see that carrier delays in transit are not measured, which is unfavorable to Buyer. The flagged problem, though, is an inconsistency between two defined terms, and this document does not show either half of it. It does not show that Supply Agreement §1.4 defines Delivery Date as arrival at Buyer's Delivery Location. It also does not show that Agreement §17.4 makes the Schedule prevail on service levels. The words 'for purposes of this Schedule' suggest the term may differ elsewhere, but they do not say what the Agreement provides or which definition controls. Both of those facts come only from the Agreement."
+              },
+              "supply_agreement_moseth_soumeir.md": {
+                "findable": false,
+                "evidence": "1.4 \"Delivery Date\" means the date Products arrive at Buyer's Delivery Location. ... 17.4 ... (b) the Service Level Schedule (as to service levels); (c) this Supply Agreement;",
+                "reason": "The Supply Agreement alone defines Delivery Date by arrival and lets the Service Level Schedule prevail on service levels. That is only a potential risk. Nothing here shows that the Schedule defines Delivery Date differently (as tender to the carrier) or uses that definition to measure On-Time Delivery, Service Credits or Critical Delivery Failures. Without the Schedule, an associate cannot see the conflicting definition or the resulting harm to Buyer (in-transit delays excluded, fewer credits, harder termination)."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F7, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.06,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
