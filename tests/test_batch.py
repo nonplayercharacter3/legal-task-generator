@@ -68,7 +68,7 @@ def test_batch_waits_for_a_usage_limit_then_resumes(ws, monkeypatch):
            author=None, branch=None, max_tries=3, retry_wait=1, export_out=None, lock="runs/.batch.lock",
            stop_file="runs/.batch.stop")
     assert batch.run_batch(a, sleep=slept.append) == 0
-    assert len(slept) == 1 and slept[0] > 120  # waited for the reset, not the 1-minute retry
+    assert sum(slept) > 120 and max(slept) <= batch.HEARTBEAT  # waited for the reset, logging as it went
     assert json.loads((ws / "runs/b5/report.json").read_text())["errors"] == 0 and (ws / "runs/b5/tries").is_dir()
 
 
@@ -125,3 +125,18 @@ def test_batch_on_a_branch_pushes_it_and_opens_one_pr(ws, monkeypatch):
     assert git("rev-parse", "origin/main", cwd=ws) == git("rev-parse", "main", cwd=ws)  # main untouched
     assert len(git("log", "--oneline", "main..HEAD", cwd=ws).splitlines()) == 4  # round and labels, per seed
     assert prs == [("lm/v2-test", "Round 9: 2 of 2 accepted (seed 9, gen, labels next)")]
+
+
+def test_batch_lock_is_released_on_sigterm(ws, monkeypatch):
+    import os
+    import signal
+
+    def killed(*_a, **_k):
+        os.kill(os.getpid(), signal.SIGTERM)
+
+    monkeypatch.setattr(batch, "_batch", killed)
+    ns = __import__("argparse").Namespace
+    a = ns(seeds="5", lock="runs/.batch.lock", stop_file="runs/.batch.stop")
+    with pytest.raises(SystemExit):
+        batch.run_batch(a)
+    assert not (ws / "runs/.batch.lock").exists()
