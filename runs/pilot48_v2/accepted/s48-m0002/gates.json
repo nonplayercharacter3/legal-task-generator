@@ -1,0 +1,146 @@
+{
+  "matter_id": "s48-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 6,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 12.2: \"Licensee shall defend, indemnify and hold harmless Licensor ... from and against all third-party claims, losses, damages, liabilities, costs and expenses ... arising out of or relating to (a) the Licensee Data, (b) Licensee's or any Authorized User's use of the Platform, including any claims by event customers, venues or other third parties arising from Rental Orders processed through the Platform, or (c) Licensee's breach of Section 3.\" Section 13.3: \"\\\"Excluded Claims\\\" means (a) a party's obligations under Section 12 ...\" Section 13.1: \"Except for Excluded Claims, each party's total aggregate liability ... shall not exceed the fees paid or payable in the 12 months before the claim.\"",
+            "reason": "Baineind (the client) is the indemnitor under Section 12.2. That indemnity covers every third-party claim arising from Rental Orders processed through the Platform, which in practice reaches its whole rental business: deliveries, venue damage and injuries from tents, staging or furniture. It is not limited to claims caused by Baineind's breach. Sections 13.1 and 13.3 take all Section 12 obligations out of the liability cap, and Section 13.2 takes Excluded Claims out of the consequential-damages waiver, so the client's exposure has no limit. Beipeiv's uncapped obligation in Section 12.1 is narrow: US IP infringement only, with exclusions and an option to terminate and refund. The term sheet (Section 8.3) contemplated a Licensee indemnity limited to Licensee Data and breach of the use restrictions, so the broad wording departs from the deal terms. The Side Letter changes pricing, support, governing law and forum but does not restore any cap, and no other document cures the problem. The agreement is in its Initial Term and nothing shows the client waived the point, so it remains actionable: the client can seek an amendment and should assess its exposure, including in connection with the pending Kestrel sale."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Service Level Schedule Section 2.1: \"For purposes of this Schedule, 'Severity 1 Incident' means the complete unavailability of the Platform to all Authorized Users at all Licensee locations, other than during Scheduled Maintenance.\" License Agreement Section 1.18: \"'Severity 1 Incident' means any failure of the Platform preventing Licensee from creating, modifying or fulfilling Rental Orders at any Licensee location.\" Section 20.4: \"As to service levels, the Service Level Schedule shall prevail over the body of this Agreement and the Quality Agreement.\"",
+            "reason": "The two documents define the same term differently. The Agreement's definition, which matches the term sheet, covers any failure that blocks Rental Orders at any single location. The Schedule's definition applies only to a total outage at all locations. Section 20.4 makes the Schedule prevail as to service levels, so the narrower definition governs the Severity 1 commitments.\n\nThe Schedule ties three protections to Severity 1 only: the 1-hour 24x7 response and 4-hour resolution, the Downtime Minutes used for availability credits (Section 5.2), and response credits (Section 5.4).\n\nAs a result, a dispatch or pick-list outage at one warehouse on an event day falls to Severity 2. That level carries a 4-Business-Hour response, Business Hours coverage only, and earns no credits. This is the exact scenario Baineind negotiated to protect, so the gap hurts the client as Licensee.\n\nNothing in the folder cures the gap or shows Baineind accepting it. The Side Letter and Quality Agreement do not change the definition. The Schedule runs for the full Term and can be amended under Section 8.2, so the issue remains actionable.",
+            "alone": {
+              "service_level_schedule.md": {
+                "findable": false,
+                "evidence": "2.1 Severity 1 Incident. For purposes of this Schedule, \"Severity 1 Incident\" means the complete unavailability of the Platform to all Authorized Users at all Licensee locations, other than during Scheduled Maintenance.",
+                "reason": "Read alone, the Schedule shows a narrow Severity 1 definition that is unfavorable to Baineind. Section 2.2 expressly places failures of the delivery dispatch or warehouse pick-list modules at one or more locations in Severity 2. That tier gets a 4-Business-Hour response and earns no response credits (Section 5.4) and no Downtime Minutes (Section 5.2). An associate could therefore flag the definition as commercially weak. The flagged problem, however, is an inconsistency between two definitions, and this document does not show it. Several pieces sit only in the License Agreement and term sheet: (1) the broader Section 1.18 definition (any failure preventing creating, modifying or fulfilling Rental Orders at any location); (2) the term sheet's agreement to that broader definition; and (3) the Section 20.4 order of precedence that makes the Schedule prevail. The phrase \"For purposes of this Schedule\" hints at a possible redefinition. But nothing here shows that the Agreement defines the term differently, or which definition controls."
+              },
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "1.18 \"Severity 1 Incident\" means any failure of the Platform preventing Licensee from creating, modifying or fulfilling Rental Orders at any Licensee location. ... 20.4 ... As to service levels, the Service Level Schedule shall prevail over the body of this Agreement and the Quality Agreement.",
+                "reason": "This document shows only the broad, client-favorable definition of Severity 1 Incident in Section 1.18. It also shows that Sections 4.3 and 4.4 send incident classification, response times and service credits to the Service Level Schedule, and that Section 20.4 makes that Schedule prevail as to service levels. A careful associate could flag a general risk that the Schedule might override the Agreement's definitions. But nothing here shows that the Schedule actually redefines Severity 1 more narrowly as complete unavailability to all users at all locations. It also does not show the 1-hour response commitment, the Severity 2 treatment, or the absence of credits for a single-site dispatch or pick-list outage. The conflicting definition and its harm to Baineind can only be seen in the Service Level Schedule."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Side Letter Section 6.1: \"This Side Letter, and the Agreement as modified hereby, are governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of laws principles.\" Section 6.2: \"Each party irrevocably submits to the exclusive jurisdiction of the state or federal courts located in the Borough of Manhattan, New York, New York for any action arising out of or relating to this Side Letter or the Agreement as modified hereby...\" Compare Agreement Section 20.1 (Delaware law), Section 20.2 (exclusive Wilmington, Delaware courts) and Section 20.4 (\"(a) first, the Side Letter\").",
+            "reason": "The License Agreement picks Delaware law and exclusive Wilmington courts, which is Baineind's home forum and what the term sheet contemplated. The Side Letter instead applies New York law and exclusive Manhattan courts to itself and to 'the Agreement as modified hereby.' Because Section 20.4 ranks the Side Letter first, the New York clause arguably overrides the Delaware choice for the whole relationship. That leaves two conflicting exclusive-forum clauses, a likely threshold fight over which one applies, and a risk that Baineind has to litigate in New York under unfamiliar law. Nothing in the folder cures or limits this. The Side Letter's 'Except as modified' language makes the conflict worse rather than resolving it. This is still actionable: there is no dispute yet, and with the pending Kestrel change of control likely to draw scrutiny under Section 16, Baineind can and should seek a written amendment conforming Section 6 to Delaware."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 16.2: \"Any direct or indirect change in Control of Licensee is deemed an assignment of this Agreement by Licensee, whether it occurs by merger, sale or transfer of equity or membership interests... Any such assignment requires Licensor's prior written consent, which Licensor may give or withhold in its sole discretion.\" Section 16.3: \"In that event Licensor may terminate this Agreement immediately by written notice to Licensee. On such termination, all License Fees for the remainder of the Initial Term become immediately due and payable.\" Notice letter: \"Ostrander Holdings LLC... has entered into a definitive agreement to sell 100% of the membership interests in Baineind to Kestrel Venue Group, Inc.... This letter is provided for Beipeiv's information, and no action is required by Beipeiv in connection with it.\"",
+            "reason": "The problem is present and still actionable. The sale of 100% of Baineind's membership interests to Kestrel is a change in Control under Section 1.4. Section 16.2 deems that an assignment and requires Beipeiv's prior written consent, which Beipeiv may withhold in its sole discretion. The equity-sale structure and Baineind's continued existence as the same entity do not avoid the clause, because it expressly covers transfers of equity or membership interests. Baineind's November 2 letter only gives information and says no action is required. It does not request consent. No document in the folder shows consent or a written waiver, and Section 20.5 requires any waiver to be in writing. The Side Letter, Service Level Schedule and Quality Agreement do not modify Section 16. If closing happens without consent, Beipeiv may terminate the core operating platform immediately and accelerate the License Fees for the rest of the 3-year Initial Term, roughly $186,000 per year through February 2029. Closing is expected December 15, 2026 and today is November 17, 2026, so Baineind can still seek written consent before closing.",
+            "alone": {
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "Any direct or indirect change in Control of Licensee is deemed an assignment of this Agreement by Licensee... Any such assignment requires Licensor's prior written consent, which Licensor may give or withhold in its sole discretion. ... On such termination, all License Fees for the remainder of the Initial Term become immediately due and payable, together with any other Fees accrued through the date of termination.",
+                "reason": "On its own, the License Agreement shows a client-unfavorable clause. Under Sections 16.2 and 16.3, any change in Control of Baineind counts as an assignment that needs Beipeiv's prior consent, which Beipeiv may refuse in its sole discretion. If the change happens without consent, Beipeiv may terminate immediately and accelerate the remaining Initial Term fees at $186,000 per year. An associate could flag this as a general risk. The actual problem, though, is that a specific change of control is pending and consent has not been sought. That depends entirely on the November 2, 2026 notice letter, which is not provided. Only the letter shows Ostrander's sale of 100% of Baineind to Kestrel, the December 15, 2026 expected closing, and that the letter is framed as informational with no request for consent. The agreement does not identify Baineind's owner, any planned sale, or whether consent was requested or given. So the triggering event and the missing consent cannot be seen from this document alone."
+              },
+              "baineind_notice_letter_2026-11-02.md": {
+                "findable": false,
+                "evidence": "Baineind's sole member, Ostrander Holdings LLC (\"Ostrander\"), has entered into a definitive agreement to sell 100% of the membership interests in Baineind to Kestrel Venue Group, Inc. ... This letter is provided for Beipeiv's information, and no action is required by Beipeiv in connection with it.",
+                "reason": "The letter alone shows a pending 100% equity sale of Baineind, with closing expected December 15, 2026. It also shows that Baineind sent only an informational notice under Section 20.3 and did not request consent. What makes this a problem is in the License Agreement, which is not provided: Section 16.2 treats a change in Control as an assignment that needs Beipeiv's prior written consent in its sole discretion, and Section 16.3 lets Beipeiv terminate and accelerate License Fees for the rest of the 3-year Initial Term. The letter itself argues the opposite, saying Baineind stays the same legal entity and Licensee. It never mentions a consent requirement, an anti-assignment clause or any termination remedy. An associate might generally suspect a change-of-control clause, but could not confirm from this document that consent is required or that the client is exposed to termination and fee acceleration."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C5 asks for fact F3, which only issue I4 uses: a memo that misses I4 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.068,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

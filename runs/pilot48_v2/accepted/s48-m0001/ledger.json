@@ -1,0 +1,276 @@
+{
+  "matter_id": "s48-m0001",
+  "summary": "Stutind Solar Installations, LLC, an Arizona-based residential and commercial solar installer, licenses Zikeiv Software, Inc.'s HelioPlan solar design, proposal and permitting platform. The Software License Agreement is effective January 15, 2026. The folder also holds an Order Form, the pre-signing term sheet, a quality/service-level agreement, a Statement of Work for a Permitting Automation Module, a Data Processing Addendum, a June 2026 pricing side letter, and Stutind's August 24, 2026 rejection letter. It also holds two distractors: a prior draft of the license agreement and an implementation kickoff email chain. The supervising partner wants an issue-spotting memo covering six problems. (1) Order Form renewal mechanics override the license agreement. (2) A late acceptance rejection under the SOW. (3) A California law and forum clause in the DPA that prevails for data disputes. (4) An assignment clause that binds only Stutind. (5) A side letter that strips the data-security and gross-negligence carve-outs from the liability cap. (6) An exclusivity covenant that, through the Order Form's Territory definition, reaches far beyond the term sheet deal.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Stutind Solar Installations, LLC",
+      "role": "Licensee; the firm's client; solar panel installation contractor"
+    },
+    {
+      "id": "P2",
+      "name": "Zikeiv Software, Inc.",
+      "role": "Licensor of the HelioPlan solar design and permitting software platform"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "January 15, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Order of precedence",
+      "value": "Order Form, then DPA (as to Personal Data), then License Agreement, then SOW and other exhibits",
+      "doc": "D1",
+      "section": "Section 1.3"
+    },
+    {
+      "id": "F3",
+      "key": "Software License Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 16.1"
+    },
+    {
+      "id": "F4",
+      "key": "Software License Agreement exclusive forum",
+      "value": "State or federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "Section 16.2"
+    },
+    {
+      "id": "F5",
+      "key": "Software License Agreement default renewal term",
+      "value": "12 months",
+      "doc": "D1",
+      "section": "Section 10.2"
+    },
+    {
+      "id": "F6",
+      "key": "Annual subscription fee",
+      "value": "$312,000 for up to 180 installer seats",
+      "doc": "D2",
+      "section": "Section 3 (Fees)"
+    },
+    {
+      "id": "F7",
+      "key": "Subscription Start Date",
+      "value": "February 1, 2026",
+      "doc": "D2",
+      "section": "Section 2 (Subscription Term)"
+    },
+    {
+      "id": "F8",
+      "key": "SOW Milestone 2 fee",
+      "value": "$148,000",
+      "doc": "D5",
+      "section": "Section 6 (Milestones and Fees)"
+    },
+    {
+      "id": "F9",
+      "key": "Term sheet exclusivity scope",
+      "value": "Residential rooftop design software only, in Arizona and Nevada",
+      "doc": "D3",
+      "section": "Exclusivity"
+    },
+    {
+      "id": "F10",
+      "key": "Term sheet assignment term",
+      "value": "Neither party may assign without the other party's prior written consent",
+      "doc": "D3",
+      "section": "Assignment"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "order_form.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "statement_of_work.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D6",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "notice_letter.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "prior_draft_license_agreement.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D10",
+      "filename": "implementation_kickoff_emails.md",
+      "kind": "email correspondence",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Two provisions combine here. Order Form Section 2 (Subscription Term) makes the 36-month initial term starting February 1, 2026 renew automatically for successive 36-month Renewal Terms at Zikeiv's then-current list price. Non-renewal notice is valid only if delivered no earlier than 120 days and no later than 90 days before the term ends, a 30-day window. License Agreement Section 10.2 provides a 12-month renewal with a simple 60-day notice, but only 'unless the Order Form provides otherwise'. Section 1.3 also makes the Order Form prevail over the License Agreement. Read together, the Order Form controls. Stutind can be locked into a further three years at uncapped list pricing if it misses a narrow window.",
+      "doc": "D2",
+      "section": "Section 2 (Subscription Term)",
+      "detect_terms": [
+        "successive thirty-six (36) month",
+        "no earlier than 120 days",
+        "then-current list price"
+      ],
+      "expected_finding": "Because the Order Form prevails under Section 1.3 and Section 10.2 defers to it, Stutind's subscription will auto-renew for 36-month terms at Zikeiv's then-current list price unless non-renewal notice is given within a 30-day window running from 120 to 90 days before term end, so Stutind should negotiate a 12-month renewal, a longer notice window and a renewal price cap.",
+      "contradicts": "F5",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "SOW Section 5.2 requires Stutind to give written notice of any Nonconformity within ten Business Days after the Delivery Date. The Delivery Date is defined as the date of Zikeiv's written Delivery Confirmation. If no notice is given, the Permitting Automation Module is deemed accepted and the $148,000 Milestone 2 fee becomes payable. Stutind's notice letter (D8) is dated August 24, 2026. It recites that Zikeiv's Delivery Confirmation is dated August 3, 2026 (a Monday). Ten Business Days after August 3, 2026 ends on August 17, 2026, so the rejection came about five Business Days late. Neither document alone shows the lapse. The window and its consequence are in the SOW, and the two dates are in the letter. The letter disputes deemed acceptance and says Stutind will withhold Milestone 2. Stutind has not accepted the result, so the point is still live.",
+      "doc": "D5",
+      "section": "Section 5.2 (Acceptance)",
+      "detect_terms": [
+        "ten (10) Business Days after the Delivery Date",
+        "deemed accepted"
+      ],
+      "expected_finding": "Measured from the August 3, 2026 Delivery Confirmation, Stutind's August 24, 2026 rejection missed the ten-Business-Day deadline of August 17, 2026, so the module is likely deemed accepted under SOW Section 5.2 and the $148,000 Milestone 2 fee payable, and Stutind should seek a written waiver or extension from Zikeiv rather than rely on its late rejection.",
+      "contradicts": null,
+      "doc2": "D8",
+      "section2": "Letter body (rejection of Permitting Automation Module)",
+      "detect_terms2": [
+        "Delivery Confirmation dated August 3, 2026",
+        "hereby rejects"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "DPA Section 11 provides that the DPA, and any dispute arising out of or relating to the processing of Personal Data, is governed by California law. It also submits such disputes to the exclusive jurisdiction of courts in San Francisco County. License Agreement Sections 16.1 and 16.2 choose Delaware law and exclusive New Castle County, Delaware courts. Section 1.3 of the License Agreement ranks the DPA above the License Agreement as to Personal Data, so the License Agreement's choice does not cure the conflict. The result is a split regime. A homeowner-data security incident would be litigated in California under California law, while related contract, fee and liability claims proceed in Delaware. This risks parallel proceedings and inconsistent rulings.",
+      "doc": "D6",
+      "section": "Section 11 (Governing Law and Jurisdiction)",
+      "detect_terms": [
+        "laws of the State of California",
+        "San Francisco County"
+      ],
+      "expected_finding": "Because License Agreement Section 1.3 gives the DPA priority as to Personal Data, the DPA's California law and San Francisco forum clause displaces the Delaware choice of law and forum for data-related disputes, splitting any data incident dispute from related contract claims, so the DPA should be conformed to Delaware law and the New Castle County forum.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "License Agreement Section 15.3 provides only that Licensee shall not assign the Agreement without Licensor's prior written consent. It places no restriction on Zikeiv. Under Delaware law, contract rights are freely assignable absent an express restriction. Zikeiv can therefore assign the Agreement, along with the hosted Stutind customer, pipeline and pricing data it holds, to any acquirer, including a competing solar installer. Stutind gets no consent right and no termination right. The signed term sheet (D3) recorded a mutual consent requirement, but License Agreement Section 16.4 (entire agreement) supersedes the term sheet, so Stutind cannot rely on it.",
+      "doc": "D1",
+      "section": "Section 15.3 (Assignment)",
+      "detect_terms": [
+        "Licensee shall not assign",
+        "without Licensor's prior written consent"
+      ],
+      "expected_finding": "Section 15.3 restricts only Stutind, so under Delaware's default of free assignability Zikeiv may assign the Agreement and Stutind's hosted data to anyone, including a competitor, contrary to the term sheet's mutual consent term, and Stutind should require a mutual consent restriction with a termination right on assignment or change of control to a competitor.",
+      "contradicts": "F10",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "License Agreement Section 12.1 caps each party's liability at fees paid in the prior 12 months. Section 12.2 excludes three categories from that cap: indemnification obligations under Section 11, breach of Section 9 (Data Security) or Section 8 (Confidentiality), and gross negligence or willful misconduct. The June 10, 2026 side letter (D7) grants a pricing concession. Paragraph 2 of the side letter deletes Section 12.2 in its entirety and replaces it with a single exclusion for Licensor's obligations under Section 11.1 (Infringement Indemnity). The side letter reads as a routine amendment, and Section 12.2 reads as a standard carve-out list. Only by comparing the two does it become clear that Zikeiv's liability for a homeowner data breach, a confidentiality breach, gross negligence or willful misconduct is now capped at 12 months' fees. DPA Section 9 makes liability under the DPA subject to the Agreement's limitations and exclusions, so it carries the narrowed cap into data claims rather than restoring uncapped exposure.",
+      "doc": "D7",
+      "section": "Paragraph 2 (Amendment to Section 12.2)",
+      "detect_terms": [
+        "deleted in its entirety and replaced",
+        "Section 11.1 (Infringement Indemnity)"
+      ],
+      "expected_finding": "The side letter's replacement of Section 12.2 removes the carve-outs for breach of Section 9 (Data Security), confidentiality breach and gross negligence or willful misconduct, so Zikeiv's liability for those losses, including through DPA Section 9, is now capped at 12 months' fees, and Stutind should restore those carve-outs by further amendment.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 12.2 (Exclusions from Limitation)",
+      "detect_terms2": [
+        "breach of Section 9 (Data Security)",
+        "gross negligence or willful misconduct"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "License Agreement Section 3.4 bars Stutind, during the Subscription Term, from licensing, using, developing or procuring any solar system design, permitting or proposal software other than the Licensed Software for any installation in the Territory. Section 3.4 does not define Territory itself; Section 1.1 defines it 'as set out in the Order Form'. Order Form Section 4 sets the Territory as the United States and Canada. Read together, and with the Order Form prevailing under Section 1.3, the covenant covers all of Stutind's lines of business, including commercial and utility-scale projects, across two countries. The term sheet (D3) limited exclusivity to residential rooftop design software in Arizona and Nevada. Neither document alone shows the overreach.",
+      "doc": "D1",
+      "section": "Section 3.4 (Exclusivity)",
+      "detect_terms": [
+        "other than the Licensed Software",
+        "for any installation in the Territory"
+      ],
+      "expected_finding": "Section 3.4 combined with the Order Form's United States and Canada Territory bars Stutind from using any other design, permitting or proposal software for any installation, residential or commercial, across both countries, far beyond the term sheet's residential-rooftop, Arizona-and-Nevada exclusivity, so the covenant and Territory should be narrowed to the agreed scope.",
+      "contradicts": "F9",
+      "doc2": "D2",
+      "section2": "Section 4 (Territory)",
+      "detect_terms2": [
+        "United States and Canada"
+      ]
+    }
+  ]
+}

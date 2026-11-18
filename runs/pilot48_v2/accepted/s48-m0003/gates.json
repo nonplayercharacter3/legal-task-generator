@@ -1,0 +1,146 @@
+{
+  "matter_id": "s48-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"During the term of this Agreement, Supplier is the exclusive source of all Elevator Components purchased or used by Customer and its Affiliates throughout North America. Neither Customer nor any of its Affiliates will, directly or indirectly, (a) purchase Elevator Components from any person other than Supplier, (b) manufacture Elevator Components, or (c) refurbish, rebuild or remanufacture Elevator Components for resale or for installation at any customer site, in each case other than Products supplied by Supplier under this Agreement.\"",
+            "reason": "Section 3.1 binds the client, Zeisein (Customer), and its Affiliates. The restriction is very broad: 'Elevator Components' is defined in Section 1.2 as parts 'of every kind' (door operators, fixtures, sensors, drives, and more), it covers all of North America, and it bars in-house manufacture and refurbishment. The Order Form, however, covers only ten hydraulic power unit, valve and controller board line items for a modernization program limited to PA, NJ and DE. Its Section 4.1 also says Zeisein has no commitment to buy any minimum quantity. The Order Form says nothing about exclusivity, so the Section 18.2 order of precedence does not narrow Section 3.1. The 'other than Products supplied by Supplier' carve-out does not help either, because it still forbids buying anything from third parties, even parts Bruben does not sell. Section 16.2's substitute-purchase right applies only during force majeure and does not cure the breadth. The result is a one-sided lock-in of Zeisein's whole maintenance and refurbishment business with no reciprocal volume or territory limit. The agreement runs for an initial 36-month term with automatic renewal and there is no waiver, so the problem remains actionable: the client can seek an amendment under Section 18.3, and it can track the clause as a breach risk and use it as negotiating leverage in the current pricing dispute."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Supply Agreement §1.4: \"'Critical Part' means any Elevator Component that is needed to release passengers from an entrapment or to return any elevator to service.\" Service Level Schedule §1.2: \"'Critical Part' means an Elevator Component listed in Annex 1, as Annex 1 may be updated under Section 6.2.\" Supply Agreement §18.2: \"they prevail in the following order: the Service Level Schedule, then the Order Form, then the body of this Supply Agreement.\"",
+            "reason": "The two definitions conflict, and §18.2 makes the narrow Schedule definition control. Annex 1 lists only six part numbers. It leaves out the hydraulic power units, the 2\" main valve, the I/O expansion board and every other Elevator Component. Several of these are parts needed to return a hydraulic elevator to service. Emergency Orders (Schedule §1.3), the 4-hour Dispatch obligation (§3.1), the no-premium pricing (§3.5), the emergency service credits (§5.1) and the safety stock commitment (§7.1) all depend on the term 'Critical Part'. Most parts Zeisein needs for outages therefore carry no emergency commitment and no credits. This hurts Zeisein, the Customer, which benefits from these Supplier obligations. The harm is worse because §3.1 makes Bruben Zeisein's exclusive source for all Elevator Components across North America, so Zeisein cannot buy those parts elsewhere. Nothing in the folder cures the gap. It remains actionable for the term because Annex 1 can be expanded by written amendment under Schedule §6.2 and Agreement §18.3, and the conflict can be raised at the quarterly review.",
+            "alone": {
+              "supply_agreement_zeisein_bruben.md": {
+                "findable": false,
+                "evidence": "1.4 \"Critical Part\" means any Elevator Component that is needed to release passengers from an entrapment or to return any elevator to service. ... 18.2 Order of Precedence. If there is a conflict or inconsistency among the documents forming this Agreement, they prevail in the following order: the Service Level Schedule, then the Order Form, then the body of this Supply Agreement.",
+                "reason": "The Supply Agreement alone gives a broad, client-favorable definition of 'Critical Part' (Section 1.4). It also shows that the Service Level Schedule outranks the body of the Agreement (Section 18.2) and that 'Emergency Order' is defined in the Schedule (Section 1.7). A careful reader could flag the general risk that the Schedule might override defined terms. But the actual problem depends entirely on the Schedule's content, which this document does not show. That content is the narrower Annex 1 definition of 'Critical Part' in Schedule Section 1.2 and the 4-hour dispatch and service credits in Schedule Section 3.1 that apply only to Critical Parts. Nothing in this document shows any conflicting definition or that emergency obligations are narrowed, so the harm to Zeisein cannot be seen from it alone."
+              },
+              "service_level_schedule.md": {
+                "findable": false,
+                "evidence": "1.2 Critical Part. \"Critical Part\" means an Elevator Component listed in Annex 1, as Annex 1 may be updated under Section 6.2.",
+                "reason": "From the Schedule alone, an associate can see three things. Critical Part is limited to six Annex 1 items, all hydraulic or BH-series parts. The 4-hour dispatch duty in Section 3.1 and the credits in Section 5.1 apply only to Critical Parts. Section 1.1 defers to the Agreement only for terms the Schedule does not define. A careful reader might flag the short list as narrow coverage for an elevator maintenance contractor. The Schedule does not show the actual issue, which is a conflict between definitions. It never shows that Agreement Section 1.4 defines Critical Part broadly as any component needed to release an entrapment or return an elevator to service. It also never shows that Agreement Section 18.2 makes the Schedule prevail over the Agreement body, so the narrow definition displaces the broader one. Without the Agreement, the six-part list could simply be the negotiated deal. The inconsistency, and the loss of the broader protection the Agreement appears to give Zeisein, depend on the other document."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Supply Agreement §12.2: \"The limitation in Section 12.1 and the exclusion in Section 12.3 do not apply to: ... (b) a Party's obligations under any Order Form;\" Order Form §6.1: \"Customer shall defend, indemnify and hold harmless Supplier ... from and against all claims ... including claims for bodily injury, death or damage to property, arising from site conditions at any Program Site, or from the installation, adjustment, testing, start-up or operation of Products at any Program Site. This Section 6.1 applies to claims brought by any person, including Supplier's own employees, agents and subcontractors.\"",
+            "reason": "Read together, the two provisions leave Zeisein exposed without limit. The Order Form §6.1 site indemnity runs from Zeisein (Customer) to Bruben (Supplier). It has no negligence or fault qualifier and expressly covers claims by Bruben's own personnel. That reaches injuries at Program Sites caused in part by Bruben, for example its start-up technicians under Order Form §7.1. Because §12.2(b) carves 'obligations under any Order Form' out of both the 12-month fees cap and the consequential-damages exclusion, Zeisein's liability under this indemnity is uncapped. The order-of-precedence clause (§18.2) puts the Order Form above the Agreement body, so the Order Form indemnity is not limited by Customer's narrower fault-based indemnity in §11.2. Nothing in the folder cures or limits this, and the Supplier's insurance runs in Zeisein's favor and does not offset the exposure. The agreement is in force and the issue is live, so it remains actionable: Zeisein can seek an amendment under §18.3 to narrow the indemnity or bring it within the cap.",
+            "alone": {
+              "supply_agreement_zeisein_bruben.md": {
+                "findable": false,
+                "evidence": "12.2 Exclusions. The limitation in Section 12.1 and the exclusion in Section 12.3 do not apply to: ... (b) a Party's obligations under any Order Form;",
+                "reason": "On its own, the Supply Agreement shows that anything owed under an Order Form falls outside both the 12-month-fees cap and the consequential-damages exclusion. A careful associate might mark this as an unusually broad carve-out. But this document does not put any indemnity or other significant liability on Zeisein through an Order Form. Zeisein's only indemnity here (Section 11.2) is limited to its own negligence or willful misconduct in installing or servicing. Nothing here says the Order Form holds a site indemnity covering claims 'arising from site conditions' with no negligence qualifier, or one that reaches claims by Bruben's own personnel. The harm to the client, unlimited exposure for elevator-site injury and property claims including claims caused in part by Bruben, depends on Order Form Section 6, which is not in this document."
+              },
+              "order_form_mid_atlantic_program.md": {
+                "findable": false,
+                "evidence": "6.1 Customer shall defend, indemnify and hold harmless Supplier ... from and against all claims ... arising from site conditions at any Program Site, or from the installation, adjustment, testing, start-up or operation of Products at any Program Site. This Section 6.1 applies to claims brought by any person, including Supplier's own employees, agents and subcontractors.",
+                "reason": "Read alone, the Order Form shows a broad one-way site indemnity owed by Zeisein. It has no negligence qualifier and covers claims by Bruben's own personnel. An associate would see that this is unfavorable. But the issue is that the indemnity is uncapped, and this document says nothing about a liability cap or its exceptions. Section 9.1 only says the Order Form is governed by the Agreement. Whether the indemnity falls inside the Section 12.1 cap or is carved out by Section 12.2 ('obligations under any Order Form') can only be seen in the Supply Agreement. From this document alone, the associate would likely assume the Agreement's cap applies. The unlimited exposure therefore cannot be identified without the other document."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "\"Supplier's Price Adjustment Notice was dated July 28, 2026 and was delivered to our King of Prussia offices by courier the same day (the \"July Notice\"). ... Under Section 5.3 of the Agreement, Customer hereby objects to the July Notice and to the adjusted prices it proposes.\"",
+            "reason": "Section 5.3 gives Customer 30 days after receipt of a Price Adjustment Notice to object. If it does not, the adjusted prices are deemed accepted and take effect on the stated date. The letter itself admits receipt on July 28, 2026, so the window closed on August 27, 2026. Zeisein is the party that must give the objection, and its September 14 letter is about 18 days late. Yet the letter relies only on Section 5.3 and does not address timeliness. That hands Bruben a deemed-acceptance argument for the 14% increase from October 1, 2026. The point is still actionable. Nothing in the folder shows Zeisein has accepted the higher prices, for example by signing anything or paying increased invoices. Paragraph 3 says it will keep ordering at the existing prices, so the dispute is live. Zeisein also has a strong alternative ground the letter fails to raise. Order Form Section 3.2 fixes prices for the first 12 months after March 2, 2026, and Agreement Section 18.2 gives the Order Form precedence over the body of the Agreement. An October 1, 2026 effective date therefore appears impermissible regardless of the late objection. Zeisein should revise or supplement the letter to rely on this ground and reserve its rights, rather than resting on an untimely Section 5.3 objection."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C5 asks for the whole ranking in fact F2 ('Service Level Schedule, then Order Form, then body of Supply Agreement'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.068,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

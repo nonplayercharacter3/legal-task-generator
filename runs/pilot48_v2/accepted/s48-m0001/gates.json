@@ -1,0 +1,172 @@
+{
+  "matter_id": "s48-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Order Form §2.3: \"At the end of the Initial Term, the Subscription Term renews automatically for successive thirty-six (36) month renewal terms (each a \"Renewal Term\"). Fees for each Renewal Term are charged at Licensor's then-current list price...\" and §2.4: \"A notice of non-renewal is effective only if it is received no earlier than 120 days and no later than ninety (90) days before the last day of the Initial Term or the then-current Renewal Term.\"",
+            "reason": "The Licence Agreement §10.2 sets 12-month renewals with a 60-day notice \"unless the Order Form provides otherwise\", and §1.3 gives the Order Form precedence. So the Order Form's 36-month auto-renewal and narrow 30-day notice window control. The term sheet (§5(c)) contemplated 12-month renewals with 60 days' notice, so the Order Form departs from the deal. The June 2026 side letter changes the fees and §12.2 but leaves the renewal mechanics unchanged. The renewal fees are uncapped at Licensor's list price. Stutind is the party that must give notice in time and the party exposed to three more years at uncapped pricing. The Initial Term ends January 31, 2029, so the notice window has not yet opened. The issue remains open and actionable, for example by amending the Order Form or diarising the window."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "SOW §5.2: \"Licensee shall give Licensor written notice of any Nonconformity within ten (10) Business Days after the Delivery Date... If Licensee does not give a notice of Nonconformity within that period, Deliverable D-2 is deemed accepted as of the last day of that period.\" Notice letter §1.1: \"Licensor's Delivery Confirmation dated August 3, 2026 confirmed that the Module was available for acceptance testing.\" The letter itself is dated August 24, 2026.",
+            "reason": "The SOW defines the Delivery Date as the date of Licensor's written Delivery Confirmation, which was Monday, August 3, 2026. Ten Business Days, with no federal holidays in that span, ran out on Monday, August 17, 2026. Stutind's notice is dated August 24, and under Agreement §15.1 a notice is effective only on receipt, so it came about five Business Days late at the earliest. Under §5.2, D-2 was therefore deemed accepted as of August 17. Acceptance of D-2 is the payment event for the $148,000 Milestone 2 fee. Deemed acceptance also undercuts Stutind's rights to correction and redelivery (§5.3) and to terminate with a refund for repeated failure (§5.4), because both depend on a timely notice. Stutind would be left mainly with warranty remedies. The letter's statements that there was no deemed acceptance and that it withholds payment under Agreement §6.4 do not cure the lapse. Nothing in the folder extends the window, waives it in writing (§15.7 requires writing), or shows a §4.4 dependency delay. The issue is still actionable: Stutind has not paid or otherwise accepted the result, and it expressly disputes acceptance and reserves its rights. Counsel must deal with the late notice, for example by seeking Zikeiv's waiver or a Change Order, or by relying on warranty and other arguments.",
+            "alone": {
+              "statement_of_work.md": {
+                "findable": false,
+                "evidence": "Licensee shall give Licensor written notice of any Nonconformity within ten (10) Business Days after the Delivery Date. ... If Licensee does not give a notice of Nonconformity within that period, Deliverable D-2 is deemed accepted as of the last day of that period.",
+                "reason": "The SOW sets out the ten-Business-Day notice window in Section 5.2. It defines the Delivery Date as the date of Licensor's written Delivery Confirmation. It also states the consequence: deemed acceptance of D-2, which triggers the $148,000 Milestone 2 fee under Section 6.1. Together these show a deadline risk for Stutind. The SOW does not give the Delivery Confirmation date (August 3, 2026), does not show when Stutind sent its notice (August 24, 2026), and does not say whether any notice was given. Without those dates from the notice letter, an associate cannot tell that the window expired or that Stutind's rejection was late. The lapse cannot be found from this document alone."
+              },
+              "notice_letter.md": {
+                "findable": false,
+                "evidence": "Licensor's Delivery Confirmation dated August 3, 2026 confirmed that the Module was available for acceptance testing.\" / \"Under Section 5.2 of the SOW, Licensee gives Licensor written notice that the Module does not meet its Acceptance Criteria\" / \"Licensee does not agree that Deliverable D-2 has been accepted, whether deemed or otherwise.",
+                "reason": "The letter alone gives both dates: it is dated August 24, 2026 and says the Delivery Confirmation is dated August 3, 2026. It also cites SOW Section 5.2 as the notice provision. Its denial of acceptance \"whether deemed or otherwise\" hints that deemed acceptance may be possible. What the letter does not show is the key term: that Section 5.2 requires notice within ten Business Days after the Delivery Date, that the Delivery Date runs from the Delivery Confirmation, and that missing the window means deemed acceptance and the $148,000 Milestone 2 fee becomes payable. Without the SOW's deadline and its consequence, an associate reading only this letter cannot tell that the notice came 21 days late, or that this hurts the client. They might suspect a timing risk but could not confirm it."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "DPA Section 11.1: \"This DPA, and any dispute arising out of or relating to the processing of Personal Data under the Agreement, is governed by the laws of the State of California, without regard to its conflict of laws principles.\" DPA Section 11.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state or federal courts located in San Francisco County, California for any action arising out of or relating to this DPA or the processing of Personal Data under the Agreement...\"",
+            "reason": "The problem is present. License Agreement Sections 16.1 and 16.2 choose Delaware law and exclusive New Castle County, Delaware courts. The term sheet also contemplated Delaware law and forum. Section 1.3 of the License Agreement ranks the DPA above the License Agreement as to Personal Data, so the DPA's California choice controls for data-processing disputes and the License Agreement does not cure the conflict. Both forum clauses are exclusive, which creates a split regime. A data security incident involving homeowner data would be litigated in San Francisco under California law. Related claims under the License Agreement would go to Delaware under Delaware law, including claims on the liability cap, the Section 12.2 carve-outs (now narrowed by the side letter), fees and termination. That risks parallel proceedings and inconsistent rulings. Stutind is an Arizona company with no evident connection to California, and the split adds cost and uncertainty for it as the party most likely to bring data-breach claims. Nothing in the folder fixes this. The side letter amends only Section 12.2 and does not touch the DPA's Section 11. The DPA is unsigned and dated January 15, 2026, and no document shows Stutind accepted or waived the inconsistency. The issue therefore remains actionable: Stutind can seek to amend the DPA under its Section 12.1."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 15.3: \"Licensee shall not assign or otherwise transfer this Agreement, or any of its rights or obligations under it, whether by operation of law or otherwise, without Licensor's prior written consent. Any purported assignment in violation of this Section 15.3 is void.\" Section 16.4: \"It supersedes all prior and contemporaneous proposals, term sheets, negotiations, understandings and agreements...\"",
+            "reason": "The problem is present and still actionable for Stutind. Section 15.3 restricts only Licensee and puts no limit on Zikeiv. Under Delaware's default rule of free assignability, Zikeiv may assign the Agreement to any acquirer, including a competing solar installer. That assignee would then hold Stutind's hosted customer, pipeline and pricing data. Stutind has no consent right and no termination right.\n\nThe other documents do not cure this:\n- The term sheet (Section 13) recorded mutual consent, but it was non-binding except Sections 15 and 16, and Section 16.4 of the Agreement supersedes it.\n- Licensor's January 6 draft had a mutual, not-unreasonably-withheld consent and a Licensee termination right if a solar installer acquired control of Licensor. Both were dropped from the signed version.\n- The June 2026 side letter amended only Section 12.2 and fees, not assignment.\n- The confidentiality provisions and the DPA would bind an assignee rather than prevent the transfer, so the competitive exposure remains.\n\nNo event has fixed the outcome or shown Stutind accepting the risk. Stutind can still seek an amendment under Section 15.8, so the issue remains live."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Side letter Paragraph 2: \"With effect from the date of this Letter Agreement, Section 12.2 of the Agreement is deleted in its entirety and replaced with the following: > 12.2 Exclusions from Limitation. The limitation in Section 12.1 and the exclusion in Section 12.3 do not apply to Licensor's obligations under Section 11.1 (Infringement Indemnity).\" This replaces License Agreement Section 12.2, which carved out \"(b) a Party's breach of Section 9 (Data Security) or Section 8 (Confidentiality); or (c) a Party's gross negligence or willful misconduct.\"",
+            "reason": "Read alone, the side letter looks like a pricing concession ($31,200 credit and waived seat proration) with a routine housekeeping amendment. Read against Agreement Section 12.2, Paragraph 2 strips out three carve-outs: the data security breach carve-out (Section 9), the confidentiality carve-out (Section 8) and the gross negligence/willful misconduct carve-out. Zikeiv hosts Stutind's homeowner Personal Data, customer pricing and pipeline data. Zikeiv's liability for a data breach, a confidentiality breach or gross negligence would now be capped at 12 months' fees, about $312,000. Section 12.3 would also bar consequential damages and lost profits for those claims. DPA Section 9 makes DPA liability subject to Agreement Section 12, so the narrowed cap reaches DPA claims, including the reimbursement of notification and credit-monitoring costs under DPA 7.4. That is a large shift of risk against Stutind in exchange for a one-time $31,200 credit. The narrowing also removes carve-outs on Stutind's own side (its Section 11.3 indemnity and its own breaches), but that does not offset the loss: Zikeiv, as data custodian, is the party with the material breach exposure. It also departs from the agreed Term Sheet Section 11(b). The Stutind countersignature block is blank and nothing in the folder shows Stutind signed or accepted it. The issue is therefore actionable: Stutind can refuse to sign or negotiate restoration of the carve-outs. If it has already signed, Stutind should still be advised of the reduced protection.",
+            "alone": {
+              "side_letter.md": {
+                "findable": false,
+                "evidence": "With effect from the date of this Letter Agreement, Section 12.2 of the Agreement is deleted in its entirety and replaced with the following: > 12.2 Exclusions from Limitation. The limitation in Section 12.1 and the exclusion in Section 12.3 do not apply to Licensor's obligations under Section 11.1 (Infringement Indemnity).",
+                "reason": "The side letter shows that Section 12.2 is replaced wholesale and that the new version excludes only Licensor's infringement indemnity from the cap. It does not show what the original Section 12.2 said, so it does not reveal that the amendment removes existing carve-outs for data security breaches, confidentiality breaches and gross negligence or willful misconduct. It also does not state the Section 12.1 cap (12 months' fees), and it does not mention that the DPA ties data liability to the Agreement's limits. An associate might ask what was given up, especially since the letter is framed as a pricing concession. Confirming that the client lost uncapped protection, and how much exposure is now capped, requires the License Agreement and the DPA."
+              },
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "\"12.2 Exclusions from Limitation. The limitation in Section 12.1 and the exclusion in Section 12.3 do not apply to: (a) a Party's indemnification obligations under Section 11; (b) a Party's breach of Section 9 (Data Security) or Section 8 (Confidentiality); or (c) a Party's gross negligence or willful misconduct.\"",
+                "reason": "Read alone, the License Agreement protects Stutind. Section 12.2 keeps the infringement indemnity, data security and confidentiality breaches, and gross negligence or willful misconduct outside the 12-month fee cap, and it is reciprocal. Section 15.8 allows amendment only by a signed writing, but nothing in this document says such an amendment exists or what it would change. The harm, that Zikeiv's liability for a homeowner data breach, confidentiality breach or gross negligence is now limited to 12 months' fees, comes entirely from the June 10, 2026 side letter, which deletes Section 12.2 and keeps only the Section 11.1 carve-out. The DPA's link back to the Agreement's limitations also sits outside this document. An associate reading only this agreement would see a standard, client-protective carve-out list and no problem."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "License Agreement §3.4: \"during the Subscription Term Licensee shall not, and shall cause its Affiliates not to, license, use, develop or procure any solar system design, permitting or proposal software other than the Licensed Software for any installation in the Territory.\" Order Form §4: \"For purposes of the Agreement, the \"Territory\" is the United States and Canada.\"",
+            "reason": "The client, Stutind, is the party bound by this covenant. §1.1 defines Territory by reference to the Order Form, and the Order Form sets it as the United States and Canada. Read together, the covenant covers design, permitting and proposal software for every type of installation (residential, commercial and utility-scale) across two countries. It also bars Stutind from using or developing such software itself, and binds its Affiliates. The term sheet (§9) agreed to something much narrower: residential rooftop design software only, in Arizona and Nevada only, expressly excluding commercial, utility-scale and other jurisdictions. The Licensor's own prior draft (§3.4) also reflected that narrow scope. Nothing in the folder cures or limits the expanded scope. The side letter amends only §12.2 and leaves the rest of the Agreement unchanged. The §16.4 entire-agreement clause supersedes the term sheet, so the narrower scope cannot be relied on. The covenant runs for the whole Subscription Term, which includes 36-month auto-renewals, so it is a live restriction on the client's business. It remains actionable: the client can seek an amendment conforming it to the agreed scope, or raise it as a mistake or overreach.",
+            "alone": {
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "3.4 Exclusivity. In consideration of the pricing granted in the Order Form, during the Subscription Term Licensee shall not, and shall cause its Affiliates not to, license, use, develop or procure any solar system design, permitting or proposal software other than the Licensed Software for any installation in the Territory.",
+                "reason": "This document shows a broad exclusivity covenant. It reaches all three software categories and 'any installation', and Recital B says Stutind does residential and commercial work, so the covenant plainly reaches commercial projects. It does not show the two elements that make it an overreach. First, the geographic reach: 'Territory' is defined only 'as set out in the Order Form', and the Order Form (which prevails under Section 1.3) is what sets it as the United States and Canada. Second, the comparison: the term sheet limited exclusivity to residential rooftop design software in Arizona and Nevada. Without the Order Form, an associate cannot tell how far the covenant extends geographically. Without the term sheet, the associate cannot tell that the agreed scope was narrower. Breadth alone, read from this document, does not show that the clause goes beyond what Stutind agreed to."
+              },
+              "order_form.md": {
+                "findable": false,
+                "evidence": "For purposes of the Agreement, the \"**Territory**\" is the United States and Canada.",
+                "reason": "The order form only defines Territory as the United States and Canada. It contains no exclusivity covenant. Nothing in it shows that Territory feeds a restriction barring Stutind from using other design, permitting or proposal software across all lines of business. That covenant is in Agreement Section 3.4, which is not provided. The order form also does not show the narrower agreed scope (residential rooftop, Arizona and Nevada) from the term sheet. Read alone, a two-country Territory looks like an ordinary, even client-favorable, license grant scope rather than a harmful overreach."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C8 asks for fact F3, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": [
+          "criterion C7 asks for the whole ranking in fact F2 ('Order Form, then DPA (as to Personal Data), then License Agreement, then SOW and other exhibits'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C6"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.08,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

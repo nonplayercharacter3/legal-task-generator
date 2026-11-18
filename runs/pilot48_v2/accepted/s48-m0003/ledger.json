@@ -1,0 +1,217 @@
+{
+  "matter_id": "s48-m0003",
+  "summary": "Zeisein Lift Services, Inc., an elevator maintenance and modernization contractor (the firm's client), buys elevator components from Bruben Elevator Components, LLC under a Supply Agreement dated March 2, 2026. Bruben's parent, Bruben Industrial Holdings, Inc., guarantees Bruben's obligations. The folder holds seven documents: the Supply Agreement, a Service Level Schedule, an Order Form for Zeisein's Mid-Atlantic hydraulic modernization program, a September 14, 2026 letter from Zeisein objecting to Bruben's price increase, the Parent Guaranty, a mutual NDA and a certificate of insurance. Four issues are planted. (1) The exclusivity clause binds Zeisein and its Affiliates to buy all Elevator Components only from Bruben across North America, although the Order Form shows the deal covers only hydraulic units and controllers for a three-state program. (2) 'Critical Part' is defined broadly in the Agreement but narrowly in the Service Level Schedule, and the precedence clause makes the Schedule control. (3) The liability cap excludes 'obligations under any Order Form', and the Order Form contains an open-ended site indemnity from Zeisein. (4) Zeisein's objection to the price increase was sent after the 30-day objection window, measured from Bruben's July 28, 2026 notice, had closed.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Zeisein Lift Services, Inc.",
+      "role": "Customer; elevator maintenance and modernization contractor; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Bruben Elevator Components, LLC",
+      "role": "Supplier of elevator components (hydraulic power units, valve units, controller boards)"
+    },
+    {
+      "id": "P3",
+      "name": "Bruben Industrial Holdings, Inc.",
+      "role": "Parent of Bruben and guarantor of Bruben's obligations under the Supply Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Order of precedence",
+      "value": "Service Level Schedule, then Order Form, then body of Supply Agreement",
+      "doc": "D1",
+      "section": "Section 18.2"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 19.1"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F5",
+      "key": "Price adjustment objection window",
+      "value": "30 days after receipt of a Price Adjustment Notice",
+      "doc": "D1",
+      "section": "Section 5.3"
+    },
+    {
+      "id": "F6",
+      "key": "Order Form Initial Term",
+      "value": "36 months from the Supply Agreement Effective Date",
+      "doc": "D3",
+      "section": "Section 2"
+    },
+    {
+      "id": "F7",
+      "key": "Order Form Program Territory",
+      "value": "Pennsylvania, New Jersey and Delaware",
+      "doc": "D3",
+      "section": "Section 1"
+    },
+    {
+      "id": "F8",
+      "key": "Emergency dispatch time for Critical Parts",
+      "value": "4 hours from Emergency Order",
+      "doc": "D2",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F9",
+      "key": "Bruben Price Adjustment Notice date",
+      "value": "July 28, 2026, delivered by courier the same day",
+      "doc": "D4",
+      "section": "Paragraph 1"
+    },
+    {
+      "id": "F10",
+      "key": "Guarantor",
+      "value": "Bruben Industrial Holdings, Inc.",
+      "doc": "D5",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement_zeisein_bruben.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "order_form_mid_atlantic_program.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "zeisein_letter_2026-09-14.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "bruben_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "mutual_nda_zeisein_bruben.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "bruben_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Supply Agreement Section 3.1 makes Bruben the 'exclusive source' of 'all Elevator Components' for Zeisein and its Affiliates 'throughout North America'. It also bars Zeisein from making, refurbishing or buying such components from anyone else. The Order Form (D3, Section 1), however, shows that the commercial deal covers only hydraulic power units, valve units and controller boards for the Mid-Atlantic modernization program in Pennsylvania, New Jersey and Delaware. The Order Form says nothing about exclusivity, so nothing in it narrows Section 3.1, and the precedence clause in Section 18.2 does not cure the breadth. Read together, the two documents show that Zeisein has locked its entire maintenance business, including its Affiliates, its in-house refurbishment work and its work outside the program states, into a single supplier far beyond the deal.",
+      "doc": "D1",
+      "section": "Section 3.1",
+      "detect_terms": [
+        "exclusive source",
+        "all Elevator Components",
+        "throughout North America"
+      ],
+      "expected_finding": "Section 3.1 imposes exclusivity and a refurbishment/third-party sourcing ban on Zeisein and its Affiliates across all Elevator Components and all of North America, far broader than the hydraulic-unit and controller program in three states shown in the Order Form, and should be narrowed to the Order Form products and Program Territory with Affiliates and in-house refurbishment carved out.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Supply Agreement Section 1.4 defines 'Critical Part' as any Elevator Component needed to release an entrapment or return any elevator to service. Service Level Schedule Section 1.2 defines 'Critical Part' as only the parts listed in Annex 1, a short list. The 4-hour emergency dispatch commitment and the related service credits in Schedule Section 3.1 apply only to Critical Parts. Supply Agreement Section 18.2 ranks the Service Level Schedule above the body of the Agreement, so the narrow Schedule definition controls. As a result, most parts Zeisein needs to restore out-of-service elevators carry no emergency dispatch obligation and no service credits, which undermines Zeisein's own uptime commitments to building owners.",
+      "doc": "D1",
+      "section": "Section 1.4",
+      "detect_terms": [
+        "return any elevator to service"
+      ],
+      "expected_finding": "Because Section 18.2 makes the Service Level Schedule prevail, its narrow Annex 1-only definition of 'Critical Part' displaces the Agreement's broad definition, so the 4-hour emergency dispatch and service credits cover only listed parts; the Schedule definition should be conformed to the Agreement's broad definition.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Section 1.2",
+      "detect_terms2": [
+        "listed in Annex 1"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Supply Agreement Section 12.2 excludes from the Section 12.1 liability cap, which equals fees in the prior 12 months, a party's 'obligations under any Order Form'. Read alone, this looks like an ordinary carve-out for payment obligations. Order Form Section 6, however, contains a site indemnity under which Zeisein must defend and indemnify Bruben against all claims 'arising from site conditions', installation or operation at Program Sites, including claims from Bruben's own personnel and with no negligence qualifier. Read together, the two provisions take Zeisein's site indemnity entirely outside the cap. Zeisein is therefore exposed to unlimited liability for elevator-site injury and property claims, including claims caused in part by Bruben.",
+      "doc": "D1",
+      "section": "Section 12.2",
+      "detect_terms": [
+        "obligations under any Order Form"
+      ],
+      "expected_finding": "The Section 12.2 cap carve-out for 'obligations under any Order Form' sweeps in Zeisein's broad site indemnity in Order Form Section 6, leaving Zeisein with uncapped liability for site claims (including those caused by Bruben), so the carve-out should be limited to payment of fees and the site indemnity made fault-based and subject to the cap.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Section 6",
+      "detect_terms2": [
+        "arising from site conditions"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Supply Agreement Section 5.3 gives Zeisein 30 days after receipt of a Price Adjustment Notice to deliver an objection; otherwise the adjusted prices are deemed accepted. Zeisein's letter dated September 14, 2026 (D4) states that Bruben's Price Adjustment Notice, a 14% increase effective October 1, 2026, was dated and delivered by courier on July 28, 2026. The objection window therefore closed on August 27, 2026, more than two weeks before the letter, so Zeisein's objection is untimely. Bruben can argue the increase was deemed accepted. The letter shows that Zeisein disputes the increase and has not accepted it. The point remains actionable: Zeisein can review whether the notice complied with the Agreement's notice requirements and can negotiate or reserve its rights.",
+      "doc": "D4",
+      "section": "Paragraph 1",
+      "detect_terms": [
+        "July 28, 2026",
+        "hereby objects"
+      ],
+      "expected_finding": "Zeisein's September 14, 2026 objection came after the 30-day window under Section 5.3 closed on August 27, 2026 (measured from the July 28, 2026 Price Adjustment Notice), so Bruben may treat the 14% increase as deemed accepted, and the firm should test the notice's validity under the notice clause and negotiate or reserve rights before the October 1, 2026 increase is invoiced.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

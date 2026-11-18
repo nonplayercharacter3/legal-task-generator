@@ -1,0 +1,120 @@
+{
+  "task_id": "s48-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Baineind Event Rentals, LLC, a Delaware event furniture and decor rental company, as licensee under a software license agreement with Beipeiv Software, Inc. The client needs to understand where it stands under this arrangement. Please review all eight documents in the folder and prepare a memo to me that lists each issue you identify, where it appears (document and section), why it matters for the client, and your recommended fix. Flag anything you can't resolve from the documents alone.",
+  "documents": [
+    "baineind_notice_letter_2026-11-02.md",
+    "beipeiv_certificate_of_insurance.md",
+    "implementation_kickoff_meeting_notes.md",
+    "platform_license_term_sheet.md",
+    "quality_agreement_inventory_data.md",
+    "service_level_schedule.md",
+    "side_letter_peak_season_pricing.md",
+    "software_license_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Baineind's indemnity of Beipeiv in License Agreement Section 12.2 is effectively uncapped. That indemnity covers third-party claims arising from Baineind's use of the Platform, including claims by event customers and venues over Rental Orders, and it sits outside the liability cap because Section 13.3 excludes Section 12 obligations from the cap. The response must locate the issue in the License Agreement (Section 12.2, 13.1 or 13.3), explain why this matters to the client, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 12.2 indemnity is unlimited",
+        "Excluded Claims include obligations under Section 12",
+        "subject the indemnity to a cap"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the Service Level Schedule's narrower definition of 'Severity 1 Incident' controls over the License Agreement's Section 1.18 definition for service-level purposes. The schedule definition requires complete unavailability of the Platform to all Authorized Users at all Licensee locations. Under it, a failure that prevents creating, modifying or fulfilling Rental Orders at a single location does not qualify as Severity 1. The response must locate the issue in the Service Level Schedule Section 2.1 or in License Agreement Section 1.18 or 20.4, explain why this matters to the client, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "complete unavailability of the Platform",
+        "all Authorized Users at all Licensee locations",
+        "conform the schedule definition to Section 1.18"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the peak-season pricing side letter's New York governing-law clause and its exclusive Manhattan forum clause conflict with the License Agreement's Delaware governing law and Wilmington, Delaware forum. Those side-letter clauses extend to the Agreement as modified by the letter. The response must locate the issue in the side letter (Section 6) or in License Agreement Section 20.1, 20.2 or 20.4, explain why this matters to the client, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "laws of the State of New York",
+        "Borough of Manhattan",
+        "conflicts with Delaware law and Wilmington forum"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the sale of 100% of Baineind to Kestrel Venue Group is a change in Control that requires Beipeiv's prior written consent under the License Agreement. It also identifies that the November 2, 2026 notice letter does not request that consent. The response must locate the issue in License Agreement Section 16.2 or 16.3 or in the notice letter, explain why this matters to the client, and recommend a fix.",
+      "kind": "issue",
+      "hints": [
+        "change in Control",
+        "prior written consent",
+        "notice letter does not request consent"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the License Agreement's Initial Term is 3 years from the Effective Date.",
+      "kind": "fact",
+      "hints": [
+        "Initial Term of 3 years",
+        "three-year term"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the annual License Fee is $186,000.",
+      "kind": "fact",
+      "hints": [
+        "$186,000 per year",
+        "$186,000 annual fee"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is a memo addressed to the supervising partner. For each issue it identifies, the memo gives the document and section where the issue appears, why it matters for the client, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo to partner",
+        "Location:",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response flags at least one matter that cannot be resolved from the documents alone.",
+      "kind": "format",
+      "hints": [
+        "cannot be resolved from the documents",
+        "open questions",
+        "confirm with client"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the November 2, 2026 notice letter satisfies, or makes unnecessary, the requirement to obtain Beipeiv's consent to the Kestrel acquisition.",
+      "kind": "negative",
+      "hints": [
+        "notice letter suffices",
+        "no consent needed"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Baineind's Section 12.2 indemnity obligations are limited by the Section 13.1 liability cap.",
+      "kind": "negative",
+      "hints": [
+        "indemnity capped at 12 months' fees"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

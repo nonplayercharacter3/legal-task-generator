@@ -1,0 +1,235 @@
+{
+  "matter_id": "s48-m0002",
+  "summary": "Baineind Event Rentals, LLC, a Delaware event furniture rental company headquartered in Wilmington, licenses Beipeiv Software, Inc.'s cloud rental-management platform under a Software License Agreement effective March 1, 2026. The platform handles inventory, quoting, Rental Orders, delivery dispatch and warehouse pick lists. The folder also holds the original term sheet, a Service Level Schedule, a Quality Agreement on data accuracy, a side letter on peak-season pricing, and a November 2, 2026 notice letter from Baineind. In that letter Baineind tells Beipeiv that its parent, Ostrander Holdings LLC, will sell 100% of Baineind to Kestrel Venue Group, Inc., with closing expected December 15, 2026. Kickoff meeting notes and a certificate of insurance complete the folder. The partner wants an issue-spotting memo before the acquisition closes. Four issues are planted. (1) The cap carve-out makes Baineind's broad operational indemnity unlimited. (2) The Service Level Schedule redefines Severity 1 Incident more narrowly, and the precedence clause lets the schedule control. (3) The side letter, which also controls under the precedence clause, moves governing law and forum to New York. (4) The pending acquisition triggers Beipeiv's consent right, and the notice letter does not ask for consent.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Baineind Event Rentals, LLC",
+      "role": "Licensee; the firm's client; Delaware event furniture and decor rental company"
+    },
+    {
+      "id": "P2",
+      "name": "Beipeiv Software, Inc.",
+      "role": "Licensor; provider of the cloud rental-management platform"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Holdings LLC",
+      "role": "Current sole member and parent of Baineind"
+    },
+    {
+      "id": "P4",
+      "name": "Kestrel Venue Group, Inc.",
+      "role": "Buyer of 100% of Baineind's equity in the pending acquisition"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "March 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Annual License Fee",
+      "value": "$186,000 per year",
+      "doc": "D1",
+      "section": "5.1"
+    },
+    {
+      "id": "F3",
+      "key": "License Agreement Initial Term",
+      "value": "3 years from the Effective Date",
+      "doc": "D1",
+      "section": "15.1"
+    },
+    {
+      "id": "F4",
+      "key": "License Agreement liability cap",
+      "value": "fees paid or payable in the 12 months before the claim",
+      "doc": "D1",
+      "section": "13.1"
+    },
+    {
+      "id": "F5",
+      "key": "License Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "20.1"
+    },
+    {
+      "id": "F6",
+      "key": "License Agreement forum",
+      "value": "state or federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "20.2"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "Side Letter; then Service Level Schedule (as to service levels); then Agreement body; then Quality Agreement",
+      "doc": "D1",
+      "section": "20.4"
+    },
+    {
+      "id": "F8",
+      "key": "Severity 1 Incident definition (License Agreement)",
+      "value": "any failure preventing creating, modifying or fulfilling Rental Orders at any Licensee location",
+      "doc": "D1",
+      "section": "1.18"
+    },
+    {
+      "id": "F9",
+      "key": "Severity 1 response time",
+      "value": "1 hour, 24x7",
+      "doc": "D6",
+      "section": "3.1"
+    },
+    {
+      "id": "F10",
+      "key": "Expected closing date of Kestrel acquisition",
+      "value": "December 15, 2026",
+      "doc": "D2",
+      "section": "Paragraph 2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "baineind_notice_letter_2026-11-02.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "side_letter_peak_season_pricing.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "quality_agreement_inventory_data.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "platform_license_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "implementation_kickoff_meeting_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "beipeiv_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 12.2 of the License Agreement requires Baineind to indemnify Beipeiv against all third-party claims arising from Licensee Data or Licensee's use of the Platform. That expressly includes any claims by event customers, venues or other third parties arising from Rental Orders processed through the Platform, so in practice it covers Baineind's entire rental business: late deliveries, damaged venues, and injuries from tents, staging or furniture. Section 13.1 caps each party's liability at fees paid or payable in the prior 12 months, but only 'except for Excluded Claims'. Section 13.3 defines Excluded Claims to include 'a party's obligations under Section 12'. Read together, these provisions leave Baineind's operational indemnity with no limit. The same carve-out also lifts the cap on Beipeiv's narrow IP indemnity in Section 12.1, so Baineind carries far more uncapped exposure than Beipeiv. Nothing in the side letter or any other document restores a cap.",
+      "doc": "D1",
+      "section": "Sections 12.2 and 13.3 (with 13.1)",
+      "detect_terms": [
+        "any claims by event customers, venues",
+        "obligations under Section 12"
+      ],
+      "expected_finding": "Because Section 13.3 removes all Section 12 obligations from the Section 13.1 cap, Baineind's Section 12.2 indemnity is unlimited even though it covers third-party claims from its whole rental operation, so Baineind should narrow 12.2 to Licensee Data and misuse of the Platform and make its indemnity subject to the cap or to a separate super-cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Section 1.18 of the License Agreement defines 'Severity 1 Incident' as any failure that prevents Licensee from creating, modifying or fulfilling Rental Orders at any Licensee location. This matches what the term sheet (D5) agreed. Section 2.1 of the Service Level Schedule redefines 'Severity 1 Incident' for the schedule as complete unavailability of the Platform to all Authorized Users at all Licensee locations. Under the order of precedence in Section 20.4 of the License Agreement, the Service Level Schedule prevails over the Agreement body as to service levels. The narrower schedule definition therefore controls the 1-hour response commitment in Schedule Section 3.1 and the service credits. As a result, a dispatch or pick-list outage at a single warehouse on an event day counts only as Severity 2, which carries a slower response time and no credits. That is exactly the failure Baineind most needs covered.",
+      "doc": "D6",
+      "section": "Section 2.1",
+      "detect_terms": [
+        "complete unavailability of the Platform",
+        "all Authorized Users at all Licensee locations"
+      ],
+      "expected_finding": "Because Section 20.4 gives the Service Level Schedule priority on service levels, the schedule's narrower 'Severity 1 Incident' definition displaces the License Agreement and term sheet definition and removes 1-hour response and service credits for location- or function-level outages, so the schedule definition should be conformed to Section 1.18 or the precedence clause should make the Agreement's definitions control.",
+      "contradicts": "F8",
+      "doc2": "D1",
+      "section2": "Sections 1.18 and 20.4",
+      "detect_terms2": [
+        "creating, modifying or fulfilling Rental Orders",
+        "Service Level Schedule shall prevail"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Sections 20.1 and 20.2 of the License Agreement choose Delaware law and exclusive jurisdiction in the state or federal courts in Wilmington, Delaware, which is Baineind's home forum. Section 6 of the peak-season pricing side letter provides that the letter and 'the Agreement as modified hereby' are governed by New York law. It also provides that disputes go exclusively to the state or federal courts in the Borough of Manhattan. Section 20.4 of the License Agreement ranks the Side Letter first in the order of precedence, so the side letter's clause arguably displaces the Delaware choice for the entire relationship. This produces conflicting forum clauses, a likely threshold dispute over which forum applies, and possible litigation for Baineind in New York.",
+      "doc": "D3",
+      "section": "Section 6",
+      "detect_terms": [
+        "laws of the State of New York",
+        "Borough of Manhattan"
+      ],
+      "expected_finding": "Because the Side Letter ranks first under Section 20.4, its New York governing-law and Manhattan forum clause, which reaches the Agreement as modified, conflicts with and arguably overrides the License Agreement's Delaware law and Wilmington forum, so the side letter should be amended to limit its scope or to adopt Delaware law and forum.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 16.2 of the License Agreement treats any direct or indirect change in Control of Licensee as an assignment. Such an assignment requires Beipeiv's prior written consent, which Beipeiv may give or withhold in its sole discretion. Under Section 16.3, a change of control without consent lets Beipeiv terminate and accelerate all License Fees for the remainder of the 3-year Initial Term. The notice letter dated November 2, 2026 (D2) states that Ostrander Holdings LLC has agreed to sell 100% of Baineind to Kestrel Venue Group, Inc., with closing expected December 15, 2026. That sale is a change in Control. The letter is framed as an informational notice under the Notices clause and says no action is required by Beipeiv. It does not request consent, and nothing in the folder shows that consent or a waiver was given. Unless consent is obtained before closing, Baineind faces termination of its core operating platform and fee acceleration.",
+      "doc": "D1",
+      "section": "Sections 16.2 and 16.3",
+      "detect_terms": [
+        "direct or indirect change in Control",
+        "sole discretion"
+      ],
+      "expected_finding": "The Kestrel acquisition announced in the November 2, 2026 notice letter is a change in Control that requires Beipeiv's prior written consent under Section 16.2, and the letter does not seek it, so Baineind must obtain written consent or a waiver before the December 15, 2026 closing or risk termination and fee acceleration under Section 16.3.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Paragraphs 2-3",
+      "detect_terms2": [
+        "Kestrel Venue Group",
+        "no action is required"
+      ]
+    }
+  ]
+}
