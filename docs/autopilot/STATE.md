@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-18 13:45, autopilot iteration 10.
+Last updated: 2026-11-19 12:30, autopilot iteration 11.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -41,11 +41,11 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- One batch, PID 38866 (caffeinate), log `runs/gen-v2-54-61.log` (appended), started 12:29 on main 627e862 (PR #41
-  code, so it survives a usage-limit wait): generates and labels seed 61, then labels the 6 unlabelled tasks of
-  seeds 49-53. Expected end ~17:00 on 2026-11-18. The first seed 61 try (all 3 in error, usage limit) was moved to
-  `runs/_trash/2026-11-18/pilot61_v2`. PR #42 is not in this batch (prompts load at start).
-- Watchdog (planning chat's, PID 35897) killed the previous batch (40471) at 08:51 during a usage-limit wait.
+- LAB chunk 1, PID 95600 (caffeinate), `runs/lab_sample/chunk_lab.py 8` (LAB rows only, 4 at a time, NRP), output
+  `runs/lab_sample/chunk_lab1.out`, logs `runs/lab_sample/logs/`. 8 of the 18 unscored LAB tasks, 541 criteria.
+  Started 12:28 on 2026-11-19; expected end ~14:30 (NRP pace varies: 4 to 18 min per task).
+- No batch. Batch 38866 (seed 61 + labels for 49-53) died 2026-11-18: the laptop slept, all 3 seed 61 matters errored
+  ("computer went to sleep"), the watchdog killed it at 15:15. Watchdog (35897) is gone now. No `runs/.batch.lock`.
 
 ## v2 numbers (seeds 45-60)
 - 30 accepted of 46 matters; seeds 54-60 (after PR #40): 16 of 21. Rejections 54-60, all read: s54-m0001 and
@@ -59,16 +59,20 @@ agent. Full definition of done: PROMPT.md.
   15,704 (MISS, needs 20,000), checklist median 10 (soft miss, needs 20).
 
 ## Next
-1. When the batch ends: read seed 61's rejections; commit nothing by hand (batch commits).
-2. M3, in the day, after the batch (one heavy Opus job at a time): score the 18 remaining LAB sample tasks in chunks
-   of ~8 (inbox.md T46 "Continue 2"), freeze `docs/autopilot/lab_sample.md`, then run 20+ v2 tasks (dev/test first)
-   through LAB's tool.
-3. M4 candidate fix for the level 2 miss: longer folders (v3 config: more or longer supporting documents, target
-   median 20,000+ words) and more checklist items via more facts and negative items. Decide after M3's level 3
-   numbers, so one v3 change can target both.
-4. If an NRP call stalls a batch (no log line for an hour outside a wait), add a wall-clock cap per solver call.
+1. When chunk 1 ends: `python3 runs/lab_sample/check.py`; delete any `scores.json` it lists as ERR (judge limit). Then
+   `runs/lab_venv/bin/python runs/lab_sample/chunk_lab.py 10` for the last 10 LAB tasks (672 criteria).
+2. Evening (no LAB run going): move `runs/pilot61_v2` to `runs/_trash/<date>/`, then restart the batch:
+   `ltg batch --config configs/pilot_generate_v2.toml --label-config configs/pilot_nrp_solver.toml --seeds 61,49-53`
+   (detached, caffeinate, log `runs/gen-v2-54-61.log`). Picks up PR #42.
+3. M3 our side, after the LAB 30: convert 20+ v2 tasks (dev/test first) with `scripts/to_lab_format.py`, add them as
+   `ours_v2` rows, score them the same way; then `summarise`, commit `runs/lab_sample/summary.json`, write both sides
+   into `docs/research/lab_harness.md`.
+4. M4 candidate fix for the level 2 miss: longer folders (v3 config, median 20,000+ words) and more checklist items.
+   Decide after M3's level 3 numbers, so one v3 change can target both.
+5. If an NRP call stalls a batch (no log line for an hour outside a wait), add a wall-clock cap per solver call.
 
 ## Needs Sirui
+- Issue #44: keep the laptop plugged in with the lid open while jobs run (sleep killed seed 61 twice).
 - Issue #43: kubectl login expired (waits for a browser sign-in; checked 2026-11-18 13:45). Needed for the vLLM
   fallback and M6, not for batches. Close once `kubectl get pods -n ecepxie` answers. Never run kubectl without a
   time cap until then: it hangs.

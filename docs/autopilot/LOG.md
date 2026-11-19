@@ -87,3 +87,12 @@ Dated, append-only. One entry per iteration.
 - Issue #36 header bumped to 119b8dd.
 - kubectl hung on an expired OIDC login; opened needs-sirui issue #43.
 - s61-m0002 errored at 13:56: "Your computer went to sleep mid-response" (lid closed? caffeinate -i stops only idle sleep). The batch retries errored matters on its next try.
+
+## 2026-11-19 12:12, iteration 11
+- Loop restarted 12:12 (it had not run since 2026-11-18 14:14). Batch 38866 died: the laptop slept, all 3 seed 61
+  matters errored "computer went to sleep mid-response" (13:56, 15:15), and the watchdog killed it at 15:15 (log
+  silent 76 min). The watchdog itself is gone. Opened needs-sirui #44 (lid open while jobs run).
+- M3 started: froze the LAB side in `docs/autopilot/lab_sample.md` (30 tasks, 1,927 criteria; 12 scored, 0 errors).
+  Started LAB chunk 1 (8 tasks, 541 criteria) with `runs/lab_sample/chunk_lab.py` (LAB rows only), PID 95600.
+- Seed 61 and labels for 49-53 wait for the evening, so the LAB run is the only heavy Opus job.
+- Issue #36 matches STATE (main has moved only by docs since 119b8dd); lab mate has not started.
