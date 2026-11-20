@@ -96,3 +96,13 @@ Dated, append-only. One entry per iteration.
   Started LAB chunk 1 (8 tasks, 541 criteria) with `runs/lab_sample/chunk_lab.py` (LAB rows only), PID 95600.
 - Seed 61 and labels for 49-53 wait for the evening, so the LAB run is the only heavy Opus job.
 - Issue #36 matches STATE (main has moved only by docs since 119b8dd); lab mate has not started.
+
+## 2026-11-19 17:00, iteration 12
+- LAB chunk 1 (PID 95600) finished, but all 8 tasks' judging hit the 5-hour limit ("resets 3:30pm"): 409 criteria
+  errored, the Qwen runs themselves completed. Errored scores.json copied to `runs/_trash/2026-11-19/lab_s1_errored/`.
+- New `runs/lab_sample/regrade.py` (local, gitignored): `lab_run.py --judge-only` per errored task, one at a time,
+  stops if errors recur. Started PID 11811.
+- Moved `runs/pilot61_v2` (3 matters lost to laptop sleep) to `runs/_trash/2026-11-19/pilot61_v2_slept`.
+- Chain `runs/lab_sample/tonight.sh` (PID 13075): regrade, then `chunk_lab.py 10` (last 10 LAB tasks), then
+  `ltg batch --seeds 61,49-53`. One heavy Opus job at a time.
+- Lab mate: no activity on #36 since 2026-11-18; work order still matches main's code (only docs commits since 119b8dd).
