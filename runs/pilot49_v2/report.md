@@ -14,7 +14,7 @@ Backend: `claude_sdk`. Accepted **1 of 3** candidate matters.
 | rubric_trace | 1 | 1 | 0 | 0 |
 | rubric_tests | 1 | 1 | 0 | 0 |
 | decontamination | 1 | 1 | 0 | 0 |
-| solver_check | 1 | 0 | 0 | 1 |
+| solver_check | 1 | 1 | 0 | 0 |
 
 ## Difficulty
 
@@ -22,15 +22,16 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 
 | Model | Tasks | Pass rate: tasks |
 | --- | ---: | --- |
+| qwen3-small | 1 | 0.00: 1 |
 
-**1 accepted task(s) wait for `ltg label`: solver_check was deferred, so they have no difficulty label and no leak probe yet.**
+**1 accepted task(s) are marked unsolved (no attempt passed): check they are not broken.**
 
 ## Matters
 
 | Matter | Result | Split | Pass rate per model | Reason |
 | --- | --- | --- | --- | --- |
 | s49-m0001 | rejected at consistency |  |  | mismatches: [{"fact": "F10", "key": "APA representation survival period", "filename": "asset_purchase_agreement.md", "ledger": "earlier of 12 months after Closi |
-| s49-m0002 | accepted (label pending) | train |  |  |
+| s49-m0002 | accepted (unsolved) | train | qwen3-small 0.00 |  |
 | s49-m0003 | rejected at issue_check |  |  | missing: ["I2"] |
 
 ## Variety
@@ -49,3 +50,5 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 | fact_extractor | 1 | 40166 | 3345 | 0 |
 | issue_solo_verifier | 8 | 67047 | 4265 | 0 |
 | issue_verifier | 5 | 170837 | 4439 | 0 |
+| judge | 4 | 31073 | 3253 | 0 |
+| solver | 71 | 601962 | 58342 | 0 |

@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -150,8 +164,66 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "msa_prior_draft_v2_superseded.md",
+                "order_form_no_1_2026_breeding_season.md",
+                "tanair_dronusk_master_services_agreement.md",
+                "tanair_dronusk_mutual_nda_2025.md",
+                "tanair_dronusk_quality_agreement.md",
+                "tanair_letter_to_dronusk_2026-10-05.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "msa_prior_draft_v2_superseded.md",
+                "order_form_no_1_2026_breeding_season.md",
+                "tanair_dronusk_master_services_agreement.md",
+                "tanair_dronusk_mutual_nda_2025.md",
+                "tanair_dronusk_quality_agreement.md",
+                "tanair_letter_to_dronusk_2026-10-05.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1"
+              ],
+              "steps": 16,
+              "files_opened": [
+                "msa_prior_draft_v2_superseded.md",
+                "order_form_no_1_2026_breeding_season.md",
+                "tanair_dronusk_master_services_agreement.md",
+                "tanair_dronusk_mutual_nda_2025.md",
+                "tanair_dronusk_quality_agreement.md",
+                "tanair_letter_to_dronusk_2026-10-05.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
