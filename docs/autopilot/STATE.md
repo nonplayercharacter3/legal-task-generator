@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-19 17:20, autopilot iteration 12.
+Last updated: 2026-11-19 21:10, autopilot iteration 13.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -41,14 +41,14 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- Chain `runs/lab_sample/tonight.sh`, PID 13075 (caffeinate), output `runs/lab_sample/tonight.out`. Steps, one at a time:
-  1. Re-grade (judge only, Qwen outputs kept) of LAB chunk 1's 8 tasks, PID 11811, `runs/lab_sample/regrade.py`,
-     output `regrade1.out`, ~2 min per task; it stops itself if grading errors recur. Chunk 1's judging hit the
-     5-hour limit (reset 15:30): 409 errored criteria; the errored scores.json are in `runs/_trash/2026-11-19/lab_s1_errored/`.
-  2. `chunk_lab.py 10`: the last 10 LAB tasks (672 criteria), output `chunk_lab2.out`, ~2-3 h.
-  3. `ltg batch --seeds 61,49-53` (seed 61 generation + labels for 49-53), log `runs/gen-v2-54-61.log`, overnight.
-     The old seed 61 folder (all 3 matters lost to sleep) is in `runs/_trash/2026-11-19/pilot61_v2_slept`.
-- Expected: LAB 30 scored by ~20:30, batch done by morning 2026-11-20.
+- Night chain `runs/lab_sample/tonight.sh`, PID 13075: now on its last step, `ltg batch --seeds 61,49-53` (PID 10390,
+  log `runs/gen-v2-54-61.log`). Seed 61 generated 3 of 3 (150d94a); labelling 61, then 49-53. Expected done by morning.
+- Morning chain `runs/lab_sample/morning.sh`, PID 46874 (caffeinate), output `morning.out`: waits for 13075, then
+  `runs/lab_sample/regrade2.py` (output `regrade2.out`) re-judges the 13 LAB tasks that hit the 5-hour limit
+  (~874 criteria, one Opus call each). On a limit it waits for the stated reset and retries the same task; it stops on
+  any other grading error. Errored scores.json are copied to `runs/_trash/<date>/lab_s1_errored2/` first.
+- LAB side: 30 of 30 run by Qwen; 17 scored cleanly, 13 errored in judging (limit "resets 8:30pm" on 2026-11-19).
+  The judge costs one Opus call per criterion with the whole memo: one 5-hour window holds about 250 to 400 of them.
 
 ## v2 numbers (seeds 45-60)
 - 30 accepted of 46 matters; seeds 54-60 (after PR #40): 16 of 21. Rejections 54-60, all read: s54-m0001 and
@@ -62,13 +62,11 @@ agent. Full definition of done: PROMPT.md.
   15,704 (MISS, needs 20,000), checklist median 10 (soft miss, needs 20).
 
 ## Next
-1. Read `runs/lab_sample/tonight.out` and `python3 runs/lab_sample/check.py`. If a LAB run has ERR, move its
-   scores.json to `runs/_trash/<date>/` and run `runs/lab_venv/bin/python runs/lab_sample/regrade.py` (judge only).
-   If chunk 2 left tasks with no scores.json, run `chunk_lab.py 10` again (it skips scored ones).
-2. When the batch ends: read seed 61's rejections, check the labels for 49-53 landed on main.
+1. Batch done: check labels for 61 and 49-53 landed on main (`git log`), read any seed 61 rejection (none: 3 of 3).
+2. Read `runs/lab_sample/regrade2.out` and `python3 runs/lab_sample/check.py` until all 30 LAB rows are clean.
 3. M3 our side, after the LAB 30: convert 20+ v2 tasks (dev/test first) with `scripts/to_lab_format.py`, add them as
-   `ours_v2` rows, score them the same way (daytime, no batch running); then `summarise`, commit
-   `runs/lab_sample/summary.json`, write both sides into `docs/research/lab_harness.md`.
+   `ours_v2` rows, score them the same way, in chunks of about 6 tasks per 5-hour window (no batch running); then
+   `summarise`, commit `runs/lab_sample/summary.json`, write both sides into `docs/research/lab_harness.md`.
 4. M4 candidate fix for the level 2 miss: longer folders (v3 config, median 20,000+ words) and more checklist items.
    Decide after M3's level 3 numbers, so one v3 change can target both.
 5. If an NRP call stalls a batch (no log line for an hour outside a wait), add a wall-clock cap per solver call.

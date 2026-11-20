@@ -106,3 +106,12 @@ Dated, append-only. One entry per iteration.
 - Chain `runs/lab_sample/tonight.sh` (PID 13075): regrade, then `chunk_lab.py 10` (last 10 LAB tasks), then
   `ltg batch --seeds 61,49-53`. One heavy Opus job at a time.
 - Lab mate: no activity on #36 since 2026-11-18; work order still matches main's code (only docs commits since 119b8dd).
+
+## 2026-11-19 21:05, iteration 13
+- Regrade of LAB chunk 1 fixed 4 tasks, then hit the 5-hour limit again at 17:2x ("resets 8:30pm"); chunk 2's 10 LAB
+  runs completed with Qwen but 9 of them judged into the same limit. Now 17 of 30 LAB rows clean, 13 errored
+  (~874 criteria). The LAB judge makes one Opus call per criterion with the full memo, about 250 to 400 per window.
+- Seed 61 generated 3 of 3 (150d94a, by the batch); the batch is labelling 61, then 49-53.
+- New `runs/lab_sample/regrade2.py` (local): waits for the reset named in the error and retries, instead of stopping.
+  `morning.sh` (PID 46874) starts it once the night chain (13075) ends, so it does not compete with labelling.
+- Lab mate: no activity on #36 since 2026-11-18; no code changes since 119b8dd, so the work order still matches.
