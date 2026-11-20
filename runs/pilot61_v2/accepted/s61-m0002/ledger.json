@@ -1,0 +1,258 @@
+{
+  "matter_id": "s61-m0002",
+  "summary": "Vogert Live Holdings, LLC (client, Buyer) bought the regional concert promotion business of Dretusk Presents, Inc. (Seller) under an Asset Purchase Agreement signed May 15, 2026, closing June 30, 2026. The business includes artist promoter agreements, venue booking agreements, the 'Ironfern Fest' festival brand and ticketing data. The $24,000,000 purchase price was paid partly through a $4,000,000 Seller Note issued by Buyer to Seller. The folder holds the APA, a post-closing written consent of Buyer's Board of Managers dated September 8, 2026, the non-binding letter of intent dated March 2, 2026, the Seller Note, and two distractors: a stage lighting and rigging vendor agreement and a pre-deal mutual confidentiality agreement. The board consent records two things. First, Seller delivered its Closing Statement on August 3, 2026 and Buyer disputes its advance-ticket-sales deferred revenue figure. Second, Buyer's parent, Vogert Entertainment Group, Inc., signed a merger agreement with Sablecrest Capital Partners on August 28, 2026, expected to close in Q1 2027. Six issues are planted, four of which need two documents read together: (1) the expired Closing Statement objection window; (2) the Note's limited-recourse clause, which controls under the APA precedence clause and so removes the APA cap carve-outs; (3) a general rep survival period tied to a Note-defined date only 180 days after closing; (4) Buyer's uncapped indemnity for Assumed Liabilities that include Seller's pre-closing contract liabilities; (5) Holder's free assignment of the Note, which carries detailed information rights; and (6) the parent merger, which triggers the Note's change of control default without Holder consent.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Vogert Live Holdings, LLC",
+      "role": "Buyer under the Asset Purchase Agreement and Maker of the Seller Note; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Dretusk Presents, Inc.",
+      "role": "Seller under the Asset Purchase Agreement and Holder of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Vogert Entertainment Group, Inc.",
+      "role": "Sole member and parent of Buyer; party to a pending merger with Sablecrest Capital Partners"
+    },
+    {
+      "id": "P4",
+      "name": "Lumenhoist Production Services, LLC",
+      "role": "Stage lighting and rigging vendor to Buyer (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Closing Date",
+      "value": "June 30, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F2",
+      "key": "APA Purchase Price",
+      "value": "$24,000,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$4,000,000",
+      "doc": "D4",
+      "section": "Section 1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note Maturity Date",
+      "value": "June 30, 2028",
+      "doc": "D4",
+      "section": "Section 2"
+    },
+    {
+      "id": "F5",
+      "key": "APA Indemnity Cap",
+      "value": "$2,400,000",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F6",
+      "key": "APA order of precedence",
+      "value": "APA prevails over Ancillary Agreements, except Seller Note controls as to payment, set-off and recourse",
+      "doc": "D1",
+      "section": "Section 12.9"
+    },
+    {
+      "id": "F7",
+      "key": "APA Closing Statement objection period",
+      "value": "30 days after delivery of the Closing Statement",
+      "doc": "D1",
+      "section": "Section 2.7(b)"
+    },
+    {
+      "id": "F8",
+      "key": "Seller Note Set-off Expiration Date",
+      "value": "the 180th day after the Issue Date (Issue Date June 30, 2026)",
+      "doc": "D4",
+      "section": "Section 4"
+    },
+    {
+      "id": "F9",
+      "key": "LOI survival period for general representations",
+      "value": "18 months after Closing",
+      "doc": "D3",
+      "section": "Section 6"
+    },
+    {
+      "id": "F10",
+      "key": "LOI Assumed Liabilities scope",
+      "value": "only obligations under Assigned Contracts arising after the Closing",
+      "doc": "D3",
+      "section": "Section 3"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "buyer_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "lighting_rigging_services_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "mutual_confidentiality_agreement.md",
+      "kind": "mutual confidentiality agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "APA Section 2.7(b) gives Buyer thirty days after delivery of the Closing Statement to deliver a written objection. Under Section 2.7(c), if Buyer delivers none, the statement becomes final and binding. The Buyer board consent (D2), dated September 8, 2026, recites that Seller delivered the Closing Statement on August 3, 2026. It records that Buyer disputes the advance-ticket-sales deferred revenue figure and authorizes officers to deliver an objection. Reading the two together, the objection deadline was September 2, 2026, before the consent was even adopted. No objection appears in the folder. The board consent shows the client still disputes the figure and has not accepted it.",
+      "doc": "D1",
+      "section": "Section 2.7(b)-(c)",
+      "detect_terms": [
+        "within thirty (30) days after delivery of the Closing Statement",
+        "final and binding"
+      ],
+      "expected_finding": "Buyer's 30-day window under APA Section 2.7(b) to object to the Closing Statement delivered August 3, 2026 closed on September 2, 2026, before the September 8, 2026 board consent authorizing an objection, so the disputed deferred revenue figure is final and binding under Section 2.7(c) unless Buyer obtains Seller's written waiver or extension or shows the statement failed to comply with Section 2.7(a).",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Recitals and Resolution 1",
+      "detect_terms2": [
+        "August 3, 2026",
+        "advance ticket sales"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "APA Section 9.5(a) caps Seller's indemnity at the $2,400,000 Indemnity Cap. Section 9.5(b) carves Fraud, breaches of Fundamental Representations and Excluded Liabilities out of that cap. APA Section 12.9 says the APA prevails over Ancillary Agreements, but makes the Seller Note control as to payment, set-off and recourse. Seller Note Section 5 (Limited Recourse) says Holder's aggregate liability for all Indemnifiable Losses, whether recovered by set-off against the Note or otherwise, shall in no event exceed the Indemnity Cap. It does not mention the 9.5(b) carve-outs. Each clause looks ordinary alone. Together, the precedence clause makes the Note's recourse limit govern, so Seller's liability for fraud, title and other fundamental breaches and for Excluded Liabilities is capped at $2,400,000.",
+      "doc": "D1",
+      "section": "Section 12.9",
+      "detect_terms": [
+        "the Seller Note shall control",
+        "set-off and recourse"
+      ],
+      "expected_finding": "Because APA Section 12.9 makes the Seller Note control as to recourse, Seller Note Section 5's limit of Holder's aggregate liability to the Indemnity Cap overrides the APA Section 9.5(b) carve-outs, so Seller's liability for Fraud, Fundamental Representations and Excluded Liabilities is capped at $2,400,000; the Note should be amended to preserve the 9.5(b) carve-outs or Section 12.9 narrowed.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Section 5",
+      "detect_terms2": [
+        "shall in no event exceed the Indemnity Cap",
+        "whether recovered by set-off against this Note or otherwise"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 9.1 says Seller's representations other than Fundamental Representations survive until the Set-off Expiration Date (as defined in the Seller Note). On its own this reads as a sensible link between the claim period and the set-off source. Seller Note Section 4 defines the Set-off Expiration Date as the 180th day after the Issue Date. The Issue Date is the June 30, 2026 Closing Date, so the date falls on December 27, 2026. Read together, the general reps survive about six months. That expires before the 2027 festival season and before Buyer's first annual audit could surface breaches of reps on artist settlements, ticket refund liabilities, venue permits and financial statements. The letter of intent (D3, Section 6) contemplated 18 months.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "until the Set-off Expiration Date"
+      ],
+      "expected_finding": "Read with Seller Note Section 4, APA Section 9.1 makes Seller's general representations expire on December 27, 2026, 180 days after the June 30, 2026 closing and far short of the 18 months in the letter of intent, which is too short to discover and claim breaches through a full concert season and annual audit; the survival period should be reset to an independent 18-month period.",
+      "contradicts": "F9",
+      "doc2": "D4",
+      "section2": "Section 4",
+      "detect_terms2": [
+        "Set-off Expiration Date",
+        "180th day after the Issue Date"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "APA Section 2.3(a) defines Assumed Liabilities as all Liabilities arising under the Assigned Contracts, whether arising before, on or after the Closing Date. That sweeps in Seller's pre-closing artist guarantees, unpaid venue settlements and refunds for shows cancelled before closing. Section 9.3(b) requires Buyer to indemnify Seller for all Losses arising from Assumed Liabilities. Section 9.5(b) states that the Indemnity Cap does not apply to claims under Section 9.3(b). Read together, Buyer carries unlimited indemnity exposure for Seller's own pre-closing contract liabilities. This departs from the letter of intent (D3, Section 3), under which Buyer would assume only post-closing obligations. Seller Note Section 5 limits only Holder's liability and does not cap Buyer.",
+      "doc": "D1",
+      "section": "Sections 2.3(a), 9.3(b) and 9.5(b)",
+      "detect_terms": [
+        "whether arising before, on or after the Closing Date",
+        "claims under Section 9.3(b)"
+      ],
+      "expected_finding": "Because APA Section 2.3(a) makes Buyer assume pre-closing liabilities under the Assigned Contracts and Section 9.5(b) exempts Buyer's Section 9.3(b) indemnity for Assumed Liabilities from the Indemnity Cap, Buyer has uncapped indemnity exposure for Seller's pre-closing artist, venue and ticket refund liabilities, contrary to the letter of intent; Assumed Liabilities should be limited to post-closing obligations or Buyer's indemnity capped.",
+      "contradicts": "F10",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Seller Note Section 9 lets Holder assign, transfer or pledge the Note or any interest in it to any Person without Maker's consent, while Maker may not assign without Holder's consent. Under Section 6, Holder receives monthly ticket sales and artist settlement reports and may enforce acceleration and other default remedies. Holder could therefore transfer the Note, with those information and enforcement rights, to a rival concert promoter or distressed-debt buyer. Nothing in the APA restricts transfer of the Note.",
+      "doc": "D4",
+      "section": "Sections 9 and 6",
+      "detect_terms": [
+        "Holder may assign, transfer or pledge this Note",
+        "without the consent of Maker",
+        "monthly ticket sales and artist settlement reports"
+      ],
+      "expected_finding": "Seller Note Section 9 lets Holder transfer the Note to anyone without Maker's consent, so a competing promoter could acquire the Note together with its Section 6 monthly ticket sales and artist settlement reporting rights and default remedies; transfers should require Maker's consent and be barred to competitors.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I6",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Seller Note Section 7 defines a Change of Control to include any Person or group acquiring beneficial ownership of more than fifty percent of the voting equity of Maker or of any Person that directly or indirectly controls Maker. It makes a Change of Control without Holder's prior written consent an Event of Default, accelerating the entire unpaid $4,000,000 principal, which is otherwise due June 30, 2028. Taken alone, this is a standard acceleration clause. The Buyer board consent (D2), dated September 8, 2026, recites that parent Vogert Entertainment Group, Inc. entered into an Agreement and Plan of Merger with Sablecrest Capital Partners on August 28, 2026, expected to close in Q1 2027. The consent approves Buyer's participation without mentioning the Note or any Holder consent. Read together, the parent merger will trigger the Note's change of control default unless Dretusk consents. No consent has been sought or obtained.",
+      "doc": "D4",
+      "section": "Section 7",
+      "detect_terms": [
+        "beneficial ownership of more than fifty percent",
+        "any Person that directly or indirectly controls Maker"
+      ],
+      "expected_finding": "The pending merger of Buyer's parent with Sablecrest Capital Partners recorded in the September 8, 2026 board consent is a Change of Control under Seller Note Section 7, and without Dretusk's prior written consent it will be an Event of Default accelerating the $4,000,000 principal; Buyer must obtain Holder's consent or waiver before the merger closes or plan to repay the Note.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Recitals and Resolution 3",
+      "detect_terms2": [
+        "Agreement and Plan of Merger",
+        "Sablecrest Capital Partners"
+      ]
+    }
+  ]
+}

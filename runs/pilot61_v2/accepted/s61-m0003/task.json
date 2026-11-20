@@ -1,0 +1,119 @@
+{
+  "task_id": "s61-m0003",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Votox Glazing Holdings, Inc., the buyer in a proposed stock purchase from Stounaisk Industries, Inc. Before we go back with comments, I need to understand where the client stands. Please review all six documents in the folder and send me a memo listing each issue you find. For each one, give the document and section where it appears, explain why it matters for Votox, and recommend a fix. Keep it practical so I can use it directly in our next round with the other side.",
+  "documents": [
+    "escrow_agreement_pellucid.md",
+    "kestrelline_forklift_lease.md",
+    "letter_of_intent_lumacrest.md",
+    "mutual_confidentiality_agreement.md",
+    "stock_purchase_agreement_votox_stounaisk.md",
+    "transition_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that Seller's pre-closing tax indemnity is subject to the SPA liability cap (the $6,300,000 Cap Amount), contrary to the LOI's agreed carve-out of pre-closing taxes from the cap. It identifies this as arising in SPA Section 9.5, explains why this matters to Votox, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "pre-closing tax indemnity is capped",
+        "Section 9.5(c)",
+        "LOI carved out taxes"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that the SPA's special environmental indemnity (Pre-Closing Environmental Liabilities) does not cover pre-closing contamination at the Company's Erie and Rochester plants, because 'Facility' takes the TSA meaning, which covers only Seller's retained Fremont, Ohio campus. It identifies this as arising in SPA Section 1.1/9.2(d) or TSA Section 1.1, explains why this matters to Votox, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "2200 Sandusky Pike",
+        "Erie and Rochester plants not covered",
+        "define Facility independently"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that general (non-fundamental) representations survive only about 90 days after Closing, inconsistent with the LOI's 18-month survival period. It identifies this as arising in SPA Section 9.1 or Escrow Agreement Section 1.1 (Release Date), explains why this matters to Votox, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "90 days after the Closing Date",
+        "Release Date vs Indemnity Release Date",
+        "LOI contemplated 18 months"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that the Escrow Agreement's choice of Delaware law and exclusive Delaware Court of Chancery jurisdiction conflicts with the SPA's New York governing law and exclusive New York forum. It identifies this as arising in Escrow Agreement Section 11.2 or 5.3, explains why this matters to Votox, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Court of Chancery of the State of Delaware",
+        "New York County courts",
+        "conform escrow agreement to New York"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the purchase price under the SPA is $63,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$63,000,000",
+        "$63 million"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Indemnity Escrow Amount under the SPA is $6,300,000.",
+      "kind": "fact",
+      "hints": [
+        "$6,300,000",
+        "Indemnity Escrow Amount"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is in the form of a memo addressed to the supervising partner (or the requesting lawyer).",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "From:"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response organizes its findings issue by issue. For each issue it gives the document and section, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Issue 1",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Seller's pre-closing tax indemnity under the SPA is excluded from (not subject to) the liability cap.",
+      "kind": "negative",
+      "hints": [
+        "taxes are uncapped",
+        "tax indemnity outside the cap"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that, under the SPA as drafted, general representations survive for 18 months after Closing.",
+      "kind": "negative",
+      "hints": [
+        "survive 18 months",
+        "18-month survival under the SPA"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

@@ -1,0 +1,176 @@
+{
+  "matter_id": "s61-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 72
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Side Letter §2.1: \"Buyer shall indemnify, defend and hold harmless Seller and each Guarantor Member ... from and against all Losses incurred by any of them arising out of or relating to the Guaranteed Obligations or any Guaranty.\" Side Letter §2.3: \"Buyer's obligations under this Section 2 are deemed a Buyer Fundamental Obligation.\" SPA definition: \"Buyer Fundamental Obligations\" includes \"(c) any obligation of Buyer under an Ancillary Agreement that the Ancillary Agreement expressly designates as a Buyer Fundamental Obligation.\" SPA §9.5(d): \"Those limitations shall not apply to Buyer Fundamental Obligations.\"",
+            "reason": "The client, Peinol, is Buyer, so it bears the guaranty indemnity. The Side Letter is an Ancillary Agreement. Its §2.3 makes the designation that SPA clause (c) invites. Under SPA §9.5(d), the $8.4M cap and $420K basket then do not apply. SPA §9.1 also keeps Buyer Fundamental Obligations alive until fully performed. The §11.9 precedence clause does not help, because the two documents do not conflict. The result is an indemnity with no limit on amount or time. It covers: all rent, return, casualty and indemnity obligations under equipment schedules running to 2030; take-or-pay and minimum-volume commitments; continuing guaranties; and obligations arising \"before, on or after the Closing Date.\" That last point means Buyer even absorbs pre-Closing Company liabilities that Seller should bear. Nothing in the folder caps or limits this. The documents are unsigned and dated March 4, 2026, with Closing still ahead, so the client can still renegotiate the point.",
+            "alone": {
+              "guaranty_side_letter.md": {
+                "findable": false,
+                "evidence": "Buyer's obligations under this Section 2 are deemed a Buyer Fundamental Obligation.",
+                "reason": "On its own, the Side Letter shows that Buyer indemnifies Seller and the Guarantor Members for 'all Losses' under the personal guaranties. That covers obligations arising before, on or after Closing, under an equipment lease and supply contracts, including take-or-pay and minimum-volume obligations. It also shows that this indemnity is labelled a Buyer Fundamental Obligation. The Side Letter states no cap, but it does not say the indemnity is uncapped either. It is an Ancillary Agreement that borrows SPA definitions and procedures (Section 9.4), so a reader would expect the SPA's general cap, basket and survival limits to apply. Two things that make this a problem come only from the SPA: (1) its definition of Buyer Fundamental Obligations includes obligations that an Ancillary Agreement designates as such, and (2) Section 9.5(d) excludes Buyer Fundamental Obligations from the $8,400,000 cap and the basket. Without those SPA provisions, the designation reads as an undefined label, and an associate could not tell that it removes any limit on amount or duration."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Buyer Fundamental Obligations\" means: ... (c) any obligation of Buyer under an Ancillary Agreement that the Ancillary Agreement expressly designates as a Buyer Fundamental Obligation.\" / Section 9.5(d): \"Those limitations shall not apply to Buyer Fundamental Obligations.\"",
+                "reason": "On its own, the SPA shows only the mechanism. Any Ancillary Agreement can designate a Buyer obligation as a Buyer Fundamental Obligation. Such obligations sit outside the $8,400,000 cap and the $420,000 basket (Section 9.5(d)). They also survive until fully performed (Section 9.1), and Buyer must indemnify for their breach (Section 9.3(c)). An associate could flag this open-ended designation as a drafting risk. The SPA does not, however, contain any Buyer indemnity for the Seller members' personal guaranties of the extruder equipment lease or the ingredient supply contracts. Nor does it show that any Ancillary Agreement actually makes such a designation. Without that, there is no uncapped exposure to identify. The guaranty indemnity, its scope and the 'deemed a Buyer Fundamental Obligation' language all come from the Side Letter, which was not provided. So the concrete harm to Buyer cannot be seen from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Seller Note Section 5.2: \"For purposes of this Note, \"Losses\" means out-of-pocket damages, liabilities, judgments, fines, penalties and reasonable attorneys' fees actually paid by a Buyer Indemnitee to a third party, excluding costs of any product recall, market withdrawal or stock recovery, and excluding any diminution in value, lost profits, or multiple-of-earnings or similar valuation-based damages.\" Read with SPA Section 11.9: \"In the event of any conflict between this Agreement and any Ancillary Agreement, this Agreement shall control, except that the Seller Note shall control with respect to its payment, subordination and set-off terms.\"",
+            "reason": "The SPA definition of Losses expressly includes recall, market withdrawal, stock recovery and regulatory remediation costs, which are the main risk for a pet food business. SPA 9.6(b) lets Buyer, our client, satisfy indemnity claims by set-off against the Seller Note 'in accordance with the Seller Note.' The Note's Section 5.1 limits set-off to 'Losses' as narrowly defined in 5.2, which excludes exactly those recall costs and counts only out-of-pocket third-party payments. SPA 11.9 carves set-off terms out of the SPA's general priority and makes the Note control, so the narrower definition governs. The result is that Buyer cannot set off recall Losses against the $12M Note it owes. After the escrow is used up, Buyer must sue Seller directly to recover them. Nothing in the folder cures this. The LOI contemplated recall costs as recoverable Losses and set-off against the Note as a recovery source. The Note is still unsigned, with a blank Issue Date, so the problem can still be fixed before closing and is actionable for Buyer.",
+            "alone": {
+              "subordinated_seller_note.md": {
+                "findable": false,
+                "evidence": "\"Losses\" means out-of-pocket damages, liabilities, judgments, fines, penalties and reasonable attorneys' fees actually paid by a Buyer Indemnitee to a third party, excluding costs of any product recall, market withdrawal or stock recovery, and excluding any diminution in value, lost profits, or multiple-of-earnings or similar valuation-based damages.",
+                "reason": "The Note alone shows that its own set-off right (Section 5.1) does not reach recall or market-withdrawal costs, and that this definition applies 'for purposes of this Note.' Read by itself, that looks like a negotiated limit on one remedy. Two things the problem depends on come only from the SPA. First, the inconsistency: the SPA defines 'Losses' to include recall, withdrawal and regulatory compliance costs. Section 5.1 refers to Losses indemnifiable 'under Article IX of the Purchase Agreement, in accordance with Section 9.6,' but the Note never shows what the SPA covers. Second, the harm: SPA Section 9.6 gives Buyer its own set-off right, and SPA Section 11.9 makes the Note's set-off terms prevail. Without 11.9, Buyer could still set off recall Losses directly under SPA 9.6. Only with it is Buyer barred from setting off recall Losses against the $12,000,000 Note and forced to sue Seller. Neither the conflict nor the precedence rule can be seen from this document."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"In the event of any conflict between this Agreement and any Ancillary Agreement, this Agreement shall control, except that the Seller Note shall control with respect to its payment, subordination and set-off terms.\" (Section 11.9); see also Section 9.6(b): \"by set-off against principal and accrued interest otherwise payable under the Seller Note, in accordance with the Seller Note\"",
+                "reason": "The SPA alone shows three things. 'Losses' broadly includes recall, market withdrawal and regulatory remediation costs. Section 9.6(b) lets Buyer set off indemnity claims against the Seller Note 'in accordance with the Seller Note.' Section 11.9 makes the Note control on its set-off terms. An associate might flag that set-off rights depend on Exhibit A, but the Note's text is not included. Nothing in the SPA shows that the Note narrows 'Losses' to out-of-pocket damages or excludes recall, market withdrawal and diminution-in-value costs. Without that narrower definition, which appears only in the Seller Note, there is no visible conflict and no visible harm to Buyer. The SPA reads as giving Buyer full set-off for recall Losses."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Escrow Agreement §12.1–12.2: \"This Agreement, and all claims and causes of action arising out of or relating to this Agreement, the Escrow Account or the Escrow Funds, shall be governed by and construed in accordance with the laws of the State of Delaware.\" and \"Each party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware for any action or proceeding arising out of or relating to this Agreement, including any dispute concerning a Claim Notice, an Objection Notice or the release of any Escrow Funds.\" SPA §11.7: \"This Agreement, and all claims and causes of action, whether in contract, tort or otherwise, arising out of or relating to this Agreement or the Transactions, shall be governed by and construed in accordance with the laws of the State of New York.\" SPA §11.8 adds \"the exclusive jurisdiction of the state or federal courts sitting in New York County, New York, for any Action arising out of or relating to this Agreement or the Transactions.\"",
+            "reason": "The mismatch is real and it hurts the client. Buyer (Peinol) is the party that brings indemnity claims, and those claims fall under the SPA's New York law and exclusive New York forum. The escrow's release mechanics, however, run through Delaware. A contested claim is paid out only on Joint Written Instructions or a \"Final Order\" (Escrow §5.4(b)). That term is defined as an order of a court \"determined in accordance with Section 12\", meaning the Delaware Court of Chancery. A New York judgment on the indemnity claim therefore may not on its face release the $4.2M. Buyer faces two proceedings under different laws, with a risk of inconsistent results and delay before it can reach the fund that is its first source of recovery under SPA §9.6(a). SPA §11.9 says the SPA controls in a conflict, but it is not clean. Each forum clause is exclusive over its own subject matter, and the Escrow Agent is not a party to the SPA, so it is bound only by Escrow §12. The Escrow Agreement is still unsigned: it is dated \"____________, 2026\" and the signature blocks are blank. Nothing in the folder shows Buyer has accepted these terms, so the point can still be raised and fixed, for example by conforming the escrow to New York or providing that a final judgment under SPA §11.8 counts as a Final Order.",
+            "alone": {
+              "indemnity_escrow_agreement.md": {
+                "findable": false,
+                "evidence": "This Agreement, and all claims and causes of action arising out of or relating to this Agreement, the Escrow Account or the Escrow Funds, shall be governed by and construed in accordance with the laws of the State of Delaware. ... Each party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware for any action or proceeding arising out of or relating to this Agreement, including any dispute concerning a Claim Notice, an Objection Notice or the release of any Escrow Funds.",
+                "reason": "On its own, the escrow agreement shows that Delaware law governs and that the Delaware Court of Chancery has exclusive jurisdiction over escrow disputes, including contested releases. Under Sections 5.4(b), 6.1 and 1.1, release of the contested amount requires a Final Order 'determined in accordance with Section 12', which means a Delaware order. The agreement also refers to Article IX indemnity claims under the Purchase Agreement. What it does not show is the Purchase Agreement's governing law or forum. Nothing here indicates that the SPA picks New York law and New York County courts for indemnity claims. Without that, a Delaware forum for the escrow is an ordinary, consistent choice. The risk of split proceedings, inconsistent rulings and delay in reaching the $4,200,000 depends on the SPA's New York clauses, which only the other document shows."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "This Agreement, and all claims and causes of action, whether in contract, tort or otherwise, arising out of or relating to this Agreement or the Transactions, shall be governed by and construed in accordance with the laws of the State of New York. (Section 11.7); Each Party irrevocably submits to the exclusive jurisdiction of the state or federal courts sitting in New York County, New York, for any Action arising out of or relating to this Agreement or the Transactions. (Section 11.8)",
+                "reason": "The SPA alone shows a New York governing-law clause and exclusive New York County forum for all disputes relating to the Transactions. It also shows that the Indemnity Escrow Amount is held under a separate Escrow Agreement (Exhibit B), which is not attached. Its precedence clause (11.9) does not reserve escrow terms to the Escrow Agreement. Read by itself, the SPA puts the escrow disputes in New York along with everything else, so there is no conflict on its face. The problem exists only because the Escrow Agreement's Section 12 picks Delaware law and the exclusive jurisdiction of the Court of Chancery. That clause is in the document I was not given. An associate could at most note that the escrow terms should be checked for consistency, but could not see the split-forum risk to Buyer from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Schedule 4.8, Part A, Item 1(d): \"Pawford may terminate the Pawford Agreement on 60 days' written notice if any transfer of more than 50% of the voting equity of the Company occurs, whether directly or indirectly and whether in one transaction or a series of related transactions, without Pawford's prior written consent.\" Schedule 4.6, Part B: \"None. No consent of any third party is required in connection with the execution, delivery and performance by Seller and the Company of the Agreement or the consummation of the Transactions.\"",
+            "reason": "Under SPA Section 1.1, Buyer acquires 100% of the Company's stock. That transfers far more than 50% of the voting equity, so it triggers Pawford's termination right unless Pawford consents in advance. Pawford is the Company's largest customer, at about $31.6M a year. Schedule 4.6 nonetheless lists no third-party consents. As a result, three protections that run in Buyer's favor and turn on that list do not cover the Pawford consent:\n- Seller's covenant to seek consents (Section 6.3);\n- the closing delivery of consents (Section 3.1(f));\n- Buyer's closing condition (Section 7.2(c)).\n\nThe schedule entry also carves the Pawford conflict out of the no-conflicts representation. Section 4.5(c) excepts matters \"as set forth on Schedule 4.6,\" and Section 4.6 is likewise qualified by the schedule. This weakens Buyer's indemnity position for the conflict. Any recovery would also be capped and backed by an escrow that lasts only six months.\n\nThe harm falls on Buyer, the firm's client. After Closing, Buyer would own a company whose key customer can walk away on 60 days' notice. Nothing in the folder cures this, waives it, or records Buyer accepting it. The latest date in the folder is the March 4, 2026 signing, and no Closing appears to have occurred. Buyer can therefore still act: it can require that Schedule 4.6 be corrected, that Pawford's consent be added as a condition, or that it get a specific indemnity before Closing."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "SPA §9.1: \"All other representations and warranties of Seller and Buyer contained in this Agreement shall survive until the Escrow Release Date.\" Escrow Agreement §4.1: \"The \"Escrow Release Date\" is the date that is six (6) months after the Closing Date.\"",
+            "reason": "The two provisions together cut the survival of every non-Fundamental Seller representation to six months after Closing. That includes the §4.14 product safety, contamination, nutrient-profile and recall representations, plus the material contracts and compliance representations. Escrow Agreement §5.1 likewise allows Claim Notices only before that date. Buyer, our client, is the indemnified party, so the short window hurts Buyer. Latent contamination or recall problems often surface after six months, and Buyer would then have no indemnity claim and no set-off against the Seller Note. Nothing in the folder cures this. The LOI's 18-month and 24-month periods are non-binding. The Feb. 18 Buyer draft had those periods, but it was replaced in the signed SPA. No other document extends survival. The latest date in the folder is the March 4, 2026 signing, and Closing has not yet occurred. The six-month window has therefore not run, and Buyer can still seek an amendment before or at Closing (SPA §11.3; Escrow Agreement §13.3). The issue is present and actionable.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "All other representations and warranties of Seller and Buyer contained in this Agreement shall survive until the Escrow Release Date.",
+                "reason": "The SPA shows that non-fundamental representations, including the Section 4.14 product safety and recall representations, survive only until the 'Escrow Release Date'. It also shows that this term 'has the meaning given to that term in the Escrow Agreement.' The SPA itself never says when that date falls, so it gives no survival period of any length. The six-month release date, which creates the short window for product-safety claims, appears only in Escrow Agreement Section 4.1, and that document has not been provided. An associate could flag the cross-reference and ask for the date to be confirmed, but could not tell from this document alone that the survival period is too short and hurts Buyer."
+              },
+              "indemnity_escrow_agreement.md": {
+                "findable": false,
+                "evidence": "\"The \"Escrow Release Date\" is the date that is six (6) months after the Closing Date.\" (Section 4.1); \"At any time before the Escrow Release Date, Buyer may deliver to Seller and the Escrow Agent a written notice (a \"Claim Notice\") of any claim for indemnification under Article IX of the Purchase Agreement.\" (Section 5.1)",
+                "reason": "This document alone shows only that the escrow releases six months after Closing and that Buyer must deliver Claim Notices against the escrowed funds before then. Read by itself, that is a short escrow period that limits recovery from the $4.2M escrow. It does not show that Buyer's underlying indemnity rights end at that point. A short escrow is common and can sit alongside a longer survival period that lets Buyer claim directly against Seller. The actual problem comes from the SPA: Section 9.1 ties the survival of non-fundamental representations, including the Section 4.14 product-safety representations, to the Escrow Release Date, which cuts off all claims after six months. Nothing in this agreement shows that survival link, the product-safety representations, or the LOI's 18- and 24-month terms. An associate reading only this document could not see the survival gap."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F4, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

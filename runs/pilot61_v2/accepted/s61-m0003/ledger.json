@@ -1,0 +1,223 @@
+{
+  "matter_id": "s61-m0003",
+  "summary": "Votox Glazing Holdings, Inc. (client, Buyer) is buying all outstanding stock of Lumacrest Facade Systems, Inc. from Stounaisk Industries, Inc. (Seller) for $63,000,000. Lumacrest is an architectural glass fabricator making tempered, laminated and insulated glass units and curtain-wall glazing at plants in Erie, Pennsylvania and Rochester, New York. The folder holds the execution-form draft SPA, the signed non-binding LOI, the draft transition services agreement, the draft escrow agreement with Pellucid Trust Company, N.A., an unrelated forklift lease and the parties' confidentiality agreement. Four problems are planted. First, the SPA cap reaches Seller's pre-closing tax indemnity, although the LOI agreed taxes would be carved out. Second, the special environmental indemnity borrows a TSA definition of 'Facility' that covers only Seller's retained Ohio campus, not the Company's plants. Third, general representations survive only until an escrow-agreement 'Release Date' that falls 90 days after closing. Fourth, the escrow agreement sends escrow disputes to Delaware law and courts, while the SPA uses New York law and forum.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Votox Glazing Holdings, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Stounaisk Industries, Inc.",
+      "role": "Seller and TSA service provider"
+    },
+    {
+      "id": "P3",
+      "name": "Lumacrest Facade Systems, Inc.",
+      "role": "Company being acquired (target)"
+    },
+    {
+      "id": "P4",
+      "name": "Pellucid Trust Company, N.A.",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P5",
+      "name": "Kestrelline Material Handling LLC",
+      "role": "Forklift lessor to the Company (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA purchase price",
+      "value": "$63,000,000",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Indemnity Escrow Amount",
+      "value": "$6,300,000",
+      "doc": "D1",
+      "section": "2.4"
+    },
+    {
+      "id": "F3",
+      "key": "Adjustment Escrow Amount",
+      "value": "$750,000",
+      "doc": "D1",
+      "section": "2.4"
+    },
+    {
+      "id": "F4",
+      "key": "SPA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "11.9(a)"
+    },
+    {
+      "id": "F5",
+      "key": "SPA exclusive forum",
+      "value": "State or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "11.9(b)"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "SPA controls over any conflicting Ancillary Agreement as between Buyer and Seller",
+      "doc": "D1",
+      "section": "11.4"
+    },
+    {
+      "id": "F7",
+      "key": "LOI general representation survival period",
+      "value": "18 months after closing",
+      "doc": "D2",
+      "section": "4"
+    },
+    {
+      "id": "F8",
+      "key": "LOI cap carve-outs",
+      "value": "Fraud, fundamental representations, pre-closing taxes, and the special environmental indemnity",
+      "doc": "D2",
+      "section": "4"
+    },
+    {
+      "id": "F9",
+      "key": "TSA term",
+      "value": "9 months after the Closing Date",
+      "doc": "D3",
+      "section": "7.1"
+    },
+    {
+      "id": "F10",
+      "key": "Escrow Agreement Indemnity Release Date",
+      "value": "18 months after the Closing Date",
+      "doc": "D4",
+      "section": "1.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_votox_stounaisk.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "letter_of_intent_lumacrest.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "escrow_agreement_pellucid.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "kestrelline_forklift_lease.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "mutual_confidentiality_agreement.md",
+      "kind": "mutual confidentiality agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "This issue appears only when four SPA provisions are read together. SPA Section 9.5(a) caps Seller's aggregate liability for all Losses under Article IX at the Cap Amount, which equals the $6,300,000 Indemnity Escrow Amount. Section 9.5(c) lifts the cap only for Fraud, breaches of Fundamental Representations, and the special environmental indemnity in Section 9.2(d). The Section 1.1 definition of 'Fundamental Representations' lists Sections 4.1 to 4.4 (organization, authority, capitalization, brokers) and leaves out the tax representation in Section 4.14. Nothing in 9.5(c) mentions the pre-closing tax indemnity in Section 9.2(c). The result is that Seller's pre-closing tax indemnity, including multistate sales and use tax exposure on the Company's glazing installation contracts, is capped at 10% of the price. The signed LOI (D2, Section 4) agreed that pre-closing taxes would sit outside the cap. The SPA, the later and binding document, dropped that carve-out, and the SPA's entire-agreement clause supersedes the LOI. Nothing in the folder restores the carve-out.",
+      "doc": "D1",
+      "section": "9.5",
+      "detect_terms": [
+        "shall not exceed the Cap Amount",
+        "breach of any Fundamental Representation"
+      ],
+      "expected_finding": "Because SPA Section 9.5(c) does not carve out the Section 9.2(c) pre-closing tax indemnity, and the tax representation is not a Fundamental Representation, Seller's tax indemnity is capped at the $6,300,000 Cap Amount, contrary to the LOI's agreed tax carve-out; Votox should add Section 9.2(c) (and the Section 4.14 tax representation) to the Section 9.5(c) carve-outs.",
+      "contradicts": "F8",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 9.2(d) has Seller indemnify Buyer for 'Pre-Closing Environmental Liabilities'. Section 1.1 defines these as liabilities from Hazardous Materials (for example batch-house lead and arsenic residues, and coating solvents) released at or from any Facility before Closing. The SPA says 'Facility' has the meaning given in the Transition Services Agreement. On its own, that cross-reference reads as ordinary drafting economy. TSA Section 1.1 defines 'Facility' as the real property owned by Seller at 2200 Sandusky Pike, Fremont, Ohio, where Seller will keep performing coating and warehousing services. That definition is correct for the TSA's purposes. Read together, the two provisions confine the special environmental indemnity, which Section 9.5(c) leaves uncapped, to Seller's own retained campus. The Company's Erie and Rochester fabrication plants, the sites Buyer actually acquires, fall outside it. The SPA's precedence clause (Section 11.4) does not cure this because there is no conflict to resolve: the SPA itself adopts the TSA meaning.",
+      "doc": "D1",
+      "section": "1.1 (definition of Pre-Closing Environmental Liabilities) and 9.2(d)",
+      "detect_terms": [
+        "Pre-Closing Environmental Liabilities",
+        "at or from any Facility"
+      ],
+      "expected_finding": "Because the SPA borrows the TSA definition of 'Facility', which covers only Seller's retained Fremont, Ohio campus, the Section 9.2(d) environmental indemnity does not cover pre-closing contamination at the Company's Erie and Rochester plants; the SPA should define Facility (or Company Real Property) independently to include all current and former Company sites.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "1.1 (definition of Facility)",
+      "detect_terms2": [
+        "2200 Sandusky Pike"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1 provides that representations other than Fundamental Representations and the tax representation survive Closing 'until the Release Date (as defined in the Escrow Agreement)'. Tying survival to the escrow release looks ordinary on its own. The escrow agreement holds two funds. Its Section 1.1 defines 'Release Date' as ninety (90) days after the Closing Date, which is the release date for the $750,000 Adjustment Escrow. It uses a separate term, 'Indemnity Release Date', for the 18-month release of the Indemnity Escrow. That two-fund structure is also ordinary on its own. Read together, the SPA's cross-reference picks up the 90-day term. General representations, including product warranty, insulated glass unit seal-failure claims, customer contract and financial statement representations, therefore expire about 90 days after closing. That is before a full installation season or a first audit. The LOI (D2, Section 4) contemplated 18-month survival. The escrow agreement's holdback of funds for claims pending at the Indemnity Release Date does not extend survival: it covers only Claim Notices validly delivered under the SPA, and after 90 days no such notice can be validly delivered for general representations.",
+      "doc": "D1",
+      "section": "9.1",
+      "detect_terms": [
+        "until the Release Date"
+      ],
+      "expected_finding": "Read with Escrow Agreement Section 1.1, SPA Section 9.1 cuts survival of general representations to 90 days after Closing, too short for Votox to discover and claim breaches and inconsistent with the LOI's 18 months; Section 9.1 should refer to the Indemnity Release Date or state an 18-month period directly.",
+      "contradicts": "F7",
+      "doc2": "D4",
+      "section2": "1.1 (definition of Release Date)",
+      "detect_terms2": [
+        "ninety (90) days after the Closing Date"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Escrow Agreement Section 11.2 chooses the laws of the State of Delaware and the exclusive jurisdiction of the Court of Chancery of the State of Delaware. Escrow Agreement Section 5.3 lets the Escrow Agent release disputed Indemnity Escrow funds only on joint written instructions or a 'Final Order' of a court specified in Section 11.2. SPA Section 11.9 requires every dispute arising out of the SPA or the transactions it contemplates, including indemnification claims, to be governed by New York law and brought exclusively in New York County courts. Read together, Votox would have to win its indemnity claim in New York and then obtain a separate Delaware order to reach the escrow, with the risk of inconsistent rulings and Seller arguing that each forum lacks jurisdiction over part of the dispute. The SPA's precedence clause (Section 11.4) does not cure the conflict. It operates only as between Buyer and Seller, and the Escrow Agent is not a party to the SPA. The Escrow Agent remains contractually bound to release funds only on a Delaware Final Order.",
+      "doc": "D4",
+      "section": "11.2 and 5.3",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery of the State of Delaware"
+      ],
+      "expected_finding": "The Escrow Agreement's Delaware law and exclusive Chancery forum, which the Escrow Agent's release mechanics in Section 5.3 depend on, conflict with the SPA's New York law and exclusive New York forum and are not cured by SPA Section 11.4 because the Escrow Agent is not bound by it; the Escrow Agreement should be conformed to New York law and forum, or Section 5.3 should accept a final order of the court specified in SPA Section 11.9.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

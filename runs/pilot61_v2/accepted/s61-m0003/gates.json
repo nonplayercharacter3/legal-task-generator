@@ -1,0 +1,146 @@
+{
+  "matter_id": "s61-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 9.5(a): \"The aggregate liability of Seller for all Losses under this Article IX shall not exceed the Cap Amount.\" Section 9.5(c): \"The limitations in Sections 9.5(a) and 9.5(b) shall not apply to Losses arising out of or relating to (i) Fraud, (ii) any breach of any Fundamental Representation, or (iii) the matters described in Section 9.2(d)...\"",
+            "reason": "The problem is present and hurts Buyer (Votox), the indemnified party. The Cap Amount equals the $6,300,000 Indemnity Escrow Amount and applies to all Losses under Article IX. Section 9.5(c) lifts the cap only for Fraud, Fundamental Representations and the environmental indemnity in Section 9.2(d). The Section 1.1 definition of Fundamental Representations covers only Sections 4.1 to 4.4, so the tax representation in Section 4.14 is not included. The pre-closing tax indemnity in Section 9.2(c) is not carved out either. As a result, Seller's tax exposure, including multistate sales and use tax on the installation contracts, is capped at 10% of the price. The longer survival period for Section 4.14 in Section 9.1 does not change that cap. The LOI (Section 4(d)) expressly put pre-closing taxes outside the cap, but the LOI is non-binding on this point and Section 11.4 of the SPA supersedes it. No other document in the folder restores the carve-out. The SPA is still an unsigned execution form, so Buyer can still negotiate to add Section 9.2(c) and Section 4.14 to the Section 9.5(c) carve-outs. The issue is actionable."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "SPA §1.1: \"'Facility' has the meaning given to such term in the Transition Services Agreement.\" and \"'Pre-Closing Environmental Liabilities' means all Losses arising out of or relating to (a) the presence or Release of Hazardous Materials at or from any Facility on or prior to the Closing Date, or (b) any violation of Environmental Law by the Company on or prior to the Closing Date in connection with any Facility.\" TSA §1.1: \"'Facility' means the real property owned by Provider located at 2200 Sandusky Pike, Fremont, Ohio, including the coating lines, warehouse buildings, loading docks, rail spur and related improvements located on that property...\"",
+            "reason": "The problem is present. Seller gives the special environmental indemnity in SPA §9.2(d). §9.5(c) exempts it from the Cap Amount and the Deductible, subject only to a Purchase Price ceiling. That indemnity is tied to 'any Facility', and the SPA takes that term from the TSA, where it means only Seller's retained Fremont, Ohio campus. The result is that the uncapped indemnity covers Seller's own site and not the Company's Erie and Rochester plants that Buyer is acquiring. The LOI (§4(c)) shows the intended deal was coverage for the Company's current and former facilities, so the mismatch was not intended. Two provisions might seem to cure it, and neither does. First, the §11.4 precedence clause does not apply because there is no conflict between the documents: the SPA itself adopts the TSA definition. Second, TSA §8.3 says the TSA does not modify the SPA, but it does not change a definition the SPA chooses to incorporate. As a result, Buyer would be left with the general environmental rep in §4.15 for the plants, which is subject to the Deductible, the $6.3M cap and the survival period in §9.1. The agreement is still an unsigned execution form, so the problem can still be fixed before signing.",
+            "alone": {
+              "stock_purchase_agreement_votox_stounaisk.md": {
+                "findable": false,
+                "evidence": "\"Facility\" has the meaning given to such term in the Transition Services Agreement.",
+                "reason": "The SPA alone shows that the uncapped environmental indemnity in Sections 9.2(d) and 9.5(c) depends on \"Facility\", and that \"Facility\" is defined only by reference to the TSA, an agreement between Seller and the Company for coating and warehousing services. An associate might find that cross-reference odd or worth checking. But nothing in the SPA says what \"Facility\" means. It does not show that the term covers only Seller's retained Fremont, Ohio campus, or that it leaves out the Erie and Rochester plants. Without the TSA's definition, there is no visible narrowing of the indemnity and no visible harm to Buyer. The term could just as well cover the Company's plants."
+              },
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"Facility\" means the real property owned by Provider located at 2200 Sandusky Pike, Fremont, Ohio, including the coating lines, warehouse buildings, loading docks, rail spur and related improvements located on that property, from which Provider will perform the coating and warehousing Services under this Agreement.",
+                "reason": "On its own, the TSA defines 'Facility' to mean only the Provider's retained Fremont campus. That is correct and harmless for a services agreement. The TSA also names the Company's Erie and Rochester plants as separate sites (Section 5.3), but it says nothing about environmental indemnities. Section 8.3 says the TSA does not change Purchase Agreement rights. The harm comes from the SPA, which is not provided here: the SPA borrows this definition for its uncapped Pre-Closing Environmental Liabilities indemnity, so that indemnity covers only Fremont and not the acquired plants. An associate reading only the TSA would have no reason to see a problem for Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SPA §9.1: \"The representations and warranties contained in this Agreement shall survive the Closing until the Release Date (as defined in the Escrow Agreement)...\" Escrow Agreement §1.1: \"'Release Date' means the date that is ninety (90) days after the Closing Date.\" The same section separately defines \"'Indemnity Release Date' means the date that is 18 months after the Closing Date.\"",
+            "reason": "The SPA's survival clause cross-refers to the Escrow Agreement's 'Release Date'. That term is the 90-day release date for the Adjustment Escrow, not the 18-month 'Indemnity Release Date'. As a result, Seller's general representations expire about 90 days after Closing. This includes financial statements, product warranty and IGU seal-failure, material contracts, and environmental (other than the special indemnity). The LOI §4(b) contemplated 18-month survival. Under SPA §9.1, no Claim Notice may be delivered after the survival period, so the holdback for pending claims in Escrow §5.4 does not help. Votox, as Buyer, is the indemnified party and bears this harm. Nothing in the folder cures it. The SPA is still an unsigned execution form with blank dates, so the problem can still be fixed by changing the cross-reference to 'Indemnity Release Date'.",
+            "alone": {
+              "stock_purchase_agreement_votox_stounaisk.md": {
+                "findable": false,
+                "evidence": "The representations and warranties contained in this Agreement shall survive the Closing until the Release Date (as defined in the Escrow Agreement); provided that the Fundamental Representations and the representations and warranties in Section 4.14 (Taxes) shall survive until sixty (60) days after the expiration of the applicable statute of limitations.",
+                "reason": "The SPA shows only that survival of the general representations is tied to a term, 'Release Date', that is defined in the Escrow Agreement. The SPA does not include that definition, and it gives no survival period of its own for general reps. A careful associate would note the external cross-reference and want to check it. The SPA mentions two escrows ($6.3M indemnity, $750K adjustment), but nothing in it says that 'Release Date' means the 90-day adjustment release rather than the 18-month indemnity release. Linking survival to an escrow release date is ordinary and would normally be read as the indemnity escrow. The actual problem has two parts, and both come from documents not provided: (1) the Escrow Agreement defines 'Release Date' as 90 days and uses a separate 'Indemnity Release Date'; (2) the LOI contemplated 18-month survival. Without those, the SPA alone does not show that general reps expire about 90 days after closing."
+              },
+              "escrow_agreement_pellucid.md": {
+                "findable": false,
+                "evidence": "\"Release Date\" means the date that is ninety (90) days after the Closing Date. If that date is not a Business Day, the Release Date is the next Business Day.",
+                "reason": "On its own, the escrow agreement shows two defined terms: 'Release Date' (90 days, used for the $750,000 Adjustment Escrow) and 'Indemnity Release Date' (18 months, used for the $6,300,000 Indemnity Escrow). It also refers to Claim Notices under SPA Section 9.4(a). Read alone, this is an ordinary and internally consistent two-fund structure. Nothing in it caps how long representations survive, and nothing harms Buyer. The problem only arises because SPA Section 9.1 ties survival of general representations to 'the Release Date (as defined in the Escrow Agreement)', which picks up the 90-day term instead of the 18-month one. That cross-reference, and the 18-month survival contemplated in the LOI, are in documents not provided. An associate reading only this agreement could not see that survival is cut to 90 days."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Escrow Agreement §11.2: \"Each party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware in any action or proceeding arising out of or relating to this Agreement or the Escrow Funds.\" Escrow Agreement §5.3: \"The Escrow Agent shall release a disputed amount only upon receipt of one of the following: (a) Joint Written Instructions; or (b) a Final Order of a court specified in Section 11.2.\" SPA §11.9(b): \"Each party irrevocably submits to the exclusive jurisdiction of the state or federal courts located in New York County, New York in any action or proceeding arising out of or relating to this Agreement or the transactions contemplated hereby, including any claim for indemnification under Article IX, and agrees that all such actions and proceedings shall be brought only in such courts.\"",
+            "reason": "Under the SPA, Votox's indemnity claims must be decided under New York law and only in New York County courts. Under the escrow, a disputed indemnity amount comes out only on Joint Written Instructions or a Final Order of a Delaware court. If Seller files an Objection Notice and refuses to sign joint instructions, Votox has no direct route from a New York judgment to the $6.3M Indemnity Escrow. It would need a second Delaware proceeding, which brings delay, cost, a risk of inconsistent results and forum fights. Votox carries this risk because it is the party trying to reach the escrow. SPA §11.4 does not fix the problem. It applies only \"as between Buyer and Seller,\" and the Escrow Agent's duties are expressly limited to the escrow terms (Escrow §2.2: it \"is not a party to, and has no duties or obligations under, the Purchase Agreement\"). SPA §9.6 obliges the parties to give joint instructions once a claim is finally determined, but that is a covenant Seller could breach, and enforcing it would itself need New York litigation. The escrow is still an unsigned form with the date blank, so the clause can be fixed before closing. The issue is therefore present and actionable."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F2, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.105,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

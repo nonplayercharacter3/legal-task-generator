@@ -1,0 +1,250 @@
+{
+  "matter_id": "s61-m0001",
+  "summary": "Peinol Pet Nutrition, Inc. (Buyer, the firm's client) is acquiring all of the issued and outstanding stock of Ostbrook Kibble Company, a dry and wet pet food manufacturer, from Laraisk Family Holdings, LLC (Seller). The deal is governed by a New York-law Stock Purchase Agreement signed March 4, 2026. The consideration is $84,000,000. Of that, $12,000,000 is paid through a subordinated Seller Note issued by Buyer, and $4,200,000 is held in an indemnity escrow with Cobalt Harbor Trust Company, N.A. The folder also holds a side letter, a disclosure schedule, the non-binding letter of intent, a superseded prior draft of the SPA and Buyer's board resolutions. Five problems are planted for Buyer: (1) a side-letter guaranty indemnity that the SPA's carve-out makes uncapped; (2) a Seller Note definition of 'Losses' that, through the SPA's precedence clause, strips recall costs from Buyer's set-off right; (3) Delaware law and forum in the Escrow Agreement against New York in the SPA; (4) an unaddressed change-of-control termination right in the Company's largest retail supply contract; and (5) general representations, including product-safety representations, that survive only until a six-month escrow release date.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Peinol Pet Nutrition, Inc.",
+      "role": "Buyer; issuer of the Seller Note; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Laraisk Family Holdings, LLC",
+      "role": "Seller of all outstanding stock of Ostbrook Kibble Company; payee of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Ostbrook Kibble Company",
+      "role": "Target company; pet food manufacturer whose shares are being sold"
+    },
+    {
+      "id": "P4",
+      "name": "Cobalt Harbor Trust Company, N.A.",
+      "role": "Escrow Agent under the Escrow Agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Pawford Retail Group, Inc.",
+      "role": "Retail customer under the Company's Co-Manufacturing and Supply Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement signing date",
+      "value": "March 4, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$84,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$12,000,000",
+      "doc": "D6",
+      "section": "Section 1"
+    },
+    {
+      "id": "F4",
+      "key": "Indemnity Escrow Amount",
+      "value": "$4,200,000",
+      "doc": "D2",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F5",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.7"
+    },
+    {
+      "id": "F6",
+      "key": "Stock Purchase Agreement forum",
+      "value": "state or federal courts sitting in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "SPA controls over Ancillary Agreements, except the Seller Note controls its payment, subordination and set-off terms",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "LOI survival of general and product-safety representations",
+      "value": "18 months after Closing; product safety and recall representations 24 months",
+      "doc": "D5",
+      "section": "Section 4"
+    },
+    {
+      "id": "F9",
+      "key": "Stock Purchase Agreement general indemnity cap",
+      "value": "$8,400,000",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "indemnity_escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "guaranty_side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "subordinated_seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "spa_prior_draft_feb_2026.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D8",
+      "filename": "buyer_board_resolutions.md",
+      "kind": "board resolutions",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "The two provisions only create the exposure when read together. Side Letter Section 2 has Buyer indemnify Seller and its members for all Losses under the members' personal guaranties of the Company's extruder equipment lease and ingredient supply contracts (the 'Guaranteed Obligations'). It also declares that obligation 'deemed a Buyer Fundamental Obligation'. On its own, that label reads as housekeeping. The SPA defines Buyer Fundamental Obligations to include any obligation an Ancillary Agreement expressly designates as one. SPA Section 9.5(d) then provides that the $8,400,000 cap and basket 'shall not apply to Buyer Fundamental Obligations'. Together, Buyer's guaranty indemnity is unlimited in amount and in duration. The SPA's precedence clause does not cure this: there is no conflict, because the SPA itself invites the designation.",
+      "doc": "D3",
+      "section": "Section 2",
+      "detect_terms": [
+        "deemed a Buyer Fundamental Obligation",
+        "Guaranteed Obligations"
+      ],
+      "expected_finding": "Because Side Letter Section 2 designates Buyer's guaranty indemnity a Buyer Fundamental Obligation and SPA Section 9.5(d) exempts Buyer Fundamental Obligations from the $8,400,000 cap, Buyer faces unlimited liability for the Seller members' guaranties. The designation should be deleted or the indemnity expressly capped, with guaranty releases obtained at Closing.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 9.5(d)",
+      "detect_terms2": [
+        "shall not apply to Buyer Fundamental Obligations"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "The SPA defines 'Losses' to include costs of product recalls, market withdrawals and regulatory compliance, which is the core risk for a pet food maker. SPA Section 9.6 lets Buyer recover indemnity claims by set-off against the Seller Note. Seller Note Section 5 permits set-off only of 'Losses', which it defines for the Note as out-of-pocket damages actually paid, 'excluding costs of any product recall, market withdrawal' and diminution in value. Read alone, the Note's set-off clause looks routine. The narrowing only controls because of SPA Section 11.9, which makes the Seller Note prevail on its set-off terms. As a result, Buyer cannot set off recall Losses against the $12,000,000 Note and must sue Seller for them instead.",
+      "doc": "D6",
+      "section": "Section 5",
+      "detect_terms": [
+        "excluding costs of any product recall, market withdrawal"
+      ],
+      "expected_finding": "The Seller Note's narrower definition of 'Losses', which controls set-off under SPA Section 11.9, removes recall and withdrawal costs from Buyer's set-off right against the $12,000,000 Note. The Note's set-off provision should use the SPA definition of Losses, or the set-off carve-out should be removed from the precedence clause.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 11.9",
+      "detect_terms2": [
+        "Seller Note shall control with respect to its payment, subordination and set-off terms"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Escrow Agreement Section 12 chooses Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery for any dispute about the escrow, including release of the Indemnity Escrow Amount. SPA Sections 11.7 and 11.8 choose New York law and New York County courts for all disputes arising from the transaction, including the indemnity claims the escrow secures. Each clause is ordinary on its own. Together, Buyer must prove an indemnity claim in New York but fight over the escrow release in Delaware. That risks duplicative proceedings, inconsistent rulings and delay in reaching the $4,200,000 fund. The SPA's precedence clause does not resolve which forum governs escrow disputes, because each forum clause is framed as exclusive within its own instrument's subject matter.",
+      "doc": "D2",
+      "section": "Section 12",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery of the State of Delaware"
+      ],
+      "expected_finding": "The Escrow Agreement's Delaware law and exclusive Delaware forum conflict with the SPA's New York law and New York County forum, splitting indemnity and escrow-release disputes across two jurisdictions. The Escrow Agreement should be conformed to New York law and the SPA forum.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ],
+      "doc2": "D1",
+      "section2": "Section 11.7",
+      "detect_terms2": [
+        "laws of the State of New York"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "The SPA recitals and Section 1.1 provide for the sale of all of the Company's outstanding stock to Buyer. Disclosure Schedule 4.8 lists the Company's Co-Manufacturing and Supply Agreement with Pawford Retail Group, Inc., its largest customer. That agreement lets Pawford terminate on any transfer of more than 50% of the Company's voting equity without Pawford's prior written consent. Disclosure Schedule 4.6, however, states that no consent of any third party is required for the transaction. SPA Section 7.2(c) conditions Closing only on consents listed in Schedule 4.6. The stock sale therefore triggers Pawford's termination right, the consent is neither obtained nor a closing condition, and Schedule 4.6 understates what is required.",
+      "doc": "D4",
+      "section": "Schedule 4.8 and Schedule 4.6",
+      "detect_terms": [
+        "transfer of more than 50% of the voting equity",
+        "no consent of any third party is required"
+      ],
+      "expected_finding": "The stock sale triggers Pawford's change-of-control termination right under the Co-Manufacturing and Supply Agreement listed in Schedule 4.8. Schedule 4.6 wrongly states that no consents are required, so Pawford's consent should be listed in Schedule 4.6 and made a closing condition under SPA Section 7.2(c), or a specific indemnity should be added.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1 provides that all representations other than Fundamental Representations, including the Section 4.14 product safety and recall representations, survive 'until the Escrow Release Date'. The SPA defines that term by reference to the Escrow Agreement. Escrow Agreement Section 4.1 sets the Escrow Release Date at six months after the Closing Date. Read together, Buyer has only six months to give notice of claims for contamination, nutrient-deficiency or recall problems, which often surface later. The Letter of Intent (Section 4) contemplated 18 months for general representations and 24 months for product-safety representations. The LOI is non-binding and superseded, so it does not cure the gap.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "shall survive until the Escrow Release Date"
+      ],
+      "expected_finding": "Because SPA Section 9.1 ties survival to the Escrow Release Date, and Escrow Agreement Section 4.1 sets that date at six months after Closing, Buyer's product-safety and other general representation claims expire after only six months. The survival periods should be reset to at least the LOI's 18 and 24 months, with escrow release extended to match.",
+      "contradicts": "F8",
+      "doc2": "D2",
+      "section2": "Section 4.1",
+      "detect_terms2": [
+        "six (6) months after the Closing Date"
+      ]
+    }
+  ]
+}

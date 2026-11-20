@@ -1,0 +1,182 @@
+{
+  "matter_id": "s61-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "APA §2.7(b): \"Buyer may, within thirty (30) days after delivery of the Closing Statement (the \"Review Period\"), deliver to Seller a written notice of objection...\"; §2.7(c): \"If Buyer does not deliver an Objection Notice before the expiration of the Review Period, the Closing Statement shall be final and binding on the parties.\" Board Consent Recital C: \"The Seller delivered the Closing Statement to the Company by email to the Company's Chief Financial Officer on August 3, 2026.\" Resolution 1 (dated September 8, 2026) authorizes officers \"to prepare, execute and deliver to the Seller an Objection Notice under Section 2.7(b).\"",
+            "reason": "The problem is present and is still live for Buyer, our client. Seller delivered the Closing Statement on August 3, 2026, so Buyer's 30-day Review Period ended on September 2, 2026. The board did not authorize an objection until September 8, 2026, and the folder contains no Objection Notice delivered by September 2. Under §2.7(c), the Closing Statement is therefore at risk of having become final and binding. That would foreclose Buyer's roughly $1,150,000 claim that deferred revenue was understated. It would also foreclose the §2.7(d) Independent Accountant process the board authorized, and any set-off of a §2.7(e) shortfall under Note §4(a), since that set-off depends on an amount being payable under §2.7(e). Buyer has not accepted the figure: the board consent expressly states the Company does not accept it. So the issue is still actionable. Counsel can act now, for example by: arguing that emailing the CFO was not effective delivery under the §12.2 notice mechanics; seeking Seller's written waiver or extension under §12.3; or pursuing the understatement as a §4.8 representation breach under Article IX, within the deductible and cap.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "If Buyer does not deliver an Objection Notice before the expiration of the Review Period, the Closing Statement shall be final and binding on the parties.",
+                "reason": "The APA alone shows the mechanism. Section 2.7(b) sets a 30-day Review Period after delivery of the Closing Statement, and Section 2.7(c) makes the statement final and binding if no Objection Notice is delivered in time. The APA does not show when the Closing Statement was actually delivered (August 3, 2026). It does not show that Buyer disputes the deferred revenue figure, or that Buyer had not objected by September 2, 2026. Those facts come only from the board consent. Without that document, an associate could not tell that the deadline has passed or that the client is harmed."
+              },
+              "buyer_board_consent.md": {
+                "findable": false,
+                "evidence": "C. The Seller delivered the Closing Statement to the Company by email to the Company's Chief Financial Officer on August 3, 2026.",
+                "reason": "Read alone, the consent shows four things. The Closing Statement was delivered on August 3, 2026. The Buyer still disputes the advance-ticket deferred revenue figure (about $1.15M). As of September 8, 2026, the board was only then authorizing officers to prepare and deliver an Objection Notice under Section 2.7(b). The consent does not state the length of the objection period, and it does not say an untimely objection makes the statement final and binding. Those terms of Sections 2.7(b) and 2.7(c) are only in the APA. An associate would notice the 36-day gap and might suspect a timing risk. But the September 2 deadline, and the fact that the window had expired and the figure is now binding against the client, cannot be shown without the APA."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "APA Section 12.9: \"In the event of any conflict between the terms of this Agreement and the terms of any Ancillary Agreement, the terms of this Agreement shall prevail; provided, however, that the Seller Note shall control as to payment, set-off and recourse.\" Seller Note Section 5: \"Holder's aggregate liability for all Indemnifiable Losses, whether recovered by set-off against this Note or otherwise, shall in no event exceed the Indemnity Cap.\"",
+            "reason": "The problem is present when the two documents are read together. APA 9.5(b) carves Fraud, Fundamental Representations, the Tax representations and Excluded Liabilities out of the $2,400,000 Indemnity Cap. Seller Note Section 5 is a recourse limitation that caps Holder (Seller) liability for all Indemnifiable Losses, \"whether recovered by set-off ... or otherwise.\" It has no carve-outs. 'Indemnifiable Losses' covers all Article IX Losses, so it includes the carve-out categories. APA 12.9 makes the Note control as to recourse, so the Note's flat cap overrides the APA carve-outs. Buyer is the indemnified party, so this hurts Buyer: Seller's uncapped exposure for fraud, title breaches and retained liabilities (pending litigation, pre-Closing taxes, employee liabilities) is limited to $2.4M. Nothing in the folder cures or waives this. The Recital D deferred-revenue claim also counts as an Indemnifiable Loss and would use up the cap. The issue remains actionable: the Fundamental and Tax representations survive until the statute of limitations, and covenant and Excluded Liability claims have no survival bar. Buyer can still pursue an amendment, or argue that 12.9 and Note Section 5 should be construed to preserve the carve-outs.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "12.9 ... the Seller Note shall control as to payment, set-off and recourse.",
+                "reason": "The APA alone shows the Indemnity Cap in 9.5(a), the uncapped carve-outs in 9.5(b), and the precedence clause in 12.9 that lets the Seller Note control as to recourse. A careful associate might flag 12.9 as a risk. But nothing in the APA shows that the Note actually limits recourse. The problem only exists because Seller Note Section 5 caps Holder's aggregate liability for all Indemnifiable Losses at the Indemnity Cap without the carve-outs, and that term appears only in the Note, which I have not been given. Without the Note, the APA reads as preserving uncapped recovery for Fraud, Fundamental Representations and Excluded Liabilities."
+              },
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "Holder's aggregate liability for all Indemnifiable Losses, whether recovered by set-off against this Note or otherwise, shall in no event exceed the Indemnity Cap.",
+                "reason": "On its own, the Note shows a broad 'in no event' cap that reaches recovery 'otherwise' than by set-off. An associate could see that it is drafted broadly. The Note does not define the Indemnity Cap or its $2,400,000 amount. It does not show that APA Section 9.5(b) carves Fraud, Fundamental Representations and Excluded Liabilities out of that cap. It also does not show that APA Section 12.9 makes the Note control on recourse. Without those, Section 5 reads as a restatement of the APA's own cap. Nothing in this document shows that it overrides uncapped carve-outs or that the client loses uncapped recovery for fraud, title and Excluded Liabilities. The harm only appears when the APA is read alongside it."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "APA Section 9.1: \"The representations and warranties of Seller in this Agreement, other than the Fundamental Representations, shall survive the Closing until the Set-off Expiration Date (as defined in the Seller Note).\" Seller Note Section 4(c): \"Maker's right of set-off under this Section 4 applies only to claims for which notice is delivered to Holder on or before the 180th day after the Issue Date (the \"Set-off Expiration Date\").\" The Issue Date is June 30, 2026.",
+            "reason": "The survival gap is real and still actionable for Buyer.\n\n- **The gap.** Read together, the two clauses end the survival period for Seller's general representations on December 27, 2026, about six months after closing. The letter of intent (Section 6(b)) contemplated 18 months.\n- **Who it hurts.** Buyer is the indemnified party, so Buyer bears the harm. Section 9.1 bars any claim made after the survival period. That period ends before the 2027 Ironfern Fest season and before Buyer's first annual audit, which is due within 120 days after fiscal year-end under Note Section 6(c). Those are the points at which breaches would most likely surface, including reps on Schedule 4.7 artist settlements, 4.8 ticketing and refunds, 4.10 permits and 4.6 financials.\n- **Nothing cures it.** No document in the folder extends or amends the period. APA Section 12.9 makes the Note control set-off, and nothing overrides the 180-day cutoff.\n- **Still open.** The latest date in the folder is September 8, 2026, so the period has not run. Buyer can still act by noticing claims before December 27, 2026 or negotiating an extension. The window is not lapsed history.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "The representations and warranties of Seller in this Agreement, other than the Fundamental Representations, shall survive the Closing until the Set-off Expiration Date (as defined in the Seller Note).",
+                "reason": "The APA ties general rep survival to a date defined only in the Seller Note. It never says what that date is or how long it runs. Reading the APA alone, an associate would see a cross-reference to another document but could not tell that survival is only about six months (180 days after the June 30, 2026 Issue Date, which is December 27, 2026). Nor could they tell that the period ends before the 2027 festival season and the first audit, or that it falls short of the 18 months in the LOI. The short duration that hurts Buyer comes entirely from the Seller Note's definition, so the problem cannot be found from this document by itself."
+              },
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "Maker's right of set-off under this Section 4 applies only to claims for which notice is delivered to Holder on or before the 180th day after the Issue Date (the \"Set-off Expiration Date\").",
+                "reason": "Read alone, the note shows only that Buyer's right to set off against the note ends 180 days after the June 30, 2026 Issue Date, which is about December 27, 2026. It does not say this date also ends the survival of Seller's representations. The note in fact assumes Buyer can recover indemnifiable losses some other way: Section 5 refers to recovery \"by set-off against this Note or otherwise.\" So an associate would see a short set-off window, not a cut-off of the indemnity claims themselves. The real harm is that general reps on artist settlements, refunds, permits and financials expire before the 2027 season and the first audit. That harm only appears from APA Section 9.1, which ties rep survival to this defined term, and from the LOI's 18-month expectation. Neither document is provided."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 2.3(a): \"all Liabilities arising under the Assigned Contracts, whether arising before, on or after the Closing Date\"; Section 9.3(b): Buyer shall indemnify the Seller Indemnitees against all Losses arising out of or relating to \"any Assumed Liability\"; Section 9.5(b): \"The Deductible and the Indemnity Cap shall not apply to Losses arising out of ... any Excluded Liability, or claims under Section 9.3(b).\"",
+            "reason": "Section 2.3(a) makes Buyer (our client) assume every liability under the Assigned Contracts, including those that arose before closing. That covers Seller's pre-closing artist guarantees, unpaid settlements and refunds for shows cancelled or rescheduled before closing. Section 9.3(b) then makes Buyer indemnify Seller for those liabilities, and Section 9.5(b) expressly removes both the Deductible and the Indemnity Cap from 9.3(b) claims. Nothing in the folder cures this. Section 2.4 does not carve pre-closing contract liabilities back into the Excluded Liabilities. Seller Note Section 5 caps only Holder's (Seller's) liability, and Section 12.9 does not limit Buyer's indemnity. Seller's rep in Section 4.7 listing guarantees and settlements does not reallocate the liabilities, and any claim on it would be capped and subject to the deductible. The result departs from LOI Section 3, which limited the assumption to post-closing obligations and had Seller keep pre-closing guarantees, settlements and refunds. Buyer still faces open-ended exposure to Seller's indemnity claims, so the issue remains live and actionable."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 9: \"Holder may assign, transfer or pledge this Note or any interest in it to any Person without the consent of Maker. Any assignee shall succeed to all of Holder's rights under this Note.\" Section 6(a): Maker must deliver \"monthly ticket sales and artist settlement reports for the Business ... for each event promoted by Maker, gross ticket receipts, tickets sold and refunded, advance ticket sales for future events, artist guarantees paid and owed, and final settlement amounts with artists and venues.\"",
+            "reason": "The problem is in the Note and it hurts Vogert, the Maker. Dretusk can transfer the Note to anyone, including a competing promoter or a distressed-debt fund, without Vogert's consent, while Vogert cannot assign at all. Any assignee takes all of Holder's rights. That includes the Section 6 monthly reports on artist guarantees, settlements and advance sales. It also includes the Section 7 acceleration and remedies, among them acceleration on a Change of Control. That trigger is live because the Parent signed a merger agreement with Sablecrest in August 2026. Nothing in the folder fixes this. The Note puts no confidentiality duty on Holder or any assignee. APA Section 6.5 binds only Seller. APA Section 12.4 limits assignment of the APA, not of the Note, and APA Section 12.9 says the Note controls as to payment and recourse. Nothing limits who may buy the Note. The Note is outstanding and runs to 2028, so the risk is current. Vogert can still act on it, for example by negotiating an amendment that requires its consent to transfers or a confidentiality undertaking from any assignee."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Seller Note §7(a)(v) makes it an Event of Default if \"a Change of Control occurs without the prior written consent of Holder.\" §7(b) defines Change of Control to include \"any Person or group of Persons ... acquiring, directly or indirectly, by merger, consolidation, purchase of equity or otherwise, beneficial ownership of more than fifty percent of the voting equity of Maker or of any Person that directly or indirectly controls Maker.\" Board Consent Recital F says the Parent, Vogert Entertainment Group, Inc., \"the sole member of the Company,\" entered into a Merger Agreement under which \"the Parent will survive as a wholly owned subsidiary of an entity controlled by funds managed by Sablecrest Capital Partners,\" expected to close in Q1 2027. Resolution 3 approves the Company's participation and does not mention the Seller Note or any Holder consent.",
+            "reason": "Vogert Entertainment Group controls Maker as its sole member. When the merger closes, Sablecrest-controlled funds will indirectly acquire 100% of the Parent, and so of Maker. That falls within prong (i) of the Change of Control definition. Without Dretusk's prior written consent, this is an Event of Default under §7(a)(v). Holder could then declare the full $4,000,000 plus accrued interest immediately due under §7(c), well before the June 30, 2028 maturity. Default interest of +2% (§3(c)) and collection costs (§7(d)) would also apply. Acceleration of a large note could cross-default senior debt. Maker's set-off leverage is also limited, because the set-off window closes 180 days after the June 30, 2026 issue date. Nothing in the folder records that Holder's consent was sought or obtained, or that the clause was waived or amended. The Board Consent of September 8, 2026 approves the merger without addressing the Note. The merger has not closed (expected Q1 2027), so the client can still act: it can seek Dretusk's consent or a waiver, or prepay the Note under §10 without premium or penalty. This is a live, actionable risk for the client as Maker.",
+            "alone": {
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "\"Change of Control\" means (i) any Person or group of Persons ... acquiring, directly or indirectly, by merger, consolidation, purchase of equity or otherwise, beneficial ownership of more than fifty percent of the voting equity of Maker or of any Person that directly or indirectly controls Maker\"; Section 7(a)(v): \"a Change of Control occurs without the prior written consent of Holder.\"",
+                "reason": "On its own, the Note shows a standard change of control default. It covers a change at Maker or at any parent, and on a default other than insolvency Holder can declare the whole $4,000,000 due early. The Note does not show that any such transaction is planned or pending. It does not mention Vogert Entertainment Group, the Sablecrest merger, or the board consent, and it does not say whether Holder's consent has been sought. Without the board consent, an associate would see only an ordinary acceleration risk, not an actual default the client is facing."
+              },
+              "buyer_board_consent.md": {
+                "findable": false,
+                "evidence": "Under the Merger Agreement, a subsidiary formed by Sablecrest Capital Partners will merge with and into the Parent, and the Parent will survive as a wholly owned subsidiary of an entity controlled by funds managed by Sablecrest Capital Partners (the \"Merger\").",
+                "reason": "Read by itself, the consent shows that the Company's sole member and parent will come under Sablecrest's control in the Merger, expected to close in Q1 2027. That is an indirect change of control of the Company. The consent never mentions the Seller Note, a change of control clause, Holder consent, acceleration, or the $4,000,000 principal. It also gives no sign that any Company agreement treats an indirect change of control as a default. An associate might think to check change of control provisions generally, but this document does not show that a specific obligation is triggered or how that would hurt the client. The definition reaching controlling Persons, the consent requirement and the acceleration remedy are all in the Seller Note, which was not provided."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F5, which only issue I2 uses: a memo that misses I2 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.08,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

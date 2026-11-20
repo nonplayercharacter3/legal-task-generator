@@ -1,0 +1,127 @@
+{
+  "task_id": "s61-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Vogert Live Holdings, LLC, the buyer under an asset purchase agreement with Dretusk Presents, Inc. and maker of the related seller note. Before we finalize, please review all six documents in the folder and prepare a memo to me. For each issue, state where it appears (document and section), why it matters for Vogert, and your recommended fix. Please keep it organized so I can work from it directly with the client.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "buyer_board_consent.md",
+    "letter_of_intent.md",
+    "lighting_rigging_services_agreement.md",
+    "mutual_confidentiality_agreement.md",
+    "seller_note.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that Buyer's 30-day window to object to the Closing Statement delivered on August 3, 2026 expired on or about September 2, 2026, before the September 8, 2026 board consent authorizing an objection, so the disputed deferred revenue figure has become final and binding. It identifies where this arises (APA Section 2.7 or the board consent), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "September 2, 2026",
+        "final and binding",
+        "Section 2.7(b)"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that the Seller Note's limited-recourse provision controls over the APA's cap carve-outs, so Seller's liability for Fraud, Fundamental Representations and Excluded Liabilities is capped at the $2,400,000 Indemnity Cap. It identifies where this arises (APA Section 12.9 or Seller Note Section 5), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "limited recourse",
+        "carve-outs",
+        "shall in no event exceed the Indemnity Cap"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that Seller's general (non-fundamental) representations survive only until the Set-off Expiration Date, about 180 days after the June 30, 2026 closing (around December 27, 2026), which is too short a claims period for Buyer. It identifies where this arises (APA Section 9.1 or Seller Note Section 4), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Set-off Expiration Date",
+        "180th day after the Issue Date",
+        "December 27, 2026"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Buyer bears uncapped indemnity exposure to Seller for Seller's pre-closing liabilities under the Assigned Contracts, because those liabilities are Assumed Liabilities and Buyer's indemnity for Assumed Liabilities is excluded from the Indemnity Cap. It identifies where this arises (APA Section 2.3(a), 9.3(b) or 9.5(b)), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "whether arising before, on or after the Closing Date",
+        "uncapped",
+        "Section 9.3(b)"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that Holder may assign or transfer the Seller Note to any person, including a competitor, without Maker's consent, and that the transferee would obtain the Note's monthly ticket sales and artist settlement reporting rights. It identifies where this arises (Seller Note Section 9 or Section 6), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without the consent of Maker",
+        "competitor",
+        "monthly ticket sales and artist settlement reports"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response concludes that the pending merger of Buyer's parent, Vogert Entertainment Group, Inc., with Sablecrest Capital Partners is a Change of Control under the Seller Note, and that without Holder's prior written consent it will be an Event of Default accelerating the $4,000,000 principal. It identifies where this arises (Seller Note Section 7 or the board consent), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "Sablecrest",
+        "acceleration"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Indemnity Cap under the APA is $2,400,000.",
+      "kind": "fact",
+      "hints": [
+        "$2,400,000",
+        "Indemnity Cap"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that the Closing Date under the APA was June 30, 2026.",
+      "kind": "fact",
+      "hints": [
+        "June 30, 2026",
+        "Closing"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is a memo addressed to the supervising partner and is organized issue by issue. For each issue it gives the location (document and section), why the issue matters to Vogert, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Buyer's objection to the Closing Statement is still timely, or that Buyer can still object to it as of right under APA Section 2.7(b).",
+      "kind": "negative",
+      "hints": [
+        "still within the objection period"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the parent-level merger with Sablecrest Capital Partners is not a Change of Control under the Seller Note because Buyer's own equity does not change hands.",
+      "kind": "negative",
+      "hints": [
+        "not a change of control"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

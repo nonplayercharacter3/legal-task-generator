@@ -1,0 +1,121 @@
+{
+  "task_id": "s61-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Peinol Pet Nutrition, Inc., the buyer and issuer of the Seller Note, in its stock purchase from Laraisk Family Holdings, LLC. Before we finalize, please review all eight documents in the folder and send me a memo listing each issue you find. For each, give the document and section, explain why it matters for Peinol, and recommend a fix. Please flag anything you can't resolve from the documents.",
+  "documents": [
+    "buyer_board_resolutions.md",
+    "guaranty_side_letter.md",
+    "indemnity_escrow_agreement.md",
+    "letter_of_intent.md",
+    "seller_disclosure_schedule.md",
+    "spa_prior_draft_feb_2026.md",
+    "stock_purchase_agreement.md",
+    "subordinated_seller_note.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that Buyer's indemnity of Seller and its members for losses under the members' personal guaranties (the Guaranteed Obligations) is uncapped, meaning it is not subject to the SPA's $8,400,000 cap. It identifies the location as Guaranty Side Letter Section 2 or SPA Section 9.5(d), explains why this matters to Peinol, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "deemed a Buyer Fundamental Obligation",
+        "uncapped",
+        "Guaranteed Obligations"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that the Seller Note's definition of Losses excludes product recall and market withdrawal costs, so Buyer cannot set off recall-related Losses against the Seller Note. It identifies the location as Seller Note Section 5 or SPA Section 11.9, explains why this matters to Peinol, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "set-off",
+        "excluding costs of any product recall",
+        "Seller Note"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that the Escrow Agreement's Delaware governing law and Delaware forum conflict with the SPA's New York governing law and New York forum. It identifies the location as Escrow Agreement Section 12 or SPA Section 11.7 or 11.8, explains why this matters to Peinol, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Delaware",
+        "Court of Chancery",
+        "New York"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that the stock sale triggers Pawford Retail Group's change-of-control termination right under the Co-Manufacturing and Supply Agreement, and that Pawford's consent is not addressed because Schedule 4.6 states that no third-party consent is required. It identifies the location as Disclosure Schedule 4.8 or Schedule 4.6, explains why this matters to Peinol, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Pawford",
+        "change of control",
+        "no consent of any third party is required"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that general representations, including the product safety and recall representations, survive only until the Escrow Release Date, which is six months after Closing. It identifies the location as SPA Section 9.1 or Escrow Agreement Section 4.1, explains why this matters to Peinol, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Escrow Release Date",
+        "six months",
+        "survival"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Indemnity Escrow Amount is $4,200,000.",
+      "kind": "fact",
+      "hints": [
+        "$4,200,000",
+        "Indemnity Escrow Amount"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Seller Note controls over the SPA with respect to the Note's set-off terms.",
+      "kind": "fact",
+      "hints": [
+        "Section 11.9",
+        "Seller Note shall control",
+        "set-off terms"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo to the supervising partner that presents each issue separately, and for each issue gives the document and section, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Buyer's guaranty indemnity under the Side Letter is limited by the SPA's $8,400,000 indemnity cap.",
+      "kind": "negative",
+      "hints": [
+        "subject to the cap"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the Letter of Intent's 18-month and 24-month survival periods bind the parties as the survival periods for the representations.",
+      "kind": "negative",
+      "hints": [
+        "18 months",
+        "24 months"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}
