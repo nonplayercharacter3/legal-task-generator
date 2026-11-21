@@ -140,9 +140,9 @@ Dated, append-only. One entry per iteration.
 
 ## 2026-11-21 11:20, iteration 17
 - Laptop woke 10:55 (slept on battery overnight). The LAB regrade (PID 55990) was stuck in its usage-limit wait, which
-  counts only awake time; killed and restarted (PID 67821, `regrade3.out`), 10 errored s1 scores to re-judge.
+  counts only awake time; restarted (Sirui She's session restarted it at the same minute with a wall-clock wait fix, PID 67923, output in `regrade2.out`; kept that one), 10 errored s1 scores to re-judge.
 - Found one LAB sample task with no score at all: technology control plan scenario-02, Qwen run died on
-  `APIConnectionError` during sleep. Chained a full re-run after the regrade (`rerun_sanctions.sh`, PID 69247); partial
+  `APIConnectionError` during sleep. Chained a full re-run after the regrade (`rerun_sanctions.sh`, PID 69249); partial
   output to `runs/_trash/2026-11-21/lab_s1_connerror/`.
 - Read the lab mate's 4 rejections (seeds 501, 502, 503, 507): 3 correct (known classes), 1 likely false
   (s502-m0002, paraphrased detect term in the second document; first case in about 70 v2 matters; not fixed yet).

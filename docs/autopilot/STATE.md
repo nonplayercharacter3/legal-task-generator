@@ -41,10 +41,10 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- LAB regrade restarted 11:06 (`regrade2.py`, PID 67821, output `runs/lab_sample/regrade3.out`): the old one (PID
+- LAB regrade restarted 11:06 by Sirui She's own session with a wall-clock wait fix (`regrade2.py`, PID 67923, output appended to `runs/lab_sample/regrade2.out`; the autopilot's own restart was replaced): the old one (PID
   55990) sat in its usage-limit wait from 22:30 while the laptop slept (time.sleep does not count sleep), so it was
   killed; it re-reads which s1 scores have errors, 10 to go, ~3 min each.
-- Then `runs/lab_sample/rerun_sanctions.sh` (PID 69247, output `rerun_sanctions.out`): the LAB task
+- Alongside it (its wait mis-keyed on a wrapper PID, so it started at once; Qwen solves first, so the judging overlap is small): `runs/lab_sample/rerun_sanctions.sh` (PID 69249, output `rerun_sanctions.out`): the LAB task
   `international-trade-sanctions/review-technology-control-plan/scenario-02` has no score (Qwen run died on a
   connection error while the laptop slept); its partial output moves to `runs/_trash/2026-11-21/lab_s1_connerror/`
   and it re-runs in full (Qwen solve, then judge). Expected end about 12:45.
