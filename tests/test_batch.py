@@ -124,7 +124,24 @@ def test_batch_on_a_branch_pushes_it_and_opens_one_pr(ws, monkeypatch):
     assert git("rev-parse", "HEAD", cwd=ws) == git("rev-parse", "origin/lm/v2-test", cwd=ws)
     assert git("rev-parse", "origin/main", cwd=ws) == git("rev-parse", "main", cwd=ws)  # main untouched
     assert len(git("log", "--oneline", "main..HEAD", cwd=ws).splitlines()) == 4  # round and labels, per seed
-    assert prs == [("lm/v2-test", "Round 9: 2 of 2 accepted (seed 9, gen, labels next)")]
+    assert len(prs) == 4 and prs[0] == ("lm/v2-test", "Round 9: 2 of 2 accepted (seed 9, gen, labels next)")
+
+
+def test_open_pr_opens_a_new_one_once_the_last_was_merged(monkeypatch):
+    import subprocess
+    calls, state = [], {"s": "MERGED"}
+
+    def fake_sh(*a):
+        calls.append(a[:3])
+        out = state["s"] if a[:3] == ("gh", "pr", "view") else "https://example/pr/2"
+        return subprocess.CompletedProcess(a, 0, out, "")
+
+    monkeypatch.setattr(batch, "sh", fake_sh)
+    monkeypatch.setattr(batch.shutil, "which", lambda _: "/usr/bin/gh")
+    assert batch.open_pr("lm/x", "Round 1")
+    assert ("gh", "pr", "create") in calls
+    calls.clear(); state["s"] = "OPEN"
+    assert batch.open_pr("lm/x", "Round 2") and ("gh", "pr", "create") not in calls
 
 
 def test_batch_lock_is_released_on_sigterm(ws, monkeypatch):

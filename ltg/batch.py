@@ -150,7 +150,6 @@ class Git:
                 raise ValueError(f"--author must look like 'Name <email>', not {author!r}")
             self.cfg = ["-c", f"user.name={m[1]}", "-c", f"user.email={m[2]}"]
         self.branch = branch
-        self.pr_open = False
 
     def start(self) -> str | None:
         """Check out the branch to commit to. An error message if the checkout is not fit to commit from."""
@@ -191,8 +190,8 @@ class Git:
             push = sh("git", "push", "-q", "-u", "origin", self.branch) if self.branch else sh("git", "push", "-q")
             log(f"committed {sh('git', 'rev-parse', '--short', 'HEAD').stdout.strip()} "
                 + ("and pushed" if push.returncode == 0 else "but the push failed: " + push.stderr.strip()))
-            if self.branch and push.returncode == 0 and not self.pr_open:
-                self.pr_open = open_pr(self.branch, msg.splitlines()[0])
+            if self.branch and push.returncode == 0:  # every push: an earlier PR may have been merged since
+                open_pr(self.branch, msg.splitlines()[0])
             return True
         finally:
             GIT_LOCK.rmdir()
