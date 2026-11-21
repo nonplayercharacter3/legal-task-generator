@@ -1,0 +1,228 @@
+{
+  "matter_id": "s500-m0003",
+  "summary": "Drabir AgriAerial Holdings, Inc. (Buyer, the firm's client) signed an Asset Purchase Agreement on August 14, 2026 to buy the precision-agriculture drone business of Troudaind Field Robotics, LLC (Seller). The business covers AgriSpray spray-drone hardware, FieldPath flight-planning software and CanopyLens agronomic analytics. The price is $41,500,000: $34,300,000 in cash and a $7,200,000 Seller Note issued by Buyer. Closing has not occurred. The Outside Date is December 15, 2026. The folder holds the APA, a Side Letter signed with it, Buyer's board consent of October 19, 2026, Seller's Disclosure Schedule with a Schedule Supplement delivered September 21, 2026, the form Seller Note, the form IP Assignment Agreement, Buyer's unrelated headquarters office lease, and a pre-signing mutual NDA. Four issues are planted. First, the Side Letter (which prevails over the APA) makes Buyer give Seller an uncapped indemnity for Seller's own pre-closing drift-trial liabilities. Second, the IP Assignment Agreement, which controls IP conveyance under APA Section 11.9, defines 'Business' to cover only drone hardware, so the software and analytics IP is never conveyed. Third, Buyer's 10-Business-Day window to terminate after the Schedule Supplement lapsed before the board objected. Fourth, the Kestrelmark exclusive dealer agreement needs consent on an asset sale, and that consent is not a closing condition.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Drabir AgriAerial Holdings, Inc.",
+      "role": "Buyer; the firm's client; maker of the Seller Note"
+    },
+    {
+      "id": "P2",
+      "name": "Troudaind Field Robotics, LLC",
+      "role": "Seller of the agricultural drone business; payee of the Seller Note; assignor under the IP Assignment Agreement"
+    },
+    {
+      "id": "P3",
+      "name": "Kestrelmark Ag Supply Co.",
+      "role": "Seller's exclusive Midwest dealer and counterparty to an assigned contract with an assignment consent right"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Purchase Agreement Agreement Date",
+      "value": "August 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$41,500,000",
+      "doc": "D1",
+      "section": "Section 2.7"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$7,200,000",
+      "doc": "D5",
+      "section": "Section 1"
+    },
+    {
+      "id": "F4",
+      "key": "Purchase Agreement indemnity cap",
+      "value": "12% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Side Letter, then Purchase Agreement, then other Ancillary Agreements; IP Assignment Agreement controls IP conveyance",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F6",
+      "key": "Business (Purchase Agreement definition)",
+      "value": "design, manufacture, sale and servicing of agricultural UAVs, flight-planning software and agronomic analytics",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F7",
+      "key": "Schedule Supplement termination window",
+      "value": "10 Business Days after delivery of a Schedule Supplement",
+      "doc": "D1",
+      "section": "Section 6.9(b)"
+    },
+    {
+      "id": "F8",
+      "key": "Schedule Supplement No. 1 delivery date",
+      "value": "September 21, 2026",
+      "doc": "D4",
+      "section": "Schedule Supplement No. 1"
+    },
+    {
+      "id": "F9",
+      "key": "Purchase Agreement Outside Date",
+      "value": "December 15, 2026",
+      "doc": "D1",
+      "section": "Section 10.1(b)"
+    },
+    {
+      "id": "F10",
+      "key": "Purchase Agreement governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 11.6"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "drabir_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "drabir_headquarters_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "mutual_confidentiality_agreement.md",
+      "kind": "mutual confidentiality agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Side Letter Section 2 makes Buyer indemnify Seller and its members for all Losses arising out of the Harvest Drift Trial. That trial was Seller's own pre-closing pesticide-drift field program with grower cooperatives in 2025-2026. The clause states the obligation 'shall not be subject to the Cap' or the Basket in APA Section 9.5. These liabilities are Seller's pre-closing operations, which APA Section 2.4 otherwise leaves with Seller as Excluded Liabilities. APA Section 11.9 says the Side Letter prevails over the Purchase Agreement, so neither the 12% cap nor the Excluded Liabilities allocation cures the point. Buyer carries unlimited liability for Seller's own pre-closing conduct.",
+      "doc": "D2",
+      "section": "Section 2",
+      "detect_terms": [
+        "Harvest Drift Trial",
+        "shall not be subject to the Cap"
+      ],
+      "expected_finding": "Side Letter Section 2 requires Buyer to indemnify Seller, without cap or basket, for Seller's own pre-closing Harvest Drift Trial liabilities, and because the Side Letter prevails over the APA under Section 11.9 this overrides both the 12% cap and the Excluded Liabilities allocation, so Buyer should require the clause be deleted or reversed into a Seller indemnity before Closing.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "The APA (Section 1.1) defines 'Business' broadly to include agricultural UAV hardware, flight-planning software and agronomic analytics. APA Section 2.1(f) conveys all Intellectual Property used in the Business, and Disclosure Schedule 3.12 lists the FieldPath flight-planning software and the CanopyLens analytics models as Business IP. IP Assignment Agreement Section 1.1 defines 'Business' as only 'the design, manufacture and sale of Seller's AgriSpray drone hardware', and it assigns only IP used in that Business. Read alone, that definition looks like ordinary drafting. APA Section 11.9 looks like an ordinary precedence clause, but it provides that the IP Assignment Agreement 'shall control as to the conveyance of Intellectual Property'. Read together, the narrower definition governs the actual conveyance, so FieldPath and CanopyLens IP is never assigned to Buyer even though Buyer pays for it.",
+      "doc": "D6",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "AgriSpray drone hardware"
+      ],
+      "expected_finding": "Because APA Section 11.9 makes the IP Assignment Agreement control IP conveyance and that agreement defines 'Business' as hardware only, the FieldPath software and CanopyLens analytics IP would not be conveyed to Buyer, so the IP Assignment definition must be conformed to the APA's 'Business' definition (or the software and analytics IP expressly scheduled) before Closing.",
+      "contradicts": "F6",
+      "doc2": "D1",
+      "section2": "Section 11.9",
+      "detect_terms2": [
+        "shall control as to the conveyance of Intellectual Property"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "APA Section 6.9(b) lets Buyer terminate within ten (10) Business Days after Seller delivers a Schedule Supplement. If Buyer does not, the supplement is deemed to have cured any breach of representations, and Buyer waives indemnity for the matters disclosed. Schedule Supplement No. 1 in the Disclosure Schedule states it was delivered to Buyer on September 21, 2026. It discloses an FAA Letter of Investigation into Seller's Part 137 aerial-application spray-drone operations, with possible civil penalties and certificate action. Ten Business Days from September 21, 2026 ends October 5, 2026. Buyer's board consent is dated October 19, 2026. It records that the FAA matter is unacceptable and directs officers to tell Seller that Buyer reserves its indemnity rights, but it does not terminate. Buyer has not accepted the supplement, yet under the APA's terms the window has already lapsed. Neither the APA clause nor the supplement alone shows the lapse; the dates must be combined.",
+      "doc": "D1",
+      "section": "Section 6.9(b)",
+      "detect_terms": [
+        "deemed to have cured",
+        "within ten (10) Business Days"
+      ],
+      "expected_finding": "Buyer's ten-Business-Day termination window under APA Section 6.9(b) ran from the September 21, 2026 supplement delivery and expired October 5, 2026, before the October 19, 2026 board consent objected, so the FAA Part 137 investigation is deemed cured and Buyer has lost its termination and indemnity rights for it unless it negotiates a written waiver or amendment (special indemnity, escrow or price reduction) with Seller before Closing.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Schedule Supplement No. 1",
+      "detect_terms2": [
+        "Letter of Investigation",
+        "delivered to Buyer on September 21, 2026"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Disclosure Schedule 3.9(a)(iv) lists the Exclusive Dealer Agreement with Kestrelmark Ag Supply Co. as an Assigned Contract. It notes that the dealer channel produced about 38% of Seller's 2025 revenue. It also notes that any assignment, including by operation of law or a sale of all or substantially all of Seller's assets, requires the prior written consent of Kestrelmark. Kestrelmark may terminate on 30 days' notice after an unconsented assignment, and the schedule states that consent has not yet been requested. Read alone, that entry is ordinary disclosure. APA Section 7.2(d) conditions Buyer's obligation to close only on consents from Pellwick Grower Cooperative and Ruskmoor Avionics. Under APA Section 2.6, any Assigned Contract whose consent is not obtained is simply excluded, with no price adjustment. Read together, the sale triggers Kestrelmark's consent right, yet Buyer must close without that consent and without a price reduction. Because the requirement is disclosed, Buyer also has no indemnity claim.",
+      "doc": "D4",
+      "section": "Schedule 3.9(a)(iv)",
+      "detect_terms": [
+        "prior written consent of Kestrelmark",
+        "sale of all or substantially all"
+      ],
+      "expected_finding": "The asset sale triggers Kestrelmark's consent and termination right under the Exclusive Dealer Agreement (about 38% of revenue), but APA Section 7.2(d) does not make that consent a closing condition and Section 2.6 excludes an unconsented contract without price adjustment, so Buyer should amend the APA to add the Kestrelmark consent as a closing condition (or obtain price protection or escrow) and require Seller to seek it promptly.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 7.2(d)",
+      "detect_terms2": [
+        "Pellwick Grower Cooperative",
+        "Ruskmoor Avionics"
+      ]
+    }
+  ]
+}

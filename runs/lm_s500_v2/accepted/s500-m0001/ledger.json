@@ -1,0 +1,245 @@
+{
+  "matter_id": "s500-m0001",
+  "summary": "Brouviv Student Transit, Inc. (client, buyer) is buying the school bus operations of Droureil Coachways LLC (seller) under an Asset Purchase Agreement signed August 14, 2026, with closing still pending. The assets are 212 school buses, two bus depots, pupil transportation contracts with Hudson Valley school districts, and the RouteLattice routing and dispatch software. Droureil keeps its charter motorcoach business. The folder holds the APA, a form IP Assignment Agreement with a license-back to Droureil, a side letter dated October 9, 2026, the Disclosure Schedule, a form Bill of Sale, the March 2026 letter of intent, an announcement press release and a Brouviv board resolution. Five issues are planted:\n1. The license-back in the IP Assignment Agreement can be assigned freely.\n2. A Delaware law and forum clause in the IP Assignment Agreement takes control through the APA's precedence carve-out.\n3. The side letter renumbers the vehicle title representation, which drops it out of the APA's fundamental-representation carve-out from the cap.\n4. The largest district contract needs consent, but the APA's required consents omit it.\n5. Brouviv's Fleet Defect Notice was sent after the APA's 30-day window, measured from the delivery date recorded in the side letter.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Brouviv Student Transit, Inc.",
+      "role": "Buyer; the firm's client; a New York school bus contractor acquiring the operating assets"
+    },
+    {
+      "id": "P2",
+      "name": "Droureil Coachways LLC",
+      "role": "Seller; Hudson Valley school bus operator keeping its charter motorcoach business"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Signing Date",
+      "value": "August 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "APA Purchase Price",
+      "value": "$38,500,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "Number of Purchased Vehicles",
+      "value": "212 school buses",
+      "doc": "D1",
+      "section": "Section 2.1(a)"
+    },
+    {
+      "id": "F4",
+      "key": "APA indemnification cap",
+      "value": "10% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "APA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F6",
+      "key": "APA forum",
+      "value": "State or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "APA controls over Ancillary Agreements, except the IP Assignment Agreement controls as to Transferred IP",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F8",
+      "key": "Fleet Defect Notice deadline",
+      "value": "30 days after Seller delivers the Fleet Condition Report",
+      "doc": "D1",
+      "section": "Section 6.8"
+    },
+    {
+      "id": "F9",
+      "key": "APA Outside Date",
+      "value": "December 15, 2026",
+      "doc": "D1",
+      "section": "Section 10.1(b)"
+    },
+    {
+      "id": "F10",
+      "key": "Fleet Condition Report delivery date",
+      "value": "August 28, 2026",
+      "doc": "D3",
+      "section": "Section 3"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "board_resolution.md",
+      "kind": "board resolution",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Under the IP Assignment Agreement, Brouviv takes the RouteLattice routing and dispatch software and grants Droureil a perpetual Retained License to use it in Droureil's retained charter business. Section 7.2 lets Droureil, as Licensee, assign the agreement and the Retained License in whole or in part without Brouviv's consent. That includes assignment to any successor to any part of Droureil's business. Droureil could therefore pass Brouviv's core routing platform to a competing school bus contractor. The APA's anti-assignment clause (Section 11.5) covers only the APA itself. APA Section 11.12 also makes the IP Assignment Agreement control as to Transferred IP. Nothing in the folder restricts this transfer.",
+      "doc": "D2",
+      "section": "Section 7.2",
+      "detect_terms": [
+        "without the consent of Assignee",
+        "any successor to all or any part of its business"
+      ],
+      "expected_finding": "Section 7.2 of the IP Assignment Agreement lets Droureil freely assign the Retained License to RouteLattice, including to a competing school bus operator. Brouviv should require its prior written consent for any assignment, bar transfers to competitors, and make the license personal to Droureil's charter business.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Two provisions combine here:\n- IP Assignment Agreement Section 8.1 selects Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery for any dispute arising out of or relating to that agreement or the Transferred IP. Read alone, that is an ordinary boilerplate choice.\n- APA Section 11.12 makes the APA control over Ancillary Agreements, except that the IP Assignment Agreement controls with respect to the Transferred IP. Read alone, that is a harmless precedence rule.\nRead together, the precedence carve-out lets the Delaware clause govern every dispute touching the Transferred IP. That includes disputes over the APA's IP representations and the related indemnity claims. All other APA claims must go to New York County courts under New York law (APA Sections 11.8 and 11.9), and the letter of intent contemplated New York law for all definitive agreements. Brouviv faces split forums, inconsistent law and a risk of conflicting rulings on one transaction.",
+      "doc": "D2",
+      "section": "Section 8.1",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Delaware Court of Chancery"
+      ],
+      "expected_finding": "Because APA Section 11.12 lets the IP Assignment Agreement control as to Transferred IP, the Delaware law and exclusive Delaware forum in Section 8.1 of that agreement displace the APA's New York law and New York County forum for IP-related claims, splitting Brouviv's disputes across two forums. The IP Assignment Agreement should be conformed to New York law and forum, or the precedence carve-out should exclude governing law and forum.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ],
+      "doc2": "D1",
+      "section2": "Section 11.12",
+      "detect_terms2": [
+        "shall control with respect to the Transferred IP"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Two provisions combine here:\n- APA Section 9.5(b) exempts breaches of Fundamental Representations, defined by cross-reference as 'Sections 4.1, 4.2 and 4.9', from the 10% indemnification cap. Section 4.9 is the title to Purchased Vehicles representation.\n- Side letter Section 2, dated October 9, 2026, appears favourable to Brouviv. It deletes Section 4.9 and replaces it with a new Section 4.9A that extends the title representation to six Substitute Vehicles.\nRead together, the title representation now lives in Section 4.9A, which Section 9.5(b) does not name. A breach of title to the buses is therefore subject to the $3,850,000 cap rather than uncapped. Nothing in the side letter deems references to Section 4.9 to refer to Section 4.9A.",
+      "doc": "D3",
+      "section": "Section 2",
+      "detect_terms": [
+        "new Section 4.9A",
+        "Section 4.9 is hereby deleted"
+      ],
+      "expected_finding": "Because the side letter replaces Section 4.9 with a new Section 4.9A while APA Section 9.5(b) still exempts only 'Sections 4.1, 4.2 and 4.9' from the cap, Seller's vehicle title representation is now limited to the 10% cap. The side letter should be amended so that Section 9.5(b) and every reference to Section 4.9 expressly include Section 4.9A.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 9.5(b)",
+      "detect_terms2": [
+        "Sections 4.1, 4.2 and 4.9"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Two provisions combine here:\n- Disclosure Schedule 4.7(a) lists the Lakemont Union Free School District Pupil Transportation Contract (58 routes, about $9.4 million in annual revenue, the largest contract being acquired). The schedule quotes its Section 14, which bars assignment or transfer 'including by sale of substantially all assets, merger or change in control' without prior written approval of the Board of Education. Read alone, that is ordinary disclosure.\n- APA Section 7.2(d) makes Buyer's closing condition, and the Section 6.5 consent covenant, cover only the consents of the Ashfield Central School District and the Pell Hollow City School District.\nRead together, the asset sale triggers Lakemont's approval right. Yet the APA neither requires Droureil to obtain that approval nor conditions closing on it. Brouviv could close and then lose its largest route contract.",
+      "doc": "D4",
+      "section": "Schedule 4.7(a), Item 3",
+      "detect_terms": [
+        "including by sale of substantially all assets, merger or change in control",
+        "prior written approval of the Board of Education"
+      ],
+      "expected_finding": "The Lakemont contract disclosed in Schedule 4.7(a) requires Board of Education approval for the asset sale, but APA Sections 6.5 and 7.2(d) cover only the Ashfield and Pell Hollow consents. Brouviv should add the Lakemont approval as a Required Consent and closing condition before the December 15, 2026 Outside Date, or obtain a special indemnity or escrow for loss of that contract.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 7.2(d)",
+      "detect_terms2": [
+        "Ashfield Central School District and the Pell Hollow City School District"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Two provisions combine here:\n- APA Section 6.8 gives Buyer thirty days after Seller delivers the Fleet Condition Report to send a Fleet Defect Notice that reduces the Purchase Price by repair costs. Failure to deliver the notice within that period is an irrevocable waiver.\n- Side letter Section 3, dated October 9, 2026, records that Seller delivered the Fleet Condition Report on August 28, 2026. It also records that Brouviv delivered its Fleet Defect Notice on October 2, 2026, identifying 11 buses and claiming a $612,000 reduction. It provides that the parties will resolve the notice 'in accordance with Section 6.8'. Read alone, this reads as preserving Brouviv's claim.\nRead together, the window closed on September 27, 2026. Brouviv's notice was five days late, and the side letter incorporates Section 6.8 and its waiver language rather than waiving the deadline. Brouviv's position, as shown in the side letter, is that the $612,000 reduction applies. Droureil has not expressly conceded the point, and closing has not occurred, so the claim can still be secured.",
+      "doc": "D3",
+      "section": "Section 3",
+      "detect_terms": [
+        "on October 2, 2026",
+        "in accordance with Section 6.8"
+      ],
+      "expected_finding": "Brouviv's Fleet Defect Notice of October 2, 2026 came after the 30-day window that APA Section 6.8 sets from the August 28, 2026 delivery of the Fleet Condition Report (deadline September 27, 2026). Under Section 6.8 the $612,000 price reduction is waived unless Droureil agrees otherwise, so Brouviv should obtain an express written waiver of the deadline, or a fixed price reduction, before closing.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 6.8",
+      "detect_terms2": [
+        "after Seller delivers the Fleet Condition Report",
+        "irrevocable waiver"
+      ]
+    }
+  ]
+}

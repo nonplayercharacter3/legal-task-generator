@@ -1,0 +1,156 @@
+{
+  "matter_id": "s500-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Side Letter §2.1: \"From and after the Closing, Buyer shall indemnify, defend and hold harmless Seller and its members, managers, officers, employees and agents against any and all Losses arising out of or relating to the Harvest Drift Trial.\" Side Letter §2.2: \"Buyer's obligations under this Section 2 shall not be subject to the Cap, the Basket or any other limitation set forth in Section 9.5 of the Purchase Agreement.\"",
+            "reason": "Buyer, the client, is the indemnitor. It must cover Seller's own 2025-2026 pesticide-drift field program, and the obligation is uncapped and has no basket. Under APA §2.4(a), (b) and (f), these pre-closing field-trial and drift liabilities are Excluded Liabilities that stay with Seller, and Seller indemnifies Buyer for them under §9.2(c). APA §11.9 makes the Side Letter prevail over the APA, so the Side Letter reverses that allocation and the 12% Cap does not apply. Nothing in the folder cures the point. The Closing has not occurred as of the board consent (October 19, 2026), and the Outside Date is December 15, 2026, so the issue can still be negotiated or amended. The board's ratification of the Side Letter does not settle the issue, because the provision only takes effect at Closing (Side Letter §5.1). The problem is real and still actionable for Buyer."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "IP Assignment Agreement Section 1.1 defines \"Business\" as \"the design, manufacture and sale of Seller's AgriSpray drone hardware, as conducted by Assignor as of the date of the Purchase Agreement.\" Section 2.1 then assigns only \"Intellectual Property owned by Assignor and used or held for use in the Business.\" APA Section 11.9 provides: \"provided that the IP Assignment Agreement shall control as to the conveyance of Intellectual Property.\"",
+            "reason": "The problem is present and still actionable. The APA defines \"Business\" to cover agricultural UAVs, flight-planning software and agronomic analytics. APA Section 2.1(f) conveys all Business IP, and Disclosure Schedule 3.12 lists FieldPath and CanopyLens as Business IP. The IP Assignment Agreement's own \"Business\" definition is limited to AgriSpray hardware. Its Schedule A also lists only AgriSpray items: two patents, the AGRISPRAY mark, agrispray.com, AgriSpray firmware and design files. It leaves out the FieldPath and CanopyLens patent applications, the FIELDPATH and CANOPYLENS marks, fieldpathapp.com and canopylens.ai, and the FieldPath and CanopyLens software and models. Under APA Section 11.9's IP carve-out, the narrower instrument governs the actual conveyance. Drabir, the Buyer, would therefore pay $41.5M, including a $7.2M Seller Note, without receiving title to two of the three product lines' IP. APA Section 6.8 (further assurances) does not clearly cure this, because Section 11.9 makes the IP Assignment Agreement control. The issue is still open: the board consent dated October 19, 2026 confirms the Closing has not occurred, and the agreement is still an unsigned form. The board approved it with changes allowed, so Drabir can still conform the definition and Schedule A to the APA, or revise Section 11.9, before Closing.",
+            "alone": {
+              "ip_assignment_agreement.md": {
+                "findable": false,
+                "evidence": "\"Business\" means the design, manufacture and sale of Seller's AgriSpray drone hardware, as conducted by Assignor as of the date of the Purchase Agreement.",
+                "reason": "On its own, this document shows only that it defines 'Business' narrowly, as AgriSpray drone hardware, and that Section 2.1 assigns only IP used in that Business. Read alone, that looks like an ordinary, self-consistent scope definition. Nothing here mentions the FieldPath flight-planning software or the CanopyLens analytics models. It does not show that the APA defines 'Business' more broadly or conveys that broader IP in Section 2.1(f). It also does not show that APA Section 11.9 makes this agreement control the conveyance of IP. Section 5.2 says the representations sit in the Purchase Agreement, which suggests the APA governs rather than this document. Without the APA, an associate could not see the mismatch, that Buyer pays for IP this assignment leaves out, or that this narrower assignment controls. So the harm to the client cannot be seen from this document alone."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.9: \"...provided that the IP Assignment Agreement shall control as to the conveyance of Intellectual Property.\"",
+                "reason": "On its own, the APA shows only that 'Business' is defined broadly (UAV hardware, flight-planning software and agronomic analytics), that Section 2.1(f) conveys all IP used in the Business, and that Section 11.9 makes the IP Assignment Agreement control the conveyance of IP. A careful associate might note that this carve-out lets the ancillary document override the APA's IP conveyance. But nothing in the APA suggests the IP Assignment Agreement actually conveys less. The narrower definition ('only the design, manufacture and sale of Seller's AgriSpray drone hardware') is in the IP Assignment Agreement, and the Disclosure Schedule 3.12 listing of FieldPath and CanopyLens is not in this document either. The APA describes the IP Assignment Agreement as 'substantially in the form attached as Exhibit C', but that exhibit's text is not included. Without the other document, the conflict cannot be seen, nor can the resulting loss of FieldPath and CanopyLens IP that Buyer pays for."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "APA §6.9(b): \"If Buyer does not deliver such notice of termination within ten (10) Business Days after delivery of such Schedule Supplement, Buyer shall be deemed to have irrevocably waived its right to terminate this Agreement with respect to such matter, the Schedule Supplement shall be deemed to have cured any inaccuracy in or breach of any representation or warranty of Seller arising from such matter for all purposes of this Agreement, including Section 7.2(a) and Article 9, and Buyer shall have no right to indemnification under Article 9 with respect to any matter disclosed in such Schedule Supplement.\" Schedule Supplement No. 1 §1.1: \"It was delivered to Buyer on September 21, 2026, by e-mail of a PDF document to Buyer's Chief Executive Officer and General Counsel ... in accordance with Section 11.2 of the Agreement.\"",
+            "reason": "The supplement was delivered on Monday, September 21, 2026, in the manner required by §11.2. Ten Business Days after that is Monday, October 5, 2026. The folder records no termination notice by that date. Buyer's board consent of October 19, 2026 comes two weeks late. It declares the FAA matter unacceptable, refuses to accept the supplement as a cure, and directs officers to reserve indemnity rights under Article 9. But §6.9(b) makes the waiver automatic and irrevocable. Under its terms, the FAA matter is deemed cured for §7.2(a) and for Article 9, and Buyer has no indemnity for it. The board's reservation of rights is therefore likely ineffective. Its belief that it keeps its §7.2(a) condition and its Article 9 rights is mistaken. The Side Letter does not change this result, and neither does any other document. Seller is the indemnitor here, so the loss falls on Buyer, the client. Buyer would lose its walk right and its uncapped-basket protection against FAA civil penalties and against suspension or revocation of the Part 137 certificate. The matter is still actionable. Closing has not occurred, and the Outside Date of December 15, 2026 is still open. The board has expressly objected rather than accepted the result. Buyer can still pursue an amendment, a special indemnity, a price adjustment or set-off protection, or argue against the deemed-waiver mechanics, before it closes. Counsel needs to flag this now.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "If Buyer does not deliver such notice of termination within ten (10) Business Days after delivery of such Schedule Supplement, Buyer shall be deemed to have irrevocably waived its right to terminate this Agreement with respect to such matter, the Schedule Supplement shall be deemed to have cured any inaccuracy in or breach of any representation or warranty of Seller arising from such matter for all purposes of this Agreement, including Section 7.2(a) and Article 9, and Buyer shall have no right to indemnification under Article 9 with respect to any matter disclosed in such Schedule Supplement.",
+                "reason": "The APA alone shows that Section 6.9(b) works against Buyer. A supplement Buyer does not terminate on within 10 Business Days is deemed to cure Seller's breaches and wipes out indemnity for the disclosed matter. A careful associate could flag that clause as a general risk. The APA does not show that any Schedule Supplement was actually delivered, when it was delivered (September 21, 2026), or what it disclosed (the FAA Part 137 Letter of Investigation). It also contains nothing about Buyer's later board consent reserving indemnity rights without terminating. The specific problem, that the window already lapsed on October 5, 2026 and Buyer lost its termination right and indemnity for the FAA matter, depends on the supplement's delivery date and contents, which are in another document."
+              },
+              "seller_disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "It was delivered to Buyer on September 21, 2026, by e-mail of a PDF document to Buyer's Chief Executive Officer and General Counsel, with a copy by nationally recognized overnight courier, in accordance with Section 11.2 of the Agreement.",
+                "reason": "This document alone shows that Schedule Supplement No. 1 was delivered on September 21, 2026 under Section 6.9(a). It also discloses the FAA Letter of Investigation, which could lead to civil penalties and suspension or revocation of Certificate No. TFR-137-0442. It does not show the problem itself. It does not state the APA Section 6.9(b) mechanics: the ten-Business-Day termination window, the deemed cure if Buyer does not terminate, and the waiver of indemnity for disclosed matters. It also does not show that Buyer failed to terminate within that window. The October 19, 2026 board consent, which reserves indemnity rights without terminating, is in another document. Without the APA clause and Buyer's post-delivery conduct, an associate could not see that the window lapsed on October 5, 2026 or that the client lost its termination and indemnity rights."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Schedule 3.9(a)(iv): \"Seller may not assign the agreement ... by a sale of all or substantially all of the assets of Seller or of the business to which the agreement relates, without the prior written consent of Kestrelmark Ag Supply Co. Kestrelmark may grant or withhold consent in its sole discretion.\" and \"Status of consent: Seller has not yet requested the consent of Kestrelmark.\" APA Section 7.2(d) defines the Required Consents only as \"(i) the Cooperative Pilot and Supply Agreement between Seller and Pellwick Grower Cooperative and (ii) the Flight Controller Component Supply Agreement between Seller and Ruskmoor Avionics.\" APA Section 2.6 says an unconsented contract \"shall be deemed an Excluded Asset for all purposes of this Agreement, and no adjustment shall be made to the Purchase Price on account thereof.\"",
+            "reason": "The Kestrelmark dealer channel produced about 38% of 2025 revenue. Kestrelmark can refuse consent in its sole discretion or terminate on 30 days' notice after an unconsented assignment, and Seller has not even asked for consent. Yet Buyer's closing condition in Section 7.2(d) covers only the Pellwick and Ruskmoor consents. Section 6.5 obliges Seller to pursue only those consents. If Kestrelmark's consent is not obtained, Section 2.6 drops the contract from the deal with no reduction to the $41.5M price. Because the consent requirement is disclosed in Schedules 3.3 and 3.9(a)(iv), Buyer has no indemnity claim under Section 3.3. The issue is still actionable. The board consent dated October 19, 2026 confirms Closing has not occurred, and the Outside Date of December 15, 2026 has not passed. Nothing in the folder shows Buyer waived the point or accepted the result. Buyer can still seek an amendment adding Kestrelmark as a Required Consent, a price adjustment, or a special indemnity.",
+            "alone": {
+              "seller_disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "Seller may not assign the agreement ... by a sale of all or substantially all of the assets of Seller or of the business to which the agreement relates, without the prior written consent of Kestrelmark Ag Supply Co. Kestrelmark may grant or withhold consent in its sole discretion. ... Status of consent: Seller has not yet requested the consent of Kestrelmark.",
+                "reason": "On its own, the schedule shows four things. First, the Kestrelmark dealer agreement (about 38% of 2025 revenue) is an Assigned Contract. Second, it needs Kestrelmark's prior consent, which Kestrelmark can withhold at its sole discretion. Third, an unconsented assignment allows termination on 30 days' notice. Fourth, consent has not been requested. That is a significant diligence point, but on this document's face it is ordinary disclosure. Nothing here shows that Buyer would have to close without the consent or that it would get no price adjustment. The closing condition in APA Section 7.2(d), which covers only the Pellwick and Ruskmoor consents, is in the APA, not here. So are the Section 2.6 mechanic that excludes unconsented contracts with no price reduction, and the indemnity and disclosure provisions. Without the APA, an associate could not tell whether the Kestrelmark consent is a closing condition or whether the price would adjust. The harm to Buyer therefore depends on the other document."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 2.6: \"If any such consent has not been obtained on or prior to the Closing Date, such Assigned Contract or other Purchased Asset shall not be transferred to Buyer at the Closing, shall be deemed an Excluded Asset for all purposes of this Agreement, and no adjustment shall be made to the Purchase Price on account thereof.\" Section 7.2(d) makes closing conditional only on consents from Pellwick Grower Cooperative and Ruskmoor Avionics.",
+                "reason": "The APA shows the general structure that hurts Buyer. Only two consents are closing conditions. Any other Assigned Contract whose consent is missing drops out as an Excluded Asset with no price cut. An associate could flag this as a general risk. The APA does not mention Kestrelmark or any exclusive dealer agreement. It does not show that any other Assigned Contract needs consent on an asset sale, that the dealer channel produced about 38% of 2025 revenue, that Kestrelmark can terminate on 30 days' notice, or that consent has not been requested. Those facts come only from Disclosure Schedule 3.9(a), which is not provided. The specific problem, a material contract that will likely be lost while Buyer must still close at full price, cannot be identified from the APA alone."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.083,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
