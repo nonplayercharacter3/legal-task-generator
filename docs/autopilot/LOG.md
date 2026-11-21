@@ -122,3 +122,8 @@ Dated, append-only. One entry per iteration.
 - Labels landed overnight before the sleep: s61 (0.67, 0.00, 0.00), s49-m0002 0.00, s50-m0001 0.67.
 - Lab mate started seeds 500-507 at 18:01; PR #45 (seed 500, 3 of 3 accepted, 52 files, only runs/lm_s500_v2,
   run-output rule kept, CI green) reviewed and merged.
+
+## 2026-11-20 21:30, iteration 15
+- Laptop slept at 19:02 on battery (pmset: dark wakes only since), during seed 51's label retry (attempt 2 of 3).
+  Batch PID 10390 and morning chain 46874 alive but stalled. Commented on #44. No lab-mate PR open (seed 500 merged;
+  his batch started 18:01, PID 61989 on his machine). No code or result changes this iteration.

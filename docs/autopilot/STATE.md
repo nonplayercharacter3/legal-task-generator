@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-20 18:50, autopilot iteration 14.
+Last updated: 2026-11-20 21:30, autopilot iteration 15.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -45,6 +45,8 @@ agent. Full definition of done: PROMPT.md.
   `runs/gen-v2-54-61.log`). Labels landed for 61 (ea36b22), 49 (04b33c6), 50 (14adae7). Seed 51's two labels timed
   out after the laptop slept 20 hours (clamshell on battery, 2026-11-19 22:09 to 2026-11-20 18:25); retry at 18:57,
   then 52 and 53 (about an hour if the laptop stays awake).
+  2026-11-20 21:25: the laptop slept again at 19:02 (on battery, 48%), mid seed 51 attempt 2; no log line since.
+  The jobs resume on wake (a stalled call times out and the batch retries); nothing to fix in code.
 - Morning chain `runs/lab_sample/morning.sh`, PID 46874 (caffeinate), output `morning.out`: waits for 13075, then
   `runs/lab_sample/regrade2.py` (output `regrade2.out`) re-judges the 13 LAB tasks that hit the 5-hour limit
   (~874 criteria, one Opus call each). On a limit it waits for the stated reset and retries the same task; it stops on
@@ -74,7 +76,7 @@ agent. Full definition of done: PROMPT.md.
 5. If an NRP call stalls a batch (no log line for an hour outside a wait), add a wall-clock cap per solver call.
 
 ## Needs Sirui
-- Issue #44: keep the laptop plugged in with the lid open while jobs run (sleep killed seed 61 twice).
+- Issue #44 (sleep again 2026-11-20 19:02 on battery): keep the laptop plugged in with the lid open while jobs run (sleep killed seed 61 twice).
 - Issue #43: kubectl login expired (waits for a browser sign-in; checked 2026-11-18 13:45). Needed for the vLLM
   fallback and M6, not for batches. Close once `kubectl get pods -n ecepxie` answers. Never run kubectl without a
   time cap until then: it hangs.
