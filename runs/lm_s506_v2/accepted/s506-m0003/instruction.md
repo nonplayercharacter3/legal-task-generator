@@ -1,0 +1,1 @@
+We act for Glenox Circular Materials, Inc., a lithium-ion battery recycler, on its software license with Protoux Analytics, Inc. Glenox needs to understand its position under the deal. Please review all nine documents in the folder and prepare a memo to me listing each issue you find, where it appears (document and section), why it matters for Glenox, and your recommended fix.

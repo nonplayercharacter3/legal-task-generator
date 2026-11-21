@@ -1,0 +1,177 @@
+{
+  "matter_id": "s506-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 2.3(a): Buyer shall assume \"all Liabilities under the Assigned Contracts, whether arising prior to, on or after the Closing Date\"; Section 9.3(b): Buyer shall indemnify the Seller Indemnitees against all Losses arising out of \"any Assumed Liability\"; Section 9.5(c): \"Claims under Section 9.3(b) shall not be subject to the Cap or the Deductible.\"",
+            "reason": "Read together, these sections make the Buyer (our client) responsible for the Seller's own pre-closing liabilities under the artist, venue and sponsorship contracts, such as unpaid guarantees, pre-closing venue damage and missed sponsor activations. The Buyer must also indemnify the Seller for those liabilities with no cap and no deductible. The LOI (Section 3(a)) had limited the assumption to post-closing obligations and expressly left out liabilities from the Seller's pre-closing breaches, so the APA departs from the agreed deal. The LOI was non-binding and does not cure this. Nothing else in the folder fixes it. The October 6, 2026 letter agreement amends only the Fundamental Representations definition, the supplemental assets, the Hudson Pier consent and cooperation matters, and leaves Section 2.3(a) unchanged. The Seller's indemnity for Excluded Liabilities under 9.2(c) does not help, because these liabilities are Assumed Liabilities, not Excluded Liabilities. Recovery through rep breaches (4.10/4.11) is subject to the $3.6M Cap, the $300K Deductible and 18-month survival, so it is a much weaker remedy. The problem is live: the pending $1,150,000 July Claim Notice covers sponsor make-goods for activations not performed before closing, and the Seller can argue under 2.3(a) and 9.3(b) that those are Assumed Liabilities the Buyer must bear. The issue is therefore present, hurts the client, and is still actionable, for example by amendment or as a position in the claim dispute."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "APA Section 1.1: \"'Fundamental Representations' means the representations and warranties of Seller set out in Section 4.1 (Organization and Qualification), Section 4.2 (Authority; Enforceability), Section 4.7 (Title to Purchased Assets) and Section 4.19 (Brokers).\" APA Section 9.5(a): \"the Cap shall not apply to Losses arising from any inaccuracy in or breach of any Fundamental Representation.\" Letter Agreement Section 3: \"'Fundamental Representations' means the representations and warranties of Seller set out in Sections 4.1, 4.2 and 4.19.\" APA Section 11.11: \"first, signed letter agreements referencing this Agreement.\"",
+            "reason": "Read together, the two documents show the problem. The October 6, 2026 Letter Agreement restates the definition of Fundamental Representations and silently drops Section 4.7 (Title to Purchased Assets, including the festival brands, trademarks and ticketing database). Section 11.11 ranks signed letter agreements first, and Section 7.1 of the letter makes the amendment part of the Purchase Agreement, so the narrower definition controls. The consequences hurt Buyer, the indemnified party: title and IP ownership claims are now (1) subject to the $3,600,000 Cap, (2) subject to the $300,000 Deductible, and (3) limited to 18-month survival instead of six years. Nothing in the letter explains or compensates for the change, and the letter does not present it as a concession. It remains actionable. The 18-month window runs to July 12, 2027, so title claims are still live and the reduced protection matters now. Buyer can seek a corrective amendment or rectification and should account for the change in the pending Orrant sale, which closes in December 2026.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Fundamental Representations\" means the representations and warranties of Seller set out in Section 4.1 (Organization and Qualification), Section 4.2 (Authority; Enforceability), Section 4.7 (Title to Purchased Assets) and Section 4.19 (Brokers).",
+                "reason": "Read alone, the APA helps Buyer on this point. Section 4.7 (title, including the festival brands, trademarks and ticketing database) is a Fundamental Representation. Under Section 9.5(a) it is outside the $3,600,000 Cap, under Section 9.5(b) it is outside the Deductible, and under Section 9.1 it survives six years. Section 11.11 does rank signed letter agreements above the APA. But that only shows that a later letter could override the APA. It does not show that any letter has done so. The harm depends on the October 6, 2026 Letter Agreement restating the definition as only Sections 4.1, 4.2 and 4.19, which drops 4.7. That letter is not provided. Without it, an associate would see a favourable carve-out and a standard precedence clause, not a problem for the client."
+              },
+              "post_closing_letter_agreement.md": {
+                "findable": false,
+                "evidence": "The definition of \"Fundamental Representations\" in Section 1.1 of the Purchase Agreement is amended and restated in its entirety to read as follows: > \"Fundamental Representations\" means the representations and warranties of Seller set out in Sections 4.1, 4.2 and 4.19.",
+                "reason": "The letter shows that Section 3 replaces the APA definition of Fundamental Representations with a list of Sections 4.1, 4.2 and 4.19. It does not show what the original definition contained, so a reader cannot tell that Section 4.7 (Title to Purchased Assets) was removed. It also does not show the $3,600,000 Cap, the Fundamental Representations carve-out from that Cap in Section 9.5(a), the six-year versus 18-month survival periods in Section 9.1, or the precedence rule in Section 11.11. Read alone, the restatement looks like a routine conforming change. Seeing that title and IP claims are now subject to the Cap and a shorter survival period, and that this hurts Buyer, requires the APA."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Escrow Agreement §4.2: \"On the date that is six (6) months following the Closing Date (the \"Release Date\"), Escrow Agent shall release to Seller the entire balance of the Escrow Fund. Escrow Agent shall first deduct the aggregate Claimed Amounts of all Claim Notices delivered to Escrow Agent prior to the Release Date that remain unresolved on the Release Date.\" Letter Agreement Recital B: \"Buyer delivered to Seller, at Seller's notice address under Section 11.2 of the Purchase Agreement, a written notice of claim for indemnification ... dated July 20, 2026 ... Seller disputed the claim in full by letter dated August 14, 2026. Each of Buyer and Seller reserves all of its rights and remedies with respect to the claim.\"",
+            "reason": "The problem is present and it hurts Baimix, the Buyer.\n\n- **Missed escrow deadline:** The Closing Date was January 12, 2026, so the Release Date under §4.2 was July 12, 2026. Only Claim Notices delivered to the Escrow Agent before that date hold funds back. Buyer's $1,150,000 Section 4.11 claim notice is dated July 20, 2026, after the Release Date. It was also sent only to Seller under APA §11.2, not to Calderline as §4.1 requires.\n- **Escrow lost as security:** The full $3,000,000 escrow was therefore released to Seller, and Buyer lost its first-priority source of recovery under APA §9.6.\n- **APA survival does not rescue the escrow:** The 18-month survival period in APA §9.1 does not extend the escrow. APA §11.11 makes the Escrow Agreement control as to its subject matter.\n- **Buyer has not accepted the result:** Recital B records that Seller disputes the claim in full and that both parties reserve all rights. Nothing in the folder shows Buyer acquiescing to the loss of the claim.\n- **Still actionable:** The claim remains live within the 18-month survival period. Buyer can pursue it directly against Seller or by withholding or setoff under Seller Note §5.2 against the January 12, 2027 installment. Counsel should still raise the lost escrow security and the remaining recovery routes.",
+            "alone": {
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "On the date that is six (6) months following the Closing Date (the \"Release Date\"), Escrow Agent shall release to Seller the entire balance of the Escrow Fund. Escrow Agent shall first deduct the aggregate Claimed Amounts of all Claim Notices delivered to Escrow Agent prior to the Release Date that remain unresolved on the Release Date.",
+                "reason": "The Escrow Agreement alone establishes the mechanism. The Release Date is July 12, 2026. Only Claim Notices delivered to the Escrow Agent before that date preserve funds. Notices under Section 4.1 go to the Escrow Agent with a copy to Seller. It does not show that Buyer actually delivered its claim notice late (July 20, 2026) or to Seller only. It also does not show the $1,150,000 claim amount or that the escrow was released without any reserve. Without D6's recital of the late, misdirected notice, a reader sees only a short six-month window, which is an ordinary term and not a lapse that has already hurt the client."
+              },
+              "post_closing_letter_agreement.md": {
+                "findable": false,
+                "evidence": "Buyer delivered to Seller, at Seller's notice address under Section 11.2 of the Purchase Agreement, a written notice of claim for indemnification under Article IX of the Purchase Agreement, dated July 20, 2026 (the \"July Claim Notice\").",
+                "reason": "This letter shows that the July 20, 2026 claim notice for $1,150,000 went only to Seller, about six months after the January 12, 2026 Closing, and that Seller disputes it. It never mentions an escrow, an Escrow Agent, the $3,000,000 Escrow Funds, a Release Date, or the requirement that Claim Notices reach the Escrow Agent before that date. It also does not show that the Escrow Agreement controls over the APA survival period. Nothing here suggests the timing or the addressee of the notice is defective, so the escrow lapse cannot be seen without the Escrow Agreement and APA Section 11.11."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Seller Note Section 6.1(g): \"Maker undergoes a Change of Control without the prior written consent of Holder\"; Section 2.1 defines Change of Control to include \"any Person or group of Persons acting in concert, other than Baimix Group Holdings, Inc., acquires, directly or indirectly ... beneficial ownership of more than fifty percent (50%) of the equity interests or voting power of Maker.\" Letter Agreement Recital D: \"Under that agreement, Baimix Group Holdings, Inc. will sell all of the membership interests of Buyer to Orrant (the \"Orrant Transaction\"). Closing of the Orrant Transaction is expected in December 2026.\"",
+            "reason": "The client, Baimix Live Holdings, is the Maker and the party that owes the $6,000,000 note. Orrant Media Partners, L.P. is not Baimix Group Holdings, Inc. Its acquisition of all of Maker's membership interests is therefore a Change of Control under clause (a). Unless Holder (Tinev) gives prior written consent, closing that deal is an Event of Default under 6.1(g). Holder could then accelerate the unpaid principal under 6.2, charge default interest at the 8% Default Rate, and recover its collection costs. Nothing in the folder cures this. The October 6, 2026 Letter Agreement only provides for Seller's diligence cooperation (Section 5). It contains no consent to the Change of Control and no waiver of 6.1(g), and the Note itself requires a signed written instrument for any waiver (Section 9.3). The Affiliate carve-out in clause (c) does not apply, because the deal is a sale of equity, not of assets. The issue is still open and actionable: the latest date in the folder is October 2026 and closing is expected in December 2026. It also matters more because the parties are already disputing the $1.15M July Claim, which gives Seller leverage to withhold consent. The client should obtain Holder's written consent, or plan to prepay or refinance the note, before the Orrant closing.",
+            "alone": {
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "Section 6.1(g): \"Maker undergoes a Change of Control without the prior written consent of Holder\"; Change of Control clause (a): \"any Person or group of Persons acting in concert, other than Baimix Group Holdings, Inc., acquires, directly or indirectly, ... beneficial ownership of more than fifty percent (50%) of the equity interests or voting power of Maker\"",
+                "reason": "The note alone shows a standard change-of-control default: a change of control without Holder's consent is an Event of Default, and Section 6.2 then lets Holder accelerate the $6,000,000. Read by itself this is an ordinary, market-standard provision, and nothing in the note shows that any change of control is pending or planned. The fact that turns it into a live problem for the client is Baimix Group Holdings' September 22, 2026 agreement to sell all of Buyer's membership interests to Orrant Media Partners, with closing expected in December 2026. That fact appears only in the Letter Agreement, as does the absence of any Seller consent. Without that document, an associate could not see that a default and acceleration right are about to be triggered."
+              },
+              "post_closing_letter_agreement.md": {
+                "findable": false,
+                "evidence": "Baimix Group Holdings, Inc., the sole member of Buyer, has entered into a Membership Interest Purchase Agreement dated September 22, 2026 with Orrant Media Partners, L.P. (\"Orrant\"). Under that agreement, Baimix Group Holdings, Inc. will sell all of the membership interests of Buyer to Orrant (the \"Orrant Transaction\").",
+                "reason": "This document shows the pending sale of all of Buyer's membership interests to Orrant, with closing expected in December 2026. It also shows that the Letter Agreement handles the Orrant Transaction only as a diligence-cooperation and confidentiality matter (Section 5), and contains no consent by Seller to a change of control. It does not show the Seller Note, the $6,000,000 principal, the Change of Control definition, the requirement for Holder's prior written consent, or the Event of Default and acceleration remedies. Nothing here indicates that a change in Buyer's ownership has any consequence for Buyer's obligations to Seller. An associate reading only this letter would see an ordinary pending sale and could not tell that it triggers a default and acceleration right against the client. That element exists only in the Seller Note."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Seller Note §10.1–10.2: \"This Note, and all claims and disputes arising out of or relating to it, shall be governed by and construed in accordance with the laws of the State of California... Any action or proceeding arising out of or relating to this Note shall be brought exclusively in the state or federal courts located in the County of Los Angeles, California.\" APA §11.8: \"Any Action arising out of or relating to this Agreement or any Ancillary Agreement shall be brought exclusively in the state or federal courts located in the County of New York, New York.\"",
+            "reason": "The Seller Note is an Ancillary Agreement under the APA. APA §11.8 sends note disputes exclusively to New York courts under New York law. The note sends them exclusively to Los Angeles courts under California law. APA §11.11 gives precedence to each Ancillary Agreement as to its subject matter, so the note's California clause likely governs note disputes. Baimix, as Maker, depends on the note's setoff and withholding rights in Section 5, and those rights turn on indemnity claims determined under APA Article IX. Those claims must be litigated in New York under New York law. That includes the $1.15M July 20, 2026 Section 4.11 claim, which Seller has disputed and which is still unresolved. Seller could therefore sue for note installments in Los Angeles, for example the $1.5M due January 12, 2027, while Baimix's indemnity claim proceeds in New York. Baimix would face parallel proceedings and inconsistent rulings on setoff. No document in the folder cures this: the October 2026 letter agreement does not touch the note's forum clause. The note can still be amended under §9.3, and Baimix still has exposure in any future litigation, so the problem is actionable.",
+            "alone": {
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "This Note, and all claims and disputes arising out of or relating to it, shall be governed by and construed in accordance with the laws of the State of California ... Any action or proceeding arising out of or relating to this Note shall be brought exclusively in the state or federal courts located in the County of Los Angeles, California.",
+                "reason": "The note by itself shows a California governing-law clause and an exclusive Los Angeles forum. Both parties have New York addresses and the note is dated in New York, so the choice looks odd. The note also shows that setoff under Section 5.1 depends on Article IX indemnity amounts that Holder has agreed in writing or that a court has finally determined. The note does not show the conflict itself. That depends on three things in the APA, which is not provided: (1) Section 11.8 chooses New York law and requires disputes under the APA and any Ancillary Agreement to go exclusively to New York County courts; (2) Section 11.11 makes the note's own clause control as to note disputes; (3) the July 20, 2026 indemnity claim. Without the APA, an associate cannot see that note disputes and indemnity disputes are split between two forums under two different laws. An unusual but internally consistent California clause does not, on its own, show that split or the resulting risk of duplicative proceedings and inconsistent rulings on setoff."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.8: \"Any Action arising out of or relating to this Agreement or any Ancillary Agreement shall be brought exclusively in the state or federal courts located in the County of New York, New York...\"; Section 11.11: \"...then each Ancillary Agreement as to its subject matter; and then this Agreement.\"",
+                "reason": "On its own terms the APA is consistent. It picks New York law and makes New York County courts the exclusive forum for disputes under the APA and every Ancillary Agreement, including the Seller Note. Section 11.11 lets an Ancillary Agreement control as to its subject matter, and Section 9.6 allows setoff against the Seller Note \"in accordance with its terms.\" Read alone, an associate would see a single New York forum and nothing indicating split proceedings. The problem depends on the Seller Note itself, which is not in this document: its Section 10 picks California law and Los Angeles courts, and its Section 5 sets the terms of the setoff right. Only with that clause, combined with the APA's precedence rule in Section 11.11, does the risk appear of Seller suing on the note in Los Angeles while Buyer's indemnity claims must be brought in New York. The July 20, 2026 claim is also not mentioned here."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F3, which only issue I4 uses: a memo that misses I4 need not state it",
+          "criterion C7 asks for fact F1, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.09,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

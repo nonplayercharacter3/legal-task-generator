@@ -1,0 +1,164 @@
+{
+  "matter_id": "s506-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "License Agreement §11.3(b): \"The limitations and exclusions in Sections 11.1 and 11.2 shall not apply to: ... (b) either party's data protection obligations\". §1.8 defines \"data protection obligations\" as \"all of that party's obligations under the Data Processing Addendum\". DPA §9.2: \"Customer shall indemnify, defend and hold harmless Processor ... from and against any and all Losses, including regulatory fines, arising out of or in connection with: (a) Processor's processing of Customer Personal Data in accordance with Customer's instructions ... (b) Customer's failure to give any notice to, or obtain any consent from, any Data Subject\".",
+            "reason": "Glenox is the indemnifying party under DPA §9.2. The indemnity is broad: it covers all Losses, including fines and penalties under DPA §1.4, and is triggered by Glenox's own instructions and by notice or consent failures affecting drop-off customers, drivers and employees. DPA §10.1 appears to cap this exposure by making DPA liability subject to Section 11 of the Agreement. However, Section 11 itself contains §11.3(b), and §1.8 brings every DPA obligation within \"data protection obligations\". The carve-out therefore removes both the 12-month-fees cap and the exclusion of indirect damages from Glenox's indemnity. The two provisions are consistent with each other, so the order of precedence in §2.3 does not cure the problem; it simply gives effect to the carve-out. Protoux's own DPA indemnity under §9.1 is narrower: it is a defend-and-pay-awards obligation limited to third-party claims. The apparently mutual carve-out therefore falls mainly on Glenox. The contract is in force for a 60-month term, and nothing in the folder shows Glenox has waived the point, so it remains a live risk. Glenox can still raise it, for example by seeking an amendment that caps or narrows the indemnity.",
+            "alone": {
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.3: \"The limitations and exclusions in Sections 11.1 and 11.2 shall not apply to: ... (b) either party's data protection obligations;\" and Section 1.8: \"'data protection obligations' means, for each party, all of that party's obligations under the Data Processing Addendum and all of that party's obligations under Data Protection Laws in connection with this Agreement.\"",
+                "reason": "The License Agreement alone shows that the liability cap and the indirect-damages exclusion do not apply to either party's obligations under the DPA. It also shows the DPA is incorporated and ranks above the Statement of Work but below this Agreement (Section 2.3). Read by itself, though, the carve-out looks mutual and aimed at protecting Glenox from Protoux's data breaches. Nothing in this document says Glenox owes Protoux any indemnity for personal-data processing, regulatory fines, or failures to give notices or obtain consents. What makes this a problem for the client is the broad customer-side indemnity in DPA Section 9.2, together with DPA Section 10.1, which points back to this Agreement's limits. That exposure comes entirely from the DPA, which is not provided. An associate might note in general terms that Glenox's own DPA obligations are uncapped. They could not see that this creates unlimited indemnity exposure for Glenox without the other document."
+              },
+              "data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "10.1 Limitations. Each party's liability arising out of or in connection with this DPA is subject to the limitations of liability in Section 11 of the Agreement.",
+                "reason": "On its own, the DPA shows a broad one-sided Customer indemnity in Section 9.2. It covers all Losses, including regulatory fines, arising from Customer's instructions and from notice and consent failures. Section 10.1 then appears to bring that indemnity under the Agreement's limitation of liability, so the DPA alone reads as capped. The problem is that the indemnity is uncapped, and that depends on Section 11.3(b) of the License Agreement, which removes the cap for 'data protection obligations', and on its definition of that term to cover DPA obligations. Neither is in this document. An associate could see that the indemnity is broad and lopsided, but not that it leaves Glenox with unlimited exposure."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Agreement s.15.2: \"Licensee shall not undergo a Change of Control of Licensee without Licensor's prior written consent. If a Change of Control of Licensee occurs without that consent, Licensor may terminate this Agreement by giving Licensee 10 days' written notice. On that termination, Licensor may also declare all unpaid Subscription Fees for the remainder of the Subscription Term immediately due and payable.\" Notice letter: \"Glenox Holdings LLC will sell all of the outstanding shares of Glenox to Sennford Resources Corp.\" ... \"The parties currently expect closing to occur on or about January 15, 2027.\" ... \"We are sending this letter for information purposes only, as a courtesy to Protoux.\"",
+            "reason": "Section 1.3(a) defines a Change of Control to include a transfer of more than 50% of Licensee's voting shares 'by any holder of its shares'. The parent's sale of 100% of Glenox's shares to Sennford is therefore a Change of Control. Section 15.2 puts the obligation on Glenox not to undergo it without Protoux's prior written consent. The October 20, 2026 letter is expressly informational and requests no consent. If closing happens without consent, Protoux may terminate on 10 days' notice and accelerate all unpaid Subscription Fees for the rest of the 60-month Initial Term. Under the Order Form that is roughly four years at $480,000 a year, so about $1.9M or more before any side-letter discount, payable within 30 days. The Parent Guaranty backs that obligation. Nothing in the folder records that consent was sought or given. The issue is still actionable: the latest date in the folder is October 20, 2026, and closing is not expected until about January 15, 2027. Glenox can still request Protoux's written consent before closing, or build consent into the conditions of the share purchase agreement.",
+            "alone": {
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "15.2 Change of Control of Licensee. Licensee shall not undergo a Change of Control of Licensee without Licensor's prior written consent. If a Change of Control of Licensee occurs without that consent, Licensor may terminate this Agreement by giving Licensee 10 days' written notice. On that termination, Licensor may also declare all unpaid Subscription Fees for the remainder of the Subscription Term immediately due and payable.",
+                "reason": "The license agreement alone shows the consent requirement, the broad definition (including any transfer of more than 50% of voting shares, by any holder), the termination right, and fee acceleration. Each is a provision the client could note as burdensome. It does not show that any share sale is pending. The October 2026 sale to Sennford and the notice letter's 'information only' framing without a consent request come from D4. The amount at risk (the term length and $480,000 per year) comes from the Order Form. Without those, there is no actual unconsented Change of Control and no live exposure, only a generic contract term."
+              },
+              "glenox_notice_letter.md": {
+                "findable": false,
+                "evidence": "We are sending this letter for information purposes only, as a courtesy to Protoux as one of our key technology providers.",
+                "reason": "The letter alone shows that Glenox Holdings LLC agreed on October 14, 2026 to sell all of Glenox's shares to Sennford Resources Corp., with closing expected around January 15, 2027. It also shows the letter is for information only and asks for no consent. It does not show that the Agreement treats a transfer of more than 50% of the voting shares as a Change of Control, that Protoux's prior written consent is needed, or that Protoux could terminate on 10 days' notice and accelerate the remaining Subscription Fees. Those terms are in the License Agreement, and the fee amounts are in the Order Form. An associate might suspect a change-of-control clause, but could not confirm from this letter that consent is required or that Glenox is exposed to termination and acceleration."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Licensor may assign this Agreement, in whole or in part, without Licensee's consent to any person, including by merger, consolidation, reorganization or sale of all or any part of its assets or business.",
+            "reason": "Section 15.1 is one-sided. Glenox, the client, cannot assign without Protoux's consent, but Protoux may assign to anyone with no consent, notice or limit on who the assignee is. Nothing in the folder fixes this. The DPA's subprocessor-notice and objection right in Section 5.2 covers subprocessors, not assignees. No document gives Glenox a termination right if Protoux assigns. Protoux could therefore move the contract, along with Glenox's chain-of-custody, yield and supplier data, to a competitor or a weaker vendor. Glenox would stay locked into a 60-month term with automatic renewal and exclusivity under the side letter. The issue is still live and Glenox can act on it. It is a continuing structural risk, not a lapsed deadline, and Glenox needs Protoux's consent for the pending Sennford share sale. That gives Glenox leverage to negotiate a mutual or limited assignment clause."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Side Letter Section 2.2: \"During the Subscription Term, Licensee shall not license, procure, develop or use any Competing Software for Covered Operations, and shall not engage any third party to do so on its behalf.\" License Agreement Section 1.4: \"'Covered Operations' means all battery collection, sorting, processing and materials recovery activities of Licensee and its Affiliates, wherever located.\"",
+            "reason": "The side letter takes 'Covered Operations' from the Agreement (Side Letter 1.1). Section 1.4 of the Agreement defines it as all battery activities of Licensee and its Affiliates, wherever located. The Agreement only uses that term to set the scope of support and warranty (Sections 6.1 and 10.2), where the breadth helps Glenox. Imported into Sections 2.1–2.2 of the side letter, it becomes a restrictive covenant on Glenox. The covenant covers every Glenox and Affiliate operation worldwide, including non-lithium lines. It also covers the current parent, Glenox Holdings. After the pending share sale (expected closing January 15, 2027), it would likely reach Sennford Resources Corp. and its group as new Affiliates. Yet the license covers only the Rochester Licensed Site (Agreement 4.1; Order Form 2.1). Nothing cures this. Section 2.3 carves out only existing ERP, accounting and EHS systems. The precedence clause does not apply because there is no conflict, only a borrowed definition. The consequences fall on Glenox. Protoux can claw back the 15% discount from the date of breach, about $72,000 a year (Side Letter 4.2), and 4.3 preserves its other remedies under the Agreement, potentially including termination. The covenant runs through every Renewal Term (5.3). Glenox Holdings' guaranty of 'all other obligations' may also cover it. The side letter is unsigned and the transaction has not closed, so the issue can still be acted on: narrow the covenant to the Licensed Site or exclude Affiliates.",
+            "alone": {
+              "side_letter_pricing.md": {
+                "findable": false,
+                "evidence": "2.1 In consideration of the Discount, during the Subscription Term Licensee shall use the Platform as its exclusive traceability and process analytics software for Covered Operations.",
+                "reason": "The side letter shows Glenox taking on an exclusivity and non-compete obligation for 'Covered Operations' in exchange for a 15% discount, backed by a clawback remedy. It does not define 'Covered Operations'; Section 1.1 borrows that term from the Agreement. Nothing in this letter says the term covers all battery activities of Licensee and its Affiliates worldwide. It also does not say the Platform is licensed only for the Rochester site. The 2.3 carve-out for accounting, ERP and EHS systems hints that the scope may be broad, but it does not establish it. An associate could flag that the exclusivity scope depends on an outside definition and should be checked. They could not see from this letter that the obligation reaches lead-acid lines, other sites or a future affiliate such as Sennford. That requires the Agreement's definition and the Order Form's Licensed Site."
+              },
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "1.4 \"Covered Operations\" means all battery collection, sorting, processing and materials recovery activities of Licensee and its Affiliates, wherever located.",
+                "reason": "This document by itself contains the broad 'Covered Operations' definition. Here it only sets how far support (6.1) and the platform warranty (10.2) reach, so its breadth helps Glenox. The agreement contains no exclusivity or non-compete covenant binding Glenox, and nothing ties a fee discount to an exclusive-use promise. The harm comes only from the side letter's exclusivity clause, which borrows this definition, and that clause is in a document not provided here. An associate reading only this agreement would see a definition favorable to the client, not an overbroad exclusivity obligation."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "4.1 At the end of the Initial Subscription Term, the subscription renews automatically for successive Renewal Terms equal in length to the Initial Subscription Term, unless either party gives the other written notice of non-renewal at least 120 days before the end of the then-current term.",
+            "reason": "Section 1.2 sets a 60-month Initial Subscription Term. Section 4.1 makes each Renewal Term equal in length to that term, so every renewal is another five years. Section 3.4 fixes the fee at $480,000 a year, so each Renewal Term commits Glenox to about $2.4 million, before any 15% side-letter discount. The Agreement does not cure this. Section 3.1 defers to the Order Form on term, and the Order Form ranks first in the order of precedence under Section 2.3. Nothing requires Protoux to send a renewal reminder. Glenox has no termination-for-convenience right. The 120-day window comes once every five years. The side letter makes it worse: its exclusivity obligation lasts for the Subscription Term, including any Renewal Term, so a missed window also extends the lock-out on competing software. Glenox bears this burden as the fee-paying licensee. The first window closes around November 2030, well after the folder's latest date, so the problem is still actionable and can be raised now."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F6, which only issue I5 uses: a memo that misses I5 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.08,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
