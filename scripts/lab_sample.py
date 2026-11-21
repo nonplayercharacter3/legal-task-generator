@@ -1,7 +1,8 @@
 """Draw the LAB sample and ours, run them through lab_run.py (4 at a time), and write summary.json.
 
     runs/lab_venv/bin/python scripts/lab_sample.py draw   # prints the draw and the judge-call projection, writes sample.json
-    runs/lab_venv/bin/python scripts/lab_sample.py run    # runs every task in sample.json without a scores.json yet
+    runs/lab_venv/bin/python scripts/lab_sample.py draw-v2  # appends 20 v2 tasks (set ours_v2) to sample.json
+    runs/lab_venv/bin/python scripts/lab_sample.py run [SET]  # runs every task (of SET) in sample.json without a scores.json yet
 
 LAB root is runs/lab_root of the main checkout (see lab_run.py); the sample, logs and summary.json go to
 runs/lab_sample/. The draw is fixed by SEED: 20 LAB tasks from corporate-ma and contracts (the slice ours resemble),
@@ -65,6 +66,20 @@ def draw() -> dict:
             "judge_calls_projected": sum(r["criteria"] for r in rows)}
 
 
+def draw_v2(n: int = 20) -> list[dict]:
+    """v2 tasks (runs/*_v2): every dev and test task first, then train tasks drawn by SEED to fill n."""
+    tasks = [t.parent for t in sorted(MAIN.glob("runs/*_v2/accepted/*/task.json")) if not json.loads(t.read_text()).get("hold")]
+    held = [m for m in tasks if json.loads((m / "task.json").read_text()).get("split") in ("dev", "test")]
+    rest = [m for m in tasks if m not in held]
+    rows = []
+    for m in held[:n] + random.Random(SEED).sample(rest, max(0, n - len(held))):
+        mine = [d for d in difficulty(json.loads((m / "task.json").read_text()), {}) if d["model"] == "qwen3-small"]
+        name = to_lab_format.convert(m, ROOT / "tasks")
+        c = len(json.loads((ROOT / "tasks" / name / "task.json").read_text())["criteria"])
+        rows.append({"task": name, "set": "ours_v2", "label": mine[0]["pass_rate"] if mine else None, "matter": str(m), "criteria": c})
+    return rows
+
+
 def run_one(row: dict) -> None:
     d = ROOT / "results" / row["task"] / f"qwen3-small-low/{TAG}"
     if (d / "scores.json").exists():
@@ -88,7 +103,7 @@ def summarise(rows: list[dict]) -> dict:
                     "output_tokens": m["output_tokens"], "seconds": m["wall_clock_seconds"], "finish": m["finish_reason"],
                     "judge_calls": j["calls"], "wrote_output": any((d / "output").iterdir())})
     sets = {}
-    for name in ("lab_slice", "lab_other", "ours"):
+    for name in ("lab_slice", "lab_other", "ours", "ours_v2"):
         g = [o for o in out if o["set"] == name and "n_criteria" in o]
         if g:
             sets[name] = {"tasks": len(g), "all_pass": sum(o["all_pass"] for o in g) / len(g),
@@ -108,8 +123,15 @@ if __name__ == "__main__":
         print(json.dumps({k: v for k, v in s.items() if k != "rows"}))
         for r in s["rows"]:
             print(f"{r['set']:9} {r['task']} {r.get('label', '')} {r['criteria']}")
+    elif sys.argv[1] == "draw-v2":
+        s = json.loads((OUT / "sample.json").read_text())
+        s["rows"] = [r for r in s["rows"] if r["set"] != "ours_v2"] + draw_v2()
+        (OUT / "sample.json").write_text(json.dumps(s, indent=1))
+        for r in s["rows"]:
+            if r["set"] == "ours_v2":
+                print(r["task"], r["label"], r["criteria"])
     else:
         rows = json.loads((OUT / "sample.json").read_text())["rows"]
         with ThreadPoolExecutor(WORKERS) as pool:
-            list(pool.map(run_one, rows))
+            list(pool.map(run_one, [r for r in rows if len(sys.argv) < 3 or r["set"] == sys.argv[2]]))
         (OUT / "summary.json").write_text(json.dumps(summarise(rows), indent=1))
