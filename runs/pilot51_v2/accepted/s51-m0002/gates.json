@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -136,8 +150,78 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C8"
+              ],
+              "steps": 27,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "bill_of_sale.md",
+                "closing_funds_flow_memo.md",
+                "doureth_board_consent.md",
+                "indemnity_escrow_agreement.md",
+                "integration_meeting_notes.md",
+                "letter_of_intent.md",
+                "plant_director_employment_agreement.md",
+                "seller_promissory_note.md",
+                "transitional_supply_side_letter.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2"
+              ],
+              "steps": 27,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "bill_of_sale.md",
+                "closing_funds_flow_memo.md",
+                "doureth_board_consent.md",
+                "indemnity_escrow_agreement.md",
+                "integration_meeting_notes.md",
+                "letter_of_intent.md",
+                "plant_director_employment_agreement.md",
+                "seller_promissory_note.md",
+                "transitional_supply_side_letter.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C5"
+              ],
+              "steps": 28,
+              "files_opened": [
+                "asset_purchase_agreement.md",
+                "bill_of_sale.md",
+                "closing_funds_flow_memo.md",
+                "doureth_board_consent.md",
+                "indemnity_escrow_agreement.md",
+                "integration_meeting_notes.md",
+                "letter_of_intent.md",
+                "plant_director_employment_agreement.md",
+                "seller_promissory_note.md",
+                "transitional_supply_side_letter.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
