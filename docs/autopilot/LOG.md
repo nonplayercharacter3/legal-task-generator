@@ -115,3 +115,10 @@ Dated, append-only. One entry per iteration.
 - New `runs/lab_sample/regrade2.py` (local): waits for the reset named in the error and retries, instead of stopping.
   `morning.sh` (PID 46874) starts it once the night chain (13075) ends, so it does not compete with labelling.
 - Lab mate: no activity on #36 since 2026-11-18; no code changes since 119b8dd, so the work order still matches.
+
+## 2026-11-20 18:50, iteration 14
+- Laptop slept from 2026-11-19 22:09 (clamshell, battery) to 2026-11-20 18:25: labelling of seed 51 hung 20 hours,
+  then both solver calls timed out; `ltg batch` waits 30 min and retries. Commented on issue #44.
+- Labels landed overnight before the sleep: s61 (0.67, 0.00, 0.00), s49-m0002 0.00, s50-m0001 0.67.
+- Lab mate started seeds 500-507 at 18:01; PR #45 (seed 500, 3 of 3 accepted, 52 files, only runs/lm_s500_v2,
+  run-output rule kept, CI green) reviewed and merged.
