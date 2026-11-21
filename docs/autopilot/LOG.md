@@ -136,3 +136,4 @@ Dated, append-only. One entry per iteration.
 - Lab mate finished seeds 500-507: 20 of 24 accepted. Seeds 501-507 had no PR (PR #45 merged mid-batch and
   `ltg batch` never re-checked). Opened and merged PR #46 (runs/lm_s50*_v2 only, CI green), fixed `ltg batch` in
   PR #47 (open_pr after every push), commented on #36.
+- PR #47 merge first failed on a dropped connection; the cleanup chain then deleted the branch and closed the PR. Restored the branch from 7cbb101, reopened, CI green, merged. Lesson: cleanup only after a confirmed merge (`&&`, not `;`).
