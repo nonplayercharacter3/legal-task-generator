@@ -72,9 +72,8 @@ agent. Full definition of done: PROMPT.md.
 
 ## Next
 1. When `chain_v2.out` says "chain done": check `check.py` shows every s1 row clean (LAB 30 and ours_v2 20); if not,
-   run `regrade2.py` again. Then `runs/lab_venv/bin/python scripts/lab_sample.py summarise`-equivalent: `summarise`
-   is called by `run`; re-run `scripts/lab_sample.py run ours_v2` (skips scored tasks) to rewrite `summary.json`,
-   commit it, write both sides into `docs/research/lab_harness.md` (M3 done).
+   run `regrade2.py` again. Then re-run `scripts/lab_sample.py run ours_v2` (it skips scored tasks and rewrites
+   `summary.json` over all rows), commit `summary.json`, write both sides into `docs/research/lab_harness.md` (M3 done).
 2. Label the lab mate's 20 tasks (`ltg label`, runs/lm_s500-507_v2) after the chain (one heavy job at a time).
 3. M4: apply EVALUATION.md levels 1-3 with M3's numbers. Known level 2 misses: folder words median 15,704 (needs
    20,000), checklist median 10 (needs 20). Candidate v3: longer folders and more checklist items in one change.
