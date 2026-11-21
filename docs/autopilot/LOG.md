@@ -137,3 +137,12 @@ Dated, append-only. One entry per iteration.
   `ltg batch` never re-checked). Opened and merged PR #46 (runs/lm_s50*_v2 only, CI green), fixed `ltg batch` in
   PR #47 (open_pr after every push), commented on #36.
 - PR #47 merge first failed on a dropped connection; the cleanup chain then deleted the branch and closed the PR. Restored the branch from 7cbb101, reopened, CI green, merged. Lesson: cleanup only after a confirmed merge (`&&`, not `;`).
+
+## 2026-11-21 11:20, iteration 17
+- Laptop woke 10:55 (slept on battery overnight). The LAB regrade (PID 55990) was stuck in its usage-limit wait, which
+  counts only awake time; killed and restarted (PID 67821, `regrade3.out`), 10 errored s1 scores to re-judge.
+- Found one LAB sample task with no score at all: technology control plan scenario-02, Qwen run died on
+  `APIConnectionError` during sleep. Chained a full re-run after the regrade (`rerun_sanctions.sh`, PID 69247); partial
+  output to `runs/_trash/2026-11-21/lab_s1_connerror/`.
+- Read the lab mate's 4 rejections (seeds 501, 502, 503, 507): 3 correct (known classes), 1 likely false
+  (s502-m0002, paraphrased detect term in the second document; first case in about 70 v2 matters; not fixed yet).

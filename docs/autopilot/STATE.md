@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-21 07:35, autopilot iteration 16.
+Last updated: 2026-11-21 11:20, autopilot iteration 17.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -41,17 +41,22 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- Night chain done 2026-11-20 22:19: labels for seeds 51-53 on main (b277085, 8302e09, f588776). All 33 of our v2
-  tasks (s45-s61) are labelled.
-- Morning chain `runs/lab_sample/morning.sh`, PID 46874 (caffeinate), running `runs/lab_sample/regrade2.py`
-  (PID 55990, output `regrade2.out`): 3 of 13 LAB tasks re-judged cleanly by 22:30; the 4th (employment agreement
-  scenario-01) hit the 5-hour limit at 22:30 with 32 grading errors and is waiting 184 min to retry it. The laptop
-  then slept on battery (19% at 07:24 on 2026-11-21), so the wait has not finished. It resumes on wake.
-- LAB side: 30 of 30 run by Qwen; 20 scored cleanly, 10 still to re-judge.
+- LAB regrade restarted 11:06 (`regrade2.py`, PID 67821, output `runs/lab_sample/regrade3.out`): the old one (PID
+  55990) sat in its usage-limit wait from 22:30 while the laptop slept (time.sleep does not count sleep), so it was
+  killed; it re-reads which s1 scores have errors, 10 to go, ~3 min each.
+- Then `runs/lab_sample/rerun_sanctions.sh` (PID 69247, output `rerun_sanctions.out`): the LAB task
+  `international-trade-sanctions/review-technology-control-plan/scenario-02` has no score (Qwen run died on a
+  connection error while the laptop slept); its partial output moves to `runs/_trash/2026-11-21/lab_s1_connerror/`
+  and it re-runs in full (Qwen solve, then judge). Expected end about 12:45.
+- LAB side: 30 of 30 attempted; 19 scored cleanly, 10 to re-judge, 1 to re-run.
 
 ## v2 numbers (seeds 45-61, ours; lab mate 500-507)
-- Lab mate's seeds 500-507: 20 of 24 accepted (rejections: 501 consistency, 502 and 503 issue_check, 507
-  ledger_schema; not yet read), labels deferred, on main (PR #45, #46). Not labelled yet.
+- Lab mate's seeds 500-507: 20 of 24 accepted, on main (PR #45, #46), not labelled yet. Rejections, read 2026-11-21:
+  s501-m0003 consistency (drafter's lookback runs from the event, ledger says the claim; correct, same as s59-m0001),
+  s503-m0001 issue_check (two-document issue findable from the schedule alone; correct), s507-m0001 ledger_schema
+  (a 21-word fact; correct), s502-m0002 issue_check (detect term "delivered on August 3, 2026" not verbatim in SOW
+  No. 2; likely false, the drafter wrote "delivered the ... Module on August 3, 2026"; documents are on his machine
+  only). Paraphrased detect terms: 1 in about 70 v2 matters, fix only if it recurs.
 - Ours: 33 accepted, labels 0.00: 15, 0.33: 7, 0.67: 9, 1.00: 2, mean 0.31.
 - Seeds 45-60: 30 accepted of 46 matters; seeds 54-60 (after PR #40): 16 of 21. Rejections 54-60, all read: s54-m0001 and
   s59-m0001 consistency (drafter added a qualifier that changes the fact: a governing-law proviso, a lookback from
@@ -64,9 +69,8 @@ agent. Full definition of done: PROMPT.md.
   15,704 (MISS, needs 20,000), checklist median 10 (soft miss, needs 20).
 
 ## Next
-1. Read the 4 rejections of the lab mate's seeds 501-503, 507 (gates.json on main); label his 20 tasks with
-   `ltg label` when no other heavy job runs (after the LAB regrade).
-2. Read `runs/lab_sample/regrade2.out` and `python3 runs/lab_sample/check.py` until all 30 LAB rows are clean.
+1. Read `regrade3.out`, `rerun_sanctions.out` and `python3 runs/lab_sample/check.py` until all 30 LAB rows are clean.
+2. Label the lab mate's 20 tasks (`ltg label`, runs/lm_s500-507_v2) when no other heavy job runs, then commit labels.
 3. M3 our side, after the LAB 30: convert 20+ v2 tasks (dev/test first) with `scripts/to_lab_format.py`, add them as
    `ours_v2` rows, score them the same way, in chunks of about 6 tasks per 5-hour window (no batch running); then
    `summarise`, commit `runs/lab_sample/summary.json`, write both sides into `docs/research/lab_harness.md`.
