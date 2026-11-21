@@ -1,0 +1,140 @@
+{
+  "task_id": "s504-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Prodeth Water Solutions, Inc., the buyer in its asset purchase from Toulous Aquachem LLC, and Prodeth is also the maker of the Seller Note. Please review all nine documents in the folder and send me a memo covering every issue you find that matters to Prodeth. For each issue, give the document and section where it appears, explain why it matters for the client, and recommend a fix. Please tell me if anything in the folder seems to be missing or incomplete.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "bill_of_sale_and_assumption.md",
+    "closing_side_letter.md",
+    "indemnity_escrow_agreement.md",
+    "joint_press_release.md",
+    "key_employee_agreement_fannick.md",
+    "mutual_confidentiality_agreement.md",
+    "seller_promissory_note.md",
+    "toulous_board_consent.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the closing side letter's restated definition of Pre-Closing Environmental Liabilities narrows the APA's environmental cap carve-out to the conditions listed in its Annex A (the Identified Environmental Conditions), so unidentified pre-Closing contamination becomes subject to the $4,200,000 Cap Amount. It identifies the location as Side Letter Section 2 or APA Section 9.5(b), explains why this matters to Prodeth, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Identified Environmental Conditions",
+        "Annex A",
+        "carve-out narrowed"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that Buyer's indemnity for Assumed Liabilities is uncapped, and that Assumed Liabilities include liabilities under the Assigned Contracts arising before Closing, so Prodeth faces unlimited liability for Seller's own pre-Closing breaches. It identifies the location as APA Section 2.3(c), 9.3(b) or 9.5(d), explains why this matters to Prodeth, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "whether arising before or after the Closing",
+        "uncapped",
+        "Section 9.5(d)"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that the Seller Note's Delaware governing law and exclusive Delaware Court of Chancery forum conflict with the APA's New York law and New York County forum that govern Buyer's set-off right against the Note, so Prodeth risks split litigation in which the Note is enforced without the set-off. It identifies the location as Seller Note Section 12 or APA Section 9.8, 11.9 or 11.10, explains why this matters to Prodeth, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Court of Chancery",
+        "set-off",
+        "parallel proceedings"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that the sale requires the Ashcombe County Water Authority's prior written consent (as Toulous's board consent recites), yet the APA does not include that consent among the Required Consents or in Buyer's closing condition, so Prodeth could be obliged to close without the Ashcombe Supply Agreement. It identifies the location as APA Section 4.5 or 7.2(c) or the Toulous board consent, explains why this matters to Prodeth, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Ashcombe Supply Agreement",
+        "Required Consents",
+        "closing condition"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that the 9-month survival period for non-Fundamental representations can expire before the post-Closing NSF recertification audit, which is scheduled within 12 months after Closing, so Prodeth may lose any claim under the NSF/ANSI/CAN 60 certification representation. It identifies the location as APA Section 9.1(a), 6.10 or 4.14, explains why this matters to Prodeth, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "nine (9) months",
+        "NSF recertification audit",
+        "12 months"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response finds that the Seller Note can be transferred by the Holder to any Person without Prodeth's consent, including a Prodeth competitor, which would then receive Prodeth's financial and customer reporting delivered under the Note. It identifies the location as Seller Note Section 10 or Section 7, explains why this matters to Prodeth, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without the consent of Maker",
+        "competitor",
+        "financial statements"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the APA Cap Amount is $4,200,000.",
+      "kind": "fact",
+      "hints": [
+        "$4,200,000",
+        "Cap Amount"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that the Seller Note's principal amount is $6,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$6,000,000",
+        "Seller Note"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is a memo addressed to the supervising partner, and it gives each issue with its document and section, why it matters to Prodeth and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "memo",
+        "recommended fix",
+        "why it matters"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response includes a statement on whether anything in the folder appears to be missing or incomplete.",
+      "kind": "format",
+      "hints": [
+        "missing",
+        "incomplete",
+        "not in the folder"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the APA's New York governing-law or forum clause overrides the Seller Note's Delaware governing-law and forum clause.",
+      "kind": "negative",
+      "hints": [
+        "APA prevails over the Note's governing law"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response claims that the Ashcombe County Water Authority's consent is a Required Consent or a condition to Buyer's obligation to close under the APA.",
+      "kind": "negative",
+      "hints": [
+        "Ashcombe consent is a closing condition"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

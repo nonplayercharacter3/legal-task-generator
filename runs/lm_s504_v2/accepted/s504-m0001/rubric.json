@@ -1,0 +1,111 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response concludes that Trutour may assign the License Agreement to any third party, including a Vougeir competitor, without Vougeir's consent. It identifies the location as the License Agreement Section 14.1, explains why this matters to Vougeir, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "Section 14.1",
+        "without Licensee's consent",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that the pending Ostrander acquisition is a Change of Control that requires Trutour's consent, and that the side letter does not give that consent. It identifies the location as License Agreement Section 14.3 or the side letter (recitals or Section 4), explains why this matters to Vougeir, and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "Change of Control",
+        "Ostrander",
+        "nothing herein constitutes a consent"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that service-level and service-credit disputes are governed by New York law in an exclusive New York County forum, while other claims under the License Agreement stay under Delaware law and forum, splitting Vougeir's outage-related claims across two laws and forums. It identifies the location as Quality Agreement Section 9.1 or License Agreement Section 1.3, explains why this matters to Vougeir, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "New York law",
+        "Delaware",
+        "Service Credits"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Vougeir's September 14, 2026 objection to the fee increase was sent after the 30-day objection window closed (on or about September 2, 2026), so the increase may be deemed accepted. It identifies the location as License Agreement Section 4.4 or Vougeir's September 14, 2026 letter, explains why this matters to Vougeir, and recommends a fix.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "September 2, 2026",
+        "deemed accepted",
+        "Section 4.4"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the License Agreement's effective date is March 1, 2025.",
+      "kind": "fact",
+      "source": "F1",
+      "hints": [
+        "March 1, 2025",
+        "Effective Date"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response identifies the licensed software as the TruRoute Linen Suite, an RFID linen tracking and route management platform.",
+      "kind": "fact",
+      "source": "F3",
+      "hints": [
+        "TruRoute Linen Suite",
+        "RFID",
+        "route management"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is written as a memo addressed to the supervising partner, and it gives a document and section for each issue listed.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memo",
+        "To:",
+        "Section"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response presents the issues in a prioritized order, or labels each issue with a priority or severity.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "priority",
+        "high",
+        "most urgent"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Vougeir's September 14, 2026 objection to the fee increase was timely under Section 4.4.",
+      "kind": "negative",
+      "source": "I4",
+      "hints": [
+        "timely objection",
+        "within the 30-day window"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the side letter gives Trutour's consent to the Ostrander acquisition.",
+      "kind": "negative",
+      "source": "I2",
+      "hints": [
+        "side letter consents",
+        "consent already obtained"
+      ]
+    }
+  ]
+}

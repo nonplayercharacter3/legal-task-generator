@@ -1,0 +1,168 @@
+{
+  "matter_id": "s506-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 10.2: \"The Holder may sell, assign, pledge or otherwise transfer this Note, in whole or in part, and any of its rights under this Note, to any Person, without the consent of the Maker. Each transferee becomes the Holder of this Note, or of the transferred portion of it, and is entitled to all rights of the Holder under this Note.\" Section 7.1(b) requires delivery to the Holder of \"a report on the status of the Maker's breeding pipeline, identifying each hybrid tomato and pepper line in development, its stage of development, the traits under selection, and expected commercial release dates.\" Section 8.2 lets the Holder accelerate on \"a Reporting Default.\"",
+            "reason": "The problem is present and hurts Loudeil, the Maker. Section 10.2 lets Naitox transfer the Note to any Person without Loudeil's consent. Each transferee takes every Holder right, including the right to receive the 7.1 seed-sales reports by variety and the breeding-pipeline reports. It also takes the right to accelerate the full $8.5M on a Reporting Default under 8.1(c) and 8.2. Section 8.1(c) gives only a 15-day grace period after the due date and requires no notice from the Holder. Nothing in the folder cures this. The Note has no confidentiality covenant protecting the reports. APA 6.4 binds only Seller, covers only information about the acquired Business, and does not bind any transferee. APA 11.4 restricts assignment of the APA only, not the Note. Section 10.3 does not require notice of a transfer before it takes effect; it only protects payments Loudeil makes to the Holder of record. Nothing restricts transfers to competitors and nothing requires notice to Loudeil. The Note is outstanding until 2029 and can still be amended under 11.2, so the exposure is ongoing and actionable. Loudeil can seek a consent or competitor carve-out, a notice requirement, and confidentiality protections for the reports."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "APA §2.4(b): \"Buyer may deliver to Seller a written notice (an \"Inventory Dispute Notice\") within 45 days after the Closing Date ... If Buyer does not deliver an Inventory Dispute Notice within that period, the Closing Seed Inventory Statement shall be final and binding on the parties for all purposes of this Agreement.\" Side letter §4.2: \"Buyer delivered its Inventory Dispute Notice on April 24, 2026.\"",
+            "reason": "The Bill of Sale fixes the Closing Date as March 2, 2026, so the 45-day window under APA §2.4(b) closed on April 16, 2026. Buyer's notice of April 24 was eight days late. On the face of §2.4(b), Seller can argue that the Closing Seed Inventory Statement is final and binding. That would cut off Loudeil's challenge to the germination rates on 14 tomato lots, the quantities of six pepper lots and the related valuation. It would also cost Loudeil any shortfall recovery against the $6.2M Target Inventory Value. Nothing in the folder cures this. Seller has not waived the deadline: §4.3 says the discussions are without prejudice and each party reserves all rights. The APA (§11.3) requires any waiver to be in writing and signed. The problem is still actionable. Loudeil has not accepted the statement and maintains its notice is valid (§4.2), and the parties are to meet before May 29, 2026. Loudeil therefore needs to secure a written waiver or extension, or prepare arguments that the notice was timely or that Seller is estopped.",
+            "alone": {
+              "asset_purchase_agreement_loudeil_naitox.md": {
+                "findable": false,
+                "evidence": "If Buyer does not deliver an Inventory Dispute Notice within that period, the Closing Seed Inventory Statement shall be final and binding on the parties for all purposes of this Agreement.",
+                "reason": "The APA by itself sets out the 45-day window after the Closing Date for an Inventory Dispute Notice and says the statement becomes final and binding if no notice is delivered in time. It does not give the actual Closing Date, which Section 3.1 defines only by reference to when conditions are satisfied. The April 15, 2026 outside date in Section 8.1(b) caps the closing date but does not fix it. The APA also says nothing about when, or whether, Buyer delivered a dispute notice. An associate reading only this document could see the deadline mechanism and its risk in general terms. They could not see that the window had actually run or that Buyer's notice was late. Those facts come from the Bill of Sale (Closing Date) and the side letter (April 24, 2026 delivery)."
+              },
+              "post_closing_side_letter_2026-04-28.md": {
+                "findable": false,
+                "evidence": "Buyer delivered its Inventory Dispute Notice on April 24, 2026. ... Buyer maintains that its Inventory Dispute Notice is valid and effective under Section 2.4 of the Purchase Agreement.",
+                "reason": "The side letter gives the date Buyer delivered its Inventory Dispute Notice (April 24, 2026). The words 'Buyer maintains' and the mutual reservation of rights in Section 4.3 suggest Seller may dispute whether the notice was timely. But the letter does not state the 45-day objection window in APA Section 2.4(b) or the Closing Date of March 2, 2026, which comes from the Bill of Sale. Without the deadline and the Closing Date, an associate reading only this letter cannot tell that the notice was late or that the Closing Seed Inventory Statement may have become final and binding against Loudeil."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 4.11: \"In each case, purity and trait expression are as determined by a grow-out trial conducted over a full growing season under standard commercial conditions for the relevant crop.\" Section 9.1: \"The representations and warranties of the parties, other than the Fundamental Representations, survive the Closing until 9 months after the Closing Date.\" Section 9.4: \"No claim for breach of a representation or warranty may be made unless such notice is delivered before the end of the applicable survival period under Section 9.1.\"",
+            "reason": "The problem is present and hurts Buyer (Loudeil). Seller gives the Section 4.11 purity and trait warranty, and Buyer is the party that must give notice. Section 4.11 is not a Fundamental Representation (those are Sections 4.1, 4.2, 4.9 and 4.15), so it survives only 9 months. With Closing on March 2, 2026 (Bill of Sale and Note), the window ends December 2, 2026. Section 4.11 itself requires a full-season grow-out trial to measure breach. That trial could only start in the 2026 season after closing, and its results, analysis and a claim notice with reasonable specificity under Section 9.4 would struggle to arrive before December 2. No other document cures this. The IP Assignment's Section 3.6 supersedes only Section 4.9, not Section 4.11, and the side letter leaves Article IX unchanged. The issue is still actionable: the latest date in the folder is April 28, 2026, so the window is still open. Buyer can seek an amendment extending survival for Section 4.11, or serve a protective notice before December 2, 2026. Nothing shows Buyer has accepted the result. The live Inventory Dispute Notice over germination rates also suggests seed-quality concerns exist."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "IP Assignment Agreement Section 3.6: \"The representations and warranties in this Section 3 are Assignor's sole representations concerning the Assigned IP and supersede Section 4.9 of the Purchase Agreement.\" APA Section 11.9: \"However, the IP Assignment Agreement controls with respect to the conveyance of, and representations concerning, the Transferred IP.\" APA Section 9.6(b): \"The limitations in Section 9.6(a) apply only to Losses arising from breaches of representations and warranties other than Fundamental Representations.\"",
+            "reason": "The problem is present and actionable for Loudeil, the Buyer and indemnified party.\n\n- **How the protection is lost.** The APA defines Fundamental Representations by section number: Sections 4.1, 4.2, 4.9 and 4.15. Section 3.6 of the IP Assignment states that its Section 3 reps supersede APA Section 4.9. APA Section 11.9 then makes the IP Assignment control on representations concerning the Transferred IP. Read together, the IP title protection no longer sits in Section 4.9. It therefore loses Fundamental status, and with it:\n  - the 6-year survival under Section 9.1, which falls back to 9 months; and\n  - the carve-out from the $485,000 basket and the 12% cap under Section 9.6(b).\n- **Possibly worse.** Section 9.2(a) indemnifies only breaches of reps \"in this Agreement.\" Reps that sit in the IP Assignment may not be indemnifiable under Article IX at all.\n- **The replacement reps are weaker.** IP Assignment Section 3.2 replaces 4.9's flat statement that no Personnel holds any ownership interest with a scope-of-employment assignment rep. That matters because Dr. Varnholt's Key Employee Agreement lists the TY-Shield marker panel as her own Prior Invention. That is a live title risk on a core asset, which Loudeil now faces under the cap.\n- **Nothing cures it.** The side letter leaves the Ancillary Agreements unchanged, and no document restores Fundamental treatment.\n- **The window is still open.** The latest date in the folder is April 28, 2026. Even the shortened 9-month survival period runs until December 2, 2026. Loudeil can still notice claims, seek an amendment or a clarifying side letter, or use Section 9.7 set-off against the Seller Note.",
+            "alone": {
+              "ip_assignment_agreement.md": {
+                "findable": false,
+                "evidence": "The representations and warranties in this Section 3 are Assignor's sole representations concerning the Assigned IP and supersede Section 4.9 of the Purchase Agreement.",
+                "reason": "This document shows only that its Section 3 IP reps replace APA Section 4.9. Read alone, that looks like routine integration of fuller IP reps, and it contains no cap, survival period, indemnity limits or definition of Fundamental Representations. The harm depends on the APA, which this document does not include. APA Section 1.1 makes Section 4.9 a Fundamental Representation, Section 9.6(b) excludes those from the 12% cap, Section 9.1 gives them longer survival, and Section 11.9 lets the IP Assignment control. Without those provisions, an associate could not tell that superseding 4.9 strips the title reps of their cap carve-out and leaves title failure capped at 12%."
+              },
+              "asset_purchase_agreement_loudeil_naitox.md": {
+                "findable": false,
+                "evidence": "\"However, the IP Assignment Agreement controls with respect to the conveyance of, and representations concerning, the Transferred IP.\" (Section 11.9)",
+                "reason": "On its own, the APA protects the Buyer on IP title. Section 4.9 is listed as a Fundamental Representation in Section 1.1. Under Section 9.1 it survives six years, and under Section 9.6(b) it is outside the 12% cap. Section 11.9 gives the IP Assignment Agreement priority on representations about Transferred IP. A careful associate might mark that as a drafting point to check. But the APA does not say what the IP Assignment Agreement contains. It does not show that IP Assignment Section 3.6 makes its own Section 3 representations the Seller's sole IP representations, or that they supersede APA Section 4.9. That supersession is what pulls IP title out of the Fundamental Representations and puts it under the 12% cap. Without it, Section 11.9 only matters if there is a conflict, and the APA alone shows no conflict. The actual harm, title failure on the germplasm being capped, depends on the document we do not have."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "KEA Section 5.2: \"The Prior Inventions are not assigned to the Company under this Agreement and shall remain the sole property of Employee.\" Exhibit A, item 1 lists the \"TY-Shield marker panel\" (conceived 2021). APA Section 1.1, by contrast, defines \"Pre-Closing Inventions\" as \"all inventions, marker panels and breeding methods conceived by Seller or its Personnel prior to the Closing Date that relate to the Business ... This includes the TY-Shield marker panel.\" APA Section 2.1(c) conveys \"the Pre-Closing Inventions\" to Buyer.",
+            "reason": "The problem is present and hurts the client. Loudeil paid for the TY-Shield marker panel as a conveyed asset under APA Sections 1.1 and 2.1(c), backed by Section 4.9, IP Assignment Schedule 1 Part C and Disclosure Schedule 4.9 Part C. It underpins the TY-Shield parent lines and the NX-T412 and NX-T430 hybrids. Yet in KEA Section 5.2 and Exhibit A, Loudeil itself acknowledged in writing that the same panel 'shall remain the sole property of Employee.' Loudeil takes only a non-exclusive license, limited to Company products into which she incorporates it. The two definitions conflict because both key off the same date (Closing Date = Employment Start Date). APA Section 11.9 cannot reconcile them, since the KEA is between Buyer and the employee and is not an Ancillary Agreement with Seller. The KEA admission also undercuts Loudeil's title and its Fundamental Representation claim against Naitox under Section 4.9, which says no Personnel holds any ownership interest. The issue remains actionable. The folder runs only to April 28, 2026. The Section 4.9 survival period runs six years, and nothing shows Loudeil accepted the result. The KEA can still be amended (Section 9.5), or Varnholt can be asked to confirm assignment, and a claim against Seller remains open.",
+            "alone": {
+              "key_employee_agreement_varnholt.md": {
+                "findable": false,
+                "evidence": "The Prior Inventions are not assigned to the Company under this Agreement and shall remain the sole property of Employee.",
+                "reason": "On its own, this document shows that Loudeil acknowledged in writing that Dr. Varnholt personally owns the Prior Inventions. Exhibit A lists the TY-Shield marker panel, dated 2021. Recital B says she was Naitox's Head of Vegetable Breeding, and Recital A says Loudeil bought Naitox's business under an APA. A careful associate might suspect that something she built while working at Naitox belonged to Naitox and passed to Loudeil. But nothing in this document says so. It does not define 'Pre-Closing Inventions', does not convey them as Transferred Assets, does not list TY-Shield as Seller-owned IP, and does not show that the APA precedence clause leaves the conflict unresolved. Read alone, Section 5.2 and Exhibit A look like a standard prior-inventions carve-out. Seeing that the same asset is treated as conveyed to Loudeil in one document and as the employee's property in the other, to the client's harm, requires the APA."
+              },
+              "asset_purchase_agreement_loudeil_naitox.md": {
+                "findable": false,
+                "evidence": "\"Pre-Closing Inventions\" means all inventions, marker panels and breeding methods conceived by Seller or its Personnel prior to the Closing Date that relate to the Business, whether or not reduced to practice, patented or registered. This includes the TY-Shield marker panel for Tomato Yellow Leaf Curl Virus resistance.",
+                "reason": "Read alone, the APA treats the TY-Shield panel and other Personnel-conceived pre-Closing inventions as Transferred Assets conveyed to Buyer (Sections 1.1, 2.1(c)). Seller also represents in Section 4.9 that no current or former Personnel holds any ownership interest. Section 6.3 contemplates Buyer hiring Dr. Varnholt but says nothing about her retaining any inventions. Nothing in the APA shows a conflicting ownership claim or a written acknowledgment by Loudeil that she owns them. The conflict depends entirely on Section 5.2 and Exhibit A of the Key Employee Agreement, which this document does not contain. That agreement is where Loudeil acknowledges her ownership of the TY-Shield panel. On the APA alone, the provisions are internally consistent and protect Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Section 3.3: \"Buyer shall indemnify Seller and its affiliates, officers, directors and employees against all Losses, including grower crop losses, arising from or relating to seed supplied by Buyer for Transition Orders. ... This indemnity is in addition to, and not subject to any limitation in Article IX of, the Purchase Agreement.\"",
+            "reason": "Buyer (Loudeil, the client) is the indemnifying party under Section 3.3. The indemnity covers all Losses, expressly including grower crop losses, arising from seed supplied for the Transition Orders. It is expressly carved out of every Article IX limitation. APA §9.6(c) caps only Buyer's liability under §9.3(a), so in any case nothing caps this obligation. Nothing else in the side letter caps it either: there is no limit tied to the price of the seed, no exclusion of consequential damages, and no reciprocal limitation. The side letter does not carve out losses caused by Seller's own storage or handling failures under §3.4. The indemnity runs to the 'relating to' standard. Crop-loss claims on hybrid tomato and pepper seed (about $1.6M in Annex A orders, including TY-Shield trait claims) can far exceed the value of the seed. Loudeil, which only receives a net 96% of the sale price, therefore carries unlimited exposure. The letter is unsigned in the folder (signature blocks are blank), so the client can still negotiate a cap. The deliveries run through June 30, 2026, and grower claims could arise afterward, so the exposure remains live and actionable."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.083,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

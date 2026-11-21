@@ -1,0 +1,243 @@
+{
+  "matter_id": "s503-m0001",
+  "summary": "Gleigen Pet Nutrition, Inc. (client, buyer) signed an asset purchase agreement on August 14, 2026 to acquire the pet food business of Movaisk Foods, LLC for $86,500,000. The business makes Ridgeline dry kibble and Copperpot retort-canned wet food at a leased plant in Topeka, Kansas. The deal has signed but not closed. The folder holds the APA, an IP assignment with a license-back to the seller, Gleigen's board consent, a form escrow agreement, the earlier LOI, the seller's disclosure schedule, and two distractors: an unrelated packaging supply agreement and a mutual confidentiality agreement. Four issues are planted. (1) The license-back in the IP assignment can be freely assigned and sublicensed by the seller. (2) The APA's 'Products' definition points to a schedule that lists only dry SKUs, so pre-Closing wet-food liabilities shift to Gleigen. (3) A key private-label customer contract requires consent on assignment or change of control, but its consent is not among the APA's Required Consents. (4) The APA requires the seller to exercise a Topeka lease renewal option whose notice deadline had already passed before the APA was signed.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Gleigen Pet Nutrition, Inc.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Movaisk Foods, LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Bank & Trust Company",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P4",
+      "name": "Fernhollow Pet Markets, Inc.",
+      "role": "Private-label customer under an Assigned Contract"
+    },
+    {
+      "id": "P5",
+      "name": "Sunflower Industrial Properties, LLC",
+      "role": "Landlord of the Topeka facility"
+    },
+    {
+      "id": "P6",
+      "name": "Pellacott Flexible Packaging Co.",
+      "role": "Packaging vendor to Gleigen (distractor counterparty)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "APA Agreement Date",
+      "value": "August 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "APA Purchase Price",
+      "value": "$86,500,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "Indemnity Escrow Amount",
+      "value": "$8,650,000",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F4",
+      "key": "Escrow Agreement release date",
+      "value": "18 months after the Closing Date",
+      "doc": "D4",
+      "section": "Section 3.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "APA prevails over Ancillary Agreements, except IP Assignment Agreement governs Transferred IP and the License-Back",
+      "doc": "D1",
+      "section": "Section 10.9"
+    },
+    {
+      "id": "F6",
+      "key": "APA governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 10.11"
+    },
+    {
+      "id": "F7",
+      "key": "APA definition of Products",
+      "value": "products listed on Schedule 1.1(c) of the Disclosure Schedule",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F8",
+      "key": "Topeka Facility Lease expiration date",
+      "value": "March 31, 2027",
+      "doc": "D6",
+      "section": "Schedule 3.9"
+    },
+    {
+      "id": "F9",
+      "key": "Topeka Facility Lease renewal notice period",
+      "value": "not less than 270 days prior to the expiration date",
+      "doc": "D6",
+      "section": "Schedule 3.9"
+    },
+    {
+      "id": "F10",
+      "key": "Gleigen board consent date",
+      "value": "August 12, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "gleigen_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "packaging_supply_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "mutual_confidentiality_agreement.md",
+      "kind": "mutual confidentiality agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 4 of the IP Assignment Agreement grants Movaisk a license-back. Under it, Movaisk may keep using the transferred Ridgeline and Copperpot formulas and manufacturing know-how in the livestock and equine feed field. Section 4.3 lets Movaisk assign the agreement or the License-Back, in whole or in part, to any person without Gleigen's consent. This expressly includes a transfer by merger or a sale of Movaisk's feed business, and Movaisk may also grant sublicenses. Nothing limits transfers to competitors. The APA does not fix this. APA Section 10.6 restricts assignment of 'this Agreement' only. APA Section 10.9 says the IP Assignment Agreement governs the Transferred IP and the License-Back. As a result, a pet food competitor with a feed division could acquire rights to the formulas Gleigen is paying for.",
+      "doc": "D2",
+      "section": "Section 4.3",
+      "detect_terms": [
+        "without the consent of Assignee",
+        "in whole or in part"
+      ],
+      "expected_finding": "Movaisk can freely assign or sublicense the License-Back of the acquired formulas and know-how, including to a Gleigen competitor, and APA Section 10.9 makes the IP Assignment Agreement control on this point; Gleigen should require its prior written consent to any assignment or sublicense, with an express bar on transfers to competitors and termination of the License-Back on any prohibited transfer.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "The APA recitals describe the Business as making dry kibble and retort-canned wet pet food. APA Section 1.1 defines 'Products' as the products listed on Schedule 1.1(c) of the Disclosure Schedule. Under APA Section 2.4(d), the seller keeps, as an Excluded Liability, any Liability arising from Products manufactured or sold before Closing, including recalls. Under APA Section 2.3, Gleigen assumes all Liabilities arising from the Purchased Assets and the Business other than Excluded Liabilities. Read alone, these APA provisions are a normal seller-retains structure. Schedule 1.1(c) of the Disclosure Schedule lists only Ridgeline dry kibble SKUs. Read alone, it looks like an ordinary product list. Yet Schedule 1.1(a) transfers the Copperpot wet recipes and retort canning line, and Schedule 3.14 discloses a pending FDA inquiry into vitamin D levels in Copperpot canned food. Read together, the documents give 'Products' a narrower meaning than the Business being sold. Pre-Closing Copperpot product liability and recall exposure therefore falls outside Excluded Liabilities and becomes an Assumed Liability of Gleigen.",
+      "doc": "D1",
+      "section": "Sections 1.1 and 2.4(d)",
+      "detect_terms": [
+        "Products manufactured or sold prior to the Closing",
+        "listed on Schedule 1.1(c)"
+      ],
+      "expected_finding": "Because 'Products' is defined by the schedule list that covers only Ridgeline dry kibble, pre-Closing liabilities and recalls for Copperpot wet food, including the disclosed FDA vitamin D inquiry, are not Excluded Liabilities and pass to Gleigen under Section 2.3; Gleigen should redefine Products as all products manufactured or sold by the Business (or add every Copperpot SKU to Schedule 1.1(c)) and add a specific indemnity for the FDA inquiry.",
+      "contradicts": null,
+      "doc2": "D6",
+      "section2": "Schedule 1.1(c)",
+      "detect_terms2": [
+        "Ridgeline dry kibble"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "APA Section 7.2(c) makes it a condition to Gleigen's obligation to close that the 'Required Consents' be obtained. It defines these as (i) the landlord's consent to assignment of the Topeka Facility Lease and (ii) the Kansas Department of Agriculture's approval of the commercial feed license transfer. Under APA Section 2.8, any Assigned Contract whose consent is not obtained stays with the seller, with no reduction in the purchase price. Read alone, the APA looks complete. Schedule 3.5 of the Disclosure Schedule lists the Fernhollow Private Label Manufacturing Agreement as an Assigned Contract. It states that Fernhollow's prior written consent is required for any assignment, including by change of control of Seller, and that Fernhollow may terminate on 30 days' notice if consent is not given. Read alone, that is an ordinary disclosure. Read together, the documents show that the consent for the business's largest customer contract has not been obtained and is neither a closing condition nor a covenant. Gleigen could therefore be required to close without the contract. The LOI (D5) shows this contract accounts for about 41% of the business's revenue.",
+      "doc": "D1",
+      "section": "Section 7.2(c)",
+      "detect_terms": [
+        "Required Consents",
+        "Kansas Department of Agriculture"
+      ],
+      "expected_finding": "Fernhollow's consent, which its agreement requires for the assignment and change of control and without which Fernhollow may terminate, is not among the Required Consents, so Gleigen must close even if that key contract is lost and Section 2.8 gives no price reduction; Gleigen should add Fernhollow's consent as a closing condition, require the seller to seek it promptly, and provide a price adjustment or termination right if it is refused.",
+      "contradicts": null,
+      "doc2": "D6",
+      "section2": "Schedule 3.5",
+      "detect_terms2": [
+        "change of control of Seller",
+        "Fernhollow may terminate"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Schedule 3.9 of the Disclosure Schedule says the Topeka Facility Lease, the only plant used by the Business, expires March 31, 2027. It also says the tenant may extend for one five-year term by notice given not less than 270 days before expiration. The schedule records no exercise of the option. Counting back from March 31, 2027, the last day for notice was July 4, 2026. APA Section 5.9 requires the seller to 'timely exercise the renewal option' before Closing. The APA is dated August 14, 2026 (preamble), so the window had closed before signing. The covenant is therefore impossible to perform and gives Gleigen no real protection, and the landlord's consent to assignment under Section 7.2(c) does not extend the term. Gleigen has not accepted the lapse. Its board consent dated August 12, 2026 (D3) recites that the board approved the deal on the basis of continued occupancy of the Topeka facility through at least March 31, 2032 under the renewal option.",
+      "doc": "D6",
+      "section": "Schedule 3.9",
+      "detect_terms": [
+        "not less than 270 days prior",
+        "one additional five-year term"
+      ],
+      "expected_finding": "The Topeka renewal notice deadline (July 4, 2026, which is 270 days before the March 31, 2027 expiry) had passed before the August 14, 2026 APA date, so the Section 5.9 covenant cannot be performed and Gleigen would take a plant lease ending March 31, 2027, contrary to the board's stated basis for approval; Gleigen should make a signed landlord extension or new lease through at least 2032 a closing condition and seek a price adjustment or specific indemnity if it cannot be obtained.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 5.9",
+      "detect_terms2": [
+        "timely exercise the renewal option"
+      ]
+    }
+  ]
+}

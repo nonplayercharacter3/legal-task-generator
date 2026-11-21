@@ -1,0 +1,121 @@
+{
+  "task_id": "s503-m0003",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Trobur Dental Distribution, LLC, the distributor, on its distribution arrangement with Furux Dental Technologies, Inc. Please review the six documents in the folder and prepare a memo to me identifying each issue you find. For each one, state where it appears (document and section), explain why it matters for Trobur, and recommend a fix. Keep it practical and prioritized so I can take it to the client. Flag anything you can't resolve from the documents alone.",
+  "documents": [
+    "amendment_no_1_distribution_agreement.md",
+    "certificate_of_insurance_trobur.md",
+    "exclusive_distribution_agreement_furux_trobur.md",
+    "office_showroom_lease_newark.md",
+    "parent_guaranty_trobur_holdings.md",
+    "quality_agreement_furux_trobur.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that, after Amendment No. 1 moves Furux's product-liability (Product Claims) indemnity out of Section 10 into new Section 9.6, that indemnity is no longer excluded from the liability cap and is now capped at 12 months of purchases. It identifies where this arises: Distribution Agreement Section 11.3 or Amendment No. 1 Section 3. It explains why this matters to Trobur, and it recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 9.6",
+        "carve-out only covers Section 10",
+        "product liability indemnity now capped"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that the Quality Agreement's narrower 'Recall' definition (only removals or corrections ordered by the FDA or another governmental authority) controls. It concludes that this cuts back Furux's obligation to bear all Recall costs, leaving Trobur to bear the costs of voluntary withdrawals and field corrections. It identifies where this arises: Quality Agreement Section 1, or Distribution Agreement Section 2.3 or 7.4. It explains why this matters to Trobur, and it recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "mandated by order of the FDA",
+        "voluntary recalls",
+        "Section 7.4 recall costs"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that the Quality Agreement's New Jersey governing-law clause and its exclusive Mercer County, New Jersey forum control disputes over quality and recall matters. It concludes that these clauses override the Distribution Agreement's Delaware law and forum for those disputes, splitting disputes between two laws and forums. It identifies where this arises: Quality Agreement Section 12 or Distribution Agreement Section 2.3. It explains why this matters to Trobur, and it recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New Jersey law",
+        "Mercer County",
+        "split forums"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Furux may assign the Distribution Agreement to any person, including a competitor of Trobur, without Trobur's consent. It identifies Distribution Agreement Section 14.1 as where this arises. It explains why this matters to Trobur, and it recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 14.1",
+        "without the consent of Distributor",
+        "assign to a competitor"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that the Distribution Agreement renews automatically for five-year Renewal Terms unless a non-renewal notice is given within a 30-day window beginning 180 days before the end of the current term. It identifies Distribution Agreement Section 3.2 (or the Section 1.1 definitions) as where this arises. It explains why this matters to Trobur, and it recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "automatic renewal",
+        "five Contract Years",
+        "30-day Non-Renewal Window"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response concludes that the Pending Sale of Trobur's units to Pellmont Dental Group is a Change of Control requiring Furux's prior written consent. It also concludes that this consent has not been given, Amendment No. 1 included. It identifies where this arises: Distribution Agreement Section 14.2, or Amendment No. 1's Recitals or Section 5. It explains why this matters to Trobur, and it recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "prior written consent of Furux",
+        "Pellmont"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that under the Distribution Agreement the Quality Agreement governs conflicts on Quality Matters.",
+      "kind": "fact",
+      "hints": [
+        "Section 2.3",
+        "Quality Agreement shall govern",
+        "Quality Matters"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is in the form of a memo addressed to the supervising partner. It presents the issues in an order of priority or with an explicit priority ranking.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Priority",
+        "High"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Furux's signature on Amendment No. 1 constitutes Furux's consent to the Pending Sale or Change of Control.",
+      "kind": "negative",
+      "hints": [
+        "Amendment constitutes consent",
+        "consent already obtained"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that recall and product-quality disputes under the Quality Agreement are governed by Delaware law and must be brought in the New Castle County, Delaware courts.",
+      "kind": "negative",
+      "hints": [
+        "Delaware governs quality disputes",
+        "New Castle County for recall disputes"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

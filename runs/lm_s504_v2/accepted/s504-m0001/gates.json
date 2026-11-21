@@ -1,0 +1,156 @@
+{
+  "matter_id": "s504-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 13,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "14.1 Assignment by Licensor. Licensor may assign this Agreement, in whole or in part, to any Affiliate or to any third party without Licensee's consent. Licensor shall give Licensee written notice of the assignment within thirty (30) days after it takes effect.",
+            "reason": "Section 14.1 lets Trutour assign the whole Agreement, or part of it, to anyone (including a competitor) without Vougeir's consent, and only requires notice after the fact. Section 14.2 bars Vougeir from assigning without consent, and Section 14.3 lets Trutour terminate on a Vougeir change of control. The term sheet (s.11.1) and Draft v2 (s.14.1) both provided a mutual consent requirement, so the one-sided clause departs from the agreed deal. The Section 5.1 limit on data use and the Section 6 confidentiality terms would bind a permitted assignee, but they do not stop the hosted platform and Vougeir's customer, route, pricing and linen-volume data from passing to a competitor. Part assignments could also split responsibility for performance. Nothing in the folder cures the issue: the side letter expressly preserves all rights and grants no consent or waiver. The issue remains actionable because the Agreement runs to at least March 2028, and the pending Ostrander merger, which needs Trutour's consent under s.14.3, gives Vougeir leverage to renegotiate the clause."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "License Agreement §14.3: \"A Change of Control of Licensee is deemed an assignment of this Agreement by Licensee for purposes of Section 14.2. Licensor may grant or withhold its consent to a Change of Control of Licensee in its sole discretion. If a Change of Control of Licensee occurs without Licensor's prior written consent, Licensor may terminate this Agreement on thirty (30) days' written notice to Licensee.\" Side Letter Recital B: \"Licensee has informed Licensor of the proposed acquisition of Licensee by Ostrander Linen Group, Inc. ... under an agreement and plan of merger signed September 28, 2026. Closing is expected in January 2027.\" Side Letter §4.2: \"Nothing herein constitutes a consent or waiver under the Agreement, and the execution of this Side Letter does not limit or affect any right or remedy of either Party under the Agreement or the Quality Agreement.\"",
+            "reason": "Reading the two documents together, the problem is present and the client can still act on it. The Ostrander merger is a Change of Control of Vougeir under §1.1(c). Under §14.3 it is deemed an assignment, and it needs Trutour's prior written consent, which Trutour may withhold in its sole discretion. The October 6, 2026 side letter knows about the deal, adds plants and seats for the post-closing business, and has Vougeir pay extra fees for them. Even so, §4.2 expressly says it is not a consent or waiver. That leaves Trutour free to terminate on 30 days' notice after closing. If Trutour terminates under §14.3, §13.4 also denies Vougeir a refund of prepaid fees, which by then would include the newly added plant and seat fees. The software runs Vougeir's core operations, so termination would be serious. Closing is expected in January 2027, after the latest date in the folder (October 2026). Vougeir can therefore still seek Trutour's written consent before closing, or rework the side letter to include it. Nothing in the folder shows that consent has been given or that Vougeir has accepted the risk.",
+            "alone": {
+              "vougeir_trutour_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "A Change of Control of Licensee is deemed an assignment of this Agreement by Licensee for purposes of Section 14.2. Licensor may grant or withhold its consent to a Change of Control of Licensee in its sole discretion. If a Change of Control of Licensee occurs without Licensor's prior written consent, Licensor may terminate this Agreement on thirty (30) days' written notice to Licensee.",
+                "reason": "The license agreement by itself shows only a standard change-of-control clause in Section 14.3. It is one-sided, since Licensor has sole-discretion consent and can terminate on 30 days' notice, but that is a general negotiation point, not the specific problem described. The agreement says nothing about a pending acquisition of Vougeir by Ostrander Linen Group, a signed merger agreement, an expected January 2027 closing, or whether Trutour has consented. Those facts, plus the side letter's statement that nothing in it is a consent or waiver despite appearing to accommodate the deal, come only from the side letter. Without it, an associate could not see that the clause is actually triggered and that consent is missing."
+              },
+              "vougeir_trutour_side_letter_additional_plants.md": {
+                "findable": false,
+                "evidence": "\"Nothing herein constitutes a consent or waiver under the Agreement, and the execution of this Side Letter does not limit or affect any right or remedy of either Party under the Agreement or the Quality Agreement.\"",
+                "reason": "The side letter shows that the Ostrander merger agreement was signed September 28, 2026, with closing expected in January 2027. It adds plants and seats for the post-closing business and expressly disclaims any consent or waiver. It does not say that the Agreement restricts a change of control, does not cite Section 14.3, and says nothing of a consent requirement, Trutour's sole-discretion right, or a 30-day termination right. An associate reading it alone could guess the merger might need consent and could note the disclaimer as a reason to check. But the actual problem comes only from the License Agreement: the merger counts as an assignment needing Trutour's consent, and closing without it lets Trutour terminate. Without that document, this one cannot show the problem or that it hurts Vougeir."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Quality Agreement §9.1: \"This Quality Agreement and all disputes arising out of or relating to it, including claims for Service Credits, are governed by the laws of the State of New York ... Each Party submits to the exclusive jurisdiction of the state or federal courts located in New York County, New York for any action arising out of or relating to this Quality Agreement.\" License Agreement §1.3: \"...except that the Quality Agreement controls on all matters relating to Service Levels and Service Credits, including the resolution of disputes regarding them.\" License Agreement §18.1 selects Delaware law and exclusive Wilmington, Delaware courts.",
+            "reason": "The two documents together split one dispute. Under License Agreement §1.3, the Quality Agreement controls the resolution of disputes over Service Levels and Service Credits. That puts Vougeir's uptime and credit claims under New York law in New York County, which is the only exclusive forum. Its related claims stay in Delaware under §18.1. Those related claims include warranty breach under §8.2, for-cause termination under §13.1, refund under §13.4, transition assistance and liability-cap questions. A single outage would therefore have to be litigated in two exclusive forums under two bodies of law. That costs Vougeir more and risks inconsistent results, for example on whether a failure is a material breach or on how the exclusions apply. The term sheet contemplated Delaware law and forum only, so the New York clause is not a negotiated, intentional carve-out. No document in the folder cures the split. The Side Letter leaves the Quality Agreement unchanged. The Licensee's chronic-failure termination right under QA §7 sits under New York law, while its consequences run through LA §13.4 and §13.5. The issue remains live and actionable: the agreements are in force, and Vougeir has expressly reserved all its rights under both of them.",
+            "alone": {
+              "vougeir_trutour_quality_agreement.md": {
+                "findable": false,
+                "evidence": "9.1 Governing Law and Forum. This Quality Agreement and all disputes arising out of or relating to it, including claims for Service Credits, are governed by the laws of the State of New York, without regard to its conflict-of-laws rules. Each Party submits to the exclusive jurisdiction of the state or federal courts located in New York County, New York for any action arising out of or relating to this Quality Agreement.",
+                "reason": "This document by itself shows that the Quality Agreement chooses New York law and exclusive New York County courts, including for Service Credit claims. It also shows that the agreement leans on the License Agreement for termination consequences (Section 13), force majeure (Section 17.1) and notices (Section 16.1). It does not show what law or forum the License Agreement selects, so the conflict with Delaware law and the Wilmington courts cannot be seen. It also does not show a precedence clause like License Agreement Section 1.3 making the Quality Agreement control on Service Level disputes. Read alone, the New York clause is an ordinary, internally consistent choice. The split of one outage dispute across two laws and two exclusive forums only appears once the License Agreement's Section 18.1 and Section 1.3 are read alongside it."
+              },
+              "vougeir_trutour_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "Section 1.3: \"...the Quality Agreement controls on all matters relating to Service Levels and Service Credits, including the resolution of disputes regarding them.\" Section 18.1: \"This Agreement is governed by the laws of the State of Delaware... exclusive jurisdiction of the state or federal courts located in Wilmington, Delaware...\"",
+                "reason": "This document shows that Delaware law and the Wilmington courts govern the License Agreement. It also shows, in Section 1.3, that the Quality Agreement controls the resolution of Service Level and Service Credit disputes. A careful associate could note that this carve-out might send service-credit disputes somewhere else. Nothing here, though, says the Quality Agreement chooses a different law or forum. The New York law and New York County exclusive-jurisdiction clause appears only in Section 9.1 of the Quality Agreement, which was not provided. Without it, there is no visible conflict and no split of an outage dispute across two forums. The Quality Agreement might equally pick Delaware or say nothing on the point. The harm to Vougeir depends on content from the other document."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "License Agreement §4.4: \"Licensee may object to the adjusted fee by written notice to Licensor given within thirty (30) days after the date of Licensor's fee adjustment notice. If Licensee does not object within that period, the adjusted fee is deemed accepted by Licensee and takes effect on the stated anniversary.\" Vougeir letter dated September 14, 2026, ¶1: \"We refer to Trutour's fee adjustment notice dated August 3, 2026 ... Vougeir Linen Services, Inc. (\\\"Vougeir\\\") gives this letter under Section 4.4 of the Agreement as its written objection to the adjusted fee.\"",
+            "reason": "The objection window is the client's, and it was missed. §4.4 runs Vougeir's 30 days from the date of Trutour's notice, not from receipt. A notice dated August 3, 2026 closed the window on September 2, 2026, so the September 14 objection is 12 days late. Under the deeming clause, the $559,000 fee is treated as accepted from March 1, 2027, and Vougeir loses the good-faith negotiation route and the carry-forward of $486,000. Trutour's notice met its own 90-day lead time before the anniversary, so it cannot be attacked on that ground. The problem is still live and actionable: the latest date in the folder is the October 6, 2026 side letter, and the increase has not yet taken effect. Nothing shows Vougeir paid or agreed to the higher fee, and its letter disputes the increase and reserves its rights. The side letter's §4.2 confirms that signing it was no consent or waiver. The firm should advise on the late objection and Trutour's likely deemed-acceptance position, for example by arguing about when the notice was received or by negotiating.",
+            "alone": {
+              "vougeir_trutour_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "If Licensee does not object within that period, the adjusted fee is deemed accepted by Licensee and takes effect on the stated anniversary.",
+                "reason": "Section 4.4 sets the rule: an objection must come within thirty days after the date of the fee adjustment notice, and if it does not, the increase is deemed accepted. This document contains no dates for a fee adjustment notice or for an objection, no proposed fee amount, and no correspondence at all. The August 3, 2026 notice date, the September 14, 2026 objection date, and the increase to $559,000 all come only from the other document (D4). Without them an associate can see that the clause carries a deemed-acceptance risk, but cannot tell that the objection was late or that Vougeir is now facing the higher fee."
+              },
+              "vougeir_letter_to_trutour_2026-09-14.md": {
+                "findable": false,
+                "evidence": "We refer to Trutour's fee adjustment notice dated August 3, 2026 (the \"Notice\"). ... Vougeir Linen Services, Inc. (\"Vougeir\") gives this letter under Section 4.4 of the Agreement as its written objection to the adjusted fee.",
+                "reason": "On its face the letter shows a September 14, 2026 objection under Section 4.4 to a notice dated August 3, 2026. That is a gap of 42 days. The letter never states the objection deadline or that a late objection counts as acceptance. It points the other way: it says Section 4.4 'contemplates' good-faith negotiation and treats the fee as staying at $486,000 'until the Parties agree in writing.' A reader would see the dates but could not tell from this document that a 30-day window existed and had already closed. Only the Agreement's Section 4.4 supplies the 30-day deemed-acceptance rule, so the problem cannot be found from this letter alone."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.062,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

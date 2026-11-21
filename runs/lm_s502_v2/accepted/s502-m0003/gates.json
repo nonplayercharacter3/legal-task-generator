@@ -1,0 +1,144 @@
+{
+  "matter_id": "s502-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "TSA §8.2: \"Recipient shall indemnify, defend and hold harmless Provider and its Affiliates ... from and against all Losses arising from or relating to the Services or this Agreement, including Losses caused by Provider's negligence.\" TSA §8.4: \"The aggregate liability of Provider ... shall not exceed the total fees paid by Recipient to Provider under this Agreement. ... This Section 8.4 shall not limit Recipient's obligations under Section 8.2.\"",
+            "reason": "The client is Buyer/Recipient. Under §8.2 it must indemnify Seller/Provider for all Losses relating to the Services, expressly including Provider's own negligence, and with no cap. Section 8.4 caps only Provider's liability, at fees paid, and expressly carves Recipient's §8.2 obligation out of that cap. Provider's own indemnity in §8.1 covers only its willful misconduct and §7.2 breaches. The SPA does not cure this. SPA §9.5(d) confines its caps to Article IX, SPA §11.12 makes the TSA control its own subject matter, and TSA §9.2 preserves only pre-Closing SPA rights. Nothing else in the folder caps the obligation either. The TSA dates from October 30, 2026, and the Services are still running, so this is a live, uncapped exposure. It would include student-injury claims caused by Provider negligently screening drivers. The client can still raise it, for example by seeking an amendment under §10.4, or by deciding whether to terminate or accelerate termination of Services under §3.3."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 9.1(c): \"The obligations of Seller under Section 9.2(b) survive the Closing for the same period as the representations in Section 4.10.\" Section 9.1(a): \"The representations and warranties in this Agreement, other than the Fundamental Representations, survive the Closing until 12 months after the Closing Date.\" Section 9.1(e): \"No claim for indemnification under this Article IX may be asserted, and no Losses are recoverable under this Article IX, unless a Proceeding is commenced with respect to the claim before the expiration of the applicable survival period set forth in this Section 9.1.\"",
+            "reason": "The problem is present and still actionable for Buyer, the firm's client.\n\n- **Who bears the obligation:** Seller gives the Pre-Closing Tax indemnity under Section 9.2(b). Buyer is the indemnified party and is hurt by any cut-off.\n- **How the cut-off works:** Section 4.10 is not a Fundamental Representation under Section 1.1, so it falls under the general 12-month survival period in Section 9.1(a). Section 9.1(c) ties the 9.2(b) indemnity to that same period. With the Closing set for October 30, 2026 (Section 3.1), the tax indemnity ends on October 30, 2027.\n- **Proceeding requirement:** Section 9.1(e) also requires a Proceeding to be commenced before that date. A notice of claim is not enough.\n- **The gap:** Payroll, withholding and fuel excise assessments typically come within three years or more after the returns are filed. Most pre-Closing tax exposure will therefore surface only after the indemnity has lapsed.\n- **No cure elsewhere:**\n  - No ancillary agreement fixes this. TSA Section 9.2 only preserves rights under the Purchase Agreement and does not extend them.\n  - The Section 9.7 set-off against the Seller Note depends on Losses to which Buyer is entitled under Article IX, so it falls with the survival bar.\n  - The Section 9.5 caps do not apply to 9.2(b), but that does not help with timing.\n- **Still open:** The latest date in the folder is around the October 30, 2026 closing (the estoppel is dated October 22, 2026). The survival window has not run. Buyer can still seek an amendment under Section 11.3, for example tying 9.2(b) to the statute of limitations plus 60 days and allowing a written notice of claim to preserve claims."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Seller Note §10.1–10.2: \"This Note, and all claims arising out of or relating to it, are governed by and construed in accordance with the laws of the State of New York ...\" and \"The Maker and the Holder each irrevocably submit to the exclusive jurisdiction of the state courts of the State of New York sitting in the Borough of Manhattan and the United States District Court for the Southern District of New York for any action or proceeding arising out of or relating to this Note.\" SPA §11.9: \"Each party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware for any Proceeding arising out of or relating to this Agreement...\" SPA §11.12: \"Each Ancillary Agreement controls as to its subject matter...\"",
+            "reason": "The problem is present and it hurts Batairt, the client. Batairt is the Maker of the Note. Under SPA §9.7 and Note §3.3, its main way to recover indemnifiable Losses is to set them off against Note payments. Any fight over whether a withheld payment was proper is a claim 'relating to' the Note. Because SPA §11.12 makes the Seller Note (an Ancillary Agreement) control as to its subject matter, that fight goes to the Note's New York law and exclusive Manhattan forum. The underlying indemnity claim, however, arises under the SPA and must be brought in Delaware Chancery under Delaware law. SPA §9.1(e) adds that an indemnity claim is lost unless a Proceeding is commenced within the survival period. The result is that Seller can sue on the Note in New York, where a note is a candidate for summary judgment in lieu of complaint, while Batairt's indemnity claim runs separately in Delaware. That splits Batairt's recourse across two forums, risks inconsistent rulings, and weakens the set-off. Nothing in the folder reconciles the two forum clauses. The issue remains actionable: the Note was issued October 30, 2026, no set-off or Note dispute has occurred, and Batairt can still seek an amendment (Note §11.2) or a consolidation or forum-alignment agreement.",
+            "alone": {
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "\"This Note, and all claims arising out of or relating to it, are governed by and construed in accordance with the laws of the State of New York...\" (§10.1); \"All payments of principal and interest under this Note are subject to the Maker's right of set-off under Section 9.7 of the Purchase Agreement.\" (§3.3)",
+                "reason": "On its own, the Note shows that it uses New York law and an exclusive Manhattan forum (§10.1–10.2). It also shows that Buyer's set-off right comes from SPA Section 9.7 (§3.3). Nothing in the Note conflicts with anything else in the Note. A New York choice of law and forum for a promissory note is ordinary. The problem only exists because the SPA picks Delaware law (§11.8) and the Court of Chancery as the exclusive forum (§11.9) for the underlying indemnity claims, and has an Ancillary-Agreement-controls clause (§11.12). None of those terms appears in this document, so a reader would have to go to the SPA to see that the set-off dispute and the indemnity claim are split across two forums."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.12: \"Each Ancillary Agreement controls as to its subject matter; otherwise the Stock Purchase Agreement controls.\" Section 11.8 chooses Delaware law, Section 11.9 gives the Court of Chancery exclusive jurisdiction, and Section 9.7 lets Buyer set off indemnifiable Losses against the Seller Note.",
+                "reason": "The SPA alone shows Delaware law and Chancery jurisdiction, a set-off right against the Seller Note, and a precedence clause that lets each Ancillary Agreement control as to its subject matter. It does not show what the Seller Note says about governing law or forum. Nothing in the SPA indicates that the Note chooses New York law or Manhattan courts. Without that, an associate would see a consistent Delaware framework with a general precedence clause, and no forum split. The conflict that hurts Buyer, where Note payment disputes go to New York (possibly by summary judgment in lieu of complaint) while indemnity claims go to Delaware, depends entirely on the Note's terms, which are not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Side Letter Section 2: \"For purposes of Section 9.2(d) of the Purchase Agreement, references to \"Material District Contracts\" mean the District Contracts listed on Annex A to this Side Letter.\" Annex A lists only Harrowgate Township ($1,850,000), Millbank Area ($1,320,000) and Quarry Hollow ($940,000). SPA Schedule 4.4 names Pellbrook Unified ($3,100,000) and Ashcombe County ($2,450,000) as the only contracts that \"require[] the consent of the applicable District to the change of control,\" and states \"No other consent of, or notice to, any Person is required.\"",
+            "reason": "**The problem.** SPA Section 1.1 defines Material District Contract as any district contract with annual revenues over $500,000. That definition covers all five contracts listed on Schedule 4.12.\n\nSPA Section 9.2(d) is Seller's indemnity to Buyer for a District terminating within 12 months after Closing because its change-of-control consent was not obtained. Side Letter Section 2 narrows that indemnity to the three Annex A contracts.\n\nSchedule 4.4 says none of those three needs consent. The only two contracts that do need consent are Pellbrook and Ashcombe, worth about $5.55M a year combined, and both are left out of Annex A.\n\nSPA Section 11.12 says each Ancillary Agreement controls as to its subject matter, and the Side Letter is an Ancillary Agreement. So the narrower Side Letter definition prevails.\n\n**Effect on the client.** The consent-loss indemnity covers no contract that could actually trigger it. Buyer (the client) loses Seller indemnity and the related Seller Note set-off under SPA Section 9.7 for the two highest-revenue contracts actually at risk.\n\nNothing in the folder cures or limits this, or shows it was intended.\n\n**Still actionable.**\n- The matter is set at October 30, 2026 (Closing), the latest date the folder states.\n- The 12-month termination window and the 18-month survival period under Section 9.1(d) have not run.\n- The Side Letter can be amended by a signed writing under its Section 5.3, and no document shows Buyer accepted the loss of coverage.",
+            "alone": {
+              "district_consents_side_letter.md": {
+                "findable": false,
+                "evidence": "For purposes of Section 9.2(d) of the Purchase Agreement, references to \"Material District Contracts\" mean the District Contracts listed on Annex A to this Side Letter.",
+                "reason": "On its own, the side letter shows that Section 2 replaces the SPA meaning of \"Material District Contracts\" for the Section 9.2(d) indemnity with a closed list of three contracts (Harrowgate, Millbank, Quarry Hollow). A careful associate would notice that this could narrow the indemnity. But the letter does not show what makes it harmful. It does not give the SPA Section 1.1 definition ($500,000 revenue threshold). It does not say that Schedule 4.4 lists Pellbrook and Ashcombe as above the threshold and requiring consent, and it never names either district. It also does not say that SPA Section 11.12 makes the side letter control. Nothing here shows that the Annex A contracts are not the ones needing consent. Read alone, the letter looks like an ordinary consent-cooperation letter, so the harm to Buyer can only be seen with the SPA."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Side Letter\" means the letter agreement between Buyer and Seller regarding District change-of-control consents, dated as of the date of this Agreement.\" / \"Each Ancillary Agreement controls as to its subject matter; otherwise the Stock Purchase Agreement controls.\"",
+                "reason": "Read alone, the SPA protects Buyer. Section 1.1 defines Material District Contract by a $500,000 revenue threshold. Section 9.2(d) indemnifies Buyer if a Material District Contract is terminated for lack of change-of-control consent. Schedule 4.4 names Pellbrook ($3.1M) and Ashcombe ($2.45M) as the contracts above the threshold that need consent, so both fall squarely within the 9.2(d) indemnity. The SPA does say a Side Letter on District consents exists, and Section 11.12 makes Ancillary Agreements control as to their subject matter. That gives a careful associate a general reason to review the Side Letter, but it does not show any narrowing. The problem depends entirely on the Side Letter: its Section 2 limits 9.2(d) to the contracts on its Annex A, and Annex A leaves out Pellbrook and Ashcombe. That redefinition, and the loss of indemnity coverage for the two consent-required contracts, cannot be seen from the SPA alone."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

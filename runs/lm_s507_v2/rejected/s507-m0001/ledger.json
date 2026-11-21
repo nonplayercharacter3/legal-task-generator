@@ -1,0 +1,231 @@
+{
+  "matter_id": "s507-m0001",
+  "summary": "Masun Orthopedics, Inc. (client, buyer) designs and markets a hip replacement system. It sources machined titanium and cobalt-chromium implant components (acetabular shells and femoral stems) from contract manufacturer Rineil Precision Machining, LLC under a New York-law Supply Agreement effective March 2, 2026. The folder also holds a First Amendment dated October 6, 2026, a Quality Agreement dated May 18, 2026, Order Form No. 1, a Service Level Schedule, a logistics email thread and Rineil's certificate of insurance. The First Amendment's recitals record that Masun signed an Agreement and Plan of Merger on September 14, 2026, under which it will become a wholly owned subsidiary of Kestrelholm Medical Holdings, Inc. The partner wants an issue-spotting memo before closing. Five issues are planted. (1) The Supply Agreement deems a change of control an assignment needing Rineil's express written consent, and the merger recited in the Amendment has no consent or waiver anywhere in the folder. (2) The requirements exclusivity in the Supply Agreement reaches a 'Product Family' that the Order Form defines to cover spine, trauma and extremity components, far beyond the hip program. (3) Masun's broad indemnity sits outside the liability cap, while Rineil's indemnity stays capped. (4) The Quality Agreement, which controls on recall matters, defines Recall Costs narrowly, so most recall losses fall back under the cap. (5) The Amendment rewrites the assignment clause so Rineil may assign freely, including to a Masun competitor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Masun Orthopedics, Inc.",
+      "role": "Buyer; designer and marketer of a hip implant system; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Rineil Precision Machining, LLC",
+      "role": "Supplier; contract manufacturer of machined orthopedic implant components"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "five years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Liability cap",
+      "value": "fees paid or payable by Buyer in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "13.3"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "17.1"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Quality Agreement prevails on quality, regulatory and recall matters; otherwise Supply Agreement prevails over Quality Agreement, Service Level Schedule, Order Form",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement Recall Costs scope",
+      "value": "all recall costs, including replacement product, customer and hospital reimbursement, and third-party claims",
+      "doc": "D1",
+      "section": "9.4"
+    },
+    {
+      "id": "F7",
+      "key": "Merger agreement date",
+      "value": "September 14, 2026",
+      "doc": "D2",
+      "section": "Recitals"
+    },
+    {
+      "id": "F8",
+      "key": "Acquirer of Masun",
+      "value": "Kestrelholm Medical Holdings, Inc.",
+      "doc": "D2",
+      "section": "Recitals"
+    },
+    {
+      "id": "F9",
+      "key": "First Amendment Effective Date",
+      "value": "October 6, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Quality Agreement Effective Date",
+      "value": "May 18, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "first_amendment.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "order_form_no_1.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "email_thread_logistics.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Supply Agreement Section 16.2 deems any acquisition of more than fifty percent of a party's voting securities, or a merger of that party, to be an assignment by that party. Section 16.1 requires Rineil's prior written consent to any assignment by Masun. Section 16.3 makes a non-consented assignment void and a ground for Rineil to terminate, and any consent must be express and in writing. On its own this is an ordinary change-of-control provision. The First Amendment recitals (D2) record that Masun entered into an Agreement and Plan of Merger dated September 14, 2026, under which Masun will become a wholly owned subsidiary of Kestrelholm Medical Holdings, Inc. Read together, the merger is a deemed assignment that needs Rineil's consent. Neither the Amendment nor any other document in the folder grants a consent or waiver, so at closing Rineil could terminate the sole-source supply of Masun's hip components or use its consent as leverage.",
+      "doc": "D2",
+      "section": "Recitals",
+      "detect_terms": [
+        "Agreement and Plan of Merger",
+        "wholly owned subsidiary of Kestrelholm"
+      ],
+      "expected_finding": "The Kestrelholm merger recited in the First Amendment is a deemed assignment under Supply Agreement Section 16.2 that requires Rineil's express written consent, which has not been obtained, so Masun must secure a written consent or waiver before closing or risk Rineil terminating the agreement.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "16.2",
+      "detect_terms2": [
+        "deemed an assignment",
+        "fifty percent of the voting"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Supply Agreement Section 3.1 requires Masun to buy from Rineil one hundred percent of Masun's and its Affiliates' requirements for components within the 'Product Family'. Section 1 says 'Product Family' has the meaning given in the applicable Order Form. On its own, and given the recitals describing a hip-system program, this reads as a normal requirements commitment. Order Form No. 1 Section 2 then defines Product Family as all machined titanium and cobalt-chromium orthopedic implant components, including hip, knee, spine, trauma and extremity components, although its order lines cover only acetabular shells and femoral stems. Section 2.3 does not cure this, because the Supply Agreement adopts the Order Form definition rather than conflicting with it. Read together, the exclusivity binds Masun's entire orthopedic component sourcing, not just the hip program. After the merger it would also reach Kestrelholm as an Affiliate.",
+      "doc": "D4",
+      "section": "2",
+      "detect_terms": [
+        "spine, trauma and extremity"
+      ],
+      "expected_finding": "Because Supply Agreement Section 3.1 imports the Order Form's definition of Product Family, Masun's 100% requirements exclusivity covers all of its (and its Affiliates') orthopedic implant components, not just the hip shells and stems it buys from Rineil, so the definition should be narrowed to the hip components actually ordered.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "3.1",
+      "detect_terms2": [
+        "one hundred percent of Buyer's"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Supply Agreement Section 12.2 requires Masun to indemnify Rineil against any third-party claim arising out of the design, labeling, marketing, sale or clinical use of the Products. That wording sweeps in product liability claims from implant failures generally. Section 13.4(a) removes the Section 13.3 cap for obligations under Section 12.2 only. Rineil's own indemnity for manufacturing defects in Section 12.1 is not listed in Section 13.4 and stays limited to twelve months of fees. Read together, Masun carries unlimited indemnity exposure for implant claims, while Rineil's matching exposure is capped.",
+      "doc": "D1",
+      "section": "12.2 and 13.4(a)",
+      "detect_terms": [
+        "clinical use of the Products",
+        "obligations under Section 12.2"
+      ],
+      "expected_finding": "Masun's Section 12.2 indemnity is broad and, under Section 13.4(a), excluded from the liability cap, while Rineil's Section 12.1 manufacturing-defect indemnity remains capped, so Masun faces unlimited exposure and should seek a cap on, or narrowing of, its indemnity (excluding claims caused by Rineil's manufacturing defects) or a matching carve-out for Section 12.1.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Supply Agreement Section 13.4(b) excludes from the cap Rineil's obligation to reimburse Recall Costs under Section 9.4. Section 9.4 defines Recall Costs broadly to include replacement product, customer and hospital reimbursement and third-party claims. Section 2.3 gives the Quality Agreement priority on quality, regulatory and recall matters, which is ordinary on its own. The later Quality Agreement (effective May 18, 2026) defines Recall Costs in Section 10.4 as Rineil's documented out-of-pocket costs of notification, retrieval and shipping of recalled Product, excluding all other losses. On its own that is an unremarkable recall-logistics definition. Read together, the Quality Agreement definition controls, so the uncapped carve-out shrinks to logistics costs. Replacement implants, hospital reimbursement and revision-surgery claims from a recall caused by Rineil's defective components then fall back under the twelve-month fee cap.",
+      "doc": "D3",
+      "section": "10.4",
+      "detect_terms": [
+        "notification, retrieval and shipping"
+      ],
+      "expected_finding": "Because Supply Agreement Section 2.3 lets the Quality Agreement control recall matters, its narrow Section 10.4 definition of Recall Costs overrides Supply Agreement Section 9.4 and shrinks the Section 13.4(b) carve-out, leaving Masun's major recall losses subject to the twelve-month fee cap, so the Quality Agreement definition should be conformed to Section 9.4 or the precedence clause should carve out Section 13.4.",
+      "contradicts": "F6",
+      "doc2": "D1",
+      "section2": "2.3",
+      "detect_terms2": [
+        "quality, regulatory and recall matters"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "First Amendment Section 4 replaces Supply Agreement Section 16.1. The new text keeps the requirement that Masun obtain Rineil's prior written consent to assign. It now lets Rineil assign the agreement, or any rights under it, without Buyer's consent to any Affiliate or to any successor to all or any part of its business. Nothing excludes competitors, and nothing requires the assignee to assume the Quality Agreement obligations or protect Masun's proprietary component specifications. Rineil could therefore transfer the sole-source supply of Masun's hip components, along with Masun's design specifications, to a competing orthopedic manufacturer.",
+      "doc": "D2",
+      "section": "4",
+      "detect_terms": [
+        "without Buyer's consent",
+        "successor to all or any part of its business"
+      ],
+      "expected_finding": "As amended by First Amendment Section 4, Section 16.1 lets Rineil assign the Supply Agreement without Masun's consent to any affiliate or successor, including a competitor, so Masun should require its consent (or at least a ban on assignment to competitors plus assumption of all obligations) for any Rineil assignment.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

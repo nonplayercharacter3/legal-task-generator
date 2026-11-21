@@ -1,0 +1,174 @@
+{
+  "matter_id": "s505-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "SPA Section 9.1: \"The General Representations shall survive the Closing until the Escrow Release Date.\" Escrow Agreement Section 4.1: \"'Escrow Release Date' means the date that is ninety (90) days after the Closing Date or, if that date is not a Business Day, the next Business Day.\"",
+            "reason": "The SPA does not define the Escrow Release Date and takes it from the Escrow Agreement, which fixes it at 90 days after Closing. Read together, Buyer's claims for breach of the General Representations end 90 days after Closing. Those representations cover financial statements, consignor trust funds, licenses, receivables, floorplan arrangements, material contracts and litigation. Section 9.1 bars any claim brought after the survival period. Seller bears the indemnity, so the short window hurts Buyer, our client. Ninety days is too short to complete a post-closing audit or to surface consignor, floorplan and license problems. Nothing in the folder extends or cures the period. The Section 9.2(d) title and odometer carve-out does not reach the other General Representations. The issue is still actionable: the latest document (the October 14, 2026 broker letter) describes pre-closing diligence, Closing has not occurred, and the Outside Date is December 18, 2026. The Escrow Agreement is an unsigned agreed form, so Buyer can still negotiate a longer survival period or release date.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"The General Representations shall survive the Closing until the Escrow Release Date.\" (Section 9.1); \"\\\"Escrow Release Date\\\" has the meaning given in the Escrow Agreement.\" (Section 1.1)",
+                "reason": "The SPA by itself shows that survival of the General Representations is tied to the Escrow Release Date, and that this term is defined only by cross-reference to the Escrow Agreement. A careful associate would note the dependency and would want to check the escrow document. The SPA does not say how long that period is. The 90-day length, which is what makes the survival window too short and harms Buyer, appears only in Escrow Agreement Section 4.1. Section 11.12 (SPA prevails in a conflict) does not help, because the SPA sets no competing period. Without the other document, the harmful short window cannot be seen."
+              },
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "\"Escrow Release Date\" means the date that is ninety (90) days after the Closing Date or, if that date is not a Business Day, the next Business Day.",
+                "reason": "On its own, this document shows only that the Escrow Release Date is 90 days after Closing. It also shows that Claim Notices against the escrow must be delivered on or before that date (Sections 4.1, 4.2 and 5.1), and that any unclaimed funds are then released to Seller. That is a short window for claims against the escrow fund, but it is an ordinary escrow mechanic. It does not by itself end Buyer's indemnity rights. Nothing in this document says the representations stop surviving at the Escrow Release Date. The harm described in the issue is that Buyer's right to claim for breach of the general representations expires after 90 days. That depends on SPA Section 9.1 tying the survival of those representations to the undefined term \"Escrow Release Date\", and that language is not in this document. So a reader of this document alone could not see that the general indemnity itself lapses at 90 days."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Seller Note §8.1: \"This Note shall be governed by and construed in accordance with the laws of the State of Delaware...\" and §8.2: \"Any legal suit, action or proceeding arising out of or relating to this Note shall be brought exclusively in the courts of the State of Delaware located in New Castle County...\" SPA §9.7: \"Buyer shall be entitled to set off the amount of any Losses for which a Buyer Indemnitee is entitled to indemnification under this Article IX against any payments due under the Seller Note...\" SPA §11.9 requires exclusive New York County courts for disputes \"arising out of or relating to this Agreement or the transactions contemplated by it\", and §11.12 gives the SPA precedence only over \"any Ancillary Agreement (the Escrow Agreement, the Transition Services Agreement, the IP Assignment Agreement and the Bill of Sale).\"",
+            "reason": "The conflict is real and it hurts Buyer, the Maker of the Note. If Seller, as Holder, sues on the Note, it must do so in Delaware under Delaware law. Buyer's main defence would be setoff, and that right sits only in SPA §9.7. It depends on New York-law indemnity rights, and the SPA requires those disputes to go exclusively to New York County courts. The two exclusive forum clauses therefore compete. The SPA's order-of-precedence clause does not resolve the conflict because it covers only the four Ancillary Agreements, and the Seller Note is not one of them. The Note itself does not cure the problem either. It never mentions the §9.7 setoff right. It contains no clause saying that a good-faith setoff is not a payment default. Its Event of Default in §6.1(a) is triggered by any failure to pay when due. This is still actionable. The Note is an unsigned form with a blank date ([●]) that is to be issued at Closing. The folder shows Closing has not yet occurred: the October 14, 2026 broker letter describes the deal as pre-closing, and the Outside Date is December 18, 2026. Buyer can therefore still negotiate changes, such as aligning the Note's governing law and forum with New York or writing the setoff right into the Note.",
+            "alone": {
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "Section 8.2: \"Any legal suit, action or proceeding arising out of or relating to this Note shall be brought exclusively in the courts of the State of Delaware located in New Castle County...\"; Section 8.1 chooses Delaware law.",
+                "reason": "The Note alone shows only that it picks Delaware law and exclusive Delaware courts, which is a standard and harmless choice on its own terms. It does not mention a buyer setoff right. It also does not show that the Purchase Agreement picks New York law and exclusive New York County courts (SPA 11.8/11.9), that SPA 9.7 lets Buyer set off indemnifiable Losses against Note payments, or that the SPA's precedence clause (11.12) leaves out the Seller Note. The conflict and the risk to Buyer's setoff defense both depend on those SPA terms, so an associate reading only this Note could not see the mismatch or the harm to the client."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.12: \"In the event of any conflict or inconsistency between the provisions of this Agreement and those of any Ancillary Agreement (the Escrow Agreement, the Transition Services Agreement, the IP Assignment Agreement and the Bill of Sale), the provisions of this Agreement shall prevail.\" Section 9.7: \"Buyer shall be entitled to set off the amount of any Losses ... against any payments due under the Seller Note...\"",
+                "reason": "The SPA by itself shows several parts of the setup. Sections 11.8 and 11.9 choose New York law and exclusive New York County courts. Section 9.7 gives Buyer a right to set off indemnifiable Losses against the Seller Note. The 'Ancillary Agreements' definition and Section 11.12 leave the Seller Note out of the precedence clause. A careful associate could flag that the precedence clause does not reach the Note. But nothing in the SPA says what law or forum the Seller Note chooses. Its terms appear only as 'in the agreed form'. The actual conflict depends on Seller Note Section 8, which chooses Delaware law and exclusive Delaware courts, and that document is not provided. Without it, the competing forum, the risk of parallel proceedings and the threat to Buyer's setoff defense cannot be seen. The Note might just as well choose New York law and forum."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SPA §6.8: \"Unless Buyer delivers to Seller a written objection to a Schedule Supplement within ten (10) Business Days after receipt of that Schedule Supplement, the Schedule Supplement shall be deemed accepted by Buyer, and the matters disclosed in it shall be deemed to have cured any inaccuracy in or breach of any representation or warranty to which they relate, both for purposes of determining whether the conditions in Section 8.2 have been satisfied and for purposes of the indemnification provisions of Article IX.\" Supplement No. 1 cover statement: \"This Supplement was delivered to Buyer on September 8, 2026, by email to Buyer's notice address in accordance with Section 11.3 of the Agreement.\"",
+            "reason": "The objection was late. Seller delivered the supplement on Tuesday, September 8, 2026 (Monday September 7 was Labor Day). Under §11.3 email notice, ten Business Days after receipt ends on September 22, 2026. Buyer's objection letter is dated September 29, 2026, so on the contract's terms the Calloway Action supplement is deemed accepted.\n\nThat deemed acceptance hurts Buyer in two ways:\n- **Closing condition:** it cures any breach of §§4.5, 4.10 and 4.13 for the §8.2(a) bring-down condition. That removes Buyer's ability to refuse to close, or to terminate under §10.1(c), on those breaches.\n- **Indemnity:** it cures those breaches for indemnification under §9.2(a).\n\nThe harm is only partly limited. §9.2(d) still covers Title and Odometer Losses \"regardless of whether disclosed in the Disclosure Schedule,\" with no cap. §8.2(c), the no-Material-Adverse-Effect condition, also remains available. Even so, the loss of the rep-based walk right and of rep indemnity is a real exposure on a putative nationwide Odometer Act class action.\n\nThe issue is still actionable. Buyer has not accepted the result: its September 29 letter objects in full and reserves all rights. Closing has not occurred; the October 14 broker letter treats Closing as future, and the Outside Date is December 18, 2026. Buyer can therefore still:\n- argue the supplement falls outside §6.8, because the underlying conduct predates signing;\n- negotiate a special indemnity or a larger escrow; or\n- rely on its MAE and termination rights.\n\nSo the problem is present and matters to Buyer.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Unless Buyer delivers to Seller a written objection to a Schedule Supplement within ten (10) Business Days after receipt of that Schedule Supplement, the Schedule Supplement shall be deemed accepted by Buyer, and the matters disclosed in it shall be deemed to have cured any inaccuracy in or breach of any representation or warranty to which they relate, both for purposes of determining whether the conditions in Section 8.2 have been satisfied and for purposes of the indemnification provisions of Article IX.",
+                "reason": "The SPA alone shows the deemed-acceptance mechanism in Section 6.8: a 10-Business-Day objection window, after which a supplement cures breaches for both the closing conditions and indemnification. A careful reader would see this as a risk to Buyer in general. The SPA does not show that any Schedule Supplement exists, what it disclosed (the odometer class action), when it was delivered (September 8, 2026), or when Buyer objected (September 29, 2026). Without those facts from the Disclosure Schedule and the objection letter, nobody can tell that the window was missed or that a specific breach was deemed cured. One partial point is that Section 9.2(d) covers Title and Odometer Losses 'regardless of whether disclosed in the Disclosure Schedule', which may limit the harm. That too only matters once the supplement's content is known. The specific problem therefore depends on documents not provided."
+              },
+              "disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "This Supplement was delivered to Buyer on September 8, 2026, by email to Buyer's notice address in accordance with Section 11.3 of the Agreement, with a copy by nationally recognized overnight courier.",
+                "reason": "This document shows the supplement was delivered on September 8, 2026, under SPA Section 6.8, and that it adds a serious putative class action under the Odometer Act. It does not show the 10-Business-Day objection deadline or the deemed-acceptance and cure effect, which are SPA Section 6.8 terms not quoted here. It also does not show when or whether Buyer objected; the September 29 objection letter is in another document. Reading this document alone, an associate could see that a deadline might be running, but could not tell that the objection window has passed or that Buyer's objection came too late."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "SPA Section 9.8: \"Any Losses arising out of or relating to the subject matter of the Services shall be recovered exclusively under, and subject to the limitations of, the Transition Services Agreement.\" TSA Schedule A, A-1 defines the Services to include \"Title remediation, title transfer and odometer disclosure processing for all vehicles sold through the Auctions before and after the Closing.\" TSA Section 9.2 provides that Provider's aggregate liability \"shall not exceed the Service Fees paid in the three (3) months preceding the event giving rise to the claim.\"",
+            "reason": "Section 9.5(b) removes Title and Odometer Losses under Section 9.2(d) from the $4.2M cap. Seller is the indemnitor there, and Buyer is the protected party. However, Section 9.8 sends any Losses 'relating to the subject matter of the Services' exclusively to the TSA. TSA Schedule A defines those Services to cover title and odometer processing for vehicles sold before Closing. Seller can therefore argue that pre-Closing title and odometer exposure falls under TSA §9.2. That cap is three months' fees, roughly $140k–$310k (A-1 alone is $46,500/month), or about nothing for a claim made early in the term. The SPA precedence clause (11.12) does not resolve this, because the SPA itself directs those Losses to the TSA. The exposure is live: the Calloway odometer class action seeks per-violation statutory damages for sales back to 2023, and Buyer reserved its §9.2(d) rights in its objection letter. Closing has not occurred and the TSA is still in agreed form, so Buyer can still fix this, for example by carving §9.2(d) out of §9.8. The problem is real and actionable for Buyer.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 9.8: \"Any Losses arising out of or relating to the subject matter of the Services shall be recovered exclusively under, and subject to the limitations of, the Transition Services Agreement.\" Section 9.5(b): \"The limitations in Section 9.5(a) shall not apply to Losses arising from ... Sections 9.2(b), 9.2(c) or 9.2(d), including Title and Odometer Losses.\"",
+                "reason": "The SPA shows that Title and Odometer Losses under 9.2(d) are carved out of the $4.2M cap. It also shows that Section 9.8 sends Losses 'relating to the subject matter of the Services' to the TSA and its limitations. But the SPA never says what the Services are. 'Services' is defined only by cross-reference ('has the meaning given in the Transition Services Agreement'). Nothing in this document says the Services cover title remediation, title transfer or odometer disclosure processing, let alone for pre-Closing vehicles. The SPA also says nothing about the size of any TSA liability cap. An associate reading only the SPA would see a generic channeling clause next to an uncapped title and odometer indemnity, with no visible overlap between them. Both the overlap and the harm to Buyer (pre-Closing title and odometer exposure squeezed under a cap of three months' fees) depend on TSA Schedule A and TSA Section 9.2, which are not in this document."
+              },
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "Schedule A, A-1: \"Title remediation, title transfer and odometer disclosure processing for all vehicles sold through the Auctions before and after the Closing.\" Section 9.2: \"The aggregate liability of Provider and its Affiliates arising out of or relating to this Agreement or the Services ... shall not exceed the Service Fees paid in the three (3) months preceding the event giving rise to the claim.\"",
+                "reason": "The TSA alone shows two things. First, the Services cover title and odometer work on vehicles sold before Closing. Second, Provider's liability for the Services is capped at three months of fees, roughly $310,000 at most, or about $140,000 if only the A-1 fees count. Read by itself, that is an ordinary services cap: it limits liability for Provider's own performance of the services and says nothing about Seller's pre-Closing indemnity. Nothing in the TSA mentions the SPA's Title and Odometer Losses indemnity, its exclusion from the $4.2M cap, or any clause sending those Losses exclusively to the TSA. TSA Section 10.3 borrows only the SPA's indemnity procedures. The harm to Buyer is losing uncapped recourse for pre-Closing title and odometer defects. That harm comes from SPA Section 9.8 channeling those Losses into this cap, and that clause is only in the SPA, which was not provided."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 13.3: \"Provider may assign this Agreement, or delegate or subcontract the performance of any Services, in whole or in part, to any Person without the consent of Recipient. Recipient may not assign this Agreement without the prior written consent of Provider.\"",
+            "reason": "The problem is present and still actionable. The TSA is undated and unsigned ([●], 2026), and closing has not yet occurred, so the client can still negotiate the clause. Section 13.3 lets Pritouth assign, delegate or subcontract any Service to any Person without the Company's consent. Those Services include title office work (A-1), TitleTrack hosting (A-2), and LaneLink and simulcast systems with consignor and bidder account access (A-5). Meanwhile the Company cannot assign without Pritouth's consent. Nothing in the folder cures this. The clause does not require the assignee to be vetted, keep Provider liable for its subcontractors, or flow down the data and security obligations in Sections 7.1 to 7.3. SPA Section 6.6 bars Seller and its Affiliates from competing, but it does not bind a third-party assignee, and it expressly excepts \"the performance of the Services.\" Provider's liability is capped at three months of fees (Section 9.2), and SPA 9.8 channels Services-related losses exclusively into the TSA, so recovery would be limited if an assignee misuses the data. As the Company's acquirer, Buyer bears this risk, so the provision hurts the client."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.087,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

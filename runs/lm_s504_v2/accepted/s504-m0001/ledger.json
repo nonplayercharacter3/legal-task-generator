@@ -1,0 +1,224 @@
+{
+  "matter_id": "s504-m0001",
+  "summary": "Vougeir Linen Services, Inc. runs an industrial laundry and linen-rental business. It licenses the TruRoute Linen Suite, an RFID linen tracking and route management platform, from Trutour Systems, LLC under a Software License Agreement effective March 1, 2025. The firm represents Vougeir. The folder holds seven documents: the license agreement, a Quality Agreement setting service levels and service credits, the original term sheet, Vougeir's letter objecting to Trutour's fee increase, a side letter adding plant seats ahead of Vougeir's pending acquisition by Ostrander Linen Group, a prior draft of the license, and a go-live confirmation email. The associate must find four problems for Vougeir. First, Trutour may assign the license to anyone, including a competitor. Second, the Ostrander acquisition needs Trutour's consent, and the side letter does not give it. Third, the precedence clause sends service-credit disputes to a Quality Agreement governed by New York law. Fourth, Vougeir's fee-increase objection was sent after the 30-day window closed.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Vougeir Linen Services, Inc.",
+      "role": "Licensee; commercial laundry and linen-rental operator; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Trutour Systems, LLC",
+      "role": "Licensor of the TruRoute Linen Suite software"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Linen Group, Inc.",
+      "role": "Proposed acquirer of Vougeir under a merger agreement signed September 28, 2026"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "March 1, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "License Agreement Initial Term",
+      "value": "three years from the License Agreement Effective Date",
+      "doc": "D1",
+      "section": "12.1"
+    },
+    {
+      "id": "F3",
+      "key": "Licensed Software",
+      "value": "TruRoute Linen Suite RFID linen tracking and route management platform",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Annual License Fee",
+      "value": "$486,000",
+      "doc": "D1",
+      "section": "4.1"
+    },
+    {
+      "id": "F5",
+      "key": "Fee increase objection period",
+      "value": "30 days after the date of Licensor's fee adjustment notice",
+      "doc": "D1",
+      "section": "4.4"
+    },
+    {
+      "id": "F6",
+      "key": "License Agreement governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "18.1"
+    },
+    {
+      "id": "F7",
+      "key": "License Agreement forum",
+      "value": "state or federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "18.1"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "License Agreement prevails, except the Quality Agreement controls on Service Levels and Service Credits",
+      "doc": "D1",
+      "section": "1.3"
+    },
+    {
+      "id": "F9",
+      "key": "Term sheet assignment terms",
+      "value": "neither party may assign without the other party's prior written consent",
+      "doc": "D3",
+      "section": "Assignment"
+    },
+    {
+      "id": "F10",
+      "key": "Trutour fee adjustment notice date",
+      "value": "August 3, 2026",
+      "doc": "D4",
+      "section": "Paragraph 1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "vougeir_trutour_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "vougeir_trutour_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "truroute_license_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "vougeir_letter_to_trutour_2026-09-14.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "vougeir_trutour_side_letter_additional_plants.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "truroute_license_draft_v2.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D7",
+      "filename": "trutour_go_live_confirmation_email.md",
+      "kind": "go-live confirmation email",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 14.1 of the License Agreement lets Trutour assign the Agreement, in whole or in part, to any Affiliate or any third party without Vougeir's consent. Section 14.2 bars Vougeir from assigning without Trutour's consent. Trutour could therefore transfer the license, and with it the hosted platform holding Vougeir's customer route, pricing and linen-volume data, to a competing laundry operator or its affiliate. The term sheet (D3) recorded a mutual restriction under which neither party could assign without the other's prior written consent.",
+      "doc": "D1",
+      "section": "14.1",
+      "detect_terms": [
+        "to any third party without Licensee's consent"
+      ],
+      "expected_finding": "Section 14.1 lets Trutour assign the License Agreement to anyone, including a Vougeir competitor that would gain access to Vougeir's customer and route data, without Vougeir's consent and contrary to the term sheet's mutual consent requirement, so Vougeir should require its consent (at minimum for assignments to competitors) and confidentiality protections binding any assignee.",
+      "contradicts": "F9",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 14.3 of the License Agreement treats a Change of Control of Licensee as an assignment. Trutour may withhold consent to it in its sole discretion and may terminate on 30 days' notice if one occurs without consent. Read alone, this is an ordinary clause. The side letter (D5, dated October 6, 2026) recites the proposed acquisition of Licensee by Ostrander Linen Group under a merger agreement signed September 28, 2026, with closing expected in January 2027, and grants extra plant seats for the post-closing business. It also states that nothing in it constitutes a consent or waiver under the Agreement. Read together, the two show that the pending acquisition triggers Section 14.3 and that Trutour's consent has not been obtained, even though the side letter appears to accommodate the deal.",
+      "doc": "D1",
+      "section": "14.3",
+      "detect_terms": [
+        "Change of Control of Licensee",
+        "sole discretion"
+      ],
+      "expected_finding": "The Ostrander acquisition recited in the October 6, 2026 side letter is a Change of Control requiring Trutour's consent under Section 14.3, which the side letter expressly does not give, so Vougeir must obtain Trutour's written consent before closing or risk Trutour terminating the license.",
+      "contradicts": null,
+      "doc2": "D5",
+      "section2": "Recitals and Section 4",
+      "detect_terms2": [
+        "proposed acquisition of Licensee",
+        "nothing herein constitutes a consent"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Section 18.1 of the License Agreement selects Delaware law and the Wilmington, Delaware courts. Section 9.1 of the Quality Agreement says that the Quality Agreement and all disputes under it, including claims for Service Credits, are governed by New York law, with exclusive jurisdiction in the courts of New York County. Read alone, that is an unremarkable choice. However, Section 1.3 of the License Agreement makes the Quality Agreement control on all matters relating to Service Levels and Service Credits, including the resolution of disputes regarding them. As a result, the New York clause governs Vougeir's service-credit and uptime claims, while all other claims stay in Delaware. That splits a single outage dispute across two laws and two exclusive forums, with a risk of inconsistent results.",
+      "doc": "D2",
+      "section": "9.1",
+      "detect_terms": [
+        "laws of the State of New York",
+        "courts located in New York County"
+      ],
+      "expected_finding": "Because License Agreement Section 1.3 lets the Quality Agreement control service-level and service-credit disputes, Quality Agreement Section 9.1's New York law and exclusive New York County forum override the License Agreement's Delaware law and forum for those claims, splitting Vougeir's outage-related claims across two laws and forums, so both documents should be conformed to a single Delaware law and forum.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ],
+      "doc2": "D1",
+      "section2": "1.3",
+      "detect_terms2": [
+        "including the resolution of disputes regarding them"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 4.4 of the License Agreement allows Trutour to raise fees effective on an anniversary of the Effective Date. Vougeir must object within thirty (30) days after the date of the fee adjustment notice, failing which the increase is deemed accepted by Licensee. Vougeir's letter (D4) is dated September 14, 2026. It refers to Trutour's notice dated August 3, 2026, which raises the Annual License Fee from $486,000 to $559,000 effective March 1, 2027, and states that Vougeir does not accept the proposed increase. Counting from August 3, 2026, the objection window closed on September 2, 2026, so the objection came 12 days late. Neither document shows the problem alone. D4 records Vougeir's dispute, and nothing in the folder shows that Vougeir has paid or agreed to the higher fee.",
+      "doc": "D1",
+      "section": "4.4",
+      "detect_terms": [
+        "deemed accepted by Licensee",
+        "within thirty (30) days after the date"
+      ],
+      "expected_finding": "Vougeir's September 14, 2026 objection came after the 30-day window under Section 4.4 closed on September 2, 2026, measured from Trutour's August 3, 2026 notice, so Trutour can treat the increase to $559,000 as deemed accepted, and Vougeir should promptly seek Trutour's written waiver or a negotiated fee resolution, for example as part of the change-of-control consent discussions, before the increase takes effect on March 1, 2027.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Paragraph 1",
+      "detect_terms2": [
+        "dated August 3, 2026",
+        "do not accept the proposed increase"
+      ]
+    }
+  ]
+}

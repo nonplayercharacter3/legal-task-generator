@@ -1,0 +1,121 @@
+{
+  "task_id": "s504-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Vougeir Linen Services, Inc., the licensee under a software license agreement with Trutour Systems, LLC, and the client needs our review of the deal before it moves forward. Please review all seven documents in the folder and prepare a memo to me that lists each issue you identify, where it appears (document and section), why it matters for Vougeir, and your recommended fix. Keep it practical and prioritized for the client.",
+  "documents": [
+    "truroute_license_draft_v2.md",
+    "truroute_license_term_sheet.md",
+    "trutour_go_live_confirmation_email.md",
+    "vougeir_letter_to_trutour_2026-09-14.md",
+    "vougeir_trutour_quality_agreement.md",
+    "vougeir_trutour_side_letter_additional_plants.md",
+    "vougeir_trutour_software_license_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that Trutour may assign the License Agreement to any third party, including a Vougeir competitor, without Vougeir's consent. It identifies the location as the License Agreement Section 14.1, explains why this matters to Vougeir, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 14.1",
+        "without Licensee's consent",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that the pending Ostrander acquisition is a Change of Control that requires Trutour's consent, and that the side letter does not give that consent. It identifies the location as License Agreement Section 14.3 or the side letter (recitals or Section 4), explains why this matters to Vougeir, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "Ostrander",
+        "nothing herein constitutes a consent"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that service-level and service-credit disputes are governed by New York law in an exclusive New York County forum, while other claims under the License Agreement stay under Delaware law and forum, splitting Vougeir's outage-related claims across two laws and forums. It identifies the location as Quality Agreement Section 9.1 or License Agreement Section 1.3, explains why this matters to Vougeir, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York law",
+        "Delaware",
+        "Service Credits"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Vougeir's September 14, 2026 objection to the fee increase was sent after the 30-day objection window closed (on or about September 2, 2026), so the increase may be deemed accepted. It identifies the location as License Agreement Section 4.4 or Vougeir's September 14, 2026 letter, explains why this matters to Vougeir, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "September 2, 2026",
+        "deemed accepted",
+        "Section 4.4"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the License Agreement's effective date is March 1, 2025.",
+      "kind": "fact",
+      "hints": [
+        "March 1, 2025",
+        "Effective Date"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response identifies the licensed software as the TruRoute Linen Suite, an RFID linen tracking and route management platform.",
+      "kind": "fact",
+      "hints": [
+        "TruRoute Linen Suite",
+        "RFID",
+        "route management"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is written as a memo addressed to the supervising partner, and it gives a document and section for each issue listed.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Section"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response presents the issues in a prioritized order, or labels each issue with a priority or severity.",
+      "kind": "format",
+      "hints": [
+        "priority",
+        "high",
+        "most urgent"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Vougeir's September 14, 2026 objection to the fee increase was timely under Section 4.4.",
+      "kind": "negative",
+      "hints": [
+        "timely objection",
+        "within the 30-day window"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the side letter gives Trutour's consent to the Ostrander acquisition.",
+      "kind": "negative",
+      "hints": [
+        "side letter consents",
+        "consent already obtained"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

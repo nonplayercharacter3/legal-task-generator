@@ -1,0 +1,131 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Steinaix may assign the Supply Agreement to any person, including a Naigert competitor, without Naigert's consent, while Naigert's own assignment requires Steinaix's consent. It locates this in Supply Agreement Section 18.2, explains why this matters to Naigert, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "Section 18.2",
+        "without Customer's consent",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Naigert's indemnity for third-party End Product claims, which applies even where the Steinaix Products contributed to the loss, is excluded from the liability cap and so is unlimited, while Steinaix's own indemnity stays capped. It locates this in Supply Agreement Section 11.2 and/or Section 12.3(b), explains why this matters to Naigert, and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "whether or not the Products contributed",
+        "Section 12.3(b)",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Naigert's October 14, 2026 non-renewal letter missed the September 30, 2026 deadline (six months before the Initial Term ends on March 31, 2027), so Steinaix can treat the agreement as renewed through March 31, 2029. It locates this in Supply Agreement Section 2.1/2.2 or the non-renewal letter, explains why this matters to Naigert, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "September 30, 2026",
+        "October 14, 2026",
+        "March 31, 2029"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the exclusivity obligation requires Naigert to buy all of its industrial fabric (Technical Textiles) requirements worldwide from Steinaix, not just the filter media Products for the facilities covered by the Statement of Work. It locates this in Supply Agreement Section 3.1 and/or the Section 1 definitions, explains why this matters to Naigert, and recommends a fix.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "all of its requirements for Technical Textiles",
+        "throughout the world",
+        "Section 3.1"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the Parent Guaranty does not cover the obligations of the Mexican Supplying Affiliate (Steinaix Textiles Mexico) added by Amendment No. 1, because the guaranty's 'Supplier' means solely Steinaix Industrial Fabrics, LLC. It locates this in Parent Guaranty Section 1 and/or Amendment No. 1 Section 2, explains why this matters to Naigert, and recommends a fix.",
+      "kind": "issue",
+      "source": "I5",
+      "hints": [
+        "solely Steinaix Industrial Fabrics, LLC",
+        "Supplying Affiliate",
+        "Steinaix Textiles Mexico"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response identifies that Steinaix's liability for personal data breaches is subject to the Section 12.1 liability cap under the Data Processing Addendum, even though Supply Agreement Section 12.3(c) carves breaches of Section 14 out of the cap. It locates this in Supply Agreement Section 12.3(c)/20.4 or DPA Section 9, explains why this matters to Naigert, and recommends a fix.",
+      "kind": "issue",
+      "source": "I6",
+      "hints": [
+        "DPA Section 9",
+        "Section 12.3(c)",
+        "Personal Data"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Supply Agreement's general liability cap equals the fees paid or payable in the 12 months preceding the claim.",
+      "kind": "fact",
+      "source": "F5",
+      "hints": [
+        "12 months",
+        "fees paid or payable"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that Steinaix Holdings, Inc. is the parent guarantor of Steinaix's obligations.",
+      "kind": "fact",
+      "source": "F8",
+      "hints": [
+        "Steinaix Holdings",
+        "Parent Guaranty"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is written as a memo addressed to the supervising partner, and it presents each issue with its location, its significance to Naigert and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response presents the issues in an explicit priority order (for example ranked, or grouped by severity or urgency).",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "priority",
+        "high",
+        "urgent"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that Naigert's October 14, 2026 non-renewal letter was timely and effectively ends the Supply Agreement on March 31, 2027.",
+      "kind": "negative",
+      "source": "I3",
+      "hints": [
+        "timely",
+        "effective non-renewal"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response claims that the Parent Guaranty covers the obligations of Steinaix Textiles Mexico, S. de R.L. de C.V.",
+      "kind": "negative",
+      "source": "I5",
+      "hints": [
+        "guaranty covers the affiliate"
+      ]
+    }
+  ]
+}

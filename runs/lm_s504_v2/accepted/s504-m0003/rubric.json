@@ -1,0 +1,100 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Software License Agreement renews automatically for successive 36-month Renewal Terms unless non-renewal notice is given within a 15-day Non-Renewal Window ending 120 days before term end, which departs from the term sheet's 12-month renewals terminable on 60 days' notice. It locates this in the Software License Agreement (Section 2.2 and/or the Section 1 definitions), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "36-month Renewal Term",
+        "15-day Non-Renewal Window",
+        "12-month renewals on 60 days' notice"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the exclusivity covenant in Software License Agreement Section 3.5 is broader than the term sheet's LIMS-only, US Licensed Sites, term-only exclusivity. The response must show that the covenant covers diagnostic imaging and practice-management software, applies at any facility worldwide (including Affiliates' facilities), and continues for 24 months after the term. It explains why this matters to the client and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "practice management software",
+        "anywhere in the world",
+        "24 months after the term"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that, because Amendment No. 1 restates Section 11 so that Section 11.1 is now the Licensee's indemnity, the liability-cap carve-out for 'amounts payable under Section 11.1' now leaves the client's (Licensee's) indemnity uncapped. It locates this in Software License Agreement Section 13.2 or Amendment No. 1 Section 2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "amounts payable under Section 11.1",
+        "Licensee indemnity uncapped",
+        "renumbered"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the side letter's broader definition of 'Connected Instrument', which includes devices transmitting data to the Software such as point-of-care devices at Partner Clinics, governs the Software License Agreement's instrument overage fee. The response must conclude that this exposes the client to $1,800-per-year overage fees on partner-clinic devices above the 120-instrument count. It locates this in Side Letter Section 2 or Software License Agreement Section 4.4/18.3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "point-of-care devices at Partner Clinics",
+        "overage fee",
+        "$1,800 per Connected Instrument"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that the Software License Agreement's Initial Term is 36 months from the April 1, 2026 Effective Date (ending March 31, 2029).",
+      "kind": "fact",
+      "source": "F2",
+      "hints": [
+        "36 months",
+        "March 31, 2029"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that under the Software License Agreement's order-of-precedence clause, amendments and the Side Letter prevail over the Software License Agreement in the event of a conflict.",
+      "kind": "fact",
+      "source": "F6",
+      "hints": [
+        "order of precedence",
+        "shall prevail",
+        "Section 18.3"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is formatted as a memo addressed to the supervising partner. For each issue it sets out the location (document and section), why the issue matters for Pupeska, and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memo",
+        "Location",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that the Licensee indemnity added by Amendment No. 1 remains subject to the Section 13.1 liability cap under the documents as they currently stand.",
+      "kind": "negative",
+      "source": "I3",
+      "hints": [
+        "Licensee indemnity is capped",
+        "subject to the 12-month fees cap"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that the term sheet's renewal or exclusivity terms currently bind the parties and override the broader terms of the signed Software License Agreement.",
+      "kind": "negative",
+      "source": "I1",
+      "hints": [
+        "term sheet controls",
+        "term sheet terms apply"
+      ]
+    }
+  ]
+}

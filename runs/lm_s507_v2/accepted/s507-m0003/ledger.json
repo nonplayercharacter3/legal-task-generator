@@ -1,0 +1,220 @@
+{
+  "matter_id": "s507-m0003",
+  "summary": "Tramil Hospitality Holdings, Inc. (client, Buyer) bought all outstanding shares of Oakhollow Event Rentals, Inc., a company that rents event furniture, tenting and staging for weddings and corporate events. The seller was Titairt Group, LLC. The Stock Purchase Agreement was signed and closed at the same time on March 31, 2026. The purchase price was $46,500,000, of which $7,000,000 was paid by a Seller Note. At closing, Titairt and Oakhollow also entered into a Transition Services Agreement. Under it, Titairt provides access to its EventGrid booking platform, warehouse yard management and fleet-routing support, and Titairt executed an IP assignment of the Oakhollow marks and booking-portal content. The folder also holds the disclosure schedule, Tramil's diligence meeting notes, and a November 16, 2026 letter from Tramil purporting to extend the TSA. Four issues are planted. (1) The TSA lets Titairt assign freely. (2) The SPA lets tax indemnity claims lapse after 12 months. (3) The Seller Note's Delaware law and forum conflict with the SPA's New York regime, and the SPA's precedence carve-out lets the Note control. (4) The TSA extension notice was sent after the window closed.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Tramil Hospitality Holdings, Inc.",
+      "role": "Buyer under the Stock Purchase Agreement, maker of the Seller Note, and parent of the TSA service recipient (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Titairt Group, LLC",
+      "role": "Seller under the Stock Purchase Agreement, holder of the Seller Note, service provider under the TSA, and assignor under the IP assignment"
+    },
+    {
+      "id": "P3",
+      "name": "Oakhollow Event Rentals, Inc.",
+      "role": "Target company acquired by Buyer, and service recipient under the TSA"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Purchase Price",
+      "value": "$46,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Closing Date",
+      "value": "March 31, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "SPA governing law and forum",
+      "value": "New York law; exclusive jurisdiction of state and federal courts in New York County",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "SPA controls over Ancillary Agreements, except the Seller Note controls matters arising under the Seller Note",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F5",
+      "key": "SPA general representation survival period",
+      "value": "12 months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1(a)"
+    },
+    {
+      "id": "F6",
+      "key": "Seller Note principal amount",
+      "value": "$7,000,000",
+      "doc": "D5",
+      "section": "Section 1"
+    },
+    {
+      "id": "F7",
+      "key": "TSA Effective Date",
+      "value": "March 31, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F8",
+      "key": "TSA Initial Term",
+      "value": "270 days after the TSA Effective Date",
+      "doc": "D3",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F9",
+      "key": "TSA extension notice deadline",
+      "value": "No later than 45 days before the Initial Term expires",
+      "doc": "D3",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F10",
+      "key": "TSA extension letter date",
+      "value": "November 16, 2026",
+      "doc": "D7",
+      "section": "Letter date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "diligence_meeting_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "tsa_extension_letter.md",
+      "kind": "letter from client exercising TSA extension",
+      "distractor": false,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 13.2 lets Titairt, as Provider, assign the TSA in whole or in part, or delegate any Services, to any person without Recipient's consent. That includes a competing event-rental operator or a buyer of Titairt's EventGrid booking platform. Section 13.1 bars Oakhollow from assigning without Provider's consent. The Services give the provider live access to Oakhollow's customer bookings, pricing and fleet-routing data. Titairt could therefore hand that access, and control of the services, to a direct competitor of Tramil's newly acquired business, and Oakhollow could do nothing to stop it.",
+      "doc": "D3",
+      "section": "Section 13.2",
+      "detect_terms": [
+        "Provider may assign this Agreement",
+        "without the consent of Recipient"
+      ],
+      "expected_finding": "TSA Section 13.2 lets Titairt assign the TSA or delegate the Services to anyone, including a competitor, without Oakhollow's consent, even though Oakhollow cannot assign without consent under Section 13.1, which exposes Oakhollow's customer and booking data, so the clause should be amended to require Recipient's prior written consent and to bar assignment to competitors.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Three provisions of the SPA work together here. First, Section 1.1 defines \"Fundamental Representations\" as only Sections 4.1, 4.2, 4.3 and 4.4 (organization, authority, capitalization, brokers). That leaves out the tax representation in Section 4.14. Second, Section 9.1(a) says non-fundamental representations survive only twelve months after the Closing Date. Third, Section 9.1(c) says claims under the Pre-Closing Taxes indemnity in Section 9.2(d) may be made only within the survival period applicable to Section 4.14. Read together, Buyer's special tax indemnity expires on March 31, 2027. Multi-state sales and use tax audits on rental receipts can be assessed years later. Buyer would therefore lose the tax indemnity well before the relevant statutes of limitation run.",
+      "doc": "D1",
+      "section": "Sections 1.1 and 9.1",
+      "detect_terms": [
+        "Sections 4.1, 4.2, 4.3 and 4.4",
+        "survival period applicable to Section 4.14",
+        "twelve (12) months after the Closing Date"
+      ],
+      "expected_finding": "Because Section 4.14 is not a Fundamental Representation and Section 9.1(c) ties the Pre-Closing Taxes indemnity in Section 9.2(d) to Section 4.14's twelve-month survival, Buyer's tax indemnity lapses on March 31, 2027, long before the applicable tax statutes of limitation, so the tax representation and tax indemnity should survive until 60 days after the statute of limitations expires.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Seller Note Section 9 chooses Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery for any action arising under the Note. Read alone, that is an ordinary choice. SPA Section 11.8 chooses New York law and exclusive New York County courts for disputes under the SPA and the Ancillary Agreements. SPA Section 9.7 gives Buyer a right to set off indemnity claims against Note installments. SPA Section 11.12 makes the SPA control over Ancillary Agreements, except that the Seller Note controls matters arising under the Seller Note. Read together, the precedence carve-out lets the Note's Delaware clause govern. If Buyer withholds an installment to exercise its New York-law set-off, Titairt can sue on the Note in Delaware under Delaware law. Buyer then faces parallel proceedings, possibly inconsistent rulings, and the risk of acceleration while its indemnity claim must be decided in New York.",
+      "doc": "D5",
+      "section": "Section 9",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery of the State of Delaware"
+      ],
+      "expected_finding": "The Seller Note's Delaware governing law and exclusive Delaware forum conflict with the SPA's New York law and forum. Because SPA Section 11.12 lets the Note control matters arising under it, Buyer's SPA set-off rights against Note payments could be litigated separately in Delaware under Delaware law, with a risk of inconsistent results and acceleration. The Note should be amended to adopt New York law and the SPA forum, or the precedence carve-out should be narrowed.",
+      "contradicts": "F3",
+      "doc2": "D1",
+      "section2": "Sections 11.8 and 11.12",
+      "detect_terms2": [
+        "the Seller Note shall control",
+        "laws of the State of New York"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "The TSA is dated March 31, 2026 (the TSA Effective Date). Section 2.1 sets an Initial Term ending two hundred seventy days after the Effective Date, which is December 26, 2026. Section 2.2 lets Recipient extend for one 90-day Extension Term only by written notice delivered no later than forty-five days before the Initial Term expires, which is November 11, 2026. Tramil's letter (D7), on Oakhollow's behalf, is dated November 16, 2026. In it Tramil states that it exercises the extension right because Oakhollow still depends on the EventGrid booking platform and the warehouse yard services. The letter came five days after the window closed. Titairt can therefore treat the extension as ineffective and end the services on December 26, 2026. The letter shows that the client still treats the extension as exercised and has not accepted that the services will lapse.",
+      "doc": "D3",
+      "section": "Sections 2.1 and 2.2",
+      "detect_terms": [
+        "two hundred seventy (270) days",
+        "no later than forty-five (45) days"
+      ],
+      "expected_finding": "The extension notice deadline under TSA Section 2.2 was November 11, 2026, so Tramil's November 16, 2026 extension letter is untimely, and Titairt may end the critical booking and warehouse services on December 26, 2026. Tramil should promptly obtain Titairt's written agreement to the extension or a waiver of the deadline, and prepare contingency services in case Titairt refuses.",
+      "contradicts": null,
+      "doc2": "D7",
+      "section2": "Letter body",
+      "detect_terms2": [
+        "hereby exercises its right to extend"
+      ]
+    }
+  ]
+}
