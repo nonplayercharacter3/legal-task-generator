@@ -148,3 +148,12 @@ Dated, append-only. One entry per iteration.
   (s502-m0002, paraphrased detect term in the second document; first case in about 70 v2 matters; not fixed yet).
 - 2026-11-21 12:15 (Sirui She's session): issue #36 rewritten as the lab mate's next work order, labelling his seeds
   500-507 (20 tasks, all label_pending, 0 errors) on his machine, branch `lm/v2-s500-507-labels`; STATE Next 2 updated.
+
+## 2026-11-21 12:20, iteration 18
+- regrade2.py (PID 67923) hit the usage limit at 11:30, resumed 12:05 by the wall clock; working through 10 errored s1 scores.
+- rerun_sanctions.sh finished 11:34, but its judging ran into the same limit: the sanctions scores.json has grading
+  errors, so 10 s1 rows are still errored (regrade2 computed its list before, so it needs a second pass).
+- Issue #44 closed: Sirui She disabled sleep (`pmset -a disablesleep 1`) and plugged the laptop in.
+- PR #48 merged: `scripts/lab_sample.py draw-v2` adds 20 v2 tasks as set `ours_v2` (dev/test first, 7 of them, then
+  13 train by seed 46; 202 criteria); `run [SET]` runs one set. Drawn; old sample in `sample.before_v2.json`.
+- Started `runs/lab_sample/chain_v2.sh` (PID 78677): regrade pass, ours_v2 run, regrade pass, check.

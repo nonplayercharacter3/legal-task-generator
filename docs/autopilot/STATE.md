@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-21 11:20, autopilot iteration 17.
+Last updated: 2026-11-21 12:20, autopilot iteration 18.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -41,14 +41,16 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- LAB regrade restarted 11:06 by Sirui She's own session with a wall-clock wait fix (`regrade2.py`, PID 67923, output appended to `runs/lab_sample/regrade2.out`; the autopilot's own restart was replaced): the old one (PID
-  55990) sat in its usage-limit wait from 22:30 while the laptop slept (time.sleep does not count sleep), so it was
-  killed; it re-reads which s1 scores have errors, 10 to go, ~3 min each.
-- Alongside it (its wait mis-keyed on a wrapper PID, so it started at once; Qwen solves first, so the judging overlap is small): `runs/lab_sample/rerun_sanctions.sh` (PID 69249, output `rerun_sanctions.out`): the LAB task
-  `international-trade-sanctions/review-technology-control-plan/scenario-02` has no score (Qwen run died on a
-  connection error while the laptop slept); its partial output moves to `runs/_trash/2026-11-21/lab_s1_connerror/`
-  and it re-runs in full (Qwen solve, then judge). Expected end about 12:45.
-- LAB side: 30 of 30 attempted; 19 scored cleanly, 10 to re-judge, 1 to re-run.
+- LAB regrade `regrade2.py` (PID 67923, output `runs/lab_sample/regrade2.out`), started 11:06 by Sirui She's session:
+  hit the usage limit at 11:30, resumed 12:05 on the credit-lending task (114 criteria); 9 more after it.
+- Chained after it: `runs/lab_sample/chain_v2.sh` (PID 78677, output `runs/lab_sample/chain_v2.out`): a second
+  regrade pass (the sanctions task, re-run at 11:34, was judged into the limit: 10 errored scores still), then
+  `scripts/lab_sample.py run ours_v2` (20 v2 tasks, Qwen solve then judge, 202 criteria), then a last regrade pass and
+  `check.py`. Expected end about 15:30, later if a limit hits.
+- LAB side: 30 of 30 attempted; 20 scored cleanly, 10 to re-judge (sanctions among them).
+- `sample.json` now has set `ours_v2` (PR #48): s504-m0003, s506-m0003, s45-m0003, s53-m0002, s55-m0001,
+  s55-m0003, s58-m0002 (all dev and test), plus 13 train drawn by seed 46; 7 are the lab mate's, unlabelled yet.
+  Old sample kept as `runs/lab_sample/sample.before_v2.json`. The 20 v1 `ours` rows are not run (v1 is superseded).
 
 ## v2 numbers (seeds 45-61, ours; lab mate 500-507)
 - Lab mate's seeds 500-507: 20 of 24 accepted, on main (PR #45, #46), not labelled yet. Rejections, read 2026-11-21:
@@ -69,19 +71,18 @@ agent. Full definition of done: PROMPT.md.
   15,704 (MISS, needs 20,000), checklist median 10 (soft miss, needs 20).
 
 ## Next
-1. Read `regrade3.out`, `rerun_sanctions.out` and `python3 runs/lab_sample/check.py` until all 30 LAB rows are clean.
-2. Lab mate's 20 tasks: assigned to him on 2026-11-21 (Sirui She's decision; issue #36 rewritten: label seeds 500-507 on his
-   own Max plan and NRP key with `ltg batch --label-config configs/pilot_nrp_solver.toml --branch lm/v2-s500-507-labels`).
-   Do not label them here; review and merge his labels PR when it comes.
-3. M3 our side, after the LAB 30: convert 20+ v2 tasks (dev/test first) with `scripts/to_lab_format.py`, add them as
-   `ours_v2` rows, score them the same way, in chunks of about 6 tasks per 5-hour window (no batch running); then
-   `summarise`, commit `runs/lab_sample/summary.json`, write both sides into `docs/research/lab_harness.md`.
-4. M4 candidate fix for the level 2 miss: longer folders (v3 config, median 20,000+ words) and more checklist items.
-   Decide after M3's level 3 numbers, so one v3 change can target both.
+1. When `chain_v2.out` says "chain done": check `check.py` shows every s1 row clean (LAB 30 and ours_v2 20); if not,
+   run `regrade2.py` again. Then `runs/lab_venv/bin/python scripts/lab_sample.py summarise`-equivalent: `summarise`
+   is called by `run`; re-run `scripts/lab_sample.py run ours_v2` (skips scored tasks) to rewrite `summary.json`,
+   commit it, write both sides into `docs/research/lab_harness.md` (M3 done).
+2. Label the lab mate's 20 tasks (`ltg label`, runs/lm_s500-507_v2) after the chain (one heavy job at a time).
+3. M4: apply EVALUATION.md levels 1-3 with M3's numbers. Known level 2 misses: folder words median 15,704 (needs
+   20,000), checklist median 10 (needs 20). Candidate v3: longer folders and more checklist items in one change.
+4. Then write the lab mate's next work order in #36 (v2 or v3), test-run in a scratch clone first.
 5. If an NRP call stalls a batch (no log line for an hour outside a wait), add a wall-clock cap per solver call.
 
 ## Needs Sirui
-- Issue #44 (sleep again 2026-11-20 19:02 on battery): keep the laptop plugged in with the lid open while jobs run (sleep killed seed 61 twice).
+- When all jobs are done for good: remind Sirui She to undo `sudo pmset -a disablesleep 0` (#44, closed 2026-11-21).
 - Issue #43: kubectl login expired (waits for a browser sign-in; checked 2026-11-18 13:45). Needed for the vLLM
   fallback and M6, not for batches. Close once `kubectl get pods -n ecepxie` answers. Never run kubectl without a
   time cap until then: it hangs.
