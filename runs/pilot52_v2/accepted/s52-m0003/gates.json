@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.333,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 1,
+      "pass_rate": 0.333
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 40
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -136,8 +150,76 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.333,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 1,
+            "pass_rate": 0.333
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2"
+              ],
+              "steps": 23,
+              "files_opened": [
+                "data_processing_addendum_crew_credentials.md",
+                "diril_kevond_master_services_agreement.md",
+                "diril_kevond_term_sheet_2023.md",
+                "gc_email_to_outside_counsel_nov_2026.md",
+                "kevond_side_letter_festival_led_rates.md",
+                "msa_amendment_no_1.md",
+                "production_meeting_notes_sept_2026.md",
+                "production_quality_and_safety_agreement.md",
+                "service_level_schedule.md",
+                "sow_ember_season_2027_tour.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2"
+              ],
+              "steps": 23,
+              "files_opened": [
+                "data_processing_addendum_crew_credentials.md",
+                "diril_kevond_master_services_agreement.md",
+                "diril_kevond_term_sheet_2023.md",
+                "gc_email_to_outside_counsel_nov_2026.md",
+                "kevond_side_letter_festival_led_rates.md",
+                "msa_amendment_no_1.md",
+                "production_meeting_notes_sept_2026.md",
+                "production_quality_and_safety_agreement.md",
+                "service_level_schedule.md",
+                "sow_ember_season_2027_tour.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 23,
+              "files_opened": [
+                "data_processing_addendum_crew_credentials.md",
+                "diril_kevond_master_services_agreement.md",
+                "diril_kevond_term_sheet_2023.md",
+                "gc_email_to_outside_counsel_nov_2026.md",
+                "kevond_side_letter_festival_led_rates.md",
+                "msa_amendment_no_1.md",
+                "production_meeting_notes_sept_2026.md",
+                "production_quality_and_safety_agreement.md",
+                "service_level_schedule.md",
+                "sow_ember_season_2027_tour.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
