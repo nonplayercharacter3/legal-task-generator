@@ -127,3 +127,12 @@ Dated, append-only. One entry per iteration.
 - Laptop slept at 19:02 on battery (pmset: dark wakes only since), during seed 51's label retry (attempt 2 of 3).
   Batch PID 10390 and morning chain 46874 alive but stalled. Commented on #44. No lab-mate PR open (seed 500 merged;
   his batch started 18:01, PID 61989 on his machine). No code or result changes this iteration.
+
+## 2026-11-21 07:35, iteration 16
+- Night chain finished 22:19: labels for seeds 51-53 committed. Our 33 v2 tasks all labelled (0.00: 15, 0.33: 7,
+  0.67: 9, 1.00: 2, mean 0.31).
+- LAB regrade2: 3 of 13 clean, then the 5-hour limit at 22:30 (32 errors on one task, retried after the wait); the
+  laptop slept on battery overnight, so the wait is still pending.
+- Lab mate finished seeds 500-507: 20 of 24 accepted. Seeds 501-507 had no PR (PR #45 merged mid-batch and
+  `ltg batch` never re-checked). Opened and merged PR #46 (runs/lm_s50*_v2 only, CI green), fixed `ltg batch` in
+  PR #47 (open_pr after every push), commented on #36.

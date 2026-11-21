@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-20 21:30, autopilot iteration 15.
+Last updated: 2026-11-21 07:35, autopilot iteration 16.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -41,21 +41,19 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- Night chain `runs/lab_sample/tonight.sh`, PID 13075: last step `ltg batch --seeds 61,49-53` (PID 10390, log
-  `runs/gen-v2-54-61.log`). Labels landed for 61 (ea36b22), 49 (04b33c6), 50 (14adae7). Seed 51's two labels timed
-  out after the laptop slept 20 hours (clamshell on battery, 2026-11-19 22:09 to 2026-11-20 18:25); retry at 18:57,
-  then 52 and 53 (about an hour if the laptop stays awake).
-  2026-11-20 21:25: the laptop slept again at 19:02 (on battery, 48%), mid seed 51 attempt 2; no log line since.
-  The jobs resume on wake (a stalled call times out and the batch retries); nothing to fix in code.
-- Morning chain `runs/lab_sample/morning.sh`, PID 46874 (caffeinate), output `morning.out`: waits for 13075, then
-  `runs/lab_sample/regrade2.py` (output `regrade2.out`) re-judges the 13 LAB tasks that hit the 5-hour limit
-  (~874 criteria, one Opus call each). On a limit it waits for the stated reset and retries the same task; it stops on
-  any other grading error. Errored scores.json are copied to `runs/_trash/<date>/lab_s1_errored2/` first.
-- LAB side: 30 of 30 run by Qwen; 17 scored cleanly, 13 errored in judging (limit "resets 8:30pm" on 2026-11-19).
-  The judge costs one Opus call per criterion with the whole memo: one 5-hour window holds about 250 to 400 of them.
+- Night chain done 2026-11-20 22:19: labels for seeds 51-53 on main (b277085, 8302e09, f588776). All 33 of our v2
+  tasks (s45-s61) are labelled.
+- Morning chain `runs/lab_sample/morning.sh`, PID 46874 (caffeinate), running `runs/lab_sample/regrade2.py`
+  (PID 55990, output `regrade2.out`): 3 of 13 LAB tasks re-judged cleanly by 22:30; the 4th (employment agreement
+  scenario-01) hit the 5-hour limit at 22:30 with 32 grading errors and is waiting 184 min to retry it. The laptop
+  then slept on battery (19% at 07:24 on 2026-11-21), so the wait has not finished. It resumes on wake.
+- LAB side: 30 of 30 run by Qwen; 20 scored cleanly, 10 still to re-judge.
 
-## v2 numbers (seeds 45-60)
-- 30 accepted of 46 matters; seeds 54-60 (after PR #40): 16 of 21. Rejections 54-60, all read: s54-m0001 and
+## v2 numbers (seeds 45-61, ours; lab mate 500-507)
+- Lab mate's seeds 500-507: 20 of 24 accepted (rejections: 501 consistency, 502 and 503 issue_check, 507
+  ledger_schema; not yet read), labels deferred, on main (PR #45, #46). Not labelled yet.
+- Ours: 33 accepted, labels 0.00: 15, 0.33: 7, 0.67: 9, 1.00: 2, mean 0.31.
+- Seeds 45-60: 30 accepted of 46 matters; seeds 54-60 (after PR #40): 16 of 21. Rejections 54-60, all read: s54-m0001 and
   s59-m0001 consistency (drafter added a qualifier that changes the fact: a governing-law proviso, a lookback from
   the event not the claim; correct), s56-m0003 issue_check (two-document issue findable from one; correct),
   s59-m0003 ledger_schema (all issues in one document; correct), s60-m0002 issue_check (false: the verifier used the
@@ -66,7 +64,8 @@ agent. Full definition of done: PROMPT.md.
   15,704 (MISS, needs 20,000), checklist median 10 (soft miss, needs 20).
 
 ## Next
-1. Batch done: check labels for 51-53 landed on main (`git log`); if 51 errors again (not sleep), look at the NRP call.
+1. Read the 4 rejections of the lab mate's seeds 501-503, 507 (gates.json on main); label his 20 tasks with
+   `ltg label` when no other heavy job runs (after the LAB regrade).
 2. Read `runs/lab_sample/regrade2.out` and `python3 runs/lab_sample/check.py` until all 30 LAB rows are clean.
 3. M3 our side, after the LAB 30: convert 20+ v2 tasks (dev/test first) with `scripts/to_lab_format.py`, add them as
    `ours_v2` rows, score them the same way, in chunks of about 6 tasks per 5-hour window (no batch running); then
@@ -98,6 +97,7 @@ agent. Full definition of done: PROMPT.md.
   rewritten 2026-11-17 16:35 for `ltg batch`, and 18:26 with a "For Aarush: start here" block, no NRP key, and only
   two comments (started; ended or failed) (seeds 500-507, `configs/pilot_generate_v2.toml`, `runs/lm_s{seed}_v2`,
   `--no-label`, `--branch lm/v2-s500-507`); every command test-run on the fake backend in a scratch clone first.
-- On: v2 batch seeds 500-507, started 2026-11-20 18:01 (his comment on #36). Seed 500: 3 of 3 accepted, PR #45
-  merged 2026-11-20 18:45. Later seeds open a new PR from the same branch (`ltg batch` does that when none is open).
-  Header still says main 119b8dd: no code changed since, so the command is current.
+- Done: v2 batch seeds 500-507, 20 of 24 accepted (his comment on #36, 2026-11-21 02:41 PST). Seed 500 via PR #45;
+  501-507 sat on his branch with no PR because `ltg batch` cached the first PR as open: autopilot opened and merged
+  PR #46, fixed the tool in PR #47, told him on #36. His next work order is not written yet: decide after M3/M4
+  (v2 or v3 config), test-run it in a scratch clone, then rewrite #36's body.
