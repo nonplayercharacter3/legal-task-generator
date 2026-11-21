@@ -1,0 +1,209 @@
+{
+  "matter_id": "s504-m0003",
+  "summary": "Pupeska Animal Diagnostics, Inc. (P1, the client) operates a network of veterinary reference laboratories and partners with independent veterinary clinics. It licenses a cloud laboratory information management system (LIMS) and instrument-interface platform from Rotounde Labware Systems, LLC (P2) under a Software License Agreement with an Effective Date of April 1, 2026, governed by New York law. The folder holds six documents: the main agreement; a side letter of the same date granting onboarding credits; Amendment No. 1, dated September 15, 2026, which adds a reportable-disease regulatory reporting module and restates the indemnities; a non-binding term sheet dated January 20, 2026; a mutual NDA dated December 2, 2025; and an implementation statement of work. The NDA and the statement of work are distractors. Four issues are planted. First, an automatic renewal into 36-month terms with a 15-day opt-out window, which departs from the term sheet. Second, an exclusivity covenant much broader than the term sheet's LIMS-only, US-only, term-only deal. Third, a cap carve-out keyed to 'Section 11.1', which Amendment No. 1 renumbers so that the client's broad indemnity becomes uncapped. Fourth, a side-letter definition of 'Connected Instrument' that the precedence clause lets control the agreement's overage fee, exposing the client to overage fees on hundreds of partner-clinic devices.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Pupeska Animal Diagnostics, Inc.",
+      "role": "Licensee; veterinary reference laboratory operator; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Rotounde Labware Systems, LLC",
+      "role": "Licensor; provider of veterinary LIMS and analyzer-interface software"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "April 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Software License Agreement Initial Term",
+      "value": "36 months from the Effective Date, ending March 31, 2029",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Annual Subscription Fee",
+      "value": "$684,000 per year",
+      "doc": "D1",
+      "section": "4.1"
+    },
+    {
+      "id": "F4",
+      "key": "Licensed Instrument Count",
+      "value": "120 Connected Instruments",
+      "doc": "D1",
+      "section": "4.4"
+    },
+    {
+      "id": "F5",
+      "key": "Instrument overage fee",
+      "value": "$1,800 per Connected Instrument per contract year above the Licensed Instrument Count",
+      "doc": "D1",
+      "section": "4.4"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "Amendments first, then the Side Letter, then the Software License Agreement",
+      "doc": "D1",
+      "section": "18.3"
+    },
+    {
+      "id": "F7",
+      "key": "Software License Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "18.1"
+    },
+    {
+      "id": "F8",
+      "key": "Liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "13.1"
+    },
+    {
+      "id": "F9",
+      "key": "Term sheet agreed exclusivity scope",
+      "value": "LIMS software only, at Licensed Sites in the United States, during the term only",
+      "doc": "D4",
+      "section": "5"
+    },
+    {
+      "id": "F10",
+      "key": "Term sheet agreed renewal terms",
+      "value": "12-month renewal terms, terminable on 60 days' notice before expiry",
+      "doc": "D4",
+      "section": "3"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "side_letter_onboarding_credits.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "mutual_nda.md",
+      "kind": "mutual NDA",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "implementation_sow.md",
+      "kind": "implementation statement of work",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "D1 Section 2.2 provides that the agreement automatically renews for successive 'Renewal Terms' unless a party gives notice of non-renewal during the 'Non-Renewal Window'. Only when that clause is read with the D1 Section 1 definitions does the problem appear. 'Renewal Term' means 36 months. 'Non-Renewal Window' means the 15-day period ending 120 days before the end of the then-current term. Measured against the Initial Term ending March 31, 2029 (D1 Section 2.1, 36 months from the April 1, 2026 Effective Date), the only opt-out period is November 16 to December 1, 2028. Under D1 Section 4.6, fees escalate during renewal terms. If the client misses that narrow window, it is locked into a further three years at escalated fees. This departs from the term sheet (D4 Section 3), which contemplated 12-month renewals terminable on 60 days' notice. The D1 entire-agreement clause supersedes the term sheet, so the term sheet does not protect the client.",
+      "doc": "D1",
+      "section": "2.2 and 1 (definitions of Renewal Term and Non-Renewal Window)",
+      "detect_terms": [
+        "successive Renewal Terms",
+        "Non-Renewal Window",
+        "15-day period ending 120 days"
+      ],
+      "expected_finding": "The agreement auto-renews for 36-month terms unless notice is given only within a 15-day window (November 16 to December 1, 2028 for the Initial Term ending March 31, 2029), contrary to the term sheet's 12-month renewals on 60 days' notice. The associate should recommend renegotiating to 12-month renewals with a 60-day notice right before expiry and calendaring the window in the meantime.",
+      "contradicts": "F10",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D1 Section 3.5 covers far more than the deal agreed in the term sheet. It bars the client and its Affiliates from licensing, using or developing any third-party laboratory information management, diagnostic imaging, or practice management software at any facility anywhere in the world. The bar runs for the term and for 24 months after it. The term sheet (D4 Section 5) limited exclusivity to LIMS software at Licensed Sites in the United States during the term only. The D1 entire-agreement clause supersedes the term sheet, so the broader covenant binds the client. Under the clause, the client's existing imaging and practice-management vendors and any future non-US labs would put it in breach. The covenant also extends to Affiliates that are not parties to the agreement.",
+      "doc": "D1",
+      "section": "3.5",
+      "detect_terms": [
+        "practice management software",
+        "anywhere in the world",
+        "24 months following"
+      ],
+      "expected_finding": "The D1 Section 3.5 exclusivity goes beyond the agreed deal. It covers imaging and practice-management software, all Affiliate facilities worldwide, and 24 months after the term, whereas the term sheet limited it to LIMS at US Licensed Sites during the term. It should be narrowed to the term sheet scope.",
+      "contradicts": "F9",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "D1 Section 13.2 excludes 'amounts payable under Section 11.1' from the liability cap in Section 13.1. In D1 as signed, Section 11.1 is the Licensor's intellectual property infringement indemnity, so the carve-out favours the client. Amendment No. 1 (D3 Section 2, dated September 15, 2026) amends and restates Section 11. New Section 11.1 becomes the Licensee's indemnity covering claims arising from Licensee Data, diagnostic results reported through the Software (including the new regulatory reporting module), and Licensee's use of the Software. The Licensor's IP indemnity moves to new Section 11.2. D3 leaves Section 13.2 unchanged, and D3 prevails under the D1 Section 18.3 precedence rule. Read together, the client's broad indemnity is now uncapped and the Licensor's IP indemnity is subject to the 12-month-fees cap. Neither document alone shows this: D1 alone carves out the Licensor's indemnity, and D3 alone appears to add a capped Licensee indemnity.",
+      "doc": "D1",
+      "section": "13.2",
+      "detect_terms": [
+        "amounts payable under Section 11.1"
+      ],
+      "expected_finding": "Because Amendment No. 1 renumbers the indemnities while D1 Section 13.2's carve-out still references 'Section 11.1', the client's broad data and diagnostic-results indemnity is now excluded from the cap (unlimited exposure) and the Licensor's IP indemnity has become capped. Section 13.2 should be conformed to refer to the Licensor's IP indemnity (new Section 11.2), and the Licensee indemnity should be expressly subject to the cap.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "2 (amended and restated Section 11)",
+      "detect_terms2": [
+        "defend, indemnify and hold harmless Licensor",
+        "diagnostic results reported through the Software"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 Section 1 defines 'Connected Instrument' as an analyzer at a Licensed Site listed in Exhibit A that is interfaced with the Software. D1 Section 4.4 charges $1,800 per year per Connected Instrument in excess of the 120-instrument Licensed Instrument Count. The side letter (D2 Section 2) grants a $250 onboarding credit per Connected Instrument interfaced by December 31, 2026. For that credit, D2 defines 'Connected Instrument' more broadly: any analyzer, workstation or device that transmits data to the Software, including point-of-care devices at Partner Clinics. D2 states that the client expects roughly 340 such partner-clinic devices. On its own, the broader definition looks favourable because it increases the credit. Under D1 Section 18.3, however, the Side Letter prevails over the Agreement in a conflict. The broad definition therefore controls the overage fee in D1 Section 4.4. The client then faces overage fees on hundreds of partner-clinic devices, roughly $612,000 per year for 340 devices, against a one-time credit of about $85,000.",
+      "doc": "D2",
+      "section": "2",
+      "detect_terms": [
+        "including point-of-care devices at Partner Clinics",
+        "transmits data to the Software"
+      ],
+      "expected_finding": "Under the D1 Section 18.3 precedence clause, the side letter's broad definition of 'Connected Instrument' (including Partner Clinic point-of-care devices) overrides D1's Licensed-Site definition and feeds the Section 4.4 overage fee. The client becomes liable for $1,800 per year on each partner-clinic device above 120. The side letter definition should be expressly limited to the onboarding credit, or Section 4.4 should be amended to exclude Partner Clinic devices.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "4.4 and 18.3",
+      "detect_terms2": [
+        "per Connected Instrument in excess of",
+        "the Side Letter shall prevail"
+      ]
+    }
+  ]
+}

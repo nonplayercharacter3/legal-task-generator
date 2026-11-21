@@ -1,0 +1,181 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 1,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 1
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s504-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s504-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s504-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "dev",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "fact_extractor": {
+      "calls": 2,
+      "input_tokens": 85445,
+      "output_tokens": 6700,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 1,
+      "input_tokens": 1363,
+      "output_tokens": 106,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 10,
+      "input_tokens": 389246,
+      "output_tokens": 8185,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 10,
+      "input_tokens": 86000,
+      "output_tokens": 4901,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 6,
+      "input_tokens": 107285,
+      "output_tokens": 28753,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 4,
+      "input_tokens": 173824,
+      "output_tokens": 32164,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 6,
+      "input_tokens": 46665,
+      "output_tokens": 4589,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 1,
+      "input_tokens": 1345,
+      "output_tokens": 136,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 1,
+      "input_tokens": 6849,
+      "output_tokens": 2608,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "commercial laundry services": 1,
+      "water treatment chemicals": 1,
+      "veterinary diagnostics": 1
+    },
+    "agreement_types": {
+      "software license agreement": 2,
+      "asset purchase agreement": 1
+    },
+    "issue_types": {
+      "missing_assignment_restriction": 2,
+      "change_of_control_consent": 2,
+      "governing_law_mismatch": 2,
+      "uncapped_indemnity": 2,
+      "expired_notice_window": 1,
+      "liability_cap_carveout": 1,
+      "survival_gap": 1,
+      "auto_renewal": 1,
+      "defined_term_inconsistency": 1,
+      "exclusivity_scope": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}
