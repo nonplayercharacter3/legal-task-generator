@@ -1,0 +1,174 @@
+{
+  "matter_id": "s500-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 6,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 7.2: \"Licensee may assign or otherwise transfer this Agreement and the Retained License, in whole or in part, without the consent of Assignee, to any Affiliate or to any successor to all or any part of its business, whether by merger, consolidation, sale of assets or equity, operation of law or otherwise. Licensee shall give Assignee written notice of any such assignment within thirty days after it takes effect.\"",
+            "reason": "Brouviv is the Assignee and licensor. Droureil, as Licensee, holds a perpetual, irrevocable, royalty-free license and keeps a copy of the source code under Section 4.5. Section 7.2 lets Droureil transfer that license, in whole or in part, without Brouviv's consent. The transferee can be any successor to 'any part' of Droureil's business, and that includes a rival school bus contractor. Brouviv only gets after-the-fact notice. The protections that exist do not close this gap. The field-of-use limit in Section 4.1 and the requirement that the transferee be bound by Articles 4 and 5 still put Brouviv's core routing source code in a competitor's hands. Partial assignments could also multiply the number of licensees. The APA non-compete (Section 6.6) binds only Droureil and its Affiliates, not third-party successors. The APA anti-assignment clause (Section 11.5) covers only the APA itself. APA Section 11.12 makes the IP Assignment Agreement control as to the Transferred IP. Nothing else in the folder limits the transfer. The agreement is still unsigned (its date is blank) and the deal has not closed (Outside Date December 15, 2026), so Brouviv can still negotiate a consent requirement or a bar on transfers to competitors."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "IP Assignment Agreement §8.1: \"This Agreement, and any claim, controversy or dispute arising out of or relating to this Agreement or the Transferred IP, shall be governed by and construed in accordance with the laws of the State of Delaware ... Each Party irrevocably submits to the exclusive jurisdiction of the Delaware Court of Chancery ...\" APA §11.12: \"If there is any conflict between this Agreement and any Ancillary Agreement, this Agreement shall control, except that the IP Assignment Agreement shall control with respect to the Transferred IP.\"",
+            "reason": "The problem is present and still actionable for Brouviv.\n\n- **The clash.** APA §§11.8 and 11.9 send all APA claims to New York County courts under New York law. IP Assignment §8.1 sends any dispute \"relating to ... the Transferred IP\" to the Delaware Court of Chancery under Delaware law. APA §11.12 resolves conflicts in favor of the IP Assignment Agreement \"with respect to the Transferred IP.\"\n\n- **Effect on Brouviv's claims.** Brouviv's claims against Seller under APA §4.8 (the IP representation) and the §9.2 indemnity are IP-related. They can be pulled into Delaware under Delaware law, while every other claim on the same transaction stays in New York.\n\n- **Burden falls on Brouviv.** Seller gives the IP representation and the indemnity, so Brouviv is the party that would have to bring these claims. It faces split forums, inconsistent law and possibly conflicting rulings.\n\n- **No cure in the documents.** The letter of intent (§8.3) contemplated New York law for all definitive agreements. The bill of sale uses New York law and forum. IP Assignment §6.2 says the agreement does not limit or expand the APA's indemnities, but it does not resolve the forum or law conflict.\n\n- **Still open to fix.** The IP Assignment Agreement is an undated, unsigned closing deliverable. The Outside Date is December 15, 2026, and the latest folder date is October 9, 2026. Brouviv can still negotiate the form and conform §8.1 or §11.12 before closing.",
+            "alone": {
+              "ip_assignment_agreement.md": {
+                "findable": false,
+                "evidence": "This Agreement, and any claim, controversy or dispute arising out of or relating to this Agreement or the Transferred IP, shall be governed by and construed in accordance with the laws of the State of Delaware ... Each Party irrevocably submits to the exclusive jurisdiction of the Delaware Court of Chancery",
+                "reason": "Read alone, this document shows that Section 8.1 picks Delaware law and exclusive Delaware courts. The clause is broad: it reaches any dispute 'relating to ... the Transferred IP', not just disputes under this Agreement. A careful associate might find Delaware odd for two New York parties and note the breadth. But nothing here shows that the choice conflicts with anything or hurts Brouviv. The document does not show that the APA sends all other claims to New York courts under New York law (APA 11.8/11.9). It does not show that APA 11.12 makes this Agreement control on Transferred IP matters, which is what pulls APA IP representation and indemnity claims into Delaware. It also does not show that the LOI contemplated New York law. Section 6.2 points the other way: it says this Agreement does not limit or expand the APA's representations, warranties or indemnities, which suggests those claims stay with the APA. The split forums, inconsistent law and risk of conflicting rulings only appear when this clause is read with the APA's forum and precedence provisions."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "11.12 Order of Precedence. If there is any conflict between this Agreement and any Ancillary Agreement, this Agreement shall control, except that the IP Assignment Agreement shall control with respect to the Transferred IP.",
+                "reason": "The APA by itself shows New York law and exclusive New York County courts for all claims (Sections 11.8 and 11.9). It also shows a precedence carve-out that lets the IP Assignment Agreement control as to the Transferred IP. It does not show what the IP Assignment Agreement says about governing law or forum. The Delaware law and Court of Chancery clause appears only in that other agreement, which the APA references (Exhibit B) but does not reproduce. Without it, an associate could flag the carve-out as a point to check, but could not see an actual conflict or the split-forum harm to Brouviv. The carve-out is harmless if the IP Assignment Agreement also selects New York. The letter of intent is not part of this document either."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Side letter Section 2.2: \"Section 4.9 is hereby deleted in its entirety, and the following new Section 4.9A is inserted in Article IV of the Agreement\". APA Section 9.5(b): \"The basket in Section 9.4 and the cap in Section 9.5(a) do not apply to Losses arising from any inaccuracy in or breach of the representations and warranties in Sections 4.1, 4.2 and 4.9 (the \"Fundamental Representations\") or from fraud.\"",
+            "reason": "Brouviv is the Buyer and the indemnified party, so it is the one hurt here. Seller gives the title representation and the indemnity under Section 9.2(a). Section 9.5(b) defines Fundamental Representations by section number, naming Section 4.9. The side letter deletes Section 4.9 and moves the vehicle title representation into a new Section 4.9A, which 9.5(b) does not name. Nothing in the side letter fixes this. Section 4.2 of the letter only redirects references to \"this Agreement\", and Section 4.1 leaves 9.5(b) unchanged. As a result, Losses from a title defect in any bus would now fall under the $192,500 basket and the $3,850,000 cap, instead of being capped only at the Purchase Price. The same change likely cuts the survival period in Section 9.1 from the statute of limitations plus sixty days to eighteen months. So a change that looks favourable to Brouviv actually weakens its title protection on all 212 buses. The problem is still actionable. The latest date in the folder is October 9, 2026, the side letter is shown unsigned, and the Closing has not occurred (Outside Date December 15, 2026). The parties can fix it by amending 9.5(b) to cover Section 4.9A or by adding a clause that deems references to Section 4.9 to refer to Section 4.9A.",
+            "alone": {
+              "side_letter.md": {
+                "findable": false,
+                "evidence": "Section 4.9 is hereby deleted in its entirety, and the following new Section 4.9A is inserted in Article IV of the Agreement:",
+                "reason": "On its own, the side letter shows that the title representation is moved from Section 4.9 into a new Section 4.9A. It also shows that the letter does not say references to Section 4.9 elsewhere in the Agreement now point to 4.9A. A careful associate might wonder whether this breaks cross-references. But the letter does not show that the 10% indemnification cap exists or its $3,850,000 amount. It does not show that Section 9.5(b) carves Fundamental Representations out of the cap, or that the Fundamental Representations definition names Section 4.9 by number. Without the APA, nothing here shows that title claims lose uncapped status or that Brouviv is harmed. Read alone, the letter looks favourable to Brouviv, since it extends title coverage to the Substitute Vehicles."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "The basket in Section 9.4 and the cap in Section 9.5(a) do not apply to Losses arising from any inaccuracy in or breach of the representations and warranties in Sections 4.1, 4.2 and 4.9 (the \"Fundamental Representations\") or from fraud.",
+                "reason": "The APA by itself treats the vehicle title representation (Section 4.9) as a Fundamental Representation, outside the $3,850,000 cap and the basket. Read alone, that arrangement protects Buyer. The problem only appears because the side letter deletes Section 4.9 and moves the title representation into a new Section 4.9A, which the Section 9.5(b) cross-reference does not name. Without the side letter, an associate could not see that the title rep has moved or that title claims would fall back under the cap."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Disclosure Schedule 4.7(a), Item 3 (Lakemont) quotes Section 14: \"The Contractor shall not assign, transfer, convey, sublet or otherwise dispose of this Contract ... including by sale of substantially all assets, merger or change in control, without the prior written approval of the Board of Education. Any such assignment or transfer made without that approval shall be void, and the District may terminate this Contract upon written notice to the Contractor.\" APA Section 7.2(d) reads: \"Seller has obtained, and delivered to Buyer, the written consents of the Ashfield Central School District and the Pell Hollow City School District to the assignment of their respective Pupil Transportation Contracts to Buyer.\"",
+            "reason": "The problem is present and hurts Brouviv. The Lakemont contract is the largest being acquired (58 routes, about $9.4M a year), and its Section 14 expressly makes an assignment by asset sale void without Board of Education approval, with a termination right for the District. APA Section 6.5 defines the Required Consents by reference to Section 7.2(d), and 7.2(d) names only Ashfield and Pell Hollow. As a result, Seller has no obligation to seek Lakemont's approval, and Buyer has no condition letting it refuse to close without that approval. The Section 3.2(f) and 7.2(e) deliverables reach only those two Required Consents. Because Schedule 4.3 discloses that Item 3 is subject to its assignment provisions, the Article IV reps are qualified, so Brouviv would likely have no indemnity claim if Lakemont voids the assignment or terminates. The LOI's broader consent condition was non-binding, and the October 9 side letter does not address the point. The closing has not occurred (the latest folder date is October 9, 2026, and the Outside Date is December 15, 2026), so Brouviv can still negotiate an amendment that adds Lakemont to Section 7.2(d) and Section 6.5.",
+            "alone": {
+              "disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "\"The Contractor shall not assign, transfer, convey, sublet or otherwise dispose of this Contract ... including by sale of substantially all assets, merger or change in control, without the prior written approval of the Board of Education. Any such assignment or transfer made without that approval shall be void, and the District may terminate this Contract upon written notice to the Contractor.\"",
+                "reason": "This schedule shows that the Lakemont contract is the largest one (58 routes, about $9.4M) and that its Section 14 requires Board of Education approval for an asset sale. It also shows that a transfer without approval is void and lets the District terminate. Schedule 4.3 flags Items 1–3 as subject to their assignment provisions. So the schedule makes clear that Lakemont's consent is needed. What it does not show is the harm: that APA Section 7.2(d) and the Section 6.5 consent covenant cover only Ashfield and Pell Hollow and leave out Lakemont. That gap is only visible in the APA. Read alone, this is ordinary disclosure of a consent requirement, and an associate could not tell that Buyer lacks a closing condition or covenant protecting it."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 7.2(d): \"Seller has obtained, and delivered to Buyer, the written consents of the Ashfield Central School District and the Pell Hollow City School District to the assignment of their respective Pupil Transportation Contracts to Buyer;\"",
+                "reason": "The APA alone shows that the consent covenant (Section 6.5) and the closing condition (Section 7.2(d)) cover only two named districts, and that other Pupil Transportation Contracts listed on Schedule 4.7(a) will pass to Buyer without any consent condition. It does not name the Lakemont Union Free School District or its contract. It does not show that any contract left off 7.2(d) has an anti-assignment or change-of-control clause triggered by an asset sale. Section 4.3 points to a Schedule 4.3 for required consents, but that schedule is not in this document. Nothing here shows that Lakemont is the largest contract (about $9.4 million). So the gap, and the harm to Buyer from closing without Lakemont's Board approval, only appear when the Disclosure Schedule is read alongside this agreement."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Side letter §3.1–3.3: \"Seller delivered the Fleet Condition Report to Buyer on August 28, 2026.\" … \"Buyer delivered a Fleet Defect Notice to Seller on October 2, 2026.\" … \"Buyer's position is that the Purchase Price is to be reduced at the Closing by $612,000 … The Parties shall resolve the Fleet Defect Notice, including the amount of any reduction of the Purchase Price and any dispute over Buyer's estimate, in accordance with Section 6.8 of the Agreement.\" APA §6.8(d): \"Buyer's failure to deliver a Fleet Defect Notice within the period stated in Section 6.8(b) after Seller delivers the Fleet Condition Report constitutes an irrevocable waiver of Buyer's right to any reduction of the Purchase Price under this Section 6.8.\"",
+            "reason": "Under APA §6.8(b), Buyer had 30 days from Seller's August 28 delivery of the Fleet Condition Report to send a Fleet Defect Notice, so the window closed on September 27, 2026. Brouviv's notice of October 2 was five days late. APA §6.8(c) allows a price reduction only for a \"timely\" notice, and §6.8(d) makes a late notice an irrevocable waiver. The side letter does not waive or extend the deadline. It records the $612,000 reduction only as \"Buyer's position\" and sends resolution back to §6.8, which brings the waiver language with it. That lets Droureil argue that Brouviv's $612,000 claim is forfeited. The claim is still actionable for Brouviv. The side letter is unsigned and still being negotiated. Droureil has not conceded the reduction. Closing has not occurred, and the Outside Date is December 15, 2026. Brouviv can still insist that the letter expressly waive the §6.8(b) deadline, treat the October 2 notice as timely, or fix the reduction outright before it countersigns.",
+            "alone": {
+              "side_letter.md": {
+                "findable": false,
+                "evidence": "\"Seller delivered the Fleet Condition Report to Buyer on August 28, 2026.\" / \"Buyer delivered a Fleet Defect Notice to Seller on October 2, 2026.\" / \"The Parties shall resolve the Fleet Defect Notice ... in accordance with Section 6.8 of the Agreement.\"",
+                "reason": "The side letter shows the two dates: the Fleet Condition Report was delivered on August 28, 2026 and Brouviv's Fleet Defect Notice on October 2, 2026, 35 days later. It also routes the $612,000 claim through Section 6.8. But the side letter never states that Section 6.8 has a 30-day notice period or that missing it is an irrevocable waiver. Nothing in this document sets a deadline for the notice or says a late notice has any consequence. Read alone, it presents the claim as live, to be resolved under 6.8, and gives no sign it was late. The deadline and the waiver come only from APA Section 6.8, which we were not given. So an associate reading only this letter could not tell that the notice was late or that Brouviv's $612,000 reduction is at risk."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Buyer's failure to deliver a Fleet Defect Notice within the period stated in Section 6.8(b) after Seller delivers the Fleet Condition Report constitutes an irrevocable waiver of Buyer's right to any reduction of the Purchase Price under this Section 6.8.",
+                "reason": "The APA by itself sets out the 30-day window in Section 6.8(b) and the irrevocable-waiver consequence in Section 6.8(d). A reader would see that a late notice forfeits the price reduction. It does not say when Seller delivered the Fleet Condition Report (August 28, 2026). It also does not say when Brouviv sent its Fleet Defect Notice (October 2, 2026) or how much was claimed ($612,000 for 11 buses). Those facts are only in the side letter. Without them, the APA shows a deadline-and-waiver risk in the abstract, not that Brouviv actually missed the window and lost its claim."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

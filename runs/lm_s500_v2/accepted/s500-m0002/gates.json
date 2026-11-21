@@ -1,0 +1,162 @@
+{
+  "matter_id": "s500-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 5,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Bill of Sale §4.2: \"Any claim by the Company, Buyer or any other Buyer Indemnitee relating to title to, or any Lien on, any Conveyed Brand Asset, or to the validity or effectiveness of the conveyance under Section 2.1, shall be brought solely as a claim under Section 9.2(a) of the Purchase Agreement...\" SPA §9.5(a): \"The aggregate amount of all Losses for which Seller shall be liable in respect of claims under Section 9.2(a) shall not exceed $4,650,000 (10% of the Purchase Price) (the \"General Cap\").\" SPA §11.10: \"If there is any conflict between this Agreement and any Ancillary Agreement, the Ancillary Agreement shall control with respect to its subject matter.\"",
+            "reason": "Title to the Conveyed Brand Assets is warranted in SPA §3.9, which is a Fundamental Representation. Breaches of it are indemnified under §9.2(b). That bucket has no Deductible and no General Cap; it is limited only by the Purchase Price and survives for six years. Bill of Sale §4.2 instead forces every title claim on the brand assets into §9.2(a). Because SPA §11.10 makes the Ancillary Agreement control on its own subject matter, the Bill of Sale governs here. The result is that Buyer, the firm's client and the indemnified party, would face the $465,000 Deductible and the $4,650,000 General Cap on these claims. Arguably it would also face the shorter 18-month survival period that applies to §9.2(a) claims. All of this would apply to the LARKSPUR marks, the reservation domain and the central FF&E, which are core to the Hotels. Nothing in the folder cures this or shows it was intended. The Bill of Sale is still an undated, unsigned form, with its Effective Date left as [●], so Buyer can still insist that §4.2 be revised before it is delivered. The issue is therefore present and actionable.",
+            "alone": {
+              "bill_of_sale_brand_assets.md": {
+                "findable": false,
+                "evidence": "Any claim by the Company, Buyer or any other Buyer Indemnitee relating to title to, or any Lien on, any Conveyed Brand Asset, or to the validity or effectiveness of the conveyance under Section 2.1, shall be brought solely as a claim under Section 9.2(a) of the Purchase Agreement, by notice given in accordance with Section 9.4 of the Purchase Agreement.",
+                "reason": "Section 4.2 of the Bill of Sale does route all title claims on the brand assets exclusively through SPA Section 9.2(a). But this document never says what Section 9.2(a) covers. It does not show that title is a Fundamental Representation (Section 3.9) indemnified separately under Section 9.2(b). It does not show that the General Cap ($4,650,000) and the deductible in Section 9.5(a) apply only to Section 9.2(a) claims. It also does not show that Section 11.10 makes an Ancillary Agreement control over the SPA. Read alone, Section 4.2 looks like an ordinary channeling clause, and Section 4.3 even preserves the SPA covenants. The harm to the client is moving title claims out of the uncapped fundamental-rep bucket into the capped general bucket. That can only be seen by reading the SPA's indemnity, cap and precedence provisions, which are not in this document."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.10: \"If there is any conflict between this Agreement and any Ancillary Agreement, the Ancillary Agreement shall control with respect to its subject matter.\"",
+                "reason": "Read alone, the SPA puts Section 3.9 (Title to Assets; Sufficiency) among the Fundamental Representations. It indemnifies Fundamental-rep breaches under Section 9.2(b), and Section 9.5(a) applies the Deductible and General Cap only to claims under Section 9.2(a). So in the SPA, title claims to the Conveyed Brand Assets are uncapped (limited only by the Purchase Price) and survive six years, which favors Buyer. Section 11.10 does let an Ancillary Agreement override the SPA, but on its face that is ordinary boilerplate. The problem only arises from the Bill of Sale's Section 4, which routes brand-asset title claims 'solely as a claim under Section 9.2(a)'. That clause is not in this document. Without it, an associate cannot see that Buyer's title claims would be moved under the $465,000 deductible and $4,650,000 cap."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 7.2: \"Recipient shall indemnify, defend and hold harmless Provider ... from and against all Losses arising out of or relating to the Services or the use of the Services by Recipient, the Company or the Hotels, including any Losses arising from Provider's negligence, except to the extent such Losses arise from Provider's gross negligence or willful misconduct.\" Section 8.2: \"The aggregate liability of each party arising out of or relating to this Agreement, other than obligations under Section 7.2, shall not exceed the total Service Fees paid by Recipient under this Agreement.\"",
+            "reason": "Praivein is the Recipient, so it is the party giving the Section 7.2 indemnity. That indemnity expressly covers Stailan's own ordinary negligence in running the PMS, reservations, revenue-management and loyalty systems and handling guest and payment-card data. Section 8.2 carves Section 7.2 out of the cap, so Praivein's exposure is unlimited. Stailan's own indemnity under Section 7.1 reaches only gross negligence or willful misconduct. Its other liability is capped at fees paid: about $114,000 over the 90-day term, and less if the TSA is terminated early. No other document fixes this imbalance. SPA Section 11.10 says the Ancillary Agreement controls its own subject matter, and SPA Section 9.6 does not limit claims under the TSA. The TSA appears unsigned (the Effective Date is blank and the signature blocks are empty), so it can still be negotiated. Even if it has been signed, the exposure continues because Article 7 survives under Section 2.2, and nothing shows the client has accepted it. The problem is real and the client can still act on it."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SPA Section 9.1(b): \"The Operational Representations shall survive the Closing until the last day of the Transition Period.\" TSA Section 2.1: \"Provider shall provide the Services during the period beginning on the Closing Date and ending ninety (90) days after the Closing Date (the \"Transition Period\").\"",
+            "reason": "The problem is present and still actionable for Buyer.\n\n- **How the gap arises.** The SPA defines \"Transition Period\" only by reference to the TSA. Read with TSA Section 2.1, the Operational Representations survive just 90 days after Closing. Those are Sections 3.11 (Permits, including liquor licenses), 3.12 (Environmental) and 3.13 (Condition of Real Property). Under SPA Section 9.1(e), no claim may be made after the survival period expires.\n- **Who bears it.** Seller gives the indemnity under Section 9.2(a), so the short window hurts only Buyer (the client). Buyer must discover and notice code, environmental and permit defects at historic hotels within one quarter.\n- **Change from the prior draft.** In Draft v2 (Feb. 20, 2026), these reps fell into the general 18-month survival bucket. The final agreement carved them out into this shortened period.\n- **Nothing cures it.** No other document extends the period. TSA Section 10.1 also lets Recipient terminate services early, which could invite argument that the period ends even sooner.\n- **Still open.** The folder runs only to the April 2026 payoff letter (anticipated payoff April 24, expiry May 29, 2026). Nothing shows Closing has occurred or that the 90-day window has run. Buyer can still raise the point, for example by renegotiating the survival period before or at Closing, or by tracking the deadline closely.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 9.1(b): \"The Operational Representations shall survive the Closing until the last day of the Transition Period.\" Section 1.1: \"'Transition Period' has the meaning given in the Transition Services Agreement.\"",
+                "reason": "The SPA alone shows that the survival of the permits, environmental and property-condition reps (Sections 3.11–3.13) is tied to a period defined only in the TSA. A careful associate might find that linkage unusual and flag it for follow-up. But the SPA gives no length for the Transition Period. The harm depends on the TSA setting it at only 90 days after Closing, which is far shorter than the 18-month general survival and too short to find these hotel-specific defects. From the SPA alone, the period could be long or short, so the associate cannot yet see that the clause hurts Buyer."
+              },
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "Provider shall provide the Services during the period beginning on the Closing Date and ending ninety (90) days after the Closing Date (the \"**Transition Period**\").",
+                "reason": "The TSA alone defines a 90-day Transition Period. For a services agreement that length is unremarkable, and it helps rather than hurts Recipient, given the 15-day convenience termination right. Nothing in the TSA ties SPA representation survival or indemnity claim periods to the Transition Period. It does not mention Operational Representations, Sections 3.11–3.13, or SPA Section 9.1(b). The only cross-references are generic: Section 1.1 imports SPA definitions, and Recital C notes that the SPA contemplates this Agreement. Neither signals that the SPA borrows the TSA's term to limit survival. The harm, that the environmental, permit and real-property reps expire 90 days after Closing, only appears once the SPA's survival clause and its definition of 'Transition Period' are read. A careful associate reading only the TSA would not see the issue."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "TSA Section 1.1: \"\"Hotels\" means the three hotels identified in Exhibit A.\" Exhibit A lists only Charleston, Asheville and Beaufort. Disclosure Schedule Section 1.1(a): \"The following hotels constitute the \"Hotels\" for all purposes of the Agreement: ... 3 | The Larkspur Savannah | 221 East Jones Street, Savannah, Georgia 31401 | 54\". TSA Section 3.1: \"Provider shall provide the following services for the Hotels\".",
+            "reason": "Under the SPA and Disclosure Schedule 1.1(a) there are four Hotels, including The Larkspur Savannah. The Cobblestone payoff letter also lists four hotels, including Savannah. The TSA, however, defines \"Hotels\" as the three in Exhibit A and leaves Savannah out. Because Section 3.1 ties all PMS, CRS, revenue-management and loyalty services to \"the Hotels,\" Seller has no obligation to provide those services to Savannah. Section 3.6 confirms Seller has no duty beyond Article 3 and Exhibit B.\n\nThe SPA does not cure the gap:\n- SPA Section 11.10 says the Ancillary Agreement controls on its own subject matter.\n- TSA Section 1.1 incorporates SPA definitions only for terms the TSA does not itself define, and it defines \"Hotels\" itself.\n\nDisclosure Schedule 3.7 item 8 states that the intercompany services arrangement \"terminates at Closing.\" Savannah would therefore lose its reservation and property-management systems at Closing, while Buyer still pays the full $38,000 monthly fee. This hurts Buyer/Recipient, our client.\n\nThe issue remains actionable. The TSA is still an unsigned draft (Effective Date \"[●]\"), and nothing in the folder shows that Closing occurred or that the client accepted a three-hotel scope. Exhibit A can still be corrected to add Savannah, with a corresponding look at the fee.",
+            "alone": {
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"**Hotels**\" means the three hotels identified in Exhibit A.",
+                "reason": "Read alone, the TSA is internally consistent. It defines 'Hotels' as three properties (Charleston, Asheville, Beaufort), lists those three in Exhibit A, and Section 3.1 provides services 'for the Hotels.' Nothing in the TSA mentions The Larkspur Savannah or says the Company owns more than three hotels, so a reader cannot tell that a property has been left out. Recital B and Section 1.1 send the reader to the Purchase Agreement for context, but the TSA does not set out the SPA's definition of 'Hotels.' Three facts come only from the SPA and its Disclosure Schedule: that Section 1.1(a) of the Disclosure Schedule lists a fourth hotel, that SPA Section 11.10 makes the TSA control, and that Savannah would therefore lose PMS and reservations at Closing. Without them, the gap and its harm to the client cannot be seen."
+              },
+              "disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "The following hotels constitute the \"Hotels\" for all purposes of the Agreement: ... 3 | The Larkspur Savannah ... After Closing, the services will be provided under the Transition Services Agreement.",
+                "reason": "The disclosure schedule lists four Hotels, Savannah among them. It also states that the Seller's centralized PMS, central reservations, revenue-management and loyalty services end at Closing and will continue under the TSA. Read alone, that looks complete: Savannah is a Hotel, and the services carry over. The problem only appears in the TSA itself. Its definition of 'Hotels' covers three hotels, and Exhibit A leaves out Savannah. TSA Section 3.1 limits the services to those Hotels, and SPA Section 11.10 says the TSA controls. None of those terms is in this document, so an associate reading only the schedule could not see that Savannah loses its services."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 12.4: \"Recipient shall not assign this Agreement or any of its rights or obligations under it without the prior written consent of Provider, which shall not be unreasonably withheld. This Agreement is binding on and inures to the benefit of the parties and their respective successors and assigns.\"",
+            "reason": "Section 12.4 limits assignment only by Recipient (Praivein, our client). Provider (Stailan) faces no restriction. No other TSA clause stops Stailan from assigning or delegating, and SPA Section 11.6 covers only the SPA. Under Delaware default rules Stailan could therefore transfer the TSA, or subcontract the Services, to any third party, including a competing hotel operator. Under Section 5.2 that party would receive guest data, rate strategy and booking information, and it would run the PMS, CRS and revenue-management systems the Hotels depend on during the transition. Article 6 and Section 5.2 do limit use of the data, but they do not stop it from passing to a competitor, and Praivein gets no say over who performs the Services. The TSA is still an unsigned draft: the Effective Date is blank and the latest date in the folder is the April 2026 payoff letter. A mutual anti-assignment and anti-delegation clause can still be negotiated, so the problem is real and actionable for Praivein."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.083,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

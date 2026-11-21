@@ -1,0 +1,232 @@
+{
+  "matter_id": "s500-m0002",
+  "summary": "Praivein Hospitality Partners, LLC (client, Buyer) is buying all outstanding stock of Larkspur Row Hotels, Inc., a four-property boutique hotel company in the Southeast, from Stailan Hotel Group, Inc. (Seller) for $46,500,000 under a Delaware-law stock purchase agreement. The folder holds six documents: the SPA, Seller's disclosure schedule, a transition services agreement, a bill of sale, a prior SPA draft and a lender payoff letter. Under the TSA, Seller provides property-management, reservations, revenue-management and loyalty services after Closing. Under the bill of sale, Seller conveys the 'Larkspur' brand assets it holds at parent level to the Company. Five issues are planted, three of them across two documents. First, the bill of sale channels brand-asset title claims into the capped general-rep indemnity, and the SPA's precedence clause lets the bill of sale control. Second, the TSA's 90-day Transition Period becomes the survival period for the SPA's operational reps. Third, 'Hotels' means four properties in the SPA and disclosure schedule but only three in the TSA, which leaves the Savannah hotel without transition services. Fourth, the TSA carves the Recipient's broad indemnity out of the TSA cap. Fifth, the TSA restricts assignment by the Recipient only.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Praivein Hospitality Partners, LLC",
+      "role": "Buyer under the SPA; Recipient under the TSA (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Stailan Hotel Group, Inc.",
+      "role": "Seller under the SPA; Provider under the TSA; transferor under the bill of sale"
+    },
+    {
+      "id": "P3",
+      "name": "Larkspur Row Hotels, Inc.",
+      "role": "Company whose shares are being sold; owner-operator of the Hotels; transferee under the bill of sale"
+    },
+    {
+      "id": "P4",
+      "name": "Cobblestone Federal Savings Bank",
+      "role": "Existing mortgage lender issuing the payoff letter"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Purchase Price",
+      "value": "$46,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "SPA General Cap",
+      "value": "$4,650,000 (10% of the Purchase Price)",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F3",
+      "key": "SPA signing date",
+      "value": "March 16, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F4",
+      "key": "SPA Fundamental Representations survival period",
+      "value": "six (6) years after the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1(a)"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence (SPA vs. Ancillary Agreements)",
+      "value": "Ancillary Agreement (TSA, Bill of Sale) controls over SPA with respect to its subject matter",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F6",
+      "key": "Hotels comprising the Company's portfolio",
+      "value": "The Larkspur Charleston, The Larkspur Asheville, The Larkspur Savannah, The Larkspur Beaufort",
+      "doc": "D2",
+      "section": "Section 1.1(a)"
+    },
+    {
+      "id": "F7",
+      "key": "TSA Transition Period",
+      "value": "Closing Date through ninety (90) days after the Closing Date",
+      "doc": "D3",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F8",
+      "key": "TSA monthly Service Fee",
+      "value": "$38,000 per month",
+      "doc": "D3",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F9",
+      "key": "SPA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F10",
+      "key": "Shares being sold",
+      "value": "10,000 shares of common stock, 100% of the Company's outstanding equity",
+      "doc": "D1",
+      "section": "Recitals"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "bill_of_sale_brand_assets.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "spa_prior_draft_v2.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D6",
+      "filename": "cobblestone_payoff_letter.md",
+      "kind": "payoff letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 9.2(b) indemnifies Buyer for breaches of Fundamental Representations, which include Section 3.9 (Title to Assets; Sufficiency). Those claims fall outside the General Cap and deductible in Section 9.5(a), which reach only 'claims under Section 9.2(a)'. The Bill of Sale (D4) Section 4 provides that any claim about title to the Conveyed Brand Assets (the Larkspur trademarks, reservation domain and central FF&E inventory) shall be brought 'solely as a claim under Section 9.2(a)' of the Purchase Agreement. On its face that reads as an ordinary channeling clause. SPA Section 11.10, however, provides that an Ancillary Agreement controls over the SPA with respect to its subject matter, so the Bill of Sale governs. Read together, title defects in the brand assets move out of the uncapped Fundamental bucket and into the capped general-rep bucket. That subjects Buyer's recovery to the $4,650,000 General Cap and the deductible, removing the fundamental-rep carve-out for title to the assets that are essential to the hotels.",
+      "doc": "D4",
+      "section": "Section 4",
+      "detect_terms": [
+        "solely as a claim under Section 9.2(a)"
+      ],
+      "expected_finding": "Because SPA Section 11.10 makes the Bill of Sale control on its subject matter, Bill of Sale Section 4 reroutes title claims on the Conveyed Brand Assets from the uncapped Fundamental Representation indemnity (SPA 9.2(b), Section 3.9) into Section 9.2(a), subjecting them to the $4,650,000 General Cap in Section 9.5(a); the Bill of Sale should instead route such claims under Section 9.2(b) or SPA 11.10 should make the SPA control on indemnification.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Sections 9.5(a) and 11.10",
+      "detect_terms2": [
+        "shall control with respect to its subject matter",
+        "claims under Section 9.2(a)"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Under TSA Section 7.2, the Recipient (Praivein) indemnifies the Provider (Stailan) for all Losses arising out of or relating to the Services or Recipient's use of them, 'including any Losses arising from Provider's negligence'. Provider's own indemnity in Section 7.1 is limited to gross negligence and willful misconduct. The TSA limitation of liability in Section 8.2 caps each party's liability at the total Service Fees paid, 'other than obligations under Section 7.2'. Read together, the client's indemnity, which covers Seller's own ordinary negligence in running reservations, guest data and property-management systems for the hotels, has no cap. Seller's exposure under the same agreement is limited to roughly three months of $38,000 fees.",
+      "doc": "D3",
+      "section": "Sections 7.2 and 8.2",
+      "detect_terms": [
+        "including any Losses arising from Provider's negligence",
+        "other than obligations under Section 7.2"
+      ],
+      "expected_finding": "TSA Section 8.2 excludes Recipient's Section 7.2 indemnity from the fee-based cap, so Praivein faces unlimited liability for Losses relating to the Services, including those caused by Stailan's own negligence, and the indemnity should be limited to Recipient's own negligence or misconduct and brought within the Section 8.2 cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1(b) provides that the Operational Representations survive 'until the last day of the Transition Period'. These are Section 3.11 (Hotel Licenses and Permits), Section 3.12 (Environmental Matters) and Section 3.13 (Condition of Real Property). SPA Section 1.1 defines 'Transition Period' by reference to the TSA. On its own the SPA gives no length. TSA Section 2.1 sets the Transition Period at the Closing Date through ninety (90) days after the Closing Date, which is unremarkable for a services agreement. Read together, Buyer must discover and give notice of environmental contamination, building-code defects, liquor-license or permit violations at four historic hotels within 90 days after Closing. Such problems typically surface only after a full operating season or a regulatory inspection. Indemnity claims for the most hotel-specific risks become practically unavailable.",
+      "doc": "D1",
+      "section": "Section 9.1(b)",
+      "detect_terms": [
+        "until the last day of the Transition Period"
+      ],
+      "expected_finding": "Because the SPA ties survival of the Operational Representations (Sections 3.11, 3.12, 3.13) to the TSA Transition Period, which TSA Section 2.1 fixes at 90 days after Closing, Buyer has only 90 days to bring claims for licensing, environmental and property-condition breaches, and Section 9.1(b) should instead provide a fixed survival period (e.g., 18 to 24 months or longer for environmental) independent of the TSA.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Section 2.1",
+      "detect_terms2": [
+        "ninety (90) days after the Closing Date"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "The SPA defines 'Hotels' as the hotels listed in Section 1.1(a) of the Disclosure Schedule. Disclosure Schedule Section 1.1(a) lists four properties: The Larkspur Charleston, Asheville, Savannah and Beaufort. TSA Section 1.1 defines 'Hotels' as 'the three hotels identified in Exhibit A', and Exhibit A omits The Larkspur Savannah. TSA Section 3.1 obliges the Provider to supply property-management, central reservations, revenue-management and loyalty services only 'for the Hotels'. SPA Section 11.10 makes the TSA control on its subject matter, so the SPA definition does not cure the gap. Read together, the Savannah hotel loses its reservation and PMS systems at Closing. The Seller's parent-level platforms run those systems, and the Company has no standalone replacement, so the property faces operational disruption and lost bookings.",
+      "doc": "D3",
+      "section": "Section 1.1 and Exhibit A",
+      "detect_terms": [
+        "the three hotels identified in Exhibit A"
+      ],
+      "expected_finding": "The TSA's definition of 'Hotels' covers only three properties while the SPA and Disclosure Schedule Section 1.1(a) cover four, so The Larkspur Savannah receives no transition services, and because the TSA controls under SPA Section 11.10 the TSA definition and Exhibit A must be conformed to include all four Hotels.",
+      "contradicts": "F6",
+      "doc2": "D2",
+      "section2": "Section 1.1(a)",
+      "detect_terms2": [
+        "The Larkspur Savannah"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 12.4 provides that 'Recipient shall not assign' the TSA without Provider's prior written consent and that the agreement binds the parties' successors and assigns. It places no restriction on the Provider (Stailan). Under Delaware law contract rights are freely assignable absent an express restriction. SPA Section 11.6 restricts assignment of the SPA only, not of Ancillary Agreements. Stailan can therefore assign the TSA, or delegate the Services, to any third party, including a competing hotel operator or brand. Under TSA Section 5.2 the Provider receives the hotels' guest data, rate strategy and booking information. An assignee competitor would gain access to Praivein's confidential commercial information and control over critical systems during the transition.",
+      "doc": "D3",
+      "section": "Section 12.4",
+      "detect_terms": [
+        "Recipient shall not assign"
+      ],
+      "expected_finding": "TSA Section 12.4 restricts assignment only by Recipient, so under Delaware law Stailan may freely assign the TSA or delegate the Services, including to a competitor that would receive guest and rate data under Section 5.2, and the clause should be made mutual with an express bar on assignment or delegation to competitors without Praivein's consent.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}
