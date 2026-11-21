@@ -1,0 +1,84 @@
+{
+  "criteria": [
+    {
+      "id": "C1",
+      "text": "The response identifies that under the Transition Services Agreement (Sections 8.2/8.4) Buyer must indemnify Seller, without any cap, for all Losses relating to the Services, including Losses caused by Seller's own negligence. It identifies the location as the TSA (Section 8.2 and/or 8.4), explains why this matters to Batairt, and recommends a fix.",
+      "kind": "issue",
+      "source": "I1",
+      "hints": [
+        "including Losses caused by Provider's negligence",
+        "uncapped",
+        "Section 8.4 caps only Provider"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the SPA's Pre-Closing Tax indemnity survives only for the 12-month general survival period, ending on or about October 30, 2027, rather than for the tax limitations period. It identifies the location as the Stock Purchase Agreement (Section 9.1(c), 9.1(a) and/or 9.1(e)), explains why this matters to Batairt, and recommends a fix.",
+      "kind": "issue",
+      "source": "I2",
+      "hints": [
+        "same period as the representations in Section 4.10",
+        "12 months",
+        "statute of limitations"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the Seller Note's New York governing law and Manhattan forum conflict with the SPA's Delaware law and Court of Chancery forum, so that disputes over Buyer's set-off against Note payments and the underlying indemnity claims would be split across two forums. It identifies the location as Seller Note Section 10 or the SPA's set-off or precedence provisions (Sections 9.7/11.12), explains why this matters to Batairt, and recommends a fix.",
+      "kind": "issue",
+      "source": "I3",
+      "hints": [
+        "New York",
+        "Borough of Manhattan",
+        "set-off"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the district consents side letter narrows 'Material District Contract' for the SPA's consent-loss indemnity (Section 9.2(d)) to the Annex A contracts, leaving out the Pellbrook and Ashcombe contracts that require change-of-control consent. It identifies the location as the side letter (Section 2 and/or Annex A) or the SPA (Section 1.1 and/or Schedule 4.4), explains why this matters to Batairt, and recommends a fix.",
+      "kind": "issue",
+      "source": "I4",
+      "hints": [
+        "listed on Annex A",
+        "Pellbrook",
+        "Ashcombe"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that under the SPA's order-of-precedence clause each Ancillary Agreement controls as to its own subject matter (with the SPA controlling otherwise).",
+      "kind": "fact",
+      "source": "F8",
+      "hints": [
+        "Section 11.12",
+        "Ancillary Agreement shall control",
+        "as to its subject matter"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is a memo to the supervising partner that, for each issue, states where it appears (document and section), why it matters for Batairt, and a recommended fix.",
+      "kind": "format",
+      "source": null,
+      "hints": [
+        "Memorandum",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response claims that the SPA's Article IX indemnity cap (10% of the Purchase Price) limits Buyer's indemnification obligation to Seller under the Transition Services Agreement.",
+      "kind": "negative",
+      "source": "I1",
+      "hints": []
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that the Seller Note is governed by Delaware law.",
+      "kind": "negative",
+      "source": "I3",
+      "hints": []
+    }
+  ]
+}

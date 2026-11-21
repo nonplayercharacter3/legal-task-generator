@@ -1,0 +1,254 @@
+{
+  "matter_id": "s502-m0002",
+  "summary": "Fodain Brewing Company, LLC, a craft brewery with a production brewhouse and taproom in Kingston, New York, licenses Tekan Brewsystems, Inc.'s brewery management platform under a Software License Agreement effective January 15, 2026. The folder holds a Service Level Schedule, Statement of Work No. 2 (dated September 15, 2026, covering data migration and integration), the November 2025 term sheet, a superseded draft of the Service Level Schedule, and the parties' 2025 mutual NDA. Read with the other documents, the License Agreement does not match the deal. It renews automatically for three-year terms through a narrow opt-out window. Its exclusivity covers all software categories for all Affiliates worldwide. Its cap carve-out leaves Fodain's SOW indemnity uncapped. Its precedence clause lets the SLA's Delaware law and arbitration clause control. Its change of control clause is triggered by Fodain's pending acquisition by Wexmoor Beverage Group, which SOW No. 2 records. Its acceptance window for the Release 4.0 Production Module lapsed before Fodain's emailed defect report.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Fodain Brewing Company, LLC",
+      "role": "Customer / licensee (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Tekan Brewsystems, Inc.",
+      "role": "Licensor / software vendor"
+    },
+    {
+      "id": "P3",
+      "name": "Wexmoor Beverage Group, Inc.",
+      "role": "Prospective acquirer of all membership interests in P1 (non-signatory)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "January 15, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "License Agreement governing law",
+      "value": "Laws of the State of New York",
+      "doc": "D1",
+      "section": "Section 18.1"
+    },
+    {
+      "id": "F3",
+      "key": "License Agreement dispute forum",
+      "value": "State and federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 18.2"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "Service Level Schedule, then License Agreement, then Statements of Work",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F5",
+      "key": "License Agreement liability cap",
+      "value": "Fees paid by Customer in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F6",
+      "key": "License Agreement Initial Term",
+      "value": "Three years from the Effective Date",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F7",
+      "key": "Acceptance rejection period for Licensed Modules",
+      "value": "Ten (10) Business Days after delivery",
+      "doc": "D1",
+      "section": "Section 6.3"
+    },
+    {
+      "id": "F8",
+      "key": "Release 4.0 Production Module delivery date",
+      "value": "August 3, 2026",
+      "doc": "D3",
+      "section": "Recital B"
+    },
+    {
+      "id": "F9",
+      "key": "Term sheet exclusivity scope",
+      "value": "Brewhouse production-scheduling software at Customer's Kingston, New York facility only",
+      "doc": "D4",
+      "section": "Exclusivity"
+    },
+    {
+      "id": "F10",
+      "key": "Term sheet renewal terms",
+      "value": "One-year renewals; either party may decline on 30 days' notice before expiry",
+      "doc": "D4",
+      "section": "Term and Renewal"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "fodain_tekan_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "fodain_tekan_service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "fodain_tekan_sow_no2_migration_integration.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D4",
+      "filename": "fodain_tekan_term_sheet_nov2025.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "fodain_tekan_service_level_schedule_prior_draft.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "fodain_tekan_mutual_nda_2025.md",
+      "kind": "mutual nondisclosure agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Section 3.2 of the License Agreement (D1) provides that the Agreement renews automatically for successive Renewal Terms unless a party delivers a Non-Renewal Notice during the Non-Renewal Window. Section 1 (Definitions) is needed to see the effect. It defines each Renewal Term as thirty-six (36) months. It defines the Non-Renewal Window as only the fifteen (15) day period beginning 120 days before expiry of the then-current Term. A notice given early or late is ineffective, so Fodain is locked into three-year extensions. The term sheet (D4) instead agreed one-year renewals that either party could decline on 30 days' notice. The harm appears only when Section 3.2 is read with the Section 1 definitions.",
+      "doc": "D1",
+      "section": "Section 3.2 and Section 1 (definitions of Renewal Term and Non-Renewal Window)",
+      "detect_terms": [
+        "Non-Renewal Window",
+        "thirty-six (36) months"
+      ],
+      "expected_finding": "Read with the Section 1 definitions, Section 3.2 of the License Agreement automatically renews Fodain for 36-month terms unless notice falls within a 15-day window starting 120 days before expiry. This departs from the term sheet's one-year renewals on 30 days' notice and should be renegotiated to match the term sheet.",
+      "contradicts": "F10",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Section 4.5 of the License Agreement (D1) bars Customer and its Affiliates, during the Term, from licensing, using or evaluating any brewery management, production, inventory, distribution or point-of-sale software from anyone other than Tekan, at any location worldwide. The term sheet (D4) limited exclusivity to brewhouse production-scheduling software at the Kingston, New York facility. The D1 clause therefore reaches taproom POS, distribution and inventory systems and every Affiliate location. After the pending Wexmoor acquisition recorded in D3, Affiliates would include Fodain's new parent group.",
+      "doc": "D1",
+      "section": "Section 4.5",
+      "detect_terms": [
+        "Customer and its Affiliates shall not license, use or evaluate",
+        "at any location worldwide"
+      ],
+      "expected_finding": "Section 4.5 of the License Agreement imposes exclusivity on Fodain and all Affiliates worldwide across production, inventory, distribution and point-of-sale software. This is far broader than the term sheet's limit to production-scheduling software at the Kingston facility, and Section 4.5 should be narrowed to the term sheet scope.",
+      "contradicts": "F9",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 6.3 of the License Agreement (D1) requires Customer to deliver a written rejection notice for any Licensed Module within ten (10) Business Days after delivery; otherwise the module is deemed accepted. Recital B of SOW No. 2 (D3) states that Tekan delivered the Release 4.0 Production Module on August 3, 2026, which makes the rejection deadline August 17, 2026. The same recital records that Fodain reported defects only in an email dated September 4, 2026. That was after the deadline, and Section 17 of D1 does not treat email as valid formal notice. Recital B also records that Fodain maintains the module has not been accepted and that nothing in SOW No. 2 constitutes acceptance, so Fodain's position is still open. Neither document alone shows the lapse: D1 supplies the period and D3 supplies the dates.",
+      "doc": "D1",
+      "section": "Section 6.3",
+      "detect_terms": [
+        "within ten (10) Business Days after delivery",
+        "deemed accepted"
+      ],
+      "expected_finding": "Under Section 6.3 of the License Agreement, the Release 4.0 Production Module delivered August 3, 2026 was deemed accepted when the rejection window closed on August 17, 2026, and Fodain's September 4, 2026 email (recorded in SOW No. 2) was both late and not formal notice. The associate should recommend that Fodain promptly serve formal written notice preserving its defect claims, including a warranty claim, and negotiate with Tekan rather than rely on the email.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Recital B",
+      "detect_terms2": [
+        "delivered on August 3, 2026",
+        "email dated September 4, 2026"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Section 9 of the Service Level Schedule (D2) provides that the Schedule, and any dispute concerning Service Levels or Service Credits, is governed by the laws of the State of Delaware and resolved by binding arbitration in Wilmington, Delaware. Section 18 of the License Agreement (D1) chooses New York law and New York County courts. On its own, Section 2.3 of D1 is an ordinary precedence clause. However, it provides that the Service Level Schedule shall prevail over the Agreement in case of conflict, so the main agreement does not cure the conflict. As a result, Fodain's uptime and outage claims are split into Delaware arbitration under Delaware law, while all other claims proceed in New York courts. This creates parallel proceedings and inconsistent results.",
+      "doc": "D2",
+      "section": "Section 9",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "arbitration in Wilmington, Delaware"
+      ],
+      "expected_finding": "Because D1 Section 2.3 makes the Service Level Schedule prevail, the Schedule's Delaware law and Wilmington arbitration clause controls service-level and service-credit disputes, despite the License Agreement's choice of New York law and New York County courts. The associate should recommend conforming the Schedule to New York law and forum or carving dispute resolution out of the precedence clause.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ],
+      "doc2": "D1",
+      "section2": "Section 2.3",
+      "detect_terms2": [
+        "the Service Level Schedule shall prevail"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 14.2 of the License Agreement (D1) deems a Change of Control of Customer an assignment requiring Tekan's prior written consent. That consent is effective only in a written instrument expressly referencing Section 14.2. If a Change of Control occurs without consent, Tekan may terminate the Agreement and all licenses. Recital C of SOW No. 2 (D3), dated September 15, 2026, records that Wexmoor Beverage Group, Inc. has agreed to the acquisition of all outstanding membership interests of Fodain, expected to close March 31, 2027. Each document reads as ordinary on its own. Together they show that the pending closing will trigger Section 14.2. No consent referencing Section 14.2 appears in the folder, and the SOW's mention of the deal does not satisfy the express-instrument requirement. Fodain therefore risks losing the platform that runs its brewhouse.",
+      "doc": "D1",
+      "section": "Section 14.2",
+      "detect_terms": [
+        "Change of Control of Customer shall be deemed an assignment",
+        "expressly referencing this Section 14.2"
+      ],
+      "expected_finding": "Wexmoor's pending acquisition of Fodain, recorded in SOW No. 2 and expected to close March 31, 2027, is a Change of Control requiring Tekan's prior written consent under Section 14.2 of the License Agreement. Absent a written consent expressly referencing Section 14.2, Tekan may terminate the Agreement and all licenses, so Fodain must obtain that consent before closing.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Recital C",
+      "detect_terms2": [
+        "acquisition of all outstanding membership interests",
+        "expected to close March 31, 2027"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 11.2 of the License Agreement (D1) caps liability at fees paid in the prior 12 months. Section 11.3(b) excludes from that cap 'any indemnification obligation of a party under a Statement of Work', which reads harmlessly on its own because SOWs usually carry vendor indemnities. Section 7 of SOW No. 2 (D3) then has Fodain defend and indemnify Tekan against all Losses arising from Customer Integration Materials and Fodain's distributor and TTB reporting data feeds, 'subject to Section 11 of the Agreement'. On its own, that phrase suggests the indemnity is capped. Read together, Section 11 includes the Section 11.3(b) exception, so Fodain's indemnity is fully uncapped. The SOW's lower position in the order of precedence does not help, because the two provisions do not conflict.",
+      "doc": "D1",
+      "section": "Section 11.3(b)",
+      "detect_terms": [
+        "indemnification obligation of a party under a Statement of Work"
+      ],
+      "expected_finding": "Because License Agreement Section 11.3(b) removes SOW indemnities from the Section 11.2 cap, Fodain's indemnity in SOW No. 2 Section 7 for Customer Integration Materials and its distributor and TTB data feeds is uncapped despite being stated as 'subject to Section 11'. The cap carve-out should be limited to Tekan's indemnities, or Fodain's SOW indemnity should be expressly capped.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Section 7",
+      "detect_terms2": [
+        "subject to Section 11 of the Agreement",
+        "Customer Integration Materials"
+      ]
+    }
+  ]
+}

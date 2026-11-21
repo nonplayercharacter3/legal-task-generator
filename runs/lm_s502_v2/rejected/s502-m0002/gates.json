@@ -1,0 +1,115 @@
+{
+  "matter_id": "s502-m0002",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I3\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I3"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 3.2: \"It shall not renew if either party delivers a Non-Renewal Notice to the other party during the Non-Renewal Window applicable to the then-current Term. A Non-Renewal Notice delivered before or after the Non-Renewal Window has no effect.\" Section 1.11: \"'Renewal Term' means each successive renewal period of thirty-six (36) months following the Initial Term.\" Section 1.9: \"'Non-Renewal Window' means the fifteen (15) day period beginning on the date that is one hundred twenty (120) days before the expiration of the then-current Term.\"",
+            "reason": "Read together, Section 3.2 and the definitions renew the Agreement automatically for three-year periods. Fodain can stop renewal only by a notice delivered within a 15-day window that opens 120 days before expiry, and any notice outside that window is void. Fodain bears the practical risk: a missed window binds it to another 36 months of fees. That is compounded by the worldwide exclusivity in Section 4.5 and by the formal notice requirements in Section 17, under which email does not count. The November 2025 term sheet instead contemplated one-year renewals that either party could decline on 30 days' notice. Nothing in the Service Level Schedule, the SOW or the other folder documents cures or limits this. The issue is still actionable: the Initial Term runs to January 2029, so the first window (around September 2028) has not opened as of the latest folder dates in 2026–2027. Fodain can calendar the window or seek an amendment, which matters particularly with the pending Wexmoor acquisition."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 4.5: \"During the Term, Customer and its Affiliates shall not license, use or evaluate any brewery management, production, inventory, distribution or point-of-sale software provided by any person other than Tekan, at any location worldwide. Customer shall procure that its Affiliates comply with this Section 4.5.\"",
+            "reason": "The restriction falls on Fodain, the client. The term sheet (Sections 5.1–5.2) limited exclusivity to brewhouse production-scheduling software at the Kingston facility only. It expressly excluded other software categories, other facilities and affiliates. The executed Section 4.5 instead covers inventory, distribution and POS software, applies worldwide, and binds all Affiliates. SOW No. 2 records the pending Wexmoor acquisition of all of Fodain's membership interests, expected to close March 31, 2027. After closing, Wexmoor and its group become Affiliates under Section 1.1 because they will control Fodain. Fodain would then have to 'procure' their compliance, which it cannot realistically do. Breach would expose Fodain to termination under Section 13.1. Nothing in the folder cures or narrows the clause. The issue remains actionable: the agreement runs through January 2029 and the acquisition has not closed, so it can be raised now, through amendment or as part of the Section 14.2 consent negotiation with Tekan."
+          },
+          {
+            "issue": "I3",
+            "present": false,
+            "missing_terms": [
+              "delivered on August 3, 2026"
+            ]
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "SLS Section 9.1: \"This Schedule, and any dispute, claim or controversy arising out of or relating to the Service Levels or Service Credits, including their measurement, calculation, application or breach, shall be governed by the laws of the State of Delaware...\" and Section 9.3: \"...shall be finally resolved by binding arbitration in Wilmington, Delaware...\". Agreement Section 2.3: \"Accordingly, the Service Level Schedule shall prevail over these terms and conditions and over any Statement of Work...\" Agreement Section 18.1–18.2 choose New York law and the exclusive jurisdiction of New York County courts.",
+            "reason": "The problem is present and still actionable. The executed Schedule sends uptime and service-credit disputes to Delaware law and to AAA arbitration in Wilmington. The main Agreement sends everything else to New York law and New York County courts. Section 2.3 of the Agreement makes the Schedule prevail over the Agreement, so the main agreement does not cure the conflict.\n\nThis hurts Fodain. Its outage claims are the claims most likely to arise, given the open Release 4.0 defects. A Chronic Failure termination under Schedule §7.3 also ties back to Agreement §13. Fodain could therefore face split, parallel proceedings with inconsistent results. It would also travel to Wilmington and bear its own fees and half the arbitration costs, for a claim against a Delaware vendor.\n\nThe split is not what the parties agreed. The term sheet (§13) and the prior draft Schedule (§9) both routed SLA disputes to New York courts under Agreement §18, so the Delaware clause departs from that deal. Nothing in the folder shows Fodain accepted or waived the point, and the Schedule can still be amended under its §8.3, so the issue remains open.",
+            "alone": {
+              "fodain_tekan_service_level_schedule.md": {
+                "findable": false,
+                "evidence": "9.1 Governing Law. This Schedule, and any dispute, claim or controversy arising out of or relating to the Service Levels or Service Credits ... shall be governed by the laws of the State of Delaware ... 9.3 Arbitration. Any dispute described in Section 9.1 ... shall be finally resolved by binding arbitration in Wilmington, Delaware",
+                "reason": "This Schedule shows only that SLA and Service Credit disputes go to Delaware law and AAA arbitration in Wilmington. It does not show the governing law or forum of the License Agreement. That the Agreement chooses New York law and New York County courts appears only in D1 Section 18. It also does not show that the Agreement's precedence clause (D1 Section 2.3) makes the Schedule prevail. The Schedule says it 'forms part of the Agreement' and refers to Agreement Sections 12, 13, 17 and 19. The Kingston, New York facility hints at a New York connection, but that alone does not establish a conflicting choice of law or forum. Without D1, an associate cannot see that Fodain's claims are split between Delaware arbitration and New York courts, or that nothing cures the conflict."
+              },
+              "fodain_tekan_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "2.3 Order of Precedence. If there is any conflict or inconsistency among the documents comprising this Agreement, they shall govern in the following order: the Service Level Schedule, then this Agreement, then the Statements of Work.",
+                "reason": "This document chooses New York law and exclusive New York County courts in Section 18. Section 2.3 says the Service Level Schedule prevails over these terms if they conflict. Read alone, that is an ordinary precedence clause. Nothing in this agreement says the Schedule has its own governing-law, forum or arbitration provision. The pieces that create the problem all sit in Exhibit B, which is not included here: Delaware law, binding arbitration in Wilmington, and the split of Service Level and Service Credit disputes into a separate proceeding. An associate reading only this agreement could flag that the Schedule outranks the main terms. They could not see that a governing-law or forum conflict actually exists, or that it harms Fodain."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "License Agreement §14.2: \"A Change of Control of Customer shall be deemed an assignment of this Agreement by Customer requiring Tekan's prior written consent. Tekan's consent is effective only if it is given in a written instrument signed by an officer of Tekan and expressly referencing this Section 14.2.\" SOW No. 2, Recital C: \"Customer has informed Tekan that Wexmoor Beverage Group, Inc. (\"Wexmoor\") has agreed to the acquisition of all outstanding membership interests of Customer. The transaction is expected to close March 31, 2027.\"",
+            "reason": "Read together, the two documents show a live risk to Fodain. Wexmoor's acquisition of all of Fodain's membership interests is a Change of Control under §1.3(a). Under §14.2 that counts as an assignment requiring Tekan's prior written consent. The consent works only if it is a written instrument signed by a Tekan officer that expressly references §14.2. Recital C merely records that Fodain told Tekan about the deal. It does not reference §14.2 and is not a consent. Section 2.2 also bars an SOW from amending the Agreement unless it expressly identifies the section amended and is signed by officers. No qualifying consent appears anywhere in the folder. If the deal closes without consent, Tekan may terminate the Agreement and all licenses with immediate effect, with no cure period. The platform runs Fodain's brewhouse, regulatory reporting and distributor feeds, so losing it would be serious. Closing is expected March 31, 2027, after the latest folder date of September 15, 2026. Fodain can therefore still act by obtaining a compliant consent before closing.",
+            "alone": {
+              "fodain_tekan_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "14.2 Change of Control. A Change of Control of Customer shall be deemed an assignment of this Agreement by Customer requiring Tekan's prior written consent. Tekan's consent is effective only if it is given in a written instrument signed by an officer of Tekan and expressly referencing this Section 14.2. If a Change of Control of Customer occurs without that consent, Tekan may terminate this Agreement and all licenses granted under it, with immediate effect, by written notice to Customer given within one hundred eighty (180) days after Tekan becomes aware of the Change of Control.",
+                "reason": "The License Agreement alone shows the change-of-control mechanism. A Change of Control is deemed an assignment, consent must be in an officer-signed instrument that expressly references Section 14.2, and without it Tekan may terminate. An associate could note this as a customer-unfavorable clause in the abstract. Nothing in this document shows that any Change of Control is pending or planned. There is no mention of Wexmoor Beverage Group, of a sale of Fodain's membership interests, or of a March 31, 2027 closing. That fact comes only from Recital C of SOW No. 2. Without it, a reader cannot see that this clause will actually be triggered and put Fodain's platform at risk. The concrete problem therefore depends on the unseen document."
+              },
+              "fodain_tekan_sow_no2_migration_integration.md": {
+                "findable": false,
+                "evidence": "Customer has informed Tekan that Wexmoor Beverage Group, Inc. (\"Wexmoor\") has agreed to the acquisition of all outstanding membership interests of Customer. The transaction is expected to close March 31, 2027.",
+                "reason": "This SOW shows only that Fodain is being acquired and that Tekan has been told about the deal. Nothing in it mentions a change-of-control or anti-assignment provision. It does not require Tekan's consent, and it gives Tekan no termination right tied to the acquisition. The SOW notes that Section 13 of the Agreement governs termination, but it does not say what that section provides. The SOW alone does not show three things: that a Change of Control counts as an assignment under Section 14.2, that consent must be given in an instrument expressly referencing Section 14.2, or that Tekan may terminate all licenses. A careful associate might think to check the license for a change-of-control clause. Seeing the actual problem, and that it hurts Fodain, requires reading the License Agreement."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "License Agreement §11.3(b): \"The limitations in Sections 11.1 and 11.2 do not apply to: ... (b) any indemnification obligation of a party under a Statement of Work\". SOW No. 2 §7.1: \"Customer shall defend, indemnify and hold harmless Tekan ... from and against all Losses arising out of or relating to: (a) the Customer Integration Materials ... and (b) the content of the data transmitted through the Distributor Feeds and the TTB Reporting Feeds ... This indemnity is subject to Section 11 of the Agreement.\"",
+            "reason": "Fodain is the indemnifying party under SOW No. 2 §7.1. That indemnity reaches third-party and governmental Losses, including TTB penalties, fines and distributor claims. The phrase \"subject to Section 11 of the Agreement\" looks like it applies the §11.2 cap of 12 months' fees. However, Section 11 includes §11.3(b), and §11.3(b) carves every SOW indemnity out of both the cap and the exclusion of indirect damages. Read together, the two provisions leave Fodain's indemnity fully uncapped and open to consequential losses. They do not conflict, so the order of precedence in §2.3 gives Fodain no help. Nothing else in the folder limits this exposure. The term sheet (§11.3) only promised \"customary exceptions\", and a carve-out for a customer indemnity is not customary. The SOW is in force and its term runs through hypercare in 2027. The exposure is therefore ongoing and still actionable: Fodain can seek an amendment that caps its indemnity or confines §11.3(b) to Tekan's indemnities. That matters more with the Wexmoor acquisition pending, since the uncapped liability will be part of what the buyer takes on.",
+            "alone": {
+              "fodain_tekan_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.3(b): \"The limitations in Sections 11.1 and 11.2 do not apply to: ... (b) any indemnification obligation of a party under a Statement of Work;\" read with Section 10.4: \"A Statement of Work may contain additional indemnification obligations of either party relating to the services, materials or data described in that Statement of Work.\"",
+                "reason": "This document shows that any indemnity placed in a Statement of Work, by either party, sits outside the 12-month fees cap and the bar on indirect damages. A careful associate could flag that as a theoretical drafting risk for Fodain. But the agreement itself puts no indemnity on Fodain. Its only indemnity (Section 10.1) runs from Tekan to Customer, and no SOW is attached. The actual harm depends on SOW No. 2, Section 7, which is not provided here. That section makes Fodain defend and indemnify Tekan for all Losses from Customer Integration Materials and distributor and TTB data feeds. Its 'subject to Section 11' wording looks like a cap but in fact brings in the 11.3(b) carve-out. Without that SOW, you cannot see that Fodain has an indemnity, what it covers, or that it is uncapped. So the concrete problem is not visible from this document alone."
+              },
+              "fodain_tekan_sow_no2_migration_integration.md": {
+                "findable": false,
+                "evidence": "This indemnity is subject to Section 11 of the Agreement.",
+                "reason": "By itself, the SOW shows that Fodain gives Tekan a broad defense and indemnity. It covers all Losses arising from the Customer Integration Materials and from the data in the Distributor Feeds and TTB Reporting Feeds, including errors in regulatory reports. On the page, though, the indemnity is expressly made 'subject to Section 11 of the Agreement', which an associate would reasonably read as applying the Agreement's liability cap. Nothing in the SOW shows that Section 11.3(b) of the Agreement removes SOW indemnification obligations from that cap. That carve-out, which is what makes the indemnity uncapped, is only in the License Agreement. An associate could see that the indemnity is broad and one-sided, but not that it is uncapped."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}
