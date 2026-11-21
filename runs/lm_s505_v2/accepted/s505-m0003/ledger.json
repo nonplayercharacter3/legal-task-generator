@@ -1,0 +1,227 @@
+{
+  "matter_id": "s505-m0003",
+  "summary": "Lebun Interactive, Inc., a video game publisher, is the client. It buys game QA testing, localization and live-operations support from Draibouth Studios LLC under a Master Services Agreement effective January 15, 2025, governed by Delaware law. Amendment No. 1, dated October 15, 2026, records that Lebun signed a merger agreement on September 30, 2026 with Fennick Pine Entertainment Holdings, Inc., a console and mobile game publisher. The same amendment quietly widens the MSA definition of 'Competitor', so the pending merger triggers Draibouth's change-of-control termination right in MSA Section 15.3, and Draibouth has not consented. The MSA also departs from the term sheet in two ways: it auto-renews for three-year terms on a 180-day notice requirement, and it imposes worldwide, all-services, all-affiliate-titles exclusivity. Separately, Lebun's September 25, 2026 rejection of the Thornfall Reckoning Gold Master Build, delivered September 1, 2026 according to Order Form No. 4, falls outside the 15-day rejection period in the Quality Agreement. The build is therefore deemed accepted, and Lebun disputes this in a reservation of rights in Amendment No. 1. The folder also holds a service level schedule, a data processing addendum, Lebun's office lease and Draibouth's certificate of insurance.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Lebun Interactive, Inc.",
+      "role": "Customer; video game publisher (the firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Draibouth Studios LLC",
+      "role": "Provider of outsourced game QA testing, localization and live-operations support services"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "January 15, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 17.1"
+    },
+    {
+      "id": "F3",
+      "key": "Order of precedence",
+      "value": "Signed amendments, then DPA (as to Personal Data), then MSA, Order Forms, Service Level Schedule, Quality Agreement",
+      "doc": "D1",
+      "section": "Section 17.4"
+    },
+    {
+      "id": "F4",
+      "key": "Term sheet renewal terms",
+      "value": "One-year renewal terms; either party may opt out on 60 days' notice",
+      "doc": "D5",
+      "section": "Term and Renewal"
+    },
+    {
+      "id": "F5",
+      "key": "Term sheet exclusivity scope",
+      "value": "Functional QA testing of Lebun-published console titles in North America only",
+      "doc": "D5",
+      "section": "Exclusivity"
+    },
+    {
+      "id": "F6",
+      "key": "Thornfall Reckoning Gold Master Build delivery date",
+      "value": "September 1, 2026",
+      "doc": "D4",
+      "section": "Section 1 (Background)"
+    },
+    {
+      "id": "F7",
+      "key": "Quality Agreement build rejection period",
+      "value": "15 calendar days after Delivery",
+      "doc": "D3",
+      "section": "Section 5.2"
+    },
+    {
+      "id": "F8",
+      "key": "Amendment No. 1 date",
+      "value": "October 15, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Lebun–Fennick Pine merger agreement date",
+      "value": "September 30, 2026",
+      "doc": "D2",
+      "section": "Recital B"
+    },
+    {
+      "id": "F10",
+      "key": "Lebun Gold Master rejection letter date",
+      "value": "September 25, 2026",
+      "doc": "D2",
+      "section": "Section 4 (Reservation of Rights)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_no1_msa.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "order_form_no4.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "MSA Section 15.3 lets Draibouth terminate the MSA and all Order Forms on 30 days' notice if Lebun is acquired by a 'Competitor' without Draibouth's prior written consent. On its own this is harmless, because MSA Section 1.1 defines Competitor narrowly as a provider of outsourced game testing, localization or player-support services. Amendment No. 1 Section 2 replaces that definition with one that also covers any person that develops, publishes or distributes interactive entertainment software. Amendment No. 1 Recital B records Lebun's September 30, 2026 merger agreement with Fennick Pine Entertainment Holdings, Inc., a console and mobile game publisher. Read together, the merger now triggers the Section 15.3 termination right. Amendment No. 1 Section 3 only acknowledges receipt of notice of the merger and gives no consent. Under the order of precedence the amendment controls, so the broadened definition governs.",
+      "doc": "D1",
+      "section": "Section 15.3",
+      "detect_terms": [
+        "acquired by a Competitor",
+        "prior written consent"
+      ],
+      "expected_finding": "Because Amendment No. 1 Section 2 broadens 'Competitor' to include game publishers, the recorded Fennick Pine merger triggers Draibouth's right under MSA Section 15.3 to terminate the MSA and all Order Forms without its consent, so Lebun should obtain Draibouth's written consent or waiver (or restore the narrow definition) before closing.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Section 2",
+      "detect_terms2": [
+        "develops, publishes or distributes interactive entertainment software"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "MSA Section 12.2 renews the MSA automatically after its three-year Initial Term, which runs from the January 15, 2025 Effective Date, for successive three-year Renewal Terms. A party can avoid renewal only by giving non-renewal notice not less than 180 days before the end of the current term. The term sheet agreed one-year renewals with a 60-day opt-out. The clause locks Lebun into long renewal periods, which carry the MSA exclusivity, and requires it to decide roughly six months in advance.",
+      "doc": "D1",
+      "section": "Section 12.2",
+      "detect_terms": [
+        "successive three (3) year Renewal Terms",
+        "not less than one hundred eighty (180) days"
+      ],
+      "expected_finding": "MSA Section 12.2 auto-renews for three-year terms unless notice is given at least 180 days before expiry, departing from the term sheet's one-year renewals with 60-day opt-out, so Lebun should renegotiate it to the agreed terms and diarize the 180-day deadline before the Initial Term ends.",
+      "contradicts": "F4",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "MSA Section 6 makes acceptance of deliverables subject to the Quality Agreement. Quality Agreement Section 5.2 lets Lebun reject a Build by written notice within 15 calendar days after Delivery. Otherwise the Build is deemed accepted, the related milestone fee becomes payable, and Lebun's only remedy is warranty remediation. Order Form No. 4 Section 1 records that Draibouth delivered the Thornfall Reckoning Gold Master Build on September 1, 2026, so the rejection period closed on September 16, 2026. Amendment No. 1 Section 4 records Lebun's rejection letter of September 25, 2026, nine days late, and Lebun's continuing dispute; it states that the amendment does not extend or waive any period. Neither document shows the lapse alone. Nothing in the MSA overrides the Quality Agreement period.",
+      "doc": "D3",
+      "section": "Section 5.2",
+      "detect_terms": [
+        "within fifteen (15) days after Delivery",
+        "deemed accepted"
+      ],
+      "expected_finding": "Delivery on September 1, 2026 means the 15-day rejection period expired on September 16, 2026, so Lebun's September 25, 2026 rejection was untimely and the Gold Master Build is deemed accepted with the milestone fee payable, leaving Lebun to pursue warranty remediation or negotiate a written extension or waiver with Draibouth, as it has reserved its position in Amendment No. 1 Section 4.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Section 1 (Background)",
+      "detect_terms2": [
+        "September 1, 2026"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "MSA Section 3.5 bars Lebun, during the Term, from engaging any third party to perform Covered Services for any Customer Title, with no territorial limit. MSA Section 1.1 defines 'Covered Services' as all services of the type described in Schedule A or any Order Form, including testing, localization and player support. It defines 'Customer Title' as any product published, co-published or distributed by Lebun or its Affiliates. Read together, the provisions impose worldwide exclusivity across every service line and every affiliate title. The term sheet limited exclusivity to functional QA testing of Lebun-published console titles in North America. After the merger recorded in Amendment No. 1, Fennick Pine's titles would also fall within Customer Title.",
+      "doc": "D1",
+      "section": "Sections 3.5 and 1.1",
+      "detect_terms": [
+        "any third party to perform Covered Services",
+        "published, co-published or distributed by Customer or its Affiliates"
+      ],
+      "expected_finding": "Read with the Section 1.1 definitions, MSA Section 3.5 imposes worldwide exclusivity over all service lines for all titles of Lebun and its Affiliates, far beyond the term sheet's North American console functional-QA exclusivity, so Lebun should narrow the definitions to the agreed scope.",
+      "contradicts": "F5",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

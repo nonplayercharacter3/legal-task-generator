@@ -1,0 +1,188 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s505-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s505-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s505-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 14389,
+      "output_tokens": 45730,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 26,
+      "input_tokens": 769696,
+      "output_tokens": 140718,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 155148,
+      "output_tokens": 9583,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 5112,
+      "output_tokens": 902,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 15,
+      "input_tokens": 652152,
+      "output_tokens": 13424,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 18,
+      "input_tokens": 146269,
+      "output_tokens": 7884,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 3997,
+      "output_tokens": 471,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 21914,
+      "output_tokens": 6837,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 305182,
+      "output_tokens": 44911,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 9,
+      "input_tokens": 64237,
+      "output_tokens": 6987,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "industrial textiles": 1,
+      "used car auctions": 1,
+      "video game publishing": 1
+    },
+    "agreement_types": {
+      "supply agreement": 1,
+      "stock purchase agreement": 1,
+      "master services agreement": 1
+    },
+    "issue_types": {
+      "expired_notice_window": 3,
+      "missing_assignment_restriction": 2,
+      "exclusivity_scope": 2,
+      "liability_cap_carveout": 2,
+      "uncapped_indemnity": 1,
+      "defined_term_inconsistency": 1,
+      "survival_gap": 1,
+      "governing_law_mismatch": 1,
+      "change_of_control_consent": 1,
+      "auto_renewal": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

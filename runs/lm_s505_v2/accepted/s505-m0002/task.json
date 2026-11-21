@@ -1,0 +1,133 @@
+{
+  "task_id": "s505-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Vailous Auto Remarketing Holdings, LLC, the buyer in its proposed stock purchase from Pritouth Dealer Services, Inc. Before we go back to the other side, I need a clear view of where the deal documents leave our client exposed. Please review all nine documents in the folder and prepare a memo to me listing each issue you find, where it appears (document and section), why it matters for Vailous, and your recommended fix. Keep it practical and prioritized.",
+  "documents": [
+    "bill_of_sale.md",
+    "buyer_objection_letter.md",
+    "disclosure_schedule.md",
+    "escrow_agreement.md",
+    "insurance_certificate_cover_letter.md",
+    "ip_assignment_agreement.md",
+    "seller_note.md",
+    "stock_purchase_agreement.md",
+    "transition_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the General Representations survive only until the Escrow Release Date, which is 90 days after Closing, so Buyer has only about 90 days after Closing to bring indemnity claims for breach of those representations. It locates the issue in SPA Section 9.1 or Escrow Agreement Section 4.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Escrow Release Date",
+        "90 days after Closing",
+        "survival period"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that the Seller Note's choice of Delaware law and exclusive Delaware forum conflicts with the SPA's choice of New York law and exclusive New York forum. It locates the issue in Seller Note Section 8 or SPA Section 9.7, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Delaware",
+        "New York",
+        "setoff against the Seller Note"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that Buyer's September 29, 2026 objection to Supplement No. 1 was delivered after the 10-Business-Day objection window, which closed on September 22, 2026, so Seller can treat the supplement as deemed accepted. It locates the issue in SPA Section 6.8 or the Disclosure Schedule's Supplement No. 1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "deemed accepted",
+        "September 22, 2026",
+        "objection was late"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that pre-Closing Title and Odometer Losses are channeled to the TSA and become subject to its cap of three months' Service Fees, which defeats the SPA's uncapped carve-out for those Losses. It locates the issue in SPA Section 9.8, or in TSA Schedule A or Section 9.2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Title and Odometer Losses",
+        "three months' Service Fees",
+        "exclusively under the TSA"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that the TSA lets Pritouth (Provider) assign the TSA or delegate the Services to any person, including a competitor, without the Company's consent. It locates the issue in TSA Section 13.3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "assign or delegate",
+        "without consent",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Purchase Price under the SPA is $42,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$42,000,000",
+        "$42 million"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the SPA prevails over the Ancillary Agreements in the event of conflict.",
+      "kind": "fact",
+      "hints": [
+        "order of precedence",
+        "SPA controls",
+        "Ancillary Agreements"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo addressed to the supervising partner, and for each issue it identifies the document and section where the issue appears.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Section"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response presents the issues in order of priority or labels each issue with a priority or severity level.",
+      "kind": "format",
+      "hints": [
+        "High priority",
+        "priority",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Buyer's September 29, 2026 objection to Supplement No. 1 was timely under SPA Section 6.8.",
+      "kind": "negative",
+      "hints": [
+        "objection was timely",
+        "within the objection period"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the SPA's order-of-precedence clause makes the SPA's New York governing law and forum override the Seller Note's Delaware provisions.",
+      "kind": "negative",
+      "hints": [
+        "precedence clause resolves",
+        "SPA overrides the Note"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}
