@@ -1,0 +1,177 @@
+{
+  "matter_id": "s507-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 3.1: \"During the Term, Buyer shall purchase one hundred percent (100%) of its and its Affiliates' requirements of Glass Products exclusively from Supplier for every project Buyer or its Affiliates perform anywhere in North America.\"",
+            "reason": "Section 1.1 defines \"Glass Products\" to cover all architectural glass Supplier makes: monolithic, laminated, fire-rated and IGUs, coated or uncoated. Section 3.1 therefore locks Leilisk, and its Affiliates, into Seineix for every glass type on every North American project. It also bars Leilisk from even soliciting quotes elsewhere.\n\nThe October 2023 term sheet (Sections 4.1–4.2) limited exclusivity to triple-silver low-E IGUs for NY/NJ/CT projects. It expressly left Leilisk free to source everything else. That term sheet was non-binding, and Section 21.3 supersedes it, so it gives Leilisk no protection.\n\nThe exceptions are narrow:\n- Section 3.2 applies only after Supplier gives written notice that it cannot supply.\n- Section 3.3 requires notice but grants no clear right.\n- Section 18 applies only to force majeure lasting more than 60 days.\n\nThe Section 5.3 carve-out applies only after a price-objection deadlock. Leilisk's April 20, 2026 objection was outside the 30-day window from the March 4 receipt, so that route is doubtful.\n\nThe restated Order Form does not narrow exclusivity. Under Section 2.2, the clause continues through 60-month auto-renewals.\n\nThe pending acquisition by Ostrander makes this more serious. On closing, Ostrander's group becomes Leilisk's Affiliates and is swept into the exclusivity obligation.\n\nThe issue is still live and actionable. The Term runs to January 2029, and Leilisk can seek an amendment or plan around the clause."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Quality Agreement Section 1.4: \"'Defect' means a deviation of a Glass Product from the Specifications that is detectable by visual inspection, conducted in accordance with the viewing distance, lighting and viewing-angle procedures of ASTM C1036 ... at the time of Delivery.\" Supply Agreement Section 21.2: \"In the event of any conflict or inconsistency among them, the Quality Agreement shall prevail as to quality, inspection and acceptance criteria and the definition of Defect.\"",
+            "reason": "The two documents define \"Defect\" differently. Supply Agreement Section 1.1 defines it broadly to include edge-seal failure, coating degradation and nickel-sulfide spontaneous breakage. Quality Agreement Section 1.4 limits it to deviations visible at Delivery under ASTM C1036/C1048. Section 21.2 of the Supply Agreement expressly gives the Quality Agreement precedence on the definition of Defect. Supplier can therefore argue that the 10-year IGU warranty (Section 9.1) and the 5-year warranty (Section 9.2) cover only defects visible at Delivery. That would strip out latent seal failure, coating degradation and nickel-sulfide breakage, the core long-tail risks for Leilisk as Buyer. Supplier gives the warranty, so the narrowing hurts Leilisk. The Section 12.1(a) indemnity is also tied to \"Defect\" and is narrowed the same way. Nothing in the folder cures the conflict. The term sheet's broader warranty coverage is superseded under Section 21.3. Section 8.1 preserves warranty rights after acceptance but does not change the definition. Section 9.3(a)'s conformity warranty does not reach latent failures that are not Specification deviations. The agreements remain in effect, so the issue can still be raised, for example through an amendment or in Ostrander-related negotiations.",
+            "alone": {
+              "leilisk_seineix_quality_agreement.md": {
+                "findable": false,
+                "evidence": "1.4 \"Defect\" means a deviation of a Glass Product from the Specifications that is detectable by visual inspection, conducted in accordance with the viewing distance, lighting and viewing-angle procedures of ASTM C1036 ... at the time of Delivery.",
+                "reason": "On its own, this document shows only a narrow, delivery-time, visual-inspection definition of 'Defect'. In a quality agreement about receiving inspection and rejection, that reads as ordinary drafting. Nothing here mentions a 10-year IGU warranty, seal failure, coating degradation or nickel-sulfide breakage. Section 11.1 says only that the Quality Agreement 'forms part of the documents comprising the Parties' supply arrangement' and contains no precedence rule. Three facts that create the harm all come from the Supply Agreement, which I have not been given: (1) its broader definition of 'Defect', (2) its Section 9.1 warranty built on that term, and (3) its Section 21.2, which makes the Quality Agreement's definition control. Without those, an associate could not see that this definition cuts down the client's long-term warranty protection."
+              },
+              "leilisk_seineix_supply_agreement.md": {
+                "findable": false,
+                "evidence": "21.2 Order of Precedence. ... In the event of any conflict or inconsistency among them, the Quality Agreement shall prevail as to quality, inspection and acceptance criteria and the definition of Defect; subject to that, this Agreement shall prevail over any Order Form.",
+                "reason": "This document alone shows the broad 'Defect' definition in Section 1.1, which covers IGU seal failure, coating degradation and nickel-sulfide breakage. It also shows the 10-year IGU warranty in Section 9.1, which is tied to that definition. And it shows that Section 21.2 lets the Quality Agreement override the definition of Defect. A careful associate could therefore see that the warranty scope depends on whatever the Quality Agreement says. They could flag that as a structural risk to check. What this document does not show is the conflict itself. It does not reveal that Quality Agreement Section 1.4 limits Defect to deviations visible under ASTM C1036 at Delivery. Without that narrower definition there is no actual inconsistency, and nothing shows that latent seal failure and nickel-sulfide breakage fall out of the 10-year warranty. The harm to Leilisk becomes visible only with the Quality Agreement."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Supply Agreement s.2.2: \"On expiry of the Initial Term, this Agreement will renew automatically for successive Renewal Terms. Either Party may prevent a renewal only by giving the other Party written notice of non-renewal during the Opt-Out Period that applies to the then-current Initial Term or Renewal Term. All terms of this Agreement, including Sections 3 and 4, continue to apply during each Renewal Term.\" Restated Order Form s.2.2–2.3: \"Renewal Term: 60 months for each Renewal Term.\" and \"Opt-Out Period: the ten (10) Business Days immediately preceding the 180th day before the end of the then-current Initial Term or Renewal Term.\"",
+            "reason": "Read together, the two documents roll Leilisk into successive five-year Renewal Terms unless it serves notice in a ten-business-day window that closes about six months before expiry. For the Initial Term ending January 15, 2029, that window falls around July 2028. Each renewal carries forward the 400,000 sq ft Annual Minimum, with a $4.25/sq ft shortfall charge, and the North America-wide exclusivity in s.3.1. Notice outside the window is ineffective. That is a narrow trap with serious consequences for Leilisk as Buyer. Nothing in the folder cures or limits it. The restated Order Form of May 11, 2026 carries the terms forward without change, and the term sheet left renewal open. The window has not passed: the latest date in the folder is May 2026 (closing of the Ostrander acquisition is expected in Q4 2026). So the issue is still actionable, either by negotiating a change or by docketing the July 2028 window.",
+            "alone": {
+              "leilisk_seineix_supply_agreement.md": {
+                "findable": false,
+                "evidence": "2.2 Renewal. On expiry of the Initial Term, this Agreement will renew automatically for successive Renewal Terms. Either Party may prevent a renewal only by giving the other Party written notice of non-renewal during the Opt-Out Period that applies to the then-current Initial Term or Renewal Term.",
+                "reason": "The Supply Agreement alone shows an evergreen clause. Renewal is automatic, non-renewal is only possible within the 'Opt-Out Period', and exclusivity (Section 3) and the minimum commitment (Section 4) continue during each renewal. But the Initial Term, the Renewal Term and the Opt-Out Period are all defined only 'as set out in the Order Form'. From this document alone an associate cannot tell that renewals run 60 months or that the opt-out window is just ten Business Days about 180 days before expiry. Without those terms it reads as a standard, possibly benign auto-renewal. The harm (successive five-year lock-ins carrying the 400,000 sq ft minimum and North American exclusivity, escapable only in a narrow July 2028 window) depends on Order Form terms not provided."
+              },
+              "leilisk_seineix_restated_order_form_1.md": {
+                "findable": false,
+                "evidence": "2.2 Renewal Term: 60 months for each Renewal Term. 2.3 Opt-Out Period: the ten (10) Business Days immediately preceding the 180th day before the end of the then-current Initial Term or Renewal Term.",
+                "reason": "The Order Form by itself shows a 60-month Renewal Term, a narrow ten-Business-Day Opt-Out Period falling about six months before the end of each term, and the 400,000 sq ft annual minimum. The phrase 'Opt-Out Period' hints at a default renewal, but the Order Form never says the agreement renews automatically, that a non-renewal notice in that window is the only way out, or what happens if Leilisk misses it. That mechanism is in Supply Agreement Section 2.2, and the exclusivity in Section 3.1 is also in the Supply Agreement. Without that document, an associate cannot confirm that Leilisk is locked into successive five-year terms carrying the minimum commitment and exclusivity. So the problem only shows when the two documents are read together."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Supply Agreement §16.2: \"A Change of Control of either Party is deemed an assignment of this Agreement by that Party and requires the prior written consent of the other Party. ... If Supplier terminates under this Section 16.2 following a Change of Control of Buyer, Buyer shall pay Supplier ... the Minimum Purchase Shortfall for the then-current Contract Year and for each remaining Contract Year of the Initial Term, calculated for each remaining Contract Year as if Buyer purchased no Glass Products in it.\" Restated Order Form §6.2: \"Buyer has entered into a definitive agreement dated April 28, 2026 under which Buyer is to be acquired by Ostrander Building Group, Inc. Closing is expected in the fourth quarter of 2026.\"",
+            "reason": "The Ostrander acquisition is a Change of Control of Leilisk. Under §16.2 it needs Seineix's prior written consent.\n\nThe Order Form only records the deal as a billing and remittance update. It does not say Seineix consents. Under §21.4, a waiver must be in writing and signed, and nothing in §6.2 waives Seineix's consent right. Under §21.2, the Agreement prevails over any Order Form. Nothing else in the folder shows consent was requested or given.\n\nClosing is expected in Q4 2026, after the latest dated document (May 11, 2026). So Leilisk can still act by getting Seineix's written consent before closing.\n\nIf it closes without consent, Seineix can terminate. Leilisk would then owe the Minimum Purchase Shortfall for the current Contract Year and every remaining year through January 2029, calculated as if zero purchases were made. At 400,000 sq ft × $4.25, that is about $1.7M per year, or roughly $5M or more in total. This is a real and still-actionable exposure for the client.",
+            "alone": {
+              "leilisk_seineix_supply_agreement.md": {
+                "findable": false,
+                "evidence": "16.2 Change of Control. A Change of Control of either Party is deemed an assignment of this Agreement by that Party and requires the prior written consent of the other Party. If a Change of Control occurs without that consent, the other Party may terminate this Agreement by giving thirty (30) days' written notice within ninety (90) days after it learns of the Change of Control. If Supplier terminates under this Section 16.2 following a Change of Control of Buyer, Buyer shall pay Supplier ... the Minimum Purchase Shortfall for the then-current Contract Year and for each remaining Contract Year of the Initial Term, calculated for each remaining Contract Year as if Buyer purchased no Glass Products in it.",
+                "reason": "The Supply Agreement alone shows a mutual change-of-control consent requirement. If Seineix terminates after a non-consented Change of Control of Leilisk, Leilisk owes accelerated Minimum Purchase Shortfall for each remaining Contract Year of the Initial Term. An associate could flag this as a contingent risk for the client. It is not a live problem, though, because nothing here says Leilisk is being acquired. The pending acquisition by Ostrander, signed April 28, 2026 with closing expected in Q4 2026, appears only in the Amended and Restated Order Form, which I was not given. That fact is what turns the clause into a problem. This document also does not state the Initial Term length or the shortfall rate, since both are deferred to the Order Form. So the remaining exposure through January 2029 cannot be measured from this document either."
+              },
+              "leilisk_seineix_restated_order_form_1.md": {
+                "findable": false,
+                "evidence": "Buyer has entered into a definitive agreement dated April 28, 2026 under which Buyer is to be acquired by Ostrander Building Group, Inc. Closing is expected in the fourth quarter of 2026.",
+                "reason": "The Order Form, read by itself, shows that Leilisk is to be acquired by Ostrander, with closing expected in Q4 2026. It also shows a 400,000 sq ft annual minimum and a $4.25 shortfall rate. It does not show that a change of control needs Seineix's prior written consent, and it does not give Seineix a right to terminate or to recover the shortfall for the rest of the Initial Term if consent is missing. Those terms come only from Supply Agreement Section 16.2. Section 6.2 treats the acquisition as an administrative matter: remittance advices will come from Ostrander's shared services center. Nothing here signals a consent requirement or that the closing puts Leilisk at risk. An associate reading only this document would see a pending acquisition but could not tell that it triggers a consent right or creates termination and shortfall exposure."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Supply Agreement §5.3: \"Buyer may object to a Price Adjustment Notice by written notice to Supplier given within thirty (30) days after its receipt of the Price Adjustment Notice... If Buyer does not object within that period, the price adjustment is deemed accepted and takes effect on the date stated in the Price Adjustment Notice.\" Restated Order Form §3.2–3.3: \"Supplier issued a Price Adjustment Notice ... which was received by Buyer on March 4, 2026.\" and \"Buyer delivered to Supplier a letter dated April 20, 2026 objecting to the Price Adjustment Notice and requesting benchmarking under Section 5.3 ... Buyer signs this Order Form under reservation of rights and does not accept the adjusted pricing in Column B of Schedule A. Supplier's signature of this Order Form does not waive Supplier's position on the Price Adjustment Notice.\"",
+            "reason": "Read together, the documents show the objection was late. Leilisk received the notice on March 4, 2026, so its 30-day objection window under §5.3 closed on April 3, 2026. The April 20 objection came 17 days after that. Seineix can therefore argue that the increase for IGUs and laminated glass was deemed accepted from May 4, 2026. It can also argue that Leilisk lost its benchmarking right and its right to terminate the affected products out of exclusivity and the Annual Minimum. Seineix expressly preserves that position in §3.3. The issue is still actionable for Leilisk. Leilisk has not accepted the result: it signed the restated Order Form under reservation of rights and rejected the Column B pricing. It is also paying only the Column A price, with the difference treated as a disputed amount under §3.4. Nothing in the folder shows the dispute was resolved. The problem is therefore a live exposure for the client (higher prices plus loss of the exit right) that still needs to be contested or negotiated.",
+            "alone": {
+              "leilisk_seineix_supply_agreement.md": {
+                "findable": false,
+                "evidence": "Buyer may object to a Price Adjustment Notice by written notice to Supplier given within thirty (30) days after its receipt of the Price Adjustment Notice. ... If Buyer does not object within that period, the price adjustment is deemed accepted and takes effect on the date stated in the Price Adjustment Notice.",
+                "reason": "The Supply Agreement on its own sets up only an ordinary 30-day objection window with deemed acceptance (Section 5.3). It contains no Price Adjustment Notice, no date when Leilisk received one, and no date for Leilisk's objection. The facts that create the problem are the March 4, 2026 receipt, the April 20, 2026 objection letter, and the reservation of rights. All of them appear only in the Order Form. Without that document, an associate could not tell that the window closed on April 3 or that the objection was 17 days late, and so could not see the harm to Leilisk."
+              },
+              "leilisk_seineix_restated_order_form_1.md": {
+                "findable": false,
+                "evidence": "Supplier issued a Price Adjustment Notice under Section 5.2 of the Supply Agreement, which was received by Buyer on March 4, 2026. ... Buyer delivered to Supplier a letter dated April 20, 2026 objecting to the Price Adjustment Notice and requesting benchmarking under Section 5.3 of the Supply Agreement.",
+                "reason": "The Order Form gives both dates: the notice was received March 4, 2026 and Buyer's objection is dated April 20, 2026, a gap of 47 days. It also shows Buyer signing under reservation of rights and treating the difference as disputed. It does not say how long Buyer has to object, and it does not say that a late objection means the adjustment is deemed accepted or that benchmarking and termination rights are lost. Those terms are in Section 5.3 of the Supply Agreement, which is not provided. Reading this document alone, an associate could not tell whether the April 20 objection was late or whether that hurts Leilisk."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F7, which only issue I3 uses: a memo that misses I3 need not state it",
+          "criterion C7 asks for fact F10, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.045,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

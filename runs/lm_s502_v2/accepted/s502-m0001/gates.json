@@ -1,0 +1,158 @@
+{
+  "matter_id": "s502-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Supply Agreement §15.3: \"Customer shall not undergo a Change of Control without the prior written consent of Supplier. ... If a Change of Control of Customer occurs without the prior written consent of Supplier, Supplier may terminate this Agreement immediately by written notice to Customer.\" GC email ¶1–2: \"Niron Ocean Lines, Inc. signed an Agreement and Plan of Merger with Sorvik Maritime Group AS on November 2, 2026 ... Niron will survive as a wholly owned subsidiary of Sorvik Maritime Group AS\" and \"no supplier consents have been requested to date. In particular, we have not contacted Laguth Marine Technologies, LLC about the transaction.\"",
+            "reason": "The reverse triangular merger will make Sorvik the owner of 100% of Niron's voting power. That is a Change of Control under §15.3, a clause that binds only the Customer (Niron). Closing is targeted for January 2027, which is after the folder's latest date (November 9, 2026). The issue is therefore still live and actionable before closing. If closing happens without Laguth's prior written consent, Laguth gets an immediate termination right over supply that is operationally critical to the whole fleet, and it gains leverage to reprice. The clause is also one-sided: Supplier can assign freely under §15.2, but Customer is bound by §15.3. Nothing in the folder cures or limits this. Amendment No. 1 does not touch §15.3, no consent or waiver is recorded, and §16.6 requires any waiver to be in writing. Niron's loss of the supply could be cushioned somewhat by the 180-day transition supply in §14.4(b), but that does not remove the exposure.",
+            "alone": {
+              "01_supply_agreement_niron_laguth.md": {
+                "findable": false,
+                "evidence": "Customer shall not undergo a Change of Control without the prior written consent of Supplier. ... If a Change of Control of Customer occurs without the prior written consent of Supplier, Supplier may terminate this Agreement immediately by written notice to Customer.",
+                "reason": "This agreement on its own sets out a one-sided change-of-control clause against Niron. It requires Supplier's consent, defines Change of Control to cover a merger above 50%, and gives Supplier an immediate termination right. It also lets Supplier assign freely under 15.2 while Niron needs consent under 15.1. An associate could flag that as a structural risk. But the document does not show that any change of control is pending or that consent has not been sought. Those facts are the Sorvik merger signed November 2, 2026, the January 2027 target closing, and the fact that Laguth has not been contacted. Without them there is no current problem that harms the client, only a contingent contract term. The issue as described depends on the GC email."
+              },
+              "10_email_niron_gc.md": {
+                "findable": false,
+                "evidence": "In particular, we have not contacted Laguth Marine Technologies, LLC about the transaction, and Laguth is not aware of it as far as we know.",
+                "reason": "The email by itself shows that a merger with Sorvik was signed on November 2, 2026, that closing is targeted for January 2027, and that no consent has been requested from Laguth. It also asks the firm to flag anything in the Laguth documents that the transaction could affect. It does not show that the Supply Agreement contains a change-of-control consent requirement, how Change of Control is defined, or that Laguth may terminate if a change of control happens without consent. Those terms come from Supply Agreement Section 15.3, which was not provided. From the email alone, an associate would know a check is needed but could not tell whether Laguth's consent is required or what remedy Laguth has. The problem cannot be identified without the other document."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 15.2: \"Supplier may assign, novate or otherwise transfer this Agreement, in whole or in part, to any person without the consent of Customer, upon written notice to Customer.\" By contrast, Section 15.1 requires Supplier's consent before Customer may assign.",
+            "reason": "Niron is Customer, and the asymmetry works against it. Laguth can assign or novate, including in part, to anyone, on notice only. There is no competitor carve-out, no creditworthiness or capability test, and no termination right for Niron. Nothing else in the folder limits it. Amendment No. 1 does not touch Section 15. Order Form No. 3, the SOW and the DPA leave it unchanged; the DPA's sub-processor consent covers processors engaged by Supplier, not an assignee that becomes Supplier. The Parent Guaranty is worded around obligations of \"the Supplier\" (Laguth Marine Technologies, LLC). A novation to a third party could therefore leave Niron without guaranty cover for the assignee's performance. Section 14.3 only lets Niron terminate if the guaranty lapses, not if the supplier is replaced. The assignee would also receive Vessel Data under Section 13. The point is still actionable: Order Form No. 4 is about to be negotiated, and Sorvik wants to extend the arrangement, so Niron has leverage to seek mutuality or protections."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Amendment No. 1, Section 4.1: \"Section 12.4 is deleted in its entirety and replaced with the following: '12.4 Exclusions. The limitations in Sections 12.1 and 12.3 shall not apply to Supplier's obligations under Section 11.1, or to liability arising from a Party's gross negligence or willful misconduct.'\" The original Supply Agreement Section 12.4(c) excluded \"Supplier's obligations under Section 11.3\" from the cap.",
+            "reason": "The problem is present and hurts Niron. Section 11.3 makes Laguth (the Supplier) give the environmental indemnity: it covers fines, penalties, port detention, off-hire and deviation costs when nonconforming Products or deficient Services cause MARPOL Annex VI or washwater breaches. Section 12.3 caps Laguth's aggregate liability at 12 months' fees. The original Section 12.4(c) took the 11.3 indemnity outside that cap. Amendment No. 1 is mainly a pricing amendment, but its Section 4 deletes Section 12.4 in its entirety and restates it without clause (c). Supply Agreement Section 1.3 says amendments prevail, and Amendment Section 6.1 says the Agreement continues 'as amended.' Nothing in the folder restores the carve-out or shows Niron meant to give it up; the recitals mention only pricing, delivery locations and 'certain other changes.' As a result, Laguth's environmental exposure is now capped at 12 months' fees, even though regulatory fines and detention costs can far exceed annual spend. This is not a lapsed window that Niron has accepted. It is an ongoing allocation of risk that the firm can still raise. There are natural chances to do so: the change-of-control consent discussions for Project Keel and the Order Form No. 4 negotiations the GC mentions, both after the folder's latest date of November 9, 2026. Niron can seek a corrective amendment to reinstate Section 12.4(c).",
+            "alone": {
+              "06_amendment_no1.md": {
+                "findable": false,
+                "evidence": "\"Section 12.4 is deleted in its entirety and replaced with the following: 'The limitations in Sections 12.1 and 12.3 shall not apply to Supplier's obligations under Section 11.1, or to liability arising from a Party's gross negligence or willful misconduct.'\"",
+                "reason": "The amendment shows that Section 12.4 is fully replaced and that the new version excludes only Section 11.1 obligations and gross negligence or willful misconduct from the caps in Sections 12.1 and 12.3. It does not show what the original Section 12.4 said. It never mentions Section 11.3 or an environmental indemnity. It does not show what the Section 12.3 cap amounts to (12 months' fees) or what Environmental Losses cover (MARPOL fines, detention, off-hire). The recitals describe the amendment as a pricing and delivery change, and nothing in the text signals that a carve-out is being removed. An associate reading only this document would see a restated exclusions clause, not a lost carve-out that hurts Niron. Seeing the problem requires the original Supply Agreement's Sections 11.3, 12.3 and 12.4."
+              },
+              "01_supply_agreement_niron_laguth.md": {
+                "findable": false,
+                "evidence": "12.4 Exclusions. The limitations in Sections 12.1 and 12.3 shall not apply to: (a) Supplier's obligations under Section 11.1; (b) liability arising from a Party's gross negligence or willful misconduct; or (c) Supplier's obligations under Section 11.3.",
+                "reason": "Read by itself, the Supply Agreement protects the client. Section 12.4(c) expressly takes the Section 11.3 environmental indemnity outside the 12-month-fees cap in Section 12.3, and Section 1.3 says amendments prevail. The problem is that Amendment No. 1 deletes and restates Section 12.4 without the 11.3 carve-out, which brings fines, detention and off-hire losses under the cap. That change exists only in the amendment, which is not provided here. An associate reading only this document would conclude the environmental indemnity is uncapped and would see no harm to Niron."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Service Level Schedule Section 1.2: \"'Vessels' means the vessels listed in Annex 1 to this Schedule.\" Annex 1 lists 14 vessels \"As of March 1, 2025\". Supply Agreement Section 1.1: \"'Vessels' means all vessels owned, operated or chartered by Customer or its Affiliates from time to time.\" Section 1.3: \"the Service Level Schedule prevails over this Agreement as to service levels and service credits.\"",
+            "reason": "The Schedule's own definition of Vessels is a fixed list of 14 ships, and nothing in the Schedule lets that list be updated. Order Form No. 3 covers 22 vessels. Eight of them have no committed response times, attendance, spares delivery or reagent service levels, and earn no service credits: Orion, Pegasus, Atlantic Serenade, Atlantic Tempest, Cape Valiant, Cape Wanderer, Nordic Halvard and Nordic Ingrid. Any vessel added later, including Sorvik's ships after closing, is also left out. This happens because Section 1.3 gives the Schedule priority on service levels, and changing the list would need a formal amendment under Section 7.2. The Supply Agreement's from-time-to-time fleet definition does not cure the gap. Order Form No. 3 Section 4.1 refers to the Schedule but sits lowest in the order of precedence. This hurts Niron as Customer, since it is the beneficiary of the service levels. The problem is still actionable: the Agreement is ongoing, and Order Form No. 4 and the merger give natural chances to fix it.",
+            "alone": {
+              "07_service_level_schedule.md": {
+                "findable": false,
+                "evidence": "\"Vessels\" means the vessels listed in Annex 1 to this Schedule. ... ANNEX 1: VESSELS — As of March 1, 2025: [14 vessels listed]",
+                "reason": "On its own, this Schedule shows that 'Vessels' means a fixed list of 14 ships as of March 1, 2025, and that nothing provides for updating the list. A careful reader could suspect that ships added later might fall outside the service levels. It does not show the actual problem, which depends on other documents. It does not show that the Supply Agreement defines 'Vessels' more broadly as the whole fleet from time to time, so there is no visible conflict between definitions. It does not show that the Agreement's Section 1.3 makes the Schedule prevail on service levels. It does not show that Order Form No. 3 covers 22 vessels, so the 8 current vessels left without response times, spares levels and credits cannot be seen. The Schedule's own use of Section 1.1 of the Agreement only points to that document and does not set out its content."
+              },
+              "01_supply_agreement_niron_laguth.md": {
+                "findable": false,
+                "evidence": "Section 1.3: \"Accordingly, the Service Level Schedule prevails over this Agreement as to service levels and service credits, and any written amendment executed by both Parties prevails over each of the other documents.\"",
+                "reason": "This document alone shows that 'Vessels' is defined broadly (all vessels owned, operated or chartered by Customer or its Affiliates from time to time), that service levels and credits are set in the Service Level Schedule (Section 6.2), and that the Schedule prevails over the Agreement on those matters (Section 1.3). A careful associate could note in the abstract that the Schedule might narrow coverage. The Agreement does not show that the Schedule defines 'Vessels' differently, that its Annex 1 lists only 14 vessels with no way to update the list, or that Order Form No. 3 covers 22 vessels. The conflict and the harm to Niron (8 vessels, plus any vessel added later, with no committed response times, parts-availability levels or service credits) can only be seen with the Service Level Schedule and the Order Form."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C5 asks for the whole ranking in fact F5 ('Amendments; Service Level Schedule (as to service levels and credits); Supply Agreement; DPA; Quality Agreement; SOW; Order Form'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.072,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

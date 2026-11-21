@@ -1,0 +1,122 @@
+{
+  "task_id": "s505-m0003",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "master services agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Lebun Interactive, Inc., a video game publisher, as customer under its master services agreement with Draibouth Studios LLC. Please review all nine documents in the folder and prepare a memo to me identifying each issue you find. For each, note where it appears (document and section), why it matters for Lebun, and your recommended fix. Lebun needs this to understand its position under the arrangement. Flag anything you can't resolve from the documents alone.",
+  "documents": [
+    "amendment_no1_msa.md",
+    "certificate_of_insurance.md",
+    "data_processing_addendum.md",
+    "master_services_agreement.md",
+    "office_lease.md",
+    "order_form_no4.md",
+    "quality_agreement.md",
+    "service_level_schedule.md",
+    "term_sheet.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that, because Amendment No. 1 broadens the definition of 'Competitor' to cover game publishers, Lebun's pending merger with Fennick Pine Entertainment Holdings gives Draibouth a right to terminate the MSA (and its Order Forms) unless Draibouth consents. It identifies where the issue appears (MSA Section 15.3 or Amendment No. 1 Section 2), explains why this matters to Lebun, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Competitor",
+        "change of control",
+        "Draibouth's consent"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that the MSA auto-renews for successive three-year terms unless notice of non-renewal is given at least 180 days before the end of the term, and that this departs from the term sheet's one-year renewals with a 60-day opt-out. It identifies where the issue appears (MSA Section 12.2), explains why this matters to Lebun, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "three (3) year Renewal Terms",
+        "180 days",
+        "term sheet"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that, because the Thornfall Reckoning Gold Master Build was delivered on September 1, 2026 and the rejection period is 15 days, Lebun's September 25, 2026 rejection was untimely and the Build is deemed accepted. It identifies where the issue appears (Quality Agreement Section 5.2 or Order Form No. 4 Section 1), explains why this matters to Lebun, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "September 16, 2026",
+        "deemed accepted",
+        "untimely"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that the MSA exclusivity, read with the definitions of 'Covered Services' and 'Customer Title', covers all service lines for all titles of Lebun and its Affiliates worldwide, far beyond the term sheet's exclusivity for North American console functional QA. It identifies where the issue appears (MSA Section 3.5 or Section 1.1), explains why this matters to Lebun, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Covered Services",
+        "Customer Title",
+        "North America"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that Lebun signed a merger agreement with Fennick Pine Entertainment Holdings, Inc. on September 30, 2026.",
+      "kind": "fact",
+      "hints": [
+        "Fennick Pine",
+        "September 30, 2026",
+        "merger agreement"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that signed amendments (Amendment No. 1) prevail over the MSA in the event of conflict.",
+      "kind": "fact",
+      "hints": [
+        "order of precedence",
+        "amendment prevails",
+        "Section 17.4"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is presented as a memo addressed to the supervising partner, organized issue by issue.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Issue 1"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "For each issue it identifies, the response states the location (document and section), why the issue matters for Lebun, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Location",
+        "Why it matters",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Lebun's September 25, 2026 rejection of the Gold Master Build was made within the Quality Agreement rejection period.",
+      "kind": "negative",
+      "hints": [
+        "timely rejection"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Amendment No. 1 records Draibouth's consent to, or waiver of its rights in respect of, the Fennick Pine merger.",
+      "kind": "negative",
+      "hints": [
+        "Draibouth consented"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

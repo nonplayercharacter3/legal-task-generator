@@ -1,0 +1,262 @@
+{
+  "matter_id": "s505-m0002",
+  "summary": "Vailous Auto Remarketing Holdings, LLC (client, Buyer) signed a stock purchase agreement on August 3, 2026 to acquire all shares of Stonebarrow Vehicle Auctions, Inc., a regional wholesale used-car auction operator, from Pritouth Dealer Services, Inc. (Seller) for $42,000,000. Of that amount, $6,000,000 is deferred through a Seller Note, and $3,150,000 of the cash is placed in an indemnity escrow. Closing has not yet occurred; the Outside Date is December 18, 2026. The folder holds the signed SPA, the agreed forms of the ancillary agreements (IP assignment, bill of sale, escrow agreement, seller note, transition services agreement), the Disclosure Schedule with Seller's Supplement No. 1, a broker's insurance certificate cover letter, and Buyer's September 29, 2026 objection letter. Five issues are planted. (1) The general representations survive only until an escrow release date that the Escrow Agreement sets at 90 days after Closing. (2) The Seller Note picks Delaware law and Delaware courts, while the SPA picks New York, and the SPA's precedence clause does not reach the Note. (3) Buyer's objection to the schedule supplement was delivered after the SPA's 10-Business-Day deemed-acceptance window. (4) An SPA exclusive-remedy clause sends Losses relating to TSA subject matter to the TSA's fee-based cap, and the TSA services include title and odometer remediation for vehicles sold before Closing, which pulls the SPA's uncapped Title and Odometer Losses under that cap. (5) The TSA lets Seller assign freely, including to a rival auction operator.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Vailous Auto Remarketing Holdings, LLC",
+      "role": "Buyer (client)"
+    },
+    {
+      "id": "P2",
+      "name": "Pritouth Dealer Services, Inc.",
+      "role": "Seller; TSA service provider; holder of the Seller Note"
+    },
+    {
+      "id": "P3",
+      "name": "Stonebarrow Vehicle Auctions, Inc.",
+      "role": "Company (target wholesale used-car auction operator)"
+    },
+    {
+      "id": "P4",
+      "name": "Cindral Trust Company, N.A.",
+      "role": "Escrow Agent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "August 3, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$42,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "SPA governing law",
+      "value": "Laws of the State of New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F4",
+      "key": "SPA forum",
+      "value": "Exclusive jurisdiction of state or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F5",
+      "key": "SPA general indemnity cap",
+      "value": "$4,200,000",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F6",
+      "key": "Seller Note principal amount",
+      "value": "$6,000,000",
+      "doc": "D5",
+      "section": "Section 1"
+    },
+    {
+      "id": "F7",
+      "key": "Indemnity Escrow Amount",
+      "value": "$3,150,000",
+      "doc": "D6",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F8",
+      "key": "SPA order of precedence",
+      "value": "SPA prevails over Ancillary Agreements (Escrow Agreement, TSA, IP Assignment Agreement, Bill of Sale)",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F9",
+      "key": "Schedule supplement objection period",
+      "value": "10 Business Days after Buyer's receipt of the supplement",
+      "doc": "D1",
+      "section": "Section 6.8"
+    },
+    {
+      "id": "F10",
+      "key": "SPA Outside Date",
+      "value": "December 18, 2026",
+      "doc": "D1",
+      "section": "Section 10.1(b)"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "buyer_objection_letter.md",
+      "kind": "buyer objection letter to schedule supplement",
+      "distractor": false,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1 provides that the General Representations (financial statements, consignor trust funds, dealer licenses, auction receivables, and similar) survive Closing only 'until the Escrow Release Date'. That term is not defined in the SPA; it takes the Escrow Agreement's definition. Escrow Agreement Section 4.1 defines the Escrow Release Date as ninety (90) days after the Closing Date. Each provision looks ordinary on its own. Read together, Buyer has only 90 days after Closing to assert claims for breach of the general representations. That window is too short to complete a post-closing audit cycle or to surface consignor, floorplan, and dealer-license problems, and once it ends the general indemnity is practically worthless. Because Closing has not occurred, the period can still be fixed.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "until the Escrow Release Date"
+      ],
+      "expected_finding": "Read with Escrow Agreement Section 4.1, SPA Section 9.1 limits survival of the General Representations to 90 days after Closing, which leaves Buyer no practical window to bring indemnity claims. Before Closing, Buyer should require a stand-alone survival period of at least 15 to 18 months in the SPA, with a matching escrow release date.",
+      "contradicts": null,
+      "doc2": "D6",
+      "section2": "Section 4.1",
+      "detect_terms2": [
+        "ninety (90) days after the Closing Date"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "SPA Sections 11.8 and 11.9 choose New York law and exclusive New York County courts. SPA Section 9.7 gives Buyer the right to set off indemnifiable Losses against payments due under the Seller Note. Seller Note Section 8 chooses Delaware law and the exclusive jurisdiction of Delaware courts for any dispute arising out of or relating to the Note. The SPA precedence clause (Section 11.12) does not cure the conflict, because it covers only 'Ancillary Agreements', which Section 1.1 defines as the Escrow Agreement, TSA, IP Assignment Agreement and Bill of Sale; the Seller Note is not included. Each clause is standard on its own. Together, if Seller sues on the Note in Delaware, Buyer's setoff defense, which rests on New York-law indemnity rights, falls under a different law and a competing exclusive forum. That invites parallel proceedings and puts Buyer's main protection for the deferred price at risk.",
+      "doc": "D5",
+      "section": "Section 8",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "courts of the State of Delaware"
+      ],
+      "expected_finding": "The Seller Note's Delaware law and exclusive Delaware forum conflict with the SPA's New York law and exclusive New York forum. The SPA precedence clause does not reach the Note. Disputes over Buyer's SPA Section 9.7 setoff against Note payments could therefore be split across forums and laws. The Note should be conformed to New York law and the New York County forum, or the Seller Note should be added to the SPA's precedence clause.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ],
+      "doc2": "D1",
+      "section2": "Section 9.7",
+      "detect_terms2": [
+        "set off",
+        "payments due under the Seller Note"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "SPA Section 6.8 lets Seller supplement the Disclosure Schedule before Closing. It provides that unless Buyer delivers a written objection within 10 Business Days after receiving a supplement, the supplement is deemed accepted and cures any related breach, both for the Section 8.2 closing conditions and for indemnification under Article IX. The Disclosure Schedule (D4) includes Supplement No. 1, which adds a pending putative class action alleging odometer-disclosure violations at Company auction lanes. Its cover statement says it was delivered to Buyer on September 8, 2026 (a Tuesday). Ten Business Days later is September 22, 2026. Buyer's objection letter (D9) is dated September 29, 2026, so it was late. D9 disputes the supplement and reserves Buyer's rights, so Buyer has not accepted the result. Because Closing is still pending, Buyer can still act.",
+      "doc": "D1",
+      "section": "Section 6.8",
+      "detect_terms": [
+        "deemed accepted",
+        "within ten (10) Business Days after receipt"
+      ],
+      "expected_finding": "Seller delivered Supplement No. 1 on September 8, 2026, so Buyer's objection window under SPA Section 6.8 closed on September 22, 2026, and Buyer's September 29, 2026 objection letter was late. Seller can argue the odometer class action is now cured for both the closing condition and indemnification. Before Closing, Buyer should obtain Seller's written waiver of the deemed-acceptance effect or a special uncapped indemnity for that litigation.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Supplement No. 1 (cover statement)",
+      "detect_terms2": [
+        "delivered to Buyer on September 8, 2026"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 9.5(b) excludes Title and Odometer Losses (Seller's specific indemnity under Section 9.2(d) for title defects and odometer misstatements on vehicles sold through the Company's auctions before Closing) from the $4,200,000 cap. SPA Section 9.8 then provides that, notwithstanding anything to the contrary in Article IX, Losses arising out of or relating to the subject matter of the Services shall be recovered exclusively under, and subject to the limitations of, the TSA. TSA Schedule A defines the Services to include title remediation, title transfer and odometer disclosure processing for all vehicles sold through the Auctions before and after the Closing. TSA Section 9.2 caps Provider's aggregate liability at the Service Fees paid in the three months preceding the claim. Section 9.8 reads like routine channeling, and the TSA cap is an ordinary services cap. Read together, they pull pre-Closing title and odometer exposure out of the uncapped carve-out and under a cap of a few months' TSA fees. The SPA precedence clause does not cure this, because the SPA itself directs those Losses to the TSA.",
+      "doc": "D1",
+      "section": "Section 9.8",
+      "detect_terms": [
+        "shall be recovered exclusively",
+        "subject matter of the Services"
+      ],
+      "expected_finding": "Read together, SPA Section 9.8, TSA Schedule A and TSA Section 9.2 subject pre-Closing Title and Odometer Losses to the TSA cap of three months' Service Fees, which defeats the SPA Section 9.5(b) carve-out for those Losses. Buyer should exclude Section 9.2(d) Title and Odometer Losses from Section 9.8, or remove pre-Closing vehicles from the TSA services.",
+      "contradicts": null,
+      "doc2": "D7",
+      "section2": "Schedule A and Section 9.2",
+      "detect_terms2": [
+        "before and after the Closing",
+        "Service Fees paid in the three (3) months"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "TSA Section 13.3 lets Provider (Pritouth) assign the TSA or delegate any Services, in whole or in part, to any Person without Recipient's consent, while Recipient (the Company) may not assign without Provider's consent. Under the TSA, Provider will handle the Company's title files, consignor and bidder data, and auction lane systems. Unrestricted assignment would let Pritouth transfer these functions and the data access that comes with them to a competing wholesale auction operator or an unvetted subcontractor, and the Company would have no consent right.",
+      "doc": "D7",
+      "section": "Section 13.3",
+      "detect_terms": [
+        "without the consent of Recipient",
+        "to any Person"
+      ],
+      "expected_finding": "TSA Section 13.3 lets Pritouth assign the TSA or delegate the Services to anyone, including a competing auction operator that would then receive the Company's title, consignor and bidder data. Before Closing, Buyer should require mutual consent for any assignment or delegation, with an express bar on transfers to competitors.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

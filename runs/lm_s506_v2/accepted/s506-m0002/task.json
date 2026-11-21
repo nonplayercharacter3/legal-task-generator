@@ -1,0 +1,120 @@
+{
+  "task_id": "s506-m0002",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "asset purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Baimix Live Holdings, LLC, the buyer under an asset purchase agreement with Tinev Concerts & Festivals, Inc. and maker of the related seller note. Please review all eight documents in the folder and send me a memo listing each issue you find, where it appears (document and section), why it matters for Baimix, and your recommended fix. The client needs this before it takes its next steps on the deal.",
+  "documents": [
+    "asset_purchase_agreement.md",
+    "escrow_agreement.md",
+    "key_employee_agreement.md",
+    "letter_of_intent.md",
+    "post_closing_letter_agreement.md",
+    "seller_closing_officers_certificate.md",
+    "seller_note.md",
+    "stage_lighting_rental_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the APA's definition of Assumed Liabilities sweeps in Seller's pre-closing liabilities under the Assigned Contracts, and that Buyer's indemnity for Assumed Liabilities is not subject to the Cap. Together these leave Baimix with unlimited exposure for Seller's pre-closing contract breaches, contrary to the LOI's post-closing-only assumption. The response identifies where this appears (APA Section 2.3(a) and/or Sections 9.3(b) and 9.5), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "whether arising prior to, on or after the Closing Date",
+        "not subject to the Cap",
+        "post-closing only"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that the Letter Agreement's restated definition of Fundamental Representations omits Section 4.7 (Title to Purchased Assets). As a result, Buyer's title and IP claims are no longer carved out of the Cap and are now limited to $3,600,000. The response identifies where this appears (APA Section 1.1 / Section 9.5(a) and/or Letter Agreement Section 3), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Sections 4.1, 4.2 and 4.19",
+        "drops Section 4.7",
+        "$3,600,000 Cap"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that Buyer's July 20, 2026 claim notice was delivered after the July 12, 2026 escrow Release Date and was not delivered to the Escrow Agent, so Buyer's $1,150,000 claim is not secured by the escrow. The response identifies where this appears (Escrow Agreement Section 4.2 and/or Letter Agreement Recital B), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "July 12, 2026 Release Date",
+        "not delivered to the Escrow Agent",
+        "$1,150,000"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that the pending sale of Buyer to Orrant Media Partners is a Change of Control under the Seller Note. Without Seller's prior written consent, which has not been obtained, it will be an Event of Default allowing Seller to accelerate the $6,000,000 note. The response identifies where this appears (Seller Note Section 6.1(g) and/or Letter Agreement Recital D), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Orrant Media Partners",
+        "prior written consent of Holder",
+        "accelerate"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that the Seller Note's California governing law and exclusive Los Angeles forum conflict with the APA's New York law and exclusive New York County forum for Ancillary Agreements. Because the note controls its own subject matter, note and setoff disputes would be split from indemnity disputes across two forums and two laws. The response identifies where this appears (Seller Note Section 10 and/or APA Section 11.8), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "laws of the State of California",
+        "County of Los Angeles",
+        "New York"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Seller Note's principal amount is $6,000,000.",
+      "kind": "fact",
+      "hints": [
+        "$6,000,000 Seller Note"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the APA closed on January 12, 2026.",
+      "kind": "fact",
+      "hints": [
+        "January 12, 2026",
+        "Closing Date"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo addressed to the supervising partner. It presents each issue with its document and section location, why it matters for Baimix, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Buyer's July 20, 2026 claim notice was timely under the Escrow Agreement, or that it preserved the claim against the escrow funds.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely",
+        "escrow preserved"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Seller has given its written consent to the sale of Buyer to Orrant Media Partners.",
+      "kind": "negative",
+      "hints": [
+        "Seller consented",
+        "consent obtained"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

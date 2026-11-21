@@ -1,0 +1,244 @@
+{
+  "matter_id": "s501-m0002",
+  "summary": "Vaibur Water Services, LLC (client) operates municipal and industrial water treatment plants. It buys coagulants and other water treatment chemicals from Taipux Chemical Corp. under a Delaware-law Supply Agreement effective March 1, 2024. Taipux Holdings, Inc. guarantees Taipux Chemical's obligations. The folder holds the Supply Agreement, the initial Order Form, a Quality Agreement, the Parent Guaranty, Amendment No. 1, a supply-continuity Side Letter, a Data Processing Addendum, a price adjustment notice, an insurance certificate cover letter and the pre-signing term sheet. There are four planted problems. (1) The exclusivity clause binds Vaibur to buy all treatment chemicals for every U.S. facility from Taipux, although the term sheet agreed only coagulants for six plants. (2) Amendment No. 1 stretches the initial term to seven years and makes each renewal term equal to the initial term. (3) The Supply Agreement lifts the cap for any Environmental Claim indemnity under 'this Agreement', and the Quality Agreement places on Vaibur its own Environmental Claim indemnity, which is therefore uncapped. (4) The Supply Agreement lets Taipux assign without consent to any 'Supplier Group' member, and the Side Letter widens that group to third-party manufacturers and distributors that Taipux can add by notice.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Vaibur Water Services, LLC",
+      "role": "Customer (client); operator of water and wastewater treatment plants"
+    },
+    {
+      "id": "P2",
+      "name": "Taipux Chemical Corp.",
+      "role": "Supplier of water treatment chemicals"
+    },
+    {
+      "id": "P3",
+      "name": "Taipux Holdings, Inc.",
+      "role": "Parent guarantor of Taipux Chemical Corp."
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term (as originally signed)",
+      "value": "three years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement Renewal Term (as originally signed)",
+      "value": "one year",
+      "doc": "D1",
+      "section": "2.2"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement non-renewal notice period (as originally signed)",
+      "value": "at least 90 days before the end of the then-current term",
+      "doc": "D1",
+      "section": "2.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "amendments and side letters, then Supply Agreement, then Quality Agreement, then Order Forms",
+      "doc": "D1",
+      "section": "1.6"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid or payable in the 12 months before the claim",
+      "doc": "D1",
+      "section": "11.1"
+    },
+    {
+      "id": "F7",
+      "key": "Agreed exclusivity scope",
+      "value": "ferric chloride and polyaluminum chloride coagulants for the six Listed Plants only",
+      "doc": "D10",
+      "section": "3"
+    },
+    {
+      "id": "F8",
+      "key": "Supply Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "16.1"
+    },
+    {
+      "id": "F9",
+      "key": "Number of Listed Plants",
+      "value": "six",
+      "doc": "D2",
+      "section": "Schedule 1"
+    },
+    {
+      "id": "F10",
+      "key": "Supply Agreement payment terms",
+      "value": "net 45 days from invoice receipt",
+      "doc": "D1",
+      "section": "6.2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "order_form_no_1.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "side_letter_supply_continuity.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "price_adjustment_notice.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D10",
+      "filename": "term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Two provisions of the Supply Agreement work together. Section 3.1 requires Vaibur to buy 100% of its requirements of 'all Treatment Chemicals' only from Taipux, for every facility 'owned, operated or managed' by Vaibur or its Affiliates in the United States. Section 1.9 defines Treatment Chemicals as all water and wastewater treatment chemicals. The term sheet (D10, Section 3) recorded a much narrower agreed deal: exclusivity only for ferric chloride and polyaluminum chloride coagulants at the six Listed Plants. As drafted, Vaibur is barred from buying disinfectants, pH chemicals and every other product from anyone else, at every current and future U.S. facility, including facilities it only manages for municipal owners. The Supply Agreement does not carry the agreed limit.",
+      "doc": "D1",
+      "section": "3.1",
+      "detect_terms": [
+        "all Treatment Chemicals",
+        "owned, operated or managed"
+      ],
+      "expected_finding": "Section 3.1, read with the Section 1.9 definition of Treatment Chemicals, imposes exclusivity on all treatment chemicals at every Vaibur-owned, -operated or -managed U.S. facility, far beyond the term sheet's agreed coagulants-only exclusivity for the six Listed Plants, and should be amended to that agreed scope.",
+      "contradicts": "F7",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Amendment No. 1 is dated June 15, 2025, and its recital says it was made so Taipux could amortize on-site bulk storage tanks. Two of its sections combine. Section 2 replaces the Initial Term with 'seven (7) years' from the March 1, 2024 Effective Date. Section 3 replaces Supply Agreement Section 2.2, so the agreement now renews automatically for successive Renewal Terms 'equal in length to the Initial Term' unless notice is given at least 'one hundred eighty (180) days' before expiry. Read together, a single missed window locks Vaibur, together with the overbroad exclusivity, into a further seven-year term. Under the order of precedence, amendments prevail over the Supply Agreement, so the original one-year renewal and 90-day notice period no longer apply.",
+      "doc": "D5",
+      "section": "2 and 3",
+      "detect_terms": [
+        "seven (7) years",
+        "equal in length to the Initial Term",
+        "one hundred eighty (180) days"
+      ],
+      "expected_finding": "Amendment No. 1 Sections 2 and 3 together make the agreement renew automatically for successive seven-year terms unless Vaibur gives notice at least 180 days before expiry. Vaibur should negotiate a short (e.g. one-year) renewal term, or a right to terminate during renewal, and should calendar the notice deadline.",
+      "contradicts": [
+        "F2",
+        "F3",
+        "F4"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Supply Agreement Section 11.3 excludes from the Section 11.1 cap 'any Environmental Claim indemnity obligation' of either party under 'this Agreement'. Section 1.4 defines 'this Agreement' to include the Quality Agreement and Order Forms. Within the Supply Agreement itself, the only Environmental Claim indemnity is Taipux's under Section 10.2, so the carve-out looks favourable to Vaibur. Quality Agreement Section 8.2, however, states that 'Customer shall indemnify' Taipux against Environmental Claims arising from any release, spill or discharge of Products after delivery at Customer Sites. That reads as an ordinary handling indemnity. Read together, it is an Environmental Claim indemnity under 'this Agreement', so it falls within the Section 11.3 carve-out. Vaibur's liability for chemical releases at its plants is therefore uncapped. Precedence does not cure this, because the two documents do not conflict.",
+      "doc": "D1",
+      "section": "11.3",
+      "detect_terms": [
+        "any Environmental Claim indemnity obligation"
+      ],
+      "expected_finding": "Because Supply Agreement Section 11.3 removes from the cap every Environmental Claim indemnity under 'this Agreement', a term that Section 1.4 defines to include the Quality Agreement, Vaibur's Quality Agreement Section 8.2 indemnity for post-delivery releases at Customer Sites is unlimited. The carve-out should be confined to Supplier's Section 10.2 indemnity, or Vaibur's indemnity expressly capped.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "8.2",
+      "detect_terms2": [
+        "Customer shall indemnify",
+        "after delivery at Customer Sites"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Supply Agreement Section 15.2 lets Taipux assign the agreement without Vaibur's consent to 'any member of the Supplier Group'. Section 1.12 defines Supplier Group as Taipux and its Affiliates, so on its own this is a routine affiliate carve-out. Side Letter Section 2 was signed to secure backup supply after a Taipux plant outage. It provides that, for purposes of the Agreement, Supplier Group also includes the 'contract manufacturers and distributors' listed in its Annex 1, 'as Supplier may update' by written notice. Read alone, the Side Letter only seems to widen backup sourcing under Supply Agreement Section 4.3. Under the order of precedence, side letters prevail over the Supply Agreement, so the expanded definition controls. Read together, Taipux can assign the whole agreement, including the exclusivity, to any unaffiliated third party it adds to Annex 1, including a competitor of Vaibur, without consent. The Parent Guaranty covers only Taipux Chemical Corp.'s obligations.",
+      "doc": "D1",
+      "section": "15.2",
+      "detect_terms": [
+        "any member of the Supplier Group"
+      ],
+      "expected_finding": "Because the Side Letter, which prevails over the Supply Agreement, expands 'Supplier Group' to unaffiliated contract manufacturers and distributors that Taipux can add unilaterally by notice, Supply Agreement Section 15.2 lets Taipux assign the agreement without Vaibur's consent to any such third party, including a Vaibur competitor. The Side Letter expansion should be limited to sourcing under Section 4.3, or assignment should require Vaibur's consent.",
+      "contradicts": null,
+      "doc2": "D6",
+      "section2": "2",
+      "detect_terms2": [
+        "contract manufacturers and distributors",
+        "as Supplier may update"
+      ]
+    }
+  ]
+}

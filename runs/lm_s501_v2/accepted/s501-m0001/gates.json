@@ -1,0 +1,144 @@
+{
+  "matter_id": "s501-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"Fundamental Representations\" means the representations and warranties of Seller set forth in Sections 4.1, 4.2, 4.3 and 4.4. ... Section 9.1: \"The representations and warranties of Seller and Buyer contained in this Agreement shall survive the Closing until nine (9) months following the Closing Date; provided, that the Fundamental Representations shall survive until sixty (60) days after the expiration of the statute of limitations applicable to the underlying subject matter.\" Section 9.2(d): \"any Taxes of the Company attributable to any Pre-Closing Tax Period, subject to the survival periods set forth in Section 9.1.\"",
+            "reason": "The problem is present and it hurts the Buyer, our client. Seller is the indemnitor and Buyer is the indemnitee. The tax representations in Section 4.12 are left out of the Fundamental Representations, so they survive only nine months under Section 9.1. That includes the representation that sales and use taxes on auction vehicle sales were collected and remitted, with resale certificates retained. The stand-alone pre-Closing Tax indemnity in 9.2(d) is expressly tied to those same 9.1 survival periods, so the most natural reading is that it also lapses at nine months. Tax audits and assessments, such as New York's three-year sales tax assessment window, will usually surface after that. Section 9.9 makes Article IX the exclusive remedy after Closing, so the Buyer would have no fallback claim. The 12-month escrow release in the Escrow Agreement does not fix this: Claim Notices must assert valid Article IX indemnity claims, and those are barred after nine months. Nothing in the folder cures, carves out or limits the gap. Nothing shows the Closing has occurred or that the Buyer has accepted these terms. The agreement is still a draft with unsigned signature blocks, so the client can still negotiate a statute-of-limitations survival period for taxes."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Bill of Sale §1.3: Retained Liabilities cover Salvage Business liabilities 'in each case to the extent arising after the Transfer Time.' SPA: '\"Retained Liabilities\" has the meaning given to such term in the Bill of Sale'; §9.5(b): 'The limitation in Section 9.5(a) shall not apply to Losses arising from Retained Liabilities'; §11.10: 'the Bill of Sale shall govern with respect to the assets and liabilities it conveys.'",
+            "reason": "The SPA's uncapped protection for Retained Liabilities (§9.2(c) and §9.5(b)) depends entirely on the Bill of Sale definition. Section 1.3 of the Bill of Sale limits Retained Liabilities to Salvage Business liabilities arising after the Transfer Time. So every pre-transfer salvage liability stays with the Company, which the Buyer is acquiring. That includes the Harwell class action on Schedule 4.10 over salvage title brands on vehicles sold in 2023–2025. Section 11.10 makes the Bill of Sale govern the liabilities it conveys, so the SPA does not cure the narrow definition. Because Harwell is disclosed, a rep claim under §9.2(a) is likely barred. Any such claim would also be capped at the $3.6M Escrow Amount and limited by the 9-month survival period. This is a real, uncapped exposure for the Buyer. It is still actionable: the Bill of Sale is an undated, unsigned form to be dated at Closing, and nothing in the folder shows the Closing has occurred or that the Buyer accepted this result. The Buyer can still insist that pre-transfer salvage liabilities, including Harwell, be included in the definition.",
+            "alone": {
+              "salvage_business_bill_of_sale.md": {
+                "findable": false,
+                "evidence": "\"in each case to the extent arising after the Transfer Time.\" (Section 1.3, definition of Retained Liabilities)",
+                "reason": "This document shows that the Seller Affiliate assumes only Salvage Business liabilities arising after the Transfer Time. Recital C shows that Buyer is acquiring the Company. A careful associate could therefore see that pre-transfer salvage liabilities stay with the Company Buyer is buying. That alone does not establish the problem described. The harm depends on the SPA, which this document does not contain: Section 9.5(b) carves \"Retained Liabilities\" out of the Escrow Amount cap, Section 9.2(c) indemnifies them without limit, and the SPA borrows the term's meaning from this Bill of Sale. The disclosed class action over 2023–2025 salvage title brands sits on the Section 4.10 schedule, and Section 11.10 makes the Bill of Sale control. This document says nothing about Buyer's indemnity rights, the cap, the carve-out, or the class action. Without the SPA, an associate could not tell whether Buyer is already protected for pre-transfer salvage liabilities by some other SPA provision. So the cap carve-out conflict cannot be seen from this document alone."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Retained Liabilities\" has the meaning given to such term in the Bill of Sale.",
+                "reason": "Read alone, the SPA looks protective. Section 9.2(c) indemnifies Retained Liabilities, and Section 9.5(b) takes them out of the Escrow Amount cap. Schedule 4.10 discloses the Harwell class action over the salvage division's 2023–2025 auctions, and Section 11.10 says the Bill of Sale governs the liabilities it conveys. A careful associate would see that the key definition is borrowed from another document and might want to check it. But nothing in the SPA defines what Retained Liabilities covers, and nothing limits it to liabilities 'arising after the Transfer Time.' On the SPA's face, a pre-Closing Salvage Business claim like Harwell could well fall within the uncapped Retained Liabilities indemnity. The narrowing that leaves pre-transfer salvage liabilities with the Company comes only from Section 1.3 of the Bill of Sale, which I have not seen. So it is the Bill of Sale that pushes the class action outside the uncapped carve-out, and the harm to Buyer cannot be shown from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Key Employee Agreement §1.1: \"'Business' means the conduct of in-person wholesale motor vehicle auctions at physical auction facilities, including the solicitation of consignments for those auctions, the registration of dealer buyers to attend and bid at them...\" §7.2 bars her only from any \"Competing Business,\" defined as a Person that \"engages in the Business.\" By contrast, SPA §1.1 defines 'Business' as \"wholesale motor vehicle auctions conducted in-lane or online, including the SimuLane platform,\" and SPA §6.6 says \"Buyer is relying on the non-competition and non-solicitation covenants of the Key Employee set forth in the Key Employee Agreement to protect the goodwill of the Business following the Closing.\"",
+            "reason": "The problem is present and actionable for Pisas.\n\n1. **The covenants miss the online business.** The Key Employee Agreement's restrictive covenants in Sections 7 and 8 are tied to a 'Business' limited to in-person auctions at physical facilities. That leaves out SimuLane and online-only auctions. SPA §4.20 says SimuLane generated about 41% of gross auction fees in 2025.\n\n2. **The SPA does not fix it.** SPA §6.6 shows Buyer is relying on these covenants to protect the broader SPA 'Business.' But Okonkwo-Veil is not a party to the SPA, so its definitions and its §11.10 precedence clause cannot widen her obligations. Section 8.1 also covers only consignments and registrations 'in the Business,' so her non-solicit does not reach online auctions either.\n\n3. **The risk falls on Pisas as Buyer.** After Closing, Pisas will own the Company, and the Company is the party that benefits from these covenants.\n\n4. **Nothing in the folder cures or limits the gap.** Section 5.3 lets her end the Restricted Period on an unconsented Change of Control, which makes the protection even weaker. There is no record of an amendment.\n\n5. **The window to act appears open.** The latest date in the folder is the March 2026 SPA. Its outside date for Closing is June 30, 2026, and there is no indication Closing has occurred. Pisas can still require an amendment to the Key Employee Agreement, for example as a closing condition, or seek other protection before Closing.",
+            "alone": {
+              "key_employee_agreement_okonkwo_veil.md": {
+                "findable": false,
+                "evidence": "\"Business\" means the conduct of in-person wholesale motor vehicle auctions at physical auction facilities, including the solicitation of consignments for those auctions, the registration of dealer buyers to attend and bid at them, and the arbitration, reconditioning, transport coordination and title processing services provided in connection with them.",
+                "reason": "On its own, the agreement shows that 'Business' is limited to in-person auctions at physical facilities, and that the non-compete (Section 7) and non-solicitation (Section 8) covenants depend on that term. A careful associate could notice that online auctions fall outside the covenants. Nothing in this document, however, shows that the Company runs an online platform. Recital A says only that it 'operates wholesale used-vehicle auctions', and SimuLane is never mentioned. The document also does not show that online revenue is material or that the SPA relies on these covenants to protect a broader 'Business.' Without those facts, the narrow definition reads as a reasonable fit for an auction general manager at a physical-auction company. The harm to the Buyer, a gap that leaves the SimuLane revenue unprotected, only appears from the SPA's definition of Business, its Section 4.20 revenue representation, and its Section 6.6 reliance on these covenants."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Buyer is relying on the non-competition and non-solicitation covenants of the Key Employee set forth in the Key Employee Agreement to protect the goodwill of the Business following the Closing.",
+                "reason": "The SPA alone shows three things. It defines 'Business' to include online auctions and SimuLane. It states that SimuLane generated about 41% of gross auction fees. In Section 6.6, Buyer relies on the Key Employee Agreement's restrictive covenants to protect 'the Business.' The SPA does not show how the Key Employee Agreement defines 'Business' or what its covenants actually restrict. The gap is that the KEA defines 'Business' as in-person auctions at physical facilities only, which excludes online activity. That fact appears only in the Key Employee Agreement. The SPA alone gives no sign that the employee's non-compete fails to reach SimuLane or online competitors. An associate reading only the SPA would at most flag a general diligence point (confirm the KEA's scope), not the actual mismatch."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Key Employee Agreement Section 5.3: \"The Company shall not undergo a Change of Control without first obtaining Employee's written consent. If a Change of Control occurs without first obtaining Employee's written consent, Employee may terminate for Good Reason by written notice to the Company given at any time within ninety (90) days after the Change of Control, and no cure period applies. On any such termination, (a) Employee shall receive the payments and benefits described in Section 5.4(b), and (b) the Restricted Period under Section 7 shall terminate as of the Termination Date.\"",
+            "reason": "The problem is present and still actionable for Buyer.\n\n- **It is triggered.** Section 1.1(a) defines Change of Control to include a transfer of more than 50% of the Company's voting stock. The SPA sells all 1,000 Shares to Buyer, so the sale is a Change of Control.\n- **The SPA does nothing about the consent.**\n  - Schedule 4.5 lists only the NYS DMV notice and the revolver agent consent.\n  - The Section 7.2 closing conditions do not require the Key Employee's consent.\n  - Section 6.6 only bars Seller from amending, waiving or terminating the Key Employee Agreement before Closing. It does not oblige Seller to obtain her consent.\n  - Schedule 4.14 discloses the agreement but does not flag the consent.\n- **The cost lands on Buyer.** If Closing occurs without her consent, she can resign within 90 days with no cure period. The Company, which Buyer will own, must then:\n  - continue her $285,000 salary for 18 months;\n  - pay the $400,000 Retention Bonus; and\n  - pay 18 months of COBRA subsidy.\n- **Buyer also loses the protection it bargained for.** Her non-compete and non-solicit (Restricted Period) end on her resignation. Yet SPA 6.6 says Buyer is relying on exactly those covenants.\n- **Indemnity is unlikely to help.** A Seller indemnity claim is doubtful because the agreement was disclosed and no representation or covenant clearly covers it.\n- **Still actionable.** Nothing in the folder shows that Closing has occurred: the Bill of Sale and Escrow Agreement are undated. The SPA outside date of June 30, 2026 sits within the folder's own timeline. Buyer can therefore still require the Key Employee's written consent as a closing deliverable or condition, or obtain a specific indemnity."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.09,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

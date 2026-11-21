@@ -1,0 +1,146 @@
+{
+  "matter_id": "s503-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 10,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "MSA Section 9.1: \"During the Term and for a period of twenty-four (24) months following the expiration or termination of this Agreement, Provider shall not, directly or through any Affiliate, perform solar photovoltaic installation, engineering, procurement and construction, or operations and maintenance services for any person other than Customer and its Affiliates anywhere in the United States.\" Term Sheet Section 4.2–4.3: \"Exclusivity will apply for the Initial Term only. There will be no post-term restriction.\" \"Provider's residential, utility-scale, ground-mount and other business is not restricted. Provider's business outside New Jersey and Pennsylvania is also not restricted.\"",
+            "reason": "The obligation is on Provider (Riboul, the client). Section 9.1 goes well beyond the agreed deal, which covered commercial rooftop community solar projects in NJ/PA for the Initial Term only. As drafted, it covers all solar installation, EPC and O&M work, nationwide. It also runs for the full Term, including auto-renewals, plus 24 months after the agreement ends. This bars Riboul's residential, utility-scale and out-of-region business. No other document narrows it. The side letter and Order Form do not address exclusivity. Under the MSA's order of precedence, the term sheet is non-binding and does not control. Section 15.4 makes Section 9 survive termination. The problem is actionable: the agreement is in force, nothing shows Riboul has accepted the broader restriction in practice, and an amendment under Section 18.4 is still possible."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "MSA 11.1(b): \"Site Damage, as such term is defined in the applicable Statement of Work, arising from the performance of the Services by Provider or its subcontractors\". MSA 11.1: \"For purposes of Section 11.1(b), Losses include Losses suffered directly by Customer whether or not a third-party claim is asserted.\" MSA 12.3: \"The limitations in Section 12.2 and the exclusions in Section 12.1 shall not apply to Provider's obligations under Section 11.1(b)\". SOW 1.6(b): \"any lost Production Revenue resulting from that damage, including revenue lost while a System is offline, de-energized or curtailed to allow investigation or repair of the roof or premises, for the remaining term of the Offtake Agreement for the affected System.\"",
+            "reason": "The indemnity is given by Riboul, the client. Read together, MSA 11.1(b), MSA 12.3 and SOW 1.6 make Riboul liable, with no cap, for Treikev's lost Production Revenue over the remaining term of each Offtake Agreement. That covers community solar subscriptions, PPAs and Environmental Attributes. Section 12.3 removes the lost-revenue and lost-production waiver and the 12-month-fees cap for this indemnity. The final sentence of 11.1 extends it to Treikev's own direct losses, so no third-party claim is needed. The indemnity also does not require fault: it covers Site Damage 'arising from the performance of the Services', and SOW 2.6 treats the roof's pre-construction condition as the baseline. The order of precedence in MSA 2.3 (Order Form, SOW, SLS, MSA body) puts the SOW definition above the MSA body, so the MSA does not cure the problem. The term sheet (8.2) promised a mutual waiver of lost revenue and lost production, and the documents depart from it without saying so. Nothing in the folder limits the exposure. The insurance certificate covers liability for property damage, not the contractual lost revenue of a project. Construction is ongoing and the documents can still be amended under MSA 18.4 and SOW 11.2. This is therefore a live, material risk for Riboul to raise.",
+            "alone": {
+              "master_services_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.1(b): \"Site Damage, as such term is defined in the applicable Statement of Work, arising from the performance of the Services by Provider or its subcontractors\"; Section 12.3: \"The limitations in Section 12.2 and the exclusions in Section 12.1 shall not apply to Provider's obligations under Section 11.1(b)\"",
+                "reason": "The MSA alone shows several risks to Riboul. The Site Damage indemnity has no cap. It is exempt from the waiver of lost profits, lost revenue and lost production. It covers Treikev's own direct losses, not only third-party claims. And its scope depends on a term defined in a SOW, which outranks the MSA body under Section 2.3. A careful associate would flag that as open-ended and risky. But the MSA does not say what Site Damage covers. Read alone, the term naturally suggests physical damage to the roof and premises, which makes this a common uncapped property-damage carve-out. The serious problem is that Site Damage also includes decades of lost Production Revenue under the Offtake Agreement. That comes only from SOW Section 1.6, which is not in this document. So the specific harm to Riboul cannot be identified from the MSA alone."
+              },
+              "statement_of_work_nj_rooftop_portfolio.md": {
+                "findable": false,
+                "evidence": "1.6 \"Site Damage\" means: ... (b) any lost Production Revenue resulting from that damage, including revenue lost while a System is offline, de-energized or curtailed to allow investigation or repair of the roof or premises, for the remaining term of the Offtake Agreement for the affected System.",
+                "reason": "The SOW alone shows an unusually broad definition: Site Damage includes lost Production Revenue for the rest of the Offtake Agreement term, which can include community solar and PPA revenue. A careful associate might flag it as odd. But the SOW attaches no liability, indemnity or damages obligation to the term. Section 2.4 only requires Provider to take reasonable precautions and give notice, and nothing here makes Riboul pay for Site Damage. The SOW also says nothing about the liability cap or the consequential-damages waiver. The harm to Riboul depends on two MSA provisions that are not in this document: Section 11.1(b), which requires Riboul to indemnify for Site Damage as defined in the SOW, and Section 12.3, which removes the cap and the consequential and lost-profit waiver for that indemnity. It also depends on the MSA's order-of-precedence clause. Without the MSA, the reader cannot see that this definition produces uncapped, unwaivable liability for Riboul."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Order Form Section 7.1: \"This Order Form, the Portfolio SOW and all Services performed under them are governed by the laws of the State of New Jersey, without regard to its conflict of laws principles.\" Section 7.2: \"Each Party submits to the exclusive jurisdiction of the Superior Court of New Jersey, Mercer County, for any action arising out of or relating to this Order Form, the Portfolio SOW or the Services performed under them...\" By contrast, MSA 17.1 and 17.2 choose Delaware law and the courts in Wilmington, Delaware, and MSA 2.3 ranks the Order Form first in the order of precedence.",
+            "reason": "The MSA and the term sheet both chose Delaware law and a Wilmington forum. Order Form Section 7 overrides that choice for the entire current portfolio, which is all of the work now underway. It does so through the MSA's order of precedence, which puts the Order Form first. As a result, the Order Form, the SOW and the Services are governed by New Jersey law in Mercer County, which is Treikev's home venue. The MSA itself, along with its indemnity, liability cap and exclusivity terms, stays nominally under Delaware law and in Delaware courts. This leaves Riboul with split governing law, a risk of parallel proceedings in two forums, and litigation in the counterparty's home county. No document in the folder reconciles or limits this conflict, and nothing suggests it is intentional or helps Riboul. The Order Form is in force, and nothing in the folder shows that a dispute has arisen. Riboul can still raise the point, for example by seeking an amendment under MSA 18.4, so the issue is actionable."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "SLS Section 1.2: \"In this Schedule, \"Defect\" has the meaning given in Section 1.3 of the Quality Agreement.\" Quality Agreement Section 1.3: \"\"Defect\" means any of the following in a System or any component of a System, whether or not caused by Provider ... This includes any of those conditions in Customer-Furnished Equipment ...\" SLS Section 3.2: \"Provider shall remediate each Defect within 5 Business Days after notice of a Defect.\"",
+            "reason": "The Service Level Schedule borrows the Quality Agreement's broad definition of Defect. That definition covers any malfunction or performance shortfall, whether or not Provider caused it, and expressly includes Customer-Furnished Equipment such as the modules Treikev supplies. The MSA defines Defect narrowly, as a failure of Provider's Installation Work to conform to the Specifications. Under MSA Section 2.3 the Service Level Schedule ranks above the MSA body, so the broad meaning controls the SLA. As a result, Riboul (the Provider and the firm's client) must remediate any such condition within 5 Business Days and owes daily service credits under SLS Section 4 for any delay, even where the failure is in Customer-supplied panels or was caused by third parties. Nothing in the Schedule carves those out. Its only relief is the extension in Section 3.5, which covers force majeure and access failures. The Quality Agreement's own Section 5.3 contemplates that CFE defects are routed to manufacturer warranty claims, but that does not limit the SLS obligation. The documents were signed March 9, 2026 and the O&M period has not begun. Section 6.2 permits amendment, so the issue remains actionable for Riboul.",
+            "alone": {
+              "service_level_schedule.md": {
+                "findable": false,
+                "evidence": "1.2 Defect. In this Schedule, \"Defect\" has the meaning given in Section 1.3 of the Quality Agreement.",
+                "reason": "This Schedule takes its definition of Defect from Section 1.3 of the Quality Agreement, which is not provided. It then requires Riboul to remediate every Defect within 5 Business Days (Section 3.2), with daily service credits under Section 4. What the Schedule does not show is how broad that imported definition is. Nothing here says Defect covers nonconformities Riboul did not cause or Customer-Furnished Equipment such as Treikev-supplied modules. It also does not show that the MSA defines Defect more narrowly, or that the MSA's order-of-precedence clause ranks the Schedule above the MSA. An associate could notice that the key term is defined elsewhere, but could not tell from this document alone that it widens Riboul's liability. The harm depends on the Quality Agreement's wording and on the MSA."
+              },
+              "quality_agreement.md": {
+                "findable": false,
+                "evidence": "\"Defect\" means any of the following in a System or any component of a System, whether or not caused by Provider: ... This includes any of those conditions in Customer-Furnished Equipment, Provider-supplied equipment, workmanship, wiring, racking, roof attachments and monitoring equipment.",
+                "reason": "On its own, the Quality Agreement defines Defect broadly, including Customer-Furnished Equipment and problems Provider did not cause. But it uses the term only for logging, classification, reporting, root cause analysis and passing warranty information to Customer (Sections 5.1-5.5). Nothing in it requires Riboul to remediate Defects, sets deadlines, or imposes service credits. Read alone, the broad definition is ordinary and does not hurt the client. The harm depends on the Service Level Schedule, which is not provided: it imports this definition, imposes a 5-Business-Day remediation duty with daily credits, and ranks above the MSA's narrower meaning. Section 5.4 mentions the Service Level Schedule only for combining quarterly reports, which does not reveal the problem."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 8,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C5 asks for the whole ranking in fact F4 ('Order Form, then Statement of Work, then Service Level Schedule, then MSA body, then Quality Agreement'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.052,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

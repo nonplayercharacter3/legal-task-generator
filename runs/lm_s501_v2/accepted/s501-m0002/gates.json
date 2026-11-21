@@ -1,0 +1,148 @@
+{
+  "matter_id": "s501-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 3.1: \"During the term, Customer shall purchase 100% of its requirements of all Treatment Chemicals exclusively from Supplier, for every facility owned, operated or managed by Customer or its Affiliates in the United States.\" Section 1.9 defines Treatment Chemicals as \"all chemicals used in the treatment of water or wastewater,\" including disinfectants, oxidants, pH adjustment chemicals, corrosion inhibitors and odor control chemicals.",
+            "reason": "The problem is present and hurts Vaibur, which bears the exclusive-purchase obligation. Section 3.1, read with Section 1.9, binds Vaibur and its Affiliates to buy every water and wastewater treatment chemical only from Taipux. That reaches every current and future U.S. facility, including plants Vaibur only manages for municipal owners. Yet Order Form No. 1 covers only ferric chloride and PACl at six plants. Term Sheet Section 3.3 recorded the agreed deal: exclusivity for those two coagulants at the six Listed Plants only, with Vaibur free to buy everything else anywhere. Nothing in the folder narrows Section 3.1. The term sheet is non-binding and is not part of \"this Agreement\" under Section 1.4. The side letter and Amendment No. 1 leave Section 3.1 unchanged. Section 14.2 only suspends exclusivity during force majeure. The Amendment makes things worse by extending the Initial Term to seven years with seven-year automatic renewals. The issue is still actionable: the agreement is in force, and Vaibur can seek a corrective amendment, rely on the term sheet as evidence of the agreed scope, or assess its exposure for past non-exclusive purchases."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 3.1 of the Amendment replaces Section 2.2 with: \"After the Initial Term, this Agreement renews automatically for successive renewal terms, each equal in length to the Initial Term (each a \"Renewal Term\"). It does not renew if either Party gives the other written notice of non-renewal at least one hundred eighty (180) days before the end of the then-current term.\" Section 2.1 of the Amendment sets the Initial Term at \"seven (7) years from the Effective Date.\"",
+            "reason": "Reading Sections 2 and 3 together, each automatic Renewal Term is seven years, not the original one year. Vaibur must also give non-renewal notice 180 days ahead, not 90. Under Supply Agreement Section 1.6, amendments prevail over the Supply Agreement, so the original one-year renewal and 90-day notice are displaced.\n\nThe recitals say the longer term is only meant to let Taipux amortize the tanks. Seven-year renewal blocks go well beyond that, and nothing limits renewals to amortization. A single missed notice window would bind Vaibur for another seven years. That lock-in includes the Section 3.1 exclusivity, which covers all Treatment Chemicals at every US facility of Vaibur and its Affiliates. The term sheet contemplated one-year renewals on 90 days' notice and exclusivity for two coagulants at six plants only.\n\nNothing in the folder cures or limits this. The issue remains actionable. The latest folder date is early 2026, and the Initial Term runs to March 1, 2031, so the first notice window is years away. The Amendment's signature blocks are also blank. Vaibur can still renegotiate the provision, for example to one-year renewals on 90 days' notice, or calendar the notice deadline."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Supply Agreement §11.3: \"Sections 11.1 and 11.2 do not apply to: (a) any Environmental Claim indemnity obligation of either Party under this Agreement;\" read with §1.4 (\"'this Agreement' means this Supply Agreement, together with the Quality Agreement, each Order Form...\") and Quality Agreement §8.2: \"Customer shall indemnify, defend and hold harmless Supplier, its Affiliates and their respective officers, employees and agents from and against any Environmental Claim arising from any release, spill or discharge of Products after delivery at Customer Sites.\"",
+            "reason": "The problem is present and still actionable. Because §1.4 defines 'this Agreement' to include the Quality Agreement, Vaibur's Environmental Claim indemnity in QA §8.2 falls within the §11.3(a) carve-out. That leaves Vaibur's liability for releases at its own plants outside both the cap and the consequential-damages exclusion. The indemnity is broad: it covers any release after delivery, without a fault qualifier, and a third-party environmental claim against Taipux could be large. The order of precedence in §1.6 does not cure this, because the two documents do not conflict. No other document in the folder limits the exposure. The amendment and side letter leave §11.3 and QA §8.2 unchanged, and the term sheet contemplated only Supplier environmental indemnities. Under Amendment No. 1 the agreement now runs until 2031, so the exposure is ongoing and Vaibur can still seek to renegotiate it.",
+            "alone": {
+              "supply_agreement.md": {
+                "findable": false,
+                "evidence": "11.3 Exclusions. Sections 11.1 and 11.2 do not apply to: (a) any Environmental Claim indemnity obligation of either Party under this Agreement;",
+                "reason": "The Supply Agreement shows the carve-out mechanics. Section 11.3(a) removes the cap for any Environmental Claim indemnity of 'either Party', and Section 1.4 defines 'this Agreement' to include the Quality Agreement and Order Forms. But the only Environmental Claim indemnity in this document is Supplier's under Section 10.2, so here the carve-out only helps Vaibur. An associate might notice that 'either Party' wording and the broad definition are a theoretical risk. They could not see that Vaibur actually owes an uncapped indemnity. That depends on Quality Agreement Section 8.2, the Customer indemnity for post-delivery releases, which is not in this document."
+              },
+              "quality_agreement.md": {
+                "findable": false,
+                "evidence": "8.2 Customer Indemnity. Customer shall indemnify, defend and hold harmless Supplier, its Affiliates and their respective officers, employees and agents from and against any Environmental Claim arising from any release, spill or discharge of Products after delivery at Customer Sites.",
+                "reason": "This document shows that Vaibur gives Taipux an Environmental Claim indemnity for releases after delivery at Customer Sites. Section 1.2 also says the Quality Agreement forms part of 'this Agreement' under the Supply Agreement. On its face, though, the indemnity is an ordinary handling allocation, and nothing here says it is uncapped. The liability cap (Supply Agreement 11.1) and the carve-out of 'any Environmental Claim indemnity obligation' from that cap (11.3) appear only in the Supply Agreement. An associate reading this document alone could not see that the indemnity escapes the cap and leaves Vaibur with unlimited exposure."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Supply Agreement §15.2: \"Supplier may assign this Agreement, in whole or in part, without Customer's consent to any member of the Supplier Group.\" Side Letter §2.1: \"For purposes of the Agreement, \"Supplier Group\" also includes the contract manufacturers and distributors listed in Annex 1, as Supplier may update Annex 1 from time to time by written notice to Customer under Section 16.4 of the Supply Agreement.\" Supply Agreement §1.6: \"amendments and side letters, then Supply Agreement...\"",
+            "reason": "The problem is present and still actionable. Side Letter §2.1 is not limited to backup sourcing under §4.3. It redefines \"Supplier Group\" \"for purposes of the Agreement\", and the Side Letter forms part of the Agreement (§1.4). Under §1.6, side letters prevail over the Supply Agreement. Section 15.2's no-consent assignment right therefore reaches unaffiliated contract manufacturers and distributors. Taipux can also add new ones to Annex 1 by its own notice, which could include a competitor of Vaibur. Through that route Taipux could assign the whole Agreement, including Vaibur's broad exclusivity under §3.1, without Vaibur's consent. The Parent Guaranty covers only obligations of \"the Supplier\" (Taipux Chemical Corp.), so an unaffiliated assignee's performance would not be guaranteed. Nothing in the folder cures this: Side Letter §7.1 preserves the Supply Agreement only \"except as set out\" in it. The Agreement runs to 2031 under Amendment No. 1, so Vaibur can still seek a clarifying amendment limiting the expanded definition to §4.3.",
+            "alone": {
+              "supply_agreement.md": {
+                "findable": false,
+                "evidence": "15.2 Permitted Assignment. Supplier may assign this Agreement, in whole or in part, without Customer's consent to any member of the Supplier Group.",
+                "reason": "Read by itself, the Supply Agreement shows only a routine affiliate carve-out. Section 1.12 limits 'Supplier Group' to Supplier and its Affiliates, meaning entities under more than 50% common ownership or control. Section 1.6 gives side letters precedence, and Section 16.3 shows the guaranty comes from Taipux Holdings. However, nothing in this document widens 'Supplier Group' to unaffiliated contract manufacturers or distributors, or lets Supplier update that list. The point that makes this harmful (Taipux could assign the agreement, including the exclusivity, to an unaffiliated third party or a competitor without consent) depends on Side Letter Section 2 and its Annex 1, which are not in this document."
+              },
+              "side_letter_supply_continuity.md": {
+                "findable": false,
+                "evidence": "2.1 For purposes of the Agreement, \"Supplier Group\" also includes the contract manufacturers and distributors listed in Annex 1, as Supplier may update Annex 1 from time to time by written notice to Customer under Section 16.4 of the Supply Agreement.",
+                "reason": "The Side Letter shows that the definition of Supplier Group is widened 'for purposes of the Agreement', not just for backup sourcing. It also shows Taipux can add unaffiliated third parties to Annex 1 by notice alone. A careful reader might find that breadth odd. But the Side Letter never mentions assignment, and its stated purpose and its other sections all concern alternate sourcing under Section 4.3. The harm depends on facts only in the Supply Agreement and related documents: that Section 15.2 allows assignment without consent to any member of the Supplier Group, that side letters prevail under the order of precedence, and that the Parent Guaranty covers only Taipux. Without those, a reader cannot see that the expanded definition lets Taipux assign the whole agreement, exclusivity included, to an unaffiliated third party or a competitor."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F1, which only issue I2 uses: a memo that misses I2 need not state it"
+        ],
+        "ranking_facts": [
+          "criterion C5 asks for the whole ranking in fact F5 ('amendments and side letters, then Supply Agreement, then Quality Agreement, then Order Forms'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.08,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

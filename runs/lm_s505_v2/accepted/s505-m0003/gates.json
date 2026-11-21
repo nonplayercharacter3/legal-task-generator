@@ -1,0 +1,148 @@
+{
+  "matter_id": "s505-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "MSA Section 15.3: \"If Customer undergoes a Change of Control in which Customer is acquired by a Competitor, or merges with or into a Competitor, without Provider's prior written consent, Provider may terminate this Agreement and all Order Forms by giving Customer thirty (30) days' written notice.\" Amendment No. 1 Section 2.1 redefines Competitor to include any entity that \"(b) develops, publishes or distributes interactive entertainment software, including video games for console, personal computer, mobile or online platforms.\" Recital B describes Fennick Pine as \"a publisher of console and mobile games\" under which Customer will \"survive as a wholly owned subsidiary of Fennick Pine.\"",
+            "reason": "The problem is present and hurts Lebun. Under the original MSA definition, Fennick Pine, a game publisher and not an outsourced testing, localization or support vendor, would not have been a Competitor. Section 15.3 would then have been harmless. Amendment No. 1 Section 2.1 broadens the definition to cover publishers. The amendment is a signed amendment, which ranks first under MSA Section 17.4, and Section 5.1 makes it part of the Agreement. The announced Merger is therefore a Change of Control: Fennick Pine will acquire all of Lebun's voting securities, so Lebun is acquired by a Competitor. Amendment Section 3.1 only acknowledges receipt of the merger notice and gives no consent. Section 4.3 expressly waives nothing. The result is that the right to terminate the MSA and all Order Forms falls to Provider. That includes Order Form No. 4 launch support for Thornfall Reckoning, which runs through at least March 31, 2027. Meanwhile Lebun stays bound by the broad Section 3.5 exclusivity until Provider chooses to exit, giving Provider leverage in the open gold master rejection dispute. The matter is still actionable. The merger had not closed as of the latest folder date (October 15, 2026), and Provider's 90-day election window runs from its receipt of the merger notice, which arrived around early-to-mid October 2026. Lebun can still seek Provider's written consent or a waiver, or renegotiate the definition, before closing.",
+            "alone": {
+              "master_services_agreement.md": {
+                "findable": false,
+                "evidence": "15.3 Change of Control. If Customer undergoes a Change of Control in which Customer is acquired by a Competitor, or merges with or into a Competitor, without Provider's prior written consent, Provider may terminate this Agreement and all Order Forms by giving Customer thirty (30) days' written notice.",
+                "reason": "The MSA alone shows the Section 15.3 termination right, but Section 1.1 defines 'Competitor' narrowly as a provider of outsourced game testing, localization or player-support services. Under that definition, a merger with a game publisher would not trigger termination. The MSA does not mention the Fennick Pine merger, the broadened Competitor definition, or the absence of consent. All of those come from Amendment No. 1. Reading only this document, an associate could not see that the client's merger exposes it to termination."
+              },
+              "amendment_no1_msa.md": {
+                "findable": false,
+                "evidence": "\"Competitor\" means any person or entity, or any Affiliate of one, that ... (b) develops, publishes or distributes interactive entertainment software, including video games for console, personal computer, mobile or online platforms.\" Also: \"Provider acknowledges that it has received Customer's written notice of the Merger Agreement under the last sentence of Section 15.3 of the Agreement\"",
+                "reason": "Read alone, the amendment shows three things: it widens 'Competitor' to cover game publishers; it records Lebun's pending merger into Fennick Pine, which it describes as a console and mobile game publisher; and Section 3 only acknowledges notice of the merger and gives no consent. Section 3.1 also hints that MSA Section 15.3 deals with change-of-control events. An associate would notice that Fennick Pine now fits the new definition. The amendment does not show what the defined term does in the MSA. It never says that Section 15.3 lets Draibouth terminate the MSA and all Order Forms on 30 days' notice if Lebun is acquired by a Competitor without Draibouth's prior written consent. It also does not show the old, narrower definition, so it cannot show that the amendment is what made the merger a trigger. The termination right and consent requirement come from the MSA, which I have not been given, and they are what make this a concrete harm to Lebun. So the problem cannot be confirmed from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 12.2: \"At the end of the Initial Term, this Agreement shall renew automatically for successive three (3) year Renewal Terms (each a \"Renewal Term\"), unless either Party gives the other written notice of non-renewal not less than one hundred eighty (180) days before the end of the then-current Initial Term or Renewal Term.\"",
+            "reason": "The problem is present and still actionable for Lebun.\n\n- **Departure from the term sheet:** the term sheet (Section 4.2) provided for one-year renewal terms with a 60-day opt-out. The MSA instead renews for successive three-year terms and requires non-renewal notice at least 180 days before the term ends.\n- **Exclusivity carries over:** each renewal also renews Section 3.5. That covenant bars Lebun and its Affiliates from using third parties, or newly formed internal teams, for any Covered Services on any Customer Title. It is far broader than the term sheet's limit to North American functional QA on console titles.\n- **Nothing in the folder cures it:** Amendment No. 1 changes only the Competitor definition and records the merger notice and the rejection dispute. Section 12.2 is untouched.\n- **The window is still open:** the Initial Term ends January 15, 2028, so Lebun must give notice by about July 19, 2027. The latest date in the folder is October 15, 2026, so Lebun can still give non-renewal notice or renegotiate the clause.\n- **Lebun bears the risk:** the right is mutual, but the long lock-in and the early decision point work against Lebun as the party bound by exclusivity. This is especially so with the pending Fennick Pine merger, after which Lebun's Affiliates would also be bound."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Quality Agreement §5.2: \"Customer may reject a Build or other Deliverable that does not meet its Acceptance Criteria by giving Provider written notice of rejection within fifteen (15) days after Delivery (the \"Rejection Period\"). The Rejection Period therefore ends 15 calendar days after Delivery... If Customer does not give a Rejection Notice within the Rejection Period, the Deliverable is deemed accepted on the last day of the Rejection Period.\" Order Form No. 4 §1.3: \"Provider Delivered the gold master Build of the Title, version 1.0.0.4471 ... through the Delivery Portal on September 1, 2026, together with its Delivery Package.\"",
+            "reason": "The two documents together show the lapse. The Gold Master Build was Delivered on September 1, 2026, with its Delivery Package, so §4.4 does not postpone Delivery. The 15-calendar-day Rejection Period therefore closed on September 16, 2026. Lebun's Rejection Letter is dated September 25, 2026 (Amendment No. 1 §4.1), nine days late. Under the Quality Agreement the Build is deemed accepted. The $420,000 M4 milestone fee becomes payable, and Lebun's remedies are limited to warranty under MSA §§11.2(b) and 11.3. MSA §6.2 applies the Quality Agreement periods, and Order Form §6.2 states no different procedure, so nothing overrides the period. Amendment §4.3 expressly says nothing extends, tolls or waives any period, so the documents do not cure the lapse. Lebun has not accepted the result: it maintains the rejection and disputes the fee, and both Parties reserve their rights. The issue is therefore still live and actionable. It affects Lebun's fee-dispute position, and the 90-day warranty window, which runs to about December 15, 2026, is still open as of the latest folder date (October 15, 2026).",
+            "alone": {
+              "quality_agreement.md": {
+                "findable": false,
+                "evidence": "Customer may reject a Build or other Deliverable that does not meet its Acceptance Criteria by giving Provider written notice of rejection within fifteen (15) days after Delivery (the \"Rejection Period\"). ... If Customer does not give a Rejection Notice within the Rejection Period, the Deliverable is deemed accepted on the last day of the Rejection Period.",
+                "reason": "Section 5.2 of the Quality Agreement sets the 15-calendar-day rejection window. It also sets the deemed-acceptance consequences: the milestone fee becomes payable and remedies are limited to warranty. This is the rule that would hurt Lebun. The document contains no facts about the Thornfall Reckoning Gold Master Build. It does not give the September 1, 2026 Delivery date, which is in Order Form No. 4. It does not show that Lebun's rejection letter was sent on September 25, 2026, which is recorded in Amendment No. 1. Without the Delivery date and the rejection date, a reader cannot tell that the window has closed or that Lebun missed it. This document shows only the general deadline, not that a deadline was missed."
+              },
+              "order_form_no4.md": {
+                "findable": false,
+                "evidence": "Provider Delivered the gold master Build of the Title, version 1.0.0.4471 (the \"Thornfall Reckoning Gold Master Build\"), through the Delivery Portal on September 1, 2026, together with its Delivery Package.",
+                "reason": "This order form shows only the delivery date of the Gold Master Build (September 1, 2026). It also says acceptance is governed by MSA Section 6 and Quality Agreement Section 5, but it does not state the 15-day rejection window, which comes from the Quality Agreement. More importantly, it says nothing about when, or whether, Lebun sent a rejection notice. The late September 25, 2026 rejection letter and the continuing dispute appear only in Amendment No. 1. Reading this document alone, an associate could see the delivery date and that a rejection deadline exists somewhere, but could not tell that Lebun missed it or that it was hurt by missing it."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "MSA §3.5: \"During the Term, Customer shall not engage, and shall cause its Affiliates not to engage, any third party to perform Covered Services for any Customer Title, and shall not perform Covered Services for any Customer Title through an internal team created after the Effective Date for that purpose.\" §1.1 defines \"Covered Services\" as \"all services of the type described in Schedule A or in any Order Form, including functional, compatibility, compliance, performance and localization testing, linguistic translation and cultural adaptation, community management, player support and other live-operations support services\". It defines \"Customer Title\" as any product \"developed, published, co-published or distributed by Customer or its Affiliates.\"",
+            "reason": "The problem is present and hurts Lebun. The exclusivity in §3.5 binds Lebun, the Customer. Read with the §1.1 definitions, it covers every service line (QA, localization, live-ops), every platform, every territory and every Affiliate's title. It also stops Lebun from building new internal teams to do this work. That is far beyond the term sheet's deal, which was limited to functional QA of Lebun-published console titles in North America (§§5.1–5.2), with other services, PC/mobile titles, affiliate titles and work outside North America expressly excluded. Nothing in the folder cures the gap. Amendment No. 1 left the exclusivity unchanged, and the Order Forms do not narrow it. The Merger makes the problem worse: once Lebun is a wholly owned subsidiary of Fennick Pine, Fennick Pine and its subsidiaries become Affiliates. Their titles then become Customer Titles, and Lebun must \"cause\" a parent it does not control not to use other vendors, which exposes Lebun to breach. The amended \"Competitor\" definition also lets Draibouth terminate on the merger, but that does not remove the exclusivity for as long as the Agreement runs. The issue is still actionable. The Initial Term runs to January 15, 2028, and the Agreement then auto-renews for three years. The 180-day non-renewal window (around July 2027) remains open as of the folder's latest date. Lebun can also still seek to renegotiate through an amendment, for example in connection with the Merger, and nothing shows it accepted the overbroad scope."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C5 asks for fact F9, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": [
+          "criterion C6 asks for the whole ranking in fact F3 ('Signed amendments, then DPA (as to Personal Data), then MSA, Order Forms, Service Level Schedule, Quality Agreement'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.068,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

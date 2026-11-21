@@ -1,0 +1,150 @@
+{
+  "matter_id": "s504-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "dev",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 2.2: \"At the end of the Initial Term, this Agreement will renew automatically for successive Renewal Terms. It will continue to renew at the end of each Renewal Term unless either Party gives the other written notice of non-renewal during the Non-Renewal Window for the then-current term. A notice of non-renewal given outside the Non-Renewal Window has no effect for that term.\" Section 1.14: \"'Renewal Term' means each successive renewal period of 36 months under Section 2.2.\" Section 1.12: \"'Non-Renewal Window' means, for the Initial Term or any Renewal Term, the 15-day period ending 120 days before the last day of the then-current term.\"",
+            "reason": "The problem is present and still actionable for Pupeska. The Initial Term ends March 31, 2029 (Section 2.1). Read with the definitions, the only valid opt-out for the Initial Term is a 15-day window ending about December 1, 2028. Any non-renewal notice given outside that window has no effect. If Pupeska misses it, the agreement renews for a further 36 months, and Section 4.6 raises the $684,000 fee and the overage fee by 7% at the start of the renewal and in each later Contract Year. Amendment No. 1 applies the same escalation to the Module Fee. This departs from the term sheet, which proposed 12-month renewals terminable on 60 days' notice. The term sheet does not help Pupeska: it was non-binding, and Section 18.2 supersedes term sheets. Neither the Side Letter nor Amendment No. 1 changes Sections 1.12, 1.14 or 2.2. The latest date in the folder is in early 2027, and the window does not open until November 2028. Pupeska can still diarize the window or seek an amendment, so the issue is live."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 3.5: \"Licensee shall not, and shall cause its Affiliates not to, license, use, or develop any third-party laboratory information management software, diagnostic imaging software, or practice management software at any facility owned, operated, or controlled by Licensee or any of its Affiliates anywhere in the world. This obligation applies during the Term and for the 24 months following expiration or termination of this Agreement for any reason.\"",
+            "reason": "The covenant binds Pupeska, the client and Licensee. It goes well past the term sheet (Section 5), which limited exclusivity to LIMS only, at Licensed Sites in the United States, during the term only. The term sheet also said exclusivity would not restrict diagnostic imaging or practice management software and would not apply outside the US. The agreement's entire-agreement clause (Section 18.2) supersedes the term sheet, so the broader covenant controls. Neither the Side Letter nor Amendment No. 1 narrows Section 3.5. Section 14.5 makes Section 3.5 survive termination, which locks in the 24-month tail. As written, the client and its Affiliates would breach by using any imaging or practice-management software at any facility worldwide, including after the agreement ends. The issue is still actionable: the latest date in the folder is in late 2026 and the agreement runs to 2029, so the client can seek an Amendment to bring the clause back in line with the agreed deal."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Agreement Section 13.2: \"The limitation in Section 13.1 and the exclusion in Section 13.3 do not apply to: (a) amounts payable under Section 11.1...\" Amendment No. 1, Section 2 (restated Section 11): \"11.1 **Licensee Indemnity.** Licensee shall defend, indemnify and hold harmless Licensor ... arising out of or relating to: (a) Licensee Data ...; (b) diagnostic results reported through the Software ...; or (c) Licensee's use of the Software\" and \"11.2 **Licensor Indemnity.** Licensor shall defend Licensee ... against any third-party claim alleging that the Software ... infringes...\"",
+            "reason": "In the Agreement as signed, Section 11.1 is Licensor's IP indemnity, so the Section 13.2(a) carve-out protects Pupeska by leaving that indemnity uncapped. Amendment No. 1 restates Section 11 in full. New Section 11.1 is now Pupeska's own broad indemnity, which covers Licensee Data, reported diagnostic results (including regulatory reporting), and any use of the Software. Licensor's IP indemnity moves to Section 11.2. The Amendment does not change Section 13.2, and Section 5.1 of the Amendment confirms the rest of the Agreement stays as it was. Amendments also take priority under Section 18.3. Read together: (1) Pupeska's broad indemnity is uncapped and is also outside the consequential-damages exclusion. (2) Licensor's IP indemnity now falls under the 12-month-fees cap and the Section 13.3 exclusion. This reverses the term-sheet bargain (Section 8.3), which carved out Licensor's IP indemnity from the cap. It hurts the client and is not cured anywhere in the folder. It remains actionable: this is a continuing risk allocation, not a missed deadline. Pupeska can seek a corrective amendment, and it can rely on the term sheet and the parties' clear intent in any dispute over interpretation.",
+            "alone": {
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "13.2 Exclusions. The limitation in Section 13.1 and the exclusion in Section 13.3 do not apply to: (a) amounts payable under Section 11.1; ...",
+                "reason": "Read alone, this agreement has Section 13.2(a) removing the cap only for Section 11.1, and Section 11.1 is the Licensor's IP infringement indemnity. That works in the client's favour. The client's own indemnity, Section 11.2, is narrow (only breaches of Section 3.3) and stays under the 12-month-fees cap. The agreement says Amendments override it (Section 18.3) and that the cross-reference is by section number. But it does not show any amendment that renumbers Section 11, moves the Licensor's IP indemnity to 11.2, or turns 11.1 into a broad Licensee indemnity. Without Amendment No. 1, an associate cannot see that the client's indemnity has become uncapped or that the Licensor's IP indemnity is now capped."
+              },
+              "amendment_no_1.md": {
+                "findable": false,
+                "evidence": "11.1 **Licensee Indemnity.** Licensee shall defend, indemnify and hold harmless Licensor, its Affiliates, and their officers, directors, and employees from and against any third-party claim, and all resulting damages, losses, fines, penalties, costs, and reasonable attorneys' fees, arising out of or relating to: (a) Licensee Data ... (b) diagnostic results reported through the Software, including results transmitted to Reporting Authorities ... or (c) Licensee's use of the Software",
+                "reason": "This document alone shows that Section 11 is restated so that new 11.1 is a broad Licensee indemnity and the Licensor's IP indemnity moves to 11.2. It also shows that everything not expressly amended stays in force (Section 5.1). It never mentions the limitation of liability in Section 13, the cap in 13.1, or the carve-out in 13.2 for 'amounts payable under Section 11.1'. Without the original Agreement, an associate could not see that renumbering moves the client's indemnity into an uncapped carve-out and leaves the Licensor's IP indemnity capped. Read alone, the amendment looks like it adds a Licensee indemnity that is subject to whatever cap the Agreement provides. The uncapped exposure depends on Section 13.2 of the Agreement, which is not provided."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Side Letter §2.1: \"'Connected Instrument' means any analyzer, workstation, or other device that transmits data to the Software, whether directly or through the Instrument Interface Module, the client portal, or any middleware approved by Licensor. This includes analyzers at the Licensed Sites, including point-of-care devices at Partner Clinics.\" Side Letter §2.3: \"Licensee currently expects to interface approximately 340 Connected Instruments located at Partner Clinics in addition to the analyzers at the Licensed Sites.\" Agreement §18.3: \"in the event of any conflict between the Side Letter and this Agreement, the Side Letter shall prevail.\" Agreement §4.4: \"Licensee shall pay an overage fee of $1,800 per Connected Instrument per contract year above the Licensed Instrument Count.\"",
+            "reason": "The problem is present and it hurts Pupeska, which as Licensee pays the overage fee. Agreement §1.4 limits 'Connected Instrument' to analyzers at Exhibit A Licensed Sites that are interfaced through the Instrument Interface Module. The Side Letter redefines the same capitalized term much more broadly and does not limit the new meaning to the Side Letter's own purposes. Nothing like 'for purposes of this Side Letter' appears, and §6.1 only says the Agreement is otherwise unchanged. Because §18.3 makes the Side Letter prevail in a conflict, Licensor can argue that the broad definition also governs the §4.4 Licensed Instrument Count and the overage. On that reading: (1) the 106 site analyzers in SOW Appendix 1 plus about 340 Partner Clinic devices would far exceed the 120-instrument cap; (2) overage of roughly $1,800 per excess device per year would follow, escalating 7% annually in renewals under §4.6; (3) that cost dwarfs the one-time $250-per-device credit of about $85,000. Amendment No. 1 does not touch either definition, so nothing in the folder cures the conflict. The matter date is no later than the latest date in the folder (September 15, 2026). On that basis the onboarding period runs to December 31, 2026 and the first year-end overage invoice has not yet issued. The issue therefore remains actionable: Pupeska can seek a clarifying amendment confining the Side Letter definition to the credit.",
+            "alone": {
+              "side_letter_onboarding_credits.md": {
+                "findable": false,
+                "evidence": "\"Connected Instrument\" means any analyzer, workstation, or other device that transmits data to the Software, whether directly or through the Instrument Interface Module, the client portal, or any middleware approved by Licensor. This includes analyzers at the Licensed Sites, including point-of-care devices at Partner Clinics.\" (Section 2.1); also \"Except as set out in this Side Letter, the Agreement remains unchanged and in full force and effect.\" (Section 6.1)",
+                "reason": "Read alone, the side letter gives a broad definition of 'Connected Instrument', expects about 340 partner-clinic devices, and grants a $250 credit for each one. On its face this only benefits the client. Section 6.1 suggests the side letter may modify the Agreement, but it does not show how. The harm depends on three things that appear only in the Agreement: (1) the Agreement already uses 'Connected Instrument' with a narrower meaning tied to Exhibit A sites; (2) Section 4.4 charges $1,800 per year for each Connected Instrument above the 120-instrument Licensed Instrument Count; and (3) Section 18.3 makes the Side Letter prevail when the two conflict. Without these, an associate could not see that the broad definition might raise recurring overage fees (about $612,000 per year) that far exceed the one-time credit (about $85,000). At most, the side letter alone prompts a reviewer to check whether the term is used elsewhere in the Agreement."
+              },
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "1.4 \"Connected Instrument\" means a laboratory analyzer located at a Licensed Site listed in Exhibit A that is interfaced with the Software through the Instrument Interface Module.",
+                "reason": "This document alone defines Connected Instrument narrowly: analyzers at the four Exhibit A sites. It charges overage only above 120 such instruments (Section 4.4). It also says the Side Letter prevails in a conflict (Section 18.3), which is a general precedence risk. Nothing in the document shows that the Side Letter redefines Connected Instrument to cover partner-clinic point-of-care devices, or that about 340 such devices exist. Under this document alone, partner-clinic devices fall outside the definition, because they are neither analyzers at a Licensed Site nor interfaced through the Instrument Interface Module. So they would not trigger overage. The broader definition, and the overage exposure it creates, can only be seen in the Side Letter."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [
+          "criterion C4 requires a harm, remedy or provision that issue I4's expected_finding does not name: 'The response must conclude that this exposes the client to $1,800-per-year overage fees on partner-clinic devices above the 120-instrument count'; ask that the response explains why it matters and recommends a fix"
+        ],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C5 asks for fact F2, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": [
+          "criterion C6 asks for the whole ranking in fact F6 ('Amendments first, then the Side Letter, then the Software License Agreement'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.068,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

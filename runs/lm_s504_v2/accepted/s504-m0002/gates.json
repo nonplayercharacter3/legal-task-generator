@@ -1,0 +1,170 @@
+{
+  "matter_id": "s504-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Side letter Section 2: \"The definition of \\\"Pre-Closing Environmental Liabilities\\\" in Section 1.1 of the Purchase Agreement is hereby amended and restated in its entirety to read as follows: ... means all Liabilities arising under Environmental Laws to the extent arising from the Identified Environmental Conditions...\" APA Section 9.5(b): \"The limitations in Section 9.5(a) ... (iii) shall not apply to Losses constituting Pre-Closing Environmental Liabilities, whether claimed under Section 9.2(a) or Section 9.2(c).\"",
+            "reason": "The problem is present and hurts Buyer (Prodeth), the indemnified party.\n\n- **Original position.** The APA defines Pre-Closing Environmental Liabilities to cover any contamination at the Purchased Assets on or before Closing, \"whether known or unknown.\" Section 9.5(b)(iii) takes all of those losses outside the $4,200,000 Cap Amount.\n- **Effect of the side letter.** Section 2 narrows the definition to the five Annex A conditions from the Phase I Report. The letter is expressly an amendment under Section 11.8, and Section 11.12 gives that amendment precedence over the APA.\n- **Result.** Contamination not listed in Annex A, such as undiscovered subsurface releases at the Ashby Falls Facility, falls outside the uncapped carve-out. It also stops being an Excluded Liability under Section 2.4(a).\n- **What is left for Buyer.** Buyer could only claim under the Section 4.13 environmental representation. That claim is knowledge-qualified, subject to the $4,200,000 cap and the $210,000 basket, and must be noticed within the 9-month survival period.\n- **Nothing cures it.** The remediation undertaking covers only the Identified Environmental Conditions. Nothing in the folder restores coverage for unknown conditions.\n- **Still actionable.** The side letter is undated and unsigned, so Buyer can still renegotiate it before signing.",
+            "alone": {
+              "closing_side_letter.md": {
+                "findable": false,
+                "evidence": "The definition of \"Pre-Closing Environmental Liabilities\" in Section 1.1 of the Purchase Agreement is hereby amended and restated in its entirety to read as follows: > \"Pre-Closing Environmental Liabilities\" means all Liabilities arising under Environmental Laws to the extent arising from the Identified Environmental Conditions...",
+                "reason": "The side letter alone shows that Section 2 replaces the APA's definition of 'Pre-Closing Environmental Liabilities' with one limited to the five Annex A conditions. It also shows that Section 5.1 makes the letter an amendment under APA Section 11.8. It does not show what the original definition covered, so a reader cannot tell whether this narrows or widens Buyer's protection. It also does not show where the term is used. Nothing in it mentions the $4,200,000 Cap Amount, the Section 9.5(b)(iii) carve-out from that cap, or the Section 11.12 precedence rule. Read alone, Section 2 looks like a definitional tie-in to Seller's remediation promise, which is favourable to Buyer. The harm is that unlisted contamination, such as undiscovered subsurface releases at Ashby Falls, falls back under the capped representation-breach indemnity. Seeing that requires the APA's original definition and its cap and carve-out provisions, which are in the other document."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"(iii) shall not apply to Losses constituting Pre-Closing Environmental Liabilities, whether claimed under Section 9.2(a) or Section 9.2(c).\"",
+                "reason": "Read alone, the APA favors the Buyer. 'Pre-Closing Environmental Liabilities' is defined broadly to cover all pre-Closing environmental conditions at the Purchased Assets, including the Ashby Falls Facility, whether known or unknown and whether or not disclosed. Section 9.5(b)(iii) takes all of those Losses out of the $4,200,000 cap. Sections 11.8 and 11.12 let a letter-agreement amendment override the APA, but that is ordinary drafting and does not harm the Buyer on its face. The harm comes only from the side letter, which restates the definition to cover just the Annex A Identified Environmental Conditions. That document is not provided. Without it, nothing here shows that unlisted contamination falls back under the cap."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 2.3(c): Buyer shall assume \"(c) all Liabilities under the Assigned Contracts, whether arising before or after the Closing.\" Section 9.3(b): Buyer indemnifies Seller for \"any Assumed Liability.\" Section 9.5(c): \"The aggregate liability of Buyer under Section 9.3 shall not exceed the Cap Amount.\" Section 9.5(d): \"No limitation in this Section 9.5 shall apply to Buyer's obligations under Section 9.3(b).\"",
+            "reason": "Under 2.3(c), Prodeth, our client, assumes Seller's pre-Closing liabilities under the municipal supply contracts, such as off-spec deliveries and late-delivery penalties. Because these are Assumed Liabilities, they are not Excluded Liabilities, so Seller's uncapped Excluded Liability indemnity in 9.2(c) does not cover them. Under 9.3(b), Prodeth must also indemnify Seller for them, and 9.5(d) removes the 9.5(c) cap on that obligation, so Prodeth's exposure has no limit. Nothing in the folder fixes this. Section 2.4(f) excludes only liabilities tied to actions pending or threatened at Closing. Prodeth's only fallback is a claim for breach of the Section 4.5(b) contract rep, which is knowledge-qualified for counterparties, survives only nine months, and is subject to the $210,000 basket and the $4,200,000 cap. The closing side letter changes only the environmental definition and adds remediation terms. The issue is still actionable: the Bill of Sale, Seller Note and Escrow Agreement are undated and unsigned, so Closing has not occurred. Prodeth can still negotiate an amendment under Section 11.8 limiting 2.3(c) to post-Closing liabilities or capping 9.3(b) for pre-Closing matters."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Seller Note §12.2: \"Any legal suit, action or proceeding arising out of or relating to this Note shall be instituted exclusively in the Court of Chancery of the State of Delaware...\" (with §12.1 choosing Delaware law). APA §11.10: \"Any legal suit, action or proceeding arising out of or relating to this Agreement or the transactions contemplated by it shall be instituted exclusively in the State or federal courts located in New York County, New York.\" APA §11.12: \"The exception is that each Ancillary Agreement's own governing-law and forum clauses govern that Ancillary Agreement.\"",
+            "reason": "The problem is present and still actionable for Prodeth. Prodeth is the maker of the Seller Note, so it is the party that would withhold payments under APA §9.8. That section gives Buyer a right to set off finally determined and pending indemnity claims against the Note and says a good-faith set-off is not a default. The Note itself contains no set-off provision and no cross-reference to APA §9.8. It also selects Delaware law and exclusive Delaware courts. The APA selects New York law and exclusive New York courts for disputes about the APA and the transactions it contemplates. §11.12 expressly preserves the Note's own forum and governing-law clauses, so the APA does not override them. If Prodeth sets off, Seller can sue on the Note in Delaware under Delaware law, while the indemnity and set-off dispute belongs in New York. Prodeth would then face parallel proceedings, inconsistent results, and a Delaware court that may enforce the Note's plain payment terms without honoring the set-off. Nothing in the folder cures this. The Note and APA ancillaries are still unsigned closing forms, so the mismatch can still be fixed before Closing, for example by aligning the forum and governing law or by adding the set-off right expressly to the Note.",
+            "alone": {
+              "seller_promissory_note.md": {
+                "findable": false,
+                "evidence": "This Note, and any claim or dispute arising out of or relating to this Note, shall be governed by and construed in accordance with the laws of the State of Delaware... Any legal suit, action or proceeding arising out of or relating to this Note shall be instituted exclusively in the Court of Chancery of the State of Delaware...",
+                "reason": "The Note alone shows that Section 12 chooses Delaware law and exclusive Delaware jurisdiction, which is an ordinary clause by itself. It also identifies the counterparty as a New York LLC and refers to the Purchase Agreement. The Note does not mention any set-off right, an indemnity regime, the APA's New York governing-law and forum clauses, or the APA precedence rule that leaves the Note's clauses in place. The Note in fact makes payment unconditional and has no set-off provision. Without APA Sections 9.8, 11.9, 11.10 and 11.12, an associate could not see that a set-off or indemnity dispute would have to go to New York while the Note claim goes to Delaware, so the risk of parallel proceedings and inconsistent rulings for the Buyer cannot be identified from this document alone."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "The exception is that each Ancillary Agreement's own governing-law and forum clauses govern that Ancillary Agreement.",
+                "reason": "Read alone, the APA shows three things. Section 9.8 lets Buyer set off indemnity claims against Seller Note payments. Sections 11.9 and 11.10 choose New York law and the exclusive jurisdiction of the New York County courts. Section 11.12 lets each Ancillary Agreement, including the Note, keep its own governing-law and forum clauses. A careful associate could therefore see that a split forum is possible. The APA never says what law or forum the Note actually chooses. It does not say the Note is governed by Delaware law or that disputes go to the Delaware Court of Chancery. If the Note also chose New York law and New York courts, there would be no mismatch, no parallel proceedings and no harm to Buyer. The actual conflict depends on Section 12 of the Note, which is not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "APA §4.5(a): \"No consent, approval or notice of or to any Person is required for the assignment of the Assigned Contracts to Buyer ... other than: (i) the consent of the Brennock Regional Water Commission ... and (ii) the consent of the Tillery Municipal Utilities District ... (collectively, the \"Required Consents\").\" APA §7.2(c): \"Seller shall have obtained and delivered to Buyer each of the Required Consents.\" Board Consent §1.5: \"The Ashcombe Supply Agreement accounted for approximately 31% of the Business's revenue ... the Company may not assign the Ashcombe Supply Agreement, or effect any sale of all or substantially all of the assets used in its performance, without the prior written consent of the Authority.\" Resolution 3 authorizes officers only \"to seek the prior written consent of the Authority.\"",
+            "reason": "The problem is present and still actionable. Section 2.1(c) makes the Ashcombe Supply Agreement an Assigned Contract. Seller's own board consent records that the contract needs the Authority's prior written consent to assignment or to an asset sale, and that it produces about 31% of revenue. Even so, Section 4.5 leaves Ashcombe out of the Required Consents, and the Section 7.2(c) condition covers only those Required Consents. Resolution 3 treats the two consents differently: officers are told to \"seek and obtain\" and deliver the Brennock and Tillery consents, but only to \"seek\" the Ashcombe consent. No document in the folder shows the Ashcombe consent was obtained, and no document makes it a condition to closing. The general bring-down condition in Section 7.2(a) does not reliably protect Buyer. Article IV is qualified by the Disclosure Schedule, so Seller can disclose the consent requirement there and defeat both the representation and the condition. Buyer would then have to close, pay $36M in cash plus the $6M Seller Note, and take on all Liabilities under Assigned Contracts (Section 2.3(c)) even if the Authority refuses consent or terminates. Buyer's fallback would be a general representation claim, which is subject to the $210,000 basket, the $4.2M cap and the 9-month survival period, plus a set-off against the Note. Closing has not happened: the closing documents are undated and the Outside Date is January 15, 2027. Buyer can therefore still add the Ashcombe consent to the Required Consents and the Section 7.2(c) condition, or negotiate a price adjustment or special indemnity.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"No consent, approval or notice of or to any Person is required for the assignment of the Assigned Contracts to Buyer or the consummation of the transactions contemplated by this Agreement, other than: (i) the consent of the Brennock Regional Water Commission under the Brennock Supply Agreement; and (ii) the consent of the Tillery Municipal Utilities District under the Tillery Supply Agreement (collectively, the \"Required Consents\").\"",
+                "reason": "The APA alone shows that the Ashcombe Supply Agreement is an Assigned Contract (2.1(c)). It shows the Required Consents cover only Brennock and Tillery (4.5(a)). It shows Buyer's closing condition is limited to the Required Consents (7.2(c)). It shows non-fundamental reps survive only 9 months and are capped at $4.2M (9.1(a), 9.5(a)). But the APA itself represents that no consent is needed for Ashcombe, so on its face this is an ordinary, internally consistent consent structure. The APA does not show that the Ashcombe agreement actually requires the Authority's prior written consent to assignment or an asset sale. It also does not show that the contract is about 31% of revenue, or that Seller's board only authorized officers to 'seek' that consent. Those facts come from the Toulous board consent (D6). Without them, a careful associate would see no gap between the rep and reality, and no exposure for Buyer from closing without Ashcombe's consent."
+              },
+              "toulous_board_consent.md": {
+                "findable": false,
+                "evidence": "Under its terms, the Company may not assign the Ashcombe Supply Agreement, or effect any sale of all or substantially all of the assets used in its performance, without the prior written consent of the Authority.",
+                "reason": "The board consent alone shows three things: the Ashcombe Supply Agreement is about 31% of revenue, it needs the Authority's prior written consent to assign or to sell substantially all related assets, and the officers are only authorized to 'seek' that consent. That flags a consent still to be obtained, which is an ordinary pre-closing item. What makes it a problem for Prodeth is in the Purchase Agreement, which this document does not contain: the Required Consents in Section 4.5 leave out Ashcombe, Buyer's closing condition in Section 7.2(c) covers only the Required Consents, and the fallback is a capped 9-month representation claim. Without the APA, an associate could not tell that Buyer must close and pay full price even if the Authority refuses."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 9.1(a): \"The representations and warranties in this Agreement, other than the Fundamental Representations, survive the Closing until nine (9) months after the Closing Date. No claim may be made in respect of any of them unless written notice of the claim is given before that date.\" Section 6.10: \"Buyer shall cause the recertification audit of the transferred Products and the Ashby Falls Facility to be completed within twelve (12) months after the Closing Date.\"",
+            "reason": "The problem is present and hurts Buyer (Prodeth), the indemnified party. The Section 4.14 NSF representation is not a Fundamental Representation, so a claim for its breach must be noticed within 9 months of Closing. The recertification audit under Section 6.10 may run until month 12, and that audit is the step most likely to show that Products did not conform to their certified formulations. Nothing in the folder closes the gap. Uncapped, any-time claims under Section 9.2(c) cover only Excluded Liabilities, which do not include NSF nonconformity. The side letter's amendment deals only with environmental matters. The escrow Release Date is also 9 months after Closing, so escrow security disappears at the same point. The set-off right under Section 9.8 depends on a valid Article IX claim, so it does not help either. Closing has not occurred: the Closing Date is left blank and the Outside Date is January 15, 2027. Buyer can therefore still fix this, for example by extending survival of Section 4.14 or by requiring the audit to finish before the survival period ends."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Section 10.1: \"Holder may sell, assign, pledge or otherwise transfer this Note, in whole or in part, and any of its rights under this Note, to any Person, without the consent of Maker. Each transferee shall succeed to all of the rights of Holder under this Note to the extent of the interest transferred.\" Section 7(c) separately requires delivery to Holder of \"a customer-concentration report identifying each customer of Maker ... with the revenue attributable to that customer and the contract under which it is supplied.\"",
+            "reason": "Section 10.1 lets Toulous transfer the Note to any Person without Prodeth's consent, and every transferee takes all Holder rights. Those rights include the Section 7 reporting package: monthly financials, annual audited statements and customer-by-customer revenue and contract data. They also include the acceleration remedies in Section 9. Nothing in the Note excludes competitors as transferees or imposes a confidentiality obligation on any Holder. The folder does not cure this. APA Section 6.7 and the Mutual Confidentiality Agreement bind only Toulous, not a transferee. The confidentiality agreement also expires in March 2028, before the Note matures. Section 10.2 gives Prodeth only after-the-fact notice of a transfer. Section 10.3 restricts Maker's own assignments and leaves the Holder unrestricted. The Note is still an unsigned form to be delivered at a Closing that has not occurred (the Outside Date is January 15, 2027), so Prodeth can still negotiate fixes before signing: a consent right, a competitor carve-out, or confidentiality undertakings from transferees. The problem is real for Prodeth as Maker and is still actionable."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F6, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.092,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

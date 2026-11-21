@@ -1,0 +1,180 @@
+{
+  "matter_id": "s503-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Agreement §11.3: \"Sections 11.1 and 11.2 do not apply to (a) a party's indemnification obligations under Section 10, ...\" Amendment No. 1 §3.1: \"Section 10.1(b) of the Agreement is deleted in its entirety and restated as new Section 9.6 of the Agreement...\" Amendment §3.2 replaces Section 10.1 so that it covers only IP infringement claims.",
+            "reason": "Read together, the two documents create the problem. Supplier's Product Claims indemnity for patient-injury and product-liability claims now sits in Section 9.6, not Section 10. The Section 11.3(a) carve-out still covers only \"indemnification obligations under Section 10\". As a result, Supplier's product-liability indemnity is now subject to the Section 11.2 cap (amounts Distributor paid in the prior 12 months). It may also be cut back by the Section 11.1 exclusion of consequential damages and lost profits. Nothing cures this. New Section 9.6 imports only the Section 10.3 procedures, not the cap carve-out. Amendment §5.1 leaves Section 11.3 unchanged, and §3.3 touches only the Section 9.5 disclaimer. Distributor's own Section 10.2 indemnities to Supplier remain uncapped. The gap therefore falls on Trobur, the reseller facing clinic and patient claims, and it creates an asymmetry. The amendment is dated September 15, 2026 and the Agreement remains in force. Trobur can still seek a corrective amendment adding Section 9.6 to the Section 11.3 carve-out, and the cap would apply to any future Product Claim. The issue is therefore still actionable.",
+            "alone": {
+              "exclusive_distribution_agreement_furux_trobur.md": {
+                "findable": false,
+                "evidence": "11.3 Exclusions. Sections 11.1 and 11.2 do not apply to (a) a party's indemnification obligations under Section 10, (b) a Party's breach of Section 12, (c) a Party's gross negligence, fraud or willful misconduct, or (d) Distributor's obligation to pay for Products ordered and delivered.",
+                "reason": "This agreement alone gives Supplier's Product Claims indemnity in Section 10.1(b). Section 11.3(a) carves that indemnity, like every Section 10 obligation, out of the Section 11.2 cap, so it is uncapped and works in Distributor's favor. Nothing in this document puts the product-liability indemnity under the cap. The problem only appears once Amendment No. 1 Section 3 deletes 10.1(b) and restates it as Section 9.6 while 11.3 still points only to Section 10. That amendment is not provided. A careful associate reading this agreement by itself would see a working carve-out, not a gap that hurts Trobur."
+              },
+              "amendment_no_1_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "Section 10.1(b) of the Agreement is deleted in its entirety and restated as new Section 9.6 of the Agreement",
+                "reason": "The Amendment shows that Supplier's Product Claims indemnity moves from Section 10 into new Section 9.6. It also shows that Section 10.1 now covers only IP infringement. A careful reader might wonder whether moving the indemnity affects other cross-references. But the Amendment never mentions Section 11.2 or 11.3, any liability cap, the 12-month measure, or a carve-out limited to 'indemnification obligations under Section 10'. Those facts are in the original Distribution Agreement. Without it, an associate cannot see that the product-liability indemnity has left the cap carve-out and is now capped, or that Distributor's own Section 10 indemnities stay uncapped."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Quality Agreement Section 1.1: \"'Recall' means a removal or correction of a Product that is mandated by order of the FDA or another Governmental Authority, including any mandatory recall ordered under 21 C.F.R. Part 810 or any comparable order of a Governmental Authority.\" Section 1.2: \"The definitions in this Section 1 apply to all Quality Matters between the Parties.\" Distribution Agreement Section 2.3: \"In the event of any conflict between this Agreement and the Quality Agreement, with respect to Quality Matters, the Quality Agreement shall govern.\" Distribution Agreement Section 7.4: \"Supplier shall bear all costs of any Recall, including Distributor's reasonable out-of-pocket costs of notifying Customers and of retrieving, replacing and crediting Products at dental clinics and other Customer locations.\"",
+            "reason": "The Distribution Agreement defines Recall broadly, covering voluntary withdrawals, field corrections and field safety notices. Section 7.4 puts all Recall costs on Supplier, which protects Trobur. The Quality Agreement narrows Recall to government-ordered actions and says its definitions apply to all Quality Matters. The Distribution Agreement lists Recalls as a Quality Matter and makes the Quality Agreement govern conflicts on Quality Matters. Supplier can therefore argue that the narrow definition controls. On that reading, Supplier pays only for mandated recalls, and Trobur bears the costs of voluntary field actions. Those are the most common field actions for dental devices. Amendment No. 1 does not cure this. Section 5.3 expressly states that it does not amend the Quality Agreement, and Section 1.2 only updates cross-references. Supplier can initiate a voluntary Recall at any time, so the exposure is ongoing. Trobur can still seek a written amendment to align the definitions, and the upcoming Pellmont sale gives it an occasion to do so.",
+            "alone": {
+              "quality_agreement_furux_trobur.md": {
+                "findable": false,
+                "evidence": "\"Recall\" means a removal or correction of a Product that is mandated by order of the FDA or another Governmental Authority, including any mandatory recall ordered under 21 C.F.R. Part 810 or any comparable order of a Governmental Authority. ... 1.2 Application of Definitions. The definitions in this Section 1 apply to all Quality Matters between the Parties.",
+                "reason": "This document shows that 'Recall' is defined narrowly, covering only government-mandated removals or corrections, and that the definition is meant to apply to all Quality Matters between the parties. An associate could notice that voluntary withdrawals and field corrections fall outside the term. The document does not say who bears Recall costs. It has no cost-allocation clause, and Section 8.3 only assigns Distributor operational tasks. It also does not contain the Distribution Agreement's broader 'Recall' definition, the Supplier's cost obligation in Section 7.4, or the Section 2.3 rule that the Quality Agreement controls in a conflict on Quality Matters. Without those terms, the reader cannot see a definitional conflict, cannot tell which definition prevails, and cannot see that the narrow definition shifts voluntary-recall costs to Trobur. The harm to the client depends on the other document."
+              },
+              "exclusive_distribution_agreement_furux_trobur.md": {
+                "findable": false,
+                "evidence": "In the event of any conflict between this Agreement and the Quality Agreement, with respect to Quality Matters, the Quality Agreement shall govern, and with respect to all other matters, this Agreement shall govern.",
+                "reason": "This document alone defines 'Recall' broadly, covering voluntary and mandated actions, field corrections and safety notices. Section 7.4 makes Supplier bear all Recall costs, including Distributor's retrieval and replacement costs at clinics. Section 2.3 gives the Quality Agreement priority on Quality Matters, and Quality Matters expressly include Recalls. A careful associate would see the general risk that the separate Quality Agreement could override recall terms. Nothing in this document shows that the Quality Agreement actually defines 'Recall' more narrowly as government-mandated actions only. It also does not show that the Quality Agreement says its definitions apply to all Quality Matters. On its face, this Agreement is favorable to Distributor on recall costs. The actual shift of voluntary-withdrawal and field-correction costs to Distributor depends entirely on the Quality Agreement's narrower definition, which is not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Quality Agreement §12.1–12.2: \"This Quality Agreement and all disputes concerning Quality Matters are governed by the laws of the State of New Jersey... Any action arising out of or relating to this Quality Agreement or any Quality Matter shall be brought exclusively in the state or federal courts of Mercer County, New Jersey.\" Distribution Agreement §2.3: \"In the event of any conflict between this Agreement and the Quality Agreement, with respect to Quality Matters, the Quality Agreement shall govern, and with respect to all other matters, this Agreement shall govern.\" Distribution Agreement §15.1–15.2 select Delaware law and the exclusive jurisdiction of the New Castle County courts.",
+            "reason": "The two documents conflict. Section 2.3 of the Distribution Agreement gives the Quality Agreement priority on Quality Matters, and the Distribution Agreement defines Quality Matters broadly to include complaints, Recalls, product quality and regulatory compliance. As a result, the New Jersey law and Mercer County forum in QA §12 control those disputes. Delaware law and forum govern everything else. Trobur is a Delaware company, and its key claims are recall costs under DA §7.4 and quality and compliance warranties. Those claims would have to be brought under Supplier's home-state law and in Supplier's home forum. The rest of any dispute, such as indemnity, payment and termination, would go to Delaware. That risks split proceedings and inconsistent results. Amendment No. 1 does not fix this. Its §5.3 states that it does not amend the Quality Agreement other than updating references. No other document cures or waives the conflict. The agreements are still in force and QA §11.3 calls for periodic review, so the issue can still be raised and renegotiated.",
+            "alone": {
+              "quality_agreement_furux_trobur.md": {
+                "findable": false,
+                "evidence": "12.1 Governing Law. This Quality Agreement and all disputes concerning Quality Matters are governed by the laws of the State of New Jersey... 12.2 Forum. Any action arising out of or relating to this Quality Agreement or any Quality Matter shall be brought exclusively in the state or federal courts of Mercer County, New Jersey.",
+                "reason": "This document shows that quality disputes go to New Jersey law and the exclusive courts of Mercer County. That is Supplier's home state (Princeton, NJ), and Distributor is a Delaware company. A reader could see that this forum is less convenient for the client. The document does not show that the Distribution Agreement picks Delaware law and New Castle County courts, so the mismatch and the risk of split proceedings cannot be seen here. It also contains no clause saying the Quality Agreement wins in a conflict. The recitals only say that Section 2.3 of the Distribution Agreement contemplates this agreement. The ordering rule that makes the New Jersey choice control quality disputes comes from Section 2.3 of the Distribution Agreement, which is not provided. The core of the problem therefore depends on the other document."
+              },
+              "exclusive_distribution_agreement_furux_trobur.md": {
+                "findable": false,
+                "evidence": "In the event of any conflict between this Agreement and the Quality Agreement, with respect to Quality Matters, the Quality Agreement shall govern, and with respect to all other matters, this Agreement shall govern.",
+                "reason": "The Distribution Agreement alone shows Delaware governing law and exclusive New Castle County jurisdiction (Sections 15.1–15.2). It also shows a precedence clause (Section 2.3) that lets the Quality Agreement control on Quality Matters. An associate could flag that clause as a possible risk. But this document does not show that the Quality Agreement actually picks New Jersey law and Mercer County courts, or that it says anything about governing law or forum at all. The conflict, the split-forum risk, and the harm to Distributor all depend on Section 12 of the Quality Agreement, which is not provided."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 14.1: \"Supplier may assign this Agreement, or any of its rights or obligations hereunder, in whole or in part, to any Person without the consent of Distributor. Supplier shall give Distributor written notice of any assignment within 30 days after it takes effect.\" Section 14.2, by contrast: \"Distributor may not assign this Agreement ... without the prior written consent of Supplier.\"",
+            "reason": "The problem is present and one-sided against Trobur, the Distributor. Supplier can assign freely, in whole or in part, to any Person, including a competing dental distributor or a buyer of the Furux product line. Supplier only has to give notice after the assignment takes effect. Trobur has no consent right, no right to approve the assignee's identity or creditworthiness, and no termination right if this happens. The assignee would take over supply and pricing under the exclusive term, which can renew for five-year terms. It would also receive Trobur's customer-level sales, resale pricing and installed-base data under Section 6.2. Section 12 confidentiality covers that data but does not stop a competitor-assignee from holding it. Because assignment can be partial, Supplier's obligations could also be split among several assignees. Nothing in the folder cures this. Amendment No. 1 (Sept. 15, 2026) leaves Section 14.1 unchanged and ratifies the Agreement. The Parent Guaranty's tie of guaranty assignment to a permitted assignment of the Agreement protects only Supplier. The Quality Agreement simply follows the Distribution Agreement. The agreement is in force and no assignment has occurred, so the issue remains actionable for Trobur."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 3.2: \"At the end of the Initial Term and each Renewal Term, this Agreement shall renew automatically for successive Renewal Terms, unless either Party delivers a Non-Renewal Notice to the other Party during the Non-Renewal Window. A Non-Renewal Notice delivered outside the Non-Renewal Window has no effect.\" Section 5.2: the Minimum Annual Purchase Commitment \"is $2,400,000 for the first Contract Year, increasing 8% each Contract Year (compounded on the prior Contract Year's amount), and continues through the Initial Term and any Renewal Term.\"\n\nSection 1.1 also defines \"Renewal Term\" as \"a period of five Contract Years\" and the \"Non-Renewal Window\" as \"the 30-day period beginning 180 days before the last day of the then-current Term.\"",
+            "reason": "The renewal clause is present and works against Trobur. Section 3.2 renews the agreement automatically for five-year terms. Trobur can opt out only by notice given in a 30-day window, roughly September 2 to October 1, 2027, and a notice outside that window has no effect. Section 3.3 carries Section 5.2 into each Renewal Term. As Distributor, Trobur bears the compounding 8% minimum purchase obligation. Under Section 5.3, a shortfall costs it a 15% charge and the possible loss of exclusivity. Missing the window would therefore lock Trobur into five more years of rising minimums, and this matters more given the pending sale to Pellmont.\n\nThe amendment does not cure the problem. Amendment No. 1 leaves Sections 3.2, 3.3 and 5.2 unchanged and expressly ratifies the Agreement (Section 5.1). The parent guaranty also continues through any Renewal Term (Guaranty Section 2.3), which raises the stakes.\n\nThe issue is still actionable. The latest date in the folder is September 15, 2026, and the window does not open until September 2027. Trobur can still calendar the window or negotiate a fix in Amendment No. 2, such as a longer window, a shorter renewal term, or a reset of the minimums. Any notice must go to Supplier's new notice address under Amendment Section 4.1."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Distribution Agreement §14.2: \"Any Change of Control of Distributor shall be deemed an assignment of this Agreement requiring the prior written consent of Supplier. If a Change of Control of Distributor occurs without the prior written consent of Supplier, Supplier may terminate this Agreement on 30 days' written notice to Distributor, given within 120 days after Supplier learns of the Change of Control.\" Amendment No. 1 Recital B: \"Holdings has agreed to sell all of the outstanding limited liability company units of Distributor to Pellmont (the \"Pending Sale\"). As of the Amendment Date, the Pending Sale has not closed.\" Amendment §5.2: \"This Amendment, including its Recitals, does not constitute a consent or waiver under any provision of the Agreement or the Quality Agreement.\"",
+            "reason": "The Pending Sale moves 100% of Distributor's units to Pellmont, so it is a Change of Control under clause (a) of the definition. Section 14.2 therefore requires Furux's prior written consent. The Amendment shows Furux knows about the sale, but §5.2 expressly says neither the Amendment nor its Recitals is a consent or waiver. Furux's signature on the Amendment does not cure the requirement. No other document in the folder records a consent. The latest date in the folder is September 15, 2026, and the sale had not closed then, so Trobur can still act by getting written consent before closing. Without that consent, Furux could terminate on 30 days' notice after closing and end Trobur's exclusive distribution rights, including the newly added Additional Territory. Separately, the Lease (§9.2(c)) allows equity transfers, so the lease is not the constraint. The Distribution Agreement is, and the risk falls on the client.",
+            "alone": {
+              "exclusive_distribution_agreement_furux_trobur.md": {
+                "findable": false,
+                "evidence": "Any Change of Control of Distributor shall be deemed an assignment of this Agreement requiring the prior written consent of Supplier. If a Change of Control of Distributor occurs without the prior written consent of Supplier, Supplier may terminate this Agreement on 30 days' written notice to Distributor, given within 120 days after Supplier learns of the Change of Control.",
+                "reason": "Section 14.2, together with the Change of Control definition, shows only a general change-of-control consent requirement and termination right. Read alone, the agreement says nothing about a pending sale of Trobur's units to Pellmont, the August 3, 2026 Unit Purchase Agreement, or whether Furux has consented. It also does not show that Amendment No. 1 expressly withholds any consent or waiver. The fact that turns this clause into an actual problem for the client is a specific transaction, and it appears only in the Amendment's recitals and Section 5. A reader of this document alone would see an ordinary contract term, not a live risk that a planned closing triggers Furux's termination right."
+              },
+              "amendment_no_1_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "Recital B: \"Under that Unit Purchase Agreement, Holdings has agreed to sell all of the outstanding limited liability company units of Distributor to Pellmont (the \"Pending Sale\"). As of the Amendment Date, the Pending Sale has not closed.\" Section 5.2: \"This Amendment, including its Recitals, does not constitute a consent or waiver under any provision of the Agreement or the Quality Agreement.\"",
+                "reason": "The Amendment alone shows two things. First, a pending sale of 100% of Distributor's units to Pellmont. Second, Furux expressly declined to treat the Amendment or its disclosure of that sale as a consent or waiver. Those facts would make a careful associate suspect a change-of-control issue. The Amendment does not show the rule that turns this into a problem. Nothing in it says that a Change of Control is deemed an assignment, that it requires Supplier's prior written consent, or that Supplier may terminate on 30 days' notice if one occurs without consent. Those terms are in Section 14.2 of the underlying Distribution Agreement, which was not provided. The Amendment never mentions Section 14.2, assignment, or any termination right tied to a change in ownership. From this document alone, the associate cannot confirm that consent is required or that closing without it would put Trobur's exclusive rights at risk."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.08,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

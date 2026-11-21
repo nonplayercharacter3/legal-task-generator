@@ -1,0 +1,168 @@
+{
+  "matter_id": "s505-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 5,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 18.2: \"Supplier may assign this Agreement, in whole or in part, or any of its rights or obligations under it, to any person upon written notice to Customer and without Customer's consent.\" Compare Section 18.1: \"Customer may not assign or transfer this Agreement or any of its rights or obligations under it without Supplier's prior written consent.\"",
+            "reason": "The problem is present and still actionable for Naigert.\n\n- **One-sided right.** Section 18.2 lets Steinaix assign to any person, without Naigert's consent. Nothing excludes Naigert's competitors or less creditworthy entities. Section 16 gives Naigert no right to terminate on an assignment. Section 18.1 bars Naigert from assigning at all without consent.\n- **Exclusivity makes it worse.** Section 3.1 requires Naigert and its Affiliates to buy all their worldwide Technical Textiles requirements from \"Supplier.\" An assignee would inherit that exclusive requirements relationship.\n- **The guaranty would not follow.** The Parent Guaranty defines \"Supplier\" as \"solely Steinaix Industrial Fabrics, LLC.\" Its Section 3.2(a) covers only changes in Supplier's or Guarantor's ownership or structure, not a transfer of the contract to an unrelated assignee. So an assignee's obligations would not be guaranteed.\n- **Nothing in the folder cures it.** Amendment No. 1 adds Steinaix Mexico as a Supplier but leaves Section 18 unchanged.\n- **Still live.** The folder's latest date is October 14, 2026, and the Agreement runs at least until March 31, 2027. The non-renewal letter is also dated after the six-month deadline in Section 2.2 (September 30, 2026). If that notice is ineffective, the Agreement could auto-renew for two more years, which lengthens Naigert's exposure. An assignment could therefore still happen during the remaining Term and the transition period, so Naigert can still act, for example by seeking an amendment adding consent, competitor and creditworthiness limits, or a termination right."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 11.2: \"Customer shall defend, indemnify and hold harmless Supplier ... from and against all Losses arising out of any third-party claim arising out of or relating to the design, manufacture, marketing, sale or use of End Products, including product liability claims, whether or not the Products contributed to the Loss.\" Section 12.3: \"Sections 12.1 and 12.2 do not apply to: ... (b) Customer's obligations under Section 11.2\"",
+            "reason": "Naigert, the client, gives the Section 11.2 indemnity. That indemnity covers all claims relating to End Products 'whether or not the Products contributed to the Loss.' Every End Product includes Steinaix media by definition, so the indemnity reaches losses caused by defective Steinaix filter media. Section 12.3(b) removes this obligation from the Section 12.1 cap and the 12.2 damages exclusion, so Naigert's exposure is unlimited. Steinaix's own indemnity in Section 11.1 gets no matching carve-out and stays capped at twelve months' fees. The fix that would normally help is the 'to the extent' wording in 11.1(a), but 11.2 contains no 'except to the extent caused by Supplier' carve-out, and none of the other documents cures this. The Amendment does not change 11.2 or 12.3, and the DPA concerns only data liability. The problem is still actionable. The folder's latest date is the October 14, 2026 non-renewal notice, so the agreement runs until March 31, 2027. Section 16.4 also makes Sections 11 and 12 survive, so Naigert stays exposed for End Products already sold. Naigert can raise the issue in an amendment, in transition negotiations, or in the defense of any claim (for example, by arguing the 11.1/11.2 conflict and the 'to the extent' allocation)."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Supply Agreement §2.1: \"This Agreement begins on the Effective Date and continues for three (3) years from the Effective Date (the \"Initial Term\")\"; §2.2: \"Renewal does not occur if either party gives the other party written notice of non-renewal at least six (6) months before the end of the then-current term.\" Notice letter (dated October 14, 2026), ¶1: \"Under Section 2.2 of the Agreement, Customer hereby gives notice of non-renewal of the Agreement. The Agreement will therefore expire at the end of the Initial Term, effective March 31, 2027, and will not renew for a Renewal Term.\"",
+            "reason": "The Initial Term starts April 1, 2024 and ends on or about March 31, 2027, so §2.2 required non-renewal notice by about September 30 / October 1, 2026. Naigert's letter is dated October 14, 2026, roughly two weeks late. A letter delivered late cannot stop the automatic two-year renewal. Steinaix can therefore treat the Agreement as renewed through March 31, 2029. That includes Naigert's worldwide requirements exclusivity under §3.1, which covers all Technical Textiles. Nothing in the folder fixes this: the Amendment does not change §2, and §16 allows termination only for cause or insolvency, not for convenience. The issue is still live and actionable for Naigert. The folder's latest date is the October 14, 2026 letter, the renewal has not yet taken effect, and Naigert has not accepted renewal; its letter asserts expiry and reserves its rights. Naigert's options include seeking Steinaix's written agreement to end the Agreement on March 31, 2027 under §20.5, or preparing for Steinaix to insist on renewal.",
+            "alone": {
+              "naigert_steinaix_supply_agreement.md": {
+                "findable": false,
+                "evidence": "Renewal does not occur if either party gives the other party written notice of non-renewal at least six (6) months before the end of the then-current term.",
+                "reason": "From the Supply Agreement alone you can work out the deadline. The Initial Term runs three years from April 1, 2024, so it ends March 31, 2027, and Section 2.2 requires non-renewal notice at least six months earlier, by September 30, 2026. Missing that deadline would mean automatic renewal for two years, extending the Section 3.1 worldwide exclusive-purchase obligation. That is a risk the associate can see. But the agreement does not show that Naigert gave notice late, or when it gave notice at all. The October 14, 2026 date, which is the actual problem, appears only in the notice letter, which was not provided. Reading the agreement alone, the associate could flag the deadline but could not see that it was missed."
+              },
+              "naigert_notice_letter.md": {
+                "findable": false,
+                "evidence": "Under Section 2.2 of the Agreement, Customer hereby gives notice of non-renewal of the Agreement. The Agreement will therefore expire at the end of the Initial Term, effective March 31, 2027, and will not renew for a Renewal Term.",
+                "reason": "The letter shows its own date (October 14, 2026), the Initial Term end date (March 31, 2027), and that notice is given under Section 2.2. It does not say how much advance notice Section 2.2 requires. It also does not say that the Agreement renews automatically, or for how long. Without the Supply Agreement's six-month notice requirement, an associate cannot work out the September 30, 2026 deadline. So they cannot tell that the notice is late or that Naigert may be bound to a two-year renewal with exclusivity."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 3.1: \"During the Term, Customer shall buy from Supplier all of its requirements for Technical Textiles in the Territory, and shall cause its Affiliates to do the same.\" Section 1.12: \"'Technical Textiles' means any woven, nonwoven, knitted or coated industrial fabric, in roll goods, cut-piece or fabricated form, including filter media, filter bags, filter sleeves and membranes.\" Section 1.13: \"'Territory' means throughout the world.\"",
+            "reason": "The obligation falls on Naigert, the client, and on its Affiliates. Section 3.1 makes them buy all of their 'Technical Textiles' from Steinaix. That term covers every woven, nonwoven, knitted or coated industrial fabric, not just the Products. The obligation also applies worldwide. By contrast, Steinaix's supply commitment (Section 3.2) is limited to the Products and the capacity in a Statement of Work. SOW No. 1, as amended, covers only nine specific media and bag items for three U.S. plants. Steinaix has no duty to supply the other fabrics Naigert is bound to buy only from it. The only carve-outs are Sections 3.3 and 17.2, and they apply only to compliant Purchase Orders for Products. No document narrows this: not Amendment No. 1, the SOW or the order-of-precedence clause. Every off-contract fabric purchase by Naigert or its Affiliates is therefore a potential material breach under Section 16.1, and it falls outside the liability cap protections Naigert might expect. The issue is still actionable. Naigert's non-renewal notice of October 14, 2026 (the latest date in the folder) means the Agreement and the exclusivity run until March 31, 2027. Naigert remains bound for several more months and should seek a written narrowing or waiver under Section 20.5. It should also confirm that no past or planned third-party fabric purchases create breach exposure. The notice letter does not address or waive this."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Guaranty §1.1(a): \"'Supplier' means solely Steinaix Industrial Fabrics, LLC.\" Amendment No. 1 §2.1–2.3: \"Steinaix Industrial Fabrics, LLC ... and each Supplying Affiliate (together, 'Supplier')\" and \"Steinaix Mexico joins the Agreement as a party, as a Supplier\"; §3.3: \"Steinaix Mexico shall ... perform the warranty, remedy, indemnity, compliance, insurance and other obligations of Supplier under the Agreement for the Coated Products it supplies.\"",
+            "reason": "The Guaranteed Obligations are defined as obligations of 'Supplier', and the guaranty defines that term as solely Steinaix Industrial Fabrics, LLC. That definition overrides the Supply Agreement's meaning, which Amendment No. 1 broadened to include Steinaix Mexico. The guaranty's consent to amendments in §3.1(a) keeps the guaranty in force for the amended agreement, but it does not add new obligors. Steinaix Mexico's own supply, warranty, indemnity and rebate obligations for Coated Products (CF-301, CF-302, CB-401, CB-402) therefore fall outside the parent guaranty. Steinaix Holdings did not sign or reaffirm the amendment. This hurts Naigert, the beneficiary, because it is left with direct recourse only against a Mexican entity. The problem is still actionable. The latest date in the folder is October 2026. The agreement runs until March 31, 2027. The 18-month warranties and the indemnities survive expiry. Naigert can still ask Holdings to amend or reaffirm the guaranty to cover each Supplying Affiliate, and nothing shows it accepted the gap.",
+            "alone": {
+              "steinaix_parent_guaranty.md": {
+                "findable": false,
+                "evidence": "\"Supplier\" means solely Steinaix Industrial Fabrics, LLC.",
+                "reason": "On its own, the Guaranty shows that it covers only Steinaix Industrial Fabrics, LLC's obligations, and that it extends to the Supply Agreement \"as amended, supplemented or otherwise modified from time to time.\" Guarantor also consents to amendments without notice under Section 3.1(a). Read alone, though, this is an ordinary single-obligor guaranty. Nothing in it says that any other entity supplies Products, performs Purchase Orders, or owes warranty or indemnity obligations to Naigert. The harm comes from Amendment No. 1, which is not provided. That amendment redefines 'Supplier' to include Supplying Affiliates and has Steinaix Textiles Mexico perform the coated-product orders, which leaves those obligations unguaranteed. An associate could at most flag in general terms that the word 'solely' would exclude any future affiliate supplier. They could not tell from this document that such an affiliate exists or that the gap actually hurts the client."
+              },
+              "amendment_no1_supply_agreement.md": {
+                "findable": false,
+                "evidence": "2.1 Preamble. The definition of \"Supplier\" in the preamble to the Agreement is deleted and replaced with the following: > \"Steinaix Industrial Fabrics, LLC ... and each Supplying Affiliate (together, \"Supplier\").\"",
+                "reason": "The amendment shows that \"Supplier\" is redefined to include Steinaix Mexico. It also shows that Steinaix Mexico alone accepts and performs Purchase Orders for Coated Products and carries the related warranty, remedy and indemnity obligations (Sections 3.1 and 3.3). It never mentions a Parent Guaranty, Steinaix Holdings, or any credit support. It has no guarantor signature block or reaffirmation, but nothing in it suggests one was needed. An associate reading only this document would see an ordinary joinder of a new supplying affiliate. They would have no reason to know a guaranty exists that defines \"Supplier\" as Steinaix Industrial Fabrics alone. So the conflicting definitions, and the gap that leaves Steinaix Mexico's obligations unguaranteed, can only be seen with the Parent Guaranty."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Supply Agreement §12.3(c): \"Sections 12.1 and 12.2 do not apply to: ... (c) Supplier's breach of Section 14.\" §20.4: \"...they shall govern in the following order: (a) any amendment to this Agreement; then (b) the DPA, as to Personal Data Processing; then (c) the body of this Agreement...\" DPA §9.1: \"Each party's liability arising out of or relating to this DPA, including any Security Incident and any breach of Data Protection Laws, is subject to the limitations set out in Section 12.1 of the Agreement.\"",
+            "reason": "The two documents conflict, and the conflict is resolved against Naigert. The Agreement removes Supplier's Section 14 confidentiality and data-security breaches from the 12-month fee cap. Section 14 expressly covers Customer Personal Data (§§14.1, 14.3–14.5). The later DPA, signed June 3, 2024, puts all DPA-related liability back under the §12.1 cap, including Security Incidents. Under §20.4, the DPA prevails over the Agreement body on Personal Data Processing. So Steinaix's liability for personal data breaches is likely capped at twelve months' fees. That defeats the carve-out Naigert had obtained. Steinaix is the party that bears the data-protection obligations, so the cap protects Steinaix and hurts Naigert. Nothing in the folder cures this: Amendment No. 1 does not address it. The issue remains actionable. The Agreement runs until March 31, 2027, and Naigert's non-renewal letter reserves all rights. Sections 12 and 14 survive expiry, and the DPA continues while Supplier holds Customer Personal Data. Naigert can still seek an amendment, and should factor the capped exposure into any incident claim or the transition. The carve-out still applies to non-personal Confidential Information.",
+            "alone": {
+              "naigert_steinaix_supply_agreement.md": {
+                "findable": false,
+                "evidence": "12.3 Exclusions. Sections 12.1 and 12.2 do not apply to: ... (c) Supplier's breach of Section 14.",
+                "reason": "Read alone, the Supply Agreement favours Naigert. A breach of Section 14 by Supplier, which covers Customer Personal Data, sits outside the twelve-month fee cap. Section 20.4 does rank the DPA ahead of the body of the Agreement for Personal Data Processing, and 'as amended from time to time' means a later DPA could change things. But this document does not show that the DPA contains any liability cap, or that it ties DPA liability back to Section 12.1. The step that pulls data-breach losses back under the cap comes only from DPA Section 9, which is not provided. An associate could flag a general risk that a DPA might override the carve-out. They could not see the actual conflict, or that it hurts the client, without the DPA."
+              },
+              "data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "9.1 Each party's liability arising out of or relating to this DPA, including any Security Incident and any breach of Data Protection Laws, is subject to the limitations set out in Section 12.1 of the Agreement.",
+                "reason": "The DPA shows that DPA liability, including for Security Incidents, falls under the Section 12.1 limitations of the Supply Agreement. Read alone, that looks like an ordinary cross-reference to the agreed cap. It does not show what Section 12.1 caps (the twelve-month fee amount). It does not show that Section 12.3(c) carves Section 14 data-security breaches out of the cap. It also does not show that Section 20.4 makes the DPA prevail on Personal Data matters. Without the Supply Agreement, an associate could not see that this clause pulls carved-out, uncapped losses back under the cap to the Customer's detriment."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.06,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

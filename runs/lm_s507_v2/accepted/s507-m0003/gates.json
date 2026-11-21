@@ -1,0 +1,146 @@
+{
+  "matter_id": "s507-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 13.2: \"Provider may assign this Agreement, in whole or in part, or delegate the performance of any Service, to any Person without the consent of Recipient.\" Compare Section 13.1: \"Recipient may not assign this Agreement ... without the prior written consent of Provider. Any purported assignment in violation of this Section 13.1 is void.\"",
+            "reason": "The problem is present and still actionable for Tramil. Titairt, as Provider, may assign the TSA or delegate any Service to any Person, including a competing event-rental operator or a buyer of EventGrid. Oakhollow, Tramil's subsidiary, cannot assign without Titairt's consent. Nothing in the folder cures this. The SPA non-compete (7.1) and confidentiality covenant (6.1) bind only Seller and its Affiliates, so they do not reach an unaffiliated assignee. Once a successor becomes \"Provider,\" TSA Sections 7.1–7.2 let that successor's personnel access Recipient Data, including customer bookings, pricing and fleet-routing data. SPA 11.12 gives the SPA precedence only where it conflicts with the TSA, and the SPA says nothing about assignment of the TSA. The TSA is still running: the Initial Term ends about December 26, 2026, and Oakhollow has sent notice to extend it by 90 days. The client can therefore still seek an amendment or protective undertakings."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 1.1: \"'Fundamental Representations' means the representations and warranties in Sections 4.1, 4.2, 4.3 and 4.4.\" Section 9.1(a): \"The representations and warranties in this Agreement, other than the Fundamental Representations, shall survive the Closing until 11:59 p.m. New York City time on the date that is twelve (12) months after the Closing Date.\" Section 9.1(c): \"Claims under Section 9.2(d) may be made only within the survival period applicable to Section 4.14.\"",
+            "reason": "The three provisions together cut off Buyer's Pre-Closing Taxes indemnity on March 31, 2027. The tax representation in Section 4.14 is not a Fundamental Representation, so under Section 9.1(a) it survives only 12 months, and Section 9.1(c) ties Section 9.2(d) claims to that same period. Section 9.4(d) lifts the Basket and cap for 9.2(d) claims, but that does not extend the time to bring them. Nothing else in the folder cures this: the Disclosure Schedule lists 'None' for Section 4.14, and no amendment exists. The exposure is real for Buyer, which is the indemnitee. The Company rents equipment in NY, NJ, CT and PA, and Section 4.14(c) specifically covers sales and use tax on rental receipts. Audits of those taxes can be assessed well after March 31, 2027 and within the statutes of limitation, and the claim would then be time-barred. The issue is still actionable. The matter's latest date is November 2026, so the survival window remains open. Buyer can still seek an amendment under Section 11.6, or protect itself by serving Claim Notices before the window closes, including notices needed to preserve its set-off right against the Seller Note."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Seller Note §9.1–9.2: \"This Note, and all claims or causes of action based on, arising out of or relating to this Note, shall be governed by and construed in accordance with the laws of the State of Delaware ... The Maker and the Holder each irrevocably submit to the exclusive jurisdiction of the Court of Chancery of the State of Delaware in any action or proceeding arising out of or relating to this Note.\" SPA §11.8: \"This Agreement and the Ancillary Agreements ... shall be governed by and construed in accordance with the laws of the State of New York ... Each party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in New York County, New York\"; SPA §11.12: \"...except that with respect to matters arising under the Seller Note, the Seller Note shall control.\"",
+            "reason": "The problem is present and it hurts Tramil, the client. The two documents conflict. The SPA (§11.8) sends disputes under the SPA and every Ancillary Agreement, which includes the Seller Note, to New York law and exclusive New York County courts. The Note (§9) chooses Delaware law and exclusive Delaware Chancery jurisdiction. SPA §11.12 resolves conflicts in the SPA's favor except for matters arising under the Seller Note, where the Note controls. That carve-out lets Titairt (the Holder) argue that an action for a missed installment arises under the Note and belongs in Delaware under Delaware law. Tramil (the Maker) holds the set-off right under SPA §9.7, and its indemnity claims are governed by New York law and must be heard in New York courts. If Tramil withholds an installment to exercise set-off, it faces: (1) parallel suits in two forums; (2) the risk of inconsistent rulings on whether the set-off was made in good faith; and (3) acceleration under Note §6.1(a)/6.2 if the Delaware court does not recognize the SPA's protection that a good-faith set-off is not a default. The Note itself does not mention the set-off right, which adds to the risk. Nothing in the folder fixes this. The first installment is not due until March 31, 2027, so the matter remains live and actionable, for example through an amendment under Note §10.2 to align forum and governing law or to cross-reference the set-off right.",
+            "alone": {
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "9.1 Governing Law. This Note, and all claims or causes of action based on, arising out of or relating to this Note, shall be governed by and construed in accordance with the laws of the State of Delaware... 9.2 Jurisdiction. The Maker and the Holder each irrevocably submit to the exclusive jurisdiction of the Court of Chancery of the State of Delaware...",
+                "reason": "On its own, the Note shows a Delaware choice of law and exclusive Delaware jurisdiction. It also refers to the Purchase Agreement (Sections 1.2, 1.3 and 10.1). It does not say that the SPA picks New York law and New York County courts (SPA 11.8). It contains no set-off right against installments (SPA 9.7). It does not show the precedence clause that lets the Note control matters arising under it (SPA 11.12). The Note itself has no set-off provision, so nothing in it points to a conflict. Without the SPA, an associate would see an ordinary Delaware forum clause. They would have no basis to spot the risk of split New York/Delaware proceedings and acceleration when Buyer withholds an installment to set off indemnity claims."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "In the event of any conflict or inconsistency between this Agreement and any Ancillary Agreement, this Agreement shall control, except that with respect to matters arising under the Seller Note, the Seller Note shall control.",
+                "reason": "The SPA alone shows three things: New York law and exclusive New York County courts for the SPA and the Ancillary Agreements (11.8), Buyer's right to set off against the Seller Note (9.7), and a precedence carve-out that lets the Seller Note control matters arising under it (11.12). It does not show that the Seller Note actually chooses Delaware law and the Delaware Court of Chancery. On its face, 11.8 appears to put the Note under New York law and New York courts as well. A careful associate might see the carve-out as a theoretical gap. But the actual conflict, and the resulting risk of parallel Delaware proceedings and acceleration while the set-off claim is heard in New York, depends on the Note's Section 9, which is not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "TSA §2.1: the Agreement \"continues for two hundred seventy (270) days after the Effective Date (the \"Initial Term\")\"; §2.2: \"To do so, Recipient must give written notice to Provider no later than forty-five (45) days before the expiration of the Initial Term.\" Letter dated \"November 16, 2026\", §2.1: \"Under Section 2.2 of the TSA, Oakhollow hereby exercises its right to extend the Initial Term for the one (1) additional period of ninety (90) days\".",
+            "reason": "The extension notice was late. Counting 270 days from March 31, 2026, the Initial Term ends December 26, 2026, so the §2.2 notice deadline was November 11, 2026. The letter is dated November 16, five days after that. Nothing in the TSA cures the lateness: there is no cure or grace provision, no deemed-extension mechanism, and §13.5 requires any waiver to be in writing and signed by Titairt. Titairt can therefore treat the extension as ineffective and end all Services on December 26, 2026. The client side bears the harm. Oakhollow, Tramil's subsidiary, is the Recipient and must give the notice. The letter says it still depends on EventGrid and the yard management system through the holiday peak, and its cut-over is planned for the Extension Term. The issue is still actionable. The latest date in the folder is November 16, 2026, or November 23 for the requested confirmation, which is before the Initial Term ends. The client has not accepted that the Services will lapse; it insists the extension is exercised and asks Titairt to confirm it. Tramil can still seek Titairt's written agreement to the extension or an amendment under §§3.4 and 13.5, or speed up its contingency migration plans.",
+            "alone": {
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "Recipient may extend the Initial Term for one (1) additional period of ninety (90) days (the \"Extension Term\"). To do so, Recipient must give written notice to Provider no later than forty-five (45) days before the expiration of the Initial Term.",
+                "reason": "From the TSA alone, a reader can work out that the Initial Term runs 270 days from March 31, 2026 (to December 26, 2026). The extension notice deadline is 45 days before that, around November 11, 2026. Given today's date (November 20, 2026), an associate could also see that the window has closed. What the TSA does not show is whether, when, or by whom an extension notice was sent. The late November 16, 2026 letter from Tramil, the client's ongoing reliance on EventGrid and yard services, and the position that the extension was exercised all come only from the other document (D7). Without it, the TSA shows a deadline but no missed deadline. Notice may have been given on time, or the client may not want an extension at all. The harm to the client therefore depends on the document I cannot see."
+              },
+              "tsa_extension_letter.md": {
+                "findable": false,
+                "evidence": "2.1 Under Section 2.2 of the TSA, Oakhollow hereby exercises its right to extend the Initial Term for the one (1) additional period of ninety (90) days provided in that Section (the \"**Extension Term**\").",
+                "reason": "The letter shows the TSA date (March 31, 2026), the letter's own date (November 16, 2026), and that it exercises the Section 2.2 extension. It also shows the client's reliance on continued services through the holiday peak. It does not state the length of the Initial Term (270 days, ending December 26, 2026) or that Section 2.2 requires notice at least 45 days before expiry (by November 11, 2026). Both terms come only from the TSA itself. Reading the letter alone, an associate could not tell that the notice was late or that Titairt could treat the extension as ineffective."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C5 asks for fact F2, which only issue I4 uses: a memo that misses I4 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.077,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
