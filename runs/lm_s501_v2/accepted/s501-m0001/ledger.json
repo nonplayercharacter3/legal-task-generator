@@ -1,0 +1,229 @@
+{
+  "matter_id": "s501-m0001",
+  "summary": "Pisas Automotive Holdings, LLC (client, Buyer) is buying all outstanding stock of Ostrander Auto Exchange, Inc. from Bainouv Remarketing Group, Inc. (Seller). Ostrander is a wholesale used-vehicle auction operator that runs physical auction lanes and the online SimuLane simulcast platform. Before Closing, Ostrander's Salvage Business is carved out to a Seller affiliate under a Bill of Sale. Part of the price is escrowed. Ostrander's general manager has a pre-existing Key Employee Agreement. The folder also holds an office lease and a confidentiality agreement, both distractors. The memo must identify: (1) a tax-representation survival gap; (2) a narrow 'Retained Liabilities' definition in the Bill of Sale that leaves the disclosed pre-closing salvage class action inside the Company and outside the uncapped carve-out; (3) a narrower meaning of 'Business' in the Key Employee Agreement that leaves the online platform unprotected; and (4) an unaddressed employee consent right triggered by the change of control.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Pisas Automotive Holdings, LLC",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Bainouv Remarketing Group, Inc.",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrander Auto Exchange, Inc.",
+      "role": "Company (target)"
+    },
+    {
+      "id": "P4",
+      "name": "Bainouv Salvage Recovery, LLC",
+      "role": "Seller Affiliate (transferee of the Salvage Business)"
+    },
+    {
+      "id": "P5",
+      "name": "Renata Okonkwo-Veil",
+      "role": "Key Employee (General Manager of the Company)"
+    },
+    {
+      "id": "P6",
+      "name": "Fennimore Trust Company, N.A.",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P7",
+      "name": "Wexcombe Plaza Associates, LLC",
+      "role": "Landlord under the Company's office lease"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "March 16, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Purchase Price",
+      "value": "$41,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Escrow Amount",
+      "value": "$3,600,000",
+      "doc": "D1",
+      "section": "Section 2.4"
+    },
+    {
+      "id": "F4",
+      "key": "SPA general indemnity cap",
+      "value": "an amount equal to the Escrow Amount",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "SPA general representation survival period",
+      "value": "nine (9) months following the Closing Date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F6",
+      "key": "Escrow release date",
+      "value": "twelve (12) months following the Closing Date",
+      "doc": "D3",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F7",
+      "key": "SPA order of precedence",
+      "value": "SPA prevails over Ancillary Agreements, except the Bill of Sale governs assets and liabilities it conveys",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F8",
+      "key": "SPA definition of Business",
+      "value": "wholesale motor vehicle auctions conducted in-lane or online, including the SimuLane platform",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F9",
+      "key": "SPA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.6"
+    },
+    {
+      "id": "F10",
+      "key": "Key Employee Agreement Date",
+      "value": "January 12, 2026",
+      "doc": "D4",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "salvage_business_bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "key_employee_agreement_okonkwo_veil.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "wexcombe_plaza_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "mutual_confidentiality_agreement.md",
+      "kind": "mutual confidentiality agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 1.1 defines 'Fundamental Representations' as only Sections 4.1, 4.2, 4.3 and 4.4 (organization, authority, capitalization, brokers). These are the only representations that survive until 60 days after the applicable statute of limitations. Section 4.12 (Taxes) is left out, including the representation that the Company has collected and remitted all sales and use taxes on auction vehicle sales. Under Section 9.1, every other representation survives only nine (9) months following the Closing Date. Section 9.2(d), the pre-Closing Taxes indemnity, is expressly 'subject to the survival periods set forth in Section 9.1', so it also expires at nine months. Sales-tax and income-tax audits of an auction business typically open well after that, within the three-year New York assessment period or longer. Read together, the definition and the survival clause mean the Buyer's tax protection lapses before most tax exposure can surface. The Escrow Agreement holds funds for twelve months, but that does not help: escrow claims must be validly asserted indemnity claims, and those are barred after nine months.",
+      "doc": "D1",
+      "section": "Section 1.1 (definition of Fundamental Representations) and Section 9.1",
+      "detect_terms": [
+        "nine (9) months following the Closing Date",
+        "Sections 4.1, 4.2, 4.3 and 4.4"
+      ],
+      "expected_finding": "Because Section 4.12 (Taxes) is not a Fundamental Representation, the tax representations and the Section 9.2(d) pre-Closing Taxes indemnity expire nine months after Closing, before most tax audits can surface liabilities. Section 4.12 and Section 9.2(d) should be made to survive until 60 days after the applicable statute of limitations.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 9.5(b) carves 'Retained Liabilities' out of the Escrow Amount cap in Section 9.5(a) and indemnifies them without limit under Section 9.2(c). The SPA gives the term the meaning in the Bill of Sale. Read alone, the SPA looks protective. The Bill of Sale, dated later at Closing, defines Retained Liabilities in Section 1.3 as liabilities of the Salvage Business only 'to the extent arising after the Transfer Time'. All pre-transfer Salvage Business liabilities therefore stay with the Company. Those liabilities include the class action disclosed on the SPA Section 4.10 litigation schedule, which alleges failure to disclose salvage title brands on vehicles auctioned in 2023–2025. Under SPA Section 11.10, the Bill of Sale governs the liabilities it conveys, so the SPA does not override the narrow definition. Reading Section 9.5(b) and Section 9.2(c) of the SPA with Section 1.3 of the Bill of Sale shows that these losses fall outside the uncapped carve-out. Because the class action is disclosed, the Buyer may have no recovery for it at all. At best it is a capped general claim.",
+      "doc": "D2",
+      "section": "Section 1.3 (definition of Retained Liabilities)",
+      "detect_terms": [
+        "to the extent arising after the Transfer Time"
+      ],
+      "expected_finding": "The Bill of Sale's definition limits Retained Liabilities to post-Transfer Time liabilities, and SPA Section 11.10 lets that definition control. As a result, pre-Closing Salvage Business liabilities, including the disclosed salvage-title class action, stay in the Company outside the uncapped Section 9.5(b)/9.2(c) carve-out. They are recoverable at most under the Escrow Amount cap, and possibly not at all because they were disclosed. The definition should cover all Salvage Business liabilities whether arising before or after the Transfer Time, or the SPA should add a specific uncapped indemnity for the disclosed class action.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 9.5(b) and Section 9.2(c)",
+      "detect_terms2": [
+        "shall not apply to Losses arising from Retained Liabilities"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines 'Business' as wholesale motor vehicle auctions conducted in-lane or online, including the SimuLane platform. SPA Section 4.20 states that SimuLane accounts for a substantial share of Company revenue. SPA Section 6.6 relies on the Key Employee Agreement's non-competition and non-solicitation covenants to protect 'the Business' after Closing. The Key Employee Agreement, however, defines 'Business' in Section 1.1 as the conduct of in-person wholesale motor vehicle auctions at physical auction facilities. Its restrictive covenants in Sections 7 and 8 use that narrower term. Read alone, the Key Employee Agreement looks like an ordinary non-compete for an auction general manager. Read with the SPA, the same defined term excludes the online platform. The general manager is not a party to the SPA, so the SPA's precedence clause cannot fix the employee's covenants. She could join or start an online wholesale auction competitor without breaching anything.",
+      "doc": "D4",
+      "section": "Section 1.1 (definition of Business) and Sections 7–8",
+      "detect_terms": [
+        "at physical auction facilities"
+      ],
+      "expected_finding": "The Key Employee Agreement defines 'Business' more narrowly than the SPA, limiting it to physical in-lane auctions. Its non-compete and non-solicit therefore do not cover the SimuLane online platform the Buyer is paying for, and the SPA's precedence clause cannot fix this because the employee is not a party to the SPA. The definition should be conformed to the SPA's definition of Business through an amendment signed by the employee before Closing.",
+      "contradicts": "F8",
+      "doc2": "D1",
+      "section2": "Section 1.1 (definition of Business) and Section 6.6",
+      "detect_terms2": [
+        "in-lane or online"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Key Employee Agreement Section 5.3, dated January 12, 2026, provides that the Company shall not undergo a Change of Control 'without first obtaining Employee's written consent'. Section 1.1 defines Change of Control to include any transfer of more than 50% of the Company's voting stock. If a Change of Control occurs without that consent, the employee may terminate for Good Reason within 90 days. She then receives 18 months' base salary plus her Retention Bonus, and the Restricted Period under Section 7 terminates. The SPA, signed March 16, 2026, records the sale of 100% of the Company's stock to the Buyer, which is such a Change of Control. Yet SPA Schedule 4.5 (required consents) and the closing deliverables and conditions in Section 7.2 do not mention this consent. The Seller has no covenant to obtain it. The severance cost and the loss of the non-compete would fall on the Company after Closing, and therefore on the Buyer.",
+      "doc": "D4",
+      "section": "Section 5.3",
+      "detect_terms": [
+        "without first obtaining Employee's written consent",
+        "terminate for Good Reason"
+      ],
+      "expected_finding": "The stock sale is a Change of Control under the Key Employee Agreement. That requires the general manager's written consent, which the SPA does not address. Without it, she can resign for Good Reason with 18 months' salary plus the Retention Bonus, and her non-compete ends. The Buyer should make her written consent and waiver a closing condition and deliverable under SPA Section 7.2, list it on Schedule 4.5, and obtain a Seller indemnity for any resulting severance.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}
