@@ -146,3 +146,5 @@ Dated, append-only. One entry per iteration.
   output to `runs/_trash/2026-11-21/lab_s1_connerror/`.
 - Read the lab mate's 4 rejections (seeds 501, 502, 503, 507): 3 correct (known classes), 1 likely false
   (s502-m0002, paraphrased detect term in the second document; first case in about 70 v2 matters; not fixed yet).
+- 2026-11-21 12:15 (Sirui She's session): issue #36 rewritten as the lab mate's next work order, labelling his seeds
+  500-507 (20 tasks, all label_pending, 0 errors) on his machine, branch `lm/v2-s500-507-labels`; STATE Next 2 updated.

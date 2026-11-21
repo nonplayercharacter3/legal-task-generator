@@ -70,7 +70,9 @@ agent. Full definition of done: PROMPT.md.
 
 ## Next
 1. Read `regrade3.out`, `rerun_sanctions.out` and `python3 runs/lab_sample/check.py` until all 30 LAB rows are clean.
-2. Label the lab mate's 20 tasks (`ltg label`, runs/lm_s500-507_v2) when no other heavy job runs, then commit labels.
+2. Lab mate's 20 tasks: assigned to him on 2026-11-21 (Sirui She's decision; issue #36 rewritten: label seeds 500-507 on his
+   own Max plan and NRP key with `ltg batch --label-config configs/pilot_nrp_solver.toml --branch lm/v2-s500-507-labels`).
+   Do not label them here; review and merge his labels PR when it comes.
 3. M3 our side, after the LAB 30: convert 20+ v2 tasks (dev/test first) with `scripts/to_lab_format.py`, add them as
    `ours_v2` rows, score them the same way, in chunks of about 6 tasks per 5-hour window (no batch running); then
    `summarise`, commit `runs/lab_sample/summary.json`, write both sides into `docs/research/lab_harness.md`.
