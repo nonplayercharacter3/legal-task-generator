@@ -1,0 +1,234 @@
+{
+  "matter_id": "s503-m0002",
+  "summary": "Riboul Solar Installations, LLC (client), a commercial rooftop solar EPC and installation contractor, has signed a Master Services Agreement with Treikev Community Power, Inc., a community solar developer. Under it Riboul installs and services rooftop PV systems for Treikev's community solar projects. The folder holds the MSA, the pre-signing term sheet, the first Order Form (14 rooftop sites in New Jersey), a Statement of Work for those sites, a side letter on module tariff pass-through, a Service Level Schedule, a Quality Agreement, kickoff meeting notes and a certificate of insurance. The partner wants an issue-spotting memo. Four problems are planted. (1) The MSA's exclusivity covers all solar installation work nationwide and runs for 24 months after the term, while the term sheet agreed New Jersey/Pennsylvania commercial rooftop community solar work during the Initial Term only. (2) The MSA removes the Site Damage indemnity from the liability cap and from the consequential damages waiver, and the SOW defines Site Damage to include lost production revenue for the remaining offtake term, which leaves Riboul with uncapped multi-decade revenue exposure. (3) The Order Form chooses New Jersey law and Mercer County courts, and it prevails over the MSA's Delaware choice under the MSA's own precedence clause. (4) The Service Level Schedule imports the Quality Agreement's definition of 'Defect', which covers failures not caused by Riboul and failures of customer-furnished equipment, so Riboul's remediation deadlines and service credits extend to problems outside its workmanship.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Riboul Solar Installations, LLC",
+      "role": "Provider; installation and O&M contractor (the firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Treikev Community Power, Inc.",
+      "role": "Customer; community solar project developer and owner"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "MSA Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "MSA governing law",
+      "value": "Laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 17.1"
+    },
+    {
+      "id": "F3",
+      "key": "MSA dispute forum",
+      "value": "State or federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "Section 17.2"
+    },
+    {
+      "id": "F4",
+      "key": "MSA order of precedence",
+      "value": "Order Form, then Statement of Work, then Service Level Schedule, then MSA body, then Quality Agreement",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F5",
+      "key": "MSA liability cap",
+      "value": "Fees paid or payable to Provider in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F6",
+      "key": "Agreed exclusivity scope (term sheet)",
+      "value": "Commercial rooftop community solar projects in New Jersey and Pennsylvania",
+      "doc": "D2",
+      "section": "Section 4"
+    },
+    {
+      "id": "F7",
+      "key": "Agreed exclusivity duration (term sheet)",
+      "value": "Initial Term only; no post-term restriction",
+      "doc": "D2",
+      "section": "Section 4"
+    },
+    {
+      "id": "F8",
+      "key": "MSA Initial Term",
+      "value": "Three years from the MSA Effective Date",
+      "doc": "D1",
+      "section": "Section 15.1"
+    },
+    {
+      "id": "F9",
+      "key": "Order Form No. 1 total system capacity",
+      "value": "18.6 MWdc across 14 rooftop sites",
+      "doc": "D3",
+      "section": "Section 2"
+    },
+    {
+      "id": "F10",
+      "key": "Service Level Schedule remediation period",
+      "value": "5 Business Days after notice of a Defect",
+      "doc": "D6",
+      "section": "Section 3.2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "master_services_agreement.md",
+      "kind": "master services agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "order_form_no1.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "statement_of_work_nj_rooftop_portfolio.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D5",
+      "filename": "side_letter_module_tariff_pass_through.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "kickoff_meeting_notes.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "MSA Section 9.1 bars Riboul from performing solar installation or O&M services for any person other than Treikev anywhere in the United States, during the term and for twenty-four months after it ends. Section 4 of the term sheet (D2) records the agreed exclusivity: commercial rooftop community solar projects in New Jersey and Pennsylvania, for the Initial Term only, with no post-term restriction. Nothing in the side letter, the Order Form or the other documents narrows Section 9.1. As drafted, the clause cuts Riboul off from its residential, utility-scale and out-of-region business and keeps the restriction in place for two years after termination. That goes well beyond what Treikev's deal requires, and a Delaware court applying a reasonableness review may refuse to enforce it or may blue-pencil it.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "anywhere in the United States",
+        "twenty-four (24) months following"
+      ],
+      "expected_finding": "MSA Section 9.1 imposes nationwide, all-segment exclusivity that runs for 24 months after the term, which exceeds the term sheet's agreed exclusivity (New Jersey/Pennsylvania commercial rooftop community solar projects, Initial Term only) and would bar Riboul's other lines of business, so it should be narrowed to the term sheet scope and the post-term tail deleted.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "MSA Section 11.1(b) requires Riboul to indemnify Treikev for Losses arising from 'Site Damage, as such term is defined in' the applicable Statement of Work. MSA Section 12.3 provides that the Section 12.2 cap (fees paid in the prior 12 months) and the Section 12.1 waiver of consequential and lost-profit damages do not apply to Riboul's obligations under Section 11.1(b). Read alone, this is a conventional uncapped carve-out for physical property damage. However, Section 1.6 of the SOW (D4) defines Site Damage to include physical damage to the roof and premises and also any resulting lost Production Revenue for the remaining term of the Offtake Agreement, meaning community solar subscription and PPA revenue that can run for twenty years. The SOW definition is just a definition and creates no obligation by itself. Combined, the two provisions give Riboul uncapped, unwaivable liability for decades of Treikev's lost project revenue whenever an installation causes roof damage that takes a system offline. The MSA precedence clause does not help, because the SOW ranks above the MSA body.",
+      "doc": "D1",
+      "section": "Sections 11.1(b) and 12.3",
+      "detect_terms": [
+        "as such term is defined in",
+        "shall not apply to Provider's obligations under Section 11.1(b)"
+      ],
+      "expected_finding": "Because MSA Section 12.3 removes the Section 11.1(b) Site Damage indemnity from both the liability cap and the consequential damages waiver, and SOW Section 1.6 defines Site Damage to include lost Production Revenue for the remaining Offtake Agreement term, Riboul faces uncapped liability for long-term project revenue losses, so the Site Damage definition should be limited to physical damage and/or the indemnity should be brought under a cap and the consequential damages waiver.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Section 1.6",
+      "detect_terms2": [
+        "lost Production Revenue",
+        "remaining term of the Offtake Agreement"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Section 7 of the general terms in Order Form No. 1 (D3) states that the Order Form and all Services under it are governed by New Jersey law, with exclusive jurisdiction in the Superior Court of New Jersey, Mercer County (Treikev's home venue). MSA Sections 17.1 and 17.2 choose Delaware law and courts in Wilmington, Delaware, and the term sheet (D2) also contemplates Delaware. MSA Section 2.3, however, ranks the Order Form first in the order of precedence. As a result, the New Jersey choice controls disputes over the 18.6 MWdc project that makes up the entire current work, while the MSA nominally stays under Delaware law. Riboul therefore faces split governing law, possible parallel proceedings in two forums, and litigation in Treikev's home county, and loses the Delaware choice it negotiated.",
+      "doc": "D3",
+      "section": "Section 7",
+      "detect_terms": [
+        "laws of the State of New Jersey",
+        "Mercer County"
+      ],
+      "expected_finding": "Order Form No. 1 Section 7 selects New Jersey law and Mercer County courts, and because MSA Section 2.3 gives the Order Form top precedence, it overrides the MSA's Delaware law and Wilmington forum for the active project, so the Order Form clause should be deleted or the MSA amended so that its governing law and forum provisions control notwithstanding the precedence clause.",
+      "contradicts": [
+        "F2",
+        "F3"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Section 1.2 of the Service Level Schedule (D6) says 'Defect' has the meaning given in Section 1.3 of the Quality Agreement. Section 3.2 then requires Riboul to remediate every Defect within 5 Business Days, and Section 4 imposes daily service credits for any delay. Section 1.3 of the Quality Agreement (D7) defines Defect, for inspection logging and reporting, as any nonconformity, malfunction or performance shortfall of a System or any component, whether or not caused by Provider, including Customer-Furnished Equipment such as the modules Treikev procures. Each provision is ordinary on its own: a cross-reference in one, and a broad logging definition in the other that creates no remediation duty. MSA Section 1 uses Defect to mean a failure of Riboul's Installation Work to conform to the Specifications. Because MSA Section 2.3 ranks the Service Level Schedule above the MSA body, the broader imported meaning governs Riboul's remediation and credit obligations. Riboul would then have to fix, on SLA deadlines and under credits, failures of Treikev-supplied panels and problems it did not cause.",
+      "doc": "D6",
+      "section": "Section 1.2",
+      "detect_terms": [
+        "has the meaning given in Section 1.3"
+      ],
+      "expected_finding": "By importing the Quality Agreement's definition of Defect, which covers failures not caused by Provider and failures of Customer-Furnished Equipment, the Service Level Schedule, which ranks above the MSA body, extends Riboul's 5-Business-Day remediation obligation and service credits beyond the MSA's workmanship-based meaning of Defect, so the Schedule should instead use the MSA definition limited to Provider's Installation Work.",
+      "contradicts": null,
+      "doc2": "D7",
+      "section2": "Section 1.3",
+      "detect_terms2": [
+        "whether or not caused by Provider",
+        "Customer-Furnished Equipment"
+      ]
+    }
+  ]
+}

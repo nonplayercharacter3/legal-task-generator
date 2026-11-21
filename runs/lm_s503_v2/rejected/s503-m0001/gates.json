@@ -1,0 +1,102 @@
+{
+  "matter_id": "s503-m0001",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I4\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I4"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 4.3: \"Assignor may assign or otherwise transfer this Agreement or the License-Back, in whole or in part, to any Person without the consent of Assignee, including by merger, consolidation, conversion, operation of law, change of control of Assignor or sale of all or any part of Assignor's livestock and equine feed business. Assignor may grant sublicenses under the License-Back, through multiple tiers, to any Person without the consent of Assignee.\"",
+            "reason": "The problem is present and hurts Gleigen. Gleigen is the licensor, and under Section 4.3 Movaisk can freely assign or multi-tier sublicense the License-Back, which covers the Ridgeline and Copperpot formulas and manufacturing know-how, to any Person. That includes a pet food competitor, with no consent from Gleigen and only after-the-fact notice. The Field limit and the confidentiality duty in Section 4.5 still apply, but they do not stop a competitor from getting the formulas and know-how. Those protections are weak once a competitor holds the information. APA Section 10.6 restricts assignment of the APA only. APA Section 10.9 makes the IP Assignment Agreement govern the License-Back. The APA non-compete in Section 5.8 binds only Seller and its Affiliates, not unrelated assignees. Nothing in the folder cures this. The IP Assignment Agreement is still an unsigned closing deliverable (date [●]; the latest date in the folder is August 2026; closing has not occurred), so Gleigen can still negotiate the point. The LOI also contemplated a license 'for use solely in Seller's livestock and equine feed business', which is narrower than this draft."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "APA §1.1: \"'Products' means the products listed on Schedule 1.1(c) of the Disclosure Schedule.\" APA §2.4(d) excludes \"any Liability arising out of or relating to Products manufactured or sold prior to the Closing, including any product liability, breach of warranty, personal injury or property damage claim, and any recall, market withdrawal or field correction of such Products.\" Schedule 1.1(c) lists only \"The following Ridgeline dry kibble products\" (RL-D and RL-C SKUs). APA §2.3 says Buyer assumes \"all Liabilities arising out of or relating to the Purchased Assets or the operation of the Business, whether arising before, on or after the Closing, other than the Excluded Liabilities.\" Schedule 3.14 item 1 discloses a pending FDA inquiry into vitamin D levels in Copperpot canned food, with 4,200 cases on quality hold.",
+            "reason": "The seller-retains product liability carve-out in §2.4(d) is tied to the defined term 'Products.' That term is limited to the Ridgeline dry kibble SKUs, even though the Business sold to Gleigen also includes the Copperpot retort-canned line and private-label manufacturing. §2.3 is a broad catch-all that makes Gleigen assume every pre-Closing Business liability not expressly excluded. As a result, pre-Closing Copperpot (and private-label) product liability and recall exposure becomes an Assumed Liability of Gleigen. That includes exposure from the live FDA vitamin D inquiry. Nothing in the folder cures this: (1) §8.2(c) indemnity covers only Excluded Liabilities. (2) The Copperpot FDA inquiry is disclosed on Schedule 3.14, so it qualifies §3.14 and cannot support a rep-breach claim. (3) Under §8.3(b), Gleigen must indemnify Seller for Assumed Liabilities. The LOI shows the intended deal was for Seller to keep all pre-closing product liability and recall exposure, so this is a drafting gap that harms the Buyer, not a deliberate allocation. The folder does not show that Closing has occurred, and the outside date (Dec 31, 2026) has not passed. Gleigen can still fix the definition (e.g., define Products as all products of the Business, including Copperpot and private-label) or seek a specific indemnity before Closing.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Products\" means the products listed on Schedule 1.1(c) of the Disclosure Schedule. ... (d) any Liability arising out of or relating to Products manufactured or sold prior to the Closing, including any product liability, breach of warranty, personal injury or property damage claim, and any recall, market withdrawal or field correction of such Products;",
+                "reason": "The APA alone shows the structure that creates the risk. Section 2.4(d) limits the pre-Closing product carve-out to 'Products'. 'Products' is defined only by reference to Schedule 1.1(c), not as all products of the Business. Section 2.3 makes Buyer assume every other Liability of the Business, including pre-Closing ones. The Recitals describe both Ridgeline kibble and Copperpot wet food. A careful associate could flag the general drafting risk that a narrow schedule would push product liability onto Buyer. The APA does not show that the schedule is actually narrow. Nothing in it says Schedule 1.1(c) omits the Copperpot products, and nothing discloses the pending FDA vitamin D inquiry into Copperpot canned food. Those facts are in the Disclosure Schedule (Schedules 1.1(c), 1.1(a) and 3.14). Without them, the APA reads as an ordinary seller-retains-pre-Closing-product-liability structure, and no actual gap or harm to Gleigen can be seen."
+              },
+              "disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "Schedule 1.1(c): Products — \"The following Ridgeline dry kibble products:\" (only RL-D and RL-C SKUs listed), compared with Schedule 1.1(a) Part C.2 (\"All Copperpot retort-canned wet food recipes...\") and Schedule 3.14 item 1 (\"FDA Inquiry: Copperpot Vitamin D... lot codes CP26-0301 through CP26-0419... Seller has placed 4,200 cases of finished goods from the affected lots on quality hold\").",
+                "reason": "On its own, the schedule shows a mismatch. The Products list in Schedule 1.1(c) covers only Ridgeline dry kibble. Yet Copperpot wet-food recipes and the retort canning line are being transferred, and a pending FDA vitamin D inquiry concerns Copperpot canned products. A careful associate could notice that Copperpot is missing from the Products list. What the schedule does not show is why that omission hurts the Buyer. It says nothing about how 'Products' is used in the APA. Specifically, it does not show that Section 2.4(d) limits the Seller's retained pre-Closing product liability and recall exposure to 'Products', or that Section 2.3 makes the Buyer assume every Liability of the Business that is not an Excluded Liability. Without those APA provisions, the narrow product list could be a harmless descriptive schedule. The shift of Copperpot recall and FDA exposure onto Gleigen only appears when the APA is read alongside it."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "APA Section 7.2(c): \"Seller has obtained, and delivered to Buyer copies of, each of the following (the \"Required Consents\"): (i) the written consent of the landlord under the Topeka Facility Lease to the assignment of the Topeka Facility Lease to Buyer; and (ii) the approval of the Kansas Department of Agriculture of the transfer to Buyer of Seller's commercial feed license for the Business, or the issuance to Buyer of a replacement license\". Schedule 3.5, Part A, item 1: \"Under Section 14.2, Fernhollow's prior written consent is required for any assignment of the agreement by Seller, including by operation of law or by change of control of Seller. If consent is not given, Fernhollow may terminate the agreement on 30 days' written notice to Seller. Consent has not been obtained as of the date of this Disclosure Schedule.\"",
+            "reason": "The problem is present and hurts Gleigen as Buyer. Read together, the documents show the following gap. Schedule 3.5 discloses that Fernhollow's consent is required for the Fernhollow Private Label Manufacturing Agreement, which is an Assigned Contract. It also says that consent has not been obtained. The LOI shows this contract produces about 41% of the Business's revenue. Nothing in the APA protects Gleigen against that gap. (1) Section 7.2(c) limits the Required Consents to the landlord consent and the Kansas Department of Agriculture approval. (2) Section 5.3 obliges Seller to seek only the Required Consents, so Seller has no covenant to obtain Fernhollow's consent. (3) Section 2.8 provides that an unconsented contract stays with Seller \"with no reduction in the Purchase Price.\" (4) The bring-down condition in Section 7.2(a) gives no protection, because Section 10.8 makes the schedule disclosure qualify the Section 3.5 representation. The missing consent is therefore not a breach, and Gleigen would have no indemnity claim. (5) The MAE condition is unlikely to be triggered, because Fernhollow's termination right would only be exercised after closing. As a result, Gleigen could be bound to close and pay the full $86.5 million without the largest customer contract. The ancillary agreements are still undated and the outside date is December 31, 2026, so the deal has not closed. The issue remains actionable: Gleigen can seek to add Fernhollow's consent as a closing condition or covenant, or seek a price adjustment.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "If any such consent is not obtained before the Closing, (a) the relevant Assigned Contract or Purchased Asset shall remain with Seller, (b) Seller shall cooperate with Buyer in any lawful arrangement reasonably requested by Buyer to provide Buyer with the benefits of it, and (c) there shall be no reduction in the Purchase Price on that account.",
+                "reason": "On its own, the APA shows a general structural weakness for Gleigen. Section 7.2(c) limits the Required Consents to the landlord consent and the Kansas Department of Agriculture license approval. Section 2.8 says any Assigned Contract whose consent is not obtained stays with Seller, with no price reduction. Recital A also says Seller makes private-label products for retail customers. A careful associate could flag that customer-contract consents are not closing conditions. The APA does not identify the Fernhollow Private Label Manufacturing Agreement, and it does not say that contract requires consent to assignment or change of control. It also does not show that the consent has not been obtained or that Fernhollow can terminate on 30 days' notice. Most importantly, nothing in it shows the contract is the business's largest customer (about 41% of revenue). Those facts come from Schedule 3.5 and the LOI, so the specific, material harm cannot be seen from this document alone."
+              },
+              "disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "Consent has not been obtained as of the date of this Disclosure Schedule.",
+                "reason": "Read alone, the schedule shows that the Fernhollow Private Label Manufacturing Agreement is an Assigned Contract. It also shows that Fernhollow's prior written consent is required, including on a change of control, that Fernhollow may terminate on 30 days' notice if consent is not given, and that consent has not yet been obtained. That is an ordinary consent disclosure. Schedule 3.3 lists the landlord consent, the KDA approval and the Schedule 3.5 consents as required consents for no-conflicts purposes, but it says nothing about which of them are closing conditions. Two things are missing. First, whether the Fernhollow consent is excluded from the APA Section 7.2(c) closing condition and from any covenant, and whether APA Section 2.8 leaves an unconsented contract with Seller at no price reduction; that is only in the APA. Second, that the contract is the business's largest customer contract, at about 41% of revenue; that is only in the LOI. Without those, an associate could not see that Gleigen could be required to close without the contract."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": false,
+            "evidence": "Schedule 3.9: \"Expiration Date: March 31, 2027.\" and \"Renewal Option: Under Section 3.3 of the Topeka Facility Lease, the tenant may extend the term for one additional five-year term, by written notice to the landlord given not less than 270 days prior to the expiration date.\" Its Status paragraph records no exercise of the option. APA Section 5.9: \"Before the Closing, Seller shall timely exercise the renewal option under the Topeka Facility Lease in accordance with its terms.\"",
+            "reason": "findable from disclosure_schedule.md alone, so it does not need two documents",
+            "alone": {
+              "disclosure_schedule.md": {
+                "findable": true,
+                "evidence": "Schedule 3.9 states: \"**Expiration Date:** March 31, 2027.\" and \"**Renewal Option:** Under Section 3.3 of the Topeka Facility Lease, the tenant may extend the term for one additional five-year term, by written notice to the landlord given not less than 270 days prior to the expiration date.\" Preliminary Statement 1 says Seller \"delivers it concurrently with the execution of the Agreement,\" and the Agreement is dated August 14, 2026.",
+                "reason": "The core problem is visible from this schedule alone. Counting 270 days back from March 31, 2027 gives July 4, 2026, which is about six weeks before the August 14, 2026 signing date shown in the schedule. Schedule 3.9 describes the option and the lease status (in force, no default, rent current) but never says the option was exercised. On the schedule's own terms, the window to extend had already closed when the deal was signed. Schedules 1.1(b), 1.1(d), 3.12 and 3.14 show the whole Business sits in the Topeka Facility: all lines, all employees and the feed license. So an associate could see that Buyer is buying a business whose only plant lease ends in about seven months with no renewal right, which plainly hurts the client. What the schedule does not show: (1) the APA Section 5.9 covenant requiring Seller to 'timely exercise' the option, which would show the covenant cannot be performed; (2) whether Section 7.2(c) landlord consent might bring an extension; and (3) the board consent showing Gleigen relied on occupancy through 2032. Those facts only sharpen the issue. The expired option, and the harm it does to Buyer, can be seen from this document alone."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 5.9: \"Before the Closing, Seller shall timely exercise the renewal option under the Topeka Facility Lease in accordance with its terms.\"",
+                "reason": "The APA alone shows that the Topeka Facility is the only real property used in the Business (Section 3.9). It shows a covenant to 'timely exercise the renewal option' before Closing (Section 5.9). It also shows the signing date of August 14, 2026. It does not give the lease expiration date (March 31, 2027), the 270-day notice requirement, or the fact that the option has not been exercised. Those facts appear only in Schedule 3.9 of the Disclosure Schedule, which is referenced but not included. Without them, an associate cannot work out that the notice deadline was July 4, 2026, which was before signing, or that the covenant cannot be performed. The APA shows the covenant exists. It does not show that the window had already closed."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

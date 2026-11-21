@@ -1,0 +1,262 @@
+{
+  "matter_id": "s503-m0003",
+  "summary": "The firm represents Trobur Dental Distribution, LLC. Trobur distributes Furux Dental Technologies, Inc.'s intraoral scanners, chairside milling units and zirconia milling blocks to independent dental clinics and dental service organizations in a mid-Atlantic territory, under a Delaware-law Exclusive Distribution Agreement effective March 1, 2024. Trobur's parent, Trobur Holdings, Inc., guarantees Trobur's payment obligations to Furux. Product quality, complaints and recalls are covered by a separate Quality Agreement, which controls on Quality Matters. Amendment No. 1, dated September 15, 2026, adds territory. Its recitals disclose that Trobur Holdings signed a Unit Purchase Agreement on August 3, 2026 to sell all of Trobur's units to Pellmont Dental Group, a multi-state dental clinic operator. The supervising partner wants a memo on the folder before the sale closes. The planted issues are: (1) Furux's product-liability indemnity falls under the liability cap once the amendment moves it out of Section 10; (2) a narrower 'Recall' definition in the Quality Agreement controls the recall-cost obligation; (3) the Quality Agreement's New Jersey law and forum override Delaware for quality disputes; (4) Furux may assign freely; (5) a five-year auto-renewal with a 30-day window and escalating minimums; (6) the Pending Sale triggers Furux's change-of-control consent right, which has not been obtained. The office lease and the certificate of insurance are distractors.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Trobur Dental Distribution, LLC",
+      "role": "Distributor (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Furux Dental Technologies, Inc.",
+      "role": "Supplier / manufacturer of dental equipment and consumables"
+    },
+    {
+      "id": "P3",
+      "name": "Trobur Holdings, Inc.",
+      "role": "Parent and guarantor of Distributor; seller in the Pending Sale"
+    },
+    {
+      "id": "P4",
+      "name": "Pellmont Dental Group, LLC",
+      "role": "Buyer of Distributor under the Pending Sale"
+    },
+    {
+      "id": "P5",
+      "name": "Ashgrove Commercial Properties LLC",
+      "role": "Landlord under Distributor's office and showroom lease"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Initial Term",
+      "value": "four years, ending February 29, 2028",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement Renewal Term length",
+      "value": "five Contract Years",
+      "doc": "D1",
+      "section": "1.1 (\"Renewal Term\")"
+    },
+    {
+      "id": "F4",
+      "key": "Distribution Agreement liability cap",
+      "value": "amounts paid by Distributor to Supplier in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.2"
+    },
+    {
+      "id": "F5",
+      "key": "Distribution Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "15.1"
+    },
+    {
+      "id": "F6",
+      "key": "Distribution Agreement exclusive forum",
+      "value": "state or federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "15.2"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "Quality Agreement governs conflicts on Quality Matters; Distribution Agreement governs all other matters",
+      "doc": "D1",
+      "section": "2.3"
+    },
+    {
+      "id": "F8",
+      "key": "Minimum Annual Purchase Commitment (first Contract Year)",
+      "value": "$2,400,000, increasing 8% each Contract Year",
+      "doc": "D1",
+      "section": "5.2"
+    },
+    {
+      "id": "F9",
+      "key": "Pending Sale Unit Purchase Agreement date",
+      "value": "August 3, 2026",
+      "doc": "D2",
+      "section": "Recitals"
+    },
+    {
+      "id": "F10",
+      "key": "Parent Guaranty maximum liability",
+      "value": "$3,000,000",
+      "doc": "D3",
+      "section": "2.2"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "exclusive_distribution_agreement_furux_trobur.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_no_1_distribution_agreement.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "parent_guaranty_trobur_holdings.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "quality_agreement_furux_trobur.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "office_showroom_lease_newark.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "certificate_of_insurance_trobur.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 11.2 of the Distribution Agreement caps each party's aggregate liability at the amounts Distributor paid in the prior 12 months. Section 11.3 excludes from that cap 'a party's indemnification obligations under Section 10', which as originally drafted included Supplier's Section 10.1(b) indemnity against third-party product-liability and patient-injury claims (Product Claims). Section 3 of Amendment No. 1 reads like a reorganization: it deletes Section 10.1(b) and restates it as new Section 9.6 (Product Claims Indemnity). Section 11.3 still refers only to Section 10. Read together, Supplier's product-liability indemnity has moved outside the carve-out and is now capped at 12 months of purchases. Distributor, which resells scanners, milling units and zirconia blocks to dental clinics, keeps uncapped exposure for patient-injury claims, while its own Section 10 indemnities to Supplier remain uncapped.",
+      "doc": "D1",
+      "section": "11.3",
+      "detect_terms": [
+        "indemnification obligations under Section 10"
+      ],
+      "expected_finding": "Because Amendment No. 1 relocates Supplier's Product Claims indemnity to new Section 9.6 while the Section 11.3 cap carve-out still reaches only Section 10, Supplier's product-liability indemnity is now subject to the 12-month-fees cap in Section 11.2, and Section 11.3 should be amended to carve out Section 9.6 (or all indemnities wherever located).",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "3",
+      "detect_terms2": [
+        "restated as new Section 9.6"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Section 1.1 of the Distribution Agreement defines 'Recall' broadly to include any recall, market withdrawal, field correction or field safety notice, whether voluntary or mandated. Section 7.4 requires Supplier to bear all costs of any Recall, including Distributor's costs of retrieving, replacing and crediting product at dental clinics. Section 1 of the Quality Agreement defines 'Recall' as only a removal or correction mandated by order of the FDA or another Governmental Authority, and states that its definitions apply to all Quality Matters between the parties. Section 2.3 of the Distribution Agreement makes the Quality Agreement govern conflicts on Quality Matters, and those expressly include Recalls. Read together, the narrower definition controls. Supplier's cost obligation then covers only government-ordered recalls. Voluntary withdrawals and field corrections, the most common field actions for dental devices, fall to Distributor.",
+      "doc": "D4",
+      "section": "1 (definition of \"Recall\")",
+      "detect_terms": [
+        "mandated by order of the FDA"
+      ],
+      "expected_finding": "Because Section 2.3 of the Distribution Agreement makes the Quality Agreement control on Quality Matters, the Quality Agreement's narrow 'Recall' definition (government-ordered only) displaces the broad definition and cuts back Supplier's Section 7.4 obligation to bear all Recall costs, leaving Distributor to bear the costs of voluntary withdrawals and field corrections, so the definitions must be conformed to the broad version.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "2.3 and 7.4",
+      "detect_terms2": [
+        "with respect to Quality Matters, the Quality Agreement shall govern",
+        "all costs of any Recall"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Sections 15.1 and 15.2 of the Distribution Agreement choose Delaware law and exclusive jurisdiction of the courts in New Castle County, Delaware. Section 12 of the Quality Agreement provides that the Quality Agreement and all disputes concerning Quality Matters are governed by New Jersey law (Supplier's home state) and must be brought exclusively in the courts of Mercer County, New Jersey. On its own the Quality Agreement clause would yield to the main agreement. But Section 2.3 of the Distribution Agreement provides that the Quality Agreement governs conflicts on Quality Matters, so the New Jersey choice controls disputes over recalls, complaints and product quality. Distributor's most valuable claims would therefore have to be brought in Supplier's home forum under a different law, while all other disputes go to Delaware. That creates a risk of split proceedings and inconsistent results.",
+      "doc": "D4",
+      "section": "12",
+      "detect_terms": [
+        "laws of the State of New Jersey",
+        "courts of Mercer County, New Jersey"
+      ],
+      "expected_finding": "Because Section 2.3 of the Distribution Agreement lets the Quality Agreement govern Quality Matters, the Quality Agreement's New Jersey governing-law and exclusive-forum clause overrides the Delaware law and New Castle County forum for recall and quality disputes, splitting disputes between two forums and laws, so the Quality Agreement should be conformed to Delaware law and forum or Section 2.3 should exclude governing law and forum from the Quality Agreement's precedence.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ],
+      "doc2": "D1",
+      "section2": "2.3",
+      "detect_terms2": [
+        "with respect to Quality Matters, the Quality Agreement shall govern"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 14.1 of the Distribution Agreement allows Supplier to assign the agreement, or any of its rights or obligations, in whole or in part, to any Person without Distributor's consent. Distributor, by contrast, cannot assign without consent under Section 14.2. Nothing bars assignment to a competing dental distributor or to a purchaser of Furux's product line. That assignee would then control supply to Distributor during the exclusive term and receive Distributor's clinic customer data and pricing under the reporting provisions. Distributor would have no consent right or termination right.",
+      "doc": "D1",
+      "section": "14.1",
+      "detect_terms": [
+        "without the consent of Distributor",
+        "to any Person"
+      ],
+      "expected_finding": "Section 14.1 lets Furux assign the Distribution Agreement to anyone, including a competitor of Trobur, without Trobur's consent, and should be revised to require Trobur's consent (or limit assignment to a successor to substantially all of the product line that is not a Trobur competitor) with a Trobur termination right.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Section 3.2 of the Distribution Agreement renews the agreement automatically for successive Renewal Terms unless a party delivers a Non-Renewal Notice during the Non-Renewal Window. Section 1.1 defines 'Renewal Term' as five Contract Years and the 'Non-Renewal Window' as the 30-day period beginning 180 days before the end of the then-current Term. For the Initial Term ending February 29, 2028, that window runs from about September 2 to October 1, 2027. The clause binds both parties alike, but it hurts Distributor because of Section 5.2. That section imposes a Minimum Annual Purchase Commitment of $2,400,000 that increases 8% each Contract Year and continues through any Renewal Term. If Distributor misses the narrow window, it is locked into five more years of escalating minimum purchases. This matters especially because the Pending Sale may change Distributor's strategy.",
+      "doc": "D1",
+      "section": "3.2",
+      "detect_terms": [
+        "renew automatically for successive Renewal Terms",
+        "Non-Renewal Window"
+      ],
+      "expected_finding": "Read with the Section 1.1 definitions and the Section 5.2 escalating minimum purchase commitment, Section 3.2 automatically renews the Distribution Agreement for five-year terms unless notice is given in a 30-day window opening 180 days before expiry (about September 2 to October 1, 2027 for the Initial Term ending February 29, 2028), so the window should be calendared and the clause renegotiated to shorter renewals, a longer notice window, or reset minimums.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I6",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Section 14.2 of the Distribution Agreement deems any Change of Control of Distributor (defined to include a transfer of more than 50% of its equity) an assignment that requires Supplier's prior written consent. It lets Supplier terminate on 30 days' notice if a Change of Control occurs without consent. The Recitals of Amendment No. 1 state that Trobur Holdings, Inc. signed a Unit Purchase Agreement dated August 3, 2026 to sell all outstanding units of Distributor to Pellmont Dental Group, LLC (the 'Pending Sale'). The Pending Sale is therefore a Change of Control. Section 5 of the same Amendment says that nothing in it constitutes a consent or waiver under any provision of the Agreement, so Furux's signature on the Amendment is not consent. No document in the folder records Furux's consent. Closing without it would let Furux terminate Trobur's exclusive distribution rights.",
+      "doc": "D1",
+      "section": "14.2",
+      "detect_terms": [
+        "Change of Control of Distributor shall be deemed an assignment",
+        "prior written consent of Supplier"
+      ],
+      "expected_finding": "The Pending Sale under the August 3, 2026 Unit Purchase Agreement recited in Amendment No. 1 is a Change of Control requiring Furux's prior written consent under Section 14.2, which the Amendment expressly does not give, so Trobur must obtain Furux's written consent before closing (and make it a closing condition) or face a 30-day termination right.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Recitals and 5",
+      "detect_terms2": [
+        "Pending Sale",
+        "does not constitute a consent or waiver"
+      ]
+    }
+  ]
+}
