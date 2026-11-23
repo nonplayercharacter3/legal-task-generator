@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-23 14:00, autopilot iteration 27 (loop restarted after a reboot).
+Last updated: 2026-11-23 13:50, autopilot iteration 27 (loop restarted after a reboot).
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -41,7 +41,7 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- `runs/lab_sample/chain_v2b.sh` (PID 3174, output `runs/lab_sample/chain_v2b.out`), started 2026-11-23 13:58: starts
+- `runs/lab_sample/chain_v2b.sh` (PID 3174, output `runs/lab_sample/chain_v2b.out`), started 2026-11-23 13:44: starts
   podman, re-judges the 10 errored s1 LAB rows (errored criteria only, PR #49), runs `scripts/lab_sample.py run
   ours_v2` (20 v2 tasks, Qwen solve then judge, 202 criteria), regrades again, `check.py`. Expected end about 18:00,
   later if a limit hits. The 2026-11-21 chain (PIDs 67923, 78677) died in the reboot; nothing of ours_v2 had run.

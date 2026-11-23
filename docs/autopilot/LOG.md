@@ -158,7 +158,7 @@ Dated, append-only. One entry per iteration.
   13 train by seed 46; 202 criteria); `run [SET]` runs one set. Drawn; old sample in `sample.before_v2.json`.
 - Started `runs/lab_sample/chain_v2.sh` (PID 78677): regrade pass, ours_v2 run, regrade pass, check.
 
-## 2026-11-23 14:00, iteration 27
+## 2026-11-23 13:50, iteration 27
 - The loop sat on the usage limit from 2026-11-21 15:27 to 23:00 (every iteration refused), then the laptop rebooted;
   loop restarted 2026-11-23 13:40. Both LAB jobs (regrade2 PID 67923, chain_v2 PID 78677) died; ours_v2 never ran.
 - regrade2 had re-judged the 114-criterion credit-lending task 5 times on 2026-11-21; each full pass (~2.6M judge
