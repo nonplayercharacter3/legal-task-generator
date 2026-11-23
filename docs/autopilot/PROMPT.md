@@ -116,7 +116,9 @@ agent works from one issue, unattended, so the issue must always be current and 
 - **Never ask him for steps that need someone watching** (per-seed comments, babysitting a log): his agent session
   ends once the batch starts. Read seed numbers from his PR's commits instead. Ask only for what a fresh session can do
   in one go. Do not ask for credentials a step does not use (a `--no-label` batch needs no NRP key).
-- **Every iteration** compare the body with STATE.md (seeds, config, command, next step) and fix mismatches first.
+- **Every iteration** check his work-order issue is open and assigned to him (`gh issue view <n> --json state,assignees`;
+  reopen it with a short comment if it was closed before he finished), then compare the body with STATE.md (seeds,
+  config, command, next step) and fix mismatches first.
 - **Test-run every command before posting it**, from a scratch clone (`/tmp/ltg-labmate-test`, origin pointed at a
   local bare repo so nothing is pushed) on `configs/fake_demo.toml` with the same flags (`--seeds`, `--out-pattern`,
   `--no-label`, a throwaway `--branch`, `--author`). Never post a command that has not run.
