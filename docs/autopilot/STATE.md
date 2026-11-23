@@ -105,5 +105,5 @@ agent. Full definition of done: PROMPT.md.
   `--no-label`, `--branch lm/v2-s500-507`); every command test-run on the fake backend in a scratch clone first.
 - Done: v2 batch seeds 500-507, 20 of 24 accepted (his comment on #36, 2026-11-21 02:41 PST). Seed 500 via PR #45;
   501-507 sat on his branch with no PR because `ltg batch` cached the first PR as open: autopilot opened and merged
-  PR #46, fixed the tool in PR #47, told him on #36. His next work order is not written yet: decide after M3/M4
-  (v2 or v3 config), test-run it in a scratch clone, then rewrite #36's body.
+  PR #46, fixed the tool in PR #47, told him on #36. Current order (2026-11-21): label his seeds 500-507.
+  When he is done, post his next order in the same iteration (PROMPT.md "Never leave him idle").

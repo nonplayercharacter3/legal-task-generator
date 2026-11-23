@@ -120,6 +120,11 @@ agent works from one issue, unattended, so the issue must always be current and 
 - **Test-run every command before posting it**, from a scratch clone (`/tmp/ltg-labmate-test`, origin pointed at a
   local bare repo so nothing is pushed) on `configs/fake_demo.toml` with the same flags (`--seeds`, `--out-pattern`,
   `--no-label`, a throwaway `--branch`, `--author`). Never post a command that has not run.
+- **Never leave him idle (Sirui She, 2026-11-23).** As soon as he is done with a job (his "ended" comment, or his PR
+  merged), write and post his next work order in that same iteration, without asking anyone. If the bigger decision
+  it depends on (v2 or v3, M4) is still open, give him the most useful job that does not depend on it: label his
+  unlabelled tasks, or run the next 8 of his seeds on the current config. If he reports a failure, fix it or work
+  around it and post a runnable order in the same iteration.
 - **When his next work changes,** edit the body (`gh issue edit <n> --body-file ...`), then add a short comment
   saying what changed, so he is notified.
 - Keep a "Lab mate" section in STATE.md: issue number, what he is on, last seen activity, his open PR.
