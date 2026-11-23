@@ -157,3 +157,13 @@ Dated, append-only. One entry per iteration.
 - PR #48 merged: `scripts/lab_sample.py draw-v2` adds 20 v2 tasks as set `ours_v2` (dev/test first, 7 of them, then
   13 train by seed 46; 202 criteria); `run [SET]` runs one set. Drawn; old sample in `sample.before_v2.json`.
 - Started `runs/lab_sample/chain_v2.sh` (PID 78677): regrade pass, ours_v2 run, regrade pass, check.
+
+## 2026-11-23 14:00, iteration 27
+- The loop sat on the usage limit from 2026-11-21 15:27 to 23:00 (every iteration refused), then the laptop rebooted;
+  loop restarted 2026-11-23 13:40. Both LAB jobs (regrade2 PID 67923, chain_v2 PID 78677) died; ours_v2 never ran.
+- regrade2 had re-judged the 114-criterion credit-lending task 5 times on 2026-11-21; each full pass (~2.6M judge
+  input tokens) ran into the limit and left 20 to 24 criteria errored. PR #49 (merged): `lab_run.py --errored-only`
+  keeps earlier pass/fail verdicts and re-judges only errored criteria (checked with a fake judge on that run: 24
+  calls, 112/114). regrade2.py (local) now passes it.
+- Started `runs/lab_sample/chain_v2b.sh` (PID 3174). Lab mate: no activity since his work order of 2026-11-21 12:15
+  (label seeds 500-507); issue #36 matches STATE.

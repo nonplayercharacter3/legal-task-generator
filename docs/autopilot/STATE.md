@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-21 12:20, autopilot iteration 18.
+Last updated: 2026-11-23 14:00, autopilot iteration 27 (loop restarted after a reboot).
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -41,16 +41,16 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- LAB regrade `regrade2.py` (PID 67923, output `runs/lab_sample/regrade2.out`), started 11:06 by Sirui She's session:
-  hit the usage limit at 11:30, resumed 12:05 on the credit-lending task (114 criteria); 9 more after it.
-- Chained after it: `runs/lab_sample/chain_v2.sh` (PID 78677, output `runs/lab_sample/chain_v2.out`): a second
-  regrade pass (the sanctions task, re-run at 11:34, was judged into the limit: 10 errored scores still), then
-  `scripts/lab_sample.py run ours_v2` (20 v2 tasks, Qwen solve then judge, 202 criteria), then a last regrade pass and
-  `check.py`. Expected end about 15:30, later if a limit hits.
-- LAB side: 30 of 30 attempted; 20 scored cleanly, 10 to re-judge (sanctions among them).
-- `sample.json` now has set `ours_v2` (PR #48): s504-m0003, s506-m0003, s45-m0003, s53-m0002, s55-m0001,
+- `runs/lab_sample/chain_v2b.sh` (PID 3174, output `runs/lab_sample/chain_v2b.out`), started 2026-11-23 13:58: starts
+  podman, re-judges the 10 errored s1 LAB rows (errored criteria only, PR #49), runs `scripts/lab_sample.py run
+  ours_v2` (20 v2 tasks, Qwen solve then judge, 202 criteria), regrades again, `check.py`. Expected end about 18:00,
+  later if a limit hits. The 2026-11-21 chain (PIDs 67923, 78677) died in the reboot; nothing of ours_v2 had run.
+- LAB side: 30 of 30 attempted; 20 scored cleanly, 10 to re-judge.
+- `sample.json` has set `ours_v2` (PR #48): s504-m0003, s506-m0003, s45-m0003, s53-m0002, s55-m0001,
   s55-m0003, s58-m0002 (all dev and test), plus 13 train drawn by seed 46; 7 are the lab mate's, unlabelled yet.
   Old sample kept as `runs/lab_sample/sample.before_v2.json`. The 20 v1 `ours` rows are not run (v1 is superseded).
+- Judge call counts: `judge_calls.json` holds only the last judge pass of a task (regrades overwrite it); count
+  about one call per criterion plus retries when reporting.
 
 ## v2 numbers (seeds 45-61, ours; lab mate 500-507)
 - Lab mate's seeds 500-507: 20 of 24 accepted, on main (PR #45, #46), not labelled yet. Rejections, read 2026-11-21:
@@ -71,7 +71,7 @@ agent. Full definition of done: PROMPT.md.
   15,704 (MISS, needs 20,000), checklist median 10 (soft miss, needs 20).
 
 ## Next
-1. When `chain_v2.out` says "chain done": check `check.py` shows every s1 row clean (LAB 30 and ours_v2 20); if not,
+1. When `chain_v2b.out` says "chain done": check `check.py` shows every s1 row clean (LAB 30 and ours_v2 20); if not,
    run `regrade2.py` again. Then re-run `scripts/lab_sample.py run ours_v2` (it skips scored tasks and rewrites
    `summary.json` over all rows), commit `summary.json`, write both sides into `docs/research/lab_harness.md` (M3 done).
 2. Label the lab mate's 20 tasks (`ltg label`, runs/lm_s500-507_v2) after the chain (one heavy job at a time).
