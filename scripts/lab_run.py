@@ -1,6 +1,6 @@
 """Run one task through LAB's own harness with Qwen on NRP, then grade it with our SDK judge in place of LAB's judges.
 
-    runs/lab_venv/bin/python scripts/lab_run.py TASK [--tag r1] [--judge-only]
+    runs/lab_venv/bin/python scripts/lab_run.py TASK [--tag r1] [--judge-only [--errored-only]]
 
 TASK is a LAB task id (`corporate-ma/analyze-cim-deal-teaser/scenario-01`) or `ours/<name>` from to_lab_format.py.
 LAB root is runs/lab_root (LAB's tasks symlinked or copied in; results and scores land in runs/lab_root/results/), so
@@ -31,8 +31,10 @@ os.environ["BASETEN_BASE_URL"] = os.environ.get("LAB_BASE_URL", "https://ellm.nr
 
 import openai  # noqa: E402
 from lab_core import paths  # noqa: E402
+from lab_core.evaluation import run_eval  # noqa: E402
 from lab_core.evaluation.judge import Judge  # noqa: E402
 from lab_core.evaluation.run_eval import evaluate_run  # noqa: E402
+from lab_core.evaluation.scoring import RubricResult, pandoc_version  # noqa: E402
 from lab_core.harness import run as lab_run  # noqa: E402
 from lab_core.harness.adapters.baseten import BasetenAdapter  # noqa: E402
 from ltg.models import CallLog, ClaudeAgentClient  # noqa: E402
@@ -74,11 +76,31 @@ class SdkJudge(Judge):
         raise ValueError("judge reply had no JSON")
 
 
+def judge_errored_only(old_results: list[dict]):
+    """Patch LAB's score_rubric to re-judge only criteria whose earlier verdict was "error" and keep the rest.
+    A full re-judge of a 114-criterion task costs ~2.6M judge input tokens; after a usage limit only the errored
+    ones need it."""
+    old = {c["id"]: c for c in old_results}
+    real = run_eval.score_rubric
+
+    def score_rubric(criteria, **kw):
+        todo = [c for c in criteria if old.get(c["id"], {}).get("verdict", "error") == "error"]
+        new = {c["id"]: c for c in (real(criteria=todo, **kw).criteria_results if todo else [])}
+        results = [new.get(c["id"]) or old[c["id"]] for c in criteria]
+        n_pass = sum(r["verdict"] == "pass" for r in results)
+        return RubricResult(score=float(bool(results) and n_pass == len(results)), max_score=1.0,
+                            criteria_results=results, n_grading_errors=sum(r["verdict"] == "error" for r in results),
+                            pandoc_version=pandoc_version())
+
+    run_eval.score_rubric = score_rubric
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("task")
     ap.add_argument("--tag", default="r1")
     ap.add_argument("--judge-only", action="store_true")
+    ap.add_argument("--errored-only", action="store_true", help="with --judge-only: re-judge only errored criteria")
     a = ap.parse_args()
     run_id = f"{a.task}/{MODEL}-low/{a.tag}"
     run_dir = paths.results_dir() / run_id
@@ -86,6 +108,8 @@ if __name__ == "__main__":
         lab_run.BasetenAdapter = NRPAdapter
         lab_run.main(lab_run.parser.parse_args(["--model", f"baseten/{MODEL}", "--task", a.task, "--run-id", run_id,
                                                  "--reasoning-effort", "low", "--max-turns", "60"]))
+    if a.errored_only and (run_dir / "scores.json").exists():
+        judge_errored_only(json.loads((run_dir / "scores.json").read_text())["criteria_results"])
     calls = CallLog()
     t0 = time.time()
     scores = evaluate_run(run_id, a.task, SdkJudge(calls), parallel=4)
