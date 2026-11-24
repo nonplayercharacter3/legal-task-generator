@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "test",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.667,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 50
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -186,8 +200,73 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 49,
+              "files_opened": [
+                "drenind_logistics_group_parent_guaranty.md",
+                "msa_amendment_no_1_peak_overflow.md",
+                "order_form_001_fulfillment_services.md",
+                "vaitix_drenind_fulfillment_term_sheet.md",
+                "vaitix_drenind_master_services_agreement.md",
+                "vaitix_drenind_mutual_nda.md",
+                "vaitix_drenind_quality_agreement.md",
+                "vaitix_letter_to_drenind_2026-08-14.md",
+                "vaitix_portland_studio_office_lease.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 49,
+              "files_opened": [
+                "drenind_logistics_group_parent_guaranty.md",
+                "msa_amendment_no_1_peak_overflow.md",
+                "order_form_001_fulfillment_services.md",
+                "vaitix_drenind_fulfillment_term_sheet.md",
+                "vaitix_drenind_master_services_agreement.md",
+                "vaitix_drenind_mutual_nda.md",
+                "vaitix_drenind_quality_agreement.md",
+                "vaitix_letter_to_drenind_2026-08-14.md",
+                "vaitix_portland_studio_office_lease.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C4",
+                "C6",
+                "C9"
+              ],
+              "steps": 50,
+              "files_opened": [
+                "drenind_logistics_group_parent_guaranty.md",
+                "msa_amendment_no_1_peak_overflow.md",
+                "order_form_001_fulfillment_services.md",
+                "vaitix_drenind_fulfillment_term_sheet.md",
+                "vaitix_drenind_master_services_agreement.md",
+                "vaitix_drenind_mutual_nda.md",
+                "vaitix_drenind_quality_agreement.md",
+                "vaitix_letter_to_drenind_2026-08-14.md",
+                "vaitix_portland_studio_office_lease.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
