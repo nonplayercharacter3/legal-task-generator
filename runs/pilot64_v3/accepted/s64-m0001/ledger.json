@@ -1,0 +1,234 @@
+{
+  "matter_id": "s64-m0001",
+  "summary": "Dribas Brewing Company, LLC, a Delaware craft brewer with breweries in Wilmington and Dover, licensed Brikon Systems, Inc.'s BrewLedger brewery-operations software platform under a Software License Agreement effective January 15, 2026. The folder holds the license agreement, a same-day side letter, a data processing addendum, Amendment No. 1 dated September 15, 2026, the December 2025 term sheet, a superseded prior draft and Dribas's board consent. Five issues are planted. (1) The side-letter termination right for late acceptance of the Brewhouse Integration Module lapsed before Dribas sent its notice; the dispute is recorded in the Amendment recitals. (2) The Amendment's restatement of Section 10 shifts the cap carve-out cross-reference so that Brikon's IP indemnity becomes capped and Dribas's new indemnity becomes uncapped. (3) The DPA, which controls under the precedence clause, sends data disputes to New York law and New York courts. (4) The licensee exclusivity covenant is far broader than the term sheet. (5) The DPA's narrow definition of 'Customer Data' overrides the license agreement's broad definition through the precedence clause, which strips protection from Dribas's recipes and production data.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Dribas Brewing Company, LLC",
+      "role": "Licensee; craft brewer operating breweries in Wilmington and Dover, Delaware (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Brikon Systems, Inc.",
+      "role": "Licensor; developer of the BrewLedger brewery production, tank management and compliance software platform"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "January 15, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Customer Data definition (Software License Agreement)",
+      "value": "all data Licensee submits, including recipes, formulations, production records and distributor sales data",
+      "doc": "D1",
+      "section": "Section 1.4"
+    },
+    {
+      "id": "F3",
+      "key": "Software License Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F4",
+      "key": "Software License Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 15.1"
+    },
+    {
+      "id": "F5",
+      "key": "Software License Agreement exclusive forum",
+      "value": "state or federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "Section 15.1"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "signed amendments and side letters, then the DPA, then the Software License Agreement",
+      "doc": "D1",
+      "section": "Section 15.6"
+    },
+    {
+      "id": "F7",
+      "key": "Brewhouse Integration Module Acceptance Deadline",
+      "value": "June 30, 2026",
+      "doc": "D2",
+      "section": "Section 2"
+    },
+    {
+      "id": "F8",
+      "key": "Side Letter termination notice window",
+      "value": "30 days after the Acceptance Deadline",
+      "doc": "D2",
+      "section": "Section 2"
+    },
+    {
+      "id": "F9",
+      "key": "Agreed exclusivity scope (Term Sheet)",
+      "value": "production-scheduling software at Licensee's Wilmington and Dover breweries only",
+      "doc": "D4",
+      "section": "Section 5"
+    },
+    {
+      "id": "F10",
+      "key": "August Notice delivery date",
+      "value": "August 14, 2026",
+      "doc": "D3",
+      "section": "Recital C"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "license_agreement_prior_draft.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D7",
+      "filename": "dribas_board_consent.md",
+      "kind": "board consent",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 2 of the Side Letter (D2, dated January 15, 2026) gives Dribas a fee-free right to terminate the Software License Agreement if the Brewhouse Integration Module is not Accepted by the Acceptance Deadline of June 30, 2026. Dribas must exercise that right by written notice no later than thirty days after the Acceptance Deadline, which is July 30, 2026. Recital C of Amendment No. 1 (D3, dated September 15, 2026) records that Dribas delivered its termination notice (the 'August Notice') on August 14, 2026, fifteen days after the window closed. The same Recital C, with Section 6 of D3, records that Brikon disputes the notice and Dribas maintains it is effective, and both parties reserve all rights. Dribas has therefore not accepted the lapse. Its termination position, however, rests on a notice that appears untimely on the face of the documents. If Dribas acts as though the Agreement has ended, for example by stopping payment or migrating off the platform, it risks committing a breach itself.",
+      "doc": "D2",
+      "section": "Section 2",
+      "detect_terms": [
+        "thirty (30) days after the Acceptance Deadline"
+      ],
+      "expected_finding": "The Side Letter termination window closed on July 30, 2026, so Dribas's August 14, 2026 notice is likely untimely and ineffective. Dribas should not treat the Agreement as terminated. It should rely on the reservation of rights in Amendment No. 1 and pursue a negotiated waiver or alternative termination grounds.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 11.3(a) of the Software License Agreement (D1) excludes from the Section 11.2 liability cap 'a party's obligations under Section 10.1'. In D1, Section 10.1 is Brikon's IP infringement indemnity. Section 3 of Amendment No. 1 (D3) deletes Section 10 and replaces it in its entirety. In the restated text, Section 10.1 becomes a new Licensee indemnity under which Dribas defends and indemnifies Brikon for claims arising from Dribas's label, formula and alcohol-regulatory compliance data. Brikon's IP infringement indemnity moves to Section 10.2. The Amendment makes no conforming change to Section 11.3. It also prevails over D1 under the precedence clause in D1 Section 15.6. Read together, the two provisions mean Brikon's IP indemnity is now capped at twelve months' fees, while Dribas's own indemnity is uncapped. Each provision reads as ordinary drafting on its own.",
+      "doc": "D3",
+      "section": "Section 3",
+      "detect_terms": [
+        "Section 10 of the Agreement is deleted and replaced",
+        "Licensee shall defend, indemnify and hold harmless"
+      ],
+      "expected_finding": "Because Amendment No. 1 renumbered Section 10 without updating the Section 11.3(a) cross-reference, Brikon's IP infringement indemnity (now Section 10.2) is subject to the 12-month-fees cap and Dribas's new Section 10.1 indemnity is uncapped. A further amendment should point the carve-out to Section 10.2 and restore the cap on Dribas's indemnity.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 11.3",
+      "detect_terms2": [
+        "obligations under Section 10.1"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Section 15.1 of the Software License Agreement (D1) chooses Delaware law and the exclusive jurisdiction of the state or federal courts in New Castle County, Delaware. Section 12 of the Data Processing Addendum (D5) provides that the Addendum and any claim arising out of or relating to the Processing of Customer Data are governed by New York law and must be brought exclusively in the courts of New York County. Under D1 Section 15.6, the DPA prevails over the Agreement in any conflict, so the New York clause controls for data-related claims. A single incident such as a data breach, an outage that corrupts production records, or a misuse of Dribas's data could therefore have to be litigated in two forums under two bodies of law. Dribas, a Delaware brewer, would lose its chosen Delaware forum for the claims most likely to matter to it.",
+      "doc": "D5",
+      "section": "Section 12",
+      "detect_terms": [
+        "laws of the State of New York",
+        "New York County"
+      ],
+      "expected_finding": "The DPA's New York governing-law and exclusive-forum clause controls data-related claims under the Agreement's precedence clause, which splits disputes between New York and Delaware. The DPA should be conformed to Delaware law and the New Castle County forum.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ],
+      "doc2": "D1",
+      "section2": "Sections 15.1 and 15.6",
+      "detect_terms2": [
+        "laws of the State of Delaware",
+        "New Castle County"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Section 2.5 of the Software License Agreement (D1) bars Dribas and its Affiliates from licensing, using or developing any brewery management, inventory, point-of-sale or distribution software other than the Licensed Software, anywhere in the world, for the Term. Section 5 of the Term Sheet (D4) records that the agreed exclusivity covers only production-scheduling software at Dribas's Wilmington and Dover breweries. The D1 covenant therefore extends to taproom point-of-sale, distributor and inventory systems, to Affiliates and to any future brewery. The integration clause in D1 supersedes the Term Sheet, so Dribas cannot rely on the narrower agreed scope.",
+      "doc": "D1",
+      "section": "Section 2.5",
+      "detect_terms": [
+        "point-of-sale or distribution software",
+        "anywhere in the world"
+      ],
+      "expected_finding": "The Section 2.5 exclusivity covenant reaches all brewery, inventory, point-of-sale and distribution software worldwide, including Affiliates, far beyond the production-scheduling-at-Wilmington-and-Dover scope agreed in the Term Sheet. It should be narrowed by amendment to that agreed scope.",
+      "contradicts": "F9",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Section 1.4 of the Software License Agreement (D1) defines 'Customer Data' broadly to include recipes, formulations, production records and distributor sales data. Section 7.3 of D1 then bars Brikon from using Customer Data except to provide the services. Section 1.1 of the Data Processing Addendum (D5) defines the same capitalized term, without limiting the definition to the Addendum, as only Personal Data that Licensor Processes on behalf of Licensee. Under D1 Section 15.6 the DPA prevails in any conflict, so the narrower DPA definition arguably controls. Read together, the D1 Section 7.3 use restriction then protects only personal data. Dribas's proprietary recipes, formulations and production data would fall outside the restriction, and Brikon could use them, for example to train or benchmark across other brewery customers.",
+      "doc": "D5",
+      "section": "Section 1.1",
+      "detect_terms": [
+        "Personal Data that Licensor Processes on behalf of Licensee"
+      ],
+      "expected_finding": "Because the DPA's Personal-Data-only definition of 'Customer Data' prevails under the precedence clause, the Agreement's Section 7.3 use restriction may no longer protect Dribas's recipes, formulations and production data. The DPA should limit its definition to the Addendum or use a distinct term.",
+      "contradicts": "F2",
+      "doc2": "D1",
+      "section2": "Sections 1.4 and 7.3",
+      "detect_terms2": [
+        "recipes, formulations"
+      ]
+    }
+  ]
+}

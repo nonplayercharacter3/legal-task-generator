@@ -1,0 +1,121 @@
+{
+  "task_id": "s64-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We represent Dribas Brewing Company, LLC, which licenses software from Brikon Systems, Inc. for its Wilmington and Dover breweries. The client wants to understand where it stands under the software license arrangement before deciding next steps. Please review all seven documents in the folder and prepare a memo to me listing each issue you find, where it appears (document and section), why it matters for Dribas, and your recommended fix. Keep it practical and prioritized.",
+  "documents": [
+    "amendment_no_1.md",
+    "data_processing_addendum.md",
+    "dribas_board_consent.md",
+    "license_agreement_prior_draft.md",
+    "side_letter.md",
+    "software_license_agreement.md",
+    "term_sheet.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the Side Letter termination window for late acceptance of the Brewhouse Integration Module closed on July 30, 2026, so Dribas's August 14, 2026 termination notice was late and likely ineffective. It identifies this issue as arising under Side Letter Section 2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "July 30, 2026",
+        "August 14, 2026",
+        "untimely"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that, after Amendment No. 1's restatement of Section 10, Brikon's IP infringement indemnity is now subject to the liability cap and Dribas's new licensee indemnity is uncapped. It identifies this issue as arising in Amendment No. 1 Section 3 or Software License Agreement Section 11.3 (either suffices), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 10.2",
+        "cross-reference",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that the DPA's New York governing-law and exclusive New York forum clause controls data-related claims, splitting disputes away from the Agreement's Delaware law and New Castle County forum. It identifies this issue as arising in DPA Section 12 or Software License Agreement Section 15.1 or 15.6 (any of these suffices), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York County",
+        "Delaware",
+        "data-related claims"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that the exclusivity covenant is far broader than the Term Sheet's agreed scope of production-scheduling software at the Wilmington and Dover breweries only. The covenant reaches brewery management, inventory, point-of-sale and distribution software worldwide, including Affiliates. The response identifies this issue as arising in Software License Agreement Section 2.5, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 2.5",
+        "point-of-sale",
+        "production-scheduling"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that the DPA's narrower definition of 'Customer Data', limited to Personal Data, prevails over the Agreement's broad definition, so the Agreement's restriction on Brikon's use of Customer Data may not protect Dribas's recipes, formulations and production data. It identifies this issue as arising in DPA Section 1.1 or Software License Agreement Section 1.4 or 7.3 (any of these suffices), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Customer Data",
+        "Personal Data",
+        "recipes"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that, under the Agreement's order of precedence, the DPA prevails over the Software License Agreement in a conflict.",
+      "kind": "fact",
+      "hints": [
+        "DPA prevails",
+        "order of precedence",
+        "Section 15.6"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is in the form of a memo addressed to the supervising partner.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "From:"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response presents the issues in a prioritized order or otherwise assigns them relative priority.",
+      "kind": "format",
+      "hints": [
+        "priority",
+        "high",
+        "most urgent"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Dribas's August 14, 2026 notice was timely under the Side Letter or validly terminated the Software License Agreement.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely",
+        "Agreement terminated"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Brikon's IP infringement indemnity remains excluded from the liability cap after Amendment No. 1.",
+      "kind": "negative",
+      "hints": [
+        "IP indemnity remains uncapped"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

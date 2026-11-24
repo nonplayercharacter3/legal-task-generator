@@ -1,0 +1,246 @@
+{
+  "matter_id": "s64-m0002",
+  "summary": "Kunoux Creamery, Inc., an organic dairy processor, is the licensee under a five-year SaaS license with Tilil Systems, Inc. for Tilil's farm-to-plant milk traceability and cold-chain platform. Kunoux's parent, Kunoux Holdings, L.P., guarantees the license. The folder holds the license agreement, an SOW, Amendment No. 1, an order form, the original term sheet, the parent guaranty, a DPA, a quality agreement, a launch press release and implementation kickoff minutes. Four issues are planted. (1) The DPA carves the licensee's data indemnity out of the liability cap, and the license gives the DPA precedence on data matters. (2) A defined 'Permitted Transferee' lets Tilil assign freely, including to a competitor. (3) The exclusivity covenant, read with the order form's 'Covered Facilities' definition, reaches every Kunoux and affiliate facility worldwide, not the two Wisconsin plants agreed in the term sheet. (4) Amendment No. 1 records a pending sale of the parent to a fund, which triggers Tilil's change-of-control termination and fee-acceleration right without consent.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Kunoux Creamery, Inc.",
+      "role": "Licensee; organic dairy processor; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Tilil Systems, Inc.",
+      "role": "Licensor; provider of the DairyLedger traceability software platform"
+    },
+    {
+      "id": "P3",
+      "name": "Kunoux Holdings, L.P.",
+      "role": "Parent of the Licensee and guarantor under the parent guaranty"
+    },
+    {
+      "id": "P4",
+      "name": "Ostrander Dairy Partners III, L.P.",
+      "role": "Private equity fund that has agreed to acquire the equity of Kunoux Holdings, L.P.'s general partner and operating subsidiaries"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "March 1, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "License Agreement Initial Term",
+      "value": "five years from the License Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 14.1"
+    },
+    {
+      "id": "F3",
+      "key": "Order Form Annual Subscription Fee",
+      "value": "$486,000 per year",
+      "doc": "D4",
+      "section": "Section 2"
+    },
+    {
+      "id": "F4",
+      "key": "License Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F5",
+      "key": "License Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 16.1"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "DPA (as to personal data), then License Agreement as amended, Order Form, Quality Agreement, SOW",
+      "doc": "D1",
+      "section": "Section 16.4"
+    },
+    {
+      "id": "F7",
+      "key": "Term Sheet agreed exclusivity scope",
+      "value": "milk traceability software at the Eau Claire and Sheboygan, Wisconsin plants only",
+      "doc": "D5",
+      "section": "Section 4"
+    },
+    {
+      "id": "F8",
+      "key": "Amendment No. 1 date",
+      "value": "October 2, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Change of control termination notice period",
+      "value": "30 days",
+      "doc": "D1",
+      "section": "Section 14.4"
+    },
+    {
+      "id": "F10",
+      "key": "Parent Guaranty guarantor",
+      "value": "Kunoux Holdings, L.P.",
+      "doc": "D6",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "statement_of_work.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D3",
+      "filename": "amendment_no_1.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "order_form.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D10",
+      "filename": "implementation_kickoff_minutes.md",
+      "kind": "meeting minutes",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "DPA Section 8.1 requires Kunoux to defend, indemnify and hold harmless Tilil for all losses arising out of or relating to Licensee Data or Kunoux's processing instructions. Section 8.2 states that this indemnity is not subject to any limitation of liability in the Agreement. Section 8.3 keeps Tilil's own liability under the DPA subject to Section 12 of the License Agreement, so the carve-out benefits only Tilil. License Agreement Section 12.2 caps liability at 12 months' fees, but Section 12.4 applies the cap 'except as otherwise expressly provided in the DPA'. Section 16.4 gives the DPA precedence on personal data matters, so the carve-out controls. The Licensee Data includes farm supplier, driver and consumer-complaint records. Kunoux therefore faces unlimited exposure for data claims, including claims caused in part by Tilil's processing. Kunoux Holdings, L.P. guarantees all Licensee obligations under the Parent Guaranty, so the exposure also reaches the parent.",
+      "doc": "D7",
+      "section": "Section 8",
+      "detect_terms": [
+        "shall not be subject to any limitation of liability",
+        "arising out of or relating to Licensee Data"
+      ],
+      "expected_finding": "Kunoux's DPA Section 8 data indemnity sits outside the License Agreement's 12-month-fees cap, while Tilil's DPA liability stays capped, and the DPA prevails under Section 16.4. Kunoux, and its guarantor parent, therefore carry unlimited liability for data claims. The indemnity should be brought under the cap, or under a separate negotiated super-cap, and limited to losses caused by Kunoux's own fault.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "License Agreement Section 15.1 appears mutual: neither party may assign without the other's prior written consent, except to a Permitted Transferee. Section 1 defines 'Permitted Transferee' as (a) any Affiliate of either party or (b) any successor to all or any part of Licensor's business or assets to which this Agreement relates. Limb (b) has no counterpart for Kunoux, no financial-capability condition and no exclusion of competitors. Read together, the two provisions let Tilil assign the license, and with it Kunoux's farm-supplier, pricing and quality data, to anyone that buys any part of the DairyLedger business. That buyer could be a rival dairy processor or its technology arm. Kunoux, by contrast, needs consent for any transfer outside its affiliates.",
+      "doc": "D1",
+      "section": "Section 15.1 and Section 1 (definition of Permitted Transferee)",
+      "detect_terms": [
+        "Permitted Transferee",
+        "any part of Licensor's business or assets"
+      ],
+      "expected_finding": "Under Section 15.1 and the Permitted Transferee definition, Tilil can assign the License Agreement without Kunoux's consent to any acquirer of any part of its business, including a Kunoux competitor. The definition should be limited to a successor to all or substantially all of Tilil's business that is not a Kunoux competitor and assumes the agreement in writing, with notice to Kunoux and a termination right if the transferee is a competitor.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "License Agreement Section 2.6 bars Kunoux from licensing, subscribing to or using any third-party software that performs the Traceability Functions at any Covered Facility. Covered Facilities is defined by reference to the Order Form. Read alone, Section 2.6 looks narrow. Order Form Section 3 defines Covered Facilities as all facilities owned, leased or operated by Licensee or any of its Affiliates, wherever located, including facilities acquired after the Order Form date. Read alone, that definition looks like a generous license grant. Read together, the exclusivity reaches every current and future plant of Kunoux and its affiliates worldwide. Term Sheet Section 4 limited exclusivity to milk traceability software at the Eau Claire and Sheboygan, Wisconsin plants. No conflict arises for the Section 16.4 precedence clause to resolve, because Section 2.6 incorporates the Order Form definition. The covenant would also bind any facility brought in by a future acquisition of or by the Kunoux group.",
+      "doc": "D1",
+      "section": "Section 2.6",
+      "detect_terms": [
+        "shall not license, subscribe to or use",
+        "at any Covered Facility"
+      ],
+      "expected_finding": "Read with the Order Form's Covered Facilities definition, Section 2.6 imposes exclusivity at every current and future facility of Kunoux and its affiliates worldwide. That goes well beyond the two Wisconsin plants agreed in the Term Sheet. Exclusivity should be limited by amendment to the Eau Claire and Sheboygan plants, or Covered Facilities should be redefined for Section 2.6 purposes.",
+      "contradicts": "F7",
+      "doc2": "D4",
+      "section2": "Section 3",
+      "detect_terms2": [
+        "all facilities owned, leased or operated by Licensee or any of its Affiliates",
+        "wherever located"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "License Agreement Section 14.4 lets Tilil terminate on 30 days' notice if Licensee undergoes a Change of Control without Licensor's prior written consent. On such termination, all subscription fees for the remainder of the Initial Term become immediately due. Section 1 defines Change of Control to include any direct or indirect transfer of more than 50% of the voting equity of Licensee or of any entity controlling Licensee. That is a standard provision on its own. Amendment No. 1, dated October 2, 2026, states in Recital B that Kunoux Holdings, L.P. signed an equity purchase agreement on September 18, 2026 to sell its general partner and operating subsidiaries to Ostrander Dairy Partners III, L.P., with closing expected in the first quarter of 2027. Section 5 of the Amendment provides that nothing in it constitutes a consent or waiver under the Agreement. Read together, the pending sale will trigger Tilil's termination and fee-acceleration right. That exposure is roughly $486,000 for each remaining year of the five-year term. Nothing in the folder shows that Tilil's consent has been requested or obtained.",
+      "doc": "D1",
+      "section": "Section 14.4",
+      "detect_terms": [
+        "undergoes a Change of Control",
+        "without Licensor's prior written consent"
+      ],
+      "expected_finding": "The Ostrander acquisition recorded in Amendment No. 1 is an indirect Change of Control. Without Tilil's prior written consent, which the Amendment expressly does not give, it allows Tilil to terminate on 30 days' notice and accelerate the remaining subscription fees. Kunoux should obtain Tilil's written consent or a waiver before closing.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Recital B and Section 5",
+      "detect_terms2": [
+        "Ostrander Dairy Partners III",
+        "nothing herein constitutes a consent or waiver"
+      ]
+    }
+  ]
+}

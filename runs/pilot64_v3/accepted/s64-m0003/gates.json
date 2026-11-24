@@ -1,0 +1,164 @@
+{
+  "matter_id": "s64-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "APA §9.1: \"All representations and warranties of Seller and Buyer contained in this Agreement, the Disclosure Schedule and any certificate delivered under this Agreement shall survive the Closing until the date that is sixty (60) days after the expiration of the Transition Period.\" TSA §1.1: \"'Transition Period' means the period of 180 days beginning on the Closing Date.\"",
+            "reason": "Read together, the two provisions cut off every Seller representation about 240 days after the March 2, 2026 Closing, in late October 2026. The APA never defines the Transition Period. The TSA fixes it at 180 days from the Closing Date. The cutoff covers the environmental representations (§4.16: wastewater, grease interceptor, ammonia, NFPA dust hazard analysis), the food-safety and FDA representations (§4.19), the inventory and condition representations, and even the Fundamental Representations, such as title. No representation-specific longer survival is carved out. §9.4(a) bars any §9.2(a) claim noticed after that date. Some protection survives indefinitely as covenants: the Excluded Liabilities indemnity (§2.4(e)–(f), §9.2(c)) and the recall reimbursement (§10.2). But breach-of-representation claims are lost, including latent contamination, permit noncompliance and undisclosed pathogen history that do not take the form of a Seller liability. That is a real gap for Buyer (Praitir), far shorter than New York's six-year contract limitations period. The latest date in the folder is May 12, 2026, so the survival period has not run. Buyer can still act, for example by negotiating an amendment or by serving protective claim notices before the cutoff.",
+            "alone": {
+              "asset_purchase_agreement_praitir_glailirt.md": {
+                "findable": false,
+                "evidence": "All representations and warranties of Seller and Buyer contained in this Agreement, the Disclosure Schedule and any certificate delivered under this Agreement shall survive the Closing until the date that is sixty (60) days after the expiration of the Transition Period.",
+                "reason": "The APA alone shows that survival of every Seller representation, including the environmental and food-safety ones, is tied to the Transition Period. It also shows that Section 9.4(a) requires claim notices before that date. But the APA never says how long the Transition Period is: Section 1.1 says it 'has the meaning given to that term in the Transition Services Agreement.' The APA also gives no Closing Date, only an April 15, 2026 outside date. An associate reading only the APA could see that survival depends on an outside definition and could ask about it. They could not tell that the survival window is unreasonably short, roughly eight months, ending October 28, 2026. That fact depends on the TSA's 180-day definition and the March 2, 2026 Closing Date stated in the Bill of Sale, neither of which is in this document."
+              },
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"Transition Period\" means the period of 180 days beginning on the Closing Date.",
+                "reason": "The TSA by itself defines the Transition Period as 180 days from the Closing Date, and it is dated March 2, 2026. It does not say that the APA's representations and warranties survive only until sixty days after the Transition Period ends. It also does not say that claim notices under APA Section 9.4 must be given before that date. The TSA's references to the Purchase Agreement (Sections 4.19(d), 6.6, 9.4(b)-(c), 11.2, 11.7, 11.8) say nothing about how long the representations survive. A reader of this document alone sees an ordinary 180-day services term, which does no harm on its face. The harm, that the environmental and food-safety representations expire around October 28, 2026, appears only once the APA's survival clause is tied to this definition."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "APA Section 2.6(b): \"Buyer may deliver to Seller, within thirty (30) days after delivery of the Closing Statement (the \"Review Period\"), a written notice (a \"Notice of Disagreement\")...\"; Section 2.6(c): \"If Buyer does not deliver a Notice of Disagreement within the Review Period, the Closing Statement and the Closing Inventory Value set forth in it shall be final and binding on the Parties.\" Board consent Resolution 2.1: \"the Board acknowledges that Glailirt delivered the Closing Statement on March 30, 2026, and that the Company does not accept the Closing Inventory Value\"; Resolution 2.2 authorizes officers \"to prepare, execute and deliver to Glailirt ... a Notice of Disagreement under Section 2.6(b)\" in a consent dated May 12, 2026.",
+            "reason": "The Closing Statement was delivered on March 30, 2026, so the 30-day Review Period ended on April 29, 2026. As of May 12 the board was only authorizing a Notice of Disagreement, and nothing in the folder shows one was delivered earlier. Nothing extends or tolls the period either. Under Section 2.6(c), Seller's $1,326,450 figure is therefore final and binding. That exposes Buyer to the $111,650 true-up payment and forfeits its estimated $165,900 claim, a swing of about $277,550. The obligation to object belongs to Buyer, so the lapse hurts the client. The client has not accepted the result: it has made no payment, and the board expressly disputes the figure and directs officers not to pay. The issue therefore remains live and actionable. Counsel must assess the finality bar, possible waiver or estoppel arguments, or other routes, such as an indemnity claim for the Section 4.10 inventory representation, before the notice is sent.",
+            "alone": {
+              "asset_purchase_agreement_praitir_glailirt.md": {
+                "findable": false,
+                "evidence": "If Buyer does not deliver a Notice of Disagreement within the Review Period, the Closing Statement and the Closing Inventory Value set forth in it shall be final and binding on the Parties.",
+                "reason": "The APA by itself sets out the rule. Section 2.6(b) gives Buyer a 30-day Review Period after the Closing Statement is delivered, and Section 2.6(c) makes the statement final and binding if Buyer does not object in time. The APA does not show when the Closing Statement was delivered (March 30, 2026), that Buyer disputes the Closing Inventory Value, or that Buyer had not yet objected when the board acted on May 12, 2026. Those facts come only from the board consent. Without them, an associate cannot tell that the deadline has passed or that the finality bar hurts the client."
+              },
+              "praitir_board_written_consent_may_2026.md": {
+                "findable": false,
+                "evidence": "Glailirt delivered the Closing Statement on March 30, 2026 ... the Chief Executive Officer and the Chief Financial Officer of the Company ... are each authorized and directed, acting alone, to prepare, execute and deliver to Glailirt, on behalf of the Company, a Notice of Disagreement under Section 2.6(b) of the Purchase Agreement.",
+                "reason": "The consent shows that the Closing Statement was delivered on March 30, 2026. It shows that the board, acting on May 12, 2026, disputes the Closing Inventory Value and authorizes a Notice of Disagreement under APA Section 2.6(b). It does not say how long Buyer has to object after delivery. It also does not say that a late objection makes the Closing Statement final and binding under Section 2.6(c). The only deadline it mentions is the 60-day period for Seller to deliver the Closing Statement under Section 2.6(a), and Seller met that. An associate reading only this document could not tell that the objection window had already closed on April 29, 2026. The 30-day period and the finality rule would have to come from the Purchase Agreement, which is not provided."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 9.3(c): Buyer shall indemnify the Seller Indemnitees against \"all Losses described in Section 6.8, including all Liabilities for which Buyer is responsible under Section 6.8(b)\". Section 6.8(b): \"Buyer shall be responsible for, and shall pay, perform and discharge when due, all Liabilities with respect to accrued but unused vacation, paid time off and sick pay, all severance and separation pay, and all Liabilities under the WARN Act, in each case relating to the Business Employees, whether arising before, on or after the Closing Date.\" Section 9.5(b): \"The aggregate amount of all Losses for which an Indemnifying Party shall be liable under Section 9.2(a) and Section 9.3(a) shall not exceed $1,840,000 ... (the \\\"Cap\\\").\"",
+            "reason": "The problem is present, and it falls on the client. Praitir is the Buyer, so it is the indemnitor under Section 9.3(c). Section 6.8(b) shifts to Buyer Seller's pre-closing employee liabilities: accrued paid time off, severance and WARN, including liabilities \"arising before\" Closing. Section 2.3(c) also makes these Assumed Liabilities. The Cap in Section 9.5(b) reaches only Section 9.2(a) and Section 9.3(a). The Section 9.3(c) indemnity is therefore unlimited in amount. Under Section 9.1 it also survives indefinitely, because it is a covenant. Nothing else in the folder cures this. Section 2.4(h) excludes only liabilities for employees who are not Business Employees. Seller's WARN and compensation representations in Section 4.17 are claims under Section 9.2(a), which are subject to the $184,000 Deductible and the Cap. They do not offset Buyer's uncapped exposure. The folder shows no amendment, waiver or settlement on this point. The exposure is a continuing contingent liability of Praitir. It is still actionable: it can be raised in the open Section 2.6 inventory dispute negotiations with Glailirt, addressed by a negotiated amendment, and it must be disclosed and managed in the pending Copperline MIPA. It is not a lapsed window."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "TSA Section 12.2: \"For purposes of this Section 12.2, any change of control of Buyer shall be deemed an assignment, including ... any transfer of a majority of the equity interests or voting power of Buyer ... If any assignment or deemed assignment occurs without Seller's prior written consent, Seller may terminate this Agreement upon ten (10) days' notice to Buyer.\" The May 12, 2026 board consent, Recital E, describes the sale of \"100% of the issued and outstanding membership interests of the Company\" to Copperline, expected to close \"on or about July 15, 2026.\" Its Exhibit A lists only the Credit Agreement and Equipment Lease consents.",
+            "reason": "The Transition Period runs 180 days from the March 2, 2026 Closing, to about August 29, 2026. The Copperline Sale, expected around July 15, 2026, therefore closes mid-transition. Selling 100% of Praitir's equity is squarely a deemed assignment under Section 12.2. Without Seller's prior written consent, Seller may terminate the whole TSA on ten days' notice. That would cut off production planning, QA/food safety, procurement, logistics, IT, payroll and finance services that Praitir (the client) still depends on, and the board has directed migration work that is not yet complete. Nothing in the TSA cures this: Section 12.2 has no carve-out and no reasonableness standard for consent, unlike APA Section 11.4. The board consent's list of Required Consents omits the Seller TSA consent entirely. The latest date in the folder is May 12, 2026, so the sale has not closed, and Praitir can still seek Seller's consent, restructure the timing, or negotiate a waiver. The issue is present and actionable. The claimed effect on APA Section 9.1 survival is arguable, because \"Transition Period\" is defined as a fixed 180 days. However, the core risk that Seller can terminate the TSA stands independently."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "TSA Section 4.3: \"During the Transition Period, Buyer shall reimburse Seller for all rent, utilities (including electricity, natural gas, water and sewer charges), real estate taxes, insurance premiums allocable to the premises, and repair and maintenance costs of the Facilities, to the extent paid or incurred by Seller and attributable to the Transition Period.\" APA Section 1.1: \"\"Facilities\" means the Bronx Plant and the Secaucus Depot.\"",
+            "reason": "TSA Section 1.2 imports APA definitions, and the TSA does not define \"Facilities\" itself. Section 4.3 therefore uses the APA meaning, which covers both the Bronx Plant and the Secaucus Depot. The Secaucus Depot Lease is an Excluded Asset that Seller keeps (APA 2.2(d)), and liabilities relating to it are Excluded Liabilities (APA 2.4(b)). Seller also keeps using the depot for its own retail bakery-café business (APA 6.7(a)). Even so, Section 4.3 obliges Buyer, our client, to reimburse Seller's Secaucus rent, utilities, taxes and maintenance as part of the Service Fees. APA Section 11.9 makes the TSA control as to Service Fees, so the APA's Excluded Asset treatment does not clearly override the reimbursement obligation. The no-set-off clause in TSA 4.7 makes it harder for Buyer to recover these amounts through an indemnity claim. The issue is still actionable. The 180-day Transition Period runs from March 2, 2026 to about late August 2026, and the latest date in the folder is May 12, 2026, so the period is still running. Nothing in the folder shows Buyer has paid or accepted Secaucus occupancy charges. The board has asked for reporting on TSA invoice disputes, and Buyer can still dispute these charges under TSA 4.5 or seek an amendment narrowing \"Facilities\" to exclude the depot.",
+            "alone": {
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "Section 4.3: \"During the Transition Period, Buyer shall reimburse Seller for all rent, utilities (including electricity, natural gas, water and sewer charges), real estate taxes, insurance premiums allocable to the premises, and repair and maintenance costs of the Facilities, to the extent paid or incurred by Seller and attributable to the Transition Period.\"",
+                "reason": "The TSA shows that Buyer must reimburse Seller's occupancy costs for the \"Facilities\" as part of the Service Fees. It also shows that \"Facilities\" is not defined in the TSA and is imported from the APA under Section 1.2. A careful associate might notice that the TSA otherwise refers only to the Bronx Plant, and that the plural term is undefined here. Nothing in the TSA says that \"Facilities\" includes the Secaucus Depot, or that the Depot lease is an Excluded Asset Seller keeps. It also does not show APA Section 11.9, which makes the TSA control as to Service Fees. The harm to Buyer, paying occupancy costs for a depot it did not acquire, depends on the APA's definition and Excluded Asset schedule, so it cannot be found from this document alone."
+              },
+              "asset_purchase_agreement_praitir_glailirt.md": {
+                "findable": false,
+                "evidence": "\"Facilities\" means the Bronx Plant and the Secaucus Depot. … The Purchased Assets do not include … (d) the Secaucus Depot Lease, and all of Seller's leasehold interest in … the Secaucus Depot … this Agreement shall control, except that the Transition Services Agreement shall control as to the Services and the Service Fees.",
+                "reason": "The APA alone shows three things. 'Facilities' includes the Secaucus Depot. The Depot lease and its liabilities are Excluded Assets and Excluded Liabilities that stay with Seller. The TSA controls on Service Fees. Read alone, the broad 'Facilities' definition helps Buyer, because it widens Seller's property and environmental representations. Nothing in the APA makes Buyer pay any Depot costs. The harm only appears in TSA Section 4.3, which makes Buyer reimburse rent, utilities, taxes and maintenance of the 'Facilities' as Service Fees, and TSA Section 1.2, which imports the APA definitions. Neither section is in this document. A careful associate might note that the defined term could be risky if another document uses it, but could not see the cost shift to Buyer from the APA alone."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F2, which only issue I1 uses: a memo that misses I1 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

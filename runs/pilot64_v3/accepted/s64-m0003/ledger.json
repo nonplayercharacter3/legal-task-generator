@@ -1,0 +1,224 @@
+{
+  "matter_id": "s64-m0003",
+  "summary": "Praitir Baking Holdings, LLC (client, Buyer) acquired the Bronx wholesale bread and laminated-pastry plant of Glailirt Artisan Breads, Inc. (Seller) under an Asset Purchase Agreement signed February 9, 2026 and closed March 2, 2026. Seller provides transition services for 180 days under a Transition Services Agreement. A post-closing written consent of Praitir's board, dated May 12, 2026, records that Seller delivered the Closing Statement on March 30, 2026. The consent directs management to dispute the Closing Inventory Value. It also records a pending sale of all of Praitir's membership interests to a private equity fund, expected to close about July 15, 2026. The folder also holds a Bill of Sale, a counsel email thread on closing logistics and a lender payoff letter. Five issues are planted. (1) Representation survival is tied to the TSA Transition Period, so representations expire only about eight months after Closing. (2) The 30-day window to object to the Closing Statement lapsed before the board acted. (3) Buyer's employee-matters indemnity sits outside the cap and reaches Seller's pre-closing liabilities. (4) The TSA treats a change of control of Buyer as an assignment, and the pending sale triggers it. (5) The APA definition of 'Facilities' includes the Secaucus Depot, which Seller keeps. That definition carries into the TSA cost-reimbursement clause, which governs Service Fees under the precedence clause, so Buyer pays to run a depot it did not buy.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Praitir Baking Holdings, LLC",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Glailirt Artisan Breads, Inc.",
+      "role": "Seller and TSA service provider"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Asset Purchase Agreement signing date",
+      "value": "February 9, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Asset Purchase Closing Date",
+      "value": "March 2, 2026",
+      "doc": "D4",
+      "section": "Recitals"
+    },
+    {
+      "id": "F3",
+      "key": "Base Purchase Price",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F4",
+      "key": "APA indemnity Cap amount",
+      "value": "$1,840,000 (10% of the Base Purchase Price)",
+      "doc": "D1",
+      "section": "Section 9.5"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence among transaction documents",
+      "value": "APA controls over Ancillary Agreements, except the TSA controls as to Services and Service Fees",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F6",
+      "key": "APA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 11.6"
+    },
+    {
+      "id": "F7",
+      "key": "TSA Transition Period length",
+      "value": "180 days beginning on the Closing Date",
+      "doc": "D2",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F8",
+      "key": "TSA monthly Service Fee",
+      "value": "$142,000 per month",
+      "doc": "D2",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F9",
+      "key": "Closing Statement objection period",
+      "value": "30 days after delivery of the Closing Statement",
+      "doc": "D1",
+      "section": "Section 2.6(b)"
+    },
+    {
+      "id": "F10",
+      "key": "Bronx Plant address",
+      "value": "1180 Oak Point Avenue, Bronx, New York",
+      "doc": "D1",
+      "section": "Section 1.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement_praitir_glailirt.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "praitir_board_written_consent_may_2026.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "bill_of_sale_bronx_plant.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "closing_logistics_email_thread.md",
+      "kind": "email thread",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "equipment_lender_payoff_letter.md",
+      "kind": "lender payoff and lien release letter",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "APA Section 9.1 provides that all of Seller's representations and warranties survive Closing only until sixty days after the expiration of the Transition Period. This includes the environmental (wastewater and flour-dust) and food-safety/FDA representations, and APA Section 9.4 requires claim notices before that survival date. The APA never states how long the Transition Period is. TSA Section 1.1 defines the Transition Period as 180 days beginning on the Closing Date, and the Bill of Sale states the Closing Date as March 2, 2026. Read together, the Transition Period ends August 29, 2026, so every representation expires on October 28, 2026, about eight months after Closing. That is far too short for latent contamination, regulatory or product-recall claims at a commercial bakery, and far shorter than New York's six-year contract limitations period. Neither document shows the problem alone.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "sixty (60) days after the expiration of the Transition Period"
+      ],
+      "expected_finding": "Read with the TSA's 180-day Transition Period and the March 2, 2026 Closing Date, APA Section 9.1 cuts off all of Seller's representations, including environmental and food-safety, on October 28, 2026. Survival should be decoupled from the TSA and extended to at least 18–24 months for general representations, with longer survival for fundamental, environmental and food-safety representations.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Section 1.1",
+      "detect_terms2": [
+        "180 days beginning on the Closing Date"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "APA Section 2.6(b) gives Buyer thirty days after delivery of Seller's Closing Statement to deliver a Notice of Disagreement. Section 2.6(c) makes the Closing Statement final and binding if Buyer does not object within that window. The Praitir board written consent dated May 12, 2026 recites that Seller delivered the Closing Statement on March 30, 2026. The consent resolves that Buyer disputes the Closing Inventory Value and authorizes officers to deliver an objection. Computed from those dates, the objection deadline was April 29, 2026, which had already passed when the board acted. Buyer's inventory dispute is therefore exposed to the finality bar. The board consent shows the client has not accepted the figure, so the point is still actionable.",
+      "doc": "D1",
+      "section": "Section 2.6(b)",
+      "detect_terms": [
+        "within thirty (30) days after delivery of the Closing Statement",
+        "final and binding"
+      ],
+      "expected_finding": "The 30-day objection window under APA Section 2.6(b) ran from the March 30, 2026 delivery and expired April 29, 2026, before the May 12, 2026 board consent authorized the dispute. Absent a waiver or extension from Seller, the Closing Statement and Closing Inventory Value are final and binding under Section 2.6(c). Counsel should immediately seek a written extension or waiver from Seller and assess any arguments that delivery was defective.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Recitals and Resolution 2",
+      "detect_terms2": [
+        "delivered the Closing Statement on March 30, 2026"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "APA Section 9.3(c) obligates Buyer to indemnify Seller for all Losses described in Section 6.8. Section 6.8(b) makes Buyer responsible for all accrued vacation, sick pay, severance and WARN Act liabilities for Business Employees, whether arising before, on or after the Closing Date. The Section 9.5 Cap of $1,840,000 applies only to Losses under Section 9.2(a) and Section 9.3(a), so Buyer's Section 9.3(c) indemnity is unlimited. Read together, these provisions make Buyer an uncapped indemnitor of Seller's own pre-closing employee liabilities. No single clause states that result.",
+      "doc": "D1",
+      "section": "Sections 9.3(c) and 9.5",
+      "detect_terms": [
+        "whether arising before, on or after the Closing Date",
+        "Section 9.2(a) and Section 9.3(a)"
+      ],
+      "expected_finding": "Because the Section 9.5 Cap reaches only Sections 9.2(a) and 9.3(a), Buyer's Section 9.3(c) indemnity for Section 6.8 employee liabilities is uncapped and covers Seller's pre-closing accrued compensation and WARN exposure. Section 6.8(b) should be limited to post-Closing liabilities for employees Buyer hires, with pre-Closing employee liabilities kept as Excluded Liabilities, and Section 9.3(c) should be brought under the Cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "TSA Section 12.2 deems any change of control of Buyer, including a transfer of a majority of its equity, to be an assignment requiring Seller's prior written consent. Without that consent, Seller may terminate the TSA on ten days' notice. The Praitir board written consent dated May 12, 2026 records the pending sale of 100% of Praitir's membership interests to Copperline Fund IV, L.P., expected to close on or about July 15, 2026, which falls within the 180-day Transition Period. The board consent lists the lender consents required for that sale but does not identify or seek Seller's TSA consent. Closing the sale would let Seller cut off bakery production, logistics and IT services mid-transition. Because APA Section 9.1 ties survival to the end of the Transition Period, an early termination would also shorten the survival period further.",
+      "doc": "D2",
+      "section": "Section 12.2",
+      "detect_terms": [
+        "change of control of Buyer shall be deemed an assignment",
+        "terminate this Agreement upon ten (10) days' notice"
+      ],
+      "expected_finding": "The pending Copperline sale recorded in the May 12, 2026 board consent will trigger TSA Section 12.2, letting Seller terminate transition services on ten days' notice during the Transition Period. Buyer should obtain Seller's written consent or waiver before that sale closes and add it to the sale's consent list.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "APA Section 1.1 defines 'Facilities' as both the Bronx Plant and the Secaucus Depot, which suits Seller's property and environmental representations. APA Section 2.2(d) lists the Secaucus Depot lease as an Excluded Asset that Seller keeps. TSA Section 1.2 imports APA definitions. TSA Section 4.3 requires Buyer to reimburse Seller, as part of the Service Fees, for all rent, utilities, real estate taxes and maintenance of the Facilities during the Transition Period. Read together, Buyer pays the occupancy costs of a depot it did not acquire. APA Section 11.9 says the TSA controls as to Service Fees, so the APA's Excluded Asset treatment does not cure the conflict. Neither document shows the problem alone.",
+      "doc": "D2",
+      "section": "Section 4.3",
+      "detect_terms": [
+        "maintenance costs of the Facilities",
+        "form part of the Service Fees"
+      ],
+      "expected_finding": "Because the TSA uses the APA definition of 'Facilities', which includes the excluded Secaucus Depot, and the TSA controls as to Service Fees under APA Section 11.9, TSA Section 4.3 makes Buyer reimburse Seller's depot occupancy costs. The TSA should be amended to limit reimbursable Facility costs to the Bronx Plant, and any depot amounts already paid should be recovered.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 1.1",
+      "detect_terms2": [
+        "the Bronx Plant and the Secaucus Depot"
+      ]
+    }
+  ]
+}

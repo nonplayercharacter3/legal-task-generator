@@ -1,0 +1,144 @@
+{
+  "matter_id": "s64-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 4,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "DPA Section 8.1: \"Licensee shall defend, indemnify and hold harmless Licensor, its Affiliates and their respective officers, directors, employees and Subprocessors from and against all losses, damages, liabilities, fines, penalties, settlements, costs and expenses, including reasonable attorneys' fees, arising out of or relating to Licensee Data or Licensee's processing instructions under this DPA, including any claim by a Data Subject, regulator or other third party.\" DPA Section 8.2: \"The obligations of Licensee under Section 8.1 shall not be subject to any limitation of liability in the Agreement, including Section 12 of the License Agreement.\" DPA Section 8.3: \"Licensor's liability arising out of or relating to this DPA is subject to Section 12 of the License Agreement.\"",
+            "reason": "Kunoux, the client, is the party that gives this indemnity, and the problem is present and still actionable.\n\n1. **Breadth.** The indemnity covers all losses \"arising out of or relating to Licensee Data.\" Every record Tilil processes is Licensee Data, including farm supplier, driver GPS and consumer health-complaint records. The clause has no carve-out for losses caused by Tilil's own breach, negligence or a security incident on Tilil's side.\n\n2. **No cap for Kunoux.** Section 8.2 removes the cap only for Kunoux's indemnity. Section 8.3 keeps Tilil's own DPA liability capped under License Agreement Section 12, so the asymmetry favors only Tilil.\n\n3. **The License Agreement confirms the carve-out.** Section 12.4 applies the cap \"except as otherwise expressly provided in the DPA.\" Section 16.4 gives the DPA precedence on personal data matters. Section 12.3 does not list this indemnity as a mutual exclusion.\n\n4. **Inconsistent with the deal terms.** The term sheet contemplated only a mutual IP indemnity and a mutual cap.\n\n5. **Exposure reaches the parent.** The Parent Guaranty covers \"all indemnification, defense and hold harmless obligations of Licensee under the Agreement.\"\n\n6. **Still actionable.** Nothing in the folder cures or limits the clause. Amendment No. 1 did not touch the DPA. Kunoux can still seek an amendment, for example to the DPA under Section 10.2, and the issue bears on the pending Ostrander sale."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 15.1: \"Neither party may assign ... without the prior written consent of the other party, except that either party may assign this Agreement in its entirety to a Permitted Transferee upon written notice to the other party.\" Section 1: \"'Permitted Transferee' means (a) any Affiliate of either party or (b) any successor to all or any part of Licensor's business or assets to which this Agreement relates.\"",
+            "reason": "Section 15.1 reads as mutual, but limb (b) of the Permitted Transferee definition benefits only Tilil. Tilil can assign the whole Agreement on notice alone to a buyer of even part of the DairyLedger business. Nothing requires that buyer to be financially capable, and nothing excludes competitors such as a rival dairy processor or its technology arm. The assignee would take over hosting of Kunoux's Licensee Data, including supplier identities, pricing and premiums, and quality results, as the new Licensor. The confidentiality and data-use limits would then bind that party, but Kunoux would have no say in who it is. Kunoux, by contrast, can transfer only to Affiliates without consent. Under Section 14.4, Tilil can also terminate and accelerate all remaining Initial Term fees on a Kunoux Change of Control. That makes the imbalance acute now that Kunoux Holdings has signed a sale to Ostrander, expected to close in Q1 2027. Nothing in the folder cures the point. Amendment No. 1 changed only the confidentiality and notice provisions and left Section 15.1 and the definition untouched. Because Tilil has not exercised the right, Kunoux can still raise it, for example by seeking a parallel successor carve-out for itself, a competitor exclusion and a capability condition, in further amendment negotiations."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "License Agreement Section 2.6: \"during the Term Licensee shall not, and shall cause its Affiliates not to, license, subscribe to or use any third-party software or software-as-a-service offering that performs any of the Traceability Functions at any Covered Facility.\" Order Form Section 3.1: \"'Covered Facilities' means all facilities owned, leased or operated by Licensee or any of its Affiliates, wherever located, including any processing plant, receiving station, cold storage warehouse, distribution center or laboratory, and including any such facility that Licensee or any of its Affiliates acquires, leases or begins to operate after the Order Form Date.\"",
+            "reason": "Kunoux is the party bound by the covenant, so the breadth works against it. Section 2.6 takes its scope from the Order Form definition of Covered Facilities. That definition covers every facility of Kunoux and its Affiliates, anywhere, including facilities acquired later. Read together, the two provisions extend the exclusivity to all current and future group sites for the full five-year Initial Term. Term Sheet Section 4.1 limited exclusivity to the Eau Claire and Sheboygan plants only. Nothing in the folder cures this. Section 16.4 precedence does not apply, because there is no conflict: Section 2.6 incorporates the definition. Amendment No. 1 does not narrow it. Section 13.4 and Section 14.6 release the exclusivity only in narrow cases. The issue remains actionable and is made more pressing by the pending sale of Kunoux Holdings' operating subsidiaries to Ostrander Dairy Partners III, expected to close in Q1 2027. Under the Affiliate definition, Ostrander's other dairy facilities could become Covered Facilities, putting the group in breach or forcing it onto DairyLedger. Kunoux can still raise this in the change-of-control consent negotiation or by amendment.",
+            "alone": {
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "\"Covered Facilities\" means the facilities identified as Covered Facilities in the Order Form.",
+                "reason": "Read alone, this License Agreement shows that Section 2.6 bars third-party and internally developed traceability software at any Covered Facility. It also shows that the Affiliates must comply. But the scope of 'Covered Facilities' depends entirely on the Order Form, which I don't have. Nothing in this document says Covered Facilities covers all current and future facilities of Kunoux and its Affiliates worldwide. An associate reading it would assume the Order Form lists specific plants, and Recital B and the Wisconsin address are consistent with that. So the clause would look like a standard, limited exclusivity. The overbreadth only appears once the Order Form's broad definition is known, and the gap with the negotiated Eau Claire/Sheboygan limit only appears with the Term Sheet. Neither is in this document."
+              },
+              "order_form.md": {
+                "findable": false,
+                "evidence": "\"Covered Facilities\" means all facilities owned, leased or operated by Licensee or any of its Affiliates, wherever located, including any processing plant, receiving station, cold storage warehouse, distribution center or laboratory, and including any such facility that Licensee or any of its Affiliates acquires, leases or begins to operate after the Order Form Date.",
+                "reason": "The Order Form alone shows a very broad Covered Facilities definition: worldwide, covering affiliates, and including facilities acquired later. On its own terms, that reads as a generous scope of use in Kunoux's favor. The Order Form contains no exclusivity or non-use covenant and does not tie the definition to any restriction on third-party traceability software. The harm depends on License Agreement Section 2.6, which uses this definition as the reach of the exclusivity covenant. The departure from the deal also depends on the Term Sheet's Section 4 limit to the Eau Claire and Sheboygan plants. Neither document is before me. A careful associate reading only the Order Form could not see that the definition creates an overbroad exclusivity restriction that hurts the client."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "License Agreement §14.4: \"Licensor may terminate this Agreement upon 30 days' written notice to Licensee if Licensee undergoes a Change of Control without Licensor's prior written consent. Upon any termination under this Section 14.4, all Subscription Fees for the remainder of the Initial Term shall become immediately due and payable.\" Amendment No. 1, Recital B: \"Kunoux Holdings, L.P., the parent of Licensee, signed an equity purchase agreement on September 18, 2026 to sell the equity of its general partner and operating subsidiaries to Ostrander Dairy Partners III, L.P. Closing of that transaction is expected in the first quarter of 2027.\" Amendment §5.1: \"Except as expressly set out in Sections 2 and 3, nothing herein constitutes a consent or waiver under the Agreement...\"",
+            "reason": "The problem is present and the client can still act on it. Selling the general partner and operating subsidiaries to Ostrander is a direct or indirect transfer of more than 50% of the voting equity of Licensee and of the entity controlling it, so it is a Change of Control under §1. The amendment tells Tilil about the deal. Its new §10.3(b)(ii) only allows confidential information to be shared with prospective acquirers. That is not consent to the change of control, and §5.1 expressly says no consent or waiver is given. Once closing occurs without consent, Tilil may terminate on 30 days' notice, and Kunoux owes the rest of the Initial Term fees. That is about $486,000 a year through February 2031, or roughly $1.9–2.0M if closing happens in Q1 2027, plus loss of the platform. Under §14.6, transition assistance is still available in that case, but the fee acceleration hits Kunoux, and the parent guarantor backs it. Nothing in the folder shows that consent was requested or obtained. Closing is expected after the latest folder date, so Kunoux can still seek Tilil's written consent or a waiver before closing.",
+            "alone": {
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "Licensor may terminate this Agreement upon 30 days' written notice to Licensee if Licensee undergoes a Change of Control without Licensor's prior written consent. Upon any termination under this Section 14.4, all Subscription Fees for the remainder of the Initial Term shall become immediately due and payable.",
+                "reason": "This License Agreement alone shows the Change of Control termination and fee-acceleration clause in Section 14.4. Section 1 defines Change of Control to reach indirect transfers through any entity controlling Licensee. Section 16.8 identifies Kunoux Holdings, L.P. as a parent guarantor. Read alone, though, this is a standard clause. Nothing here shows that any sale or transfer is pending. The specific harm to the client depends on Amendment No. 1, which is not in this document: its Recital B records the September 18, 2026 equity purchase agreement to sell the general partner and operating subsidiaries to Ostrander Dairy Partners III, and its Section 5 states that it is not a consent or waiver. The approximate $486,000-per-year exposure also cannot be confirmed, because the fee amounts are in the Order Form, not here."
+              },
+              "amendment_no_1.md": {
+                "findable": false,
+                "evidence": "Kunoux Holdings, L.P., the parent of Licensee, signed an equity purchase agreement on September 18, 2026 to sell the equity of its general partner and operating subsidiaries to Ostrander Dairy Partners III, L.P. Closing of that transaction is expected in the first quarter of 2027. ... Except as expressly set out in Sections 2 and 3, nothing herein constitutes a consent or waiver under the Agreement, or a waiver of any right, power or remedy of either party under the Agreement",
+                "reason": "The amendment alone shows that the parent's sale is pending and that the amendment grants no consent or waiver. The only related change it makes is the confidentiality carve-out in Section 2.1, which lets Kunoux share information with a prospective acquirer. It does not contain or refer to a change-of-control termination right, a Change of Control definition covering indirect transfers, or any acceleration of the remaining subscription fees. Those terms are in License Agreement Sections 1 and 14.4, which were not provided. An associate reading only this document might think to check for a change-of-control clause. They could not tell that the sale triggers a termination right or that Kunoux faces fee acceleration, so they could not see how the sale hurts the client."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.072,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

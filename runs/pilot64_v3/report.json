@@ -1,0 +1,186 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s64-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s64-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s64-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 284537,
+      "output_tokens": 10706,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 14,
+      "input_tokens": 1226023,
+      "output_tokens": 11845,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 16,
+      "input_tokens": 277482,
+      "output_tokens": 6719,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 3918,
+      "output_tokens": 462,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 21479,
+      "output_tokens": 6191,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 16,
+      "input_tokens": 849950,
+      "output_tokens": 195732,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 568202,
+      "output_tokens": 48378,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 9,
+      "input_tokens": 65972,
+      "output_tokens": 6489,
+      "errors": 0
+    },
+    "ledger_writer": {
+      "calls": 2,
+      "input_tokens": 9549,
+      "output_tokens": 25449,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 2,
+      "input_tokens": 2878,
+      "output_tokens": 641,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "craft brewing": 1,
+      "organic dairy": 1,
+      "commercial bakery": 1
+    },
+    "agreement_types": {
+      "software license agreement": 2,
+      "asset purchase agreement": 1
+    },
+    "issue_types": {
+      "expired_notice_window": 2,
+      "exclusivity_scope": 2,
+      "defined_term_inconsistency": 2,
+      "uncapped_indemnity": 2,
+      "change_of_control_consent": 2,
+      "liability_cap_carveout": 1,
+      "governing_law_mismatch": 1,
+      "missing_assignment_restriction": 1,
+      "survival_gap": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

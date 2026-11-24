@@ -1,0 +1,164 @@
+{
+  "matter_id": "s64-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 2.2 of the Side Letter: \"If the BIM has not been Accepted on or before the Acceptance Deadline, Licensee may terminate the Agreement in its entirety ... by written notice to Licensor (a \"Termination Notice\") delivered no later than thirty (30) days after the Acceptance Deadline.\" Read with Amendment No. 1, Recital C: \"By letter dated August 14, 2026, which Licensee delivered to Licensor on August 14, 2026 (the \"August Notice\"), Licensee gave notice that it was exercising the Termination Right under Section 2.2 of the Side Letter ... By letter dated August 28, 2026, Licensor stated that it disputes the effectiveness of the August Notice.\"",
+            "reason": "The Acceptance Deadline is June 30, 2026, so the Termination Right had to be exercised by July 30, 2026. Dribas delivered its notice on August 14, 2026, fifteen days late on the face of the documents. Nothing in the folder extends or reopens that window: Side Letter §2.4 preserves the right only against a §4.4 election, and §6.3 says delay notices do not affect the deadline. Brikon's late BIM Readiness Notices also do not move it.\n\nThe issue is still live for Dribas. It has not accepted the lapse: Recital C and Section 6 of Amendment No. 1 record that the dispute is unresolved, that each party reserves all rights, and that no waiver or estoppel arises from performance or payment. So this is not settled history.\n\nIt is a real risk to the client. Dribas's fee-free termination and the refunds under Side Letter §3 depend on a facially untimely notice. If Dribas treats the Agreement as ending on November 12, 2026, for example by stopping payment or migrating off the platform, it may itself be in breach. Its fallback arguments need assessment now, such as waiver, estoppel, prevention by Brikon's late readiness notices, or §4.4(c) and §9.3 Module-level rights."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Amendment No. 1, Section 3: \"Section 10 of the Agreement is deleted and replaced in its entirety with the following: ... 10.1 Licensee Indemnity. Licensee shall defend, indemnify and hold harmless Licensor ... 10.2 Infringement Indemnity. Licensor shall defend Licensee ...\" Software License Agreement, Section 11.3: \"The exclusions and limitations in Sections 11.1 and 11.2 do not apply to: (a) a party's obligations under Section 10.1;\"",
+            "reason": "In the original Agreement, Section 11.3(a) lifted the cap and the consequential-damages exclusion only for Section 10.1, which was Brikon's IP infringement indemnity. Amendment No. 1 replaces Section 10. The new 10.1 is Dribas's indemnity for label, formula and regulatory data, and Brikon's IP indemnity moves to 10.2. The Amendment makes no conforming change to Section 11.3. Under Amendment Section 9.1, references in the Agreement now read to the Agreement as amended. Section 1.3 of the Amendment, which fixes section references as of before the amendment, covers only references made in the Amendment itself, not Section 11.3. Under Agreement Section 15.6, signed amendments also take precedence. Read together, the two documents leave Dribas's new indemnity uncapped, including fines and penalties, while Brikon's IP indemnity falls under the 12-month-fees cap. That reverses the term sheet's allocation (Term Sheet Section 11.3(a)) against the firm's client. The Amendment does nothing to cure or limit this. It is still actionable: indemnity obligations survive termination under Section 12.6, and the parties can still correct the cross-reference.",
+            "alone": {
+              "amendment_no_1.md": {
+                "findable": false,
+                "evidence": "Section 10 of the Agreement is deleted and replaced in its entirety with the following: ... 10.1 Licensee Indemnity. Licensee shall defend, indemnify and hold harmless Licensor... 10.2 Infringement Indemnity. Licensor shall defend Licensee...",
+                "reason": "The Amendment alone shows that Section 10 is restated. It shows that the new Section 10.1 is a Licensee indemnity covering regulatory data claims, that Brikon's infringement indemnity now sits in Section 10.2, and that nothing in the Amendment touches Section 11. It does not show that Section 11.3(a) of the Agreement carves 'a party's obligations under Section 10.1' out of the liability cap. It also does not show that the old 10.1 was the IP indemnity, what the cap amount is, or how the precedence clause works. Without the Agreement's limitation-of-liability text, an associate could not see that renumbering leaves Brikon's IP indemnity capped while Dribas's new indemnity becomes uncapped. The key fact for the problem comes from the document not provided."
+              },
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "11.3 Exceptions. The exclusions and limitations in Sections 11.1 and 11.2 do not apply to: (a) a party's obligations under Section 10.1;",
+                "reason": "Read alone, this agreement makes Section 10.1 Brikon's IP infringement indemnity. The carve-out in Section 11.3(a) therefore works in Dribas's favor by leaving that indemnity uncapped. The harm only appears in Amendment No. 1, which restates Section 10 so that 10.1 becomes a Dribas indemnity and the IP indemnity moves to 10.2, with no conforming change to 11.3. This document cannot show that renumbering. Section 15.6 gives amendments precedence, but that only shows a later amendment could change things, not that this one did. The lowercase 'party' in 11.3(a) is a minor drafting point and does not hurt the client here."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "DPA Section 12.1: \"This Addendum and any claim, controversy or dispute arising out of or relating to this Addendum or to the Processing of Customer Data shall be governed by and construed in accordance with the laws of the State of New York...\" Section 12.2: \"Each Party irrevocably submits to the exclusive jurisdiction of the state or federal courts located in New York County, New York...\" SLA Section 15.1 chooses Delaware law and the exclusive jurisdiction of the courts in New Castle County, Delaware. SLA Section 15.6: \"...signed amendments and side letters, then the DPA, then the Software License Agreement.\"",
+            "reason": "The Agreement sends all disputes to Delaware law and Delaware courts. The DPA sends any claim about the Processing of Customer Data to New York law and New York courts. Under SLA 15.6 the DPA ranks above the Agreement, so the New York clause controls data-related claims. A single event, such as a breach or the loss or corruption of production records, could raise claims under both documents and so have to be litigated in two forums under two bodies of law. Dribas is a Delaware company, and its own term sheet called for Delaware. None of the later documents fix this. Amendment No. 1 leaves the DPA unchanged. The side letter's governing-law clause points only to SLA Sections 14 and 15.1–15.2. The Parties also have a live dispute pending, so the conflict remains actionable: Dribas can seek an amendment conforming the DPA to Delaware, or plan its litigation strategy around the split.",
+            "alone": {
+              "data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "12.1 Governing Law. This Addendum and any claim, controversy or dispute arising out of or relating to this Addendum or to the Processing of Customer Data shall be governed by and construed in accordance with the laws of the State of New York... 12.2 Jurisdiction. Each Party irrevocably submits to the exclusive jurisdiction of the state or federal courts located in New York County, New York...",
+                "reason": "Read alone, the Addendum shows that data-related claims go under New York law, exclusively in New York County courts, even though both parties are Delaware entities based in Wilmington. A careful associate might find that forum odd. But the problem is a mismatch, and the Addendum never says what law or forum the Software License Agreement chooses. It also does not show that the Agreement picks Delaware law and New Castle County courts. And it does not contain the Section 15.6 rule that the Addendum prevails over the Agreement in a conflict. It only refers to 15.6 as describing 'the agreement between the Parties.' Without the Agreement, you cannot see the conflict, the split into two forums for one incident, or the loss of a chosen Delaware forum."
+              },
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "15.6 Order of Precedence. In the event of any conflict or inconsistency among the documents that make up the agreement between the Parties, the following order of precedence applies: signed amendments and side letters, then the DPA, then the Software License Agreement.",
+                "reason": "This document alone shows that Section 15.1 chooses Delaware law and exclusive New Castle County courts. It also shows that Section 15.6 makes the DPA prevail over the Agreement in any conflict. It does not show what the DPA says about governing law or forum. The New York law and New York County exclusive-forum clause in DPA Section 12 appear only in the other document. Without it, an associate could at most note a general risk that the DPA might override the Delaware clause. They could not see an actual conflict, or that Dribas would lose its Delaware forum for data-related claims."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 2.5: \"In consideration of the pricing set out in Schedule A, during the Term Licensee shall not, and shall cause its Affiliates not to, license, use or develop any brewery management, inventory, point-of-sale or distribution software other than the Licensed Software, anywhere in the world.\" Term Sheet Section 5.1 limits the agreed exclusivity to \"production-scheduling software at Licensee's Wilmington and Dover breweries only,\" and Section 5.2 keeps Dribas free to choose its own software for all other functions and locations, binding \"Dribas only, and not its Affiliates.\"",
+            "reason": "The executed covenant binds Dribas, the client and Licensee, far more widely than the agreed term sheet scope. It covers point-of-sale, distribution and inventory software, it binds Affiliates, and it applies worldwide, including at any future brewery. The term sheet carve-outs for transition and for automatic end on termination are also missing. Section 15.7 supersedes the term sheet, so Dribas cannot rely on the narrower deal. Nothing in the folder cures this: the Side Letter does not address exclusivity, and Amendment No. 1 does not amend Section 2.5. The Agreement remains in effect while Brikon disputes the August Notice, and the parties continue to perform under Amendment Section 6.3. The covenant therefore still restricts Dribas, and it remains actionable, for example by seeking an amendment to conform it to the term sheet."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "DPA Section 1.1: \"'Customer Data' means Personal Data that Licensor Processes on behalf of Licensee in connection with the Agreement...\" SLA Section 1.4 instead defines Customer Data as \"all data Licensee submits, including recipes, formulations, production records and distributor sales data.\" SLA Section 15.6 says: \"In the event of any conflict or inconsistency among the documents that make up the agreement between the Parties, the following order of precedence applies: signed amendments and side letters, then the DPA, then the Software License Agreement.\"",
+            "reason": "The DPA gives the same capitalized term a much narrower meaning (personal data only). Its definitions section is not expressly limited to 'this Addendum'. DPA Section 2.3 even contemplates the Addendum changing the Agreement ('Except as set out in this Addendum, the Agreement remains unchanged'). Because SLA Section 15.6 ranks the DPA above the License Agreement, Brikon could argue that the narrower definition controls. On that reading, the SLA Section 7.3 use restriction (no use other than providing the services, and no training or benchmarking for others) would cover only personal data. Dribas's recipes, formulations and production data would then be left outside it. Nothing in the side letter or Amendment No. 1 resolves the conflict. The Agreement remains in force (the August termination notice is disputed and the transition period is ongoing), so Dribas can still fix this by a clarifying amendment. It is a live exposure for the client.",
+            "alone": {
+              "data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "1.1 \"Customer Data\" means Personal Data that Licensor Processes on behalf of Licensee in connection with the Agreement...",
+                "reason": "The Addendum by itself shows only that it defines 'Customer Data' as Personal Data, without limiting that definition to the Addendum. Read alone, that is an ordinary DPA definition and does no visible harm to Dribas. The Addendum does not show three things the problem depends on. First, that the Software License Agreement defines the same term more broadly to cover recipes, formulations, production records and sales data. Second, that Section 7.3 of the Agreement restricts Brikon's use of 'Customer Data'. Third, that Section 15.6 of the Agreement makes the DPA prevail in a conflict. Section 2.3 of the Addendum mentions Section 15.6 only as describing the parties' agreement, not as a precedence rule. Without the Agreement, an associate could not see the conflict or that it leaves Dribas's proprietary data outside the use restriction."
+              },
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "15.6 Order of Precedence. In the event of any conflict or inconsistency among the documents that make up the agreement between the Parties, the following order of precedence applies: signed amendments and side letters, then the DPA, then the Software License Agreement.",
+                "reason": "On its own, this agreement defines 'Customer Data' broadly in Section 1.4 (recipes, formulations, production records, distributor sales data). Section 7.3 restricts Brikon's use of that data, and Sections 8.1 and 8.5 add confidentiality protection for recipes and formulations. Section 15.6 does make the DPA prevail over the agreement. But the agreement refers to the DPA only for 'Personal Data' (Section 1.15). Nothing in it shows that the DPA redefines 'Customer Data' more narrowly as Personal Data only. That conflicting definition is the essential part of the problem, and it exists only in the DPA. Without it, an associate would see a coherent, client-protective definition and use restriction, not a gap that exposes Dribas's recipes and production data."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C6 asks for the whole ranking in fact F6 ('signed amendments and side letters, then the DPA, then the Software License Agreement'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.068,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
