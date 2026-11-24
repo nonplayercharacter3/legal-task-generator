@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-23 19:55, autopilot iteration 28.
+Last updated: 2026-11-23 21:30, autopilot iteration 29.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -34,16 +34,25 @@ agent. Full definition of done: PROMPT.md.
 - [x] M1 `ltg batch` command: PR #39 (tests in `tests/test_batch.py`, README section); lab mate told on #36
 - [x] M2 At least 20 v2 tasks, labelled: 30 accepted (s45-s60), 24 labelled by 2026-11-18
 - [x] M3 LAB baseline frozen and scored; v2 tasks through LAB's tool: 264fbd2 (`docs/research/lab_harness.md`)
-- [ ] M4 Generator passes EVALUATION.md levels 1-3. v2: level 3 pass, level 2 miss (folder words). Hardening cycle 1: v3 (PR #50)
+- [ ] M4 Generator passes EVALUATION.md levels 1-3. v2: level 3 pass, level 2 miss (folder words). Hardening cycle 1: v3 (PR #50), round s62 1 of 3, batch s63-70 running
 - [ ] M5 250 tasks on the passing version, test split at least 30
 - [ ] M6 Usefulness pilot fine-tune
 - [ ] M7 Handoff package and notes for Pengtao
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- `ltg batch` v3 round, seed 62, 3 matters, generate then label (PID 88251, log `runs/batch_v3_s62.log`,
-  out `runs/pilot62_v3`), started 2026-11-23 19:40; commits results to main itself. Expected end about 22:30.
+- `ltg batch` v3, seeds 63-70, generate then label (PID 56839, log `runs/batch_v3_s63-70.log`, out
+  `runs/pilot{seed}_v3`), started 2026-11-23 21:24; commits each seed to main itself. Seed 62 took 77 min to
+  generate and 23 min per label, so expect the end around 2026-11-24 12:00 to 14:00.
 - No LAB jobs. LAB sample done (M3); `judge_calls.json` holds only the last judge pass of a task.
+
+## v3 round seed 62 (read 2026-11-23)
+- 1 of 3 kept: s62-m0003 (SPA, boutique hotels, 6 documents, 5 issues, 10 criteria), Qwen 0.00 (unsolved; C2 and C5
+  failed in all 3 attempts, 35 of 50 steps, every file opened). Folder 30,461 words (main 11,250, others 2,741 to
+  4,483): level 2 folder length met on this task. Instruction and rubric read: sound.
+- Both rejections correct, known classes: s62-m0001 consistency (drafter added fallback courts to an exclusive
+  Chancery forum); s62-m0002 issue_check I5 (two-document issue findable from the guaranty alone, its recital lists
+  the services). Longer drafting may make both classes more frequent; seeds 63-70 will show it.
 
 ## M3 result (LAB harness, same model and judge, tag s1, 0 grading errors)
 - LAB 30: all-pass 3 (10%), criteria 1,660 of 1,927 (86.1%), median 60.5 criteria, 1,747 judge calls (last pass).
@@ -70,14 +79,15 @@ agent. Full definition of done: PROMPT.md.
   15,704 (MISS, needs 20,000), checklist median 10 (soft miss, needs 20).
 
 ## Next
-1. When PID 88251 ends: read every s62 result (accepted and rejected), especially folder words per document (target
-   main 6,000-9,000, others 2,500-4,000) and whether longer drafting broke consistency or issue_check. Fix false
-   rejections by PR. If sound, run seeds 63-70 on v3 with `ltg batch` (same flags, `--seeds 63-70`).
+1. When PID 56839 ends: read every s63-s70 result (accepted and rejected). Count yield against v2 after PR #40
+   (16 of 21) and the share of consistency and issue_check losses; if longer drafting raises either class, fix it in
+   the drafter or ledger writer by PR. Check folder words per task.
 2. Then on v3 (at least 20 tasks): level 2 stats (`scripts/dataset_stats.py`), level 1 referee audit of 10% (at
    least 3), and level 3 through LAB's harness (add a set `ours_v3` to `sample.json`, dev and test first). Watch
    whether longer folders push item pass below LAB's by more than 5 points.
-3. Lab mate labels his own seeds 500-507 (issue #36); do not label them here. When he finishes, post his next order
-   in the same iteration: v3 seeds 508-515 if s62 looks sound, else 8 more seeds on v2. Test-run first.
+3. Lab mate labels his own seeds 500-507 (issue #36, no reply since the reopen on 2026-11-23); do not label them
+   here. When he finishes, post his next order in the same iteration: v3 seeds 508-515 if s63-70 look sound, else
+   8 more seeds on v2. Test-run first.
 4. If an NRP call stalls a batch (no log line for an hour outside a wait), add a wall-clock cap per solver call.
 
 ## Needs Sirui

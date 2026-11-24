@@ -178,3 +178,12 @@ Dated, append-only. One entry per iteration.
   `spec.support_words`, `configs/pilot_generate_v3.toml`.
 - Started v3 round seed 62 (`ltg batch`, PID 88251, log `runs/batch_v3_s62.log`).
 - Lab mate: issue #36 open and assigned, no activity since the reopen; body (label seeds 500-507) matches STATE.
+
+## 2026-11-23 21:30, iteration 29
+- v3 round seed 62 ended 21:20 (exit 0), committed by `ltg batch` (0d6c6bf, 5f28083). 1 of 3 kept: s62-m0003,
+  30,461 folder words (main 11,250), Qwen 0.00 with 50-step budget (35 steps used per attempt). Read: instruction
+  and 10 criteria sound. Rejections both correct, known classes: s62-m0001 consistency (fallback courts added to an
+  exclusive forum), s62-m0002 issue_check I5 (guaranty recital makes a two-document issue findable alone).
+  Generation 26 calls, ~1.03M in / ~108k out; labels 159 calls total for the seed.
+- Started v3 batch seeds 63-70 (PID 56839, `runs/batch_v3_s63-70.log`). Lab mate: no activity on #36 since the
+  reopen; order unchanged (label 500-507).
