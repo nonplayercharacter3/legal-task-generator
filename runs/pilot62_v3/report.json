@@ -49,9 +49,9 @@
     },
     "solver_check": {
       "evaluated": 1,
-      "passed": 0,
+      "passed": 1,
       "failed": 0,
-      "skipped": 1
+      "skipped": 0
     }
   },
   "rubric_repairs": {
@@ -59,9 +59,16 @@
     "cleared": 0,
     "bundled_after": 0
   },
-  "unsolved": 0,
-  "label_pending": 1,
-  "difficulty": {},
+  "unsolved": 1,
+  "label_pending": 0,
+  "difficulty": {
+    "qwen3-small": {
+      "tasks": 1,
+      "pass_rates": {
+        "0.00": 1
+      }
+    }
+  },
   "matters": [
     {
       "matter_id": "s62-m0001",
@@ -91,10 +98,17 @@
       "failed_gate": null,
       "reason": null,
       "split": "train",
-      "solver_pass_rate": null,
-      "unsolved": false,
-      "difficulty": [],
-      "label_pending": true
+      "solver_pass_rate": 0.0,
+      "unsolved": true,
+      "difficulty": [
+        {
+          "model": "qwen3-small",
+          "attempts": 3,
+          "passes": 0,
+          "pass_rate": 0.0
+        }
+      ],
+      "label_pending": false
     }
   ],
   "model_calls": {
@@ -147,9 +161,15 @@
       "errors": 0
     },
     "judge": {
-      "calls": 3,
-      "input_tokens": 18750,
-      "output_tokens": 2304,
+      "calls": 7,
+      "input_tokens": 51476,
+      "output_tokens": 7064,
+      "errors": 0
+    },
+    "solver": {
+      "calls": 129,
+      "input_tokens": 2849165,
+      "output_tokens": 92831,
       "errors": 0
     }
   },

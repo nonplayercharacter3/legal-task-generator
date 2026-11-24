@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 50
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -154,8 +168,75 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2",
+                "C5",
+                "C6",
+                "C10"
+              ],
+              "steps": 35,
+              "files_opened": [
+                "bill_of_sale_hospitality_services.md",
+                "escrow_agreement_fenwright.md",
+                "ip_assignment_agreement_hotel_marks.md",
+                "joint_press_release_announcement.md",
+                "seller_disclosure_schedule.md",
+                "stock_purchase_agreement_draibeir_bruneis.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C2",
+                "C5",
+                "C6",
+                "C9"
+              ],
+              "steps": 35,
+              "files_opened": [
+                "bill_of_sale_hospitality_services.md",
+                "escrow_agreement_fenwright.md",
+                "ip_assignment_agreement_hotel_marks.md",
+                "joint_press_release_announcement.md",
+                "seller_disclosure_schedule.md",
+                "stock_purchase_agreement_draibeir_bruneis.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2",
+                "C3",
+                "C5"
+              ],
+              "steps": 35,
+              "files_opened": [
+                "bill_of_sale_hospitality_services.md",
+                "escrow_agreement_fenwright.md",
+                "ip_assignment_agreement_hotel_marks.md",
+                "joint_press_release_announcement.md",
+                "seller_disclosure_schedule.md",
+                "stock_purchase_agreement_draibeir_bruneis.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

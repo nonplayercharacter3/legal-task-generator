@@ -14,7 +14,7 @@ Backend: `claude_sdk`. Accepted **1 of 3** candidate matters.
 | rubric_trace | 1 | 1 | 0 | 0 |
 | rubric_tests | 1 | 1 | 0 | 0 |
 | decontamination | 1 | 1 | 0 | 0 |
-| solver_check | 1 | 0 | 0 | 1 |
+| solver_check | 1 | 1 | 0 | 0 |
 
 ## Difficulty
 
@@ -22,8 +22,9 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 
 | Model | Tasks | Pass rate: tasks |
 | --- | ---: | --- |
+| qwen3-small | 1 | 0.00: 1 |
 
-**1 accepted task(s) wait for `ltg label`: solver_check was deferred, so they have no difficulty label and no leak probe yet.**
+**1 accepted task(s) are marked unsolved (no attempt passed): check they are not broken.**
 
 ## Matters
 
@@ -31,7 +32,7 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 | --- | --- | --- | --- | --- |
 | s62-m0001 | rejected at consistency |  |  | mismatches: [{"fact": "F5", "key": "SPA exclusive forum", "filename": "stock_purchase_agreement.md", "ledger": "Court of Chancery of the State of Delaware, for  |
 | s62-m0002 | rejected at issue_check |  |  | missing: ["I5"] |
-| s62-m0003 | accepted (label pending) | train |  |  |
+| s62-m0003 | accepted (unsolved) | train | qwen3-small 0.00 |  |
 
 ## Variety
 
@@ -52,5 +53,6 @@ Pass rates of the accepted tasks per labelling model. Difficulty is a label, not
 | instruction_writer | 1 | 1331 | 257 | 0 |
 | issue_solo_verifier | 6 | 113663 | 3896 | 0 |
 | issue_verifier | 5 | 373273 | 3842 | 0 |
-| judge | 3 | 18750 | 2304 | 0 |
+| judge | 7 | 51476 | 7064 | 0 |
 | rubric_writer | 1 | 7674 | 1961 | 0 |
+| solver | 129 | 2849165 | 92831 | 0 |
