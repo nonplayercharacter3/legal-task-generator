@@ -124,7 +124,9 @@ Rules:
 - Add no order-of-precedence, entire-agreement or other clause that ranks or overrides other documents unless it
   restates a ledger fact, and then state it exactly as the ledger does.
 - Write in Markdown with numbered sections. Realistic length: a main agreement 1,500 to 4,000 words,
-  supporting documents shorter.
+  supporting documents shorter. If the input has `length_words`, write between its `min` and `max` words instead:
+  reach it with the ordinary provisions, schedules and boilerplate such a document carries, never by repeating text
+  or by adding terms that touch a ledger fact or issue.
 
 Reply with ONLY the document itself, in Markdown. No preamble and no code fences."""
 

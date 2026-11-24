@@ -721,6 +721,31 @@ def test_v2_config_loads():
     assert v2.gates == base.gates and v2.backend == base.backend
 
 
+def test_v3_config_is_v2_with_longer_documents():
+    root = Path(__file__).resolve().parent.parent / "configs"
+    v3, v2 = load_config(str(root / "pilot_generate_v3.toml")), load_config(str(root / "pilot_generate_v2.toml"))
+    assert (v3.spec.main_words, v3.spec.support_words, v3.gates.solver_max_steps) == ([6000, 9000], [2500, 4000], 50)
+    v3.spec.main_words, v3.spec.support_words, v3.gates.solver_max_steps = [], [], 40
+    assert (v3.spec, v3.gates, v3.backend, v3.instruction) == (v2.spec, v2.gates, v2.backend, v2.instruction)
+
+
+def test_drafter_gets_a_length_only_when_configured(tmp_path):
+    from ltg.stages import draft_documents
+
+    fake = RecordingFake(seed=1)
+    spec = {"matter_id": "m", "practice_area": "commercial_contracts", "agreement_type": "supply agreement", "jurisdiction": "Delaware",
+            "n_documents": 3, "issue_types": ["auto_renewal", "uncapped_indemnity"]}
+    ledger = Ledger.from_dict(fake._ledger_writer({"spec": spec, "precedents": []}))
+    client = fake
+    draft_documents(client, ledger, {}, 0)
+    assert not any("length_words" in p for p in fake.payloads["drafter"])
+    fake.payloads["drafter"].clear()
+    draft_documents(client, ledger, {}, 0, [6000, 9000], [2500, 4000])
+    assert [p["length_words"] for p in fake.payloads["drafter"]] == [{"min": 6000, "max": 9000}] + [{"min": 2500, "max": 4000}] * (len(ledger.documents) - 1)
+    s = Pipeline(load_config(None, {"run": {"out_dir": str(tmp_path)}, "spec": {"main_words": [6000, 9000]}}))._settings()
+    assert s["spec"]["main_words"] == [6000, 9000] and "support_words" not in s["spec"]
+
+
 # ---- two-document issues (spec.cross_document_share)
 
 

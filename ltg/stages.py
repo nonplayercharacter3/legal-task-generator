@@ -113,9 +113,10 @@ def write_ledger(client: ModelClient, spec: MatterSpec, precedents: list[Precede
 # ---------------------------------------------------------------- stage 2: build
 
 
-def draft_documents(client: ModelClient, ledger: Ledger, precedents: dict[str, Precedent], precedent_chars: int) -> Documents:
+def draft_documents(client: ModelClient, ledger: Ledger, precedents: dict[str, Precedent], precedent_chars: int,
+                    main_words: list[int] | None = None, support_words: list[int] | None = None) -> Documents:
     docs: Documents = {}
-    for d in ledger.documents:
+    for i, d in enumerate(ledger.documents):
         prec = precedents.get(d.precedent or "")
         payload = {
             "ledger": ledger.to_dict(),
@@ -124,6 +125,9 @@ def draft_documents(client: ModelClient, ledger: Ledger, precedents: dict[str, P
             # earlier drafts, so cross-references, part numbers and defined terms stay consistent across the folder
             "drafted": [{"filename": n, "content": c} for n, c in docs.items()],
         }
+        words = main_words if i == 0 else support_words
+        if words:
+            payload["length_words"] = {"min": words[0], "max": words[-1]}
         docs[d.filename] = call_text(client, "drafter", prompts.DRAFTER, render_input(payload))
     return docs
 
