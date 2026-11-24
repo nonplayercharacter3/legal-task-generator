@@ -167,3 +167,14 @@ Dated, append-only. One entry per iteration.
   calls, 112/114). regrade2.py (local) now passes it.
 - Started `runs/lab_sample/chain_v2b.sh` (PID 3174). Lab mate: no activity since his work order of 2026-11-21 12:15
   (label seeds 500-507); issue #36 matches STATE.
+
+## 2026-11-23 19:55, iteration 28
+- chain_v2b finished 15:28 (one usage-limit wait): 10 errored LAB rows re-judged (errored criteria only), ours_v2
+  run, 50 s1 rows clean. M3 done (264fbd2): LAB 30 all-pass 3, criteria 86.1%; ours v2 20 all-pass 3, criteria
+  82.7%. Results in `docs/research/lab_harness.md`, `runs/lab_sample/summary.json` committed.
+- The loop sat on the 5-hour limit 15:35 to 19:30 (iterations 1 to 9 refused).
+- M4 on v2: level 3 pass, level 2 miss on folder words (median 15,750; main agreements 4,021, others 1,614 words).
+  Level 1 audit not run on v2, since v2 is superseded. PR #50 (merged, CI green, 163 tests): `spec.main_words`,
+  `spec.support_words`, `configs/pilot_generate_v3.toml`.
+- Started v3 round seed 62 (`ltg batch`, PID 88251, log `runs/batch_v3_s62.log`).
+- Lab mate: issue #36 open and assigned, no activity since the reopen; body (label seeds 500-507) matches STATE.

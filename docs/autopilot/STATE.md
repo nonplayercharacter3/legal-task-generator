@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-23 13:50, autopilot iteration 27 (loop restarted after a reboot).
+Last updated: 2026-11-23 19:55, autopilot iteration 28.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -33,24 +33,23 @@ agent. Full definition of done: PROMPT.md.
 - [x] M0 Bootstrap: docs in `docs/autopilot/`, loop script PR #37, label `needs-sirui`, lab-mate issue #36 (old #20 closed)
 - [x] M1 `ltg batch` command: PR #39 (tests in `tests/test_batch.py`, README section); lab mate told on #36
 - [x] M2 At least 20 v2 tasks, labelled: 30 accepted (s45-s60), 24 labelled by 2026-11-18
-- [ ] M3 LAB baseline frozen and scored; v2 tasks through LAB's tool
-- [ ] M4 Generator passes EVALUATION.md levels 1-3 (or hardened until it does)
+- [x] M3 LAB baseline frozen and scored; v2 tasks through LAB's tool: 264fbd2 (`docs/research/lab_harness.md`)
+- [ ] M4 Generator passes EVALUATION.md levels 1-3. v2: level 3 pass, level 2 miss (folder words). Hardening cycle 1: v3 (PR #50)
 - [ ] M5 250 tasks on the passing version, test split at least 30
 - [ ] M6 Usefulness pilot fine-tune
 - [ ] M7 Handoff package and notes for Pengtao
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- `runs/lab_sample/chain_v2b.sh` (PID 3174, output `runs/lab_sample/chain_v2b.out`), started 2026-11-23 13:44: starts
-  podman, re-judges the 10 errored s1 LAB rows (errored criteria only, PR #49), runs `scripts/lab_sample.py run
-  ours_v2` (20 v2 tasks, Qwen solve then judge, 202 criteria), regrades again, `check.py`. Expected end about 18:00,
-  later if a limit hits. The 2026-11-21 chain (PIDs 67923, 78677) died in the reboot; nothing of ours_v2 had run.
-- LAB side: 30 of 30 attempted; 20 scored cleanly, 10 to re-judge.
-- `sample.json` has set `ours_v2` (PR #48): s504-m0003, s506-m0003, s45-m0003, s53-m0002, s55-m0001,
-  s55-m0003, s58-m0002 (all dev and test), plus 13 train drawn by seed 46; 7 are the lab mate's, unlabelled yet.
-  Old sample kept as `runs/lab_sample/sample.before_v2.json`. The 20 v1 `ours` rows are not run (v1 is superseded).
-- Judge call counts: `judge_calls.json` holds only the last judge pass of a task (regrades overwrite it); count
-  about one call per criterion plus retries when reporting.
+- `ltg batch` v3 round, seed 62, 3 matters, generate then label (PID 88251, log `runs/batch_v3_s62.log`,
+  out `runs/pilot62_v3`), started 2026-11-23 19:40; commits results to main itself. Expected end about 22:30.
+- No LAB jobs. LAB sample done (M3); `judge_calls.json` holds only the last judge pass of a task.
+
+## M3 result (LAB harness, same model and judge, tag s1, 0 grading errors)
+- LAB 30: all-pass 3 (10%), criteria 1,660 of 1,927 (86.1%), median 60.5 criteria, 1,747 judge calls (last pass).
+- Ours v2 20: all-pass 3 (15%), criteria 167 of 202 (82.7%), median 10 criteria, 202 judge calls.
+- Level 3 passes on v2 (within 15 and 5 points; 18 of 33 labelled v2 tasks solved at least once). Bootstrap 95%:
+  all-pass -13 to +25 points, items -11.8 to +6.4.
 
 ## v2 numbers (seeds 45-61, ours; lab mate 500-507)
 - Lab mate's seeds 500-507: 20 of 24 accepted, on main (PR #45, #46), not labelled yet. Rejections, read 2026-11-21:
@@ -71,14 +70,15 @@ agent. Full definition of done: PROMPT.md.
   15,704 (MISS, needs 20,000), checklist median 10 (soft miss, needs 20).
 
 ## Next
-1. When `chain_v2b.out` says "chain done": check `check.py` shows every s1 row clean (LAB 30 and ours_v2 20); if not,
-   run `regrade2.py` again. Then re-run `scripts/lab_sample.py run ours_v2` (it skips scored tasks and rewrites
-   `summary.json` over all rows), commit `summary.json`, write both sides into `docs/research/lab_harness.md` (M3 done).
-2. Label the lab mate's 20 tasks (`ltg label`, runs/lm_s500-507_v2) after the chain (one heavy job at a time).
-3. M4: apply EVALUATION.md levels 1-3 with M3's numbers. Known level 2 misses: folder words median 15,704 (needs
-   20,000), checklist median 10 (needs 20). Candidate v3: longer folders and more checklist items in one change.
-4. Then write the lab mate's next work order in #36 (v2 or v3), test-run in a scratch clone first.
-5. If an NRP call stalls a batch (no log line for an hour outside a wait), add a wall-clock cap per solver call.
+1. When PID 88251 ends: read every s62 result (accepted and rejected), especially folder words per document (target
+   main 6,000-9,000, others 2,500-4,000) and whether longer drafting broke consistency or issue_check. Fix false
+   rejections by PR. If sound, run seeds 63-70 on v3 with `ltg batch` (same flags, `--seeds 63-70`).
+2. Then on v3 (at least 20 tasks): level 2 stats (`scripts/dataset_stats.py`), level 1 referee audit of 10% (at
+   least 3), and level 3 through LAB's harness (add a set `ours_v3` to `sample.json`, dev and test first). Watch
+   whether longer folders push item pass below LAB's by more than 5 points.
+3. Lab mate labels his own seeds 500-507 (issue #36); do not label them here. When he finishes, post his next order
+   in the same iteration: v3 seeds 508-515 if s62 looks sound, else 8 more seeds on v2. Test-run first.
+4. If an NRP call stalls a batch (no log line for an hour outside a wait), add a wall-clock cap per solver call.
 
 ## Needs Sirui
 - When all jobs are done for good: remind Sirui She to undo `sudo pmset -a disablesleep 0` (#44, closed 2026-11-21).
@@ -88,6 +88,9 @@ agent. Full definition of done: PROMPT.md.
 - Someone with legal training to read 10 tasks (EVALUATION.md level 1, human check). Not blocking batches.
 
 ## Decisions
+- 2026-11-23: v2 fails M4 on level 2 folder length only; hardening cycle 1 is v3 = v2 with longer documents (drafter
+  asked for 6,000-9,000 words main, 2,500-4,000 others) and 50 solver steps; checklist size (soft) left alone so one
+  change is measured at a time.
 - 2026-11-18: M2 met; the two consistency rejections where the drafter added a meaning-changing qualifier stay
   rejections (the answer key must match the documents); fix only if the class grows.
 - 2026-11-17: issue_check rejections for a two-document issue findable alone stay rejections (v2 is meant to be
