@@ -1,0 +1,170 @@
+{
+  "matter_id": "s63-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 1.1: \"'Required Consents' means the consent of the landlord under the Hangar Lease to the transactions contemplated by this Agreement.\" Schedule 4.6, item 2: \"*Autopilot Firmware License Agreement ... with Kestrune Avionics GmbH ... under which the Company licenses the flight-control autopilot firmware installed on all Company drone models. Section 12.3 of that agreement provides that the licensor may terminate the license upon written notice upon any change of control of Licensee effected without the licensor's prior written consent.\"",
+            "reason": "The problem is present and still actionable for Bisart.\n\n1. Kestrune's consent is left out of every protective mechanism. 'Required Consents' covers only the Hangar Lease landlord. That defined term drives both Seller's efforts covenant (Section 6.4(b)) and Bisart's closing condition (Section 7.2(d)) and deliverable (Section 3.2(e)). So Seller has no duty to seek Kestrune's consent, and Bisart cannot refuse to close if it is missing.\n\n2. Bisart has no indemnity backstop. Schedule 4.6 expressly discloses the Kestrune change-of-control termination right. The Article IV lead-in makes that disclosure qualify Sections 4.4(c) and 4.6(c). A post-closing termination by Kestrune therefore would not be a breach of representation, and no special indemnity covers it.\n\n3. No other document cures this. Letter Agreement No. 1 amends only the FAA-related terms and states it does not otherwise change the Disclosure Schedule. The Bill of Sale confirms the Kestrune firmware is excluded from the Company Software. The MAE closing condition would not be triggered merely because consent is missing.\n\n4. The risk is serious. The firmware runs every Company drone, so losing the license would affect the whole business.\n\n5. The issue can still be raised. Nothing in the folder shows that closing has occurred (closing was scheduled for September 15, 2026, with a December 15, 2026 outside date). Bisart can still seek an amendment under Section 11.6 to add the Kestrune consent to Required Consents, or negotiate a special indemnity."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "SPA §1.1: \"'Fundamental Representations' means the representations and warranties of Seller set forth in Sections 4.1, 4.2, 4.3 and 4.12.\" Side Letter ¶2.1 inserts \"the following new Section 4.12, Remote Pilot and Airspace Compliance, immediately after Section 4.11\", and ¶2.2 provides: \"Existing Sections 4.12 through 4.18 of the Agreement are renumbered accordingly as Sections 4.13 through 4.19.\"",
+            "reason": "Under the original SPA, the Taxes representation (§4.12) is a Fundamental Representation. That status does three things for Buyer: it removes tax claims from the $4.2M cap and the $420,000 basket in §9.5(a); it extends survival to 60 days after the statute of limitations under §9.1; and it lets Buyer choose its route of recovery under §9.6(b). Tax claims depend on that status because the SPA has no stand-alone pre-closing tax indemnity, so they run only through §9.2(a). The Side Letter renumbers the Taxes representation as §4.13 but does not conform the §1.1 definition or any other cross-reference. Its §1.3 updates only references to \"this Agreement\", and §7.1 says the Agreement is otherwise unchanged. Read literally, the Fundamental Representations now cover the new airspace representation instead of Taxes. The tax representation therefore falls under the $4.2M cap and the general survival period, which ends on the Escrow Release Date, about March 2027 (12 months from the March 2, 2026 escrow date). That is only months after a September 2026 Closing. This shifts tax risk onto Buyer, the firm's client. At the latest date in the folder (June 22, 2026), the Closing has not yet occurred. Buyer can still fix this through a further letter agreement under §11.6 that conforms the cross-references or adds a stand-alone tax indemnity, so the problem is real and actionable.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Fundamental Representations\" means the representations and warranties of Seller set forth in Sections 4.1, 4.2, 4.3 and 4.12.",
+                "reason": "Read alone, the SPA works as intended. Section 4.12 is the Taxes representation, so tax claims count as Fundamental Representations. That means they are excluded from the $4,200,000 cap in Section 9.5(a) and survive until 60 days after the statute of limitations under Section 9.1. Defining the term by section number alone is a drafting weakness that would only matter if the sections were later renumbered. Nothing in this document renumbers them, and no amendment appears in it. The harm to Buyer comes entirely from the Side Letter, which inserts a new Section 4.12 and renumbers the later sections without fixing cross-references. Without that document, an associate would see a Taxes representation correctly treated as fundamental, not a problem that hurts the client."
+              },
+              "side_letter.md": {
+                "findable": false,
+                "evidence": "Existing Sections 4.12 through 4.18 of the Agreement are renumbered accordingly as Sections 4.13 through 4.19.",
+                "reason": "The side letter alone shows that a new Section 4.12 is inserted and that the existing Sections 4.12-4.18 are renumbered without conforming cross-references. A careful associate might flag this as a general drafting risk. The letter does not show the facts that make it harmful: that old Section 4.12 is the Taxes representation, that the SPA defines Fundamental Representations by section number to include 4.12, and that Fundamental Representations are carved out of the $4,200,000 cap and get extended survival. It also does not show that there is no separate tax indemnity. Without the SPA, an associate cannot see that the renumbering moves Taxes out of fundamental status and hurts Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 11.4: \"Buyer may not assign this Agreement or any of its rights or obligations hereunder, by operation of law or otherwise, without the prior written consent of Seller, and any purported assignment in violation of this sentence shall be void. Seller may assign this Agreement or any of its rights hereunder, in whole or in part, without the consent of Buyer.\"",
+            "reason": "The assignment clause is one-sided against Bisart. Bisart needs Seller's consent to assign. Seller may assign the whole Agreement, or any of its rights in part, without Bisart's consent. The clause does not bar assignment to a competitor, does not require the assignee to assume obligations, and does not keep Seller liable after assignment. Seller's rights include the Section 2.5 earn-out. Under Section 2.5(d), that earn-out carries quarterly reports by customer, acreage and pricing, plus access to customer lists, application logs and pricing schedules. The Section 6.6 confidentiality covenant binds only Seller and its Affiliates, not an unaffiliated assignee. So Seller could pass those data rights to a competing drone maker. Because Seller may assign \"this Agreement\" as a whole, it could also try to move its Article IX indemnity and Section 6.7 non-compete obligations to an assignee with no assets. That would undercut Bisart's recourse beyond the escrow and the earn-out set-off. Letter Agreement No. 1 amended other provisions but left Section 11.4 unchanged, and no other document in the folder cures it. The issue remains actionable: the Agreement is still in effect, and the Earn-Out Period and post-closing obligations lie ahead. Bisart can still seek a Section 11.6 amendment, which would require Seller's agreement."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "SPA §9.1: \"All other representations and warranties in this Agreement shall survive the Closing until 11:59 p.m. New York time on the Escrow Release Date (as defined in the Escrow Agreement).\" Escrow Agreement §1.1: \"'Escrow Release Date' means the date that is twelve (12) months after the date of this Escrow Agreement\". The Escrow Agreement is dated as of March 2, 2026, and SPA §3.1 schedules the Closing for September 15, 2026.",
+            "reason": "The two documents together run the survival period for general reps from the Escrow Agreement's signing date, not from Closing. That fixes the end at March 2, 2027, about 5.5 months after a September 15, 2026 Closing. Any slip in Closing (the Outside Date is December 15, 2026) shortens the window further. The escrow is released to Seller on the same date (Escrow §5.1), so Bisart, as Buyer and the indemnified party, loses both its claim period and its security early. Nothing in the folder cures this: the June 22, 2026 Letter Agreement does not change §9.1 or the release date, and §9.6(d) only protects claims already noticed. The latest date in the folder is June 22, 2026, before Closing, so the window has not run and Bisart can still fix it. It could amend the agreements under §11.6 to tie the release date to the Closing Date.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "All other representations and warranties in this Agreement shall survive the Closing until 11:59 p.m. New York time on the Escrow Release Date (as defined in the Escrow Agreement).",
+                "reason": "The SPA ties the survival of non-Fundamental Representations to the 'Escrow Release Date', but it says that term is defined in the Escrow Agreement and gives no length or date for it. The SPA does show the scheduled closing of September 15, 2026 (Section 3.1) and that escrow release ends the escrow security (Section 9.6(d)). It does not show that the Escrow Release Date is twelve months after March 2, 2026, which would make it March 2, 2027. An associate reading only the SPA could note that the survival period is set by reference to another document. They could not see that it runs from signing rather than closing, or that it leaves only about 5.5 months after closing. The harm to Bisart depends on the Escrow Agreement's definition, which is not in this document."
+              },
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "\"Escrow Release Date\" means the date that is twelve (12) months after the date of this Escrow Agreement or, if that date is not a Business Day, the next Business Day.",
+                "reason": "This document alone shows that the Escrow Release Date is fixed at March 2, 2027. That date is twelve months after the agreement's own date, not after Closing. The document also shows that the $4.2M is deposited 'At the Closing' and that Closing comes after signing (Section 5.4). From this, a careful associate could sense that the escrow cover after closing will be shorter than twelve months. However, the document does not show the actual problem. It does not show that SPA Section 9.1 ties the survival of non-Fundamental Representations to this same Escrow Release Date, which would cut off Bisart's right to bring claims as well as the security for them. It also does not give the Scheduled Closing Date of September 15, 2026, which is what produces the roughly 5.5-month window. Nothing here limits when indemnity claims may be brought under the Purchase Agreement. Without the SPA, the harm described cannot be identified or measured."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Bill of Sale §1: \"'Company Software' means the software listed on Annex A...\". Annex A lists only the Telemetry Dashboard (FleetView), the Ground-Station Firmware (GCS-series) and Ancillary Tools, with no reference to FieldPath. SPA §1.1, by contrast, defines Company Software to include \"the FieldPath flight-planning and variable-rate application software,\" and SPA §11.10 provides that \"this Agreement shall prevail, except that the Bill of Sale shall control as to the identification of the assets conveyed thereunder.\"",
+            "reason": "The SPA's Company Software definition and the §6.9 covenant cover FieldPath. Disclosure Schedule item 7 confirms FieldPath is part of the Business, because the Company hosts FieldPath services. The agreed-form Bill of Sale, however, limits the conveyance to Annex A, and Annex A leaves FieldPath out. Section 11.10 makes the Bill of Sale control what is identified and conveyed. The result is that delivering this Bill of Sale would leave title to FieldPath with Seller or its affiliates. Bisart would be left with remedies only: a breach of the §4.7(b) representation, which is not a Fundamental Representation, is subject to the $4.2M cap and the basket, and survives only to the Escrow Release Date; or a §6.9 covenant claim with 12-month survival. Nothing in the folder cures this. Bill of Sale §8 further assurances covers only the Conveyed Assets, and §2.1 also limits the conveyance to Annex A. The Bill of Sale is still an unexecuted agreed form: its Effective Date is blank, Closing is scheduled for September 15, 2026, and the Outside Date is December 15, 2026. Bisart can therefore still require Annex A to be corrected before it acknowledges the document, so the issue is real and actionable for the Buyer.",
+            "alone": {
+              "bill_of_sale.md": {
+                "findable": false,
+                "evidence": "\"Company Software\" means the software listed on Annex A, in source code and object code form, including all versions, releases, builds, branches, patches, updates, modifications and derivative works of it in existence on the Effective Date, whether completed or in development.",
+                "reason": "On its own, this Bill of Sale shows only that 'Company Software' is limited to the Annex A list: FleetView, the GCS ground-station firmware and some ancillary tools. Annex A never mentions FieldPath or any flight-planning or variable-rate application software. Its only stated exclusion is the Kestrune autopilot firmware, which it explains is already licensed to the Company. Nothing here tells a reader that FieldPath exists or that the SPA defines 'Company Software' more broadly. Nor does it show that SPA Section 11.10 lets the Bill of Sale control which assets are conveyed. Section 9 actually suggests the SPA's covenants and representations survive, so a reader would not see any risk that a narrower definition here cuts down what is transferred. A careful associate reading only this document would see a scheduled list of assets that looks internally consistent. The gap, and the harm to Bisart, only appears with the SPA's definition and precedence clause, which are not in this document."
+              },
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "In the event of any conflict or inconsistency between this Agreement and any Ancillary Agreement, this Agreement shall prevail, except that the Bill of Sale shall control as to the identification of the assets conveyed thereunder.",
+                "reason": "The SPA alone shows three things. Section 1.1 defines 'Company Software' broadly and expressly names FieldPath. Section 6.9 requires Seller to convey all Company Software through the Bill of Sale. Section 11.10 carves out the Bill of Sale as controlling the identification of conveyed assets. An associate might flag that carve-out as a structural risk. But the SPA does not show that the Bill of Sale actually defines 'Company Software' more narrowly by reference to an Annex A, or that Annex A leaves out FieldPath. The SPA lists Exhibit A only by title, and its definition of 'Bill of Sale' tracks the broad definition. The actual problem is that FieldPath stays with Seller and Bisart is left with a capped, short-lived representation claim. That depends on the Bill of Sale's contents, which are not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Section 9.3(c): Buyer shall indemnify the Seller Indemnitees against all Losses arising out of \"any Seller Guarantee, including any payment, performance or other obligation of Seller or its Affiliates under any Seller Guarantee, whether arising before or after the Closing.\" Section 9.5(b) caps Buyer only for \"Losses in respect of claims under Section 9.3(a)\" at $4,200,000.",
+            "reason": "Bisart, the client, is the indemnifying party under 9.3(c). The guarantee is Bramand's Guaranty to Fallowgate of Furrowline's Fleet Financing Agreement, with $7,315,400 principal outstanding at January 31, 2026. The only buyer-side cap and basket in Section 9.5(b) is limited to 9.3(a), and nothing else in Article IX limits 9.3(c). The words \"whether arising before or after the Closing\" make Bisart responsible even for defaults and amounts that accrued while Seller owned and controlled Furrowline. Several provisions point the other way but do not cure the exposure. Seller's Section 4.16 rep that there is no default is capped and expires with the escrow. Section 9.2(c) gives Bisart only an overlapping and circular claim against Seller for unpaid Indebtedness. Section 6.8 assumes the guarantee may stay outstanding after Closing. The board consent caps any replacement guarantee at outstanding principal plus interest, fees and enforcement costs, yet the contractual indemnity has no limit at all. The SPA is signed but Closing (set for September 15, 2026, with a December 15, 2026 Outside Date) is not recorded as having happened, and the indemnity runs post-Closing. The point is therefore still actionable: it can be addressed by amendment under Section 11.6, or by a release or payoff at Closing."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C8 asks for fact F3, which only issue I4 uses: a memo that misses I4 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.085,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

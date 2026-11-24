@@ -1,0 +1,188 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 0,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s63-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s63-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "test",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s63-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "dev",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "ledger_writer": {
+      "calls": 3,
+      "input_tokens": 14443,
+      "output_tokens": 44705,
+      "errors": 0
+    },
+    "drafter": {
+      "calls": 26,
+      "input_tokens": 1445851,
+      "output_tokens": 313406,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 3,
+      "input_tokens": 317945,
+      "output_tokens": 12350,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 3,
+      "input_tokens": 4678,
+      "output_tokens": 622,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 17,
+      "input_tokens": 1644801,
+      "output_tokens": 13929,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 22,
+      "input_tokens": 361351,
+      "output_tokens": 10021,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 3,
+      "input_tokens": 3930,
+      "output_tokens": 454,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 3,
+      "input_tokens": 23878,
+      "output_tokens": 6582,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 6,
+      "input_tokens": 626092,
+      "output_tokens": 47839,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 9,
+      "input_tokens": 64917,
+      "output_tokens": 6772,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "precision agriculture drones": 1,
+      "outdoor apparel": 1,
+      "regional airline catering": 1
+    },
+    "agreement_types": {
+      "stock purchase agreement": 1,
+      "master services agreement": 1,
+      "distribution agreement": 1
+    },
+    "issue_types": {
+      "change_of_control_consent": 2,
+      "liability_cap_carveout": 2,
+      "missing_assignment_restriction": 2,
+      "exclusivity_scope": 2,
+      "auto_renewal": 2,
+      "governing_law_mismatch": 2,
+      "expired_notice_window": 2,
+      "survival_gap": 1,
+      "defined_term_inconsistency": 1,
+      "uncapped_indemnity": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

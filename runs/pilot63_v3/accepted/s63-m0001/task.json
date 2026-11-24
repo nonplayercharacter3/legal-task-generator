@@ -1,0 +1,137 @@
+{
+  "task_id": "s63-m0001",
+  "split": "train",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Bisart AgTech Corp., the buyer, in its stock purchase from Bramand Holdings, LLC. Before we go back to the other side, I need to know where the deal documents leave Bisart exposed. Please review all seven documents in the folder and send me a memo listing each issue you find. For each one, note where it appears (document and section), explain why it matters to Bisart, and recommend a fix. Flag anything you think needs my attention right away.",
+  "documents": [
+    "bill_of_sale.md",
+    "bisart_board_consent.md",
+    "escrow_agreement.md",
+    "mutual_nda_2025.md",
+    "side_letter.md",
+    "spa_prior_draft.md",
+    "stock_purchase_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the change-of-control consent under Furrowline's autopilot firmware license with Kestrune Avionics, although disclosed as required, is not included in the SPA's 'Required Consents', so Seller need not obtain it and Bisart must close without it. It locates this in the SPA (Section 1.1 'Required Consents', Schedule 4.6, or Sections 6.4/7.2(d)), explains why this matters to Bisart, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Kestrune",
+        "Required Consents",
+        "change of control"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that the Side Letter's insertion of a new Section 4.12 and renumbering of Article IV, without conforming the section-number definition of Fundamental Representations, takes the Taxes representation out of the Fundamental Representations, so Seller's tax liability becomes subject to the $4,200,000 cap and the general survival period. It locates this in SPA Section 1.1/9.5(a) or Side Letter Paragraph 2, explains why this matters to Bisart, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "renumbered accordingly",
+        "Taxes representation",
+        "Fundamental Representations"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Seller may assign the SPA or its rights without Bisart's consent, including the earn-out information and audit rights (for example to a competitor) and its obligations (for example to an assignee without assets). It locates this in SPA Section 11.4, explains why this matters to Bisart, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 11.4",
+        "without the consent of Buyer",
+        "earn-out"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that, because the Escrow Release Date runs twelve months from the March 2, 2026 Escrow Agreement date rather than from closing, the general representations survive and the escrow lasts only about 5.5 months after the September 15, 2026 closing. It locates this in SPA Section 9.1 or Escrow Agreement Section 1.1, explains why this matters to Bisart, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Escrow Release Date",
+        "March 2, 2027",
+        "about 5.5 months"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the Bill of Sale's narrower 'Company Software' definition (software listed on Annex A) controls what is conveyed, so the FieldPath software is not transferred to Furrowline despite the SPA's broader definition. It locates this in Bill of Sale Section 1/Annex A or SPA Section 1.1/11.10, explains why this matters to Bisart, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "FieldPath",
+        "Annex A",
+        "Company Software"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response identifies that Bisart's indemnity of Seller for Losses under the Seller Guarantees falls outside the buyer-side cap and extends to obligations arising before closing, leaving Bisart with unlimited liability. It locates this in SPA Section 9.3(c) or 9.5(b), explains why this matters to Bisart, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Seller Guarantees",
+        "Section 9.3(c)",
+        "uncapped"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the SPA indemnity cap is $4,200,000.",
+      "kind": "fact",
+      "hints": [
+        "$4,200,000",
+        "cap"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that the scheduled Closing Date is September 15, 2026.",
+      "kind": "fact",
+      "hints": [
+        "September 15, 2026"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is formatted as a memo to the supervising partner that presents the issues as separately identified items, each giving its location, its significance to Bisart and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Recommended fix"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response expressly flags which issue or issues need the partner's immediate attention.",
+      "kind": "format",
+      "hints": [
+        "immediate attention",
+        "priority",
+        "urgent"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that general representations and the escrow survive for twelve months or longer after the Closing Date.",
+      "kind": "negative",
+      "hints": [
+        "twelve months after Closing"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response claims that, after the Side Letter, the Taxes representation remains a Fundamental Representation excluded from the $4,200,000 cap.",
+      "kind": "negative",
+      "hints": [
+        "Taxes remains Fundamental"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

@@ -1,0 +1,268 @@
+{
+  "matter_id": "s63-m0001",
+  "summary": "Bisart AgTech Corp. (client, Buyer) is buying all outstanding shares of Furrowline Robotics, Inc., a maker of precision-agriculture spray and survey drones, from Bramand Holdings, LLC (Seller). The price is a $42,000,000 base plus an earn-out of up to $6,000,000. The Stock Purchase Agreement was signed March 2, 2026 and closing is scheduled for September 15, 2026. The folder holds the SPA, the agreed form Bill of Sale (Seller's pre-closing contribution of software to Furrowline), the Escrow Agreement, a Side Letter amending the SPA, Bisart's board consent, a superseded partial prior draft of the SPA and a 2025 mutual NDA. The memo is pre-closing. Six issues are planted: an unaddressed change-of-control consent under Furrowline's autopilot firmware license; a tax-rep carve-out that falls out of the cap through the Side Letter's renumbering; Seller's free assignment right; a survival period that expires about 5.5 months after closing because it is tied to an escrow date measured from signing; a 'Company Software' definition that the Bill of Sale narrows and that the precedence clause lets control, so FieldPath is never conveyed; and Bisart's uncapped indemnity of Seller's guarantee obligations, including pre-closing defaults.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Bisart AgTech Corp.",
+      "role": "Buyer (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Bramand Holdings, LLC",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Furrowline Robotics, Inc.",
+      "role": "Company (target), precision-agriculture drone manufacturer"
+    },
+    {
+      "id": "P4",
+      "name": "Lindqvist Trust Company, N.A.",
+      "role": "Escrow Agent"
+    },
+    {
+      "id": "P5",
+      "name": "Kestrune Avionics GmbH",
+      "role": "Licensor of Furrowline's autopilot flight-control firmware"
+    },
+    {
+      "id": "P6",
+      "name": "Fallowgate Equipment Finance LLC",
+      "role": "Lender under Furrowline's drone fleet financing guaranteed by Seller"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Base Purchase Price",
+      "value": "$42,000,000",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Scheduled Closing Date",
+      "value": "September 15, 2026",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F4",
+      "key": "Escrow Amount",
+      "value": "$4,200,000",
+      "doc": "D3",
+      "section": "2.1"
+    },
+    {
+      "id": "F5",
+      "key": "SPA Indemnity Cap",
+      "value": "$4,200,000 (10% of Base Purchase Price)",
+      "doc": "D1",
+      "section": "9.5"
+    },
+    {
+      "id": "F6",
+      "key": "Order of precedence",
+      "value": "SPA prevails over Ancillary Agreements, except Bill of Sale controls identification of assets conveyed",
+      "doc": "D1",
+      "section": "11.10"
+    },
+    {
+      "id": "F7",
+      "key": "SPA Governing law",
+      "value": "New York",
+      "doc": "D1",
+      "section": "11.8"
+    },
+    {
+      "id": "F8",
+      "key": "Escrow Agreement Date",
+      "value": "March 2, 2026",
+      "doc": "D3",
+      "section": "Preamble"
+    },
+    {
+      "id": "F9",
+      "key": "Maximum Earn-Out Payment",
+      "value": "$6,000,000",
+      "doc": "D1",
+      "section": "2.5"
+    },
+    {
+      "id": "F10",
+      "key": "Shares purchased",
+      "value": "All issued and outstanding shares of Furrowline Robotics, Inc.",
+      "doc": "D1",
+      "section": "1.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "side_letter.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "bisart_board_consent.md",
+      "kind": "board consent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "spa_prior_draft.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D7",
+      "filename": "mutual_nda_2025.md",
+      "kind": "mutual nondisclosure agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Schedule 4.6 to the SPA discloses that Furrowline's Autopilot License Agreement with Kestrune Avionics GmbH lets the licensor terminate upon any change of control of Licensee absent its prior written consent. That firmware runs every Furrowline drone. The SPA's 'Required Consents' definition (Section 1.1) is used in both Seller's efforts covenant (Section 6.4) and Bisart's closing condition (Section 7.2(d)), and it covers only the consent of the landlord under the Hangar Lease. Read together: (a) Seller has no obligation to seek the Kestrune consent; (b) Bisart cannot refuse to close if the consent is missing; and (c) because the risk is disclosed against the Section 4.6 representation, Bisart has no indemnity claim if Kestrune terminates after closing.",
+      "doc": "D1",
+      "section": "Section 1.1 ('Required Consents'); Schedule 4.6; Sections 6.4 and 7.2(d)",
+      "detect_terms": [
+        "upon any change of control of Licensee",
+        "consent of the landlord under the Hangar Lease"
+      ],
+      "expected_finding": "The Kestrune autopilot license consent is disclosed as required but omitted from the Required Consents, so Seller need not obtain it, Bisart must close without it, and the disclosure bars an indemnity claim; Bisart should add it to the Required Consents and closing condition, or obtain a special indemnity.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 1.1 defines Fundamental Representations by section number only: 'Sections 4.1, 4.2, 4.3 and 4.12'. Section 4.12 is the Taxes representation. Section 9.5(a) excludes Fundamental Representations from the $4,200,000 cap on claims under Section 9.2(a), and Section 9.1 gives them survival to 60 days after the statute of limitations. The SPA has no separate pre-closing tax indemnity, so tax claims run only through Section 9.2(a). The Side Letter (an amendment under SPA Section 11.6) inserts a new Section 4.12 (Remote Pilot and Airspace Compliance) and states that existing Sections 4.12 through 4.18 'are renumbered accordingly'. It does not conform cross-references. Each document is harmless alone, and the Side Letter looks favourable because it adds a representation. Read together, the Fundamental Representations definition now points to the new airspace representation. The Taxes representation (now Section 4.13) becomes subject to the cap and to the short general survival period.",
+      "doc": "D1",
+      "section": "Section 1.1 ('Fundamental Representations'); Section 9.5(a)",
+      "detect_terms": [
+        "Sections 4.1, 4.2, 4.3 and 4.12"
+      ],
+      "expected_finding": "Because the Side Letter renumbers Article IV without conforming the section-number definition of Fundamental Representations, the Taxes representation drops out of the cap carve-out and extended survival, so Seller's tax liability is capped at $4,200,000 and expires with general representations; the definition should be amended to name the Taxes representation expressly.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Paragraph 2 (insertion of new Section 4.12)",
+      "detect_terms2": [
+        "renumbered accordingly",
+        "Remote Pilot and Airspace Compliance"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "SPA Section 11.4 bars Bisart from assigning without Seller's consent. It lets Seller assign the Agreement or any of its rights, in whole or in part, without Bisart's consent, with no exclusion of competitors and no provision keeping Seller liable after assignment. Seller's rights include the earn-out under Section 2.5, which carries information and audit rights over Furrowline's customer, acreage and pricing data. Seller could therefore transfer those rights to a competing drone maker. It could also move its indemnity and restrictive-covenant obligations to an assignee without assets.",
+      "doc": "D1",
+      "section": "Section 11.4",
+      "detect_terms": [
+        "Seller may assign this Agreement or any of its rights hereunder",
+        "without the consent of Buyer"
+      ],
+      "expected_finding": "Seller can assign the SPA freely, including the earn-out information and audit rights to a competitor and its indemnity obligations to an assignee without assets; Section 11.4 should require Bisart's consent, bar assignment to competitors, and keep Seller primarily liable.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1 provides that all non-Fundamental Representations survive only until 11:59 p.m. New York time on the 'Escrow Release Date (as defined in the Escrow Agreement)'. The SPA states no length for that period. Escrow Agreement Section 1.1 defines the Escrow Release Date as twelve months after the date of the Escrow Agreement, which is March 2, 2026 (its preamble). That fixes the date at March 2, 2027. The SPA's Scheduled Closing Date in Section 3.1 is September 15, 2026. Each provision is ordinary alone. Combined, Bisart has about 5.5 months after closing to bring representation claims, and the escrow securing them is released at the same time. That window ends before a full spraying season or Furrowline's first post-closing audit, and it shrinks further if closing slips. New York enforces contractual survival limits.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "Escrow Release Date (as defined in the Escrow Agreement)"
+      ],
+      "expected_finding": "Because the Escrow Release Date runs twelve months from the March 2, 2026 Escrow Agreement date rather than from the September 15, 2026 closing, general representations survive and the escrow lasts only about 5.5 months after closing; survival and release should be tied to a fixed period (e.g., 18 months) after the Closing Date.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Section 1.1 ('Escrow Release Date')",
+      "detect_terms2": [
+        "twelve (12) months after the date of this Escrow Agreement"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines 'Company Software' as all software owned or used in the Business, including the FieldPath flight-planning and variable-rate application software. Section 6.9 requires Seller to convey all Company Software it holds to Furrowline under the Bill of Sale before closing. The agreed form Bill of Sale defines 'Company Software' as only the software listed on Annex A. Annex A lists the telemetry dashboard and ground-station firmware but not FieldPath. SPA Section 11.10 makes the SPA prevail over Ancillary Agreements, except that the Bill of Sale controls the identification of assets conveyed. Each document reads as ordinary drafting. Together, the precedence clause lets the narrower Bill of Sale definition decide what is transferred. FieldPath stays with Seller, and Bisart is left with only a capped, short-lived representation claim rather than title.",
+      "doc": "D2",
+      "section": "Section 1 ('Company Software'); Annex A",
+      "detect_terms": [
+        "software listed on Annex A"
+      ],
+      "expected_finding": "Under the Section 11.10 precedence carve-out, the Bill of Sale's narrower 'Company Software' definition controls what is conveyed, so FieldPath is not transferred to Furrowline despite the SPA definition; FieldPath should be added to Annex A and the Bill of Sale definition conformed to the SPA before closing.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 1.1 ('Company Software'); Section 11.10",
+      "detect_terms2": [
+        "including the FieldPath",
+        "identification of the assets conveyed"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "SPA Section 9.3(c) requires Bisart to indemnify Seller for any Losses under the Seller Guarantees. These are Bramand's guarantees of Furrowline's drone fleet financing with Fallowgate Equipment Finance LLC. The indemnity applies 'whether arising before or after the Closing'. The buyer-side cap in Section 9.5(b) reaches only claims under Section 9.3(a), and no other provision limits Section 9.3(c). Read together, Bisart has unlimited exposure on the guarantees, including defaults and amounts that accrued while Seller owned Furrowline.",
+      "doc": "D1",
+      "section": "Sections 9.3(c) and 9.5(b)",
+      "detect_terms": [
+        "whether arising before or after the Closing",
+        "claims under Section 9.3(a)"
+      ],
+      "expected_finding": "Bisart's indemnity of the Seller Guarantees is outside the buyer-side cap, which covers only Section 9.3(a), and extends to pre-closing obligations, leaving Bisart with unlimited liability; it should be limited to post-closing obligations and made subject to a cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

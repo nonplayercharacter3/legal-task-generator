@@ -1,0 +1,123 @@
+{
+  "task_id": "s63-m0002",
+  "split": "test",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "master services agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "Our client Vaitix Outdoor Co., the customer under its master services agreement with Drenind Fulfillment Services, LLC, needs a review of its position under that arrangement. Please go through all nine documents in the folder and prepare a memo to me. For each issue, state where it appears (document and section), why it matters for Vaitix, and a recommended fix. Keep it practical so we can advise the client on next steps.",
+  "documents": [
+    "drenind_logistics_group_parent_guaranty.md",
+    "msa_amendment_no_1_peak_overflow.md",
+    "order_form_001_fulfillment_services.md",
+    "vaitix_drenind_fulfillment_term_sheet.md",
+    "vaitix_drenind_master_services_agreement.md",
+    "vaitix_drenind_mutual_nda.md",
+    "vaitix_drenind_quality_agreement.md",
+    "vaitix_letter_to_drenind_2026-08-14.md",
+    "vaitix_portland_studio_office_lease.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the MSA's exclusivity covers all warehousing, fulfillment, distribution and returns processing across all channels in North America and the European Union, far broader than the term sheet's agreed scope of US direct-to-consumer e-commerce fulfillment. It locates this in MSA Section 4.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "North America and the European Union",
+        "direct-to-consumer",
+        "term sheet"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response finds that because each automatic Renewal Term equals the Order Form's 48-month Service Commitment Period, a missed 90-day non-renewal notice renews the MSA for another four years. It locates this in MSA Section 12.2 or Order Form Section 3, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "48 months",
+        "automatically renew",
+        "90 days"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response finds that the parent guaranty's New York governing law and exclusive New York forum conflict with the MSA's Delaware governing law and exclusive Delaware forum, and that nothing in the documents reconciles them. It locates this in Parent Guaranty Section 9 or MSA Section 18.1/18.2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "New York",
+        "Delaware",
+        "guaranty"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response finds that Amendment No. 1's redefinition of 'Affiliate' to include any Network Partner lets Drenind assign the MSA without Vaitix's consent to unrelated third-party logistics providers. It locates this in Amendment No. 1 Section 2.1 or MSA Section 16.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Network Partner",
+        "Affiliate",
+        "assign without consent"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response finds that the pending sale of Vaitix Holdings, LLC to Ridgeholt Capital Partners is a Change of Control requiring Drenind's prior written consent, and that the August 14, 2026 letter does not request that consent. It locates this in MSA Section 16.2 or the August 14, 2026 letter, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control",
+        "Ridgeholt",
+        "prior written consent"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response finds that the 30-day objection window ran from receipt of the Rate Adjustment Notice on June 29, 2026 and closed on or about July 29, 2026. It concludes that the August 14, 2026 objection is untimely and that Drenind may treat the 11.5% increase as deemed accepted. It locates this in MSA Section 5.4 or the August 14, 2026 letter, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "July 29, 2026",
+        "untimely",
+        "deemed accepted"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that under the MSA's order of precedence, Amendment No. 1 prevails over the MSA.",
+      "kind": "fact",
+      "hints": [
+        "Amendment No. 1 prevails",
+        "order of precedence"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo addressed to the supervising partner, presenting issues as separate entries.",
+      "kind": "format",
+      "hints": [
+        "To:",
+        "Memorandum",
+        "Issue"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Vaitix's August 14, 2026 objection to the rate increase was timely under MSA Section 5.4.",
+      "kind": "negative",
+      "hints": [
+        "timely objection",
+        "within the 30-day period"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Vaitix's August 14, 2026 letter requested or obtained Drenind's consent to the change of control.",
+      "kind": "negative",
+      "hints": [
+        "consent requested",
+        "consent obtained"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

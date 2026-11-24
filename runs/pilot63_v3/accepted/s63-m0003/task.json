@@ -1,0 +1,114 @@
+{
+  "task_id": "s63-m0003",
+  "split": "dev",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Stareisk Provisions, LLC, which distributes packaged onboard food to regional airlines and provides warehousing and galley-loading services. Please review all ten documents in the folder relating to its distribution agreement with Fevound Galley Foods, Inc. and prepare a memo to me. For each issue, identify the document and section where it appears, explain why it matters for Stareisk, and recommend a fix. Please keep it concise and practical.",
+  "documents": [
+    "amendment_no_1_distribution_agreement.md",
+    "fevound_side_letter_marketing_allowance.md",
+    "order_form_001_skycrate_initial_order.md",
+    "sow_warehousing_and_galley_loading.md",
+    "stareisk_fevound_distribution_agreement.md",
+    "stareisk_fevound_mutual_confidentiality_agreement.md",
+    "stareisk_fevound_quality_agreement.md",
+    "stareisk_fevound_term_sheet.md",
+    "stareisk_letter_to_fevound_june_2026.md",
+    "stareisk_philadelphia_office_lease.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the Quality Agreement's New York governing-law and New York County forum clause controls product nonconformity, contamination and food-safety claims. As a result, Stareisk's quality claims would proceed under New York law and in New York courts while the rest of the relationship stays under Delaware law and forum. The response identifies the location (Quality Agreement Section 14.1), explains why this matters to Stareisk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Quality Agreement Section 14.1",
+        "New York law",
+        "split law and forum"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that because Amendment No. 1 renumbered Fevound's food-safety indemnity to Section 11.2 without updating the cross-reference, the liability cap carve-out no longer covers that indemnity. Fevound's contamination and foodborne-illness indemnity is therefore subject to the 12-months'-fees cap. The response identifies the location (Distribution Agreement Section 12.3 or Amendment No. 1 Section 2), explains why this matters to Stareisk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "renumbered as Section 11.2",
+        "Section 12.3 carve-out",
+        "indemnity now capped"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that Stareisk's June 26, 2026 objection to the price increase was sent after the 20-day rejection window, which closed on June 21, 2026. The increase is therefore at risk of being deemed accepted. The response identifies the location (Distribution Agreement Section 7.3 or the June 2026 Stareisk letter), explains why this matters to Stareisk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "June 21, 2026",
+        "deemed accepted",
+        "Section 7.3"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that the non-compete takes its product scope from the SOW, which describes all onboard food and beverage provisions. The non-compete therefore bars far more than the competing shelf-stable snack boxes and sealed meal kits agreed in the term sheet. The response identifies the location (Distribution Agreement Section 1 and/or 4.3, or SOW Section 2), explains why this matters to Stareisk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Product Category",
+        "all onboard food and beverage provisions",
+        "Competing Products"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that the Distribution Agreement auto-renews for successive five-year terms unless non-renewal notice is given at least 30 days before term end. This departs from the term sheet's one-year renewals with 120 days' notice. The response identifies the location (Distribution Agreement Section 3.1 and/or 3.2), explains why this matters to Stareisk, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 3.2",
+        "five-year renewal",
+        "120 days"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Distribution Agreement's Initial Term is five years.",
+      "kind": "fact",
+      "hints": [
+        "five (5) years",
+        "Initial Term"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is a memo addressed to the supervising partner that, for each issue it raises, identifies the document and section, explains why it matters for Stareisk, and gives a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that Stareisk's June 26, 2026 objection letter was a timely rejection of the price increase under Section 7.3.",
+      "kind": "negative",
+      "hints": [
+        "timely objection",
+        "within the window"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Amendment No. 1 updated the Section 12.3 cap carve-out so that it continues to cover Fevound's food-safety indemnity.",
+      "kind": "negative",
+      "hints": [
+        "carve-out updated",
+        "indemnity remains uncapped"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

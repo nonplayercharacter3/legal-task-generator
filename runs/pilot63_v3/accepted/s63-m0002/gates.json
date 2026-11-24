@@ -1,0 +1,194 @@
+{
+  "matter_id": "s63-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "During the Term, Customer shall use Provider exclusively for all warehousing, fulfillment, distribution and returns processing of Customer Products in North America and the European Union, through all sales channels, including wholesale and retail replenishment, direct-to-consumer e-commerce and marketplace channels.",
+            "reason": "The term sheet (Sections 4.1–4.2) records that exclusivity covers only direct-to-consumer e-commerce fulfillment in the continental United States. It expressly carves out wholesale, retail replenishment, Alaska, Hawaii, U.S. territories and non-U.S. destinations, Vaitix's existing Canada and EU logistics, and marketplace-operator fulfillment. MSA 4.1 sweeps all of these in. The term sheet is non-binding, and MSA 19.3 supersedes prior understandings, so the broader clause controls. Neither Amendment No. 1 nor the Order Form narrows it. Order Form 2.1(c) limits the Services to DTC but does not limit the exclusivity covenant. Vaitix, the Customer, bears the restriction, so its existing EU, Canada and wholesale arrangements breach 4.1. That exposes Vaitix to termination for material breach and the Early Termination Fee under 12.4. The covenant runs for the Term, so this is still actionable, for example through an amendment to narrow the scope."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "MSA §12.2: \"Upon expiry of the Initial Term, this Agreement shall automatically renew for successive Renewal Terms, each Renewal Term being equal in length to the Service Commitment Period set out in the then-current Order Form (each, a \"Renewal Term\"), unless either party gives the other written notice of non-renewal at least ninety (90) days before expiry of the then-current term. Each Order Form in effect at the start of a Renewal Term continues in effect for that Renewal Term on its then-current terms, subject to Section 5.4.\" Order Form §3.1: \"Service Commitment Period: forty-eight (48) months from the Go-Live Date.\"",
+            "reason": "The problem is present. Read together, the two clauses make each automatic renewal last 48 months. The Initial Term runs to the end of the 48-month commitment from Go-Live (target May 12, 2025, so about May 2029). If Vaitix misses the 90-day non-renewal window, it is bound for a further four years. During that renewal, the Order Form continues on its existing terms: the $95,000 Minimum Monthly Fee (§5.3 applies 'during the Term') and the §4.1 exclusivity both carry over. That exclusivity covers North America and the EU across all channels, far wider than the term sheet's agreed scope of continental-US direct-to-consumer only. Provider can also raise rates under §5.4. Nothing in the folder caps the renewal length, shortens the notice period or adds a convenience exit. The term sheet left renewal mechanics open, so this was not a negotiated concession. The issue is still actionable. The latest date in the folder is August 14, 2026, and the first non-renewal deadline falls around early 2029. Vaitix can renegotiate now, for example by seeking shorter or annual renewals, and Drenind's pending rate-adjustment negotiation and the Ridgeholt change-of-control consent give Vaitix leverage to do so. In any case, it must docket the deadline.",
+            "alone": {
+              "vaitix_drenind_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "Upon expiry of the Initial Term, this Agreement shall automatically renew for successive Renewal Terms, each Renewal Term being equal in length to the Service Commitment Period set out in the then-current Order Form (each, a \"Renewal Term\"), unless either party gives the other written notice of non-renewal at least ninety (90) days before expiry of the then-current term.",
+                "reason": "The MSA alone shows an evergreen clause with a 90-day non-renewal notice. It ties both the Initial Term and each Renewal Term to the 'Service Commitment Period', which the MSA defines only by reference to the Order Form. It also shows that exclusivity (s.4.1) applies during the whole Term and that minimum fees (s.5.6) come from the Order Form. What the MSA does not show is how long the Service Commitment Period is. Without the Order Form's 48-month figure, nothing tells the reader that one missed notice locks Vaitix into another four years. The renewal could just as well be one year, which would be an ordinary evergreen. An associate could note that the renewal length is left open and depends on the Order Form. But the actual harm, a long and costly multi-year lock-in, only appears once the Order Form's 48-month period is known."
+              },
+              "order_form_001_fulfillment_services.md": {
+                "findable": false,
+                "evidence": "\"Service Commitment Period: forty-eight (48) months from the Go-Live Date.\" and \"It continues in effect for the Term of the Agreement unless terminated earlier in accordance with the Agreement.\"",
+                "reason": "The Order Form shows a 48-month Service Commitment Period. It also shows that the Order Form runs for the Term of the Agreement and that the Minimum Monthly Fee applies for each month during the Term. Read alone, this is a fixed four-year commitment with a minimum fee. The Order Form does not say that the Agreement renews automatically, that renewal terms equal the Service Commitment Period, or that there is a 90-day non-renewal notice window. Those terms are in MSA Section 12.2, which was not provided. Without them, an associate could not see that one missed notice locks Vaitix into another four years, so the lock-in problem cannot be found from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Guaranty Section 9.1: \"This Guaranty and any dispute, claim or controversy arising out of or relating to this Guaranty... shall be governed by and construed in accordance with the laws of the State of New York\". Section 9.2: \"Each of Guarantor and Beneficiary irrevocably submits to the exclusive jurisdiction of the state or federal courts located in New York County, New York\". MSA Section 18.1: \"This Agreement, each Order Form and any dispute... shall be governed by the laws of the State of Delaware\". MSA Section 18.2: \"Each party irrevocably submits to the exclusive jurisdiction of the state or federal courts located in New Castle County, Delaware\".",
+            "reason": "The two clauses conflict and nothing reconciles them. Under the MSA, Vaitix must sue Drenind Fulfillment exclusively in Delaware under Delaware law. Under the Guaranty, which Vaitix countersigned specifically to agree to Section 9, Vaitix must sue the parent exclusively in New York under New York law. The MSA's order-of-precedence clause (Section 2.3) lists only Amendment No. 1, the MSA, the Quality Agreement and the Order Form. It does not reach the Guaranty. The Guaranty has no consent to Delaware jurisdiction and no joinder provision. It also makes the guarantor's liability track the Provider's: Section 2.6 imports the MSA Section 15 limitations, and Section 4.3 preserves the Provider's contractual defenses. So the underlying liability would have to be litigated twice, under two governing laws, with a risk of inconsistent findings. This cuts against Vaitix as the party enforcing both instruments. It is still actionable: the Guaranty remains in effect, no dispute or proceeding has yet been started, and Vaitix can seek an amendment (for example, a consent by the guarantor to Delaware jurisdiction) while it is reviewing its rights in connection with the rate dispute.",
+            "alone": {
+              "drenind_logistics_group_parent_guaranty.md": {
+                "findable": false,
+                "evidence": "9.1 Governing Law. This Guaranty and any dispute, claim or controversy arising out of or relating to this Guaranty ... shall be governed by and construed in accordance with the laws of the State of New York ... 9.2 Exclusive Jurisdiction. Each of Guarantor and Beneficiary irrevocably submits to the exclusive jurisdiction of the state or federal courts located in New York County, New York ...",
+                "reason": "The guaranty alone shows that New York law and exclusive New York County jurisdiction apply to claims under the guaranty. Taken by itself, that is an ordinary choice. The guaranty does not say what law or forum the MSA picks. The conflict only appears once you know that MSA Sections 18.1–18.2 choose Delaware law and New Castle County courts, and that the MSA precedence clause (Section 2.3) does not reach the guaranty. Those facts are in the MSA, not here. Several guaranty terms, such as limitations tied to Section 15 of the Agreement and defenses available to Provider, suggest the underlying liability might be litigated elsewhere. Still, nothing in this document shows a different forum or law, so the split-forum harm to Vaitix cannot be seen from the guaranty alone."
+              },
+              "vaitix_drenind_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "This Agreement, each Order Form and any dispute, claim or controversy arising out of or relating to this Agreement or any Order Form, whether in contract, tort or otherwise, shall be governed by the laws of the State of Delaware ... Each party irrevocably submits to the exclusive jurisdiction of the state or federal courts located in New Castle County, Delaware",
+                "reason": "The MSA alone shows three things: Delaware law and an exclusive New Castle County forum (Sections 18.1–18.2), a required Parent Guaranty from Drenind Logistics Group 'in form acceptable to Customer' (Section 15.6), and a precedence clause (Section 2.3) that does not list the guaranty. A careful reader could note that the guaranty is not covered by the precedence clause and that the MSA cannot bind the guarantor to its forum. However, the MSA does not show that the guaranty actually chooses New York law and an exclusive New York County forum. That conflict is what forces separate, duplicative proceedings and harms Vaitix, and it is visible only in the guaranty itself. Without that document, any mismatch is speculation."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Amendment No. 1 Section 2.1 amends and restates the definition of Affiliate \"in its entirety, for all purposes of the Agreement\" to include \"(b) in the case of Provider, any Network Partner. \"Network Partner\" means any third-party logistics provider with which Provider has a written capacity-sharing or overflow agreement.\" MSA Section 16.1 provides: \"except that either party may assign this Agreement to an Affiliate without the consent of the other party upon written notice to the other party.\"",
+            "reason": "The problem is present and still actionable for Vaitix. MSA Section 2.3 gives Amendment No. 1 top precedence, so the expanded definition controls Section 16.1. Read together, Drenind (the Provider) can assign the whole MSA, on notice only, to any unrelated 3PL it signs an overflow agreement with. That 3PL need not be approved under Amendment Section 4.2, and it could be owned by or serve a Vaitix competitor. The assignee would then hold Vaitix's inventory, Customer Data and the benefit of Vaitix's broad exclusivity commitment in MSA Section 4.1. Nothing in the folder cures this. Amendment Section 4.3 only addresses subcontracting at approved Overflow Facilities. Parent Guaranty Section 3.4 extends the guaranty to an assignee's obligations but does not restrict the assignment. The definition is not limited to the overflow context. The burden falls only on Vaitix, because only Provider gains Network Partners as Affiliates. No assignment has occurred, and Vaitix has not accepted any. The term remains in force and can be raised or renegotiated.",
+            "alone": {
+              "msa_amendment_no_1_peak_overflow.md": {
+                "findable": false,
+                "evidence": "\"Affiliate\" means, with respect to a party: (a) any entity that directly or indirectly controls, is controlled by, or is under common control with that party ... and (b) in the case of Provider, any Network Partner. \"Network Partner\" means any third-party logistics provider with which Provider has a written capacity-sharing or overflow agreement.",
+                "reason": "On its own, the amendment shows that Section 2.1 restates 'Affiliate' 'for all purposes of the Agreement' so that it covers any unrelated 3PL with which Drenind has an overflow agreement. An associate would see that this definition is unusually broad and lopsided. But nothing in the amendment says what rights the MSA ties to Affiliate status. In particular, it does not show that MSA Section 16.1 lets either party assign the whole Agreement to an Affiliate without consent. It also does not show that MSA Section 2.3 makes the amendment prevail. The amendment itself does not use 'Affiliate' anywhere in its operative overflow provisions. Its subcontracting provision (4.3) requires Customer approval of each Overflow Facility, and Schedule B lists only Drenind-operated sites. So the amendment alone reads as a contained overflow arrangement. The actual harm is Drenind's ability to assign the entire MSA, including inventory, customer data and exclusivity, to a 3PL tied to a competitor without Vaitix's consent. That harm only appears once you read the MSA's assignment clause, which is not in this document."
+              },
+              "vaitix_drenind_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "16.1 ... except that either party may assign this Agreement to an Affiliate without the consent of the other party upon written notice to the other party.",
+                "reason": "From the MSA alone, an associate sees a mutual Affiliate-assignment carve-out. 'Affiliate' carries its ordinary common-control (more than 50%) meaning in Section 1.1, so on this document the carve-out is standard and harmless. The MSA also defines 'Amendment No. 1' as relating to peak-season overflow and ranks it first in the Section 2.3 order of precedence, which is worth noting, but nothing here shows what the amendment says. The harmful step comes only from Amendment No. 1 Section 2.1. It redefines 'Affiliate' to include any 'Network Partner' 3PL with an overflow agreement, which would let Drenind assign the MSA without consent to unrelated third parties, possibly a competitor's 3PL. That redefinition is not in this document, so the problem cannot be found from the MSA by itself."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "MSA §16.2: \"Any Change of Control of a party is deemed an assignment of this Agreement by that party and requires the prior written consent of the other party. 'Change of Control' means... (a) the acquisition by any person or group of persons acting together, directly or indirectly, of beneficial ownership of more than fifty percent (50%) of the voting equity of that party or of any entity that directly or indirectly controls such party... Any Change of Control effected without the other party's prior written consent is a material breach of this Agreement that entitles the other party to terminate this Agreement under Section 12.4, without any cure period, and, where the party undergoing the Change of Control is Customer, to recover the Early Termination Fee.\" Letter ¶3.1: \"As a courtesy... On July 30, 2026, Vaitix Holdings, LLC, the sole member of Vaitix, signed a definitive agreement to sell 100% of its equity interests to Ridgeholt Capital Partners, L.P.... currently expected to occur in the fourth quarter of 2026.\"",
+            "reason": "Vaitix Holdings, LLC is Vaitix's sole member and so controls it. Ridgeholt acquiring 100% of Holdings' equity is an indirect acquisition of more than 50% of 'an entity that directly or indirectly controls' Vaitix. That falls within §16.2(a), and the sale needs Drenind's prior written consent. The August 14 letter only describes the transaction as a courtesy. It does not ask for consent, and nothing in the folder shows consent was given. Paragraph 3.2, which says Vaitix stays the contracting party, does not help, because the clause catches indirect changes of control. Nothing in the documents cures this. Amendment No. 1 does not change §16.2, and the general reservation of rights in ¶8.1 does not excuse the breach. If the sale closes without consent, it is a material breach with no cure period. Drenind could then terminate under §12.4 and recover the Early Termination Fee: 50% of the $95,000 Minimum Monthly Fee for up to 12 months, plus the unamortized share of the $125,000 implementation costs. Drenind could also use this as leverage in the rate-adjustment dispute that is running at the same time. This harms Vaitix, the firm's client, and it is still actionable. The latest date in the folder is August 14, 2026, and closing is expected in Q4 2026, so Vaitix can still seek Drenind's prior written consent before closing.",
+            "alone": {
+              "vaitix_drenind_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "Any Change of Control of a party is deemed an assignment of this Agreement by that party and requires the prior written consent of the other party. ... Any Change of Control effected without the other party's prior written consent is a material breach of this Agreement that entitles the other party to terminate this Agreement under Section 12.4, without any cure period, and, where the party undergoing the Change of Control is Customer, to recover the Early Termination Fee.",
+                "reason": "The MSA alone shows a mutual change-of-control clause that reaches upstream parent transactions and treats closing without consent as a material breach. That breach allows termination with no cure period and recovery of the Early Termination Fee from Customer. An associate could flag this as a risk provision. The document does not show any actual or pending change of control of Vaitix. It does not identify Vaitix Holdings, LLC as a parent, and it does not mention the Ridgeholt sale or show that consent was never requested. Those facts come only from the August 14, 2026 letter. Without that letter, the clause is a contingent, mutual term and not a live problem hurting the client."
+              },
+              "vaitix_letter_to_drenind_2026-08-14.md": {
+                "findable": false,
+                "evidence": "On July 30, 2026, Vaitix Holdings, LLC, the sole member of Vaitix, signed a definitive agreement to sell 100% of its equity interests to Ridgeholt Capital Partners, L.P. (\"Ridgeholt\"). ... Vaitix will remain the contracting party under the Agreement, the Order Form, the Quality Agreement and Amendment No. 1.",
+                "reason": "The letter shows that Vaitix's parent has agreed to a sale, that closing is expected in Q4 2026, and that Vaitix disclosed this only as a courtesy without asking for consent. It does not show that the MSA treats an indirect change of control as an assignment needing Drenind's prior written consent. It also does not show that closing without consent would be a material breach giving Drenind a right to terminate under Section 12.4 and collect the Early Termination Fee. The letter itself frames the sale as having no contractual effect, since Vaitix stays the contracting party. An associate might suspect a change-of-control clause exists, but the consent requirement and the resulting harm to Vaitix come only from MSA Section 16.2, which is not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "MSA §5.4: \"Customer may object to a Rate Adjustment Notice by written notice to Provider given within thirty (30) days after receipt of the Rate Adjustment Notice... If Customer does not give a timely objection, the adjusted Fees set out in the Rate Adjustment Notice will be deemed accepted by Customer and will apply from the effective date stated in the Rate Adjustment Notice.\" The letter dated August 14, 2026, ¶1.1, refers to the Rate Adjustment Notice \"which Vaitix received on June 29, 2026,\" and ¶2.1 states: \"This letter is Vaitix's written objection to the Rate Adjustment Notice under Section 5.4 of the Agreement.\"",
+            "reason": "Under §5.4, Vaitix, as Customer, bears the 30-day objection deadline. The letter puts receipt of the notice at June 29, 2026, so the window closed on July 29, 2026. The objection dated August 14, 2026 is therefore 16 days late. The notice otherwise appears to comply with §5.4: it was given after the first anniversary of the May 2025 Go-Live, its effective date of September 1 is more than 60 days after delivery, and it states a basis. Drenind can therefore treat the 11.5% increase as deemed accepted. That costs Vaitix the rate freeze under §5.4(a) and the no-fee termination right under §5.4(c), with exposure of roughly $205,000 a year. Nothing in the folder cures the lateness. There is no written waiver, which §19.5 would require, and no later agreement. Vaitix has not accepted the increase: it disputes it and reserves its rights, and the effective date had not yet arrived as of the letter. The issue therefore remains live and actionable. Vaitix's remaining options are to argue the notice was defective because the stated basis was thin, to argue waiver or estoppel if Drenind negotiates, to rely on the good-faith dispute mechanism in §6.3, or to negotiate a commercial resolution.",
+            "alone": {
+              "vaitix_drenind_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "Customer may object to a Rate Adjustment Notice by written notice to Provider given within thirty (30) days after receipt of the Rate Adjustment Notice. ... If Customer does not give a timely objection, the adjusted Fees set out in the Rate Adjustment Notice will be deemed accepted by Customer and will apply from the effective date stated in the Rate Adjustment Notice.",
+                "reason": "The MSA alone sets out the Section 5.4 mechanism: a 30-day objection window after receipt, a rate freeze and a no-fee termination right if Vaitix objects in time, and deemed acceptance if it does not. Read alone, this is a balanced provision with nothing wrong on its face. The problem depends on facts found only in Vaitix's August 14, 2026 letter, which this document does not contain: that the Rate Adjustment Notice was received on June 29, 2026, that it announced an 11.5% increase effective September 1, 2026, and that Vaitix objected only on August 14, 2026, about 16 days after the window closed on July 29. Without those dates, an associate reading only the MSA could not see that the objection was late or that Vaitix has lost the rate freeze and the termination right."
+              },
+              "vaitix_letter_to_drenind_2026-08-14.md": {
+                "findable": false,
+                "evidence": "\"...which Vaitix received on June 29, 2026 (the \"Rate Adjustment Notice\").\" and \"This letter is Vaitix's written objection to the Rate Adjustment Notice under Section 5.4 of the Agreement.\" (letter dated August 14, 2026)",
+                "reason": "The letter gives the two dates needed for the timing calculation: receipt of the notice on June 29, 2026 and the objection dated August 14, 2026. It also identifies Section 5.4 as the governing provision. It does not state that Section 5.4 requires an objection within 30 days after receipt. It also does not say that a late objection means the adjusted rates are deemed accepted, or that a timely objection freezes rates and allows no-fee termination. Nothing in the letter suggests a deadline has passed; it reads as a proper, timely objection. The 30-day window and the deemed-acceptance consequence, which are what make the 46-day gap harmful to Vaitix, come only from the MSA text. A careful associate reading this letter alone could not tell that the objection was late."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C7 asks for the whole ranking in fact F4 ('Amendment No. 1, then MSA, then Quality Agreement, then Order Form'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C6"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.092,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

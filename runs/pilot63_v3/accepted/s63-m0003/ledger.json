@@ -1,0 +1,258 @@
+{
+  "matter_id": "s63-m0003",
+  "summary": "Stareisk Provisions, LLC (client) is a cold-chain distributor serving regional airlines in the Mid-Atlantic. It entered an exclusive distribution agreement with Fevound Galley Foods, Inc., which makes shelf-stable in-flight snack boxes and sealed meal kits sold under the 'SkyCrate' line. The folder contains ten documents: the Distribution Agreement, the January term sheet, a marketing side letter, a Quality Agreement, an Order Form, a Statement of Work for warehousing and galley-loading services, Stareisk's objection letter on a price increase, Amendment No. 1, and two distractors (an office lease and a pre-deal mutual confidentiality agreement). Five issues are planted. (1) The Quality Agreement imposes New York law and forum on quality claims, and the precedence clause lets it control. (2) Amendment No. 1 renumbers the food-safety indemnity, so it falls out of the liability cap carve-out. (3) Stareisk's price objection was sent after the 20-day rejection window. (4) The non-compete pulls its product scope from the SOW's description of all onboard food and beverage. (5) The term provisions auto-renew in five-year blocks on 30 days' notice, contrary to the term sheet.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Stareisk Provisions, LLC",
+      "role": "Distributor (client); distributes packaged onboard food products to regional airlines and provides warehousing and galley-loading services"
+    },
+    {
+      "id": "P2",
+      "name": "Fevound Galley Foods, Inc.",
+      "role": "Supplier; manufacturer of SkyCrate shelf-stable snack boxes and sealed meal kits for in-flight service"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Initial Term",
+      "value": "five (5) years from the Effective Date",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 18.1"
+    },
+    {
+      "id": "F4",
+      "key": "Distribution Agreement exclusive forum",
+      "value": "state or federal courts located in New Castle County, Delaware",
+      "doc": "D1",
+      "section": "Section 18.2"
+    },
+    {
+      "id": "F5",
+      "key": "Order of precedence",
+      "value": "Amendments; Quality Agreement for food-safety and quality matters; Distribution Agreement; SOW; Order Forms",
+      "doc": "D1",
+      "section": "Section 2.3"
+    },
+    {
+      "id": "F6",
+      "key": "Distribution Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F7",
+      "key": "Price adjustment rejection window",
+      "value": "20 days after the date of the Price Adjustment Notice",
+      "doc": "D1",
+      "section": "Section 7.3"
+    },
+    {
+      "id": "F8",
+      "key": "Term Sheet renewal term length",
+      "value": "one (1) year per renewal",
+      "doc": "D2",
+      "section": "Term and Renewal"
+    },
+    {
+      "id": "F9",
+      "key": "Term Sheet distributor non-compete scope",
+      "value": "competing shelf-stable snack boxes and sealed meal kits only",
+      "doc": "D2",
+      "section": "Exclusivity"
+    },
+    {
+      "id": "F10",
+      "key": "Fevound Price Adjustment Notice date",
+      "value": "June 1, 2026",
+      "doc": "D7",
+      "section": "First paragraph"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stareisk_fevound_distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "stareisk_fevound_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "fevound_side_letter_marketing_allowance.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "stareisk_fevound_quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "order_form_001_skycrate_initial_order.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D6",
+      "filename": "sow_warehousing_and_galley_loading.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "stareisk_letter_to_fevound_june_2026.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "amendment_no_1_distribution_agreement.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "stareisk_philadelphia_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D10",
+      "filename": "stareisk_fevound_mutual_confidentiality_agreement.md",
+      "kind": "mutual confidentiality agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Quality Agreement Section 14.1 states: 'Notwithstanding Section 18 of the Distribution Agreement, this Quality Agreement and any claim arising out of Product nonconformity, contamination or food safety shall be governed by the laws of the State of New York, with exclusive jurisdiction in the state and federal courts located in New York County.' Distribution Agreement Sections 18.1 and 18.2 choose Delaware law and New Castle County courts. The main agreement's order of precedence (Section 2.3) normally fixes conflicts in ancillary documents. Here it does the opposite: it puts the Quality Agreement above the Distribution Agreement for food-safety and quality matters, so the New York clause controls. The result is split law and forum for the claims most likely to matter to Stareisk, namely contaminated or nonconforming product passed on to airline customers. Indemnity, cap and termination disputes over the same incident would proceed under Delaware law in Delaware, while the quality claims proceed under New York law in New York. That creates a risk of parallel litigation and inconsistent results.",
+      "doc": "D4",
+      "section": "Section 14.1",
+      "detect_terms": [
+        "laws of the State of New York",
+        "New York County"
+      ],
+      "expected_finding": "Quality Agreement Section 14.1 overrides Distribution Agreement Section 18 for all product nonconformity and food-safety claims, and Section 2.3 lets the Quality Agreement control those matters. Stareisk's key quality claims would therefore fall under New York law and forum while the rest of the relationship stays under Delaware law and forum. Stareisk should delete Section 14.1 or conform it to Delaware law and New Castle County courts.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Distribution Agreement Section 12.2 caps each party's aggregate liability at fees paid or payable in the 12 months preceding the claim. Section 12.3 excludes from the cap 'Supplier's indemnification obligations under Section 11.1.' In the original agreement, Section 11.1 is Fevound's indemnity for third-party claims arising from foodborne illness, contamination or Product defects. Amendment No. 1 (dated May 4, 2026), Section 2, inserts a new Section 11.1 requiring Fevound to carry product liability insurance and states that the former Section 11.1 'is renumbered as Section 11.2.' Read alone, the amendment looks favourable to Stareisk because it adds an insurance obligation. However, it does not update the cross-reference in Section 12.3, and the amendment's 'except as expressly amended' clause leaves Section 12.3 unchanged. Read together, the carve-out now points to the insurance covenant, which contains no indemnification obligation. Fevound's food-safety indemnity in new Section 11.2 therefore falls inside the 12-month-fees cap. That exposes Stareisk to uncompensated airline and passenger claims well above the cap.",
+      "doc": "D1",
+      "section": "Section 12.3",
+      "detect_terms": [
+        "indemnification obligations under Section 11.1"
+      ],
+      "expected_finding": "Amendment No. 1 renumbered Fevound's food-safety indemnity to Section 11.2 without updating Distribution Agreement Section 12.3. The cap carve-out now points to the insurance covenant, so Fevound's indemnity for contamination and foodborne-illness claims is capped at 12 months' fees. Stareisk should amend Section 12.3 to cite Section 11.2, or to describe the indemnity by subject matter.",
+      "contradicts": null,
+      "doc2": "D8",
+      "section2": "Section 2",
+      "detect_terms2": [
+        "renumbered as Section 11.2",
+        "product liability insurance"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Distribution Agreement Section 7.3 lets Fevound raise prices once per Contract Year by a Price Adjustment Notice. Stareisk may reject the increase by written notice 'within twenty (20) days after the date of the Price Adjustment Notice,' and an increase not rejected in time is deemed accepted. Section 1 defines 'days' as calendar days. Stareisk's notice letter, dated June 26, 2026, objects to the 9.5% increase in 'your Price Adjustment Notice dated June 1, 2026.' On its own the letter reads as an ordinary objection. Measured against Section 7.3, however, the rejection window closed on June 21, 2026, so the letter was five days late and Fevound can treat the increase as deemed accepted. The letter shows Stareisk disputes the increase. No later order form, amendment or payment in the folder accepts the new prices, so the point can still be acted on.",
+      "doc": "D1",
+      "section": "Section 7.3",
+      "detect_terms": [
+        "within twenty (20) days after the date of the Price Adjustment Notice",
+        "deemed accepted"
+      ],
+      "expected_finding": "Fevound's Price Adjustment Notice was dated June 1, 2026, so Stareisk's 20-day rejection window under Section 7.3 closed on June 21, 2026. Stareisk's June 26, 2026 objection letter was late, and the 9.5% increase is at risk of being deemed accepted. Stareisk should promptly seek Fevound's written agreement to treat the objection as timely, or negotiate the increase, before paying any invoice at the new prices.",
+      "contradicts": null,
+      "doc2": "D7",
+      "section2": "First paragraph",
+      "detect_terms2": [
+        "Price Adjustment Notice dated June 1, 2026",
+        "June 26, 2026"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Distribution Agreement Section 4.3 bars Stareisk from distributing any 'Competing Products' in the Territory during the Term. Section 1 defines 'Competing Products' as products within the 'Product Category,' and defines 'Product Category' as 'the category of products described in the then-current Statement of Work.' Read alone, that definition is neutral. The Statement of Work for warehousing and galley loading, Section 2, describes the goods Stareisk will handle as 'all onboard food and beverage provisions, including fresh and frozen meals, snacks, beverages and bar items.' That is an ordinary scope-of-services description, harmless on its own. Read together, the non-compete covers Stareisk's entire airline catering distribution business rather than just products competing with SkyCrate. The term sheet limited the non-compete to competing shelf-stable snack boxes and sealed meal kits.",
+      "doc": "D1",
+      "section": "Sections 1 and 4.3",
+      "detect_terms": [
+        "described in the then-current Statement of Work",
+        "any Competing Products"
+      ],
+      "expected_finding": "Distribution Agreement Section 4.3 ties its non-compete to a Product Category defined by the SOW. The SOW describes that category as all onboard food and beverage provisions, so Stareisk is barred from its whole airline catering distribution business, far beyond the agreed limit of competing shelf-stable snack boxes and sealed meal kits. Stareisk should define Competing Products directly in the Distribution Agreement and confine it to those products.",
+      "contradicts": "F9",
+      "doc2": "D6",
+      "section2": "Section 2",
+      "detect_terms2": [
+        "all onboard food and beverage provisions",
+        "fresh and frozen meals, snacks, beverages and bar items"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Distribution Agreement Section 3.1 sets a five-year Initial Term. Section 3.2 provides that the Agreement 'renews automatically for successive renewal terms equal in length to the Initial Term' unless a party gives notice of non-renewal 'at least thirty (30) days before' the end of the then-current term. Read together, each renewal locks Stareisk into another five years, including the exclusivity and non-compete obligations, unless it acts within a short window once every five years. The term sheet called for one-year renewal terms with a 120-day non-renewal notice.",
+      "doc": "D1",
+      "section": "Sections 3.1 and 3.2",
+      "detect_terms": [
+        "successive renewal terms equal in length to the Initial Term",
+        "at least thirty (30) days before"
+      ],
+      "expected_finding": "Sections 3.1 and 3.2 together auto-renew the Distribution Agreement for successive five-year terms unless Stareisk gives non-renewal notice at least 30 days before term end. This departs from the agreed one-year renewals with 120 days' notice. Stareisk should amend Section 3.2 to provide one-year renewal terms and a 120-day notice period, and should calendar the deadline in the meantime.",
+      "contradicts": "F8",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

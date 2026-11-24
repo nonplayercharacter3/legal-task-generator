@@ -1,0 +1,162 @@
+{
+  "matter_id": "s63-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "dev",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Quality Agreement Section 14.1: \"This Quality Agreement and any claim arising out of Product nonconformity, contamination or food safety shall be governed by the laws of the State of New York, with exclusive jurisdiction in the state and federal courts located in New York County.\" Distribution Agreement Section 18.1–18.2 instead selects Delaware law and \"the exclusive jurisdiction of the state or federal courts located in New Castle County, Delaware for any action or proceeding arising out of or relating to this Agreement.\" Section 2.3 puts the \"Quality Agreement for food-safety and quality matters\" ahead of the Distribution Agreement in the order of precedence.",
+            "reason": "The quoted 14.1 does not contain the word \"Notwithstanding,\" but its effect is the same as the issue describes. Section 2.3 of the Distribution Agreement gives the Quality Agreement priority on food-safety and quality matters. That makes New York law and New York County courts govern product nonconformity and contamination claims. Indemnity, cap, recall-cost and termination disputes arising from the same incident stay with Delaware law and New Castle County courts under DA 18.1–18.2. Those are the claims Stareisk, as distributor, would most likely bring. The split creates a real risk of parallel proceedings and inconsistent results. Nothing in the folder reconciles the two clauses. Amendment No. 1 does not address it, and neither does any other document. The agreements are ongoing, so Stareisk can still seek a conforming amendment."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Distribution Agreement Section 12.3: \"The limitations and exclusions in Sections 12.1 and 12.2 do not apply to: (a) Supplier's indemnification obligations under Section 11.1\". Amendment No. 1, Section 2.2: \"The former Section 11.1 of the Distribution Agreement (Indemnification by Supplier) is renumbered as Section 11.2.\" Amendment Section 6.1: \"Except as expressly amended by this Amendment, the Distribution Agreement remains unchanged and in full force and effect.\"",
+            "reason": "The amendment inserts the insurance covenant as new Section 11.1 and moves Fevound's food-safety indemnity to Section 11.2. Its only conforming changes (Section 2.3) are internal to the renumbered indemnity sections. Section 12.3(a) is left untouched, so the cap carve-out now refers to the insurance covenant, which contains no indemnification obligation. Fevound's indemnity for foodborne illness, contamination and defects (new 11.2) therefore arguably falls under the 12-month-fees cap and the consequential damages exclusion. The recall-cost carve-out in 12.3(e) still applies, but it does not cover third-party personal-injury claims. Nothing in the folder cures the mismatch. The term sheet's intent (13.3(a)) helps only as extrinsic evidence, and the contract's anti-contra-proferentem clause cuts against a favourable construction. The insurance makes up only part of the shortfall, because claims above the policy limits or excluded from cover still face the cap. The problem hurts Stareisk as indemnitee and remains actionable: Stareisk can seek a corrective amendment to Section 12.3(a).",
+            "alone": {
+              "stareisk_fevound_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "12.3 Exclusions. The limitations and exclusions in Sections 12.1 and 12.2 do not apply to: (a) Supplier's indemnification obligations under Section 11.1;",
+                "reason": "Read alone, the Distribution Agreement is internally consistent. Section 12.3(a) correctly points to Section 11.1, which is Supplier's food-safety and product-defect indemnity, so that indemnity sits outside the 12-month-fees cap. That is favorable to Stareisk. The problem arises only from Amendment No. 1, which this document does not contain. The amendment inserts a new insurance covenant as Section 11.1 and renumbers the indemnity as Section 11.2 without updating the cross-reference in Section 12.3. Nothing here shows that renumbering or the resulting mismatch. An associate reviewing this document alone would see no conflict in the carve-out."
+              },
+              "amendment_no_1_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "The former Section 11.1 of the Distribution Agreement (Indemnification by Supplier) is renumbered as Section 11.2.",
+                "reason": "The amendment shows that Supplier's indemnity moves from Section 11.1 to Section 11.2 and that a new insurance covenant takes the 11.1 number. Section 2.3 updates references only inside the renumbered Section 11 provisions, and Section 6.1 leaves the rest of the agreement unchanged. A careful reader could suspect that cross-references elsewhere in the Distribution Agreement were not conformed. But this document never mentions the Section 12.2 liability cap or the Section 12.3 carve-out for 'Supplier's indemnification obligations under Section 11.1.' Without the original agreement, the associate cannot tell that any carve-out points to Section 11.1. So they cannot see that the food-safety indemnity now falls under the 12-month-fees cap, or that this hurts Stareisk."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 7.3: \"Distributor may reject a price adjustment by written notice to Supplier delivered within twenty (20) days after the date of the Price Adjustment Notice. A price adjustment that Distributor does not reject in accordance with this Section 7.3 is deemed accepted and takes effect on the date stated in the Price Adjustment Notice.\" The letter's first paragraph reads: \"This letter is dated June 26, 2026. Under Section 7.3 of the Distribution Agreement, it gives Distributor's written notice that Distributor rejects the 9.5% increase to the Price List set out in your Price Adjustment Notice dated June 1, 2026.\"",
+            "reason": "Section 1.10 defines 'days' as calendar days. A notice dated June 1, 2026 opened a rejection window that closed on June 21, 2026. Stareisk's rejection is dated and sent June 26, five days late. Under Section 7.3, Fevound can treat the 9.5% increase as deemed accepted from March 2, 2027. That would defeat the Section 7.4 negotiation mechanism that the letter relies on and raise Stareisk's cost of goods. The letter does not address the timing at all. Nothing in the folder shows Fevound waiving the deadline, and the Section 19.5 waiver must be in writing. Nothing shows Stareisk accepting the new prices either: no restated price list, no order form or payment at the increased prices. The letter instead records Stareisk's objection. Stareisk can still act, for example by seeking Fevound's written agreement to treat the rejection as timely, or by arguing that a Price Adjustment Notice could not validly be given during the first Contract Year. So the problem is real and still actionable.",
+            "alone": {
+              "stareisk_fevound_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "Distributor may reject a price adjustment by written notice to Supplier delivered within twenty (20) days after the date of the Price Adjustment Notice. A price adjustment that Distributor does not reject in accordance with this Section 7.3 is deemed accepted and takes effect on the date stated in the Price Adjustment Notice.",
+                "reason": "The Distribution Agreement sets out the rule. Section 7.3 gives a 20-day rejection window measured from the date of the Price Adjustment Notice and deems any increase not rejected in time to be accepted. Section 1.10 makes 'days' calendar days. The agreement does not contain the facts that make this a problem. It has no Price Adjustment Notice dated June 1, 2026, no 9.5% increase, and no Stareisk rejection letter dated June 26, 2026. Those dates come only from the letter, which I was not given. Reading the agreement alone, an associate could see that a rejection must be sent quickly, but could not tell that Stareisk's rejection was late or that the increase was deemed accepted. Separately, the agreement suggests a possible counter-argument: Section 7.2 fixes Exhibit B prices for the first Contract Year (which, under Section 1.9, runs from March 2, 2026 to March 1, 2027), and Section 7.3 allows adjustments only 'beginning with the second Contract Year.' A June 2026 notice may therefore have been premature under the agreement."
+              },
+              "stareisk_letter_to_fevound_june_2026.md": {
+                "findable": false,
+                "evidence": "Under Section 7.3 of the Distribution Agreement, it gives Distributor's written notice that Distributor rejects the 9.5% increase to the Price List set out in your Price Adjustment Notice dated June 1, 2026",
+                "reason": "The letter shows the two dates: it is dated June 26, 2026, and it rejects a Price Adjustment Notice dated June 1, 2026, a gap of 25 days. It never says that Section 7.3 has a rejection deadline, how long that deadline is, that 'days' means calendar days, or that an increase not rejected in time is deemed accepted. It actually suggests the rejection is effective, saying Section 7.3 requires no reasons and that Section 7.4 negotiations follow. Without the Agreement's 20-day window and its deemed-acceptance rule, a reader of this letter alone cannot tell that the rejection was late or that it hurts Stareisk."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "DA §1.18: \"'Product Category' means the category of products described in the then-current Statement of Work.\" DA §1.7: \"'Competing Products' means any products, other than the Products, that fall within the Product Category.\" DA §4.3: \"Distributor shall not, directly or through any Affiliate, market, sell or distribute any Competing Products to any Airline Customer or other person in the Territory.\" SOW §2.1: \"Distributor receives, stores, handles and delivers to Galley-Loading Points all onboard food and beverage provisions, including fresh and frozen meals, snacks, beverages and bar items.\"",
+            "reason": "The only product description in the SOW is §2.1's description of Stareisk's whole network: all onboard food and beverage provisions. Read with DA §§1.18, 1.7 and 4.3, the non-compete therefore bars Stareisk, the client and the restricted party, from distributing any non-SkyCrate onboard food or beverage, including fresh meals, beverages and bar items, to anyone in the Territory for a five-year auto-renewing Term. That threatens its core airline catering distribution business. The term sheet (§5.3) limited the non-compete to competing shelf-stable snack boxes and sealed meal kits and expressly left 'all other onboard food and beverage items' unrestricted. The term sheet is non-binding, so it does not cure the definitive language. The only carve-outs (DA §§6.8 and 16.4) are narrow. Amendment No. 1 and the other folder documents do not narrow the definition. Because Stareisk remains bound during an ongoing Term, the problem is live and actionable, for example by a corrective amendment to §1.18 or a change order to the SOW.",
+            "alone": {
+              "stareisk_fevound_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "1.18 \"Product Category\" means the category of products described in the then-current Statement of Work. ... 4.3 Distributor Non-Competition. During the Term, Distributor shall not, directly or through any Affiliate, market, sell or distribute any Competing Products to any Airline Customer or other person in the Territory.",
+                "reason": "This agreement shows that the non-compete in Section 4.3 depends on 'Competing Products,' which is defined through 'Product Category,' which in turn points to whatever the SOW describes. A careful associate could note that this cross-reference is unusual, since it lets a services document set the scope of a restrictive covenant. But the agreement itself does not say what the SOW describes. Nothing here shows that the category reaches beyond SkyCrate-type shelf-stable snack boxes and sealed meal kits. The harm is that the non-compete would cover Stareisk's entire onboard food and beverage business. That depends on the SOW Section 2 language ('all onboard food and beverage provisions, including fresh and frozen meals, snacks, beverages and bar items'), and that language is not in this document. Read alone, the definition is neutral, so the problem cannot be seen without the SOW."
+              },
+              "sow_warehousing_and_galley_loading.md": {
+                "findable": false,
+                "evidence": "Through that network, Distributor receives, stores, handles and delivers to Galley-Loading Points all onboard food and beverage provisions, including fresh and frozen meals, snacks, beverages and bar items, in accordance with the Load Plans and requirements of each Airline Customer.",
+                "reason": "Section 2.1 of the SOW describes Stareisk's whole network as handling 'all onboard food and beverage provisions.' Read alone, that is an ordinary description of Stareisk's existing operations, and Section 2.2 separately limits the Services to 'the Products.' Nothing in the SOW mentions a non-compete, 'Competing Products' or a 'Product Category,' and nothing says that the SOW's description defines the scope of any exclusivity restriction. The problem needs two things from the Distribution Agreement, which is not provided: the Section 4.3 non-compete, and the Section 1 definition that ties 'Product Category' to the category of products described in the then-current SOW. Only with those does this sentence widen the non-compete to cover Stareisk's entire catering distribution business. The term-sheet limit to snack boxes and meal kits also comes from outside this document. An associate reading only the SOW could not see the problem or how it harms the client."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 3.1: \"This Agreement begins on the Effective Date and continues for five (5) years from the Effective Date (the \"Initial Term\")...\" Section 3.2: \"Upon expiration of the Initial Term, this Agreement renews automatically for successive renewal terms equal in length to the Initial Term (each, a \"Renewal Term\"). Renewal does not occur if either Party gives the other Party written notice of non-renewal at least thirty (30) days before the end of the then-current term.\"",
+            "reason": "The problem is present and still actionable. Read together, Sections 3.1 and 3.2 make each renewal another five-year term. Stareisk can only exit by giving notice in a 30-day window once every five years. If it misses that window, it stays bound for five more years by the Section 4.3 non-compete on Competing Products. During those years Fevound keeps its annual price-adjustment right under Section 7.3. The non-renewal right is mutual, but the lock-in falls mainly on Stareisk as the restricted party. This departs from the term sheet (Section 6.2), which called for one-year renewal terms with 120 days' notice of non-renewal. The term sheet's commercial terms are non-binding, so it does not cure the clause. Amendment No. 1 does not change Section 3. Nothing in the folder shows Stareisk accepted the five-year structure as a negotiated concession. The first non-renewal deadline falls in early 2031, so Stareisk can still act. It can amend the clause under Section 19.4, or at least diarize the window."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.062,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
