@@ -53,6 +53,10 @@ class SpecCfg:
     n_issues: list[int] = field(default_factory=lambda: [3, 5])
     min_distractors: int = 1  # distractor documents per matter (when it has 3 or more documents)
     cross_document_share: float = 0.0  # share of issues (rounded up) that need two documents read together
+    # Word ranges the drafter is asked for: the main agreement (the first document) and every other document.
+    # Empty: the drafter prompt's own "realistic length" (v1 and v2 folders ran a median 15,750 words; LAB 33k+).
+    main_words: list[int] = field(default_factory=list)
+    support_words: list[int] = field(default_factory=list)
 
 
 @dataclass
