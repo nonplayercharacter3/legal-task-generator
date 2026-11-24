@@ -95,3 +95,25 @@ LAB slice and 5 LAB other tasks (about 1,400 calls with ours). `lab_sample.py` t
 Two things to know before the sample: LAB tasks are scored on their .docx files, so a run that fails on the docx skill
 counts against Qwen as a harness result, not a legal one; and the label loop shares NRP's 8 slots, so keep it at 4
 workers or fewer while the loop runs.
+
+## Results: frozen LAB sample and our v2 tasks (M3, 2026-11-23)
+
+Same model (qwen3-small, reasoning low), same harness, same judge (Opus through the SDK, LAB's prompt, one call per
+criterion), tag `s1`, 0 grading errors left on either side (10 LAB rows hit a usage limit and had only their errored
+criteria re-judged, PR #49). Rows: `runs/lab_sample/summary.json`; task list: `docs/autopilot/lab_sample.md`.
+
+| Set | Tasks | All-pass | Criteria passed (pooled) | Per-task mean | Median criteria | Median turns | Judge calls (last pass) |
+|---|---|---|---|---|---|---|---|
+| LAB, 30 (20 M&A and contracts, 10 other) | 30 | 3 (10%) | 1,660 of 1,927 (86.1%) | 81.8% | 60.5 | 16 | 1,747 |
+| ours, v2 (7 dev/test, 13 train) | 20 | 3 (15%) | 167 of 202 (82.7%) | 82.4% | 10 | 9.5 | 202 |
+
+LAB's 20-task M&A and contracts slice alone: all-pass 3 of 20, items 90.2%; the 10 others: 0 of 10, 78.6%. No output
+file: LAB 3 of 30, ours 0 of 20.
+
+Bootstrap (10,000 resamples of tasks on both sides), ours minus LAB, 95% interval: all-pass -13 to +25 points; pooled
+item pass -11.8 to +6.4 points. Judge calls count only the last judge pass of each task (re-judges overwrite
+`judge_calls.json`); the 10 re-judged LAB rows cost extra calls not counted here.
+
+EVALUATION.md level 3: all-pass within 15 points (10% vs 15%, pass); item pass within 5 points (86.1% vs 82.7%, pass,
+though the interval is wide); solved at least once in 3 labelling tries at least 10% (ours: 18 of 33 labelled v2
+tasks, pass). Caveat: our tasks have a sixth of LAB's criteria, so an all-pass on ours needs far fewer items right.
