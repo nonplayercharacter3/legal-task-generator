@@ -1,0 +1,251 @@
+{
+  "matter_id": "s62-m0002",
+  "summary": "Sineind Data Centers, LLC (client, Customer) buys liquid-cooling equipment and related services from Voubaith Thermal Systems, Inc. (Supplier) for its Ashburn, Virginia campus. The terms are set by a Delaware-law Supply Agreement dated March 2, 2026, a First Amendment, a Quality Agreement, an Order Form for 240 coolant distribution units, a Data Processing Addendum covering Supplier's remote-monitoring platform, a parent guaranty from Voubaith Group Holdings, Inc., and a Supplier delivery notice. The folder also holds a Voubaith press release and a certificate of insurance, which are distractors. Five issues are planted. Supplier may assign the agreement freely. Customer's exclusivity covers all cooling equipment at every Customer facility worldwide. The DPA removes personal-data breaches from the confidentiality carve-out, so those breaches fall back under the liability cap. The amendment's longer Initial Term turns the renewal clause into seven-year automatic renewals with a 30-day opt-out window. The parent guaranty defines \"Products\" narrowly, so it guarantees only part of Supplier's obligations.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Sineind Data Centers, LLC",
+      "role": "Customer; colocation data center operator; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Voubaith Thermal Systems, Inc.",
+      "role": "Supplier of liquid-cooling equipment, spare parts and installation and maintenance services"
+    },
+    {
+      "id": "P3",
+      "name": "Voubaith Group Holdings, Inc.",
+      "role": "Supplier's parent company and guarantor under the Parent Guaranty"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Order of precedence among operative documents",
+      "value": "First Amendment; then DPA (as to personal data); then Supply Agreement; then Quality Agreement; then Order Form",
+      "doc": "D1",
+      "section": "Section 20.4"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement Initial Term (as originally signed)",
+      "value": "3 years from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Non-renewal notice window",
+      "value": "no earlier than 120 days and no later than 90 days before end of then-current term",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the event giving rise to the claim",
+      "doc": "D1",
+      "section": "Section 14.2"
+    },
+    {
+      "id": "F6",
+      "key": "Order Form delivery site",
+      "value": "Ashburn Campus, Buildings A through C, Loudoun County, Virginia",
+      "doc": "D4",
+      "section": "Section 2"
+    },
+    {
+      "id": "F7",
+      "key": "Order Form equipment quantity",
+      "value": "240 Model VX-800 coolant distribution units",
+      "doc": "D4",
+      "section": "Section 3"
+    },
+    {
+      "id": "F8",
+      "key": "Order Form total price",
+      "value": "$18,400,000",
+      "doc": "D4",
+      "section": "Section 4"
+    },
+    {
+      "id": "F9",
+      "key": "First Amendment Effective Date",
+      "value": "August 17, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Supply Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "Section 20.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "supply_agreement_sineind_voubaith.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "first_amendment_to_supply_agreement.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "order_form_ashburn_phase1.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "voubaith_delivery_schedule_notice.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "parent_guaranty_voubaith_group.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "voubaith_press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "voubaith_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 19.2 of the Supply Agreement bars Customer from assigning without Supplier's prior written consent. The same section lets Supplier assign or transfer the agreement, or any rights or obligations under it, to any person on written notice alone. Supplier could therefore move the contract to a competitor of Sineind or to a weaker entity. That entity would receive Sineind's site designs and capacity plans, and Sineind would have no consent right and no right to terminate.",
+      "doc": "D1",
+      "section": "Section 19.2",
+      "detect_terms": [
+        "upon written notice to Customer",
+        "any rights or obligations hereunder"
+      ],
+      "expected_finding": "Supplier can assign the Supply Agreement to anyone, including a Sineind competitor, on notice alone while Customer needs consent, so Section 19.2 should be made mutual, requiring Customer's consent and barring assignment to competitors.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Two provisions in the Supply Agreement must be read with its own recital. Section 4.1 requires Customer to buy from Supplier all of its requirements for \"Cooling Equipment\" for any \"Customer Facility\" during the Term. Section 1.4 defines Cooling Equipment as all thermal-management equipment, including chillers, CRAH units, cooling towers and liquid-cooling systems. Section 1.6 defines Customer Facility as any data center owned, leased or operated by Customer or its Affiliates anywhere in the world. Recital B and the Order Form (D4, Section 2) show the deal is a liquid-cooling deployment at the Ashburn Campus only. Read together, the provisions lock all of Sineind's cooling procurement worldwide to one vendor.",
+      "doc": "D1",
+      "section": "Section 4.1 (with Sections 1.4 and 1.6)",
+      "detect_terms": [
+        "all of its requirements for Cooling Equipment",
+        "any Customer Facility"
+      ],
+      "expected_finding": "Read with the definitions in Sections 1.4 and 1.6, the Section 4.1 exclusivity binds every type of cooling equipment at every Sineind and affiliate facility worldwide, well beyond the Ashburn liquid-cooling deployment, and should be narrowed to liquid-cooling equipment at the Ashburn Campus.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 14.3 of the Supply Agreement excludes breach of Section 11 (Confidentiality) from the Section 14.2 cap. Section 11 treats all Customer Data as Confidential Information. DPA Section 2.3 then says Customer Personal Data is governed exclusively by the DPA and that Section 11 of the Agreement does not apply to it. DPA Section 9.1 makes DPA liability subject to Section 14 of the Agreement. Under Supply Agreement Section 20.4, the DPA prevails on personal-data matters. Read together, a breach involving the personal data on Supplier's remote-monitoring platform (badge and access logs, BMS user accounts) no longer falls within the confidentiality carve-out. Unless gross negligence is shown, that breach is capped at 12 months' fees. Neither document shows this on its own.",
+      "doc": "D6",
+      "section": "Section 2.3 (with Section 9.1)",
+      "detect_terms": [
+        "governed exclusively by this DPA",
+        "shall not apply to Customer Personal Data"
+      ],
+      "expected_finding": "Because the DPA prevails on personal data and removes Customer Personal Data from Section 11, Supplier's data-breach liability falls outside the Section 14.3 confidentiality carve-out and is capped at 12 months' fees, so the DPA or Section 14.3 should expressly carve out breaches of the DPA from the cap.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 14.3",
+      "detect_terms2": [
+        "breach of Section 11 (Confidentiality)"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Supply Agreement Section 2.2 renews the agreement automatically for successive renewal terms, each equal in length to the Initial Term. To prevent renewal, a party must give notice no earlier than 120 days and no later than 90 days before the term ends, which is a 30-day window. With the original 3-year Initial Term in Section 2.1, this looked ordinary. First Amendment Section 2.1, effective August 17, 2026, extends the Initial Term to 7 years in exchange for a price lock. It does not adjust Section 2.2. Read together, Sineind is locked into 7-year automatic renewals, including the exclusivity in Section 4.1, unless it acts within a single 30-day window before each term ends.",
+      "doc": "D2",
+      "section": "Section 2.1",
+      "detect_terms": [
+        "Initial Term shall be seven (7) years"
+      ],
+      "expected_finding": "Because Section 2.2 ties each renewal term to the length of the Initial Term, the First Amendment's 7-year Initial Term creates 7-year automatic renewals that Sineind can avoid only within a 30-day window, so renewal terms should be fixed at one year and the notice window widened.",
+      "contradicts": "F3",
+      "doc2": "D1",
+      "section2": "Section 2.2",
+      "detect_terms2": [
+        "each equal in length to the Initial Term",
+        "no earlier than 120 days and no later than 90 days"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Supply Agreement Section 1.11 defines \"Products\" as the Equipment, Spare Parts and Services described in the Order Form. Services include installation, commissioning, maintenance and warranty repair. Parent Guaranty Section 1.1 guarantees Supplier's obligations under the Supply Agreement \"in respect of the Products\". Guaranty Section 1.2 then gives Products its own definition: only the coolant distribution units identified in the Order Form. Supply Agreement Section 20.4 does not list the Guaranty, and the Guaranty defines the term itself, so the Supply Agreement definition does not control. Read together, the parent's guaranty does not cover spare-parts supply, installation, maintenance or warranty service obligations owed by Supplier, which is the operating subsidiary.",
+      "doc": "D7",
+      "section": "Sections 1.1 and 1.2",
+      "detect_terms": [
+        "in respect of the Products",
+        "the coolant distribution units identified in the Order Form"
+      ],
+      "expected_finding": "The Parent Guaranty's narrower definition of \"Products\" limits Voubaith Group Holdings' guarantee to the coolant distribution units and leaves Supplier's spare-parts, installation, maintenance and warranty service obligations unguaranteed, so the Guaranty should cover all of Supplier's obligations under the Supply Agreement.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 1.11",
+      "detect_terms2": [
+        "Equipment, Spare Parts and Services described in the Order Form"
+      ]
+    }
+  ]
+}

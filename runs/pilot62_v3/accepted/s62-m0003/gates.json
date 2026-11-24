@@ -1,0 +1,162 @@
+{
+  "matter_id": "s62-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 10,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"The representations and warranties of the Parties contained in this Agreement, other than the Fundamental Representations (the \"General Representations\"), shall survive the Closing until the earlier of (a) the date that is eighteen (18) months after the Closing Date and (b) the date on which the Escrow Amount is released pursuant to Section 2.5.\" Section 2.5(b): \"On the date that is six (6) months after the Closing Date (the \"Release Date\"), Buyer and Seller shall deliver joint written instructions to the Escrow Agent directing the release to Seller of the then-remaining balance of the Escrow Fund...\"",
+            "reason": "The problem is present. Section 2.5(b) releases the escrow six months after Closing, so the 'earlier of' test in Section 9.1 makes six months the real survival period for all General Representations. The 18-month term never applies. This hurts Buyer, the client, which is the indemnified party under Section 9.2(a) for Seller's representations. Those include property condition (4.7(c)), compliance and ADA (4.11), Permits and liquor licenses (4.10), Financial Statements (4.5) and IP (4.8). Taxes (4.12) are a Fundamental Representation and are carved out, but the other latent hotel issues would be barred after six months. No other document in the folder cures this. The Escrow Agreement repeats the six-month Release Date. The agreement is a signing-stage draft, with the signature block blank and Closing not yet occurred, so the term is still open to negotiation. The client can still act on it, for example by deleting clause (b) or extending the escrow."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Schedule 4.9, item 3: \"Under Section 14.2, any transfer, in a single transaction or a series of related transactions, of more than fifty percent of the stock, membership interests or other equity interests of Tenant, or of any Person controlling Tenant, is deemed an assignment of the lease for purposes of Section 14.1.\" Schedule 4.4 says \"None.\" Schedule 7.2(c) lists only the liquor license transfer. SPA §11.9: \"Any disclosure set forth in any section of the Disclosure Schedule shall be deemed to have been disclosed for purposes of each other section of the Disclosure Schedule and each other Section of this Agreement to which the relevance of such disclosure is reasonably apparent on the face of such disclosure.\"",
+            "reason": "The Company is the Tenant under the Pellam Ground Lease, and Buyer is buying 100% of its Shares. Under Section 14.2 that sale is a deemed assignment, which Section 14.1 bars without the Landlord's prior written consent. The folder does not show that this consent has been sought or obtained. It is not a Required Consent, so it is not a closing condition under SPA §7.2(c). Schedule 4.4 states 'None,' so on its face the §4.4(c) no-consents representation looks breached. However, the Schedule 4.9 item quotes the change-of-control clause in a document that describes a stock sale. Its relevance to §4.4 is therefore arguably 'reasonably apparent on the face,' and §11.9 would deem it disclosed against §4.4. Seller can then argue that Buyer took the risk with notice and has no claim under §9.2(a) if the Landlord declares a default or terminates the lease under the flagship hotel. That would leave the Buyer exposed on a 142-room hotel's land. The matter is still actionable. The SPA was signed September 14, 2026, closing is expected in Q4 2026, and the Outside Date is January 29, 2027. Buyer can still require the landlord consent to be added to Schedule 7.2(c), or negotiate a specific indemnity before Closing.",
+            "alone": {
+              "seller_disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "Under Section 14.2, any transfer, in a single transaction or a series of related transactions, of more than fifty percent of the stock, membership interests or other equity interests of Tenant, or of any Person controlling Tenant, is deemed an assignment of the lease for purposes of Section 14.1.",
+                "reason": "This schedule alone shows three things. The Pellam Ground Lease treats a transfer of more than 50% of Tenant's equity as an assignment that needs Landlord's prior written consent. Schedule 4.4 says 'None'. Schedule 7.2(c) lists only the liquor-license approvals. A careful associate could spot that the stock sale triggers the landlord's consent right and that the consent is not scheduled as a Required Consent or closing condition. The flagged problem, however, is that Buyer loses its indemnity remedy. That depends on SPA Section 11.9, the cross-disclosure clause, which deems the Schedule 4.9 disclosure to qualify the Section 4.4 no-consents representation. That clause is not in this document. Read alone, the schedule suggests the opposite: Schedule 4.4 says 'None', and Section 1.3 only says headings do not expand the representations. An associate would therefore likely conclude that Buyer keeps a breach-of-representation indemnity claim if the landlord objects. The harm to the client comes from the SPA clause this document does not contain."
+              },
+              "stock_purchase_agreement_draibeir_bruneis.md": {
+                "findable": false,
+                "evidence": "Section 11.9: \"Any disclosure set forth in any section of the Disclosure Schedule shall be deemed to have been disclosed for purposes of each other section of the Disclosure Schedule and each other Section of this Agreement to which the relevance of such disclosure is reasonably apparent on the face of such disclosure.\"",
+                "reason": "The SPA alone shows the pieces of the mechanism. Section 4.4(c) qualifies the no-consents representation by Schedule 4.4. Section 7.2(c) conditions Closing only on the Required Consents listed on Schedule 7.2(c). Section 11.9 lets disclosure in one schedule section qualify other sections. Section 4.9(a)(i) treats Real Property Leases as Material Contracts. But the SPA does not identify the Hotel Pellam ground lease or Ashcombe Quay Land Trust. It also does not say that any lease treats a transfer of more than 50% of the tenant's equity as an assignment needing landlord consent. Nor does it show that Schedule 4.4 says 'None' or that Schedule 7.2(c) lists only the liquor-license transfer. Without the Disclosure Schedule, an associate cannot tell that the stock sale triggers a landlord consent right that is neither obtained nor a closing condition. They also cannot tell that the Schedule 4.9 disclosure would carry over under Section 11.9 to defeat an indemnity claim under Section 4.4. The SPA shows only a generic, standard cross-disclosure clause, not the concrete harm to the client."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Seller may assign this Agreement, or any of its rights or obligations under it, to any Person without the consent of Buyer, and upon any such assignment Seller shall thereupon be released from the obligations so assigned.",
+            "reason": "Section 11.6 lets Seller assign any of its obligations to any Person without Buyer's consent, and Seller is then released. Buyer's own assignments, by contrast, need Seller's consent and never release Buyer. Seller's obligations that could be moved this way include its Article IX indemnity, which runs above the $14.85M escrow, outlasts the six-month release, and covers Fundamental Representations and Pre-Closing Taxes. They also include the Section 5.10 non-compete and non-solicit. Nothing else in the folder cures this. Section 5.10's requirement that Seller \"cause its Affiliates\" to comply does not protect Buyer once Seller is released. Escrow Agreement Section 11.3 limits only the escrow assignment. The agreement is dated September 14, 2026 and closing is expected in Q4 2026, so the clause is still live and can be negotiated or enforced. It is a real, actionable risk for Buyer."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Bill of Sale §1.2: \"'Hotel Operating Assets' means all furniture, fixtures, equipment and inventory owned by Transferor that are located at the Hotels and listed on Annex A.\" SPA §5.8: \"...by executing and delivering to the Company the Bill of Sale, and upon such delivery Seller's obligations under this Section 5.8 shall be satisfied.\" SPA §11.10: \"...except that each Ancillary Agreement shall govern the conveyance of the assets transferred under it.\"",
+            "reason": "The SPA defines Hotel Operating Assets to include (c) the PMS and central reservation software licenses, (d) Guest Data and (e) the Hotel Domain Names. The Bill of Sale redefines the term narrowly as FF&E and inventory listed on Annex A, and Annex A lists no software, Guest Data or domain names. The Disclosure Schedule confirms that every Hotel Domain Name is registered to Bruneis Hospitality Services LLC. The IP Assignment Agreement covers only the Hotel Marks, so no other instrument picks these assets up. SPA §11.10 makes the Bill of Sale govern the conveyance, so the SPA's general precedence does not fix the gap. SPA §5.8 treats delivery of the Bill of Sale as full performance, which undercuts any breach-of-covenant claim or recourse under SPA §5.13 further assurances. The Bill of Sale's own further-assurances clause (§6.1) and Annex A supplement (§6.3) reach only the narrowly defined assets. The result is that Buyer (Draibeir) pays the full price but the Company does not receive the guest data, reservation systems or domain names the press release presents as continuing. The documents are unsigned forms and closing is still pending (expected Q4 2026), so Buyer can still fix this by conforming the definition or adding these assets to the Bill of Sale. The problem is present and actionable.",
+            "alone": {
+              "bill_of_sale_hospitality_services.md": {
+                "findable": false,
+                "evidence": "\"Hotel Operating Assets\" means all furniture, fixtures, equipment and inventory owned by Transferor that are located at the Hotels and listed on Annex A.",
+                "reason": "On its own, the Bill of Sale shows a narrow, ordinary scoping definition limited to FF&E and inventory. Recital C ties it to SPA Section 5.8. Nothing here says that guest data, reservation or property-management software licenses, or domain names were meant to be conveyed. Nothing says Transferor holds those assets. Nothing says delivering this instrument satisfies Seller's covenant in full. Seeing the gap requires three things from the SPA, which is not provided: the broader SPA Section 1.1 definition of the same term, the language in Section 5.8 that delivery satisfies the covenant, and Section 11.10, under which the Ancillary Agreement governs conveyance. Without those, an associate cannot tell that the definitions conflict or that the conflict hurts the Buyer."
+              },
+              "stock_purchase_agreement_draibeir_bruneis.md": {
+                "findable": false,
+                "evidence": "Section 5.8: \"...by executing and delivering to the Company the Bill of Sale, and upon such delivery Seller's obligations under this Section 5.8 shall be satisfied.\" Section 11.10: \"...except that each Ancillary Agreement shall govern the conveyance of the assets transferred under it.\"",
+                "reason": "The SPA alone shows the setup for the problem. It defines Hotel Operating Assets broadly to include FF&E, inventory, the PMS and CRS software licenses, Guest Data and the Hotel Domain Names. Section 5.8 treats delivery of the Bill of Sale as full performance, and Section 11.10 lets each Ancillary Agreement control its own conveyance. A careful associate could see that this structure is risky. However, nothing in the SPA shows that the Bill of Sale actually conveys less than the SPA definition covers. The SPA's own definition is broad, and Section 5.8 requires a transfer of 'all of' the Hotel Operating Assets. The harm depends on the Bill of Sale defining Hotel Operating Assets more narrowly, as only the FF&E and inventory listed on Annex A. That narrower definition appears only in the document we were not given. Without it, there is no evident gap that leaves the Guest Data, software licenses and domain names behind and hurts Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "IP Assignment §6.2: \"From and after the Assignment Date, and subject to the limitations set forth in Section 9.4 of the Purchase Agreement, Assignee shall indemnify, defend and hold harmless the Assignor Indemnitees from and against any and all Losses ... arising out of or resulting from (a) the ownership, use or exploitation of the Assigned Marks ... including any claim by a third party that any such use or exploitation of the Assigned Marks infringes...\" SPA §9.4(a): \"The aggregate liability of an Indemnifying Party for Losses under Section 9.2(a) or Section 9.3(a) shall not exceed an amount equal to ten percent (10%) of the Purchase Price (the \"Cap\")\"",
+            "reason": "The cross-reference looks like a cap, but it caps nothing. SPA §9.4(a) limits only Losses under §9.2(a) or §9.3(a), the rep-breach indemnities. The §9.4(b) deductible is limited the same way. A claim under IP Assignment §6.2 falls under neither subsection, so the Assignee's indemnity has no cap and no deductible. Draibeir (our client) guarantees that indemnity under §6.4. The guarantee is primary-obligor, a guarantee of payment rather than collection, and comes with broad waivers. So Draibeir carries unlimited liability for third-party infringement claims tied to post-closing use of the marks. Those claims can stem from Bruneis's pre-closing adoption of the marks. Seller's offsetting IP rep in SPA §4.8(b) is knowledge-qualified and is subject to the 10% Cap and the escrow release window. The agreement is a closing deliverable that is still unsigned (signature blocks are blank, and closing is expected in Q4 2026). The problem can therefore still be fixed by expressly applying a cap to §6.2/§6.4 or by carving out claims arising from pre-closing adoption or use.",
+            "alone": {
+              "ip_assignment_agreement_hotel_marks.md": {
+                "findable": false,
+                "evidence": "From and after the Assignment Date, and subject to the limitations set forth in Section 9.4 of the Purchase Agreement, Assignee shall indemnify, defend and hold harmless the Assignor Indemnitees from and against any and all Losses ... (a) the ownership, use or exploitation of the Assigned Marks by or on behalf of Assignee ... including any claim by a third party that any such use or exploitation of the Assigned Marks infringes ...",
+                "reason": "This document shows three things: (1) the Assignee's broad indemnity in favor of Assignor under Section 6.2, which reaches third-party infringement claims from post-closing use; (2) Draibeir's guarantee of that indemnity under Section 6.4, as primary obligor with waivers; and (3) the express statement that the indemnity is 'subject to the limitations set forth in Section 9.4 of the Purchase Agreement.' Read alone, that cross-reference suggests the obligation is capped. The defect is that SPA Section 9.4(a) caps only claims under SPA Sections 9.2(a) and 9.3(a), so the cap never reaches an IP Assignment claim. That fact comes entirely from the Purchase Agreement, which has not been provided. A careful associate reading only this document could not see that the liability is in fact unlimited."
+              },
+              "stock_purchase_agreement_draibeir_bruneis.md": {
+                "findable": false,
+                "evidence": "\"IP Assignment Agreement\" means the Intellectual Property Assignment Agreement to be entered into at the Closing among the Brand Affiliate, as assignor, the Company, as assignee, and Buyer, as guarantor. ... (a) Cap. The aggregate liability of an Indemnifying Party for Losses under Section 9.2(a) or Section 9.3(a) shall not exceed an amount equal to ten percent (10%) of the Purchase Price (the \"Cap\")",
+                "reason": "The SPA alone shows two things. First, Buyer signs the IP Assignment Agreement as guarantor. Second, the Section 9.4(a) Cap reaches only Losses under Sections 9.2(a) and 9.3(a), the rep-breach indemnities. It does not show that the Company, as Assignee, owes the Brand Affiliate an indemnity for post-assignment ownership, use or exploitation of the marks, including infringement claims. It does not show what Buyer guarantees. It also does not show that the IP Assignment ties its indemnity to 'the limitations set forth in Section 9.4 of the Purchase Agreement.' Those facts are in the IP Assignment Agreement, and the uncapped exposure only appears when that cross-reference is set against the narrow scope of Section 9.4(a). The SPA's own indemnities run from Seller to Buyer for rep breaches, which points the other way. Section 11.10, which says the SPA prevails in a conflict, also says nothing about this gap. Without the IP Assignment, an associate could not see that Buyer carries an uncapped guarantee for marks-related claims."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C3"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.105,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

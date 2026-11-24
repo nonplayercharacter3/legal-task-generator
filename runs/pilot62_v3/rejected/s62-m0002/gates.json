@@ -1,0 +1,108 @@
+{
+  "matter_id": "s62-m0002",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I5\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I5"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 19.2: \"Customer may not assign or transfer this Agreement, or any of its rights or obligations under it, without Supplier's prior written consent. Supplier may assign or transfer this Agreement, or any rights or obligations hereunder, to any person upon written notice to Customer.\"",
+            "reason": "The problem is present and still actionable for Sineind. Section 19.2 is one-sided: Sineind needs Supplier's consent to assign, but Voubaith can assign to anyone on notice alone. Nothing in the Agreement limits who the assignee can be, such as a creditworthy entity, a non-competitor, or an affiliate. Nothing gives Sineind a right to terminate if Voubaith assigns. The other documents do not fix this. The First Amendment leaves Section 19.2 unchanged. It also extends the Initial Term to seven years, and Section 4.1 already binds Sineind to buy all its Cooling Equipment from Supplier for every Customer Facility. Together these make Sineind's exposure to an unknown or weaker counterparty much larger. The Parent Guaranty does not clearly follow the contract to a third-party assignee. It guarantees obligations of \"Supplier\" (Voubaith Thermal Systems), and its notice covenant only covers Guarantor ceasing to own Supplier, not an assignment of the contract. An assignee would also take over the Remote Monitoring Platform and receive Sineind's site designs, capacity plans and security-sensitive data under Sections 11.5 and 12.3. Sineind has no right to vet or veto that party. The Agreement is in effect and nothing in the folder shows Sineind accepted this risk, so it remains a live issue to negotiate in a further amendment."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 4.1: \"During the Term, Customer shall purchase from Supplier all of its requirements for Cooling Equipment for any Customer Facility. Customer shall not purchase Cooling Equipment for a Customer Facility from any third party during the Term.\" Section 1.4 defines Cooling Equipment as \"all thermal-management equipment, including chillers, computer room air handler (CRAH) units, cooling towers and liquid-cooling systems,\" and Section 1.6 defines Customer Facility as \"any data center owned, leased or operated by Customer or any of its Affiliates anywhere in the world.\"",
+            "reason": "Read together, these sections make Sineind buy all of its cooling equipment, at every data center it or its Affiliates operate worldwide, from Voubaith alone. That covers chillers, CRAHs and cooling towers as well as liquid cooling. The deal described in Recital B and Order Form ASH-001 is only a liquid-cooling deployment at the Ashburn Campus. Voubaith makes liquid-cooling equipment, not chillers or towers, so the clause could leave Sineind in breach whenever it builds or maintains any facility. Nothing in the folder narrows the clause. The First Amendment makes it worse: it extends the Initial Term to seven years, and Section 2.2 renews it automatically for terms of equal length. The clause is a live, continuing obligation on the client, not a lapsed event, so it remains actionable through renegotiation or a further amendment."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "DPA Section 2.3: \"The processing, protection, security and confidentiality of Customer Personal Data are governed exclusively by this DPA. Section 11 (Confidentiality) of the Agreement shall not apply to Customer Personal Data.\" DPA Section 9.1: \"Each Party's liability arising out of or relating to this DPA ... is subject to Section 14 (Limitation of Liability) of the Agreement.\" Supply Agreement Section 14.3: \"The limitations in Sections 14.1 and 14.2 do not apply to: ... (b) breach of Section 11 (Confidentiality)\".",
+            "reason": "Under Supply Agreement Section 11.1, all Customer Data, including badge and access logs and BMS user account information, is Confidential Information. A breach of Section 11 is uncapped under Section 14.3(b). DPA Section 2.3, however, takes Customer Personal Data out of Section 11 altogether, and Supply Agreement Section 20.4 gives the DPA precedence on personal-data matters. DPA Section 9.1 then makes all DPA liability subject to Section 14, including the 12-month fees cap in Section 14.2 and the consequential-damages exclusion in Section 14.1. The result is that Supplier's liability for a breach of the personal data on its Remote Monitoring Platform no longer falls within the confidentiality carve-out. That liability is capped, and the cap also covers Supplier's breach-cost reimbursement under DPA Section 8.7. The only way around the cap is to prove gross negligence, willful misconduct or fraud, or to fit the claim under an indemnity. This hurts the Customer, our client, which is the party that would bring a claim against Supplier. Nothing in the folder cures this. The First Amendment does not change Section 14 or the DPA. The Supply Agreement's initial term has been extended to seven years, so the issue remains open, and it can be fixed by amending the DPA under Section 13.1.",
+            "alone": {
+              "data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "Section 11 (Confidentiality) of the Agreement shall not apply to Customer Personal Data. ... Each Party's liability arising out of or relating to this DPA ... is subject to Section 14 (Limitation of Liability) of the Agreement.",
+                "reason": "The DPA alone shows two things: Customer Personal Data is taken out of the Agreement's Section 11 confidentiality regime (Section 2.3), and DPA liability is made subject to Section 14 of the Agreement (Section 9.1). It does not show what Section 14 contains. It does not say there is a 12-month-fees cap in Section 14.2, that Section 14.3 carves breaches of Section 11 out of that cap, or that only gross negligence would lift the cap. It also does not show that Section 11 treats all Customer Data as Confidential Information, or that Section 20.4 makes the DPA prevail on personal-data matters. The harm to Sineind is that a personal-data breach loses the uncapped confidentiality carve-out. That harm depends on the Supply Agreement's cap and carve-out terms, which are not in this document. An associate could see that Section 11 is excluded but could not tell from the DPA that this exclusion moves personal-data breaches under a cap."
+              },
+              "supply_agreement_sineind_voubaith.md": {
+                "findable": false,
+                "evidence": "Section 20.4: \"First Amendment; then DPA (as to personal data); then Supply Agreement...\" Section 14.3(b) excludes \"breach of Section 11 (Confidentiality)\" from the cap. Section 11.1 says \"All Customer Data is Confidential Information of Customer\", and Customer Data includes \"badge and access logs, BMS user account information, and any Personal Data.\"",
+                "reason": "Read alone, the Supply Agreement favors the client. Personal Data on the Remote Monitoring Platform is Customer Data, so it is Confidential Information under Section 11, and a breach of it falls in the Section 14.3(b) uncapped carve-out. The Agreement does say the DPA prevails on personal data (Section 20.4) and that Personal Data is processed under the DPA (Section 10.8). It does not show what the DPA says. The harm depends on DPA Section 2.3, which removes Personal Data from Section 11, and DPA Section 9.1, which makes DPA liability subject to the Section 14 cap. Neither appears in this document. A careful associate might note that the precedence clause means the DPA should be checked. They could not see from this document that the confidentiality carve-out is actually lost for personal data or that such a breach is capped at 12 months' fees."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "First Amendment Section 2.1: \"The Initial Term shall be seven (7) years from the Effective Date (the \"Initial Term\")...\" Supply Agreement Section 2.2: \"At the end of the Initial Term, this Agreement shall automatically renew for successive renewal terms, each equal in length to the Initial Term ... Either Party may prevent the renewal by giving the other Party written notice of non-renewal no earlier than 120 days and no later than 90 days before the end of the then-current term.\"",
+            "reason": "Section 2.2 of the Supply Agreement ties each Renewal Term to the length of the Initial Term. The First Amendment replaces Section 2.1 to make the Initial Term seven years. It amends Sections 2.1 and 7.2 but leaves Section 2.2 untouched, and Section 8.1 ratifies everything not expressly amended. Read together, each automatic renewal now runs seven years. The only way out is a non-renewal notice given in a single 30-day window, 120 to 90 days before each term ends. During every renewal, Section 4.1 binds Sineind to buy all Cooling Equipment for every Customer Facility worldwide only from Voubaith. The price lock ends with the Initial Term, so Sineind would face index-based price increases while still tied to exclusivity. Nothing in the folder cures or limits this: there is no shorter renewal term and no termination for convenience. The first notice window falls around late 2032 to early 2033, well after the latest folder date of November 16, 2026. The problem is therefore still actionable, for example by seeking a further amendment to Section 2.2 or by calendaring the window. This hurts Sineind as the party bound by the exclusive-purchase obligation.",
+            "alone": {
+              "first_amendment_to_supply_agreement.md": {
+                "findable": false,
+                "evidence": "\"2.1 Initial Term. This Agreement begins on the Effective Date and continues until the seventh anniversary of the Effective Date. The Initial Term shall be seven (7) years from the Effective Date (the \"Initial Term\"), unless this Agreement is terminated earlier in accordance with Section 18.\"",
+                "reason": "The amendment shows only that the Initial Term grows from its original length to seven years in exchange for a price lock. It never mentions Section 2.2 of the Agreement, automatic renewal, how long a renewal term lasts, the 120-to-90-day non-renewal notice window, or the exclusivity in Section 4.1. Section 8.1 says the rest of the Agreement stays unchanged, but it does not say what that rest contains. Three facts that make this harmful come only from the original Supply Agreement: renewal terms equal the Initial Term, so they become 7-year renewals; non-renewal requires notice within a 30-day window; and the renewals carry exclusivity. From this document alone, an associate would see a longer committed term, not the risk of automatic 7-year renewals."
+              },
+              "supply_agreement_sineind_voubaith.md": {
+                "findable": false,
+                "evidence": "2.2 Renewal. At the end of the Initial Term, this Agreement shall automatically renew for successive renewal terms, each equal in length to the Initial Term ... Either Party may prevent the renewal by giving the other Party written notice of non-renewal no earlier than 120 days and no later than 90 days before the end of the then-current term.",
+                "reason": "On its own, this document shows automatic renewal terms that match the Initial Term, a 30-day non-renewal notice window, and a 3-year Initial Term in Section 2.1. Through Section 4.1, it also ties the exclusivity obligation to the Term. With a 3-year term, that is a fairly ordinary renewal setup. The document defines a 'First Amendment' and places it first in the order of precedence, but it says nothing about what that amendment contains. The harm described is that the Initial Term is extended to 7 years, so each renewal becomes a 7-year exclusive lock-in. That fact comes only from First Amendment Section 2.1, which is not provided. An associate reading this agreement alone could not see the 7-year renewal problem."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": false,
+            "evidence": "Guaranty §1.1: Guarantor \"guarantees ... all obligations of Supplier under the Supply Agreement in respect of the Products.\" Guaranty §1.2(c): \"'Products' means the coolant distribution units identified in the Order Form.\" Supply Agreement §1.11: \"'Products' means the Equipment, Spare Parts and Services described in the Order Form.\"",
+            "reason": "findable from parent_guaranty_voubaith_group.md alone, so it does not need two documents",
+            "alone": {
+              "parent_guaranty_voubaith_group.md": {
+                "findable": true,
+                "evidence": "Section 1.1: Guarantor guarantees \"all obligations of Supplier under the Supply Agreement in respect of the Products.\" Section 1.2(c): \"'Products' means the coolant distribution units identified in the Order Form.\" Recital A: \"Supplier supplies liquid-cooling equipment, spare parts and installation, commissioning, maintenance and remote-monitoring services to Customer.\"",
+                "reason": "The Guaranty alone shows the gap. Recital A says Supplier provides equipment, spare parts and installation, commissioning, maintenance and monitoring services. But Section 1.1 limits the guaranty to obligations 'in respect of the Products', and Section 1.2(c) defines Products narrowly as only the coolant distribution units. Section 1.2(c) is an express definition, so the fallback to Supply Agreement meanings for undefined terms does not apply. A careful associate could therefore see that obligations for spare parts and services are left outside the parent's guaranty, which hurts Customer. What this document does not show is the Supply Agreement's own broader definition of Products (Section 1.11) or that Section 20.4 omits the Guaranty. Those facts only confirm the conflict; they are not needed to see the narrow scope and its harm."
+              },
+              "supply_agreement_sineind_voubaith.md": {
+                "findable": false,
+                "evidence": "1.11 \"Products\" means the Equipment, Spare Parts and Services described in the Order Form.",
+                "reason": "The Supply Agreement defines Products broadly to include Equipment, Spare Parts and Services. Its order-of-precedence clause (20.4) lists the First Amendment, DPA, Supply Agreement, Quality Agreement and Order Form, and does not mention any guaranty. The agreement itself does not mention a parent guaranty or a parent company at all. The problem depends on the Guaranty: its Section 1.1 guarantees obligations \"in respect of the Products\", and its Section 1.2 narrows Products to coolant distribution units only. Neither the existence of the guaranty nor its narrower definition can be seen from this document. Reading this agreement alone, an associate would see nothing wrong with how Products is defined or how far it reaches."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

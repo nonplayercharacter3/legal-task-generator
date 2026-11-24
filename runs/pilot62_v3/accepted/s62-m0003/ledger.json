@@ -1,0 +1,249 @@
+{
+  "matter_id": "s62-m0003",
+  "summary": "Draibeir Hospitality Partners, LLC (Buyer, the firm's client) is acquiring all outstanding stock of Sablewick Inn Group, Inc., which owns and operates five boutique hotels, from Bruneis Hotel Holdings, Inc. (Seller) for $148,500,000 under a Delaware-law Stock Purchase Agreement signed September 14, 2026. Two Seller affiliates convey assets to the Company at Closing. Bruneis Brand Holdings LLC assigns the hotel marks under an IP Assignment Agreement, which Buyer joins as guarantor. Bruneis Hospitality Services LLC conveys operating assets under a Bill of Sale. The folder also holds the Disclosure Schedule, an Escrow Agreement and a joint press release. Five issues are planted. (1) The Seller's indemnity survival is tied to an escrow release at six months. (2) A ground-lease change-of-control consent is disclosed only in the material contracts schedule and is swept into the consents representation by the cross-section disclosure rule. (3) Seller may freely assign the SPA and be released. (4) The Bill of Sale defines 'Hotel Operating Assets' more narrowly than the SPA, and the SPA lets the Bill of Sale govern the conveyance and treats its delivery as full performance. (5) Buyer's guaranteed IP indemnity is made 'subject to' an SPA cap that only reaches rep-breach claims, which leaves it uncapped.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Draibeir Hospitality Partners, LLC",
+      "role": "Buyer (firm's client); guarantor of Assignee's indemnity under the IP Assignment Agreement"
+    },
+    {
+      "id": "P2",
+      "name": "Bruneis Hotel Holdings, Inc.",
+      "role": "Seller"
+    },
+    {
+      "id": "P3",
+      "name": "Sablewick Inn Group, Inc.",
+      "role": "Company (target owning and operating five boutique hotels); Assignee under IP Assignment; transferee under Bill of Sale"
+    },
+    {
+      "id": "P4",
+      "name": "Bruneis Brand Holdings LLC",
+      "role": "Seller affiliate; Assignor of hotel marks under IP Assignment Agreement"
+    },
+    {
+      "id": "P5",
+      "name": "Bruneis Hospitality Services LLC",
+      "role": "Seller affiliate (Service Affiliate); transferor under Bill of Sale"
+    },
+    {
+      "id": "P6",
+      "name": "Ashcombe Quay Land Trust",
+      "role": "Ground lessor of the Hotel Pellam site (third-party counterparty)"
+    },
+    {
+      "id": "P7",
+      "name": "Fenwright Trust Company, N.A.",
+      "role": "Escrow Agent"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA signing date",
+      "value": "September 14, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Company",
+      "value": "Sablewick Inn Group, Inc., a Delaware corporation owning five boutique hotels",
+      "doc": "D1",
+      "section": "Recitals"
+    },
+    {
+      "id": "F3",
+      "key": "SPA Purchase Price",
+      "value": "$148,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "SPA Escrow Amount",
+      "value": "$14,850,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F5",
+      "key": "Escrow release date",
+      "value": "six (6) months after the Closing Date",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F6",
+      "key": "SPA General Representations survival period",
+      "value": "earlier of 18 months after Closing Date and the Escrow Amount release date",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F7",
+      "key": "SPA indemnity cap",
+      "value": "10% of the Purchase Price, for Losses under Sections 9.2(a) and 9.3(a)",
+      "doc": "D1",
+      "section": "Section 9.4(a)"
+    },
+    {
+      "id": "F8",
+      "key": "SPA order of precedence",
+      "value": "SPA prevails over Ancillary Agreements, except each Ancillary Agreement governs conveyance of assets transferred under it",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F9",
+      "key": "SPA governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F10",
+      "key": "Escrow Agent",
+      "value": "Fenwright Trust Company, N.A.",
+      "doc": "D6",
+      "section": "Preamble"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_draibeir_bruneis.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "ip_assignment_agreement_hotel_marks.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "bill_of_sale_hospitality_services.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "joint_press_release_announcement.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "escrow_agreement_fenwright.md",
+      "kind": "escrow agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1 states that the General Representations survive until the earlier of 18 months after the Closing Date and the date the Escrow Amount is released under Section 2.5. Section 2.5 releases the Escrow Amount six months after the Closing Date. Read together, all non-fundamental representations expire at six months. That is less than one full operating season or annual audit cycle for the hotels, so latent problems such as property condition, ADA compliance, occupancy-tax filings and liquor-license matters are unlikely to surface in time. Any Buyer claim noticed after that date is barred, even though the headline survival period reads as 18 months.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "the date on which the Escrow Amount is released",
+        "six (6) months after the Closing Date"
+      ],
+      "expected_finding": "Because Section 9.1 ends General Representation survival at the earlier of 18 months and the escrow release, and Section 2.5 releases escrow at six months after Closing, Buyer's rep-breach claims effectively expire at six months. Survival should be decoupled from the escrow release and set at a fixed period of at least 18 months.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Disclosure Schedule 4.9 lists the Hotel Pellam ground lease with Ashcombe Quay Land Trust as a Material Contract. The listing notes that a transfer of more than fifty percent of the Tenant's equity is deemed an assignment requiring the landlord's prior written consent. Schedule 4.4 (Consents) states 'None', and Schedule 7.2(c) lists only the liquor-license transfer as a Required Consent. On its own, that listing is ordinary disclosure. SPA Section 11.9 provides that disclosure in any section of the Disclosure Schedule is deemed made for every other section where its relevance is reasonably apparent. On its own, that is a standard interpretation clause. Read together, the stock sale triggers the landlord consent right. That consent has not been obtained and is not a closing condition. The Schedule 4.9 disclosure is deemed to qualify the no-consents representation in Section 4.4, so Buyer has no indemnity claim if the landlord declares a default or terminates the ground lease under the hotel.",
+      "doc": "D3",
+      "section": "Schedule 4.9 (Material Contracts), item 3",
+      "detect_terms": [
+        "deemed an assignment",
+        "more than fifty percent"
+      ],
+      "expected_finding": "The sale of the Company's stock triggers Ashcombe Quay Land Trust's ground-lease consent right, and that consent has not been obtained or made a closing condition. Under SPA Section 11.9, the Schedule 4.9 disclosure qualifies the Section 4.4 no-consents rep, so Buyer bears the risk of lease default or termination without an indemnity remedy. The landlord consent should be added to Schedule 7.2(c) as a Required Consent, or covered by a specific indemnity.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 11.9",
+      "detect_terms2": [
+        "relevance of such disclosure is reasonably apparent"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "SPA Section 11.6 restricts Buyer's assignment but allows Seller to assign the Agreement, or any of its rights or obligations, to any Person without Buyer's consent. On any such assignment, Seller is released. Seller could therefore move its Article IX indemnity obligations and its Section 5.10 non-compete to a thinly capitalized entity or to a competing hotel operator. That would leave Buyer with an empty indemnitor and a covenant held by a competitor, and the released Seller entity would no longer answer for either.",
+      "doc": "D1",
+      "section": "Section 11.6",
+      "detect_terms": [
+        "Seller may assign this Agreement",
+        "shall thereupon be released"
+      ],
+      "expected_finding": "Section 11.6 lets Seller assign the SPA, including its indemnity and non-compete obligations, to any Person, including a competitor or a shell, and be released. Seller's assignment should require Buyer's prior written consent, and Seller should remain liable after any permitted assignment.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I4",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines 'Hotel Operating Assets' to include FF&E, inventory, the property-management and reservation software licenses, Guest Data, and the hotel domain names. SPA Section 5.8 requires Seller to cause Bruneis Hospitality Services LLC to transfer the Hotel Operating Assets to the Company by delivering the Bill of Sale, and provides that delivery satisfies Seller's obligations under that Section. On its own, Section 5.8 is a normal closing mechanic. Bill of Sale Section 1 defines 'Hotel Operating Assets' as only the furniture, fixtures, equipment and inventory located at the Hotels and listed on Annex A. On its own, that is an ordinary scoping definition. SPA Section 11.10 provides that each Ancillary Agreement governs the conveyance of the assets transferred under it, so the SPA's precedence does not cure the gap. Together, these provisions mean the Guest Data, reservation software licenses and domain names never pass to the Company, and Seller's covenant is treated as performed.",
+      "doc": "D4",
+      "section": "Section 1 (Definitions)",
+      "detect_terms": [
+        "located at the Hotels and listed on Annex A"
+      ],
+      "expected_finding": "The Bill of Sale's narrower definition of 'Hotel Operating Assets' omits the Guest Data, reservation software licenses and domain names. SPA Section 5.8 deems delivery of the Bill of Sale full performance, and Section 11.10 lets the Bill of Sale govern the conveyance, so those core assets would not transfer and Buyer would have no covenant claim. The Bill of Sale definition should be conformed to the SPA definition, and the 'satisfied upon delivery' language in Section 5.8 should be deleted.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 5.8",
+      "detect_terms2": [
+        "upon such delivery Seller's obligations under this Section 5.8 shall be satisfied"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "IP Assignment Agreement Section 6.2 obliges the Company, as Assignee, to indemnify Bruneis Brand Holdings LLC against all Losses arising out of the ownership, use or exploitation of the Assigned Marks after the Assignment Date, including third-party infringement claims. Draibeir guarantees that obligation under Section 6.4. The indemnity is stated to be 'subject to the limitations set forth in Section 9.4 of the Purchase Agreement', so on its own it appears capped. SPA Section 9.4(a), however, caps only an Indemnifying Party's liability for Losses under Section 9.2(a) or Section 9.3(a), which are the rep-breach indemnities. A claim under the IP Assignment is not a claim under either subsection, so the cap never applies. The result is that Buyer, as guarantor, and the Company carry unlimited liability for marks-related claims. That includes infringement claims rooted in pre-closing adoption of the marks.",
+      "doc": "D2",
+      "section": "Section 6.2",
+      "detect_terms": [
+        "subject to the limitations set forth in Section 9.4 of the Purchase Agreement",
+        "use or exploitation of the Assigned Marks"
+      ],
+      "expected_finding": "The IP Assignment's cross-reference to SPA Section 9.4 imports no cap, because Section 9.4(a) limits only Losses under Sections 9.2(a) and 9.3(a). The Assignee indemnity guaranteed by Buyer is therefore uncapped. An express dollar cap should be stated in the IP Assignment, claims attributable to pre-Assignment Date use should be carved out, or the guarantee should be removed.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 9.4(a)",
+      "detect_terms2": [
+        "for Losses under Section 9.2(a) or Section 9.3(a)"
+      ]
+    }
+  ]
+}

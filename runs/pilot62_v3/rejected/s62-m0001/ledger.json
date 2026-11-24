@@ -1,0 +1,259 @@
+{
+  "matter_id": "s62-m0001",
+  "summary": "Ruseis Diagnostic Holdings, Inc. (Buyer, the firm's client) acquired all outstanding shares of Ostrel Imaging Systems, Inc., a CT and MRI scanner maker and servicer, from Trukiv Medical Technologies, Inc. (Seller) for $184,000,000. The SPA was signed January 20, 2026 and closed March 2, 2026. A Transition Services Agreement dated May 4, 2026 has Seller provide post-closing services to Buyer, including FDA field corrections on the installed CT base. The folder also holds the disclosure schedule, the November 2025 letter of intent and two distractors: an Ostrel helium supply contract and a pre-deal mutual NDA. Six issues are planted. (1) An uncapped Buyer indemnity in the TSA. (2) A Seller assignment right that reaches acquirers of Seller's ultrasound division and releases Seller. (3) The TSA liability cap, which prevails as to Services, silently caps Seller's otherwise uncapped pre-closing recall indemnity. (4) Buyer's Omitted Services notice of April 14, 2026, sent after the 30-day post-closing window expired on April 1, 2026; Buyer has reserved its rights. (5) The TSA's New York law and forum clause, which prevails as to Services, conflicts with the SPA's exclusive Delaware law and forum covering all Transaction Documents. (6) The non-compete's 'Business' is defined by reference to a schedule describing only CT design and manufacture, leaving MRI and installed-base servicing unprotected.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Ruseis Diagnostic Holdings, Inc.",
+      "role": "Buyer under the SPA; Recipient under the TSA; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Trukiv Medical Technologies, Inc.",
+      "role": "Seller under the SPA; Provider under the TSA"
+    },
+    {
+      "id": "P3",
+      "name": "Ostrel Imaging Systems, Inc.",
+      "role": "Company (target) whose shares are sold; designs, manufactures, sells and services CT and MRI systems"
+    },
+    {
+      "id": "P4",
+      "name": "Pelkora Cryogenics LLC",
+      "role": "Helium supplier to the Company under the distractor vendor agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Purchase Price",
+      "value": "$184,000,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Agreement Date",
+      "value": "January 20, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F3",
+      "key": "Closing Date",
+      "value": "March 2, 2026",
+      "doc": "D3",
+      "section": "Recitals"
+    },
+    {
+      "id": "F4",
+      "key": "SPA governing law",
+      "value": "Laws of the State of Delaware",
+      "doc": "D1",
+      "section": "Section 11.10"
+    },
+    {
+      "id": "F5",
+      "key": "SPA exclusive forum",
+      "value": "Court of Chancery of the State of Delaware, for disputes under the SPA or any Transaction Document",
+      "doc": "D1",
+      "section": "Section 11.11"
+    },
+    {
+      "id": "F6",
+      "key": "SPA general indemnity cap",
+      "value": "10% of the Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence among Transaction Documents",
+      "value": "SPA prevails over other Transaction Documents, except the TSA prevails with respect to the Services",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "SPA definition of Business",
+      "value": "Design, manufacture, sale and servicing of CT and MRI imaging systems",
+      "doc": "D1",
+      "section": "Recitals"
+    },
+    {
+      "id": "F9",
+      "key": "SPA Omitted Services request window",
+      "value": "30 days after the Closing Date",
+      "doc": "D1",
+      "section": "Section 6.9"
+    },
+    {
+      "id": "F10",
+      "key": "TSA service term",
+      "value": "12 months after the Closing Date",
+      "doc": "D3",
+      "section": "Section 3.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "helium_supply_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "mutual_nondisclosure_agreement.md",
+      "kind": "mutual nondisclosure agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "TSA Section 8.2 requires Ruseis, as Recipient, to indemnify Trukiv, as Provider, for all Losses arising out of the Services or Recipient's use of them, regardless of whether caused by Provider's negligence. It also states that this obligation is not subject to Section 9.1, the TSA's otherwise mutual liability cap. Ruseis therefore carries unlimited exposure for losses Trukiv itself causes while servicing installed-base scanners. Because SPA Section 11.9 makes the TSA prevail with respect to the Services, nothing in the SPA limits this exposure.",
+      "doc": "D3",
+      "section": "Section 8.2",
+      "detect_terms": [
+        "regardless of whether caused by Provider's negligence",
+        "not be subject to Section 9.1"
+      ],
+      "expected_finding": "TSA Section 8.2 gives Trukiv an indemnity from Ruseis that covers Trukiv's own negligence and is expressly excluded from the Section 9.1 cap, leaving Ruseis with unlimited liability; it should be limited to Recipient's own fault and made subject to the cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "SPA Section 11.4 bars Ruseis from assigning without consent. The same section lets Trukiv assign any or all of its rights and obligations to a Permitted Transferee without Buyer's consent, and releases Trukiv upon assignment. Section 1.1 defines Permitted Transferee as any Person that acquires all or a majority of the equity or assets of Seller's ultrasound division. That acquirer could be a competing imaging manufacturer, and nothing requires it to be creditworthy. Read together, the two provisions let Trukiv shift its uncapped recall indemnity, its non-compete and its other post-closing obligations to a competitor or a shell and walk away.",
+      "doc": "D1",
+      "section": "Section 11.4; Section 1.1 (Permitted Transferee)",
+      "detect_terms": [
+        "assign any or all of its rights and obligations",
+        "Seller's ultrasound division"
+      ],
+      "expected_finding": "Together, SPA Section 11.4 and the Permitted Transferee definition let Trukiv assign its post-closing indemnity and non-compete obligations, without Ruseis's consent and with a full release, to any acquirer of its ultrasound division, including a competitor; Trukiv's assignment should require Buyer consent, or at minimum Seller should remain liable and the assignee should not be a competitor.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Under SPA Section 9.2(d), Trukiv indemnifies Ruseis for Pre-Closing Product Liabilities, including recall, field correction and removal costs for scanners sold before Closing. SPA Section 9.5(c) carves those claims out of the 10% cap. SPA Section 11.9 then provides that the TSA prevails with respect to the Services. TSA Schedule A makes Field Actions on the installed CT base a Service. TSA Section 9.1 caps each Party's liability arising out of or relating to the Services, including Field Actions, at the Service Fees paid in the prior six months. Each document is ordinary on its own. Read together, Trukiv can argue that recall costs for pre-closing scanners handled through TSA Field Actions fall under the small TSA cap, which prevails, so the SPA carve-out no longer protects Ruseis.",
+      "doc": "D1",
+      "section": "Section 9.5(c); Section 11.9",
+      "detect_terms": [
+        "shall not apply to claims under Section 9.2(d)",
+        "shall prevail with respect to the Services"
+      ],
+      "expected_finding": "Because SPA Section 11.9 lets the TSA prevail as to the Services, TSA Section 9.1's fee-based cap, which expressly covers Field Actions, can cap Trukiv's otherwise uncapped Section 9.2(d) indemnity for pre-closing recall costs; TSA Section 9.1 should expressly exclude Seller's obligations under SPA Section 9.2(d), or the precedence clause should preserve the SPA carve-out.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Section 9.1; Schedule A",
+      "detect_terms2": [
+        "including Field Actions",
+        "Service Fees paid in the six months"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "SPA Section 6.9 obliges Trukiv to provide any Omitted Service only if Buyer delivers written notice within 30 days after the Closing Date. Seller has no obligation for later requests. The TSA recitals state that the Closing Date was March 2, 2026, so the window closed on April 1, 2026. The TSA recitals also state that Ruseis delivered its Omitted Service notice for PACS imaging-data migration services on April 14, 2026. That is 13 days late. In the same recital, Ruseis reserves all of its rights under Section 6.9, which shows that Ruseis has not accepted the loss of the right. Neither document alone shows the lapse: the SPA states only the window, and the TSA states only the dates and the reservation.",
+      "doc": "D1",
+      "section": "Section 6.9",
+      "detect_terms": [
+        "within 30 days after the Closing Date",
+        "Omitted Service"
+      ],
+      "expected_finding": "Ruseis's April 14, 2026 Omitted Service notice came after the Section 6.9 window closed on April 1, 2026 (30 days after the March 2, 2026 Closing Date), so Trukiv has no contractual obligation to provide the PACS migration services despite the TSA reservation of rights; Ruseis should promptly obtain a written waiver or a TSA amendment adding those services.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Recitals",
+      "detect_terms2": [
+        "April 14, 2026",
+        "reserves all of its rights"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "SPA Sections 11.10 and 11.11 choose Delaware law and give the Delaware Court of Chancery exclusive jurisdiction over disputes under the SPA or any Transaction Document. TSA Section 13.2 chooses New York law and the exclusive jurisdiction of courts in the Borough of Manhattan. SPA Section 11.9 makes the TSA prevail with respect to the Services, so the SPA does not cure the conflict. Disputes over Field Actions and other Services would be governed by New York law in New York, while the related SPA indemnity claims go to Delaware. This risks parallel litigation, inconsistent results and fights over which forum clause controls.",
+      "doc": "D3",
+      "section": "Section 13.2",
+      "detect_terms": [
+        "laws of the State of New York",
+        "courts located in the Borough of Manhattan"
+      ],
+      "expected_finding": "TSA Section 13.2's New York law and exclusive Manhattan forum conflict with the SPA's Delaware law and exclusive Chancery forum for all Transaction Documents, and because SPA Section 11.9 lets the TSA prevail as to the Services, recall and services disputes could be split from related SPA indemnity claims; the TSA should be conformed to Delaware law and forum.",
+      "contradicts": [
+        "F4",
+        "F5"
+      ],
+      "doc2": "D1",
+      "section2": "Sections 11.10, 11.11 and 11.9",
+      "detect_terms2": [
+        "any Transaction Document",
+        "Court of Chancery of the State of Delaware"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "The SPA recitals define the Business as the design, manufacture, sale and servicing of CT and MRI imaging systems. However, the five-year non-compete in SPA Section 6.7 bars Trukiv only from engaging in 'the Business as described in Schedule 6.7.' Disclosure Schedule 6.7 describes the Business as the design and manufacture of computed tomography systems. Each provision looks ordinary on its own. Read together, the term that sets the scope of the non-compete means something far narrower than the SPA's defined Business. Trukiv is left free to compete in MRI systems and in sales and servicing of the Company's installed base.",
+      "doc": "D2",
+      "section": "Schedule 6.7",
+      "detect_terms": [
+        "design and manufacture of computed tomography systems"
+      ],
+      "expected_finding": "Because SPA Section 6.7 defines the restricted Business by reference to Disclosure Schedule 6.7, which covers only CT design and manufacture, the non-compete does not reach MRI systems or sales and servicing, although the SPA defines the Business to include them; Schedule 6.7 should be conformed to the SPA definition, or Section 6.7 should refer to the Business as defined in the recitals.",
+      "contradicts": "F8",
+      "doc2": "D1",
+      "section2": "Section 6.7; Recitals",
+      "detect_terms2": [
+        "as described in Schedule 6.7"
+      ]
+    }
+  ]
+}
