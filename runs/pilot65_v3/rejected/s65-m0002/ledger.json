@@ -1,0 +1,262 @@
+{
+  "matter_id": "s65-m0002",
+  "summary": "Relusk Cold Chain Distribution LLC (client) is the exclusive Territory distributor of Ligex Thermal Systems, Inc.'s cold chain telemetry products under a New York-law Distribution Agreement effective January 15, 2026. The agreement is guaranteed by Relusk's parent, Relusk Holdings Corp. Five issues are planted across the folder. (1) Relusk objected to a Ligex price increase after the contractual 20-day objection window had closed. (2) The Order Form contains a long automatic renewal with a narrow opt-out window, unlike the term sheet. (3) The non-compete, read with the Order Form's product list, reaches Relusk's existing packaging lines and anything Ligex later adds to its catalog. (4) A cap carve-out for DPA obligations leaves Relusk's one-way DPA indemnity unlimited. (5) The SLA redefines 'Defective Unit' as a 30-day dead-on-arrival concept, and the precedence clause lets the SLA control RMA procedures, which undercuts the 24-month warranty replacement remedy. The folder also holds a term sheet, a side letter, a parent guaranty and two distractors: an unrelated facility maintenance agreement and a pre-deal mutual NDA.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Relusk Cold Chain Distribution LLC",
+      "role": "Distributor (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Ligex Thermal Systems, Inc.",
+      "role": "Supplier / manufacturer of cold chain telemetry and packaging products"
+    },
+    {
+      "id": "P3",
+      "name": "Relusk Holdings Corp.",
+      "role": "Parent guarantor of Distributor's obligations"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "January 15, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Territory",
+      "value": "States of New York, New Jersey and Pennsylvania",
+      "doc": "D1",
+      "section": "Section 1.1 (Definitions)"
+    },
+    {
+      "id": "F3",
+      "key": "Distribution Agreement liability cap",
+      "value": "amounts paid by Distributor to Supplier in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.1"
+    },
+    {
+      "id": "F4",
+      "key": "Order of precedence",
+      "value": "Distribution Agreement prevails; Order Form controls Products, pricing, term; SLA controls service levels and RMA procedures",
+      "doc": "D1",
+      "section": "Section 16.4"
+    },
+    {
+      "id": "F5",
+      "key": "Price change objection window",
+      "value": "20 calendar days after Distributor's receipt of a Price Change Notice",
+      "doc": "D1",
+      "section": "Section 5.4"
+    },
+    {
+      "id": "F6",
+      "key": "Ligex Price Change Notice date",
+      "value": "September 2, 2026",
+      "doc": "D2",
+      "section": "Paragraph 1"
+    },
+    {
+      "id": "F7",
+      "key": "Ligex Price Change Notice receipt date",
+      "value": "September 3, 2026, at Relusk's Albany, New York office",
+      "doc": "D2",
+      "section": "Paragraph 1"
+    },
+    {
+      "id": "F8",
+      "key": "Term Sheet renewal term",
+      "value": "one-year renewals, terminable by either party on 90 days' notice",
+      "doc": "D7",
+      "section": "Term and Renewal"
+    },
+    {
+      "id": "F9",
+      "key": "Term Sheet exclusivity scope",
+      "value": "telemetry units and data loggers only; Relusk's existing packaging lines excluded",
+      "doc": "D7",
+      "section": "Exclusivity"
+    },
+    {
+      "id": "F10",
+      "key": "Distribution Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 16.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "relusk_ligex_distribution_agreement.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "relusk_objection_letter_2026-10-06.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "relusk_holdings_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "ligex_order_form_no1.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "relusk_ligex_term_sheet.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "ligex_side_letter_mdf.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "pellbrook_facility_maintenance_agreement.md",
+      "kind": "unrelated vendor agreement",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D10",
+      "filename": "relusk_ligex_mutual_nda.md",
+      "kind": "mutual nondisclosure agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "D2 is Relusk's letter dated October 6, 2026. It objects to Ligex's 14% price increase, effective January 1, 2027, and invokes the good-faith negotiation and no-penalty termination rights. The letter recites that Ligex's Price Change Notice dated September 2, 2026 was received at Relusk's Albany office on September 3, 2026. D1 Section 5.4 lets Distributor object only within twenty (20) days after receipt; otherwise the change is deemed accepted and the negotiation and termination rights fall away. Each document reads as ordinary on its own. Read together, the window closed on September 23, 2026, so Relusk's objection was 13 days late. Relusk's position is shown by D2: it disputes the increase and has not accepted it, so the memo can still act.",
+      "doc": "D2",
+      "section": "Paragraphs 1-2",
+      "detect_terms": [
+        "received on September 3, 2026",
+        "hereby objects"
+      ],
+      "expected_finding": "Under D1 Section 5.4 the 20-day objection window ran from the September 3, 2026 receipt stated in D2 and closed on September 23, 2026, so Relusk's October 6, 2026 objection is untimely. Ligex can treat the 14% increase as deemed accepted and Relusk's Section 5.4 termination right as lost. Relusk should seek a negotiated waiver or extension from Ligex rather than rely on the letter.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 5.4",
+      "detect_terms2": [
+        "within twenty (20) days after receipt",
+        "deemed accepted"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "Under D1 Section 16.4 the Order Form controls the term. D4's Term and Renewal section sets a 36-month Initial Term from January 15, 2026. It then renews automatically for successive thirty-six (36) month Renewal Terms unless Distributor gives notice during a single 30-day window commencing 210 days before expiry. That locks Relusk, and its annual minimum purchase commitment, into repeated three-year terms. The term sheet (D7) agreed one-year renewals terminable by either party on 90 days' notice.",
+      "doc": "D4",
+      "section": "Term and Renewal",
+      "detect_terms": [
+        "successive thirty-six (36) month Renewal Terms",
+        "commencing two hundred ten (210) days"
+      ],
+      "expected_finding": "The Order Form, which controls the term under D1 Section 16.4, automatically renews for 36-month terms unless Relusk uses a narrow 30-day window opening 210 days before expiry. This departs from the term sheet's one-year renewals terminable on 90 days' notice, and it should be conformed to the term sheet.",
+      "contradicts": "F8",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D1 Section 3.2 bars Relusk from distributing any Competing Product in the Territory during the Term. D1 Section 1.1 defines Competing Product as anything performing substantially the same function as any Product, and defines Products by reference to the Order Form. Standing alone this is a conventional non-compete. D4's Products list covers Ligex's whole Cold Chain Catalog, including insulated pallet shippers and phase-change coolant packs, plus any additional items Supplier adds to the catalog during the Term. On its own, that list looks favourable because it gives Relusk more to sell. Read together, the non-compete reaches the packaging lines Relusk already carries for other vendors and expands unilaterally whenever Ligex adds items. The term sheet (D7) limited exclusivity to telemetry units and data loggers and excluded Relusk's existing packaging lines.",
+      "doc": "D1",
+      "section": "Sections 1.1 and 3.2",
+      "detect_terms": [
+        "any Competing Product",
+        "substantially the same function as any Product"
+      ],
+      "expected_finding": "Because D1's Competing Product definition keys off the D4 Products list, Relusk's non-compete covers insulated shippers, coolant packs and any future Ligex catalog items. This contradicts the term sheet's telemetry-and-data-logger scope and its exclusion of Relusk's existing lines. The non-compete should be limited to telemetry units and data loggers, with existing lines expressly carved out.",
+      "contradicts": "F9",
+      "doc2": "D4",
+      "section2": "Products",
+      "detect_terms2": [
+        "insulated pallet shippers",
+        "any additional items Supplier adds"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "D1 Section 12.1 caps each party's liability, including Section 11 indemnities, at amounts paid in the prior 12 months. D1 Section 12.3 excludes from that cap 'a party's obligations under the Data Processing Addendum', which looks mutual and routine. D5 Section 7.2 makes Relusk, and only Relusk, indemnify Supplier for all Losses from any Security Incident involving Shipment Data in Distributor's custody or any failure to obtain notices or consents. That includes regulatory fines and third-party claims. D5 says nothing about a cap, so a reader of D5 alone would assume D1's cap applies. Read together, Relusk's DPA indemnity is unlimited, while Ligex has no matching DPA indemnity.",
+      "doc": "D5",
+      "section": "Section 7.2",
+      "detect_terms": [
+        "shall indemnify Supplier",
+        "any Security Incident"
+      ],
+      "expected_finding": "D1 Section 12.3 removes all DPA obligations from the Section 12.1 cap, and D5 Section 7.2 places a one-way data incident indemnity on Relusk, so Relusk's exposure under that indemnity is unlimited. The DPA indemnity should be brought under the cap or a separate super-cap.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 12.3",
+      "detect_terms2": [
+        "obligations under the Data Processing Addendum"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 Section 1.1 defines Defective Unit as any Product unit failing to conform to Specifications within twenty-four (24) months after delivery. D1 Section 8.2 requires Supplier to replace Defective Units in accordance with the return-merchandise procedures in the Service Level Schedule. D1 Section 16.4 provides that the SLA controls as to return-merchandise procedures. D6 Section 1.2 separately defines Defective Unit as a unit failing within thirty (30) days after delivery, and D6 Section 4.1 makes only such units eligible for RMA replacement. Each document reads as ordinary on its own. Read together, the precedence clause lets Ligex argue that the 30-day definition governs replacement, which shrinks Relusk's 24-month warranty remedy to a dead-on-arrival remedy.",
+      "doc": "D6",
+      "section": "Sections 1.2 and 4.1",
+      "detect_terms": [
+        "within thirty (30) days after delivery"
+      ],
+      "expected_finding": "'Defective Unit' means 24 months in D1 but 30 days in the SLA, and D1 Section 16.4 makes the SLA control RMA procedures, so Ligex can limit warranty replacements to units failing within 30 days. The SLA definition should be deleted or conformed to D1's 24-month definition, and D1 should expressly prevail on warranty scope.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Sections 1.1, 8.2 and 16.4",
+      "detect_terms2": [
+        "twenty-four (24) months after delivery",
+        "return-merchandise procedures"
+      ]
+    }
+  ]
+}

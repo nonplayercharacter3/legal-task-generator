@@ -1,0 +1,164 @@
+{
+  "matter_id": "s65-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 5,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "SOW No. 2 Recital B: \"Licensor delivered the Phase 1 Deliverables to Licensee on September 2, 2026 by deploying the configured modules to Licensee's validation environment and providing ... written notice of readiness for review to Licensee's designated project manager.\" Recital C: \"On October 6, 2026, Licensee issued a written notice to Licensor rejecting the Phase 1 Deliverables.\" License Agreement Section 6.3: \"Licensee may reject the Deliverable by written notice to Licensor given no later than fifteen (15) Business Days after delivery ... If Licensee does not give a rejection notice within that period, the Deliverable shall be deemed accepted.\"",
+            "reason": "The two documents together show the problem. Delivery under Section 6.2 occurred on Wednesday, September 2, 2026. Counting 15 Business Days and excluding weekends and Labor Day (September 7), the rejection window closed on September 24, 2026. Trouvar's October 6 rejection came 8 Business Days (12 calendar days) late. Under Section 6.3, Lairal can say the Phase 1 Deliverables were deemed accepted. Under Section 6.5, that would make the $310,000 Phase 1 Milestone Fee (recited in SOW No. 2 Section 6.3) payable. Under Section 6.6, the 90-day Warranty Period would run from September 24 to about December 23, 2026. The point is still actionable for Trouvar. SOW No. 2 is an unsigned draft dated October 20, 2026. Recital C records that the conformity dispute continues and that each party reserves all rights. Nothing in the folder shows Trouvar paying the fee or otherwise accepting the result. Trouvar should not sign recitals that fix these dates without addressing the deemed-acceptance risk. It should also consider protecting itself by giving warranty notices under Section 6.6, since that window is still open.",
+            "alone": {
+              "lairal_sow_no2_phase2_validation_draft.md": {
+                "findable": false,
+                "evidence": "Licensor delivered the Phase 1 Deliverables to Licensee on September 2, 2026 ... On October 6, 2026, Licensee issued a written notice to Licensor rejecting the Phase 1 Deliverables.",
+                "reason": "This document gives the delivery date (September 2, 2026) and the rejection date (October 6, 2026), about five weeks apart. It also shows the $310,000 Phase 1 Milestone Fee is still governed by SOW No. 1 and the License Agreement, and that each party reserves its rights. Section 5.1 points to Sections 6.3 and 6.4 of the License Agreement for acceptance, but this document never states the rejection window, the deemed-acceptance consequence, how Business Days are defined, or when the warranty period starts. Without the License Agreement's 15-Business-Day rejection period and its deemed-acceptance rule, an associate could not tell whether the October 6 notice was late or whether Phase 1 is deemed accepted and the fee payable. The problem depends on terms in the document not provided."
+              },
+              "trouvar_lairal_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "If Licensee does not give a rejection notice within that period, the Deliverable shall be deemed accepted.",
+                "reason": "This document alone sets out the mechanism. Section 6.3 gives a 15-Business-Day rejection window with deemed acceptance if no notice is given. Section 6.5 makes the milestone fee payable on deemed acceptance. Section 6.6 starts the 90-day Warranty Period on acceptance or deemed acceptance. Section 1.2(f) and the Business Day definition exclude weekends and US federal holidays. It does not show when the Phase 1 deliverables were delivered (September 2, 2026) or when Trouvar sent its rejection notice (October 6, 2026). It also does not show the $310,000 Phase 1 Milestone Fee. All of these come only from draft SOW No. 2. Without those dates, an associate cannot tell that the window closed on September 24 or that the rejection was late, so the harm to Trouvar cannot be seen from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "6.1 Exclusivity. In consideration of the subscription pricing in Section 2, during the Term and for twenty-four (24) months thereafter, Licensee shall not, and shall cause its Affiliates not to, license, procure, develop or use, at any facility worldwide, any manufacturing execution, quality-management or batch-record software other than the Licensed Software.",
+            "reason": "The restriction binds Trouvar, the client, and its Affiliates. It reaches far beyond the term sheet's agreed scope, which was no third-party batch-record software at the Raleigh facility during the Initial Term only. The clause instead covers all MES, QMS and batch-record software at every facility worldwide. It also bars in-house development and runs for 24 months after the Term. Under License Agreement Section 17.2 the Order Form prevails over the License Agreement, and no other document narrows the clause. The term sheet is non-binding and does not cure it. This would block Trouvar from using other tools at other plants and from switching vendors after termination. The folder is dated as late as October 2026, and the agreement is ongoing, so Trouvar can still seek an amendment or challenge the clause."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Order Form No. 1, Section 2.1: \"'Hosted Services' means the hosting by or on behalf of Licensor of the single production instance of the Licensed Software identified in Section 7.1 of this Order Form...\" License Agreement, Section 1.1: \"'Hosted Services' means the hosting of Licensee's production, validation and disaster-recovery environments...\" License Agreement, Section 17.2: \"where any provision of an Order Form conflicts or is inconsistent with this License Agreement, the Order Form shall prevail.\"",
+            "reason": "The two definitions conflict, and the Order Form definition is not limited to the Order Form's own use. Under Section 17.2 the Order Form controls, so 'Hosted Services' across the whole Agreement shrinks to the single production instance. The obligations that turn on that term are Lairal's, and Trouvar benefits from them. These are: (1) providing the Hosted Services under the Service Level Schedule; (2) the backup and disaster-recovery arrangements in Section 7.1, which apply 'for the Hosted Services'; and (3) the availability commitment and service credits. Read with the Order Form definition, none of these clearly covers the validation or disaster-recovery environments. That cuts against Trouvar. It needs the validation environment for Update testing under Section 3.4 and for the validation work in draft SOW No. 2 (Section 4.2(c) assumes the environment stays available). It also needs disaster recovery to protect GxP records and to be ready for FDA inspection. Nothing in the folder cures the conflict. The Order Form's 'single production instance' reads like a deliberate narrowing rather than a carve-out that harms no one. The documents are in force, and Trouvar can still seek an amendment or a clarifying interpretation, so the point remains actionable.",
+            "alone": {
+              "lairalqms_order_form_no1.md": {
+                "findable": false,
+                "evidence": "\"Hosted Services\" means the hosting by or on behalf of Licensor of the single production instance of the Licensed Software identified in Section 7.1 of this Order Form, including the provision of the computing infrastructure, storage, network connectivity, monitoring and system administration necessary to make that instance available to Licensee and its Authorized Users.",
+                "reason": "This Order Form defines 'Hosted Services' as hosting of a single production instance and lists only TRV-RAL-PRD-01. Read alone, that looks like an ordinary scoping definition. It does not mention validation or disaster-recovery environments, but it says nothing suggesting they were promised or are missing. The problem depends on three things this document does not contain: (1) the License Agreement's broader definition covering production, validation and DR environments; (2) the backup, DR and service-level obligations in Section 7.1 of the License Agreement that attach to that definition; and (3) the Section 17.2 precedence clause that lets the Order Form override it. The Service Level Schedule's uptime and credit terms are also outside this document. Without these, an associate cannot see that the definition conflicts with anything or that it takes protection away from Trouvar."
+              },
+              "trouvar_lairal_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "\"Hosted Services\" means the hosting of Licensee's production, validation and disaster-recovery environments of the Licensed Software by or on behalf of Licensor ... (Section 1.1); \"where any provision of an Order Form conflicts or is inconsistent with this License Agreement, the Order Form shall prevail.\" (Section 17.2)",
+                "reason": "Read alone, the License Agreement defines 'Hosted Services' broadly to cover production, validation and disaster-recovery environments. Section 7.1 ties the backup and DR obligations to that broad definition. Section 17.2 puts the Order Form above the License Agreement, which is a general risk, but nothing here shows that Order Form No. 1 redefines 'Hosted Services' as the single production instance. That narrower definition, and its effect of removing the validation and DR environments from the uptime, backup and DR commitments, appears only in the Order Form. The availability and credit terms are in the Service Level Schedule. On this document alone the defined term is consistent and protects Trouvar, so the conflict cannot be seen without the Order Form."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "SOW No. 2 Section 8.1: \"Licensee shall defend, indemnify and hold harmless Licensor ... from and against any claim, suit or proceeding brought by a third party, including any Regulatory Authority, and all resulting damages, fines, penalties, costs and expenses ... to the extent arising out of or relating to: (a) the Licensee Materials ... (b) Licensee-supplied validation protocols ... or (c) Licensee's regulatory submissions ... and the manufacture, release and distribution of Licensee's products.\" License Agreement Section 2.2: \"Each Statement of Work forms part of this Agreement and is governed by its terms.\" License Agreement Section 12.3: \"The exclusions and limitations in Sections 12.1 and 12.2 do not apply to: (a) a party's indemnification obligations under this Agreement.\"",
+            "reason": "Trouvar is the indemnifying party under SOW No. 2 Section 8. Under License Agreement Section 2.2, an executed SOW becomes part of the Agreement. Section 12.3(a) then removes every indemnification obligation under the Agreement from both the 12-month fee cap and the exclusion of indirect damages. The result is that Trouvar's new indemnity would be uncapped. It also reaches very broadly: regulatory fines, the manufacture, release and distribution of Trouvar's products, and any deficiency in Trouvar's validation. The documents do not cure this. Section 8.2 only excludes claims caused by Lairal's own breach or negligence. The SOW sets no separate cap. The order of precedence in Section 17.2 does not help, because nothing conflicts. In the License Agreement alone, the carve-out only covered Lairal's IP indemnity, so it worked in Trouvar's favour; this draft reverses that. SOW No. 2 is still an unsigned draft (October 20, 2026), so Trouvar can still negotiate this point before it signs.",
+            "alone": {
+              "lairal_sow_no2_phase2_validation_draft.md": {
+                "findable": false,
+                "evidence": "Licensee shall defend, indemnify and hold harmless Licensor, its Affiliates and their respective directors, officers, employees and agents from and against any claim, suit or proceeding brought by a third party, including any Regulatory Authority, and all resulting damages, fines, penalties, costs and expenses, including reasonable attorneys' fees, to the extent arising out of or relating to: ...",
+                "reason": "Section 8.1 of the draft shows that Trouvar would take on a broad indemnity in Lairal's favour. It covers Licensee Materials, Licensee-supplied protocols, deficiencies in Trouvar's validation, regulatory submissions and the manufacture and distribution of Trouvar's products. Section 1.1 says the SOW is governed by the License Agreement. Section 8.3 borrows the indemnity procedure in Section 11.4 of the License Agreement. Nothing in this document shows that the indemnity is uncapped. The SOW has no liability cap and no cap carve-out, and it does not say whether the License Agreement's limitation of liability applies. To see the problem, one would need three provisions from the License Agreement: the cap in Section 12.2, the carve-out in Section 12.3 removing a party's 'indemnification obligations under this Agreement' from the cap, and Section 2.2 making each SOW part of the Agreement. Read alone, Section 8 looks like an ordinary, one-sided indemnity that an associate might push back on, presumably subject to whatever cap the Agreement sets. The specific harm, unlimited exposure created by the Agreement's carve-out, depends on terms that are not in this document."
+              },
+              "trouvar_lairal_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "12.3 Exceptions. The exclusions and limitations in Sections 12.1 and 12.2 do not apply to: (a) a party's indemnification obligations under this Agreement;",
+                "reason": "This document shows three things: the 12-month fee cap (12.2), the carve-out for 'a party's indemnification obligations under this Agreement' (12.3(a)), and that each SOW forms part of the Agreement (2.2). But the only indemnity it contains is Lairal's IP indemnity in favour of Trouvar (11.1). Read alone, the carve-out removes the cap only from Lairal's obligation, so it helps the client rather than hurts it. The harm needs a Trouvar indemnity that the carve-out would then leave uncapped, and that indemnity exists only in Section 8 of draft SOW No. 2, which is not provided. An associate could note in the abstract that a future SOW indemnity would fall outside the cap. Nothing in this document shows that such an indemnity exists or that Trouvar faces unlimited liability."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 16.1: \"Any Party may assign this Agreement in its entirety without consent to its successor or to the acquirer in a Change of Control Transaction, provided that the assignee assumes in writing all obligations of the assigning Party under this Agreement.\" Section 1.1 defines Change of Control Transaction to include \"(c) a sale, transfer or other disposition of all or substantially all of the assets of that Party, or of all or substantially all of the assets of the business to which this Agreement relates,\" \"in each case to any person.\"",
+            "reason": "Read together, the two clauses let Lairal assign the Agreement to any buyer of the LairalQMS business without Trouvar's consent. The only condition is a written assumption of obligations. There is no requirement to notify Trouvar, no exclusion of competitors and no termination right for Trouvar on such an assignment. Nothing else in the folder fills that gap. The Kessmont guaranty's notice covenant (7.2(b)) applies only if Kessmont stops owning Lairal, so it would not be triggered by a sale of the product line. The confidentiality and data-use limits in Sections 10.3 and 10.5 would bind the buyer, but they do not stop a competitor from becoming the custodian of Trouvar's GxP records. The clause is mutual on paper, but the risk falls on Trouvar. Lairal holds Trouvar's regulated batch records and manufacturing data. Trouvar is also locked in by Order Form Section 6.1, which bars it from using other batch-record or QMS software worldwide during the Term and for 24 months afterwards. The Agreement runs until at least March 2029 and no such assignment has yet happened, so Trouvar can still act on this, for example by negotiating an amendment adding notice, a competitor carve-out and a termination right."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 10,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C6 asks for the whole ranking in fact F2 ('Order Form, then License Agreement, then Service Level Schedule, then Statement of Work'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.075,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

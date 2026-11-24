@@ -1,0 +1,123 @@
+{
+  "task_id": "s65-m0003",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Trouvar Therapeutics, Inc., the licensee under a software license agreement with Lairal Systems, LLC. Trouvar needs a clear view of where it stands under the arrangement before it decides how to proceed. Please review all eight documents in the folder and prepare a memo to me. For each issue, give where it appears (document and section), why it matters for Trouvar, and a recommended fix. Keep it practical and under four pages if you can.",
+  "documents": [
+    "kessmont_parent_guaranty.md",
+    "lairal_sow_no2_phase2_validation_draft.md",
+    "lairalqms_order_form_no1.md",
+    "lairalqms_service_level_schedule.md",
+    "lairalqms_term_sheet_jan2026.md",
+    "trouvar_lairal_mutual_nda_2025.md",
+    "trouvar_lairal_software_license_agreement.md",
+    "trouvar_wilmington_office_lease.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that Trouvar's October 6, 2026 rejection notice for the Phase 1 deliverables came after the 15-Business-Day rejection window, which closed on or about September 24, 2026, so Phase 1 is likely deemed accepted. It identifies where this arises (SOW No. 2 Recitals B and C, or License Agreement Section 6.3), explains why this matters to Trouvar, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "deemed accepted",
+        "September 24, 2026",
+        "rejection was late"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that the exclusivity in Order Form No. 1 goes far beyond the term sheet's Raleigh-only, batch-record-only, Initial-Term commitment, because it covers all quality-management, MES and batch-record software at all facilities worldwide with a 24-month tail. It identifies where this arises (Order Form No. 1 Special Terms / exclusivity section), explains why this matters to Trouvar, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "at any facility worldwide",
+        "Raleigh",
+        "24 months"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that the Order Form's narrower definition of 'Hosted Services' (the single production instance) governs, so Lairal's service-level, backup and disaster-recovery obligations no longer cover Trouvar's validation and disaster-recovery environments. It identifies where this arises (Order Form No. 1 Section 2, or License Agreement Section 1.1/7.1/17.2), explains why this matters to Trouvar, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "single production instance",
+        "validation and disaster-recovery environments",
+        "Hosted Services"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Trouvar's new indemnity in draft SOW No. 2 would fall outside the License Agreement's liability cap and so be uncapped. It identifies where this arises (SOW No. 2 Section 8, or License Agreement Sections 2.2/12.3), explains why this matters to Trouvar, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "uncapped",
+        "indemnification obligations under this Agreement",
+        "Licensee indemnity"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that the Change of Control exception lets Lairal assign the License Agreement to any acquirer, including a Trouvar competitor, without Trouvar's consent. It identifies where this arises (License Agreement Section 16.1 and/or Section 1.1), explains why this matters to Trouvar, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Change of Control Transaction",
+        "without consent",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Order Form prevails over the License Agreement in the event of conflict.",
+      "kind": "fact",
+      "hints": [
+        "Order Form shall prevail",
+        "order of precedence",
+        "Section 17.2"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response is in the form of a memo addressed to the supervising partner.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "From:"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response presents the issues separately, giving for each issue its location, why it matters, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Issue 1",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Trouvar's October 6, 2026 rejection of the Phase 1 deliverables was timely under the License Agreement.",
+      "kind": "negative",
+      "hints": [
+        "rejection was timely",
+        "within the rejection period"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Trouvar's indemnity in SOW No. 2 is limited by the License Agreement's 12-month-fees liability cap.",
+      "kind": "negative",
+      "hints": [
+        "subject to the cap",
+        "capped at 12 months' fees"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

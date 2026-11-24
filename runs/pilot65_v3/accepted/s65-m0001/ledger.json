@@ -1,0 +1,261 @@
+{
+  "matter_id": "s65-m0001",
+  "summary": "Subirt Pictures Group, LLC (client, Buyer) is acquiring all outstanding shares of Nightjar Releasing, Inc., an independent film distributor with a library of 41 titles, from Fural Media Partners, L.P. (Seller). The Base Purchase Price is $28,500,000, of which $6,000,000 is paid by a Buyer-issued Seller Note. Before the SPA was signed, Seller's affiliate Fural Rights Holdings, LLC conveyed the library rights to Nightjar under a Bill of Sale. At Closing, Seller will provide transitional collection, accounting and delivery services to Nightjar under a TSA. The folder holds execution drafts of the SPA, TSA and Seller Note, the completed Bill of Sale, a draft press release, Subirt's board consent and a funds flow memorandum. Six issues are planted. Three are cross-document: (1) a 'Distribution Rights' definition that means all-media rights in the SPA but only theatrical/home-video rights in the Bill of Sale; (2) the SPA's uncapped carve-out for unremitted Post-Closing Receipts, which the TSA pulls under a small fee-based cap through the SPA's precedence clause; (3) a general-representation survival period tied to a note maturity that falls only nine months after Closing. Three are single-document: a Delaware law and forum clause in the Seller Note, an uncapped Buyer indemnity in the SPA, and a freely assignable Seller Note carrying Holder information rights.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Subirt Pictures Group, LLC",
+      "role": "Buyer; maker of the Seller Note; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Fural Media Partners, L.P.",
+      "role": "Seller; holder of the Seller Note; service provider under the TSA"
+    },
+    {
+      "id": "P3",
+      "name": "Nightjar Releasing, Inc.",
+      "role": "Target company (the Company); independent film distributor; transferee under the Bill of Sale and service recipient under the TSA"
+    },
+    {
+      "id": "P4",
+      "name": "Fural Rights Holdings, LLC",
+      "role": "Affiliate of Seller; transferor of library rights to the Company under the Bill of Sale"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "March 9, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Closing Date",
+      "value": "April 1, 2026",
+      "doc": "D1",
+      "section": "Section 3.1"
+    },
+    {
+      "id": "F3",
+      "key": "Base Purchase Price",
+      "value": "$28,500,000",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F4",
+      "key": "Seller Note principal amount",
+      "value": "$6,000,000",
+      "doc": "D4",
+      "section": "Section 1"
+    },
+    {
+      "id": "F5",
+      "key": "Seller Note Maturity Date",
+      "value": "nine (9) months after the Issue Date, which is the Closing Date",
+      "doc": "D4",
+      "section": "Section 2"
+    },
+    {
+      "id": "F6",
+      "key": "SPA governing law",
+      "value": "laws of the State of New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F7",
+      "key": "SPA exclusive forum",
+      "value": "state or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 11.8"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence (SPA vs. TSA and Seller Note)",
+      "value": "SPA prevails, except TSA governs the Services and each instrument's own governing law clause governs it",
+      "doc": "D1",
+      "section": "Section 11.12"
+    },
+    {
+      "id": "F9",
+      "key": "Seller Cap under SPA",
+      "value": "12% of the Base Purchase Price",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F10",
+      "key": "Number of Library Titles",
+      "value": "41 motion pictures listed on Schedule 4.9",
+      "doc": "D1",
+      "section": "Section 4.9"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "bill_of_sale.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "transition_services_agreement.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "press_release.md",
+      "kind": "press release",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "buyer_board_consent.md",
+      "kind": "board consent",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "funds_flow_memorandum.md",
+      "kind": "closing funds flow memorandum",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Seller Note Section 10 chooses Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery for any dispute arising under the Note. SPA Section 11.8 chooses New York law and the exclusive jurisdiction of the New York County courts. SPA Section 11.12 lets each ancillary instrument's own governing law clause control disputes under it, so the SPA does not override the Delaware clause. Seller Note Section 4 lets Subirt set off Losses determined under SPA Article IX against Note payments. As a result, any payment default or set-off dispute on the Note is decided in Delaware under Delaware law, while the underlying indemnity claim is decided in New York under New York law. That creates parallel proceedings, a risk of inconsistent results, and a risk that Subirt's main recovery mechanism is litigated in a forum it did not choose.",
+      "doc": "D4",
+      "section": "Section 10",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery of the State of Delaware"
+      ],
+      "expected_finding": "The Seller Note's Delaware governing law and exclusive Delaware forum, which SPA Section 11.12 preserves, conflict with the SPA's New York law and New York forum; set-off disputes over SPA indemnity claims would be split across two courts and two laws, so the Note should be conformed to New York law and the SPA Section 11.8 forum.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "SPA Section 9.3(b) requires Subirt to indemnify the Seller Indemnitees for all Losses arising from the ownership or operation of the Company or the exploitation of the Library Titles from and after the Closing. This reaches third-party participation, residuals and licensor claims made against Fural as the former owner. SPA Section 9.5(e) then states that no limitation in Section 9.5 applies to Buyer's obligations under Section 9.3, so there is no cap, deductible or time limit. Fural's own indemnity, by contrast, is limited to the 12% Seller Cap. Subirt therefore carries unlimited, open-ended exposure.",
+      "doc": "D1",
+      "section": "Sections 9.3(b) and 9.5(e)",
+      "detect_terms": [
+        "shall apply to Buyer's obligations under Section 9.3",
+        "from and after the Closing"
+      ],
+      "expected_finding": "Subirt's indemnity under SPA Section 9.3 is excluded from every limitation in Section 9.5, exposing it to unlimited and indefinite liability while Fural's liability is capped at 12% of the Base Purchase Price; Subirt should seek a reciprocal cap and survival limit on its Section 9.3 obligations.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "SPA Section 1.1 defines 'Distribution Rights' as all rights to exploit the Library Titles in all media, including subscription, advertising-supported and transactional video-on-demand. SPA Section 4.9 uses that term to describe what the Company acquired under the Bill of Sale. The Bill of Sale, however, is dated before SPA signing and is not an Ancillary Agreement covered by the SPA precedence clause. Its Sections 1.2 and 2.1 define and convey 'Distribution Rights' as only theatrical, non-theatrical and physical home-video rights. Read together, the Company never received the streaming rights in the 41 Library Titles that the SPA treats as part of the deal; those rights stay with Fural Rights Holdings, LLC. Subirt's only recourse would be a Section 4.9 representation claim, which is subject to the Seller Cap and the shortened survival period.",
+      "doc": "D1",
+      "section": "Sections 1.1 and 4.9",
+      "detect_terms": [
+        "including subscription, advertising-supported and transactional video-on-demand"
+      ],
+      "expected_finding": "'Distribution Rights' means all-media rights including streaming in the SPA but only theatrical, non-theatrical and physical home-video rights in the Bill of Sale, so the Company never received the streaming rights in the Library Titles, which remain with Fural Rights Holdings; before Closing, Subirt should require a confirmatory conveyance of all-media rights and a conforming definition rather than rely on a capped representation claim.",
+      "contradicts": null,
+      "doc2": "D2",
+      "section2": "Sections 1.2 and 2.1",
+      "detect_terms2": [
+        "theatrical, non-theatrical and physical home-video rights"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Seller Note Section 9 allows the Holder to sell, assign, pledge or otherwise transfer the Note, in whole or in part, to any Person without Subirt's consent. Seller Note Section 6 gives the Holder monthly Company financial statements and title-by-title performance and box-office/streaming revenue reports. Read together, Fural can transfer the Note, and with it these confidential reporting rights, to a competing film distributor or a distressed-debt buyer. Nothing in the Note restricts transferees or requires them to keep the information confidential.",
+      "doc": "D4",
+      "section": "Sections 6 and 9",
+      "detect_terms": [
+        "to any Person without the consent of Maker",
+        "title-by-title performance reports"
+      ],
+      "expected_finding": "The Seller Note is freely assignable by Fural to any Person, including a competitor, and the transferee would receive the Company's monthly financial and title-level performance reports; Subirt should require its consent to any transfer, bar transfers to competitors, and add confidentiality conditions on any transferee.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I5",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 9.2(d) requires Fural to indemnify Subirt for any failure to remit Post-Closing Receipts under Section 6.9, and Section 9.5(c) carves Section 9.2(d) claims out of the Seller Cap. On its own, that protects Subirt. SPA Section 11.12, however, provides that the TSA governs with respect to the Services. The TSA is signed at Closing. TSA Section 2.4 provides that Fural's receipt and remittance of Post-Closing Receipts shall constitute Services. TSA Section 9.1 caps Provider's aggregate liability arising out of the Services at the Service Fees paid in the six (6) months before the claim, with exceptions only for fraud and willful misconduct. Read together, exhibitor, platform and sub-distributor collections that Fural holds and fails to remit, potentially millions of dollars, fall under a cap measured by a few months of service fees. The SPA's uncapped carve-out is effectively removed.",
+      "doc": "D1",
+      "section": "Sections 9.5(c) and 11.12",
+      "detect_terms": [
+        "shall govern with respect to the Services",
+        "Post-Closing Receipts"
+      ],
+      "expected_finding": "Because SPA Section 11.12 lets the TSA govern the Services and TSA Section 2.4 makes remittance of Post-Closing Receipts a Service, TSA Section 9.1's cap of six months' Service Fees displaces the SPA Section 9.5(c) uncapped carve-out, leaving unremitted collections effectively capped; Subirt should carve Post-Closing Receipts out of the TSA cap or make SPA Sections 9.2(d) and 9.5(c) control notwithstanding the TSA.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Sections 2.4 and 9.1",
+      "detect_terms2": [
+        "shall constitute Services",
+        "Service Fees paid in the six (6) months"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA Section 9.1 provides that the General Representations, including the Section 4.9 title and chain-of-title representations, survive until the earlier of (i) eighteen (18) months after the Closing Date and (ii) the Note Maturity Date, and that claims must be noticed before expiry. Seller Note Section 2 sets the Maturity Date at nine (9) months after the Issue Date, which is the Closing Date of April 1, 2026 (SPA Section 3.1). Computed together, the general representations expire on January 1, 2027, about nine months after Closing. That is before a full annual cycle of licensor participation statements and audits, the point at which chain-of-title, residual and revenue-reporting defects typically surface. The same date ends the Note's set-off window.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "earlier of (i) eighteen (18) months after the Closing Date"
+      ],
+      "expected_finding": "Because the Seller Note matures nine months after its Closing Date issue date of April 1, 2026, SPA Section 9.1 cuts survival of the General Representations to January 1, 2027, too short to discover and notice title and revenue-reporting claims in a film library; Subirt should delink survival from the Note maturity and restore a fixed period of at least 18 months.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Section 2",
+      "detect_terms2": [
+        "nine (9) months after the Issue Date"
+      ]
+    }
+  ]
+}

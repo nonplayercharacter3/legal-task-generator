@@ -1,0 +1,109 @@
+{
+  "matter_id": "s65-m0002",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I1\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 100
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I1"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": false,
+            "missing_terms": [
+              "received on September 3, 2026"
+            ]
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Order Form Section 2.2: \"At the end of the Initial Term, the Agreement renews automatically for successive thirty-six (36) month Renewal Terms (each, a \"Renewal Term\"). It does not renew if either Party delivers written notice of non-renewal to the other Party during the thirty (30) day period commencing two hundred ten (210) days before the expiry of the Initial Term or the then-current Renewal Term... A notice delivered outside that period has no effect on the renewal of the Agreement.\" Section 5.1 also sets the commitment for \"Each Contract Year of any Renewal Term\" at \"$3,600,000\".",
+            "reason": "Agreement Section 16.4 makes the Order Form control as to term, so this clause governs. It renews the Agreement automatically for successive 36-month terms. Relusk can only stop a renewal by notice inside one narrow 30-day window, about seven months before expiry. A notice outside that window is expressly void. Missing the window locks Relusk into another three years of exclusivity, the Section 3.2 non-compete and a $3.6M minimum purchase commitment in each renewal year. The term sheet agreed something different: \"one-year renewals, terminable by either party on 90 days' notice.\" No document in the folder cures, limits or explains the change. The clause is still actionable. The Initial Term runs to January 14, 2029, so the first non-renewal window (mid-June to mid-July 2028) has not opened. Relusk can seek an amendment under Section 16.7, or at least calendar the window."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Agreement §3.2: \"During the Term, Distributor shall not, and shall cause its Affiliates not to, directly or indirectly, manufacture, market, promote, sell, distribute or otherwise supply any Competing Product in the Territory...\" Agreement §1.1 defines \"Competing Product\" as any product \"that performs substantially the same function as any Product,\" and \"Products\" as \"the products identified as Products in the Order Form.\" Order Form §3.1 makes the Products \"all products listed in Supplier's Cold Chain Catalog,\" including \"(d) Insulated Packaging... insulated pallet shippers\" and \"(e) Coolants and Refrigerants. Phase-change coolant packs.\" Order Form §3.2 adds: \"The Products also include any additional items Supplier adds to the Cold Chain Catalog during the Term.\"",
+            "reason": "Reading the Agreement and Order Form together, Relusk's non-compete covers anything that does substantially the same job as any catalog item. That includes Ligex's ColdCore insulated shippers and PhaseGuard coolant and gel packs. Relusk already distributes passive thermal packaging and coolant products for other vendors, as the term sheet confirms (§2.2), so continuing those existing lines would breach §3.2 for the whole Term. Order Form §3.2 also lets Ligex widen the restriction on its own by adding items to the catalog, without any amendment (Order Form §10.2). The non-binding term sheet had limited exclusivity and the non-compete to telemetry units and data loggers and carved out Relusk's existing packaging lines (§§6.1, 6.3–6.4), but nothing in the signed documents keeps that carve-out. Order Form §5.4 even preserves §3.2 if Relusk's appointment becomes non-exclusive. The restriction falls entirely on Relusk, the client, and puts its existing business at risk. The issue is still actionable: the Term runs to at least January 2029, nothing in the folder shows Relusk accepted or waived this point, and its pending §5.4 price-increase negotiation gives it a live opportunity to seek an amendment.",
+            "alone": {
+              "relusk_ligex_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "\"Products\" means the products identified as Products in the Order Form, together with the Documentation and any embedded firmware and associated software made available by Supplier for use with them.",
+                "reason": "This agreement contains only a conventional non-compete. Section 3.2 bars Competing Products, and the definition of Competing Product depends on 'Products', which is defined by reference to the Order Form. Recital A says Ligex makes 'telemetry and packaging products', but the agreement never says which of those are Products. It also does not say that the list can grow when Ligex adds catalog items, or that Relusk already carries packaging lines from other vendors. The overbreadth only appears from the Order Form (D4), which covers the whole Cold Chain Catalog, packaging, and future additions, and from the term sheet (D7), which limited exclusivity to telemetry units and data loggers and carved out existing lines. An associate reading only this agreement could not see that the restriction reaches Relusk's existing packaging business or expands unilaterally."
+              },
+              "ligex_order_form_no1.md": {
+                "findable": false,
+                "evidence": "\"The Products also include any additional items Supplier adds to the Cold Chain Catalog during the Term.\" (Section 3.2); see also Section 5.4: \"A conversion under paragraph (b) does not affect Section 3.2 of the Agreement or any other provision of the Agreement.\"",
+                "reason": "Read alone, the Order Form shows that 'Products' covers Ligex's entire Cold Chain Catalog, including ColdCore insulated pallet shippers and PhaseGuard coolant packs, and that Ligex can add items without an amendment. It also mentions Section 3.2 of the Agreement, which survives a conversion to non-exclusivity. But it never says what Section 3.2 provides. Nothing here shows a non-compete on Competing Products, or that 'Competing Product' is defined by reference to the Products. It also does not show that Relusk already carries packaging lines for other vendors, or that the term sheet limited exclusivity to telemetry units and data loggers. Standing alone, the broad product list reads as favourable to Relusk because it gives Relusk more to sell. The harm appears only when the list is combined with the Agreement's non-compete and the term sheet, so it cannot be found from this document by itself."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "DPA Section 7.2: \"Distributor shall indemnify Supplier, its Affiliates and their respective officers, directors, employees and agents, and shall defend and hold them harmless, from and against all Losses arising out of or relating to: (a) any Security Incident involving Shipment Data in Distributor's custody or control, or on Distributor Systems... and (b) any failure by Distributor to provide any notice or obtain any consent or authorization required under Section 4.1 or Section 4.2.\" Distribution Agreement Section 12.3: \"The limitations in Sections 12.1 and 12.2 do not apply to: ... (d) a Party's obligations under the Data Processing Addendum.\"",
+            "reason": "Read together, the two documents leave Relusk with an unlimited, one-way data indemnity. Section 12.3(d) of the Distribution Agreement removes all DPA obligations from both the 12-month cap and the consequential-damages exclusion. The DPA is incorporated into the Agreement under Section 10.7. DPA Section 7.2 makes Relusk alone indemnify Ligex for all Losses from a Security Incident in its custody or a notice or consent failure, including regulatory fines, third-party judgments, notification costs and credit monitoring. The DPA has no matching indemnity from Ligex, and Ligex's Section 11.1 indemnity stays capped. Section 7.4 requires only commercially reasonable mitigation and Section 7.3 imports procedure; neither limits the exposure. The Guaranty extends the liability to Relusk Holdings. Nothing in the folder cures this, and the October 2026 objection letter shows the Agreement is still in force, so the exposure is ongoing and can still be raised through amendment or renegotiation.",
+            "alone": {
+              "data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "Distributor shall indemnify Supplier, its Affiliates and their respective officers, directors, employees and agents, and shall defend and hold them harmless, from and against all Losses arising out of or relating to: (a) any Security Incident involving Shipment Data in Distributor's custody or control...",
+                "reason": "Read alone, the DPA shows that Section 7.2 is a one-way indemnity: Relusk indemnifies Ligex for Security Incidents in its custody and for notice and consent failures, including regulatory fines and third-party claims, and Ligex gives no matching DPA indemnity. An associate could flag that one-sidedness. What makes it an uncapped indemnity comes only from the Distribution Agreement. The DPA says nothing about liability caps, and Section 7.3 sends readers to Agreement Section 11.5 for procedure only. The cap in Section 12.1 and the carve-out in Section 12.3 for 'obligations under the Data Processing Addendum' are both in the other document. From the DPA alone, a reader would reasonably assume the Agreement's general cap applies, so the unlimited exposure cannot be seen."
+              },
+              "relusk_ligex_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "12.3 Exceptions. The limitations in Sections 12.1 and 12.2 do not apply to: ... (d) a Party's obligations under the Data Processing Addendum",
+                "reason": "The distribution agreement shows that liability is capped at fees paid in the prior 12 months, that the cap covers the Section 11 indemnities, and that a Party's DPA obligations are carved out of both the cap and the consequential-damages exclusion. Read alone, that carve-out is mutual and looks routine. Nothing in this agreement puts a one-sided indemnity on Relusk for Security Incidents, missing notices or consents, or regulatory fines. Its own indemnities in Section 11 are reciprocal and reasonably balanced. What makes this a problem is the DPA's Section 7.2, which only Relusk gives and which Ligex does not match. That clause is in a document not provided, so an associate could not see from this agreement alone that the carve-out leaves Relusk exposed to unlimited liability."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "SLS Section 1.2: \"'Defective Unit' means any unit of a Product that fails to conform to the Specifications within thirty (30) days after delivery to Distributor.\" SLS Section 4.1: \"A unit is eligible for repair or replacement under this Section 4 only if it is a Defective Unit, that is, a unit that fails to conform to the Specifications within thirty (30) days after delivery to Distributor...\" Distribution Agreement Section 1.1 defines Defective Unit as a unit failing \"within twenty-four (24) months after delivery to Distributor\", and Section 16.4 provides that \"the Service Level Schedule controls as to service levels and return-merchandise procedures.\"",
+            "reason": "The Agreement gives a 24-month warranty (Sections 1.1 and 8.1) and requires Supplier to repair or replace Defective Units under the SLS return-merchandise procedures (Section 8.2). The SLS redefines Defective Unit as a 30-day failure and limits RMA eligibility to those units. SLS Section 1.1 makes Agreement definitions apply only to terms not defined in the SLS, so the SLS's own 30-day definition displaces the 24-month one. Section 16.4 gives the SLS control over return-merchandise procedures, which lets Ligex argue the 30-day limit governs. Ligex could then decline RMAs for months 2 to 24 (SLS Section 4.3 allows a decline when a unit is not eligible under Section 4.1). That would cut Relusk's warranty remedy to roughly a dead-on-arrival remedy, which hurts Relusk as the party receiving the warranty. Nothing in the folder fixes the conflict. The term sheet supports a 24-month remedy, but it is non-binding. No amendment, waiver or acceptance by Relusk is recorded, so the issue remains live and actionable.",
+            "alone": {
+              "service_level_schedule.md": {
+                "findable": false,
+                "evidence": "\"Defective Unit\" means any unit of a Product that fails to conform to the Specifications within thirty (30) days after delivery to Distributor. ... A unit is eligible for repair or replacement under this Section 4 only if it is a Defective Unit, that is, a unit that fails to conform to the Specifications within thirty (30) days after delivery to Distributor",
+                "reason": "This Schedule alone shows that it defines Defective Unit by a 30-day window and limits RMA repair or replacement to those units. It also cross-refers to Section 8.2 of the Agreement for return procedures. An associate might find the 30-day window short, but nothing here shows that it conflicts with anything. The Schedule does not show that the Agreement defines Defective Unit with a 24-month window. It does not show that Agreement Section 8.2 ties the warranty replacement remedy to these RMA procedures. It does not show that Agreement Section 16.4 makes this Schedule control on return-merchandise matters. Those facts are what turn the 30-day definition into a cut-down of Relusk's 24-month warranty remedy, and they come only from the Agreement."
+              },
+              "relusk_ligex_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "\"Supplier shall repair or replace Defective Units, at Supplier's option and expense, in accordance with the return-merchandise procedures set out in the Service Level Schedule.\" (Section 8.2); \"...the Service Level Schedule controls as to service levels and return-merchandise procedures.\" (Section 16.4)",
+                "reason": "This agreement defines Defective Unit with a 24-month window and gives a matching 24-month warranty. It sends RMA procedures to the Service Level Schedule and says the SLA controls on return-merchandise procedures. Read alone, that precedence clause looks like an ordinary allocation of procedural matters. Nothing in this document shows that the SLA redefines Defective Unit as a 30-day failure or limits RMA eligibility to those units. The conflict, and the harm to Relusk of a 24-month remedy shrinking to a dead-on-arrival remedy, depends on the SLA's terms, which are not in this document. A careful associate might flag the precedence carve-out as a general risk, but could not see this specific problem from this document alone."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

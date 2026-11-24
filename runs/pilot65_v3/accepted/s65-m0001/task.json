@@ -1,0 +1,140 @@
+{
+  "task_id": "s65-m0001",
+  "split": "test",
+  "practice_area": "mergers_acquisitions",
+  "agreement_type": "stock purchase agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We represent Subirt Pictures Group, LLC, the buyer and maker of the Seller Note, in its stock purchase from Fural Media Partners, L.P. Please review all seven documents in the folder and prepare a memo to me identifying each issue you find, where it appears (document and section), why it matters for Subirt, and a recommended fix. We need this to understand the client's position before we go further.",
+  "documents": [
+    "bill_of_sale.md",
+    "buyer_board_consent.md",
+    "funds_flow_memorandum.md",
+    "press_release.md",
+    "seller_note.md",
+    "stock_purchase_agreement.md",
+    "transition_services_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Seller Note's choice of Delaware law and exclusive Delaware forum conflicts with the SPA's New York law and New York forum. As a result, Note payment or set-off disputes over SPA indemnity claims would be split across two courts and two laws. The response locates the issue in Seller Note Section 10, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Delaware Court of Chancery",
+        "New York County",
+        "set-off"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that Subirt's indemnity obligations to the Seller Indemnitees are not subject to any of the SPA's limitations, leaving Subirt with unlimited and indefinite liability while Fural's liability is capped at 12% of the Base Purchase Price. The response locates the issue in SPA Section 9.3(b) and/or Section 9.5(e), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "uncapped",
+        "Section 9.5(e)",
+        "reciprocal cap"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that 'Distribution Rights' means all-media rights, including streaming/video-on-demand, in the SPA but only theatrical, non-theatrical and physical home-video rights in the Bill of Sale. It concludes that the Company never received the streaming rights in the Library Titles, which remain with Fural Rights Holdings. The response locates the issue in SPA Section 1.1 or 4.9, or in Bill of Sale Section 1.2 or 2.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "video-on-demand",
+        "home-video",
+        "Fural Rights Holdings"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the Seller Note is freely assignable by Fural to any person, including a competitor, without Subirt's consent, and that the transferee would receive the Company's monthly financial and title-level performance reports. The response locates the issue in Seller Note Section 6 and/or Section 9, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without the consent of Maker",
+        "competitor",
+        "title-by-title performance reports"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the TSA's liability cap of six months' Service Fees applies to Fural's failure to remit Post-Closing Receipts, so the SPA's uncapped carve-out for unremitted Post-Closing Receipts is effectively displaced and those collections are effectively capped. The response locates the issue in SPA Section 9.5(c) or 11.12, or in TSA Section 2.4 or 9.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Post-Closing Receipts",
+        "six (6) months",
+        "Service Fees"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response identifies that survival of the General Representations ends on January 1, 2027 (about nine months after Closing) because it is tied to the Seller Note's nine-month maturity, which is too short to discover and notice claims. The response locates the issue in SPA Section 9.1 or Seller Note Section 2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Maturity Date",
+        "January 1, 2027",
+        "nine (9) months"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Seller Cap under the SPA is 12% of the Base Purchase Price.",
+      "kind": "fact",
+      "hints": [
+        "12%",
+        "Seller Cap"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that the Base Purchase Price is $28,500,000.",
+      "kind": "fact",
+      "hints": [
+        "$28,500,000",
+        "$28.5 million"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is written as a memo addressed to the supervising partner and presents the findings issue by issue.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "To:",
+        "Issue 1"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "For each issue it presents, the response gives the document and section where it appears, why it matters for Subirt, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Location",
+        "Why it matters",
+        "Recommendation"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the SPA's New York governing law and forum clause overrides the Seller Note's Delaware governing law and forum clause for disputes under the Seller Note.",
+      "kind": "negative",
+      "hints": [
+        "SPA controls",
+        "New York law governs the Note"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The response claims that the SPA's General Representations survive for a full eighteen months after the Closing Date.",
+      "kind": "negative",
+      "hints": [
+        "survive for 18 months",
+        "eighteen months after Closing"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

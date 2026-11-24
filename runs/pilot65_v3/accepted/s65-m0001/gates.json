@@ -1,0 +1,170 @@
+{
+  "matter_id": "s65-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Seller Note §10.1–10.2: \"This Note, and all claims and causes of action arising out of or relating to this Note, are governed by and construed in accordance with the laws of the State of Delaware ... Maker and Holder each irrevocably submit to the exclusive jurisdiction of the Court of Chancery of the State of Delaware for any action arising out of or relating to this Note.\" SPA §11.8, by contrast, chooses New York law and \"the exclusive jurisdiction of the state or federal courts located in New York County, New York.\" SPA §11.12 provides that \"the governing law provision of each Ancillary Agreement governs that Ancillary Agreement.\"",
+            "reason": "The mismatch is real and the documents do not cure it. The Seller Note is an Ancillary Agreement, so SPA §11.12 leaves the Note's Delaware law and forum clause in force rather than overriding it. Subirt's main recovery tool for Seller indemnity is set-off and withholding under Note §4 and SPA §9.8. That tool depends on Article IX Losses \"finally determined by a court of competent jurisdiction.\" Those Losses will be decided in New York under New York law. Any dispute over whether a withholding was in good faith, or whether a payment default occurred, falls under the Note and goes exclusively to Delaware Chancery under Delaware law. The result is parallel proceedings and possibly inconsistent outcomes on Subirt's central protection. Neither document coordinates the two forums, and nothing shows the split was intended and harmless. The problem is still actionable. The Note is outstanding and matures about January 1, 2027, and Note §11.3 allows a written amendment signed by Maker and Holder to align the forum and law clauses."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 9.3(b): Buyer shall indemnify the Seller Indemnitees from all Losses arising out of \"the ownership or operation of the Company or the exploitation of the Library Titles from and after the Closing, including any claim made against any Seller Indemnitee by any licensor, licensee, participant, guild, union or other third party in respect of any Library Title.\" Section 9.5(e): \"None of the limitations set forth in this Section 9.5 shall apply to Buyer's obligations under Section 9.3.\"",
+            "reason": "Subirt is the indemnifying party under 9.3(b), so the exposure falls on the client. The indemnity has no cap and no deductible. It is not tied to any survival period, because 9.1 limits survival only for representations and covenants. Fural's indemnity for general representations under 9.2(a), by contrast, is capped at 12% of the Base Purchase Price and subject to the Deductible. The 'including any claim ... in respect of any Library Title' clause is broad enough to be argued to reach participation, residual or licensor claims against Fural or Rights Holdings. Some of those claims could arise from pre-closing conduct, which overlaps Seller's own 9.2(e) indemnity and the Excluded Liabilities that Rights Holdings retained under the Bill of Sale. No other document in the folder narrows or caps this indemnity. Closing has occurred, but the indemnity is a continuing, open-ended obligation. Subirt can still manage it, for example by seeking an amendment, fixing a construction position, or defending against claims. Nothing shows the issue was resolved or accepted in a way that makes it non-actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SPA §1.1 defines \"Distribution Rights\" to cover \"all forms of on-demand and internet-delivered exhibition, including subscription, advertising-supported and transactional video-on-demand.\" SPA §4.9(b) states: \"Under the Rights Bill of Sale, Rights Holdings conveyed to the Company all of the Distribution Rights in each Library Title held by Rights Holdings.\" Bill of Sale §1.2, by contrast: \"'Distribution Rights' means, for each Picture, the theatrical, non-theatrical and physical home-video rights in and to that Picture.\" Bill of Sale §2.1 conveys only \"the theatrical, non-theatrical and physical home-video rights in each Picture, constituting the Distribution Rights.\"",
+            "reason": "Read together, the documents show the Company received only theatrical, non-theatrical and physical home-video rights. Streaming and VOD rights in the 41 titles stayed with Fural Rights Holdings, even though the SPA's defined term and recitals treat them as part of the deal. Nothing in the folder cures this. The Bill of Sale is a pre-signing affiliate instrument, not an Ancillary Agreement, so SPA §11.12's precedence clause does not reach it. SPA §6.8 requires only \"confirmatory instruments,\" not a conveyance of rights never transferred. Buyer's remedy is therefore a §4.9 breach claim, which has three limits: (1) it is a General Representation; (2) it is capped at 12% of the Base Purchase Price ($3.42M), above a $213,750 deductible; (3) it survives only until the earlier of 18 months after closing or the Note Maturity Date (nine months after the April 1, 2026 closing). The latest date stated in the folder is April 1, 2026, so the survival window is still open and the client can still act, through a Claim Notice and the §9.8 set-off and withholding against the Seller Note.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Distribution Rights\" means all right, title and interest in and to the Library Titles ... including subscription, advertising-supported and transactional video-on-demand. ... Under the Rights Bill of Sale, Rights Holdings conveyed to the Company all of the Distribution Rights in each Library Title held by Rights Holdings.",
+                "reason": "The SPA alone shows three things. It defines Distribution Rights broadly to include all streaming and VOD. Section 4.9 represents that the Company received those rights under the Rights Bill of Sale, a pre-signing document that is not listed as an Ancillary Agreement. Any rep claim would be capped at 12% under Section 9.5(a) and limited by the Section 9.1(a) survival period. Nothing in the SPA shows that the Bill of Sale used a narrower definition, conveying only theatrical, non-theatrical and physical home-video rights and leaving streaming rights with Rights Holdings. That gap is the core of the problem, and it can only be seen in the Bill of Sale. An associate might flag as diligence points the qualifier \"held by Rights Holdings\" and the fact that the Bill of Sale falls outside Section 11.12. Reading the SPA alone, they could not see that the Company actually lacks the streaming rights."
+              },
+              "bill_of_sale.md": {
+                "findable": false,
+                "evidence": "\"Distribution Rights\" means, for each Picture, the theatrical, non-theatrical and physical home-video rights in and to that Picture, throughout the Territory and for the Term.",
+                "reason": "On its own, the Bill of Sale shows that Fural Rights Holdings conveyed only theatrical, non-theatrical and physical home-video rights in the 41 Pictures to Nightjar. It conveys no streaming or video-on-demand rights. But it never mentions Subirt, the SPA, or any expectation that the Company would receive all-media rights. A careful associate reading it alone would see a narrow but internally consistent conveyance between two affiliates. Three things that make it a problem come only from the SPA: its broader definition of 'Distribution Rights' including SVOD, AVOD and TVOD, Section 4.9's reliance on that term to describe what the Company acquired, and the precedence clause, Seller Cap and survival limits that restrict Subirt's recourse. Without the SPA, nothing in this document shows a mismatch or harm to the client."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Section 9.1: \"Holder may sell, assign, pledge or otherwise transfer this Note, or any interest in it, in whole or in part, to any Person without the consent of Maker... the transferee becomes Holder for all purposes of this Note with respect to the interest transferred, and is entitled to all rights of Holder under this Note.\" Section 6.1 requires Maker to deliver, \"within thirty (30) days after the end of each calendar month,\" Company financial statements and \"title-by-title performance reports for each Library Title,\" plus \"box-office reports\" and \"streaming and digital revenue reports... together with the platform statements received by the Company.\"",
+            "reason": "Read together, Sections 6 and 9 let Fural transfer the Note, or a piece of it, to any Person without Subirt's consent, and the transferee takes all Holder rights. That includes the monthly title-by-title, box-office and platform revenue reports, the annual statements, and the open-ended Section 6.4 information requests. Section 9 does not exclude competitors, distressed-debt buyers or other disqualified transferees. Neither the Note nor any other document imposes confidentiality on a Holder or transferee. The SPA's Section 6.4 confidentiality covenant binds only Seller and its Affiliates and representatives, not unaffiliated transferees. The Note is governed by its own Delaware governing-law clause, and SPA Section 11.12 does not import a confidentiality duty into it. The burden falls on Subirt, the Maker and the party that must deliver the reports. It is still actionable. The Note runs until about January 1, 2027, and the reporting obligations recur monthly while the Obligations are outstanding. Subirt can seek an amendment under Section 11.3, or a confidentiality undertaking or transferee restriction, before any transfer occurs. Nothing in the folder shows a transfer has already happened or that Subirt accepted one."
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "SPA §11.12: \"In the event of any conflict between this Agreement and any Ancillary Agreement, this Agreement prevails. However, the Transition Services Agreement shall govern with respect to the Services.\" TSA §2.4: \"Provider's receipt, holding, reconciliation and remittance of Post-Closing Receipts shall constitute Services under this Agreement.\" TSA §9.1: \"The aggregate liability of Provider arising out of or relating to this Agreement or the Services, whether in contract, tort or otherwise, shall not exceed the total Service Fees paid in the six (6) months immediately preceding the event giving rise to the claim.\"",
+            "reason": "On its own, the SPA protects Subirt. Under SPA §9.2(d), Fural indemnifies for any failure to remit Post-Closing Receipts, and §9.5(c)(ii) takes those claims outside the Seller Cap and Deductible. The TSA undercuts that protection in three steps. First, SPA §11.12 makes the TSA the governing document \"with respect to the Services,\" and this overrides the SPA's general rule that the SPA prevails in a conflict. Second, TSA §2.4 expressly labels Fural's holding and remittance of Post-Closing Receipts as Services. Third, TSA §9.1 caps Fural's liability \"arising out of or relating to ... the Services\" at six months of Service Fees. The Monthly Service Fee is $42,500, so the cap can never exceed $255,000, and it is lower early in the term or after the collection service is terminated. The only exceptions are fraud and willful misconduct. Fural can therefore argue that unremitted exhibitor, platform and sub-distributor collections, which could run to millions, are capped at a small fraction of that amount. That would effectively neutralize the uncapped carve-out Subirt negotiated. The risk falls on Subirt as Buyer and owner of Nightjar, the Recipient. Nothing in the folder cures it. TSA §5.6 bars set-off and §11.8 allows specific performance, but neither lifts the cap on damages. Subirt's own §9.8 set-off against the Seller Note is limited to Losses to which Buyer Indemnitees are \"entitled,\" so the cap dispute would limit that too. The agreements have been signed, but the problem is still actionable. The Service Term runs at least to October 1, 2026, and can be extended, and any shortfall in remittances would be litigated under this framework. Subirt can still pursue a clarifying amendment, or preserve its argument that SPA §§9.2(d) and 9.5(c) control.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"However, the Transition Services Agreement shall govern with respect to the Services, and the governing law provision of each Ancillary Agreement governs that Ancillary Agreement.\" (Section 11.12)",
+                "reason": "On its own, the SPA protects Subirt. Section 6.9 requires Fural to hold Post-Closing Receipts in trust and remit them. Section 9.2(d) indemnifies Subirt for any failure to do so. Section 9.5(c)(ii) expressly excludes those claims from the Seller Cap and Deductible. Section 11.12 says the TSA governs 'with respect to the Services,' but the SPA defines 'Services' only by reference to the TSA. Nothing in the SPA says that collecting and remitting Post-Closing Receipts is a Service. Section 6.5(c) refers to Services only in the non-compete context. The SPA also does not show that the TSA contains any liability cap, or how that cap is measured. The problem depends on two TSA provisions that are not in this document: Section 2.4, which treats remittance as a Service, and Section 9.1, which caps liability at six months of fees. An associate reading only the SPA might flag the general risk that the TSA could override other terms. They could not see that the uncapped Post-Closing Receipts carve-out is actually displaced."
+              },
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"Provider's receipt, holding, reconciliation and remittance of Post-Closing Receipts shall constitute Services under this Agreement.\" (Section 2.4); \"The aggregate liability of Provider arising out of or relating to this Agreement or the Services ... shall not exceed the total Service Fees paid in the six (6) months immediately preceding the event giving rise to the claim. This Section 9.1 does not apply to liability arising out of Provider's fraud or willful misconduct.\" (Section 9.1)",
+                "reason": "By itself, the TSA shows that remitting Post-Closing Receipts is a Service. It also shows that Provider's liability for the Services is capped at six months of fees, which is at most about $255,000, with exceptions only for fraud and willful misconduct. A careful associate could therefore see a low cap on unremitted collections. The TSA also has protections that soften this: the no set-off clause in 5.6, the force majeure exclusion for remittance obligations in 11.3, and specific performance in 11.8. The issue as described is something more: the TSA cap overrides the SPA's uncapped indemnity for remittance failures (SPA 9.2(d) and 9.5(c)) through the SPA's precedence clause (11.12), which says the TSA governs the Services. Only the SPA contains that indemnity, its carve-out from the Seller Cap, and the precedence clause. The TSA alone does not show that an uncapped SPA protection exists or that it is displaced. So the key mechanism of the problem can only be found in the document not provided."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "SPA §9.1(a): \"The General Representations survive the Closing until the earlier of (i) eighteen (18) months after the Closing Date and (ii) the Note Maturity Date.\" Seller Note §2: \"The \"Maturity Date\" of this Note is the date that is nine (9) months after the Issue Date, which is the Closing Date.\" The Issue Date is stated as April 1, 2026.",
+            "reason": "Read together, the Note Maturity Date controls the 'earlier of' test. The General Representations therefore expire about nine months after the April 1, 2026 Closing: January 1, 2027, or the next Business Day under Note §2. These include the §4.9 title and chain-of-title representations, the §4.10 participations representations and the §4.7 contracts representations. Under §9.1(d), any claim not noticed by then is barred. That cuts the nominal 18-month survival in half. It ends before a full annual cycle of participation statements and audits, which is when title, residual and reporting defects usually surface. It also ends Buyer's practical set-off and withholding security under SPA §9.8 and Note §4, because the Note is paid off on the same date. Buyer (the client) is the indemnified party and bears this risk, since Seller gives the §9.2(a) indemnity. Nothing in the folder cures or limits the gap. The board consent simply restates the nine-month maturity. The latest date in the folder is the April 1, 2026 closing, and the survival window does not close until after that date, so the issue remains actionable. Buyer can calendar claim notices, seek an extension, or negotiate an amendment.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"The General Representations survive the Closing until the earlier of (i) eighteen (18) months after the Closing Date and (ii) the Note Maturity Date.\" (Section 9.1(a)); \"'Note Maturity Date' means the Maturity Date as defined in the Seller Note.\"",
+                "reason": "The SPA alone shows that survival of the General Representations, including the Section 4.9 title and chain-of-title representations, is capped at the earlier of 18 months and the Note Maturity Date. It also fixes the Closing Date at April 1, 2026 (Section 3.1). A careful associate could flag that linkage as a potential risk. But the SPA does not define the maturity date; it points to the Seller Note, which was not provided. Nothing here shows that maturity is nine months after issuance. Without that term, the reader cannot tell whether the Note Maturity Date is earlier than 18 months at all, or that survival actually ends around January 1, 2027. The actual shortening of the survival period, and of the Section 9.8 set-off window, depends on the Seller Note."
+              },
+              "seller_note.md": {
+                "findable": false,
+                "evidence": "The \"Maturity Date\" of this Note is the date that is nine (9) months after the Issue Date, which is the Closing Date.",
+                "reason": "The Note by itself shows a short nine-month maturity, which falls around January 1, 2027. It also shows that the set-off right under Section 4 runs only against amounts payable under the Note, so that right effectively ends once the Note is paid at maturity. What the Note does not show is the key fact: under SPA Section 9.1, the general representations, including the chain-of-title representations, survive only until the earlier of 18 months after Closing or the Note Maturity Date. That tie cuts the indemnity survival period down to nine months. Without the SPA, an associate would see only a short-dated note with a set-off window that closes at maturity. They could not see that the client's underlying indemnity claims themselves expire on that date."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C7 asks for fact F9, which only issue I2 uses: a memo that misses I2 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.083,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

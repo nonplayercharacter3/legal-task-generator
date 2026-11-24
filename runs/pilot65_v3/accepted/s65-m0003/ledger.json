@@ -1,0 +1,251 @@
+{
+  "matter_id": "s65-m0003",
+  "summary": "Trouvar Therapeutics, Inc. is a specialty pharmaceutical maker of sterile injectables and the firm's client. It licenses Lairal Systems, LLC's GxP batch-record and quality-management software, LairalQMS, on a hosted basis under a Software License Agreement dated March 16, 2026. The folder also holds Order Form No. 1, a draft Statement of Work No. 2 dated October 20, 2026, the January 2026 term sheet, a parent guaranty from Lairal's parent, a Service Level Schedule, and two distractors: Trouvar's Wilmington office lease and the pre-deal mutual NDA. Five issues are planted. (1) Trouvar rejected the Phase 1 deliverables after the 15-Business-Day rejection window had closed. (2) Order Form No. 1 imposes worldwide exclusivity that goes well beyond the term sheet. (3) The Order Form redefines 'Hosted Services' to the production instance only, and it controls under the precedence clause. (4) A licensee indemnity in the SOW becomes uncapped through the cap carve-out in the License Agreement. (5) The Change of Control exception lets Lairal assign the agreement to anyone, including a competitor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Trouvar Therapeutics, Inc.",
+      "role": "Licensee; specialty pharmaceutical manufacturer and the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Lairal Systems, LLC",
+      "role": "Licensor; provider of the LairalQMS batch-record and quality-management software"
+    },
+    {
+      "id": "P3",
+      "name": "Kessmont Technology Holdings, Inc.",
+      "role": "Parent of Lairal Systems, LLC and guarantor of Licensor's obligations"
+    },
+    {
+      "id": "P4",
+      "name": "Brandywine Quay Properties, LLC",
+      "role": "Landlord under Trouvar's Wilmington office lease (distractor)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "License Agreement Effective Date",
+      "value": "March 16, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Order of precedence",
+      "value": "Order Form, then License Agreement, then Service Level Schedule, then Statement of Work",
+      "doc": "D1",
+      "section": "Section 17.2"
+    },
+    {
+      "id": "F3",
+      "key": "License Agreement governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 17.1"
+    },
+    {
+      "id": "F4",
+      "key": "Deliverable rejection period",
+      "value": "15 Business Days after delivery, failing which the Deliverable is deemed accepted",
+      "doc": "D1",
+      "section": "Section 6.3"
+    },
+    {
+      "id": "F5",
+      "key": "License Agreement liability cap",
+      "value": "fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 12.2"
+    },
+    {
+      "id": "F6",
+      "key": "License Agreement 'Hosted Services' meaning",
+      "value": "hosting of Licensee's production, validation and disaster-recovery environments of the Licensed Software",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F7",
+      "key": "Term sheet exclusivity scope",
+      "value": "no third-party batch-record software at the Raleigh, North Carolina facility during the Initial Term",
+      "doc": "D3",
+      "section": "Section 5"
+    },
+    {
+      "id": "F8",
+      "key": "Annual Subscription Fee",
+      "value": "$1,240,000",
+      "doc": "D5",
+      "section": "Section 2 (Fees)"
+    },
+    {
+      "id": "F9",
+      "key": "Phase 1 deliverables delivery date",
+      "value": "September 2, 2026",
+      "doc": "D2",
+      "section": "Recital B"
+    },
+    {
+      "id": "F10",
+      "key": "Trouvar Phase 1 rejection notice date",
+      "value": "October 6, 2026",
+      "doc": "D2",
+      "section": "Recital C"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "trouvar_lairal_software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "lairal_sow_no2_phase2_validation_draft.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D3",
+      "filename": "lairalqms_term_sheet_jan2026.md",
+      "kind": "term sheet",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "kessmont_parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "lairalqms_order_form_no1.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "lairalqms_service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "trouvar_wilmington_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "trouvar_lairal_mutual_nda_2025.md",
+      "kind": "mutual nondisclosure agreement",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Section 6.3 of the License Agreement (D1) gives Licensee 15 Business Days after delivery to reject a Deliverable. If it does not, the Deliverable is deemed accepted, the milestone fee becomes payable and the 90-day Warranty Period starts. Business Days exclude weekends and US federal holidays. The draft SOW No. 2 (D2) records two dates. Recital B says Lairal delivered the Phase 1 deliverables on September 2, 2026. Recital C says Trouvar issued its rejection notice on October 6, 2026, and that the parties dispute whether the deliverables conform and reserve all rights. Neither document alone shows the problem. Read together, the window closed on September 24, 2026, so Trouvar's rejection was 12 days late. Lairal can treat Phase 1 as deemed accepted, claim the $310,000 Phase 1 Milestone Fee stated in D2, and say the warranty period runs from September 24, 2026 to December 23, 2026. Trouvar has not signed SOW No. 2 and its dispute is preserved in Recital C, so the point can still be acted on.",
+      "doc": "D2",
+      "section": "Recitals B and C",
+      "detect_terms": [
+        "September 2, 2026",
+        "October 6, 2026"
+      ],
+      "expected_finding": "Trouvar's October 6, 2026 rejection fell after the 15-Business-Day window under Section 6.3, which closed on September 24, 2026, so Phase 1 is likely deemed accepted, triggering the $310,000 milestone fee and a Warranty Period ending December 23, 2026; Trouvar should assert warranty claims before that date and require SOW No. 2 to expressly treat its rejection as timely before signing.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 6.3",
+      "detect_terms2": [
+        "fifteen (15) Business Days after delivery",
+        "shall be deemed accepted"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "The Special Terms in Order Form No. 1 (D5) bar Trouvar and its Affiliates from licensing, developing or using any manufacturing execution, quality-management or batch-record software other than the Licensed Software. The bar applies at any facility worldwide, for the Term and 24 months after. The term sheet (D3, Section 5) records a much narrower agreed exclusivity: no third-party batch-record software at the Raleigh, North Carolina facility during the Initial Term. Under Section 17.2 of D1 the Order Form prevails over the License Agreement, and D1 has no narrower exclusivity clause, so nothing in the folder limits the restriction. As drafted, it would stop Trouvar from running other QMS or MES tools at its other plants, from building in-house tools, and from switching vendors for two years after termination.",
+      "doc": "D5",
+      "section": "Section 6 (Special Terms - Exclusivity)",
+      "detect_terms": [
+        "at any facility worldwide",
+        "for twenty-four (24) months thereafter"
+      ],
+      "expected_finding": "The Order Form exclusivity covers all quality-management, MES and batch-record software, all facilities worldwide, internal development and a 24-month tail, far beyond the term sheet's Raleigh-only, batch-record-only, Initial-Term commitment, and it controls under the precedence clause, so it should be cut back to the term sheet scope.",
+      "contradicts": "F7",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "Section 1.1 of the License Agreement (D1) defines 'Hosted Services' as hosting of Licensee's production, validation and disaster-recovery environments. Section 7.1 of D1 requires Lairal to provide the Hosted Services in line with the Service Level Schedule and to keep backups and disaster recovery for them. Section 2 of Order Form No. 1 (D5) separately defines 'Hosted Services' as hosting of the single production instance identified in the Order Form. That definition is not limited to any one section. Each document reads normally on its own. Section 17.2 of D1 makes the Order Form prevail over the License Agreement, so the narrower Order Form definition controls. Combined with the availability and service-credit commitments in the Service Level Schedule (D6), this drops the GxP validation and disaster-recovery environments from the uptime, backup and DR obligations. Trouvar needs those environments for batch release and FDA inspection readiness.",
+      "doc": "D5",
+      "section": "Section 2 (Definitions)",
+      "detect_terms": [
+        "single production instance"
+      ],
+      "expected_finding": "Because the Order Form prevails under Section 17.2 and defines 'Hosted Services' as the single production instance, Lairal's service-level, backup and disaster-recovery obligations no longer cover Trouvar's validation and disaster-recovery environments, so the Order Form definition should be conformed to Section 1.1 or the precedence clause should carve out defined terms.",
+      "contradicts": "F6",
+      "doc2": "D1",
+      "section2": "Sections 1.1, 7.1 and 17.2",
+      "detect_terms2": [
+        "production, validation and disaster-recovery environments",
+        "the Order Form shall prevail"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "Section 12.2 of the License Agreement (D1) caps each party's liability at fees paid or payable in the prior 12 months. Section 12.3 excludes from the cap 'a party's indemnification obligations under this Agreement'. Section 2.2 states that each Statement of Work forms part of this Agreement. D1 contains only Lairal's IP indemnity (Section 11.1), so on its own the carve-out favours Trouvar. Section 8 of the draft SOW No. 2 (D2) adds a Licensee indemnity: Trouvar must defend, indemnify and hold harmless Lairal against third-party claims arising from Licensee Materials, Licensee-supplied validation protocols and regulatory submissions. Read alone, that looks like an ordinary indemnity that the Agreement's cap would limit. Read with Sections 2.2 and 12.3, it becomes an indemnification obligation 'under this Agreement' and falls outside the cap. Trouvar would face unlimited liability for product, regulatory and data claims.",
+      "doc": "D2",
+      "section": "Section 8 (Licensee Indemnity)",
+      "detect_terms": [
+        "Licensee shall defend, indemnify and hold harmless Licensor",
+        "Licensee-supplied validation protocols"
+      ],
+      "expected_finding": "Because SOW No. 2 forms part of the Agreement under Section 2.2 and Section 12.3 excludes all indemnification obligations under this Agreement from the cap, Trouvar's new SOW indemnity would be uncapped, so the carve-out should be limited to Lairal's Section 11.1 IP indemnity or the SOW indemnity should be expressly made subject to the Section 12.2 cap.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Sections 2.2 and 12.3",
+      "detect_terms2": [
+        "indemnification obligations under this Agreement",
+        "forms part of this Agreement"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 16.1 of the License Agreement (D1) appears to require mutual consent to assignment. It then makes an exception for assignment 'in connection with a Change of Control Transaction'. Section 1.1 defines that term to include a sale of all or substantially all of the assets of the business to which this Agreement relates, to any person. Read together, Lairal can move the agreement, and Trouvar's hosted GxP batch records and confidential manufacturing data, to any buyer of its LairalQMS line without Trouvar's consent or even notice. The buyer could be a pharmaceutical competitor of Trouvar or a competing CDMO. There is no competitor exclusion and no termination right. The clause binds both parties alike, but the harm falls on Trouvar: it relies on Lairal to hold regulated data, and it is locked in by the Order Form exclusivity.",
+      "doc": "D1",
+      "section": "Sections 1.1 and 16.1",
+      "detect_terms": [
+        "except in connection with a Change of Control Transaction",
+        "to any person"
+      ],
+      "expected_finding": "The Change of Control exception in Section 16.1, read with its definition in Section 1.1, lets Lairal assign the agreement and Trouvar's hosted data to any acquirer, including a Trouvar competitor, without consent, so Trouvar should require consent or at least a competitor exclusion, prior notice and a termination right on any such assignment.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}
