@@ -1,5 +1,6 @@
 """The Claude Agent SDK backend, run against a stub SDK module backed by the fake model (no network, no login)."""
 
+import asyncio
 import os
 import sys
 import types
@@ -15,7 +16,7 @@ from ltg.orchestrator import Pipeline
 from .test_openai_compat import ROLE_BY_SYSTEM
 
 
-def stub_sdk(fake, stop_reason="end_turn", is_error=False):
+def stub_sdk(fake, stop_reason="end_turn", is_error=False, hang=False):
     """A stand-in for `claude_agent_sdk` that answers with the fake model and records every options object."""
     sdk = types.ModuleType("claude_agent_sdk")
     sdk.calls = []
@@ -48,6 +49,8 @@ def stub_sdk(fake, stop_reason="end_turn", is_error=False):
 
     async def query(prompt, options):
         sdk.calls.append(options)
+        if hang:  # the network went away and the call never returns
+            await asyncio.sleep(3600)
         text = fake.complete(ROLE_BY_SYSTEM[options.system_prompt], options.system_prompt, prompt)
         yield AssistantMessage([TextBlock("<think>planning</think>" + text)], stop_reason)
         yield ResultMessage(subtype="error_during_execution" if is_error else "success", is_error=is_error, result=None,
@@ -91,6 +94,17 @@ def test_truncated_or_failed_calls_raise(monkeypatch, kw, match):
 
     client = ClaudeAgentClient("sonnet")
     with pytest.raises(ModelError, match=match):
+        client.complete("solver", prompts.SOLVER_WRITE, render_input({"instruction": "x", "files": [], "steps": []}))
+    assert client.log.records[-1].ok is False
+
+
+def test_a_hung_call_fails_after_max_seconds(monkeypatch):
+    monkeypatch.setitem(sys.modules, "claude_agent_sdk", stub_sdk(FakeModel(seed=7), hang=True))
+    from ltg import prompts
+    from ltg.models import render_input
+
+    client = ClaudeAgentClient("sonnet", max_seconds=0.1)
+    with pytest.raises(ModelError, match="TimeoutError"):
         client.complete("solver", prompts.SOLVER_WRITE, render_input({"instruction": "x", "files": [], "steps": []}))
     assert client.log.records[-1].ok is False
 
