@@ -34,7 +34,7 @@ class BackendCfg:
     timeout_retries: int = 1  # HTTP backends: of those, retries after a read timeout (each costs a whole `timeout`)
     extra_body: dict[str, Any] = field(default_factory=dict)  # openai_compat: added to each request, e.g. reasoning_effort
     stream: bool = False  # openai_compat: stream the reply, so `timeout` is the longest silence between chunks
-    max_seconds: float = 3600  # openai_compat with stream: ceiling on one call, however steadily it streams
+    max_seconds: float = 3600  # ceiling on one call: claude_sdk always, openai_compat with stream (however steadily it streams)
 
 
 @dataclass
@@ -190,5 +190,5 @@ def _one_client(cfg: Config, b: BackendCfg, log: CallLog) -> ModelClient:
     if b.kind == "claude_sdk":
         if not b.default_model:
             raise ValueError("backend.default_model is required for claude_sdk, e.g. \"sonnet\"")
-        return ClaudeAgentClient(default_model=b.default_model, models=b.models, log=log)
+        return ClaudeAgentClient(default_model=b.default_model, models=b.models, log=log, max_seconds=b.max_seconds)
     raise ValueError(f"unknown backend kind {b.kind!r}")

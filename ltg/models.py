@@ -238,7 +238,9 @@ class ClaudeAgentClient:
     and the solver cannot open the run folder where the answer keys live.
     """
 
-    def __init__(self, default_model: str, models: dict[str, str] | None = None, log: CallLog | None = None) -> None:
+    def __init__(
+        self, default_model: str, models: dict[str, str] | None = None, log: CallLog | None = None, max_seconds: float = 3600
+    ) -> None:
         try:
             import claude_agent_sdk
         except ImportError as e:
@@ -247,6 +249,8 @@ class ClaudeAgentClient:
         self.default_model = default_model
         self.models = models or {}
         self.log = log if log is not None else CallLog()
+        # Ceiling on one call. Round 66 (2026-11-26): with the network gone, SDK calls hung 5 and 12 hours before failing.
+        self.max_seconds = max_seconds
         self.cwd = tempfile.mkdtemp(prefix="ltg-claude-")  # empty on purpose
 
     def model_for(self, role: str) -> str:
@@ -276,7 +280,8 @@ class ClaudeAgentClient:
 
         t0 = time.time()
         try:
-            text, stop, result = asyncio.run(run())  # one event loop per call, so threads can share the client
+            # one event loop per call, so threads can share the client
+            text, stop, result = asyncio.run(asyncio.wait_for(run(), self.max_seconds))
             if result is None or result.is_error:
                 raise ModelError(f"{role}: Claude returned an error ({getattr(result, 'subtype', 'no result')})")
             if stop == "max_tokens":  # a cut-off document must not pass as complete
