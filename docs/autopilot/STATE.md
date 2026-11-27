@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-27 10:50, autopilot iteration 31.
+Last updated: 2026-11-27 11:35, autopilot iteration 32.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -36,7 +36,7 @@ agent. Full definition of done: PROMPT.md.
 - [x] M3 LAB baseline frozen and scored; v2 tasks through LAB's tool: 264fbd2 (`docs/research/lab_harness.md`)
 - [ ] M4 Generator passes EVALUATION.md levels 1-3. v2: level 3 pass, level 2 miss (folder words). Hardening cycle 1: v3 (PR #50), round s62 1 of 3, batch s63-70 running
 - [ ] M5 250 tasks on the passing version, test split at least 30
-- [ ] M6 Usefulness pilot fine-tune
+- [ ] M6 Usefulness pilot fine-tune: plan written (`docs/autopilot/pilot_finetune.md`); arm B (v1 control) first, after the batch
 - [ ] M7 Handoff package and notes for Pengtao
 - [ ] M8 Docs current, STATUS: DONE
 
@@ -44,7 +44,8 @@ agent. Full definition of done: PROMPT.md.
 - `ltg batch` v3, seeds 65-70 (PID 14353, log `runs/batch_v3_s63-70.log`, out `runs/pilot{seed}_v3`), restarted
   2026-11-26 16:19 on code from before PR #51 and #52 (verbatim detect terms, no call cap). Seed 65 done and labelled
   (both 0.00). Seed 66: m0001 and m0002 errored overnight on a network outage (ENOTFOUND, calls hung 5 to 12 hours);
-  the batch retries them on its next try. Expect the end around 2026-11-27 21:00.
+  the batch retries them on its next try. Seed 66: m0003 accepted 10:39; try 2 (resume of m0001, m0002) started
+  11:18. Expect the end around 2026-11-28 04:00.
 
 ## v3 seeds 63-65 (read 2026-11-26)
 - 8 of 9 kept (63: 3, 64: 3, 65: 2). Folder words 31,600 to 43,800 per task (level 2 length met on all).

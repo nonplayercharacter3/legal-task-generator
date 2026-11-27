@@ -205,3 +205,12 @@ Dated, append-only. One entry per iteration.
 - PR #52 merged (c41bf88): `claude_sdk` calls capped at `backend.max_seconds` (default 3600), timeout is a
   ModelError. 165 tests pass. The running batch still uses the old code (no cap, verbatim detect terms).
 - Lab mate: #36 open and assigned, no reply since 2026-11-21 (order: label seeds 500-507); unchanged.
+
+## 2026-11-27 11:35, iteration 32
+- Batch PID 14353 alive: s66-m0003 accepted (10:39, after a 12-hour ledger-to-documents gap, the same outage); seed 66
+  try 2 resumes m0001 and m0002 from their ledgers (11:18). Seeds 67-70 still to run.
+- Wrote the M6 plan, `docs/autopilot/pilot_finetune.md`: Qwen3-4B, LoRA SFT, arm B (v1 control) first since its data
+  exists and it proves the pipeline; arm A waits for 150 train tasks of the passing version. Main risk recorded: v3
+  prompts are about 45k to 62k tokens, over Qwen3-4B's native 32k, so YaRN factor 4 and a 64k cap.
+- Lab mate: #36 open and assigned, no reply since 2026-11-23; order (label seeds 500-507) still runnable on current
+  main (only generation code and the SDK call cap changed since 4461627). Unchanged.
