@@ -1,0 +1,270 @@
+{
+  "matter_id": "s67-m0002",
+  "summary": "Velourt Agrigenomics Holdings, Inc. (client, Buyer) acquired 100% of the stock of Pellacre Genetics, Inc., a corn and soybean seed genetics company, from Nagousk Seed Partners, LLC (Seller) under a Stock Purchase Agreement signed February 9, 2026, which closed March 2, 2026. The folder holds seven documents: the SPA, an Escrow Agreement with Lantern Trust Company, N.A., the target's existing Key Employee Agreement with its head of breeding, a post-closing Side Letter dated July 15, 2026, a Transition Services Agreement for seed conditioning and cold storage, an office lease (distractor) and a seed lot quality testing report (distractor). Six issues are planted. (1) The TSA indemnity owed by Velourt is uncapped and covers the provider's own negligence. (2) A change of control triggers a consent right under the Key Employee Agreement, which can end the licence to core germplasm, and nobody has addressed it. (3) The Escrow Agreement chooses Delaware law and a Delaware forum for escrow release, while the SPA chooses New York. (4) The general escrow releases at 9 months even though it is the sole source of recovery and the representations nominally survive 18 months. (5) Under the SPA's 30-day window, the price adjustment dispute that Velourt records in the Side Letter came too late. (6) The Side Letter's 'technical' renumbering quietly drops the germplasm title representation from the Fundamental Representations, which puts it under the cap.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Velourt Agrigenomics Holdings, Inc.",
+      "role": "Buyer under the SPA; Recipient under the TSA; the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Nagousk Seed Partners, LLC",
+      "role": "Seller under the SPA; Provider under the TSA"
+    },
+    {
+      "id": "P3",
+      "name": "Pellacre Genetics, Inc.",
+      "role": "Target company whose stock is sold; employer under the Key Employee Agreement; tenant under the office lease"
+    },
+    {
+      "id": "P4",
+      "name": "Dr. Renata Szabó",
+      "role": "Target's Head of Breeding; counterparty to the Key Employee Agreement and licensor of pre-existing breeding lines"
+    },
+    {
+      "id": "P5",
+      "name": "Lantern Trust Company, N.A.",
+      "role": "Escrow Agent under the Escrow Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "SPA Signing Date",
+      "value": "February 9, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "SPA Closing Date",
+      "value": "March 2, 2026",
+      "doc": "D1",
+      "section": "3.1"
+    },
+    {
+      "id": "F3",
+      "key": "SPA Base Purchase Price",
+      "value": "$184,000,000",
+      "doc": "D1",
+      "section": "2.1"
+    },
+    {
+      "id": "F4",
+      "key": "SPA General Indemnity Cap",
+      "value": "$18,400,000",
+      "doc": "D1",
+      "section": "9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "General Escrow Amount",
+      "value": "$9,200,000",
+      "doc": "D2",
+      "section": "2.1"
+    },
+    {
+      "id": "F6",
+      "key": "SPA governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "11.8"
+    },
+    {
+      "id": "F7",
+      "key": "SPA forum",
+      "value": "Exclusive jurisdiction of state or federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "11.9"
+    },
+    {
+      "id": "F8",
+      "key": "SPA general representation survival period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "9.1"
+    },
+    {
+      "id": "F9",
+      "key": "SPA Fundamental Representations",
+      "value": "Sections 4.1, 4.2, 4.3 and 4.12 (Germplasm and Intellectual Property Title)",
+      "doc": "D1",
+      "section": "1.1"
+    },
+    {
+      "id": "F10",
+      "key": "SPA order of precedence",
+      "value": "Section 11.4 amendments, then SPA, then Ancillary Agreements; Escrow Agreement controls escrow release",
+      "doc": "D1",
+      "section": "11.12"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement_velourt_nagousk.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement_lantern_trust.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "key_employee_agreement_szabo.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "post_closing_side_letter_july_2026.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "transition_services_agreement_seed_conditioning.md",
+      "kind": "transition services agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "pellacre_ames_research_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "seed_lot_quality_testing_report_2025_harvest.md",
+      "kind": "seed lot germination and genetic purity testing report",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "In TSA Section 8.1, Velourt as Recipient indemnifies Nagousk as Provider against all Losses arising from or relating to the seed conditioning and cold storage Services, including loss of or damage to stored seed lots, regardless of whether Provider's own negligence caused them. TSA Section 8.4 caps each party's liability at the fees paid in the prior 12 months but states that the cap does not apply to Recipient's obligations under Section 8.1. Velourt therefore carries unlimited liability, which extends to losses caused by the provider's own negligence, while Provider's liability to Velourt stays capped. The indemnity runs only one way.",
+      "doc": "D5",
+      "section": "8.1 and 8.4",
+      "detect_terms": [
+        "regardless of whether caused by the negligence of Provider",
+        "shall not apply to Recipient's obligations under Section 8.1"
+      ],
+      "expected_finding": "The TSA leaves Velourt with an uncapped, one-way indemnity that covers even losses caused by Provider's own negligence. Velourt should seek to make the indemnity mutual, exclude Provider's negligence and willful misconduct, and bring the indemnity within the Section 8.4 cap.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Under Key Employee Agreement Section 7.2, Dr. Szabó grants Pellacre an exclusive licence to her pre-existing Drought-Tolerance Lines, which are core breeding germplasm. Section 12.3 deems any Change of Control (defined in Section 1.1 as a transfer of more than 50% of Pellacre's voting stock) an assignment that requires her prior written consent. Absent that consent, Section 12.3 lets her terminate the Section 7.2 licence by written notice at any time after the Change of Control. The SPA recitals and Section 1.1 record the sale of 100% of Pellacre's stock to Velourt, which closed on March 2, 2026. Nothing in the folder shows that Dr. Szabó consented or that anyone addressed the point: the SPA's Section 3.2 closing deliverables include no such consent.",
+      "doc": "D3",
+      "section": "7.2 and 12.3",
+      "detect_terms": [
+        "deemed an assignment",
+        "terminate the license granted in Section 7.2"
+      ],
+      "expected_finding": "The sale of Pellacre's stock to Velourt was a Change of Control that, without Dr. Szabó's written consent, lets her terminate Pellacre's exclusive licence to the Drought-Tolerance Lines at any time. Velourt should promptly obtain her written consent or waiver, or a fresh licence, and consider an indemnity claim against Nagousk.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "Escrow Agreement Section 10.5 chooses Delaware law and the exclusive jurisdiction of the Court of Chancery of the State of Delaware. Its release provisions require joint written instructions or a final, non-appealable order of a court described in Section 10.5. SPA Sections 11.8 and 11.9 choose New York law and the exclusive jurisdiction of courts in New York County for all disputes arising from the SPA, including indemnification claims. Each clause is ordinary on its own. SPA Section 11.12, however, provides that the Escrow Agreement controls the release of escrow funds, so a New York judgment on an indemnity claim does not by itself release the escrow. Velourt would face two proceedings, under two bodies of law, to recover on a single claim.",
+      "doc": "D2",
+      "section": "10.5",
+      "detect_terms": [
+        "laws of the State of Delaware",
+        "Court of Chancery of the State of Delaware"
+      ],
+      "expected_finding": "The Escrow Agreement's Delaware law and exclusive Delaware forum conflict with the SPA's exclusive New York law and forum. Because the Escrow Agreement controls release under SPA Section 11.12, Velourt may have to litigate indemnity claims in New York and then again in Delaware to reach the escrow. Velourt should seek to amend the Escrow Agreement to New York law and forum, or to have it recognize a final New York judgment as a release trigger.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ],
+      "doc2": "D1",
+      "section2": "11.8 and 11.9",
+      "detect_terms2": [
+        "laws of the State of New York",
+        "New York County"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Escrow Agreement Section 4.2 releases the General Escrow Amount to Seller nine months after the Closing Date, that is, on December 2, 2026, because the Closing Date was March 2, 2026. Only amounts subject to pending claims are retained. SPA Section 9.1 says general representations survive 18 months after the Closing Date. SPA Section 9.6, however, makes the General Escrow Fund the sole and exclusive source of recovery for general representation claims. SPA Section 11.12 gives the Escrow Agreement control over release. Read together, Velourt has no source of recovery for general representation breaches discovered after month nine, so the 18-month survival period is effectively cut to nine months. Nine months is shorter than a full planting-to-harvest cycle in which seed performance defects typically surface.",
+      "doc": "D2",
+      "section": "4.2",
+      "detect_terms": [
+        "nine (9) months after the Closing Date"
+      ],
+      "expected_finding": "Because the general escrow releases on December 2, 2026 and SPA Section 9.6 makes it the sole source of recovery, Velourt's 18-month survival period for general representations is in practice only nine months, which is too short to cover a growing season. Velourt should seek to align the escrow release date with the 18-month survival period or to remove the sole-recourse limitation after release.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "9.1 and 9.6",
+      "detect_terms2": [
+        "sole and exclusive source of recovery",
+        "eighteen (18) months after the Closing Date"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "SPA Section 2.4(b) gives Buyer 30 days after delivery of Seller's Closing Statement to deliver a written dispute. If Buyer does not, the Closing Statement becomes final and binding. The Side Letter is dated July 15, 2026. Its Section 3 recites that Seller delivered the Closing Statement on May 28, 2026, so the dispute deadline was June 27, 2026. The same section records that Buyer disputes the valuation of the Closing Seed Inventory and that the parties will discuss the point in good faith. The Side Letter does not extend or waive the SPA deadline, and Buyer's dispute, recorded July 15, came after the window closed. Velourt has not accepted the Closing Statement: the Side Letter records its objection. The memo can therefore still recommend action.",
+      "doc": "D4",
+      "section": "3",
+      "detect_terms": [
+        "delivered the Closing Statement on May 28, 2026",
+        "disputes the valuation of the Closing Seed Inventory"
+      ],
+      "expected_finding": "Velourt's dispute of the Closing Seed Inventory valuation, first recorded in the July 15, 2026 Side Letter, came after the 30-day window under SPA Section 2.4(b) closed on June 27, 2026, so Seller can argue the Closing Statement is final and binding. Velourt should promptly seek a written extension or waiver from Nagousk and preserve any argument that Seller waived the deadline.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "2.4(b)",
+      "detect_terms2": [
+        "within thirty (30) days after delivery of the Closing Statement",
+        "final and binding"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA Section 1.1 defines Fundamental Representations as Sections 4.1, 4.2, 4.3 and 4.12, and Section 4.12 is the Germplasm and Intellectual Property Title representation. Fundamental Representations are carved out of the $18,400,000 cap in Section 9.5(a) and survive six years under Section 9.1. Side Letter Section 2 is executed as an amendment under SPA Section 11.4, which ranks first in the order of precedence in SPA Section 11.12. Presented as a technical conforming change after renumbering of the Disclosure Schedule, it provides that references to Section 4.12 in the definition of Fundamental Representations shall be read as references to Section 4.13. In the SPA, Section 4.13 is the Brokers representation. Read together, the germplasm title representation, the most valuable protection in a seed genetics acquisition, drops out of the carve-out. It becomes subject to the cap, the 18-month survival period and the escrow-only recourse.",
+      "doc": "D4",
+      "section": "2",
+      "detect_terms": [
+        "shall be read as references to Section 4.13"
+      ],
+      "expected_finding": "The Side Letter's renumbering redirects the Fundamental Representations definition from the Germplasm and Intellectual Property Title representation (Section 4.12) to the Brokers representation (Section 4.13). Germplasm title claims therefore fall under the $18,400,000 cap and the shorter survival period. Velourt should seek a corrective amendment restoring Section 4.12 as a Fundamental Representation, relying on mutual mistake if Nagousk resists.",
+      "contradicts": "F9",
+      "doc2": "D1",
+      "section2": "1.1 and 9.5(a)",
+      "detect_terms2": [
+        "Sections 4.1, 4.2, 4.3 and 4.12"
+      ]
+    }
+  ]
+}

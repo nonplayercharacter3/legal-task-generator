@@ -1,0 +1,278 @@
+{
+  "matter_id": "s67-m0001",
+  "summary": "Tinav Beverage Partners, Inc. (Buyer, the firm's client) is buying all outstanding stock of Copperwake Brewing Company, an Oregon craft brewery, from its parent Braikal Beverage Group, Inc. (Seller). The Delaware-law Stock Purchase Agreement was signed October 2, 2026. The $48,000,000 price is paid as $40,000,000 cash at closing plus an $8,000,000 Seller Note issued by Buyer, and a $2,400,000 indemnity escrow is held back. The folder holds: the SPA; the Seller Note; the earlier letter of intent; a key employee agreement with the head brewer; the Disclosure Schedule; an IP assignment moving the COPPERWAKE marks and recipes from Seller to the Company; a bill of sale for a canning line Seller owned; a broker's insurance certificate cover letter; and a landlord consent and estoppel. Six issues are planted. (1) The Seller Note's New York law and forum split note enforcement from the SPA's Delaware set-off and indemnity regime. (2) Tax representations get only general 18-month survival. (3) The Disclosure Schedule narrows the defined term \"Business\", which guts Seller's non-compete. (4) The Disclosure Schedule confines the uncapped Specified Matter indemnity to the escrow. (5) A contract-brewing customer's change-of-control consent is disclosed but left out of Required Consents. (6) The Seller Note can be assigned freely, including to a competitor.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Tinav Beverage Partners, Inc.",
+      "role": "Buyer under the Stock Purchase Agreement and Maker of the Seller Note (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Braikal Beverage Group, Inc.",
+      "role": "Seller of all Company stock, Holder of the Seller Note, assignor under the IP Assignment and seller under the Bill of Sale"
+    },
+    {
+      "id": "P3",
+      "name": "Copperwake Brewing Company",
+      "role": "Target company (Oregon corporation) whose shares are sold"
+    },
+    {
+      "id": "P4",
+      "name": "Imelda Sorrentino",
+      "role": "Head brewer of the Company and party to the Key Employee Agreement"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Stock Purchase Agreement Signing Date",
+      "value": "October 2, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$48,000,000, being $40,000,000 cash plus the $8,000,000 Seller Note",
+      "doc": "D1",
+      "section": "§2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Seller Note principal amount",
+      "value": "$8,000,000",
+      "doc": "D2",
+      "section": "§1"
+    },
+    {
+      "id": "F4",
+      "key": "Indemnity Escrow Amount",
+      "value": "$2,400,000",
+      "doc": "D1",
+      "section": "§2.4"
+    },
+    {
+      "id": "F5",
+      "key": "Stock Purchase Agreement governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "§11.8"
+    },
+    {
+      "id": "F6",
+      "key": "Stock Purchase Agreement exclusive forum",
+      "value": "Delaware Court of Chancery",
+      "doc": "D1",
+      "section": "§11.9"
+    },
+    {
+      "id": "F7",
+      "key": "Indemnity cap",
+      "value": "10% of the Purchase Price ($4,800,000), aggregate Seller liability under Article IX",
+      "doc": "D1",
+      "section": "§9.5(a)"
+    },
+    {
+      "id": "F8",
+      "key": "General representation survival period",
+      "value": "18 months after the Closing Date",
+      "doc": "D1",
+      "section": "§9.1(a)"
+    },
+    {
+      "id": "F9",
+      "key": "Letter of intent tax representation survival",
+      "value": "Until 60 days after expiry of the applicable statute of limitations",
+      "doc": "D3",
+      "section": "§5"
+    },
+    {
+      "id": "F10",
+      "key": "Order of precedence",
+      "value": "SPA controls over Ancillary Agreements, except the Seller Note controls its own payment and enforcement terms",
+      "doc": "D1",
+      "section": "§11.12"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "stock_purchase_agreement.md",
+      "kind": "stock purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "seller_note.md",
+      "kind": "seller note",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "letter_of_intent.md",
+      "kind": "letter of intent",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "key_employee_agreement_head_brewer.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "ip_assignment_agreement.md",
+      "kind": "IP assignment agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "bill_of_sale_canning_line.md",
+      "kind": "bill of sale",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D9",
+      "filename": "landlord_consent_and_estoppel.md",
+      "kind": "landlord consent and estoppel certificate",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "The SPA chooses Delaware law in §11.8 and makes the Delaware Court of Chancery the exclusive forum in §11.9. The Seller Note §10 instead chooses New York law and the exclusive courts of the County of New York, and declares the Note an instrument for the payment of money only. The SPA's own precedence clause (§11.12) does not cure the mismatch, because it lets the Seller Note control its payment and enforcement terms. The result: Seller can sue on the Note in New York, potentially by expedited summary procedure for money-only instruments. Buyer's set-off right (SPA §9.8) and its indemnity claims must meanwhile be pursued in Delaware under Delaware law. Seller could therefore obtain a judgment on the Note before Buyer's offsetting claims are decided.",
+      "doc": "D2",
+      "section": "§10 (Governing Law; Jurisdiction)",
+      "detect_terms": [
+        "laws of the State of New York",
+        "County of New York",
+        "payment of money only"
+      ],
+      "expected_finding": "The Seller Note's New York law and exclusive New York forum, which control the Note's enforcement under SPA §11.12, split Note enforcement from Buyer's Delaware-law set-off and indemnity rights under the SPA. The Note should be conformed to Delaware law and the Court of Chancery, or should expressly preserve Buyer's set-off as a defense in any Note action.",
+      "contradicts": [
+        "F5",
+        "F6"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "SPA §1.1 defines Fundamental Representations as Sections 4.1, 4.2, 4.3 and 4.5 only, so the Taxes representation in §4.12 is left out. Under §9.1(a), every non-fundamental representation, including Taxes, survives only 18 months after the Closing Date. Only the Fundamental Representations get statute-of-limitations survival under §9.1(b), and the SPA has no separate pre-closing tax indemnity with a longer survival period. Federal TTB excise tax and state beer tax assessments can be made well beyond 18 months, so Buyer's tax claims will often lapse before the liability is even assessed. The letter of intent (§5) provided that tax representations would survive until 60 days after the statute of limitations expires.",
+      "doc": "D1",
+      "section": "§1.1 (Fundamental Representations) and §9.1",
+      "detect_terms": [
+        "Sections 4.1, 4.2, 4.3 and 4.5",
+        "eighteen (18) months after the Closing Date"
+      ],
+      "expected_finding": "Because the Taxes representation in §4.12 is excluded from Fundamental Representations, it survives only 18 months under §9.1(a), which is shorter than excise and income tax assessment periods and contrary to the letter of intent. Taxes should be added to Fundamental Representations, or a pre-closing tax indemnity should survive until 60 days after the statute of limitations expires.",
+      "contradicts": "F9",
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "On its own, SPA §1.1 reads normally: \"Business\" means the Company's business as conducted on the Closing Date, as described in the Disclosure Schedule. §6.6 then bars Seller from engaging in the Business for five years. On its own, Disclosure Schedule §1.1(a) reads as an ordinary description: brewing, packaging and sale of malt beverages at the Company's brewery located at 1180 Furnace Street. Read together, the defined term the non-compete relies on is limited to beer made at a single site. It excludes the hard seltzer, contract-brewing and taproom lines the letter of intent describes as part of the business. Seller could therefore compete in those lines, or open a competing brewery at any other address. The Disclosure Schedule forms part of the SPA (§11.13), so the narrow meaning controls.",
+      "doc": "D1",
+      "section": "§1.1 (Business) and §6.6 (Non-Competition)",
+      "detect_terms": [
+        "as conducted on the Closing Date",
+        "engage in the Business"
+      ],
+      "expected_finding": "Because Disclosure Schedule §1.1(a) defines \"Business\" as beer brewing at one brewery address, Seller's non-compete in SPA §6.6 does not cover hard seltzer, contract brewing, taprooms or brewing at any other location. \"Business\" should be redefined in the SPA itself to cover all of the Company's product lines and activities without any site limitation.",
+      "contradicts": null,
+      "doc2": "D5",
+      "section2": "§1.1(a) (Description of the Business)",
+      "detect_terms2": [
+        "brewing, packaging and sale of malt beverages",
+        "located at 1180 Furnace Street"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "SPA §9.5(a) caps Seller's aggregate Article IX liability at 10% of the Purchase Price ($4,800,000). §9.5(b) removes that cap for Fraud, Fundamental Representations and \"Losses arising out of the Specified Matters\" indemnified under §9.2(d), which on its face favours Buyer. Disclosure Schedule §9.2(d) lists Specified Matter 1: the City of Marlow Bend notice of violation for biochemical oxygen demand exceedances in brewery wastewater, with a pretreatment system estimated at $3,100,000. It then provides that Losses for that matter are recoverable solely from the Indemnity Escrow Fund. That fund holds only $2,400,000 and also secures general indemnity claims. The Disclosure Schedule forms part of the SPA (§11.13), so this escrow-only limit turns the uncapped carve-out into a recovery ceiling below the expected loss.",
+      "doc": "D1",
+      "section": "§9.5(b)",
+      "detect_terms": [
+        "shall not apply to Losses arising out of the Specified Matters"
+      ],
+      "expected_finding": "Disclosure Schedule §9.2(d) limits recovery for the wastewater Specified Matter to the $2,400,000 Indemnity Escrow Fund, which is shared with general claims. This overrides the SPA §9.5(b) carve-out from the cap and leaves Buyer bearing most of the estimated $3,100,000 pretreatment cost. The escrow-only proviso should be deleted, or a dedicated, adequately sized special escrow should be added with Seller remaining directly liable for any shortfall.",
+      "contradicts": null,
+      "doc2": "D5",
+      "section2": "§9.2(d) (Specified Matters)",
+      "detect_terms2": [
+        "solely from the Indemnity Escrow Fund"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "SPA §1.1 defines \"Required Consents\" as the consents listed in Disclosure Schedule §4.4. §6.3 obliges Seller only to use commercially reasonable efforts to obtain the Required Consents, and the §7.2(d) closing condition covers only those consents. Disclosure Schedule §4.4 lists just the brewery lease landlord consent and the transfer of the wastewater pretreatment permit. Separately, Disclosure Schedule §4.7(b)(4) lists the Contract Brewing Agreement with Feldspar Hollow Brewing Co., about 28% of production volume, and notes that a change of control of Copperwake requires the prior written consent of Feldspar Hollow. Read together, this consent is triggered by the sale but is neither a Required Consent nor a closing condition. Because it is disclosed, and SPA §11.13 applies disclosures across sections, Buyer would have no claim for breach of the §4.4 or §4.7 representations if Feldspar Hollow terminated.",
+      "doc": "D1",
+      "section": "§1.1 (Required Consents), §6.3 and §7.2(d)",
+      "detect_terms": [
+        "Required Consents",
+        "Seller shall use commercially reasonable efforts to obtain"
+      ],
+      "expected_finding": "The sale triggers Feldspar Hollow's change-of-control consent right under the Contract Brewing Agreement, which covers about 28% of volume. That consent is omitted from Required Consents, so it is neither a closing condition nor indemnifiable once disclosed. Buyer should require it to be added to Required Consents and to the §7.2(d) closing condition, or should obtain a specific indemnity for termination losses.",
+      "contradicts": null,
+      "doc2": "D5",
+      "section2": "§4.4 (Consents) and §4.7(b)(4) (Material Contracts)",
+      "detect_terms2": [
+        "prior written consent of Feldspar Hollow",
+        "change of control of Copperwake"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Seller Note §8 lets the Holder (Seller) assign, transfer or pledge the Note, in whole or in part, to any Person without the consent of Maker (Buyer). Nothing excludes competing brewers or beverage companies. Under Note §5, the Holder receives monthly financial statements and distributor depletion reports, and Note §7 lets the Holder accelerate on default. A competitor assignee would therefore gain Buyer's confidential commercial data and default leverage. The SPA's anti-assignment clause (§11.5) covers only the SPA itself. Buyer's set-off right under SPA §9.8 runs against amounts payable to \"Seller\", so an assignment also puts that set-off at risk.",
+      "doc": "D2",
+      "section": "§8 (Assignment)",
+      "detect_terms": [
+        "without the consent of Maker",
+        "to any Person"
+      ],
+      "expected_finding": "The Seller Note can be freely assigned to anyone, including a competing brewer, who would receive Buyer's monthly financial and depletion reports and could jeopardize Buyer's SPA §9.8 set-off. The Note should require Maker's consent to any assignment, prohibit transfers to competitors, and make any assignee take subject to Buyer's set-off rights.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

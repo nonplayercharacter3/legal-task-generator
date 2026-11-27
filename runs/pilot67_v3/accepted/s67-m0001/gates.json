@@ -1,0 +1,168 @@
+{
+  "matter_id": "s67-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Note §10.1: \"This Note ... shall be governed by and construed in accordance with the laws of the State of New York\"; §10.2: \"Any suit, action or proceeding arising out of or relating to this Note shall be brought exclusively in the courts of the State of New York sitting in the County of New York or the United States District Court for the Southern District of New York\"; §10.3: \"Maker acknowledges that this Note is an instrument for the payment of money only.\"",
+            "reason": "The mismatch is real and it hurts Buyer (Tinav), which is the Maker of the Note.\n\n- **Two regimes.** The SPA §11.8 picks Delaware law, and §11.9 sends all SPA disputes exclusively to the Delaware Court of Chancery. The Note instead puts all Note claims exclusively in New York, under New York law.\n- **Money-only acknowledgment.** §10.3 sets up summary judgment in lieu of complaint under CPLR 3213. Seller could use that expedited route to get a judgment on the Note quickly.\n- **Set-off sits outside the Note.** Buyer's set-off and good-faith withholding right is in SPA §9.8, not in the Note. The Note never mentions it.\n- **The Note works against Buyer's defences.** Note §9.7 calls Maker's payment obligation \"absolute and unconditional.\" SPA §11.12 lets the Seller Note control its own payment and enforcement terms, so the SPA does not cure the conflict.\n- **Practical result.** Buyer's indemnity and set-off claims must be litigated in Delaware. Seller could win a New York judgment on the Note before those claims are decided. The exposure is significant: the Specified Matter (the wastewater violation) has an estimated cost of about $3.1M.\n- **Still actionable.** The latest dated document in the folder is the November 24, 2026 landlord consent, and closing has not yet occurred. The Note is still an unsigned form, so it can still be renegotiated: align it to Delaware, cross-reference §9.8 in the Note, and strike or qualify §10.3."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "§1.1: \"'Fundamental Representations' means the representations and warranties set forth in Sections 4.1, 4.2, 4.3 and 4.5.\" §9.1(a): \"the representations and warranties contained in this Agreement, other than the Fundamental Representations, shall survive the Closing and shall remain in full force and effect until the date that is eighteen (18) months after the Closing Date.\"",
+            "reason": "The Taxes representation in §4.12 is not a Fundamental Representation, so it falls under the 18-month General Survival Period in §9.1(a). Only §9.1(b) gives statute-of-limitations survival, and it covers Fundamental Representations alone. §9.1(c) extends survival only for claims under §9.2(c) (unpaid Indebtedness and Transaction Expenses) and §9.2(d) (Specified Matters). §9.2 contains no standalone pre-closing tax indemnity, and the Disclosure Schedule lists no tax Specified Matter. Tax breach claims are also subject to the $360,000 Basket and the $4.8M Cap. TTB excise tax and Oregon beer privilege tax assessments can come well after 18 months, so Buyer, as the indemnified party, could lose its claim before a liability is even assessed. This departs from LOI §5.2(c), which promised survival until 60 days after the statute of limitations and which Buyer called \"essential.\" The folder shows the Closing has not yet occurred: the landlord consent of November 24, 2026 and the broker letter of November 20, 2026 both treat it as future. Buyer can therefore still negotiate an amendment or a tax indemnity, and the issue remains actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "SPA §1.1: \"'Business' means the business of the Company as conducted on the Closing Date, as described in Section 1.1(a) of the Disclosure Schedule.\" Disclosure Schedule §1.1(a): \"For purposes of the definition of 'Business' in Section 1.1 of the Agreement, the business of the Company is the brewing, packaging and sale of malt beverages at the Company's brewery located at 1180 Furnace Street, Marlow Bend, Oregon 97389.\" SPA §6.6: \"Seller shall not ... (a) engage in the Business anywhere in the United States.\"",
+            "reason": "The SPA defines the Business by reference to Disclosure Schedule §1.1(a), and §11.13 incorporates the schedule into the SPA, so the schedule's wording controls. That wording ties the Business to activity \"at the Company's brewery located at 1180 Furnace Street.\" The §6.6 non-compete, which is Seller's obligation for Buyer's benefit, bars Seller only from engaging in that site-specific Business \"anywhere in the United States.\" Read that way, Seller could open a competing brewery at any other address without breaching, which largely empties the nationwide restriction. The definition is also narrower than the LOI's description of the business. The LOI listed four lines: beer, hard seltzer and flavored malt beverages, contract brewing and co-packing, and taproom operations including food and merchandise. The schedule's \"malt beverages\" wording leaves room to argue that non-malt seltzer, taproom food and merchandise, and services provided for third parties fall outside it. The same narrow definition also weakens Buyer's other protections that rely on it: the §4.9(c) sufficiency-of-assets representation and the IP Assignment's coverage of assets \"used in the Business.\" Nothing in the folder cures the problem. No closing has yet occurred; the latest document is dated November 24, 2026, the landlord consent runs to April 30, 2027, and the Outside Date is January 29, 2027. Buyer can therefore still insist that the definition be corrected before closing.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Business\" means the business of the Company as conducted on the Closing Date, as described in Section 1.1(a) of the Disclosure Schedule.",
+                "reason": "The SPA alone defines \"Business\" by reference to Disclosure Schedule §1.1(a). It uses that term in the §6.6 non-compete, and §11.13 makes the Disclosure Schedule part of the agreement. Nothing in the SPA says what Schedule §1.1(a) contains. The narrowing to malt beverages brewed at the 1180 Furnace Street brewery appears only in the Schedule. The SPA does refer to contract brewing customers (§4.17) and to retail licenses, but it does not show that the defined Business leaves out seltzer, contract-brewing or taproom lines, or that it is limited to one site. On the SPA's own wording, \"business of the Company as conducted\" reads broadly. An associate could notice that the non-compete depends on an outside description, but could not see the gap or the harm to the client without the Schedule (and the LOI)."
+              },
+              "disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "For purposes of the definition of \"Business\" in Section 1.1 of the Agreement, the business of the Company is the brewing, packaging and sale of malt beverages at the Company's brewery located at 1180 Furnace Street, Marlow Bend, Oregon 97389.",
+                "reason": "Read alone, the schedule does show that its 'Business' description is narrower than what the Company actually does. Elsewhere it discloses the taproom, the Feldspar Hollow contract brewing (about 28% of volume), the Tallwater cider and seltzer co-packing and the Ochre Owl alternating proprietorship, all at one address. An associate could notice that mismatch. The schedule never mentions a non-compete or any other covenant that uses 'Business', so it does not show why the narrow wording hurts Buyer. The harm described is that Seller could compete in the excluded lines or at another site. That depends on SPA §6.6 tying Seller's five-year non-compete to this defined term, and on SPA §1.1 incorporating the schedule's description. Neither appears in this document. The comparison to the letter of intent's broader description also comes from another document."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "SPA §9.5(b): \"The limitations set forth in Section 9.5(a) shall not apply to Losses arising out of the Specified Matters...\" versus Disclosure Schedule §9.2(d)(d): \"Losses arising out of Specified Matter 1 shall be recoverable by the Buyer Indemnitees solely from the Indemnity Escrow Fund.\" The same schedule, at §9.2(d)(c), estimates the pretreatment system at \"$3,100,000. That figure excludes interim surcharges and any administrative penalty.\"",
+            "reason": "The cap carve-out in §9.5(b) appears to give Buyer uncapped recovery, up to the Purchase Price, for the wastewater Specified Matter. However, §11.13 makes the Disclosure Schedule part of the SPA. The schedule's §9.2(d)(d) limits recovery for Specified Matter 1 to the Indemnity Escrow Fund. That fund is only $2,400,000 under §2.4, and it also secures general rep, covenant and other claims, which can deplete it. The expected loss is at least $3,100,000 plus surcharges and penalties, so Buyer would absorb at least $700,000, and likely more. Nothing in the folder cures the conflict. §11.12 resolves conflicts only with Ancillary Agreements, and the Disclosure Schedule is not one. A court would likely apply the specific escrow-only limit over the general carve-out. Buyer cannot fall back on set-off against the Seller Note either, because the Note is not the escrow. The matter remains actionable. Closing has not yet occurred: the landlord consent of November 24, 2026 still anticipates it, and the Outside Date is January 29, 2027. Buyer can still seek an amendment, an increased escrow or a special escrow before closing.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"The limitations set forth in Section 9.5(a) shall not apply to Losses arising out of the Specified Matters, to Losses arising out of Fraud, or to Losses arising out of any inaccuracy in or breach of any Fundamental Representation...\" (§9.5(b)); \"'Specified Matters' means the matters listed in Section 9.2(d) of the Disclosure Schedule.\" (§1.1)",
+                "reason": "Read alone, the SPA helps Buyer on this point. §9.5(b) lifts the $4,800,000 cap for the Specified Matters. §9.6(a) says Seller's payments come \"first\" from the $2,400,000 escrow, which means the escrow is not the only source of recovery. The SPA does not identify the Specified Matters, which are defined only by reference to Disclosure Schedule §9.2(d). It contains no wastewater notice of violation, no $3,100,000 pretreatment estimate, and no clause limiting Specified Matter recovery to the escrow alone. §4.11(b) in fact represents that no environmental notice of violation exists. The escrow-only restriction that turns the carve-out into a ceiling below the expected loss appears only in the Disclosure Schedule. Without that schedule, an associate would see an uncapped indemnity that favours Buyer, not a problem."
+              },
+              "disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "(d) *Recovery.* Losses arising out of Specified Matter 1 shall be recoverable by the Buyer Indemnitees solely from the Indemnity Escrow Fund.",
+                "reason": "The schedule by itself shows two things: the wastewater matter has an estimated pretreatment cost of $3,100,000, excluding surcharges and penalties, and Buyer's recovery for it is limited to the Indemnity Escrow Fund. It does not give the size of the escrow fund ($2,400,000). It does not say that the fund also secures general indemnity claims. It also does not show that SPA §9.5(b) takes Specified Matters out of the 10% cap. Without the escrow amount, a reader cannot tell that the escrow-only limit falls below the expected loss. Without the SPA's cap carve-out, a reader cannot see that this clause cuts back an otherwise uncapped indemnity. Both facts needed to establish the harm come from the SPA."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "SPA §1.1: \"'Required Consents' means the consents, approvals and notices listed in Section 4.4 of the Disclosure Schedule.\" SPA §7.2(d): \"Each of the Required Consents shall have been received...\" Disclosure Schedule §4.4 Part A lists only (1) the Furnace Street Holdings landlord consent and (2) the City Wastewater Division approval of the Discharge Permit transfer. Disclosure Schedule §4.7(b)(4): \"Feldspar Hollow accounted for approximately 28% of the Company's production volume... any change of control of Copperwake, requires the prior written consent of Feldspar Hollow. Feldspar Hollow may terminate the agreement on sixty (60) days' written notice if that consent is not obtained.\"",
+            "reason": "Read together, the two documents leave a change-of-control consent outside the deal's protections, and it hurts Buyer. The sale triggers Feldspar Hollow's consent right under a contract covering about 28% of production. That consent is not on the §4.4 list, so it is not a 'Required Consent'. As a result, Seller has no §6.3 obligation to pursue it, and §7.2(d) does not let Buyer refuse to close without it. Because §4.7(b)(4) discloses the consent requirement, the disclosure qualifies the §4.4(c) no-conflicts rep and the §4.7(b) rep through SPA §11.13 and Preliminary Statement 3. Buyer would therefore have no indemnity claim if Feldspar Hollow terminated after Closing. Nothing in the folder cures this: the landlord consent and insurance letter do not address it, and no Feldspar consent appears. The folder's latest date is November 24, 2026. Closing has not occurred and the Outside Date (January 29, 2027) has not passed, so Buyer can still act by seeking an amendment adding this consent as a Required Consent or closing condition, a specific indemnity, or a direct approach to Feldspar Hollow.",
+            "alone": {
+              "stock_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"Required Consents\" means the consents, approvals and notices listed in Section 4.4 of the Disclosure Schedule.",
+                "reason": "The SPA alone shows the structure. Required Consents are limited to whatever Disclosure Schedule §4.4 lists. Seller owes only commercially reasonable efforts (§6.3). The §7.2(d) condition covers only Required Consents. §11.13 makes a disclosure in one schedule section count for other sections. The SPA does not show what the Disclosure Schedule actually contains. It does not identify the Feldspar Hollow Contract Brewing Agreement or its change-of-control consent requirement, and it does not show that Schedule §4.4 leaves that consent out. Without the schedule, an associate cannot tell that a change-of-control consent is triggered but missing from the Required Consents and closing conditions, or that its disclosure in §4.7(b) cuts off Buyer's representation claims. The §4.4(c) and §4.7(b) representations would protect Buyer unless something is disclosed against them."
+              },
+              "disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "Under Section 14.3 of the agreement, any assignment of the agreement by the Company, and any change of control of Copperwake, requires the prior written consent of Feldspar Hollow. Feldspar Hollow may terminate the agreement on sixty (60) days' written notice if that consent is not obtained.",
+                "reason": "The schedule alone shows three things. First, the Feldspar Hollow contract, about 28% of production volume, needs consent on a change of control and can be terminated if consent is not given. Second, §4.4 Part A lists only the landlord consent and the Discharge Permit approval, not Feldspar Hollow. Third, Preliminary Statement 3 cites SPA §11.13, so disclosures apply across sections. An associate could see a gap in the consents list. The schedule does not show the harm, though. That depends on SPA §1.1 defining \"Required Consents\" by reference to the §4.4 list, on §6.3 limiting Seller's efforts covenant to those consents, and on §7.2(d) making only those consents a closing condition. Those terms are in the SPA, not here. Without them, the omission from §4.4 could be harmless, for example if the SPA had a broader consent condition or covenant. So the key part of the problem, that the consent is neither covenanted nor a condition to closing, cannot be confirmed from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Seller Note §8.1: \"Holder may assign, transfer, negotiate or pledge this Note and its rights under this Note, in whole or in part, to any Person, without the consent of Maker. Each assignee or transferee shall succeed to all of the rights of Holder under this Note to the extent of the interest assigned or transferred, including the rights under Sections 5 and 7.\"",
+            "reason": "The problem is present and still actionable. Buyer (Tinav) is the Maker, and §8.1 lets Seller transfer the Note to anyone without Buyer's consent. Nothing excludes competitors, and the transferee expressly takes the §5 reporting rights and the §7 acceleration rights. Under §5, those reports include monthly financials and distributor depletion reports by distributor, brand and package. The Note has no confidentiality undertaking and no restriction on competitor transferees. SPA §11.5 restricts assignment of the SPA only, not the Note. Buyer's set-off right (SPA §9.8) runs against amounts payable \"by Buyer to Seller.\" The Note itself contains no set-off preservation clause. It also calls Maker's payment obligation \"unconditional\" (preamble) and \"absolute and unconditional\" (§9.7), and permits the Note to be \"negotiate[d].\" An assignee could therefore claim to take free of Buyer's indemnity set-off, which is Buyer's main protection beyond the $2.4M escrow. Nothing in the folder cures or limits this. The Note is still an unsigned form: closing had not occurred as of the November 2026 documents, and the landlord consent runs to April 30, 2027. Buyer can still negotiate a consent right, a competitor bar, confidentiality terms and preservation of set-off against assignees."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 12,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.083,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

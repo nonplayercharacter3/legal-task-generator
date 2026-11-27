@@ -1,0 +1,138 @@
+{
+  "matter_id": "s67-m0003",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I1\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 7,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I1"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": false,
+            "evidence": "TSA Section 1.1: \"'Library Receipts' means all license fees, minimum guarantees, advances, overages, royalties and other amounts paid or payable by any licensee, sub-distributor, exhibitor or other Person under any Post-Closing Sub-Distribution Agreement in respect of the exploitation of any Library Film.\" TSA Section 3.2(a): \"Provider shall remit to Recipient all Library Receipts received by Provider during each calendar month.\" APA Section 6.7: \"Seller shall collect and remit Library Receipts to Buyer pursuant to the terms of the Transition Services Agreement.\" APA Section 10.10: \"each Ancillary Agreement controls as to its own subject matter.\"",
+            "reason": "findable from transition_services_agreement.md alone, so it does not need two documents",
+            "alone": {
+              "transition_services_agreement.md": {
+                "findable": true,
+                "evidence": "\"Library Receipts\" means all license fees, minimum guarantees, advances, overages, royalties and other amounts paid or payable by any licensee, sub-distributor, exhibitor or other Person under any Post-Closing Sub-Distribution Agreement in respect of the exploitation of any Library Film. ... [3.1(a)] invoice and use commercially reasonable efforts to collect all amounts payable under the Sub-Distribution Agreements ... [3.2(a)] Provider shall remit to Recipient all Library Receipts received by Provider during each calendar month.",
+                "reason": "The TSA alone shows the gap. Section 1.1 defines Library Receipts narrowly, as amounts under Post-Closing Sub-Distribution Agreements only. Those are contracts Provider signs for Recipient after the Effective Time under Section 2.5. Section 3.1 and Schedule A-2 still make Provider invoice and collect all amounts under the existing Sub-Distribution Agreements. Recital B and Section 6.5(b) show those existing agreements are Purchased Assets owned by Rorask. Yet the following duties all reach only Library Receipts in the narrow sense: remittance (3.2(a)), the Monthly Statement contents (3.2(b)), audit (3.2(c)), the segregated Collection Account (3.3), the final remittance (6.5(a)), the uncapped remittance carve-out (10.1(c)) and specific performance (11.5). A careful associate could therefore see from this document alone that money Travuth collects under the pre-closing library deals carries no express duty to remit, report, segregate or allow audit, which hurts Rorask. The APA is not needed to spot the problem. It only adds context: the broad APA definition, Section 6.7 routing remittance through the TSA, and Section 10.10 making the TSA control. The TSA alone also does not show that the existing deals are the bulk of library revenue. That is an inference, although recital B plainly treats servicing those deals as the main point of the TSA."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Following the Closing, Seller shall collect and remit Library Receipts to Buyer pursuant to the terms of the Transition Services Agreement. Seller shall hold any Library Receipts it receives in trust for Buyer pending remittance in accordance with the Transition Services Agreement.",
+                "reason": "The APA by itself defines 'Library Receipts' broadly as all post-Effective Time receipts under any Contract, whenever entered into. Section 6.7 sends the collection and remittance mechanics to the TSA, and Section 10.10 lets an Ancillary Agreement control as to its own subject matter. A careful reader would see that the remittance terms are delegated to the TSA and would want to check them. But nothing in the APA shows that the TSA defines 'Library Receipts' more narrowly (only Post-Closing Sub-Distribution Agreements) or limits remittance, reporting and audit to that narrow set. On the APA alone, the duty to remit covers all receipts and they are held in trust. The gap that excludes pre-closing sub-distribution receipts, and the harm to Rorask, appears only from the TSA's text."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "IP Assignment Exhibit A-1, Section 17.2: \"Licensor may not assign this Agreement or any of its rights or obligations hereunder, including by change of control or by sale of all or substantially all of Licensor's film library or of the Pictures licensed hereunder, without the prior written consent of Northfold. Any purported assignment without such consent shall be void.\" APA Schedule 2.7 lists only Cinderpath, talent participants and guilds. APA Section 6.3 says: \"To the extent any Required Consent was not obtained at or before the Closing, Seller shall: (a) use commercially reasonable efforts, at Seller's expense, to obtain each such Required Consent.\"",
+            "reason": "The two documents together show the gap. APA 2.1(c) sweeps all Sub-Distribution Agreements into the Assigned Contracts. The IP Assignment (Exhibit A and Section 5.2) treats Rorask as licensor under the Northfold license. That license covers eight of the twelve films and runs to June 30, 2028. Its anti-assignment clause is expressly triggered by a sale of the library and voids any assignment made without consent. Northfold is not a Required Consent, so Seller's post-closing duty in 6.3 to seek consent does not reach it. Nothing in the folder shows the consent was obtained. Section 2.7(b) only provides a fallback hold-in-trust arrangement. The breach of the no-conflicts representation in APA 3.3(c) gives an indemnity claim, but it is subject to the $184,000 deductible and the cap, and it survives only until April 30, 2027. The IP Assignment does not fix the problem: its Section 6.3 reservation of rights covers only Lantern Season. As of the latest folder date (June 15, 2026), Rorask can still act: it can demand that Seller seek Northfold's consent, pursue the representation claim within the survival period, and address the risk that Northfold treats the transfer as void or terminates or withholds fees on a key revenue contract.",
+            "alone": {
+              "ip_assignment_agreement.md": {
+                "findable": false,
+                "evidence": "Section 17.2: \"Licensor may not assign this Agreement or any of its rights or obligations hereunder, including by change of control or by sale of all or substantially all of Licensor's film library or of the Pictures licensed hereunder, without the prior written consent of Northfold. Any purported assignment without such consent shall be void.\"",
+                "reason": "This document shows that the Northfold SVOD license has a strict anti-assignment clause covering a library sale. It also treats the license as an Assigned Contract and says Assignee is now the licensor under it (Sections 1.1 and 5.2). A careful associate would see that Northfold's consent was required. But nothing here says whether that consent was obtained, waived, or covered by a seller covenant. Exhibit A reads as ordinary encumbrance disclosure, and Section 7.2 preserves all APA covenants and indemnities, which could well address this. The actual problem depends on the APA: Schedule 2.7 omits Northfold, and the Section 6.3 consent covenant reaches only Required Consents. That is what shows no one obtained the consent and nothing protects the client. From this document alone, the associate can only flag a diligence question, not identify the gap."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 3.3(c): the execution, delivery and performance by Seller \"do not and will not ... (c) except for the Required Consents, require the consent of, or notice to, any Person under any Assigned Contract\"; Schedule 2.7 lists only Cinderpath, talent participants and guilds.",
+                "reason": "The APA shows that all Sub-Distribution Agreements are Assigned Contracts (Section 2.1(c)). It also shows that Seller's post-closing consent covenant in Section 6.3 covers only the listed Required Consents. On its face, however, the consent list looks complete. Northfold, its SVOD output license, and that license's anti-assignment and change-of-control consent clause appear nowhere in this document. Seller even represents that no other consents are required. Only the IP Assignment Agreement's Exhibit A shows that a consent was triggered and not obtained. A reader of the APA alone has no basis to identify the gap or the harm to Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Section 9.1(a): \"The representations and warranties in this Agreement, other than the Fundamental Representations, survive the Closing until twelve (12) months after the Closing Date.\" Section 3.9: \"The Delivery Materials for each Library Film are complete and of exhibition quality. This includes ... the Delivery Materials for the Deferred Delivery Films to be delivered under Section 6.6.\" Section 6.6: \"Seller shall deliver to Buyer ... the complete Delivery Materials for each Deferred Delivery Film no later than fifteen (15) months after the Closing Date.\"",
+            "reason": "Section 3.9 is not a Fundamental Representation, so it survives only until April 30, 2027. Travuth's outside delivery date for the four Deferred Delivery Films is July 30, 2027. The exhibition-quality warranty on those materials can therefore expire before Travuth has to deliver them. Under Section 9.1(c), Rorask can preserve a claim only by asserting it with reasonable specificity before expiry, and it cannot do that for defects in materials it has not yet received. The Section 6.6 covenant survives until performed, but it requires only delivery of \"complete\" materials. It does not repeat the exhibition-quality or technical-specification standard, so the quality protection is lost for late deliveries. Nothing in the folder fixes this: the TSA, lab letter and IP assignment do not address it, and the LOI's 18-month survival was not carried into the APA. The gap hurts Rorask as the indemnified Buyer. It is still actionable: the latest folder date is June 15, 2026, no deliveries or waivers are recorded, and Rorask can still seek an amendment or press for early delivery and inspection before April 2027."
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "TSA Section 11.4(a)-(b): \"This Agreement, and all claims or causes of action based on, arising out of or relating to this Agreement or the Services, are governed by and construed in accordance with the laws of the State of California ... Any legal suit, action or proceeding arising out of or based on this Agreement or the Services shall be instituted exclusively in the state or federal courts located in the County of Los Angeles, State of California.\" APA Section 10.8(a)-(b) instead selects \"the internal Laws of the State of Delaware\" and says suits \"shall be instituted exclusively in the Court of Chancery of the State of Delaware.\" APA Section 10.10 provides that \"each Ancillary Agreement controls as to its own subject matter.\"",
+            "reason": "The two exclusive clauses conflict. APA 10.10 does not resolve the conflict in the APA's favor, because it lets the TSA control its own subject matter, so the TSA's California law and Los Angeles forum stand. The disputes are closely linked. Receipts remittance is covered by the TSA, while APA 6.7 requires Seller to hold Library Receipts in trust under the APA. TSA 9.4 sends TSA indemnity claims through the limitations in APA Article IX. Related claims under APA representations, such as those on receipts, title and the ongoing 'Lantern Season' title dispute, go to Delaware Chancery. As Recipient and Buyer, Rorask could face parallel suits in two courts under different law, with inconsistent results, when enforcing remittance and indemnity rights. Nothing in the folder cures this, and nothing shows Rorask accepted the split. Both agreements can be amended in writing, so the point remains actionable for the client.",
+            "alone": {
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "This Agreement, and all claims or causes of action based on, arising out of or relating to this Agreement or the Services, are governed by and construed in accordance with the laws of the State of California... shall be instituted exclusively in the state or federal courts located in the County of Los Angeles, State of California.",
+                "reason": "The TSA alone shows a California governing-law clause and an exclusive Los Angeles forum. It also shows heavy reliance on the APA: Section 9.3 and Section 9.4 route indemnity procedures and limitations through APA Article IX, and Section 3.2(c) uses the APA interest rate. It does not show what law or forum the APA chooses (Delaware law and the Court of Chancery). It also does not show how APA Section 10.10 handles conflicts with Ancillary Agreements. Without those APA terms, an associate cannot tell that the two documents send related disputes to different courts under different law. A California clause in a TSA with a Delaware buyer is not a problem on its own."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "\"In the event of any conflict or inconsistency between this Agreement and any Ancillary Agreement, this Agreement prevails, except that each Ancillary Agreement controls as to its own subject matter.\" (Section 10.10); Section 10.8(a)-(b) selects Delaware law and exclusive jurisdiction in the Delaware Court of Chancery.",
+                "reason": "The APA alone shows only one side of the problem. It picks Delaware law and the Delaware Court of Chancery. Section 10.10 lets an Ancillary Agreement control as to its own subject matter. Section 6.7 sends Library Receipts remittance to the TSA. Nothing in the APA says the TSA uses a different governing law or forum. The California law and Los Angeles forum clause in TSA Section 11.4 can only be found in the TSA. So can the TSA Section 9.4 routing of indemnity claims through APA Article IX. Without the TSA, an associate could at most note a theoretical risk that an ancillary agreement might choose a different forum. They could not see the actual mismatch or the parallel-litigation harm to Buyer."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "APA §2.5(a): \"For any Library Film identified in a Title Defect Notice delivered no later than ten (10) Business Days after the Closing Date, the Purchase Price shall be reduced, and Buyer shall be entitled to retain from the Holdback, an amount equal to the Allocated Value of that Library Film.\" IP Assignment §6.1: \"Assignee delivered to Assignor a Title Defect Notice, dated May 22, 2026, with respect to the Library Picture \"Lantern Season\"\"; §6.3: \"Each Party reserves all of its rights ... Assignor's execution of this Assignment is not an admission by Assignor that a Title Defect exists.\"",
+            "reason": "The problem is present and still actionable. Closing was April 30, 2026, so the ten-Business-Day window under §2.5(a) closed on May 14, 2026. Rorask's notice on Lantern Season is dated May 22, 2026, six Business Days late. On the APA's terms, Rorask therefore has no right to the $2,150,000 Allocated Value reduction. Under §2.5(c), that amount would go back to Seller in the Holdback release on day 90 (July 29, 2026). The IP Assignment's reservation of rights preserves positions on both sides. It does not extend the deadline, and Seller expressly does not concede the point. Nothing in the folder shows Rorask accepting a release or Seller waiving the timing defect. Measured from the latest folder date, June 15, 2026, the Holdback has not yet been released. Rorask's fallback is an indemnity claim for breach of the §3.8 chain-of-title representation. That representation is not Fundamental, so the claim is subject to the $184,000 Deductible and $2,760,000 Cap and must be asserted before April 30, 2027. That window is also still open. This is a live, material risk for the client.",
+            "alone": {
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "For any Library Film identified in a Title Defect Notice delivered no later than ten (10) Business Days after the Closing Date, the Purchase Price shall be reduced, and Buyer shall be entitled to retain from the Holdback, an amount equal to the Allocated Value of that Library Film.",
+                "reason": "The APA alone shows the 10-Business-Day notice window under Section 2.5(a), measured from an April 30, 2026 Closing, so the deadline is about May 14, 2026. It also shows the Holdback is released to Seller under 2.5(c) and that the 3.8 representation is capped and survives 12 months. It does not show that Rorask actually gave a Title Defect Notice for 'Lantern Season', when it gave it (May 22, 2026), or that it is still claiming the price reduction. Those facts come only from the IP Assignment Agreement. Without them, the APA shows only a short deadline, not a missed one that hurts the client."
+              },
+              "ip_assignment_agreement.md": {
+                "findable": false,
+                "evidence": "\"The signing and closing of the Purchase Agreement occurred simultaneously on April 30, 2026 (the \"Closing Date\").\" ... \"Assignee delivered to Assignor a Title Defect Notice, dated May 22, 2026, with respect to the Library Picture \"Lantern Season\"\" ... \"Assignee maintains that \"Lantern Season\" remains subject to a reduction of the Purchase Price ... under Section 2.5 of the Purchase Agreement\"",
+                "reason": "This document gives the Closing Date (April 30, 2026), the date of Rorask's Title Defect Notice (May 22, 2026), and Rorask's position that the price reduction and Holdback retention under APA Section 2.5 still apply. It does not state any deadline for delivering a Title Defect Notice. The ten-Business-Day window in APA Section 2.5(a) and the release of the Holdback to Seller under Section 2.5(c) appear only in the Purchase Agreement. Section 6.3 is a mutual reservation of rights, and Assignor states its execution is not an admission that a Title Defect exists. Read alone, that looks like an ordinary open dispute, not a sign that the notice was late. Without the APA's notice window, an associate could not tell that the May 22 notice missed the deadline or that the client's price-reduction remedy is at risk."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "TSA §9.2: \"Recipient shall indemnify and defend Provider, its Affiliates and their respective Representatives against all Losses arising out of any third-party claim arising out of the exploitation of the Library Films or the Services during the Service Period... This indemnity does not apply to the extent any such Losses result from Provider's gross negligence or willful misconduct.\" TSA §9.4: \"Claims for indemnification under this Article 9 are subject to the limitations on liability set forth in Article IX of the Purchase Agreement.\" APA §9.5(a): \"The aggregate amount of all Losses for which an Indemnifying Party is liable for claims under Section 9.2(a) and Section 9.3(a) shall not exceed $2,760,000 (15% of the Purchase Price) (the \"Cap\").\"",
+            "reason": "Rorask is the Recipient, so it gives the TSA §9.2 indemnity and bears the exposure. TSA §9.4 looks protective because it imports the APA Article IX limitations. But APA §9.5(a) applies the Cap and the Deductible only to representation-breach claims under APA §9.2(a) and §9.3(a). TSA indemnity claims fall in neither bucket, so the imported limitations do not reach them and Rorask's TSA indemnity is in practice uncapped. The trigger is broad: any third-party claim arising out of exploitation of the films or the Services. That sweeps in infringement and chain-of-title claims rooted in Travuth's pre-closing defects. One example is the pending Lantern Season reversion claim described in the IP Assignment. Travuth's own APA exposure for those defects is capped at $2,760,000 and survives only 12 months. The only carve-out is gross negligence or willful misconduct, so Rorask also covers Travuth's ordinary negligence in performing the Services. Nothing in the folder cures or limits this. APA §10.10 makes the TSA control as to its own subject matter. The Service Period runs to January 2027, after the latest date in the folder (June 15, 2026), so exposure continues. Rorask can still seek an amendment under TSA §11.8, so the issue remains actionable.",
+            "alone": {
+              "transition_services_agreement.md": {
+                "findable": false,
+                "evidence": "Section 9.2: \"Recipient shall indemnify and defend Provider, its Affiliates and their respective Representatives against all Losses arising out of any third-party claim arising out of the exploitation of the Library Films or the Services during the Service Period... This indemnity does not apply to the extent any such Losses result from Provider's gross negligence or willful misconduct.\" Section 9.4: \"Claims for indemnification under this Article 9 are subject to the limitations on liability set forth in Article IX of the Purchase Agreement.\"",
+                "reason": "The TSA alone shows that Rorask's indemnity under Section 9.2 is broad. It reaches all third-party claims about exploitation of the Library Films, and it covers Travuth's ordinary negligence, because only gross negligence and willful misconduct are carved out. A careful associate could flag that breadth. But the defined problem is that the indemnity has no cap, and on the face of this document it appears capped: Section 9.4 expressly applies the APA Article IX limitations. Seeing that the cap does not reach TSA claims requires APA Section 9.5(a), which limits the Cap to the Section 9.2(a) and 9.3(a) representation-breach claims. Comparing this exposure with Travuth's own capped $2,760,000 exposure also requires the APA. Neither is in this document, so the uncapped nature of the indemnity cannot be found from the TSA alone."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "The aggregate amount of all Losses for which an Indemnifying Party is liable for claims under Section 9.2(a) and Section 9.3(a) shall not exceed $2,760,000 (15% of the Purchase Price) (the \"**Cap**\").",
+                "reason": "The APA alone shows that the Cap reaches only claims for breach of representations (Sections 9.2(a)/9.3(a)), so Seller's exposure for pre-closing title and infringement breaches is capped at $2,760,000. It also shows that under Section 10.10 each Ancillary Agreement controls as to its own subject matter. But the APA contains no indemnity running from Rorask to Travuth for exploitation of the Library Films or for the Services during the Service Period. It also has no cross-reference from the TSA importing the APA's Article IX limitations. Buyer's only indemnity in the APA (Section 9.3) covers Buyer's own representation breaches, covenant breaches and Assumed Liabilities, which is ordinary and limited. The problem has two parts that exist only in the TSA: the broad Recipient indemnity in TSA 9.2 with its gross-negligence carve-out, and the misleading reference in TSA 9.4 to APA Article IX limitations. Reading the APA alone, an associate could not see that Rorask has uncapped exposure or that it covers Travuth's pre-closing defects or ordinary negligence."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}

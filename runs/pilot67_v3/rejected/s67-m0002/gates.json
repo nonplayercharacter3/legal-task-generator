@@ -1,0 +1,126 @@
+{
+  "matter_id": "s67-m0002",
+  "accepted": false,
+  "failed_gate": "issue_check",
+  "reason": "missing: [\"I6\"]",
+  "split": null,
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": false,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": false,
+      "details": {
+        "missing": [
+          "I6"
+        ],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 8.1: \"Recipient shall indemnify, defend and hold harmless Provider... from and against any and all Losses incurred by any Provider Indemnitee arising out of or relating to the Services or the Stored Seed Lots, including any loss of, damage to, deterioration, loss of germination or vigor of, or contamination of any Stored Seed Lot... in each case regardless of whether caused by the negligence of Provider or any other Provider Indemnitee.\" Section 8.4: \"This Section 8.4 shall not apply to Recipient's obligations under Section 8.1, to Recipient's obligation to pay Fees, or to liability for a Party's fraud.\"",
+            "reason": "Velourt (Recipient) is the only indemnitor. Its indemnity covers Provider's own negligence, including loss of or damage to the Company's seed in Provider's custody, and Section 8.4 carves that indemnity out of the cap. Provider gives no indemnity at all. Its liability to Velourt is capped at 12 months of fees, and Section 8.3 also bars consequential damages and lost profits. Section 8.5 keeps SPA Article IX rights only for pre-Effective Date matters, and nothing elsewhere in the folder cures this. Velourt also requires the Company to insure the seed under Section 9.2, which reinforces that the risk sits with Velourt. The Services run into 2027, so the TSA is still in force as of the latest folder date (July 2026). The problem is therefore present and still actionable, for example through an amendment under Section 10.7."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Section 12.3: \"Any Change of Control shall be deemed an assignment of this Agreement by the Company for purposes of Section 12.2 and requires the prior written consent of Employee. If a Change of Control occurs without that prior written consent, Employee may terminate the license granted in Section 7.2 by written notice to the Company at any time after the Change of Control.\" Section 7.2 grants the Company an \"exclusive, worldwide, royalty-bearing license ... to the Drought-Tolerance Lines.\"",
+            "reason": "The problem is present and still actionable. The SPA records Velourt's purchase of 100% of Pellacre's stock, which closed on March 2, 2026. That is a Change of Control under Section 1.1. The SPA closing deliverables (Section 3.2) and the July 2026 side letter contain no consent from Dr. Szabó. The consents on Schedule 3.2(a)(xi) are not shown, and nothing else in the folder records her consent or a waiver. Her termination right has no time limit ('at any time after'), so it remains open. Termination would take effect on receipt of her notice. Under Section 7.8, Pellacre would then have to return or destroy the core drought-tolerance germplasm and stop using it, which directly harms Velourt as the new owner. Velourt should seek her consent or a waiver now. It also still has recourse against Seller: the SPA Section 4.4(c) no-conflicts representation and the Section 4.12 representations survive until 18 months after closing (to September 2027), and the escrow claim window runs to the December 2, 2026 Release Date. Both are open as of the latest folder date."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Escrow Agreement §10.5: \"This Agreement, and all claims and causes of action arising out of or relating to it, including any dispute concerning the release of the General Escrow Fund, are governed by and construed in accordance with the laws of the State of Delaware ... Each party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware...\" It is read with the \"Final Order\" definition (\"a final, non-appealable order ... of a court described in Section 10.5\"). SPA §11.9: \"Any legal suit, action, proceeding or dispute arising out of or relating to this Agreement ..., including any claim for indemnification under Article IX, shall be instituted exclusively in the state or federal courts located in New York County, New York.\" SPA §11.12: \"provided that the Escrow Agreement shall control with respect to the release of funds held by the Escrow Agent.\"",
+            "reason": "Velourt is the Buyer and the indemnified party. Under SPA §9.6, the $9.2M General Escrow Fund is its sole source of recovery for general rep breaches, and its first source for other claims. If Seller objects to a Claim Notice, the escrow releases only on Joint Written Instructions or a Final Order from a Delaware court (Escrow §§4.1, 4.3(d)). The SPA, however, forces the indemnity claim itself into the New York County courts under New York law. Because SPA §11.12 gives the Escrow Agreement control over release, a New York judgment alone does not qualify as a Final Order. Velourt would have to bring a second proceeding in Delaware, under Delaware law, to get the money out of escrow. The only fallback is suing to compel Seller to sign joint instructions. Nothing in the folder cures or reconciles the two forum clauses. The July 2026 letter agreement does not touch them. This remains actionable: the escrow runs until the Release Date of December 2, 2026, after the latest folder date, and pending claims are retained beyond it. The parties could fix the mismatch by amending Escrow §10.5 or the Final Order definition to cover New York County courts.",
+            "alone": {
+              "escrow_agreement_lantern_trust.md": {
+                "findable": false,
+                "evidence": "\"Final Order\" means a final, non-appealable order, judgment or decree of a court described in Section 10.5 ... Each party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware...",
+                "reason": "By itself, the Escrow Agreement shows only that it is governed by Delaware law, that Delaware courts have exclusive jurisdiction, and that a contested release requires Joint Written Instructions or a final order of a Delaware court. Its own clauses do not conflict, and Delaware governing law and forum are ordinary choices. The problem depends on the SPA. The SPA would need to choose New York law and New York County courts for indemnification disputes (Sections 11.8 and 11.9) and to say that the Escrow Agreement controls release (Section 11.12). Without those terms, an associate cannot see that a New York judgment on an indemnity claim would fail to release the escrow, or that Velourt would face two proceedings under two bodies of law. Section 1.2 mentions the Purchase Agreement, but only for defined terms. Nothing in this document says where SPA disputes are litigated."
+              },
+              "stock_purchase_agreement_velourt_nagousk.md": {
+                "findable": false,
+                "evidence": "Section 11.12: \"...provided that the Escrow Agreement shall control with respect to the release of funds held by the Escrow Agent.\"",
+                "reason": "The SPA alone shows its own side of the problem. Sections 11.8 and 11.9 choose New York law and the exclusive jurisdiction of New York County courts, including for indemnification claims under Article IX. Section 11.12 makes the Escrow Agreement control escrow releases. Section 9.6 makes the General Escrow Fund the sole recovery source for general representation claims and the first source for other claims, with payment through joint written instructions as required under the Escrow Agreement. The SPA does not show that the Escrow Agreement chooses Delaware law and the exclusive jurisdiction of the Delaware Court of Chancery. It also does not show that the escrow release requires a final order from a court named in that agreement. Exhibit A is only listed by title, and its terms are not included. Without the Escrow Agreement's Section 10.5 and its release provisions, a reader cannot see that the two documents conflict or that Velourt would face two proceedings under two bodies of law. At most, an associate would see a reason to check that the forums match."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Escrow Agreement §4.2: \"On the date that is nine (9) months after the Closing Date (the \"Release Date\"), the Escrow Agent shall release to Seller the amount, if any, by which the General Escrow Fund exceeds the Pending Claim Amount as of the Release Date.\" §4.3(a) adds: \"At any time before the Release Date, Buyer may deliver to the Escrow Agent and Seller a written notice (a \"Claim Notice\").\" SPA §9.1: \"The representations and warranties in this Agreement shall survive the Closing until the date that is eighteen (18) months after the Closing Date.\" SPA §9.6: general representation Losses \"shall be satisfied solely from the General Escrow Fund, and the General Escrow Fund shall be the sole and exclusive source of recovery of the Buyer Indemnitees for such Losses.\" SPA §11.12: \"the Escrow Agreement shall control with respect to the release of funds held by the Escrow Agent.\"",
+            "reason": "The Closing Date is March 2, 2026, so the Release Date is December 2, 2026. On that date the escrow balance goes to Seller, except amounts covered by Claim Notices. Claim Notices can only be delivered before the Release Date. For general (non-fundamental, non-tax, non-fraud) representation breaches, SPA §9.6 makes the escrow Velourt's only source of recovery, and SPA §11.12 makes the Escrow Agreement control release. Read together, a general representation breach Velourt finds between month 9 and month 18 still survives under SPA §9.1 but has no money behind it. The 18-month survival period is in practice cut to 9 months, which is shorter than a planting-to-harvest cycle in which seed performance and inventory defects would surface. Velourt is the indemnified Buyer, so it bears this risk. Nothing in the folder cures the gap: the July 15, 2026 letter agreement amends only disclosure-schedule references and does not change escrow timing. The latest date in the folder is July 15, 2026, so the December 2, 2026 Release Date is still ahead. Velourt can still negotiate an amendment or extension, or protect itself by delivering Claim Notices before release. The problem is therefore present and actionable.",
+            "alone": {
+              "escrow_agreement_lantern_trust.md": {
+                "findable": false,
+                "evidence": "On the date that is nine (9) months after the Closing Date (the \"Release Date\"), the Escrow Agent shall release to Seller the amount, if any, by which the General Escrow Fund exceeds the Pending Claim Amount as of the Release Date.",
+                "reason": "This document alone shows that the $9.2M General Escrow Amount is released to Seller on December 2, 2026, nine months after the March 2, 2026 Closing Date. It also shows that Claim Notices may be delivered only before the Release Date (Section 4.3(a)), so later-discovered claims cannot be made against the escrow. It does not show the facts that turn this into a problem for Velourt. It does not state that general representations survive 18 months under SPA Section 9.1. It does not state that the General Escrow Fund is Buyer's sole and exclusive recovery source for general representation claims under SPA Section 9.6. It does not state that SPA Section 11.12 gives the Escrow Agreement control over release. Without these terms, a nine-month escrow is an ordinary holdback, and Buyer could have direct recourse against Seller after release. The loss of all recovery after month nine, and the mismatch with the survival period, can only be seen by reading the SPA."
+              },
+              "stock_purchase_agreement_velourt_nagousk.md": {
+                "findable": false,
+                "evidence": "Section 9.6: \"Any Losses payable to a Buyer Indemnitee under Section 9.2(a) ... shall be satisfied solely from the General Escrow Fund, and the General Escrow Fund shall be the sole and exclusive source of recovery of the Buyer Indemnitees for such Losses.\" Section 9.1: general representations \"shall survive the Closing until the date that is eighteen (18) months after the Closing Date.\" Section 11.12: \"the Escrow Agreement shall control with respect to the release of funds held by the Escrow Agent.\"",
+                "reason": "On its own, the SPA shows three things. General-rep claims can be recovered only from the General Escrow Fund. General reps survive 18 months. The Escrow Agreement controls when escrow funds are released. A careful associate could flag a risk: if escrow is released before 18 months, the survival period is illusory. But the SPA does not say when or how the General Escrow Fund is released. That nine-month release date (December 2, 2026), and the rule that only pending claims are retained, come only from Escrow Agreement Section 4.2, which is not provided. The SPA also defines the General Escrow Fund as the amount deposited \"less any disbursements made in accordance with this Agreement and the Escrow Agreement.\" That confirms the release mechanics sit in the other document. Without it, the actual gap between nine and 18 months cannot be seen, and neither can the harm to Velourt."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Side Letter §3.1: \"Seller delivered the Closing Statement on May 28, 2026...\" §3.3: \"Buyer disputes the valuation of the Closing Seed Inventory as set out in the Closing Statement.\" §3.4: \"The Parties will discuss Buyer's position on the valuation of the Closing Seed Inventory in good faith.\" §10.1: \"Except as expressly provided in Section 2, this Letter Agreement does not amend the Purchase Agreement.\" SPA §2.4(b): \"If Buyer does not deliver a Dispute Notice within that period, the Closing Statement and the Purchase Price set out in it shall be final and binding on the Parties.\"",
+            "reason": "SPA §2.4(b) gives Buyer 30 days after delivery of the Closing Statement to deliver a Dispute Notice. The Closing Statement was delivered on May 28, 2026, so the window closed on June 27, 2026. Nothing in the folder shows a Dispute Notice before that date. The July 15, 2026 Side Letter is the first record of Buyer's objection. It only commits the parties to good-faith discussion and does not waive or extend the §2.4(b) deadline. §10.1 confirms the letter amends the SPA only in Section 2. On its face, therefore, Seller's $43,180,000 inventory value, which raises the price by $1.43M, is final and binding. Buyer's estimate of $39,960,000 implies about a $3.22M swing against Velourt. The point is still actionable. The Side Letter is Velourt's own unsigned draft, so it can still be revised before signing. It records Velourt's objection, and nothing shows Velourt accepted the Closing Statement or paid the adjustment. Velourt can insist that Seller expressly waive the deadline or deem the dispute timely under §2.4(b)–(c), including access to the Independent Accountant, before the letter is signed.",
+            "alone": {
+              "post_closing_side_letter_july_2026.md": {
+                "findable": false,
+                "evidence": "Seller delivered the Closing Statement on May 28, 2026, together with supporting schedules... Buyer disputes the valuation of the Closing Seed Inventory as set out in the Closing Statement.",
+                "reason": "The side letter shows that Seller delivered the Closing Statement on May 28, 2026, that it is dated July 15, 2026, that Buyer's dispute is first recorded in it, and that it only commits the parties to good-faith discussion without extending or waiving any deadline. It does not state the dispute mechanism in SPA Section 2.4(b): the 30-day window for Buyer's written dispute notice and the rule that the Closing Statement becomes final and binding if no notice is given. It refers to Sections 2.4(a) and 2.4(e) but gives no dispute period or deemed-acceptance rule. Without the SPA, an associate cannot tell that the deadline was June 27, 2026, or that the dispute was late and puts the client at risk."
+              },
+              "stock_purchase_agreement_velourt_nagousk.md": {
+                "findable": false,
+                "evidence": "If Buyer does not deliver a Dispute Notice within that period, the Closing Statement and the Purchase Price set out in it shall be final and binding on the Parties. Any item not disputed in a timely Dispute Notice shall be final and binding on the Parties.",
+                "reason": "The SPA alone shows only the mechanism. Section 2.4(b) sets a 30-day window after delivery of the Closing Statement, and an untimely dispute makes the statement final and binding. It also shows that Section 11.4 requires any waiver or amendment to be in writing. The SPA does not show the facts that make this a live problem: when the Closing Statement was delivered (May 28, 2026), that the deadline was therefore June 27, 2026, or that Buyer's seed inventory objection was first recorded on July 15, 2026 without any extension or waiver. Those facts come only from the Side Letter. Reading the SPA alone, an associate could flag the 30-day window as a general risk but could not tell that it has already run or that Velourt's dispute was late."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": false,
+            "evidence": "Side Letter §2.2(d): \"references to Section 4.12 in the definition of \"Fundamental Representations\" in Section 1.1 of the Purchase Agreement shall be read as references to Section 4.13\"; SPA §1.1: \"\"Fundamental Representations\" means the representations and warranties of Seller in Sections 4.1, 4.2, 4.3 and 4.12.\"; SPA §9.5(a): \"the General Cap shall not apply to Losses ... with respect to any inaccuracy in or breach of any Fundamental Representation\"",
+            "reason": "findable from post_closing_side_letter_july_2026.md alone, so it does not need two documents",
+            "alone": {
+              "post_closing_side_letter_july_2026.md": {
+                "findable": true,
+                "evidence": "\"(d) references to Section 4.12 in the definition of \\\"Fundamental Representations\\\" in Section 1.1 of the Purchase Agreement shall be read as references to Section 4.13\" — read with Section 5.4: \"the applications and certificates listed in Section 4.12(a) of the Disclosure Schedule\" relating to the Plant Variety Protection Office.",
+                "reason": "The letter alone shows the problem. Section 2.1 says the only reason for Section 2 is renumbering of the Disclosure Schedule. Clause (d), however, rewrites an operative definition in SPA Section 1.1, and that change does not follow from renumbering a schedule. Section 5.4 of the same letter still uses Section 4.12(a) of the Disclosure Schedule for PVP applications and certificates. That shows Section 4.12 is still the germplasm/IP section after the conforming exercise, so swapping 4.12 for 4.13 removes the IP representation from Fundamental Representations. Section 1.3 makes the letter a binding amendment under SPA 11.4. Moving a representation out of the Fundamental Representations category is plainly adverse to the Buyer, and a careful associate would flag it. What the letter does not show: that SPA 4.13 is the Brokers representation, and the specific consequences, namely the $18.4M cap carve-out in 9.5(a), six-year versus 18-month survival, escrow-only recourse, and precedence under 11.12. Those details come from the SPA. They measure how much harm is done, but they are not needed to see that the change exists and hurts the client."
+              },
+              "stock_purchase_agreement_velourt_nagousk.md": {
+                "findable": false,
+                "evidence": "\"Fundamental Representations\" means the representations and warranties of Seller in Sections 4.1, 4.2, 4.3 and 4.12.",
+                "reason": "Read alone, the SPA protects the Buyer on this point. Section 4.12 (Germplasm and Intellectual Property Title) is a Fundamental Representation. It is therefore carved out of the $18,400,000 General Cap (9.5(a)), the $920,000 Deductible (9.4) and the escrow-only recourse limit (9.6), and it survives six years (9.1). Section 11.12 does rank future amendments under Section 11.4 first in precedence, but that is a standard clause and harms no one on its own. The problem exists only because of the Side Letter, which is not provided. Its Section 2 redirects the reference from 4.12 to 4.13 (the Brokers representation), which takes the germplasm title representation out of the carve-out. Nothing in the SPA points to that change or anticipates it."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    }
+  ]
+}
