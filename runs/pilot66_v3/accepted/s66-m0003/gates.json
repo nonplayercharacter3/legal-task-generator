@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "test",
-  "solver_pass_rate": null,
+  "solver_pass_rate": 0.667,
   "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 2,
+      "pass_rate": 0.667
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 50
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -156,8 +170,62 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.667,
+        "unsolved": false,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 2,
+            "pass_rate": 0.667
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 40,
+              "files_opened": [
+                "apa_prior_draft_2026-08-10.md",
+                "asset_purchase_agreement.md",
+                "brennt_key_employee_agreement.md",
+                "escrow_agreement.md",
+                "seller_disclosure_schedule.md",
+                "seller_member_consent.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C7"
+              ],
+              "steps": 41,
+              "files_opened": [
+                "apa_prior_draft_2026-08-10.md",
+                "asset_purchase_agreement.md",
+                "brennt_key_employee_agreement.md",
+                "escrow_agreement.md",
+                "seller_disclosure_schedule.md",
+                "seller_member_consent.md"
+              ]
+            },
+            {
+              "passed": true,
+              "failed_criteria": [],
+              "steps": 40,
+              "files_opened": [
+                "apa_prior_draft_2026-08-10.md",
+                "asset_purchase_agreement.md",
+                "brennt_key_employee_agreement.md",
+                "escrow_agreement.md",
+                "seller_disclosure_schedule.md",
+                "seller_member_consent.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]

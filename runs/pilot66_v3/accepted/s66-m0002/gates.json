@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 50
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -160,8 +174,73 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2",
+                "C3",
+                "C6",
+                "C7"
+              ],
+              "steps": 32,
+              "files_opened": [
+                "amendment_no_1_distribution_agreement.md",
+                "distribution_agreement_mibaix_bupaiv.md",
+                "insurance_certificate_cover_letter.md",
+                "parent_guaranty_mibaix_holdings.md",
+                "q4_2026_purchase_forecast.md",
+                "sow_1_installation_commissioning.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3",
+                "C6",
+                "C7"
+              ],
+              "steps": 32,
+              "files_opened": [
+                "amendment_no_1_distribution_agreement.md",
+                "distribution_agreement_mibaix_bupaiv.md",
+                "insurance_certificate_cover_letter.md",
+                "parent_guaranty_mibaix_holdings.md",
+                "q4_2026_purchase_forecast.md",
+                "sow_1_installation_commissioning.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C2",
+                "C3",
+                "C6"
+              ],
+              "steps": 32,
+              "files_opened": [
+                "amendment_no_1_distribution_agreement.md",
+                "distribution_agreement_mibaix_bupaiv.md",
+                "insurance_certificate_cover_letter.md",
+                "parent_guaranty_mibaix_holdings.md",
+                "q4_2026_purchase_forecast.md",
+                "sow_1_installation_commissioning.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
