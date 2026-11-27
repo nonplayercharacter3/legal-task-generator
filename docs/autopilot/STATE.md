@@ -101,12 +101,10 @@ agent. Full definition of done: PROMPT.md.
 
 ## Needs Sirui
 - When all jobs are done for good: remind Sirui She to undo `sudo pmset -a disablesleep 0` (#44, closed 2026-11-21).
-- Issue #43: kubectl login expired (waits for a browser sign-in; checked 2026-11-18 13:45). Needed for the vLLM
-  fallback and M6, not for batches. Close once `kubectl get pods -n ecepxie` answers. Never run kubectl without a
-  time cap until then: it hangs.
 - Someone with legal training to read 10 tasks (EVALUATION.md level 1, human check). Not blocking batches.
 
 ## Decisions
+- 2026-11-27: kubectl login works again (checked by Sirui She's session: `kubectl get pods -n ecepxie` answers; no ltg pods or jobs, PVC `ltg-hf-cache` kept). M6 and the vLLM fallback are unblocked. Still cap every kubectl call (`--request-timeout=20s`).
 - 2026-11-23: v2 fails M4 on level 2 folder length only; hardening cycle 1 is v3 = v2 with longer documents (drafter
   asked for 6,000-9,000 words main, 2,500-4,000 others) and 50 solver steps; checklist size (soft) left alone so one
   change is measured at a time.
