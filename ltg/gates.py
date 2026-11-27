@@ -39,6 +39,18 @@ def _plain(s) -> str:
     return _norm(str(s or "").translate(_PLAIN))
 
 
+def has_term(term: str, text: str) -> bool:
+    """`term` is in `text` verbatim (as `_plain` sees it), or its words appear in order with at most 4 words
+    inserted between two of them: the drafter writes "received the September Notice on September 3, 2026" for the
+    term "received on September 3, 2026" (s65-m0002, s502-m0002). The verifier still judges whether the issue is there."""
+    t, x = _plain(term), _plain(text)
+    if t in x:
+        return True
+    words = re.findall(r"\w+", t)
+    gap = r"\W+(?:\w+\W+){0,4}?"
+    return bool(words) and re.search(r"\b" + gap.join(map(re.escape, words)) + r"\b", x) is not None
+
+
 # A name stem that is an ordinary word ("First National Bank") would match almost any text, so such a party is
 # matched by its full name instead.
 COMMON_STEMS = frozenset(
@@ -277,9 +289,9 @@ def issue_check(client: ModelClient, ledger: Ledger, docs: Documents, show_terms
     results = []
     for i in ledger.issues:
         content = docs.get(fname[i.doc], "")
-        missing_terms = [t for t in i.detect_terms if _plain(t) not in _plain(content)]
+        missing_terms = [t for t in i.detect_terms if not has_term(t, content)]
         if i.doc2:
-            missing_terms += [t for t in i.detect_terms2 if _plain(t) not in _plain(docs.get(fname.get(i.doc2, ""), ""))]
+            missing_terms += [t for t in i.detect_terms2 if not has_term(t, docs.get(fname.get(i.doc2, ""), ""))]
         if missing_terms:
             results.append({"issue": i.id, "present": False, "missing_terms": missing_terms})
             continue

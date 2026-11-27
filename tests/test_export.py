@@ -20,8 +20,8 @@ def test_export_splits_and_no_answer_key(cfg, tmp_path, capsys):
     raw = {s: (out / f"{s}.jsonl").read_text().splitlines() for s in want}
     assert {s: len(ls) for s, ls in raw.items()} == want
 
-    # Ledger-only text must never appear. Detect terms are not checked: issue_check requires them verbatim in the
-    # documents, which the export includes in full.
+    # Ledger-only text must never appear. Detect terms are not checked: issue_check requires them in the
+    # documents (verbatim, or with a few words inserted), which the export includes in full.
     secrets = []
     for m in (run / "accepted").iterdir():
         led = json.loads((m / "ledger.json").read_text())

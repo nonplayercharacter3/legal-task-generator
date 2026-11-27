@@ -105,6 +105,16 @@ def test_detect_terms_ignore_markdown_emphasis_and_curly_quotes():
     assert gates._plain('"Territory" means') not in gates._plain("the Territory is")
 
 
+def test_detect_term_allows_a_few_inserted_words_in_order():
+    doc = "Distributor received the September Notice on September 3, 2026, at its office."
+    assert gates.has_term("received on September 3, 2026", doc)  # s65-m0002
+    assert gates.has_term("delivered on August 3, 2026", "Supplier delivered the Module on August 3, 2026.")
+    assert not gates.has_term("received on September 3, 2026", "received on September 4, 2026")
+    assert not gates.has_term("on September 3, 2026 received", doc)  # order matters
+    far = "received " + "word " * 5 + "on September 3, 2026"
+    assert not gates.has_term("received on September 3, 2026", far)
+
+
 def test_issue_check_finds_terms_through_markdown_bold():
     from ltg.schema import DocumentPlan, Issue, Ledger, Party
 
