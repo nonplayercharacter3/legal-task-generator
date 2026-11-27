@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-26 16:45, autopilot iteration 30.
+Last updated: 2026-11-27 10:50, autopilot iteration 31.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -42,10 +42,9 @@ agent. Full definition of done: PROMPT.md.
 
 ## Running jobs
 - `ltg batch` v3, seeds 65-70 (PID 14353, log `runs/batch_v3_s63-70.log`, out `runs/pilot{seed}_v3`), restarted
-  2026-11-26 16:19. The first run (PID 56839) died silently at 2026-11-24 02:31 while labelling seed 65 (no error in
-  the log; the laptop rebooted on 2026-11-25), leaving a stale `runs/.batch.lock`, removed. It runs the code from
-  before PR #51 (in-process), so seeds 66-70 still use the verbatim detect-term check. Expect the end around
-  2026-11-27 03:00 to 06:00 (about 105 min per seed).
+  2026-11-26 16:19 on code from before PR #51 and #52 (verbatim detect terms, no call cap). Seed 65 done and labelled
+  (both 0.00). Seed 66: m0001 and m0002 errored overnight on a network outage (ENOTFOUND, calls hung 5 to 12 hours);
+  the batch retries them on its next try. Expect the end around 2026-11-27 21:00.
 
 ## v3 seeds 63-65 (read 2026-11-26)
 - 8 of 9 kept (63: 3, 64: 3, 65: 2). Folder words 31,600 to 43,800 per task (level 2 length met on all).
@@ -97,7 +96,8 @@ agent. Full definition of done: PROMPT.md.
 3. Lab mate labels his own seeds 500-507 (issue #36, no reply since the reopen on 2026-11-23); do not label them
    here. When he finishes, post his next order in the same iteration: v3 seeds 508-515 if s63-70 look sound, else
    8 more seeds on v2. Test-run first.
-4. If an NRP call stalls a batch (no log line for an hour outside a wait), add a wall-clock cap per solver call.
+4. Claude SDK calls now have a 1-hour cap (PR #52); NRP calls already had one (`max_seconds`). If seed 66's retries
+   also error, look at the network before anything else.
 
 ## Needs Sirui
 - When all jobs are done for good: remind Sirui She to undo `sudo pmset -a disablesleep 0` (#44, closed 2026-11-21).

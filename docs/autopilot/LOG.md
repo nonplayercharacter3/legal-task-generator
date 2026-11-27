@@ -196,3 +196,12 @@ Dated, append-only. One entry per iteration.
 - s65-m0002 false rejection (paraphrased detect term, second after s502-m0002). PR #51 merged (c95c371): detect term
   may have up to 4 inserted words, words in order. 164 tests pass, fake demo rejects at each gate as before.
 - Lab mate: issue #36 open and assigned, still on labelling seeds 500-507, no reply since 2026-11-21; no new branch.
+
+## 2026-11-27 10:23 to 10:50, iteration 31
+- Batch PID 14353 alive. Seed 65 labelled (s65-m0001, s65-m0003 both 0.00; 73bc2ff). Seed 66: s66-m0001 and
+  s66-m0002 errored at the drafter, `ENOTFOUND` (network gone overnight); the calls hung 5 hours before failing and
+  the next ledger_writer call took 12 hours (2026-11-26 22:08 to 2026-11-27 10:20). The batch retries errors on its
+  next try of the seed. Normal Opus calls in v2/v3: at most 234 s over 1,768 calls.
+- PR #52 merged (c41bf88): `claude_sdk` calls capped at `backend.max_seconds` (default 3600), timeout is a
+  ModelError. 165 tests pass. The running batch still uses the old code (no cap, verbatim detect terms).
+- Lab mate: #36 open and assigned, no reply since 2026-11-21 (order: label seeds 500-507); unchanged.
