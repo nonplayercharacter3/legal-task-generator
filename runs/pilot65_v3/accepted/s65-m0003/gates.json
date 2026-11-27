@@ -4,11 +4,25 @@
   "failed_gate": null,
   "reason": null,
   "split": "train",
-  "solver_pass_rate": null,
-  "unsolved": false,
-  "difficulty": [],
-  "label_pending": true,
-  "labelled_by": null,
+  "solver_pass_rate": 0.0,
+  "unsolved": true,
+  "difficulty": [
+    {
+      "model": "qwen3-small",
+      "attempts": 3,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "label_pending": false,
+  "labelled_by": {
+    "config": "configs/pilot_nrp_solver.toml",
+    "models": [
+      "qwen3-small"
+    ],
+    "probe_without_documents_passed": false,
+    "solver_max_steps": 50
+  },
   "gates": [
     {
       "name": "ledger_schema",
@@ -156,8 +170,81 @@
       "name": "solver_check",
       "passed": true,
       "details": {
-        "skipped": true,
-        "reason": "deferred"
+        "probe_without_documents_passed": false,
+        "pass_rate": 0.0,
+        "unsolved": true,
+        "difficulty": [
+          {
+            "model": "qwen3-small",
+            "attempts": 3,
+            "passes": 0,
+            "pass_rate": 0.0
+          }
+        ],
+        "runs": {
+          "qwen3-small": [
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C3",
+                "C4",
+                "C5"
+              ],
+              "steps": 43,
+              "files_opened": [
+                "kessmont_parent_guaranty.md",
+                "lairal_sow_no2_phase2_validation_draft.md",
+                "lairalqms_order_form_no1.md",
+                "lairalqms_service_level_schedule.md",
+                "lairalqms_term_sheet_jan2026.md",
+                "trouvar_lairal_mutual_nda_2025.md",
+                "trouvar_lairal_software_license_agreement.md",
+                "trouvar_wilmington_office_lease.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C1",
+                "C3",
+                "C4",
+                "C5",
+                "C6"
+              ],
+              "steps": 43,
+              "files_opened": [
+                "kessmont_parent_guaranty.md",
+                "lairal_sow_no2_phase2_validation_draft.md",
+                "lairalqms_order_form_no1.md",
+                "lairalqms_service_level_schedule.md",
+                "lairalqms_term_sheet_jan2026.md",
+                "trouvar_lairal_mutual_nda_2025.md",
+                "trouvar_lairal_software_license_agreement.md",
+                "trouvar_wilmington_office_lease.md"
+              ]
+            },
+            {
+              "passed": false,
+              "failed_criteria": [
+                "C3",
+                "C4",
+                "C5"
+              ],
+              "steps": 43,
+              "files_opened": [
+                "kessmont_parent_guaranty.md",
+                "lairal_sow_no2_phase2_validation_draft.md",
+                "lairalqms_order_form_no1.md",
+                "lairalqms_service_level_schedule.md",
+                "lairalqms_term_sheet_jan2026.md",
+                "trouvar_lairal_mutual_nda_2025.md",
+                "trouvar_lairal_software_license_agreement.md",
+                "trouvar_wilmington_office_lease.md"
+              ]
+            }
+          ]
+        }
       }
     }
   ]
