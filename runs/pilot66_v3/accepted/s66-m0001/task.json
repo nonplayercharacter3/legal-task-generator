@@ -1,0 +1,130 @@
+{
+  "task_id": "s66-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "Our client Rekaind Vertical Services, Inc., an independent elevator and escalator maintenance contractor, is the licensee under a software license agreement with Velert Systems, LLC and wants to understand its position before going further. Please review all seven documents in the folder and send me a memo listing each issue you find, where it appears (document and section), why it matters for Rekaind, and your recommended fix.",
+  "documents": [
+    "dispatch_center_office_lease.md",
+    "order_form_001.md",
+    "rekaind_notice_letter_2026-10-21.md",
+    "service_level_schedule.md",
+    "side_letter_2025-05-12.md",
+    "software_license_agreement.md",
+    "velert_certificate_of_insurance.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response concludes that the exclusivity covenant reaches far beyond the 1,140 Licensed Units in the Order Form. It must find that the covenant, read with the definition of Covered Equipment, extends worldwide to all equipment serviced by Rekaind and its affiliates and also bars in-house development. It identifies the location as License Agreement Section 3.4 (or the Section 1.6 definition), explains why this matters to Rekaind, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "anywhere in the world",
+        "Affiliates",
+        "in-house development"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that Velert may assign the Agreement without Rekaind's consent, including to a competitor by merger, change of control or asset sale, while Rekaind needs Velert's consent to assign. It identifies the location as License Agreement Section 14.2, explains why this matters to Rekaind, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "without Licensee's consent",
+        "change of control",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that Velert's indemnity for bodily injury, death or property damage now falls under the liability cap. The reason is that the Side Letter moved that indemnity into a new Section 10.2, while the cap carve-out still covers only Section 10.1 obligations. It identifies the location as License Agreement Section 11.4 or Side Letter Section 2, explains why this matters to Rekaind, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "new Section 10.2",
+        "carve-out",
+        "subject to the cap"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that Rekaind's October 21, 2026 chronic-failure termination notice was delivered after the 30-day window closed. That window ran from delivery of the September 4, 2026 Service Report and closed on October 4, 2026. It identifies the location as Service Level Schedule Section 4.2 or the notice letter, explains why this matters to Rekaind, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "October 4, 2026",
+        "thirty (30) days",
+        "late"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that the Order Form's choice of Ohio law and exclusive Franklin County, Ohio venue overrides the License Agreement's Delaware law and Wilmington forum. It identifies the location as Order Form Section 7 or License Agreement Section 15.4, explains why this matters to Rekaind, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "State of Ohio",
+        "Franklin County",
+        "Order Form shall control"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response concludes that the subscription renews automatically for successive 36-month terms unless notice of non-renewal is given within a 15-day window (between 75 and 60 days before term end). It identifies the location as License Agreement Section 12.2 or the Section 1.14 Non-Renewal Window, explains why this matters to Rekaind, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "automatically renew",
+        "15-day window",
+        "36 months"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Order Form prevails over the License Agreement in the event of a conflict.",
+      "kind": "fact",
+      "hints": [
+        "order of precedence",
+        "Order Form shall control"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that the Annual Subscription Fee is $410,400.",
+      "kind": "fact",
+      "hints": [
+        "$410,400",
+        "$360 per Licensed Unit"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is in memo form addressed to the supervising partner and presents each issue with its document and section, its significance for Rekaind, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memorandum",
+        "Recommended fix",
+        "Section"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Rekaind's October 21, 2026 termination notice was timely under the Service Level Schedule.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely",
+        "validly terminated"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that Velert's bodily-injury and property-damage indemnity remains excluded from the liability cap after the Side Letter.",
+      "kind": "negative",
+      "hints": [
+        "uncapped",
+        "excluded from the cap"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

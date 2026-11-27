@@ -1,0 +1,170 @@
+{
+  "matter_id": "s66-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 70
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 3.4: \"During the Term and for any period during which any Order Form remains in effect, Licensee shall not license, use, or develop, and shall cause its Affiliates not to license, use, or develop, any remote-monitoring, condition-monitoring, dispatch or work-order software other than the Platform for any Covered Equipment. For purposes of this Section 3.4, Covered Equipment includes any equipment serviced by Licensee or any of its Affiliates anywhere in the world.\"",
+            "reason": "Section 3.4, read with the Section 1.6 definition, binds Rekaind and all its Affiliates for all equipment they service worldwide. It also bars in-house development. The Order Form, however, licenses only 1,140 units in PA, NJ and DE, and neither the Order Form nor the Side Letter narrows the clause. The problem is still live. The restriction lasts while Order Form 001 is in effect. Rekaind's termination is stated to take effect November 20, 2026, which is after the latest folder date (November 2, 2026). Rekaind's own letter says it will migrate monitoring to replacement arrangements region by region before that date, which would itself breach Section 3.4. The termination may also be challenged as late. Section 4.2 of the Service Level Schedule required notice within 30 days after the September 4, 2026 Service Report, but the notice is dated October 21, 2026. If the termination fails, the exclusivity could run through March 2028. The clause therefore remains a real and actionable exposure for Rekaind."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Licensor may assign this Agreement, in whole or in part, together with any or all Order Forms, without Licensee's consent: - to any Affiliate of Licensor; or - to any successor to all or substantially all of the business or assets to which this Agreement relates, whether by merger, consolidation, change of control, sale of assets, sale of equity or otherwise. Licensor shall give Licensee written notice of any such assignment within thirty (30) days after it takes effect.",
+            "reason": "Section 14.1 requires Velert's consent before Rekaind can assign. Section 14.2 lets Velert assign freely to affiliates or any successor, by merger, change of control or asset sale. Velert need only give notice up to 30 days after the assignment. Nothing excludes competitors, such as an elevator OEM that competes with Rekaind for maintenance contracts. Rekaind gets no consent right, no right to object and no right to terminate on such a transfer. The Side Letter changes indemnity, security and governance terms but leaves Section 14 untouched. The risk is real: the transferee would hold Rekaind's Customer Data, including customer lists, site and maintenance records and pricing. It would also control a platform Rekaind must use exclusively for all Covered Equipment worldwide under Section 3.4. Rekaind has given notice terminating Order Form 001 effective November 20, 2026. Even so, the exposure remains live for Rekaind. Before termination, Velert could still assign. After termination, a successor would hold Rekaind's data through the export and deletion period under Section 8.7, any transition period under Section 12.8, and backup retention. Rekaind has not accepted or waived this term, so the problem is still actionable."
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "License Agreement §11.4: \"The limitation in Section 11.3 does not apply to: (a) Licensor's indemnification obligations under Section 10.1\". Side Letter §2.1: \"Section 10.1 of the Agreement is deleted in its entirety and replaced with new Section 10.1 and new Section 10.2\". New §10.1 is limited to \"Intellectual Property Indemnification by Licensor\", and new §10.2 carries the \"Bodily Injury and Property Damage Indemnification by Licensor\", including failed entrapment alerts.",
+            "reason": "Velert is the indemnitor and Rekaind is the indemnitee. The Side Letter moves the bodily-injury, death and property-damage indemnity out of §10.1 and into a new §10.2. It does not amend §11.4(a), and its §9.1 keeps every unmodified provision in force. Under §15.4 the Side Letter takes precedence. On a literal reading, the cap carve-out now covers only the IP indemnity. Velert's indemnity for passenger injury, such as from failed entrapment alerts, then falls under the §11.3 cap of 12 months' fees, about $410,400. After the November 20, 2026 termination, fees paid in the preceding 12 months will shrink, so the cap may fall further. §11.5 also brings back the bar on consequential damages, because §11.4(a) no longer reaches the bodily-injury indemnity. Annex 1 suggests the intent was only to renumber, but it states that it \"does not change the effect of Section 2\", so it does not cure the gap. The problem is still actionable. Sections 10 and 11 survive termination under §12.9. The June–August 2026 alert-delivery failures, including units placed on manual monitoring on August 27, could give rise to third-party injury claims. Rekaind's October 21, 2026 notice expressly reserves its §10 rights. Nothing in the folder shows Rekaind accepted the capped result.",
+            "alone": {
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "11.4 Exceptions. The limitation in Section 11.3 does not apply to: (a) Licensor's indemnification obligations under Section 10.1;",
+                "reason": "Read alone, the License Agreement protects the client. Section 10.1 contains both the IP indemnity (10.1(a)) and the bodily-injury/property indemnity (10.1(b)), including failed entrapment alerts. Section 11.4(a) removes all of Section 10.1 from the 12-month-fees cap, so safety-critical claims are uncapped. The Agreement does let a Side Letter prevail (Section 15.4) and references Side Letters (1.22), but it shows no actual amendment. The problem only arises from the May 12, 2025 Side Letter, which moves the bodily-injury indemnity into a new Section 10.2 without updating Section 11.4. That document, and the dollar amount of the cap, which depends on the Order Form fees, are not in this document. An associate reading only this Agreement would see an uncapped safety indemnity, not a capped one."
+              },
+              "side_letter_2025-05-12.md": {
+                "findable": false,
+                "evidence": "2.1 Replacement of Section 10.1. Section 10.1 of the Agreement is deleted in its entirety and replaced with new Section 10.1 and new Section 10.2 set out in Sections 2.2 and 2.3 of this Side Letter.",
+                "reason": "The Side Letter shows that the bodily-injury and property-damage indemnity moves out of Section 10.1 into a new Section 10.2. Its conforming changes (Section 2.5) are limited to cross-references within Section 10. A careful reader might suspect that cross-references elsewhere in the Agreement could now point to the wrong section. But the Side Letter never mentions Section 11.3, Section 11.4, any liability cap, any carve-out or the cap amount. It also does not mention the precedence rule in Section 15.4. The harm is that the uncapped carve-out now covers only IP claims, leaving passenger-injury claims under a cap of about $410,400. Seeing that requires the License Agreement's Section 11.4 wording, which refers only to Section 10.1, and the Section 11.3 cap. Neither is in this document, so the problem cannot be identified from the Side Letter alone."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Schedule §4.2: \"Licensee must deliver written notice of termination to Licensor ... within thirty (30) days after delivery of the Service Report for the third consecutive calendar month in which Platform Availability was below 99.5%.\" Notice letter ¶2.3: \"Velert's Service Report for the August 2026 Measurement Period was delivered to us on September 4, 2026.\" The letter is dated October 21, 2026, and ¶5.2 states: \"Rekaind will stop paying Fees from November 20, 2026.\"",
+            "reason": "The window under §4.2 runs 30 days from delivery of the August 2026 Service Report on September 4, 2026, so it closed on October 4, 2026. Rekaind's notice of October 21, 2026 was 17 days late. Neither the Agreement nor the Side Letter extends or waives that deadline. Agreement §12.6 makes the termination right expressly subject to the Schedule §4 requirements. Nothing in the folder shows that Velert has accepted the termination. The November 2, 2026 insurance certificate does not acknowledge it, and Rekaind has not accepted any outcome. The latest date in the folder (November 2, 2026) is before the stated November 20 Termination Date and before Rekaind stops paying, so the point is still actionable. If Rekaind stops paying Fees for Year 2 on a defective termination, it risks being in breach or being treated as repudiating the Agreement. It could instead withdraw or reframe the notice, rely on other grounds such as §12.4 material breach or the §11.2 warranty termination, or wait for a new qualifying failure.",
+            "alone": {
+              "service_level_schedule.md": {
+                "findable": false,
+                "evidence": "To do so, Licensee must deliver written notice of termination to Licensor, in accordance with Section 15.5 of the Agreement, within thirty (30) days after delivery of the Service Report for the third consecutive calendar month in which Platform Availability was below 99.5%.",
+                "reason": "The Schedule by itself sets out the termination right and its 30-day notice window (Section 4.2), measured from delivery of the Service Report for the third consecutive failing month. It does not show which months failed, when the August 2026 Service Report was delivered (September 4, 2026), when Rekaind sent its notice (October 21, 2026), or that Rekaind plans to stop paying fees. Those facts come only from the notice letter. Without them, an associate reading only the Schedule can see a deadline but cannot tell that it was missed or that the client is exposed to breach or repudiation risk."
+              },
+              "rekaind_notice_letter_2026-10-21.md": {
+                "findable": false,
+                "evidence": "Velert's Service Report for the August 2026 Measurement Period was delivered to us on September 4, 2026.",
+                "reason": "The letter gives both dates needed for the timing calculation. It records that the August 2026 Service Report, for the third failing month, was delivered on September 4, 2026, and the letter itself is dated October 21, 2026. It also says Rekaind will stop paying Fees from November 20, 2026. What it never states is that Section 4.2 of the Service Level Schedule requires termination notice within 30 days after delivery of that Service Report. The letter cites Section 4.2 only for the items the notice must identify, and cites Section 4.3 for the effective date. An associate reading only this letter would see a 47-day gap but would have no basis to conclude that the termination right had lapsed. The 30-day limit, and so the lateness and the resulting breach or repudiation risk, comes only from the Service Level Schedule."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Order Form §7.1: \"This Order Form and the Agreement, and any dispute arising out of or relating to either of them, are governed by and construed in accordance with the laws of the State of Ohio\"; §7.2: \"Each Party irrevocably submits to the exclusive jurisdiction and venue of the state and federal courts located in Franklin County, Ohio\". Agreement §15.1/15.2 choose Delaware law and \"the exclusive jurisdiction of the state or federal courts located in Wilmington, Delaware\". Agreement §15.4: \"where any provision of an Order Form conflicts with any provision of the body of this Agreement, the Order Form shall control.\"",
+            "reason": "Read together, the two documents conflict. The Agreement's Delaware law and Wilmington forum clause is displaced by the Order Form's Ohio law and Franklin County forum clause, because §15.4 ranks the Order Form above the body of the Agreement. The Order Form clause also expressly reaches \"the Agreement\" itself, not just the Order Form. Franklin County is Velert's home county, so Rekaind would have to litigate there. The Side Letter does not address governing law or venue, so nothing in the folder cures the conflict. The issue is still live. Rekaind terminated Order Form 001 on October 21, 2026, and is pursuing a refund of $115,811.51, Service Credits, warranty labor claims and data return. A dispute over any of these would be heard under Ohio law in Ohio courts. Nothing shows Rekaind has accepted this result, and the forum clause survives termination under §12.9 and §15.",
+            "alone": {
+              "order_form_001.md": {
+                "findable": false,
+                "evidence": "This Order Form and the Agreement, and any dispute arising out of or relating to either of them, are governed by and construed in accordance with the laws of the State of Ohio, without regard to its conflict-of-laws principles.",
+                "reason": "The Order Form shows that it picks Ohio law and exclusive venue in Franklin County, Ohio, for both itself and the Agreement. It also shows that Licensor is based in Columbus, so the forum is Velert's home court. That is unfavorable to Rekaind, a Pennsylvania company, but on its face it reads as an ordinary choice-of-law and forum clause. The Order Form does not show three things the problem depends on: (1) that the License Agreement chooses Delaware law and Wilmington courts, which Rekaind negotiated; (2) that the two documents therefore conflict; and (3) that the Agreement's precedence clause (Section 15.4) makes the Order Form control in a conflict. All three come only from the License Agreement."
+              },
+              "software_license_agreement.md": {
+                "findable": false,
+                "evidence": "15.1 Governing Law. This Agreement, and any dispute arising out of or relating to it, is governed by and construed in accordance with the laws of the State of Delaware... 15.4 Order of Precedence. ... Side Letter, then Order Form, then the Agreement, then Service Level Schedule.",
+                "reason": "This document sets Delaware law and Wilmington courts in Sections 15.1 and 15.2. Section 15.4 says an Order Form controls over the body of the Agreement. Nothing in this document chooses Ohio law or a Franklin County forum. The only way the Delaware choice gets displaced is through the Order Form's Section 7, which is not in front of us. Read alone, the precedence clause is a general risk that a later Order Form could override these terms. It does not show an actual conflict, or that Rekaind would have to litigate in Velert's home court."
+              }
+            }
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Section 12.2: \"At the end of the Initial Order Term, each Order Form automatically renews for a successive term of the same length ... Renewal does not occur if either Party gives the other written notice of non-renewal during the Non-Renewal Window, that is, not more than seventy-five (75) days and not less than sixty (60) days before the expiration of the then-current Initial Order Term or Renewal Term.\" Section 12.3 adds: \"Licensor may increase the per-unit subscription fees for any Renewal Term by up to seven percent (7%).\"",
+            "reason": "Order Form 001 sets a 36-month Initial Order Term ending March 2, 2028. Under Sections 12.2 and 1.14, it auto-renews for another 36 months unless notice falls in a 15-day window, and Section 12.3 allows a fee increase of up to 7%. Rekaind is the party exposed: missing that window locks it into three more years at a higher fee. The issue is still live. Rekaind's October 21, 2026 termination notice for Chronic Availability Failure is open to challenge as late. The August Service Report was delivered September 4, 2026, so SLS Section 4.2 required notice by about October 4. If the termination fails, the Order Form continues and the renewal trap remains. The non-renewal window (roughly mid-December 2027 to early January 2028) has not yet opened as of the folder's latest date (November 2, 2026). Nothing in the Side Letter or the other documents changes this provision."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C7 asks for the whole ranking in fact F2 ('Side Letter, then Order Form, then the Agreement, then Service Level Schedule'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C4"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.092,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

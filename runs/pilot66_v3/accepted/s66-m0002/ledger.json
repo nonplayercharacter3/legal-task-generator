@@ -1,0 +1,251 @@
+{
+  "matter_id": "s66-m0002",
+  "summary": "Mibaix Marine Systems LLC (client) is the U.S. Gulf Coast distributor of ballast water treatment systems (BWTS) made by Bupaiv Ballast Technologies Ltd., an English manufacturer. The folder holds six documents: the Distribution Agreement (effective March 3, 2025), Statement of Work No. 1 for installation and commissioning services that Mibaix performs on vessel retrofits, Amendment No. 1 (September 15, 2026), which adds a new model and raises the minimum purchase commitment, a Parent Guaranty from Mibaix Holdings Corp. given the same day, a broker's insurance certificate cover letter, and a Q4 2026 purchase forecast. Planted problems for the client: (1) a worldwide post-term non-compete covering the client's existing scrubber business; (2) an SOW installation indemnity for Environmental Claims that the Agreement's cap carve-out leaves uncapped; (3) an Amendment that silently redefines Products to drop spare parts and consumables; (4) a pending sale of the parent, recorded in the Guaranty recitals, that triggers the Supplier's change-of-control termination right; (5) a Guaranty governed by English law with English courts, against the Agreement's New York law and forum; (6) an 'Affiliate' definition that lets Bupaiv assign to competing distributors without consent.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Mibaix Marine Systems LLC",
+      "role": "Distributor (firm's client); Delaware limited liability company distributing and installing ballast water treatment systems at U.S. Gulf Coast ports"
+    },
+    {
+      "id": "P2",
+      "name": "Bupaiv Ballast Technologies Ltd.",
+      "role": "Supplier; English manufacturer of ballast water treatment systems, spare parts and treatment consumables"
+    },
+    {
+      "id": "P3",
+      "name": "Mibaix Holdings Corp.",
+      "role": "Guarantor; parent company of the Distributor, guaranteeing the Distributor's obligations to the Supplier"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Distribution Agreement Effective Date",
+      "value": "March 3, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Distribution Agreement Initial Term",
+      "value": "five (5) years from the Effective Date",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Territory",
+      "value": "U.S. Gulf Coast ports of Houston, New Orleans, Mobile and Corpus Christi",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F4",
+      "key": "Products (Distribution Agreement definition)",
+      "value": "BWTS units, spare parts and consumables listed in Schedule A",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F5",
+      "key": "Distribution Agreement liability cap",
+      "value": "amounts paid by Distributor to Supplier in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "Section 11.2"
+    },
+    {
+      "id": "F6",
+      "key": "Distribution Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 19.1"
+    },
+    {
+      "id": "F7",
+      "key": "Distribution Agreement forum",
+      "value": "state and federal courts located in New York County, New York",
+      "doc": "D1",
+      "section": "Section 19.2"
+    },
+    {
+      "id": "F8",
+      "key": "Order of precedence",
+      "value": "Amendments, then the Distribution Agreement, then Statements of Work",
+      "doc": "D1",
+      "section": "Section 21.3"
+    },
+    {
+      "id": "F9",
+      "key": "Amendment No. 1 date",
+      "value": "September 15, 2026",
+      "doc": "D2",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Amendment No. 1 Minimum Annual Purchase",
+      "value": "US$6,200,000 of Products per contract year",
+      "doc": "D2",
+      "section": "Section 3.1"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "distribution_agreement_mibaix_bupaiv.md",
+      "kind": "distribution agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "amendment_no_1_distribution_agreement.md",
+      "kind": "amendment",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "parent_guaranty_mibaix_holdings.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "sow_1_installation_commissioning.md",
+      "kind": "statement of work",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "insurance_certificate_cover_letter.md",
+      "kind": "insurance certificate cover letter",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "q4_2026_purchase_forecast.md",
+      "kind": "purchase forecast",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "D1 Section 3.4 bars the Distributor, during the Term and for twenty-four months after it, from manufacturing, distributing, selling or servicing any ballast water treatment, exhaust gas scrubber or other marine environmental compliance equipment other than Products, anywhere in the world. The Distributor's appointment covers only the four Gulf Coast ports in the Territory (Section 1.1), and the D1 recitals state that Mibaix already runs a scrubber servicing business at Gulf and Caribbean ports. The covenant therefore reaches product lines and geographies the deal does not need and restrains the client's existing business. Under New York's reasonableness test for restrictive covenants it risks being unenforceable, but until a court rules it chills the client's operations and can be used as a breach claim and termination lever.",
+      "doc": "D1",
+      "section": "Section 3.4",
+      "detect_terms": [
+        "anywhere in the world",
+        "marine environmental compliance equipment",
+        "twenty-four (24) months"
+      ],
+      "expected_finding": "The Section 3.4 non-compete is overbroad: it applies worldwide, for 24 months after the Term, and to scrubbers and all environmental compliance equipment, although the appointment covers only the Gulf Coast Territory and the client already runs a scrubber servicing business. It should be narrowed to ballast water treatment systems within the Territory during the Term, with the existing scrubber business expressly carved out.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "D1 Section 11.2 caps each Party's aggregate liability under the Agreement and any Statement of Work at amounts paid by the Distributor in the prior 12 months. Section 11.3 excludes from the cap 'indemnification obligations with respect to Environmental Claims', a term defined in Section 1.1 as any claim, fine or penalty arising from a discharge of ballast water or treatment residuals. Within D1 the only Environmental Claims indemnity is the Supplier's product-defect indemnity in Section 10.2, so the carve-out favours the client. D4 Section 6.2 separately requires the Distributor to indemnify, defend and hold harmless the Supplier against any Environmental Claim arising out of or relating to the Installation Services, 'subject to Section 11 of the Agreement', which reads as an ordinary capped installation indemnity. Section 11 includes the Section 11.3 carve-out, and the Section 21.3 precedence clause does not help because the two documents do not conflict. Read together, the client's installation indemnity for discharge fines and penalties (for example under the Clean Water Act and Coast Guard ballast rules) is unlimited.",
+      "doc": "D1",
+      "section": "Section 11.3",
+      "detect_terms": [
+        "indemnification obligations with respect to Environmental Claims"
+      ],
+      "expected_finding": "Because the D1 Section 11.3 cap carve-out for Environmental Claims indemnities applies to the Distributor's installation indemnity in D4 Section 6.2, which is expressly 'subject to Section 11', the client has uncapped liability for ballast discharge fines and claims. The carve-out should be limited to the Supplier's Section 10.2 indemnity, or the SOW indemnity made subject to the Section 11.2 cap.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Section 6.2",
+      "detect_terms2": [
+        "indemnify, defend and hold harmless Supplier",
+        "arising out of or relating to the Installation Services"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "D1 Section 1.1 defines 'Products' as the BWTS units, spare parts and consumables listed in Schedule A. That definition drives the exclusive appointment (Section 3.1), the Supplier warranty (Section 12), the minimum purchase credit, and the 'other than Products' exception in the Section 3.4 non-compete. D2 Section 2.1, presented as adding the new BX-900 model, provides that 'Products' as used in the Agreement means the ballast water treatment system models listed in the replacement schedule. Spare parts and consumables are silently dropped. Under the D1 Section 21.3 precedence clause the Amendment prevails. As a result the client loses exclusivity and warranty cover for parts and consumables, its parts purchases no longer count toward the raised US$6,200,000 Minimum Annual Purchase in D2 Section 3.1, and reselling Bupaiv parts may itself fall within the Section 3.4 non-compete.",
+      "doc": "D2",
+      "section": "Section 2.1",
+      "detect_terms": [
+        "ballast water treatment system models listed"
+      ],
+      "expected_finding": "Amendment No. 1 Section 2.1 redefines 'Products' to cover only BWTS models. Because the Amendment prevails under D1 Section 21.3, spare parts and consumables fall outside the client's exclusivity, the warranty and the minimum purchase credit, and reselling them may breach the Section 3.4 non-compete. The original D1 definition should be restored, with the new model added to it.",
+      "contradicts": "F4",
+      "doc2": "D1",
+      "section2": "Section 1.1",
+      "detect_terms2": [
+        "spare parts and consumables"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "D1 Section 17.2 lets the Supplier terminate on a Change of Control of Distributor made without the Supplier's prior written consent. 'Change of Control' covers acquisition of more than 50% of the voting securities of the Distributor or of any entity that directly or indirectly controls Distributor, and Section 21.5 provides that the Supplier's knowledge is not consent or waiver. Standing alone this is a standard clause. D3 Recital B, given September 15, 2026, records that the Guarantor (the Distributor's parent) has entered into a share purchase agreement dated August 28, 2026 under which Nordhaven Maritime Group plc will acquire all of the Guarantor's shares, with closing expected in Q1 2027. Standing alone the recital is background to a guaranty that survives changes in ownership. Read together, the parent's sale will trigger the Supplier's termination right. Nothing in the folder, including Amendment No. 1 signed the same day, records the Supplier's written consent.",
+      "doc": "D1",
+      "section": "Section 17.2",
+      "detect_terms": [
+        "Change of Control of Distributor",
+        "directly or indirectly controls Distributor"
+      ],
+      "expected_finding": "The pending sale of Mibaix Holdings Corp. to Nordhaven Maritime Group under the August 28, 2026 share purchase agreement (recorded in D3 Recital B) is a Change of Control under D1 Section 17.2. Without the Supplier's prior written consent, which the folder does not show and which Section 21.5 says cannot be inferred from the Supplier's knowledge, Bupaiv could terminate the distributorship. Written consent should be obtained before closing.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Recital B",
+      "detect_terms2": [
+        "share purchase agreement dated August 28, 2026",
+        "Nordhaven Maritime Group"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "D3 Section 14 provides that the Parent Guaranty is governed by the laws of England and Wales, with disputes submitted to the exclusive jurisdiction of the courts of England and Wales. D1 Sections 19.1 and 19.2 choose New York law and the state and federal courts in New York County for the guaranteed obligations. The D1 Section 21.3 precedence clause covers only Amendments, the Agreement and Statements of Work, so it does not reach the Guaranty and cannot reconcile the two. The client group faces parallel proceedings: the Supplier can sue the parent in London under English guarantee law while the Distributor's defences to the underlying debt are decided in New York. That risks inconsistent results and adds cost for the client's parent.",
+      "doc": "D3",
+      "section": "Section 14",
+      "detect_terms": [
+        "laws of England and Wales",
+        "courts of England and Wales"
+      ],
+      "expected_finding": "The Parent Guaranty's choice of English law and exclusive English courts conflicts with the Distribution Agreement's New York law and New York County forum, and the D1 precedence clause does not cover the Guaranty. This exposes the client group to split, inconsistent proceedings abroad, so the Guaranty should be conformed to New York law and the New York County forum.",
+      "contradicts": [
+        "F6",
+        "F7"
+      ],
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I6",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "D1 Section 20.1 appears to restrict assignment for both Parties alike: neither Party may assign without the other's consent, except either may assign to an Affiliate without such consent. However, D1 Section 1.1 defines 'Affiliate' to include not only entities under common control but also any entity with which a Party has a commercial alliance, joint venture or distribution relationship. Bupaiv, a manufacturer with distribution relationships worldwide, can therefore assign the Agreement to any of its distributors, including a direct competitor of Mibaix in the Gulf, without consent. That would hand the client's pricing, customer and vessel data to a rival. The exception gives the client little in return, and D1 restricts only the Distributor's change of control (Section 17.2), not the Supplier's.",
+      "doc": "D1",
+      "section": "Section 20.1 and Section 1.1 ('Affiliate')",
+      "detect_terms": [
+        "to an Affiliate without such consent",
+        "distribution relationship"
+      ],
+      "expected_finding": "Because 'Affiliate' in D1 Section 1.1 includes any entity with which a Party has a distribution relationship, the Section 20.1 Affiliate exception lets Bupaiv assign the Agreement without consent to a competing distributor. 'Affiliate' should be limited to entities under common control, and any assignment to a competitor of the Distributor should be expressly prohibited.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

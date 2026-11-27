@@ -1,0 +1,131 @@
+{
+  "task_id": "s66-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "distribution agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "Our client, Mibaix Marine Systems LLC, distributes and installs ballast water treatment systems at Gulf Coast ports and is working through its distribution arrangement with Bupaiv Ballast Technologies Ltd. Please review all six documents in the folder and send me a memo listing each issue you find, where it appears (document and section), why it matters for Mibaix, and your recommended fix. Prioritize what most affects the client's position.",
+  "documents": [
+    "amendment_no_1_distribution_agreement.md",
+    "distribution_agreement_mibaix_bupaiv.md",
+    "insurance_certificate_cover_letter.md",
+    "parent_guaranty_mibaix_holdings.md",
+    "q4_2026_purchase_forecast.md",
+    "sow_1_installation_commissioning.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the post-term non-compete in Distribution Agreement Section 3.4 is overbroad. It must note that the covenant applies worldwide, runs for 24 months after the Term, and reaches scrubbers and other environmental compliance equipment, although the appointment covers only the Gulf Coast Territory and Mibaix already runs a scrubber business. The response locates the clause (Distribution Agreement Section 3.4), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "anywhere in the world",
+        "scrubber",
+        "24 months after"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that Mibaix's indemnity to Bupaiv for Environmental Claims arising from the Installation Services is uncapped, because the Distribution Agreement's cap carve-out for Environmental Claims indemnities applies to it. The response cites the location as Distribution Agreement Section 11.3 or SOW No. 1 Section 6.2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "uncapped",
+        "Environmental Claims",
+        "subject to Section 11"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Amendment No. 1 redefines 'Products' to cover only ballast water treatment system models, so spare parts and consumables drop out of the definition. The response cites the location as Amendment No. 1 Section 2.1 or Distribution Agreement Section 1.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "spare parts and consumables",
+        "redefines Products",
+        "Amendment No. 1"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that the pending sale of Mibaix Holdings Corp. to Nordhaven Maritime Group is a Change of Control of the Distributor that lets Bupaiv terminate unless Bupaiv gives prior written consent, and notes that the folder does not show that consent. The response cites the location as Distribution Agreement Section 17.2 or Parent Guaranty Recital B, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Nordhaven",
+        "Change of Control",
+        "prior written consent"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that the Parent Guaranty's choice of English law and English courts conflicts with the Distribution Agreement's New York governing law and New York forum. The response locates the clause (Parent Guaranty Section 14), explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "England and Wales",
+        "New York",
+        "Guaranty"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response identifies that the 'Affiliate' definition includes entities with which a Party has a distribution relationship, so the Affiliate exception to the assignment restriction lets Bupaiv assign the Agreement to a competing distributor without Mibaix's consent. The response cites the location as Distribution Agreement Section 20.1 or Section 1.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Affiliate",
+        "distribution relationship",
+        "assign without consent"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the Territory consists of the U.S. Gulf Coast ports of Houston, New Orleans, Mobile and Corpus Christi.",
+      "kind": "fact",
+      "hints": [
+        "Houston",
+        "New Orleans",
+        "Corpus Christi"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is written as a memo that, for each issue, states where the issue appears (document and section), why it matters for Mibaix, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response orders or labels the issues by priority, indicating which most affect the client's position.",
+      "kind": "format",
+      "hints": [
+        "priority",
+        "high",
+        "most significant"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the sale of Mibaix Holdings Corp. does not trigger the Supplier's change-of-control termination right because the sale occurs at the parent level rather than at the Distributor.",
+      "kind": "negative",
+      "hints": [
+        "parent-level sale",
+        "not a Change of Control"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that Mibaix's Environmental Claims indemnity in SOW No. 1 Section 6.2 is limited by the Section 11.2 liability cap.",
+      "kind": "negative",
+      "hints": [
+        "capped",
+        "Section 11.2 cap applies"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

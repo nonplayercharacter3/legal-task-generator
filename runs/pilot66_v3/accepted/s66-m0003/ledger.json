@@ -1,0 +1,249 @@
+{
+  "matter_id": "s66-m0003",
+  "summary": "Kiveth Interactive, Inc. (client, buyer) is acquiring the studio assets of Zerex Forge Studios, LLC. The assets centre on the 'Ashfall Requiem' action-RPG franchise and its codebase, tools and assigned contracts. The price is $48,500,000, with $4,850,000 placed in escrow. The execution version of the Asset Purchase Agreement is dated as of September 21, 2026 and is under review before signing. Five issues are planted. (1) IP representations survive only 90 days after Closing. (2) A precedence exception in the APA lets an escrow 'sole source' clause override the APA's cap carve-outs. (3) The franchise character license requires licensor consent for transfer to an entity controlled by a console maker; the APA discloses that Kiveth is such an entity, but the consent is not a closing condition. (4) The non-renewal deadline for the Lumen Engine License, which the APA requires Seller to give, passed before the Agreement Date. (5) Kiveth gives the key employee an uncapped indemnity that reaches pre-closing development claims.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Kiveth Interactive, Inc.",
+      "role": "Buyer; Delaware corporation and video game publisher; firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Zerex Forge Studios, LLC",
+      "role": "Seller; independent game development studio that owns the Ashfall Requiem franchise assets"
+    },
+    {
+      "id": "P3",
+      "name": "Calder Trust Company, N.A.",
+      "role": "Escrow Agent under the Escrow Agreement"
+    },
+    {
+      "id": "P4",
+      "name": "Odalys Brennt",
+      "role": "Zerex studio creative director; key employee joining Kiveth at Closing"
+    },
+    {
+      "id": "P5",
+      "name": "Vantrell Comics Group, LLC",
+      "role": "Licensor of the Ashfall Requiem characters under the Character License Agreement"
+    },
+    {
+      "id": "P6",
+      "name": "Lumen Engine Technologies, Inc.",
+      "role": "Licensor of the game engine under the Lumen Engine License"
+    },
+    {
+      "id": "P7",
+      "name": "Pellucid Systems Co.",
+      "role": "Kiveth's ultimate parent; manufacturer of the Pellucid game console"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Asset Purchase Agreement Date",
+      "value": "September 21, 2026",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Purchase Price",
+      "value": "$48,500,000",
+      "doc": "D1",
+      "section": "Section 2.5"
+    },
+    {
+      "id": "F3",
+      "key": "Escrow Amount",
+      "value": "$4,850,000",
+      "doc": "D1",
+      "section": "Section 2.6"
+    },
+    {
+      "id": "F4",
+      "key": "Seller indemnity cap",
+      "value": "$4,850,000, an amount equal to the Escrow Amount",
+      "doc": "D1",
+      "section": "Section 9.5(a)"
+    },
+    {
+      "id": "F5",
+      "key": "Escrow Release Date",
+      "value": "15 months after the Closing Date",
+      "doc": "D2",
+      "section": "Section 4.1"
+    },
+    {
+      "id": "F6",
+      "key": "IP Survival Date",
+      "value": "90 days after the Closing Date",
+      "doc": "D1",
+      "section": "Section 1.1"
+    },
+    {
+      "id": "F7",
+      "key": "Order of precedence",
+      "value": "APA prevails over Disclosure Schedule and Ancillary Agreements; Escrow Agreement controls on Escrow Fund recovery",
+      "doc": "D1",
+      "section": "Section 11.9"
+    },
+    {
+      "id": "F8",
+      "key": "Buyer ownership",
+      "value": "Kiveth is an indirect wholly owned subsidiary of Pellucid Systems Co.",
+      "doc": "D1",
+      "section": "Section 4.6"
+    },
+    {
+      "id": "F9",
+      "key": "Lumen Engine License current term end",
+      "value": "December 31, 2026",
+      "doc": "D3",
+      "section": "Schedule 3.10(a)"
+    },
+    {
+      "id": "F10",
+      "key": "Asset Purchase Agreement governing law",
+      "value": "Delaware",
+      "doc": "D1",
+      "section": "Section 11.6"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "asset_purchase_agreement.md",
+      "kind": "asset purchase agreement",
+      "distractor": false,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "escrow_agreement.md",
+      "kind": "escrow agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "seller_disclosure_schedule.md",
+      "kind": "disclosure schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "brennt_key_employee_agreement.md",
+      "kind": "key employee agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "apa_prior_draft_2026-08-10.md",
+      "kind": "prior draft",
+      "distractor": true,
+      "precedent": "sample_stock_purchase_agreement"
+    },
+    {
+      "id": "D6",
+      "filename": "seller_member_consent.md",
+      "kind": "seller written consent of members approving the asset sale",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "survival_gap",
+      "label": "indemnity survival gap",
+      "description": "Section 9.1(a) of the APA provides that Seller's Intellectual Property representations in Section 3.9 survive only until the IP Survival Date. Section 1.1 defines that date as 90 days after the Closing Date. Section 1.1 also defines Fundamental Representations to cover only Sections 3.1, 3.2 and 3.4, so the IP representations do not get the long fundamental survival period. Read together, these provisions mean Kiveth's indemnity claims for title defects or third-party infringement in the Ashfall Requiem code, art and tools expire about three months after Closing. That is long before such claims usually surface, after a game's commercial release or when a rights holder makes a demand. Delaware will enforce a contractually shortened survival period, so the window is real. The 15-month escrow does not extend survival.",
+      "doc": "D1",
+      "section": "Section 1.1 (definition of IP Survival Date) and Section 9.1(a)",
+      "detect_terms": [
+        "IP Survival Date",
+        "90 days after the Closing Date"
+      ],
+      "expected_finding": "The Section 3.9 IP representations survive only 90 days after Closing under Sections 1.1 and 9.1(a), which leaves Kiveth practically unable to bring infringement or title claims. The survival period should be extended to at least the 15-month escrow period, or Section 3.9 should be added to the Fundamental Representations.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Section 9.5(b) of the APA excludes Fraud, breaches of Fundamental Representations and Excluded Liabilities from the $4,850,000 cap. Section 11.9 says the APA prevails over Ancillary Agreements, except that the Escrow Agreement controls on matters relating to the Escrow Fund and the satisfaction of Losses from it. Section 6.2 of the Escrow Agreement reads like ordinary escrow mechanics. It says the Escrow Fund is the sole and exclusive source of recovery for all Losses of the Buyer Indemnified Parties under Article IX of the Purchase Agreement. Because of the Section 11.9 exception, that sole-source clause controls. It caps the carved-out claims at the escrow balance, and after the Escrow Release Date (15 months after Closing) Kiveth has no recovery at all. Only intentional fraud, which Delaware public policy will not let parties limit, may escape the cap.",
+      "doc": "D2",
+      "section": "Section 6.2",
+      "detect_terms": [
+        "sole and exclusive source of recovery"
+      ],
+      "expected_finding": "Under the Section 11.9 precedence exception, Section 6.2 of the Escrow Agreement makes the escrow the sole source of recovery, so Kiveth's claims for Fundamental Representations and Excluded Liabilities are effectively capped at $4,850,000 and lost after escrow release. The fix is to limit Section 6.2 to capped claims, or to amend Section 11.9 so that Section 9.5(b) prevails.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 11.9",
+      "detect_terms2": [
+        "the Escrow Agreement shall control",
+        "satisfaction of Losses from the Escrow Fund"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "Schedule 3.10(b) of the Disclosure Schedule summarizes the Vantrell Character License, which grants the Ashfall Requiem character rights the franchise depends on. Its assignment clause requires Vantrell's prior written consent to any assignment or transfer, including by sale of assets, to a person Controlled by a Hardware Platform Holder. Schedule 7.2(c) lists only the Lumen Engine License as a Required Consent. Read alone, the Disclosure Schedule seems not to need the Vantrell consent. Section 4.6 of the APA, however, has Kiveth represent that it is an indirect wholly owned subsidiary of Pellucid Systems Co., the console manufacturer. Read together, the transaction triggers Vantrell's consent right. The consent has not been obtained, and Section 7.2(c) does not make it a closing condition. Under Section 2.7, the license would stay with Zerex while Kiveth is still obliged to close and pay the full price.",
+      "doc": "D3",
+      "section": "Schedule 3.10(b) and Schedule 7.2(c)",
+      "detect_terms": [
+        "Controlled by a Hardware Platform Holder"
+      ],
+      "expected_finding": "Because Kiveth is controlled by console maker Pellucid (APA Section 4.6), the sale triggers Vantrell's consent right under the Character License (Schedule 3.10(b)), yet the consent is missing from Schedule 7.2(c). Kiveth could be required to close without the franchise character rights. The Vantrell consent should be added as a Required Consent and closing condition, or obtained before signing.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 4.6",
+      "detect_terms2": [
+        "indirect wholly owned subsidiary of Pellucid Systems"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Schedule 3.10(a) of the Disclosure Schedule states that the Lumen Engine License's current term ends December 31, 2026. It renews automatically for successive three-year renewal terms unless a party gives written notice of non-renewal at least 120 days prior to the expiration, and each renewal year carries a $1,800,000 minimum royalty guarantee. Section 6.8 of the APA requires Seller to deliver notice of non-renewal of the Lumen Engine License before the deadline, because Kiveth plans to migrate the titles to its own engine. The APA is dated as of September 21, 2026, but the non-renewal deadline computed from the Disclosure Schedule was September 2, 2026. The covenant therefore cannot be performed at signing. The license has rolled into a renewal term through December 31, 2029, and Kiveth would assume about $5,400,000 of minimum guarantees as an Assigned Contract liability. No document records Kiveth accepting this, and the APA is unsigned, so Kiveth can still address it.",
+      "doc": "D3",
+      "section": "Schedule 3.10(a)",
+      "detect_terms": [
+        "at least 120 days prior to the expiration",
+        "successive three-year renewal terms"
+      ],
+      "expected_finding": "The Lumen Engine License non-renewal deadline (September 2, 2026) passed before the September 21, 2026 Agreement Date, so the Section 6.8 covenant cannot be performed and Kiveth would assume roughly $5.4 million of renewal-term minimum guarantees. Before signing, Kiveth should treat these renewal obligations as an Excluded Liability, or obtain a price reduction or special indemnity, or get a negotiated termination from Lumen.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 6.8",
+      "detect_terms2": [
+        "notice of non-renewal of the Lumen Engine License"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "uncapped_indemnity",
+      "label": "uncapped indemnity",
+      "description": "In Section 8.2 of the Key Employee Agreement, Kiveth agrees to indemnify Odalys Brennt against any and all claims arising out of the development of the Titles, including third-party IP infringement claims, whether arising before or after the Effective Date and without limitation as to amount. The pre-closing development was Zerex's work, and the APA allocates those liabilities to Zerex as Excluded Liabilities. Kiveth's own recovery from Zerex is limited by the APA cap, survival and escrow terms. Section 8.2 therefore gives Kiveth unlimited direct exposure to Brennt for pre-closing studio conduct. The Key Employee Agreement is not an Ancillary Agreement under the APA's precedence clause, and Brennt is not a party to the APA, so nothing in the APA cures this.",
+      "doc": "D4",
+      "section": "Section 8.2",
+      "detect_terms": [
+        "whether arising before or after the Effective Date",
+        "without limitation as to amount"
+      ],
+      "expected_finding": "Section 8.2 of the Key Employee Agreement exposes Kiveth to unlimited indemnity liability for pre-closing development claims that the APA allocates to Zerex. It should be limited to post-Effective Date acts within the scope of employment, made subject to a cap, and should exclude Excluded Liabilities.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

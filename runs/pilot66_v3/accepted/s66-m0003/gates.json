@@ -1,0 +1,164 @@
+{
+  "matter_id": "s66-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "test",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 2,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 1.1: \"'IP Survival Date' means the date that is 90 days after the Closing Date.\" Section 9.1(a)(ii): \"the representations and warranties of Seller in Section 3.9 (Intellectual Property) survive until the IP Survival Date\". Section 1.1 limits 'Fundamental Representations' to Sections 3.1, 3.2 and 3.4.",
+            "reason": "The problem is present in the execution version and hurts Kiveth as Buyer. Seller gives the IP indemnity, so cutting its survival to 90 days is Buyer's loss. Section 9.1(c) bars any rep-based claim not noticed in writing within that window, and says it replaces the statute of limitations. Delaware enforces that kind of contractual shortening. The IP reps are not Fundamental Representations, so they do not get the long survival period. Several risks would therefore be cut off about three months after Closing: the non-infringement rep for continued post-Closing use of the code, art and tools (3.9(c)); chain-of-title gaps from employees and contractors (3.9(d)); open-source issues (3.9(f)); and sufficiency of IP (3.9(b)). These problems usually surface much later, for example on the 2028 release of Ashfall Requiem II or when a rights holder makes a demand. The 15-month escrow release does not extend survival. There is only a partial mitigation. Pre-Closing infringement is an Excluded Liability under 2.4(a), indemnifiable under 9.2(c) without the cap, and not subject to the rep survival periods. That does not cover post-Closing exploitation of defective assets or IP-specific defects that only breach the reps. The August 10 draft had no separate short IP period, so this was a later change. The issue is still actionable: Closing has not occurred (Outside Date December 15, 2026), so Kiveth can seek an amendment before Closing, and nothing in the folder shows it accepted the term knowingly."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Escrow Agreement Section 6.2: \"The Escrow Fund shall be the sole and exclusive source of recovery for all Losses of the Buyer Indemnified Parties under Article IX of the Purchase Agreement.\" APA Section 11.9: \"...provided, however, that with respect to matters relating to the Escrow Fund and the satisfaction of Losses from the Escrow Fund, the Escrow Agreement shall control.\"",
+            "reason": "The problem is present and hurts Kiveth, the Buyer. APA Section 9.5(b) removes Fraud, Fundamental Representation breaches (capped at the Purchase Price) and Excluded Liabilities from the $4,850,000 cap. APA Section 9.6 then lets Buyer recover directly from Seller once the escrow runs out or is released. Escrow Agreement Section 6.2, however, makes the Escrow Fund the sole and exclusive source of recovery for all Article IX Losses. That is a matter relating to the satisfaction of Losses from the Escrow Fund, so the APA Section 11.9 carve-out lets the Escrow Agreement control over Sections 9.5(b) and 9.6. Seller can therefore argue that every Buyer claim is limited to the escrow balance. The Escrow Release Date is 15 months after Closing, while Fundamental Representations survive until the statute of limitations plus 60 days and Excluded Liabilities have no time limit. After release, Buyer could be left with no recovery for its most important claims, with only intentional fraud likely escaping on public policy grounds. Nothing in the folder cures this. APA Section 9.7(b) preserves Ancillary Agreement remedies but does not limit them. The Escrow Agreement is still an unsigned, undated form to be entered into at Closing (the Outside Date is December 15, 2026), so Kiveth can still fix it, for example by deleting or narrowing Section 6.2 or limiting the Section 11.9 carve-out. The issue is actionable.",
+            "alone": {
+              "escrow_agreement.md": {
+                "findable": false,
+                "evidence": "\"The Escrow Fund shall be the sole and exclusive source of recovery for all Losses of the Buyer Indemnified Parties under Article IX of the Purchase Agreement.\" (Section 6.2)",
+                "reason": "On its own, this document shows a buyer-unfavorable sole-source clause. Section 6.2 limits all Article IX recovery to the $4,850,000 escrow. Section 4.1 releases the balance to Seller 15 months after Closing, so a careful associate might flag the clause in general terms. The document does not show the actual problem. It does not show that APA Section 9.5(b) excludes Fraud, Fundamental Representations and Excluded Liabilities from the cap, so the conflict with those carve-outs cannot be seen. It also does not show the precedence rule in APA Section 11.9, under which the Escrow Agreement controls on matters relating to the Escrow Fund and the satisfaction of Losses from it. Without that rule, an associate would reasonably assume the APA's carve-outs prevail over a clause in an ancillary escrow agreement, and that Section 6.2 is only escrow mechanics. Recital B and Section 2.2 present the escrow as security for Seller's indemnity, not as a cap. Section 7.1 says the Escrow Agent has no duty to know the APA's terms. So the facts showing that the clause overrides the carve-outs and actually cuts off Kiveth's recovery come from the APA, which is not provided."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 11.9: \"...provided, however, that with respect to matters relating to the Escrow Fund and the satisfaction of Losses from the Escrow Fund, the Escrow Agreement shall control.\"",
+                "reason": "The APA by itself contains the uncapped carve-outs in Section 9.5(b) for Fraud, Fundamental Representations and Excluded Liabilities. Section 9.6 says that once the escrow is insufficient or released, or a Loss is not subject to the cap, Seller pays Buyer directly. Section 11.9 gives the Escrow Agreement control over escrow matters. Read alone, the APA protects Kiveth: recovery beyond the escrow is preserved. The 11.9 exception is something a careful associate might flag as a general drafting risk, but nothing in this document shows that it causes harm. The harm depends on the text of Escrow Agreement Section 6.2, which makes the Escrow Fund the sole and exclusive source of recovery for all Article IX Losses. That clause is not in this document. Without it, a reader cannot see that the carve-outs are capped at the escrow balance, or that Kiveth's recovery ends after the escrow release date."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Schedule 3.10(b), Item 1 (Assignment, Section 14.2): \"any assignment or transfer of this Agreement, including by sale of assets, merger, change of control or operation of law, to a Person that is a Hardware Platform Holder or is Controlled by a Hardware Platform Holder requires Vantrell's prior written consent. Vantrell may grant or withhold that consent in its sole discretion. Any assignment or transfer made without a required consent is void and is a material breach, entitling Vantrell to terminate under Section 10.3.\" Schedule 7.2(c) lists only: \"1. Written consent of Lumen Engine Technologies, Inc. to the assignment of the Lumen Engine License to Buyer.\" APA Section 4.6: \"Buyer is an indirect wholly owned subsidiary of Pellucid Systems Co., the manufacturer of the Pellucid video game console.\"",
+            "reason": "The problem is present and still actionable. Kiveth is wholly owned by Pellucid, a console maker. Pellucid is therefore a Hardware Platform Holder, and under the Exhibit C definition it Controls Kiveth. That means assigning the Character License to Kiveth needs Vantrell's prior written consent, which Vantrell may refuse in its sole discretion. An assignment made without that consent is void and lets Vantrell terminate the license. The Disclosure Schedule does not flag this. Schedule 3.3 describes the Vantrell requirement only as a 30-day post-assignment notice, and Schedule 7.2(c) makes only the Lumen consent a Required Consent. As a result, Buyer's closing condition in Section 7.2(c) does not cover the Vantrell consent. Under APA Section 2.7(a), if the consent is missing, \"the Closing shall nevertheless proceed,\" Seller keeps the license, and there is \"no adjustment to the Purchase Price.\" Kiveth would then pay the full $48.5M without receiving the character rights the franchise depends on. Its only fallback would be a pass-through arrangement under Section 2.7(b), which may itself count as a prohibited 'transfer' under Section 14.2. Indemnity is a weak remedy here for three reasons: the clause is disclosed in Schedule 3.10(b), the fact that triggers it (Kiveth's own ownership) is known to Kiveth, and recovery is limited by the escrow cap. The deal has been signed but has not closed, and the Outside Date is December 15, 2026. Kiveth can still negotiate to add the Vantrell consent to Schedule 7.2(c), ask Seller to seek the consent now, or seek price protection.",
+            "alone": {
+              "seller_disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "However, any assignment or transfer of this Agreement, including by sale of assets, merger, change of control or operation of law, to a Person that is a Hardware Platform Holder or is Controlled by a Hardware Platform Holder requires Vantrell's prior written consent.",
+                "reason": "The schedule shows that the Vantrell Character License carries a consent right for transfers to a Hardware Platform Holder or an entity Controlled by one. It also shows that Schedule 7.2(c) lists only the Lumen consent as a Required Consent. It does not show that the consent right is triggered here. Nothing in this document says Kiveth is a Hardware Platform Holder or is Controlled by one. It describes Kiveth only as a Delaware corporation and video game publisher, and it never mentions Pellucid Systems Co. Read alone, the assignment falls under the ordinary successor-assignment path, which needs only notice within 30 days, and Schedule 3.3 treats it that way. The problem appears only when this schedule is combined with Kiveth's ownership representation in APA Section 4.6. The consequences also depend on APA terms this document does not contain: the Section 7.2(c) closing condition and the Section 2.7 treatment of non-assigned contracts."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Section 4.6: \"Buyer is an indirect wholly owned subsidiary of Pellucid Systems Co., the manufacturer of the Pellucid video game console.\" Section 2.7(a): \"If any such consent is not obtained before the Closing, the Closing shall nevertheless proceed. That Purchased Asset shall not be assigned or transferred at the Closing, and Seller shall continue to hold it, with no adjustment to the Purchase Price.\"",
+                "reason": "The APA alone shows several pieces. Kiveth is controlled by a console manufacturer (Section 4.6). The Character License Agreement is an Assigned Contract (Section 2.1(c)). Required Consents are whatever Schedule 7.2(c) lists (Section 7.2(c)). Under Section 2.7, an unconsented contract stays with Seller while Buyer still closes at full price. The APA does not show what makes this a problem. It does not say that the Vantrell license needs consent to assign to an entity Controlled by a Hardware Platform Holder, or that Schedule 7.2(c) leaves that consent out. Those facts are only in the Disclosure Schedule (Schedules 3.10(b) and 7.2(c)). Reading only the APA, an associate cannot tell that Vantrell's consent is triggered or that it is missing from the closing conditions."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Schedule 3.10(a), Item 1: \"The current term ends December 31, 2026. At the end of the current term, the license renews automatically for successive three-year renewal terms unless either party gives the other written notice of non-renewal at least 120 days prior to the expiration of the then-current term.\" It also states: \"For each contract year of any renewal term commencing on or after January 1, 2027, Licensee shall pay a minimum annual royalty guarantee of $1,800,000.\" APA Section 6.8: \"prior to the Closing, Seller shall deliver to Lumen Engine Technologies, Inc. written notice of non-renewal of the Lumen Engine License ... prior to the deadline for delivery of such notice under it.\"",
+            "reason": "The notice deadline is 120 days before December 31, 2026, which is September 2, 2026. The APA is dated September 21, 2026, so the deadline had passed before signing and Seller cannot perform the Section 6.8 covenant. The license has therefore locked in a renewal term running January 1, 2027 to December 31, 2029. That term carries $1.8M a year in minimum guarantees, about $5.4M in total. The Lumen Engine License is an Assigned Contract, and Section 2.3(a) makes Buyer assume obligations under it that are performed after Closing. Those post-Closing guarantees therefore fall on Kiveth, which defeats its stated plan to migrate the titles to its own engine. Kiveth's remedies do not cure this. A Section 9.2(b) covenant claim is not subject to the 9.5(a) cap. However, Escrow Agreement Section 6.2 makes the $4.85M escrow the sole source of recovery, and APA Section 11.9 lets the Escrow Agreement control escrow matters. Nothing in the folder shows Kiveth accepting the renewal. The APA and escrow are unsigned forms and Closing has not occurred, so Kiveth can still fix this, for example by renegotiating with Lumen, adding a specific indemnity or price adjustment, or relying on its closing conditions.",
+            "alone": {
+              "seller_disclosure_schedule.md": {
+                "findable": false,
+                "evidence": "The current term ends December 31, 2026. At the end of the current term, the license renews automatically for successive three-year renewal terms unless either party gives the other written notice of non-renewal at least 120 days prior to the expiration of the then-current term. … For each contract year of any renewal term commencing on or after January 1, 2027, Licensee shall pay a minimum annual royalty guarantee of $1,800,000.",
+                "reason": "From this schedule alone, an associate could work out that the non-renewal deadline was September 2, 2026. That is before the September 21, 2026 agreement date, so the license will roll into a 2027–2029 renewal term with $1.8M-per-year minimum guarantees, and the license is an Assigned Contract. The schedule does not show that this is a problem for Kiveth. It does not mention the Section 6.8 covenant requiring Seller to deliver non-renewal notice, or Kiveth's plan to move the titles to its own engine. Read alone, renewal could look like a benefit to Buyer. Ashfall Requiem II is being built on Lumen, Section 13.4 bars developing new titles after expiration, and the guarantees are creditable against earned royalties. The schedule also says nothing about whether notice was given. Seeing that the covenant cannot be performed, and that the $5.4M is an unwanted liability, requires the APA."
+              },
+              "asset_purchase_agreement.md": {
+                "findable": false,
+                "evidence": "Accordingly, prior to the Closing, Seller shall deliver to Lumen Engine Technologies, Inc. written notice of non-renewal of the Lumen Engine License, in accordance with the notice provisions of the Lumen Engine License and prior to the deadline for delivery of such notice under it, and shall concurrently provide Buyer a copy of that notice.",
+                "reason": "The APA shows Kiveth plans to move off the Lumen engine (Section 6.8). It also shows the Lumen Engine License is an Assigned Contract whose post-Closing obligations Kiveth would assume (Sections 2.1(c), 2.3), and that the Agreement Date is September 21, 2026. It does not state the license's expiration date, the 120-day non-renewal notice period, the three-year auto-renewal term, or the $1,800,000 annual minimum royalty guarantee. Those terms appear only in Schedule 3.10(a) of the Disclosure Schedule or in the license itself. Reading the APA alone, an associate cannot tell that the notice deadline (September 2, 2026) had already passed at signing, that the license has renewed through 2029, or that Kiveth would take on about $5.4M in minimum guarantees. The associate might sensibly ask whether the deadline is still open, but cannot see the problem or the harm to Kiveth without the other document."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 8.2: \"The Company shall indemnify, defend and hold harmless Executive from and against any and all Claims arising out of or relating to the development of the Titles, including any Claim by a third party alleging that any Title ... infringes, misappropriates or otherwise violates the Intellectual Property of that third party, in each case whether arising before or after the Effective Date and without limitation as to amount.\"",
+            "reason": "The indemnity runs from Kiveth (the Company and the firm's client) to Brennt. It is uncapped and expressly reaches IP and other claims from the pre-closing development of the Titles, which Zerex did. APA Section 2.4(a) makes those pre-closing development and infringement liabilities Excluded Liabilities that stay with Zerex. Kiveth's ability to pass its payments to Brennt back to Zerex is doubtful, for three reasons. First, those payments come from Kiveth's own new contractual promise, not from a Seller liability. Second, the Section 3.9 IP representations survive only 90 days. Third, Escrow Agreement Section 6.2 makes the $4.85M Escrow Fund the 'sole and exclusive source of recovery' for Buyer's Article IX Losses, and APA Section 11.9 gives the Escrow Agreement control over satisfaction of Losses from the fund. Nothing in the employment agreement limits or carves out pre-closing conduct, and the APA does not bind Brennt. The result is open-ended direct exposure for Kiveth for conduct it did not control. The agreement is unsigned and closing has not been shown to have occurred, so the term can still be renegotiated. The problem is actionable."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F3, which only issue I2 uses: a memo that misses I2 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.09,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

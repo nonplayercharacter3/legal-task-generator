@@ -1,0 +1,252 @@
+{
+  "matter_id": "s66-m0001",
+  "summary": "Rekaind Vertical Services, Inc. is an independent elevator and escalator maintenance contractor headquartered in Philadelphia. It licenses the LiftSense remote-monitoring and predictive-maintenance platform from Velert Systems, LLC of Columbus, Ohio, under a Software License Agreement effective March 3, 2025. The folder holds the license, its Service Level Schedule, the Order Form for 1,140 units, a May 2025 side letter, Rekaind's October 21, 2026 notice of termination for chronic availability failure, and two distractors (Rekaind's dispatch-center office lease and Velert's certificate of insurance). Six issues are planted:\n- an exclusivity covenant that reaches all equipment Rekaind or its affiliates service worldwide;\n- a one-sided Velert assignment right;\n- a side letter that restructures the indemnity so that bodily-injury indemnity falls under the cap;\n- an Order Form choosing Ohio law and forum that controls through the precedence clause;\n- a 36-month auto-renewal with a 15-day opt-out window;\n- a chronic-failure termination notice sent after the Service Level Schedule's 30-day exercise window closed.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Rekaind Vertical Services, Inc.",
+      "role": "Licensee; independent elevator and escalator maintenance contractor (firm's client)"
+    },
+    {
+      "id": "P2",
+      "name": "Velert Systems, LLC",
+      "role": "Licensor; provider of the LiftSense remote-monitoring and predictive-maintenance software platform"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Software License Agreement Effective Date",
+      "value": "March 3, 2025",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Order of precedence",
+      "value": "Side Letter, then Order Form, then the Agreement, then Service Level Schedule",
+      "doc": "D1",
+      "section": "15.4"
+    },
+    {
+      "id": "F3",
+      "key": "Software License Agreement governing law",
+      "value": "State of Delaware",
+      "doc": "D1",
+      "section": "15.1"
+    },
+    {
+      "id": "F4",
+      "key": "Software License Agreement forum",
+      "value": "State or federal courts located in Wilmington, Delaware",
+      "doc": "D1",
+      "section": "15.2"
+    },
+    {
+      "id": "F5",
+      "key": "Liability cap",
+      "value": "Fees paid or payable in the 12 months preceding the claim",
+      "doc": "D1",
+      "section": "11.3"
+    },
+    {
+      "id": "F6",
+      "key": "Initial Order Term",
+      "value": "36 months from the Order Effective Date of March 3, 2025",
+      "doc": "D3",
+      "section": "2"
+    },
+    {
+      "id": "F7",
+      "key": "Licensed Units",
+      "value": "1,140 elevator and escalator units in Pennsylvania, New Jersey and Delaware",
+      "doc": "D3",
+      "section": "1"
+    },
+    {
+      "id": "F8",
+      "key": "Annual Subscription Fee",
+      "value": "$410,400 ($360 per Licensed Unit per year)",
+      "doc": "D3",
+      "section": "3"
+    },
+    {
+      "id": "F9",
+      "key": "Chronic Availability Failure threshold",
+      "value": "Platform Availability below 99.5% in three consecutive calendar months",
+      "doc": "D2",
+      "section": "4.1"
+    },
+    {
+      "id": "F10",
+      "key": "Termination notice letter date",
+      "value": "October 21, 2026",
+      "doc": "D4",
+      "section": "Date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "software_license_agreement.md",
+      "kind": "software license agreement",
+      "distractor": false,
+      "precedent": "sample_services_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "service_level_schedule.md",
+      "kind": "service level schedule",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "order_form_001.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "rekaind_notice_letter_2026-10-21.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "side_letter_2025-05-12.md",
+      "kind": "side letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "dispatch_center_office_lease.md",
+      "kind": "office lease",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "velert_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Section 3.4 of the License Agreement says Licensee shall not license, use or develop any remote-monitoring, condition-monitoring, dispatch or work-order software other than LiftSense for any 'Covered Equipment'. Section 1.6 defines Covered Equipment as any equipment serviced by Licensee or any of its Affiliates anywhere in the world. Read together, the two provisions bind Rekaind and all its affiliates, for every unit they service in any territory, and also bar in-house development. Yet the Order Form licenses only 1,140 units in Pennsylvania, New Jersey and Delaware. Rekaind cannot win or service new contracts outside that portfolio with other monitoring tools, cannot use customer-mandated or OEM systems, and cannot build its own. Nothing in the Order Form or Side Letter narrows the definition.",
+      "doc": "D1",
+      "section": "3.4",
+      "detect_terms": [
+        "shall not license, use, or develop",
+        "any equipment serviced by Licensee or any of its Affiliates anywhere in the world"
+      ],
+      "expected_finding": "The exclusivity in Section 3.4, read with the Section 1.6 definition of Covered Equipment, extends worldwide to all equipment serviced by Rekaind and its affiliates and bars in-house development, far beyond the 1,140 Mid-Atlantic units licensed in the Order Form, and should be narrowed to the Licensed Units.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I2",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Section 14.2 of the License Agreement requires Velert's consent before Licensee assigns. By contrast, Velert may assign the Agreement without Licensee's consent to any affiliate or successor, including by merger, change of control or sale of assets. Velert could therefore transfer the license to an elevator OEM that competes with Rekaind for maintenance contracts. That transferee would then hold Rekaind's equipment, site and customer data and control a platform Rekaind is exclusively bound to use. Rekaind would have no consent right or termination right if that happened.",
+      "doc": "D1",
+      "section": "14.2",
+      "detect_terms": [
+        "Licensor may assign this Agreement",
+        "without Licensee's consent"
+      ],
+      "expected_finding": "Section 14.2 lets Velert assign the Agreement freely, including to a competing elevator OEM through a merger or asset sale, while Rekaind needs consent, so Rekaind should require consent or a termination right on assignment or change of control to a competitor.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    },
+    {
+      "id": "I3",
+      "type": "liability_cap_carveout",
+      "label": "liability cap carve-out conflict",
+      "description": "Two provisions combine to cap safety-critical claims.\n- License Agreement Section 10.1 obliges Velert to indemnify against third-party claims for (a) IP infringement and (b) bodily injury, death or property damage caused by Platform defects. Section 11.4 removes from the 12-month-fees cap in Section 11.3 'Licensor's indemnification obligations under Section 10.1'. On its own, that carve-out is protective.\n- The May 12, 2025 Side Letter, Section 2, deletes Section 10.1 and replaces it with a broadened IP indemnity as new Section 10.1 and the bodily-injury and property indemnity as new Section 10.2. On its face this is a neutral restructuring, and the IP change is favourable. The Side Letter does not amend Section 11.4. Under Section 15.4 the Side Letter prevails.\nTogether, the carve-out now reaches only the IP indemnity. Velert's indemnity for passenger injury, for example from failed entrapment alerts, falls under a cap of about $410,400.",
+      "doc": "D1",
+      "section": "11.4",
+      "detect_terms": [
+        "indemnification obligations under Section 10.1"
+      ],
+      "expected_finding": "Because the Side Letter moved the bodily-injury and property-damage indemnity into a new Section 10.2 while Section 11.4 still carves out only Section 10.1 obligations, Velert's indemnity for passenger injury claims is now subject to the 12-month-fees cap, and Section 11.4 should be amended to carve out Section 10.2 as well.",
+      "contradicts": null,
+      "doc2": "D5",
+      "section2": "2",
+      "detect_terms2": [
+        "new Section 10.2",
+        "bodily injury, death or damage to tangible property"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Two documents show that Rekaind's termination was exercised late.\n- Service Level Schedule Section 4.2 lets Licensee terminate after a Chronic Availability Failure (Section 4.1), but only by written notice delivered within thirty (30) days after delivery of the Service Report for the third consecutive failing month.\n- Rekaind's notice letter, dated October 21, 2026, relies on failures in June, July and August 2026. It recites that Velert's August 2026 Service Report was delivered on September 4, 2026, and it announces that Rekaind will stop paying fees from November 20, 2026.\nThe window closed on October 4, 2026, so the notice came 17 days late. Neither document alone shows this. The letter is Rekaind's asserted position, and Velert has not accepted the termination, so the point remains open. Rekaind risks breach or repudiation if it stops paying.",
+      "doc": "D2",
+      "section": "4.2",
+      "detect_terms": [
+        "within thirty (30) days after delivery"
+      ],
+      "expected_finding": "Rekaind's October 21, 2026 termination notice was delivered after the 30-day window that closed on October 4, 2026 (30 days after the September 4, 2026 Service Report), so the chronic-failure termination is likely ineffective and Rekaind risks breach if it stops paying fees as the letter announces.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Paragraphs 2-3",
+      "detect_terms2": [
+        "delivered to us on September 4, 2026",
+        "hereby terminates"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "governing_law_mismatch",
+      "label": "governing law mismatch",
+      "description": "License Agreement Sections 15.1 and 15.2 choose Delaware law and courts in Wilmington, Delaware. Order Form Section 7 instead provides that the Order Form and the Agreement are governed by the laws of the State of Ohio, with exclusive venue in Franklin County, Ohio, which is Velert's home county. On its own, the Order Form clause looks like routine boilerplate. On its own, the License Agreement's precedence clause (Section 15.4: Side Letter, then Order Form, then the Agreement) is also ordinary. Together, the Order Form controls in a conflict, so Ohio law and an Ohio forum displace the Delaware choice Rekaind negotiated. Rekaind would have to litigate in Velert's home court.",
+      "doc": "D3",
+      "section": "7",
+      "detect_terms": [
+        "laws of the State of Ohio",
+        "Franklin County, Ohio"
+      ],
+      "expected_finding": "Because Section 15.4 of the License Agreement gives the Order Form precedence over the Agreement, Order Form Section 7's choice of Ohio law and exclusive Franklin County, Ohio venue overrides the Agreement's Delaware law and Wilmington forum, and the Order Form clause should be deleted or the precedence clause should carve out governing law and forum.",
+      "contradicts": [
+        "F3",
+        "F4"
+      ],
+      "doc2": "D1",
+      "section2": "15.4",
+      "detect_terms2": [
+        "the Order Form shall control"
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "auto_renewal",
+      "label": "automatic renewal",
+      "description": "License Agreement Section 12.2 renews each Order Form automatically for a Renewal Term equal in length to the Initial Order Term. The Order Form sets that term at 36 months. Renewal occurs unless a party gives non-renewal notice within the Non-Renewal Window. Section 1.14 defines that window as not more than seventy-five (75) days and not less than sixty (60) days before the term ends, leaving a 15-day opt-out window. Section 12.3 allows a renewal fee increase of up to 7%. Read together, if Rekaind misses the 15-day window, it is locked in for another three years at a higher fee.",
+      "doc": "D1",
+      "section": "12.2",
+      "detect_terms": [
+        "Renewal Term equal in length to the Initial Order Term",
+        "not more than seventy-five (75) days and not less than sixty (60) days"
+      ],
+      "expected_finding": "Section 12.2, read with the Section 1.14 Non-Renewal Window and the 36-month Initial Order Term, renews the subscription automatically for successive 36-month terms unless Rekaind gives notice in a 15-day window, and should be changed to annual renewals with a longer notice window or termination for convenience.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

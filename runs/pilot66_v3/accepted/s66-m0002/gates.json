@@ -1,0 +1,168 @@
+{
+  "matter_id": "s66-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 0,
+        "checked": 60
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Section 3.4: \"During the Term and for a period of twenty-four (24) months after its expiration or termination, Distributor shall not, and shall cause its Affiliates under its control not to, directly or indirectly manufacture, distribute, sell, market or service any ballast water treatment, exhaust gas scrubber or other marine environmental compliance equipment other than Products, anywhere in the world.\" Recital B: \"Distributor currently operates an exhaust gas scrubber servicing business at Gulf and Caribbean ports.\"",
+            "reason": "The obligation falls on Mibaix, the client. Supplier's products are only BWTS units, parts and consumables (Schedule A, and the BX-900 under Amendment No. 1). The exclusive appointment covers only four Gulf Coast ports. Even so, Section 3.4 bars all marine environmental compliance equipment, worldwide, during the Term and for 24 months after it. That captures the scrubber servicing business the agreement itself says Mibaix already runs, including at Caribbean ports outside the Territory. No carve-out exists for that business. Amendment No. 1 leaves Section 3.4 unchanged, and Section 17.7 makes it survive termination. Section 17.1 allows termination for material breach, so Supplier could treat the existing business as a breach and use it to terminate. The covenant is also at risk under New York's reasonableness standard. The Initial Term runs to 2030, so the problem is live and the client can still act on it, for example by seeking a carve-out in a further amendment."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Agreement Section 11.3: \"The limitations in Sections 11.1 and 11.2 do not apply to: (a) indemnification obligations with respect to Environmental Claims;\" read with SOW No. 1 Section 6.2: \"Subject to Section 11 of the Agreement, Distributor shall indemnify, defend and hold harmless Supplier ... from and against all Losses arising from any Environmental Claim arising out of or relating to the Installation Services performed by Distributor or its subcontractors under this SOW.\"",
+            "reason": "The Section 11.3(a) carve-out is not limited to Supplier's indemnity. It covers any party's indemnification obligations for Environmental Claims, which Section 1.1 defines as any claim, fine or penalty from a ballast water or residuals discharge. SOW 6.2 makes Mibaix, the client, the indemnifying party for Environmental Claims connected with its installation work. Its 'subject to Section 11' wording suggests the indemnity is capped, but Section 11 itself pulls the carve-out back in. The result is that both the 12-month cap and the consequential-damages exclusion fall away for the client's indemnity. That exposes Mibaix to unlimited liability for discharge fines and penalties. The Section 21.3 precedence clause does not help, because the two documents do not conflict. Amendment No. 1 leaves Section 11 and the SOW unchanged, and the SOW remains in effect for upcoming Reserved Account jobs. The point is therefore live and actionable: the client can seek an amendment or use the SOW's termination right.",
+            "alone": {
+              "distribution_agreement_mibaix_bupaiv.md": {
+                "findable": false,
+                "evidence": "Section 11.3: \"The limitations in Sections 11.1 and 11.2 do not apply to: (a) indemnification obligations with respect to Environmental Claims;\"",
+                "reason": "This document shows that the cap carve-out in Section 11.3(a) is worded neutrally, so it would apply to either Party's Environmental Claim indemnity. It also shows that 'Environmental Claim' is broadly defined in Section 1.1 as any claim, fine or penalty arising from a discharge. But within this Agreement the only Environmental Claim indemnity is the Supplier's product-defect indemnity in Section 10.2. The Distributor's indemnity in Section 10.4 covers only its own warranty representations and gross negligence in marketing or resale, not installation-related discharges. Read alone, the carve-out therefore favours the client. The harm depends on the Statement of Work (D4) Section 6.2, which imposes a Distributor indemnity for Environmental Claims arising from Installation Services 'subject to Section 11'. That provision is not in this document. A careful associate could at most note a general drafting risk that a future SOW indemnity might be uncapped, but could not see an actual uncapped exposure for the client from this document alone."
+              },
+              "sow_1_installation_commissioning.md": {
+                "findable": false,
+                "evidence": "Subject to Section 11 of the Agreement, Distributor shall indemnify, defend and hold harmless Supplier and its officers, directors, employees and agents from and against all Losses arising from any Environmental Claim arising out of or relating to the Installation Services performed by Distributor or its subcontractors under this SOW.",
+                "reason": "The SOW alone shows that the client gives a broad indemnity for Environmental Claims arising from the Installation Services. It also shows that this indemnity is made 'subject to Section 11 of the Agreement', which a reader would naturally take to mean it is capped. The SOW does not show what Section 11 says. It does not show that Section 11.3 carves indemnification obligations for Environmental Claims out of the liability cap, and it does not give the definition of Environmental Claim. Those terms are only in the Agreement. Without them, an associate would see an ordinary capped indemnity and could not tell that the client's exposure for discharge fines and penalties is in fact unlimited."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Amendment Section 2.1: \"'Products' means the ballast water treatment system models listed in Part 1 of Schedule A, as that Part is replaced by Amendment No. 1 to this Agreement and as further amended from time to time under Section 21.2.\" The original Agreement Section 1.1 reads: \"'Products' means the BWTS units, spare parts and consumables listed in Schedule A.\"",
+            "reason": "Amendment Section 2.1 is presented as a change to add the BX-900, but it replaces the whole definition of Products. The new definition covers only the system models in Part 1. Spare parts and consumables in Schedule A Part 2 are no longer Products, and nothing in the Amendment preserves them. Section 8.1 of the Amendment says the Agreement stands except as \"expressly amended\", but this change is express. Under Agreement Section 21.3 the Amendment prevails.\n\nThe effects on Mibaix are:\n- **Exclusivity:** its exclusive appointment under Section 3.1 no longer covers parts and consumables.\n- **Warranty:** Supplier's Section 12 warranties and the parts-availability commitment in Section 4.5 no longer cover them.\n- **Minimum purchase:** parts purchases no longer count toward the raised US$6.2M Minimum Annual Purchase. Its Q4 2026 forecast projects about US$412,000 of parts purchases.\n- **Non-compete:** reselling Bupaiv parts may fall outside the \"other than Products\" carve-out in the Section 3.4 non-compete, which applies to servicing marine environmental compliance equipment.\n\nNothing in the folder cures this. The Amendment is ongoing and governs the relationship from here on, so Mibaix can still seek a corrective amendment. Nothing shows Mibaix knowingly accepted the narrower definition.",
+            "alone": {
+              "amendment_no_1_distribution_agreement.md": {
+                "findable": false,
+                "evidence": "\"Products\" means the ballast water treatment system models listed in Part 1 of Schedule A, as that Part is replaced by Amendment No. 1 to this Agreement and as further amended from time to time under Section 21.2.",
+                "reason": "This document shows that the Products definition is replaced and now covers only the system models in Part 1 of Schedule A. The references to \"Part 1 (BWTS Units)\" of Schedules A and B suggest that other Parts exist, so a careful reader might suspect a narrowing. The document does not show what the original definition covered. It never says that spare parts and consumables were Products. It also does not show that the definition drives exclusivity (Section 3.1), the Section 12 warranty, minimum purchase credit, or the 'other than Products' exception in the Section 3.4 non-compete. Nor does it show the precedence clause in Section 21.3. Both the dropping of parts and consumables and the harm to the client can only be confirmed from the original Distribution Agreement."
+              },
+              "distribution_agreement_mibaix_bupaiv.md": {
+                "findable": false,
+                "evidence": "\"Products\" means the BWTS units, spare parts and consumables listed in Schedule A.",
+                "reason": "This agreement, read alone, defines Products to include spare parts and consumables, and Schedule A lists them. Exclusivity (3.1), warranty (12), minimum purchase credit (5.2) and the 'other than Products' exception in the 3.4 non-compete therefore all cover parts and consumables. Section 21.3 does say that Amendments prevail over this agreement, but that only creates a general possibility. The actual problem depends on the Amendment (D2): its Section 2.1 redefines Products as BWTS models only, dropping parts and consumables, and its Section 3.1 raises the Minimum Annual Purchase to US$6,200,000. Neither appears in this document. An associate reading only this agreement would see a consistent definition and could not identify the harm to the client."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Distribution Agreement Section 17.2: \"Supplier may terminate this Agreement on ninety (90) days' written notice to Distributor if a Change of Control of Distributor occurs without Supplier's prior written consent... 'Change of Control' means any transaction... by which any person... acquires, directly or indirectly, more than fifty percent (50%) of the voting securities of Distributor or of any entity that directly or indirectly controls Distributor.\" Guaranty Recital B: \"Guarantor has entered into a share purchase agreement dated August 28, 2026 with Nordhaven Maritime Group plc. Under that agreement, Nordhaven Maritime Group plc will acquire all of the issued and outstanding shares of Guarantor, and closing is expected in the first quarter of 2027.\"",
+            "reason": "Mibaix Holdings Corp. owns all of the Distributor and so controls it. Nordhaven buying 100% of the Guarantor's shares therefore falls squarely within the definition of Change of Control in Section 17.2. If closing happens without the Supplier's prior written consent, the Supplier may terminate the Distributor's exclusive five-year appointment on 90 days' notice, at any time within 12 months after it learns of the sale. The Supplier countersigned the Guaranty, so it plainly knows of the sale. However, Section 21.5 says the Supplier's knowledge of a transaction affecting the Distributor's ownership is not consent or waiver. Amendment No. 1, signed the same day, does not grant consent, and nothing else in the folder records consent either. The latest date in the folder is October 2026 and closing is expected in Q1 2027, so the change has not yet occurred. Mibaix can still act by seeking written consent before closing. This is a live and material risk for the client.",
+            "alone": {
+              "distribution_agreement_mibaix_bupaiv.md": {
+                "findable": false,
+                "evidence": "Supplier may terminate this Agreement on ninety (90) days' written notice to Distributor if a Change of Control of Distributor occurs without Supplier's prior written consent. ... \"Change of Control\" means any transaction ... by which any person ... acquires, directly or indirectly, more than fifty percent (50%) of the voting securities of Distributor or of any entity that directly or indirectly controls Distributor",
+                "reason": "This agreement contains the change-of-control termination right in Section 17.2, which reaches indirect transfers at the parent level, and Section 21.5's statement that Supplier's knowledge is not consent or waiver. That is a standard clause. Nothing in this document shows that any transaction is pending. It does not mention a Guarantor or parent, the August 28, 2026 share purchase agreement, Nordhaven Maritime Group plc, or the expected Q1 2027 closing. Section 6.8 says only that a parent guaranty may be required. Because the planned sale of the parent appears only in the other document, an associate reading this agreement alone could not see that the termination right is about to be triggered against the client."
+              },
+              "parent_guaranty_mibaix_holdings.md": {
+                "findable": false,
+                "evidence": "Guarantor has entered into a share purchase agreement dated August 28, 2026 with Nordhaven Maritime Group plc. Under that agreement, Nordhaven Maritime Group plc will acquire all of the issued and outstanding shares of Guarantor, and closing is expected in the first quarter of 2027.",
+                "reason": "Read alone, the guaranty shows that the parent is being sold and that Supplier knows about it. It treats the sale as neutral: Section 5.1(d)-(e) keeps the guaranty in force despite changes in ownership. Nothing in it gives the Supplier a termination right, defines Change of Control, or requires the Supplier's consent to an upstream sale. The harm to the Distributor depends on the Distribution Agreement, which this document does not contain: Section 17.2 (termination on an unconsented Change of Control, defined to include indirect control) and Section 21.5 (knowledge is not consent). Without that agreement, an associate could not tell that the sale exposes the client to termination."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Guaranty Section 14.1: \"This Guaranty and any non-contractual obligations arising out of or in connection with it are governed by and construed in accordance with the laws of England and Wales.\" Section 14.2: \"The courts of England and Wales have exclusive jurisdiction to settle any dispute arising out of or in connection with this Guaranty...\" By contrast, Distribution Agreement Section 19.1 chooses New York law, and Section 19.2 provides: \"Each Party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in New York County, New York for any action arising out of or relating to this Agreement.\"",
+            "reason": "The Guaranty puts the parent's liability under English law in exclusive English courts. The Guaranteed Obligations, and the Distributor defences the parent may raise under Guaranty Section 2.4 (including Section 6.5 invoice disputes), are governed by New York law in exclusive New York courts. Agreement Section 21.3 ranks only Amendments, the Agreement and Statements of Work, so it does not reach the Guaranty. Nothing else in the folder reconciles the two forum choices. As a result, the Supplier can pursue Mibaix Holdings in London while the Distributor's dispute over the same debt runs in New York. That risks inconsistent findings and duplicated cost for the client group. The Guaranty is executed, but nothing in it has lapsed. Section 16.1 allows written amendment, and the risk only arises if a future Demand is made. So this remains a live, actionable issue for the client and its parent."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "Section 1.1: \"'Affiliate' means, with respect to a Party, any entity that directly or indirectly controls, is controlled by or is under common control with that Party, and any entity with which that Party has a commercial alliance, joint venture or distribution relationship.\" Section 20.1: \"Neither Party may assign, delegate or otherwise transfer this Agreement or any of its rights or obligations under it without the prior written consent of the other Party, except that either Party may assign this Agreement in whole to an Affiliate without such consent by giving written notice to the other Party.\"",
+            "reason": "Because 'Affiliate' covers any entity with which a Party has a distribution relationship, Section 20.1 lets Supplier assign the whole Agreement without consent to any of its distributors. That could include a Gulf competitor of Mibaix, who would then receive Mibaix's Confidential Information, such as pricing, customer and vessel data and forecasts (Section 15.1). The exception is nominally mutual but worth little to Mibaix, which as a distributor has no comparable network to assign to. Section 17.2 restricts only a Change of Control of Distributor; nothing restricts the Supplier's. None of the other documents cure this. Amendment No. 1 leaves Sections 1.1 and 20.1 unchanged (Section 8.1). Guaranty Section 15.2 ties Supplier's assignment of the guaranty to a permitted assignment under Section 20.1, which keeps the loophole in place. The issue remains live and actionable for Mibaix."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C1"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.058,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 1,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s66-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s66-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s66-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "test",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "drafter": {
+      "calls": 13,
+      "input_tokens": 503472,
+      "output_tokens": 159889,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 2,
+      "input_tokens": 152314,
+      "output_tokens": 6359,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 12,
+      "input_tokens": 846532,
+      "output_tokens": 9830,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 12,
+      "input_tokens": 166131,
+      "output_tokens": 5084,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 2,
+      "input_tokens": 2645,
+      "output_tokens": 289,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 2,
+      "input_tokens": 15534,
+      "output_tokens": 4889,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 4,
+      "input_tokens": 309022,
+      "output_tokens": 36343,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 6,
+      "input_tokens": 50188,
+      "output_tokens": 4555,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "elevator maintenance": 1,
+      "marine shipping": 1,
+      "video game publishing": 1
+    },
+    "agreement_types": {
+      "software license agreement": 1,
+      "distribution agreement": 1,
+      "asset purchase agreement": 1
+    },
+    "issue_types": {
+      "exclusivity_scope": 2,
+      "missing_assignment_restriction": 2,
+      "liability_cap_carveout": 2,
+      "expired_notice_window": 2,
+      "governing_law_mismatch": 2,
+      "uncapped_indemnity": 2,
+      "change_of_control_consent": 2,
+      "auto_renewal": 1,
+      "defined_term_inconsistency": 1,
+      "survival_gap": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}
