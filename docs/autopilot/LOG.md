@@ -187,3 +187,12 @@ Dated, append-only. One entry per iteration.
   Generation 26 calls, ~1.03M in / ~108k out; labels 159 calls total for the seed.
 - Started v3 batch seeds 63-70 (PID 56839, `runs/batch_v3_s63-70.log`). Lab mate: no activity on #36 since the
   reopen; order unchanged (label 500-507).
+
+## 2026-11-26 16:18 to 16:45, iteration 30
+- Found the v3 batch (PID 56839) dead since 2026-11-24 02:31, mid-labelling of seed 65, nothing in its log; laptop
+  rebooted 2026-11-25. Removed the stale empty `runs/.batch.lock`, restarted `ltg batch` on seeds 65-70 (PID 14353,
+  same log). Seeds 63-64 were already committed and labelled; seed 65 generated and committed (d7ab2a6).
+- Read seeds 63-65: 8 of 9 kept, folders 31.6k to 43.8k words. Labels 63-64: 5 of 6 at 0.00, one at 0.67.
+- s65-m0002 false rejection (paraphrased detect term, second after s502-m0002). PR #51 merged (c95c371): detect term
+  may have up to 4 inserted words, words in order. 164 tests pass, fake demo rejects at each gate as before.
+- Lab mate: issue #36 open and assigned, still on labelling seeds 500-507, no reply since 2026-11-21; no new branch.

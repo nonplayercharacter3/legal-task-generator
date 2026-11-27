@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-23 21:30, autopilot iteration 29.
+Last updated: 2026-11-26 16:45, autopilot iteration 30.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -41,10 +41,19 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- `ltg batch` v3, seeds 63-70, generate then label (PID 56839, log `runs/batch_v3_s63-70.log`, out
-  `runs/pilot{seed}_v3`), started 2026-11-23 21:24; commits each seed to main itself. Seed 62 took 77 min to
-  generate and 23 min per label, so expect the end around 2026-11-24 12:00 to 14:00.
-- No LAB jobs. LAB sample done (M3); `judge_calls.json` holds only the last judge pass of a task.
+- `ltg batch` v3, seeds 65-70 (PID 14353, log `runs/batch_v3_s63-70.log`, out `runs/pilot{seed}_v3`), restarted
+  2026-11-26 16:19. The first run (PID 56839) died silently at 2026-11-24 02:31 while labelling seed 65 (no error in
+  the log; the laptop rebooted on 2026-11-25), leaving a stale `runs/.batch.lock`, removed. It runs the code from
+  before PR #51 (in-process), so seeds 66-70 still use the verbatim detect-term check. Expect the end around
+  2026-11-27 03:00 to 06:00 (about 105 min per seed).
+
+## v3 seeds 63-65 (read 2026-11-26)
+- 8 of 9 kept (63: 3, 64: 3, 65: 2). Folder words 31,600 to 43,800 per task (level 2 length met on all).
+- Labels 63-64 (qwen3-small): 0.00 on 5 of 6, 0.67 on 1. Too many unsolved to trust yet: the level 1 audit must check
+  whether they fail on too-strict criteria (as 5 of 13 did in rounds 20-27) or are truly hard.
+- s65-m0002 rejected at issue_check, **false**: detect term "received on September 3, 2026", letter says "received
+  the September Notice on September 3, 2026". Second of this class (s502-m0002). Fixed in PR #51 (`gates.has_term`:
+  the term's words in order, up to 4 words inserted).
 
 ## v3 round seed 62 (read 2026-11-23)
 - 1 of 3 kept: s62-m0003 (SPA, boutique hotels, 6 documents, 5 issues, 10 criteria), Qwen 0.00 (unsolved; C2 and C5
@@ -79,7 +88,7 @@ agent. Full definition of done: PROMPT.md.
   15,704 (MISS, needs 20,000), checklist median 10 (soft miss, needs 20).
 
 ## Next
-1. When PID 56839 ends: read every s63-s70 result (accepted and rejected). Count yield against v2 after PR #40
+1. When PID 14353 ends: read every s66-s70 result (accepted and rejected). Count yield against v2 after PR #40
    (16 of 21) and the share of consistency and issue_check losses; if longer drafting raises either class, fix it in
    the drafter or ledger writer by PR. Check folder words per task.
 2. Then on v3 (at least 20 tasks): level 2 stats (`scripts/dataset_stats.py`), level 1 referee audit of 10% (at
