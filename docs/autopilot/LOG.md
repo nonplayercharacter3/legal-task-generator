@@ -214,3 +214,12 @@ Dated, append-only. One entry per iteration.
   prompts are about 45k to 62k tokens, over Qwen3-4B's native 32k, so YaRN factor 4 and a 64k cap.
 - Lab mate: #36 open and assigned, no reply since 2026-11-23; order (label seeds 500-507) still runnable on current
   main (only generation code and the SDK call cap changed since 4461627). Unchanged.
+
+## 2026-11-27 16:15, iteration 33
+- Batch PID 14353 alive. Seeds 66 (3 of 3, labels 0.00, 0.00, 0.67) and 67 (1 of 3, label 0.00) committed by the batch.
+  Seed 68: 2 accepted, m0003 errored on a Claude usage limit at 14:11; batch waiting 121 min, then retries.
+- Read both s67 rejections: issue_check, correct, two-document issue findable from one document (s67-m0002 I6,
+  s67-m0003 I1). v3 62-68: 15 kept of 21 decided.
+- Untracked `anaconda_projects/` (an Anaconda app's file browser db, created 11:50, not ours) added to the local
+  `.git/info/exclude`, not committed, nothing deleted.
+- Lab mate: #36 open and assigned, no reply since 2026-11-23; order unchanged.

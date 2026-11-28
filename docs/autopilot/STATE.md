@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-27 11:35, autopilot iteration 32.
+Last updated: 2026-11-27 16:15, autopilot iteration 33.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -41,11 +41,17 @@ agent. Full definition of done: PROMPT.md.
 - [ ] M8 Docs current, STATUS: DONE
 
 ## Running jobs
-- `ltg batch` v3, seeds 65-70 (PID 14353, log `runs/batch_v3_s63-70.log`, out `runs/pilot{seed}_v3`), restarted
-  2026-11-26 16:19 on code from before PR #51 and #52 (verbatim detect terms, no call cap). Seed 65 done and labelled
-  (both 0.00). Seed 66: m0001 and m0002 errored overnight on a network outage (ENOTFOUND, calls hung 5 to 12 hours);
-  the batch retries them on its next try. Seed 66: m0003 accepted 10:39; try 2 (resume of m0001, m0002) started
-  11:18. Expect the end around 2026-11-28 04:00.
+- `ltg batch` v3, seeds 65-70 (PID 14353, log `runs/batch_v3_s63-70.log`, out `runs/pilot{seed}_v3`), on code from
+  before PR #51 and #52. Seeds 65, 66, 67 done, committed and labelled. Seed 68: 2 accepted, m0003 errored at the
+  drafter on a Claude usage limit (14:11); the batch waits 121 min and retries it (about 16:12). Seeds 69-70 still to
+  run. Expect the end around 2026-11-28 05:00.
+
+## v3 seeds 66-67 (read 2026-11-27)
+- 66: 3 of 3 (labels 0.00, 0.00, 0.67). 67: 1 of 3 (label 0.00). Both 67 rejections at issue_check, correct, known
+  class: a two-document issue findable from one document (s67-m0002 I6: the side letter alone shows it rewrites the
+  Fundamental Representations definition; s67-m0003 I1: the TSA's narrow definition alone shows the gap).
+- v3 so far (62-68): 15 kept of 21 decided; issue_check findable-alone losses 3 (s62-m0002, s67-m0002, s67-m0003).
+  Decide after seed 70 whether that class is rising with longer drafting.
 
 ## v3 seeds 63-65 (read 2026-11-26)
 - 8 of 9 kept (63: 3, 64: 3, 65: 2). Folder words 31,600 to 43,800 per task (level 2 length met on all).
