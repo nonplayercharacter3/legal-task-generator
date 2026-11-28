@@ -5,7 +5,7 @@ STATUS: RUNNING
 Plain-words picture of where the project is. The autopilot reads this first and rewrites it last, every iteration.
 Keep it under about 150 lines; history goes to LOG.md.
 
-Last updated: 2026-11-27 16:15, autopilot iteration 33.
+Last updated: 2026-11-28 06:40, autopilot iteration 34.
 
 ## Goal
 A one-command batch tool (`ltg batch`) that builds a dataset of LAB-like contract-review tasks, with the tasks shown
@@ -42,9 +42,11 @@ agent. Full definition of done: PROMPT.md.
 
 ## Running jobs
 - `ltg batch` v3, seeds 65-70 (PID 14353, log `runs/batch_v3_s63-70.log`, out `runs/pilot{seed}_v3`), on code from
-  before PR #51 and #52. Seeds 65, 66, 67 done, committed and labelled. Seed 68: 2 accepted, m0003 errored at the
-  drafter on a Claude usage limit (14:11); the batch waits 121 min and retries it (about 16:12). Seeds 69-70 still to
-  run. Expect the end around 2026-11-28 05:00.
+  before PR #51 and #52. Seeds 65-68 generated and committed (68: 3 of 3, f63e52e). Labels for 68: m0001 0.00,
+  m0002 0.00 (written, the batch commits them after m0003), m0003 labelling. Seeds 69-70 still to run.
+- The laptop has slept since 2026-11-27 17:14 (lid-close sleep, `SleepDisabled 0`): seed 68's labels took 13 h, not
+  30 min; 32 solver calls died after up to 2 h. Issue #53 asks Sirui She to keep it awake. The end depends on that:
+  about 8 awake hours left.
 
 ## v3 seeds 66-67 (read 2026-11-27)
 - 66: 3 of 3 (labels 0.00, 0.00, 0.67). 67: 1 of 3 (label 0.00). Both 67 rejections at issue_check, correct, known
@@ -107,6 +109,8 @@ agent. Full definition of done: PROMPT.md.
    also error, look at the network before anything else.
 
 ## Needs Sirui
+- #53 (2026-11-28): keep the laptop awake (lid open, or `sudo pmset -a disablesleep 1`). Close it when the log
+  shows label attempts at normal speed (about 10-20 min each).
 - When all jobs are done for good: remind Sirui She to undo `sudo pmset -a disablesleep 0` (#44, closed 2026-11-21).
 - Someone with legal training to read 10 tasks (EVALUATION.md level 1, human check). Not blocking batches.
 

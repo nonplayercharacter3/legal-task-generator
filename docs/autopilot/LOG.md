@@ -223,3 +223,11 @@ Dated, append-only. One entry per iteration.
 - Untracked `anaconda_projects/` (an Anaconda app's file browser db, created 11:50, not ours) added to the local
   `.git/info/exclude`, not committed, nothing deleted.
 - Lab mate: #36 open and assigned, no reply since 2026-11-23; order unchanged.
+
+## 2026-11-28 06:40, iteration 34
+- Batch PID 14353 alive. Seed 68 retry after the usage limit accepted m0003 (3 of 3, f63e52e). Labels: s68-m0001 0.00,
+  s68-m0002 0.00; m0003 labelling.
+- Seed 68 labelling took 13 h (17:20 to 06:29): `pmset -g log` shows the laptop asleep since 17:14 with only short
+  dark wakes; 32 of 431 label calls failed (connection reset or read timeout after 1 to 2 h). `SleepDisabled` is 0.
+  Opened needs-sirui #53. Nothing to fix in code.
+- Lab mate: #36 open and assigned, no reply since 2026-11-23; order unchanged.
