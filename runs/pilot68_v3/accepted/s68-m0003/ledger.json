@@ -1,0 +1,250 @@
+{
+  "matter_id": "s68-m0003",
+  "summary": "Taliv Elevator Services, Inc. (client) is a New York elevator maintenance contractor. Under a Component Supply Agreement effective February 1, 2024, it buys replacement elevator components (door operators, controllers, traction machine parts, safety gear) from Breiraind Lift Components Corp. Taliv's parent, Taliv Holdings LLC, guarantees Taliv's payment obligations. On October 20, 2026 Taliv sent Breiraind a notice letter. The letter elects not to renew the agreement and reports that Taliv Holdings has signed a Membership Interest Purchase Agreement to sell itself to Pennock Vertical Partners, with closing expected December 15, 2026. The partner wants an issue-spotting memo. The folder contains the supply agreement, a data processing addendum, the notice letter, the order form, the parent guaranty and a quality agreement, plus QBR meeting notes and a certificate of insurance. Five problems are planted:\n- exclusivity that, through the order form's definition of Serviced Units, reaches all affiliates across the US and Canada;\n- a warranty remedy gutted by the quality agreement's narrow definition of Nonconforming Product;\n- a change-of-control consent right triggered by the parent-level sale, with no consent sought;\n- a non-renewal notice sent after the 120-day window closed;\n- a supplier assignment right with no restriction.",
+  "parties": [
+    {
+      "id": "P1",
+      "name": "Taliv Elevator Services, Inc.",
+      "role": "Customer; elevator maintenance contractor and the firm's client"
+    },
+    {
+      "id": "P2",
+      "name": "Breiraind Lift Components Corp.",
+      "role": "Supplier of replacement elevator components"
+    },
+    {
+      "id": "P3",
+      "name": "Taliv Holdings LLC",
+      "role": "Parent of Taliv Elevator Services, Inc. and guarantor under the Parent Guaranty"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "key": "Supply Agreement Effective Date",
+      "value": "February 1, 2024",
+      "doc": "D1",
+      "section": "Preamble"
+    },
+    {
+      "id": "F2",
+      "key": "Supply Agreement Initial Term",
+      "value": "36 months from the Supply Agreement Effective Date",
+      "doc": "D1",
+      "section": "Section 2.1"
+    },
+    {
+      "id": "F3",
+      "key": "Supply Agreement non-renewal notice period",
+      "value": "at least 120 days before the end of the then-current term",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F4",
+      "key": "Supply Agreement Renewal Term",
+      "value": "two (2) years, automatic",
+      "doc": "D1",
+      "section": "Section 2.2"
+    },
+    {
+      "id": "F5",
+      "key": "Supply Agreement order of precedence",
+      "value": "Supply Agreement, then Quality Agreement, then Data Processing Addendum, then Order Form",
+      "doc": "D1",
+      "section": "Section 18.4"
+    },
+    {
+      "id": "F6",
+      "key": "Supply Agreement governing law",
+      "value": "State of New York",
+      "doc": "D1",
+      "section": "Section 18.1"
+    },
+    {
+      "id": "F7",
+      "key": "Supply Agreement warranty period",
+      "value": "24 months following installation",
+      "doc": "D1",
+      "section": "Section 9.1"
+    },
+    {
+      "id": "F8",
+      "key": "Order Form minimum annual purchase commitment",
+      "value": "$2,400,000 per contract year",
+      "doc": "D4",
+      "section": "Commercial Terms, Item 3"
+    },
+    {
+      "id": "F9",
+      "key": "Guarantor under Parent Guaranty",
+      "value": "Taliv Holdings LLC",
+      "doc": "D5",
+      "section": "Preamble"
+    },
+    {
+      "id": "F10",
+      "key": "Non-renewal notice letter date",
+      "value": "October 20, 2026",
+      "doc": "D3",
+      "section": "Letter date line"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "filename": "component_supply_agreement.md",
+      "kind": "supply agreement",
+      "distractor": false,
+      "precedent": "sample_supply_agreement"
+    },
+    {
+      "id": "D2",
+      "filename": "data_processing_addendum.md",
+      "kind": "data processing addendum",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D3",
+      "filename": "taliv_notice_letter_2026-10-20.md",
+      "kind": "notice letter",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D4",
+      "filename": "order_form.md",
+      "kind": "order form",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D5",
+      "filename": "parent_guaranty.md",
+      "kind": "parent guaranty",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D6",
+      "filename": "quality_agreement.md",
+      "kind": "quality agreement",
+      "distractor": false,
+      "precedent": null
+    },
+    {
+      "id": "D7",
+      "filename": "qbr_meeting_notes_2026-06.md",
+      "kind": "meeting notes",
+      "distractor": true,
+      "precedent": null
+    },
+    {
+      "id": "D8",
+      "filename": "breiraind_certificate_of_insurance.md",
+      "kind": "certificate of insurance",
+      "distractor": true,
+      "precedent": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "type": "exclusivity_scope",
+      "label": "overbroad exclusivity",
+      "description": "Two provisions combine to make the exclusivity far broader than the deal.\n\nSupply Agreement Section 3.1 requires Customer to buy from Supplier all of its requirements of Covered Products for use in Serviced Units. The Supply Agreement defines Serviced Units only by reference to the Order Form, and its recital describes the deal as supplying Taliv's New York Metropolitan Area maintenance portfolio (the Metro Portfolio). Read alone, Section 3.1 looks like an ordinary requirements clause.\n\nThe Order Form's Serviced Units definition covers every elevator, escalator and moving walkway unit maintained by Customer or any of its Affiliates anywhere in the United States or Canada. Read alone, that is just a scope description.\n\nRead together, Taliv and all of its affiliates are locked into sole-source purchasing across two countries, well beyond the Metro Portfolio the pricing was built on. Because the Supply Agreement adopts the Order Form definition rather than conflicting with it, the Section 18.4 precedence clause does not cure the problem. The exposure also grows once the affiliate group expands, for example after the Pennock acquisition reported in the notice letter.",
+      "doc": "D1",
+      "section": "Section 3.1",
+      "detect_terms": [
+        "all of its requirements",
+        "for use in Serviced Units"
+      ],
+      "expected_finding": "Section 3.1 of the Supply Agreement, read with the Order Form's definition of Serviced Units, imposes exclusive purchasing on Taliv and all of its Affiliates throughout the United States and Canada rather than only the Metro Portfolio, and should be narrowed to the Metro Portfolio and to Taliv alone.",
+      "contradicts": null,
+      "doc2": "D4",
+      "section2": "Definitions – Serviced Units",
+      "detect_terms2": [
+        "any of its Affiliates",
+        "anywhere in the United States or Canada"
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "defined_term_inconsistency",
+      "label": "defined term inconsistency",
+      "description": "The term Nonconforming Product means something narrower in the Quality Agreement than the Supply Agreement's warranty needs it to mean.\n\nSupply Agreement Section 9.1 gives a warranty for 24 months following installation. Under it, Supplier must replace, and reimburse field labor for, any Nonconforming Product (as defined in the Quality Agreement). Read alone, that looks like a robust warranty covering failures in service.\n\nQuality Agreement Section 1.4 defines Nonconforming Product as a product that fails Incoming Inspection at Customer's receiving facility within ten (10) Business Days of receipt. Read alone, that is a sensible definition for receiving-inspection purposes.\n\nRead together, the warranty remedy reaches only defects caught at the loading dock. Latent failures that appear after installation in a building, which are the main risk for elevator door operators and controllers, fall outside the remedy, so the 24-month period is largely illusory. Because Section 9.1 itself incorporates the Quality Agreement definition, the precedence clause (Supply Agreement first) does not override it.",
+      "doc": "D1",
+      "section": "Section 9.1",
+      "detect_terms": [
+        "24 months following installation",
+        "any Nonconforming Product"
+      ],
+      "expected_finding": "Because Section 9.1 of the Supply Agreement adopts the Quality Agreement's definition of Nonconforming Product, which is limited to products failing Incoming Inspection within ten Business Days of receipt, the 24-month warranty does not cover latent defects found after installation, and the definition used in the warranty should be expanded to cover any failure to conform to specifications during the warranty period.",
+      "contradicts": null,
+      "doc2": "D6",
+      "section2": "Section 1.4",
+      "detect_terms2": [
+        "fails Incoming Inspection",
+        "within ten (10) Business Days of receipt"
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "change_of_control_consent",
+      "label": "change of control consent",
+      "description": "A parent-level sale triggers a supplier consent right that has not been addressed.\n\nSupply Agreement Section 16.3 defines Change of Control as any transaction that changes the person who directly or indirectly controls Customer. It bars a Change of Control without the prior written consent of Supplier. A Change of Control without that consent is a material breach that lets Supplier terminate for cause. Read alone, this is an ordinary consent clause.\n\nThe October 20, 2026 notice letter, written for other purposes, reports two things. Taliv Holdings LLC, Taliv's sole member, signed a Membership Interest Purchase Agreement with Pennock Vertical Partners on September 30, 2026. Closing is expected December 15, 2026. Read alone, the letter is a routine courtesy update and asks for no consent.\n\nRead together, the parent-level sale is an indirect Change of Control. Supplier's consent is required, has not been requested or obtained, and closing without it would put Taliv in material breach.",
+      "doc": "D1",
+      "section": "Section 16.3",
+      "detect_terms": [
+        "directly or indirectly controls Customer",
+        "prior written consent of Supplier"
+      ],
+      "expected_finding": "The pending sale of Taliv Holdings LLC to Pennock Vertical Partners described in the October 20, 2026 notice letter is an indirect Change of Control under Section 16.3 of the Supply Agreement that requires Breiraind's prior written consent, which has not been sought, so Taliv must obtain that consent (or a waiver) before the expected December 15, 2026 closing or face a material breach and termination for cause.",
+      "contradicts": null,
+      "doc2": "D3",
+      "section2": "Paragraph 3",
+      "detect_terms2": [
+        "Pennock Vertical Partners",
+        "Membership Interest Purchase Agreement"
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "expired_notice_window",
+      "label": "expired notice window",
+      "description": "Taliv's non-renewal notice was sent after the deadline, measured against dates stated in the documents.\n\nUnder Supply Agreement Sections 2.1 and 2.2, the agreement runs for an Initial Term of 36 months from the February 1, 2024 Effective Date, so the Initial Term ends January 31, 2027. It then renews automatically for a Renewal Term of two (2) years unless a party gives notice at least 120 days prior to the end of the term. That makes the deadline October 3, 2026.\n\nTaliv's notice letter is dated October 20, 2026 and states that Customer elects not to renew, which is 17 days after the window closed. Each document reads normally on its own; the lapse appears only when the dates are computed together.\n\nThe letter records Taliv's position that it wishes to exit, and nothing in the folder shows Taliv accepting a renewal. The point is therefore still actionable: absent Breiraind's agreement, the notice is likely ineffective, and Taliv faces a two-year renewal with the exclusivity and the $2,400,000 annual minimum.",
+      "doc": "D3",
+      "section": "Paragraph 1",
+      "detect_terms": [
+        "elects not to renew",
+        "October 20, 2026"
+      ],
+      "expected_finding": "Taliv's non-renewal notice dated October 20, 2026 was sent after the October 3, 2026 deadline (120 days before the January 31, 2027 end of the 36-month Initial Term running from February 1, 2024), so the Supply Agreement will likely auto-renew for two years unless Taliv negotiates a written waiver or mutual termination with Breiraind.",
+      "contradicts": null,
+      "doc2": "D1",
+      "section2": "Section 2.2",
+      "detect_terms2": [
+        "at least 120 days prior",
+        "Renewal Term of two (2) years"
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "missing_assignment_restriction",
+      "label": "unrestricted assignment",
+      "description": "Supply Agreement Section 17.1 lets Supplier assign freely while Customer cannot. Customer may not assign without Supplier's consent. Supplier, however, may assign this Agreement, in whole or in part, to any person upon written notice to Customer, with no consent requirement and no exclusion of competitors. \n\nThe consequences for Taliv are significant:\n- Breiraind could transfer the contract to an elevator OEM or maintenance competitor.\n- That transferee would then become Taliv's exclusive source of supply.\n- It would also receive the unit, building and technician data Breiraind processes under the Data Processing Addendum, along with Taliv's pricing.\n\nThis restriction is visible on the face of the clause.",
+      "doc": "D1",
+      "section": "Section 17.1",
+      "detect_terms": [
+        "Supplier may assign this Agreement",
+        "to any person upon written notice"
+      ],
+      "expected_finding": "Section 17.1 of the Supply Agreement lets Breiraind assign the agreement to anyone, including a Taliv competitor, on mere notice, and should be revised to require Taliv's prior written consent and to bar assignment to competitors.",
+      "contradicts": null,
+      "doc2": null,
+      "section2": null,
+      "detect_terms2": []
+    }
+  ]
+}

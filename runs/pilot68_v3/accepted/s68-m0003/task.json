@@ -1,0 +1,131 @@
+{
+  "task_id": "s68-m0003",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "supply agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Taliv Elevator Services, Inc., the customer under a supply agreement with Breiraind Lift Components Corp. Taliv needs to understand where it stands under this arrangement before it relies on it further. Please review all eight documents in the folder and send me a memo listing each issue you find, where it appears (document and section), why it matters for Taliv, and your recommended fix. Keep it practical and prioritized so I can take it straight to the client.",
+  "documents": [
+    "breiraind_certificate_of_insurance.md",
+    "component_supply_agreement.md",
+    "data_processing_addendum.md",
+    "order_form.md",
+    "parent_guaranty.md",
+    "qbr_meeting_notes_2026-06.md",
+    "quality_agreement.md",
+    "taliv_notice_letter_2026-10-20.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that Supply Agreement Section 3.1's requirements obligation, read with the Order Form's definition of Serviced Units, makes the exclusive purchasing obligation cover Taliv and all of its Affiliates throughout the United States and Canada rather than only the New York Metro Portfolio. It cites where this appears (Supply Agreement Section 3.1 or the Order Form's Serviced Units definition), explains why this matters to Taliv, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "any of its Affiliates",
+        "United States or Canada",
+        "Metro Portfolio"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that because the Supply Agreement Section 9.1 warranty relies on the Quality Agreement's definition of Nonconforming Product, which is limited to products failing Incoming Inspection within ten Business Days of receipt, the 24-month warranty does not cover latent defects found after installation. It cites where this appears (Supply Agreement Section 9.1 or Quality Agreement Section 1.4), explains why this matters to Taliv, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Incoming Inspection",
+        "ten (10) Business Days",
+        "latent defects"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that the pending sale of Taliv Holdings LLC to Pennock Vertical Partners reported in the October 20, 2026 notice letter is an indirect Change of Control requiring Breiraind's prior written consent, which has not been sought, so that closing without it would be a material breach giving Breiraind a right to terminate. It cites where this appears (Supply Agreement Section 16.3 or the notice letter), explains why this matters to Taliv, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "indirect Change of Control",
+        "Pennock Vertical Partners",
+        "prior written consent"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that Taliv's October 20, 2026 non-renewal notice was sent after the October 3, 2026 deadline (120 days before the January 31, 2027 end of the Initial Term), so the Supply Agreement will likely renew automatically for two years. It cites where this appears (the notice letter or Supply Agreement Section 2.2), explains why this matters to Taliv, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "October 3, 2026",
+        "January 31, 2027",
+        "auto-renew"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response identifies that Supply Agreement Section 17.1 lets Breiraind assign the agreement to any person, including a Taliv competitor, on mere written notice and without Taliv's consent. It cites where this appears (Supply Agreement Section 17.1), explains why this matters to Taliv, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Supplier may assign",
+        "upon written notice",
+        "competitor"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response states that the Order Form sets a minimum annual purchase commitment of $2,400,000 per contract year.",
+      "kind": "fact",
+      "hints": [
+        "$2,400,000",
+        "minimum annual purchase"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that Taliv Holdings LLC is the guarantor under the Parent Guaranty.",
+      "kind": "fact",
+      "hints": [
+        "Taliv Holdings LLC",
+        "guarantor"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response is a memo addressed to the supervising partner that, for each issue it lists, gives the document and section where the issue appears.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Section"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response presents the issues in a prioritized order or labels each issue with a priority or severity level.",
+      "kind": "format",
+      "hints": [
+        "priority",
+        "high",
+        "urgent"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that Taliv's October 20, 2026 non-renewal notice was timely under the Supply Agreement.",
+      "kind": "negative",
+      "hints": [
+        "notice was timely",
+        "validly prevents renewal"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that the sale of Taliv Holdings LLC to Pennock Vertical Partners does not require Breiraind's consent under the Supply Agreement.",
+      "kind": "negative",
+      "hints": [
+        "no consent required",
+        "parent-level sale not a Change of Control"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

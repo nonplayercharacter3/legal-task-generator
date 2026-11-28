@@ -1,0 +1,158 @@
+{
+  "matter_id": "s68-m0002",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 1,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Upon expiry of the Initial Term, this Agreement and each Order Form then in effect shall renew automatically for successive thirty-six (36) month Renewal Terms (each a \"Renewal Term\") on the same terms, unless either party gives the other written notice of non-renewal not more than 180 days nor less than 150 days before the end of the then-current Initial Term or Renewal Term.",
+            "reason": "Section 9.2 renews the Agreement automatically for 36-month terms. Tailosk can stop renewal only by giving notice inside a narrow 30-day window, 180 to 150 days before term end. If it misses that window, it is bound for three more years at about $412,800 a year. The Term Sheet contemplated 12-month renewals with a 90-day notice period, but it is non-binding on this point. Nothing in the other documents cures the clause. Order Form No. 001 is silent on renewal. Amendment No. 1 does not change Section 9.2. The Side Letter and Quality Agreement do not address it. The Initial Term runs from February 1, 2026 to January 31, 2029, so the first notice window falls in mid-2028, well after the latest date in the folder (June 2026). The issue is therefore still live and can be acted on, by negotiating an amendment now or diarising the window."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Quality Agreement s.5.3: \"Licensee may reject the Production Release by written notice ... given within fifteen (15) Business Days after the Delivery Date ... If Licensee does not give a Rejection Notice within that period, the Production Release is deemed accepted on the last day of that period. Following deemed acceptance, Licensee's remedy ... is re-performance and correction under Sections 11.2 and 11.3 of the Agreement.\" Amendment No. 1, Recital B: \"Licensor delivered the Production Release on April 6, 2026\". Recital C: \"Licensee delivered to Licensor a Rejection Notice dated May 14, 2026 ... Nothing in this Amendment waives, releases or otherwise affects Licensee's rights in respect of the Rejection Notice.\"",
+            "reason": "Fifteen Business Days after the April 6, 2026 delivery is April 27, 2026. Tailosk's May 14 Rejection Notice was therefore late. On the face of s.5.3, the release was deemed accepted on April 27. That cuts Tailosk off from the s.5.3(b) refund of Implementation Fees and from correction-and-redelivery, leaving only warranty re-performance. It also lets Voupourt invoice the $74,600 acceptance milestone. The Amendment prevails over the Quality Agreement but does not extend or waive the window. Recital C and s.10.4 only preserve 'rights in respect of the Rejection Notice'; they create no new rejection right. Tailosk bears the notice obligation, so the lapse hurts Tailosk. The matter is still actionable. Tailosk has not accepted the result: there is no Acceptance Certificate, no recorded milestone payment, and its objection is expressly preserved while the parties are 'in discussions'. Counsel should therefore address the untimeliness now, for example by seeking a written waiver or extension from Voupourt, or by preparing to rely on the warranty remedies.",
+            "alone": {
+              "washloop_quality_agreement.md": {
+                "findable": false,
+                "evidence": "If Licensee does not give a Rejection Notice within that period, the Production Release is deemed accepted on the last day of that period.",
+                "reason": "This document sets out the 15-Business-Day rejection window, the deemed acceptance that follows if Tailosk misses it, and the limit on remedies after that (re-performance only, no Implementation Fee refund). Read alone, that is an ordinary acceptance mechanic. Nothing here gives the actual Delivery Date (April 6, 2026) or the date of Tailosk's Rejection Notice (May 14, 2026). Without those dates there is no way to see that the window had already closed or that the notice was late. Those facts appear only in Amendment No. 1, which was not provided."
+              },
+              "amendment_no_1_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "Licensee delivered to Licensor a Rejection Notice dated May 14, 2026 in respect of the Production Release, and the parties are in discussions regarding the matters described in it. Nothing in this Amendment waives, releases or otherwise affects Licensee's rights in respect of the Rejection Notice.",
+                "reason": "The Amendment gives the delivery date (April 6, 2026, Recital B) and the Rejection Notice date (May 14, 2026, Recital C). It does not say how long Tailosk had to reject. The fifteen-Business-Day window, the deemed-acceptance rule and the limit to warranty re-performance all come from Section 5.3 of the Quality Agreement, which is not provided. Read alone, Recital C suggests Tailosk's rejection rights are preserved, not lost. An associate could not tell from this document that the notice was late or that Tailosk stands to lose recovery of the Implementation Fees."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Agreement Section 12.3: \"The limitations and exclusions in Sections 12.1 and 12.2 do not apply to (a) each party's indemnification obligations under this Agreement...\" Side Letter Section 3.1: \"Licensee shall defend, indemnify and hold harmless Licensor, its Affiliates and their respective officers, directors, employees and agents against all Claims arising out of or relating to the Customer Data...\" Side Letter Section 5.1: \"This Side Letter is incorporated into and forms part of the Agreement. It is a Side Letter for purposes of Section 1.3 of the Agreement.\"",
+            "reason": "In the Agreement alone, only Licensor gives an indemnity (the IP indemnity in Section 10.1), so the Section 12.3(a) carve-out appears to help Tailosk. The Side Letter, however, is incorporated into and forms part of the Agreement, and Section 1.3 ranks Side Letters above the Agreement. That makes Tailosk's broad Customer Data indemnity an 'indemnification obligation under this Agreement'. It therefore falls outside both the Section 12.2 cap and the Section 12.1 exclusion of indirect damages. The indemnity is very wide. It covers all Claims 'arising out of or relating to the Customer Data', including Healthcare Customer, patient-linen, Data Protection Law and regulator claims, with fines and penalties. It contains no carve-out for Licensor's own breach, security incidents or negligence. Tailosk, as indemnitor, is exposed to unlimited liability. Nothing in the folder cures this: Side Letter 2.5 preserves Licensor's obligations but does not limit the indemnity, and Amendment No. 1 does not touch it. The exposure is ongoing and can still be addressed by renegotiation or amendment, so it is actionable.",
+            "alone": {
+              "tailosk_voupourt_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "12.3 Exclusions. The limitations and exclusions in Sections 12.1 and 12.2 do not apply to (a) each party's indemnification obligations under this Agreement...",
+                "reason": "This Agreement alone shows that indemnification obligations are carved out of the liability cap, and that Side Letters rank above the Agreement under Section 1.3. But the only indemnity given in the Agreement is Licensor's IP indemnity in Section 10.1, which benefits Tailosk. Read alone, the uncapped-indemnity carve-out favours the client. The Agreement contains no indemnity from Tailosk, including none for Customer Data. The harm depends on the Side Letter's Section 3 customer-data indemnity from Tailosk and on its Section 5 incorporation clause, which makes that indemnity an obligation 'under this Agreement'. Neither appears in this document. An associate reading only the Agreement could not see that Tailosk faces unlimited liability."
+              },
+              "side_letter_customer_data.md": {
+                "findable": false,
+                "evidence": "Licensee shall defend, indemnify and hold harmless Licensor, its Affiliates and their respective officers, directors, employees and agents against all Claims arising out of or relating to the Customer Data, and against all damages, judgments, fines, penalties, settlement amounts, costs and expenses (including reasonable attorneys' fees) awarded against or incurred by any of them in connection with any such Claim.",
+                "reason": "The Side Letter alone shows that Tailosk gives a very broad customer-data indemnity to Licensor. It covers claims from Healthcare Customers, from individuals and from regulators, and it covers Patient-Linen Data and alleged violations of Data Protection Laws (Sections 3.1-3.2). Section 5.1 also says the Side Letter is incorporated into and forms part of the Agreement. However, the Side Letter says nothing about any limitation of liability, any cap, or any carve-out from a cap. The key facts are all in the Agreement: Section 12.2 sets the cap, Section 12.3 excludes 'each party's indemnification obligations under this Agreement' from it, and Section 1.3 ranks Side Letters above the Agreement. Without the Agreement, an associate would see a broad one-way indemnity but would have no reason to think it is uncapped. If anything, they would assume it sits under the Agreement's general limitation of liability. The specific harm, unlimited exposure created by the carve-out combined with incorporation, therefore cannot be identified from this document alone."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Agreement Section 15.2: \"...except that either party may assign this Agreement without consent to an Affiliate upon written notice to the other party.\" Amendment No. 1 Section 2.1: \"'Affiliate' means, with respect to a party, (a) any person that, now or in the future, directly or indirectly controls, is controlled by, or is under common control with that party, and (b) any person that merges or consolidates with that party or its parent, acquires all or substantially all of the assets of that party or its parent, or acquires a majority of its voting securities.\"",
+            "reason": "The Amendment replaces the Affiliate definition 'for all purposes of the Agreement'. Under Section 1.3 (and Amendment Section 10.2) the Amendment prevails over the Agreement. Read with Section 15.2, Voupourt (Licensor) may now assign the Agreement without Tailosk's consent to any person that acquires or merges with Voupourt or Voupourt Holdings. That could include a competing laundry operator or linen-management vendor, which would then hold Tailosk's route, pricing and healthcare customer data. The expansion was meant to cover Tailosk's acquired plants. Because it is mutual and also covers acquirers, it removes Tailosk's consent protection against a change of control on the vendor side. Nothing in the folder limits that, and no change-of-control termination right exists. This is a continuing structural exposure under a live contract, not a lapsed window. Tailosk can still seek a corrective amendment, for example narrowing clause (b) to Licensee or adding a consent or termination right on a Licensor change of control. It therefore remains a real and actionable problem for Tailosk.",
+            "alone": {
+              "tailosk_voupourt_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "\"Affiliate\" means, with respect to a party, any entity that directly or indirectly controls, is controlled by, or is under common control with that party, for so long as such control exists. ... except that either party may assign this Agreement without consent to an Affiliate upon written notice to the other party.",
+                "reason": "Read alone, the Agreement protects Tailosk. Section 15.2 requires consent for any assignment except to an Affiliate. Section 1.1 defines Affiliate narrowly by present control, \"for so long as such control exists.\" A third-party acquirer of Voupourt would not count, so assigning to it would need Tailosk's consent, and that consent cannot be unreasonably withheld. Section 1.3 lists 'Amendments' as prevailing, but it does not say any amendment exists or what one would change. The problem depends on Amendment No. 1, Section 2.1. That section expands 'Affiliate' to cover future common-control entities, merger parties and majority acquirers, which opens the door to assignment to a competitor without consent. Its terms appear only in the document not provided."
+              },
+              "amendment_no_1_software_license_agreement.md": {
+                "findable": false,
+                "evidence": "\"Affiliate\" means, with respect to a party, (a) any person that, now or in the future, directly or indirectly controls, is controlled by, or is under common control with that party, and (b) any person that merges or consolidates with that party or its parent, acquires all or substantially all of the assets of that party or its parent, or acquires a majority of its voting securities.",
+                "reason": "The Amendment shows that Section 2.1 replaces 'Affiliate' 'for all purposes of the Agreement' with a much broader definition. That definition reaches future acquirers and merger partners of either party or its parent, and it is mutual, so it covers Voupourt as well. An associate could see that the definition is unusually broad and one-sided in effect. The Amendment does not show where 'Affiliate' does any work in the Agreement. It never mentions assignment and does not reproduce Section 15.2's consent requirement or its carve-out for assignment to an Affiliate. The harm is that Voupourt could assign without Tailosk's consent to any acquirer, including a competitor that would gain Tailosk's data. That harm depends on the assignment clause in the underlying Agreement, which is not in this document. This document alone shows a broadened definition but not the unrestricted-assignment consequence that hurts the client."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 9,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C5 asks for the whole ranking in fact F6 ('Amendments, then Side Letters, then the Agreement, then Order Forms, then the Quality Agreement'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.083,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

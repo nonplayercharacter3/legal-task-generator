@@ -1,0 +1,131 @@
+{
+  "task_id": "s68-m0001",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "master services agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "New York",
+  "instruction": "We act for Kaigen Outdoor Co., the customer under its master services agreement with Dreisur Fulfillment Services LLC. Kaigen needs a clear picture of where it stands under the arrangement. Please review all nine documents in the folder and prepare a memo to me listing each issue you find: where it appears (document and section), why it matters for Kaigen, and your recommended fix. Keep it concise and practical.",
+  "documents": [
+    "amendment_no_1.md",
+    "data_processing_addendum.md",
+    "dreisur_certificate_of_insurance.md",
+    "dreisur_parent_guaranty.md",
+    "kaigen_dreisur_master_services_agreement.md",
+    "kaigen_notice_letter_2026-09-14.md",
+    "kaigen_office_lease.md",
+    "service_level_schedule.md",
+    "sow_01_fulfillment_and_returns.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response finds that the MSA automatically renews for successive three-year terms unless Kaigen gives non-renewal notice within a narrow window of 120 to 90 days before the end of the term. It identifies where this appears (MSA §12.2), explains why this matters to Kaigen, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "successive three-year Renewal Terms",
+        "not more than 120 nor fewer than 90 days",
+        "calendar the window"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response concludes that personal-data disputes are governed by Delaware law and must be brought in the Delaware Court of Chancery, not under the MSA's New York law and New York County forum. As a result, Kaigen's claims are split across two governing laws and forums. It identifies where this appears (DPA §12 or MSA §2.3), explains why this matters to Kaigen, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Court of Chancery of the State of Delaware",
+        "DPA prevails",
+        "two forums"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response concludes that the sale of Kaigen Group Holdings to Sorrelpeak is a change of control that the MSA treats as an assignment, and that it requires Dreisur's prior written consent. It also notes that the September 14, 2026 notice letter did not request that consent. It identifies where this appears (MSA §16.3/§1.1 or the notice letter), explains why this matters to Kaigen, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "deemed an assignment",
+        "prior written consent",
+        "before closing"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response concludes that the SLA Schedule's narrower Peak Season (November 20 through December 31) controls over the MSA's definition (October 15 through January 15). As a result, enhanced service credits and the chronic-failure termination right do not cover the weeks from October 15 to November 19 or January 1 to 15. It identifies where this appears (SLA Schedule §1 or MSA §1.1), explains why this matters to Kaigen, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "November 20 through December 31",
+        "October 15 through January 15",
+        "service credits"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response concludes that only Kaigen's indemnity (covering product liability, recalls and customs or regulatory fines) is uncapped, while Dreisur's indemnity remains subject to the liability cap. It identifies where this appears (MSA §10.1, §10.2 or §11.3(a)), explains why this matters to Kaigen, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "subject to Section 11.1",
+        "uncapped",
+        "product recalls"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response concludes that the MSA's cap carve-out for data security no longer reaches Dreisur's security breaches. This is because Amendment No. 1 deleted MSA §9.2, the section the carve-out refers to, and moved data security into the DPA. As a result, a data breach would be capped. It identifies where this appears (MSA §11.3(b) or Amendment No. 1 §2), explains why this matters to Kaigen, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Section 9.2 is deleted",
+        "carve-out",
+        "governed exclusively by the DPA"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response states that the MSA liability cap equals the fees paid or payable in the 12 months preceding the claim.",
+      "kind": "fact",
+      "hints": [
+        "12 months",
+        "fees paid or payable"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response states that the DPA prevails over the MSA as to matters concerning Personal Data.",
+      "kind": "fact",
+      "hints": [
+        "DPA shall prevail",
+        "Personal Data"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response is a memo addressed to the supervising partner. For each issue it sets out the document and section, why the issue matters to Kaigen, and a recommended fix.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "Recommended fix",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "The response claims that the Sorrelpeak acquisition does not require Dreisur's consent under the MSA, or that the September 14, 2026 notice letter satisfies the MSA's change-of-control requirements.",
+      "kind": "negative",
+      "hints": [
+        "no consent required",
+        "notice is sufficient"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The response claims that Dreisur's indemnity under MSA §10.1 is uncapped.",
+      "kind": "negative",
+      "hints": [
+        "Dreisur's indemnity is uncapped"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

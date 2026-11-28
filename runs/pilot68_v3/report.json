@@ -1,0 +1,181 @@
+{
+  "backend": "claude_sdk",
+  "candidates": 3,
+  "accepted": 3,
+  "errors": 0,
+  "resumed": 2,
+  "gates": {
+    "ledger_schema": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "consistency": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "issue_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "leak_check": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_trace": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rubric_tests": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "decontamination": {
+      "evaluated": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "solver_check": {
+      "evaluated": 3,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "rubric_repairs": {
+    "ran": 0,
+    "cleared": 0,
+    "bundled_after": 0
+  },
+  "unsolved": 0,
+  "label_pending": 3,
+  "difficulty": {},
+  "matters": [
+    {
+      "matter_id": "s68-m0001",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s68-m0002",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    },
+    {
+      "matter_id": "s68-m0003",
+      "accepted": true,
+      "failed_gate": null,
+      "reason": null,
+      "split": "train",
+      "solver_pass_rate": null,
+      "unsolved": false,
+      "difficulty": [],
+      "label_pending": true
+    }
+  ],
+  "model_calls": {
+    "drafter": {
+      "calls": 8,
+      "input_tokens": 362740,
+      "output_tokens": 88881,
+      "errors": 0
+    },
+    "fact_extractor": {
+      "calls": 1,
+      "input_tokens": 91752,
+      "output_tokens": 3444,
+      "errors": 0
+    },
+    "fact_matcher": {
+      "calls": 1,
+      "input_tokens": 1514,
+      "output_tokens": 351,
+      "errors": 0
+    },
+    "issue_verifier": {
+      "calls": 5,
+      "input_tokens": 426103,
+      "output_tokens": 4356,
+      "errors": 0
+    },
+    "issue_solo_verifier": {
+      "calls": 8,
+      "input_tokens": 112093,
+      "output_tokens": 3373,
+      "errors": 0
+    },
+    "instruction_writer": {
+      "calls": 1,
+      "input_tokens": 1302,
+      "output_tokens": 155,
+      "errors": 0
+    },
+    "rubric_writer": {
+      "calls": 1,
+      "input_tokens": 7626,
+      "output_tokens": 2027,
+      "errors": 0
+    },
+    "answer_writer": {
+      "calls": 2,
+      "input_tokens": 183436,
+      "output_tokens": 15883,
+      "errors": 0
+    },
+    "judge": {
+      "calls": 3,
+      "input_tokens": 22474,
+      "output_tokens": 2041,
+      "errors": 0
+    }
+  },
+  "variety": {
+    "industries": {
+      "outdoor apparel": 1,
+      "commercial laundry services": 1,
+      "elevator maintenance": 1
+    },
+    "agreement_types": {
+      "master services agreement": 1,
+      "software license agreement": 1,
+      "supply agreement": 1
+    },
+    "issue_types": {
+      "auto_renewal": 2,
+      "change_of_control_consent": 2,
+      "defined_term_inconsistency": 2,
+      "uncapped_indemnity": 2,
+      "expired_notice_window": 2,
+      "missing_assignment_restriction": 2,
+      "governing_law_mismatch": 1,
+      "liability_cap_carveout": 1,
+      "exclusivity_scope": 1
+    },
+    "repeated_names": {},
+    "repeated_issue_sets": {}
+  }
+}

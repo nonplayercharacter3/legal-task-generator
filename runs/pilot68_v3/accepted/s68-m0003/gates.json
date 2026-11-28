@@ -1,0 +1,177 @@
+{
+  "matter_id": "s68-m0003",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 80
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "Supply Agreement §3.1: \"During the Term, Customer shall purchase from Supplier all of its requirements of Covered Products for use in Serviced Units. Customer shall not purchase Covered Products for use in Serviced Units from any other source, except as permitted by Section 3.3.\" Order Form §2.1: \"'Serviced Units' means every elevator, escalator and moving walkway unit maintained by Customer or any of its Affiliates anywhere in the United States or Canada...\"",
+            "reason": "The obligation falls on Taliv as Customer. Section 1.1(p) of the Supply Agreement adopts the Order Form definition of Serviced Units, so the two do not conflict and the Section 18.4 precedence clause does not help. Read together, the requirements clause binds the purchases of Taliv and all its Affiliates across the US and Canada. That goes well beyond the Metro Portfolio described in Recital A and on which the pricing and the $2.4M minimum were built. The Section 3.3 carve-outs are narrow and do not cure this. The problem is still live. The Initial Term runs to about January 31, 2027. Taliv's non-renewal notice dated October 20, 2026 appears to fall after the 120-day deadline (about October 3, 2026), so the agreement may auto-renew for two more years. The Pennock acquisition, expected to close December 15, 2026, would also bring a new affiliate group's units within 'Serviced Units' during the Term. Nothing in the folder shows Taliv has accepted this scope, so it remains actionable for the client.",
+            "alone": {
+              "component_supply_agreement.md": {
+                "findable": false,
+                "evidence": "3.1 Requirements. During the Term, Customer shall purchase from Supplier all of its requirements of Covered Products for use in Serviced Units. ... (p) \"Serviced Units\" has the meaning given in the Order Form.",
+                "reason": "This agreement alone contains a requirements clause tied to \"Serviced Units,\" and the recital refers only to the Metro Portfolio. It defines Serviced Units solely by reference to the Order Form. Nothing in this document extends the scope to Affiliates or to the U.S. and Canada. An associate could note that the term is undefined here and should be checked, but could not see that the exclusivity reaches the whole affiliate group in two countries. That breadth comes only from the Order Form's definition, which has not been provided."
+              },
+              "order_form.md": {
+                "findable": false,
+                "evidence": "2.1 Serviced Units. \"Serviced Units\" means every elevator, escalator and moving walkway unit maintained by Customer or any of its Affiliates anywhere in the United States or Canada, whether under a full maintenance contract, an examination-and-lubrication contract, a time-and-materials arrangement or a repair or modernization project.",
+                "reason": "The Order Form gives a very broad Serviced Units definition covering all units of Customer and its Affiliates across the US and Canada. Within this document, though, the term is only used in client-friendly provisions: Emergency Orders, overtime labor reimbursement and warranty claim submission. In that setting a broad scope helps Taliv rather than hurting it. The Order Form contains no exclusivity or requirements obligation tied to Serviced Units. It mentions only the Section 3.2 minimum purchase commitment and does not describe Section 3.1. It also says nothing showing the deal or its pricing was built only on a New York Metro Portfolio. Both the sole-source requirements clause and the Metro Portfolio recital are in the Supply Agreement. Without that document, an associate could not see that this definition expands an exclusivity lock-in beyond the deal, so the harm cannot be seen from the Order Form alone."
+              }
+            }
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "Supply Agreement §9.1: \"This warranty applies for a period of 24 months following installation in a Serviced Unit... During that period Supplier shall: (a) replace any Nonconforming Product (as defined in the Quality Agreement) at no charge; and (b) reimburse Customer for the reasonable field labor and lift-truck, rigging and travel costs incurred in removing the Nonconforming Product and installing the replacement.\" Quality Agreement §1.4: \"'Nonconforming Product' means a Covered Product that fails Incoming Inspection at Customer's receiving facility within ten (10) Business Days of receipt.\"",
+            "reason": "Section 9.1 ties Supplier's replacement and field-labor remedies to the Quality Agreement definition of Nonconforming Product. That definition covers only products that fail Incoming Inspection at the receiving dock within 10 Business Days. A latent failure after installation therefore falls outside the remedy, even though the warranty runs for 24 months after installation. The §18.4 precedence clause does not help Taliv, because §9.1 itself expressly adopts the Quality Agreement definition, so there is no conflict for the clause to resolve. The issue hurts Taliv as Customer and warranty beneficiary, and it is still live. Taliv's October 20, 2026 letter lists six open warranty claims for field failures of installed units, including four DO-7741 door operators and a controller main board. Each claim seeks replacement and field-labor reimbursement, and Supplier could resist them on this definition. Section 9 survives expiration under §15.7. Nothing in the folder shows Taliv accepting a narrowed remedy, and the reservation of rights in that letter preserves its position.",
+            "alone": {
+              "component_supply_agreement.md": {
+                "findable": false,
+                "evidence": "replace any Nonconforming Product (as defined in the Quality Agreement) at no charge",
+                "reason": "This document shows that the Section 9.1 warranty remedy depends on a term defined only in the Quality Agreement. It also refers to 'Incoming Inspection' as a Quality Agreement concept. A careful associate would flag that dependency and want to review the definition. However, nothing in this document shows that the definition is limited to products failing Incoming Inspection within ten Business Days of receipt. Read alone, Section 9.1 describes a 24-month post-installation warranty covering defects in materials, workmanship and design, which appears to protect Customer against latent in-service failures. The narrowing that makes the remedy largely illusory, and so hurts the client, comes only from Quality Agreement Section 1.4, which has not been provided."
+              },
+              "quality_agreement.md": {
+                "findable": false,
+                "evidence": "1.4 Nonconforming Product. \"Nonconforming Product\" means a Covered Product that fails Incoming Inspection at Customer's receiving facility within ten (10) Business Days of receipt.",
+                "reason": "This document alone shows that 'Nonconforming Product' is limited to items that fail Incoming Inspection at the receiving facility within 10 Business Days. It also shows that field failures are handled separately, through Field Performance Reports and failure analysis. Read by itself, that is a sensible definition for receiving inspection and causes no obvious harm. The document does not show that the Supply Agreement's 24-month post-installation warranty (Section 9.1) defines its replace-and-reimburse remedy by this term. That incorporation is what shrinks the warranty to defects caught at the loading dock, and it appears only in the Supply Agreement, which I was not given. Without it, the harm to Taliv cannot be identified from this document."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "Agreement §16.3: \"'Change of Control' means any transaction or series of related transactions that results in a change in the person that directly or indirectly controls Customer, whether by merger, consolidation, sale or transfer of equity interests... (a) Customer shall not undergo a Change of Control without the prior written consent of Supplier... (c) A Change of Control without the prior written consent of Supplier is a material breach of this Agreement. It entitles Supplier to terminate this Agreement for cause under Section 15.2, effective on written notice to Customer.\" Notice letter ¶3: \"On September 30, 2026, Taliv Holdings LLC, Customer's sole member and the guarantor under the Parent Guaranty, entered into a Membership Interest Purchase Agreement with Pennock Vertical Partners. Under the Membership Interest Purchase Agreement, Pennock Vertical Partners will acquire the membership interests of Taliv Holdings LLC. Closing is expected on December 15, 2026.\"\n",
+            "reason": "Taliv Holdings is Customer's sole member and controls Customer. Pennock's purchase of Holdings' membership interests changes the person that indirectly controls Customer, so it is a Change of Control under §16.3, which expressly covers indirect control and transfers of equity interests. The obligation falls on Taliv (our client): it must obtain Supplier's prior written consent. The letter only reports the deal 'as a courtesy' and asks for no consent. Nothing in the folder shows consent was requested or given, and §18.7 requires any waiver to be in writing.\n\nThis is still actionable. Closing (Dec 15, 2026) is after the latest folder date (Nov 10, 2026) and before the Initial Term ends on Feb 1, 2027, so consent can still be sought.\n\nThe exposure is real despite the planned expiry. An unconsented closing would be a material breach letting Supplier terminate for cause, with effect on written notice. That would:\n- forfeit transition assistance, because §15.6 excludes termination for Customer's uncured material breach; and\n- expose Taliv to damages.\n\nThe risk is greater because the non-renewal notice dated Oct 20 appears to fall inside the 120-day window, which closed around Oct 4. If the Agreement therefore renews, the Change of Control breach would carry into a two-year Renewal Term.",
+            "alone": {
+              "component_supply_agreement.md": {
+                "findable": false,
+                "evidence": "Customer shall not undergo a Change of Control without the prior written consent of Supplier. ... A Change of Control without the prior written consent of Supplier is a material breach of this Agreement. It entitles Supplier to terminate this Agreement for cause under Section 15.2, effective on written notice to Customer.",
+                "reason": "On its own, the agreement contains only a standard consent clause. Section 16.3 defines Change of Control to include an indirect change in control of Customer, requires Supplier's prior written consent, and treats an unconsented change as a material breach that allows termination for cause. Recital D shows that Taliv Holdings LLC is Customer's parent. The agreement says nothing about any pending or planned sale of the parent or of membership interests in it. It also does not mention the September 30, 2026 Membership Interest Purchase Agreement with Pennock Vertical Partners, the expected December 15, 2026 closing, or whether consent has been requested. Those facts come only from the notice letter. Without them, an associate would see an ordinary consent right, not a pending breach that hurts the client."
+              },
+              "taliv_notice_letter_2026-10-20.md": {
+                "findable": false,
+                "evidence": "On September 30, 2026, Taliv Holdings LLC, Customer's sole member and the guarantor under the Parent Guaranty, entered into a Membership Interest Purchase Agreement with Pennock Vertical Partners. Under the Membership Interest Purchase Agreement, Pennock Vertical Partners will acquire the membership interests of Taliv Holdings LLC. Closing is expected on December 15, 2026, subject to customary closing conditions.",
+                "reason": "The letter shows that Customer's parent is being sold and that the sale is expected to close on December 15, 2026, before the Agreement expires. That is an indirect change in who controls Taliv. The letter calls this a courtesy update. It does not mention any consent requirement, does not cite Section 16.3, and does not say whether the Agreement restricts changes of control. A careful associate might suspect a consent issue and check the Agreement. The letter alone does not show that an indirect Change of Control needs Supplier's prior written consent, or that closing without consent would be a material breach letting Supplier terminate for cause. Those terms come from Section 16.3 of the Supply Agreement, which is not provided. Without it, there is no basis to conclude the transaction hurts the client."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "Letter ¶1: \"By this letter, dated October 20, 2026, Customer gives Supplier written notice under Section 2.2 of the Agreement that Customer elects not to renew the Agreement... Customer intends the Agreement to expire at the end of the Initial Term.\" Agreement §2.2: \"A notice of non-renewal is timely only if given at least 120 days before the end of the then-current term.\" Agreement §2.1: the Initial Term runs \"36 months from the Effective Date\" of February 1, 2024.",
+            "reason": "The Initial Term ends January 31, 2027, so the 120-day deadline under §2.2 was October 3, 2026. Taliv's notice is dated October 20, 2026, 17 days late. It is later still once §18.5 is applied, because courier notice is effective only one Business Day after sending. The letter treats the notice as effective and plans for expiry at the end of the Initial Term. It does not acknowledge the lateness or seek Breiraind's agreement to waive it, and §18.7 requires any waiver to be in writing. Nothing in the folder shows Breiraind accepting the late notice, and nothing shows Taliv accepting a renewal. Absent Breiraind's agreement, the Agreement likely auto-renews for two years from February 1, 2027. Taliv would then remain bound by the §3.1 exclusivity and the $2,400,000 annual minimum. That is a real and still actionable risk for Taliv, the Customer and the firm's client. The firm should advise Taliv now and seek a written agreement from Breiraind to treat the notice as effective, or a negotiated exit, before the Initial Term ends.",
+            "alone": {
+              "taliv_notice_letter_2026-10-20.md": {
+                "findable": false,
+                "evidence": "By this letter, dated October 20, 2026, Customer gives Supplier written notice under Section 2.2 of the Agreement that Customer elects not to renew the Agreement.",
+                "reason": "The letter gives its own date (October 20, 2026) and the Agreement's date (February 1, 2024). It cites Section 2.2 as the non-renewal provision. Its reference to Forecasts for November and December 2026 and January 2027 running only through the expiration date suggests the Initial Term ends around late January 2027. What the letter does not state is the length of the Initial Term, the 120-day advance notice requirement, or the two-year automatic Renewal Term. It also does not mention the exclusivity or the $2,400,000 annual minimum that make an unwanted renewal harmful. Without the Supply Agreement's Sections 2.1 and 2.2, an associate could not work out the October 3, 2026 deadline or tell that the notice is late."
+              },
+              "component_supply_agreement.md": {
+                "findable": false,
+                "evidence": "Renewal does not occur if either Party gives the other Party written notice of non-renewal at least 120 days prior to the end of the then-current term.",
+                "reason": "This agreement alone sets the deadline. Section 2.1 fixes a 36-month Initial Term from February 1, 2024, ending January 31, 2027. Section 2.2 provides for automatic two-year renewal unless notice is given at least 120 days before the term ends, which puts the deadline at about October 3, 2026. The agreement also shows the exclusivity obligation in Section 3.1 and a minimum purchase commitment in Section 3.2. However, it says nothing about whether, when, or how Taliv gave non-renewal notice. The October 20, 2026 date of Taliv's letter, which is what makes the notice late, comes only from the other document. The $2,400,000 minimum figure sits in the Order Form, not here. An associate reading this agreement alone could calculate the deadline but could not see that it was missed."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "Section 17.1: \"Customer may not assign or transfer this Agreement, or any of its rights or obligations under it, by operation of law or otherwise, without the prior written consent of Supplier. Supplier may assign this Agreement, in whole or in part, to any person upon written notice to Customer.\"",
+            "reason": "The assignment right is one-sided on the face of the clause. Taliv needs Breiraind's consent to assign. Breiraind can assign to anyone, in whole or in part, on notice alone. Nothing requires Taliv's consent, excludes competitors or OEMs, or requires the assignee to be creditworthy or able to perform. No other document in the folder cures this, and the Order Form, Quality Agreement and DPA do not restrict Supplier assignment. Under Section 3.1, an assignee would become Taliv's exclusive requirements source. Under Section 17.2, read with the DPA, it would also receive Customer Data (unit, building-access and technician data) and Taliv's confidential pricing and Forecasts. The issue is still actionable. The Initial Term runs to January 31, 2027. Taliv's October 20, 2026 non-renewal notice appears to fall inside the 120-day window required by Section 2.2 (the deadline was about October 3, 2026), so the Agreement may auto-renew for two more years. Even if it expires, the transition-supply period and the surviving obligations (Sections 9, 10.4, 10.5, 12, 13 and 14) continue. Taliv can still seek an amendment adding a consent requirement or a competitor carve-out."
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [
+          "criterion C6 asks for fact F8, which only issue I4 uses: a memo that misses I4 need not state it",
+          "criterion C7 asks for fact F9, which only issue I3 uses: a memo that misses I3 need not state it"
+        ],
+        "ranking_facts": []
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C2"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.06,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}

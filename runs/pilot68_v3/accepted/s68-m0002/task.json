@@ -1,0 +1,114 @@
+{
+  "task_id": "s68-m0002",
+  "split": "train",
+  "practice_area": "commercial_contracts",
+  "agreement_type": "software license agreement",
+  "work_type": "issue_spotting_memo",
+  "jurisdiction": "Delaware",
+  "instruction": "We act for Tailosk Linen & Uniform Services, Inc., the licensee under its software license agreement with Voupourt Software, LLC. Tailosk wants to understand its position under the arrangement before deciding next steps. Please review all nine documents in the folder and send me a memo listing each issue you find, where it appears (document and section), why it matters for Tailosk, and your recommended fix. Keep it practical and prioritized.",
+  "documents": [
+    "amendment_no_1_software_license_agreement.md",
+    "side_letter_customer_data.md",
+    "tailosk_voupourt_software_license_agreement.md",
+    "voupourt_holdings_parent_guaranty.md",
+    "voupourt_insurance_certificate_cover_letter.md",
+    "washloop_implementation_project_plan.md",
+    "washloop_license_term_sheet.md",
+    "washloop_order_form_001.md",
+    "washloop_quality_agreement.md"
+  ],
+  "rubric": [
+    {
+      "id": "C1",
+      "text": "The response identifies that the Software License Agreement automatically renews for successive 36-month renewal terms unless Tailosk gives non-renewal notice within a narrow 30-day window (no more than 180 and no less than 150 days before the end of the current term). It locates this in the Software License Agreement, Section 9.2, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "36-month renewal terms",
+        "150 to 180 days",
+        "30-day window"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The response identifies that, measured from the April 6, 2026 Production Release delivery date, the Quality Agreement's 15-business-day rejection window closed in late April 2026. It concludes that Tailosk's May 14, 2026 Rejection Notice was therefore untimely and that the release risks being treated as deemed accepted. It locates this in the Quality Agreement, Section 5.3, or in Amendment No. 1, Recitals B and C, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "15 Business Days",
+        "May 14, 2026",
+        "deemed accepted"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The response identifies that Tailosk's customer-data indemnity to Licensor in the Side Letter is uncapped, falling outside the Agreement's liability cap as an indemnification obligation under the Agreement. It locates this in the Software License Agreement, Section 12.3, or in the Side Letter, Sections 3 or 5, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Customer Data indemnity",
+        "uncapped",
+        "indemnification obligations under this Agreement"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The response identifies that, because of the Amendment's expanded definition of 'Affiliate', Voupourt can assign the Agreement without Tailosk's consent to any acquirer of Voupourt or its parent, including a Tailosk competitor. It locates this in the Software License Agreement, Section 15.2, or in Amendment No. 1, Section 2.1, explains why this matters to the client, and recommends a fix.",
+      "kind": "issue",
+      "hints": [
+        "Affiliate definition",
+        "acquirer",
+        "without consent"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The response states that Amendment No. 1 prevails over the Software License Agreement under the order of precedence.",
+      "kind": "fact",
+      "hints": [
+        "Amendment prevails",
+        "order of precedence",
+        "Section 1.3"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "The response is written as a memo addressed to the supervising partner.",
+      "kind": "format",
+      "hints": [
+        "Memo",
+        "To:",
+        "Partner"
+      ]
+    },
+    {
+      "id": "C7",
+      "text": "The response presents the issues in an order of priority or with an explicit priority or severity indication for each issue.",
+      "kind": "format",
+      "hints": [
+        "priority",
+        "high",
+        "most urgent"
+      ]
+    },
+    {
+      "id": "C8",
+      "text": "The response claims that Tailosk's May 14, 2026 Rejection Notice was given within the Quality Agreement's rejection window.",
+      "kind": "negative",
+      "hints": [
+        "timely",
+        "within the window"
+      ]
+    },
+    {
+      "id": "C9",
+      "text": "The response claims that Tailosk's customer-data indemnity under the Side Letter is subject to the Agreement's 12-month-fees liability cap.",
+      "kind": "negative",
+      "hints": [
+        "subject to the cap",
+        "capped at 12 months' fees"
+      ]
+    }
+  ],
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true
+}

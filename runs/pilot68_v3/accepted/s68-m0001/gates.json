@@ -1,0 +1,182 @@
+{
+  "matter_id": "s68-m0001",
+  "accepted": true,
+  "failed_gate": null,
+  "reason": null,
+  "split": "train",
+  "solver_pass_rate": null,
+  "unsolved": false,
+  "difficulty": [],
+  "label_pending": true,
+  "labelled_by": null,
+  "gates": [
+    {
+      "name": "ledger_schema",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "consistency",
+      "passed": true,
+      "details": {
+        "mismatches": [],
+        "reworded": 3,
+        "checked": 90
+      }
+    },
+    {
+      "name": "issue_check",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "results": [
+          {
+            "issue": "I1",
+            "present": true,
+            "evidence": "\"Upon expiration of the Initial Term, this Agreement shall automatically renew for successive three (3) year Renewal Terms ... unless either party gives the other party written notice of non-renewal not more than 120 nor fewer than 90 days before the expiration of the then-current Initial Term or Renewal Term.\" (§12.2)",
+            "reason": "Section 12.1 sets the Initial Term at three years from March 1, 2025, so it ends March 1, 2028. Under §12.2 the Agreement then renews automatically for three-year Renewal Terms unless notice is given in a 30-day window, roughly November 2 to December 1, 2027. Section 13 gives Kaigen no termination for convenience. Its only exits are breach (13.1), insolvency (13.3), Chronic Service Failure (13.4), Guarantor default (13.5) and unconsented Change of Control (16.3), all fault-based or contingent. Nothing in the folder cures this. The Amendment and the September 14, 2026 letter leave §12 untouched, and the letter disclaims any amendment. The latest folder date is September 14, 2026, so the window has not yet opened. The risk is live and actionable: Kaigen should calendar the window or seek an amendment adding a convenience termination right or shorter renewal terms, especially given the pending Sorrelpeak acquisition."
+          },
+          {
+            "issue": "I2",
+            "present": true,
+            "evidence": "DPA §12: \"This DPA, and any dispute, claim or controversy arising out of or relating to it or to the Processing of Customer Personal Data, shall be governed by and construed in accordance with the laws of the State of Delaware... Each party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware...\" MSA §2.3: \"Without limiting the foregoing, in any conflict or inconsistency concerning the Processing of Personal Data, the DPA shall prevail over the body of this Agreement, including Section 17.1.\"",
+            "reason": "The two clauses conflict, and the MSA resolves the conflict in the DPA's favor. MSA §17.1 sends all disputes to New York law and the New York County courts. DPA §12 sends any dispute 'relating to... the Processing of Customer Personal Data' to Delaware law and exclusive Delaware courts. MSA §2.3 expressly makes the DPA prevail over §17.1 on Personal Data matters. A single data incident at Dreisur could therefore split into two proceedings. Claims under the DPA (breach costs under §8.5, which run through the MSA §11 cap by DPA §10) would go to Delaware. Related MSA claims (indemnity under §10, termination, confidentiality) would go to New York. The Parent Guaranty adds a third set of terms, with its own New York law and New York forum clause. Amendment No. 1 makes this worse, not better. It deletes MSA §9.2 and states that data security is governed 'exclusively by the DPA', which pulls more of the dispute into Delaware. Neither the Amendment nor the notice letter changes DPA §12 or MSA §2.3. Kaigen, the Customer and the party likely to bring breach claims, therefore faces split forums, the risk of inconsistent rulings on the same incident, and an unplanned Delaware forum. Nothing in the folder cures, waives or accepts this. It remains a live drafting defect that can be fixed by amendment.",
+            "alone": {
+              "data_processing_addendum.md": {
+                "findable": false,
+                "evidence": "This DPA, and any dispute, claim or controversy arising out of or relating to it or to the Processing of Customer Personal Data, shall be governed by and construed in accordance with the laws of the State of Delaware. ... Each party irrevocably submits to the exclusive jurisdiction of the Court of Chancery of the State of Delaware for the resolution of any such dispute, claim or controversy.",
+                "reason": "On its own, the DPA shows only that DPA disputes and disputes over the Processing of Customer Personal Data go to Delaware law and an exclusive Delaware forum. That is an ordinary clause by itself. The DPA does not say that the MSA chooses New York law and a New York County forum (MSA §17.1). It also does not say that an MSA order-of-precedence clause (§2.3) makes the DPA control in such conflicts. Without those MSA terms, a reader cannot see the split proceedings or the risk of inconsistent rulings. The DPA does refer to Section 11 of the Agreement for liability, but that reference does not reveal any conflict in governing law. The harm to Kaigen depends on the MSA's contents, which are not in this document."
+              },
+              "kaigen_dreisur_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "Without limiting the foregoing, in any conflict or inconsistency concerning the Processing of Personal Data, the DPA shall prevail over the body of this Agreement, including Section 17.1.",
+                "reason": "The MSA alone shows that Section 17.1 sets New York law and exclusive New York County courts. It also shows that Section 2.3 lets the DPA override Section 17.1 on Personal Data matters. A careful associate would see a possible carve-out and might ask what the DPA says. Still, the MSA does not show that the DPA actually picks a different governing law or forum. Delaware law and the Delaware Court of Chancery appear only in DPA §12, which is not provided. Without it, there is no visible conflict, and so no visible risk of split proceedings, inconsistent rulings or an unplanned forum for Kaigen. If the DPA also chose New York, the override would change nothing. The harm therefore depends on the other document."
+              }
+            }
+          },
+          {
+            "issue": "I3",
+            "present": true,
+            "evidence": "MSA §16.3: \"A Change of Control of a party shall be deemed an assignment of this Agreement by such party and shall require the prior written consent of the other party under Section 16.1. Any assignment, delegation or transfer, including any Change of Control deemed an assignment under this Section 16.3, made without such prior written consent shall be null and void, and the non-assigning party may... terminate this Agreement by written notice to the other party effective on the date stated in such notice.\" MSA §1.1 defines Change of Control to include \"the direct or indirect acquisition by any person... of beneficial ownership of more than fifty percent (50%) of the voting securities of such party or of any entity that Controls such party.\" Notice letter ¶1: \"Sorrelpeak will acquire all of the issued and outstanding capital stock of Holdings\"; ¶2: \"No action is required by Dreisur in connection with the Transaction.\"",
+            "reason": "Holdings is the parent that Controls Kaigen. Sorrelpeak's purchase of 100% of Holdings' stock therefore falls within clause (a) of the Change of Control definition, even though Kaigen itself is not a party and nothing is assigned. Under §16.3 this is a deemed assignment that needs Dreisur's prior written consent. The letter does not request that consent. It also says no action is required by Dreisur, and §11.1 confirms the letter waives nothing. If the deal closes without consent, Dreisur can treat the deemed assignment as void and terminate the MSA on whatever date it chooses. That would happen just as Peak Season is under way, a serious exposure for Kaigen as the customer. The latest date in the folder is September 14, 2026, and closing is expected around December 15, 2026. Kaigen can therefore still seek Dreisur's written consent before closing, so the problem remains actionable.",
+            "alone": {
+              "kaigen_dreisur_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "A Change of Control of a party shall be deemed an assignment of this Agreement by such party and shall require the prior written consent of the other party under Section 16.1. Any assignment, delegation or transfer, including any Change of Control deemed an assignment under this Section 16.3, made without such prior written consent shall be null and void, and the non-assigning party may, in addition to any other remedy available to it, terminate this Agreement by written notice to the other party effective on the date stated in such notice.",
+                "reason": "The MSA alone shows the mechanism. Section 16.3 makes a Change of Control a deemed assignment that needs consent, voids it without consent and gives the other party a termination right. Section 1.1 defines Change of Control to cover an indirect acquisition of more than 50% of an entity that Controls a party. These rules apply to Kaigen as well as Dreisur, so an associate could note a general risk. But the MSA does not show any pending transaction. It does not mention Kaigen Group Holdings, the sale to Sorrelpeak, or the expected December 15, 2026 closing. It also does not show that Kaigen notified Dreisur without asking for consent. Those facts come from the September 14, 2026 notice letter (D6), which is what turns the clause into an actual problem that hurts Kaigen."
+              },
+              "kaigen_notice_letter_2026-09-14.md": {
+                "findable": false,
+                "evidence": "No action is required by Dreisur in connection with the Transaction. Kaigen will continue to be the Customer under the Agreement, and the Agreement will continue in accordance with its terms.",
+                "reason": "The letter alone shows that Kaigen's parent, Holdings, is being sold to Sorrelpeak, with closing expected around December 15, 2026. That is an indirect change in ownership of Kaigen. The letter also says no action is required by Dreisur and does not ask for consent. What the letter does not show is any contractual consequence. It never mentions MSA §16.3 or the Change of Control definition in §1.1. It never says that an indirect acquisition of a controlling parent counts as a deemed assignment, that consent is needed, or that Dreisur could treat the assignment as void and terminate. An associate reading the letter by itself might wonder whether the MSA has a change-of-control clause. But the actual problem, that this closing needs Dreisur's consent and without it Dreisur can void and terminate, depends entirely on the MSA terms, which are not in this document."
+              }
+            }
+          },
+          {
+            "issue": "I4",
+            "present": true,
+            "evidence": "SLA Schedule §1.1: \"'Peak Season' means, in each calendar year, the period from November 20 through December 31, inclusive.\" MSA §1.1: \"'Peak Season' means, in each calendar year, the period from October 15 through January 15 of the following calendar year, inclusive.\" MSA §2.3 ranks \"(c) third, the SLA Schedule; (d) fourth, the body of this Agreement.\"",
+            "reason": "The two definitions conflict, and §2.3 lets the narrower SLA definition govern the remedies. As a result, the 3x Peak Season credits (§3.3), the 3x credit cap (§3.5) and the Chronic Service Failure termination right (§5.1–5.2) apply only from November 20 to December 31. Dreisur's surge obligations, however, run on the MSA period: SOW §6.1 expressly adopts the MSA §1.1 definition, and SOW §6.5 acknowledges that returns peak in January. Failures from October 15 to November 19 and from January 1 to 15 therefore earn only standard credits and cannot trigger chronic-failure termination. That hurts Kaigen as the customer and credit recipient. Amendment No. 1 did not fix the conflict, and nothing in the folder shows Kaigen accepted the gap. It can still be raised and amended, for example at the annual review or by Amendment.",
+            "alone": {
+              "service_level_schedule.md": {
+                "findable": false,
+                "evidence": "\"Peak Season\" means, in each calendar year, the period from November 20 through December 31, inclusive.",
+                "reason": "This document by itself shows only its own Peak Season definition, November 20 to December 31. It also shows that the 3x credits (§3.3, §3.5) and the chronic-failure termination right (§5.1) apply only during that window. It does not show that the MSA defines Peak Season more broadly (October 15 to January 15). Nor does it show that the SOW's surge-staffing obligations use the broader period, or that MSA §2.3 ranks the SLA Schedule above the MSA body. Without those, there is no visible inconsistency between defined terms and no visible gap between surge obligations and enhanced remedies. A reader would see a narrow window that is internally consistent, not the problem that hurts the client."
+              },
+              "kaigen_dreisur_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "\"Peak Season\" means, in each calendar year, the period from October 15 through January 15 of the following calendar year, inclusive.\" and §2.3: \"(c) third, the SLA Schedule; (d) fourth, the body of this Agreement\"",
+                "reason": "The MSA alone defines Peak Season broadly (Oct 15–Jan 15). It ranks the SLA Schedule above the MSA body, and it defers Chronic Service Failure and service credits to the SLA Schedule. It does not show that the SLA Schedule uses a narrower Peak Season (Nov 20–Dec 31). It also does not show that enhanced 3x credits or the chronic-failure termination right are tied to that narrower period. Without the SLA Schedule, an associate could note only a general risk that the SLA might override the MSA definition, not the actual conflict or the gap in Kaigen's remedies."
+              }
+            }
+          },
+          {
+            "issue": "I5",
+            "present": true,
+            "evidence": "§10.1: \"Supplier's obligations under this Section 10.1 are subject to Section 11.1.\" §11.3(a): the limitations \"shall not apply to: (a) a party's obligations under Section 10 (Indemnification)\". §10.2 (Customer's indemnity) has no equivalent cap language.",
+            "reason": "The carve-out in §11.3(a) reads as mutual. But §10.1 expressly keeps Dreisur's indemnity subject to the §11.1 cap of 12 months' fees, and the specific clause would likely control the general one. Kaigen's §10.2 indemnity has no such limit, so it stays uncapped. That indemnity covers product liability, recalls, mislabeling, and customs and regulatory fines. The result is that Kaigen alone faces unlimited exposure on broad product and regulatory risks, while Dreisur's indemnity for injury, labor-law and IP claims is capped. Amendment No. 1 does not touch §§10 or 11, and nothing else in the folder fixes the imbalance. It remains a live point Kaigen can raise, for example at renewal or in a future amendment."
+          },
+          {
+            "issue": "I6",
+            "present": true,
+            "evidence": "MSA §11.3(b) excludes from the cap only \"breach of Section 9.2 (Data Security)\". Amendment No. 1 §2.1 says: \"Section 9.2 is deleted in its entirety. On and after the Amendment Effective Date, Supplier's obligations with respect to the security of Customer Data and of the systems on which Customer Data is Processed are governed exclusively by the DPA.\" DPA §10 says: \"Each party's liability arising out of or relating to this DPA ... is subject to Section 11 of the Agreement.\"",
+            "reason": "The carve-out in §11.3(b) was Kaigen's protection: it kept Dreisur's data-security breaches outside the 12-month-fees cap. The Amendment deletes Section 9.2 and moves all of Dreisur's security obligations exclusively into the DPA. It does not amend §11.3(b) to refer to the DPA. DPA §10 expressly puts DPA liability under MSA §11, and both the Amendment and the DPA rank above the MSA body under §2.3. As a result, a security failure is now a DPA breach. That includes Dreisur's obligation under DPA §8.5 to reimburse breach-response costs, fines and card-brand penalties. The carve-out no longer reaches those breaches because it points to a deleted section. They fall inside the cap. The §11.3(a) indemnity exclusion covers only third-party Claims, so it does not cure this for Kaigen's own response costs. Nothing in the folder fixes the gap. The Amendment remains in force as of the latest folder date, so Kaigen can still seek a corrective amendment.",
+            "alone": {
+              "kaigen_dreisur_master_services_agreement.md": {
+                "findable": false,
+                "evidence": "11.3 Exclusions from Cap. The limitations and exclusions set out in Sections 11.1 and 11.2 shall not apply to: ... (b) breach of Section 9.2 (Data Security);",
+                "reason": "As written, the MSA alone protects Kaigen: Section 9.2 exists, and §11.3(b) removes breaches of it from the 12-month-fees cap and the consequential-damages exclusion. §2.3 does rank Amendments and the DPA (for Personal Data) above the body of the Agreement, so a reader can see a general risk that later documents could override the MSA. But the problem itself depends on facts this document does not contain: Amendment No. 1 deleting §9.2 and moving data security exclusively into the DPA, and DPA §10 making DPA liability subject to MSA Section 11. Without those, a careful associate would see the carve-out working for Kaigen, not pointing at a deleted section."
+              },
+              "amendment_no_1.md": {
+                "findable": false,
+                "evidence": "Section 9.2 is deleted in its entirety. On and after the Amendment Effective Date, Supplier's obligations with respect to the security of Customer Data and of the systems on which Customer Data is Processed are governed exclusively by the DPA.",
+                "reason": "The amendment shows that Section 9.2 (Data Security) is deleted and that security obligations move exclusively to the DPA. It does not show that MSA §11.3(b) carves breach of Section 9.2 out of the liability cap. It also does not show that DPA §10 subjects DPA liability to MSA Section 11, or that amendments prevail under §2.3. The amendment never mentions Section 11, the liability cap, or any carve-out. Read alone, the deletion looks like consolidation of data provisions. A reader cannot see from this document that Kaigen loses uncapped recovery for data breaches. That harm depends on the MSA and DPA terms, which are not provided."
+              }
+            }
+          }
+        ],
+        "absent_parties": []
+      }
+    },
+    {
+      "name": "leak_check",
+      "passed": true,
+      "details": {
+        "hits": [],
+        "html_comments": [],
+        "empty": false
+      }
+    },
+    {
+      "name": "rubric_trace",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "n_criteria": 11,
+        "bundled": [],
+        "repair": {
+          "ran": false
+        },
+        "single_issue_facts": [],
+        "ranking_facts": [
+          "criterion C8 asks for the whole ranking in fact F5 ('Amendments, then DPA (as to Personal Data), then SLA Schedule, then MSA body, then SOWs'); ask for the pair an issue uses"
+        ]
+      }
+    },
+    {
+      "name": "rubric_tests",
+      "passed": true,
+      "details": {
+        "gold_fails": [],
+        "blank_passes": [],
+        "flawed_should_fail": [
+          "C5"
+        ],
+        "flawed_wrongly_passes": [],
+        "flawed_wrongly_fails": [],
+        "judge_reasons": {
+          "gold": {},
+          "flawed": {}
+        }
+      }
+    },
+    {
+      "name": "decontamination",
+      "passed": true,
+      "details": {
+        "max": 0.08,
+        "flagged": {}
+      }
+    },
+    {
+      "name": "solver_check",
+      "passed": true,
+      "details": {
+        "skipped": true,
+        "reason": "deferred"
+      }
+    }
+  ]
+}
